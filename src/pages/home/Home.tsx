@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import About from "../../components/about"
+import Classes from "../../components/classes"
 
-const PageContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
+const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,7 +12,12 @@ const PageContainer = styled.div`
 
 /* desktop thw newest info style end */
 const Home = () => {
-  return <PageContainer>Home</PageContainer>;
+  return (
+  <Container>
+    <About/>
+    <Classes />
+  </Container>
+  );
 };
 
 export default Home;
