@@ -33,7 +33,7 @@ const TopRightItems = styled.div`
 const LeftItems = styled.div`
  display:flex;
  width:50%;
- margin-left:200px;
+
 
 `;
 
@@ -121,6 +121,7 @@ const TopAreaItems = styled.div`
 const BelowAreaItems = styled.div`
   display: flex;
   justify-content:space-between;
+  
 
 `;
 
