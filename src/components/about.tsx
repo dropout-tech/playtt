@@ -19,25 +19,28 @@ const StartImg = styled.img`
 
 const TopArea = styled.div`
   width:100%;
-  height:10%;
+
+`;
+
+
+const TopRightItems = styled.div`
+ display:flex;
+ width:50%;
+ 
 
 `;
 
 const LeftItems = styled.div`
  display:flex;
- width:100%;
- 
-`;
-
-const TopRightItems = styled.div`
-   display:flex;
- width:100%;
+ width:50%;
+ margin-left:200px;
 
 `;
 
-const TopLeftItems = styled.div`
-   display:flex;
- width:100%;
+const RightItems = styled.div`
+ display:flex;
+ width:50%;
+
 
 `;
 
@@ -101,6 +104,7 @@ const Slogan = styled.p`
 `;
 
 const AboutItems = styled.div`
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -108,13 +112,16 @@ const AboutItems = styled.div`
 `;
 
 const TopAreaItems = styled.div`
+  width:100%;
   display: flex;
   justify-content:space-between;
+  
 `;
 
 const BelowAreaItems = styled.div`
- display: flex;
+  display: flex;
   justify-content:space-between;
+
 `;
 
 const Contants = styled.p`
@@ -162,14 +169,14 @@ const About = () => {
             </div>
           </LeftItems>
 
-          <TopLeftItems>
+          <RightItems>
             <StartImg src={start} alt="" />
             <div>
               <Hope>教學理念</Hope>
               <Slogan>Let's Play Teach</Slogan>
               <Contants>學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let's Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！。</Contants>
             </div>
-          </TopLeftItems>
+          </RightItems>
         </BelowAreaItems>
       </TopArea>
     </Container>
