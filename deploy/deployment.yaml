@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: convenue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: convenue
+  template:
+    metadata:
+      labels:
+        deployment: convenue
+    spec:
+      containers:
+        - name: convenue
+          image: harbor-staging.aptan.cloud/convenue/convenue_frontend:7
+          ports:
+            - containerPort: 8080

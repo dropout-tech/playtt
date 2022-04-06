@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: convenue-vs
+  namespace: convenue
+spec:
+  hosts:
+    - convenue.aptan.cloud
+  gateways:
+    - istio-system/gateway
+  http:
+    - route:
+        - destination:
+            host: convenue.convenue.svc.cluster.local
+            port:
+              number: 8080

@@ -1,0 +1,49 @@
+kind: pipeline
+type: kubernetes
+name: NAME
+
+clone:
+  disable: true
+
+steps:
+  - name: Clone
+    image: alpine/git
+    settings:
+      repo: Aptan/convenue_frontend
+      imagePullPolicy: IfNotPresent
+      username: 
+          from_secret: gitea_username
+      password: 
+          from_secret: gitea_password
+    commands:
+      - sleep 10
+      - git clone https://gitea.aptan.cloud/Aptan/convenue_frontend.git .
+
+  - name: Build
+    image: node:17-alpine
+    commands:
+        - yarn
+        - yarn build
+        
+  - name: Harbor
+    image: banzaicloud/drone-kaniko
+    settings:
+      registry: harbor-staging.aptan.cloud
+      repo: convenue/convenue_frontend
+      dockerfile: ./Dockerfile
+      tags: ${DRONE_BUILD_NUMBER}
+      username: 
+          from_secret: harbor_username
+      password: 
+          from_secret: harbor_password
+  
+  - name: Slack
+    image: plugins/slack
+    settings:
+      webhook:
+        from_secret: slack_webhook
+      channel: convenue
+
+trigger:
+  branch:
+  - master
