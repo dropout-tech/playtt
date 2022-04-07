@@ -17,7 +17,7 @@ const Container = styled.div`
 
 
 const ClassIntroduce = styled.div`
-
+ width:100%;
 `;
 
 const Title1 = styled.p`
@@ -48,13 +48,11 @@ const ContantTitle = styled.p`
   font-weight: 900;
   font-size: 26px;
   line-height: 40px;
-
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-top:10px;
-  text-align:center;
-  width:100%;
+
 `;
 
 
@@ -72,14 +70,14 @@ const ContantText = styled.p`
 `;
 
 const Contant = styled.div`
+  width:100%;
   display:flex;
-  justify-content:center;
   flex-direction: column;
 
 `;
 
 const Img = styled.img`
-  width:414px;
+  width:50%;
   height:352px;
 
 `;
@@ -89,7 +87,7 @@ const Img = styled.img`
 const Explain1 = styled.div`
  width:45%;
  display: flex;
- justify-content:space-between;
+ justify-content: flex-start;
  
 `;
 
@@ -109,8 +107,12 @@ const Explain3 = styled.div`
 
 
 const Text = styled.div`
+  width:50%;
   display: flex;
   flex-direction: column;
+  margin-left:80px;
+  margin-top:70px;
+
  
 `;
 
@@ -140,9 +142,9 @@ const Classes = () => {
       </ClassIntroduce>
 
       <Contant>
+
         <Explain1>
           <Img src={img1} alt="" />
-
           <Text>
             <Background>
               <ContantTitle>班別課程豐富客製化</ContantTitle>
@@ -153,21 +155,17 @@ const Classes = () => {
               ・ 小班客製化教學 / 大班休閒娛樂教學
               ・ 冬令營 / 夏令營 / 多元冬夏令營
             </ContantText>
-
           </Text>
-
         </Explain1>
 
         <Explain2>
           <Img src={img2} alt="" />
-
           <Text>
             <Background>
               <ContantTitle>
                 寓教於樂多元發展
               </ContantTitle>
             </Background>
-
 
             <ContantText>
               ・ 暖身做操 & 趣味體適能桌球
@@ -177,14 +175,12 @@ const Classes = () => {
               ・ 遊戲競賽
               ・ 學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
             </ContantText>
-
           </Text>
-
         </Explain2>
+
 
         <Explain3>
           <Img src={img3} alt="" />
-
           <Text>
             <Background>
               <ContantTitle>伴你一生的全年齡運動</ContantTitle>
@@ -197,21 +193,10 @@ const Classes = () => {
               ・ 培養良好運動習慣與社交能力
               ・ 預防老人智力退化
             </ContantText>
-
           </Text>
-
         </Explain3>
-
-
-
-
       </Contant>
-
-
-
     </Container>
-
-
   </PageContainer>;
 };
 
