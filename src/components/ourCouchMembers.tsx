@@ -35,6 +35,7 @@ const Container = styled.div`
 const PicImg = styled.img`
   width:310px;
   height:300px;
+  margin-left:80px;
 `;
 
 const Row1 = styled.div`
@@ -45,6 +46,7 @@ const Row1 = styled.div`
 const Row2 = styled.div`
   display: flex;
   flex-direction: row;
+  margin-left:100px;
 `;
 
 const Row3 = styled.div`
@@ -60,6 +62,45 @@ const Picture = styled.div`
 
 `;
 
+const Text = styled.p`
+  margin-left:170px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+`;
+
+const Text2 = styled.p`
+  margin-left:200px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+`;
+
+const Span = styled.span`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:10px;
+`;
+
 
 
 /* desktop thw newest info style end */
@@ -70,51 +111,51 @@ const OurCouchMembers = () => {
         <Row1>
           <div>
             <PicImg src={pic1} alt="" />
-            <p>張昀容<span>教練</span></p>
+            <Text>張昀容<Span>教練</Span></Text>
           </div>
 
           <div>
             <PicImg src={pic2} alt="" />
-            <p>陳旻明<span>教練</span></p>
+            <Text>陳旻明<Span>教練</Span></Text>
           </div>
 
           <div>
             <PicImg src={pic3} alt="" />
-            <p>陳智鈞<span>教練</span></p>
+            <Text>陳智鈞<Span>教練</Span></Text>
           </div>
         </Row1>
 
         <Row2>
           <div>
             <PicImg src={pic4} alt="" />
-            <p>張昀容<span>教練</span></p>
+            <Text2>張昀容<Span>教練</Span></Text2>
           </div>
 
           <div>
             <PicImg src={pic5} alt="" />
-            <p>陳旻明<span>教練</span></p>
+            <Text2>陳旻明<Span>教練</Span></Text2>
           </div>
 
           <div>
             <PicImg src={pic6} alt="" />
-            <p>陳智鈞<span>教練</span></p>
+            <Text2>陳智鈞<Span>教練</Span></Text2>
           </div>
         </Row2>
 
         <Row3>
           <div>
             <PicImg src={pic7} alt="" />
-            <p>張昀容<span>教練</span></p>
+            <Text>張昀容<Span>教練</Span></Text>
           </div>
 
           <div>
             <PicImg src={pic8} alt="" />
-            <p>陳旻明<span>教練</span></p>
+            <Text>陳旻明<Span>教練</Span></Text>
           </div>
 
           <div>
             <PicImg src={pic9} alt="" />
-            <p>陳智鈞<span>教練</span></p>
+            <Text>陳智鈞<Span>教練</Span></Text>
           </div>
         </Row3>
       </Picture>
