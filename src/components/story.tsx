@@ -96,8 +96,13 @@ const BelowText = styled.p`
   color: #1A1A1A;
 `;
 
+const Span1 = styled.span`
+  color:#38D430;
+`;
 
-
+const Span2 = styled.span`
+  color:#FF40B4;
+`;
 
 
 
