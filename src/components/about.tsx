@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import start from "../assets/about/start.png";
 
+
+
+// styled components start 
+
 const PageContainer = styled.div`
   height: 100vh;
   width:100%;
@@ -20,40 +24,23 @@ const StartImg = styled.img`
 const TopArea = styled.div`
   width:100%;
   display:flex;
-
 `;
-
 
 const TopRightItems = styled.div`
  display:flex;
  width:50%;
- 
-
 `;
 
 const LeftItems = styled.div`
  display:flex;
  flex-direction: column;
  width:50%;
- 
 `;
 
 const RightItems = styled.div`
  display:flex;
  flex-direction: column;
  width:50%;
- 
- 
-`;
-
-
-const belowLeftItems = styled.div`
-
-`;
-
-
-const belowRightItems = styled.div`
-
 `;
 
 const Container = styled.div`
@@ -84,14 +71,13 @@ const AboutUs = styled.p`
 `;
 
 const Hope = styled.p`
-  
-font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 30px;
-line-height: 44px;
-letter-spacing: 0.04em;
-color: #1A1A1A;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
 `;
 
 
@@ -103,15 +89,12 @@ const Slogan = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #005CB9;
- 
 `;
 
 const AboutItems = styled.div`
-
   display: flex;
   justify-content: center;
   flex-direction: column;
-
 `;
 
 const LeftAreaContainer = styled.div`
@@ -119,21 +102,18 @@ const LeftAreaContainer = styled.div`
   display: flex;
   justify-content:flex-end;
   margin-right:40px;
-  
 `;
+
 const RightAreaContainer = styled.div`
   width:100%;
   display: flex;
   justify-content:flex-start;
   margin-left:40px;
-  
 `;
 
 const BelowAreaItems = styled.div`
   display: flex;
   justify-content:space-between;
-  
-
 `;
 
 const Contants = styled.p`
@@ -141,32 +121,18 @@ const Contants = styled.p`
   height:252px;
 `;
 
-
 const Span = styled.span`
   color:#38D430;
 `;
 
-
 const HopeContainer = styled.div`
   display:flex;
-
-
 `;
-
 
 const BrandContainer = styled.div`
   display:flex;
   margin-top:-30px;
-
 `;
-
-
-
-
-
-
-
-
 
 
 /* desktop thw newest info style end */
