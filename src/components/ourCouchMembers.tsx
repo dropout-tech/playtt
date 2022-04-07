@@ -128,34 +128,34 @@ const OurCouchMembers = () => {
         <Row2>
           <div>
             <PicImg src={pic4} alt="" />
-            <Text2>張昀容<Span>教練</Span></Text2>
+            <Text2>黃建宏<Span>教練</Span></Text2>
           </div>
 
           <div>
             <PicImg src={pic5} alt="" />
-            <Text2>陳旻明<Span>教練</Span></Text2>
+            <Text2>李彥峰<Span>教練</Span></Text2>
           </div>
 
           <div>
             <PicImg src={pic6} alt="" />
-            <Text2>陳智鈞<Span>教練</Span></Text2>
+            <Text2>王宗穎<Span>教練</Span></Text2>
           </div>
         </Row2>
 
         <Row3>
           <div>
             <PicImg src={pic7} alt="" />
-            <Text>張昀容<Span>教練</Span></Text>
+            <Text>王子傑<Span>教練</Span></Text>
           </div>
 
           <div>
             <PicImg src={pic8} alt="" />
-            <Text>陳旻明<Span>教練</Span></Text>
+            <Text>賴俊傑<Span>教練</Span></Text>
           </div>
 
           <div>
             <PicImg src={pic9} alt="" />
-            <Text>陳智鈞<Span>教練</Span></Text>
+            <Text>張品卉<Span>教練</Span></Text>
           </div>
         </Row3>
       </Picture>
