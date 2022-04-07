@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import start from "../assets/about/start.png";
+import banner from "../assets/homepage/banner.png";
 
 
 
@@ -14,6 +14,11 @@ const PageContainer = styled.div`
   justify-content: space-between;
 `;
 
+const BannerImg = styled.img`
+  width:100% ;
+  height:1100px ;
+
+`;
 
 
 
@@ -21,7 +26,9 @@ const PageContainer = styled.div`
 const homepage = () => {
   return <PageContainer>
 
-
+    <div>
+      <BannerImg src={banner} alt="" />
+    </div>
 
 
   </PageContainer>;

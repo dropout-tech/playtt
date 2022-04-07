@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import About from "../../components/about"
-import Classes from "../../components/classes"
+import Hompage from "../../components/homepage";
+import About from "../../components/about";
+import Classes from "../../components/classes";
+
 
 const Container = styled.div`
   width: 100%;
@@ -13,10 +15,12 @@ const Container = styled.div`
 /* desktop thw newest info style end */
 const Home = () => {
   return (
-  <Container>
-    <About/>
-    <Classes />
-  </Container>
+    <Container>
+      <Hompage />
+      <About />
+      {/* <Classes /> */}
+    </Container>
+
   );
 };
 
