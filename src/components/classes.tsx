@@ -10,7 +10,11 @@ const PageContainer = styled.div`
 
 /* desktop thw newest info style end */
 const Classes = () => {
-  return <PageContainer>classes</PageContainer>;
+  return <PageContainer>
+
+
+    
+  </PageContainer>;
 };
 
 export default Classes;

@@ -20,8 +20,7 @@ const Home = () => {
       <Hompage />
       <About />
       <Story />
-      
-      {/* <Classes /> */}
+      <Classes />
     </Container>
 
   );

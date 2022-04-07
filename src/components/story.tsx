@@ -12,6 +12,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 `;
 
 const ColorpicImg = styled.img`
@@ -24,13 +25,14 @@ const Container = styled.div`
  width:100% ;
  height:920px;
  display:flex;
+ background:#CFD2D3;
 `;
 
 const Picture = styled.div`
   width:50%;
   display:flex;
   justify-content:flex-end;
-  margin-top:90px;
+  margin-top:200px;
 
 
 `;
@@ -41,7 +43,7 @@ const Text = styled.p`
   justify-content:flex-start;
   flex-direction: column;
   margin-left:80px;
-  margin-top:-80px;
+  margin-top:10px;
 `;
 
 const Title1 = styled.p`
