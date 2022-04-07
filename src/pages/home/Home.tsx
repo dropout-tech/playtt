@@ -4,8 +4,8 @@ import Hompage from "../../components/homepage";
 import Story from "../../components/story";
 import About from "../../components/about";
 import Classes from "../../components/classes";
-import Ourcouch from "../../components/ourcouch";
-
+import OurCouchMembers from "../../components/ourCouchMembers";
+import Couch from "../../components/couch";
 
 const Container = styled.div`
   width: 100%;
@@ -22,7 +22,8 @@ const Home = () => {
       <About />
       <Story />
       <Classes />
-      <Ourcouch />
+      <Couch />
+      <OurCouchMembers />
     </Container>
 
   );

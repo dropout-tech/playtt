@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import pic1 from "../assets/ourcouch/pic1.png";
-import pic2 from "../assets/ourcouch/pic2.png";
-import pic3 from "../assets/ourcouch/pic3.png";
-import pic4 from "../assets/ourcouch/pic4.png";
-import pic5 from "../assets/ourcouch/pic5.png";
-import pic6 from "../assets/ourcouch/pic6.png";
-import pic7 from "../assets/ourcouch/pic7.png";
-import pic8 from "../assets/ourcouch/pic8.png";
-import pic9 from "../assets/ourcouch/pic9.png";
+import pic1 from "../assets/ourCouchMenber/pic1.png";
+import pic2 from "../assets/ourCouchMenber/pic2.png";
+import pic3 from "../assets/ourCouchMenber/pic3.png";
+import pic4 from "../assets/ourCouchMenber/pic4.png";
+import pic5 from "../assets/ourCouchMenber/pic5.png";
+import pic6 from "../assets/ourCouchMenber/pic6.png";
+import pic7 from "../assets/ourCouchMenber/pic7.png";
+import pic8 from "../assets/ourCouchMenber/pic8.png";
+import pic9 from "../assets/ourCouchMenber/pic9.png";
 
 
 
@@ -28,7 +28,8 @@ const CouchImg = styled.img`
 `;
 
 const Container = styled.div`
- margin-top:280px;
+ margin-top:500px;
+ width:100%;
 `;
 
 const PicImg = styled.img`
@@ -50,15 +51,22 @@ const Row3 = styled.div`
   display: flex;
   flex-direction: row;
 `;
-  
+
+const Picture = styled.div`
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+`;
 
 
 
 /* desktop thw newest info style end */
-const ourcouch = () => {
+const OurCouchMembers = () => {
   return <PageContainer>
     <Container>
-      <div>
+      <Picture>
         <Row1>
           <div>
             <PicImg src={pic1} alt="" />
@@ -109,11 +117,11 @@ const ourcouch = () => {
             <p>陳智鈞<span>教練</span></p>
           </div>
         </Row3>
-      </div>
+      </Picture>
     </Container>
 
 
   </PageContainer>;
 };
 
-export default ourcouch;
+export default OurCouchMembers;
