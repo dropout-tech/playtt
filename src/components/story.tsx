@@ -18,7 +18,6 @@ const ColorpicImg = styled.img`
   width:517px ;
   height:517px ;
   margin-left:100px;
-
 `;
 
 const Container = styled.div`
@@ -47,36 +46,22 @@ const Text = styled.p`
 
 const Title1 = styled.p`
   font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 30px;
-line-height: 44px;
-/* identical to box height, or 147% */
-
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
-
-
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
 `;
 
 const Title2 = styled.p`
   font-family: 'Futura';
-font-style: normal;
-font-weight: 700;
-font-size: 26px;
-line-height: 40px;
-/* identical to box height, or 154% */
-
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
-
-
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
 `;
 
 const Title3 = styled.p`
@@ -92,37 +77,23 @@ const Title4 = styled.p`
 const Contant = styled.p`
   width:517px;
   font-family: 'Futura';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 36px;
-/* or 180% */
-
-text-align: justify;
-letter-spacing: 0.03em;
-
-/* black */
-
-color: #1A1A1A;
-
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
 `;
 
 const BelowText = styled.p`
   font-family: 'Futura';
-font-style: normal;
-font-weight: 700;
-font-size: 26px;
-line-height: 40px;
-/* or 154% */
-
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
-
-
-
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
 `;
 
 
@@ -149,7 +120,7 @@ const Story = () => {
         </div>
 
         <BelowText>
-          <Title3>Let's Play 運動 X 創新</Title3>
+          <Title3>Let's Play <Span1>運動</Span1> X <Span2>創新</Span2></Title3>
           <Title4>邀請大家一起來玩！</Title4>
         </BelowText>
       </Text>
