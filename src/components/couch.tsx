@@ -3,7 +3,6 @@ import styled from "styled-components";
 import couch from "../assets/couch/couch.png";
 
 
-
 // styled components start 
 
 const PageContainer = styled.div`

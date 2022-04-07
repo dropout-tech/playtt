@@ -59,7 +59,6 @@ const Picture = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
 `;
 
 const Text = styled.p`
@@ -100,6 +99,12 @@ const Span = styled.span`
   color: #1A1A1A;
   margin-left:10px;
 `;
+
+const BelowText = styled.p`
+  display:flex;
+  flex-direction:column;
+`;
+
 
 
 
@@ -159,6 +164,8 @@ const OurCouchMembers = () => {
           </div>
         </Row3>
       </Picture>
+
+
     </Container>
 
 

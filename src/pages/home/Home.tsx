@@ -6,6 +6,7 @@ import About from "../../components/about";
 import Classes from "../../components/classes";
 import OurCouchMembers from "../../components/ourCouchMembers";
 import Couch from "../../components/couch";
+import AlliancePlan from "../../components/alliancePlan";
 
 const Container = styled.div`
   width: 100%;
@@ -24,6 +25,7 @@ const Home = () => {
       <Classes />
       <Couch />
       <OurCouchMembers />
+      <AlliancePlan />
     </Container>
 
   );
