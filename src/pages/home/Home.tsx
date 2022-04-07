@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Hompage from "../../components/homepage";
+import Story from "../../components/story";
 import About from "../../components/about";
 import Classes from "../../components/classes";
 
@@ -18,6 +19,8 @@ const Home = () => {
     <Container>
       <Hompage />
       <About />
+      <Story />
+      
       {/* <Classes /> */}
     </Container>
 

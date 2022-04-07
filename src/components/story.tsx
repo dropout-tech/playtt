@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import banner from "../assets/homepage/banner.png";
+import colorpic from "../assets/story/colorpic.png";
 
 
 
@@ -14,11 +14,59 @@ const PageContainer = styled.div`
   justify-content: space-between;
 `;
 
-const BannerImg = styled.img`
-  width:100% ;
-  height:1100px ;
+const ColorpicImg = styled.img`
+  width:517px ;
+  height:517px ;
+  margin-left:100px;
 
 `;
+
+const Container = styled.div`
+ width:100% ;
+ height:920px;
+`;
+
+const Picture = styled.div`
+  width:50%;
+  display:flex;
+  justify-content:flex-end;
+
+
+`;
+
+const Text = styled.p`
+  width:50%;
+  display:flex;
+  justify-content:flex-start;
+
+`;
+
+const Title1 = styled.p`
+  
+
+`;
+
+const Title2 = styled.p`
+  
+
+`;
+
+const Title3 = styled.p`
+  
+
+`;
+
+const Title4 = styled.p`
+  
+
+`;
+
+const Contant = styled.p`
+
+`;
+
+
+
 
 
 
@@ -26,9 +74,25 @@ const BannerImg = styled.img`
 const Story = () => {
   return <PageContainer>
 
-    <div>
-      <BannerImg src={banner} alt="" />
-    </div>
+    <Picture>
+      <ColorpicImg src={colorpic} alt="" />
+    </Picture>
+
+    <Text>
+      <div>
+        <Title1></Title1>
+        <Title2></Title2>
+        <Contant></Contant>
+      </div>
+
+      <div>
+        <Title3></Title3>
+        <Title4></Title4>
+      </div>
+    </Text>
+
+
+
 
 
   </PageContainer>;
