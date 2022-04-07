@@ -64,7 +64,7 @@ const ContantText = styled.p`
   line-height: 36px;
   text-align: justify;
   letter-spacing: 0.03em;
-  color: #CFD2D3;
+  color: #1A1A1A;
   width:550px;
   height:144px;
 `;
@@ -73,6 +73,8 @@ const Contant = styled.div`
   width:100%;
   display:flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center; 
 
 `;
 
@@ -95,14 +97,14 @@ const Explain2 = styled.div`
  width:45%;
  display: flex;
  justify-content:space-between;
- 
+ margin-top:50px;
 `;
 
 const Explain3 = styled.div`
  width:45%;
  display: flex;
  justify-content:space-between;
- 
+ margin-top:100px;
 `;
 
 
@@ -121,7 +123,7 @@ const Background = styled.div`
   border-radius: 28px;
   height:56px;
   text-align:center;
-  width:80%;
+  width:62%;
 
 `;
 
@@ -150,7 +152,7 @@ const Classes = () => {
               <ContantTitle>班別課程豐富客製化</ContantTitle>
             </Background>
             <ContantText>
-              ・ 個人班 / 團體班 / 選手班 / 親子 / 包班<br/>
+              ・ 個人班 / 團體班 / 選手班 / 親子 / 包班<br />
               ・ 幼兒 / 兒童 / 國高中 / 大學 / 成人 / 銀髮<br />
               ・ 小班客製化教學 / 大班休閒娛樂教學<br />
               ・ 冬令營 / 夏令營 / 多元冬夏令營
@@ -159,7 +161,6 @@ const Classes = () => {
         </Explain1>
 
         <Explain2>
-          <Img src={img2} alt="" />
           <Text>
             <Background>
               <ContantTitle>
@@ -176,6 +177,7 @@ const Classes = () => {
               ・ 學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
             </ContantText>
           </Text>
+          <Img src={img2} alt="" />
         </Explain2>
 
 
