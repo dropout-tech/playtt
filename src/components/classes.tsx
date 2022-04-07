@@ -65,7 +65,7 @@ const ContantText = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #CFD2D3;
-  width:413px;
+  width:550px;
   height:144px;
 `;
 
@@ -150,9 +150,9 @@ const Classes = () => {
               <ContantTitle>班別課程豐富客製化</ContantTitle>
             </Background>
             <ContantText>
-              ・ 個人班 / 團體班 / 選手班 / 親子 / 包班
-              ・ 幼兒 / 兒童 / 國高中 / 大學 / 成人 / 銀髮
-              ・ 小班客製化教學 / 大班休閒娛樂教學
+              ・ 個人班 / 團體班 / 選手班 / 親子 / 包班<br/>
+              ・ 幼兒 / 兒童 / 國高中 / 大學 / 成人 / 銀髮<br />
+              ・ 小班客製化教學 / 大班休閒娛樂教學<br />
               ・ 冬令營 / 夏令營 / 多元冬夏令營
             </ContantText>
           </Text>
@@ -168,11 +168,11 @@ const Classes = () => {
             </Background>
 
             <ContantText>
-              ・ 暖身做操 & 趣味體適能桌球
-              ・ 互動遊戲式球感
-              ・ 對打練習
-              ・ 互動單球調整揮拍動作
-              ・ 遊戲競賽
+              ・ 暖身做操 & 趣味體適能桌球<br />
+              ・ 互動遊戲式球感<br />
+              ・ 對打練習<br />
+              ・ 互動單球調整揮拍動作<br />
+              ・ 遊戲競賽<br />
               ・ 學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
             </ContantText>
           </Text>
@@ -187,10 +187,10 @@ const Classes = () => {
             </Background>
 
             <ContantText>
-              ・ 培養專注力 / 耐挫力 / 肌耐力 / 體能
-              ・ 肢體協調 / 遠離 3C
-              ・ 兒童腦部發育 / 成人腦部健全發展
-              ・ 培養良好運動習慣與社交能力
+              ・ 培養專注力 / 耐挫力 / 肌耐力 / 體能<br />
+              ・ 肢體協調 / 遠離 3C<br />
+              ・ 兒童腦部發育 / 成人腦部健全發展<br />
+              ・ 培養良好運動習慣與社交能力<br />
               ・ 預防老人智力退化
             </ContantText>
           </Text>
