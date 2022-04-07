@@ -45,20 +45,20 @@ const ourcouch = () => {
     <Container>
       <div>
         <div>
-          <PicImg src={pic1} alt="" />
-          <PicImg src={pic1} alt="" />
-          <PicImg src={pic1} alt="" />
-        </div>
-        <div>
-          <PicImg src={pic1} alt="" />
-          <PicImg src={pic1} alt="" />
-          <PicImg src={pic1} alt="" />
-        </div>
+          <div>
+            <PicImg src={pic1} alt="" />
+            <p><span></span></p>
+          </div>
 
-        <div>
-          <PicImg src={pic1} alt="" />
-          <PicImg src={pic1} alt="" />
-          <PicImg src={pic1} alt="" />
+          <div>
+            <PicImg src={pic1} alt="" />
+            <p><span></span></p>
+          </div>
+
+          <div>
+            <PicImg src={pic1} alt="" />
+            <p><span></span></p>
+          </div>
         </div>
       </div>
     </Container>
