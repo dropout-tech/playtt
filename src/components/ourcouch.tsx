@@ -32,10 +32,25 @@ const Container = styled.div`
 `;
 
 const PicImg = styled.img`
-
+  width:310px;
+  height:300px;
 `;
 
+const Row1 = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
+const Row2 = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Row3 = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+  
 
 
 
@@ -44,22 +59,56 @@ const ourcouch = () => {
   return <PageContainer>
     <Container>
       <div>
-        <div>
+        <Row1>
           <div>
             <PicImg src={pic1} alt="" />
-            <p><span></span></p>
+            <p>張昀容<span>教練</span></p>
           </div>
 
           <div>
-            <PicImg src={pic1} alt="" />
-            <p><span></span></p>
+            <PicImg src={pic2} alt="" />
+            <p>陳旻明<span>教練</span></p>
           </div>
 
           <div>
-            <PicImg src={pic1} alt="" />
-            <p><span></span></p>
+            <PicImg src={pic3} alt="" />
+            <p>陳智鈞<span>教練</span></p>
           </div>
-        </div>
+        </Row1>
+
+        <Row2>
+          <div>
+            <PicImg src={pic4} alt="" />
+            <p>張昀容<span>教練</span></p>
+          </div>
+
+          <div>
+            <PicImg src={pic5} alt="" />
+            <p>陳旻明<span>教練</span></p>
+          </div>
+
+          <div>
+            <PicImg src={pic6} alt="" />
+            <p>陳智鈞<span>教練</span></p>
+          </div>
+        </Row2>
+
+        <Row3>
+          <div>
+            <PicImg src={pic7} alt="" />
+            <p>張昀容<span>教練</span></p>
+          </div>
+
+          <div>
+            <PicImg src={pic8} alt="" />
+            <p>陳旻明<span>教練</span></p>
+          </div>
+
+          <div>
+            <PicImg src={pic9} alt="" />
+            <p>陳智鈞<span>教練</span></p>
+          </div>
+        </Row3>
       </div>
     </Container>
 
