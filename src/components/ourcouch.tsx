@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import banner from "../assets/homepage/banner.png";
+import couch from "../assets/ourcouch/couch.png";
 
 
 
@@ -14,24 +14,31 @@ const PageContainer = styled.div`
   justify-content: space-between;
 `;
 
-const BannerImg = styled.img`
-  width:100% ;
-  height:100% ;
-
+const CouchImg = styled.img`
+  width: 100%;
+  height:100%px;
 `;
 
-const EmptyContainer = styled.div`
-
+const Container = styled.div`
+ margin-top:280px;
 `;
+
+
+
 
 
 /* desktop thw newest info style end */
-const homepage = () => {
+const ourcouch = () => {
   return <PageContainer>
-    <EmptyContainer>
-      <BannerImg src={banner} alt="" />
-    </EmptyContainer>
+    <Container>
+      <div>
+        <CouchImg src={couch} alt="" />
+      </div>
+
+    </Container>
+
+
   </PageContainer>;
 };
 
-export default homepage;
+export default ourcouch;

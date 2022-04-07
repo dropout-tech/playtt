@@ -4,6 +4,7 @@ import Hompage from "../../components/homepage";
 import Story from "../../components/story";
 import About from "../../components/about";
 import Classes from "../../components/classes";
+import Ourcouch from "../../components/ourcouch";
 
 
 const Container = styled.div`
@@ -21,6 +22,7 @@ const Home = () => {
       <About />
       <Story />
       <Classes />
+      <Ourcouch />
     </Container>
 
   );
