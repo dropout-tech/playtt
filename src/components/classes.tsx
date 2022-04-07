@@ -48,14 +48,13 @@ const ContantTitle = styled.p`
   font-weight: 900;
   font-size: 26px;
   line-height: 40px;
-  display: flex;
+
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  background: #FFD900;
-  border-radius: 28px;
-  height:56px;
-  width:60%;
+  margin-top:10px;
+  text-align:center;
+  width:100%;
 `;
 
 
@@ -79,11 +78,13 @@ const Contant = styled.div`
 
 `;
 
-const Img1 = styled.img`
+const Img = styled.img`
   width:414px;
   height:352px;
 
 `;
+
+
 
 const Explain1 = styled.div`
  width:45%;
@@ -113,7 +114,14 @@ const Text = styled.div`
  
 `;
 
+const Background = styled.div`
+  background: #FFD900;
+  border-radius: 28px;
+  height:56px;
+  text-align:center;
+  width:80%;
 
+`;
 
 
 
@@ -133,11 +141,12 @@ const Classes = () => {
 
       <Contant>
         <Explain1>
-          <Img1 src={img1} alt="" />
+          <Img src={img1} alt="" />
 
           <Text>
-            <ContantTitle>班別課程豐富客製化</ContantTitle>
-
+            <Background>
+              <ContantTitle>班別課程豐富客製化</ContantTitle>
+            </Background>
             <ContantText>
               ・ 個人班 / 團體班 / 選手班 / 親子 / 包班
               ・ 幼兒 / 兒童 / 國高中 / 大學 / 成人 / 銀髮
@@ -150,10 +159,15 @@ const Classes = () => {
         </Explain1>
 
         <Explain2>
-          <Img1 src={img1} alt="" />
+          <Img src={img2} alt="" />
 
           <Text>
-            <ContantTitle>寓教於樂多元發展</ContantTitle>
+            <Background>
+              <ContantTitle>
+                寓教於樂多元發展
+              </ContantTitle>
+            </Background>
+
 
             <ContantText>
               ・ 暖身做操 & 趣味體適能桌球
@@ -169,10 +183,12 @@ const Classes = () => {
         </Explain2>
 
         <Explain3>
-          <Img1 src={img1} alt="" />
+          <Img src={img3} alt="" />
 
           <Text>
-            <ContantTitle>伴你一生的全年齡運動</ContantTitle>
+            <Background>
+              <ContantTitle>伴你一生的全年齡運動</ContantTitle>
+            </Background>
 
             <ContantText>
               ・ 培養專注力 / 耐挫力 / 肌耐力 / 體能
