@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import banner from "../assets/homepage/banner.png";
+import cho from "../assets/alliancePlan/cho.png";
+import hha from "../assets/alliancePlan/hha.png";
+import ho from "../assets/alliancePlan/ho.png";
+import circle from "../assets/alliancePlan/Circle.png";
 
 
 
@@ -51,6 +54,11 @@ const Span = styled.span`
 
 `;
 
+const CircleImg = styled.img`
+ width: 100%;
+ height: 100%;
+`;
+
 /* desktop thw newest info style end */
 const alliancePlan = () => {
   return <PageContainer>
@@ -58,6 +66,9 @@ const alliancePlan = () => {
       <Title>聯盟計畫</Title>
       <TitleWord>Alliance</TitleWord>
       <Background>
+        <div>
+          <CircleImg src={circle} alt="" />
+        </div>
         <div>
           <div>
             <img src="" alt="" />
