@@ -23,6 +23,7 @@ const Title1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  
 `;
 
 const Title2 = styled.p`
@@ -54,6 +55,71 @@ const BlueArea = styled.div`
   background: #005CB9;  
 `;
 
+const ColorLineImg = styled.img`
+  width: 98px;
+  height: 27px;
+  margin-left:110px;
+  margin-top:50px;
+`;
+
+const GrayArea = styled.div`
+  background: #CFD2D3;
+  width: 350px;
+  height:200px;
+`;
+
+const TextArea = styled.div`
+ display:flex;
+ justify-content:center;
+`;
+
+const Text = styled.div`
+  display:flex;
+  margin-left:60px;
+  margin-top:60px;
+  flex-direction:column;
+`;
+
+const BigTitle = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 44px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+`;
+
+const TopText = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:120px;
+`;
+
+const WhiteArea = styled.div`
+  background: #FFFFFF;
+  width: 350px;
+  height: 483px;
+`;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -68,7 +134,50 @@ const PartnershipAndRecruit = () => {
       </TitleContainer>
 
       <BlueArea>
+        <BigTitle> 目前已超過 30 個合作機構
+          企業機構、法人團體熱烈招募合作中！</BigTitle>
+        <TextArea>
+          <Text>
+            <GrayArea>
+              <ColorLineImg src={colorLine} alt="" />
+              <TopText>運動場館</TopText>
+            </GrayArea>
+            <WhiteArea>
+              <p></p>
+            </WhiteArea>
+          
+          </Text>
 
+          <Text>
+            <GrayArea>
+              <ColorLineImg src={colorLine} alt="" />
+              <TopText>學校社團</TopText>
+            </GrayArea>
+            <WhiteArea>
+              <p></p>
+            </WhiteArea>
+          </Text>
+
+          <Text>
+            <GrayArea>
+              <ColorLineImg src={colorLine} alt="" />
+              <TopText>教育機構</TopText>
+            </GrayArea>
+            <WhiteArea>
+              <p></p>
+            </WhiteArea>
+          </Text>
+
+          <Text>
+            <GrayArea>
+              <ColorLineImg src={colorLine} alt="" />
+              <TopText>桌球場館</TopText>
+            </GrayArea>
+            <WhiteArea>
+              <p></p>
+            </WhiteArea>
+          </Text>
+        </TextArea>
       </BlueArea>
     </Container>
 
