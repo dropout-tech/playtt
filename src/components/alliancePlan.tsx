@@ -53,6 +53,8 @@ const Background = styled.div`
 
 
 const Circle1 = styled.div`
+  display:flex;
+  justify-content:center;
   width: 588px;
   height: 588px;
   left: 872px;
@@ -60,6 +62,7 @@ const Circle1 = styled.div`
   background: #FFFFFF;
   border-radius:294px;
   margin-top:30px;
+  margin-right:-50px;
 `;
 
 const Circle2 = styled.div`
@@ -76,6 +79,8 @@ const Circle2 = styled.div`
 `;
 
 const Circle3 = styled.div`
+  display:flex;
+  justify-content:center;
   width: 588px;
   height: 588px;
   left: 872px;
@@ -83,11 +88,16 @@ const Circle3 = styled.div`
   background: #FFFFFF;
   border-radius:294px;
   margin-top:30px;
+  
 `;
 
 
-const Text = styled.div`
- z-index:10px;
+const Text1 = styled.div`
+ margin-top:100px;
+`;
+
+const Text2 = styled.div`
+ margin-top:60px;
 `;
 
 const Circle = styled.div`
@@ -98,7 +108,11 @@ const Circle = styled.div`
 
 `;
 
+const TextForm = styled.div`
+  width:310px;
+  height:144px;
 
+`;
 
 
 
@@ -121,28 +135,28 @@ const alliancePlan = () => {
       <Background>
         <Circle>
           <Circle1>
-            <Text>
+            <Text2>
               <img src="" alt="" />
               <p>創立初衷</p>
-              <p>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</p>
-            </Text>
+              <TextForm>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm>
+            </Text2>
           </Circle1>
 
           <Circle2>
-            <Text>
+            <Text1>
               <img src="" alt="" />
               <p>計畫簡介</p>
-              <p>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</p>
-            </Text>
+              <TextForm>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
+            </Text1>
           </Circle2>
 
           <Circle3>
-            <Text>
+            <Text2>
               <img src="" alt="" />
               <p>聯盟分佈</p>
-              <p>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</p>
+              <TextForm>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</TextForm>
               <p>陸續招募中！</p>
-            </Text>
+            </Text2>
           </Circle3>
         </Circle>
 
