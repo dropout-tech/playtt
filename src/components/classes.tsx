@@ -13,10 +13,12 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
   width:100%;
+  height:100%;
 `;
 
 
 const ClassIntroduce = styled.div`
+ margin-top:30px;
  width:100%;
 `;
 
@@ -29,6 +31,7 @@ const Title1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin-top:-10px;
 `;
 
 const Title2 = styled.p`
@@ -40,6 +43,7 @@ const Title2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
+  margin-top:-30px;
 `;
 
 const ContantTitle = styled.p`
@@ -71,16 +75,18 @@ const ContantText = styled.p`
 
 const Contant = styled.div`
   width:100%;
+  height:100%;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; 
+  margin-top:-80px;
 
 `;
 
 const Img = styled.img`
-  width:50%;
-  height:352px;
+  width:40%;
+  height:300px;
 
 `;
 
@@ -90,21 +96,21 @@ const Explain1 = styled.div`
  width:45%;
  display: flex;
  justify-content: flex-start;
- 
+  margin-top:-60px;
 `;
 
 const Explain2 = styled.div`
  width:45%;
  display: flex;
  justify-content:space-between;
- margin-top:50px;
+ margin-top:10px;
 `;
 
 const Explain3 = styled.div`
  width:45%;
  display: flex;
  justify-content:space-between;
- margin-top:100px;
+ margin-top:80px;
 `;
 
 

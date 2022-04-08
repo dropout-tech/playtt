@@ -28,7 +28,7 @@ const CouchImg = styled.img`
 `;
 
 const Container = styled.div`
- margin-top:500px;
+ margin-top:50px;
  width:100%;
 `;
 

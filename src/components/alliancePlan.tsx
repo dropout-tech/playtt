@@ -17,7 +17,9 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- margin-top:550px;
+ width:100%;
+ height:80%;
+ margin-top:50px;
 `;
 
 const Title = styled.p`

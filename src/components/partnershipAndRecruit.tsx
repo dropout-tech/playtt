@@ -42,13 +42,10 @@ const Title2 = styled.p`
 const Container = styled.div`
   width: 100%;
   height:100%;
-
-
 `;
 
 const TitleContainer = styled.div`
-  margin-top:500px;
-
+  margin-top:80px;
 `;
 
 const BlueArea = styled.div`

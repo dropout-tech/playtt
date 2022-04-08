@@ -19,11 +19,12 @@ const ColorpicImg = styled.img`
   width:517px ;
   height:517px ;
   margin-left:100px;
+  margin-top:100px;
 `;
 
 const Container = styled.div`
  width:100% ;
- height:920px;
+ height:100%;
  display:flex;
  background:#CFD2D3;
 `;
@@ -43,7 +44,7 @@ const Text = styled.p`
   justify-content:flex-start;
   flex-direction: column;
   margin-left:80px;
-  margin-top:10px;
+  margin-top:100px;
 `;
 
 const Title1 = styled.p`

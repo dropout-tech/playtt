@@ -16,7 +16,7 @@ const PageContainer = styled.div`
 const CouchImg = styled.img`
   width: 100%;
   height:100%;
-  margin-top:330px;
+ 
 
 `;
 
