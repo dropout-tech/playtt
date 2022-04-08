@@ -23,6 +23,7 @@ const Title1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin-left:30px;
   
 `;
 
@@ -35,6 +36,7 @@ const Title2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
+  margin-left:30px;
 `;
 
 const Container = styled.div`
@@ -53,6 +55,7 @@ const BlueArea = styled.div`
   width: 100%;
   height:80%;
   background: #005CB9;  
+  z-index:1;
 `;
 
 const ColorLineImg = styled.img`
@@ -63,7 +66,8 @@ const ColorLineImg = styled.img`
 `;
 
 const GrayArea = styled.div`
-  background: #CFD2D3;
+  z-index:10;
+  background: rgba(207, 210, 211.1);
   width: 350px;
   height:200px;
 `;
@@ -89,6 +93,7 @@ const BigTitle = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+  padding-top:60px;
 `;
 
 const TopText = styled.p`
@@ -109,8 +114,80 @@ const WhiteArea = styled.div`
   background: #FFFFFF;
   width: 350px;
   height: 483px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 `;
 
+
+const TextkeyIn1 = styled.p`
+  width: 210px;
+  height:224px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:100px;
+`;
+
+const TextkeyIn2 = styled.p`
+  width: 210px;
+  height:224px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:130px;
+`;
+
+const TextkeyIn3 = styled.p`
+  width: 210px;
+  height:224px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:100px;
+ 
+
+`;
+
+const TextkeyIn4 = styled.p`
+  width: 210px;
+  height:224px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+ 
+ 
+
+`;
 
 
 
@@ -134,8 +211,9 @@ const PartnershipAndRecruit = () => {
       </TitleContainer>
 
       <BlueArea>
-        <BigTitle> 目前已超過 30 個合作機構
-          企業機構、法人團體熱烈招募合作中！</BigTitle>
+        <BigTitle> 目前已超過 30 個合作機構<br />
+          企業機構、法人團體熱烈招募合作中！
+        </BigTitle>
         <TextArea>
           <Text>
             <GrayArea>
@@ -143,9 +221,15 @@ const PartnershipAndRecruit = () => {
               <TopText>運動場館</TopText>
             </GrayArea>
             <WhiteArea>
-              <p></p>
+              <TextkeyIn1>
+                舞動陽光<br />
+                華江俱樂部<br />
+                三峽運動中心<br />
+                中正運動中心<br />
+                等<br />
+                ⋯⋯</TextkeyIn1>
             </WhiteArea>
-          
+
           </Text>
 
           <Text>
@@ -154,7 +238,11 @@ const PartnershipAndRecruit = () => {
               <TopText>學校社團</TopText>
             </GrayArea>
             <WhiteArea>
-              <p></p>
+              <TextkeyIn2>
+                大龍國小<br />
+                懷生國小<br />
+                等<br />
+                ⋯⋯</TextkeyIn2>
             </WhiteArea>
           </Text>
 
@@ -164,7 +252,12 @@ const PartnershipAndRecruit = () => {
               <TopText>教育機構</TopText>
             </GrayArea>
             <WhiteArea>
-              <p></p>
+              <TextkeyIn3>
+                何嘉仁幼兒園<br />
+                維多利亞<br />
+                喬鈴補習班<br />
+                等<br />
+                ⋯⋯</TextkeyIn3>
             </WhiteArea>
           </Text>
 
@@ -174,7 +267,14 @@ const PartnershipAndRecruit = () => {
               <TopText>桌球場館</TopText>
             </GrayArea>
             <WhiteArea>
-              <p></p>
+              <TextkeyIn4>
+                Let's Play 蘆洲店<br />
+                Let's Play 東門店<br />
+                Let's Play 善導寺店<br />
+                Let's Play 新莊店<br />
+                Onward TT 乒乓吧 X Let's Play<br />
+                乒運動桌球館
+              </TextkeyIn4>
             </WhiteArea>
           </Text>
         </TextArea>

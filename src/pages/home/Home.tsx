@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Hompage from "../../components/homepage";
+import Homepage from "../../components/homepage";
 import Story from "../../components/story";
 import About from "../../components/about";
 import Classes from "../../components/classes";
@@ -8,6 +8,7 @@ import OurCouchMembers from "../../components/ourCouchMembers";
 import Couch from "../../components/couch";
 import AlliancePlan from "../../components/alliancePlan";
 import PartnershipAndRecruit from "../../components/partnershipAndRecruit";
+import Recruit from "../../components/recruit";
 
 const Container = styled.div`
   width: 100%;
@@ -20,7 +21,7 @@ const Container = styled.div`
 const Home = () => {
   return (
     <Container>
-      <Hompage />
+      <Homepage />
       <About />
       <Story />
       <Classes />
@@ -28,6 +29,7 @@ const Home = () => {
       <OurCouchMembers />
       <AlliancePlan />
       <PartnershipAndRecruit />
+      <Recruit />
     </Container>
 
   );
