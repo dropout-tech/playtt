@@ -47,7 +47,7 @@ const TitleWord = styled.p`
 const Background = styled.div`
   background: #CFD2D3;
   width:100%;
-  height:804px;
+  height:100%;
 `;
 
 const Span = styled.span`
@@ -57,6 +57,7 @@ const Span = styled.span`
 const CircleImg = styled.img`
  width: 100%;
  height: 100%;
+ margin-top:90px;
 `;
 
 /* desktop thw newest info style end */
