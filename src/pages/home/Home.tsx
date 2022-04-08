@@ -7,6 +7,7 @@ import Classes from "../../components/classes";
 import OurCouchMembers from "../../components/ourCouchMembers";
 import Couch from "../../components/couch";
 import AlliancePlan from "../../components/alliancePlan";
+import PartnershipAndRecruit from "../../components/partnershipAndRecruit";
 
 const Container = styled.div`
   width: 100%;
@@ -26,6 +27,7 @@ const Home = () => {
       <Couch />
       <OurCouchMembers />
       <AlliancePlan />
+      <PartnershipAndRecruit />
     </Container>
 
   );
