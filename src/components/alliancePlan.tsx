@@ -48,9 +48,7 @@ const Background = styled.div`
   width:100%;
   height:100%;
   display:flex;
-
 `;
-
 
 const Circle1 = styled.div`
   display:flex;
@@ -88,34 +86,56 @@ const Circle3 = styled.div`
   background: #FFFFFF;
   border-radius:294px;
   margin-top:30px;
-  
 `;
 
-
 const Text1 = styled.div`
- margin-top:100px;
+ margin-top:140px;
 `;
 
 const Text2 = styled.div`
- margin-top:60px;
+ margin-top:100px;
 `;
 
 const Circle = styled.div`
  display:flex;
  align-items: center;
  margin-left:200px;
-
-
 `;
 
 const TextForm = styled.div`
   width:310px;
   height:144px;
-
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+  margin-top:30px;
 `;
 
+const Title2 = styled.div`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  color: #005CB9;
+`;
 
-
+const TextForm2 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-top:-60px;
+`;
 
 
 
@@ -137,7 +157,7 @@ const alliancePlan = () => {
           <Circle1>
             <Text2>
               <img src="" alt="" />
-              <p>創立初衷</p>
+              <Title2>創立初衷</Title2>
               <TextForm>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm>
             </Text2>
           </Circle1>
@@ -145,7 +165,7 @@ const alliancePlan = () => {
           <Circle2>
             <Text1>
               <img src="" alt="" />
-              <p>計畫簡介</p>
+              <Title2>計畫簡介</Title2>
               <TextForm>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
             </Text1>
           </Circle2>
@@ -153,9 +173,9 @@ const alliancePlan = () => {
           <Circle3>
             <Text2>
               <img src="" alt="" />
-              <p>聯盟分佈</p>
+              <Title2>聯盟分佈</Title2>
               <TextForm>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</TextForm>
-              <p>陸續招募中！</p>
+              <TextForm2>陸續招募中！</TextForm2>
             </Text2>
           </Circle3>
         </Circle>
