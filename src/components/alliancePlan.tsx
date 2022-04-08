@@ -103,9 +103,19 @@ margin-top:30px;
 `;
 
 
+const Text = styled.p`
+ 
 
 
+`;
 
+const Circle = styled.div`
+ display:flex;
+ align-items: center;
+ margin-left:200px;
+
+
+`;
 
 
 
@@ -128,29 +138,31 @@ const alliancePlan = () => {
       <Title>聯盟計畫</Title>
       <TitleWord>Alliance</TitleWord>
       <Background>
-        <Circle1>
-          <div>
-            <img src="" alt="" />
-            <p></p>
-            <p></p>
-          </div>
-        </Circle1>
+        <Circle>
+          <Circle1>
+            <Text>
+              <img src="" alt="" />
+              <p></p>
+              <p></p>
+            </Text>
+          </Circle1>
 
-        <Circle2>
-          <div>
-            <img src="" alt="" />
-            <p></p>
-            <p></p>
-          </div>
-        </Circle2>
+          <Circle2>
+            <Text>
+              <img src="" alt="" />
+              <p></p>
+              <p></p>
+            </Text>
+          </Circle2>
 
-        <Circle3>
-          <div>
-            <img src="" alt="" />
-            <p></p>
-            <p><Span></Span></p>
-          </div>
-        </Circle3>
+          <Circle3>
+            <Text>
+              <img src="" alt="" />
+              <p></p>
+              <p><Span></Span></p>
+            </Text>
+          </Circle3>
+        </Circle>
 
       </Background>
     </Container>
