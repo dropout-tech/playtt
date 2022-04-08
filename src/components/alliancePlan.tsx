@@ -51,10 +51,6 @@ const Background = styled.div`
 
 `;
 
-const Span = styled.span`
-
-`;
-
 
 const Circle1 = styled.div`
   width: 588px;
@@ -127,24 +123,25 @@ const alliancePlan = () => {
           <Circle1>
             <Text>
               <img src="" alt="" />
-              <p></p>
-              <p></p>
+              <p>創立初衷</p>
+              <p>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</p>
             </Text>
           </Circle1>
 
           <Circle2>
             <Text>
               <img src="" alt="" />
-              <p>測試2圈圈</p>
-              <p></p>
+              <p>計畫簡介</p>
+              <p>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</p>
             </Text>
           </Circle2>
 
           <Circle3>
             <Text>
               <img src="" alt="" />
-              <p></p>
-              <p><Span></Span></p>
+              <p>聯盟分佈</p>
+              <p>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</p>
+              <p>陸續招募中！</p>
             </Text>
           </Circle3>
         </Circle>
