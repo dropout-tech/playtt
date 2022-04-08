@@ -3,7 +3,6 @@ import styled from "styled-components";
 import cho from "../assets/alliancePlan/cho.png";
 import hha from "../assets/alliancePlan/hha.png";
 import ho from "../assets/alliancePlan/ho.png";
-import circle from "../assets/alliancePlan/Circle.png";
 
 
 
@@ -48,17 +47,79 @@ const Background = styled.div`
   background: #CFD2D3;
   width:100%;
   height:100%;
+  display:flex;
+
 `;
 
 const Span = styled.span`
 
 `;
 
-const CircleImg = styled.img`
- width: 100%;
- height: 100%;
- margin-top:90px;
+
+const Circle1 = styled.div`
+  z-index:1;
+
+  width: 588px;
+  height: 588px;
+  left: -20px;
+  top: 696px;
+  background: #FFFFFF;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+  border-radius:294px;
+  margin-right:-50px;
+  margin-top:30px;
+  `;
+
+const Circle2 = styled.div`
+  z-index:1;
+  
+width: 660px;
+height: 660px;
+left: 390px;
+top: 732px;
+
+/* white */
+
+background: #FFFFFF;
+transform: matrix(0, -1, 1, 0, 0, 0);
+ border-radius:330px;
+ margin-right:-50px;
 `;
+
+const Circle3 = styled.div`
+  z-index:1;
+
+width: 588px;
+height: 588px;
+left: 872px;
+top: 696px;
+
+/* white */
+
+background: #FFFFFF;
+transform: matrix(0, -1, 1, 0, 0, 0);
+border-radius:294px;
+margin-top:30px;
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* desktop thw newest info style end */
 const alliancePlan = () => {
@@ -67,29 +128,29 @@ const alliancePlan = () => {
       <Title>聯盟計畫</Title>
       <TitleWord>Alliance</TitleWord>
       <Background>
-        <div>
-          <CircleImg src={circle} alt="" />
-        </div>
-        <div>
+        <Circle1>
           <div>
             <img src="" alt="" />
             <p></p>
             <p></p>
           </div>
+        </Circle1>
 
+        <Circle2>
           <div>
             <img src="" alt="" />
             <p></p>
             <p></p>
           </div>
+        </Circle2>
 
+        <Circle3>
           <div>
             <img src="" alt="" />
             <p></p>
             <p><Span></Span></p>
-
           </div>
-        </div>
+        </Circle3>
 
       </Background>
     </Container>
