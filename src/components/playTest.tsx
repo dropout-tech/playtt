@@ -20,26 +20,62 @@ const Container = styled.div`
   display:flex;
 `;
 
+const TextContainer = styled.div`
+  
+
+`;
+
+const Text1 = styled.div`
+
+`;
+
+const Text2 = styled.div`
+
+`;
+
+const Text3 = styled.div`
+
+`;
+
+const Title1 = styled.p`
+
+`;
+
+const Title2 = styled.p`
+
+`;
+
+const Title3 = styled.p`
+
+`;
+
+const SloganText = styled.p`
+
+`;
+
+const TextContent = styled.p`
+
+`;
 
 /* desktop thw newest info style end */
 const PlayTest = () => {
   return <PageContainer>
     <Container>
-      <div>
-        <div>
-          <p></p>
-          <p></p>
-        </div>
-        <div>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-        </div>
-        <div>
-          <p></p>
-        </div>
-      </div>
+      <TextContainer>
+        <Text1>
+          <Title1></Title1>
+          <Title2></Title2>
+        </Text1>
+        <Text2>
+          <Title3></Title3>
+          <SloganText></SloganText>
+          <SloganText></SloganText>
+          <SloganText></SloganText>
+        </Text2>
+        <Text3>
+          <TextContent></TextContent>
+        </Text3>
+      </TextContainer>
 
       <div>
         <img src="" alt="" />
