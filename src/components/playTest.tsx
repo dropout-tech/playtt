@@ -18,11 +18,11 @@ const Container = styled.div`
   width: 100%;
   height:100%;
   display:flex;
-  justify-content: center;
+  justify-content: space-around;
 `;
 
 const TextContainer = styled.div`
-  
+
 
 `;
 
@@ -35,38 +35,79 @@ const Text2 = styled.div`
 `;
 
 const Text3 = styled.div`
-  <width:100></width:100>%;
+  width:100;
   height:144px;
 `;
 
 const Title1 = styled.p`
-
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 52px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
 `;
 
 const Title2 = styled.p`
-
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 0.04em;
+  color: #CFD2D3;
 `;
 
 const Title3 = styled.p`
-
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
 `;
 
 const Number = styled.p`
-
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #CFD2D3;
 `;
 
 const TextContent = styled.p`
-
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
 `;
 
 const TestpicImg = styled.img`
   width:580px;
   height:593px;
-
+  margin-right:300px;
 `;
 
 const Span = styled.span`
-
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #005CB9;
 `;
 
 /* desktop thw newest info style end */
@@ -94,11 +135,8 @@ const PlayTest = () => {
         </Text3>
       </TextContainer>
 
-      <div>
-        <TestpicImg src={testpic} alt="" />
-      </div>
-
-
+      <TestpicImg src={testpic} alt="" />
+      
     </Container>
 
   </PageContainer>;
