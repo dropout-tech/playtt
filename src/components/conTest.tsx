@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import halfcircle from "../assets/conTest/halfcircle.png";
 
 
 
@@ -21,12 +21,18 @@ const Container = styled.div`
   background: rgba(207, 210, 211,0.2);
 `;
 
+const HalfcircleImg = styled.img`
+  width:25%;
+  height:100%;
+
+`;
+
 
 /* desktop thw newest info style end */
 const ConTest = () => {
   return <PageContainer>
     <Container>
-      <img src="" alt="" />
+      <HalfcircleImg src={halfcircle} alt="" />
 
 
     </Container>
