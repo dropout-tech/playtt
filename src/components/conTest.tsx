@@ -19,21 +19,38 @@ const Container = styled.div`
   width:100%;
   height:100%;
   background: rgba(207, 210, 211,0.2);
+  display: flex;
+  
 `;
 
 const HalfcircleImg = styled.img`
-  width:25%;
-  height:100%;
+  width:200%;
+  height:85%;
+  
 
 `;
 
 const ImgContainer = styled.div`
  z-index:1;
+ 
 `;
 
 
-const TextContainer = styled.div`
+const TextContainer1 = styled.div`
+ width:100%;
  z-index:10;
+ display:flex;
+ justify-content:space-between;
+ margin-right:100px;
+ margin-top:250px;
+`;
+
+const TextContainer2 = styled.div`
+ width:100%;
+ z-index:10;
+ display:flex;
+ justify-content:space-between;
+ margin-right:100px;
 `;
 
 const LeftText = styled.div`
@@ -49,6 +66,7 @@ const RightText = styled.div`
 const Background = styled.div`
   background: #FFD900;
   border-radius: 28px;
+   width:30%;
 `;
 
 const Title1 = styled.p`
@@ -60,6 +78,8 @@ const Title1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  display:flex;
+  justify-content: flex-start;
 `;
 
 
@@ -72,10 +92,21 @@ const Title2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
+  display:flex;
+  justify-content: flex-start;
 `;
 
 const Title3 = styled.p`
-
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #005CB9;
+  margin-left:40px;
 `;
 
 const TextContent = styled.p`
@@ -87,6 +118,8 @@ const TextContent = styled.p`
   text-align: justify;
   letter-spacing: 0.04em;
   color: #3C3D3D;
+  margin-top:100px;
+  
 `;
 
 const Text = styled.p`
@@ -98,8 +131,12 @@ const Text = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  
 `;
 
+const TextContainer = styled.div`
+ margin-top:100px;
+`;
 
 /* desktop thw newest info style end */
 const ConTest = () => {
@@ -109,39 +146,55 @@ const ConTest = () => {
         <HalfcircleImg src={halfcircle} alt="" />
       </ImgContainer>
 
-      <TextContainer>
+      <TextContainer1>
         <LeftText>
           <div>
             <Title1>桌球賽事</Title1>
             <Title2>Let’s Play Match</Title2>
           </div>
-          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
+          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，<br/>是很好的自我檢視方式。</TextContent>
         </LeftText>
 
+      </TextContainer1>
+
+
+      <TextContainer2>
+
         <RightText>
-          <div>
+          <TextContainer>
             <Background>
               <Title3>邀請賽</Title3>
             </Background>
-            <Text>由 Let's Play 發出邀請，讓小小選手們有發光表現的舞台。</Text>
-          </div>
+            <div>
+            <Text>
+              由 Let's Play 發出邀請，讓小小選手們有<br/>發光表現的舞台。
+            </Text>
+            </div>
+          </TextContainer>
 
-          <div>
+          <TextContainer>
             <Background>
               <Title3>積分賽</Title3>
             </Background>
-            <Text>於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。</Text>
-          </div>
+            <div>
+            <Text>
+              於台灣桌球積分賽平台刊登，是一個訓練比<br/>賽經驗的平台，每一個月最少兩次的比賽。
+            </Text>
+            </div>
+          </TextContainer>
 
-          <div>
+          <TextContainer>
             <Background>
               <Title3>學員盃</Title3>
             </Background>
-            <Text>Let's Play 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。</Text>
-          </div>
+            <div>
+              <Text>
+                Let's Play 分店館內學員的定期對內交流<br/>比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+              </Text>
+            </div>
+          </TextContainer>
         </RightText>
-      </TextContainer>
-
+      </TextContainer2>
 
     </Container>
   </PageContainer>;
