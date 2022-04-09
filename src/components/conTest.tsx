@@ -27,12 +27,48 @@ const HalfcircleImg = styled.img`
 
 `;
 
+const ImgContainer = styled.div`
+ z-index:1;
+`;
+
+
+const TextContainer = styled.div`
+
+`;
+
+const LeftText = styled.div`
+  
+
+`;
+
+const RightText = styled.div`
+  
+
+`;
+
+
+
+
+
+
 
 /* desktop thw newest info style end */
 const ConTest = () => {
   return <PageContainer>
     <Container>
-      <HalfcircleImg src={halfcircle} alt="" />
+      <ImgContainer>
+        <HalfcircleImg src={halfcircle} alt="" />
+      </ImgContainer>
+
+      <TextContainer>
+        <LeftText>
+
+        </LeftText>
+
+        <RightText>
+
+        </RightText>
+      </TextContainer>
 
 
     </Container>
