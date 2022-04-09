@@ -33,7 +33,7 @@ const ImgContainer = styled.div`
 
 
 const TextContainer = styled.div`
-
+ z-index:10;
 `;
 
 const LeftText = styled.div`
@@ -46,10 +46,59 @@ const RightText = styled.div`
 
 `;
 
+const Background = styled.div`
+  background: #FFD900;
+  border-radius: 28px;
+`;
+
+const Title1 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 52px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+`;
 
 
+const Title2 = styled.p`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #CFD2D3;
+`;
 
+const Title3 = styled.p`
 
+`;
+
+const TextContent = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 44px;
+  text-align: justify;
+  letter-spacing: 0.04em;
+  color: #3C3D3D;
+`;
+
+const Text = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+`;
 
 
 /* desktop thw newest info style end */
@@ -62,11 +111,34 @@ const ConTest = () => {
 
       <TextContainer>
         <LeftText>
-
+          <div>
+            <Title1>桌球賽事</Title1>
+            <Title2>Let’s Play Match</Title2>
+          </div>
+          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
         </LeftText>
 
         <RightText>
+          <div>
+            <Background>
+              <Title3>邀請賽</Title3>
+            </Background>
+            <Text>由 Let's Play 發出邀請，讓小小選手們有發光表現的舞台。</Text>
+          </div>
 
+          <div>
+            <Background>
+              <Title3>積分賽</Title3>
+            </Background>
+            <Text>於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。</Text>
+          </div>
+
+          <div>
+            <Background>
+              <Title3>學員盃</Title3>
+            </Background>
+            <Text>Let's Play 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。</Text>
+          </div>
         </RightText>
       </TextContainer>
 
