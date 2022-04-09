@@ -9,6 +9,7 @@ import Couch from "../../components/couch";
 import AlliancePlan from "../../components/alliancePlan";
 import PartnershipAndRecruit from "../../components/partnershipAndRecruit";
 import Recruit from "../../components/recruit";
+import PlayTest from "../../components/playTest";
 
 const Container = styled.div`
   width: 100%;
@@ -30,6 +31,7 @@ const Home = () => {
       <AlliancePlan />
       <PartnershipAndRecruit />
       <Recruit />
+      <PlayTest />
     </Container>
 
   );

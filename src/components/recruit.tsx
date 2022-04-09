@@ -16,49 +16,100 @@ const PageContainer = styled.div`
 const ColorcircleImg = styled.img`
   width: 580px;
   height:294px;
-
+  margin-top:100px;
 `;
 
 const Container = styled.div`
   display:flex;
   justify-content:center;
+  margin-top:110px;
+`;
+
+const ImgContainer = styled.div`
+  width:50%;
+  display:flex;
+  justify-content:flex-end;
+  margin-left:100px;
   margin-top:100px;
 `;
+
+const TextContainer = styled.div`
+ width:50%;
+ margin-left:100px;
+`;
+
+const Title = styled.p`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #005CB9;
+  margin-left:25px;
+  padding-top:8px;
+`;
+
+
+const Text = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+  margin-top:60px;
+`;
+
+const Background = styled.div`
+  background: #FFD900;
+  border-radius: 28px;
+  width: 247px;
+  height: 56px;
+`;
+
+
+
 
 
 /* desktop thw newest info style end */
 const Recruit = () => {
   return <PageContainer>
     <Container>
-      <ColorcircleImg src={colorcircle} alt="" />
-      <div>
-        <div>
-          <p>＃ 熱烈招募中！</p>
-        </div>
-        <p>
+      <ImgContainer>
+        <ColorcircleImg src={colorcircle} alt="" />
+      </ImgContainer>
+      <TextContainer>
+        <Background>
+          <Title>＃ 熱烈招募中！</Title>
+        </Background>
+        <Text>
           ・ 讓雙北小朋友有更完善的學習資源<br />
           ・ 推廣桌球讓更多成人共同參與<br />
-        </p>
+        </Text>
 
-        <p>
+        <Text>
           ・ 除館內課程推出也提供外派教練進駐服務<br />
           ・ 補習班 / 幼兒園 / 學校社團<br />
           ・ 家裡 / 運動中心 / 公司社團 / 公家機構<br />
           ・ 休閒運動體系創新合作教案（歡樂 / 技術）<br />
           ・ 公司福委會競技休閒活動
-        </p>
+        </Text>
 
-        <p>
-          ・ 期望結合不同類別才藝發展多元課程<br />
-          街舞、兒童舞蹈、畫畫、音樂等
-        </p>
+        <Text>
+          ・ 期望結合不同類別才藝發展多元課程街舞、兒童舞蹈、畫畫、音樂等
+        </Text>
 
-        <p>
+        <Text>
           ・ 桌球趣味比賽協辦<br />
           ・ 乒乓球表演者<br />
           ・ 提供桌球產業教練獨特升遷制度
-        </p>
-      </div>
+        </Text>
+      </TextContainer>
     </Container>
 
   </PageContainer>;
