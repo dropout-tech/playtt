@@ -68,8 +68,6 @@ const ContantText = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  width:550px;
-  height:144px;
 `;
 
 const Contant = styled.div`
@@ -86,6 +84,7 @@ const Contant = styled.div`
 const Img = styled.img`
   width:40%;
   height:300px;
+  margin-top:60px;
 
 `;
 
@@ -93,6 +92,7 @@ const Img2 = styled.img`
   width:40%;
   height:300px;
   margin-left:80px;
+  margin-top:60px;
 
 `;
 
@@ -109,14 +109,12 @@ const Explain2 = styled.div`
  width:45%;
  display: flex;
  justify-content:space-between;
- margin-top:10px;
 `;
 
 const Explain3 = styled.div`
  width:45%;
  display: flex;
  justify-content:space-between;
- margin-top:80px;
 `;
 
 
@@ -135,7 +133,7 @@ const Background = styled.div`
   border-radius: 28px;
   height:56px;
   text-align:center;
-  width:100%;
+  width:120%;
 
 `;
 
