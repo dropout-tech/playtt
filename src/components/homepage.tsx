@@ -7,7 +7,6 @@ import banner from "../assets/homepage/banner.png";
 // styled components start 
 
 const PageContainer = styled.div`
-  height: 100vh;
   width:100%;
   display: flex;
   flex-direction: column;

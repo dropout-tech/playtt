@@ -6,7 +6,6 @@ import colorcircle from "../assets/recruit/colorCircle.png";
 // styled components start 
 
 const PageContainer = styled.div`
-  height: 100vh;
   width:100%;
   display: flex;
   flex-direction: column;
@@ -65,6 +64,18 @@ const Text = styled.p`
   margin-top:60px;
 `;
 
+const Text2 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+ 
+`;
+
 const Background = styled.div`
   background: #FFD900;
   border-radius: 28px;
@@ -92,23 +103,23 @@ const Recruit = () => {
           ・ 推廣桌球讓更多成人共同參與<br />
         </Text>
 
-        <Text>
+        <Text2>
           ・ 除館內課程推出也提供外派教練進駐服務<br />
           ・ 補習班 / 幼兒園 / 學校社團<br />
           ・ 家裡 / 運動中心 / 公司社團 / 公家機構<br />
           ・ 休閒運動體系創新合作教案（歡樂 / 技術）<br />
           ・ 公司福委會競技休閒活動
-        </Text>
+        </Text2>
 
-        <Text>
-          ・ 期望結合不同類別才藝發展多元課程街舞、兒童舞蹈、畫畫、音樂等
-        </Text>
+        <Text2>
+          ・ 期望結合不同類別才藝發展多元課程街舞、<br /> &emsp; 兒童舞蹈、畫畫、音樂等
+        </Text2>
 
-        <Text>
+        <Text2>
           ・ 桌球趣味比賽協辦<br />
           ・ 乒乓球表演者<br />
           ・ 提供桌球產業教練獨特升遷制度
-        </Text>
+        </Text2>
       </TextContainer>
     </Container>
 

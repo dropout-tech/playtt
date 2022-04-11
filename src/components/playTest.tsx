@@ -7,7 +7,6 @@ import testpic from "../assets/playTest/testpic.png";
 // styled components start 
 
 const PageContainer = styled.div`
-  height: 100vh;
   width:100%;
   display: flex;
   flex-direction: column;
@@ -17,6 +16,8 @@ const PageContainer = styled.div`
 const Container = styled.div`
   display:flex;
   justify-content: space-around;
+  margin-left:80px;
+  margin-top:20px;
 `;
 
 const TextContainer = styled.div`
@@ -91,9 +92,10 @@ const TextContent = styled.p`
 `;
 
 const TestpicImg = styled.img`
-  width:580px;
-  height:593px;
+  width:505px;
+  height:500px;
   margin-right:300px;
+  margin-top:100px;
 `;
 
 const Span = styled.span`

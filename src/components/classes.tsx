@@ -5,7 +5,6 @@ import img2 from "../assets/classes/img2.png";
 import img3 from "../assets/classes/img3.png";
 
 const PageContainer = styled.div`
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -90,13 +89,20 @@ const Img = styled.img`
 
 `;
 
+const Img2 = styled.img`
+  width:40%;
+  height:300px;
+  margin-left:80px;
+
+`;
+
 
 
 const Explain1 = styled.div`
  width:45%;
  display: flex;
  justify-content: flex-start;
-  margin-top:-60px;
+  margin-top:60px;
 `;
 
 const Explain2 = styled.div`
@@ -129,7 +135,7 @@ const Background = styled.div`
   border-radius: 28px;
   height:56px;
   text-align:center;
-  width:62%;
+  width:100%;
 
 `;
 
@@ -183,7 +189,7 @@ const Classes = () => {
               ・ 學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
             </ContantText>
           </Text>
-          <Img src={img2} alt="" />
+          <Img2 src={img2} alt="" />
         </Explain2>
 
 

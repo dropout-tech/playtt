@@ -7,7 +7,6 @@ import colorLine from "../assets/partnershipAndRecruit/colorLine.png";
 // styled components start 
 
 const PageContainer = styled.div`
-  height: 100vh;
   width:100%;
   display: flex;
   flex-direction: column;
@@ -50,7 +49,7 @@ const TitleContainer = styled.div`
 
 const BlueArea = styled.div`
   width: 100%;
-  height:80%;
+  height:100%;
   background: #005CB9;  
   z-index:1;
 `;
@@ -58,14 +57,14 @@ const BlueArea = styled.div`
 const ColorLineImg = styled.img`
   width: 98px;
   height: 27px;
-  margin-left:110px;
+  margin-left:80px;
   margin-top:50px;
 `;
 
 const GrayArea = styled.div`
   z-index:10;
   background: rgba(207, 210, 211.1);
-  width: 350px;
+  width: 250px;
   height:200px;
 `;
 
@@ -104,12 +103,12 @@ const TopText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:120px;
+  margin-left:80px;
 `;
 
 const WhiteArea = styled.div`
   background: #FFFFFF;
-  width: 350px;
+  width: 250px;
   height: 483px;
   display: flex;
   align-items: center;
@@ -131,7 +130,7 @@ const TextkeyIn1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:100px;
+  margin-left:70px;
 `;
 
 const TextkeyIn2 = styled.p`
@@ -147,7 +146,7 @@ const TextkeyIn2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:130px;
+  margin-left:90px;
 `;
 
 const TextkeyIn3 = styled.p`
@@ -163,7 +162,7 @@ const TextkeyIn3 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:100px;
+  margin-left:70px;
  
 
 `;
@@ -181,22 +180,7 @@ const TextkeyIn4 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
- 
- 
-
 `;
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {

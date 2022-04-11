@@ -11,7 +11,6 @@ import img6 from "../assets/otherService/img6.png";
 // styled components start 
 
 const PageContainer = styled.div`
-  height: 100vh;
   width:100%;
   display: flex;
   flex-direction: column;
