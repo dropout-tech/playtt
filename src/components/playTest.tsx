@@ -94,7 +94,7 @@ const TextContent = styled.p`
 const TestpicImg = styled.img`
   width:505px;
   height:500px;
-  margin-right:300px;
+  margin-right:100px;
   margin-top:100px;
 `;
 
