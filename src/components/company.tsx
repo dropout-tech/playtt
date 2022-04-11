@@ -30,15 +30,16 @@ const BelowArea = styled.div`
 `;
 
 const Background = styled.div`
- background: rgba(207, 210, 211,0.6);
+ background: rgba(207, 210, 211,0.8);
  margin-left:30px;
  width:373px;
  display:flex;  
- justify-content: center
+ justify-content: center;
 `;
 
 const TopLeftArea = styled.div`
  display: flex;
+ height:300px;
 `;
 
 const TextArea = styled.div`
@@ -52,11 +53,12 @@ const TextArea = styled.div`
 `;
 
 const TextArea1 = styled.div`
-  
+  margin-top:20px;
 `;
 
 const TextArea2 = styled.div`
-
+ margin-left:80px;
+ margin-top:20px;
 `;
 
 const Text = styled.p`
