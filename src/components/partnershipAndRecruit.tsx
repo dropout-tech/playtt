@@ -52,6 +52,7 @@ const BlueArea = styled.div`
   height:100%;
   background: #005CB9;  
   z-index:1;
+  padding-bottom:60px;
 `;
 
 const ColorLineImg = styled.img`
@@ -71,6 +72,7 @@ const GrayArea = styled.div`
 const TextArea = styled.div`
  display:flex;
  justify-content:center;
+ margin-right:55px;
 `;
 
 const Text = styled.div`
@@ -78,6 +80,7 @@ const Text = styled.div`
   margin-left:60px;
   margin-top:60px;
   flex-direction:column;
+
 `;
 
 const BigTitle = styled.p`
@@ -163,8 +166,6 @@ const TextkeyIn3 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:70px;
- 
-
 `;
 
 const TextkeyIn4 = styled.p`
