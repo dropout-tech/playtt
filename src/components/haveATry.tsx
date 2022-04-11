@@ -46,7 +46,7 @@ const BlueArea = styled.div`
 `;
 
 const Button = styled.button`
-
+  border:none;
   width:374px;
   height:72px;
   background: #FFD900;
@@ -66,6 +66,7 @@ const ButtonText = styled.p`
   color: #005CB9;
   margin-left:100px;
   margin-top:13px;
+ 
 `;
 
 const TopText = styled.div`
@@ -75,6 +76,38 @@ const TopText = styled.div`
 const ButtonArea = styled.div`
  display: flex ;
  justify-content:center;
+
+`;
+
+const Text2 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  display:flex;
+  justify-content: center;
+`;
+
+const UnderText = styled.p`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: #3C3D3D;
+`;
+
+const UnderContainer = styled.div`
+  display:flex;
+  justify-content: center;
 `;
 
 
@@ -89,13 +122,15 @@ const HaveATry = () => {
         </TopText>
 
         <ButtonArea>
-        <Button>
-          <ButtonText>立即預約體驗</ButtonText>
-        </Button>
+          <Button>
+            <ButtonText>立即預約體驗</ButtonText>
+          </Button>
         </ButtonArea>
-        <p>統一由臉書私訊洽詢想預約試上的分店 Line</p>
+        <Text2>統一由臉書私訊洽詢想預約試上的分店 Line</Text2>
       </BlueArea>
-
+      <UnderContainer>
+      <UnderText>Copyright © 2022 Let's Play</UnderText>
+      </UnderContainer>
     </Container>
   </PageContainer>;
 };
