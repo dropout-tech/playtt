@@ -121,6 +121,7 @@ const BelowTextContainer = styled.div`
  padding-left:30px;
  display:flex;  
  flex-direction:column;
+ align-items: center;
 
 `;
 
@@ -172,36 +173,45 @@ const Company = () => {
               <Title2>分館資訊</Title2>
 
               <div>
-                <p></p>
-                <p></p>
-                <p></p>
+              <p>各館營業時間</p>
+              <p>週一至週五 13:00–21:00　週六日 9:00–19:00</p>
+              </div>
+
+              <div>
+              <p>Let's Play 蘆洲店 － 捷運蘆洲</p>
+              <p>台北市中正區金山南路一段121號</p>
+              <p>02 2356 7106</p>
 
               </div>
 
               <div>
-                <p></p>
-                <p></p>
-                <p></p>
+              <p>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</p>
+              <p>台北市新莊區民樂街37號B1</p>
+              <p>02 2990 0566</p>
 
               </div>
 
               <div>
-                <p></p>
-                <p></p>
-                <p></p>
-
-              </div>
-
-              <div>
-                <p></p>
-                <p></p>
-                <p></p>
+              <p>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</p>
+              <p>台北市中正區杭州南路一段63號B1</p>
+              <p>02 2391 9659</p>
 
               </div>
             </TopBelow>
 
             <UnderBelow>
               <Title2>聯盟場館經營</Title2>
+              <div>
+              <p>ONWARD TT 乒乓吧 X Let's Play － 捷運南港 & 昆陽</p>
+              <p>台北市南港區南港路二段141號1樓</p>
+              <p>02 2651 0652</p>
+              </div>
+
+            <div>
+              <p>舞動華江高中 & Let's Play － 捷運龍山寺</p>
+              <p>台北市萬華區西藏路213號</p>
+              <p>02 2339 6689</p>
+            </div>
 
             </UnderBelow>
 
