@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import banner from "../assets/homepage/banner.png";
+import img1 from "../assets/otherService/img1.png";
+import img2 from "../assets/otherService/img2.png";
+import img3 from "../assets/otherService/img3.png";
+import img4 from "../assets/otherService/img4.png";
+import img5 from "../assets/otherService/img5.png";
+import img6 from "../assets/otherService/img6.png";
 
 
 // styled components start 
@@ -92,6 +97,57 @@ const TextContainer = styled.div`
   padding-top:10px;
 `;
 
+const Img1 = styled.img`
+  width: 71px;
+  height:92px;
+  margin-right:30px;
+  margin-top:30px;
+`;
+
+const Img2 = styled.img`
+  width: 84px;
+  height:84px;
+  margin-right:30px;
+  margin-top:30px;
+`;
+
+const Img3 = styled.img`
+  width: 100px;
+  height:100px;
+  margin-right:30px;
+  margin-top:50px;
+`;
+
+const Img4 = styled.img`
+  width: 84px;
+  height:94px;
+  margin-right:30px;
+  margin-top:20px;
+`;
+
+const Img5 = styled.img`
+  width: 84px;
+  height:84px;
+  margin-right:30px;
+  margin-top:30px;
+`;
+
+const Img6 = styled.img`
+  width: 92px;
+  height:92px;
+  margin-right:30px;
+  margin-top:-30px;
+`;
+
+const ImgContainer = styled.div`
+  display: flex;
+  justify-content:flex-end;
+`;
+
+
+
+
+
 /* desktop thw newest info style end */
 const OtherService = () => {
   return <PageContainer>
@@ -109,12 +165,10 @@ const OtherService = () => {
             聚集桌球愛好打手<br />
             舉辦活動分享知識增加凝聚力
           </Text>
-
-          <img src="" alt="" />
-
+          <ImgContainer>
+            <Img1 src={img1} alt="" />
+          </ImgContainer>
         </TextContainer>
-
-
 
         <TextContainer>
           <Title3>場地租借</Title3>
@@ -123,11 +177,10 @@ const OtherService = () => {
             歡迎洽談，提早預約<br />
             平日 14:00–21:00 與周末租桌服務
           </Text>
-          <img src="" alt="" />
-
+          <ImgContainer>
+            <Img2 src={img2} alt="" />
+          </ImgContainer>
         </TextContainer>
-
-
 
         <TextContainer>
           <Title3>球具販售</Title3>
@@ -135,8 +188,9 @@ const OtherService = () => {
             依據需求協助搭配和製作球具，<br />
             以達到學習和運動成效為主要目的。
           </Text>
-          <img src="" alt="" />
-
+          <ImgContainer>
+            <Img3 src={img3} alt="" />
+          </ImgContainer>
         </TextContainer>
 
       </TopArea>
@@ -149,12 +203,10 @@ const OtherService = () => {
             展更全面，並且共享產業資源互利，<br />
             提供有心推廣桌球的同業更好的機會。<br />
           </Text>
-
-          <img src="" alt="" />
-
+          <ImgContainer>
+            <Img4 src={img4} alt="" />
+          </ImgContainer>
         </TextContainer>
-
-
 
         <TextContainer>
           <Title3>趣味活動</Title3>
@@ -163,11 +215,10 @@ const OtherService = () => {
             各式行銷活動協辦<br />
             自媒體 / 媒體合作
           </Text>
-          <img src="" alt="" />
-
+          <ImgContainer>
+            <Img5 src={img5} alt="" />
+          </ImgContainer>
         </TextContainer>
-
-
 
         <TextContainer>
           <Title3>VIP 專區</Title3>
@@ -178,8 +229,9 @@ const OtherService = () => {
             跨足休閒娛樂的業界首選，<br />
             開創桌球產業藍海。
           </Text>
-          <img src="" alt="" />
-
+          <ImgContainer>
+            <Img6 src={img6} alt="" />
+          </ImgContainer>
         </TextContainer>
 
       </BelowArea>
