@@ -55,8 +55,8 @@ const Background = styled.div`
 const Circle1 = styled.div`
   display:flex;
   justify-content:center;
-  width: 470px;
-  height: 470px;
+  width: 450px;
+  height: 450px;
   left: 872px;
   top: 696px;
   background: #FFFFFF;
@@ -81,13 +81,13 @@ const Circle2 = styled.div`
 const Circle3 = styled.div`
   display:flex;
   justify-content:center;
-  width: 470px;
-  height: 470px;
+  width: 450px;
+  height: 450px;
   left: 872px;
   top: 696px;
   background: #FFFFFF;
   border-radius:294px;
-  margin-top:30px;
+  margin-top:20px;
 `;
 
 const Text1 = styled.div`
@@ -101,6 +101,7 @@ const Text2 = styled.div`
 const Circle = styled.div`
  display:flex;
  align-items: center;
+ padding:10px;
 `;
 
 const TextForm = styled.div`
