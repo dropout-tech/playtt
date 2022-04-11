@@ -11,6 +11,7 @@ import PartnershipAndRecruit from "../../components/partnershipAndRecruit";
 import Recruit from "../../components/recruit";
 import PlayTest from "../../components/playTest";
 import ConTest from "../../components/conTest";
+import OtherService from "../../components/otherService";
 
 const Container = styled.div`
   width: 100%;
@@ -34,7 +35,9 @@ const Home = () => {
       <Recruit />
       <PlayTest />
       <ConTest />
+      <OtherService />
     </Container>
+
 
   );
 };

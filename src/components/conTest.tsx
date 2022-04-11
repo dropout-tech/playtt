@@ -25,7 +25,7 @@ const Container = styled.div`
 
 const HalfcircleImg = styled.img`
   width:200%;
-  height:85%;
+  height:100%;
   
 
 `;
