@@ -26,10 +26,19 @@ const TopArea = styled.div`
 `;
 
 const BelowArea = styled.div`
-
+  display: flex;
+  margin-top:40px;
 `;
 
-const Background = styled.div`
+const Background1 = styled.div`
+ background: rgba(207, 210, 211,0.8);
+ margin-left:30px;
+ width:373px;
+ display:flex;  
+ justify-content: center;
+`;
+
+const Background2 = styled.div`
  background: rgba(207, 210, 211,0.8);
  margin-left:30px;
  width:373px;
@@ -46,7 +55,7 @@ const TextArea = styled.div`
  background: #FFFFFF;
  width:67%;
  padding-left:30px;
-  display:flex;  
+ display:flex;  
  justify-content: center;
 
 
@@ -83,15 +92,52 @@ const Title = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
 `;
+
+const TopBelow = styled.div`
+
+
+`;
+
+const UnderBelow = styled.div`
+  
+
+
+`;
+
+
+const Title2 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+`;
+
+const BelowTextContainer = styled.div`
+ background: #FFFFFF;
+ width:67%;
+ padding-left:30px;
+ display:flex;  
+ flex-direction:column;
+
+`;
+
+
+
+
+
+
 /* desktop thw newest info style end */
 const Company = () => {
   return <PageContainer>
     <Container>
       <TopArea>
         <TopLeftArea>
-          <Background>
+          <Background1>
             <Title>＃ 總公司</Title>
-          </Background>
+          </Background1>
           <TextArea>
             <TextArea1>
               <Text>地址</Text>
@@ -108,7 +154,7 @@ const Company = () => {
               <Text>郭教練 0988 521 012</Text>
             </TextArea2>
           </TextArea>
-          
+
         </TopLeftArea>
 
 
@@ -116,11 +162,56 @@ const Company = () => {
 
 
       <BelowArea>
+        
+
+          <Background2>
+            <Title>＃ 分店與聯盟</Title>
+          </Background2>
+          <BelowTextContainer>
+            <TopBelow>
+              <Title2>分館資訊</Title2>
+
+              <div>
+                <p></p>
+                <p></p>
+                <p></p>
+
+              </div>
+
+              <div>
+                <p></p>
+                <p></p>
+                <p></p>
+
+              </div>
+
+              <div>
+                <p></p>
+                <p></p>
+                <p></p>
+
+              </div>
+
+              <div>
+                <p></p>
+                <p></p>
+                <p></p>
+
+              </div>
+            </TopBelow>
+
+            <UnderBelow>
+              <Title2>聯盟場館經營</Title2>
+
+            </UnderBelow>
+
+          </BelowTextContainer>
+        
 
       </BelowArea>
 
     </Container>
-  
+
   </PageContainer>;
 };
 
