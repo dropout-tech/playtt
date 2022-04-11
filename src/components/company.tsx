@@ -15,9 +15,8 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
   background: #38D430;
-  width:100%;
   height:100%;
-  padding:120px;
+  margin-top:20px;
 `;
 
 const TopArea = styled.div`
@@ -26,23 +25,27 @@ const TopArea = styled.div`
 
 const BelowArea = styled.div`
   display: flex;
-  margin-top:40px;
+  margin-top:80px;
 `;
 
 const Background1 = styled.div`
  background: rgba(207, 210, 211,0.8);
  margin-left:30px;
- width:373px;
  display:flex;  
  justify-content: center;
+ margin-top:50px;
+ height:100%;
+ width:20%;
+ align-items: center;
 `;
 
 const Background2 = styled.div`
  background: rgba(207, 210, 211,0.8);
  margin-left:30px;
- width:373px;
  display:flex;  
  justify-content: center;
+ width:20%;
+ align-items: center;
 `;
 
 const TopLeftArea = styled.div`
@@ -53,9 +56,12 @@ const TopLeftArea = styled.div`
 const TextArea = styled.div`
  background: #FFFFFF;
  width:67%;
+ height:100%;
  padding-left:30px;
  display:flex;  
  justify-content: center;
+ margin-top:50px;
+
 
 
 `;
@@ -80,20 +86,17 @@ const Text = styled.p`
 `;
 
 const Title = styled.p`
-  font-family: 'Futura';
+  font-family: 'Noto Sans TC';
   font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 44px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
 `;
 
 const TopBelow = styled.div`
-
+ margin-right:50px;
 
 `;
 
@@ -124,10 +127,15 @@ const BelowTextContainer = styled.div`
 
 `;
 
-
-
-
-
+const SmallTitle = styled.p`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #005CB9;
+`;
 
 /* desktop thw newest info style end */
 const Company = () => {
@@ -172,26 +180,26 @@ const Company = () => {
               <Title2>分館資訊</Title2>
 
               <div>
-              <p>各館營業時間</p>
-              <p>週一至週五 13:00–21:00　週六日 9:00–19:00</p>
+              <SmallTitle>各館營業時間</SmallTitle>
+              <Text>週一至週五 13:00–21:00　週六日 9:00–19:00</Text>
               </div>
 
               <div>
-              <p>Let's Play 蘆洲店 － 捷運蘆洲</p>
+              <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲</SmallTitle>
               <p>台北市中正區金山南路一段121號</p>
               <p>02 2356 7106</p>
 
               </div>
 
               <div>
-              <p>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</p>
+              <SmallTitle>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</SmallTitle>
               <p>台北市新莊區民樂街37號B1</p>
               <p>02 2990 0566</p>
 
               </div>
 
               <div>
-              <p>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</p>
+              <SmallTitle>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</SmallTitle>
               <p>台北市中正區杭州南路一段63號B1</p>
               <p>02 2391 9659</p>
 
@@ -199,15 +207,15 @@ const Company = () => {
             </TopBelow>
 
             <UnderBelow>
-              <Title2>聯盟場館經營</Title2>
+              <Title>聯盟場館經營</Title>
               <div>
-              <p>ONWARD TT 乒乓吧 X Let's Play － 捷運南港 & 昆陽</p>
+              <SmallTitle>ONWARD TT 乒乓吧 X Let's Play － 捷運南港 & 昆陽</SmallTitle>
               <p>台北市南港區南港路二段141號1樓</p>
               <p>02 2651 0652</p>
               </div>
 
             <div>
-              <p>舞動華江高中 & Let's Play － 捷運龍山寺</p>
+              <SmallTitle>舞動華江高中 & Let's Play － 捷運龍山寺</SmallTitle>
               <p>台北市萬華區西藏路213號</p>
               <p>02 2339 6689</p>
             </div>

@@ -18,6 +18,7 @@ const Container = styled.div`
   justify-content: space-around;
   margin-left:80px;
   margin-top:20px;
+  padding-bottom:100px;
 `;
 
 const TextContainer = styled.div`

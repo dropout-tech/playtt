@@ -13,6 +13,7 @@ import PlayTest from "../../components/playTest";
 import ConTest from "../../components/conTest";
 import OtherService from "../../components/otherService";
 import Company from "../../components/company";
+import HaveATry from "../../components/haveATry";
 
 const Container = styled.div`
   width: 100%;
@@ -38,6 +39,7 @@ const Home = () => {
       <ConTest />
       <OtherService />
       <Company />
+      <HaveATry />
     </Container>
 
 
