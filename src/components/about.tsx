@@ -102,15 +102,17 @@ const AboutItems = styled.div`
 const LeftAreaContainer = styled.div`
   width:100%;
   display: flex;
-  justify-content:flex-end;
-  margin-right:100px;
+  justify-content:center;
+
+
 `;
 
 const RightAreaContainer = styled.div`
-  width:100%;
+  width:50%;
   display: flex;
   justify-content:flex-start;
-  margin-left:40px;
+  margin-right:200px;
+
 `;
 
 const BelowAreaItems = styled.div`
@@ -129,7 +131,7 @@ const Span = styled.span`
 
 const HopeContainer = styled.div`
   display:flex;
-  width:477px;
+
 
 `;
 
