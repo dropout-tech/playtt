@@ -16,8 +16,12 @@ const PageContainer = styled.div`
 const Container = styled.div`
   background: #38D430;
   height:100%;
+  width:100%;
   padding-top:80px;
   padding-bottom: 80px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const TopArea = styled.div`
@@ -26,12 +30,15 @@ const TopArea = styled.div`
 
 const BelowArea = styled.div`
   display: flex;
+  justify-content: center;
   margin-top:80px;
+  width:80%;
+
 `;
 
 const Background1 = styled.div`
  background: rgba(207, 210, 211,0.8);
- margin-left:30px;
+
  display:flex;  
  justify-content: center;
  margin-top:50px;
@@ -42,16 +49,19 @@ const Background1 = styled.div`
 
 const Background2 = styled.div`
  background: rgba(207, 210, 211,0.8);
- margin-left:30px;
+
  display:flex;  
  justify-content: center;
- width:20%;
+ width:26.7%;
  align-items: center;
 `;
 
 const TopLeftArea = styled.div`
  display: flex;
  height:300px;
+ width:90%;
+ display: flex;
+ justify-content: center;
 `;
 
 const TextArea = styled.div`
@@ -62,9 +72,6 @@ const TextArea = styled.div`
  display:flex;  
  justify-content: center;
  margin-top:50px;
-
-
-
 `;
 
 const TextArea1 = styled.div`
@@ -72,7 +79,6 @@ const TextArea1 = styled.div`
 `;
 
 const TextArea2 = styled.div`
- margin-left:80px;
  margin-top:20px;
 `;
 
@@ -84,6 +90,7 @@ const Text = styled.p`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #3C3D3D;
+  
 `;
 
 const Title = styled.p`
@@ -97,14 +104,11 @@ const Title = styled.p`
 `;
 
 const TopBelow = styled.div`
- margin-right:50px;
 
 `;
 
 const UnderBelow = styled.div`
   
-
-
 `;
 
 
@@ -120,7 +124,7 @@ const Title2 = styled.p`
 
 const BelowTextContainer = styled.div`
  background: #FFFFFF;
- width:67%;
+ width:90%;
  padding-left:30px;
  display:flex;  
  flex-direction:column;
@@ -142,34 +146,32 @@ const SmallTitle = styled.p`
 const Company = () => {
   return <PageContainer>
     <Container>
-      <TopArea>
-        <TopLeftArea>
-          <Background1>
-            <Title>＃ 總公司</Title>
-          </Background1>
-          <TextArea>
-            <TextArea1>
-              <Text>地址</Text>
-              <Text>連絡電話</Text>
-              <Text>信箱</Text>
-              <Text>總公司客服時間</Text>
-              <Text>創辦人 / 總教練</Text>
-            </TextArea1>
-            <TextArea2>
-              <Text>新北市蘆洲區長樂路106號3樓</Text>
-              <Text>0988 521 012</Text>
-              <Text>playpp2018@gmail.com</Text>
-              <Text>週一至週五 10:00–19:00（週末請撥各館電話）</Text>
-              <Text>郭教練 0988 521 012</Text>
-            </TextArea2>
-          </TextArea>
+      
+      <TopLeftArea>
+        <Background1>
+          <Title>＃ 總公司</Title>
+        </Background1>
+        <TextArea>
+          <TextArea1>
+            <Text>地址</Text>
+            <Text>連絡電話</Text>
+            <Text>信箱</Text>
+            <Text>總公司客服時間</Text>
+            <Text>創辦人 / 總教練</Text>
+          </TextArea1>
+          <TextArea2>
+            <Text>新北市蘆洲區長樂路106號3樓</Text>
+            <Text>0988 521 012</Text>
+            <Text>playpp2018@gmail.com</Text>
+            <Text>週一至週五 10:00–19:00（週末請撥各館電話）</Text>
+            <Text>郭教練 0988 521 012</Text>
+          </TextArea2>
+        </TextArea>
 
-        </TopLeftArea>
-
-
-      </TopArea>
+      </TopLeftArea>
 
 
+  
       <BelowArea>
         
 
