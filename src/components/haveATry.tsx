@@ -111,7 +111,10 @@ const UnderContainer = styled.div`
   justify-content: center;
 `;
 
-
+const ButtonAreas = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 /* desktop thw newest info style end */
 const HaveATry = () => {
@@ -122,13 +125,16 @@ const HaveATry = () => {
           <Title1>預約體驗</Title1>
           <Title2>Have a Try</Title2>
         </TopText>
-        
-        <Button>
-          <ButtonText>立即預約體驗</ButtonText>
-        </Button>
+
+
+        <ButtonAreas>
+          <Button>
+            <ButtonText>立即預約體驗</ButtonText>
+          </Button>
+        </ButtonAreas>
        
         <Text2>統一由臉書私訊洽詢想預約試上的分店 Line</Text2>
-        
+
       </BlueArea>
       
       <UnderContainer>
