@@ -9,11 +9,7 @@ import ho from "../assets/alliancePlan/ho.png";
 // styled components start 
 
 const PageContainer = styled.div`
-
   width:100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `;
 
 const Container = styled.div`
@@ -50,7 +46,6 @@ const Background = styled.div`
   background: #CFD2D3;
   width:100%;
   height:100%;
-  display:flex;
 `;
 
 const Circle1 = styled.div`
@@ -58,8 +53,6 @@ const Circle1 = styled.div`
   justify-content:center;
   width: 450px;
   height: 450px;
-  left: 872px;
-  top: 696px;
   background: #FFFFFF;
   border-radius:294px;
   margin-top:30px;
@@ -72,8 +65,6 @@ const Circle2 = styled.div`
   z-index:1;
   width: 600px;
   height: 600px;
-  left: 390px;
-  top: 732px;
   background: #FFFFFF;
   border-radius:330px;
   margin-right:-50px;
@@ -84,8 +75,6 @@ const Circle3 = styled.div`
   justify-content:center;
   width: 450px;
   height: 450px;
-  left: 872px;
-  top: 696px;
   background: #FFFFFF;
   border-radius:294px;
   margin-top:20px;
@@ -102,6 +91,7 @@ const Text2 = styled.div`
 const Circle = styled.div`
  display:flex;
  align-items: center;
+ justify-content:center;
  padding:10px;
 `;
 
