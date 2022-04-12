@@ -21,6 +21,9 @@ const Container = styled.div`
 const ClassIntroduce = styled.div`
  margin-top:30px;
  width:100%;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
 `;
 
 const Title1 = styled.p`
@@ -68,6 +71,7 @@ const ContantText = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  width:300px;
 `;
 
 const Contant = styled.div`
@@ -81,13 +85,11 @@ const Contant = styled.div`
 `;
 
 const Img = styled.img`
-  width:40%;
   height:300px;
   margin-top:60px;
 `;
 
 const Img2 = styled.img`
-  width:40%;
   height:300px;
   margin-left:80px;
   margin-top:60px;
@@ -113,7 +115,6 @@ const Explain3 = styled.div`
 `;
 
 const Text = styled.div`
-  width:50%;
   display: flex;
   flex-direction: column;
   margin-left:80px;
@@ -125,7 +126,7 @@ const Background = styled.div`
   border-radius: 28px;
   height:56px;
   text-align:center;
-  width:120%;
+  width:110%;
 `;
 
 
@@ -153,10 +154,10 @@ const Classes = () => {
               <ContantTitle>班別課程豐富客製化</ContantTitle>
             </Background>
             <ContantText>
-              ・ 個人班 / 團體班 / 選手班 / 親子 / 包班<br />
-              ・ 幼兒 / 兒童 / 國高中 / 大學 / 成人 / 銀髮<br />
-              ・ 小班客製化教學 / 大班休閒娛樂教學<br />
-              ・ 冬令營 / 夏令營 / 多元冬夏令營
+              ・ 個人班 / 團體班 / 選手班 /  &emsp; 親子 / 包班<br />
+              ・ 幼兒 / 兒童 / 國高中 / 大學  &emsp; / 成人 / 銀髮<br />
+              ・ 小班客製化教學 / 大班休閒 &emsp; 娛樂教學<br />
+              ・ 冬令營 / 夏令營 / 多元冬夏 &emsp; 令營
             </ContantText>
           </Text>
         </Explain1>
@@ -175,7 +176,7 @@ const Classes = () => {
               ・ 對打練習<br />
               ・ 互動單球調整揮拍動作<br />
               ・ 遊戲競賽<br />
-              ・ 學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
+              ・ 學習到球技 / 學習態度 /  品<br /> &emsp; 性 / 運動家精神 / 獲得體悟
             </ContantText>
           </Text>
           <Img2 src={img2} alt="" />
@@ -190,9 +191,9 @@ const Classes = () => {
             </Background>
 
             <ContantText>
-              ・ 培養專注力 / 耐挫力 / 肌耐力 / 體能<br />
+              ・ 培養專注力 / 耐挫力 / 肌耐<br /> &emsp; 力 / 體能<br />
               ・ 肢體協調 / 遠離 3C<br />
-              ・ 兒童腦部發育 / 成人腦部健全發展<br />
+              ・ 兒童腦部發育 / 成人腦部健<br /> &emsp; 全發展<br />
               ・ 培養良好運動習慣與社交能力<br />
               ・ 預防老人智力退化
             </ContantText>
