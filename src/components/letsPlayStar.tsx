@@ -16,6 +16,7 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
 
+
 `;
 
 const Title1 = styled.p`
@@ -78,7 +79,7 @@ const GroupImg = styled.img`
 
 const Background = styled.div`
   background: #FFD900;
-  width:50%;
+  width:45%;
   padding-bottom:30px;
 
 `;
@@ -87,27 +88,47 @@ const Img1 = styled.img`
   width:144px;
   height:126px;
   margin-top:30px;
-  margin-left:60px;
+  margin-left:20px;
 `;
 
 const Img2 = styled.img`
   width:60px;
   height:62px;
   margin-top:60px;
-  margin-left:40px;
+  margin-left:20px;
 `;
 
 const LeftArea = styled.div`
   display:flex;
- 
-
 `;
 
+const TextContainer = styled.div`
+ display:flex;
+ justify-content:center;
+ margin-top:-150px;
+`;
 
+const GrayArea = styled.div`
+  background: #F5F6F6;
+  width:40%;
+  
+`;
 
+const Span = styled.span`
+ color: #FF40B4; 
+`;
 
-
-
+const GrayAreaText = styled.p`
+  margin-top:40px;
+  margin-left:40px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+`;
 
 
 /* desktop thw newest info style end */
@@ -121,7 +142,7 @@ const LetsPlayStar = () => {
 
       <GroupImg src={group} alt="" />
 
-      <div>
+      <TextContainer>
         <Background>
           <LeftArea>
             <Img1 src={img1} alt="" />
@@ -137,20 +158,19 @@ const LetsPlayStar = () => {
           </LeftArea>
         </Background>
 
-        <div>
-          <p>
-            ・ 成立於 2020/12/15 <br />
-            ・ 召集人 —— Hero 戴祖雄 & 阿寬教練 郭則寬<br />
-            ・ 由專業教練團隊協助持續訓練<br />
-            ・ 大幅提升桌技和認知<br />
-            ・ 與贊助廠商合作營運<br />
-            ・ 每周練習 1–2 次<br />
-            ・ 與全明星運動會紅隊交流<br />
-            ・ 明星交流賽與檢定
-          </p>
+        <GrayArea>
+          <GrayAreaText>
+            <Span>・</Span> 成立於 2020/12/15 <br />
+            <Span>・</Span> 召集人 —— Hero 戴祖雄 & 阿寬教練 郭則寬<br />
+            <Span>・</Span> 由專業教練團隊協助持續訓練<br />
+            <Span>・</Span>  大幅提升桌技和認知<br />
+            <Span>・</Span>  與贊助廠商合作營運<br />
+            <Span>・</Span> 與全明星運動會紅隊交流<br />
+            <Span>・</Span>  明星交流賽與檢定
+          </GrayAreaText>
 
-        </div>
-      </div>
+        </GrayArea>
+      </TextContainer>
 
     </Container>
   </PageContainer>;
