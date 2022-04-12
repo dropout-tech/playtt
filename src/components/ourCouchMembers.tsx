@@ -1,0 +1,173 @@
+import React from "react";
+import styled from "styled-components";
+import img1 from "../assets/ourCouchMenber/img1.png"
+import img2 from "../assets/ourCouchMenber/img2.png"
+import img3 from "../assets/ourCouchMenber/img3.png"
+import img4 from "../assets/ourCouchMenber/img4.png"
+import img5 from "../assets/ourCouchMenber/img5.png"
+import img6 from "../assets/ourCouchMenber/img6.png"
+import img7 from "../assets/ourCouchMenber/img7.png"
+import img8 from "../assets/ourCouchMenber/img8.png"
+
+
+
+
+// styled components start 
+
+const PageContainer = styled.div`
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const CouchImg = styled.img`
+  width: 100%;
+  height:100%;
+`;
+
+const Container = styled.div`
+ padding-top:80px;
+ padding-bottom:80px;
+ width:100%;
+ 
+`;
+
+const PicImg = styled.img`
+  width:310px;
+  height:300px;
+  margin-left:80px;
+`;
+
+const Row1 = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Row2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-left:100px;
+`;
+
+const Row3 = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Picture = styled.div`
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Text = styled.p`
+  margin-left:170px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+`;
+
+const Text2 = styled.p`
+  margin-left:200px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+`;
+
+const Span = styled.span`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:10px;
+`;
+
+const BelowText = styled.p`
+  display:flex;
+  flex-direction:column;
+`;
+
+
+
+
+/* desktop thw newest info style end */
+const OurCouchMembers = () => {
+  return <PageContainer>
+    <Container>
+      <Picture>
+        <Row1>
+          <div>
+            <PicImg src={img1} alt="" />
+            <Text>呂昀<Span>Eva教練</Span></Text>
+          </div>
+
+          <div>
+            <PicImg src={img2} alt="" />
+            <Text>鍾達威<Span>威廉教練</Span></Text>
+          </div>
+
+          <div>
+            <PicImg src={img3} alt="" />
+            <Text>林培中<Span>派派教練</Span></Text>
+          </div>
+        </Row1>
+
+        <Row2>
+          <div>
+            <PicImg src={img4} alt="" />
+            <Text2>郭則寬<Span>阿寬教練</Span></Text2>
+          </div>
+
+          <div>
+            <PicImg src={img5} alt="" />
+            <Text2>林晏先<Span>先先教練</Span></Text2>
+          </div>
+
+
+        </Row2>
+
+        <Row3>
+          <div>
+            <PicImg src={img6} alt="" />
+            <Text>顏兆寅<Span>小顏教練</Span></Text>
+          </div>
+
+          <div>
+            <PicImg src={img7} alt="" />
+            <Text>林政蔚<Span>政蔚教練</Span></Text>
+          </div>
+
+          <div>
+            <PicImg src={img8} alt="" />
+            <Text>夏振凱<Span>凱凱教練</Span></Text>
+          </div>
+        </Row3>
+      </Picture>
+
+
+    </Container>
+
+
+  </PageContainer>;
+};
+
+export default OurCouchMembers;
