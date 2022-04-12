@@ -15,7 +15,7 @@ import OtherService from "../../components/otherService";
 import Company from "../../components/company";
 import HaveATry from "../../components/haveATry";
 import LetsPlayStar from "../../components/letsPlayStar";
-
+import Reserve from "../../components/reserve";
 
 
 
@@ -31,6 +31,7 @@ const Home = () => {
   return (
     <Container>
       <Homepage />
+      <Reserve />
       <About />
       <Story />
       <Classes />

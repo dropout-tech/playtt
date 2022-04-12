@@ -112,6 +112,7 @@ const UnderContainer = styled.div`
 `;
 
 
+
 /* desktop thw newest info style end */
 const HaveATry = () => {
   return <PageContainer>
@@ -121,14 +122,15 @@ const HaveATry = () => {
           <Title1>預約體驗</Title1>
           <Title2>Have a Try</Title2>
         </TopText>
-
-        <ButtonArea>
-          <Button>
-            <ButtonText>立即預約體驗</ButtonText>
-          </Button>
-        </ButtonArea>
+        
+        <Button>
+          <ButtonText>立即預約體驗</ButtonText>
+        </Button>
+       
         <Text2>統一由臉書私訊洽詢想預約試上的分店 Line</Text2>
+        
       </BlueArea>
+      
       <UnderContainer>
       <UnderText>Copyright © 2022 Let's Play</UnderText>
       </UnderContainer>
