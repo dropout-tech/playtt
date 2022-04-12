@@ -24,10 +24,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const TopArea = styled.div`
-
-`;
-
 const BelowArea = styled.div`
   display: flex;
   justify-content: center;

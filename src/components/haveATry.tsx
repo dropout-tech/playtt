@@ -74,11 +74,6 @@ const TopText = styled.div`
 
 `;
 
-const ButtonArea = styled.div`
- display: flex ;
- justify-content:center;
-
-`;
 
 const Text2 = styled.p`
   font-family: 'Noto Sans TC';
