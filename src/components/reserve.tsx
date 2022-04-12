@@ -21,11 +21,6 @@ const Container = styled.div`
   padding-bottom:40px;
 `;
 
-const BgImg = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
 const GreenButton = styled.button`
   background: #38D430;
   box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);

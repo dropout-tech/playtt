@@ -139,10 +139,6 @@ const TextContainer = styled.div`
  margin-top:100px;
 `;
 
-const TextContainerAll = styled.div`
- display:flex;
- justify-content:space-between;
-`;
 
 /* desktop thw newest info style end */
 const ConTest = () => {

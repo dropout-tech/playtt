@@ -21,11 +21,6 @@ const PageContainer = styled.div`
   justify-content: space-between;
 `;
 
-const CouchImg = styled.img`
-  width: 100%;
-  height:100%;
-`;
-
 const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
@@ -100,13 +95,6 @@ const Span = styled.span`
   color: #1A1A1A;
   margin-left:10px;
 `;
-
-const BelowText = styled.p`
-  display:flex;
-  flex-direction:column;
-`;
-
-
 
 
 /* desktop thw newest info style end */

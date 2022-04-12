@@ -26,11 +26,6 @@ const TopArea = styled.div`
   display:flex;
 `;
 
-const TopRightItems = styled.div`
- display:flex;
- width:50%;
-`;
-
 const LeftItems = styled.div`
  display:flex;
  flex-direction: column;
@@ -115,11 +110,6 @@ const RightAreaContainer = styled.div`
   justify-content:flex-start;
   margin-right:200px;
 
-`;
-
-const BelowAreaItems = styled.div`
-  display: flex;
-  justify-content:space-between;
 `;
 
 const Contants = styled.div`
