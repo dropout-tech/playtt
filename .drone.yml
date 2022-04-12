@@ -9,7 +9,7 @@ steps:
   - name: Clone
     image: alpine/git
     settings:
-      repo: Aptan/convenue_frontend
+      repo: Aptan/letsplay_front
       imagePullPolicy: IfNotPresent
       username: 
           from_secret: gitea_username
@@ -17,7 +17,7 @@ steps:
           from_secret: gitea_password
     commands:
       - sleep 10
-      - git clone https://gitea.aptan.cloud/Aptan/convenue_frontend.git .
+      - git clone https://gitea.aptan.cloud/Aptan/letsplay_front.git .
 
   - name: Build
     image: node:17-alpine
@@ -29,7 +29,7 @@ steps:
     image: banzaicloud/drone-kaniko
     settings:
       registry: harbor-staging.aptan.cloud
-      repo: convenue/convenue_frontend
+      repo: letsplay/letsplay
       dockerfile: ./Dockerfile
       tags: ${DRONE_BUILD_NUMBER}
       username: 
@@ -37,12 +37,12 @@ steps:
       password: 
           from_secret: harbor_password
   
-  - name: Slack
-    image: plugins/slack
-    settings:
-      webhook:
-        from_secret: slack_webhook
-      channel: convenue
+  # - name: Slack
+  #   image: plugins/slack
+  #   settings:
+  #     webhook:
+  #       from_secret: slack_webhook
+  #     channel: convenue
 
 trigger:
   branch:

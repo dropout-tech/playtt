@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: convenue
+  name: letsplay
 spec:
   replicas: 1
   selector:
     matchLabels:
-      deployment: convenue
+      deployment: letsplay
   template:
     metadata:
       labels:
-        deployment: convenue
+        deployment: letsplay
     spec:
       containers:
-        - name: convenue
-          image: harbor-staging.aptan.cloud/convenue/convenue_frontend:7
+        - name: letsplay
+          image: harbor-staging.aptan.cloud/letsplay/letsplay:1
           ports:
             - containerPort: 8080

@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: convenue
+  name: letsplay
 spec:
   selector:
-    deployment: convenue
+    deployment: letsplay
   type: ClusterIP
   ports:
     - protocol: TCP
