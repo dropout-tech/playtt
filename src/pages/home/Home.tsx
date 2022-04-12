@@ -14,6 +14,10 @@ import ConTest from "../../components/conTest";
 import OtherService from "../../components/otherService";
 import Company from "../../components/company";
 import HaveATry from "../../components/haveATry";
+import LetsPlayStar from "../../components/letsPlayStar";
+
+
+
 
 const Container = styled.div`
   width: 100%;
@@ -33,6 +37,7 @@ const Home = () => {
       <Couch />
       <OurCouchMembers />
       <AlliancePlan />
+      <LetsPlayStar />
       <PartnershipAndRecruit />
       <Recruit />
       <PlayTest />

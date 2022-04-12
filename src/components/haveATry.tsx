@@ -43,6 +43,7 @@ const Title2 = styled.p`
 const BlueArea = styled.div`
   background: #005CB9;
   padding-top:30px;
+  padding-bottom:80px;
 `;
 
 const Button = styled.button`
