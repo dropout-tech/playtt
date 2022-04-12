@@ -55,10 +55,10 @@ const BelowText = styled.p`
 `;
 
 const TextArea = styled.div`
-  margin-top:-250px;
+  margin-top:-300px;
   display: flex;
-  justify-content: center;
-
+  align-items: center;
+  flex-direction: column;
 `;
 
 
