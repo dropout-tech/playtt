@@ -15,15 +15,19 @@ const PageContainer = styled.div`
 const CouchImg = styled.img`
   width: 100%;
   height:100%;
- 
-
 `;
 
+const Container = styled.div`
+ padding-top:80px;
+ padding-bottom:80px;
+`;
 
 /* desktop thw newest info style end */
 const Couch = () => {
   return <PageContainer>
-    <CouchImg src={couch} alt="" />
+    <Container>
+      <CouchImg src={couch} alt="" />
+    </Container>
   </PageContainer>;
 };
 

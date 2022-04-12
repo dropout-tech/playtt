@@ -19,6 +19,8 @@ const Container = styled.div`
   height:100%;
   background: rgba(207, 210, 211,0.2);
   display: flex;
+  padding-top:80px;
+  padding-bottom: 80px;
   
 `;
 

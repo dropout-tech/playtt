@@ -16,7 +16,8 @@ const PageContainer = styled.div`
 const Container = styled.div`
   background: #38D430;
   height:100%;
-  margin-top:20px;
+  padding-top:80px;
+  padding-bottom: 80px;
 `;
 
 const TopArea = styled.div`

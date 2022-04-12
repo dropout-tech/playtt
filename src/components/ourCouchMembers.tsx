@@ -27,8 +27,10 @@ const CouchImg = styled.img`
 `;
 
 const Container = styled.div`
- margin-top:50px;
+ padding-top:80px;
+ padding-bottom:80px;
  width:100%;
+ 
 `;
 
 const PicImg = styled.img`

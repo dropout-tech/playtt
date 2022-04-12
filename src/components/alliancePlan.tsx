@@ -19,7 +19,8 @@ const PageContainer = styled.div`
 const Container = styled.div`
  width:100%;
  height:80%;
- margin-top:50px;
+ padding-top:80px;
+ padding-bottom: 80px;
 `;
 
 const Title = styled.p`

@@ -45,6 +45,8 @@ const RightItems = styled.div`
 
 const Container = styled.div`
  width:100%;
+ margin-top: -200px;
+ padding-bottom: 80px;
  
 `;
 

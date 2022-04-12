@@ -21,7 +21,8 @@ const ColorcircleImg = styled.img`
 const Container = styled.div`
   display:flex;
   justify-content:center;
-  margin-top:110px;
+  padding-top:80px;
+  padding-bottom: 80px;
 `;
 
 const ImgContainer = styled.div`

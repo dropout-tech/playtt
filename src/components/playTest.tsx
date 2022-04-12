@@ -17,8 +17,8 @@ const Container = styled.div`
   display:flex;
   justify-content: space-around;
   margin-left:80px;
-  margin-top:20px;
-  padding-bottom:100px;
+  padding-top:80px;
+  padding-bottom: 80px;
 `;
 
 const TextContainer = styled.div`

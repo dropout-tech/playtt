@@ -13,6 +13,8 @@ const PageContainer = styled.div`
 const Container = styled.div`
   width:100%;
   height:100%;
+  padding-top:80px;
+  padding-bottom:80px;
 `;
 
 
@@ -55,9 +57,7 @@ const ContantTitle = styled.p`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-top:10px;
-
 `;
-
 
 const ContantText = styled.p`
   font-family: 'Noto Sans TC';
@@ -78,14 +78,12 @@ const Contant = styled.div`
   justify-content: center;
   align-items: center; 
   margin-top:-80px;
-
 `;
 
 const Img = styled.img`
   width:40%;
   height:300px;
   margin-top:60px;
-
 `;
 
 const Img2 = styled.img`
@@ -93,10 +91,7 @@ const Img2 = styled.img`
   height:300px;
   margin-left:80px;
   margin-top:60px;
-
 `;
-
-
 
 const Explain1 = styled.div`
  width:45%;
@@ -117,15 +112,12 @@ const Explain3 = styled.div`
  justify-content:space-between;
 `;
 
-
 const Text = styled.div`
   width:50%;
   display: flex;
   flex-direction: column;
   margin-left:80px;
   margin-top:70px;
-
- 
 `;
 
 const Background = styled.div`
@@ -134,7 +126,6 @@ const Background = styled.div`
   height:56px;
   text-align:center;
   width:120%;
-
 `;
 
 
