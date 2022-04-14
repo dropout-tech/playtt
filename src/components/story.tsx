@@ -31,7 +31,8 @@ const Container = styled.div`
  width:100% ;
  height:100%;
  display:flex;
- background:#CFD2D3;
+ background:#F5F6F6;
+ padding-bottom:50px;
   @media screen and (min-width: 768px) {
     
   }
@@ -82,6 +83,7 @@ const Title2 = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin-top:-30px;
   @media screen and (min-width: 768px) {
     
   }
@@ -96,6 +98,7 @@ const Title3 = styled.p`
 `;
 
 const Title4 = styled.p`
+  margin-top:-30px;
    @media screen and (min-width: 768px) {
     
   }
