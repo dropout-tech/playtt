@@ -12,11 +12,17 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
  padding-top:80px;
  padding-bottom: 80px;
+  @media screen and (min-width: 768px) {
+    
+  }
 
 `;
 
@@ -30,6 +36,9 @@ const Title1 = styled.p`
   color: #1A1A1A;
   display: flex;
   justify-content:center;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title2 = styled.p`
@@ -43,6 +52,9 @@ const Title2 = styled.p`
   display: flex;
   justify-content:center;
   margin-top:-30px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title3 = styled.p`
@@ -57,6 +69,9 @@ const Title3 = styled.p`
   color: #1A1A1A;
   margin-left:30px;
   margin-top:50px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title4 = styled.p`
@@ -71,18 +86,26 @@ const Title4 = styled.p`
   color: #1A1A1A;
   margin-left:30px;
   margin-top:50px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const GroupImg = styled.img`
   width:100%;
   height:100%;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Background = styled.div`
   background: #FFD900;
   width:45%;
   padding-bottom:30px;
-
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Img1 = styled.img`
@@ -90,6 +113,9 @@ const Img1 = styled.img`
   height:126px;
   margin-top:30px;
   margin-left:20px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Img2 = styled.img`
@@ -97,26 +123,41 @@ const Img2 = styled.img`
   height:62px;
   margin-top:60px;
   margin-left:20px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const LeftArea = styled.div`
   display:flex;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const TextContainer = styled.div`
  display:flex;
  justify-content:center;
  margin-top:-150px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const GrayArea = styled.div`
   background: #F5F6F6;
   width:40%;
+   @media screen and (min-width: 768px) {
+    
+  }
   
 `;
 
 const Span = styled.span`
  color: #FF40B4; 
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const GrayAreaText = styled.p`
@@ -129,6 +170,9 @@ const GrayAreaText = styled.p`
   line-height: 36px;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 

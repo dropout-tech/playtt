@@ -10,12 +10,18 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const ColorcircleImg = styled.img`
   width: 580px;
   height:294px;
   margin-top:100px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
@@ -23,6 +29,9 @@ const Container = styled.div`
   justify-content:center;
   padding-top:80px;
   padding-bottom: 80px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -31,11 +40,17 @@ const ImgContainer = styled.div`
   justify-content:flex-end;
   margin-left:100px;
   margin-top:100px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const TextContainer = styled.div`
  width:50%;
  margin-left:100px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title = styled.p`
@@ -50,8 +65,10 @@ const Title = styled.p`
   color: #005CB9;
   margin-left:25px;
   padding-top:8px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
-
 
 const Text = styled.p`
   font-family: 'Noto Sans TC';
@@ -63,6 +80,9 @@ const Text = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:60px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Text2 = styled.p`
@@ -74,6 +94,9 @@ const Text2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+   @media screen and (min-width: 768px) {
+    
+  }
  
 `;
 
@@ -82,6 +105,9 @@ const Background = styled.div`
   border-radius: 28px;
   width: 247px;
   height: 56px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 

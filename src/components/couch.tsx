@@ -15,11 +15,17 @@ const PageContainer = styled.div`
 const CouchImg = styled.img`
   width: 100%;
   height:100%;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 /* desktop thw newest info style end */

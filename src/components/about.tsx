@@ -7,11 +7,13 @@ import start from "../assets/about/start.png";
 // styled components start 
 
 const PageContainer = styled.div`
-
   width:100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (min-width: 768px) {
+
+  }
 `;
 
 const StartImg = styled.img`
@@ -19,34 +21,52 @@ const StartImg = styled.img`
   height:63px;
   margin-top:50px;
   margin-right:20px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const TopArea = styled.div`
   width:100%;
   display:flex;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const TopRightItems = styled.div`
  display:flex;
  width:50%;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const LeftItems = styled.div`
  display:flex;
  flex-direction: column;
  width:50%;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const RightItems = styled.div`
  display:flex;
  flex-direction: column;
  width:50%;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
  width:100%;
  margin-top: -200px;
  padding-bottom: 80px;
+ @media screen and (min-width: 768px) {
+    
+  }
  
 `;
 
@@ -59,6 +79,9 @@ const AboutText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   text-align: center;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const AboutUs = styled.p`
@@ -71,6 +94,9 @@ const AboutUs = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:-10px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Hope = styled.p`
@@ -81,8 +107,10 @@ const Hope = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
-
 
 const Slogan = styled.p`
   font-family: 'Futura';
@@ -92,6 +120,9 @@ const Slogan = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #005CB9;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const AboutItems = styled.div`
@@ -99,14 +130,18 @@ const AboutItems = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-top:100px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const LeftAreaContainer = styled.div`
   width:100%;
   display: flex;
   justify-content:center;
-
-
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const RightAreaContainer = styled.div`
@@ -114,32 +149,48 @@ const RightAreaContainer = styled.div`
   display: flex;
   justify-content:flex-start;
   margin-right:200px;
+  @media screen and (min-width: 768px) {
+    
+  }
 
 `;
 
 const BelowAreaItems = styled.div`
   display: flex;
   justify-content:space-between;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Contants = styled.div`
   width:350px;
   height:252px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Span = styled.span`
   color:#38D430;
+  @media screen and (min-width: 768px) {
+   
+  }
 `;
 
 const HopeContainer = styled.div`
   display:flex;
-
-
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const BrandContainer = styled.div`
   display:flex;
   margin-top:-30px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 

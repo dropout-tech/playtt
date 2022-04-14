@@ -8,6 +8,9 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
@@ -15,6 +18,9 @@ const Container = styled.div`
   height:100%;
   padding-top:80px;
   padding-bottom:80px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 
@@ -24,6 +30,9 @@ const ClassIntroduce = styled.div`
  display: flex;
  align-items: center;
  flex-direction: column;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title1 = styled.p`
@@ -36,6 +45,9 @@ const Title1 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-top:-10px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title2 = styled.p`
@@ -48,6 +60,9 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:-30px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const ContantTitle = styled.p`
@@ -60,6 +75,9 @@ const ContantTitle = styled.p`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-top:10px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const ContantText = styled.p`
@@ -72,6 +90,9 @@ const ContantText = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   width:300px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Contant = styled.div`
@@ -82,17 +103,26 @@ const Contant = styled.div`
   justify-content: center;
   align-items: center; 
   margin-top:-80px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Img = styled.img`
   height:300px;
   margin-top:60px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Img2 = styled.img`
   height:300px;
   margin-left:80px;
   margin-top:60px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Explain1 = styled.div`
@@ -100,18 +130,27 @@ const Explain1 = styled.div`
  display: flex;
  justify-content: flex-start;
   margin-top:60px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Explain2 = styled.div`
  width:45%;
  display: flex;
  justify-content:space-between;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Explain3 = styled.div`
  width:45%;
  display: flex;
  justify-content:space-between;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Text = styled.div`
@@ -119,6 +158,9 @@ const Text = styled.div`
   flex-direction: column;
   margin-left:80px;
   margin-top:70px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Background = styled.div`
@@ -127,6 +169,9 @@ const Background = styled.div`
   height:56px;
   text-align:center;
   width:110%;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 

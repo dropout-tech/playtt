@@ -11,11 +11,17 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const BannerImg = styled.img`
   width:100% ;
   height:100% ;
+   @media screen and (min-width: 768px) {
+    
+  }
 
 `;
 

@@ -10,6 +10,9 @@ import ho from "../assets/alliancePlan/ho.png";
 
 const PageContainer = styled.div`
   width:100%;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
@@ -17,6 +20,9 @@ const Container = styled.div`
  height:80%;
  padding-top:80px;
  padding-bottom: 80px;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title = styled.p`
@@ -28,6 +34,9 @@ const Title = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const TitleWord = styled.p`
@@ -40,12 +49,18 @@ const TitleWord = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:-10px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Background = styled.div`
   background: #CFD2D3;
   width:100%;
   height:100%;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Circle1 = styled.div`
@@ -57,6 +72,9 @@ const Circle1 = styled.div`
   border-radius:294px;
   margin-top:30px;
   margin-right:-50px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Circle2 = styled.div`
@@ -68,6 +86,9 @@ const Circle2 = styled.div`
   background: #FFFFFF;
   border-radius:330px;
   margin-right:-50px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Circle3 = styled.div`
@@ -78,14 +99,23 @@ const Circle3 = styled.div`
   background: #FFFFFF;
   border-radius:294px;
   margin-top:20px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Text1 = styled.div`
  margin-top:140px;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Text2 = styled.div`
  margin-top:100px;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Circle = styled.div`
@@ -93,6 +123,9 @@ const Circle = styled.div`
  align-items: center;
  justify-content:center;
  padding:10px;
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const TextForm = styled.div`
@@ -107,6 +140,9 @@ const TextForm = styled.div`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:30px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title2 = styled.div`
@@ -118,6 +154,9 @@ const Title2 = styled.div`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-top:30px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const TextForm2 = styled.p`
@@ -129,12 +168,18 @@ const TextForm2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-top:-60px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Img = styled.img`
   width:110px;
   height:55px;
   margin-top:-30px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 

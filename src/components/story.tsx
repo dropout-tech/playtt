@@ -11,6 +11,9 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   @media screen and (min-width: 768px) {
+    
+  }
   
 `;
 
@@ -19,6 +22,9 @@ const ColorpicImg = styled.img`
   height:517px ;
   margin-left:100px;
   margin-top:100px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
@@ -26,6 +32,9 @@ const Container = styled.div`
  height:100%;
  display:flex;
  background:#CFD2D3;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Picture = styled.div`
@@ -33,6 +42,9 @@ const Picture = styled.div`
   display:flex;
   justify-content:flex-end;
   margin-top:200px;
+   @media screen and (min-width: 768px) {
+    
+  }
 
 
 `;
@@ -44,6 +56,9 @@ const Text = styled.p`
   flex-direction: column;
   margin-left:80px;
   margin-top:100px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title1 = styled.p`
@@ -54,6 +69,9 @@ const Title1 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title2 = styled.p`
@@ -64,15 +82,23 @@ const Title2 = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title3 = styled.p`
+ @media screen and (min-width: 768px) {
+    
+  }
   
 
 `;
 
 const Title4 = styled.p`
-  
+   @media screen and (min-width: 768px) {
+    
+  }
 
 `;
 
@@ -86,6 +112,9 @@ const Contant = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const BelowText = styled.p`
@@ -96,14 +125,23 @@ const BelowText = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Span1 = styled.span`
   color:#38D430;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Span2 = styled.span`
   color:#FF40B4;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 

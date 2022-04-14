@@ -10,11 +10,16 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
-
  height:324px;
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Title1 = styled.p`
@@ -26,6 +31,9 @@ const Title1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+   @media screen and (min-width: 768px) {
+    
+  }
   
 `;
 
@@ -38,12 +46,18 @@ const Title2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const BlueArea = styled.div`
   background: #005CB9;
   padding-top:30px;
   padding-bottom:80px;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const Button = styled.button`
@@ -52,6 +66,9 @@ const Button = styled.button`
   height:72px;
   background: #FFD900;
   box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const ButtonText = styled.p`
@@ -67,16 +84,23 @@ const ButtonText = styled.p`
   color: #005CB9;
   margin-left:100px;
   margin-top:13px;
- 
+  @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const TopText = styled.div`
-
+ @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const ButtonArea = styled.div`
  display: flex ;
  justify-content:center;
+  @media screen and (min-width: 768px) {
+    
+  }
 
 `;
 
@@ -91,6 +115,9 @@ const Text2 = styled.p`
   color: #FFFFFF;
   display:flex;
   justify-content: center;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const UnderText = styled.p`
@@ -104,16 +131,25 @@ const UnderText = styled.p`
   text-align: center;
   letter-spacing: 0.08em;
   color: #3C3D3D;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const UnderContainer = styled.div`
   display:flex;
   justify-content: center;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 const ButtonAreas = styled.div`
   display: flex;
   justify-content: center;
+   @media screen and (min-width: 768px) {
+    
+  }
 `;
 
 /* desktop thw newest info style end */
