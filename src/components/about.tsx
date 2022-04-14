@@ -20,7 +20,19 @@ const StartImg = styled.img`
   width: 63px;
   height:63px;
   margin-top:50px;
-  margin-right:20px;
+  margin-right:40px;
+  @media screen and (min-width: 768px) {
+    
+  }
+`;
+
+const StartImg2 = styled.img`
+  width: 63px;
+  height:63px;
+  margin-top:40px;
+  margin-right:40px;
+  margin-top:175px;
+
   @media screen and (min-width: 768px) {
     
   }
@@ -115,10 +127,11 @@ const Hope = styled.p`
 const Slogan = styled.p`
   font-family: 'Futura';
   font-style: normal;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 40px;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.6px;
+  margin-top:-20px;
   color: #005CB9;
   @media screen and (min-width: 768px) {
     
@@ -166,6 +179,12 @@ const BelowAreaItems = styled.div`
 const Contants = styled.div`
   width:350px;
   height:252px;
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.6px;
+  margin-top:-10px;
   @media screen and (min-width: 768px) {
     
   }
@@ -193,6 +212,10 @@ const BrandContainer = styled.div`
   }
 `;
 
+const HopeTextArea = styled.div`
+  margin-top:130px;
+`;
+
 
 /* desktop thw newest info style end */
 const About = () => {
@@ -206,7 +229,7 @@ const About = () => {
         <LeftAreaContainer>
           <LeftItems>
             <HopeContainer>
-            <StartImg src={start} alt="" />
+              <StartImg src={start} alt="" />
               <div>
                 <Hope>願景</Hope>
                 <Slogan>Let's Play <Span>Dream</Span></Slogan>
@@ -214,17 +237,17 @@ const About = () => {
               </div>
             </HopeContainer>
             <BrandContainer>
-              <StartImg src={start} alt="" />
-              <div>
+              <StartImg2 src={start} alt="" />
+              <HopeTextArea>
                 <Hope>品牌理念</Hope>
                 <Slogan>Let's Play <Span>Thinking</Span></Slogan>
                 <Contants>感受發自內心的快樂，一起來玩吧！
                   品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants>
-              </div>
+              </HopeTextArea>
             </BrandContainer>
 
           </LeftItems>
-     
+
         </LeftAreaContainer>
 
 
@@ -241,20 +264,20 @@ const About = () => {
               </div>
             </HopeContainer>
             <BrandContainer>
-              <StartImg src={start} alt="" />
-              <div>
+              <StartImg2 src={start} alt="" />
+              <HopeTextArea>
                 <Hope>教學理念</Hope>
                 <Slogan>Let’s Play Teach <Span>Thinking</Span></Slogan>
                 <Contants>
                   學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let's Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
                 </Contants>
-              </div>
+              </HopeTextArea>
             </BrandContainer>
 
           </RightItems>
 
         </RightAreaContainer>
-        
+
       </TopArea>
     </Container>
 
