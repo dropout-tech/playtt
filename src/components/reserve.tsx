@@ -98,7 +98,7 @@ const TextArea = styled.div`
 `;
 
 const AlignText = styled.div`
- margin-top:-240px;
+ margin-top:-140px;
  display: flex; 
  align-items: center;
  justify-content:center;
