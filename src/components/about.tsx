@@ -67,6 +67,7 @@ const RightItems = styled.div`
  display:flex;
  flex-direction: column;
  width:50%;
+ margin-right:60px;
  @media screen and (min-width: 768px) {
     
   }
@@ -152,6 +153,7 @@ const LeftAreaContainer = styled.div`
   width:100%;
   display: flex;
   justify-content:center;
+  margin-left:60px;
   @media screen and (min-width: 768px) {
     
   }
