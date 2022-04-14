@@ -138,7 +138,7 @@ const Title3 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-left:40px;
+  margin-left:30px;
   @media screen and (min-width: 768px) {
     
   }
