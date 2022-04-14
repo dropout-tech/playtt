@@ -76,6 +76,7 @@ const Title2 = styled.p`
   line-height: 48px;
   letter-spacing: 0.04em;
   color: #CFD2D3;
+  line-Height:52px;
    @media screen and (min-width: 768px) {
     
   }

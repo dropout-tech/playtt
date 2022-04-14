@@ -73,7 +73,7 @@ const Container = styled.div`
 const AboutText = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
-  font-weight: 900;
+  font-Weight:900;
   font-size: 36px;
   line-height: 52px;
   letter-spacing: 0.04em;
@@ -89,11 +89,11 @@ const AboutUs = styled.p`
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
-  line-height: 48px;
+  line-height: 52px;
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-top:-10px;
+  margin-top:-35px;
   @media screen and (min-width: 768px) {
     
   }

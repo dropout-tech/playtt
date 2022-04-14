@@ -66,7 +66,7 @@ const ButtonText = styled.p`
 `;
 
 const BelowText = styled.p`
-  font-family: 'Noto Sans TC';
+  font-family: 'Futura ';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;

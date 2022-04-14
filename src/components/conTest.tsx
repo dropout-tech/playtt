@@ -122,6 +122,7 @@ const Title2 = styled.p`
   color: #CFD2D3;
   display:flex;
   justify-content: flex-start;
+  line-Height:52px;
   @media screen and (min-width: 768px) {
     
   }

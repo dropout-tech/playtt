@@ -52,7 +52,8 @@ const Title2 = styled.p`
   display: flex;
   justify-content:center;
   margin-top:-30px;
-   @media screen and (min-width: 768px) {
+  line-Height:52px;
+  @media screen and (min-width: 768px) {
     
   }
 `;
