@@ -32,7 +32,7 @@ const Container = styled.div`
  height:100%;
  display:flex;
  background:#F5F6F6;
- padding-bottom:50px;
+ padding-bottom:70px;
   @media screen and (min-width: 768px) {
     
   }
@@ -90,6 +90,11 @@ const Title2 = styled.p`
 `;
 
 const Title3 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 1.04px;
  @media screen and (min-width: 768px) {
     
   }
@@ -98,7 +103,8 @@ const Title3 = styled.p`
 `;
 
 const Title4 = styled.p`
-  margin-top:-30px;
+  margin-top:-35px;
+
    @media screen and (min-width: 768px) {
     
   }
