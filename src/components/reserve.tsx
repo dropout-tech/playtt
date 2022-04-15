@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import bg from "../assets/reserve/bg.png";
-
+import bg2 from "../assets/reserve/bg2.png";
 
 
 // styled components start 
@@ -13,7 +13,7 @@ const PageContainer = styled.div`
   justify-content: space-between;
   padding-top:30px;
   padding-bottom:30px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -22,7 +22,7 @@ const Container = styled.div`
   margin-top:30px;
   padding-top:60px;
   padding-bottom:40px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -30,7 +30,7 @@ const Container = styled.div`
 const BgImg = styled.img`
   width: 100%;
   height: 100%;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -41,8 +41,11 @@ const GreenButton = styled.button`
   background: #38D430;
   box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);
   border:none;
-   @media screen and (min-width: 768px) {
-    
+   @media screen and (max-width: 768px) {
+    width:211px;
+    height:32px;
+    margin-top:-30px
+
   }
 
 `;
@@ -58,10 +61,9 @@ const ButtonText = styled.p`
   letter-spacing: 0.04em;
   color: #FFFFFF;
 
-
-  
-  @media screen and (min-width: 768px) {
-  
+  @media screen and (max-width: 768px) {
+   font-size: 18px;
+   margin-top:10px;
   }
 `;
 
@@ -76,8 +78,9 @@ const BelowText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #3C3D3D;
-   @media screen and (min-width: 768px) {
-    
+   @media screen and (max-width: 768px) {
+    font-size: 14px;
+    margin-top:10px;
   }
 `;
 
@@ -92,9 +95,11 @@ const TextArea = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
  
-   @media screen and (min-width: 768px) {
-    
-  }
+   @media screen and (max-width: 768px) {
+   background-image: url('${bg2}');
+   width:100%;
+   height:310px; 
+   }
 `;
 
 const AlignText = styled.div`
@@ -103,7 +108,7 @@ const AlignText = styled.div`
  align-items: center;
  justify-content:center;
  flex-direction: column;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 
@@ -112,6 +117,9 @@ const AlignText = styled.div`
 const Text = styled.div`
   height:60px;
   margin-top:-8px;
+   @media screen and (max-width: 768px) {
+    
+  }
 
 `;
 
