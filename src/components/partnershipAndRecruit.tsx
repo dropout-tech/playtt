@@ -23,7 +23,7 @@ const Title1 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:30px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
   
@@ -40,7 +40,7 @@ const Title2 = styled.p`
   color: #CFD2D3;
   margin-left:30px;
   line-Height:52px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -50,7 +50,7 @@ const Container = styled.div`
   height:100%;
   padding-top:80px;
   padding-bottom: 80px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -68,7 +68,7 @@ const BlueArea = styled.div`
   background: #005CB9;  
   z-index:1;
   padding-bottom:60px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -78,7 +78,7 @@ const ColorLineImg = styled.img`
   height: 27px;
   margin-left:80px;
   margin-top:50px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -89,7 +89,7 @@ const GrayArea = styled.div`
   background: rgba(207, 210, 211.1);
   width: 250px;
   height:200px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -98,7 +98,7 @@ const TextArea = styled.div`
  display:flex;
  justify-content:center;
  margin-right:55px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -108,7 +108,7 @@ const Text = styled.div`
   margin-left:60px;
   margin-top:60px;
   flex-direction:column;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 
@@ -124,7 +124,7 @@ const BigTitle = styled.p`
   letter-spacing: 0.04em;
   color: #FFFFFF;
   padding-top:60px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -141,7 +141,7 @@ const TopText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:80px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -153,7 +153,7 @@ const WhiteArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 
@@ -174,7 +174,7 @@ const TextkeyIn1 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:70px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -193,7 +193,7 @@ const TextkeyIn2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:90px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -212,7 +212,7 @@ const TextkeyIn3 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:70px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;

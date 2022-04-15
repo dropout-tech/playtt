@@ -11,7 +11,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -22,13 +22,13 @@ const Container = styled.div`
   margin-left:80px;
   padding-top:80px;
   padding-bottom: 80px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
 
 const TextContainer = styled.div`
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 
@@ -36,13 +36,13 @@ const TextContainer = styled.div`
 `;
 
 const Text1 = styled.div`
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 `;
 
 const Text2 = styled.div`
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 `;
@@ -50,8 +50,7 @@ const Text2 = styled.div`
 const Text3 = styled.div`
   width:100;
   height:144px;
-   @media screen and (min-width: 768px) {
-    
+   @media screen and (max-width: 768px) {
   }
 `;
 
@@ -63,7 +62,7 @@ const Title1 = styled.p`
   line-height: 52px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -77,7 +76,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   line-Height:52px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -90,7 +89,7 @@ const Title3 = styled.p`
   line-height: 36px;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -105,7 +104,7 @@ const Number = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -119,7 +118,7 @@ const TextContent = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -129,7 +128,7 @@ const TestpicImg = styled.img`
   height:500px;
   margin-right:100px;
   margin-top:100px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -144,7 +143,7 @@ const Span = styled.span`
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;

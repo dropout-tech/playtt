@@ -10,12 +10,15 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const CouchImg = styled.img`
   width: 100%;
   height:100%;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -23,7 +26,7 @@ const CouchImg = styled.img`
 const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;

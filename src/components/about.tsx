@@ -11,7 +11,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
 
   }
 `;
@@ -21,7 +21,7 @@ const StartImg = styled.img`
   height:63px;
   margin-top:50px;
   margin-right:40px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -33,7 +33,7 @@ const StartImg2 = styled.img`
   margin-right:40px;
   margin-top:175px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -41,7 +41,7 @@ const StartImg2 = styled.img`
 const TopArea = styled.div`
   width:100%;
   display:flex;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -50,7 +50,7 @@ const TopArea = styled.div`
 const TopRightItems = styled.div`
  display:flex;
  width:50%;
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 `;
@@ -60,7 +60,7 @@ const LeftItems = styled.div`
  display:flex;
  flex-direction: column;
  width:50%;
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 `;
@@ -70,7 +70,7 @@ const RightItems = styled.div`
  flex-direction: column;
  width:50%;
  margin-right:60px;
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 `;
@@ -79,7 +79,7 @@ const Container = styled.div`
  width:100%;
  margin-top: -200px;
  padding-bottom: 80px;
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
  

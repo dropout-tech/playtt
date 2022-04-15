@@ -11,7 +11,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -25,13 +25,13 @@ const Container = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
 
 const TopArea = styled.div`
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 `;
@@ -41,7 +41,7 @@ const BelowArea = styled.div`
   justify-content: center;
   margin-top:80px;
   width:80%;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 
@@ -56,7 +56,7 @@ const Background1 = styled.div`
  height:100%;
  width:20%;
  align-items: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -68,7 +68,7 @@ const Background2 = styled.div`
  justify-content: center;
  width:26.7%;
  align-items: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -79,7 +79,7 @@ const TopLeftArea = styled.div`
  width:90%;
  display: flex;
  justify-content: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -92,21 +92,21 @@ const TextArea = styled.div`
  display:flex;  
  justify-content: center;
  margin-top:50px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
 
 const TextArea1 = styled.div`
   margin-top:20px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
 
 const TextArea2 = styled.div`
  margin-top:20px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -119,8 +119,7 @@ const Text = styled.p`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #3C3D3D;
-   @media screen and (min-width: 768px) {
-    
+   @media screen and (max-width: 768px) {
   }
   
 `;
@@ -133,20 +132,20 @@ const Title = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
 
 const TopBelow = styled.div`
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 
 `;
 
 const UnderBelow = styled.div`
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
   
@@ -161,7 +160,7 @@ const Title2 = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -173,7 +172,7 @@ const BelowTextContainer = styled.div`
  display:flex;  
  flex-direction:column;
  align-items: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 
@@ -187,7 +186,7 @@ const SmallTitle = styled.p`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #005CB9;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;

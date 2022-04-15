@@ -19,7 +19,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
     
   }
 `;
@@ -28,7 +28,7 @@ const PageContainer = styled.div`
 const CouchImg = styled.img`
   width: 100%;
   height:100%;
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
     
   }
 `;
@@ -39,7 +39,7 @@ const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
  width:100%;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
  
@@ -49,7 +49,7 @@ const PicImg = styled.img`
   width:310px;
   height:300px;
   margin-left:80px;
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
     
   }
 `;
@@ -57,7 +57,7 @@ const PicImg = styled.img`
 const Row1 = styled.div`
   display: flex;
   flex-direction: row;
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
     
   }
 `;
@@ -66,7 +66,7 @@ const Row2 = styled.div`
   display: flex;
   flex-direction: row;
   margin-left:100px;
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
     
   }
 `;
@@ -74,7 +74,7 @@ const Row2 = styled.div`
 const Row3 = styled.div`
   display: flex;
   flex-direction: row;
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
     
   }
 `;
@@ -84,7 +84,7 @@ const Picture = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
     
   }
 `;
@@ -100,7 +100,7 @@ const Text = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;  
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -116,7 +116,7 @@ const Text2 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
   
@@ -133,7 +133,7 @@ const Span = styled.span`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:10px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -142,7 +142,7 @@ const Span = styled.span`
 const BelowText = styled.p`
   display:flex;
   flex-direction:column;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;

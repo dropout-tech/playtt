@@ -85,13 +85,13 @@ const ButtonText = styled.p`
   color: #005CB9;
   margin-left:100px;
   margin-top:13px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
 
 const TopText = styled.div`
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
     
   }
 `;
@@ -100,7 +100,7 @@ const TopText = styled.div`
 const ButtonArea = styled.div`
  display: flex ;
  justify-content:center;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 

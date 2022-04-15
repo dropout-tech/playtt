@@ -12,7 +12,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 `;
@@ -24,7 +24,7 @@ const Container = styled.div`
   display: flex;
   padding-top:80px;
   padding-bottom: 80px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
   
@@ -33,7 +33,7 @@ const Container = styled.div`
 const HalfcircleImg = styled.img`
   width:100%;
   height:100%;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 
@@ -41,7 +41,7 @@ const HalfcircleImg = styled.img`
 
 const ImgContainer = styled.div`
  z-index:1;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -53,7 +53,7 @@ const TextContainer1 = styled.div`
  display:flex;
  justify-content:space-between;
  margin-top:250px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -64,21 +64,21 @@ const TextContainer2 = styled.div`
  display:flex;
  justify-content:space-between;
  margin-right:100px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
 
 const LeftText = styled.div`
   margin-left:-200px;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
 
 `;
 
 const RightText = styled.div`
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 
@@ -88,7 +88,7 @@ const Background = styled.div`
   background: #FFD900;
   border-radius: 28px;
   width:30%;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
    
@@ -105,7 +105,7 @@ const Title1 = styled.p`
   color: #1A1A1A;
   display:flex;
   justify-content: flex-start;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -123,7 +123,7 @@ const Title2 = styled.p`
   display:flex;
   justify-content: flex-start;
   line-Height:52px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -139,7 +139,7 @@ const Title3 = styled.p`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-left:30px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -154,7 +154,7 @@ const TextContent = styled.p`
   letter-spacing: 0.04em;
   color: #3C3D3D;
   margin-top:100px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
   
@@ -169,7 +169,7 @@ const Text = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
   
@@ -177,7 +177,7 @@ const Text = styled.p`
 
 const TextContainer = styled.div`
  margin-top:100px;
- @media screen and (min-width: 768px) {
+ @media screen and (max-width: 768px) {
   
  }
 `;
@@ -186,7 +186,7 @@ const TextContainer = styled.div`
 const TextContainerAll = styled.div`
  display:flex;
  justify-content:space-between;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
