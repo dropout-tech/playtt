@@ -8,6 +8,7 @@ import banner2 from "../assets/homepage/banner2.png";
 
 const PageContainer = styled.div`
   width:100%;
+  height:100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,13 +18,15 @@ const PageContainer = styled.div`
 `;
 
 const BannerImg = styled.img`
-  width:100% ;
-  height:100% ;
+  width:1440px ;
+  height:804px ;
   background-image: url('${banner}');
+  background-size: contain;
+  background-repeat: no-repeat;
    @media screen and (max-width: 768px) {
     background-image: url('${banner2}');
-    width:100% ;
-    height:100% ;
+    width:375px;
+    height:671px ;
   }
 
 `;
