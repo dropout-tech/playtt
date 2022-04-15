@@ -45,7 +45,7 @@ const GreenButton = styled.button`
    @media screen and (max-width: 768px) {
     width:211px;
     height:32px;
-    margin-top:-30px
+    margin-top:150px;
 
   }
 
