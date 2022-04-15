@@ -182,6 +182,7 @@ const TextContainer = styled.div`
  }
 `;
 
+
 const TextContainerAll = styled.div`
  display:flex;
  justify-content:space-between;
@@ -189,6 +190,7 @@ const TextContainerAll = styled.div`
     
   }
 `;
+
 
 /* desktop thw newest info style end */
 const ConTest = () => {

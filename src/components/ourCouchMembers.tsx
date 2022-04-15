@@ -24,6 +24,7 @@ const PageContainer = styled.div`
   }
 `;
 
+
 const CouchImg = styled.img`
   width: 100%;
   height:100%;
@@ -31,6 +32,8 @@ const CouchImg = styled.img`
     
   }
 `;
+
+
 
 const Container = styled.div`
  padding-top:80px;
@@ -135,6 +138,7 @@ const Span = styled.span`
   }
 `;
 
+
 const BelowText = styled.p`
   display:flex;
   flex-direction:column;
@@ -142,8 +146,6 @@ const BelowText = styled.p`
     
   }
 `;
-
-
 
 
 /* desktop thw newest info style end */

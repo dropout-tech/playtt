@@ -27,6 +27,7 @@ const Container = styled.div`
   }
 `;
 
+
 const BgImg = styled.img`
   width: 100%;
   height: 100%;

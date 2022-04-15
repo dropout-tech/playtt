@@ -46,6 +46,7 @@ const TopArea = styled.div`
   }
 `;
 
+
 const TopRightItems = styled.div`
  display:flex;
  width:50%;
@@ -53,6 +54,7 @@ const TopRightItems = styled.div`
     
   }
 `;
+
 
 const LeftItems = styled.div`
  display:flex;
@@ -170,6 +172,7 @@ const RightAreaContainer = styled.div`
 
 `;
 
+
 const BelowAreaItems = styled.div`
   display: flex;
   justify-content:space-between;
@@ -177,6 +180,7 @@ const BelowAreaItems = styled.div`
     
   }
 `;
+
 
 const Contants = styled.div`
   width:350px;

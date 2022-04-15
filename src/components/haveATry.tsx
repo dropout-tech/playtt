@@ -96,6 +96,7 @@ const TopText = styled.div`
   }
 `;
 
+
 const ButtonArea = styled.div`
  display: flex ;
  justify-content:center;
