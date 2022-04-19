@@ -160,7 +160,8 @@ const BelowText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
    @media screen and  (max-width: 768px) {
-    margin-top:115px;
+    margin-top:150px;
+    width:300px
   }
 `;
 
