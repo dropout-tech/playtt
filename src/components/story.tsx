@@ -49,6 +49,8 @@ const Picture = styled.div`
     width:50%;
     display:flex;
     justify-content:center;
+    margin-top:-30px;
+    margin-left:50px;
  
   }
 
