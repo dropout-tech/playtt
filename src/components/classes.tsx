@@ -116,6 +116,9 @@ const Img = styled.img`
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
+    display:flex;
+    justify-content: center;
+    margin-left:70px;
   }
 `;
 
@@ -140,7 +143,7 @@ const Img3 = styled.img`
     width:251px;  
     height:220px;
     display:flex;
-    justify-content: center;
+     margin-left:80px;
 
   }
 `;
@@ -196,6 +199,7 @@ const Text = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
+    margin-left:0px;
 
   }
 `;
