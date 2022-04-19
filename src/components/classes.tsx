@@ -77,7 +77,16 @@ const ContantTitle = styled.p`
   color: #005CB9;
   margin-top:10px;
   @media screen and (max-width: 768px) {
-    
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #005CB9;
+    margin-top:20px;
   }
 `;
 
@@ -118,7 +127,7 @@ const Img = styled.img`
     height:220px;
     display:flex;
     justify-content: center;
-    margin-left:70px;
+    margin-left:40px;
   }
 `;
 
@@ -131,6 +140,7 @@ const Img2 = styled.img`
     height:220px;
     display:flex;
     justify-content: center;
+   
   }
 `;
 
@@ -213,7 +223,7 @@ const Background1 = styled.div`
   justify-content:center;
   width:55%;
   @media screen and (max-width: 768px) {
-     width:120%;
+     width:60%;
   }
 `;
 const Background2 = styled.div`
@@ -225,7 +235,7 @@ const Background2 = styled.div`
   justify-content:center;
   width:50%;
   @media screen and (max-width: 768px) {
-     width:50%;
+     width:60%;
   }
 `;
 const Background3 = styled.div`
@@ -237,7 +247,7 @@ const Background3 = styled.div`
   justify-content:center;
   width:60%;
   @media screen and (max-width: 768px) {
-     width:130%;
+     width:80%;
   }
 `;
 
@@ -401,21 +411,21 @@ const Classes = () => {
 
             <ContantText>
               <DotContainer>
-                < SpanDot>・</SpanDot> 培養專注力 / 耐挫力 / 肌耐力 / 體能<br />
+                < SpanDot>・</SpanDot> <TextArea>培養專注力 / 耐挫力 / 肌耐力 / 體能</TextArea><br />
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 肢體協調 / 遠離 3C<br />
+                <SpanDot>・</SpanDot> <TextArea>肢體協調 / 遠離 3C</TextArea><br />
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 兒童腦部發育 / 成人腦部健全發展<br />
+                <SpanDot>・</SpanDot> <TextArea>兒童腦部發育 / 成人腦部健全發展</TextArea><br />
               </DotContainer>
               <DotContainer>
-                <SpanDot>・</SpanDot> 培養良好運動習慣與社交能力<br />
+                <SpanDot>・</SpanDot> <TextArea>培養良好運動習慣與社交能力</TextArea><br />
               </DotContainer>
               <DotContainer>
-                <SpanDot>・</SpanDot> 預防老人智力退化
+                <SpanDot>・</SpanDot> <TextArea>預防老人智力退化</TextArea>
               </DotContainer>
             </ContantText>
           </Text>
