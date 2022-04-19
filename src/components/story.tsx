@@ -23,7 +23,8 @@ const ColorpicImg = styled.img`
   margin-left:100px;
   margin-top:100px;
    @media screen and  (max-width: 768px) {
-    
+     width:251px ;
+     height:251px ;
   }
 `;
 
@@ -46,6 +47,8 @@ const Picture = styled.div`
   margin-top:200px;
    @media screen and  (max-width: 768px) {
     width:50%;
+    display:flex;
+    justify-content:center;
  
   }
 
@@ -124,7 +127,8 @@ const Contant = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
    @media screen and  (max-width: 768px) {
-    
+    width:327px;
+    height:240px;
   }
 `;
 
