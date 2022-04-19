@@ -172,6 +172,7 @@ const MobileContainer = styled.div`
    width:80%;
    display: flex;
    justify-content:center;
+   flex-direction: column;
  @media screen and (min-width: 768px) {
    display:none;
   }
@@ -193,7 +194,9 @@ const Text = styled.div`
   margin-left:80px;
   margin-top:70px;
   @media screen and (max-width: 768px) {
-    
+    display:flex;
+    justify-content: center;
+
   }
 `;
 
