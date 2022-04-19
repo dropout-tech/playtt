@@ -133,7 +133,8 @@ const Explain1 = styled.div`
  justify-content: flex-start;
   margin-top:60px;
   @media screen and (max-width: 768px) {
-    
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -142,7 +143,8 @@ const Explain2 = styled.div`
  display: flex;
  justify-content:space-between;
  @media screen and (max-width: 768px) {
-    
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -151,7 +153,8 @@ const Explain3 = styled.div`
  display: flex;
  justify-content:space-between;
  @media screen and (max-width: 768px) {
-    
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -174,7 +177,7 @@ const Background1 = styled.div`
   justify-content:center;
   width:55%;
   @media screen and (max-width: 768px) {
-    
+     width:120%;
   }
 `;
 const Background2 = styled.div`
@@ -186,7 +189,7 @@ const Background2 = styled.div`
   justify-content:center;
   width:50%;
   @media screen and (max-width: 768px) {
-    
+     width:110%;
   }
 `;
 const Background3 = styled.div`
@@ -198,7 +201,7 @@ const Background3 = styled.div`
   justify-content:center;
   width:60%;
   @media screen and (max-width: 768px) {
-    
+     width:130%;
   }
 `;
 
