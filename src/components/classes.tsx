@@ -114,7 +114,8 @@ const Img = styled.img`
   height:414px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
-    
+    width:251px;  
+    height:220px;
   }
 `;
 
@@ -123,9 +124,28 @@ const Img2 = styled.img`
   margin-left:80px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
-    
+    width:251px;  
+    height:220px;
+    display:flex;
+    justify-content: center;
   }
 `;
+
+const Img3 = styled.img`
+  height:414px;
+  margin-left:80px;
+  margin-top:60px;
+  @media screen and (max-width: 768px) {
+    
+    width:251px;  
+    height:220px;
+    display:flex;
+    justify-content: center;
+
+  }
+`;
+
+
 
 const Explain1 = styled.div`
  width:80%;
@@ -143,8 +163,7 @@ const Explain2 = styled.div`
  display: flex;
  justify-content:space-between;
  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
+   display:none;
   }
 `;
 
@@ -189,7 +208,7 @@ const Background2 = styled.div`
   justify-content:center;
   width:50%;
   @media screen and (max-width: 768px) {
-     width:110%;
+     width:50%;
   }
 `;
 const Background3 = styled.div`
@@ -207,11 +226,27 @@ const Background3 = styled.div`
 
 const SpanDot = styled.div`
   color: #CFD2D3;
-
+ @media screen and (max-width: 768px) {
+ 
+  }
 `;
 
 const DotContainer = styled.div`
  display:flex;
+  @media screen and (max-width: 768px) {
+ 
+  }
+`;
+
+const MobileContainer = styled.div`
+  width:80%;
+  display: flex;
+  justify-content:center;
+ @media screen and (min-width: 768px) {
+  
+  
+
+  }
 `;
 
 
@@ -290,6 +325,44 @@ const Classes = () => {
           <Img2 src={img2} alt="" />
         </Explain2>
 
+        <MobileContainer>
+          <Img3 src={img2} alt="" />
+          <Text>
+            <Background2>
+              <ContantTitle>
+                寓教於樂多元發展
+              </ContantTitle>
+            </Background2>
+
+            <ContantText>
+
+              <DotContainer>
+                <SpanDot>・</SpanDot> 暖身做操 & 趣味體適能桌球<br />
+              </DotContainer>
+
+              <DotContainer>
+                <SpanDot>・</SpanDot> 互動遊戲式球感<br />
+              </DotContainer>
+
+              <DotContainer>
+                <SpanDot>・</SpanDot> 對打練習<br />
+              </DotContainer>
+
+              <DotContainer>
+                <SpanDot>・</SpanDot> 互動單球調整揮拍動作<br />
+              </DotContainer>
+
+              <DotContainer>
+                <SpanDot>・</SpanDot> 遊戲競賽<br />
+              </DotContainer>
+
+              <DotContainer>
+                <SpanDot>・</SpanDot>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
+              </DotContainer>
+            </ContantText>
+          </Text>
+
+        </MobileContainer>
 
         <Explain3>
           <Img src={img3} alt="" />
