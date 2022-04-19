@@ -11,7 +11,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     
   }
   
@@ -22,7 +22,7 @@ const ColorpicImg = styled.img`
   height:517px ;
   margin-left:100px;
   margin-top:100px;
-   @media screen and (min-width: 768px) {
+   @media screen and  (max-width: 768px) {
     
   }
 `;
@@ -33,8 +33,9 @@ const Container = styled.div`
  display:flex;
  background:#F5F6F6;
  padding-bottom:70px;
-  @media screen and (min-width: 768px) {
-    
+  @media screen and  (max-width: 768px) {
+    display:flex;
+    flex-direction:column;
   }
 `;
 
@@ -43,8 +44,9 @@ const Picture = styled.div`
   display:flex;
   justify-content:flex-end;
   margin-top:200px;
-   @media screen and (min-width: 768px) {
-    
+   @media screen and  (max-width: 768px) {
+    width:50%;
+ 
   }
 
 
@@ -57,7 +59,7 @@ const Text = styled.p`
   flex-direction: column;
   margin-left:80px;
   margin-top:100px;
-   @media screen and (min-width: 768px) {
+   @media screen and  (max-width: 768px) {
     
   }
 `;
@@ -70,7 +72,7 @@ const Title1 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-   @media screen and (min-width: 768px) {
+   @media screen and  (max-width: 768px) {
     
   }
 `;
@@ -84,7 +86,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-top:-30px;
-  @media screen and (min-width: 768px) {
+  @media screen and  (max-width: 768px) {
     
   }
 `;
@@ -95,7 +97,7 @@ const Title3 = styled.p`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
- @media screen and (min-width: 768px) {
+ @media screen and  (max-width: 768px) {
     
   }
   
@@ -105,7 +107,7 @@ const Title3 = styled.p`
 const Title4 = styled.p`
   margin-top:-35px;
 
-   @media screen and (min-width: 768px) {
+   @media screen and  (max-width: 768px) {
     
   }
 
@@ -121,7 +123,7 @@ const Contant = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-   @media screen and (min-width: 768px) {
+   @media screen and  (max-width: 768px) {
     
   }
 `;
@@ -134,21 +136,21 @@ const BelowText = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-   @media screen and (min-width: 768px) {
+   @media screen and  (max-width: 768px) {
     
   }
 `;
 
 const Span1 = styled.span`
   color:#38D430;
-   @media screen and (min-width: 768px) {
+   @media screen and  (max-width: 768px) {
     
   }
 `;
 
 const Span2 = styled.span`
   color:#FF40B4;
-   @media screen and (min-width: 768px) {
+   @media screen and  (max-width: 768px) {
     
   }
 `;
