@@ -80,6 +80,7 @@ const ColorLineImg = styled.img`
   margin-top:50px;
    @media screen and (max-width: 768px) {
      margin-left:10px;
+     margin-top:10px;
   }
 `;
 
@@ -206,6 +207,18 @@ const TextkeyIn1 = styled.p`
   margin-left:70px;
   @media screen and (max-width: 768px) {
     margin-left:50px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+
+
   }
 `;
 
@@ -225,6 +238,16 @@ const TextkeyIn2 = styled.p`
   margin-left:90px;
   @media screen and (max-width: 768px) {
     margin-left:70px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
   }
 `;
 
@@ -244,6 +267,16 @@ const TextkeyIn3 = styled.p`
   margin-left:70px;
   @media screen and (max-width: 768px) {
     margin-left:50px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
   }
 `;
 
@@ -261,7 +294,16 @@ const TextkeyIn4 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
-    
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
   }
 `;
 
@@ -276,7 +318,7 @@ const MobileContainer = styled.div`
 const GrayAreaContent = styled.div`
 
  @media screen and (max-width: 768px) {
-  margin-right:50px;
+  
   }
 `;
 
