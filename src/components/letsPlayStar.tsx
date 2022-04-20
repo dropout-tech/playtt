@@ -156,10 +156,13 @@ const GroupImg = styled.img`
 
 const Background = styled.div`
   background: #FFD900;
-  width:100%;
+  width:200%;
   padding-bottom:30px;
+
+
  @media screen and (max-width: 768px) {
     margin-top:145px;
+    width:100%;
   }
 `;
 
@@ -184,21 +187,25 @@ const Img2 = styled.img`
 `;
 
 const LeftArea = styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
+   
+    
    @media screen and (min-width: 768px) {
-     display:none;
+    display:flex;
+    
   }
 `;
 
 const TextContainer = styled.div`
  display:flex;
  justify-content:center;
- margin-top:-150px;
+ margin-left:150px;
+ margin-top:-70px;
+ width:80%;
   @media screen and (max-width: 768px) {
   display:flex;
   flex-direction: column;
+  margin-left:0px;
+  width:100%;
 
     
   }
@@ -206,9 +213,9 @@ const TextContainer = styled.div`
 
 const GrayArea = styled.div`
   background: #F5F6F6;
-  width:100%;
+  width:180%;
    @media screen and (max-width: 768px) {
-    
+  width:100%;
   }
   
 `;
@@ -255,7 +262,12 @@ const MobileContainer = styled.div`
 `;
 
 
-
+const Dot = styled.div`
+  display:flex;
+ @media screen and (min-width: 768px) {
+      display: none;
+    }
+`;
 
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
@@ -273,7 +285,7 @@ const LetsPlayStar = () => {
             <LeftArea>
               <Img1 src={img1} alt="" />
               <Img2 src={img3} alt="" />
-              <Title3>推廣桌球
+              <Title3>推廣桌球<br/>
                 提升全民桌球風氣</Title3>
             </LeftArea>
 
@@ -303,33 +315,54 @@ const LetsPlayStar = () => {
 
       <MobileContainer>
         <GroupImg src={group2} alt="" />
-        
+
         <TextContainer>
           <Background>
             <LeftArea>
               <Img1 src={img1} alt="" />
-             
+
               <Title3>推廣桌球</Title3>
               <Title5>提升全民桌球風氣</Title5>
-              
+
 
             </LeftArea>
 
             <LeftArea>
               <Img1 src={img2} alt="" />
-            
+
               <Title4>公益桌球賽</Title4>
             </LeftArea>
           </Background>
           <GrayArea>
             <GrayAreaText>
-              <Span>・</Span> 成立於 2020/12/15 <br />
-              <Span>・</Span> 召集人 —— Hero 戴祖雄 & 阿寬教練 郭則寬<br />
-              <Span>・</Span> 由專業教練團隊協助持續訓練<br />
-              <Span>・</Span>  大幅提升桌技和認知<br />
-              <Span>・</Span>  與贊助廠商合作營運<br />
-              <Span>・</Span> 與全明星運動會紅隊交流<br />
-              <Span>・</Span>  明星交流賽與檢定
+              <Dot>
+                <Span>・</Span> 成立於 2020/12/15 <br />
+              </Dot>
+
+              <Dot>
+                <Span>・</Span> 召集人 —— Hero 戴祖雄 & 阿<br />&emsp; &emsp; &ensp; 寬教練 郭則寬<br />
+              </Dot>
+
+              <Dot>
+                <Span>・</Span> 由專業教練團隊協助持續訓練<br />
+              </Dot>
+
+              <Dot>
+                <Span>・</Span>  大幅提升桌技和認知<br />
+              </Dot>
+
+              <Dot>
+                <Span>・</Span>  與贊助廠商合作營運<br />
+              </Dot>
+
+              <Dot>
+                <Span>・</Span>
+                與全明星運動會紅隊交流<br />
+              </Dot>
+
+              <Dot>
+                <Span>・</Span>  明星交流賽與檢定
+              </Dot>
             </GrayAreaText>
 
           </GrayArea>
