@@ -187,10 +187,13 @@ const Img2 = styled.img`
 `;
 
 const LeftArea = styled.div`
-   
+   display:flex;
+   align-items:center;
+   flex-direction: column;
     
    @media screen and (min-width: 768px) {
     display:flex;
+   
     
   }
 `;
@@ -199,15 +202,17 @@ const TextContainer = styled.div`
  display:flex;
  justify-content:center;
  margin-left:150px;
- margin-top:-70px;
+ margin-top:-160px;
  width:80%;
   @media screen and (max-width: 768px) {
   display:flex;
+  align-items: center;
+  justify-content:center;
   flex-direction: column;
   margin-left:0px;
   width:100%;
+  
 
-    
   }
 `;
 
