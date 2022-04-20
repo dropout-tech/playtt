@@ -79,7 +79,7 @@ const ColorLineImg = styled.img`
   margin-left:80px;
   margin-top:50px;
    @media screen and (max-width: 768px) {
-    
+     margin-left:10px;
   }
 `;
 
@@ -92,6 +92,11 @@ const GrayArea = styled.div`
    @media screen and (max-width: 768px) {
     width: 116px;
     height:256px;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    
+ 
   }
 `;
 
@@ -117,6 +122,7 @@ const Text = styled.div`
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction:row;
+  
   }
 
 `;
@@ -149,7 +155,20 @@ const TopText = styled.p`
   color: #1A1A1A;
   margin-left:80px;
    @media screen and (max-width: 768px) {
-    
+    width:110px;
+    display: flex;
+    align-items: center;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    margin-left:20px;
   }
 `;
 
@@ -238,16 +257,26 @@ const TextkeyIn4 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
 
 const MobileContainer = styled.div`
   
-
+ @media screen and (max-width: 768px) {
+    
+  }
 
 `;
+
+const GrayAreaContent = styled.div`
+
+ @media screen and (max-width: 768px) {
+  margin-right:50px;
+  }
+`;
+
 
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
@@ -336,8 +365,10 @@ const PartnershipAndRecruit = () => {
         <TextArea>
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>運動場館</TopText>
+              <GrayAreaContent>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>運動場館</TopText>
+              </GrayAreaContent>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn1>
