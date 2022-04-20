@@ -56,7 +56,7 @@ const TitleWord = styled.p`
 `;
 
 const Background = styled.div`
-  background: #CFD2D3;
+  background: #F5F6F6;
   width:100%;
   height:100%;
   @media screen and (max-width: 768px) {
@@ -215,8 +215,8 @@ const Img = styled.img`
   @media screen and (max-width: 768px) {
     width:88px;
     height:40px;
-    margin-top:-20px;
-    margin-left:30px;
+    margin-top:40px;
+    margin-left:-5px;
    
   }
 `;
@@ -263,8 +263,8 @@ const alliancePlan = () => {
 
       </Background>
 
-    
-      
+
+
     </Container>
 
   </PageContainer>;
