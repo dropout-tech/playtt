@@ -100,6 +100,7 @@ const Circle2 = styled.div`
     justify-content:center;
     align-items:center;
     margin-right:0px;
+    margin-top:-40px;
   }
 `;
 
@@ -118,19 +119,21 @@ const Circle3 = styled.div`
     justify-content:center;
     align-items:center;
     margin-right:0px;
+    margin-top:-40px;
   }
 `;
 
 const Text1 = styled.div`
  margin-top:140px;
  @media screen and (max-width: 768px) {
-    
+    margin-top:-30px
   }
 `;
 
 const Text2 = styled.div`
  margin-top:100px;
  @media screen and (max-width: 768px) {
+   margin-top:-30px
   }
 `;
 
@@ -158,6 +161,15 @@ const TextForm = styled.div`
   color: #1A1A1A;
   margin-top:30px;
   @media screen and (max-width: 768px) {
+    margin-top:5px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
   }
 `;
 
@@ -171,6 +183,14 @@ const Title2 = styled.div`
   color: #005CB9;
   margin-top:30px;
   @media screen and (max-width: 768px) {
+    margin-top:10px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+    color: #005CB9;
   }
 `;
 
@@ -193,7 +213,11 @@ const Img = styled.img`
   height:55px;
   margin-top:-30px;
   @media screen and (max-width: 768px) {
-    
+    width:88px;
+    height:40px;
+    margin-top:-20px;
+    margin-left:30px;
+   
   }
 `;
 
