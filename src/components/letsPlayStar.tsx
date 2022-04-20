@@ -188,12 +188,12 @@ const Img2 = styled.img`
 
 const LeftArea = styled.div`
    display:flex;
-   align-items:center;
-   flex-direction: column;
+ 
     
-   @media screen and (min-width: 768px) {
+   @media screen and (max-width: 768px) {
     display:flex;
-   
+    align-items:center;
+    flex-direction: column;
     
   }
 `;
