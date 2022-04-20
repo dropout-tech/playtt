@@ -111,7 +111,8 @@ const Text = styled.div`
   margin-top:60px;
   flex-direction:column;
    @media screen and (max-width: 768px) {
-    
+    display:flex;
+    flex-direction:row;
   }
 
 `;
