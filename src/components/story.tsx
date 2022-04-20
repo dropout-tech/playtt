@@ -66,6 +66,8 @@ const Text = styled.p`
   margin-top:100px;
    @media screen and  (max-width: 768px) {
     margin-top:10px;
+    margin-left:60px;
+
   }
 `;
 
