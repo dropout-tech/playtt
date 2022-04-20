@@ -59,7 +59,6 @@ const Title2 = styled.p`
     
   }
 `;
-
 const Title3 = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
@@ -72,8 +71,48 @@ const Title3 = styled.p`
   color: #1A1A1A;
   margin-left:30px;
   margin-top:50px;
-   @media screen and (min-width: 768px) {
-    
+   @media screen and (max-width: 768px) {
+   margin-top:20px;
+   margin-right:10px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 18px;
+   line-height: 32px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   letter-spacing: 0.04em;
+   color: #1A1A1A;
+  }
+`;
+const Title5 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:30px;
+  margin-top:50px;
+   @media screen and (max-width: 768px) {
+    margin-right:10px;
+    margin-top:-20px;
+    margin-right:10px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+ 
   }
 `;
 
@@ -90,7 +129,20 @@ const Title4 = styled.p`
   margin-left:30px;
   margin-top:50px;
    @media screen and (max-width: 768px) {
-    
+    margin-top:20px;
+    margin-right:10px;
+    margin-top:20px;
+    margin-right:10px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
   }
 `;
 
@@ -104,10 +156,10 @@ const GroupImg = styled.img`
 
 const Background = styled.div`
   background: #FFD900;
-  width:45%;
+  width:100%;
   padding-bottom:30px;
  @media screen and (max-width: 768px) {
-    
+    margin-top:145px;
   }
 `;
 
@@ -133,8 +185,10 @@ const Img2 = styled.img`
 
 const LeftArea = styled.div`
   display:flex;
-   @media screen and (max-width: 768px) {
-    
+  flex-direction: column;
+  align-items: center;
+   @media screen and (min-width: 768px) {
+     display:none;
   }
 `;
 
@@ -143,13 +197,16 @@ const TextContainer = styled.div`
  justify-content:center;
  margin-top:-150px;
   @media screen and (max-width: 768px) {
+  display:flex;
+  flex-direction: column;
+
     
   }
 `;
 
 const GrayArea = styled.div`
   background: #F5F6F6;
-  width:40%;
+  width:100%;
    @media screen and (max-width: 768px) {
     
   }
@@ -174,6 +231,9 @@ const GrayAreaText = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     
   }
 `;
@@ -181,7 +241,7 @@ const GrayAreaText = styled.p`
 const Container2 = styled.div`
 
   @media screen and (max-width: 768px) {
-   
+    display: none;
       
     }
 
@@ -193,6 +253,7 @@ const MobileContainer = styled.div`
       display: none;
     }
 `;
+
 
 
 
@@ -238,25 +299,28 @@ const LetsPlayStar = () => {
         </TextContainer>
 
       </Container2>
+
+
       <MobileContainer>
         <GroupImg src={group2} alt="" />
-
+        
         <TextContainer>
           <Background>
             <LeftArea>
               <Img1 src={img1} alt="" />
-              <Img2 src={img3} alt="" />
-              <Title3>推廣桌球
-                提升全民桌球風氣</Title3>
+             
+              <Title3>推廣桌球</Title3>
+              <Title5>提升全民桌球風氣</Title5>
+              
+
             </LeftArea>
 
             <LeftArea>
               <Img1 src={img2} alt="" />
-              <Img2 src={img3} alt="" />
+            
               <Title4>公益桌球賽</Title4>
             </LeftArea>
           </Background>
-
           <GrayArea>
             <GrayAreaText>
               <Span>・</Span> 成立於 2020/12/15 <br />
