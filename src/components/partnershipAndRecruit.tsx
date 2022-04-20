@@ -99,7 +99,9 @@ const TextArea = styled.div`
  justify-content:center;
  margin-right:55px;
   @media screen and (max-width: 768px) {
-    
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
   }
 `;
 
