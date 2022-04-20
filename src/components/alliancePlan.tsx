@@ -60,9 +60,10 @@ const Background = styled.div`
   width:100%;
   height:100%;
   @media screen and (max-width: 768px) {
-    
+
   }
 `;
+
 
 const Circle1 = styled.div`
   display:flex;
@@ -74,7 +75,12 @@ const Circle1 = styled.div`
   margin-top:30px;
   margin-right:-50px;
   @media screen and (max-width: 768px) {
-    
+   width: 400px;
+   height:400px;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   margin-right:0px;
   }
 `;
 
@@ -123,8 +129,9 @@ const Circle = styled.div`
  align-items: center;
  justify-content:center;
  padding:10px;
- @media screen and (min-width: 768px) {
-    
+ @media screen and (max-width: 768px) {
+  display:flex;
+  flex-direction: column;
   }
 `;
 
@@ -140,8 +147,7 @@ const TextForm = styled.div`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:30px;
-  @media screen and (min-width: 768px) {
-    
+  @media screen and (max-width: 768px) {
   }
 `;
 
@@ -154,8 +160,7 @@ const Title2 = styled.div`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-top:30px;
-  @media screen and (min-width: 768px) {
-    
+  @media screen and (max-width: 768px) {
   }
 `;
 
@@ -168,7 +173,7 @@ const TextForm2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-top:-60px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -177,11 +182,10 @@ const Img = styled.img`
   width:110px;
   height:55px;
   margin-top:-30px;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     
   }
 `;
-
 
 
 
@@ -224,6 +228,9 @@ const alliancePlan = () => {
         </Circle>
 
       </Background>
+
+    
+      
     </Container>
 
   </PageContainer>;
