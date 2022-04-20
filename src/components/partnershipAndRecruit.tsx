@@ -90,7 +90,8 @@ const GrayArea = styled.div`
   width: 250px;
   height:200px;
    @media screen and (max-width: 768px) {
-    
+    width: 116px;
+    height:256px;
   }
 `;
 
@@ -101,7 +102,10 @@ const TextArea = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content:center;
+    align-items: center;
     flex-direction: column;
+  
+    
   }
 `;
 
@@ -157,7 +161,8 @@ const WhiteArea = styled.div`
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 768px) {
-    
+    width: 211px;
+    height: 256px;
   }
 
 `;
@@ -327,6 +332,7 @@ const PartnershipAndRecruit = () => {
         <BigTitle> 目前已超過 30 個合作機構<br />
           企業機構、法人團體熱烈招募合作中！
         </BigTitle>
+
         <TextArea>
           <Text>
             <GrayArea>
