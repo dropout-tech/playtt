@@ -182,6 +182,9 @@ const WhiteArea = styled.div`
   @media screen and (max-width: 768px) {
     width: 211px;
     height: 256px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 `;
@@ -202,7 +205,7 @@ const TextkeyIn1 = styled.p`
   color: #1A1A1A;
   margin-left:70px;
   @media screen and (max-width: 768px) {
-    
+    margin-left:50px;
   }
 `;
 
@@ -221,7 +224,7 @@ const TextkeyIn2 = styled.p`
   color: #1A1A1A;
   margin-left:90px;
   @media screen and (max-width: 768px) {
-    
+    margin-left:70px;
   }
 `;
 
@@ -240,7 +243,7 @@ const TextkeyIn3 = styled.p`
   color: #1A1A1A;
   margin-left:70px;
   @media screen and (max-width: 768px) {
-    
+    margin-left:50px;
   }
 `;
 
