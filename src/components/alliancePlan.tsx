@@ -221,6 +221,19 @@ const Img = styled.img`
   }
 `;
 
+const Img3 = styled.img`
+  width:90px;
+  height:50px;
+  margin-top:-30px;
+  @media screen and (max-width: 768px) {
+    width:70px;
+    height:35px;
+    margin-top:40px;
+    margin-left:-5px;
+   
+  }
+`;
+
 
 
 
@@ -253,7 +266,7 @@ const alliancePlan = () => {
 
           <Circle3>
             <Text2>
-              <Img src={ho} alt="" />
+              <Img3 src={ho} alt="" />
               <Title2>聯盟分佈</Title2>
               <TextForm>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</TextForm>
               <TextForm2>陸續招募中！</TextForm2>
