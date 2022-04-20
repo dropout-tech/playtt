@@ -94,7 +94,12 @@ const Circle2 = styled.div`
   border-radius:330px;
   margin-right:-50px;
   @media screen and (max-width: 768px) {
-    
+    width: 400px;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:0px;
   }
 `;
 
@@ -107,7 +112,12 @@ const Circle3 = styled.div`
   border-radius:294px;
   margin-top:20px;
   @media screen and (max-width: 768px) {
-    
+    width: 400px;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:0px;
   }
 `;
 
