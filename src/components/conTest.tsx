@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import halfcircle from "../assets/conTest/halfcircle.png";
-
+import circle from "../assets/conTest/circle.png";
 
 
 
@@ -13,7 +13,7 @@ const PageContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
    @media screen and (max-width: 768px) {
-    
+    display:none;
   }
 `;
 
@@ -25,7 +25,7 @@ const Container = styled.div`
   padding-top:80px;
   padding-bottom: 80px;
    @media screen and (max-width: 768px) {
-    display:none;
+   
   }
   
 `;
@@ -34,7 +34,7 @@ const HalfcircleImg = styled.img`
   width:100%;
   height:100%;
    @media screen and (max-width: 768px) {
-    
+    display:none;
   }
 
 `;
@@ -183,10 +183,11 @@ const TextContainer = styled.div`
 `;
 
 const MobileContainer = styled.div`
-
+  margin-top:100px;
+ 
 
  @media screen and (min-width: 768px) {
-  
+  display:none;
  }
 `;
 
@@ -198,6 +199,11 @@ const TextContainerAll = styled.div`
   }
 `;
 
+const CircleImg = styled.img`
+  width:375px;
+  height:375px;
+  
+`;
 
 /* desktop thw newest info style end */
 const ConTest = () => {
@@ -207,7 +213,7 @@ const ConTest = () => {
         <HalfcircleImg src={halfcircle} alt="" />
       </ImgContainer>
 
-    
+
       <TextContainer1>
         <LeftText>
           <div>
@@ -255,13 +261,13 @@ const ConTest = () => {
           </TextContainer>
         </RightText>
       </TextContainer2>
-     
+
 
     </Container>
 
     <MobileContainer>
       <ImgContainer>
-        <HalfcircleImg src={halfcircle} alt="" />
+        <CircleImg src={circle} alt="" />
       </ImgContainer>
 
 
