@@ -25,7 +25,7 @@ const Container = styled.div`
   padding-top:80px;
   padding-bottom: 80px;
    @media screen and (max-width: 768px) {
-    
+    display:none;
   }
   
 `;
@@ -182,6 +182,13 @@ const TextContainer = styled.div`
  }
 `;
 
+const MobileContainer = styled.div`
+
+
+ @media screen and (min-width: 768px) {
+  
+ }
+`;
 
 const TextContainerAll = styled.div`
  display:flex;
@@ -251,6 +258,63 @@ const ConTest = () => {
      
 
     </Container>
+
+    <MobileContainer>
+      <ImgContainer>
+        <HalfcircleImg src={halfcircle} alt="" />
+      </ImgContainer>
+
+
+      <TextContainer1>
+        <LeftText>
+          <div>
+            <Title1>桌球賽事</Title1>
+            <Title2>Let’s Play Match</Title2>
+          </div>
+          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，<br />是很好的自我檢視方式。</TextContent>
+        </LeftText>
+      </TextContainer1>
+
+
+      <TextContainer2>
+        <RightText>
+          <TextContainer>
+            <Background>
+              <Title3>邀請賽</Title3>
+            </Background>
+            <div>
+              <Text>
+                由 Let's Play 發出邀請，讓小小選手們有<br />發光表現的舞台。
+              </Text>
+            </div>
+          </TextContainer>
+
+          <TextContainer>
+            <Background>
+              <Title3>積分賽</Title3>
+            </Background>
+            <div>
+              <Text>
+                於台灣桌球積分賽平台刊登，是一個訓練比<br />賽經驗的平台，每一個月最少兩次的比賽。
+              </Text>
+            </div>
+          </TextContainer>
+
+          <TextContainer>
+            <Background>
+              <Title3>學員盃</Title3>
+            </Background>
+            <div>
+              <Text>
+                Let's Play 分店館內學員的定期對內交流<br />比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+              </Text>
+            </div>
+          </TextContainer>
+        </RightText>
+      </TextContainer2>
+
+
+    </MobileContainer>
   </PageContainer>;
 };
 
