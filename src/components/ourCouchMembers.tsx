@@ -56,9 +56,9 @@ const PicImg = styled.img`
 
 const Row1 = styled.div`
   display: flex;
-  flex-direction: column;
     @media screen and (max-width: 768px) {
-   
+   display: flex;
+    flex-direction: column;
   }
 `;
 
