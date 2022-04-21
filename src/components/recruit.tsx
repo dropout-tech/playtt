@@ -72,7 +72,7 @@ const Title = styled.p`
   margin-left:25px;
   padding-top:8px;
    @media screen and (max-width: 768px) {
-    
+    margin-top:16px;
   }
 `;
 
@@ -112,7 +112,8 @@ const Background = styled.div`
   width: 247px;
   height: 56px;
    @media screen and (max-width: 768px) {
-    
+    display:flex;
+    align-items: center;
   }
 `;
 
@@ -132,26 +133,26 @@ const Recruit = () => {
           <Title>＃ 熱烈招募中！</Title>
         </Background>
         <Text>
-          ・ 讓雙北小朋友有更完善的學習資源<br />
-          ・ 推廣桌球讓更多成人共同參與<br />
+          ・ 讓雙北小朋友有更 &emsp; 完善的學習資源<br />
+          ・ 推廣桌球讓更多<br />&emsp; 成人共同參與<br />
         </Text>
 
         <Text2>
-          ・ 除館內課程推出也提供外派教練進駐服務<br />
-          ・ 補習班 / 幼兒園 / 學校社團<br />
-          ・ 家裡 / 運動中心 / 公司社團 / 公家機構<br />
-          ・ 休閒運動體系創新合作教案（歡樂 / 技術）<br />
-          ・ 公司福委會競技休閒活動
+          ・ 除館內課程推出也<br /> &emsp; 提供外派教練<br />&emsp; 進駐服務<br />
+          ・ 補習班 / 幼兒園 /<br /> &emsp; 學校社團<br />
+          ・ 家裡 / 運動中心 / <br /> &emsp; 公司社團 /<br /> &emsp; 公家機構<br />
+          ・ 休閒運動體系創新<br /> &emsp; 合作教案<br /> &emsp; （歡樂 / 技術）<br />
+          ・ 公司福委會競技<br /> &emsp; 休閒活動
         </Text2>
 
         <Text2>
-          ・ 期望結合不同類別才藝發展多元課程街舞、<br /> &emsp; 兒童舞蹈、畫畫、音樂等
+          ・ 期望結合不同類別<br /> &emsp; 才藝發展多元課程<br /> &emsp; 街舞、 兒童舞蹈、<br />&emsp; 畫畫、音樂等
         </Text2>
 
         <Text2>
           ・ 桌球趣味比賽協辦<br />
           ・ 乒乓球表演者<br />
-          ・ 提供桌球產業教練獨特升遷制度
+          ・ 提供桌球產業教練<br /> &emsp; 獨特升遷制度
         </Text2>
       </TextContainer>
     </Container>
