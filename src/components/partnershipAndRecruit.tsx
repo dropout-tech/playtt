@@ -307,14 +307,6 @@ const TextkeyIn4 = styled.p`
   }
 `;
 
-const MobileContainer = styled.div`
-  
- @media screen and (max-width: 768px) {
-    
-  }
-
-`;
-
 const GrayAreaContent = styled.div`
 
  @media screen and (max-width: 768px) {
@@ -402,78 +394,6 @@ const PartnershipAndRecruit = () => {
         </TextArea>
       </BlueArea>
 
-      <MobileContainer>
-        <BigTitle> 目前已超過 30 個合作機構<br />
-          企業機構、法人團體熱烈招募合作中！
-        </BigTitle>
-
-        <TextArea>
-          <Text>
-            <GrayArea>
-              <GrayAreaContent>
-                <ColorLineImg src={colorLine} alt="" />
-                <TopText>運動場館</TopText>
-              </GrayAreaContent>
-            </GrayArea>
-            <WhiteArea>
-              <TextkeyIn1>
-                舞動陽光<br />
-                華江俱樂部<br />
-                三峽運動中心<br />
-                中正運動中心<br />
-                等<br />
-                ⋯⋯</TextkeyIn1>
-            </WhiteArea>
-
-          </Text>
-
-          <Text>
-            <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>學校社團</TopText>
-            </GrayArea>
-            <WhiteArea>
-              <TextkeyIn2>
-                大龍國小<br />
-                懷生國小<br />
-                等<br />
-                ⋯⋯</TextkeyIn2>
-            </WhiteArea>
-          </Text>
-
-          <Text>
-            <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>教育機構</TopText>
-            </GrayArea>
-            <WhiteArea>
-              <TextkeyIn3>
-                何嘉仁幼兒園<br />
-                維多利亞<br />
-                喬鈴補習班<br />
-                等<br />
-                ⋯⋯</TextkeyIn3>
-            </WhiteArea>
-          </Text>
-
-          <Text>
-            <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>桌球場館</TopText>
-            </GrayArea>
-            <WhiteArea>
-              <TextkeyIn4>
-                Let's Play 蘆洲店<br />
-                Let's Play 東門店<br />
-                Let's Play 善導寺店<br />
-                Let's Play 新莊店<br />
-                Onward TT 乒乓吧 X Let's Play<br />
-                乒運動桌球館
-              </TextkeyIn4>
-            </WhiteArea>
-          </Text>
-        </TextArea>
-      </MobileContainer>
     </Container>
 
   </PageContainer>;
