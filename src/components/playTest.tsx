@@ -48,7 +48,7 @@ const Text2 = styled.div`
     display:flex;
     flex-direction: column;
     padding:45px;
-  }
+    margin-top:-50px;
 `;
 
 const Text3 = styled.div`
