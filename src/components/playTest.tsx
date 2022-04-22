@@ -49,6 +49,7 @@ const Text2 = styled.div`
     flex-direction: column;
     padding:45px;
     margin-top:-50px;
+  }
 `;
 
 const Text3 = styled.div`
@@ -167,6 +168,7 @@ const TextContent = styled.p`
    width:327px;
    display:flex;
    justify-content: center;
+   margin-top:-30px;
 
   }
 `;
