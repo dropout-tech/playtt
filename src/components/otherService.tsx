@@ -33,7 +33,9 @@ const BelowArea = styled.div`
  justify-content:center;
  margin-top:30px; 
   @media screen and (max-width: 768px) {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -90,7 +92,9 @@ const TopArea = styled.div`
  justify-content:center;
  margin-top:60px;
    @media screen and (max-width: 768px) {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 `;
