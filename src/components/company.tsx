@@ -191,6 +191,23 @@ const SmallTitle = styled.p`
   }
 `;
 
+const MobileContainer = styled.div`
+  display:none;
+ @media screen and (max-width: 768px) {
+    
+  }
+
+`;
+
+const Column = styled.div`
+  
+ @media screen and (max-width: 768px) {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 /* desktop thw newest info style end */
 const Company = () => {
   return <PageContainer>
@@ -280,6 +297,111 @@ const Company = () => {
       </BelowArea>
 
     </Container>
+
+    <MobileContainer>
+      <TopLeftArea>
+        <Background1>
+          <Title>＃ 總公司</Title>
+        </Background1>
+        <TextArea>
+          <TextArea1>
+            <Column>
+              <Text>地址</Text>
+              <Text>新北市蘆洲區長樂路106號3樓</Text>
+            </Column>
+            <Column>
+              <Text>連絡電話</Text>
+              <Text>0988 521 012</Text>
+            </Column>
+
+            <Column>
+              <Text>信箱</Text>
+              <Text>playpp2018@gmail.com</Text>
+            </Column>
+
+            <Column>
+            <Text>總公司客服時間</Text>
+            </Column>
+
+            <Column>
+            <Text>週一至週五 10:00–19:00（週末請撥各館電話）</Text>
+            </Column>
+
+            <Text>創辦人 / 總教練</Text>
+            <Text>郭教練 0988 521 012</Text>
+          </TextArea1>
+          <TextArea2>
+          
+       
+          
+           
+            
+          </TextArea2>
+        </TextArea>
+
+      </TopLeftArea>
+
+
+
+      <BelowArea>
+
+
+        <Background2>
+          <Title>＃ 分店與聯盟</Title>
+        </Background2>
+        <BelowTextContainer>
+          <TopBelow>
+            <Title2>分館資訊</Title2>
+
+            <div>
+              <SmallTitle>各館營業時間</SmallTitle>
+              <Text>週一至週五 13:00–21:00　週六日 9:00–19:00</Text>
+            </div>
+
+            <div>
+              <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲</SmallTitle>
+              <p>台北市中正區金山南路一段121號</p>
+              <p>02 2356 7106</p>
+
+            </div>
+
+            <div>
+              <SmallTitle>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</SmallTitle>
+              <p>台北市新莊區民樂街37號B1</p>
+              <p>02 2990 0566</p>
+
+            </div>
+
+            <div>
+              <SmallTitle>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</SmallTitle>
+              <p>台北市中正區杭州南路一段63號B1</p>
+              <p>02 2391 9659</p>
+
+            </div>
+          </TopBelow>
+
+          <UnderBelow>
+            <Title>聯盟場館經營</Title>
+            <div>
+              <SmallTitle>ONWARD TT 乒乓吧 X Let's Play － 捷運南港 & 昆陽</SmallTitle>
+              <p>台北市南港區南港路二段141號1樓</p>
+              <p>02 2651 0652</p>
+            </div>
+
+            <div>
+              <SmallTitle>舞動華江高中 & Let's Play － 捷運龍山寺</SmallTitle>
+              <p>台北市萬華區西藏路213號</p>
+              <p>02 2339 6689</p>
+            </div>
+
+          </UnderBelow>
+
+        </BelowTextContainer>
+
+
+      </BelowArea>
+
+    </MobileContainer>
 
   </PageContainer>;
 };
