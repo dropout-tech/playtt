@@ -42,14 +42,16 @@ const BelowArea = styled.div`
   margin-top:80px;
   width:80%;
    @media screen and (max-width: 768px) {
-    
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top:80px;
   }
 
 `;
 
 const Background1 = styled.div`
  background: rgba(207, 210, 211,0.8);
-
  display:flex;  
  justify-content: center;
  margin-top:50px;
@@ -57,30 +59,34 @@ const Background1 = styled.div`
  width:20%;
  align-items: center;
   @media screen and (max-width: 768px) {
-    
+    width:327px;
+    height:84px;
   }
 `;
 
 const Background2 = styled.div`
  background: rgba(207, 210, 211,0.8);
-
  display:flex;  
  justify-content: center;
  width:26.7%;
  align-items: center;
   @media screen and (max-width: 768px) {
-    
+    width:327px;
+    height:84px;
   }
 `;
 
 const TopLeftArea = styled.div`
- display: flex;
  height:300px;
  width:90%;
  display: flex;
  justify-content: center;
   @media screen and (max-width: 768px) {
-    
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 327px;
+    height:468px;
   }
 `;
 
@@ -93,13 +99,18 @@ const TextArea = styled.div`
  justify-content: center;
  margin-top:50px;
   @media screen and (max-width: 768px) {
-    
+    width:90%;
+    margin-top:0px;
   }
 `;
 
 const TextArea1 = styled.div`
   margin-top:20px;
    @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    
     
   }
 `;
