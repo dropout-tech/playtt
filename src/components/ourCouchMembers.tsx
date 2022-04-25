@@ -113,7 +113,8 @@ const Text = styled.p`
   @media screen and (max-width: 768px) {
    margin-left:0px;
    display:flex;
-   flex-direction: column
+   flex-direction: column;
+   margin-right:100px;
   }
 `;
 
@@ -286,12 +287,12 @@ const OurCouchMembers = () => {
 
     <MobileContainer>
       <Row1>
-        <Pic>
+        <div>
           <PicImg src={img1} alt="" />
           <Name>
             <Text>呂昀<Span>Eva教練</Span></Text>
           </Name>
-        </Pic>
+        </div>
 
         <div>
           <PicImg src={img2} alt="" />
