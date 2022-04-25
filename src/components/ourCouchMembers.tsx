@@ -55,6 +55,17 @@ const PicImg = styled.img`
   }
 `;
 
+const PicImg2 = styled.img`
+  width:310px;
+  height:300px;
+  margin-left:80px;
+    @media screen and (max-width: 768px) {
+    width:181px;
+    height:181px;
+    margin-left:-80px;
+  }
+`;
+
 const Row1 = styled.div`
   display: flex;
     @media screen and (max-width: 768px) {
@@ -207,8 +218,14 @@ const Pic = styled.div`
     display:flex;
     justify-content:space-between;
     flex-direction: row;
-  
-    
+  }
+`;
+
+const Pic2 = styled.div`
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:space-between;
+    flex-direction: row;
   }
 `;
 
@@ -218,6 +235,17 @@ const Name = styled.div`
   display: flex;
   flex-direction: column;
   margin-top:40px;
+  }
+  
+`;
+
+const Name2 = styled.div`
+
+  @media screen and (max-width: 768px) {
+  display: flex;
+  flex-direction: column;
+  margin-top:40px;
+  margin-left:100px;
   }
   
 `;
@@ -336,12 +364,12 @@ const OurCouchMembers = () => {
           </Name>
         </Pic>
 
-        <Pic>
-          <Name>
+        <Pic2>
+          <Name2>
             <Text>鍾達威<Span>威廉教練</Span></Text>
-          </Name>
-          <PicImg src={img2} alt="" />
-        </Pic>
+          </Name2>
+          <PicImg2 src={img2} alt="" />
+        </Pic2>
 
         <Pic>
           <PicImg src={img3} alt="" />
@@ -350,12 +378,12 @@ const OurCouchMembers = () => {
           </Name>
         </Pic>
 
-        <Pic>
-          <Name>
+        <Pic2>
+          <Name2>
             <Text>郭則寬<Span>阿寬教練</Span></Text>
-          </Name>
-          <PicImg src={img4} alt="" />
-        </Pic>
+          </Name2>
+          <PicImg2 src={img4} alt="" />
+        </Pic2>
 
         <Pic>
           <PicImg src={img5} alt="" />
@@ -364,12 +392,12 @@ const OurCouchMembers = () => {
           </Name>
         </Pic>
 
-        <Pic>
-          <Name>
+        <Pic2>
+          <Name2>
             <Text>顏兆寅<Span>小顏教練</Span></Text>
-          </Name>
-          <PicImg src={img6} alt="" />
-        </Pic>
+          </Name2>
+          <PicImg2 src={img6} alt="" />
+        </Pic2>
 
         <Pic>
           <PicImg src={img7} alt="" />
@@ -378,12 +406,12 @@ const OurCouchMembers = () => {
           </Name>
         </Pic>
 
-        <Pic>
-          <Name>
+        <Pic2>
+          <Name2>
             <Text>夏振凱<Span>凱凱教練</Span></Text>
-          </Name>
-          <PicImg src={img8} alt="" />
-        </Pic>
+          </Name2>
+          <PicImg2 src={img8} alt="" />
+        </Pic2>
       </Row1>
     </MobileContainer>
 
