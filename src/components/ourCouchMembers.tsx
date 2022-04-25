@@ -111,7 +111,9 @@ const Text = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;  
   @media screen and (max-width: 768px) {
- 
+   margin-left:0px;
+   display:flex;
+   flex-direction: column
   }
 `;
 
@@ -127,7 +129,9 @@ const Text2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
-    
+   margin-left:0px;
+   display:flex;
+   flex-direction: column
   }
   
 `;
@@ -166,6 +170,14 @@ const Pic = styled.div`
   }
 `;
 
+const Name = styled.div`
+
+  @media screen and (max-width: 768px) {
+  display: flex;
+  flex-direction: column;
+  }
+  
+`;
 
 
 
@@ -276,7 +288,9 @@ const OurCouchMembers = () => {
       <Row1>
         <Pic>
           <PicImg src={img1} alt="" />
-          <Text>呂昀<Span>Eva教練</Span></Text>
+          <Name>
+            <Text>呂昀<Span>Eva教練</Span></Text>
+          </Name>
         </Pic>
 
         <div>
