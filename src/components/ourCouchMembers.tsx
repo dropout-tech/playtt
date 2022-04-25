@@ -116,19 +116,14 @@ const Text = styled.p`
    flex-direction: column;
    margin-right:100px;
    font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 20px;
-line-height: 36px;
-/* identical to box height, or 180% */
-
-display: flex;
-align-items: center;
-letter-spacing: 0.03em;
-
-/* black */
-
-color: #1A1A1A;
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
 
   }
 `;
@@ -193,7 +188,7 @@ letter-spacing: 0.02em;
 /* black */
 
 color: #1A1A1A;
-
+width:100px;
 
   }
 `;
@@ -212,6 +207,7 @@ const Pic = styled.div`
     display:flex;
     justify-content:space-between;
     flex-direction: row;
+  
     
   }
 `;
@@ -221,6 +217,7 @@ const Name = styled.div`
   @media screen and (max-width: 768px) {
   display: flex;
   flex-direction: column;
+  margin-top:40px;
   }
   
 `;
@@ -332,51 +329,61 @@ const OurCouchMembers = () => {
 
     <MobileContainer>
       <Row1>
-        <div>
+        <Pic>
           <PicImg src={img1} alt="" />
           <Name>
             <Text>呂昀<Span>Eva教練</Span></Text>
           </Name>
-        </div>
+        </Pic>
 
-        <div>
+        <Pic>
+          <Name>
+            <Text>鍾達威<Span>威廉教練</Span></Text>
+          </Name>
           <PicImg src={img2} alt="" />
-          <Text>鍾達威<Span>威廉教練</Span></Text>
+        </Pic>
 
-
-        </div>
-
-        <div>
+        <Pic>
           <PicImg src={img3} alt="" />
-          <Text>林培中<Span>派派教練</Span></Text>
-        </div>
+          <Name>
+            <Text>林培中<Span>派派教練</Span></Text>
+          </Name>
+        </Pic>
 
-        <div>
+        <Pic>
+          <Name>
+            <Text>郭則寬<Span>阿寬教練</Span></Text>
+          </Name>
           <PicImg src={img4} alt="" />
-          <Text>郭則寬<Span>阿寬教練</Span></Text>
+        </Pic>
 
-
-        </div>
-
-        <div>
+        <Pic>
           <PicImg src={img5} alt="" />
-          <Text>林晏先<Span>先先教練</Span></Text>
-        </div>
+          <Name>
+            <Text>林晏先<Span>先先教練</Span></Text>
+          </Name>
+        </Pic>
 
-        <div>
+        <Pic>
+          <Name>
+            <Text>顏兆寅<Span>小顏教練</Span></Text>
+          </Name>
           <PicImg src={img6} alt="" />
-          <Text>顏兆寅<Span>小顏教練</Span></Text>
-        </div>
+        </Pic>
 
-        <div>
+        <Pic>
           <PicImg src={img7} alt="" />
-          <Text>林政蔚<Span>政蔚教練</Span></Text>
-        </div>
+          <Name>
+            <Text>林政蔚<Span>政蔚教練</Span></Text>
+          </Name>
+        </Pic>
 
-        <div>
+        <Pic>
+          <Name>
+            <Text>夏振凱<Span>凱凱教練</Span></Text>
+          </Name>
           <PicImg src={img8} alt="" />
-          <Text>夏振凱<Span>凱凱教練</Span></Text>
-        </div>
+        </Pic>
       </Row1>
     </MobileContainer>
 
