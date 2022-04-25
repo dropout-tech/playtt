@@ -115,6 +115,21 @@ const Text = styled.p`
    display:flex;
    flex-direction: column;
    margin-right:100px;
+   font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 36px;
+/* identical to box height, or 180% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.03em;
+
+/* black */
+
+color: #1A1A1A;
+
   }
 `;
 
@@ -133,6 +148,21 @@ const Text2 = styled.p`
    margin-left:0px;
    display:flex;
    flex-direction: column
+   font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 36px;
+/* identical to box height, or 180% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.03em;
+
+/* black */
+
+color: #1A1A1A;
+
   }
   
 `;
@@ -149,7 +179,22 @@ const Span = styled.span`
   color: #1A1A1A;
   margin-left:10px;
   @media screen and (max-width: 768px) {
-    
+    font-family: 'Futura';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 30px;
+/* identical to box height, or 188% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.02em;
+
+/* black */
+
+color: #1A1A1A;
+
+
   }
 `;
 
@@ -308,22 +353,19 @@ const OurCouchMembers = () => {
 
         <div>
           <PicImg src={img4} alt="" />
-          <Text2>郭則寬<Span>阿寬教練</Span></Text2>
+          <Text>郭則寬<Span>阿寬教練</Span></Text>
 
 
         </div>
 
         <div>
-          <Text2>林晏先<Span>先先教練</Span></Text2>
           <PicImg src={img5} alt="" />
-
+          <Text>林晏先<Span>先先教練</Span></Text>
         </div>
 
         <div>
           <PicImg src={img6} alt="" />
           <Text>顏兆寅<Span>小顏教練</Span></Text>
-
-
         </div>
 
         <div>
@@ -334,8 +376,6 @@ const OurCouchMembers = () => {
         <div>
           <PicImg src={img8} alt="" />
           <Text>夏振凱<Span>凱凱教練</Span></Text>
-
-
         </div>
       </Row1>
     </MobileContainer>
