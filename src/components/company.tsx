@@ -71,8 +71,9 @@ const Background2 = styled.div`
  width:26.7%;
  align-items: center;
   @media screen and (max-width: 768px) {
-    width:98%;
+    width:110%;
     height:84px;
+    margin-top:70px;
   }
 `;
 
@@ -130,18 +131,9 @@ const Text = styled.p`
   letter-spacing: 0.04em;
   color: #3C3D3D;
    @media screen and (max-width: 768px) {
-     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 28px;
-/* identical to box height, or 200% */
-
-letter-spacing: 0.06em;
-
-/* gray */
-
-color: #3C3D3D;
+     font-size: 14px;
+     line-height: 28px;
+     letter-spacing: 0.06em;
   }
   
 `;
@@ -155,29 +147,18 @@ const Title = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 20px;
-line-height: 36px;
-/* identical to box height, or 180% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.03em;
-
-/* black */
-
-color: #1A1A1A;
-
-
+    font-size: 20px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.03em;
   }
 `;
 
 const TopBelow = styled.div`
  @media screen and (max-width: 768px) {
-    
+  
   }
 
 `;
@@ -211,7 +192,7 @@ const BelowTextContainer = styled.div`
  flex-direction:column;
  align-items: center;
   @media screen and (max-width: 768px) {
-    
+    width:101%;
   }
 
 `;
@@ -242,7 +223,7 @@ const Column = styled.div`
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
-    align-items: center;
+
   }
 `;
 
