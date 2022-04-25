@@ -50,7 +50,8 @@ const PicImg = styled.img`
   height:300px;
   margin-left:80px;
     @media screen and (max-width: 768px) {
-    
+    width:181px;
+    height:181px;
   }
 `;
 
@@ -109,7 +110,7 @@ const Text = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;  
   @media screen and (max-width: 768px) {
-    
+ 
   }
 `;
 
@@ -154,6 +155,16 @@ const BelowText = styled.p`
     
   }
 `;
+
+const Pic = styled.div`
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:space-between;
+    flex-direction: row;
+    
+  }
+`;
+
 
 
 
@@ -212,14 +223,15 @@ const OurCouchMembers = () => {
       </Picture>
       <MobileContainer>
         <Row1>
-          <div>
+          <Pic>
             <PicImg src={img1} alt="" />
             <Text>呂昀<Span>Eva教練</Span></Text>
-          </div>
+          </Pic>
 
           <div>
-            <PicImg src={img2} alt="" />
             <Text>鍾達威<Span>威廉教練</Span></Text>
+            <PicImg src={img2} alt="" />
+            
           </div>
 
           <div>
@@ -228,8 +240,9 @@ const OurCouchMembers = () => {
           </div>
         
           <div>
-            <PicImg src={img4} alt="" />
             <Text2>郭則寬<Span>阿寬教練</Span></Text2>
+            <PicImg src={img4} alt="" />
+            
           </div>
 
           <div>
@@ -238,8 +251,9 @@ const OurCouchMembers = () => {
           </div>
       
           <div>
-            <PicImg src={img6} alt="" />
             <Text>顏兆寅<Span>小顏教練</Span></Text>
+            <PicImg src={img6} alt="" />
+           
           </div>
 
           <div>
@@ -248,8 +262,9 @@ const OurCouchMembers = () => {
           </div>
 
           <div>
-            <PicImg src={img8} alt="" />
             <Text>夏振凱<Span>凱凱教練</Span></Text>
+            <PicImg src={img8} alt="" />
+            
           </div>
         </Row1>
       </MobileContainer>
