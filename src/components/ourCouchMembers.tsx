@@ -62,7 +62,7 @@ const PicImg2 = styled.img`
     @media screen and (max-width: 768px) {
     width:181px;
     height:181px;
-    margin-left:-80px;
+    margin-left:-100px;
   }
 `;
 
@@ -104,9 +104,13 @@ const Picture = styled.div`
 const MobileContainer = styled.div`
   display:flex;
   flex-direction: column;
+  align-items: center;
+  margin-left:-10px;
+  width:327px;
    
   @media screen and (min-width: 768px) {
     display:none;
+   
   }
 `;
 
@@ -220,6 +224,7 @@ const Pic2 = styled.div`
     display:flex;
     justify-content:space-between;
     flex-direction: row;
+ 
   }
 `;
 

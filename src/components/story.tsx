@@ -133,6 +133,8 @@ const Contant = styled.p`
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
+    display:flex;
+    margin-left:-25px;
   }
 `;
 
@@ -150,6 +152,7 @@ const Contant2 = styled.p`
     width:327px;
     height:240px;
     margin-top:180px;
+    margin-left:-25px;
   }
 `;
 
