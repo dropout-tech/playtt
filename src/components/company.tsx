@@ -46,6 +46,7 @@ const BelowArea = styled.div`
     flex-direction: column;
     align-items:center;
     margin-top:80px;
+    margin-left:-20px;
   }
 
 `;
@@ -87,13 +88,13 @@ const TopLeftArea = styled.div`
     flex-direction: column;
     align-items:center;
     width:90%;
+    margin-left:-20px;
   }
 `;
 
 const TextArea = styled.div`
  background: #FFFFFF;
  width:67%;
- height:100%;
  padding-left:30px;
  display:flex;  
  justify-content: center;
@@ -101,15 +102,15 @@ const TextArea = styled.div`
   @media screen and (max-width: 768px) {
     width:90%;
     margin-top:0px;
+    
   }
 `;
 
 const TextArea1 = styled.div`
   margin-top:20px;
    @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
+   
+   
     
     
   }
@@ -135,6 +136,23 @@ const Text = styled.p`
      font-size: 14px;
      line-height: 28px;
      letter-spacing: 0.06em;
+  }
+  
+`;
+
+const Text2 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #3C3D3D;
+   @media screen and (max-width: 768px) {
+     font-size: 14px;
+     line-height: 28px;
+     letter-spacing: 0.06em;
+    
   }
   
 `;
@@ -327,28 +345,28 @@ const Company = () => {
           <TextArea1>
             <Column>
               <Text>地址</Text>
-              <Text>新北市蘆洲區長樂路106號3樓</Text>
+              <Text2>新北市蘆洲區長樂路106號3樓</Text2>
             </Column>
             <Column>
               <Text>連絡電話</Text>
-              <Text>0988 521 012</Text>
+              <Text2>0988 521 012</Text2>
             </Column>
 
             <Column>
               <Text>信箱</Text>
-              <Text>playpp2018@gmail.com</Text>
+              <Text2>playpp2018@gmail.com</Text2>
             </Column>
 
             <Column>
-              <Text>總公司客服時間</Text>
+              <Text2>總公司客服時間</Text2>
             </Column>
 
             <Column>
-              <Text>週一至週五 10:00–19:00（週末請撥各館電話）</Text>
+              <Text2>週一至週五 10:00–19:00（週末請撥各館電話）</Text2>
             </Column>
 
             <Text>創辦人 / 總教練</Text>
-            <Text>郭教練 0988 521 012</Text>
+            <Text2>郭教練 0988 521 012</Text2>
           </TextArea1>
           
         </TextArea>
