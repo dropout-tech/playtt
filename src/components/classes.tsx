@@ -95,7 +95,7 @@ const ContantText = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 36px;
+  line-height: 16px;
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
@@ -275,7 +275,7 @@ const TextArea = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 36px;
+  line-height: 16px;
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
