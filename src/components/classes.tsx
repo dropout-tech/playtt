@@ -102,7 +102,10 @@ const ContantText = styled.p`
   width:550px;
 
   @media screen and (max-width: 768px) {
-    
+    width: 327px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -149,11 +152,10 @@ const Img3 = styled.img`
   margin-left:80px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
-    
     width:251px;  
     height:220px;
     display:flex;
-     margin-left:80px;
+     margin-left:20px;
 
   }
 `;
@@ -224,6 +226,7 @@ const Background1 = styled.div`
   width:55%;
   @media screen and (max-width: 768px) {
      width:60%;
+     margin-left:70px;
   }
 `;
 const Background2 = styled.div`
@@ -236,6 +239,7 @@ const Background2 = styled.div`
   width:50%;
   @media screen and (max-width: 768px) {
      width:60%;
+     margin-left:70px;
   }
 `;
 const Background3 = styled.div`
@@ -248,6 +252,7 @@ const Background3 = styled.div`
   width:60%;
   @media screen and (max-width: 768px) {
      width:80%;
+     margin-left:30px;
   }
 `;
 
