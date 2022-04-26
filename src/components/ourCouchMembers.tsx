@@ -153,7 +153,7 @@ const Text2 = styled.p`
   @media screen and (max-width: 768px) {
    margin-left:0px;
    display:flex;
-   flex-direction: column
+   flex-direction: column;
    font-family: 'Noto Sans TC';
 font-style: normal;
 font-weight: 900;
@@ -186,21 +186,15 @@ const Span = styled.span`
   margin-left:10px;
   @media screen and (max-width: 768px) {
     font-family: 'Futura';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 30px;
-/* identical to box height, or 188% */
-
-display: flex;
-align-items: center;
-letter-spacing: 0.02em;
-
-/* black */
-
-color: #1A1A1A;
-width:100px;
-
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:100px;
   }
 `;
 
