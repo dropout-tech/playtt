@@ -64,20 +64,16 @@ const Title2 = styled.p`
   line-Height:52px;
    @media screen and (max-width: 768px) {
     font-family: 'Futura';
-font-style: normal;
-font-weight: 700;
-font-size: 26px;
-line-height: 40px;
-/* identical to box height, or 154% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.04em;
-
-/* secondary gray */
-
-color: #CFD2D3;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #CFD2D3;
+    margin-top:-30px;
 
   }
 `;
@@ -118,30 +114,25 @@ const ButtonText = styled.p`
   margin-top:13px;
   @media screen and (max-width: 768px) {
   font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 18px;
-line-height: 32px;
-/* identical to box height, or 178% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.04em;
-
-/* primary blue */
-
-color: #005CB9;
-
-
-
-
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #005CB9;
+  margin-top:-1px;
+  margin-left:45px;
   }
 `;
 
 const TopText = styled.div`
  @media screen and (max-width: 768px) {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -191,6 +182,7 @@ const UnderText = styled.p`
    @media screen and (max-width: 768px) {
     font-size: 12px;
     line-height: 24px;
+    margin-left:-10px;
   }
 `;
 
