@@ -56,7 +56,7 @@ const Background1 = styled.div`
  justify-content: center;
  margin-top:50px;
  height:100%;
- width:20%;
+ width:19.5%;
  align-items: center;
   @media screen and (max-width: 768px) {
     width:98%;
@@ -117,6 +117,7 @@ const TextArea1 = styled.div`
 
 const TextArea2 = styled.div`
  margin-top:20px;
+ margin-left:90px;
   @media screen and (max-width: 768px) {
     
   }
@@ -219,7 +220,7 @@ const MobileContainer = styled.div`
 `;
 
 const Column = styled.div`
-  
+    
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
@@ -349,21 +350,13 @@ const Company = () => {
             <Text>創辦人 / 總教練</Text>
             <Text>郭教練 0988 521 012</Text>
           </TextArea1>
-          <TextArea2>
-
-
-
-
-
-          </TextArea2>
+          
         </TextArea>
 
       </TopLeftArea>
 
 
-
       <BelowArea>
-
 
         <Background2>
           <Title>＃ 分店與聯盟</Title>
