@@ -26,8 +26,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
    @media screen and (max-width: 768px) {
-    height:98%;
-    width:100%;
+    display:none;
   }
 `;
 
@@ -46,7 +45,7 @@ const BelowArea = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
-    margin-top:50px;
+    margin-top:-50px;
     margin-left:-20px;
   }
 
@@ -75,7 +74,7 @@ const Background2 = styled.div`
   @media screen and (max-width: 768px) {
     width:110%;
     height:84px;
-    margin-top:70px;
+    margin-top:300px;
   }
 `;
 
@@ -90,6 +89,7 @@ const TopLeftArea = styled.div`
     align-items:center;
     width:90%;
     margin-left:-20px;
+    margin-top:100px;
   }
 `;
 
@@ -104,6 +104,8 @@ const TextArea = styled.div`
   @media screen and (max-width: 768px) {
     width:90%;
     margin-top:0px;
+    height:300%;
+    
     
   }
 `;
@@ -154,6 +156,7 @@ const Text2 = styled.p`
      font-size: 14px;
      line-height: 28px;
      letter-spacing: 0.06em;
+    
     
   }
   
@@ -236,7 +239,14 @@ const SmallTitle = styled.p`
 const MobileContainer = styled.div`
   display:none;
  @media screen and (max-width: 768px) {
-  
+  background: #38D430;
+  height:100%;
+  width:100%;
+  padding-top:80px;
+  padding-bottom: 80px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   }
 
 `;
@@ -246,6 +256,7 @@ const Column = styled.div`
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
+   
 
   }
 `;
@@ -372,7 +383,7 @@ const Company = () => {
             <Text>創辦人 / 總教練</Text>
             <Text2>郭教練 0988 521 012</Text2>
           </TextArea1>
-          
+
         </TextArea>
 
       </TopLeftArea>
