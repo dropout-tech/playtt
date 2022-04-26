@@ -54,7 +54,7 @@ const TextContainer1 = styled.div`
  z-index:10;
  display:flex;
  flex-direction: column;
- margin-top:130px;
+ margin-top:-40px;
 
   @media screen and (max-width: 768px) {
     
@@ -272,9 +272,9 @@ const TextContainerAll = styled.div`
 `;
 
 const CircleImg = styled.img`
-  width:418px;
-  height:200px;
-  z-index:1;
+  width:100%;
+  height:175px;
+ 
   margin-top:-100px;
   display:flex;
   align-items: center;

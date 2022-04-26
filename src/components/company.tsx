@@ -26,7 +26,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
    @media screen and (max-width: 768px) {
-    
+    height:98%;
+    width:100%;
   }
 `;
 
@@ -45,7 +46,7 @@ const BelowArea = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
-    margin-top:80px;
+    margin-top:50px;
     margin-left:-20px;
   }
 
@@ -95,6 +96,7 @@ const TopLeftArea = styled.div`
 const TextArea = styled.div`
  background: #FFFFFF;
  width:67%;
+ height:100%;
  padding-left:30px;
  display:flex;  
  justify-content: center;
@@ -176,6 +178,7 @@ const Title = styled.p`
 `;
 
 const TopBelow = styled.div`
+  width:67%;
  @media screen and (max-width: 768px) {
   
   }

@@ -24,7 +24,15 @@ const Title1 = styled.p`
   color: #1A1A1A;
   margin-left:30px;
   @media screen and (max-width: 768px) {
-    
+      margin-left:0px;
+      font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 900;
+font-size: 26px;
+line-height: 40px;
+letter-spacing: 0.04em;
+color: #1A1A1A;
+
   }
   
 `;
@@ -41,7 +49,19 @@ const Title2 = styled.p`
   margin-left:30px;
   line-Height:52px;
   @media screen and (max-width: 768px) {
-    
+      margin-left:0px;
+      font-family: 'Futura';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 40px;
+/* identical to box height, or 154% */
+letter-spacing: 0.04em;
+
+/* secondary gray */
+
+color: #CFD2D3;
+
   }
 `;
 
@@ -123,6 +143,7 @@ const Text = styled.div`
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction:row;
+    margin-top:20px;
   
   }
 
@@ -139,7 +160,24 @@ const BigTitle = styled.p`
   color: #FFFFFF;
   padding-top:60px;
    @media screen and (max-width: 768px) {
-    
+    font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 36px;
+/* or 180% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.03em;
+
+/* white */
+
+color: #FFFFFF;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+margin-left:30px;
   }
 `;
 

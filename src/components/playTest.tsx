@@ -47,14 +47,12 @@ const Text2 = styled.div`
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
-    padding:45px;
+
     margin-top:-50px;
   }
 `;
 
 const Text3 = styled.div`
-  width:100;
-  height:144px;
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
@@ -127,6 +125,7 @@ const Title3 = styled.p`
     text-align: justify;
     letter-spacing: 0.02em;
     color: #1A1A1A;
+    margin-top:50px;
 
   }
 `;
@@ -168,7 +167,7 @@ const TextContent = styled.p`
    width:327px;
    display:flex;
    justify-content: center;
-   margin-top:-30px;
+   margin-top:20px;
 
   }
 `;
@@ -182,6 +181,7 @@ const TestpicImg = styled.img`
     width:251px;
     height:256px;
     margin-left:100px;
+    margin-right:0px;
     
     
   }
