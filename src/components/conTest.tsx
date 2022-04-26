@@ -34,8 +34,9 @@ const Container = styled.div`
 const HalfcircleImg = styled.img`
   width:100%;
   height:100%;
+  z-index:1;
    @media screen and (max-width: 768px) {
-    display:none;
+
   }
 
 `;
@@ -53,7 +54,7 @@ const TextContainer1 = styled.div`
  z-index:10;
  display:flex;
  flex-direction: column;
- margin-top:-100px;
+ margin-top:100px;
 
   @media screen and (max-width: 768px) {
     
@@ -76,7 +77,8 @@ const LeftText = styled.div`
   margin-top:300px;
    @media screen and (max-width: 768px) {
     z-index:10;
-    margin-left:-250px;
+    margin-top:-250px;
+    margin-left:20px;
   
     
   }
@@ -122,6 +124,7 @@ const Title1 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    z-index:10;
 
   }
 `;
@@ -181,24 +184,15 @@ const TextContent = styled.p`
   color: #3C3D3D;
   margin-top:100px;
   @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 20px;
-line-height: 36px;
-/* or 180% */
-
-display: flex;
-align-items: center;
-justify-content:center;
-text-align: center;
-letter-spacing: 0.03em;
-
-/* gray */
-
-color: #3C3D3D;
-
-transform: matrix(1, 0, 0, 1, 0, 0);
+    font-size: 20px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #3C3D3D;
+    transform: matrix(1, 0, 0, 1, 0, 0);
   }
   
 `;
@@ -256,10 +250,20 @@ const CircleImg = styled.img`
   display:flex;
   align-items: center;
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   
 }
 `;
+
+const Ball = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-left:145px;
+   margin-top:-20px;
+  }
+
+
+`;
+
 
 /* desktop thw newest info style end */
 const ConTest = () => {
@@ -329,10 +333,10 @@ const ConTest = () => {
 
       <TextContainer1>
         <LeftText>
-          <div>
+          <Ball>
             <Title1>桌球賽事</Title1>
             <Title2>Let’s Play Match</Title2>
-          </div>
+          </Ball>
           <TextContent>比賽可以幫助你們靈活應用桌球小技巧，<br />是很好的自我檢視方式。</TextContent>
         </LeftText>
       </TextContainer1>
