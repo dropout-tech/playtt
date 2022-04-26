@@ -54,7 +54,7 @@ const TextContainer1 = styled.div`
  z-index:10;
  display:flex;
  flex-direction: column;
- margin-top:100px;
+ margin-top:-50px;
 
   @media screen and (max-width: 768px) {
     
@@ -209,6 +209,7 @@ const TextContent = styled.p`
     color: #3C3D3D;
     transform: matrix(1, 0, 0, 1, 0, 0);
     margin-top:10px;
+    width:340px;
 
   }
   
