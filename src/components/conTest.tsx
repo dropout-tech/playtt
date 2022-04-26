@@ -54,7 +54,7 @@ const TextContainer1 = styled.div`
  z-index:10;
  display:flex;
  flex-direction: column;
- margin-top:-50px;
+ margin-top:130px;
 
   @media screen and (max-width: 768px) {
     
@@ -210,6 +210,7 @@ const TextContent = styled.p`
     transform: matrix(1, 0, 0, 1, 0, 0);
     margin-top:10px;
     width:340px;
+    margin-left:12px;
 
   }
   
@@ -365,7 +366,7 @@ const ConTest = () => {
             <Title1>桌球賽事</Title1>
             <Title2>Let’s Play Match</Title2>
           </Ball>
-          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，<br />是很好的自我檢視方式。</TextContent>
+          <TextContent>比賽可以幫助你們靈活應用桌球小<br />技巧，是很好的自我檢視方式。</TextContent>
         </LeftText>
       </TextContainer1>
 
