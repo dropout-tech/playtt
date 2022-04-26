@@ -186,6 +186,7 @@ const TopBelow = styled.div`
 `;
 
 const UnderBelow = styled.div`
+ width:67%;
  @media screen and (max-width: 768px) {
     
   }
