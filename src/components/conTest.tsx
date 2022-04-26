@@ -54,7 +54,7 @@ const TextContainer1 = styled.div`
  z-index:10;
  display:flex;
  flex-direction: column;
- margin-top:-60px;
+ margin-top:120px;
 
   @media screen and (max-width: 768px) {
     
@@ -68,7 +68,7 @@ const TextContainer2 = styled.div`
  justify-content:space-between;
  margin-right:100px;
   @media screen and (max-width: 768px) {
-    
+    margin-top:-40px;
   }
 `;
 

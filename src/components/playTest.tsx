@@ -47,7 +47,7 @@ const Text2 = styled.div`
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
-
+    padding-left:30px;
     margin-top:-50px;
   }
 `;
@@ -93,7 +93,7 @@ const Title2 = styled.p`
   color: #CFD2D3;
   line-Height:52px;
    @media screen and (max-width: 768px) {
-    margin-top:-30px;
+    margin-top:-25px;
     font-family: 'Futura';
     font-style: normal;
     font-weight: 700;
@@ -104,6 +104,7 @@ const Title2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
+    
 
   }
 `;
@@ -126,6 +127,7 @@ const Title3 = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:50px;
+    margin-left:18px;
 
   }
 `;
@@ -141,7 +143,7 @@ const Number = styled.span`
   letter-spacing: 0.04em;
   color: #CFD2D3;
    @media screen and (max-width: 768px) {
-    
+    padding-left:12px;
   }
 `;
 

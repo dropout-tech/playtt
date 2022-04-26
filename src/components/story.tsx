@@ -65,7 +65,7 @@ const Text = styled.p`
   margin-left:80px;
   margin-top:100px;
    @media screen and  (max-width: 768px) {
-    margin-top:10px;
+    margin-top:30px;
     margin-left:60px;
 
   }
@@ -80,6 +80,20 @@ const Title1 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
    @media screen and  (max-width: 768px) {
+font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 36px;
+/* identical to box height, or 180% */
+
+text-align: center;
+letter-spacing: 0.03em;
+
+/* black */
+
+color: #1A1A1A;
+margin-left:60px;
 
   }
 `;
@@ -95,6 +109,20 @@ const Title2 = styled.p`
   margin-top:-30px;
   @media screen and  (max-width: 768px) {
    width:250px;
+   font-family: 'Futura';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 32px;
+/* identical to box height, or 178% */
+
+text-align: center;
+letter-spacing: 0.04em;
+
+/* black */
+
+color: #1A1A1A;
+margin-left:10px;
   }
 `;
 
@@ -105,17 +133,42 @@ const Title3 = styled.p`
   line-height: 40px;
   letter-spacing: 1.04px;
  @media screen and  (max-width: 768px) {
-    
+    font-family: 'Futura';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 36px;
+/* or 180% */
+
+text-align: center;
+letter-spacing: 0.03em;
+
+/* black */
+
+color: #1A1A1A;
   }
   
 
 `;
 
 const Title4 = styled.p`
-  margin-top:-35px;
+  margin-top:-20px;
 
    @media screen and  (max-width: 768px) {
-    
+    font-family: 'Futura';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 36px;
+/* or 180% */
+
+text-align: center;
+letter-spacing: 0.03em;
+
+/* black */
+
+color: #1A1A1A;
+
   }
 
 `;
@@ -135,6 +188,20 @@ const Contant = styled.p`
     height:240px;
     display:flex;
     margin-left:-25px;
+    font-family: 'Futura';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 30px;
+/* or 188% */
+
+text-align: justify;
+letter-spacing: 0.02em;
+
+/* black */
+
+color: #1A1A1A;
+
   }
 `;
 
@@ -151,8 +218,22 @@ const Contant2 = styled.p`
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
-    margin-top:180px;
+    margin-top:40px;
     margin-left:-25px;
+    font-family: 'Futura';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 30px;
+/* or 188% */
+
+text-align: justify;
+letter-spacing: 0.02em;
+
+/* black */
+
+color: #1A1A1A;
+
   }
 `;
 
@@ -165,7 +246,7 @@ const BelowText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
    @media screen and  (max-width: 768px) {
-    margin-top:150px;
+    margin-top:50px;
     width:300px
   }
 `;

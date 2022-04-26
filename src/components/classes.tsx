@@ -46,7 +46,21 @@ const Title1 = styled.p`
   color: #1A1A1A;
   margin-top:-10px;
   @media screen and (max-width: 768px) {
-    
+    font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 900;
+font-size: 26px;
+line-height: 40px;
+/* identical to box height, or 154% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+
+/* black */
+
+color: #1A1A1A;
   }
 `;
 
@@ -61,6 +75,21 @@ const Title2 = styled.p`
   color: #CFD2D3;
   margin-top:-30px;
   line-Height:52px;
+  font-family: 'Futura';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 40px;
+/* identical to box height, or 154% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+
+/* secondary gray */
+
+color: #CFD2D3;
   @media screen and (max-width: 768px) {
     
   }
@@ -95,7 +124,7 @@ const ContantText = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 16px;
+  line-height: 36px;
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
@@ -106,6 +135,7 @@ const ContantText = styled.p`
     display:flex;
     flex-direction: column;
     align-items: center;
+    line-height: 22px;
   }
 `;
 
@@ -284,7 +314,7 @@ const TextArea = styled.p`
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 10px;
     line-height: 32px;
     text-align: center;
     letter-spacing: 0.04em;
