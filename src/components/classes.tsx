@@ -290,7 +290,7 @@ const SpanDot = styled.div`
   color: #CFD2D3;
   margin-top:20px;
  @media screen and (max-width: 768px) {
-   margin-top:15px;
+   margin-top:5px;
   }
 `;
 
@@ -314,8 +314,8 @@ const TextArea = styled.p`
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
-    font-size: 10px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 1px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
@@ -343,15 +343,15 @@ const Classes = () => {
             </Background1>
             <ContantText>
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>個人班 / 團體班 / 選手班 /親子 / 包班</TextArea><br />
+                <SpanDot>・</SpanDot> <TextArea>個人班 / 團體班 / 選手班 /親子 / 包班</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea><br />
+                <SpanDot>・</SpanDot> <TextArea>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>小班客製化教學 / 大班休閒娛樂教學</TextArea><br />
+                <SpanDot>・</SpanDot> <TextArea>小班客製化教學 / 大班休閒娛樂教學</TextArea>
               </DotContainer>
 
               <DotContainer>
@@ -371,27 +371,33 @@ const Classes = () => {
 
             <ContantText>
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>暖身做操 & 趣味體適能桌球</TextArea><br />
+                <SpanDot>・</SpanDot> 
+                  <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot><TextArea>互動遊戲式球感</TextArea> <br />
+                <SpanDot>・</SpanDot>
+                  <TextArea>互動遊戲式球感</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>對打練習</TextArea><br />
+                <SpanDot>・</SpanDot> 
+                  <TextArea>對打練習</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>互動單球調整揮拍動作</TextArea><br />
+                <SpanDot>・</SpanDot> 
+                  <TextArea>互動單球調整揮拍動作</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>遊戲競賽</TextArea><br />
+                <SpanDot>・</SpanDot> 
+                <TextArea>遊戲競賽</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot><TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
+                <SpanDot>・</SpanDot>
+                  <TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
               </DotContainer>
             </ContantText>
           </Text>
@@ -410,27 +416,35 @@ const Classes = () => {
             <ContantText>
 
               <DotContainer>
-                <SpanDot>・</SpanDot><TextArea>暖身做操 & 趣味體適能桌球</TextArea><br />
+                <SpanDot>・</SpanDot>
+                <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>互動遊戲式球感</TextArea><br />
+                <SpanDot>・</SpanDot> 
+                <TextArea>互動遊戲式球感</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>對打練習</TextArea><br />
+                <SpanDot>・</SpanDot> 
+                <TextArea>對打練習</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>互動單球調整揮拍動作</TextArea><br />
+                <SpanDot>・</SpanDot> 
+                <TextArea>互動單球調整揮拍動作</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>遊戲競賽</TextArea><br />
+                <SpanDot>・</SpanDot> 
+                <TextArea>遊戲競賽</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>學習到球技 / 學習態度 / 品性 <br/>/ 運動家精神 / 獲得體悟</TextArea>
+                <SpanDot>・</SpanDot> 
+                <TextArea>
+                  學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
+                </TextArea>
               </DotContainer>
             </ContantText>
           </Text>
