@@ -263,13 +263,6 @@ const MobileContainer = styled.div`
  }
 `;
 
-const TextContainerAll = styled.div`
- display:flex;
- justify-content:space-between;
-  @media screen and (max-width: 768px) {
-    
-  }
-`;
 
 const CircleImg = styled.img`
   width:100%;

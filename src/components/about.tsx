@@ -86,15 +86,6 @@ const TopArea = styled.div`
 `;
 
 
-const TopRightItems = styled.div`
- display:flex;
- width:50%;
- @media screen and (max-width: 768px) {
-    
-  }
-`;
-
-
 const LeftItems = styled.div`
  display:flex;
  flex-direction: column;
@@ -301,13 +292,6 @@ const RightAreaContainer = styled.div`
 
 `;
 
-
-const BelowAreaItems = styled.div`
-  display: flex;
-  justify-content:space-between;
-  @media screen and (max-width: 768px) {
-  }
-`;
 
 
 const Contants = styled.div`

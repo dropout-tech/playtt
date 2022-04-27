@@ -30,12 +30,6 @@ const Container = styled.div`
   }
 `;
 
-const TopArea = styled.div`
- @media screen and (max-width: 768px) {
-    
-  }
-`;
-
 const BelowArea = styled.div`
   display: flex;
   justify-content: center;
