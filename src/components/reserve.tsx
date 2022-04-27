@@ -28,13 +28,6 @@ const Container = styled.div`
 `;
 
 
-const BgImg = styled.img`
-  width: 100%;
-  height: 100%;
-   @media screen and (max-width: 768px) {
-    
-  }
-`;
 
 const GreenButton = styled.button`
   width:374px;

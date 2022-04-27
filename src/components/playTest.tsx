@@ -211,27 +211,7 @@ const Text123 = styled.p`
   }
 `;
 
-const Text1234 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 30px;
-  line-height: 44px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #005CB9;
-   @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 36px;
-    letter-spacing: 0.03em;
-    color: #005CB9;
 
-  }
-`;
 
 const MobileContainer = styled.div`
   margin-top:-120px;
