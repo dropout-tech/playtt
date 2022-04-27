@@ -46,7 +46,6 @@ const BelowArea = styled.div`
     flex-direction: column;
     align-items:center;
     margin-top:-50px;
-    margin-left:-20px;
   }
 
 `;
@@ -88,7 +87,6 @@ const TopLeftArea = styled.div`
     flex-direction: column;
     align-items:center;
     width:90%;
-    margin-left:-20px;
     margin-top:100px;
   }
 `;
@@ -247,6 +245,7 @@ const MobileContainer = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
+
   }
 
 `;

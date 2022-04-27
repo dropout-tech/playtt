@@ -19,7 +19,7 @@ const Container = styled.div`
   padding-top:80px;
   padding-bottom:80px;
   @media screen and (max-width: 768px) {
-    
+   margin-top:-40px;
   }
 `;
 
@@ -174,6 +174,8 @@ const Img2 = styled.img`
     display:flex;
     justify-content: center;
    
+
+   
   }
 `;
 
@@ -290,7 +292,15 @@ const SpanDot = styled.div`
   color: #CFD2D3;
   margin-top:20px;
  @media screen and (max-width: 768px) {
-   margin-top:5px;
+   margin-top:10px;
+  }
+`;
+
+const SpanDot2 = styled.div`
+  color: #CFD2D3;
+  margin-top:20px;
+ @media screen and (max-width: 768px) {
+   margin-top:22px;
   }
 `;
 
@@ -322,6 +332,28 @@ const TextArea = styled.p`
     }
 `;
 
+const TextArea2 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 16px;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    }
+`;
+
 
 /* desktop thw newest info style end */
 const Classes = () => {
@@ -347,7 +379,7 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea>
+                <SpanDot2>・</SpanDot2> <TextArea2>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea2>
               </DotContainer>
 
               <DotContainer>
@@ -441,10 +473,10 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot>
-                <TextArea>
+                <SpanDot2>・</SpanDot2>
+                <TextArea2>
                   學習到球技 / 學習態度 / 品性 /運動家精神 /  獲得體悟
-                </TextArea>
+                </TextArea2>
               </DotContainer>
             </ContantText>
           </Text>

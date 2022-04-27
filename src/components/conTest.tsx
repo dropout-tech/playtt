@@ -24,6 +24,7 @@ const Container = styled.div`
   display: flex;
   padding-top:80px;
   padding-bottom: 80px;
+
    @media screen and (max-width: 768px) {
     display:none;
    
@@ -57,7 +58,7 @@ const TextContainer1 = styled.div`
  margin-top:-60px;
 
   @media screen and (max-width: 768px) {
-    
+    margin-top:100px;
   }
 `;
 
