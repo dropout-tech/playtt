@@ -123,6 +123,26 @@ const TextArea2 = styled.div`
   }
 `;
 
+const Text3 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #3C3D3D;
+   @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    
+  }
+  
+`;
 const Text = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
@@ -293,18 +313,18 @@ const Company = () => {
         </Background1>
         <TextArea>
           <TextArea1>
-            <Text>地址</Text>
-            <Text>連絡電話</Text>
-            <Text>信箱</Text>
-            <Text>總公司客服時間</Text>
-            <Text>創辦人 / 總教練</Text>
+            <Text2>地址</Text2>
+            <Text2>連絡電話</Text2>
+            <Text2>信箱</Text2>
+            <Text2>總公司客服時間</Text2>
+            <Text2>創辦人 / 總教練</Text2>
           </TextArea1>
           <TextArea2>
-            <Text>新北市蘆洲區長樂路106號3樓</Text>
-            <Text>0988 521 012</Text>
-            <Text>playpp2018@gmail.com</Text>
-            <Text>週一至週五 10:00–19:00（週末請撥各館電話）</Text>
-            <Text>郭教練 0988 521 012</Text>
+            <Text2>新北市蘆洲區長樂路106號3樓</Text2>
+            <Text2>0988 521 012</Text2>
+            <Text2>playpp2018@gmail.com</Text2>
+            <Text2>週一至週五 10:00–19:00（週末請撥各館電話）</Text2>
+            <Text2>郭教練 0988 521 012</Text2>
           </TextArea2>
         </TextArea>
 
@@ -380,29 +400,29 @@ const Company = () => {
         <TextArea>
           <TextArea1>
             <Column>
-              <Text>地址</Text>
-              <Text2>新北市蘆洲區長樂路106號3樓</Text2>
+              <Text3>地址</Text3>
+              <Text3>新北市蘆洲區長樂路106號3樓</Text3>
             </Column>
             <Column>
-              <Text>連絡電話</Text>
-              <Text2>0988 521 012</Text2>
+              <Text3>連絡電話</Text3>
+              <Text3>0988 521 012</Text3>
             </Column>
 
             <Column>
-              <Text>信箱</Text>
-              <Text2>playpp2018@gmail.com</Text2>
+              <Text3>信箱</Text3>
+              <Text3>playpp2018@gmail.com</Text3>
             </Column>
 
             <Column>
-              <Text2>總公司客服時間</Text2>
+              <Text3>總公司客服時間</Text3>
             </Column>
 
             <Column>
-              <Text2>週一至週五 10:00–19:00（週末請撥各館電話）</Text2>
+              <Text3>週一至週五 10:00–19:00（週末請撥各館電話）</Text3>
             </Column>
 
-            <Text>創辦人 / 總教練</Text>
-            <Text2>郭教練 0988 521 012</Text2>
+            <Text3>創辦人 / 總教練</Text3>
+            <Text3>郭教練 0988 521 012</Text3>
           </TextArea1>
 
         </TextArea>
