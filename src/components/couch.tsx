@@ -10,16 +10,25 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const CouchImg = styled.img`
   width: 100%;
   height:100%;
+   @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
+  @media screen and (max-width: 768px) {
+    margin-top:-130px;
+  }
 `;
 
 /* desktop thw newest info style end */

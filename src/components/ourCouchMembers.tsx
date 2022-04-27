@@ -19,12 +19,29 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+    @media screen and (max-width: 768px) {
+    
+  }
 `;
+
+
+const CouchImg = styled.img`
+  width: 100%;
+  height:100%;
+    @media screen and (max-width: 768px) {
+    
+  }
+`;
+
+
 
 const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
  width:100%;
+   @media screen and (max-width: 768px) {
+    display:none;
+  }
  
 `;
 
@@ -32,22 +49,46 @@ const PicImg = styled.img`
   width:310px;
   height:300px;
   margin-left:80px;
+    @media screen and (max-width: 768px) {
+    width:181px;
+    height:181px;
+  }
+`;
+
+const PicImg2 = styled.img`
+  width:310px;
+  height:300px;
+  margin-left:80px;
+    @media screen and (max-width: 768px) {
+    width:181px;
+    height:181px;
+    margin-left:-100px;
+  }
 `;
 
 const Row1 = styled.div`
   display: flex;
-  flex-direction: row;
+    @media screen and (max-width: 768px) {
+   display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Row2 = styled.div`
   display: flex;
   flex-direction: row;
   margin-left:100px;
+    @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const Row3 = styled.div`
   display: flex;
   flex-direction: row;
+    @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const Picture = styled.div`
@@ -55,6 +96,23 @@ const Picture = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+    @media screen and (max-width: 768px) {
+     display:none;
+  }
+`;
+
+const MobileContainer = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left:10px;
+  width:327px;
+  
+   
+  @media screen and (min-width: 768px) {
+    display:none;
+   
+  }
 `;
 
 const Text = styled.p`
@@ -67,7 +125,23 @@ const Text = styled.p`
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-  color: #1A1A1A;
+  color: #1A1A1A;  
+  @media screen and (max-width: 768px) {
+   margin-left:0px;
+   display:flex;
+   flex-direction: column;
+   margin-right:100px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
+
+  }
 `;
 
 const Text2 = styled.p`
@@ -81,6 +155,22 @@ const Text2 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  @media screen and (max-width: 768px) {
+   margin-left:0px;
+   display:flex;
+   flex-direction: column;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
+
+  }
+  
 `;
 
 const Span = styled.span`
@@ -94,7 +184,67 @@ const Span = styled.span`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:10px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:100px;
+  }
 `;
+
+
+const BelowText = styled.p`
+  display:flex;
+  flex-direction:column;
+  @media screen and (max-width: 768px) {
+    
+  }
+`;
+
+const Pic = styled.div`
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:space-between;
+    flex-direction: row;
+  }
+`;
+
+const Pic2 = styled.div`
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:space-between;
+    flex-direction: row;
+ 
+  }
+`;
+
+const Name = styled.div`
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-top:40px;
+  }
+  
+`;
+
+const Name2 = styled.div`
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-top:40px;
+    margin-left:100px;
+  }
+  
+`;
+
 
 
 /* desktop thw newest info style end */
@@ -150,9 +300,115 @@ const OurCouchMembers = () => {
           </div>
         </Row3>
       </Picture>
+      <MobileContainer>
+        <Row1>
+          <Pic>
+            <PicImg src={img1} alt="" />
+            <Text>呂昀<Span>Eva教練</Span></Text>
+          </Pic>
 
+          <div>
+            <Text>鍾達威<Span>威廉教練</Span></Text>
+            <PicImg src={img2} alt="" />
+
+          </div>
+
+          <div>
+            <PicImg src={img3} alt="" />
+            <Text>林培中<Span>派派教練</Span></Text>
+          </div>
+
+          <div>
+            <Text2>郭則寬<Span>阿寬教練</Span></Text2>
+            <PicImg src={img4} alt="" />
+
+          </div>
+
+          <div>
+            <PicImg src={img5} alt="" />
+            <Text2>林晏先<Span>先先教練</Span></Text2>
+          </div>
+
+          <div>
+            <Text>顏兆寅<Span>小顏教練</Span></Text>
+            <PicImg src={img6} alt="" />
+
+          </div>
+
+          <div>
+            <PicImg src={img7} alt="" />
+            <Text>林政蔚<Span>政蔚教練</Span></Text>
+          </div>
+
+          <div>
+            <Text>夏振凱<Span>凱凱教練</Span></Text>
+            <PicImg src={img8} alt="" />
+
+          </div>
+        </Row1>
+      </MobileContainer>
 
     </Container>
+
+    <MobileContainer>
+      <Row1>
+        <Pic>
+          <PicImg src={img1} alt="" />
+          <Name>
+            <Text>呂昀<Span>Eva教練</Span></Text>
+          </Name>
+        </Pic>
+
+        <Pic2>
+          <Name2>
+            <Text>鍾達威<Span>威廉教練</Span></Text>
+          </Name2>
+          <PicImg2 src={img2} alt="" />
+        </Pic2>
+
+        <Pic>
+          <PicImg src={img3} alt="" />
+          <Name>
+            <Text>林培中<Span>派派教練</Span></Text>
+          </Name>
+        </Pic>
+
+        <Pic2>
+          <Name2>
+            <Text>郭則寬<Span>阿寬教練</Span></Text>
+          </Name2>
+          <PicImg2 src={img4} alt="" />
+        </Pic2>
+
+        <Pic>
+          <PicImg src={img5} alt="" />
+          <Name>
+            <Text>林晏先<Span>先先教練</Span></Text>
+          </Name>
+        </Pic>
+
+        <Pic2>
+          <Name2>
+            <Text>顏兆寅<Span>小顏教練</Span></Text>
+          </Name2>
+          <PicImg2 src={img6} alt="" />
+        </Pic2>
+
+        <Pic>
+          <PicImg src={img7} alt="" />
+          <Name>
+            <Text>林政蔚<Span>政蔚教練</Span></Text>
+          </Name>
+        </Pic>
+
+        <Pic2>
+          <Name2>
+            <Text>夏振凱<Span>凱凱教練</Span></Text>
+          </Name2>
+          <PicImg2 src={img8} alt="" />
+        </Pic2>
+      </Row1>
+    </MobileContainer>
 
 
   </PageContainer>;

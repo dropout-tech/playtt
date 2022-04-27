@@ -10,19 +10,33 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const ColorcircleImg = styled.img`
   width: 580px;
   height:294px;
   margin-top:100px;
+   @media screen and (max-width: 768px) {
+    width: 251px;
+    height:127px;
+    margin-top:-160px;
+    margin-left:15px;
+    
+  }
 `;
 
 const Container = styled.div`
   display:flex;
   justify-content:center;
-  padding-top:80px;
-  padding-bottom: 80px;
+  padding-top:-20px;
+  padding-bottom: 20px;
+   @media screen and (max-width: 768px) {
+    display:flex;
+    flex-direction:column;
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -31,11 +45,23 @@ const ImgContainer = styled.div`
   justify-content:flex-end;
   margin-left:100px;
   margin-top:100px;
+   @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:center;
+
+  }
 `;
 
 const TextContainer = styled.div`
  width:50%;
  margin-left:100px;
+  @media screen and (max-width: 768px) {
+   display:flex;
+   width:100%;
+   flex-direction:column;
+   align-items: center;
+   margin-left:0px;
+  }
 `;
 
 const Title = styled.p`
@@ -50,8 +76,21 @@ const Title = styled.p`
   color: #005CB9;
   margin-left:25px;
   padding-top:8px;
+   @media screen and (max-width: 768px) {
+    margin-top:16px;
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #005CB9;
+    margin-left:20px;
+    margin-top:10px;
+  }
 `;
-
 
 const Text = styled.p`
   font-family: 'Noto Sans TC';
@@ -63,6 +102,20 @@ const Text = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:60px;
+   @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-top:30px;
+
+  }
 `;
 
 const Text2 = styled.p`
@@ -74,6 +127,21 @@ const Text2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+   @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color:  #1A1A1A;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 16px 0px;
+
+  }
  
 `;
 
@@ -82,6 +150,13 @@ const Background = styled.div`
   border-radius: 28px;
   width: 247px;
   height: 56px;
+   @media screen and (max-width: 768px) {
+    display:flex;
+    align-items: center;
+    width: 170px;
+    height: 32px;
+    margin-left:20px;
+  }
 `;
 
 
@@ -106,20 +181,20 @@ const Recruit = () => {
 
         <Text2>
           ・ 除館內課程推出也提供外派教練進駐服務<br />
-          ・ 補習班 / 幼兒園 / 學校社團<br />
-          ・ 家裡 / 運動中心 / 公司社團 / 公家機構<br />
-          ・ 休閒運動體系創新合作教案（歡樂 / 技術）<br />
+          ・ 補習班 / 幼兒園 /學校社團<br />
+          ・ 家裡 / 運動中心 /公司社團 /公家機構<br />
+          ・ 休閒運動體系創新 合作教案（歡樂 / 技術）<br />
           ・ 公司福委會競技休閒活動
         </Text2>
 
         <Text2>
-          ・ 期望結合不同類別才藝發展多元課程街舞、<br /> &emsp; 兒童舞蹈、畫畫、音樂等
+          ・ 期望結合不同類別才藝發展多元課程<br /> &emsp; 街舞、 兒童舞蹈、 畫畫、音樂等
         </Text2>
 
         <Text2>
           ・ 桌球趣味比賽協辦<br />
           ・ 乒乓球表演者<br />
-          ・ 提供桌球產業教練獨特升遷制度
+          ・ 提供桌球產業教練<br /> &emsp; 獨特升遷制度
         </Text2>
       </TextContainer>
     </Container>

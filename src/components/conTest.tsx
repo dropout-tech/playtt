@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import halfcircle from "../assets/conTest/halfcircle.png";
-
+import circle from "../assets/conTest/circle.png";
 
 
 
@@ -12,6 +12,9 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   @media screen and (max-width: 768px) {
+ 
+  }
 `;
 
 const Container = styled.div`
@@ -19,21 +22,30 @@ const Container = styled.div`
   height:100%;
   background: rgba(207, 210, 211,0.2);
   display: flex;
-  padding-top:80px;
+  padding-top:-120px;
   padding-bottom: 80px;
+   @media screen and (max-width: 768px) {
+    display:none;
+   
+  }
   
 `;
 
 const HalfcircleImg = styled.img`
   width:100%;
   height:100%;
-  
+  z-index:1;
+   @media screen and (max-width: 768px) {
+
+  }
 
 `;
 
 const ImgContainer = styled.div`
  z-index:1;
- 
+  @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 
@@ -41,9 +53,12 @@ const TextContainer1 = styled.div`
  width:100%;
  z-index:10;
  display:flex;
- justify-content:space-between;
+ flex-direction: column;
+ margin-top:-60px;
 
- margin-top:250px;
+  @media screen and (max-width: 768px) {
+    margin-top:120px;
+  }
 `;
 
 const TextContainer2 = styled.div`
@@ -52,22 +67,42 @@ const TextContainer2 = styled.div`
  display:flex;
  justify-content:space-between;
  margin-right:100px;
+  @media screen and (max-width: 768px) {
+    margin-top:-40px;
+  }
 `;
 
 const LeftText = styled.div`
   margin-left:-200px;
+  margin-top:300px;
+   @media screen and (max-width: 768px) {
+    z-index:10;
+    margin-top:-300px;
+    margin-left:20px;
+  
+    
+  }
 
 `;
 
 const RightText = styled.div`
-  
+  @media screen and (max-width: 768px) {
+    
+  }
 
 `;
 
 const Background = styled.div`
   background: #FFD900;
   border-radius: 28px;
-   width:30%;
+  width:30%;
+  @media screen and (max-width: 768px) {
+    width:96px;
+    height:44px;
+    margin-top:20px;
+    margin-left:30px;
+  }
+   
 `;
 
 const Title1 = styled.p`
@@ -81,6 +116,21 @@ const Title1 = styled.p`
   color: #1A1A1A;
   display:flex;
   justify-content: flex-start;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    margin-left:-10px;
+
+
+  }
 `;
 
 
@@ -95,6 +145,20 @@ const Title2 = styled.p`
   color: #CFD2D3;
   display:flex;
   justify-content: flex-start;
+  line-Height:52px;
+  @media screen and (max-width: 768px) {
+   margin-left:-80px;
+   font-family: 'Futura';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 26px;
+   line-height: 40px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   letter-spacing: 0.04em;
+   color: #CFD2D3;
+  }
 `;
 
 const Title3 = styled.p`
@@ -107,7 +171,21 @@ const Title3 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-left:40px;
+  margin-left:30px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #005CB9;
+    margin-top:5px;
+    margin-left:20px;
+
+  }
 `;
 
 const TextContent = styled.p`
@@ -120,6 +198,21 @@ const TextContent = styled.p`
   letter-spacing: 0.04em;
   color: #3C3D3D;
   margin-top:100px;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #3C3D3D;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    margin-top:10px;
+    width:340px;
+    margin-left:12px;
+
+  }
   
 `;
 
@@ -132,11 +225,72 @@ const Text = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:211px;
+    margin-left:40px;
+  }
   
 `;
 
 const TextContainer = styled.div`
  margin-top:100px;
+ @media screen and (max-width: 768px) {
+  display:flex;
+  margin-top:10px;
+ }
+`;
+
+const MobileContainer = styled.div`
+  margin-top:100px;
+  width:100%;
+  height:100%;
+  background: rgba(207, 210, 211,0.2);
+  display: flex;
+  padding-top:80px;
+  padding-bottom: 80px;
+  flex-direction: column;
+
+ @media screen and (min-width: 768px) {
+  display:none;
+ }
+`;
+
+const TextContainerAll = styled.div`
+ display:flex;
+ justify-content:space-between;
+  @media screen and (max-width: 768px) {
+    
+  }
+`;
+
+const CircleImg = styled.img`
+  width:100%;
+  height:175px;
+ 
+  margin-top:-100px;
+  display:flex;
+  align-items: center;
+
+@media screen and (max-width: 768px) {
+  
+}
+`;
+
+const Ball = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-left:145px;
+   margin-top:-20px;
+  }
+
+
 `;
 
 
@@ -148,7 +302,7 @@ const ConTest = () => {
         <HalfcircleImg src={halfcircle} alt="" />
       </ImgContainer>
 
-    
+
       <TextContainer1>
         <LeftText>
           <div>
@@ -196,9 +350,66 @@ const ConTest = () => {
           </TextContainer>
         </RightText>
       </TextContainer2>
-     
+
 
     </Container>
+
+    <MobileContainer>
+      <ImgContainer>
+        <CircleImg src={circle} alt="" />
+      </ImgContainer>
+
+
+      <TextContainer1>
+        <LeftText>
+          <Ball>
+            <Title1>桌球賽事</Title1>
+            <Title2>Let’s Play Match</Title2>
+          </Ball>
+          <TextContent>比賽可以幫助你們靈活應用桌球小<br />技巧，是很好的自我檢視方式。</TextContent>
+        </LeftText>
+      </TextContainer1>
+
+
+      <TextContainer2>
+        <RightText>
+          <TextContainer>
+            <Background>
+              <Title3>邀請賽</Title3>
+            </Background>
+            <div>
+              <Text>
+                由 Let's Play 發出邀請，讓小小選手們有<br />發光表現的舞台。
+              </Text>
+            </div>
+          </TextContainer>
+
+          <TextContainer>
+            <Background>
+              <Title3>積分賽</Title3>
+            </Background>
+            <div>
+              <Text>
+                於台灣桌球積分賽平台刊登，是一個訓練比<br />賽經驗的平台，每一個月最少兩次的比賽。
+              </Text>
+            </div>
+          </TextContainer>
+
+          <TextContainer>
+            <Background>
+              <Title3>學員盃</Title3>
+            </Background>
+            <div>
+              <Text>
+                Let's Play 分店館內學員的定期對內交流<br />比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+              </Text>
+            </div>
+          </TextContainer>
+        </RightText>
+      </TextContainer2>
+
+
+    </MobileContainer>
   </PageContainer>;
 };
 

@@ -10,13 +10,19 @@ import ho from "../assets/alliancePlan/ho.png";
 
 const PageContainer = styled.div`
   width:100%;
+  @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
  width:100%;
  height:80%;
- padding-top:80px;
+
  padding-bottom: 80px;
+ @media screen and (max-width: 768px) {
+    margin-top:-30px;
+  }
 `;
 
 const Title = styled.p`
@@ -28,6 +34,9 @@ const Title = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const TitleWord = styled.p`
@@ -40,13 +49,21 @@ const TitleWord = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:-10px;
+  line-Height:52px;
+  @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const Background = styled.div`
-  background: #CFD2D3;
+  background: #F5F6F6;
   width:100%;
   height:100%;
+  @media screen and (max-width: 768px) {
+
+  }
 `;
+
 
 const Circle1 = styled.div`
   display:flex;
@@ -57,6 +74,14 @@ const Circle1 = styled.div`
   border-radius:294px;
   margin-top:30px;
   margin-right:-50px;
+  @media screen and (max-width: 768px) {
+   width: 400px;
+   height:400px;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   margin-right:0px;
+  }
 `;
 
 const Circle2 = styled.div`
@@ -68,6 +93,15 @@ const Circle2 = styled.div`
   background: #FFFFFF;
   border-radius:330px;
   margin-right:-50px;
+  @media screen and (max-width: 768px) {
+    width: 400px;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:0px;
+    margin-top:-40px;
+  }
 `;
 
 const Circle3 = styled.div`
@@ -78,14 +112,29 @@ const Circle3 = styled.div`
   background: #FFFFFF;
   border-radius:294px;
   margin-top:20px;
+  @media screen and (max-width: 768px) {
+    width: 400px;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:0px;
+    margin-top:-40px;
+  }
 `;
 
 const Text1 = styled.div`
  margin-top:140px;
+ @media screen and (max-width: 768px) {
+    margin-top:-30px
+  }
 `;
 
 const Text2 = styled.div`
  margin-top:100px;
+ @media screen and (max-width: 768px) {
+   margin-top:-30px
+  }
 `;
 
 const Circle = styled.div`
@@ -93,6 +142,10 @@ const Circle = styled.div`
  align-items: center;
  justify-content:center;
  padding:10px;
+ @media screen and (max-width: 768px) {
+  display:flex;
+  flex-direction: column;
+  }
 `;
 
 const TextForm = styled.div`
@@ -107,6 +160,17 @@ const TextForm = styled.div`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:30px;
+  @media screen and (max-width: 768px) {
+    margin-top:5px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+  }
 `;
 
 const Title2 = styled.div`
@@ -118,6 +182,16 @@ const Title2 = styled.div`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-top:30px;
+  @media screen and (max-width: 768px) {
+    margin-top:10px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+    color: #005CB9;
+  }
 `;
 
 const TextForm2 = styled.p`
@@ -129,12 +203,23 @@ const TextForm2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-top:-60px;
+  @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const Img = styled.img`
   width:110px;
   height:55px;
   margin-top:-30px;
+  margin-left:-15px;
+  @media screen and (max-width: 768px) {
+    width:88px;
+    height:40px;
+    margin-top:40px;
+    margin-left:-5px;
+   
+  }
 `;
 
 
@@ -179,6 +264,9 @@ const alliancePlan = () => {
         </Circle>
 
       </Background>
+
+
+
     </Container>
 
   </PageContainer>;

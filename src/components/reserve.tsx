@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import bg from "../assets/reserve/bg.png";
-
+import bg2 from "../assets/reserve/bg2.png";
 
 
 // styled components start 
@@ -13,18 +13,41 @@ const PageContainer = styled.div`
   justify-content: space-between;
   padding-top:30px;
   padding-bottom:30px;
+   @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const Container = styled.div`
   margin-top:30px;
   padding-top:60px;
   padding-bottom:40px;
+   @media screen and (max-width: 768px) {
+    margin-top:-50px;
+  }
+`;
+
+
+const BgImg = styled.img`
+  width: 100%;
+  height: 100%;
+   @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const GreenButton = styled.button`
+  width:374px;
+  height:72px;
   background: #38D430;
   box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);
   border:none;
+   @media screen and (max-width: 768px) {
+    width:211px;
+    height:32px;
+    margin-top:150px;
+
+  }
 
 `;
 
@@ -33,16 +56,20 @@ const ButtonText = styled.p`
   font-style: normal;
   font-weight: 900;
   font-size: 26px;
-  line-height: 40px;
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content:center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+
+  @media screen and (max-width: 768px) {
+   font-size: 18px;
+   margin-top:10px;
+  }
 `;
 
 const BelowText = styled.p`
-  font-family: 'Noto Sans TC';
+  font-family: 'Futura ';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -52,6 +79,10 @@ const BelowText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #3C3D3D;
+   @media screen and (max-width: 768px) {
+    font-size: 14px;
+    margin-top:10px;
+  }
 `;
 
 const TextArea = styled.div`
@@ -64,14 +95,32 @@ const TextArea = styled.div`
   background-image: url('${bg}');
   background-size: contain;
   background-repeat: no-repeat;
+ 
+   @media screen and (max-width: 768px) {
+   background-image: url('${bg2}');
+   width:100%;
+   height:310px; 
+   }
 `;
 
 const AlignText = styled.div`
- margin-top:-130px;
+ margin-top:-140px;
  display: flex; 
  align-items: center;
  justify-content:center;
  flex-direction: column;
+  @media screen and (max-width: 768px) {
+    
+  }
+
+`;
+
+const Text = styled.div`
+  height:60px;
+  margin-top:-8px;
+   @media screen and (max-width: 768px) {
+    
+  }
 
 `;
 
@@ -81,9 +130,11 @@ const Reserve = () => {
     <Container>
 
       <TextArea>
-         <AlignText>
+        <AlignText>
           <GreenButton>
-            <ButtonText>立即預約體驗</ButtonText>
+            <Text>
+              <ButtonText>立即預約體驗</ButtonText>
+            </Text>
           </GreenButton>
           <BelowText>統一由臉書私訊洽詢想預約試上的分店 Line</BelowText>
         </AlignText>
