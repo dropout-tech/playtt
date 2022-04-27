@@ -24,7 +24,7 @@ const StartImg1 = styled.img`
   margin-top:175px;
   @media screen and (max-width: 768px) {
      margin-left:20px;
-     margin-top:150px;
+     margin-top:140px;
      width: 38px;
      height:38px;
   }
@@ -41,7 +41,7 @@ const StartImg2 = styled.img`
      margin-left:20px;
      width: 38px;
      height:38px;
-     margin-top:190px;
+     margin-top:180px;
   }
 `;
 const StartImg3 = styled.img`
@@ -55,7 +55,7 @@ const StartImg3 = styled.img`
      margin-top:-2px;
      width: 38px;
      height:38px;
-     margin-top:20px;
+     margin-top:5px;
   }
 `;
 const StartImg4 = styled.img`
@@ -69,7 +69,7 @@ const StartImg4 = styled.img`
     margin-top:60px;
     width: 38px;
     height:38px;
-    margin-top:80px;
+    margin-top:60px;
   }
 `;
 
@@ -163,6 +163,13 @@ const Hope1 = styled.p`
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
    margin-top:-10px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
   }
 `;
 
@@ -176,6 +183,13 @@ const Hope2 = styled.p`
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
    margin-top:35px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
   }
 `;
 
@@ -189,6 +203,13 @@ const Hope3 = styled.p`
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
    margin-top:-10px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
   }
 `;
 
@@ -202,6 +223,13 @@ const Hope4 = styled.p`
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
    margin-top:-80px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
   }
 `;
 
@@ -215,7 +243,14 @@ const Slogan = styled.p`
   margin-top:-20px;
   color: #005CB9;
   @media screen and (max-width: 768px) {
-    
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #005CB9;
+
   }
 `;
 
@@ -280,7 +315,13 @@ const Contants = styled.div`
 const Span = styled.span`
   color:#38D430;
   @media screen and (max-width: 768px) {
-   
+   font-family: 'Futura';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 32px; 
+   letter-spacing: 0.04em;
+   color:#38D430;
   }
 `;
 
@@ -318,7 +359,9 @@ const TextArea2 = styled.div`
 `;
 
 const MobileContainer = styled.div`
-   
+   width:100%;
+   margin-top: -190px;
+   padding-bottom: 80px;
    @media screen and (min-width: 768px) {
     display:none;
   }
