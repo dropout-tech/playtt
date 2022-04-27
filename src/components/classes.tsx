@@ -167,18 +167,6 @@ const Img2 = styled.img`
   }
 `;
 
-const Img3 = styled.img`
-  height:414px;
-  margin-left:80px;
-  margin-top:60px;
-  @media screen and (max-width: 768px) {
-    width:251px;  
-    height:220px;
-    display:flex;
-     margin-left:20px;
-
-  }
-`;
 
 const Explain1 = styled.div`
  width:80%;

@@ -24,17 +24,6 @@ const PageContainer = styled.div`
   }
 `;
 
-
-const CouchImg = styled.img`
-  width: 100%;
-  height:100%;
-    @media screen and (max-width: 768px) {
-    
-  }
-`;
-
-
-
 const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
@@ -195,15 +184,6 @@ const Span = styled.span`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     width:100px;
-  }
-`;
-
-
-const BelowText = styled.p`
-  display:flex;
-  flex-direction:column;
-  @media screen and (max-width: 768px) {
-    
   }
 `;
 

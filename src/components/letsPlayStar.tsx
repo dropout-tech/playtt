@@ -5,7 +5,7 @@ import group2 from "../assets/letsPlayStar/group2.png";
 import img1 from "../assets/letsPlayStar/img1.png";
 import img2 from "../assets/letsPlayStar/img2.png";
 import img3 from "../assets/letsPlayStar/img3.png";
-import img4 from "../assets/letsPlayStar/img4.png";
+
 
 // styled components start 
 

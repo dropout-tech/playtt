@@ -334,13 +334,6 @@ const TextkeyIn4 = styled.p`
   }
 `;
 
-const GrayAreaContent = styled.div`
-
- @media screen and (max-width: 768px) {
-  
-  }
-`;
-
 
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
