@@ -76,6 +76,7 @@ const StartImg4 = styled.img`
 const TopArea = styled.div`
   width:100%;
   display:flex;
+  margin-top:-90px;
   @media screen and (max-width: 768px) {
     width:100%;
     display:flex;
