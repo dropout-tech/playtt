@@ -56,7 +56,11 @@ const TextContainer = styled.div`
  width:50%;
  margin-left:100px;
   @media screen and (max-width: 768px) {
-    
+   display:flex;
+   width:100%;
+   flex-direction:column;
+   align-items: center;
+   margin-left:0px;
   }
 `;
 
@@ -105,26 +109,16 @@ const Text = styled.p`
   margin-top:60px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 32px;
-/* or 200% */
-
-text-align: center;
-letter-spacing: 0.04em;
-
-/* secondary gray */
-
-color:  #1A1A1A;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 16px 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 16px 0px;
 
   }
 `;

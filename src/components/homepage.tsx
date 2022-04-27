@@ -18,14 +18,13 @@ const PageContainer = styled.div`
 `;
 
 const BannerImg = styled.img`
-  width:1440px ;
+  width:100% ;
   height:804px ;
   background-image: url('${banner}');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
    @media screen and (max-width: 768px) {
     background-image: url('${banner2}');
-    width:375px;
     height:671px ;
   }
 
