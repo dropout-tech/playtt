@@ -315,7 +315,7 @@ const TextArea = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 1px;
+    line-height: 10px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
@@ -371,33 +371,33 @@ const Classes = () => {
 
             <ContantText>
               <DotContainer>
-                <SpanDot>・</SpanDot> 
-                  <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
+                <SpanDot>・</SpanDot>
+                <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
               </DotContainer>
 
               <DotContainer>
                 <SpanDot>・</SpanDot>
-                  <TextArea>互動遊戲式球感</TextArea>
+                <TextArea>互動遊戲式球感</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 
-                  <TextArea>對打練習</TextArea>
+                <SpanDot>・</SpanDot>
+                <TextArea>對打練習</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 
-                  <TextArea>互動單球調整揮拍動作</TextArea>
+                <SpanDot>・</SpanDot>
+                <TextArea>互動單球調整揮拍動作</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 
+                <SpanDot>・</SpanDot>
                 <TextArea>遊戲競賽</TextArea>
               </DotContainer>
 
               <DotContainer>
                 <SpanDot>・</SpanDot>
-                  <TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
+                <TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
               </DotContainer>
             </ContantText>
           </Text>
@@ -421,29 +421,29 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 
+                <SpanDot>・</SpanDot>
                 <TextArea>互動遊戲式球感</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 
+                <SpanDot>・</SpanDot>
                 <TextArea>對打練習</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 
+                <SpanDot>・</SpanDot>
                 <TextArea>互動單球調整揮拍動作</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 
+                <SpanDot>・</SpanDot>
                 <TextArea>遊戲競賽</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> 
+                <SpanDot>・</SpanDot>
                 <TextArea>
-                  學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
+                  學習到球技 / 學習態度 / 品性 /運動家精神 /  獲得體悟
                 </TextArea>
               </DotContainer>
             </ContantText>
