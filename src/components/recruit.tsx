@@ -31,8 +31,8 @@ const ColorcircleImg = styled.img`
 const Container = styled.div`
   display:flex;
   justify-content:center;
-  padding-top:80px;
-  padding-bottom: 80px;
+  padding-top:-20px;
+  padding-bottom: 20px;
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction:column;
@@ -79,21 +79,16 @@ const Title = styled.p`
    @media screen and (max-width: 768px) {
     margin-top:16px;
     font-family: 'Futura';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 32px;
-/* identical to box height, or 178% */
-
-display: flex;
-align-items: center;
-letter-spacing: 0.04em;
-
-/* primary blue */
-
-color: #005CB9;
-margin-left:20px;
-margin-top:10px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #005CB9;
+    margin-left:20px;
+    margin-top:10px;
   }
 `;
 
@@ -119,7 +114,6 @@ const Text = styled.p`
     order: 0;
     flex-grow: 0;
     margin-top:30px;
-    
 
   }
 `;
@@ -135,27 +129,17 @@ const Text2 = styled.p`
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 32px;
-
-/* or 200% */
-
-text-align: center;
-letter-spacing: 0.04em;
-
-/* secondary gray */
-
-color:  #1A1A1A;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 16px 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color:  #1A1A1A;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 16px 0px;
 
   }
  

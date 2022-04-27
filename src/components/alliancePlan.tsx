@@ -18,7 +18,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
  width:100%;
  height:80%;
- padding-top:80px;
+
  padding-bottom: 80px;
  @media screen and (max-width: 768px) {
     margin-top:-30px;

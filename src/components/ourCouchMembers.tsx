@@ -160,19 +160,14 @@ const Text2 = styled.p`
    display:flex;
    flex-direction: column;
    font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 20px;
-line-height: 36px;
-/* identical to box height, or 180% */
-
-display: flex;
-align-items: center;
-letter-spacing: 0.03em;
-
-/* black */
-
-color: #1A1A1A;
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
 
   }
   
@@ -232,9 +227,9 @@ const Pic2 = styled.div`
 const Name = styled.div`
 
   @media screen and (max-width: 768px) {
-  display: flex;
-  flex-direction: column;
-  margin-top:40px;
+    display: flex;
+    flex-direction: column;
+    margin-top:40px;
   }
   
 `;
@@ -242,10 +237,10 @@ const Name = styled.div`
 const Name2 = styled.div`
 
   @media screen and (max-width: 768px) {
-  display: flex;
-  flex-direction: column;
-  margin-top:40px;
-  margin-left:100px;
+    display: flex;
+    flex-direction: column;
+    margin-top:40px;
+    margin-left:100px;
   }
   
 `;

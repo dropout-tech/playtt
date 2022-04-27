@@ -47,20 +47,15 @@ const Title1 = styled.p`
   margin-top:-10px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 26px;
-line-height: 40px;
-/* identical to box height, or 154% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color:#1A1A1A
   }
 `;
 
@@ -75,23 +70,18 @@ const Title2 = styled.p`
   color: #CFD2D3;
   margin-top:-30px;
   line-Height:52px;
-  font-family: 'Futura';
-font-style: normal;
-font-weight: 700;
-font-size: 26px;
-line-height: 40px;
-/* identical to box height, or 154% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.04em;
-
-/* secondary gray */
-
-color: #CFD2D3;
+  
   @media screen and (max-width: 768px) {
-    
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #CFD2D3;
   }
 `;
 
@@ -190,8 +180,6 @@ const Img3 = styled.img`
   }
 `;
 
-
-
 const Explain1 = styled.div`
  width:80%;
  display: flex;
@@ -211,7 +199,6 @@ const Explain2 = styled.div`
    display:none;
   }
 `;
-
 
 const MobileContainer = styled.div`
    width:80%;
@@ -255,9 +242,9 @@ const Background1 = styled.div`
   justify-content:center;
   width:55%;
   @media screen and (max-width: 768px) {
-     width:60%;
-     margin-left:70px;
-  }
+    width:60%;
+    margin-left:70px;
+}
 `;
 const Background2 = styled.div`
   background: #FFD900;
@@ -268,8 +255,8 @@ const Background2 = styled.div`
   justify-content:center;
   width:50%;
   @media screen and (max-width: 768px) {
-     width:60%;
-     margin-left:70px;
+    width:60%;
+    margin-left:70px;
   }
 `;
 const Background3 = styled.div`
@@ -281,8 +268,8 @@ const Background3 = styled.div`
   justify-content:center;
   width:60%;
   @media screen and (max-width: 768px) {
-     width:80%;
-     margin-left:30px;
+    width:80%;
+    margin-left:30px;
   }
 `;
 

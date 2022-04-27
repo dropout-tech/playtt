@@ -23,10 +23,10 @@ const StartImg1 = styled.img`
   margin-right:40px;
   margin-top:175px;
   @media screen and (max-width: 768px) {
-     margin-left:20px;
-     margin-top:140px;
-     width: 38px;
-     height:38px;
+    margin-left:20px;
+    margin-top:140px;
+    width: 38px;
+    height:38px;
   }
 `;
 
@@ -38,10 +38,10 @@ const StartImg2 = styled.img`
   margin-top:175px;
 
   @media screen and (max-width: 768px) {
-     margin-left:20px;
-     width: 38px;
-     height:38px;
-     margin-top:180px;
+    margin-left:20px;
+    width: 38px;
+    height:38px;
+    margin-top:180px;
   }
 `;
 const StartImg3 = styled.img`
@@ -51,11 +51,11 @@ const StartImg3 = styled.img`
   margin-right:40px;
   margin-top:175px;
   @media screen and (max-width: 768px) {
-     margin-left:40px;
-     margin-top:-2px;
-     width: 38px;
-     height:38px;
-     margin-top:30px;
+    margin-left:40px;
+    margin-top:-2px;
+    width: 38px;
+    height:38px;
+    margin-top:30px;
   }
 `;
 const StartImg4 = styled.img`
@@ -116,7 +116,7 @@ const RightItems = styled.div`
 
 const Container = styled.div`
  width:100%;
- margin-top: -200px;
+ margin-top: -300px;
  padding-bottom: 80px;
  @media screen and (max-width: 768px) {
     display:none;

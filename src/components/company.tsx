@@ -103,18 +103,15 @@ const TextArea = styled.div`
     width:90%;
     margin-top:0px;
     height:300%;
-    
-    
+
   }
 `;
 
 const TextArea1 = styled.div`
   margin-top:20px;
+  margin-left:-100px;
    @media screen and (max-width: 768px) {
    margin-left:-10px;
-   
-    
-    
   }
 `;
 
@@ -135,23 +132,14 @@ const Text = styled.p`
   letter-spacing: 0.04em;
   color: #3C3D3D;
    @media screen and (max-width: 768px) {
-     font-size: 1font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 32px;
-/* or 200% */
-
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
-
-4px;
-     line-height: 28px;
-     letter-spacing: 0.06em;
-     
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    
   }
   
 `;
@@ -166,19 +154,12 @@ const Text2 = styled.p`
   color: #3C3D3D;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 32px;
-/* identical to box height, or 200% */
-
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
-
-    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
     
   }
   
@@ -204,6 +185,7 @@ const Title = styled.p`
 
 const TopBelow = styled.div`
   width:67%;
+  margin-left:-100px;
  @media screen and (max-width: 768px) {
    margin-left:-125px;
   }
@@ -212,6 +194,7 @@ const TopBelow = styled.div`
 
 const UnderBelow = styled.div`
  width:67%;
+ margin-left:-100px;
  @media screen and (max-width: 768px) {
     margin-left:-125px;
   }
@@ -229,17 +212,12 @@ const Title2 = styled.p`
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 18px;
-line-height: 32px;
-/* identical to box height, or 178% */
-
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
   }
 `;
 
@@ -267,17 +245,12 @@ const SmallTitle = styled.p`
   color: #005CB9;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 28px;
-/* identical to box height, or 200% */
-
-letter-spacing: 0.06em;
-
-/* primary blue */
-
-color: #005CB9;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    color: #005CB9;
 
   }
 `;

@@ -21,7 +21,7 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- padding-top:80px;
+ padding-top:20px;
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
     display:none;

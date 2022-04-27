@@ -24,14 +24,14 @@ const Title1 = styled.p`
   color: #1A1A1A;
   margin-left:30px;
   @media screen and (max-width: 768px) {
-      margin-left:0px;
-      font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 26px;
-line-height: 40px;
-letter-spacing: 0.04em;
-color: #1A1A1A;
+    margin-left:0px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
 
   }
   
@@ -49,18 +49,14 @@ const Title2 = styled.p`
   margin-left:30px;
   line-Height:52px;
   @media screen and (max-width: 768px) {
-      margin-left:0px;
-      font-family: 'Futura';
-font-style: normal;
-font-weight: 700;
-font-size: 26px;
-line-height: 40px;
-/* identical to box height, or 154% */
-letter-spacing: 0.04em;
-
-/* secondary gray */
-
-color: #CFD2D3;
+    margin-left:0px;
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    color: #CFD2D3;
 
   }
 `;
@@ -68,7 +64,7 @@ color: #CFD2D3;
 const Container = styled.div`
   width: 100%;
   height:100%;
-  padding-top:80px;
+  margin-top:-90px;
   padding-bottom: 80px;
   @media screen and (max-width: 768px) {
     margin-top:-190px;
@@ -116,8 +112,7 @@ const GrayArea = styled.div`
     display:flex;
     justify-content:center;
     flex-direction: column;
-    
- 
+  
   }
 `;
 
@@ -161,23 +156,17 @@ const BigTitle = styled.p`
   padding-top:60px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 900;
-font-size: 20px;
-line-height: 36px;
-/* or 180% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.03em;
-
-/* white */
-
-color: #FFFFFF;
-
-transform: matrix(1, 0, 0, 1, 0, 0);
-margin-left:30px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    margin-left:30px;
   }
 `;
 

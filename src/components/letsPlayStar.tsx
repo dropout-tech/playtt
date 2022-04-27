@@ -20,7 +20,7 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- padding-top:80px;
+
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
     margin-top:-145px;
@@ -72,18 +72,15 @@ const Title3 = styled.p`
   margin-left:30px;
   margin-top:50px;
    @media screen and (max-width: 768px) {
-   margin-top:20px;
-   margin-right:10px;
-   font-family: 'Noto Sans TC';
-   font-style: normal;
-   font-weight: 900;
-   font-size: 18px;
-   line-height: 32px;
-   display: flex;
-   align-items: center;
-   text-align: center;
-   letter-spacing: 0.04em;
-   color: #1A1A1A;
+    margin-top:20px;
+    margin-right:10px;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
   }
 `;
 const Title5 = styled.p`
@@ -102,9 +99,6 @@ const Title5 = styled.p`
     margin-right:10px;
     margin-top:-20px;
     margin-right:10px;
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
     font-size: 18px;
     line-height: 32px;
     display: flex;
@@ -133,9 +127,6 @@ const Title4 = styled.p`
     margin-right:10px;
     margin-top:20px;
     margin-right:10px;
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
     font-size: 18px;
     line-height: 32px;
     display: flex;
@@ -206,14 +197,12 @@ const TextContainer = styled.div`
  margin-top:-160px;
  width:80%;
   @media screen and (max-width: 768px) {
-  display:flex;
-  align-items: center;
-  justify-content:center;
-  flex-direction: column;
-  margin-left:0px;
-  width:100%;
-  
-
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    margin-left:0px;
+    width:100%;
   }
 `;
 
