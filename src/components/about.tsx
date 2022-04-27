@@ -55,7 +55,7 @@ const StartImg3 = styled.img`
      margin-top:-2px;
      width: 38px;
      height:38px;
-     margin-top:5px;
+     margin-top:30px;
   }
 `;
 const StartImg4 = styled.img`
@@ -458,7 +458,7 @@ const About = () => {
         <AboutUs>About Us</AboutUs>
       </AboutItems>
       <TopArea>
-      
+
 
         <HopeContainer>
           <StartImg1 src={start} alt="" />
@@ -478,7 +478,7 @@ const About = () => {
               品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants>
           </TextArea>
         </BrandContainer>
-  
+
         <TextArea2>
           <HopeContainer>
             <StartImg3 src={start} alt="" />
@@ -491,9 +491,9 @@ const About = () => {
             </Contants>
           </Hope3Container>
         </TextArea2>
-    
+
         <RightItems>
-         
+
           <BrandContainer>
             <StartImg4 src={start} alt="" />
             <TextArea>
@@ -507,7 +507,7 @@ const About = () => {
 
         </RightItems>
 
-     
+
 
       </TopArea>
     </MobileContainer>

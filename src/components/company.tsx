@@ -205,7 +205,7 @@ const Title = styled.p`
 const TopBelow = styled.div`
   width:67%;
  @media screen and (max-width: 768px) {
-   margin-left:-100px;
+   margin-left:-125px;
   }
 
 `;
