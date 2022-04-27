@@ -37,6 +37,9 @@ const Container = styled.div`
   @media screen and  (max-width: 768px) {
     display:flex;
     flex-direction:column;
+    margin-top:-40px;
+ 
+  
   }
 `;
 
@@ -246,7 +249,7 @@ const BelowText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
    @media screen and  (max-width: 768px) {
-    margin-top:50px;
+    margin-top:70px;
     width:300px
   }
 `;

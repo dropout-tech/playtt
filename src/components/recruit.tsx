@@ -23,7 +23,7 @@ const ColorcircleImg = styled.img`
     width: 251px;
     height:127px;
     margin-top:-160px;
-    margin-left:-25px;
+    margin-left:15px;
     
   }
 `;
@@ -118,7 +118,8 @@ const Text = styled.p`
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 16px 0px;
+    margin-top:30px;
+    
 
   }
 `;
@@ -138,6 +139,7 @@ font-style: normal;
 font-weight: 500;
 font-size: 16px;
 line-height: 32px;
+
 /* or 200% */
 
 text-align: center;

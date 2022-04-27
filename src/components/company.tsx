@@ -45,7 +45,7 @@ const BelowArea = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
-    margin-top:-50px;
+    margin-top:-30px;
   }
 
 `;
@@ -87,7 +87,7 @@ const TopLeftArea = styled.div`
     flex-direction: column;
     align-items:center;
     width:90%;
-    margin-top:100px;
+    margin-top:160px;
   }
 `;
 
@@ -111,7 +111,7 @@ const TextArea = styled.div`
 const TextArea1 = styled.div`
   margin-top:20px;
    @media screen and (max-width: 768px) {
-   
+   margin-left:-10px;
    
     
     
@@ -135,9 +135,23 @@ const Text = styled.p`
   letter-spacing: 0.04em;
   color: #3C3D3D;
    @media screen and (max-width: 768px) {
-     font-size: 14px;
+     font-size: 1font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 32px;
+/* or 200% */
+
+letter-spacing: 0.04em;
+
+/* black */
+
+color: #1A1A1A;
+
+4px;
      line-height: 28px;
      letter-spacing: 0.06em;
+     
   }
   
 `;
@@ -151,9 +165,19 @@ const Text2 = styled.p`
   letter-spacing: 0.04em;
   color: #3C3D3D;
    @media screen and (max-width: 768px) {
-     font-size: 14px;
-     line-height: 28px;
-     letter-spacing: 0.06em;
+    font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 32px;
+/* identical to box height, or 200% */
+
+letter-spacing: 0.04em;
+
+/* black */
+
+color: #1A1A1A;
+
     
     
   }
@@ -181,7 +205,7 @@ const Title = styled.p`
 const TopBelow = styled.div`
   width:67%;
  @media screen and (max-width: 768px) {
-  
+   margin-left:-100px;
   }
 
 `;
@@ -189,7 +213,7 @@ const TopBelow = styled.div`
 const UnderBelow = styled.div`
  width:67%;
  @media screen and (max-width: 768px) {
-    
+    margin-left:-100px;
   }
   
 `;
@@ -204,7 +228,18 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
-    
+    font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 32px;
+/* identical to box height, or 178% */
+
+letter-spacing: 0.04em;
+
+/* black */
+
+color: #1A1A1A;
   }
 `;
 
@@ -217,6 +252,7 @@ const BelowTextContainer = styled.div`
  align-items: center;
   @media screen and (max-width: 768px) {
     width:101%;
+    padding-left:30px;
   }
 
 `;
@@ -230,7 +266,19 @@ const SmallTitle = styled.p`
   letter-spacing: 0.04em;
   color: #005CB9;
    @media screen and (max-width: 768px) {
-    
+    font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 28px;
+/* identical to box height, or 200% */
+
+letter-spacing: 0.06em;
+
+/* primary blue */
+
+color: #005CB9;
+
   }
 `;
 
@@ -245,6 +293,7 @@ const MobileContainer = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
+  margin-top:-40px;
 
   }
 

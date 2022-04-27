@@ -23,7 +23,7 @@ const Container = styled.div`
  padding-top:80px;
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
-    
+    margin-top:-145px;
   }
 
 `;
@@ -172,7 +172,7 @@ const Img1 = styled.img`
   margin-top:30px;
   margin-left:20px;
    @media screen and (max-width: 768px) {
-    
+  
   }
 `;
 
@@ -194,6 +194,7 @@ const LeftArea = styled.div`
     display:flex;
     align-items:center;
     flex-direction: column;
+      margin-top:30px;
     
   }
 `;

@@ -58,7 +58,7 @@ const TextContainer1 = styled.div`
  margin-top:-60px;
 
   @media screen and (max-width: 768px) {
-    margin-top:100px;
+    margin-top:120px;
   }
 `;
 

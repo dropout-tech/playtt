@@ -134,7 +134,13 @@ const AboutText = styled.p`
   color: #1A1A1A;
   text-align: center;
   @media screen and (max-width: 768px) {
-    
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
   }
 `;
 
@@ -149,7 +155,14 @@ const AboutUs = styled.p`
   color: #CFD2D3;
   margin-top:-35px;
   @media screen and (max-width: 768px) {
-    
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    color: #CFD2D3;
+
   }
 `;
 
@@ -328,7 +341,7 @@ const Span = styled.span`
 const HopeContainer = styled.div`
   display:flex;
   @media screen and (max-width: 768px) {
-    
+    margin-top:-30px;
   }
 `;
 

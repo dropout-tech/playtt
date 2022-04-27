@@ -171,9 +171,7 @@ const Img2 = styled.img`
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
-    display:flex;
-    justify-content: center;
-   
+    margin-left:35px;
 
    
   }
@@ -437,7 +435,7 @@ const Classes = () => {
         </Explain2>
 
         <MobileContainer>
-          <Img3 src={img2} alt="" />
+          <Img2 src={img2} alt="" />
           <Text>
             <Background2>
               <ContantTitle>
