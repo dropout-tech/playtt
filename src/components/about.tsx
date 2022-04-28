@@ -295,7 +295,7 @@ const RightAreaContainer = styled.div`
 
 
 const Contants = styled.div`
-  width:350px;
+  width:477px;
   height:252px;
   font-family: "Noto Sans TC";
   font-weight: 500;
@@ -324,6 +324,7 @@ const Span = styled.span`
 
 const HopeContainer = styled.div`
   display:flex;
+  
   @media screen and (max-width: 768px) {
     margin-top:-30px;
   }
@@ -339,6 +340,7 @@ const BrandContainer = styled.div`
 
 const TextArea = styled.div`
   margin-top:130px;
+
   @media screen and (max-width: 768px) {
    margin-left:-20px;
   }
