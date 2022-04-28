@@ -120,15 +120,12 @@ const Title2 = styled.p`
 `;
 
 const Title3 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-weight: 900, Black;
+  font-family: 'Futura';
+  font-weight: 700;
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
  @media screen and  (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 700;
     font-size: 20px;
     line-height: 36px;
     text-align: center;
@@ -140,6 +137,9 @@ const Title3 = styled.p`
 `;
 
 const Title4 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-weight: 900;
+  font-size: 26px;
   margin-top:-20px;
 
    @media screen and  (max-width: 768px) {
@@ -226,8 +226,8 @@ const BelowText = styled.p`
 
 const Span1 = styled.span`
   color:#38D430;
-  font-family: 'Futura';
-  font-weight: 700 
+  font-family: 'Noto Sans TC';
+  font-weight: 900;
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
@@ -238,8 +238,8 @@ const Span1 = styled.span`
 
 const Span2 = styled.span`
   color:#FF40B4;
-  font-family: 'Futura';
-  font-weight: 700, 
+  font-family: 'Noto Sans TC';
+  font-weight: 900;
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
