@@ -242,8 +242,8 @@ const TextForm2 = styled.p`
 `;
 
 const Img = styled.img`
-  width:110px;
-  height:55px;
+  width:130px;
+  height:64px;
   margin-top:-30px;
   margin-left:-15px;
   @media screen and (max-width: 768px) {
