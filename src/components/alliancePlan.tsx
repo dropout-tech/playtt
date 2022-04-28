@@ -132,7 +132,7 @@ const Circle3 = styled.div`
 `;
 
 const Text2 = styled.div`
- margin-top:140px;
+ margin-top:-30px;
  z-index:10;
  position: absolute;
  left: 590px;
@@ -147,7 +147,7 @@ const Text2 = styled.div`
 `;
 
 const Text1 = styled.div`
- margin-top:100px;
+ margin-top:-15px;
  position: absolute;
  z-index: 10;
  left:150px;
@@ -157,10 +157,11 @@ const Text1 = styled.div`
 `;
 
 const Text3 = styled.div`
- margin-top:100px;
+ margin-top:-30px;
  position: absolute;
  left: 1030px;
  z-index: 10;
+
 
  @media screen and (max-width: 768px) {
    margin-top:-30px
