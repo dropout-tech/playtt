@@ -143,7 +143,8 @@ const Contant = styled.div`
 `;
 
 const Img = styled.img`
-  height:414px;
+  width:414px;
+  height:352px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
     width:251px;  
@@ -155,7 +156,8 @@ const Img = styled.img`
 `;
 
 const Img2 = styled.img`
-  height:414px;
+  width:414px;
+  height:352px;
   margin-left:80px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
@@ -263,7 +265,14 @@ const Background3 = styled.div`
 
 const SpanDot = styled.div`
   color: #CFD2D3;
-  margin-top:20px;
+  margin-top:8px;
+  width: 36px;
+  height: 36px;
+  font-family: 'Noto Sans TC';
+  font-Weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.6px;
  @media screen and (max-width: 768px) {
    margin-top:10px;
   }
@@ -271,7 +280,9 @@ const SpanDot = styled.div`
 
 const SpanDot2 = styled.div`
   color: #CFD2D3;
-  margin-top:20px;
+  margin-top:8px;
+  width: 36px;
+  height: 36px;
  @media screen and (max-width: 768px) {
    margin-top:22px;
   }
@@ -288,7 +299,7 @@ const TextArea = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 16px;
+  line-height: 5px;
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
@@ -310,7 +321,7 @@ const TextArea2 = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 16px;
+   line-height: 10px;
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
