@@ -176,6 +176,7 @@ const TextContent = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  width:517px;
    @media screen and (max-width: 768px) {
    padding-left:0px;
    font-family: 'Noto Sans TC';
@@ -195,8 +196,8 @@ const TextContent = styled.p`
 `;
 
 const TestpicImg = styled.img`
-  width:505px;
-  height:500px;
+  width:580px;
+  height:593px;
   margin-right:100px;
   margin-top:100px;
    @media screen and (max-width: 768px) {
@@ -252,15 +253,15 @@ const PlayTest = () => {
         </Text1>
         <Text2>
           <Title3>Let's Play 獨家精心規劃專屬檢定，結合</Title3>
-          <Number>1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
+          <Number> 1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
           <Number2>2.<Text123>筆試 —— 桌球知識</Text123></Number2>
           <Number2>3.<Text123>體能</Text123></Number2>
         </Text2>
         <Text3>
           <TextContent>
-            設計成 L1–L12 檢定關卡，最後一關還有模擬比賽。<br />
-            教學內容搭配好玩的教案，讓大家在樂趣中成長，<br />
-            用來幫助大小朋友測驗學習技術成果。<br />
+            設計成 L1–L12 檢定關卡，最後一關還有模擬比賽。
+            教學內容搭配好玩的教案，讓大家在樂趣中成長，
+            用來幫助大小朋友測驗學習技術成果。
             你意想不到的玩桌球，也可以學到、揮灑汗水、歡笑滿滿！
           </TextContent>
         </Text3>
