@@ -147,7 +147,7 @@ const GroupImg = styled.img`
 
 const Background = styled.div`
   background: #FFD900;
-  width:200%;
+  width:150%;
   padding-bottom:30px;
 
 
@@ -193,7 +193,7 @@ const LeftArea = styled.div`
 const TextContainer = styled.div`
  display:flex;
  justify-content:center;
- margin-left:150px;
+ margin-left:140px;
  margin-top:-160px;
  width:80%;
   @media screen and (max-width: 768px) {
@@ -208,7 +208,7 @@ const TextContainer = styled.div`
 
 const GrayArea = styled.div`
   background: #F5F6F6;
-  width:180%;
+  width:150%;
    @media screen and (max-width: 768px) {
   width:100%;
   }
@@ -299,6 +299,7 @@ const LetsPlayStar = () => {
               <Span>・</Span> 由專業教練團隊協助持續訓練<br />
               <Span>・</Span>  大幅提升桌技和認知<br />
               <Span>・</Span>  與贊助廠商合作營運<br />
+              <Span>・</Span>  每週練習1-2次<br />
               <Span>・</Span> 與全明星運動會紅隊交流<br />
               <Span>・</Span>  明星交流賽與檢定
             </GrayAreaText>
