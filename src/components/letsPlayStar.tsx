@@ -69,7 +69,7 @@ const Title3 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:10px;
+  margin-left:40px;
   margin-top:50px;
    @media screen and (max-width: 768px) {
     margin-top:20px;
@@ -120,7 +120,7 @@ const Title4 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:10px;
+  margin-left:40px;
   margin-top:50px;
    @media screen and (max-width: 768px) {
     margin-top:20px;
