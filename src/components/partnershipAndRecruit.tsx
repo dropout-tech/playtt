@@ -103,7 +103,7 @@ const ColorLineImg = styled.img`
 
 const GrayArea = styled.div`
   z-index:10;
-  background: rgba(207, 210, 211.1);
+  background: #F5F6F6;
   width: 250px;
   height:200px;
    @media screen and (max-width: 768px) {
