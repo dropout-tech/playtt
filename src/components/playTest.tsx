@@ -44,6 +44,7 @@ const Text1 = styled.div`
 `;
 
 const Text2 = styled.div`
+  margin-top:80px;
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
@@ -92,6 +93,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   line-Height:52px;
+  margin-top:-38px;
    @media screen and (max-width: 768px) {
     margin-top:-25px;
     font-family: 'Futura';
