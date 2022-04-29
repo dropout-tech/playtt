@@ -54,6 +54,7 @@ const Text2 = styled.div`
 `;
 
 const Text3 = styled.div`
+
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
@@ -144,6 +145,23 @@ const Number = styled.span`
   align-items: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
+  margin-top:-40px;
+   @media screen and (max-width: 768px) {
+    padding-left:12px;
+  }
+`;
+
+const Number2 = styled.span`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #CFD2D3;
+  margin-top:-40px;
    @media screen and (max-width: 768px) {
     padding-left:12px;
   }
@@ -235,8 +253,8 @@ const PlayTest = () => {
         <Text2>
           <Title3>Let's Play 獨家精心規劃專屬檢定，結合</Title3>
           <Number>1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
-          <Number>2.<Text123>筆試 —— 桌球知識</Text123></Number>
-          <Number>3.<Text123>體能</Text123></Number>
+          <Number2>2.<Text123>筆試 —— 桌球知識</Text123></Number2>
+          <Number2>3.<Text123>體能</Text123></Number2>
         </Text2>
         <Text3>
           <TextContent>
