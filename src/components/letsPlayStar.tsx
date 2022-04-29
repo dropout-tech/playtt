@@ -241,7 +241,12 @@ const GrayArea = styled.div`
 `;
 
 const Span = styled.span`
- color: #FF40B4; 
+ color: #FF40B4;
+ font-family: 'Noto Sans TC';
+ font-weight: 500;
+ font-size: 20px;
+ line-height: 36px;
+ letter-spacing: 0.6px;
   @media screen and (max-width: 768px) {
     
   }
@@ -314,7 +319,7 @@ const LetsPlayStar = () => {
               <LeftArea>
                 <Img1 src={img1} alt="" />
                 <Img3 src={img3} alt="" />
-                <Title3>推廣桌球<br/>
+                <Title3>推廣桌球<br />
                   提升全民桌球風氣</Title3>
               </LeftArea>
 
