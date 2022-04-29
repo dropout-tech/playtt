@@ -101,7 +101,7 @@ const Text = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin-top:60px;
+  margin-top:30px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
