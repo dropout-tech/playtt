@@ -104,8 +104,8 @@ const ColorLineImg = styled.img`
 const GrayArea = styled.div`
   z-index:10;
   background: #F5F6F6;
-  width: 250px;
-  height:200px;
+  width: 270px;
+  height:150px;
    @media screen and (max-width: 768px) {
     width: 116px;
     height:256px;
@@ -202,7 +202,7 @@ const TopText = styled.p`
 
 const WhiteArea = styled.div`
   background: #FFFFFF;
-  width: 250px;
+  width: 270px;
   height: 483px;
   display: flex;
   align-items: center;
