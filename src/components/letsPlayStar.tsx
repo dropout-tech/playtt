@@ -168,6 +168,16 @@ const Img1 = styled.img`
 `;
 
 const Img2 = styled.img`
+  width:144px;
+  height:126px;
+  margin-top:30px;
+  margin-left:-50px;
+  @media screen and (max-width: 768px) {
+    
+  }
+`;
+
+const Img3 = styled.img`
   width:60px;
   height:62px;
   margin-top:60px;
@@ -175,11 +185,22 @@ const Img2 = styled.img`
    @media screen and (max-width: 768px) {
     
   }
+
 `;
 
+const Img4 = styled.img`
+  width:60px;
+  height:62px;
+  margin-top:60px;
+  margin-left:20px;
+   @media screen and (max-width: 768px) {
+    
+  }
+
+`;
 const LeftArea = styled.div`
    display:flex;
- 
+   justify-content:center;
     
    @media screen and (max-width: 768px) {
     display:flex;
@@ -265,6 +286,7 @@ const Dot = styled.div`
     }
 `;
 
+
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
   return <PageContainer>
@@ -280,14 +302,14 @@ const LetsPlayStar = () => {
           <Background>
             <LeftArea>
               <Img1 src={img1} alt="" />
-              <Img2 src={img3} alt="" />
+              <Img3 src={img3} alt="" />
               <Title3>推廣桌球<br/>
                 提升全民桌球風氣</Title3>
             </LeftArea>
 
             <LeftArea>
-              <Img1 src={img2} alt="" />
-              <Img2 src={img3} alt="" />
+              <Img2 src={img2} alt="" />
+              <Img4 src={img3} alt="" />
               <Title4>公益桌球賽</Title4>
             </LeftArea>
           </Background>
