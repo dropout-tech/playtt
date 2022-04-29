@@ -134,7 +134,7 @@ const TextArea = styled.div`
 
 const Text = styled.div`
   display:flex;
-  margin-left:60px;
+  margin-left:40px;
   margin-top:60px;
   flex-direction:column;
    @media screen and (max-width: 768px) {
@@ -184,6 +184,7 @@ const TopText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:80px;
+  margin-top:5px;
    @media screen and (max-width: 768px) {
     width:110px;
     display: flex;
@@ -337,7 +338,7 @@ const TextkeyIn4 = styled.p`
 `;
 
 const Textcontainer = styled.div`
-  margin-top:-20px;
+  margin-top:-15px;
 
 `;
 
