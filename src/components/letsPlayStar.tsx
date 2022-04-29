@@ -230,6 +230,10 @@ const TextContainer = styled.div`
 const GrayArea = styled.div`
   background: #F5F6F6;
   width:150%;
+  display: flex;
+  justify-content:center;
+ 
+  
    @media screen and (max-width: 768px) {
   width:100%;
   }
@@ -244,7 +248,7 @@ const Span = styled.span`
 `;
 
 const GrayAreaText = styled.p`
-  margin-top:40px;
+  margin-top:35px;
   margin-left:40px;
   font-family: 'Noto Sans TC';
   font-style: normal;
@@ -253,6 +257,7 @@ const GrayAreaText = styled.p`
   line-height: 36px;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  margin-left:-7px;
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
