@@ -106,6 +106,8 @@ const GrayArea = styled.div`
   background: #F5F6F6;
   width: 270px;
   height:150px;
+  margin-top:-50px;
+
    @media screen and (max-width: 768px) {
     width: 116px;
     height:256px;
@@ -231,7 +233,7 @@ const TextkeyIn1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:70px;
+  margin-left:80px;
   @media screen and (max-width: 768px) {
     margin-left:50px;
     font-family: 'Noto Sans TC';
@@ -262,7 +264,7 @@ const TextkeyIn2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:90px;
+  margin-left:100px;
   @media screen and (max-width: 768px) {
     margin-left:70px;
     font-family: 'Noto Sans TC';
@@ -291,7 +293,7 @@ const TextkeyIn3 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:70px;
+  margin-left:80px;
   @media screen and (max-width: 768px) {
     margin-left:50px;
     font-family: 'Noto Sans TC';
@@ -334,6 +336,11 @@ const TextkeyIn4 = styled.p`
   }
 `;
 
+const Textcontainer = styled.div`
+  margin-top:-20px;
+
+`;
+
 
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
@@ -351,8 +358,10 @@ const PartnershipAndRecruit = () => {
         <TextArea>
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>運動場館</TopText>
+              <Textcontainer>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>運動場館</TopText>
+              </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn1>
@@ -368,8 +377,10 @@ const PartnershipAndRecruit = () => {
 
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>學校社團</TopText>
+              <Textcontainer>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>學校社團</TopText>
+              </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn2>
@@ -382,8 +393,10 @@ const PartnershipAndRecruit = () => {
 
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>教育機構</TopText>
+              <Textcontainer>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>教育機構</TopText>
+            </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn3>
@@ -397,8 +410,10 @@ const PartnershipAndRecruit = () => {
 
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>桌球場館</TopText>
+              <Textcontainer>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>桌球場館</TopText>
+              </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn4>
