@@ -69,7 +69,7 @@ const Title3 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:30px;
+  margin-left:10px;
   margin-top:50px;
    @media screen and (max-width: 768px) {
     margin-top:20px;
@@ -120,7 +120,7 @@ const Title4 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:30px;
+  margin-left:10px;
   margin-top:50px;
    @media screen and (max-width: 768px) {
     margin-top:20px;
@@ -171,7 +171,7 @@ const Img2 = styled.img`
   width:144px;
   height:126px;
   margin-top:30px;
-  margin-left:-50px;
+  margin-left:-60px;
   @media screen and (max-width: 768px) {
     
   }
@@ -286,6 +286,11 @@ const Dot = styled.div`
     }
 `;
 
+const TextArea = styled.div`
+  margin-left:-30px;
+  margin-top:15px;
+
+`;
 
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
@@ -300,18 +305,20 @@ const LetsPlayStar = () => {
 
         <TextContainer>
           <Background>
-            <LeftArea>
-              <Img1 src={img1} alt="" />
-              <Img3 src={img3} alt="" />
-              <Title3>推廣桌球<br/>
-                提升全民桌球風氣</Title3>
-            </LeftArea>
+            <TextArea>
+              <LeftArea>
+                <Img1 src={img1} alt="" />
+                <Img3 src={img3} alt="" />
+                <Title3>推廣桌球<br/>
+                  提升全民桌球風氣</Title3>
+              </LeftArea>
 
-            <LeftArea>
-              <Img2 src={img2} alt="" />
-              <Img4 src={img3} alt="" />
-              <Title4>公益桌球賽</Title4>
-            </LeftArea>
+              <LeftArea>
+                <Img2 src={img2} alt="" />
+                <Img4 src={img3} alt="" />
+                <Title4>公益桌球賽</Title4>
+              </LeftArea>
+            </TextArea>
           </Background>
 
           <GrayArea>
