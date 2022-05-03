@@ -135,7 +135,7 @@ const TextContainer = styled.div`
 
 const Img1 = styled.img`
   width: 71px;
-  height:92px;
+  height:82px;
   margin-right:30px;
   margin-top:30px;
     @media screen and (max-width: 768px) {
