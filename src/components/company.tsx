@@ -105,7 +105,7 @@ const TextArea = styled.div`
 
 const TextArea1 = styled.div`
   margin-top:20px;
-  padding-top:20px;
+  padding-top:50px;
   margin-left:-100px;
   @media screen and (max-width: 768px) {
    margin-left:-10px;
@@ -115,7 +115,7 @@ const TextArea1 = styled.div`
 const TextArea2 = styled.div`
  margin-top:20px;
  margin-left:90px;
- padding-top:20px;
+ padding-top:48px;
   @media screen and (max-width: 768px) {
     
   }
@@ -167,7 +167,7 @@ const Text2 = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 32px;
+  line-height: 20px;
   letter-spacing: 0.72px;
   color: #3C3D3D;
   @media screen and (max-width: 768px) {
@@ -213,6 +213,7 @@ const TopBelow = styled.div`
 const UnderBelow = styled.div`
  width:67%;
  margin-left:-100px;
+ margin-top:-20px;
  @media screen and (max-width: 768px) {
     margin-left:-125px;
   }
@@ -261,6 +262,7 @@ const SmallTitle = styled.p`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #005CB9;
+  margin-top:-10px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -332,7 +334,7 @@ const Num = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 32px;
+  line-height: 20px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
 `;
@@ -394,21 +396,18 @@ const Company = () => {
                 <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲</SmallTitle>
                 <Text2>台北市中正區金山南路一段121號</Text2>
                 <Num>02 2356 7106</Num>
-
               </div>
 
               <div>
                 <SmallTitle>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</SmallTitle>
                 <Text2>台北市新莊區民樂街37號B1</Text2>
                 <Num>02 2990 0566</Num>
-
               </div>
 
               <div>
                 <SmallTitle>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</SmallTitle>
                 <Text2>台北市中正區杭州南路一段63號B1</Text2>
                 <Num>02 2391 9659</Num>
-
               </div>
             </TopBelow>
 
