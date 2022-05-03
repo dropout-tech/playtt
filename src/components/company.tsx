@@ -17,7 +17,6 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
-
   height:100%;
   width:100%;
   padding-top:80px;
@@ -33,7 +32,8 @@ const Container = styled.div`
 const BelowArea = styled.div`
   display: flex;
   justify-content: center;
-  margin-top:80px;
+  margin-top:180px;
+  margin-left:140px;
   width:80%;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -45,12 +45,13 @@ const BelowArea = styled.div`
 `;
 
 const Background1 = styled.div`
- background: rgba(207, 210, 211,0.8);
+ background:#F5F6F6;
  display:flex;  
  justify-content: center;
  margin-top:50px;
- height:100%;
- width:19.5%;
+ height:373px;
+ width:253px;
+ margin-left:-30px;
  align-items: center;
   @media screen and (max-width: 768px) {
     width:98%;
@@ -59,7 +60,7 @@ const Background1 = styled.div`
 `;
 
 const Background2 = styled.div`
- background: rgba(207, 210, 211,0.8);
+ background: #F5F6F6;
  display:flex;  
  justify-content: center;
  width:26.7%;
@@ -76,6 +77,7 @@ const TopLeftArea = styled.div`
  width:90%;
  display: flex;
  justify-content: center;
+ margin-left:84px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -88,7 +90,7 @@ const TopLeftArea = styled.div`
 const TextArea = styled.div`
  background: #FFFFFF;
  width:67%;
- height:100%;
+ height:124.05%;
  padding-left:30px;
  display:flex;  
  justify-content: center;
@@ -103,6 +105,7 @@ const TextArea = styled.div`
 
 const TextArea1 = styled.div`
   margin-top:20px;
+  padding-top:20px;
   margin-left:-100px;
   @media screen and (max-width: 768px) {
    margin-left:-10px;
@@ -112,6 +115,7 @@ const TextArea1 = styled.div`
 const TextArea2 = styled.div`
  margin-top:20px;
  margin-left:90px;
+ padding-top:20px;
   @media screen and (max-width: 768px) {
     
   }
@@ -162,9 +166,9 @@ const Text2 = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 32px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.72px;
   color: #3C3D3D;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
@@ -319,7 +323,28 @@ const TitleTwo = styled.p`
 const Background = styled.div`
   background: #38D430;
   width:100%;
-  height:1400px;
+  height:1650px;
+  padding-top:80px;
+`;
+
+const Num = styled.p`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+`;
+
+const Span = styled.span`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
 `;
 
 /* desktop thw newest info style end */
@@ -343,18 +368,16 @@ const Company = () => {
             </TextArea1>
             <TextArea2>
               <Text2>新北市蘆洲區長樂路106號3樓</Text2>
-              <Text2>0988 521 012</Text2>
-              <Text2>playpp2018@gmail.com</Text2>
+              <Num>0988 521 012</Num>
+              <Num>playpp2018@gmail.com</Num>
               <Text2>週一至週五 10:00–19:00（週末請撥各館電話）</Text2>
-              <Text2>郭教練 0988 521 012</Text2>
+              <Text2>郭教練 <Span>0988 521 012</Span></Text2>
             </TextArea2>
           </TextArea>
 
         </TopLeftArea>
-    
+
         <BelowArea>
-
-
           <Background2>
             <Title>＃ 分店與聯盟</Title>
           </Background2>
@@ -364,27 +387,27 @@ const Company = () => {
 
               <div>
                 <SmallTitle>各館營業時間</SmallTitle>
-                <Text>週一至週五 13:00–21:00　週六日 9:00–19:00</Text>
+                <Text>週一至週五 <Span>13:00–21:00</Span>　週六日<Span> 9:00–19:00</Span></Text>
               </div>
 
               <div>
                 <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲</SmallTitle>
-                <p>台北市中正區金山南路一段121號</p>
-                <p>02 2356 7106</p>
+                <Text2>台北市中正區金山南路一段121號</Text2>
+                <Num>02 2356 7106</Num>
 
               </div>
 
               <div>
                 <SmallTitle>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</SmallTitle>
-                <p>台北市新莊區民樂街37號B1</p>
-                <p>02 2990 0566</p>
+                <Text2>台北市新莊區民樂街37號B1</Text2>
+                <Num>02 2990 0566</Num>
 
               </div>
 
               <div>
                 <SmallTitle>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</SmallTitle>
-                <p>台北市中正區杭州南路一段63號B1</p>
-                <p>02 2391 9659</p>
+                <Text2>台北市中正區杭州南路一段63號B1</Text2>
+                <Num>02 2391 9659</Num>
 
               </div>
             </TopBelow>
@@ -393,14 +416,14 @@ const Company = () => {
               <Title>聯盟場館經營</Title>
               <div>
                 <SmallTitle>ONWARD TT 乒乓吧 X Let's Play － 捷運南港 & 昆陽</SmallTitle>
-                <p>台北市南港區南港路二段141號1樓</p>
-                <p>02 2651 0652</p>
+                <Text2>台北市南港區南港路二段141號1樓</Text2>
+                <Num>02 2651 0652</Num>
               </div>
 
               <div>
                 <SmallTitle>舞動華江高中 & Let's Play － 捷運龍山寺</SmallTitle>
-                <p>台北市萬華區西藏路213號</p>
-                <p>02 2339 6689</p>
+                <Text2>台北市萬華區西藏路213號</Text2>
+                <Num>02 2339 6689</Num>
               </div>
 
             </UnderBelow>
