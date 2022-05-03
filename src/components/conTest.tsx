@@ -95,7 +95,8 @@ const RightText = styled.div`
 const Background = styled.div`
   background: #FFD900;
   border-radius: 28px;
-  width:30%;
+  width:129px;
+  height:56px;
   margin-top:-70px;
   @media screen and (max-width: 768px) {
     width:96px;
@@ -168,12 +169,15 @@ const Title3 = styled.p`
   font-style: normal;
   font-weight: 900;
   font-size: 26px;
-  line-height: 40px;
+  line-height: 56px;
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-left:30px;
+  margin-left:24px;
+  
+
+
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -228,6 +232,7 @@ const Text = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  width:374px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -244,7 +249,7 @@ const Text = styled.p`
 `;
 
 const TextContainer = styled.div`
- margin-top:140px;
+ margin-top:120px;
  @media screen and (max-width: 768px) {
   display:flex;
   margin-top:10px;
