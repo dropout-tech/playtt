@@ -325,7 +325,7 @@ const TitleTwo = styled.p`
 const Background = styled.div`
   background: #38D430;
   width:100%;
-  height:1650px;
+  height:1450px;
   padding-top:80px;
 `;
 
