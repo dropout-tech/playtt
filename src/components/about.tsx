@@ -272,7 +272,7 @@ const LeftAreaContainer = styled.div`
   width:100%;
   display: flex;
   justify-content:center;
-  margin-left:60px;
+  margin-left:-60px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -284,7 +284,7 @@ const RightAreaContainer = styled.div`
   width:50%;
   display: flex;
   justify-content:flex-start;
-  margin-right:200px;
+  margin-right:80px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -293,9 +293,8 @@ const RightAreaContainer = styled.div`
 `;
 
 
-
 const Contants = styled.div`
-  width:350px;
+  width:477px;
   height:252px;
   font-family: "Noto Sans TC";
   font-weight: 500;
@@ -324,6 +323,8 @@ const Span = styled.span`
 
 const HopeContainer = styled.div`
   display:flex;
+  
+  
   @media screen and (max-width: 768px) {
     margin-top:-30px;
   }
@@ -339,6 +340,7 @@ const BrandContainer = styled.div`
 
 const TextArea = styled.div`
   margin-top:130px;
+
   @media screen and (max-width: 768px) {
    margin-left:-20px;
   }
@@ -405,7 +407,6 @@ const About = () => {
 
         </LeftAreaContainer>
 
-
         <RightAreaContainer>
           <RightItems>
             <HopeContainer>
@@ -443,7 +444,6 @@ const About = () => {
       </AboutItems>
       <TopArea>
 
-
         <HopeContainer>
           <StartImg1 src={start} alt="" />
           <TextArea>
@@ -462,6 +462,7 @@ const About = () => {
               品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants>
           </TextArea>
         </BrandContainer>
+  
 
         <TextArea2>
           <HopeContainer>

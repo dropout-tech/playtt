@@ -23,7 +23,6 @@ const Container = styled.div`
   background: rgba(207, 210, 211,0.2);
   display: flex;
   padding-top:-120px;
-  padding-bottom: 80px;
    @media screen and (max-width: 768px) {
     display:none;
    
@@ -54,7 +53,7 @@ const TextContainer1 = styled.div`
  z-index:10;
  display:flex;
  flex-direction: column;
- margin-top:-60px;
+ margin-top:-100px;
 
   @media screen and (max-width: 768px) {
     margin-top:120px;
@@ -66,14 +65,15 @@ const TextContainer2 = styled.div`
  z-index:10;
  display:flex;
  justify-content:space-between;
- margin-right:100px;
+ margin-right:150px;
+ margin-top:30px;
   @media screen and (max-width: 768px) {
     margin-top:-40px;
   }
 `;
 
 const LeftText = styled.div`
-  margin-left:-200px;
+  margin-left:-240px;
   margin-top:300px;
    @media screen and (max-width: 768px) {
     z-index:10;
@@ -95,7 +95,9 @@ const RightText = styled.div`
 const Background = styled.div`
   background: #FFD900;
   border-radius: 28px;
-  width:30%;
+  width:129px;
+  height:56px;
+  margin-top:-70px;
   @media screen and (max-width: 768px) {
     width:96px;
     height:44px;
@@ -146,6 +148,7 @@ const Title2 = styled.p`
   display:flex;
   justify-content: flex-start;
   line-Height:52px;
+  margin-top:-38px;
   @media screen and (max-width: 768px) {
    margin-left:-80px;
    font-family: 'Futura';
@@ -166,12 +169,15 @@ const Title3 = styled.p`
   font-style: normal;
   font-weight: 900;
   font-size: 26px;
-  line-height: 40px;
+  line-height: 56px;
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-left:30px;
+  margin-left:24px;
+  
+
+
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -197,7 +203,8 @@ const TextContent = styled.p`
   text-align: justify;
   letter-spacing: 0.04em;
   color: #3C3D3D;
-  margin-top:100px;
+  margin-top:80px;
+  width:477px;
   @media screen and (max-width: 768px) {
     font-size: 20px;
     line-height: 36px;
@@ -225,6 +232,7 @@ const Text = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  width:374px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -241,7 +249,7 @@ const Text = styled.p`
 `;
 
 const TextContainer = styled.div`
- margin-top:100px;
+ margin-top:120px;
  @media screen and (max-width: 768px) {
   display:flex;
   margin-top:10px;
@@ -302,7 +310,7 @@ const ConTest = () => {
             <Title1>桌球賽事</Title1>
             <Title2>Let’s Play Match</Title2>
           </div>
-          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，<br />是很好的自我檢視方式。</TextContent>
+          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
         </LeftText>
       </TextContainer1>
 
@@ -315,7 +323,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                由 Let's Play 發出邀請，讓小小選手們有<br />發光表現的舞台。
+                由 Let's Play 發出邀請，讓小小選手們有發光表現的舞台。
               </Text>
             </div>
           </TextContainer>
@@ -326,7 +334,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                於台灣桌球積分賽平台刊登，是一個訓練比<br />賽經驗的平台，每一個月最少兩次的比賽。
+                於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
               </Text>
             </div>
           </TextContainer>
@@ -337,7 +345,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                Let's Play 分店館內學員的定期對內交流<br />比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+                Let's Play 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
               </Text>
             </div>
           </TextContainer>

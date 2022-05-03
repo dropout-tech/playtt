@@ -101,7 +101,7 @@ const Text = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin-top:60px;
+  margin-top:30px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -127,6 +127,7 @@ const Text2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -159,8 +160,20 @@ const Background = styled.div`
   }
 `;
 
+const Span = styled.div`
+  color: #CFD2D3;
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.6px;
 
+`;
 
+const TextDot = styled.div`
+  display:flex;
+
+`;
 
 
 /* desktop thw newest info style end */
@@ -175,26 +188,48 @@ const Recruit = () => {
           <Title>＃ 熱烈招募中！</Title>
         </Background>
         <Text>
-          ・ 讓雙北小朋友有更完善的學習資源<br />
-          ・ 推廣桌球讓更多成人共同參與<br />
+          <TextDot>
+            <Span>・</Span> 讓雙北小朋友有更完善的學習資源<br />
+          </TextDot>
+          <TextDot>
+            <Span>・</Span> 推廣桌球讓更多成人共同參與<br />
+          </TextDot>
         </Text>
 
         <Text2>
-          ・ 除館內課程推出也提供外派教練進駐服務<br />
-          ・ 補習班 / 幼兒園 /學校社團<br />
-          ・ 家裡 / 運動中心 /公司社團 /公家機構<br />
-          ・ 休閒運動體系創新 合作教案（歡樂 / 技術）<br />
-          ・ 公司福委會競技休閒活動
+          <TextDot>
+            <Span>・</Span> 除館內課程推出也提供外派教練進駐服務<br />
+          </TextDot>
+          <TextDot>
+            <Span>・</Span> 補習班 / 幼兒園 /學校社團<br />
+          </TextDot>
+          <TextDot>
+            <Span>・</Span> 家裡 / 運動中心 /公司社團 /公家機構<br />
+          </TextDot>
+          <TextDot>
+            <Span>・</Span> 休閒運動體系創新 合作教案（歡樂 / 技術）<br />
+          </TextDot>
+          <TextDot>
+            <Span>・</Span> 公司福委會競技休閒活動
+          </TextDot>
         </Text2>
 
         <Text2>
-          ・ 期望結合不同類別才藝發展多元課程<br /> &emsp; 街舞、 兒童舞蹈、 畫畫、音樂等
+          <TextDot>
+            <Span>・</Span>期望結合不同類別才藝發展多元課程<br /> &emsp; 街舞、 兒童舞蹈、 畫畫、音樂等
+          </TextDot>
         </Text2>
 
         <Text2>
-          ・ 桌球趣味比賽協辦<br />
-          ・ 乒乓球表演者<br />
-          ・ 提供桌球產業教練<br /> &emsp; 獨特升遷制度
+          <TextDot>
+            <Span>・</Span>桌球趣味比賽協辦<br />
+          </TextDot>
+          <TextDot>
+            <Span>・</Span>乒乓球表演者<br />
+          </TextDot>
+          <TextDot>
+            <Span>・</Span>提供桌球產業教練獨特升遷制度
+          </TextDot>
         </Text2>
       </TextContainer>
     </Container>

@@ -103,9 +103,11 @@ const ColorLineImg = styled.img`
 
 const GrayArea = styled.div`
   z-index:10;
-  background: rgba(207, 210, 211.1);
-  width: 250px;
-  height:200px;
+  background: #F5F6F6;
+  width: 270px;
+  height:150px;
+  margin-top:-50px;
+
    @media screen and (max-width: 768px) {
     width: 116px;
     height:256px;
@@ -132,7 +134,7 @@ const TextArea = styled.div`
 
 const Text = styled.div`
   display:flex;
-  margin-left:60px;
+  margin-left:40px;
   margin-top:60px;
   flex-direction:column;
    @media screen and (max-width: 768px) {
@@ -182,6 +184,7 @@ const TopText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:80px;
+  margin-top:5px;
    @media screen and (max-width: 768px) {
     width:110px;
     display: flex;
@@ -202,7 +205,7 @@ const TopText = styled.p`
 
 const WhiteArea = styled.div`
   background: #FFFFFF;
-  width: 250px;
+  width: 270px;
   height: 483px;
   display: flex;
   align-items: center;
@@ -231,7 +234,7 @@ const TextkeyIn1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:70px;
+  margin-left:80px;
   @media screen and (max-width: 768px) {
     margin-left:50px;
     font-family: 'Noto Sans TC';
@@ -262,7 +265,7 @@ const TextkeyIn2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:90px;
+  margin-left:100px;
   @media screen and (max-width: 768px) {
     margin-left:70px;
     font-family: 'Noto Sans TC';
@@ -291,7 +294,7 @@ const TextkeyIn3 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:70px;
+  margin-left:80px;
   @media screen and (max-width: 768px) {
     margin-left:50px;
     font-family: 'Noto Sans TC';
@@ -334,6 +337,11 @@ const TextkeyIn4 = styled.p`
   }
 `;
 
+const Textcontainer = styled.div`
+  margin-top:-15px;
+
+`;
+
 
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
@@ -351,8 +359,10 @@ const PartnershipAndRecruit = () => {
         <TextArea>
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>運動場館</TopText>
+              <Textcontainer>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>運動場館</TopText>
+              </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn1>
@@ -368,8 +378,10 @@ const PartnershipAndRecruit = () => {
 
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>學校社團</TopText>
+              <Textcontainer>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>學校社團</TopText>
+              </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn2>
@@ -382,8 +394,10 @@ const PartnershipAndRecruit = () => {
 
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>教育機構</TopText>
+              <Textcontainer>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>教育機構</TopText>
+            </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn3>
@@ -397,8 +411,10 @@ const PartnershipAndRecruit = () => {
 
           <Text>
             <GrayArea>
-              <ColorLineImg src={colorLine} alt="" />
-              <TopText>桌球場館</TopText>
+              <Textcontainer>
+                <ColorLineImg src={colorLine} alt="" />
+                <TopText>桌球場館</TopText>
+              </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn4>
