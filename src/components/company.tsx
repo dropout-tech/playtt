@@ -19,7 +19,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
   height:100%;
   width:100%;
-  padding-top:80px;
+  padding-top:-30px;
   padding-bottom: 80px;
   display:flex;
   flex-direction: column;
