@@ -11,17 +11,18 @@ import ho from "../assets/alliancePlan/ho.png";
 const PageContainer = styled.div`
   width:100%;
   @media screen and (max-width: 768px) {
-    
+   
   }
 `;
 
 const Container = styled.div`
  width:100%;
  height:80%;
-
  padding-bottom: 80px;
  @media screen and (max-width: 768px) {
     margin-top:-30px;
+    
+   
   }
 `;
 
@@ -254,7 +255,14 @@ const Img = styled.img`
    
   }
 `;
-
+const MobileContainer = styled.div`
+display:none;
+@media screen and (max-width: 768px) {
+  width:100%;
+  
+ 
+ }
+`;
 
 /* desktop thw newest info style end */
 const alliancePlan = () => {
@@ -298,6 +306,47 @@ const alliancePlan = () => {
 
 
     </Container>
+
+    <MobileContainer>
+      <Title>聯盟計畫</Title>
+      <TitleWord>Alliance</TitleWord>
+      <Background>
+        <Circle>
+
+          <Text1>
+            <Img src={cho} alt="" />
+            <Title2>創立初衷</Title2>
+            <TextForm>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm>
+          </Text1>
+
+          <Circle1>
+          </Circle1>
+
+          <Text2>
+            <Img src={hha} alt="" />
+            <Title2>計畫簡介</Title2>
+            <TextForm>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
+          </Text2>
+          <Circle2>
+          </Circle2>
+
+
+          <Text3>
+            <Img src={ho} alt="" />
+            <Title2>聯盟分佈</Title2>
+            <TextForm>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</TextForm>
+            <TextForm2>陸續招募中！</TextForm2>
+          </Text3>
+          <Circle3>
+          </Circle3>
+        </Circle>
+
+      </Background>
+
+
+
+    </MobileContainer>
+
 
   </PageContainer>;
 };
