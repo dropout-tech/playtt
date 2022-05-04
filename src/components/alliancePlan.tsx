@@ -3,9 +3,9 @@ import styled from "styled-components";
 import cho from "../assets/alliancePlan/cho.png";
 import hha from "../assets/alliancePlan/hha.png";
 import ho from "../assets/alliancePlan/ho.png";
-
-
-
+import phone1 from "../assets/alliancePlan/phone1.png";
+import phone2 from "../assets/alliancePlan/phone2.png";
+import phone3 from "../assets/alliancePlan/phone3.png";
 // styled components start 
 
 
@@ -189,6 +189,7 @@ const Container2 = styled.div`
  width:100%;
  display: flex;
  padding-bottom: 80px;
+ padding-top:80px;
  }
 
 `;
@@ -238,6 +239,7 @@ const TitleWord2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
+    margin-top:-30px;
  }
 `;
 
@@ -271,10 +273,10 @@ const Circle22 = styled.div`
     height:375px;
     background: #FFFFFF;
     border-radius:294px;
-    margin-top:30px;
+    margin-top:-30px;
     margin-right:-50px;
     z-index: 1;
-    margin-top:-30px;
+
 
   }
   
@@ -290,10 +292,10 @@ const Circle33 = styled.div`
     height:375px;
     background: #FFFFFF;
     border-radius:294px;
-    margin-top:30px;
+    margin-top:-30px;
     margin-right:-50px;
     z-index: 1;
-    margin-top:-30px;
+   
     
  }
 `;
@@ -305,6 +307,7 @@ const Text11 = styled.div`
  position: none;
  z-index: 0;
  left:0px;
+ margin-left:60px;
 
   }
  
@@ -316,6 +319,8 @@ const Text22 = styled.div`
     z-index:0;
     position: none;
     left:0px;
+    z-index:10;
+    margin-left:60px;
 
   }
  
@@ -323,7 +328,8 @@ const Text22 = styled.div`
 `;
 const Text33 = styled.div`
 @media screen and (max-width: 768px) {
-    
+    z-index:10;
+    margin-left:60px;
 
   }
 
@@ -338,7 +344,7 @@ const Circle111 = styled.div`
   justify-content:center;
   padding:10px;
   padding-top:70px;
-  margin-top:-190px;
+  margin-top:-150px;
   margin-left:-55px;
 
 }
@@ -347,24 +353,24 @@ const Circle111 = styled.div`
 
 const Img1 = styled.img`
   @media screen and (max-width: 768px) {
-  width:88px;
-  height:33px;
+   width:106px;
+   height:42px;
 }
 
 `;
 
 const Img2 = styled.img`
   @media screen and (max-width: 768px) {
-  width:98px;
-  height:34px;
+   width:106px;
+   height:42px;
 }
 
 `;
 
 const Img3 = styled.img`
   @media screen and (max-width: 768px) {
-  width:71px;
-  height:30px;
+   width:106px;
+   height:42px;
 }
 
 `;
@@ -373,6 +379,10 @@ const TitleContainer = styled.div`
   
   @media screen and (max-width: 768px) {
   z-index:10px;
+  display:flex;
+  align-items: center;
+  z-index: 10;
+  flex-direction: column;
 }
 
 `;
@@ -387,6 +397,8 @@ const Title22 = styled.p`
     line-height: 36px;
     letter-spacing: 0.03em;
     color: #005CB9;
+    margin-top:2px;
+   
   }
 `;
 const TextForm222 = styled.p`
@@ -467,27 +479,26 @@ const alliancePlan = () => {
         </TitleContainer>
         <Background>
           <Circle111>
-           
+
             <Circle11>
               <Text11>
-                <Img1 src={cho} alt="" />
+                <Img1 src={phone1} alt="" />
                 <Title22>創立初衷</Title22>
                 <TextForm222>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm222>
               </Text11>
             </Circle11>
-            
 
-            <Text22>
-              <Img2 src={hha} alt="" />
-              <Title22>計畫簡介</Title22>
-              <TextForm222>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm222>
-            </Text22>
             <Circle22>
+              <Text22>
+                <Img2 src={phone2} alt="" />
+                <Title22>計畫簡介</Title22>
+                <TextForm222>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm222>
+              </Text22>
             </Circle22>
-            
+
             <Circle33>
               <Text33>
-                <Img3 src={ho} alt="" />
+                <Img3 src={phone3} alt="" />
                 <Title22>聯盟分佈</Title22>
                 <TextForm222>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</TextForm222>
                 <TextForm2222>陸續招募中！</TextForm2222>
