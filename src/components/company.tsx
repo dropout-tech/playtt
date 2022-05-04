@@ -56,6 +56,7 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:98%;
     height:400px;
+    margin-left:-90px;
   }
 `;
 
@@ -69,6 +70,8 @@ const Background2 = styled.div`
     width:110%;
     height:84px;
     margin-top:300px;
+    margin-left:-90px;
+    
   }
 `;
 
@@ -96,9 +99,11 @@ const TextArea = styled.div`
  justify-content: center;
  margin-top:50px;
   @media screen and (max-width: 768px) {
-    width:90%;
+    width:98%;
     margin-top:0px;
     height:300%;
+    padding-left:0px;
+    margin-left:-90px
 
   }
 `;
@@ -108,7 +113,9 @@ const TextArea1 = styled.div`
   padding-top:50px;
   margin-left:-100px;
   @media screen and (max-width: 768px) {
-   margin-left:-10px;
+   margin-left:20px;
+   margin-top:-30px;
+   margin-bottom:30px;
   }
 `;
 
