@@ -106,7 +106,7 @@ const GrayArea = styled.div`
   background: #F5F6F6;
   width: 270px;
   height:150px;
-  margin-top:-50px;
+  
 
    @media screen and (max-width: 768px) {
     width: 116px;
@@ -338,7 +338,7 @@ const TextkeyIn4 = styled.p`
 `;
 
 const Textcontainer = styled.div`
-  margin-top:-15px;
+  margin-top:-25px;
 
 `;
 
