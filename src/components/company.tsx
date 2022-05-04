@@ -67,10 +67,10 @@ const Background2 = styled.div`
  width:26.7%;
  align-items: center;
   @media screen and (max-width: 768px) {
-    width:110%;
+    width:110.025%;
     height:84px;
     margin-top:300px;
-    margin-left:-90px;
+    margin-left:-142px;
     
   }
 `;
@@ -212,7 +212,7 @@ const TopBelow = styled.div`
   width:67%;
   margin-left:-100px;
  @media screen and (max-width: 768px) {
-   margin-left:-125px;
+   margin-left:-80px;
   }
 
 `;
@@ -222,7 +222,7 @@ const UnderBelow = styled.div`
  margin-left:-100px;
  margin-top:-20px;
  @media screen and (max-width: 768px) {
-    margin-left:-125px;
+    margin-left:-80px;
   }
   
 `;
@@ -255,8 +255,9 @@ const BelowTextContainer = styled.div`
  flex-direction:column;
  align-items: center;
   @media screen and (max-width: 768px) {
-    width:101%;
-    padding-left:30px;
+    width:110%;
+    padding-left:0px;
+    margin-left:-141px;
   }
 
 `;
