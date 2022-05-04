@@ -67,7 +67,7 @@ const Container = styled.div`
   margin-top:-90px;
   padding-bottom: 80px;
   @media screen and (max-width: 768px) {
-    margin-top:-190px;
+    margin-top:-120px;
   }
 `;
 

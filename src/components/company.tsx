@@ -33,7 +33,7 @@ const BelowArea = styled.div`
   display: flex;
   justify-content: center;
   margin-top:180px;
-  margin-left:140px;
+  /* margin-left:140px; */
   width:80%;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -87,6 +87,7 @@ const TopLeftArea = styled.div`
     align-items:center;
     width:90%;
     margin-top:160px;
+    margin-left:0px;
   }
 `;
 
@@ -479,9 +480,7 @@ const Company = () => {
 
       </TopLeftArea>
 
-
       <BelowArea>
-
         <Background2>
           <Title>＃ 分店與聯盟</Title>
         </Background2>
