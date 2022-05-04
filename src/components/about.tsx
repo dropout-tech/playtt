@@ -132,6 +132,7 @@ const AboutText = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-left:10px;
   }
 `;
 
@@ -153,6 +154,8 @@ const AboutUs = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #CFD2D3;
+    margin-left:10px;
+    margin-top:-20px;
 
   }
 `;

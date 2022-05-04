@@ -28,7 +28,7 @@ const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
  width:100%;
- margin-left:-60px;
+ margin-left:-80px;
    @media screen and (max-width: 768px) {
     display:none;
   }
@@ -90,6 +90,7 @@ const Picture = styled.div`
   align-items: center;
     @media screen and (max-width: 768px) {
      display:none;
+ 
   }
 `;
 
@@ -97,7 +98,7 @@ const MobileContainer = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
-  margin-left:-10px;
+  margin-left:3px;
   width:327px;
   
    

@@ -116,6 +116,7 @@ const Title2 = styled.p`
    letter-spacing: 0.04em;
    color: #1A1A1A;
    margin-left:10px;
+   margin-top:-20px;
   }
 `;
 
