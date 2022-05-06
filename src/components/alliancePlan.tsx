@@ -47,7 +47,7 @@ const TitleWord = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-top:-10px;
+  margin-top:-30px;
   line-Height:52px;
   
 `;

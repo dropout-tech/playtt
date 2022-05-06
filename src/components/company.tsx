@@ -24,6 +24,7 @@ const Container = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
+
   @media screen and (max-width: 768px) {
     display:none;
     flex-direction: column;
@@ -51,8 +52,9 @@ const Background1 = styled.div`
  display:flex;  
  justify-content: center;
  margin-top:50px;
- height:373px;
- width:253px;
+ width:373px;
+ height:288px;
+
  margin-left:-30px;
  align-items: center;
   @media screen and (max-width: 768px) {
@@ -84,7 +86,7 @@ const TopLeftArea = styled.div`
  display: flex;
  justify-content: center;
  align-items: center;
- margin-left:84px;
+
   @media screen and (max-width: 768px) {
     width:90%;
     margin-top:160px;
@@ -96,11 +98,12 @@ const TopLeftArea = styled.div`
 
 const TextArea = styled.div`
  background: #FFFFFF;
- width:67%;
- height:124.05%;
+ width:827px;
+ height:288px;
  padding-left:30px;
  display:flex;  
  justify-content: center;
+
  margin-top:50px;
   @media screen and (max-width: 768px) {
     width:98%;
@@ -113,9 +116,10 @@ const TextArea = styled.div`
 `;
 
 const TextArea1 = styled.div`
-  margin-top:20px;
-  padding-top:50px;
-  margin-left:-100px;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
   @media screen and (max-width: 768px) {
    margin-left:20px;
    margin-top:-30px;
@@ -124,9 +128,12 @@ const TextArea1 = styled.div`
 `;
 
 const TextArea2 = styled.div`
- margin-top:20px;
- margin-left:90px;
- padding-top:48px;
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  margin-top:16px;
+  margin-left:70px;
+
   @media screen and (max-width: 768px) {
     
   }
@@ -178,7 +185,7 @@ const Text2 = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 20px;
+  line-height: 8px;
   letter-spacing: 0.72px;
   color: #3C3D3D;
   @media screen and (max-width: 768px) {
@@ -190,6 +197,21 @@ const Text2 = styled.p`
     letter-spacing: 0.04em;
     color: #1A1A1A;
     
+  }
+  
+`;
+
+const Text33 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 8px;
+  letter-spacing: 0.72px;
+  color: #3C3D3D;
+  margin-top:6px;
+  @media screen and (max-width: 768px) {
+   
   }
   
 `;
@@ -342,6 +364,7 @@ const Background = styled.div`
   width:100%;
   height:1450px;
   padding-top:80px;
+ 
 `;
 
 const Num = styled.p`
@@ -349,7 +372,7 @@ const Num = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 20px;
+  line-height: 8px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
 `;
@@ -400,7 +423,7 @@ const Company = () => {
               <Num>0988 521 012</Num>
               <Num>playpp2018@gmail.com</Num>
               <Text2>週一至週五 10:00–19:00（週末請撥各館電話）</Text2>
-              <Text2>郭教練 <Span>0988 521 012</Span></Text2>
+              <Text33>郭教練 <Span>0988 521 012</Span></Text33>
             </TextArea2>
           </TextArea>
 

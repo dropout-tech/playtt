@@ -94,7 +94,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   line-Height:52px;
-  margin-top:-38px;
+  margin-top:-30px;
    @media screen and (max-width: 768px) {
     margin-top:-25px;
     font-family: 'Futura';
@@ -220,6 +220,8 @@ const Text123 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
+  margin-left:12px;
+
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
