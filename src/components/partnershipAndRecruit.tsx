@@ -81,7 +81,7 @@ const TitleContainer = styled.div`
 
 const BlueArea = styled.div`
   width: 100%;
-  height:100%;
+  height:804px;
   background: #005CB9;  
   z-index:1;
   padding-bottom:60px;
@@ -157,7 +157,7 @@ const BigTitle = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
-  padding-top:60px;
+  padding-top:80px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -208,7 +208,7 @@ const TopText = styled.p`
 const WhiteArea = styled.div`
   background: #FFFFFF;
   width: 270px;
-  height: 483px;
+  height: 333px;
   display: flex;
   align-items: center;
   justify-content: center;
