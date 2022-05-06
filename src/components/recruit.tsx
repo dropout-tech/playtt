@@ -65,17 +65,14 @@ const TextContainer = styled.div`
 `;
 
 const Title = styled.p`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 700;
+  font-family: 'Noto Sans TC';
+  font-weight: 900;
   font-size: 26px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
+  line-height: 56px;
+  letter-spacing: 1.04px;
   color: #005CB9;
   margin-left:25px;
-  padding-top:8px;
+  
    @media screen and (max-width: 768px) {
     margin-top:16px;
     font-family: 'Futura';
@@ -149,7 +146,7 @@ const Text2 = styled.p`
 const Background = styled.div`
   background: #FFD900;
   border-radius: 28px;
-  width: 247px;
+  width: 244px;
   height: 56px;
    @media screen and (max-width: 768px) {
     display:flex;
@@ -207,7 +204,7 @@ const Recruit = () => {
             <Span>・</Span> 家裡 / 運動中心 /公司社團 /公家機構<br />
           </TextDot>
           <TextDot>
-            <Span>・</Span> 休閒運動體系創新 合作教案（歡樂 / 技術）<br />
+            <Span>・</Span> 休閒運動體系創新合作教案（歡樂 / 技術）<br />
           </TextDot>
           <TextDot>
             <Span>・</Span> 公司福委會競技休閒活動
@@ -216,7 +213,11 @@ const Recruit = () => {
 
         <Text2>
           <TextDot>
-            <Span>・</Span>期望結合不同類別才藝發展多元課程<br /> &emsp; 街舞、 兒童舞蹈、 畫畫、音樂等
+            <Span>・</Span>期望結合不同類別才藝發展多元課程<br />
+
+          </TextDot>
+          <TextDot>
+            <Span>・</Span>街舞、 兒童舞蹈、 畫畫、音樂等
           </TextDot>
         </Text2>
 

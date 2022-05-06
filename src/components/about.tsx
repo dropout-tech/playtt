@@ -20,7 +20,7 @@ const StartImg1 = styled.img`
   width: 63px;
   height:63px;
   margin-top:50px;
-  margin-right:40px;
+  margin-right:20px;
   margin-top:175px;
   @media screen and (max-width: 768px) {
     margin-left:20px;
@@ -34,7 +34,7 @@ const StartImg2 = styled.img`
   width: 63px;
   height:63px;
   margin-top:40px;
-  margin-right:40px;
+  margin-right:20px;
   margin-top:175px;
 
   @media screen and (max-width: 768px) {
@@ -48,8 +48,8 @@ const StartImg3 = styled.img`
   width: 63px;
   height:63px;
   margin-top:50px;
-  margin-right:40px;
   margin-top:175px;
+  margin-left:100px;
   @media screen and (max-width: 768px) {
     margin-left:40px;
     margin-top:-2px;
@@ -62,8 +62,8 @@ const StartImg4 = styled.img`
   width: 63px;
   height:63px;
   margin-top:50px;
-  margin-right:40px;
   margin-top:175px;
+  margin-left:100px;
   @media screen and (max-width: 768px) {
     margin-left:20px;
     margin-top:60px;
@@ -208,6 +208,7 @@ const Hope3 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+
   @media screen and (max-width: 768px) {
    margin-top:-10px;
    font-family: 'Noto Sans TC';
@@ -334,6 +335,7 @@ const HopeContainer = styled.div`
   display:flex;
   
   
+  
   @media screen and (max-width: 768px) {
     margin-top:-30px;
   }
@@ -349,7 +351,7 @@ const BrandContainer = styled.div`
 
 const TextArea = styled.div`
   margin-top:130px;
-
+  margin-left:20px;
   @media screen and (max-width: 768px) {
    margin-left:-20px;
   }
@@ -358,6 +360,8 @@ const TextArea = styled.div`
 
 const TextArea2 = styled.div`
   margin-top:130px;
+  margin-left:40px;
+  
   @media screen and (max-width: 768px) {
    margin-left:-20px;
    margin-top:30px;

@@ -20,8 +20,9 @@ const PageContainer = styled.div`
 const ColorpicImg = styled.img`
   width:517px ;
   height:517px ;
-  margin-left:100px;
+  
   margin-top:100px;
+
    @media screen and  (max-width: 768px) {
      width:251px ;
      height:251px ;
@@ -30,7 +31,7 @@ const ColorpicImg = styled.img`
 
 const Container = styled.div`
  width:100% ;
- height:100%;
+ height:920px;
  display:flex;
  background:#F5F6F6;
  padding-bottom:70px;
@@ -47,7 +48,10 @@ const Picture = styled.div`
   width:50%;
   display:flex;
   justify-content:flex-end;
-  margin-top:200px;
+  align-items:center;
+
+
+
    @media screen and  (max-width: 768px) {
     width:50%;
     display:flex;
@@ -65,7 +69,7 @@ const Text = styled.p`
   display:flex;
   justify-content:flex-start;
   flex-direction: column;
-  margin-left:80px;
+  margin-left:180px;
   margin-top:100px;
    @media screen and  (max-width: 768px) {
     margin-top:30px;
@@ -104,7 +108,7 @@ const Title2 = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-top:-30px;
+  margin-top:-20px;
   @media screen and  (max-width: 768px) {
    width:250px;
    font-family: 'Futura';
@@ -141,7 +145,7 @@ const Title4 = styled.p`
   font-family: 'Noto Sans TC';
   font-weight: 900;
   font-size: 26px;
-  margin-top:-20px;
+  margin-top:-38px;
 
    @media screen and  (max-width: 768px) {
     font-family: 'Futura';
@@ -167,6 +171,7 @@ const Contant = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  margin-top:-15px;
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
@@ -194,6 +199,7 @@ const Contant2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  margin-top:-10px;
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
@@ -219,6 +225,7 @@ const BelowText = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin-top:-20px;
    @media screen and  (max-width: 768px) {
     margin-top:70px;
     width:300px

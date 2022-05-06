@@ -251,7 +251,8 @@ const Title22 = styled.p`
 const TopBelow = styled.div`
   display:flex;
   flex-direction: column;
-  justify-content: flex-start;
+  margin-left:-200px;
+  /* margin-left:-200px; */
  
 
  @media screen and (max-width: 768px) {
@@ -261,10 +262,8 @@ const TopBelow = styled.div`
 `;
 
 const UnderBelow = styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:center;
+
+ margin-left:-170px;
  @media screen and (max-width: 768px) {
     margin-left:-80px;
   }
@@ -299,6 +298,7 @@ const BelowTextContainer = styled.div`
  justify-content:center;
  width:827px;
  height:980px;
+ 
   @media screen and (max-width: 768px) {
     width:110%;
     padding-left:0px;
