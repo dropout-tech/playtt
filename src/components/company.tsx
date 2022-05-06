@@ -114,7 +114,6 @@ const TextArea = styled.div`
 
 const TextArea1 = styled.div`
   display:flex;
-  align-items: center;
   justify-content:center;
   flex-direction: column;
   @media screen and (max-width: 768px) {
@@ -128,8 +127,9 @@ const TextArea2 = styled.div`
   display:flex;
   justify-content:center;
   flex-direction: column;
-  margin-top:16px;
+  margin-top:-3px;
   margin-left:70px;
+
 
   @media screen and (max-width: 768px) {
     
@@ -184,7 +184,7 @@ const Text2 = styled.p`
   font-size: 18px;
   line-height: 8px;
   letter-spacing: 0.72px;
-  color: #3C3D3D;
+  color: #1A1A1A;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -411,8 +411,14 @@ const TopContainer = styled.div`
 
 `;
 
+const Text22 = styled.div`
+font-family: 'Noto Sans TC';
+font-weight: 500;
+font-size: 18px;
+line-height: 44px;
+letter-spacing: 0.72px;
 
-
+`;
 
 
 /* desktop thw newest info style end */
@@ -435,11 +441,11 @@ const Company = () => {
               <Text2>創辦人 / 總教練</Text2>
             </TextArea1>
             <TextArea2>
-              <Text2>新北市蘆洲區長樂路106號3樓</Text2>
-              <Num>0988 521 012</Num>
-              <Num>playpp2018@gmail.com</Num>
-              <Text2>週一至週五 10:00–19:00（週末請撥各館電話）</Text2>
-              <Text33>郭教練 <Span>0988 521 012</Span></Text33>
+              <Text22>新北市蘆洲區長樂路106號3樓</Text22>
+              <Text22>0988 521 012</Text22>
+              <Text22>playpp2018@gmail.com</Text22>
+              <Text22>週一至週五 10:00–19:00（週末請撥各館電話）</Text22>
+              <Text22>郭教練 <Span>0988 521 012</Span></Text22>
             </TextArea2>
           </TextArea>
 
@@ -460,7 +466,13 @@ const Company = () => {
               </div>
 
               <div>
-                <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲</SmallTitle>
+                <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲 </SmallTitle>
+                <Text2>新北市蘆洲區長樂路106號3樓</Text2>
+                <Num>02 8286 1011</Num>
+              </div>
+
+              <div>
+                <SmallTitle>Let's Play 東門店 X 東門桌球 － 捷運東門 </SmallTitle>
                 <Text2>台北市中正區金山南路一段121號</Text2>
                 <Num>02 2356 7106</Num>
               </div>
@@ -494,7 +506,7 @@ const Company = () => {
 
             </UnderBelow>
 
-          </BelowTextContainer> 
+          </BelowTextContainer>
 
 
         </BelowArea>
