@@ -28,7 +28,9 @@ const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
  width:100%;
- margin-left:-80px;
+ display:flex;
+ justify-content:center;
+ align-items: center;
    @media screen and (max-width: 768px) {
     display:none;
   }
@@ -67,8 +69,9 @@ const Row1 = styled.div`
 const Row2 = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top:30px;
-  margin-left:-20px;
+  margin-top:50px;
+  justify-content:center;
+  align-items:center;
     @media screen and (max-width: 768px) {
     
   }
@@ -77,7 +80,7 @@ const Row2 = styled.div`
 const Row3 = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top:30px;
+  margin-top:50px;
     @media screen and (max-width: 768px) {
     
   }
@@ -85,9 +88,7 @@ const Row3 = styled.div`
 
 const Picture = styled.div`
   width:100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ 
     @media screen and (max-width: 768px) {
      display:none;
  

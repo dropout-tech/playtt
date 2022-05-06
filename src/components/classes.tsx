@@ -90,11 +90,11 @@ const ContantTitle = styled.p`
   font-style: normal;
   font-weight: 900;
   font-size: 26px;
-  line-height: 40px;
+  line-height:10px;
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-top:10px;
+ 
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -158,7 +158,7 @@ const Img = styled.img`
 const Img2 = styled.img`
   width:414px;
   height:352px;
-  margin-left:80px;
+  margin-left:20px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
     width:251px;  
@@ -174,6 +174,7 @@ const Explain1 = styled.div`
  width:80%;
  display: flex;
  justify-content: flex-start;
+ align-items: center;
   margin-top:60px;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -185,6 +186,7 @@ const Explain2 = styled.div`
  width:80%;
  display: flex;
  justify-content:center;
+ align-items: center;
  @media screen and (max-width: 768px) {
    display:none;
   }
@@ -203,6 +205,7 @@ const MobileContainer = styled.div`
 const Explain3 = styled.div`
  width:80%;
  display: flex;
+ align-items: center;
  justify-content:space-between;
  @media screen and (max-width: 768px) {
     display: flex;
@@ -213,7 +216,7 @@ const Explain3 = styled.div`
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left:80px;
+  margin-left:180px;
   margin-top:70px;
   @media screen and (max-width: 768px) {
     display:flex;
@@ -226,7 +229,7 @@ const Text = styled.div`
 const Background1 = styled.div`
   background: #FFD900;
   border-radius: 28px;
-  height:60px;
+  height:56px;
   text-align:center;
   display:flex;
   justify-content:center;
@@ -265,9 +268,9 @@ const Background3 = styled.div`
 
 const SpanDot = styled.div`
   color: #CFD2D3;
-  margin-top:8px;
-  width: 36px;
-  height: 36px;
+  margin-top:5px;
+  width: 28px;
+  height: 28px;
   font-family: 'Noto Sans TC';
   font-Weight: 500;
   font-size: 20px;
@@ -299,7 +302,7 @@ const TextArea = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 5px;
+  line-height: 4px;
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
@@ -321,7 +324,7 @@ const TextArea2 = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-   line-height: 10px;
+   line-height: 4px;
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
@@ -363,7 +366,7 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot2>・</SpanDot2> <TextArea2>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea2>
+                <SpanDot2>・</SpanDot2><TextArea2>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea2>
               </DotContainer>
 
               <DotContainer>
