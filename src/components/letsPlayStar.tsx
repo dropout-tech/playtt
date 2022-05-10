@@ -23,7 +23,7 @@ const Container = styled.div`
 
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
-    margin-top:-145px;
+    margin-top:-70px;
   }
 
 `;
@@ -70,7 +70,7 @@ const Title3 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:40px;
-  margin-top:50px;
+
    @media screen and (max-width: 768px) {
     margin-top:20px;
     margin-right:10px;
@@ -121,7 +121,7 @@ const Title4 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-left:40px;
-  margin-top:50px;
+
    @media screen and (max-width: 768px) {
     margin-top:20px;
     margin-right:10px;
@@ -149,6 +149,9 @@ const Background = styled.div`
   background: #FFD900;
   width:150%;
   padding-bottom:30px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 
 
  @media screen and (max-width: 768px) {
@@ -160,7 +163,6 @@ const Background = styled.div`
 const Img1 = styled.img`
   width:144px;
   height:126px;
-  margin-top:30px;
   margin-left:20px;
    @media screen and (max-width: 768px) {
   
@@ -170,7 +172,6 @@ const Img1 = styled.img`
 const Img2 = styled.img`
   width:144px;
   height:126px;
-  margin-top:30px;
   margin-left:-60px;
   @media screen and (max-width: 768px) {
     
@@ -178,9 +179,8 @@ const Img2 = styled.img`
 `;
 
 const Img3 = styled.img`
-  width:60px;
-  height:62px;
-  margin-top:60px;
+  width:66px;
+  height:52px;
   margin-left:20px;
    @media screen and (max-width: 768px) {
     
@@ -189,9 +189,8 @@ const Img3 = styled.img`
 `;
 
 const Img4 = styled.img`
-  width:60px;
-  height:62px;
-  margin-top:60px;
+  width:66px;
+  height:52px;
   margin-left:20px;
    @media screen and (max-width: 768px) {
     
@@ -201,6 +200,8 @@ const Img4 = styled.img`
 const LeftArea = styled.div`
    display:flex;
    justify-content:center;
+   align-items: center;
+   margin-top:30px;
     
    @media screen and (max-width: 768px) {
     display:flex;
@@ -232,8 +233,8 @@ const GrayArea = styled.div`
   width:150%;
   display: flex;
   justify-content:center;
+  align-items:center;
  
-  
    @media screen and (max-width: 768px) {
   width:100%;
   }
@@ -253,7 +254,6 @@ const Span = styled.span`
 `;
 
 const GrayAreaText = styled.p`
-  margin-top:35px;
   margin-left:40px;
   font-family: 'Noto Sans TC';
   font-style: normal;

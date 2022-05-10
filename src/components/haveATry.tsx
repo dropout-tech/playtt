@@ -58,6 +58,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   line-Height:52px;
+  margin-top:-35px;
    @media screen and (max-width: 768px) {
     font-family: 'Futura';
     font-style: normal;

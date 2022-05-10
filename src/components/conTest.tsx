@@ -73,11 +73,11 @@ const TextContainer2 = styled.div`
 `;
 
 const LeftText = styled.div`
-  margin-left:-240px;
+  margin-left:-180px;
   margin-top:300px;
    @media screen and (max-width: 768px) {
     z-index:10;
-    margin-top:-300px;
+    margin-top:-240px;
     margin-left:20px;
   
     

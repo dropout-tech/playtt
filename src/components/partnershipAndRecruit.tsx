@@ -48,6 +48,7 @@ const Title2 = styled.p`
   color: #CFD2D3;
   margin-left:30px;
   line-Height:52px;
+  margin-top:-35px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
     font-family: 'Futura';
@@ -67,7 +68,7 @@ const Container = styled.div`
   margin-top:-90px;
   padding-bottom: 80px;
   @media screen and (max-width: 768px) {
-    margin-top:-190px;
+    margin-top:-120px;
   }
 `;
 
@@ -80,7 +81,7 @@ const TitleContainer = styled.div`
 
 const BlueArea = styled.div`
   width: 100%;
-  height:100%;
+  height:804px;
   background: #005CB9;  
   z-index:1;
   padding-bottom:60px;
@@ -106,7 +107,7 @@ const GrayArea = styled.div`
   background: #F5F6F6;
   width: 270px;
   height:150px;
-  margin-top:-50px;
+  
 
    @media screen and (max-width: 768px) {
     width: 116px;
@@ -127,6 +128,7 @@ const TextArea = styled.div`
     justify-content:center;
     align-items: center;
     flex-direction: column;
+    margin-left:12px;
   
     
   }
@@ -155,7 +157,7 @@ const BigTitle = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
-  padding-top:60px;
+  padding-top:80px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -206,7 +208,7 @@ const TopText = styled.p`
 const WhiteArea = styled.div`
   background: #FFFFFF;
   width: 270px;
-  height: 483px;
+  height: 333px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -338,7 +340,7 @@ const TextkeyIn4 = styled.p`
 `;
 
 const Textcontainer = styled.div`
-  margin-top:-15px;
+  margin-top:-25px;
 
 `;
 

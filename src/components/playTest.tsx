@@ -54,7 +54,7 @@ const Text2 = styled.div`
 `;
 
 const Text3 = styled.div`
-
+ margin-top:-20px;
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
@@ -94,7 +94,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   line-Height:52px;
-  margin-top:-38px;
+  margin-top:-30px;
    @media screen and (max-width: 768px) {
     margin-top:-25px;
     font-family: 'Futura';
@@ -161,7 +161,7 @@ const Number2 = styled.span`
   align-items: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-top:-40px;
+  margin-top:-60px;
    @media screen and (max-width: 768px) {
     padding-left:12px;
   }
@@ -198,8 +198,9 @@ const TextContent = styled.p`
 const TestpicImg = styled.img`
   width:580px;
   height:593px;
-  margin-right:100px;
-  margin-top:100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
    @media screen and (max-width: 768px) {
     width:251px;
     height:256px;
@@ -220,6 +221,8 @@ const Text123 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
+  margin-left:12px;
+
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;

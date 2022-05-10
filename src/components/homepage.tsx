@@ -17,7 +17,7 @@ const PageContainer = styled.div`
   }
 `;
 
-const BannerImg = styled.img`
+const BannerImg = styled.div`
   width:100% ;
   height:804px ;
   background-image: url('${banner}');
@@ -26,6 +26,7 @@ const BannerImg = styled.img`
    @media screen and (max-width: 768px) {
     background-image: url('${banner2}');
     height:671px ;
+
   }
 
 `;
