@@ -164,6 +164,8 @@ const Text = styled.p`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #3C3D3D;
+  margin:0px;
+  padding:0px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -179,13 +181,13 @@ const Text = styled.p`
 
 const Text2 = styled.p`
   font-family: 'Noto Sans TC';
-  font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 8px;
-  letter-spacing: 0.72px;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.64px;
   color: #3C3D3D;
-  margin-top:-10px;
+  margin:0px;
+  padding:0px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -199,20 +201,7 @@ const Text2 = styled.p`
   
 `;
 
-const Text33 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 8px;
-  letter-spacing: 0.72px;
-  color: #3C3D3D;
-  margin-top:6px;
-  @media screen and (max-width: 768px) {
-   
-  }
-  
-`;
+
 
 const Title = styled.p`
   font-family: 'Noto Sans TC';
@@ -243,6 +232,7 @@ const Title22 = styled.p`
   color: #1A1A1A;
   display:flex;
   justify-content:flex-start;
+  margin:0px 8px 0px 0px;
 
    @media screen and (max-width: 768px) {
    
@@ -250,10 +240,9 @@ const Title22 = styled.p`
 `;
 
 const TopBelow = styled.div`
-  display:flex;
-  flex-direction: column;
-  margin-left:-200px;
-  /* margin-left:-200px; */
+  margin-left:144px;
+
+ 
  
 
  @media screen and (max-width: 768px) {
@@ -263,8 +252,8 @@ const TopBelow = styled.div`
 `;
 
 const UnderBelow = styled.div`
-
- margin-left:-170px;
+  margin-left:144px;
+  margin-top:40px;
  @media screen and (max-width: 768px) {
     margin-left:-80px;
   }
@@ -279,6 +268,8 @@ const Title2 = styled.p`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 0.04em;
+  margin:40px 0px 0px 0px;
+
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
@@ -295,10 +286,12 @@ const BelowTextContainer = styled.div`
  background: #FFFFFF;
  display:flex;  
  flex-direction:column;
- align-items: center;
- justify-content:center;
+ align-items:start ;
+ justify-content:flex-start;
  width:827px;
  height:980px;
+
+
  
   @media screen and (max-width: 768px) {
     width:110%;
@@ -316,7 +309,7 @@ const SmallTitle = styled.p`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-top:10px;
+  margin-bottom:0px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -389,9 +382,13 @@ const Num = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 8px;
+  line-height:32px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
+
+
+
 `;
 
 const Span = styled.span`
@@ -421,6 +418,27 @@ letter-spacing: 0.72px;
 color:#1A1A1A;
 `;
 
+const Time = styled.div`
+
+`;
+
+const Shop = styled.div`
+margin-top:0px;
+
+
+`;
+
+const Shop1 = styled.div`
+margin-top:20px;
+
+
+`;
+
+const Shop2 = styled.div`
+margin:0px;
+
+
+`;
 
 /* desktop thw newest info style end */
 const Company = () => {
@@ -461,49 +479,49 @@ const Company = () => {
             <TopBelow>
               <Title2>分館資訊</Title2>
 
-              <div>
+              <Time>
                 <SmallTitle>各館營業時間</SmallTitle>
                 <Text>週一至週五 <Span>13:00–21:00</Span>　週六日<Span> 9:00–19:00</Span></Text>
-              </div>
+              </Time>
 
-              <div>
+              <Shop>
                 <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲 </SmallTitle>
                 <Text2>新北市蘆洲區長樂路106號3樓</Text2>
                 <Num>02 8286 1011</Num>
-              </div>
+              </Shop>
 
-              <div>
+              <Shop1>
                 <SmallTitle>Let's Play 東門店 X 東門桌球 － 捷運東門 </SmallTitle>
                 <Text2>台北市中正區金山南路一段121號</Text2>
                 <Num>02 2356 7106</Num>
-              </div>
+              </Shop1>
 
-              <div>
+              <Shop1>
                 <SmallTitle>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</SmallTitle>
                 <Text2>台北市新莊區民樂街37號B1</Text2>
                 <Num>02 2990 0566</Num>
-              </div>
+              </Shop1>
 
-              <div>
+              <Shop1>
                 <SmallTitle>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</SmallTitle>
                 <Text2>台北市中正區杭州南路一段63號B1</Text2>
                 <Num>02 2391 9659</Num>
-              </div>
+              </Shop1>
             </TopBelow>
 
             <UnderBelow>
               <Title22>聯盟場館經營</Title22>
-              <div>
+              <Shop2>
                 <SmallTitle>ONWARD TT 乒乓吧 X Let's Play － 捷運南港 & 昆陽</SmallTitle>
                 <Text2>台北市南港區南港路二段141號1樓</Text2>
                 <Num>02 2651 0652</Num>
-              </div>
+              </Shop2>
 
-              <div>
+              <Shop2>
                 <SmallTitle>舞動華江高中 & Let's Play － 捷運龍山寺</SmallTitle>
                 <Text2>台北市萬華區西藏路213號</Text2>
                 <Num>02 2339 6689</Num>
-              </div>
+              </Shop2>
 
             </UnderBelow>
 
