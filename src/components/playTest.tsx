@@ -70,6 +70,7 @@ const Title1 = styled.p`
   line-height: 52px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -94,7 +95,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   line-Height:52px;
-  margin-top:-30px;
+  margin-top:8px;
    @media screen and (max-width: 768px) {
     margin-top:-25px;
     font-family: 'Futura';

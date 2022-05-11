@@ -119,12 +119,13 @@ const Text = styled.p`
 const TextContainer = styled.div`
   display:flex;
   flex-direction:column;
+  justify-content:center;
+
   background: rgba(207, 210, 211,0.2);
   width: 373px;
   height:373px;
   margin-left:40px;
   margin-top:10px;
-  padding-left:10px;
   padding-top:10px;
     @media screen and (max-width: 768px) {
      margin-top:30px;
@@ -213,7 +214,7 @@ const MobileContainer = styled.div`
 
 const TextSize = styled.div`
   width:309px;
-  height:128px;
+  height:100%;
   margin-left:50px;
 
 `;

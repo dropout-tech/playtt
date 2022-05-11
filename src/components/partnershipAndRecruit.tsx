@@ -22,7 +22,7 @@ const Title1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:30px;
+  margin:0px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
     font-family: 'Noto Sans TC';
@@ -48,7 +48,7 @@ const Title2 = styled.p`
   color: #CFD2D3;
   margin-left:30px;
   line-Height:52px;
-  margin-top:-35px;
+  margin-top:8px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
     font-family: 'Futura';

@@ -35,6 +35,7 @@ const Title = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
 
 `;
 
@@ -47,7 +48,7 @@ const TitleWord = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-top:-30px;
+  margin-top:8px;
   line-Height:52px;
   
 `;
@@ -157,7 +158,7 @@ const Title2 = styled.div`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-top:30px;
+  margin-top:5px;
 `;
 
 const TextForm2 = styled.p`
@@ -175,7 +176,7 @@ const TextForm2 = styled.p`
 const Img = styled.img`
   width:130px;
   height:64px;
-  margin-top:-30px;
+  margin-top:-10px;
   margin-left:-15px;
   
 `;

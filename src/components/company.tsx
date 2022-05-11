@@ -184,7 +184,8 @@ const Text2 = styled.p`
   font-size: 18px;
   line-height: 8px;
   letter-spacing: 0.72px;
-  color: #1A1A1A;
+  color: #3C3D3D;
+  margin-top:-10px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -315,7 +316,7 @@ const SmallTitle = styled.p`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-top:-10px;
+  margin-top:10px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -415,9 +416,9 @@ const Text22 = styled.div`
 font-family: 'Noto Sans TC';
 font-weight: 500;
 font-size: 18px;
-line-height: 44px;
+line-height: 32px;
 letter-spacing: 0.72px;
-
+color:#1A1A1A;
 `;
 
 
