@@ -45,6 +45,7 @@ const ImgContainer = styled.div`
   display:flex;
   justify-content:center;
   align-items: center;
+  margin-bottom:80px;
  
    @media screen and (max-width: 768px) {
     display:flex;
@@ -56,6 +57,10 @@ const ImgContainer = styled.div`
 const TextContainer = styled.div`
  width:50%;
  margin-left:100px;
+ display:flex;
+ justify-content:center;
+ /* align-items:center; */
+ flex-direction: column;
   @media screen and (max-width: 768px) {
    display:flex;
    width:100%;
@@ -73,6 +78,7 @@ const Title = styled.p`
   letter-spacing: 1.04px;
   color: #005CB9;
   margin-left:25px;
+  margin-top:-1px;
   
    @media screen and (max-width: 768px) {
     margin-top:16px;
@@ -125,6 +131,7 @@ const Text2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  margin-top:28px;
   
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
