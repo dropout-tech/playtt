@@ -110,7 +110,7 @@ const RightItems = styled.div`
 
 const Container = styled.div`
  width:100%;
- margin-top: -300px;
+ margin-top: -46px;
  padding-bottom: 80px;
  @media screen and (max-width: 768px) {
     display:none;

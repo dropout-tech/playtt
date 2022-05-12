@@ -86,9 +86,9 @@ const TextArea = styled.div`
   justify-content:center;
   flex-direction: column;
   background-image: url('${bg}');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
- 
+  background-position:center;
    @media screen and (max-width: 768px) {
    background-image: url('${bg2}');
    width:100%;
@@ -97,11 +97,11 @@ const TextArea = styled.div`
 `;
 
 const AlignText = styled.div`
- margin-top:-140px;
  display: flex; 
  align-items: center;
  justify-content:center;
  flex-direction: column;
+;
   @media screen and (max-width: 768px) {
     
   }

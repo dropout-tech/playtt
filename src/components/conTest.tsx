@@ -175,7 +175,7 @@ const Title3 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-left:24px;
+  margin:0px 0px 0px 24px;
   
 
 
@@ -234,6 +234,7 @@ const Text = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   width:374px;
+  margin:24px 0px 0px 0px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -250,7 +251,7 @@ const Text = styled.p`
 `;
 
 const TextContainer = styled.div`
- margin-top:120px;
+ margin-top:130px;
  @media screen and (max-width: 768px) {
   display:flex;
   margin-top:10px;
