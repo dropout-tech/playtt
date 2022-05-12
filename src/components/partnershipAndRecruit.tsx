@@ -122,7 +122,8 @@ const GrayArea = styled.div`
 const TextArea = styled.div`
  display:flex;
  justify-content:center;
- margin-right:55px;
+ align-items: center;
+ margin-right:40px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content:center;
@@ -224,19 +225,14 @@ const WhiteArea = styled.div`
 
 
 const TextkeyIn1 = styled.p`
-  width: 210px;
-  height:224px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 32px;
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:80px;
+
   @media screen and (max-width: 768px) {
     margin-left:50px;
     font-family: 'Noto Sans TC';
@@ -255,8 +251,6 @@ const TextkeyIn1 = styled.p`
 `;
 
 const TextkeyIn2 = styled.p`
-  width: 210px;
-  height:224px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -267,7 +261,6 @@ const TextkeyIn2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:100px;
   @media screen and (max-width: 768px) {
     margin-left:70px;
     font-family: 'Noto Sans TC';
@@ -284,8 +277,6 @@ const TextkeyIn2 = styled.p`
 `;
 
 const TextkeyIn3 = styled.p`
-  width: 210px;
-  height:224px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -296,7 +287,10 @@ const TextkeyIn3 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
   @media screen and (max-width: 768px) {
     margin-left:50px;
     font-family: 'Noto Sans TC';
