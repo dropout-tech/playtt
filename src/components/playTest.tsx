@@ -18,16 +18,18 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
   display:flex;
-  justify-content: space-around;
+  justify-content:flex-start;
   margin-left:80px;
   padding-top:80px;
   padding-bottom: 80px;
+  margin-left:300px;
    @media screen and (max-width: 768px) {
     display: none;
   }
 `;
 
 const TextContainer = styled.div`
+ 
  @media screen and (max-width: 768px) {
     
   }
@@ -200,8 +202,9 @@ const TestpicImg = styled.img`
   width:580px;
   height:593px;
   display:flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left:103px;
    @media screen and (max-width: 768px) {
     width:251px;
     height:256px;

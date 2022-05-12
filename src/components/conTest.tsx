@@ -65,8 +65,9 @@ const TextContainer2 = styled.div`
  z-index:10;
  display:flex;
  justify-content:space-between;
+ align-items: center;
  margin-right:150px;
- margin-top:30px;
+ 
   @media screen and (max-width: 768px) {
     margin-top:-40px;
   }
@@ -74,7 +75,7 @@ const TextContainer2 = styled.div`
 
 const LeftText = styled.div`
   margin-left:-180px;
-  margin-top:300px;
+  margin-top:400px;
    @media screen and (max-width: 768px) {
     z-index:10;
     margin-top:-240px;
@@ -274,7 +275,7 @@ const MobileContainer = styled.div`
 
 const CircleImg = styled.img`
   width:100%;
-  height:175px;
+  height:200px;
  
   margin-top:-100px;
   display:flex;
