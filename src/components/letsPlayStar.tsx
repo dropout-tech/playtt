@@ -215,7 +215,6 @@ const LeftArea = styled.div`
 const TextContainer = styled.div`
  display:flex;
  justify-content:center;
- margin-left:140px;
  margin-top:-160px;
  width:80%;
   @media screen and (max-width: 768px) {
@@ -254,7 +253,6 @@ const Span = styled.span`
 `;
 
 const GrayAreaText = styled.p`
-  margin-left:40px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -262,7 +260,6 @@ const GrayAreaText = styled.p`
   line-height: 36px;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin-left:-7px;
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
@@ -273,7 +270,10 @@ const GrayAreaText = styled.p`
 `;
 
 const Container2 = styled.div`
-
+ display:flex;
+ justify-content:center;
+ align-items: center;
+ flex-direction: column;
   @media screen and (max-width: 768px) {
     display: none;
       
@@ -297,7 +297,10 @@ const Dot = styled.div`
 `;
 
 const TextArea = styled.div`
-  margin-left:-30px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
   margin-top:15px;
 
 `;
