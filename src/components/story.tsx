@@ -49,6 +49,8 @@ const Picture = styled.div`
   display:flex;
   justify-content:flex-end;
   align-items:center;
+  margin-right:103px;
+;
 
 
 
@@ -67,10 +69,12 @@ const Picture = styled.div`
 const Text = styled.p`
   width:50%;
   display:flex;
-  justify-content:flex-start;
+  justify-content:center;
   flex-direction: column;
-  margin-left:180px;
-  margin-top:100px;
+  align-items: flex-start;
+  margin:100px 0px 0px 0px
+  
+  margin-bottom:30px;
    @media screen and  (max-width: 768px) {
     margin-top:30px;
     margin-left:60px;
@@ -86,6 +90,7 @@ const Title1 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
    @media screen and  (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -108,7 +113,7 @@ const Title2 = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-top:-20px;
+  margin:4px 0px 0px 0px;
   @media screen and  (max-width: 768px) {
    width:250px;
    font-family: 'Futura';
@@ -130,6 +135,8 @@ const Title3 = styled.p`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
+  margin:0px;
+  
  @media screen and  (max-width: 768px) {
     font-size: 20px;
     line-height: 36px;
@@ -145,7 +152,7 @@ const Title4 = styled.p`
   font-family: 'Noto Sans TC';
   font-weight: 900;
   font-size: 26px;
-  margin-top:-38px;
+  margin:-13px 0px 0px 0px;
 
    @media screen and  (max-width: 768px) {
     font-family: 'Futura';
@@ -171,7 +178,8 @@ const Contant = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin-top:-15px;
+  margin:24px 0px 0px 0px;
+
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
@@ -199,7 +207,7 @@ const Contant2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin-top:-10px;
+  margin:0px;
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
@@ -225,7 +233,7 @@ const BelowText = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-top:-20px;
+  margin:40px 210px 0px 0px;
    @media screen and  (max-width: 768px) {
     margin-top:70px;
     width:300px
