@@ -22,7 +22,7 @@ const Container = styled.div`
   height:100%;
   background: rgba(207, 210, 211,0.2);
   display: flex;
-  padding-top:-120px;
+  margin-top:80px;
    @media screen and (max-width: 768px) {
     display:none;
    

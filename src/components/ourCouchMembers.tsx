@@ -61,6 +61,7 @@ const PicImg2 = styled.img`
 const Row1 = styled.div`
   display: flex;
   justify-content:center;
+  margin-top:-65px;
     @media screen and (max-width: 768px) {
    display: flex;
     flex-direction: column;
@@ -83,6 +84,7 @@ const Row3 = styled.div`
   justify-content:center;
   flex-direction: row;
   margin-top:50px;
+  margin-bottom:94px;
     @media screen and (max-width: 768px) {
     
   }

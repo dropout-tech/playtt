@@ -65,7 +65,6 @@ const Title2 = styled.p`
 const Container = styled.div`
   width: 100%;
   height:100%;
-  margin-top:-90px;
   padding-bottom: 80px;
   @media screen and (max-width: 768px) {
     margin-top:-120px;
@@ -85,6 +84,7 @@ const BlueArea = styled.div`
   background: #005CB9;  
   z-index:1;
   padding-bottom:60px;
+  margin-top:60px;
   @media screen and (max-width: 768px) {
     flex:none;
   }

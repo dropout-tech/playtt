@@ -20,7 +20,7 @@ const Container = styled.div`
   display:flex;
   justify-content:flex-start;
   margin-left:80px;
-  padding-top:80px;
+  padding-top:180px;
   padding-bottom: 80px;
   margin-left:300px;
    @media screen and (max-width: 768px) {

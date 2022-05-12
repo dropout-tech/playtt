@@ -20,7 +20,7 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
-
+ margin-top:44px;
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
     margin-top:-70px;
@@ -274,6 +274,7 @@ const Container2 = styled.div`
  justify-content:center;
  align-items: center;
  flex-direction: column;
+ margin-top:60px;
   @media screen and (max-width: 768px) {
     display: none;
       

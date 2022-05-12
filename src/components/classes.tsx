@@ -16,7 +16,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
   width:100%;
   height:100%;
-  padding-top:80px;
+  padding-top:140px;
   padding-bottom:80px;
   @media screen and (max-width: 768px) {
    margin-top:-40px;
@@ -137,7 +137,7 @@ const Contant = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center; 
-  margin-top:-80px;
+  margin-top:4px;
  
   @media screen and (max-width: 768px) {
     

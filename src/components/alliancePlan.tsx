@@ -57,6 +57,7 @@ const Background = styled.div`
   background: #F5F6F6;
   width:100%;
   height:965px;
+  margin-top:60px;
  
   
 `;

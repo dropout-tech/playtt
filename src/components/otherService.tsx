@@ -21,7 +21,7 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- padding-top:20px;
+ padding-top:110px;
  padding-bottom: 80px;
  margin-left:-40px;
   @media screen and (max-width: 768px) {
@@ -69,6 +69,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:-30px;
+  margin-bottom:60px;
   line-Height:52px;
     @media screen and (max-width: 768px) {
     

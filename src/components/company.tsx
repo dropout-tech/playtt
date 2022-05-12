@@ -19,7 +19,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
   height:100%;
   width:100%;
-  padding-top:-30px;
+  margin-top:55px;
   padding-bottom: 80px;
   display:flex;
   flex-direction: column;
@@ -370,6 +370,7 @@ const TitleTwo = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:-30px;
+  margin-bottom:60px;
 `;
 
 const Background = styled.div`
