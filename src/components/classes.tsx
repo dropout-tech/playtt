@@ -91,6 +91,8 @@ const ContantTitle = styled.p`
   font-weight: 900;
   font-size: 26px;
   line-height:10px;
+  display:flex;
+
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
@@ -146,6 +148,7 @@ const Img = styled.img`
   width:414px;
   height:352px;
   margin-top:60px;
+
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
@@ -158,7 +161,7 @@ const Img = styled.img`
 const Img2 = styled.img`
   width:414px;
   height:352px;
-  margin-left:20px;
+  margin-left:40px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
     width:251px;  
@@ -171,7 +174,7 @@ const Img2 = styled.img`
 
 
 const Explain1 = styled.div`
- width:80%;
+
  display: flex;
  justify-content: flex-start;
  align-items: center;
@@ -203,7 +206,7 @@ const MobileContainer = styled.div`
 `;
 
 const Explain3 = styled.div`
- width:80%;
+
  display: flex;
  align-items: center;
  justify-content:space-between;
@@ -216,7 +219,7 @@ const Explain3 = styled.div`
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left:180px;
+  margin-left:103px;
   margin-top:70px;
   @media screen and (max-width: 768px) {
     display:flex;
@@ -242,7 +245,7 @@ const Background1 = styled.div`
 const Background2 = styled.div`
   background: #FFD900;
   border-radius: 28px;
-  height:60px;
+  height:56px;
   text-align:center;
   display:flex;
   justify-content:center;
@@ -255,7 +258,7 @@ const Background2 = styled.div`
 const Background3 = styled.div`
   background: #FFD900;
   border-radius: 28px;
-  height:60px;
+  height:56px;
   text-align:center;
   display:flex;
   justify-content:center;
@@ -283,7 +286,7 @@ const SpanDot = styled.div`
 
 const SpanDot2 = styled.div`
   color: #CFD2D3;
-  margin-top:8px;
+  margin-top:4px;
   width: 36px;
   height: 36px;
  @media screen and (max-width: 768px) {

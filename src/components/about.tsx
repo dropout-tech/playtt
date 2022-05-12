@@ -340,7 +340,7 @@ const TextArea = styled.div`
 `;
 
 const TextArea2 = styled.div`
-  
+  margin-top:-10px;
   margin-left:40px;
   
   @media screen and (max-width: 768px) {
