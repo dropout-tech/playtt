@@ -75,6 +75,8 @@ const BelowText = styled.p`
    @media screen and (max-width: 768px) {
     font-size: 14px;
     margin-top:10px;
+    display: flex; 
+ 
   }
 `;
 
@@ -86,13 +88,17 @@ const TextArea = styled.div`
   justify-content:center;
   flex-direction: column;
   background-image: url('${bg}');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position:center;
    @media screen and (max-width: 768px) {
-   background-image: url('${bg2}');
-   width:100%;
-   height:310px; 
+    background-image: url('${bg2}');
+    background-size:contain ;
+    background-repeat: no-repeat;
+    background-position:center;
+  
+    width:80%;
+    height:310px; 
    }
 `;
 
@@ -103,7 +109,7 @@ const AlignText = styled.div`
  flex-direction: column;
 ;
   @media screen and (max-width: 768px) {
-    
+   margin-top:-120px;
   }
 
 `;

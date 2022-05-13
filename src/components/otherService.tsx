@@ -32,6 +32,7 @@ const Container = styled.div`
 const BelowArea = styled.div`
  display: flex;
  justify-content:center;
+ align-items: center;
  margin-top:30px; 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -121,6 +122,7 @@ const TextContainer = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:center;
+ 
 
   background: rgba(207, 210, 211,0.2);
   width: 373px;
