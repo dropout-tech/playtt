@@ -41,7 +41,7 @@ const BelowArea = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
-    margin-top:-30px;
+
   }
 
 `;
@@ -71,10 +71,10 @@ const Background2 = styled.div`
  height:980px;
  align-items: center;
   @media screen and (max-width: 768px) {
-    width:110.025%;
+    width:327px;
     height:84px;
-    margin-top:300px;
-    margin-left:-142px;
+ 
+   
     
   }
 `;
@@ -256,13 +256,20 @@ const Title22 = styled.p`
 `;
 
 const TopBelow = styled.div`
-  margin-left:144px;
+   @media screen and (max-width: 768px) {
+   display:flex;
+   justify-content:center;
+   align-items:flex-start;
+   flex-direction:column;
+   margin-top:-100px;
+   margin-left:200px;
+  }
 
  
  
 
  @media screen and (max-width: 768px) {
-   margin-left:-80px;
+   margin-left:0px;
   }
 
 `;
@@ -271,7 +278,7 @@ const UnderBelow = styled.div`
   margin-left:144px;
   margin-top:40px;
  @media screen and (max-width: 768px) {
-    margin-left:-80px;
+    margin-left:0px;
   }
   
 `;
@@ -295,6 +302,7 @@ const Title2 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin:0px;
   }
 `;
 
@@ -302,17 +310,20 @@ const BelowTextContainer = styled.div`
  background: #FFFFFF;
  display:flex;  
  flex-direction:column;
- align-items:start ;
- justify-content:flex-start;
+ align-items:center ;
+ justify-content:center;
  width:827px;
  height:980px;
 
 
  
   @media screen and (max-width: 768px) {
-    width:110%;
+    width:327px;
+    height:993px;
     padding-left:0px;
-    margin-left:-141px;
+    margin-bottom:80px;
+
+
   }
 
 `;
@@ -341,14 +352,12 @@ const MobileContainer = styled.div`
   display:none;
  @media screen and (max-width: 768px) {
     background: #38D430;
-    height:100%;
     width:100%;
-    padding-top:80px;
-    padding-bottom: 80px;
+    height:40%;
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin-top:-40px;
+   
 
   }
 
@@ -621,7 +630,7 @@ const Company = () => {
 
             <div>
               <SmallTitle>各館營業時間</SmallTitle>
-              <Text>週一至週五 13:00–21:00　週六日 9:00–19:00</Text>
+              <Text>週一至週五 13:00–21:00　週六日<br/> 9:00–19:00</Text>
             </div>
 
             <div>

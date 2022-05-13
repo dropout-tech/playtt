@@ -71,7 +71,7 @@ const Title2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-top:-30px;
+    margin-top:10px;
 
   }
 `;
