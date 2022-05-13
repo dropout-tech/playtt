@@ -50,16 +50,16 @@ const Background1 = styled.div`
  background:#F5F6F6;
  display:flex;  
  justify-content: center;
+ align-items: center;
  margin-top:50px;
  width:373px;
  height:288px;
-
  margin-left:-30px;
- align-items: center;
+ 
   @media screen and (max-width: 768px) {
-    width:98%;
-    height:400px;
-    margin-left:-90px;
+    width:327px;
+    height:84px;
+  ;
   }
 `;
 
@@ -104,11 +104,19 @@ const TextArea = styled.div`
  margin-top:50px;
 
   @media screen and (max-width: 768px) {
-    width:98%;
+    width:327px;
+    height:468px;
+    display:flex;  
+    justify-content: center;
+    align-items:center;
+    margin-right:30px;
     margin-top:0px;
-    height:300%;
-    padding-left:0px;
-    margin-left:-90px
+    
+  
+    
+    
+
+
 
   }
 `;
@@ -120,9 +128,8 @@ const TextArea1 = styled.div`
   flex-direction: column;
   margin-left:48px;
   @media screen and (max-width: 768px) {
-   margin-left:20px;
-   margin-top:-30px;
    margin-bottom:30px;
+   margin-left:0px;
   }
 `;
 
@@ -149,12 +156,18 @@ const Text3 = styled.p`
   color: #3C3D3D;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 20px;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 28px;
+/* identical to box height, or 200% */
+
+letter-spacing: 0.06em;
+
+/* gray */
+
+color: #3C3D3D;
+
     
   }
   
@@ -408,9 +421,13 @@ const Span = styled.span`
 
 
 const TopContainer = styled.div`
-
-
-
+  
+ @media screen and (max-width: 768px) {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  }
 `;
 
 const Text22 = styled.div`
@@ -442,6 +459,24 @@ const Shop2 = styled.div`
 margin:0px;
 
 
+`;
+
+const Text33 = styled.div`
+@media screen and (max-width: 768px) {
+  font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 32px;
+/* identical to box height, or 200% */
+
+letter-spacing: 0.04em;
+
+/* black */
+
+color: #1A1A1A;
+
+  }
 `;
 
 /* desktop thw newest info style end */
@@ -546,16 +581,16 @@ const Company = () => {
             <TextArea1>
               <Column>
                 <Text3>地址</Text3>
-                <Text3>新北市蘆洲區長樂路106號3樓</Text3>
+                <Text33>新北市蘆洲區長樂路106號3樓</Text33>
               </Column>
               <Column>
                 <Text3>連絡電話</Text3>
-                <Text3>0988 521 012</Text3>
+                <Text33>0988 521 012</Text33>
               </Column>
 
               <Column>
                 <Text3>信箱</Text3>
-                <Text3>playpp2018@gmail.com</Text3>
+                <Text33>playpp2018@gmail.com</Text33>
               </Column>
 
               <Column>
@@ -567,7 +602,7 @@ const Company = () => {
               </Column>
 
               <Text3>創辦人 / 總教練</Text3>
-              <Text3>郭教練 0988 521 012</Text3>
+              <Text33>郭教練 0988 521 012</Text33>
             </TextArea1>
 
           </TextArea>
