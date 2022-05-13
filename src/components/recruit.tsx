@@ -48,8 +48,8 @@ const ImgContainer = styled.div`
   margin-bottom:80px;
  
    @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
+   margin-top:120px;
+   margin-left:90px;
 
   }
 `;

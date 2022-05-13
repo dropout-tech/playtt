@@ -42,6 +42,7 @@ const Text1 = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-top:20px;
   }
 `;
 
@@ -99,7 +100,7 @@ const Title2 = styled.p`
   line-Height:52px;
   margin-top:8px;
    @media screen and (max-width: 768px) {
-    margin-top:-25px;
+   
     font-family: 'Futura';
     font-style: normal;
     font-weight: 700;
@@ -210,6 +211,7 @@ const TestpicImg = styled.img`
     height:256px;
     margin-left:100px;
     margin-right:0px;
+    margin-top:120px;
     
     
   }

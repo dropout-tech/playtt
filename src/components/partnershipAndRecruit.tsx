@@ -86,7 +86,8 @@ const BlueArea = styled.div`
   padding-bottom:60px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
-    flex:none;
+    width:100%;
+    height:100%;
   }
 `;
 
