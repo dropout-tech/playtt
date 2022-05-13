@@ -94,7 +94,7 @@ const BlueArea = styled.div`
 const ColorLineImg = styled.img`
   width: 98px;
   height: 27px;
-  margin-left:80px;
+
   margin-top:50px;
    @media screen and (max-width: 768px) {
      margin-left:10px;
@@ -108,6 +108,9 @@ const GrayArea = styled.div`
   background: #F5F6F6;
   width: 270px;
   height:150px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
   
 
    @media screen and (max-width: 768px) {
@@ -187,7 +190,6 @@ const TopText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:80px;
   margin-top:5px;
    @media screen and (max-width: 768px) {
     width:110px;
@@ -335,7 +337,12 @@ const TextkeyIn4 = styled.p`
 `;
 
 const Textcontainer = styled.div`
-  margin-top:-25px;
+  margin-top:0px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+
 
 `;
 
@@ -394,7 +401,7 @@ const PartnershipAndRecruit = () => {
               <Textcontainer>
                 <ColorLineImg src={colorLine} alt="" />
                 <TopText>教育機構</TopText>
-            </Textcontainer>
+              </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn3>
