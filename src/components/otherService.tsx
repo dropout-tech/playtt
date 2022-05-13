@@ -25,7 +25,7 @@ const Container = styled.div`
  padding-bottom: 80px;
  margin-left:-40px;
   @media screen and (max-width: 768px) {
-    display:none;
+
   }
 `;
 
@@ -207,8 +207,8 @@ const ImgContainer = styled.div`
 `;
 
 const MobileContainer = styled.div`
-   display:none;
-  @media screen and (max-width: 768px) {
+  display:none;
+  @media screen and (mix-width: 768px) {
     padding-top:80px;
     padding-bottom: 80px;
 
