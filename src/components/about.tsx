@@ -79,6 +79,8 @@ const TopArea = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     display:flex;
+    justify-content:flex-start;
+    align-items: flex-start;
     flex-direction: column;
     margin-top:-90px;
   }
@@ -93,7 +95,7 @@ const LeftItems = styled.div`
  margin-right:40px;
 
  @media screen and (max-width: 768px) {
-    
+   
   }
 `;
 
@@ -325,7 +327,9 @@ const BrandContainer = styled.div`
   justify-content:space-between;
 
   @media screen and (max-width: 768px) {
-    
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
   }
 `;
 
@@ -334,7 +338,11 @@ const TextArea = styled.div`
   
 
   @media screen and (max-width: 768px) {
-   margin-left:-20px;
+    display:flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top:100px;
   }
   
 `;
@@ -515,23 +523,17 @@ const About = () => {
             </Contants>
           </Hope3Container>
         </TextArea2>
-
-        <RightItems>
-
-          <BrandContainer>
-            <StartImg4 src={start} alt="" />
-            <TextArea>
-              <Hope4>教學理念</Hope4>
-              <Slogan>Let’s Play Teach <Span>Thinking</Span></Slogan>
-              <Contants>
-                學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let's Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
-              </Contants>
-            </TextArea>
-          </BrandContainer>
-
-        </RightItems>
-
-
+        
+        <BrandContainer>
+          <StartImg4 src={start} alt="" />
+          <TextArea>
+            <Hope4>教學理念</Hope4>
+            <Slogan>Let’s Play Teach <Span>Thinking</Span></Slogan>
+            <Contants>
+              學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let's Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
+            </Contants>
+          </TextArea>
+        </BrandContainer>
 
       </TopArea>
     </MobileContainer>
