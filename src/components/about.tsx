@@ -137,7 +137,8 @@ const AboutText = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:10px;
+    margin:0px 0px 10px 0px;
+
   }
 `;
 
@@ -223,6 +224,7 @@ const Hope3 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
+  
   }
 `;
 
@@ -263,7 +265,7 @@ const Slogan = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #005CB9;
-
+    
   }
 `;
 
@@ -371,7 +373,7 @@ const MobileContainer = styled.div`
 
 const Hope3Container = styled.div`
  @media screen and (max-width: 768px) {
-   margin-left:-20px;
+   margin-left:20px;
   }
  
 `;
