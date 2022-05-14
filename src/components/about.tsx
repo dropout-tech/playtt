@@ -19,7 +19,7 @@ const PageContainer = styled.div`
 const StartImg1 = styled.img`
   width: 63px;
   height:63px;
-  margin-top:50px;
+  margin-top:14px;
   margin-right:40px;
   @media screen and (max-width: 768px) {
     margin-left:20px;
@@ -32,7 +32,7 @@ const StartImg1 = styled.img`
 const StartImg2 = styled.img`
   width: 63px;
   height:63px;
-  margin-top:40px;
+  margin-top:14px;
   margin-right:40px;
 
   @media screen and (max-width: 768px) {
@@ -46,7 +46,7 @@ const StartImg2 = styled.img`
 const StartImg3 = styled.img`
   width: 63px;
   height:63px;
-  margin-top:50px;
+  margin-top:14px;
   margin-right:40px;
 
 
@@ -62,7 +62,7 @@ const StartImg3 = styled.img`
 const StartImg4 = styled.img`
   width: 63px;
   height:63px;
-  margin-top:50px;
+  margin-top:14px;
   margin-right:40px;
 
   @media screen and (max-width: 768px) {
