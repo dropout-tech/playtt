@@ -20,7 +20,7 @@ const StartImg1 = styled.img`
   width: 63px;
   height:63px;
   margin-top:50px;
-  margin-right:20px;
+  margin-right:40px;
   @media screen and (max-width: 768px) {
     margin-left:20px;
     margin-top:105px;
@@ -33,7 +33,7 @@ const StartImg2 = styled.img`
   width: 63px;
   height:63px;
   margin-top:40px;
-  margin-right:20px;
+  margin-right:40px;
 
   @media screen and (max-width: 768px) {
     margin-left:50px;
@@ -47,7 +47,7 @@ const StartImg3 = styled.img`
   width: 63px;
   height:63px;
   margin-top:50px;
-  margin-right:20px;
+  margin-right:40px;
 
 
   @media screen and (max-width: 768px) {
@@ -63,7 +63,7 @@ const StartImg4 = styled.img`
   width: 63px;
   height:63px;
   margin-top:50px;
-  margin-right:20px;
+  margin-right:40px;
 
   @media screen and (max-width: 768px) {
     margin-left:20px;
@@ -131,6 +131,7 @@ const AboutText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   text-align: center;
+  margin:0px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -153,7 +154,7 @@ const AboutUs = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-top:-35px;
+  margin-top:8px;
   @media screen and (max-width: 768px) {
     font-family: 'Futura';
     font-style: normal;
@@ -176,6 +177,7 @@ const Hope1 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
   @media screen and (max-width: 768px) {
    margin-top:-10px;
    font-family: 'Noto Sans TC';
@@ -197,6 +199,7 @@ const Hope2 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
   @media screen and (max-width: 768px) {
    margin-top:35px;
    font-family: 'Noto Sans TC';
@@ -218,6 +221,7 @@ const Hope3 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
 
   @media screen and (max-width: 768px) {
    margin-top:-10px;
@@ -241,6 +245,7 @@ const Hope4 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
   @media screen and (max-width: 768px) {
    margin-top:-80px;
    font-family: 'Noto Sans TC';
@@ -261,6 +266,7 @@ const Slogan = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #005CB9;
+  margin:4px;
 
   @media screen and (max-width: 768px) {
     font-family: 'Futura';
@@ -295,7 +301,7 @@ const Contants = styled.div`
   font-size: 20px;
   line-height: 36px;
   letter-spacing: 0.6px;
-  margin-top:-10px;
+  margin-top:-6px;
   @media screen and (max-width: 768px) {
      font-size: 16px;
      width:300px;
@@ -310,7 +316,7 @@ const Contants2 = styled.div`
   font-size: 20px;
   line-height: 36px;
   letter-spacing: 0.6px;
-  margin-top:-10px;
+  margin-top:-6px;
   @media screen and (max-width: 768px) {
      font-size: 16px;
      width:300px;
@@ -373,7 +379,7 @@ const BrandContainer = styled.div`
 `;
 
 const TextArea = styled.div`
-  
+  margin-top:100px;
   
 
   @media screen and (max-width: 768px) {
@@ -387,8 +393,20 @@ const TextArea = styled.div`
   
 `;
 
+
+const TextArea11 = styled.div`
+  
+  
+
+  @media screen and (max-width: 768px) {
+    
+  }
+  
+`;
 const TextArea2 = styled.div`
-  margin-top:-10px;
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
   margin-left:40px;
   
   @media screen and (max-width: 768px) {
@@ -417,12 +435,12 @@ const Hope3Container = styled.div`
 `;
 
 const TextContainer = styled.div`
-
+ 
 `;
 
 const PicturAndText = styled.div`
-display:flex;
-margin-left:-80px;
+ display:flex;
+
 
 
 `;
@@ -440,7 +458,7 @@ const About = () => {
         <LeftItems>
           <HopeContainer>
 
-            <TextArea>
+            <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
                 <div>
@@ -454,7 +472,7 @@ const About = () => {
                   我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！
                 </Contants>
               </TextContainer>
-            </TextArea>
+            </TextArea11>
           </HopeContainer>
           <BrandContainer>
 
