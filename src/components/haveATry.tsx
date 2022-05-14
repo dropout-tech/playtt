@@ -16,8 +16,8 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- height:324px;
- margin-top:-80px;
+
+
   @media screen and (max-width: 768px) {
     margin-top:-30px;
   }
@@ -78,6 +78,7 @@ const Title2 = styled.p`
 
 const BlueArea = styled.div`
   background: #005CB9;
+  height:406px;
   padding-top:30px;
   padding-bottom:80px;
    @media screen and (max-width: 768px) {
@@ -127,10 +128,12 @@ const ButtonText = styled.p`
 `;
 
 const TopText = styled.div`
+ margin-top:50px;
  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
+   
   }
 `;
 
@@ -184,6 +187,7 @@ const UnderContainer = styled.div`
 
 const ButtonAreas = styled.div`
   display: flex;
+  margin-top:80px;
   justify-content: center;
    @media screen and (max-width: 768px) {
     
@@ -206,13 +210,13 @@ const HaveATry = () => {
             <ButtonText>立即預約體驗</ButtonText>
           </Button>
         </ButtonAreas>
-       
+
         <Text2>統一由臉書私訊洽詢想預約試上的分店 Line</Text2>
 
       </BlueArea>
-      
+
       <UnderContainer>
-      <UnderText>Copyright © 2022 Let's Play</UnderText>
+        <UnderText>Copyright © 2022 Let's Play</UnderText>
       </UnderContainer>
     </Container>
   </PageContainer>;
