@@ -198,10 +198,10 @@ const Text = styled.p`
 const Text2 = styled.p`
   font-family: 'Noto Sans TC';
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 32px;
-  letter-spacing: 0.64px;
-  color: #3C3D3D;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
   margin:0px;
   padding:0px;
   @media screen and (max-width: 768px) {
@@ -217,6 +217,28 @@ const Text2 = styled.p`
   
 `;
 
+const Text12 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.64px;
+  color: #3C3D3D;
+  margin:0px;
+  margin-top:12px;
+  padding:0px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    
+  }
+  
+`;
 
 
 const Title = styled.p`
@@ -256,6 +278,7 @@ const Title22 = styled.p`
 `;
 
 const TopBelow = styled.div`
+  margin-left:-150px;
    @media screen and (max-width: 768px) {
    display:flex;
    justify-content:center;
@@ -275,7 +298,7 @@ const TopBelow = styled.div`
 `;
 
 const UnderBelow = styled.div`
-  margin-left:144px;
+  margin-left:-130px;
   margin-top:40px;
  @media screen and (max-width: 768px) {
     margin-left:0px;
@@ -446,6 +469,7 @@ font-size: 18px;
 line-height: 32px;
 letter-spacing: 0.72px;
 color:#1A1A1A;
+margin-top:12px;
 `;
 
 const Time = styled.div`
@@ -471,12 +495,18 @@ margin:0px;
 `;
 
 const Text33 = styled.div`
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
 @media screen and (max-width: 768px) {
   font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 32px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
 /* identical to box height, or 200% */
 
 letter-spacing: 0.04em;
@@ -501,11 +531,11 @@ const Company = () => {
           </Background1>
           <TextArea>
             <TextArea1>
-              <Text2>地址</Text2>
-              <Text2>連絡電話</Text2>
-              <Text2>信箱</Text2>
-              <Text2>總公司客服時間</Text2>
-              <Text2>創辦人 / 總教練</Text2>
+              <Text12>地址</Text12>
+              <Text12>連絡電話</Text12>
+              <Text12>信箱</Text12>
+              <Text12>總公司客服時間</Text12>
+              <Text12>創辦人 / 總教練</Text12>
             </TextArea1>
             <TextArea2>
               <Text22>新北市蘆洲區長樂路106號3樓</Text22>

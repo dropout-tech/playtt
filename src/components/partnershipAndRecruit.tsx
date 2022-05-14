@@ -190,7 +190,7 @@ const TopText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-top:5px;
+  margin-top:12px;
    @media screen and (max-width: 768px) {
     width:110px;
     display: flex;
@@ -337,12 +337,12 @@ const TextkeyIn4 = styled.p`
 `;
 
 const Textcontainer = styled.div`
-  margin-top:0px;
+  margin-top:-20px;
   display: flex;
   justify-content:center;
   align-items: center;
   flex-direction: column;
-
+ 
 
 `;
 

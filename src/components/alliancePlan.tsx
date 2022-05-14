@@ -55,8 +55,8 @@ const TitleWord = styled.p`
 
 const Background = styled.div`
   background: #F5F6F6;
-  width:100%;
-  height:965px;
+  width:1440px;
+  height:804px;
   margin-top:60px;
  
   

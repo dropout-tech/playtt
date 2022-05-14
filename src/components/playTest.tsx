@@ -18,7 +18,7 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
   display:flex;
-  justify-content:flex-start;
+  justify-content:center;
   margin-left:80px;
   padding-top:180px;
   padding-bottom: 80px;

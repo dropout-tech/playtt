@@ -95,6 +95,7 @@ const LeftItems = styled.div`
  align-items:flex-end;
  width:50%;
  margin-right:40px;
+ margin-top:100px;
 
  @media screen and (max-width: 768px) {
    
@@ -106,7 +107,8 @@ const RightItems = styled.div`
  flex-direction: column;
  align-items: flex-start;
  width:50%;
- margin-left:40px;
+ margin-left:0px;
+ margin-top:100px;
  @media screen and (max-width: 768px) {
     
   }
