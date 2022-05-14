@@ -178,7 +178,7 @@ const Explain1 = styled.div`
  display: flex;
  justify-content: flex-start;
  align-items: center;
-  margin-top:60px;
+ margin:60px 0px 0px 0px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -190,6 +190,7 @@ const Explain2 = styled.div`
  display: flex;
  justify-content:center;
  align-items: center;
+ margin-top:-71px;
  @media screen and (max-width: 768px) {
    display:none;
   }
@@ -206,7 +207,7 @@ const MobileContainer = styled.div`
 `;
 
 const Explain3 = styled.div`
-
+ margin-top: -50px;
  display: flex;
  align-items: center;
  justify-content:space-between;
@@ -220,7 +221,7 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   margin-left:103px;
-  margin-top:70px;
+  margin-top:140px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
@@ -383,7 +384,7 @@ const Classes = () => {
           </Text>
         </Explain1>
 
-        <Explain2>
+        <Explain3>
           <Text>
             <Background2>
               <ContantTitle>
@@ -424,7 +425,7 @@ const Classes = () => {
             </ContantText>
           </Text>
           <Img2 src={img2} alt="" />
-        </Explain2>
+        </Explain3>
 
         <MobileContainer>
           <Img2 src={img2} alt="" />

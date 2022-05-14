@@ -20,8 +20,7 @@ const PageContainer = styled.div`
 const ColorpicImg = styled.img`
   width:517px ;
   height:517px ;
-  
-  margin-top:100px;
+  margin-top:0px;
 
    @media screen and  (max-width: 768px) {
      width:251px ;
@@ -72,7 +71,7 @@ const Text = styled.p`
   justify-content:center;
   flex-direction: column;
   align-items: flex-start;
-  margin:100px 0px 0px 0px
+  margin:10px 0px 0px 0px;
   
   margin-bottom:30px;
    @media screen and  (max-width: 768px) {
@@ -178,7 +177,7 @@ const Contant = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin:24px 0px 0px 0px;
+  margin:26px 0px 0px 0px;
 
    @media screen and  (max-width: 768px) {
     width:327px;
@@ -207,7 +206,7 @@ const Contant2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin:0px;
+  margin-top:24px;
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
@@ -233,7 +232,7 @@ const BelowText = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin:40px 210px 0px 0px;
+  margin:20px 210px 0px 0px;
    @media screen and  (max-width: 768px) {
     margin-top:70px;
     width:300px

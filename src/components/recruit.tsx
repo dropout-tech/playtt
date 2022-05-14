@@ -43,7 +43,7 @@ const Container = styled.div`
 const ImgContainer = styled.div`
   width:50%;
   display:flex;
-  justify-content:center;
+  justify-content:flex-end;
   align-items: center;
   margin-bottom:80px;
  

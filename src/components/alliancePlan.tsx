@@ -55,7 +55,7 @@ const TitleWord = styled.p`
 
 const Background = styled.div`
   background: #F5F6F6;
-  width:1440px;
+  width:100%;
   height:804px;
   margin-top:60px;
  
@@ -72,9 +72,6 @@ const Circle1 = styled.div`
   border-radius:294px;
   margin-top:30px;
   margin-right:-50px;
-  z-index: 1;
-  position: absolute;
-  left: 20px;
   
 `;
 
@@ -86,7 +83,7 @@ const Circle2 = styled.div`
   background: #FFFFFF;
   border-radius:330px;
   margin-right:-50px;
-  z-index: 1;
+
   
 `;
 
@@ -98,8 +95,6 @@ const Circle3 = styled.div`
   background: #FFFFFF;
   border-radius:294px;
   margin-top:20px;
-  z-index: 1;
-  position: absolute;
   right: 20px;
   
 `;
@@ -107,24 +102,19 @@ const Circle3 = styled.div`
 
 
 const Text1 = styled.div`
- margin-top:-15px;
- position: absolute;
- z-index: 10;
- left:150px;
+ margin-top:90px;
+ 
 `;
 
 const Text2 = styled.div`
- margin-top:-30px;
- z-index:10;
- position: absolute;
- left: 590px;
+ margin-top:140px;
+
  
 `;
 const Text3 = styled.div`
- margin-top:-30px;
- position: absolute;
- left: 1030px;
- z-index: 10;
+ margin-top:96px;
+
+
 
 `;
 
@@ -132,7 +122,6 @@ const Circle = styled.div`
  display:flex;
  align-items: center;
  justify-content:center;
- padding:10px;
  padding-top:70px;
 
 `;
@@ -441,31 +430,31 @@ const alliancePlan = () => {
       <Background>
         <Circle>
 
-          <Text1>
-            <Img src={cho} alt="" />
-            <Title2>創立初衷</Title2>
-            <TextForm>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm>
-          </Text1>
-
           <Circle1>
+            <Text1>
+              <Img src={cho} alt="" />
+              <Title2>創立初衷</Title2>
+              <TextForm>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm>
+            </Text1>
           </Circle1>
 
-          <Text2>
-            <Img src={hha} alt="" />
-            <Title2>計畫簡介</Title2>
-            <TextForm>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
-          </Text2>
+
           <Circle2>
+            <Text2>
+              <Img src={hha} alt="" />
+              <Title2>計畫簡介</Title2>
+              <TextForm>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
+            </Text2>
+          
           </Circle2>
 
-
-          <Text3>
-            <Img src={ho} alt="" />
-            <Title2>聯盟分佈</Title2>
-            <TextForm>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</TextForm>
-            <TextForm2>陸續招募中！</TextForm2>
-          </Text3>
           <Circle3>
+            <Text3>
+              <Img src={ho} alt="" />
+              <Title2>聯盟分佈</Title2>
+              <TextForm>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</TextForm>
+              <TextForm2>陸續招募中！</TextForm2>
+            </Text3>
           </Circle3>
         </Circle>
 
