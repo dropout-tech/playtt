@@ -340,14 +340,24 @@ const Span = styled.span`
 const HopeContainer = styled.div`
   display:flex;
   justify-content:space-between;
-  
+  margin:0px;
   
   @media screen and (max-width: 768px) {
-    
+
   }
 `;
 
 const HopeContainer2 = styled.div`
+  display:flex;
+  justify-content:space-between;
+  
+  
+  @media screen and (max-width: 768px) {
+    margin-top:-30px;
+  }
+`;
+
+const HopeContainer3 = styled.div`
   display:flex;
   justify-content:space-between;
   
@@ -542,16 +552,16 @@ const About = () => {
           </TextArea>
         </HopeContainer>
 
-        <HopeContainer>
+        <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
             <Hope1>使命</Hope1>
             <Slogan>Let’s Play <Span>Goal</Span></Slogan>
             <Contants>我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。</Contants>
           </TextArea>
-        </HopeContainer>
+        </HopeContainer2>
 
-        <HopeContainer2>
+        <HopeContainer3>
           <StartImg1 src={start} alt="" />
           <TextArea>
             <Hope1>品牌理念</Hope1>
@@ -559,16 +569,16 @@ const About = () => {
             <Contants>感受發自內心的快樂，一起來玩吧！
               品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants>
           </TextArea>
-        </HopeContainer2>
+        </HopeContainer3>
 
-        <HopeContainer2>
+        <HopeContainer3>
           <StartImg1 src={start} alt="" />
           <TextArea>
             <Hope1>教學理念</Hope1>
             <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
             <Contants>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！</Contants>
           </TextArea>
-        </HopeContainer2>
+        </HopeContainer3>
 
       
 
