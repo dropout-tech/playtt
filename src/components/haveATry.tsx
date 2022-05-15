@@ -94,7 +94,7 @@ const Button = styled.button`
   box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);
    @media screen and (max-width: 768px) {
     width:211px;
-    height:32px;
+    height:48px;
   }
 `;
 
@@ -116,7 +116,7 @@ const ButtonText = styled.p`
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
-    line-height: 32px;
+    line-height: 48px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -155,6 +155,8 @@ const Text2 = styled.p`
     align-items: center;
     text-align: center;
     letter-spacing: 0.06em;
+    margin-top:20px;
+  
     
   }
 `;
@@ -190,7 +192,7 @@ const ButtonAreas = styled.div`
   margin-top:80px;
   justify-content: center;
    @media screen and (max-width: 768px) {
-    
+    margin-top:14px;
   }
 `;
 

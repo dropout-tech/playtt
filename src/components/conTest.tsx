@@ -69,7 +69,8 @@ const TextContainer2 = styled.div`
  margin-right:150px;
  
   @media screen and (max-width: 768px) {
-    margin-top:-40px;
+    margin-top:-24px;
+    justify-content:center;
   }
 `;
 
@@ -216,7 +217,7 @@ const TextContent = styled.p`
     letter-spacing: 0.03em;
     color: #3C3D3D;
     transform: matrix(1, 0, 0, 1, 0, 0);
-    margin-top:10px;
+    margin-top:40px;
     width:340px;
     margin-left:12px;
 
@@ -245,7 +246,8 @@ const Text = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     width:211px;
-    margin-left:40px;
+    margin:15px 0px -5px 20px;
+    
   }
   
 `;

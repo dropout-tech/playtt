@@ -143,7 +143,8 @@ const GroupImg = styled.img`
   width:100%;
   height:100%;
    @media screen and (max-width: 768px) {
-    
+    z-index: 10;
+    position: relative;
   }
 `;
 
@@ -154,7 +155,17 @@ const Background = styled.div`
   display:flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:375px;
+    height:375px;
+    padding-top:26.5px;
 
+      
+    } 
 
 
  @media screen and (max-width: 768px) {
@@ -168,7 +179,8 @@ const Img1 = styled.img`
   height:126px;
   margin-left:20px;
    @media screen and (max-width: 768px) {
-  
+   width:101px;
+   height:88px;
   }
 `;
 
@@ -177,7 +189,8 @@ const Img2 = styled.img`
   height:126px;
   margin-left:-60px;
   @media screen and (max-width: 768px) {
-    
+   width:101px;
+   height:88px;
   }
 `;
 
@@ -210,10 +223,28 @@ const LeftArea = styled.div`
     display:flex;
     align-items:center;
     flex-direction: column;
-      margin-top:30px;
+      margin-top:10px;
     
   }
 `;
+
+const LeftArea1 = styled.div`
+   display:flex;
+   justify-content:center;
+   align-items: center;
+   margin-top:21px;
+    
+   @media screen and (max-width: 768px) {
+    display:flex;
+    align-items:flex-start;
+    flex-direction: column;
+    margin-top:-128px;
+    
+  }
+`;
+
+
+
 
 const TextContainer = styled.div`
  display:flex;
@@ -238,7 +269,8 @@ const GrayArea = styled.div`
   align-items:center;
  
    @media screen and (max-width: 768px) {
-  width:100%;
+   width:100%;
+   height:375px;
   }
   
 `;
@@ -264,6 +296,13 @@ const GrayAreaText = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.004em;
+    color: #1A1A1A;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -300,14 +339,6 @@ const Dot = styled.div`
     }
 `;
 
-const TextArea = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
- 
-
-`;
 
 const TextArea1 = styled.div`
   display:flex;
@@ -315,8 +346,25 @@ const TextArea1 = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top:30px;
+  @media screen and (max-width: 768px) {
+  
+    
+    }
 
 `;
+
+const Span2 = styled.span`
+@media screen and (max-width: 768px) {
+  font-family: 'Futura';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+    
+    }
+
+`;
+
 
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
@@ -340,21 +388,21 @@ const LetsPlayStar = () => {
               </LeftArea>
 
               <LeftArea>
-                <Img2 src={img2} alt="" />
-                <Img4 src={img3} alt="" />
-                <Title4>公益桌球賽</Title4>
+                  <Img2 src={img2} alt="" />
+                  <Img4 src={img3} alt="" />
+                  <Title4>公益桌球賽</Title4>
               </LeftArea>
             </TextArea1>
           </Background>
 
           <GrayArea>
             <GrayAreaText>
-              <Span>・</Span> 成立於 2020/12/15 <br />
-              <Span>・</Span> 召集人 —— Hero 戴祖雄 & 阿寬教練 郭則寬<br />
+              <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
+              <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄<Span2 >& </Span2>阿寬教練 郭則寬<br />
               <Span>・</Span> 由專業教練團隊協助持續訓練<br />
               <Span>・</Span>  大幅提升桌技和認知<br />
               <Span>・</Span>  與贊助廠商合作營運<br />
-              <Span>・</Span>  每週練習1-2次<br />
+              <Span>・</Span>  每週練習<Span2>1-2</Span2>次<br />
               <Span>・</Span> 與全明星運動會紅隊交流<br />
               <Span>・</Span>  明星交流賽與檢定
             </GrayAreaText>
