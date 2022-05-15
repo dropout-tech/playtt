@@ -182,6 +182,36 @@ const Text11 = styled.p`
   }
 `;
 
+const Text111 = styled.p`
+  margin-left:170px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;  
+  @media screen and (max-width: 768px) {
+   margin-left:0px;
+   display:flex;
+   flex-direction: column;
+   margin-right:100px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
+   margin-left:-20px;
+
+  }
+`;
+
 const Text2 = styled.p`
   margin-left:200px;
   font-family: 'Noto Sans TC';
@@ -234,6 +264,32 @@ const Span = styled.span`
     color: #1A1A1A;
     width:100px;
     margin-left:60px;
+  }
+`;
+
+const Span1 = styled.span`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:10px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    align-items: flex-start;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:100px;
+    margin-left:40px;
   }
 `;
 
@@ -443,7 +499,7 @@ const OurCouchMembers = () => {
         <Pic>
           <PicImg src={img33} alt="" />
           <Name1>
-            <Text11>林培中<Span>派派教練</Span></Text11>
+            <Text111>林培中<Span1>派派教練</Span1></Text111>
           </Name1>
         </Pic>
 
@@ -457,7 +513,7 @@ const OurCouchMembers = () => {
         <Pic>
           <PicImg src={img55} alt="" />
           <Name1>
-            <Text11>林晏先<Span>先先教練</Span></Text11>
+            <Text111>林晏先<Span1>先先教練</Span1></Text111>
           </Name1>
         </Pic>
 
@@ -471,7 +527,7 @@ const OurCouchMembers = () => {
         <Pic>
           <PicImg src={img77} alt="" />
           <Name1>
-            <Text11>林政蔚<Span>政蔚教練</Span></Text11>
+            <Text111>林政蔚<Span1>政蔚教練</Span1></Text111>
           </Name1>
         </Pic>
 
