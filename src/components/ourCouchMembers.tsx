@@ -327,6 +327,7 @@ const Pic = styled.div`
     display:flex;
     justify-content:center;
     flex-direction: row;
+    margin-top:20px;
   }
 `;
 
@@ -335,19 +336,11 @@ const Pic2 = styled.div`
     display:flex;
     justify-content:center;
     flex-direction: row;
- 
+    margin-top:20px;
   }
 `;
 
-const Name = styled.div`
 
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    margin-top:40px;
-  }
-  
-`;
 const Name1 = styled.div`
 
   @media screen and (max-width: 768px) {

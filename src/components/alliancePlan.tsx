@@ -346,6 +346,7 @@ const Img1 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
+   margin-left:-10px;
 }
 
 `;
@@ -354,6 +355,7 @@ const Img2 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
+   margin-left:-10px;
 }
 
 `;
@@ -362,6 +364,7 @@ const Img3 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
+  margin-left:-10px;
 }
 
 `;
@@ -388,7 +391,7 @@ const Title22 = styled.p`
     line-height: 36px;
     letter-spacing: 0.03em;
     color: #005CB9;
-    margin-top:2px;
+    margin-top:1px;
    
   }
 `;
@@ -404,6 +407,7 @@ const TextForm222 = styled.p`
     text-align: justify;
     letter-spacing: 0.02em;
     color: #1A1A1A;
+    margin-top:-8px;
   }
 `;
 
@@ -417,6 +421,7 @@ const TextForm2222 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-top:-8px;
   }
 `;
 
@@ -445,7 +450,7 @@ const alliancePlan = () => {
               <Title2>計畫簡介</Title2>
               <TextForm>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
             </Text2>
-          
+
           </Circle2>
 
           <Circle3>
