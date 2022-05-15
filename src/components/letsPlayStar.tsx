@@ -39,7 +39,8 @@ const Title1 = styled.p`
   display: flex;
   justify-content:center;
    @media screen and (max-width: 768px) {
-    
+    font-size: 26px;
+    line-height: 40px;
   }
 `;
 
@@ -56,7 +57,8 @@ const Title2 = styled.p`
   margin-top:-30px;
   line-Height:52px;
   @media screen and (max-width: 768px) {
-    
+    font-size: 26px;
+    line-height: 40px;
   }
 `;
 const Title3 = styled.p`
