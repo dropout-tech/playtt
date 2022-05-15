@@ -71,8 +71,10 @@ const Row1 = styled.div`
   justify-content:center;
   margin-top:-65px;
     @media screen and (max-width: 768px) {
-   display: flex;
+    display: flex;
+    justify-content:center;
     flex-direction: column;
+    margin-left:40px;
   }
 `;
 
@@ -150,6 +152,36 @@ const Text = styled.p`
   }
 `;
 
+const Text11 = styled.p`
+  margin-left:170px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;  
+  @media screen and (max-width: 768px) {
+   margin-left:0px;
+   display:flex;
+   flex-direction: column;
+   margin-right:100px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
+   margin-left:-45px;
+
+  }
+`;
+
 const Text2 = styled.p`
   margin-left:200px;
   font-family: 'Noto Sans TC';
@@ -197,17 +229,47 @@ const Span = styled.span`
     font-size: 16px;
     line-height: 30px;
     display: flex;
+    align-items: flex-start;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:100px;
+    margin-left:60px;
+  }
+`;
+
+const Span2 = styled.span`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:10px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
     align-items: center;
     letter-spacing: 0.02em;
     color: #1A1A1A;
     width:100px;
+    margin-left:30px;
+    
+  
+    
   }
 `;
 
 const Pic = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     flex-direction: row;
   }
 `;
@@ -215,7 +277,7 @@ const Pic = styled.div`
 const Pic2 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     flex-direction: row;
  
   }
@@ -230,7 +292,16 @@ const Name = styled.div`
   }
   
 `;
+const Name1 = styled.div`
 
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-top:40px;
+    margin-left:20px;
+  }
+  
+`;
 const Name2 = styled.div`
 
   @media screen and (max-width: 768px) {
@@ -246,6 +317,7 @@ const Couch = styled.div`
   margin-left:50px;
 
 `;
+
 
 
 
@@ -356,56 +428,56 @@ const OurCouchMembers = () => {
       <Row1>
         <Pic>
           <PicImg src={img11} alt="" />
-          <Name>
-            <Text>呂昀<Span>Eva教練</Span></Text>
-          </Name>
+          <Name1>
+            <Text11>呂昀<Span>Eva教練</Span></Text11>
+          </Name1>
         </Pic>
 
         <Pic2>
           <Name2>
-            <Text>鍾達威<Span>威廉教練</Span></Text>
+            <Text>鍾達威<Span2>威廉教練</Span2></Text>
           </Name2>
           <PicImg2 src={img22} alt="" />
         </Pic2>
 
         <Pic>
           <PicImg src={img33} alt="" />
-          <Name>
-            <Text>林培中<Span>派派教練</Span></Text>
-          </Name>
+          <Name1>
+            <Text11>林培中<Span>派派教練</Span></Text11>
+          </Name1>
         </Pic>
 
         <Pic2>
           <Name2>
-            <Text>郭則寬<Span>阿寬教練</Span></Text>
+            <Text>郭則寬<Span2>阿寬教練</Span2></Text>
           </Name2>
           <PicImg2 src={img44} alt="" />
         </Pic2>
 
         <Pic>
           <PicImg src={img55} alt="" />
-          <Name>
-            <Text>林晏先<Span>先先教練</Span></Text>
-          </Name>
+          <Name1>
+            <Text11>林晏先<Span>先先教練</Span></Text11>
+          </Name1>
         </Pic>
 
         <Pic2>
           <Name2>
-            <Text>顏兆寅<Span>小顏教練</Span></Text>
+            <Text>顏兆寅<Span2>小顏教練</Span2></Text>
           </Name2>
           <PicImg2 src={img66} alt="" />
         </Pic2>
 
         <Pic>
           <PicImg src={img77} alt="" />
-          <Name>
-            <Text>林政蔚<Span>政蔚教練</Span></Text>
-          </Name>
+          <Name1>
+            <Text11>林政蔚<Span>政蔚教練</Span></Text11>
+          </Name1>
         </Pic>
 
         <Pic2>
           <Name2>
-            <Text>夏振凱<Span>凱凱教練</Span></Text>
+            <Text>夏振凱<Span2>凱凱教練</Span2></Text>
           </Name2>
           <PicImg2 src={img88} alt="" />
         </Pic2>
