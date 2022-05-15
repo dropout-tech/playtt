@@ -35,9 +35,11 @@ const Container = styled.div`
  background:#F5F6F6;
  padding-bottom:70px;
   @media screen and  (max-width: 768px) {
+    width:100% ;
+    height:90%;
     display:flex;
     flex-direction:column;
-    margin-top:-40px;
+    margin-top:40px;
  
   
   }
@@ -54,11 +56,13 @@ const Picture = styled.div`
 
 
    @media screen and  (max-width: 768px) {
-    width:50%;
+    width:100%;
     display:flex;
     justify-content:center;
-    margin-top:-30px;
-    margin-left:50px;
+    align-items:center;
+    margin-top:60px;
+    margin-right:0px;
+
  
   }
 
@@ -96,10 +100,13 @@ const Title1 = styled.p`
     font-weight: 900;
     font-size: 20px;
     line-height: 36px;
+    display: flex;
+    justify-content:center;
     text-align: center;
     letter-spacing: 0.03em;
     color: #1A1A1A;
-    margin-left:60px;
+    margin-left:-20px;
+   
 
   }
 `;
@@ -124,7 +131,7 @@ const Title2 = styled.p`
    letter-spacing: 0.04em;
    color: #1A1A1A;
    margin-left:10px;
-   margin-top:-20px;
+   margin-top:-10px;
   }
 `;
 
@@ -192,6 +199,7 @@ const Contant = styled.p`
     text-align: justify;
     letter-spacing: 0.02em;
     color: #1A1A1A;
+    margin-top:40px;
 
   }
 `;
@@ -210,7 +218,7 @@ const Contant2 = styled.p`
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
-    margin-top:40px;
+    margin-top:20px;
     margin-left:-25px;
     font-family: 'Futura';
     font-style: normal;
@@ -234,7 +242,7 @@ const BelowText = styled.p`
   color: #1A1A1A;
   margin:20px 210px 0px 0px;
    @media screen and  (max-width: 768px) {
-    margin-top:70px;
+    margin-top:24px;
     width:300px
   }
 `;

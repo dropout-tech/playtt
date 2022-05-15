@@ -153,7 +153,7 @@ const Img = styled.img`
     width:251px;  
     height:220px;
     display:flex;
-    justify-content: center;
+    justify-content: center;rt qwertyhb v
     margin-left:40px;
   }
 `;
@@ -225,7 +225,8 @@ const Text = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:0px;
+    margin-left:-20px;
+  
 
   }
 `;
