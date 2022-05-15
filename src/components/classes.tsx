@@ -139,7 +139,7 @@ const Contant = styled.div`
   margin-top:4px;
  
   @media screen and (max-width: 768px) {
-    
+    margin-top:-30px;
   }
 `;
 
@@ -152,8 +152,8 @@ const Img = styled.img`
     width:251px;  
     height:220px;
     display:flex;
-    justify-content: center;rt qwertyhb v
-    margin-left:40px;
+    justify-content: center;
+    margin-top:114px;
   }
 `;
 
@@ -298,7 +298,8 @@ const Background3 = styled.div`
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
-    margin-left:30px;
+    margin-left:70px;
+    margin-top:-102px;
   }
 `;
 
@@ -313,7 +314,7 @@ const SpanDot = styled.div`
   line-height: 36px;
   letter-spacing: 0.6px;
  @media screen and (max-width: 768px) {
-   margin-top:10px;
+   margin-top:-2px;
   }
 `;
 
@@ -323,7 +324,7 @@ const SpanDot2 = styled.div`
   width: 36px;
   height: 36px;
  @media screen and (max-width: 768px) {
-   margin-top:22px;
+   margin-top:4px;
   }
 `;
 
@@ -348,7 +349,7 @@ const TextArea = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 10px;
+    line-height: 0px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
@@ -370,7 +371,7 @@ const TextArea2 = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 36px;
+    line-height: 0px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
@@ -402,13 +403,13 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot2>・</SpanDot2><TextArea2>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea2>
+                <SpanDot>・</SpanDot><TextArea2>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea2>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>小班客製化教學 / 大班休閒娛樂教學</TextArea>
+                <SpanDot>・</SpanDot><TextArea>小班客製化教學 / 大班休閒娛樂教學髮</TextArea>
               </DotContainer>
-
+           
               <DotContainer>
                 <SpanDot>・</SpanDot> <TextArea>冬令營 / 夏令營 / 多元冬夏令營</TextArea>
               </DotContainer>
@@ -453,7 +454,7 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot>
+                <SpanDot2>・</SpanDot2>
                 <TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
               </DotContainer>
             </ContantText>
