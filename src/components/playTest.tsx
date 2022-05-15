@@ -19,10 +19,8 @@ const PageContainer = styled.div`
 const Container = styled.div`
   display:flex;
   justify-content:center;
-  margin-left:80px;
   padding-top:180px;
   padding-bottom: 80px;
-  margin-left:300px;
    @media screen and (max-width: 768px) {
     display: none;
   }
@@ -165,7 +163,7 @@ const Number2 = styled.span`
   align-items: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-top:-60px;
+  margin-top:-52px;
    @media screen and (max-width: 768px) {
     padding-left:12px;
   }
@@ -181,6 +179,7 @@ const TextContent = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   width:517px;
+  margin-top:30px;
    @media screen and (max-width: 768px) {
    padding-left:0px;
    font-family: 'Noto Sans TC';

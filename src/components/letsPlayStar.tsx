@@ -154,6 +154,7 @@ const Background = styled.div`
   align-items: center;
 
 
+
  @media screen and (max-width: 768px) {
     margin-top:145px;
     width:100%;
@@ -201,7 +202,7 @@ const LeftArea = styled.div`
    display:flex;
    justify-content:center;
    align-items: center;
-   margin-top:30px;
+   margin-top:21px;
     
    @media screen and (max-width: 768px) {
     display:flex;
@@ -302,7 +303,16 @@ const TextArea = styled.div`
   justify-content:center;
   align-items: center;
   flex-direction: column;
-  margin-top:15px;
+ 
+
+`;
+
+const TextArea1 = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  margin-top:30px;
 
 `;
 
@@ -319,7 +329,7 @@ const LetsPlayStar = () => {
 
         <TextContainer>
           <Background>
-            <TextArea>
+            <TextArea1>
               <LeftArea>
                 <Img1 src={img1} alt="" />
                 <Img3 src={img3} alt="" />
@@ -332,7 +342,7 @@ const LetsPlayStar = () => {
                 <Img4 src={img3} alt="" />
                 <Title4>公益桌球賽</Title4>
               </LeftArea>
-            </TextArea>
+            </TextArea1>
           </Background>
 
           <GrayArea>
