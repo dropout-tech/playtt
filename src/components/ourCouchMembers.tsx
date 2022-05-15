@@ -8,7 +8,14 @@ import img5 from "../assets/ourCouchMenber/img5.png"
 import img6 from "../assets/ourCouchMenber/img6.png"
 import img7 from "../assets/ourCouchMenber/img7.png"
 import img8 from "../assets/ourCouchMenber/img8.png"
-
+import img11 from "../assets/ourCouchMenber/img-1.png"
+import img22 from "../assets/ourCouchMenber/img-2.png"
+import img33 from "../assets/ourCouchMenber/img-3.png"
+import img44 from "../assets/ourCouchMenber/img-4.png"
+import img55 from "../assets/ourCouchMenber/img-5.png"
+import img66 from "../assets/ourCouchMenber/img-6.png"
+import img77 from "../assets/ourCouchMenber/img-7.png"
+import img88 from "../assets/ourCouchMenber/img-8.png"
 
 
 
@@ -348,7 +355,7 @@ const OurCouchMembers = () => {
     <MobileContainer>
       <Row1>
         <Pic>
-          <PicImg src={img1} alt="" />
+          <PicImg src={img11} alt="" />
           <Name>
             <Text>呂昀<Span>Eva教練</Span></Text>
           </Name>
@@ -358,11 +365,11 @@ const OurCouchMembers = () => {
           <Name2>
             <Text>鍾達威<Span>威廉教練</Span></Text>
           </Name2>
-          <PicImg2 src={img2} alt="" />
+          <PicImg2 src={img22} alt="" />
         </Pic2>
 
         <Pic>
-          <PicImg src={img3} alt="" />
+          <PicImg src={img33} alt="" />
           <Name>
             <Text>林培中<Span>派派教練</Span></Text>
           </Name>
@@ -372,11 +379,11 @@ const OurCouchMembers = () => {
           <Name2>
             <Text>郭則寬<Span>阿寬教練</Span></Text>
           </Name2>
-          <PicImg2 src={img4} alt="" />
+          <PicImg2 src={img44} alt="" />
         </Pic2>
 
         <Pic>
-          <PicImg src={img5} alt="" />
+          <PicImg src={img55} alt="" />
           <Name>
             <Text>林晏先<Span>先先教練</Span></Text>
           </Name>
@@ -386,11 +393,11 @@ const OurCouchMembers = () => {
           <Name2>
             <Text>顏兆寅<Span>小顏教練</Span></Text>
           </Name2>
-          <PicImg2 src={img6} alt="" />
+          <PicImg2 src={img66} alt="" />
         </Pic2>
 
         <Pic>
-          <PicImg src={img7} alt="" />
+          <PicImg src={img77} alt="" />
           <Name>
             <Text>林政蔚<Span>政蔚教練</Span></Text>
           </Name>
@@ -400,7 +407,7 @@ const OurCouchMembers = () => {
           <Name2>
             <Text>夏振凱<Span>凱凱教練</Span></Text>
           </Name2>
-          <PicImg2 src={img8} alt="" />
+          <PicImg2 src={img88} alt="" />
         </Pic2>
       </Row1>
     </MobileContainer>

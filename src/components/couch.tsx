@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import couch from "../assets/couch/couch.png";
-
+import couchMobile from "../assets/couch/couch-mobile.png";
 
 // styled components start 
 
@@ -19,7 +19,7 @@ const CouchImg = styled.img`
   width: 100%;
   height:100%;
    @media screen and (max-width: 768px) {
-    
+
   }
 `;
 
@@ -27,7 +27,23 @@ const Container = styled.div`
  padding-top:80px;
  padding-bottom:80px;
   @media screen and (max-width: 768px) {
-    margin-top:-130px;
+   display:none;
+  }
+`;
+
+const MobileContainer = styled.div`
+  padding-top:80px;
+  padding-bottom:80px;
+@media screen and (min-width: 768px) {
+ display:none;
+   
+  }
+`;
+
+const CouchMobileImg = styled.img`
+@media screen and (max-width: 768px) {
+  width: 100%;
+  height:100%;;
   }
 `;
 
@@ -37,6 +53,10 @@ const Couch = () => {
     <Container>
       <CouchImg src={couch} alt="" />
     </Container>
+
+    <MobileContainer>
+      <CouchMobileImg src={couchMobile} alt="" />
+    </MobileContainer>
   </PageContainer>;
 };
 
