@@ -278,8 +278,6 @@ const Slogan = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-top:-10px;
-    margin-left:20px;
     
   }
 `;
@@ -305,11 +303,17 @@ const Contants = styled.div`
   letter-spacing: 0.6px;
   margin-top:-6px;
   @media screen and (max-width: 768px) {
-     font-size: 16px;
-     width:300px;
-     display: flex;
-     justify-content:center;
-     margin-left:-40px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:300px;
+    display: flex;
+    justify-content:center;
+    margin-left:-40px;
 
   }
 `;
@@ -323,13 +327,13 @@ const Span = styled.span`
   letter-spacing: 0.04em;
   color:#38D430;
   @media screen and (max-width: 768px) {
-   font-family: 'Futura';
-   font-style: normal;
-   font-weight: 700;
-   font-size: 18px;
-   line-height: 32px; 
-   letter-spacing: 0.04em;
-   color:#38D430;
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color:#38D430;
   }
 `;
 
