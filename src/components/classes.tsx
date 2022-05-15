@@ -92,7 +92,6 @@ const ContantTitle = styled.p`
   font-size: 26px;
   line-height:10px;
   display:flex;
-
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
@@ -182,10 +181,11 @@ const Explain1 = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    margin-top:-50px;
   }
 `;
 
-const Explain2 = styled.div`
+const Explain22 = styled.div`
  width:80%;
  display: flex;
  justify-content:center;
@@ -201,11 +201,22 @@ const MobileContainer = styled.div`
    display: flex;
    justify-content:center;
    flex-direction: column;
+   margin-top:-40px;
  @media screen and (min-width: 768px) {
    display:none;
   }
 `;
-
+const Explain2 = styled.div`
+ margin-top: -50px;
+ display: flex;
+ align-items: center;
+ justify-content:space-between;
+ @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-top:-90px;
+  }
+`;
 const Explain3 = styled.div`
  margin-top: -50px;
  display: flex;
@@ -214,6 +225,22 @@ const Explain3 = styled.div`
  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    margin-top:-90px;
+  }
+`;
+
+const Text1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left:103px;
+  margin-top:140px;
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content: center;
+    margin-left:-20px;
+    margin-top:38px;
+  
+
   }
 `;
 
@@ -240,7 +267,8 @@ const Background1 = styled.div`
   justify-content:center;
   width:55%;
   @media screen and (max-width: 768px) {
-    width:60%;
+    width:208px;
+    height:44px;
     margin-left:70px;
 }
 `;
@@ -253,8 +281,10 @@ const Background2 = styled.div`
   justify-content:center;
   width:50%;
   @media screen and (max-width: 768px) {
-    width:60%;
+    width:208px;
+    height:44px;
     margin-left:70px;
+    margin-top:-102px;
   }
 `;
 const Background3 = styled.div`
@@ -266,7 +296,8 @@ const Background3 = styled.div`
   justify-content:center;
   width:60%;
   @media screen and (max-width: 768px) {
-    width:80%;
+    width:208px;
+    height:44px;
     margin-left:30px;
   }
 `;
@@ -361,7 +392,7 @@ const Classes = () => {
 
         <Explain1>
           <Img src={img1} alt="" />
-          <Text>
+          <Text1>
             <Background1>
               <ContantTitle>班別課程豐富客製化</ContantTitle>
             </Background1>
@@ -382,18 +413,20 @@ const Classes = () => {
                 <SpanDot>・</SpanDot> <TextArea>冬令營 / 夏令營 / 多元冬夏令營</TextArea>
               </DotContainer>
             </ContantText>
-          </Text>
+          </Text1>
         </Explain1>
 
-        <Explain3>
+        <Explain22>
           <Text>
+            <Img2 src={img2} alt="" />
             <Background2>
               <ContantTitle>
                 寓教於樂多元發展
               </ContantTitle>
             </Background2>
-
+           
             <ContantText>
+              
               <DotContainer>
                 <SpanDot>・</SpanDot>
                 <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
@@ -425,8 +458,8 @@ const Classes = () => {
               </DotContainer>
             </ContantText>
           </Text>
-          <Img2 src={img2} alt="" />
-        </Explain3>
+          
+        </Explain22>
 
         <MobileContainer>
           <Img2 src={img2} alt="" />
