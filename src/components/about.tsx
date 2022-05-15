@@ -22,7 +22,7 @@ const StartImg1 = styled.img`
   margin-top:14px;
   margin-right:40px;
   @media screen and (max-width: 768px) {
-    margin-left:20px;
+    margin-left:60px;
     margin-top:105px;
     width: 38px;
     height:38px;
@@ -189,7 +189,7 @@ const Hope1 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
-   margin-left:30px;
+   margin-left:20px;
   }
 `;
 
@@ -278,8 +278,8 @@ const Slogan = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-top:-20px;
-    margin-left:0px;
+    margin-top:-10px;
+    margin-left:20px;
     
   }
 `;
@@ -307,7 +307,10 @@ const Contants = styled.div`
   @media screen and (max-width: 768px) {
      font-size: 16px;
      width:300px;
-     margin-left:20px;
+     display: flex;
+     justify-content:center;
+     margin-left:-40px;
+
   }
 `;
 
@@ -336,7 +339,17 @@ const HopeContainer = styled.div`
   
   
   @media screen and (max-width: 768px) {
-    margin-top:-30px;
+    
+  }
+`;
+
+const HopeContainer2 = styled.div`
+  display:flex;
+  justify-content:space-between;
+  
+  
+  @media screen and (max-width: 768px) {
+    margin-top:-100px;
   }
 `;
 
@@ -360,7 +373,6 @@ const TextArea = styled.div`
     justify-content:flex-start;
     align-items: flex-start;
     flex-direction: column;
-    margin-top:100px;
     margin-left:-30px;
   }
   
@@ -535,7 +547,7 @@ const About = () => {
           </TextArea>
         </HopeContainer>
 
-        <HopeContainer>
+        <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
             <Hope1>品牌理念</Hope1>
@@ -543,16 +555,16 @@ const About = () => {
             <Contants>感受發自內心的快樂，一起來玩吧！
               品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants>
           </TextArea>
-        </HopeContainer>
+        </HopeContainer2>
 
-        <HopeContainer>
+        <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
             <Hope1>教學理念</Hope1>
             <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
             <Contants>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！</Contants>
           </TextArea>
-        </HopeContainer>
+        </HopeContainer2>
 
       
 
