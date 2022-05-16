@@ -24,7 +24,7 @@ const ColorcircleImg = styled.img`
     width: 251px;
     height:127px;
     margin-top:-160px;
-    margin-left:15px;
+  
     
   }
 `;
@@ -50,7 +50,8 @@ const ImgContainer = styled.div`
  
    @media screen and (max-width: 768px) {
    margin-top:120px;
-   margin-left:90px;
+   margin-left:120px;
+ 
 
   }
 `;
