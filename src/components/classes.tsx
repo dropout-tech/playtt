@@ -223,17 +223,7 @@ const MobileContainer = styled.div`
    display:none;
   }
 `;
-const Explain2 = styled.div`
- margin-top: -50px;
- display: flex;
- align-items: center;
- justify-content:space-between;
- @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    margin-top:-90px;
-  }
-`;
+
 const Explain3 = styled.div`
  margin-top: -50px;
  display: flex;
