@@ -160,7 +160,23 @@ const Img2 = styled.img`
   width:414px;
   height:352px;
   margin-left:-120px;
-  margin-top:60px;
+  margin-top:20px;
+
+
+  @media screen and (max-width: 768px) {
+    width:251px;  
+    height:220px;
+    margin-left:35px;
+
+   
+  }
+`;
+
+const Img3 = styled.img`
+  width:414px;
+  height:352px;
+  margin-left:-120px;
+  margin-top:120px;
 
 
   @media screen and (max-width: 768px) {
@@ -223,6 +239,7 @@ const Explain3 = styled.div`
  display: flex;
  align-items: center;
  justify-content:space-between;
+ margin-left:110px;
  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -532,7 +549,7 @@ const Classes = () => {
         </MobileContainer>
 
         <Explain3>
-          <Img src={img3} alt="" />
+          <Img3 src={img3} alt="" />
           <Text>
             <Background3>
               <ContantTitle>伴你一生的全年齡運動</ContantTitle>
