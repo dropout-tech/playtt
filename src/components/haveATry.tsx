@@ -16,8 +16,8 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- height:324px;
- margin-top:-80px;
+
+
   @media screen and (max-width: 768px) {
     margin-top:-30px;
   }
@@ -32,6 +32,7 @@ const Title1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+  margin:0px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -58,7 +59,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   line-Height:52px;
-  margin-top:-35px;
+  margin-top:8px;
    @media screen and (max-width: 768px) {
     font-family: 'Futura';
     font-style: normal;
@@ -70,13 +71,14 @@ const Title2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-top:-30px;
+    margin-top:10px;
 
   }
 `;
 
 const BlueArea = styled.div`
   background: #005CB9;
+  height:406px;
   padding-top:30px;
   padding-bottom:80px;
    @media screen and (max-width: 768px) {
@@ -92,7 +94,7 @@ const Button = styled.button`
   box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);
    @media screen and (max-width: 768px) {
     width:211px;
-    height:32px;
+    height:48px;
   }
 `;
 
@@ -114,7 +116,7 @@ const ButtonText = styled.p`
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
-    line-height: 32px;
+    line-height: 48px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -126,10 +128,12 @@ const ButtonText = styled.p`
 `;
 
 const TopText = styled.div`
+ margin-top:50px;
  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
+   
   }
 `;
 
@@ -151,6 +155,8 @@ const Text2 = styled.p`
     align-items: center;
     text-align: center;
     letter-spacing: 0.06em;
+    margin-top:20px;
+  
     
   }
 `;
@@ -183,9 +189,10 @@ const UnderContainer = styled.div`
 
 const ButtonAreas = styled.div`
   display: flex;
+  margin-top:80px;
   justify-content: center;
    @media screen and (max-width: 768px) {
-    
+    margin-top:14px;
   }
 `;
 
@@ -205,13 +212,13 @@ const HaveATry = () => {
             <ButtonText>立即預約體驗</ButtonText>
           </Button>
         </ButtonAreas>
-       
+
         <Text2>統一由臉書私訊洽詢想預約試上的分店 Line</Text2>
 
       </BlueArea>
-      
+
       <UnderContainer>
-      <UnderText>Copyright © 2022 Let's Play</UnderText>
+        <UnderText>Copyright © 2022 Let's Play</UnderText>
       </UnderContainer>
     </Container>
   </PageContainer>;

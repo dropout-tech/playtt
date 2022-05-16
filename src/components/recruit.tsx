@@ -31,9 +31,10 @@ const ColorcircleImg = styled.img`
 
 const Container = styled.div`
   display:flex;
-  justify-content:center;
-  padding-top:-20px;
+  justify-content:flex-end;
+  padding-top:21px;
   padding-bottom: 20px;
+  
    @media screen and (max-width: 768px) {
     display:flex;
     flex-direction:column;
@@ -43,19 +44,24 @@ const Container = styled.div`
 const ImgContainer = styled.div`
   width:50%;
   display:flex;
-  justify-content:center;
+  justify-content:flex-end;
   align-items: center;
+  margin-bottom:80px;
  
    @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
+   margin-top:120px;
+   margin-left:90px;
 
   }
 `;
 
 const TextContainer = styled.div`
  width:50%;
- margin-left:100px;
+ margin-left:143px;
+ display:flex;
+ justify-content:flex-start;
+ /* align-items:center; */
+ flex-direction: column;
   @media screen and (max-width: 768px) {
    display:flex;
    width:100%;
@@ -73,6 +79,7 @@ const Title = styled.p`
   letter-spacing: 1.04px;
   color: #005CB9;
   margin-left:25px;
+  margin-top:-1px;
   
    @media screen and (max-width: 768px) {
     margin-top:16px;
@@ -125,6 +132,7 @@ const Text2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  margin-top:8px;
   
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';

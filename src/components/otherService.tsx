@@ -21,17 +21,18 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- padding-top:20px;
+ padding-top:110px;
  padding-bottom: 80px;
  margin-left:-40px;
   @media screen and (max-width: 768px) {
-    display:none;
+
   }
 `;
 
 const BelowArea = styled.div`
  display: flex;
  justify-content:center;
+ align-items: center;
  margin-top:30px; 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -69,6 +70,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:-30px;
+  margin-bottom:60px;
   line-Height:52px;
     @media screen and (max-width: 768px) {
     
@@ -119,12 +121,14 @@ const Text = styled.p`
 const TextContainer = styled.div`
   display:flex;
   flex-direction:column;
+  justify-content:center;
+ 
+
   background: rgba(207, 210, 211,0.2);
   width: 373px;
   height:373px;
   margin-left:40px;
   margin-top:10px;
-  padding-left:10px;
   padding-top:10px;
     @media screen and (max-width: 768px) {
      margin-top:30px;
@@ -203,8 +207,8 @@ const ImgContainer = styled.div`
 `;
 
 const MobileContainer = styled.div`
-   display:none;
-  @media screen and (max-width: 768px) {
+  display:none;
+  @media screen and (mix-width: 768px) {
     padding-top:80px;
     padding-bottom: 80px;
 
@@ -213,7 +217,7 @@ const MobileContainer = styled.div`
 
 const TextSize = styled.div`
   width:309px;
-  height:128px;
+  height:100%;
   margin-left:50px;
 
 `;

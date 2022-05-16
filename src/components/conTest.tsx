@@ -22,7 +22,7 @@ const Container = styled.div`
   height:100%;
   background: rgba(207, 210, 211,0.2);
   display: flex;
-  padding-top:-120px;
+  margin-top:80px;
    @media screen and (max-width: 768px) {
     display:none;
    
@@ -65,16 +65,18 @@ const TextContainer2 = styled.div`
  z-index:10;
  display:flex;
  justify-content:space-between;
+ align-items: center;
  margin-right:150px;
- margin-top:30px;
+ 
   @media screen and (max-width: 768px) {
-    margin-top:-40px;
+    margin-top:-24px;
+    justify-content:center;
   }
 `;
 
 const LeftText = styled.div`
   margin-left:-180px;
-  margin-top:300px;
+  margin-top:400px;
    @media screen and (max-width: 768px) {
     z-index:10;
     margin-top:-240px;
@@ -174,7 +176,7 @@ const Title3 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-left:24px;
+  margin:0px 0px 0px 24px;
   
 
 
@@ -215,7 +217,7 @@ const TextContent = styled.p`
     letter-spacing: 0.03em;
     color: #3C3D3D;
     transform: matrix(1, 0, 0, 1, 0, 0);
-    margin-top:10px;
+    margin-top:40px;
     width:340px;
     margin-left:12px;
 
@@ -233,6 +235,7 @@ const Text = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   width:374px;
+  margin:24px 0px 0px 0px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -243,13 +246,14 @@ const Text = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     width:211px;
-    margin-left:40px;
+    margin:15px 0px -5px 20px;
+    
   }
   
 `;
 
 const TextContainer = styled.div`
- margin-top:120px;
+ margin-top:130px;
  @media screen and (max-width: 768px) {
   display:flex;
   margin-top:10px;
@@ -274,7 +278,7 @@ const MobileContainer = styled.div`
 
 const CircleImg = styled.img`
   width:100%;
-  height:175px;
+  height:200px;
  
   margin-top:-100px;
   display:flex;

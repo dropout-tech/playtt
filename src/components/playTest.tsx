@@ -18,9 +18,8 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
   display:flex;
-  justify-content: space-around;
-  margin-left:80px;
-  padding-top:80px;
+  justify-content:center;
+  padding-top:180px;
   padding-bottom: 80px;
    @media screen and (max-width: 768px) {
     display: none;
@@ -28,6 +27,7 @@ const Container = styled.div`
 `;
 
 const TextContainer = styled.div`
+ 
  @media screen and (max-width: 768px) {
     
   }
@@ -40,6 +40,7 @@ const Text1 = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-top:20px;
   }
 `;
 
@@ -49,7 +50,7 @@ const Text2 = styled.div`
     display:flex;
     flex-direction: column;
     padding-left:30px;
-    margin-top:-50px;
+    margin-top:-42px;
   }
 `;
 
@@ -70,6 +71,7 @@ const Title1 = styled.p`
   line-height: 52px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -94,9 +96,9 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   line-Height:52px;
-  margin-top:-30px;
+  margin-top:8px;
    @media screen and (max-width: 768px) {
-    margin-top:-25px;
+   
     font-family: 'Futura';
     font-style: normal;
     font-weight: 700;
@@ -131,6 +133,7 @@ const Title3 = styled.p`
     color: #1A1A1A;
     margin-top:50px;
     margin-left:18px;
+    margin-bottom:32px;
 
   }
 `;
@@ -148,6 +151,11 @@ const Number = styled.span`
   margin-top:-40px;
    @media screen and (max-width: 768px) {
     padding-left:12px;
+    font-family: 'Futura';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
   }
 `;
 
@@ -161,7 +169,7 @@ const Number2 = styled.span`
   align-items: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-top:-60px;
+  margin-top:-52px;
    @media screen and (max-width: 768px) {
     padding-left:12px;
   }
@@ -177,6 +185,7 @@ const TextContent = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   width:517px;
+  margin-top:30px;
    @media screen and (max-width: 768px) {
    padding-left:0px;
    font-family: 'Noto Sans TC';
@@ -199,13 +208,15 @@ const TestpicImg = styled.img`
   width:580px;
   height:593px;
   display:flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left:103px;
    @media screen and (max-width: 768px) {
     width:251px;
     height:256px;
-    margin-left:100px;
+    margin-left:80px;
     margin-right:0px;
+    margin-top:120px;
     
     
   }

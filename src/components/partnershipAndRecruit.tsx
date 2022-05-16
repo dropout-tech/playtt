@@ -22,7 +22,7 @@ const Title1 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:30px;
+  margin:0px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
     font-family: 'Noto Sans TC';
@@ -48,7 +48,7 @@ const Title2 = styled.p`
   color: #CFD2D3;
   margin-left:30px;
   line-Height:52px;
-  margin-top:-35px;
+  margin-top:8px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
     font-family: 'Futura';
@@ -65,7 +65,6 @@ const Title2 = styled.p`
 const Container = styled.div`
   width: 100%;
   height:100%;
-  margin-top:-90px;
   padding-bottom: 80px;
   @media screen and (max-width: 768px) {
     margin-top:-120px;
@@ -85,15 +84,17 @@ const BlueArea = styled.div`
   background: #005CB9;  
   z-index:1;
   padding-bottom:60px;
+  margin-top:60px;
   @media screen and (max-width: 768px) {
-    flex:none;
+    width:100%;
+    height:100%;
   }
 `;
 
 const ColorLineImg = styled.img`
   width: 98px;
   height: 27px;
-  margin-left:80px;
+
   margin-top:50px;
    @media screen and (max-width: 768px) {
      margin-left:10px;
@@ -107,6 +108,9 @@ const GrayArea = styled.div`
   background: #F5F6F6;
   width: 270px;
   height:150px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
   
 
    @media screen and (max-width: 768px) {
@@ -122,7 +126,8 @@ const GrayArea = styled.div`
 const TextArea = styled.div`
  display:flex;
  justify-content:center;
- margin-right:55px;
+ align-items: center;
+ margin-right:40px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content:center;
@@ -185,8 +190,7 @@ const TopText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:80px;
-  margin-top:5px;
+  margin-top:12px;
    @media screen and (max-width: 768px) {
     width:110px;
     display: flex;
@@ -224,19 +228,14 @@ const WhiteArea = styled.div`
 
 
 const TextkeyIn1 = styled.p`
-  width: 210px;
-  height:224px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 32px;
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:80px;
+
   @media screen and (max-width: 768px) {
     margin-left:50px;
     font-family: 'Noto Sans TC';
@@ -255,8 +254,6 @@ const TextkeyIn1 = styled.p`
 `;
 
 const TextkeyIn2 = styled.p`
-  width: 210px;
-  height:224px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -267,7 +264,6 @@ const TextkeyIn2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:100px;
   @media screen and (max-width: 768px) {
     margin-left:70px;
     font-family: 'Noto Sans TC';
@@ -284,8 +280,6 @@ const TextkeyIn2 = styled.p`
 `;
 
 const TextkeyIn3 = styled.p`
-  width: 210px;
-  height:224px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -296,7 +290,10 @@ const TextkeyIn3 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
   @media screen and (max-width: 768px) {
     margin-left:50px;
     font-family: 'Noto Sans TC';
@@ -340,7 +337,12 @@ const TextkeyIn4 = styled.p`
 `;
 
 const Textcontainer = styled.div`
-  margin-top:-25px;
+  margin-top:-20px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+ 
 
 `;
 
@@ -399,7 +401,7 @@ const PartnershipAndRecruit = () => {
               <Textcontainer>
                 <ColorLineImg src={colorLine} alt="" />
                 <TopText>教育機構</TopText>
-            </Textcontainer>
+              </Textcontainer>
             </GrayArea>
             <WhiteArea>
               <TextkeyIn3>

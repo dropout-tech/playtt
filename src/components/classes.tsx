@@ -16,7 +16,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
   width:100%;
   height:100%;
-  padding-top:80px;
+  padding-top:140px;
   padding-bottom:80px;
   @media screen and (max-width: 768px) {
    margin-top:-40px;
@@ -91,6 +91,7 @@ const ContantTitle = styled.p`
   font-weight: 900;
   font-size: 26px;
   line-height:10px;
+  display:flex;
   align-items: center;
   letter-spacing: 0.04em;
   color: #005CB9;
@@ -115,7 +116,6 @@ const ContantText = styled.p`
   font-weight: 500;
   font-size: 20px;
   line-height: 36px;
-  text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
   width:550px;
@@ -135,10 +135,10 @@ const Contant = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center; 
-  margin-top:-80px;
+  margin-top:4px;
  
   @media screen and (max-width: 768px) {
-    
+    margin-top:-30px;
   }
 `;
 
@@ -146,20 +146,39 @@ const Img = styled.img`
   width:414px;
   height:352px;
   margin-top:60px;
+
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
     display:flex;
     justify-content: center;
-    margin-left:40px;
+    margin-top:114px;
   }
 `;
 
 const Img2 = styled.img`
   width:414px;
   height:352px;
-  margin-left:20px;
-  margin-top:60px;
+  margin-left:-120px;
+  margin-top:20px;
+
+
+  @media screen and (max-width: 768px) {
+    width:251px;  
+    height:220px;
+    margin-left:35px;
+
+   
+  }
+`;
+
+const Img3 = styled.img`
+  width:414px;
+  height:352px;
+  margin-left:-120px;
+  margin-top:120px;
+
+
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
@@ -171,22 +190,24 @@ const Img2 = styled.img`
 
 
 const Explain1 = styled.div`
- width:80%;
+
  display: flex;
  justify-content: flex-start;
  align-items: center;
-  margin-top:60px;
+ margin:60px 0px 0px 0px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    margin-top:-50px;
   }
 `;
 
-const Explain2 = styled.div`
+const Explain22 = styled.div`
  width:80%;
  display: flex;
  justify-content:center;
  align-items: center;
+ margin-top:-71px;
  @media screen and (max-width: 768px) {
    display:none;
   }
@@ -197,34 +218,68 @@ const MobileContainer = styled.div`
    display: flex;
    justify-content:center;
    flex-direction: column;
+   margin-top:-40px;
  @media screen and (min-width: 768px) {
    display:none;
   }
 `;
 
 const Explain3 = styled.div`
- width:80%;
+ margin-top: -50px;
  display: flex;
  align-items: center;
  justify-content:space-between;
+ margin-left:110px;
  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    margin-top:-90px;
+    margin-left:0px;
+  }
+`;
+
+const Text1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left:103px;
+  margin-top:140px;
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content: center;
+    margin-left:-20px;
+    margin-top:38px;
+  
+
   }
 `;
 
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left:180px;
-  margin-top:70px;
+  margin-left:103px;
+  margin-top:140px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:0px;
+    margin-left:-20px;
+  
 
   }
 `;
+
+const Text2 = styled.div`
+  display: flex;
+  margin-left:103px;
+  margin-top:140px;
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content: center;
+    margin-left:-20px;
+  
+
+  }
+`;
+
 
 const Background1 = styled.div`
   background: #FFD900;
@@ -235,34 +290,39 @@ const Background1 = styled.div`
   justify-content:center;
   width:55%;
   @media screen and (max-width: 768px) {
-    width:60%;
+    width:208px;
+    height:44px;
     margin-left:70px;
 }
 `;
 const Background2 = styled.div`
   background: #FFD900;
   border-radius: 28px;
-  height:60px;
+  height:56px;
   text-align:center;
   display:flex;
   justify-content:center;
   width:50%;
   @media screen and (max-width: 768px) {
-    width:60%;
+    width:208px;
+    height:44px;
     margin-left:70px;
+    margin-top:-102px;
   }
 `;
 const Background3 = styled.div`
   background: #FFD900;
   border-radius: 28px;
-  height:60px;
+  height:56px;
   text-align:center;
   display:flex;
   justify-content:center;
   width:60%;
   @media screen and (max-width: 768px) {
-    width:80%;
-    margin-left:30px;
+    width:208px;
+    height:44px;
+    margin-left:70px;
+    margin-top:-102px;
   }
 `;
 
@@ -277,17 +337,17 @@ const SpanDot = styled.div`
   line-height: 36px;
   letter-spacing: 0.6px;
  @media screen and (max-width: 768px) {
-   margin-top:10px;
+   margin-top:-2px;
   }
 `;
 
 const SpanDot2 = styled.div`
   color: #CFD2D3;
-  margin-top:8px;
+  margin-top:4px;
   width: 36px;
   height: 36px;
  @media screen and (max-width: 768px) {
-   margin-top:22px;
+   margin-top:4px;
   }
 `;
 
@@ -312,7 +372,7 @@ const TextArea = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 10px;
+    line-height: 0px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
@@ -334,12 +394,18 @@ const TextArea2 = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 36px;
+    line-height: 0px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
     }
 `;
+
+
+const AlignText = styled.div`
+  margin-left:110px;
+`;
+
 
 
 /* desktop thw newest info style end */
@@ -356,7 +422,7 @@ const Classes = () => {
 
         <Explain1>
           <Img src={img1} alt="" />
-          <Text>
+          <Text1>
             <Background1>
               <ContantTitle>班別課程豐富客製化</ContantTitle>
             </Background1>
@@ -366,62 +432,65 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot2>・</SpanDot2><TextArea2>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea2>
+                <SpanDot>・</SpanDot><TextArea2>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea2>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>小班客製化教學 / 大班休閒娛樂教學</TextArea>
+                <SpanDot>・</SpanDot><TextArea>小班客製化教學 / 大班休閒娛樂教學髮</TextArea>
               </DotContainer>
-
+           
               <DotContainer>
                 <SpanDot>・</SpanDot> <TextArea>冬令營 / 夏令營 / 多元冬夏令營</TextArea>
               </DotContainer>
             </ContantText>
-          </Text>
+          </Text1>
         </Explain1>
 
-        <Explain2>
-          <Text>
-            <Background2>
-              <ContantTitle>
-                寓教於樂多元發展
-              </ContantTitle>
-            </Background2>
+        <Explain22>
+          <Text2>
+            <Img2 src={img2} alt="" />
+            <AlignText>
+              <Background2>
+                <ContantTitle>
+                  寓教於樂多元發展
+                </ContantTitle>
+              </Background2>
+            
+              <ContantText>
+                <DotContainer>
+                  <SpanDot>・</SpanDot>
+                  <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
+                </DotContainer>
 
-            <ContantText>
-              <DotContainer>
-                <SpanDot>・</SpanDot>
-                <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
-              </DotContainer>
+                <DotContainer>
+                  <SpanDot>・</SpanDot>
+                  <TextArea>互動遊戲式球感</TextArea>
+                </DotContainer>
 
-              <DotContainer>
-                <SpanDot>・</SpanDot>
-                <TextArea>互動遊戲式球感</TextArea>
-              </DotContainer>
+                <DotContainer>
+                  <SpanDot>・</SpanDot>
+                  <TextArea>對打練習</TextArea>
+                </DotContainer>
 
-              <DotContainer>
-                <SpanDot>・</SpanDot>
-                <TextArea>對打練習</TextArea>
-              </DotContainer>
+                <DotContainer>
+                  <SpanDot>・</SpanDot>
+                  <TextArea>互動單球調整揮拍動作</TextArea>
+                </DotContainer>
 
-              <DotContainer>
-                <SpanDot>・</SpanDot>
-                <TextArea>互動單球調整揮拍動作</TextArea>
-              </DotContainer>
+                <DotContainer>
+                  <SpanDot>・</SpanDot>
+                  <TextArea>遊戲競賽</TextArea>
+                </DotContainer>
 
-              <DotContainer>
-                <SpanDot>・</SpanDot>
-                <TextArea>遊戲競賽</TextArea>
-              </DotContainer>
-
-              <DotContainer>
-                <SpanDot>・</SpanDot>
-                <TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
-              </DotContainer>
-            </ContantText>
-          </Text>
-          <Img2 src={img2} alt="" />
-        </Explain2>
+                <DotContainer>
+                  <SpanDot2>・</SpanDot2>
+                  <TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
+                </DotContainer>
+              </ContantText>
+            </AlignText>
+          </Text2>
+          
+        </Explain22>
 
         <MobileContainer>
           <Img2 src={img2} alt="" />
@@ -471,7 +540,7 @@ const Classes = () => {
         </MobileContainer>
 
         <Explain3>
-          <Img src={img3} alt="" />
+          <Img3 src={img3} alt="" />
           <Text>
             <Background3>
               <ContantTitle>伴你一生的全年齡運動</ContantTitle>

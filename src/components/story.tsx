@@ -20,8 +20,7 @@ const PageContainer = styled.div`
 const ColorpicImg = styled.img`
   width:517px ;
   height:517px ;
-  
-  margin-top:100px;
+  margin-top:0px;
 
    @media screen and  (max-width: 768px) {
      width:251px ;
@@ -36,9 +35,11 @@ const Container = styled.div`
  background:#F5F6F6;
  padding-bottom:70px;
   @media screen and  (max-width: 768px) {
+    width:100% ;
+    height:90%;
     display:flex;
     flex-direction:column;
-    margin-top:-40px;
+    margin-top:40px;
  
   
   }
@@ -49,15 +50,19 @@ const Picture = styled.div`
   display:flex;
   justify-content:flex-end;
   align-items:center;
+  margin-right:103px;
+;
 
 
 
    @media screen and  (max-width: 768px) {
-    width:50%;
+    width:100%;
     display:flex;
     justify-content:center;
-    margin-top:-30px;
-    margin-left:50px;
+    align-items:center;
+    margin-top:60px;
+    margin-right:0px;
+
  
   }
 
@@ -67,10 +72,12 @@ const Picture = styled.div`
 const Text = styled.p`
   width:50%;
   display:flex;
-  justify-content:flex-start;
+  justify-content:center;
   flex-direction: column;
-  margin-left:180px;
-  margin-top:100px;
+  align-items: flex-start;
+  margin:10px 0px 0px 0px;
+  
+  margin-bottom:30px;
    @media screen and  (max-width: 768px) {
     margin-top:30px;
     margin-left:60px;
@@ -86,16 +93,20 @@ const Title1 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
    @media screen and  (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
     font-size: 20px;
     line-height: 36px;
+    display: flex;
+    justify-content:center;
     text-align: center;
     letter-spacing: 0.03em;
     color: #1A1A1A;
-    margin-left:60px;
+    margin-left:-20px;
+   
 
   }
 `;
@@ -108,7 +119,7 @@ const Title2 = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-top:-20px;
+  margin:4px 0px 0px 0px;
   @media screen and  (max-width: 768px) {
    width:250px;
    font-family: 'Futura';
@@ -120,7 +131,7 @@ const Title2 = styled.p`
    letter-spacing: 0.04em;
    color: #1A1A1A;
    margin-left:10px;
-   margin-top:-20px;
+   margin-top:-10px;
   }
 `;
 
@@ -130,6 +141,8 @@ const Title3 = styled.p`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
+  margin:0px;
+  
  @media screen and  (max-width: 768px) {
     font-size: 20px;
     line-height: 36px;
@@ -145,7 +158,7 @@ const Title4 = styled.p`
   font-family: 'Noto Sans TC';
   font-weight: 900;
   font-size: 26px;
-  margin-top:-38px;
+  margin:-13px 0px 0px 0px;
 
    @media screen and  (max-width: 768px) {
     font-family: 'Futura';
@@ -171,7 +184,8 @@ const Contant = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin-top:-15px;
+  margin:26px 0px 0px 0px;
+
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
@@ -185,6 +199,7 @@ const Contant = styled.p`
     text-align: justify;
     letter-spacing: 0.02em;
     color: #1A1A1A;
+    margin-top:40px;
 
   }
 `;
@@ -199,11 +214,11 @@ const Contant2 = styled.p`
   text-align: justify;
   letter-spacing: 0.03em;
   color: #1A1A1A;
-  margin-top:-10px;
+  margin-top:24px;
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
-    margin-top:40px;
+    margin-top:20px;
     margin-left:-25px;
     font-family: 'Futura';
     font-style: normal;
@@ -225,9 +240,9 @@ const BelowText = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-top:-20px;
+  margin:20px 210px 0px 0px;
    @media screen and  (max-width: 768px) {
-    margin-top:70px;
+    margin-top:24px;
     width:300px
   }
 `;

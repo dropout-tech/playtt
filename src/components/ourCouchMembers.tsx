@@ -8,7 +8,14 @@ import img5 from "../assets/ourCouchMenber/img5.png"
 import img6 from "../assets/ourCouchMenber/img6.png"
 import img7 from "../assets/ourCouchMenber/img7.png"
 import img8 from "../assets/ourCouchMenber/img8.png"
-
+import img11 from "../assets/ourCouchMenber/img-1.png"
+import img22 from "../assets/ourCouchMenber/img-2.png"
+import img33 from "../assets/ourCouchMenber/img-3.png"
+import img44 from "../assets/ourCouchMenber/img-4.png"
+import img55 from "../assets/ourCouchMenber/img-5.png"
+import img66 from "../assets/ourCouchMenber/img-6.png"
+import img77 from "../assets/ourCouchMenber/img-7.png"
+import img88 from "../assets/ourCouchMenber/img-8.png"
 
 
 
@@ -31,6 +38,7 @@ const Container = styled.div`
  display:flex;
  justify-content:center;
  align-items: center;
+ margin-left:-30px;
    @media screen and (max-width: 768px) {
     display:none;
   }
@@ -60,9 +68,13 @@ const PicImg2 = styled.img`
 
 const Row1 = styled.div`
   display: flex;
+  justify-content:center;
+  margin-top:-65px;
     @media screen and (max-width: 768px) {
-   display: flex;
+    display: flex;
+    justify-content:center;
     flex-direction: column;
+    margin-left:40px;
   }
 `;
 
@@ -79,8 +91,10 @@ const Row2 = styled.div`
 
 const Row3 = styled.div`
   display: flex;
+  justify-content:center;
   flex-direction: row;
   margin-top:50px;
+  margin-bottom:94px;
     @media screen and (max-width: 768px) {
     
   }
@@ -138,6 +152,66 @@ const Text = styled.p`
   }
 `;
 
+const Text11 = styled.p`
+  margin-left:170px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;  
+  @media screen and (max-width: 768px) {
+   margin-left:0px;
+   display:flex;
+   flex-direction: column;
+   margin-right:100px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
+   margin-left:-45px;
+
+  }
+`;
+
+const Text111 = styled.p`
+  margin-left:170px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;  
+  @media screen and (max-width: 768px) {
+   margin-left:0px;
+   display:flex;
+   flex-direction: column;
+   margin-right:100px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
+   margin-left:-20px;
+
+  }
+`;
+
 const Text2 = styled.p`
   margin-left:200px;
   font-family: 'Noto Sans TC';
@@ -185,40 +259,98 @@ const Span = styled.span`
     font-size: 16px;
     line-height: 30px;
     display: flex;
+    align-items: flex-start;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:100px;
+    margin-left:60px;
+  }
+`;
+
+const Span1 = styled.span`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:10px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    align-items: flex-start;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:100px;
+    margin-left:40px;
+  }
+`;
+
+const Span2 = styled.span`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:10px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
     align-items: center;
     letter-spacing: 0.02em;
     color: #1A1A1A;
     width:100px;
+    margin-left:30px;
+    
+  
+    
   }
 `;
 
 const Pic = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     flex-direction: row;
+    margin-top:20px;
   }
 `;
 
 const Pic2 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     flex-direction: row;
- 
+    margin-top:20px;
   }
 `;
 
-const Name = styled.div`
+
+const Name1 = styled.div`
 
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     margin-top:40px;
+    margin-left:20px;
   }
   
 `;
-
 const Name2 = styled.div`
 
   @media screen and (max-width: 768px) {
@@ -234,6 +366,7 @@ const Couch = styled.div`
   margin-left:50px;
 
 `;
+
 
 
 
@@ -343,59 +476,59 @@ const OurCouchMembers = () => {
     <MobileContainer>
       <Row1>
         <Pic>
-          <PicImg src={img1} alt="" />
-          <Name>
-            <Text>呂昀<Span>Eva教練</Span></Text>
-          </Name>
+          <PicImg src={img11} alt="" />
+          <Name1>
+            <Text11>呂昀<Span>Eva教練</Span></Text11>
+          </Name1>
         </Pic>
 
         <Pic2>
           <Name2>
-            <Text>鍾達威<Span>威廉教練</Span></Text>
+            <Text>鍾達威<Span2>威廉教練</Span2></Text>
           </Name2>
-          <PicImg2 src={img2} alt="" />
+          <PicImg2 src={img22} alt="" />
         </Pic2>
 
         <Pic>
-          <PicImg src={img3} alt="" />
-          <Name>
-            <Text>林培中<Span>派派教練</Span></Text>
-          </Name>
+          <PicImg src={img33} alt="" />
+          <Name1>
+            <Text111>林培中<Span1>派派教練</Span1></Text111>
+          </Name1>
         </Pic>
 
         <Pic2>
           <Name2>
-            <Text>郭則寬<Span>阿寬教練</Span></Text>
+            <Text>郭則寬<Span2>阿寬教練</Span2></Text>
           </Name2>
-          <PicImg2 src={img4} alt="" />
+          <PicImg2 src={img44} alt="" />
         </Pic2>
 
         <Pic>
-          <PicImg src={img5} alt="" />
-          <Name>
-            <Text>林晏先<Span>先先教練</Span></Text>
-          </Name>
+          <PicImg src={img55} alt="" />
+          <Name1>
+            <Text111>林晏先<Span1>先先教練</Span1></Text111>
+          </Name1>
         </Pic>
 
         <Pic2>
           <Name2>
-            <Text>顏兆寅<Span>小顏教練</Span></Text>
+            <Text>顏兆寅<Span2>小顏教練</Span2></Text>
           </Name2>
-          <PicImg2 src={img6} alt="" />
+          <PicImg2 src={img66} alt="" />
         </Pic2>
 
         <Pic>
-          <PicImg src={img7} alt="" />
-          <Name>
-            <Text>林政蔚<Span>政蔚教練</Span></Text>
-          </Name>
+          <PicImg src={img77} alt="" />
+          <Name1>
+            <Text111>林政蔚<Span1>政蔚教練</Span1></Text111>
+          </Name1>
         </Pic>
 
         <Pic2>
           <Name2>
-            <Text>夏振凱<Span>凱凱教練</Span></Text>
+            <Text>夏振凱<Span2>凱凱教練</Span2></Text>
           </Name2>
-          <PicImg2 src={img8} alt="" />
+          <PicImg2 src={img88} alt="" />
         </Pic2>
       </Row1>
     </MobileContainer>

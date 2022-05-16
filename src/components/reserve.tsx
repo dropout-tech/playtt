@@ -37,7 +37,7 @@ const GreenButton = styled.button`
   border:none;
    @media screen and (max-width: 768px) {
     width:211px;
-    height:32px;
+    height:48px;
     margin-top:150px;
 
   }
@@ -54,10 +54,21 @@ const ButtonText = styled.p`
   justify-content:center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+ 
 
   @media screen and (max-width: 768px) {
-   font-size: 18px;
-   margin-top:10px;
+    margin-top:10px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height:48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+
   }
 `;
 
@@ -75,6 +86,18 @@ const BelowText = styled.p`
    @media screen and (max-width: 768px) {
     font-size: 14px;
     margin-top:10px;
+    display: flex; 
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #3C3D3D;
+ 
   }
 `;
 
@@ -88,22 +111,26 @@ const TextArea = styled.div`
   background-image: url('${bg}');
   background-size: contain;
   background-repeat: no-repeat;
- 
+  background-position:center;
    @media screen and (max-width: 768px) {
-   background-image: url('${bg2}');
-   width:100%;
-   height:310px; 
+    background-image: url('${bg2}');
+    background-size:contain ;
+    background-repeat: no-repeat;
+    background-position:center;
+  
+    width:100%;
+    height:310px; 
    }
 `;
 
 const AlignText = styled.div`
- margin-top:-140px;
  display: flex; 
  align-items: center;
  justify-content:center;
  flex-direction: column;
+;
   @media screen and (max-width: 768px) {
-    
+   margin-top:-120px;
   }
 
 `;
