@@ -228,20 +228,20 @@ const LeftArea = styled.div`
   }
 `;
 
-const LeftArea1 = styled.div`
-   display:flex;
-   justify-content:center;
-   align-items: center;
-   margin-top:21px;
+// const LeftArea1 = styled.div`
+//    display:flex;
+//    justify-content:center;
+//    align-items: center;
+//    margin-top:21px;
     
-   @media screen and (max-width: 768px) {
-    display:flex;
-    align-items:flex-start;
-    flex-direction: column;
-    margin-top:-128px;
+//    @media screen and (max-width: 768px) {
+//     display:flex;
+//     align-items:flex-start;
+//     flex-direction: column;
+//     margin-top:-128px;
     
-  }
-`;
+//   }
+// `;
 
 
 
