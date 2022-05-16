@@ -216,6 +216,7 @@ const Text2 = styled.p`
   
 `;
 
+<<<<<<< HEAD
 const Text12 = styled.p`
   font-family: 'Noto Sans TC';
   font-weight: 500;
@@ -236,8 +237,22 @@ const Text12 = styled.p`
     color: #1A1A1A;
     
   }
+=======
+// const Text33 = styled.p`
+//   font-family: 'Noto Sans TC';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 18px;
+//   line-height: 8px;
+//   letter-spacing: 0.72px;
+//   color: #3C3D3D;
+//   margin-top:6px;
+//   @media screen and (max-width: 768px) {
+   
+//   }
+>>>>>>> master
   
-`;
+// `;
 
 
 const Title = styled.p`
