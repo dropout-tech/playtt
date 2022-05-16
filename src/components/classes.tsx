@@ -244,6 +244,7 @@ const Explain3 = styled.div`
     display: flex;
     flex-direction: column;
     margin-top:-90px;
+    margin-left:0px;
   }
 `;
 
