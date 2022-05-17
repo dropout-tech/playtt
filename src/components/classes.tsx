@@ -18,8 +18,10 @@ const Container = styled.div`
   height:100%;
   padding-top:140px;
   padding-bottom:80px;
+  margin-left:60px;
   @media screen and (max-width: 768px) {
    margin-top:-40px;
+   margin-left:0px;
   }
 `;
 
@@ -159,7 +161,7 @@ const Img = styled.img`
 const Img2 = styled.img`
   width:414px;
   height:352px;
-  margin-left:-120px;
+  margin-left:40px;
   margin-top:20px;
 
 
@@ -402,8 +404,11 @@ const TextArea2 = styled.p`
 
 
 const AlignText = styled.div`
-  margin-left:110px;
+  margin-left:-40px;
   margin-top:10px;
+  @media screen and (max-width: 768px) {
+    margin-left:0px;
+    }
 `;
 
 
@@ -438,7 +443,7 @@ const Classes = () => {
               <DotContainer>
                 <SpanDot>・</SpanDot><TextArea>小班客製化教學 / 大班休閒娛樂教學髮</TextArea>
               </DotContainer>
-           
+
               <DotContainer>
                 <SpanDot>・</SpanDot> <TextArea>冬令營 / 夏令營 / 多元冬夏令營</TextArea>
               </DotContainer>
@@ -448,14 +453,14 @@ const Classes = () => {
 
         <Explain22>
           <Text2>
-            <Img2 src={img2} alt="" />
+
             <AlignText>
               <Background2>
                 <ContantTitle>
                   寓教於樂多元發展
                 </ContantTitle>
               </Background2>
-            
+
               <ContantText>
                 <DotContainer>
                   <SpanDot>・</SpanDot>
@@ -488,8 +493,9 @@ const Classes = () => {
                 </DotContainer>
               </ContantText>
             </AlignText>
+            <Img2 src={img2} alt="" />
           </Text2>
-          
+
         </Explain22>
 
         <MobileContainer>
