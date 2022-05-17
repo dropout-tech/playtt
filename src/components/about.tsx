@@ -77,8 +77,10 @@ const StartImg4 = styled.img`
 const TopArea = styled.div`
   width:100%;
   display:flex;
+  justify-content:center;
+  margin-left:40px;
   padding:0px -15px 0px 80px;
-  margin-top:-36px;
+  
   @media screen and (max-width: 768px) {
     width:100%;
     display:flex;
@@ -119,6 +121,7 @@ const Container = styled.div`
  width:100%;
  margin-top: -46px;
  padding-bottom: 104px;
+
  @media screen and (max-width: 768px) {
     display:none;
   }
@@ -454,7 +457,6 @@ const About = () => {
         <AboutUs>About Us</AboutUs>
       </AboutItems>
       <TopArea>
-
         <LeftItems>
           <HopeContainer>
 
