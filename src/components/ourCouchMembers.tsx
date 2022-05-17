@@ -532,8 +532,6 @@ const OurCouchMembers = () => {
         </Pic2>
       </Row1>
     </MobileContainer>
-
-
   </PageContainer>;
 };
 

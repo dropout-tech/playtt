@@ -190,7 +190,6 @@ const Img3 = styled.img`
 
 
 const Explain1 = styled.div`
-
  display: flex;
  justify-content: flex-start;
  align-items: center;
@@ -242,7 +241,7 @@ const Text1 = styled.div`
   display: flex;
   flex-direction: column;
   margin-left:103px;
-  margin-top:140px;
+  margin-top:10px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
@@ -257,7 +256,7 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   margin-left:103px;
-  margin-top:140px;
+  margin-top:100px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
@@ -404,6 +403,7 @@ const TextArea2 = styled.p`
 
 const AlignText = styled.div`
   margin-left:110px;
+  margin-top:10px;
 `;
 
 

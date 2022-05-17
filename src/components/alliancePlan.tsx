@@ -475,7 +475,6 @@ const alliancePlan = () => {
         </TitleContainer>
         <Background>
           <Circle111>
-
             <Circle11>
               <Text11>
                 <Img1 src={phone1} alt="" />

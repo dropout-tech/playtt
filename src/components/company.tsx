@@ -337,15 +337,11 @@ const BelowTextContainer = styled.div`
  width:827px;
  height:980px;
 
-
- 
   @media screen and (max-width: 768px) {
     width:327px;
     height:993px;
     padding-left:0px;
     margin-bottom:80px;
-
-
   }
 
 `;
@@ -379,8 +375,6 @@ const MobileContainer = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-   
-
   }
 
 `;
@@ -434,9 +428,6 @@ const Num = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin:0px;
-
-
-
 `;
 
 const Span = styled.span`

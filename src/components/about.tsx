@@ -531,8 +531,6 @@ const About = () => {
 
         </RightItems>
 
-
-
       </TopArea>
     </Container>
 
