@@ -78,6 +78,7 @@ const TopArea = styled.div`
   width:100%;
   display:flex;
   padding:0px -15px 0px 80px;
+  margin-top:-36px;
   @media screen and (max-width: 768px) {
     width:100%;
     display:flex;
@@ -269,6 +270,7 @@ const Slogan = styled.p`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin:4px;
+  margin-left:1px;
 
   @media screen and (max-width: 768px) {
     font-family: 'Futura';
@@ -278,6 +280,7 @@ const Slogan = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #005CB9;
+    margin-left:0px;
     
   }
 `;
@@ -302,6 +305,7 @@ const Contants = styled.div`
   line-height: 36px;
   letter-spacing: 0.6px;
   margin-top:-6px;
+  margin-left:4px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -313,7 +317,8 @@ const Contants = styled.div`
     width:300px;
     display: flex;
     justify-content:center;
-    margin-left:-40px;
+    margin-left:-36px;
+    margin-top:24px; 
 
   }
 `;
@@ -429,7 +434,7 @@ const MobileContainer = styled.div`
 
 
 const TextContainer = styled.div`
- 
+  margin-top:23px;
 `;
 
 const PicturAndText = styled.div`
@@ -522,10 +527,11 @@ const About = () => {
                     <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
                   </div>
                 </PicturAndText>
-
-                <Contants>
-                  學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let's Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
-                </Contants>
+                <TextContainer>
+                  <Contants>
+                    學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let's Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
+                  </Contants>
+               </TextContainer>
               </TextArea2>
             </TextArea>
           </BrandContainer>
