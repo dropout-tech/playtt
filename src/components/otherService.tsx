@@ -139,8 +139,8 @@ const TextContainer = styled.div`
 `;
 
 const Img1 = styled.img`
-  width: 71px;
-  height:82px;
+  width: 148px;
+  height:148px;
   margin-right:30px;
   margin-top:20px;
     @media screen and (max-width: 768px) {
@@ -149,8 +149,8 @@ const Img1 = styled.img`
 `;
 
 const Img2 = styled.img`
-  width: 84px;
-  height:84px;
+  width: 148px;
+  height:148px;
   margin-right:30px;
   margin-top:30px;
     @media screen and (max-width: 768px) {
@@ -159,8 +159,8 @@ const Img2 = styled.img`
 `;
 
 const Img3 = styled.img`
-  width: 100px;
-  height:100px;
+  width: 148px;
+  height:148px;
   margin-right:30px;
   margin-top:40px;
     @media screen and (max-width: 768px) {
@@ -169,8 +169,8 @@ const Img3 = styled.img`
 `;
 
 const Img4 = styled.img`
-  width: 84px;
-  height:94px;
+  width: 148px;
+  height:148px;
   margin-right:30px;
   margin-top:-30px;
     @media screen and (max-width: 768px) {
@@ -179,8 +179,8 @@ const Img4 = styled.img`
 `;
 
 const Img5 = styled.img`
-  width: 84px;
-  height:84px;
+  width: 148px;
+  height:148px;
   margin-right:30px;
   margin-top:-35px;
     @media screen and (max-width: 768px) {
@@ -189,8 +189,8 @@ const Img5 = styled.img`
 `;
 
 const Img6 = styled.img`
-  width: 92px;
-  height:92px;
+  width: 148px;
+  height:148px;
   margin-right:30px;
   margin-top:-70px;
     @media screen and (max-width: 768px) {
@@ -201,7 +201,7 @@ const Img6 = styled.img`
 const ImgContainer = styled.div`
   display: flex;
   justify-content:flex-end;
-  margin-top:80px;
+  margin-top:30px;
     @media screen and (max-width: 768px) {
     
   }
