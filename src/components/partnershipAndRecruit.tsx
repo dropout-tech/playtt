@@ -65,7 +65,7 @@ const Title2 = styled.p`
 const Container = styled.div`
   width: 100%;
   height:100%;
-  padding-bottom: 80px;
+
   @media screen and (max-width: 768px) {
     margin-top:-120px;
   }
@@ -80,11 +80,11 @@ const TitleContainer = styled.div`
 
 const BlueArea = styled.div`
   width: 100%;
-  height:804px;
+  height:100%;
   background: #005CB9;  
   z-index:1;
-  padding-bottom:60px;
-  margin-top:60px;
+  padding-bottom:90px;
+  margin-top:90px;
   @media screen and (max-width: 768px) {
     width:100%;
     height:100%;
@@ -128,6 +128,7 @@ const TextArea = styled.div`
  justify-content:center;
  align-items: center;
  margin-right:40px;
+ margin-top:-10px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content:center;
@@ -162,7 +163,7 @@ const BigTitle = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
-  padding-top:80px;
+  padding-top:50px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;

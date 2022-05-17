@@ -38,7 +38,8 @@ const Container = styled.div`
  display:flex;
  justify-content:center;
  align-items: center;
- margin-left:-30px;
+ margin-left:-65px;
+
    @media screen and (max-width: 768px) {
     display:none;
   }
@@ -152,6 +153,35 @@ const Text = styled.p`
   }
 `;
 
+const TextEVA = styled.p`
+  margin-left:170px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;  
+  @media screen and (max-width: 768px) {
+   margin-left:0px;
+   display:flex;
+   flex-direction: column;
+   margin-right:100px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
+
+  }
+`;
+
 const Text11 = styled.p`
   margin-left:170px;
   font-family: 'Noto Sans TC';
@@ -223,7 +253,7 @@ const Text2 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:170px;
+  margin-left:150px;
   @media screen and (max-width: 768px) {
    margin-left:0px;
    display:flex;
@@ -379,7 +409,7 @@ const OurCouchMembers = () => {
         <Row1>
           <Couch>
             <PicImg src={img1} alt="" />
-            <Text>呂昀<Span>Eva教練</Span></Text>
+            <TextEVA>呂昀<Span>Eva教練</Span></TextEVA>
           </Couch>
 
           <Couch>

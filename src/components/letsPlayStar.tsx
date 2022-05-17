@@ -20,7 +20,7 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- margin-top:44px;
+ margin-top:91px;
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
     margin-top:-56px;
@@ -71,7 +71,7 @@ const Title3 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:40px;
+  margin-left:32px;
 
    @media screen and (max-width: 768px) {
     margin-top:20px;
@@ -122,7 +122,7 @@ const Title4 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:40px;
+  margin-left:32px;
 
    @media screen and (max-width: 768px) {
     margin-top:20px;
@@ -345,7 +345,9 @@ const TextArea1 = styled.div`
   justify-content:center;
   align-items: center;
   flex-direction: column;
-  margin-top:30px;
+  margin-top:6px;
+  margin-left:-20px;
+
   @media screen and (max-width: 768px) {
   
     
