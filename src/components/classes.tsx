@@ -19,6 +19,10 @@ const Container = styled.div`
   padding-top:140px;
   padding-bottom:80px;
   margin-left:60px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   @media screen and (max-width: 768px) {
    margin-top:-40px;
    margin-left:0px;
@@ -33,7 +37,7 @@ const ClassIntroduce = styled.div`
  align-items: center;
  justify-content:center;
  flex-direction: column;
- margin-left:-60px;
+ margin-left:-120px;
  @media screen and (max-width: 768px) {
    margin-left:0px;
   }
@@ -49,6 +53,7 @@ const Title1 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-top:-10px;
+
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -182,7 +187,7 @@ const Img2 = styled.img`
 const Img3 = styled.img`
   width:414px;
   height:352px;
-  margin-left:-120px;
+  margin-left:-118px;
   margin-top:120px;
 
 
@@ -201,7 +206,7 @@ const Explain1 = styled.div`
  display: flex;
  justify-content: flex-start;
  align-items: center;
- margin:0px;
+ margin-left:-20px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -215,6 +220,7 @@ const Explain22 = styled.div`
  justify-content:center;
  align-items: center;
  margin-top:-71px;
+ margin-left:-180px;
  @media screen and (max-width: 768px) {
    display:none;
   }
@@ -237,7 +243,7 @@ const Explain3 = styled.div`
  display: flex;
  align-items: center;
  justify-content:space-between;
- margin-left:110px;
+ margin-left:90px;
  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;

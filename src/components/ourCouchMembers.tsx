@@ -124,7 +124,7 @@ const MobileContainer = styled.div`
 `;
 
 const Text = styled.p`
-  margin-left:170px;
+  margin-left:150px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 900;
@@ -223,6 +223,7 @@ const Text2 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin-left:170px;
   @media screen and (max-width: 768px) {
    margin-left:0px;
    display:flex;
