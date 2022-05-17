@@ -33,7 +33,6 @@ const Container = styled.div`
  height:920px;
  display:flex;
  background:#F5F6F6;
- padding-bottom:70px;
   @media screen and  (max-width: 768px) {
     width:100% ;
     height:90%;
@@ -75,9 +74,9 @@ const Text = styled.p`
   justify-content:center;
   flex-direction: column;
   align-items: flex-start;
-  margin:10px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
   
-  margin-bottom:30px;
+ 
    @media screen and  (max-width: 768px) {
     margin-top:30px;
     margin-left:60px;
@@ -158,7 +157,7 @@ const Title4 = styled.p`
   font-family: 'Noto Sans TC';
   font-weight: 900;
   font-size: 26px;
-  margin:-13px 0px 0px 0px;
+  margin:0px;
 
    @media screen and  (max-width: 768px) {
     font-family: 'Futura';

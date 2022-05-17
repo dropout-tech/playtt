@@ -80,6 +80,7 @@ const TopArea = styled.div`
   justify-content:center;
   margin-left:40px;
   padding:0px -15px 0px 80px;
+  margin-top:-30px;
   
   @media screen and (max-width: 768px) {
     width:100%;
@@ -119,7 +120,7 @@ const RightItems = styled.div`
 
 const Container = styled.div`
  width:100%;
- margin-top: -46px;
+ margin-top:-10px;
  padding-bottom: 104px;
 
  @media screen and (max-width: 768px) {
