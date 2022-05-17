@@ -81,6 +81,7 @@ const TopArea = styled.div`
   margin-left:40px;
   padding:0px -15px 0px 80px;
   margin-top:-30px;
+  margin-bottom:20px;
   
   @media screen and (max-width: 768px) {
     width:100%;
@@ -89,6 +90,7 @@ const TopArea = styled.div`
     align-items: flex-start;
     flex-direction: column;
     margin-top:-90px;
+    margin-bottom:0px;
   }
 `;
 

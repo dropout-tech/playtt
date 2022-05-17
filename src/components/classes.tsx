@@ -31,8 +31,9 @@ const ClassIntroduce = styled.div`
  width:100%;
  display: flex;
  align-items: center;
+ justify-content:center;
  flex-direction: column;
- margin-left:-12px;
+ margin-left:-60px;
  @media screen and (max-width: 768px) {
    margin-left:0px;
   }
@@ -198,7 +199,7 @@ const Explain1 = styled.div`
  display: flex;
  justify-content: flex-start;
  align-items: center;
- margin:60px 0px 0px 0px;
+ margin:0px 0px 0px 0px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;

@@ -17,8 +17,8 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
  width:100%;
- height:80%;
- padding-bottom: 80px;
+ height:1011px;
+  
  
  @media screen and (max-width: 768px) {
 display:none;
@@ -58,6 +58,9 @@ const Background = styled.div`
   width:100%;
   height:80%;
   margin-top:60px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
  
   
 `;
@@ -66,23 +69,24 @@ const Background = styled.div`
 const Circle1 = styled.div`
   display:flex;
   justify-content:center;
+  align-items: center;
   width: 588px;
   height: 588px;
   background: #FFFFFF;
   border-radius:294px;
-  margin-top:30px;
-  margin-right:-50px;
+  margin-right:-170px;
   
 `;
 
 const Circle2 = styled.div`
   display:flex;
   justify-content:center;
+  align-items: center;
   width: 660px;
   height: 660px;
   background: #FFFFFF;
   border-radius:330px;
-  margin-right:-50px;
+
 
   
 `;
@@ -90,29 +94,28 @@ const Circle2 = styled.div`
 const Circle3 = styled.div`
   display:flex;
   justify-content:center;
+  align-items: center;
   width: 588px;
   height: 588px;
   background: #FFFFFF;
   border-radius:294px;
-  margin-top:20px;
-  right: 20px;
-  
+  margin-left:-170px;
 `;
 
 
 
 const Text1 = styled.div`
- margin-top:90px;
+ margin-top:-100px;
  
 `;
 
 const Text2 = styled.div`
- margin-top:140px;
+ margin-top:-100px;
 
  
 `;
 const Text3 = styled.div`
- margin-top:96px;
+ margin-top:-98px;
 
 
 
@@ -122,7 +125,7 @@ const Circle = styled.div`
  display:flex;
  align-items: center;
  justify-content:center;
- padding-top:70px;
+
 
 `;
 
@@ -138,6 +141,8 @@ const TextForm = styled.div`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:30px;
+  position: relative;
+  z-index:10;
 `;
 
 const Title2 = styled.div`
@@ -148,7 +153,7 @@ const Title2 = styled.div`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-top:5px;
+  margin-top:3px;
 `;
 
 const TextForm2 = styled.p`
