@@ -170,6 +170,7 @@ const Img2 = styled.img`
     width:251px;  
     height:220px;
     margin-left:35px;
+    margin-top:80px;
 
    
   }
@@ -185,7 +186,8 @@ const Img3 = styled.img`
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
-    margin-left:35px;
+    margin-left:10px;
+    margin-top:130px;
 
    
   }
@@ -221,6 +223,7 @@ const MobileContainer = styled.div`
    justify-content:center;
    flex-direction: column;
    margin-top:-40px;
+   margin-left:30px;
  @media screen and (min-width: 768px) {
    display:none;
   }
@@ -244,12 +247,27 @@ const Text1 = styled.div`
   display: flex;
   flex-direction: column;
   margin-left:103px;
-  margin-top:10px;
+  margin-top:20px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
     margin-left:-20px;
     margin-top:38px;
+  
+
+  }
+`;
+
+const Text33 = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left:103px;
+  margin-top:100px;
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content: center;
+    margin-left:-20px;
+    margin-top:134px;
   
 
   }
@@ -295,6 +313,7 @@ const Background1 = styled.div`
     width:208px;
     height:44px;
     margin-left:70px;
+    margin-top:-6px;
 }
 `;
 const Background2 = styled.div`
@@ -309,7 +328,7 @@ const Background2 = styled.div`
     width:208px;
     height:44px;
     margin-left:70px;
-    margin-top:-102px;
+    margin-top:-68px;
   }
 `;
 const Background3 = styled.div`
@@ -548,7 +567,7 @@ const Classes = () => {
 
         <Explain3>
           <Img3 src={img3} alt="" />
-          <Text>
+          <Text33>
             <Background3>
               <ContantTitle>伴你一生的全年齡運動</ContantTitle>
             </Background3>
@@ -572,7 +591,7 @@ const Classes = () => {
                 <SpanDot>・</SpanDot> <TextArea>預防老人智力退化</TextArea>
               </DotContainer>
             </ContantText>
-          </Text>
+          </Text33>
         </Explain3>
       </Contant>
     </Container>
