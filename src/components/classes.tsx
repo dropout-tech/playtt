@@ -123,6 +123,8 @@ const ContantText = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   width:550px;
+  margin-top:40px;
+
 
   @media screen and (max-width: 768px) {
     width: 327px;
@@ -199,7 +201,7 @@ const Explain1 = styled.div`
  display: flex;
  justify-content: flex-start;
  align-items: center;
- margin:0px 0px 0px 0px;
+ margin:0px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -248,7 +250,7 @@ const Text1 = styled.div`
   display: flex;
   flex-direction: column;
   margin-left:103px;
-  margin-top:20px;
+  margin-top:60px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
@@ -263,7 +265,7 @@ const Text33 = styled.div`
   display: flex;
   flex-direction: column;
   margin-left:103px;
-  margin-top:100px;
+  margin-top:125px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
@@ -310,6 +312,7 @@ const Background1 = styled.div`
   display:flex;
   justify-content:center;
   width:55%;
+;
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
@@ -350,7 +353,7 @@ const Background3 = styled.div`
 
 const SpanDot = styled.div`
   color: #CFD2D3;
-  margin-top:5px;
+  margin-top:-15px;
   width: 28px;
   height: 28px;
   font-family: 'Noto Sans TC';
@@ -358,6 +361,7 @@ const SpanDot = styled.div`
   font-size: 20px;
   line-height: 36px;
   letter-spacing: 0.6px;
+  
  @media screen and (max-width: 768px) {
    margin-top:-2px;
   }
@@ -384,10 +388,10 @@ const TextArea = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 4px;
-  text-align: justify;
+  line-height: 36px;
   letter-spacing: 0.03em;
   color: #1A1A1A;
+  margin-top:-16px;
 
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
@@ -426,9 +430,10 @@ const TextArea2 = styled.p`
 
 const AlignText = styled.div`
   margin-left:-40px;
-  margin-top:10px;
+  margin-top:20px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
+    margin-top:10px
     }
 `;
 
@@ -458,7 +463,7 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot><TextArea2>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea2>
+                <SpanDot>・</SpanDot><TextArea>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea>
               </DotContainer>
 
               <DotContainer>
@@ -509,7 +514,7 @@ const Classes = () => {
                 </DotContainer>
 
                 <DotContainer>
-                  <SpanDot2>・</SpanDot2>
+                  <SpanDot>・</SpanDot>
                   <TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
                 </DotContainer>
               </ContantText>
