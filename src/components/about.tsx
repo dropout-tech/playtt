@@ -107,7 +107,7 @@ const RightItems = styled.div`
  flex-direction: column;
  align-items: flex-start;
  width:50%;
- margin-left:0px;
+ margin-left:60px;
  margin-top:100px;
  @media screen and (max-width: 768px) {
     
@@ -434,6 +434,7 @@ const TextContainer = styled.div`
 
 const PicturAndText = styled.div`
  display:flex;
+ margin-left:-100px;
 
 
 
