@@ -84,7 +84,7 @@ const BlueArea = styled.div`
   background: #005CB9;  
   z-index:1;
   padding-bottom:90px;
-  margin-top:90px;
+  margin-top:60px;
   @media screen and (max-width: 768px) {
     width:100%;
     height:100%;
@@ -163,7 +163,7 @@ const BigTitle = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
-  padding-top:50px;
+  padding-top:70px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;

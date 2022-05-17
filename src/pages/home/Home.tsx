@@ -45,7 +45,7 @@ const Home = () => {
       <ConTest />
       <OtherService />
       <Company />
-      {/* <HaveATry /> */}
+      <HaveATry />
     </Container>
 
 

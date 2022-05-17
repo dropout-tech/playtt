@@ -32,7 +32,7 @@ const ColorcircleImg = styled.img`
 const Container = styled.div`
   display:flex;
   justify-content:flex-end;
-  margin-top:20px;
+  margin-top:101px;
   padding-bottom: 20px;
   
    @media screen and (max-width: 768px) {
