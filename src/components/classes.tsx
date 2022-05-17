@@ -250,7 +250,7 @@ const Text1 = styled.div`
   display: flex;
   flex-direction: column;
   margin-left:103px;
-  margin-top:60px;
+  margin-top:100px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
@@ -265,7 +265,7 @@ const Text33 = styled.div`
   display: flex;
   flex-direction: column;
   margin-left:103px;
-  margin-top:125px;
+  margin-top:160px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
@@ -308,8 +308,8 @@ const Background1 = styled.div`
   background: #FFD900;
   border-radius: 28px;
   height:56px;
-  text-align:center;
   display:flex;
+  text-align:center;
   justify-content:center;
   width:55%;
 ;
@@ -430,10 +430,10 @@ const TextArea2 = styled.p`
 
 const AlignText = styled.div`
   margin-left:-40px;
-  margin-top:20px;
+  margin-top:35px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
-    margin-top:10px
+    margin-top:20px
     }
 `;
 
