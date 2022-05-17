@@ -32,8 +32,9 @@ const ClassIntroduce = styled.div`
  display: flex;
  align-items: center;
  flex-direction: column;
+ margin-left:-12px;
  @media screen and (max-width: 768px) {
-    
+   margin-left:0px;
   }
 `;
 

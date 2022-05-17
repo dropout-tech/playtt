@@ -118,11 +118,12 @@ const Text = styled.p`
 `;
 
 
+
+
 const TextContainer = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:center;
- 
 
   background: rgba(207, 210, 211,0.2);
   width: 373px;
@@ -141,7 +142,7 @@ const Img1 = styled.img`
   width: 71px;
   height:82px;
   margin-right:30px;
-  margin-top:30px;
+  margin-top:20px;
     @media screen and (max-width: 768px) {
     
   }
@@ -161,7 +162,7 @@ const Img3 = styled.img`
   width: 100px;
   height:100px;
   margin-right:30px;
-  margin-top:25px;
+  margin-top:40px;
     @media screen and (max-width: 768px) {
     
   }
@@ -171,7 +172,7 @@ const Img4 = styled.img`
   width: 84px;
   height:94px;
   margin-right:30px;
-  margin-top:30px;
+  margin-top:-30px;
     @media screen and (max-width: 768px) {
     
   }
@@ -181,7 +182,7 @@ const Img5 = styled.img`
   width: 84px;
   height:84px;
   margin-right:30px;
-  margin-top:35px;
+  margin-top:-35px;
     @media screen and (max-width: 768px) {
     
   }
@@ -191,7 +192,7 @@ const Img6 = styled.img`
   width: 92px;
   height:92px;
   margin-right:30px;
-  margin-top:25px;
+  margin-top:-70px;
     @media screen and (max-width: 768px) {
     
   }
