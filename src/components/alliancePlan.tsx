@@ -199,6 +199,7 @@ display:none;
    width:100%;
    display: flex;
 
+
  }
 `;
 
@@ -235,7 +236,7 @@ const TitleWord2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-top:-30px;
+    margin-top:-35px;
  }
 `;
 
@@ -269,7 +270,7 @@ const Circle22 = styled.div`
     height:375px;
     background: #FFFFFF;
     border-radius:294px;
-    margin-top:-30px;
+    margin-top:-60px;
     margin-right:-50px;
     z-index: 1;
 
@@ -288,7 +289,7 @@ const Circle33 = styled.div`
     height:375px;
     background: #FFFFFF;
     border-radius:294px;
-    margin-top:-30px;
+    margin-top:-89px;
     margin-right:-50px;
     z-index: 1;
    
@@ -300,9 +301,6 @@ const Circle33 = styled.div`
 const Text11 = styled.div`
 @media screen and (max-width: 768px) {
  margin-top:0px;
- position: none;
- z-index: 0;
- left:0px;
  margin-left:60px;
 
   }
@@ -312,10 +310,6 @@ const Text11 = styled.div`
 const Text22 = styled.div`
 @media screen and (max-width: 768px) {
     margin-top:0px;
-    z-index:0;
-    position: none;
-    left:0px;
-    z-index:10;
     margin-left:60px;
 
   }
@@ -324,7 +318,7 @@ const Text22 = styled.div`
 `;
 const Text33 = styled.div`
 @media screen and (max-width: 768px) {
-    z-index:10;
+   
     margin-left:60px;
 
   }
@@ -382,6 +376,7 @@ const TitleContainer = styled.div`
   align-items: center;
   z-index: 10;
   flex-direction: column;
+     margin-top:-99px;
 }
 
 `;
@@ -413,6 +408,8 @@ const TextForm222 = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:-8px;
+    position: absolute;
+    z-index: 10;
   }
 `;
 
