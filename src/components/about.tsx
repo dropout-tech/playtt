@@ -194,7 +194,7 @@ const Hope1 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
-   margin-left:-5px;
+   margin-left:-3px;
   }
 `;
 
@@ -303,7 +303,7 @@ const AboutItems = styled.div`
 
 const Contants = styled.div`
   width:477px;
-  height:252px;
+  height:270px;
   font-family: "Noto Sans TC";
   font-weight: 500;
   font-size: 20px;
@@ -323,7 +323,7 @@ const Contants = styled.div`
     display: flex;
     justify-content:center;
     margin-left:-36px;
-    margin-top:24px; 
+    margin-top:8px; 
 
   }
 `;
@@ -589,7 +589,7 @@ const About = () => {
           <TextArea>
             <Hope1>教學理念</Hope1>
             <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
-            <Contants>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！</Contants>
+            <Contants>學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let’s Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！</Contants>
           </TextArea>
         </HopeContainer3>
 
