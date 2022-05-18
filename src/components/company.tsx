@@ -19,7 +19,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
   height:100%;
   width:100%;
-  margin-top:55px;
+  margin-top:44px;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ const BelowArea = styled.div`
   display: flex;
   justify-content: center;
   align-items:center;
-  margin-top:70px;
+  margin-top:40px;
   
   @media screen and (max-width: 768px) {
     display: flex;
@@ -79,11 +79,11 @@ const Background2 = styled.div`
 `;
 
 const TopLeftArea = styled.div`
-
  display: flex;
  justify-content: center;
  align-items:center;
  margin-left:30px;
+ margin-top:-50px;
 
   @media screen and (max-width: 768px) {
     width:90%;
@@ -237,7 +237,7 @@ const Text12 = styled.p`
     
   }
   
-// `;
+`;
 
 
 const Title = styled.p`
@@ -414,8 +414,9 @@ const TitleTwo = styled.p`
 const Background = styled.div`
   background: #38D430;
   width:100%;
-  height:1450px;
+  height:1388px;
   padding-top:80px;
+  padding-bottom:-180px;
  
 `;
 

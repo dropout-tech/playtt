@@ -85,10 +85,26 @@ const Title3 = styled.p`
   line-height: 40px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin-top:32px;
     @media screen and (max-width: 768px) {
     
   }
 `;
+
+const Title4 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-top:19px;
+    @media screen and (max-width: 768px) {
+    
+  }
+`;
+
 
 const TopArea = styled.div`
  display: flex;
@@ -124,7 +140,6 @@ const TextContainer = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:center;
-
   background: rgba(207, 210, 211,0.2);
   width: 373px;
   height:373px;
@@ -141,7 +156,7 @@ const TextContainer = styled.div`
 const Img1 = styled.img`
   width: 148px;
   height:148px;
-  margin-right:30px;
+  margin-right:0px;
   margin-top:20px;
     @media screen and (max-width: 768px) {
     
@@ -151,7 +166,7 @@ const Img1 = styled.img`
 const Img2 = styled.img`
   width: 148px;
   height:148px;
-  margin-right:30px;
+  margin-right:0px;
   margin-top:30px;
     @media screen and (max-width: 768px) {
     
@@ -161,7 +176,7 @@ const Img2 = styled.img`
 const Img3 = styled.img`
   width: 148px;
   height:148px;
-  margin-right:30px;
+  margin-right:0px;
   margin-top:40px;
     @media screen and (max-width: 768px) {
     
@@ -171,7 +186,7 @@ const Img3 = styled.img`
 const Img4 = styled.img`
   width: 148px;
   height:148px;
-  margin-right:30px;
+  margin-right:0px;
   margin-top:-30px;
     @media screen and (max-width: 768px) {
     
@@ -181,7 +196,7 @@ const Img4 = styled.img`
 const Img5 = styled.img`
   width: 148px;
   height:148px;
-  margin-right:30px;
+  margin-right:0px;
   margin-top:-35px;
     @media screen and (max-width: 768px) {
     
@@ -191,7 +206,7 @@ const Img5 = styled.img`
 const Img6 = styled.img`
   width: 148px;
   height:148px;
-  margin-right:30px;
+  margin-right:0px;
   margin-top:-70px;
     @media screen and (max-width: 768px) {
     
@@ -201,7 +216,8 @@ const Img6 = styled.img`
 const ImgContainer = styled.div`
   display: flex;
   justify-content:flex-end;
-  margin-top:30px;
+  margin-top:20px;
+ 
     @media screen and (max-width: 768px) {
     
   }
@@ -219,10 +235,42 @@ const MobileContainer = styled.div`
 const TextSize = styled.div`
   width:309px;
   height:100%;
-  margin-left:50px;
+  margin-left:32px;
+  margin-top:-10px;
+
 
 `;
 
+const TextSize2 = styled.div`
+  width:309px;
+  height:100%;
+  margin-left:30px;
+  margin-top:-10px;
+
+
+`;
+
+const TextSize3 = styled.div`
+  width:309px;
+  height:100%;
+  margin-left:32px;
+  margin-top:-12px;
+
+
+`;
+
+const TextSize4 = styled.div`
+  width:309px;
+  height:100%;
+  margin-left:110px;
+
+
+`;
+const TextArea = styled.div`
+  display:flex;
+  justify-content:center;
+
+`
 
 
 
@@ -266,7 +314,7 @@ const OtherService = () => {
 
         <TextContainer>
           <TextSize>
-            <Title3>球具販售</Title3>
+            <Title4>球具販售</Title4>
             <Text>
               依據需求協助搭配和製作球具，<br />
               以達到學習和運動成效為主要目的。
@@ -281,14 +329,14 @@ const OtherService = () => {
 
       <BelowArea>
         <TextContainer>
-          <TextSize>
+          <TextSize2>
             <Title3>場館加盟與聯盟合作</Title3>
             <Text>
               提供系統化的 SOP 協助桌球產業發<br />
               展更全面，並且共享產業資源互利，<br />
               提供有心推廣桌球的同業更好的機會。<br />
             </Text>
-          </TextSize>
+          </TextSize2>
           <ImgContainer>
             <Img4 src={img4} alt="" />
           </ImgContainer>
@@ -309,7 +357,7 @@ const OtherService = () => {
         </TextContainer>
 
         <TextContainer>
-          <TextSize>
+          <TextSize3>
             <Title3>VIP 專區</Title3>
             <Text>
               特別精心打造的桌球 VIP 包廂空間，<br />
@@ -318,7 +366,7 @@ const OtherService = () => {
               跨足休閒娛樂的業界首選，<br />
               開創桌球產業藍海。
             </Text>
-          </TextSize>
+          </TextSize3>
           <ImgContainer>
             <Img6 src={img6} alt="" />
           </ImgContainer>
@@ -341,12 +389,14 @@ const OtherService = () => {
       </div>
 
       <TextContainer>
-        <Title3>桌球俱樂部</Title3>
-        <Text>
-          合作機構：華江高中<br />
-          聚集桌球愛好打手<br />
-          舉辦活動分享知識增加凝聚力
-        </Text>
+        
+          <Title3>桌球俱樂部</Title3>
+          <Text>
+            合作機構：華江高中<br />
+            聚集桌球愛好打手<br />
+            舉辦活動分享知識增加凝聚力
+          </Text>
+      
         <ImgContainer>
           <Img1 src={img1} alt="" />
         </ImgContainer>

@@ -52,6 +52,7 @@ const TextContainer1 = styled.div`
  width:100%;
  z-index:10;
  display:flex;
+
  flex-direction: column;
  margin-top:-100px;
 
@@ -64,7 +65,7 @@ const TextContainer2 = styled.div`
  width:100%;
  z-index:10;
  display:flex;
- justify-content:space-between;
+ justify-content:flex-start;
  align-items: center;
  margin-right:150px;
  
