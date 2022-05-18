@@ -126,6 +126,7 @@ const TextArea1 = styled.div`
   align-items: start;
   flex-direction: column;
   margin-left:48px;
+  margin-top:-13px;
   @media screen and (max-width: 768px) {
    margin-bottom:30px;
    margin-left:0px;
@@ -136,7 +137,7 @@ const TextArea2 = styled.div`
   display:flex;
   justify-content:center;
   flex-direction: column;
-  margin-top:-3px;
+  margin-top:-12px;
   margin-left:70px;
 
 

@@ -154,7 +154,7 @@ const Text = styled.p`
 `;
 
 const TextEVA = styled.p`
-  margin-left:170px;
+  margin-left:10px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 900;
