@@ -24,7 +24,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   @media screen and (max-width: 768px) {
-   margin-top:-40px;
+   margin-top:-80px;
    margin-left:0px;
   }
 `;
@@ -40,6 +40,7 @@ const ClassIntroduce = styled.div`
  margin-left:-120px;
  @media screen and (max-width: 768px) {
    margin-left:0px;
+ 
   }
 `;
 
@@ -210,7 +211,7 @@ const Explain1 = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    margin-top:-50px;
+    margin-top:-60px;
   }
 `;
 
@@ -231,8 +232,9 @@ const MobileContainer = styled.div`
    display: flex;
    justify-content:center;
    flex-direction: column;
-   margin-top:-40px;
+   margin-top:-56px;
    margin-left:30px;
+
  @media screen and (min-width: 768px) {
    display:none;
   }
@@ -291,6 +293,7 @@ const Text = styled.div`
     display:flex;
     justify-content: center;
     margin-left:-20px;
+
   
 
   }
@@ -369,7 +372,7 @@ const SpanDot = styled.div`
   letter-spacing: 0.6px;
   
  @media screen and (max-width: 768px) {
-   margin-top:-2px;
+   margin-top:-18px;
   }
 `;
 
@@ -404,7 +407,7 @@ const TextArea = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 0px;
+    line-height: 32px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;

@@ -38,7 +38,8 @@ const Container = styled.div`
     height:90%;
     display:flex;
     flex-direction:column;
-    margin-top:40px;
+    margin-top:-20px;
+    height:1116px;
  
   
   }

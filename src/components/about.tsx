@@ -301,7 +301,7 @@ const AboutItems = styled.div`
 `;
 
 
-const Contants = styled.div`
+const Contants1 = styled.div`
   width:477px;
   height:270px;
   font-family: "Noto Sans TC";
@@ -328,6 +328,59 @@ const Contants = styled.div`
   }
 `;
 
+const Contants = styled.div`
+  width:477px;
+  height:220px;
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.6px;
+  margin-top:-6px;
+  margin-left:4px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:300px;
+    display: flex;
+    justify-content:center;
+    margin-left:-36px;
+    margin-top:8px; 
+
+  }
+`;
+
+const Contants3 = styled.div`
+  width:477px;
+  height:190px;
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.6px;
+  margin-top:-6px;
+  margin-left:4px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:300px;
+    display: flex;
+    justify-content:center;
+    margin-left:-36px;
+    margin-top:8px; 
+
+  }
+`;
 const Span = styled.span`
   font-family: 'Futura';
   font-style: normal;
@@ -373,7 +426,7 @@ const HopeContainer3 = styled.div`
   
   
   @media screen and (max-width: 768px) {
-    margin-top:-100px;
+    margin-top:-30px;
   }
 `;
 
@@ -561,7 +614,7 @@ const About = () => {
           <TextArea>
             <Hope1>願景</Hope1>
             <Slogan>Let's Play <Span>Dream</Span></Slogan>
-            <Contants>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！</Contants>
+            <Contants1>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！</Contants1>
           </TextArea>
         </HopeContainer>
 
@@ -570,7 +623,7 @@ const About = () => {
           <TextArea>
             <Hope1>使命</Hope1>
             <Slogan>Let’s Play <Span>Goal</Span></Slogan>
-            <Contants>我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。</Contants>
+            <Contants3>我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。</Contants3>
           </TextArea>
         </HopeContainer2>
 
@@ -579,8 +632,8 @@ const About = () => {
           <TextArea>
             <Hope1>品牌理念</Hope1>
             <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
-            <Contants>感受發自內心的快樂，一起來玩吧！
-              品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants>
+            <Contants3>感受發自內心的快樂，一起來玩吧！
+              品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants3>
           </TextArea>
         </HopeContainer3>
 
