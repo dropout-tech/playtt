@@ -85,9 +85,7 @@ const TopArea = styled.div`
   
   @media screen and (max-width: 768px) {
     width:100%;
-    display:flex;
-    justify-content:flex-start;
-    align-items: flex-start;
+    margin-left:-30px;
     flex-direction: column;
     margin-top:-90px;
     margin-bottom:0px;
@@ -196,7 +194,7 @@ const Hope1 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
-   margin-left:20px;
+   margin-left:-5px;
   }
 `;
 
@@ -264,6 +262,7 @@ const Hope4 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
+   margin-left:-10px;
   }
 `;
 
@@ -295,7 +294,7 @@ const AboutItems = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top:100px;
+  margin-top:194px;
   @media screen and (max-width: 768px) {
     
   }
@@ -405,11 +404,11 @@ const TextArea = styled.div`
 
 
 const TextArea11 = styled.div`
-  
+ 
   
 
   @media screen and (max-width: 768px) {
-    
+   
   }
   
 `;
@@ -437,8 +436,6 @@ const MobileContainer = styled.div`
 
 `;
 
-
-
 const TextContainer = styled.div`
   margin-top:23px;
 `;
@@ -446,10 +443,16 @@ const TextContainer = styled.div`
 const PicturAndText = styled.div`
  display:flex;
  margin-left:-100px;
-
+  @media screen and (max-width: 768px) {
+   
+  }
 
 
 `;
+
+
+
+
 
 /* desktop thw newest info style end */
 const About = () => {
@@ -466,10 +469,10 @@ const About = () => {
             <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
-                <div>
-                  <Hope1>願景</Hope1>
-                  <Slogan>Let's Play <Span>Dream</Span></Slogan>
-                </div>
+          
+                <Hope1>願景</Hope1>
+                <Slogan>Let's Play <Span>Dream</Span></Slogan>
+               
               </PicturAndText>
               <TextContainer>
 

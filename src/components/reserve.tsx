@@ -54,6 +54,7 @@ const ButtonText = styled.p`
   justify-content:center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+  
  
 
   @media screen and (max-width: 768px) {
@@ -137,7 +138,7 @@ const AlignText = styled.div`
 
 const Text = styled.div`
   height:60px;
-  margin-top:-8px;
+  margin-top:-10px;
    @media screen and (max-width: 768px) {
     
   }
