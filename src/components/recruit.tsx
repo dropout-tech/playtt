@@ -24,6 +24,8 @@ const ColorcircleImg = styled.img`
     width: 251px;
     height:127px;
     margin-top:-160px;
+
+  
   
     
   }
@@ -32,7 +34,7 @@ const ColorcircleImg = styled.img`
 const Container = styled.div`
   display:flex;
   justify-content:flex-end;
-  margin-top:101px;
+  margin-top:83px;
   padding-bottom: 20px;
   
    @media screen and (max-width: 768px) {
@@ -69,6 +71,7 @@ const TextContainer = styled.div`
    flex-direction:column;
    align-items: center;
    margin-left:0px;
+   margin-top:-56px;
   }
 `;
 
@@ -84,17 +87,18 @@ const Title = styled.p`
   
    @media screen and (max-width: 768px) {
     margin-top:16px;
-    font-family: 'Futura';
+    font-family: 'Noto Sans TC';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 18px;
     line-height: 32px;
     display: flex;
     align-items: center;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-left:20px;
-    margin-top:10px;
+    margin-left:18px;
+
+   
   }
 `;
 
@@ -147,7 +151,7 @@ const Text2 = styled.p`
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 16px 0px;
+    margin:0px;
 
   }
  
@@ -161,9 +165,9 @@ const Background = styled.div`
    @media screen and (max-width: 768px) {
     display:flex;
     align-items: center;
-    width: 170px;
-    height: 32px;
-    margin-left:20px;
+    width: 176px;
+    height: 44px;
+  
   }
 `;
 
