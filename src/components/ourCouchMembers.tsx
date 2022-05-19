@@ -299,6 +299,7 @@ const Span = styled.span`
   }
 `;
 
+
 const Span1 = styled.span`
   font-family: 'Noto Sans TC';
   font-style: normal;
@@ -399,8 +400,20 @@ const Couch = styled.div`
 
 `;
 
+const SpanEVA = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+  margin-left:10px;
+`;
+
+const SpanLeft = styled.div`
+  margin-left:-10px;
 
 
+`;
 
 /* desktop thw newest info style end */
 const OurCouchMembers = () => {
@@ -410,7 +423,7 @@ const OurCouchMembers = () => {
         <Row1>
           <Couch>
             <PicImg src={img1} alt="" />
-            <TextEVA>呂昀<Span>Eva教練</Span></TextEVA>
+            <TextEVA>呂昀      <Span><SpanEVA>Eva</SpanEVA>教練</Span>   </TextEVA>
           </Couch>
 
           <Couch>
