@@ -19,16 +19,22 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
   width:100%;
-  height:100%;
+  height:804px;
   background: rgba(207, 210, 211,0.2);
   display: flex;
+  justify-content:center;
+  align-items:center;
   margin-top:80px;
 
+  background-image: url('${halfcircle}');
+  background-size: cover;
+  
+  ;
    @media screen and (max-width: 768px) {
     display:none;
-   
+
   }
-  
+
 `;
 
 const HalfcircleImg = styled.img`
@@ -55,7 +61,7 @@ const TextContainer1 = styled.div`
  display:flex;
  align-items: flex-end;
  flex-direction: column;
-
+ margin-top:-7px;
   @media screen and (max-width: 768px) {
     margin-top:120px;
   }
@@ -302,16 +308,13 @@ const AlignText = styled.div`
  display:flex;
  justify-content: center;
  align-items: center;
-
+ margin-left:330px;
 `;
 
 /* desktop thw newest info style end */
 const ConTest = () => {
   return <PageContainer>
     <Container>
-      <ImgContainer>
-        <HalfcircleImg src={halfcircle} alt="" />
-      </ImgContainer>
 
       <AlignText>
         <TextContainer1>
