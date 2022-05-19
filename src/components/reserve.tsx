@@ -146,6 +146,14 @@ const Text = styled.div`
 
 `;
 
+const Span = styled.p`
+  font-family:'Futura';
+  font-weight:500;
+  font-size:18px;
+  line-height:32px;
+  letter-spacing:4%;
+`;
+
 /* desktop thw newest info style end */
 const Reserve = () => {
   return <PageContainer>
@@ -158,7 +166,7 @@ const Reserve = () => {
               <ButtonText>立即預約體驗</ButtonText>
             </Text>
           </GreenButton>
-          <BelowText>統一由臉書私訊洽詢想預約試上的分店 Line</BelowText>
+          <BelowText>統一由臉書私訊洽詢想預約試上的分店 <Span>Line</Span></BelowText>
         </AlignText>
       </TextArea>
 

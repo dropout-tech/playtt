@@ -68,7 +68,7 @@ const Background2 = styled.div`
  display:flex;  
  justify-content: center;
  width:373px;
- height:964px;
+ height:981px;
  align-items: center;
  
   @media screen and (max-width: 768px) {
@@ -117,12 +117,9 @@ const TextArea = styled.div`
 `;
 
 const TextArea1 = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items: start;
-  flex-direction: column;
+  margin-top:28px;
   margin-left:48px;
-
+  
   @media screen and (max-width: 768px) {
    margin-bottom:30px;
    margin-left:0px;
@@ -141,10 +138,7 @@ const TextArea2 = styled.div`
 `;
 
 const TextArea3 = styled.div`
-  display:flex;
-  justify-content:center;
-  flex-direction: column;
-
+  margin-top:28px;
   margin-left:70px;
 
 
@@ -231,6 +225,30 @@ const Text12 = styled.p`
   line-height: 32px;
   letter-spacing: 0.64px;
   color: #3C3D3D;
+  margin:0px;
+  margin-top:12px;
+  padding:0px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    
+  }
+  
+`;
+
+const Text32 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
   margin:0px;
   margin-top:12px;
   padding:0px;
@@ -340,7 +358,7 @@ const Title2 = styled.p`
 const BelowTextContainer = styled.div`
  background: #FFFFFF;
  width:827px;
- height:964px;
+ height:981px;
  
 
 
@@ -468,15 +486,15 @@ font-size: 18px;
 line-height: 32px;
 letter-spacing: 0.72px;
 color:#1A1A1A;
-margin-top:12px;
+
 `;
 
 const Time = styled.div`
-
+ margin-top:20px;
 `;
 
 const Shop = styled.div`
-margin-top:0px;
+margin-top:20px;
 
 
 `;
@@ -488,7 +506,7 @@ margin-top:20px;
 `;
 
 const Shop2 = styled.div`
-margin:0px;
+margin-top:20px;
 
 
 `;
@@ -538,11 +556,11 @@ const Company = () => {
                 <Text12>創辦人 / 總教練</Text12>
               </TextArea1>
               <TextArea3>
-                <Text22>新北市蘆洲區長樂路106號3樓</Text22>
-                <Text22>0988 521 012</Text22>
-                <Text22>playpp2018@gmail.com</Text22>
-                <Text22>週一至週五 10:00–19:00（週末請撥各館電話）</Text22>
-                <Text22>郭教練 <Span>0988 521 012</Span></Text22>
+                <Text32>新北市蘆洲區長樂路106號3樓</Text32>
+                <Text32>0988 521 012</Text32>
+                <Text32>playpp2018@gmail.com</Text32>
+                <Text32>週一至週五 10:00–19:00（週末請撥各館電話）</Text32>
+                <Text32>郭教練 <Span>0988 521 012</Span></Text32>
               </TextArea3>
             </TextArea2>
           </TextArea>
@@ -560,7 +578,7 @@ const Company = () => {
 
               <Time>
                 <SmallTitle>各館營業時間</SmallTitle>
-                <Text>週一至週五 <Span>13:00–21:00</Span>　週六日<Span> 9:00–19:00</Span></Text>
+                <Text22>週一至週五 <Span>13:00–21:00</Span>　週六日<Span> 9:00–19:00</Span></Text22>
               </Time>
 
               <Shop>
