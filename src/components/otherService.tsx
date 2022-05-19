@@ -157,7 +157,7 @@ const Img1 = styled.img`
   width: 148px;
   height:148px;
   margin-right:0px;
-  margin-top:20px;
+  margin-top:14px;
     @media screen and (max-width: 768px) {
     
   }
@@ -167,7 +167,7 @@ const Img2 = styled.img`
   width: 148px;
   height:148px;
   margin-right:0px;
-  margin-top:30px;
+  margin-top:14px;
     @media screen and (max-width: 768px) {
     
   }

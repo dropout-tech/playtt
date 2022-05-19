@@ -279,6 +279,7 @@ const Title22 = styled.p`
 
 const TopBelow = styled.div`
   margin-left:-150px;
+  margin-top:-80px;
    @media screen and (max-width: 768px) {
    display:flex;
    justify-content:center;
@@ -300,6 +301,7 @@ const TopBelow = styled.div`
 const UnderBelow = styled.div`
   margin-left:-130px;
   margin-top:40px;
+  margin-bottom: -20px;
  @media screen and (max-width: 768px) {
     margin-left:0px;
   }
@@ -314,7 +316,7 @@ const Title2 = styled.p`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 0.04em;
-  margin:40px 0px 0px 0px;
+  margin:60px 0px 0px 0px;
 
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
@@ -337,6 +339,7 @@ const BelowTextContainer = styled.div`
  justify-content:center;
  width:827px;
  height:980px;
+
 
   @media screen and (max-width: 768px) {
     width:327px;

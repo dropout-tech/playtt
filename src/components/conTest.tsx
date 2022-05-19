@@ -151,7 +151,7 @@ const Title2 = styled.p`
   display:flex;
   justify-content: flex-start;
   line-Height:52px;
-  margin-top:-38px;
+  margin-top:-28px;
   @media screen and (max-width: 768px) {
    margin-left:-80px;
    font-family: 'Futura';
