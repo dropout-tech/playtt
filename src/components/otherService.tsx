@@ -21,7 +21,7 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- margin-top:-18px;
+ margin-top:110px;
  padding-bottom: 80px;
  margin-left:-40px;
   @media screen and (max-width: 768px) {
@@ -109,7 +109,7 @@ const Title4 = styled.p`
 const TopArea = styled.div`
  display: flex;
  justify-content:center;
- margin-top:40px;
+ margin-top:-10px;
    @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -232,6 +232,15 @@ const MobileContainer = styled.div`
     }
 `;
 
+const TextSize5 = styled.div`
+  width:309px;
+  height:100%;
+  margin-left:32px;
+  margin-top:3px;
+
+
+`;
+
 const TextSize = styled.div`
   width:309px;
   height:100%;
@@ -244,7 +253,7 @@ const TextSize = styled.div`
 const TextSize2 = styled.div`
   width:309px;
   height:100%;
-  margin-left:30px;
+  margin-left:32px;
   margin-top:-10px;
 
 
@@ -254,7 +263,7 @@ const TextSize3 = styled.div`
   width:309px;
   height:100%;
   margin-left:32px;
-  margin-top:-12px;
+  margin-top:-10px;
 
 
 `;
@@ -305,7 +314,7 @@ const OtherService = () => {
               平日上午包場優惠<br />
               歡迎洽談，提早預約<br />
               平日 14:00–21:00 與周末租桌服務
-            </Text>
+            </Text> 
           </TextSize>
           <ImgContainer>
             <Img2 src={img2} alt="" />
@@ -313,13 +322,13 @@ const OtherService = () => {
         </TextContainer>
 
         <TextContainer>
-          <TextSize>
+          <TextSize5>
             <Title4>球具販售</Title4>
             <Text>
               依據需求協助搭配和製作球具，<br />
               以達到學習和運動成效為主要目的。
             </Text>
-          </TextSize>
+          </TextSize5>
           <ImgContainer>
             <Img3 src={img3} alt="" />
           </ImgContainer>
