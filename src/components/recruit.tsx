@@ -34,8 +34,9 @@ const ColorcircleImg = styled.img`
 const Container = styled.div`
   display:flex;
   justify-content:flex-end;
-  margin-top:83px;
+  margin-top:101px;
   padding-bottom: 20px;
+  margin-left:110px;
   
    @media screen and (max-width: 768px) {
     display:flex;
@@ -63,7 +64,6 @@ const TextContainer = styled.div`
  margin-left:143px;
  display:flex;
  justify-content:flex-start;
- /* align-items:center; */
  flex-direction: column;
   @media screen and (max-width: 768px) {
    display:flex;
@@ -112,6 +112,7 @@ const Text = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:40px;
+  margin-left:15px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -138,6 +139,8 @@ const Text2 = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:8px;
+  margin-left:15px;
+
   
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';

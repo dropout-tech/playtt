@@ -163,7 +163,8 @@ const TextEVA = styled.p`
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-  color: #1A1A1A;  
+  color: #1A1A1A;
+  margin-left:170px;  
   @media screen and (max-width: 768px) {
    margin-left:0px;
    display:flex;
