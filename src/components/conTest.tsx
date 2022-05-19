@@ -23,6 +23,7 @@ const Container = styled.div`
   background: rgba(207, 210, 211,0.2);
   display: flex;
   margin-top:80px;
+
    @media screen and (max-width: 768px) {
     display:none;
    
@@ -52,9 +53,8 @@ const TextContainer1 = styled.div`
  width:100%;
  z-index:10;
  display:flex;
-
+ align-items: flex-end;
  flex-direction: column;
- margin-top:-100px;
 
   @media screen and (max-width: 768px) {
     margin-top:120px;
@@ -68,6 +68,8 @@ const TextContainer2 = styled.div`
  justify-content:flex-start;
  align-items: center;
  margin-right:150px;
+ margin-left:143px;
+ margin-top:-60px;
  
   @media screen and (max-width: 768px) {
     margin-top:-24px;
@@ -77,13 +79,10 @@ const TextContainer2 = styled.div`
 
 const LeftText = styled.div`
   margin-left:-180px;
-  margin-top:310px;
    @media screen and (max-width: 768px) {
     z-index:10;
     margin-top:-240px;
     margin-left:20px;
-  
-    
   }
 
 `;
@@ -299,6 +298,12 @@ const Ball = styled.div`
 
 `;
 
+const AlignText = styled.div`
+ display:flex;
+ justify-content: center;
+ align-items: center;
+
+`;
 
 /* desktop thw newest info style end */
 const ConTest = () => {
@@ -308,55 +313,55 @@ const ConTest = () => {
         <HalfcircleImg src={halfcircle} alt="" />
       </ImgContainer>
 
-
-      <TextContainer1>
-        <LeftText>
-          <div>
-            <Title1>桌球賽事</Title1>
-            <Title2>Let’s Play Match</Title2>
-          </div>
-          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
-        </LeftText>
-      </TextContainer1>
-
-
-      <TextContainer2>
-        <RightText>
-          <TextContainer>
-            <Background>
-              <Title3>邀請賽</Title3>
-            </Background>
+      <AlignText>
+        <TextContainer1>
+          <LeftText>
             <div>
-              <Text>
-                由 Let's Play 發出邀請，讓小小選手們有發光表現的舞台。
-              </Text>
+              <Title1>桌球賽事</Title1>
+              <Title2>Let’s Play Match</Title2>
             </div>
-          </TextContainer>
+            <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
+          </LeftText>
+        </TextContainer1>
 
-          <TextContainer>
-            <Background>
-              <Title3>積分賽</Title3>
-            </Background>
-            <div>
-              <Text>
-                於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
-              </Text>
-            </div>
-          </TextContainer>
 
-          <TextContainer>
-            <Background>
-              <Title3>學員盃</Title3>
-            </Background>
-            <div>
-              <Text>
-                Let's Play 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
-              </Text>
-            </div>
-          </TextContainer>
-        </RightText>
-      </TextContainer2>
+        <TextContainer2>
+          <RightText>
+            <TextContainer>
+              <Background>
+                <Title3>邀請賽</Title3>
+              </Background>
+              <div>
+                <Text>
+                  由 Let's Play 發出邀請，讓小小選手們有發光表現的舞台。
+                </Text>
+              </div>
+            </TextContainer>
 
+            <TextContainer>
+              <Background>
+                <Title3>積分賽</Title3>
+              </Background>
+              <div>
+                <Text>
+                  於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
+                </Text>
+              </div>
+            </TextContainer>
+
+            <TextContainer>
+              <Background>
+                <Title3>學員盃</Title3>
+              </Background>
+              <div>
+                <Text>
+                  Let's Play 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+                </Text>
+              </div>
+            </TextContainer>
+          </RightText>
+        </TextContainer2>
+      </AlignText>
 
     </Container>
 

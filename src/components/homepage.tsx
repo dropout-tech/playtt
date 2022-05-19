@@ -47,7 +47,6 @@ const homepage = () => {
     <EmptyContainer>
       <BannerImg src={banner} />
       <BannerImg2 src={banner2} />
-
     </EmptyContainer>
   </PageContainer>;
 };
