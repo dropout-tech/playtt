@@ -280,7 +280,13 @@ const TextArea = styled.div`
   justify-content:center;
 
 `
-
+const Span = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+`;
 
 
 /* desktop thw newest info style end */
@@ -313,7 +319,7 @@ const OtherService = () => {
             <Text>
               平日上午包場優惠<br />
               歡迎洽談，提早預約<br />
-              平日 14:00–21:00 與周末租桌服務
+              平日<Span>14:00–21:00 </Span> 與周末租桌服務
             </Text> 
           </TextSize>
           <ImgContainer>
@@ -341,7 +347,7 @@ const OtherService = () => {
           <TextSize2>
             <Title3>場館加盟與聯盟合作</Title3>
             <Text>
-              提供系統化的 SOP 協助桌球產業發<br />
+              提供系統化的 <Span>SOP</Span> 協助桌球產業發<br />
               展更全面，並且共享產業資源互利，<br />
               提供有心推廣桌球的同業更好的機會。<br />
             </Text>
@@ -367,9 +373,9 @@ const OtherService = () => {
 
         <TextContainer>
           <TextSize3>
-            <Title3>VIP 專區</Title3>
+            <Title3><Span>VIP</Span>專區</Title3>
             <Text>
-              特別精心打造的桌球 VIP 包廂空間，<br />
+              特別精心打造的桌球 <Span>VIP</Span> 包廂空間，<br />
               讓玩樂和歡笑回憶留在美好的空間，<br />
               更方便拍照留念。目標成為雙北桌球<br />
               跨足休閒娛樂的業界首選，<br />
