@@ -19,7 +19,7 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
-  margin-top:30px;
+  margin-top:-10px;
   padding-top:60px;
   padding-bottom:40px;
    @media screen and (max-width: 768px) {
@@ -129,6 +129,7 @@ const AlignText = styled.div`
  align-items: center;
  justify-content:center;
  flex-direction: column;
+ margin-top:20px;
 ;
   @media screen and (max-width: 768px) {
    margin-top:-120px;

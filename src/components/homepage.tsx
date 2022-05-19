@@ -17,20 +17,25 @@ const PageContainer = styled.div`
   }
 `;
 
-const BannerImg = styled.div`
+const BannerImg = styled.img`
   width:100% ;
-  height:804px ;
-  background-image: url('${banner}');
-  background-size: cover;
-  background-repeat: no-repeat;
    @media screen and (max-width: 768px) {
-    background-image: url('${banner2}');
-    height:671px ;
+   display:none;
 
   }
 
 `;
 
+const BannerImg2 = styled.img`
+   display:none;
+   @media screen and (max-width: 768px) {
+  display: flex;
+   width:100% ;
+   height:804px ;
+
+  }
+
+`;
 const EmptyContainer = styled.div`
 
 `;
@@ -40,7 +45,9 @@ const EmptyContainer = styled.div`
 const homepage = () => {
   return <PageContainer>
     <EmptyContainer>
-      <BannerImg></BannerImg>
+      <BannerImg src={banner} />
+      <BannerImg2 src={banner2} />
+
     </EmptyContainer>
   </PageContainer>;
 };
