@@ -207,7 +207,7 @@ const Explain1 = styled.div`
  display: flex;
  justify-content: flex-start;
  align-items: center;
- margin-left:-20px;
+ margin-left:-50px;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -245,7 +245,7 @@ const Explain3 = styled.div`
  display: flex;
  align-items: center;
  justify-content:space-between;
- margin-left:90px;
+ margin-left:60px;
  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;

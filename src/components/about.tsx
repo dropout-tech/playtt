@@ -112,7 +112,7 @@ const RightItems = styled.div`
  align-items: flex-start;
  width:50%;
  margin-left:60px;
- margin-top:100px;
+ margin-top:101px;
  @media screen and (max-width: 768px) {
     
   }
@@ -330,7 +330,7 @@ const Contants1 = styled.div`
 
 const Contants = styled.div`
   width:477px;
-  height:220px;
+  height:252px;
   font-family: "Noto Sans TC";
   font-weight: 500;
   font-size: 20px;
@@ -443,7 +443,7 @@ const BrandContainer = styled.div`
 
 const TextArea = styled.div`
   margin-top:100px;
-  
+
 
   @media screen and (max-width: 768px) {
     display:flex;
@@ -457,7 +457,7 @@ const TextArea = styled.div`
 
 
 const TextArea11 = styled.div`
- 
+
   
 
   @media screen and (max-width: 768px) {
@@ -465,6 +465,21 @@ const TextArea11 = styled.div`
   }
   
 `;
+const TextArea3 = styled.div`
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  margin-left:40px;
+  margin-top:-2px;
+  
+  @media screen and (max-width: 768px) {
+   margin-left:-20px;
+   margin-top:30px;
+   display:flex;
+  }
+  
+`;
+
 const TextArea2 = styled.div`
   display:flex;
   justify-content:center;
@@ -491,6 +506,7 @@ const MobileContainer = styled.div`
 
 const TextContainer = styled.div`
   margin-top:23px;
+
 `;
 
 const PicturAndText = styled.div`
@@ -503,8 +519,21 @@ const PicturAndText = styled.div`
 
 `;
 
+const PicturAndText2 = styled.div`
+ display:flex;
+ margin-left:-100px;
+ 
+  @media screen and (max-width: 768px) {
+   
+  }
 
 
+`;
+
+const AlignText = styled.div`
+ display:flex;
+ flex-direction: column;
+`;
 
 
 /* desktop thw newest info style end */
@@ -522,10 +551,10 @@ const About = () => {
             <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
-          
-                <Hope1>願景</Hope1>
-                <Slogan>Let's Play <Span>Dream</Span></Slogan>
-               
+                <AlignText>
+                  <Hope1>願景</Hope1>
+                  <Slogan>Let's Play <Span>Dream</Span></Slogan>
+                </AlignText>
               </PicturAndText>
               <TextContainer>
 
@@ -580,7 +609,7 @@ const About = () => {
           <BrandContainer>
 
             <TextArea>
-              <TextArea2>
+              <TextArea3>
                 <PicturAndText>
                   <StartImg4 src={start} alt="" />
                   <div>
@@ -593,7 +622,7 @@ const About = () => {
                     學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let's Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
                   </Contants>
                </TextContainer>
-              </TextArea2>
+              </TextArea3>
             </TextArea>
           </BrandContainer>
 
