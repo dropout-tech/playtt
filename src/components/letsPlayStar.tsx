@@ -438,11 +438,11 @@ const LetsPlayStar = () => {
           <GrayArea>
             <GrayAreaText>
               <Dot>
-                <Span>・</Span> 成立於 2020/12/15 <br />
+                <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
               </Dot>
 
               <Dot>
-                <Span>・</Span> 召集人 —— Hero 戴祖雄 & 阿<br />&emsp; &emsp; &ensp; 寬教練 郭則寬<br />
+                <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄 & 阿<br />&emsp; &emsp; &ensp; 寬教練 郭則寬<br />
               </Dot>
 
               <Dot>

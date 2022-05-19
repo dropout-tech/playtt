@@ -446,6 +446,13 @@ const AlignText = styled.div`
     }
 `;
 
+const Span = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+`;
 
 
 /* desktop thw newest info style end */
@@ -593,7 +600,7 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>肢體協調 / 遠離 3C</TextArea><br />
+                <SpanDot>・</SpanDot> <TextArea>肢體協調 / 遠離 <Span>3C</Span></TextArea><br />
               </DotContainer>
 
               <DotContainer>

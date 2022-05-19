@@ -317,7 +317,7 @@ const TextkeyIn3 = styled.p`
   }
 `;
 
-const TextkeyIn4 = styled.p`
+const TextkeyIn4 = styled.div`
   width: 210px;
   height:224px;
   font-family: 'Noto Sans TC';
@@ -326,6 +326,7 @@ const TextkeyIn4 = styled.p`
   font-size: 18px;
   line-height: 32px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
@@ -355,6 +356,14 @@ const Textcontainer = styled.div`
 
 `;
 
+const Span = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:18px;
+  line-height:32px;
+  letter-spacing:4%;
+
+`;
 
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
@@ -430,14 +439,15 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
+              
               <TextkeyIn4>
-                Let's Play 蘆洲店<br />
-                Let's Play 東門店<br />
-                Let's Play 善導寺店<br />
-                Let's Play 新莊店<br />
-                Onward TT 乒乓吧 X Let's Play<br />
-                乒運動桌球館
+                <p style={{margin:0}}><Span>Let's Play</Span>蘆洲店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play</Span>東門店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play</Span>善導寺店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play</Span>新莊店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</p>
               </TextkeyIn4>
+
             </WhiteArea>
           </Text>
         </TextArea>
