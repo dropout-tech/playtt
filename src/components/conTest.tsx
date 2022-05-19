@@ -311,6 +311,15 @@ const AlignText = styled.div`
  margin-left:330px;
 `;
 
+const Span = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+
+`;
+
 /* desktop thw newest info style end */
 const ConTest = () => {
   return <PageContainer>
@@ -336,7 +345,7 @@ const ConTest = () => {
               </Background>
               <div>
                 <Text>
-                  由 Let's Play 發出邀請，讓小小選手們有發光表現的舞台。
+                  由 <Span>Let's Play</Span> 發出邀請，讓小小選手們有發光表現的舞台。
                 </Text>
               </div>
             </TextContainer>
@@ -358,7 +367,7 @@ const ConTest = () => {
               </Background>
               <div>
                 <Text>
-                  Let's Play 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+                  <Span>Let's Play</Span> 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
                 </Text>
               </div>
             </TextContainer>
@@ -393,7 +402,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                由 Let's Play 發出邀請，讓小小選手們有<br />發光表現的舞台。
+                由<Span>Let's Play</Span> 發出邀請，讓小小選手們有<br />發光表現的舞台。
               </Text>
             </div>
           </TextContainer>
@@ -415,7 +424,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                Let's Play 分店館內學員的定期對內交流<br />比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+                <Span>Let's Play</Span> 分店館內學員的定期對內交流<br />比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
               </Text>
             </div>
           </TextContainer>

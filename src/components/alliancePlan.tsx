@@ -458,7 +458,7 @@ const alliancePlan = () => {
             <Text2>
               <Img src={hha} alt="" />
               <Title2>計畫簡介</Title2>
-              <TextForm>Let's Play 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 X 全齡複合空間 X 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
+              <TextForm><Span>Let's Play</Span> 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作<Span>X</Span>  全齡複合空間 <Span>X</Span> 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
             </Text2>
 
           </Circle2>
@@ -467,7 +467,7 @@ const alliancePlan = () => {
             <Text3>
               <Img src={ho} alt="" />
               <Title2>聯盟分佈</Title2>
-              <TextForm>全台目前分店為 4 家，合作聯盟據點 10 個以上，聯盟球館</TextForm>
+              <TextForm>全台目前分店為 <Span>4</Span> 家，合作聯盟據點  <Span>10</Span> 個以上，聯盟球館</TextForm>
               <TextForm2>陸續招募中！</TextForm2>
             </Text3>
           </Circle3>
