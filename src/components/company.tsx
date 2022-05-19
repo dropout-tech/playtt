@@ -35,6 +35,7 @@ const BelowArea = styled.div`
   justify-content: center;
   align-items:center;
   margin-top:40px;
+  margin-left:30px;
   
   @media screen and (max-width: 768px) {
     display: flex;
@@ -53,7 +54,7 @@ const Background1 = styled.div`
  margin-top:50px;
  width:373px;
  height:288px;
- margin-left:-30px;
+ 
  
   @media screen and (max-width: 768px) {
     width:327px;
@@ -67,8 +68,9 @@ const Background2 = styled.div`
  display:flex;  
  justify-content: center;
  width:373px;
- height:980px;
+ height:964px;
  align-items: center;
+ 
   @media screen and (max-width: 768px) {
     width:327px;
     height:84px;
@@ -83,7 +85,7 @@ const TopLeftArea = styled.div`
  justify-content: center;
  align-items:center;
  margin-left:30px;
- margin-top:-50px;
+
 
   @media screen and (max-width: 768px) {
     width:90%;
@@ -111,12 +113,6 @@ const TextArea = styled.div`
     margin-right:30px;
     margin-top:0px;
     
-  
-    
-    
-
-
-
   }
 `;
 
@@ -126,7 +122,7 @@ const TextArea1 = styled.div`
   align-items: start;
   flex-direction: column;
   margin-left:48px;
-  margin-top:-13px;
+
   @media screen and (max-width: 768px) {
    margin-bottom:30px;
    margin-left:0px;
@@ -136,8 +132,19 @@ const TextArea1 = styled.div`
 const TextArea2 = styled.div`
   display:flex;
   justify-content:center;
+  margin-left:30px;
+
+
+  @media screen and (max-width: 768px) {
+    
+  }
+`;
+
+const TextArea3 = styled.div`
+  display:flex;
+  justify-content:center;
   flex-direction: column;
-  margin-top:-12px;
+
   margin-left:70px;
 
 
@@ -278,8 +285,7 @@ const Title22 = styled.p`
 `;
 
 const TopBelow = styled.div`
-  margin-left:-150px;
-  margin-top:-80px;
+  margin-left:160px;
    @media screen and (max-width: 768px) {
    display:flex;
    justify-content:center;
@@ -299,9 +305,9 @@ const TopBelow = styled.div`
 `;
 
 const UnderBelow = styled.div`
-  margin-left:-130px;
+  margin-left:160px;
   margin-top:40px;
-  margin-bottom: -20px;
+
  @media screen and (max-width: 768px) {
     margin-left:0px;
   }
@@ -316,7 +322,7 @@ const Title2 = styled.p`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 0.04em;
-  margin:60px 0px 0px 0px;
+  margin:40px 0px 0px 0px;
 
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
@@ -333,12 +339,10 @@ const Title2 = styled.p`
 
 const BelowTextContainer = styled.div`
  background: #FFFFFF;
- display:flex;  
- flex-direction:column;
- align-items:center ;
- justify-content:center;
  width:827px;
- height:980px;
+ height:964px;
+ 
+
 
 
   @media screen and (max-width: 768px) {
@@ -525,19 +529,21 @@ const Company = () => {
             <Title>＃ 總公司</Title>
           </Background1>
           <TextArea>
-            <TextArea1>
-              <Text12>地址</Text12>
-              <Text12>連絡電話</Text12>
-              <Text12>信箱</Text12>
-              <Text12>總公司客服時間</Text12>
-              <Text12>創辦人 / 總教練</Text12>
-            </TextArea1>
             <TextArea2>
-              <Text22>新北市蘆洲區長樂路106號3樓</Text22>
-              <Text22>0988 521 012</Text22>
-              <Text22>playpp2018@gmail.com</Text22>
-              <Text22>週一至週五 10:00–19:00（週末請撥各館電話）</Text22>
-              <Text22>郭教練 <Span>0988 521 012</Span></Text22>
+              <TextArea1>
+                <Text12>地址</Text12>
+                <Text12>連絡電話</Text12>
+                <Text12>信箱</Text12>
+                <Text12>總公司客服時間</Text12>
+                <Text12>創辦人 / 總教練</Text12>
+              </TextArea1>
+              <TextArea3>
+                <Text22>新北市蘆洲區長樂路106號3樓</Text22>
+                <Text22>0988 521 012</Text22>
+                <Text22>playpp2018@gmail.com</Text22>
+                <Text22>週一至週五 10:00–19:00（週末請撥各館電話）</Text22>
+                <Text22>郭教練 <Span>0988 521 012</Span></Text22>
+              </TextArea3>
             </TextArea2>
           </TextArea>
 
