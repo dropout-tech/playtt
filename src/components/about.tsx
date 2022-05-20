@@ -75,7 +75,7 @@ const StartImg4 = styled.img`
 `;
 
 const TopArea = styled.div`
-  width:100%;
+  width:90%;
   display:flex;
   justify-content:center;
   margin-left:40px;
@@ -402,7 +402,7 @@ const Span = styled.span`
 
 const HopeContainer = styled.div`
   display:flex;
-  justify-content:space-between;
+  justify-content:flex-end;
   margin:0px;
   
   @media screen and (max-width: 768px) {
@@ -567,7 +567,7 @@ const About = () => {
               <TextContainer>
 
                 <Contants>
-                  我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起<Span2>Let's Play！</Span2> 
+                  我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起<Span2>&ensp;Let's Play！</Span2> 
                 </Contants>
               </TextContainer>
             </TextArea11>

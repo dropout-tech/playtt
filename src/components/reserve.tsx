@@ -84,6 +84,7 @@ const BelowText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #3C3D3D;
+  margin-top:25px;
    @media screen and (max-width: 768px) {
     font-size: 14px;
     margin-top:10px;
@@ -166,7 +167,7 @@ const Reserve = () => {
               <ButtonText>立即預約體驗</ButtonText>
             </Text>
           </GreenButton>
-          <BelowText>統一由臉書私訊洽詢想預約試上的分店 <Span>Line</Span></BelowText>
+          <BelowText>統一由臉書私訊洽詢想預約試上的分店 <Span>&ensp;Line</Span></BelowText>
         </AlignText>
       </TextArea>
 
