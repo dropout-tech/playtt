@@ -80,6 +80,7 @@ const TextContainer2 = styled.div`
   @media screen and (max-width: 768px) {
     margin-top:-24px;
     justify-content:center;
+    margin-left:0px;
   }
 `;
 

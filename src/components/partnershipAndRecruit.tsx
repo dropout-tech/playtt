@@ -152,6 +152,7 @@ const Text = styled.div`
     display:flex;
     flex-direction:row;
     margin-top:20px;
+
   
   }
 
@@ -439,7 +440,6 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              
               <TextkeyIn4>
                 <p style={{margin:0}}><Span>Let's Play</Span>蘆洲店</p>
                 <p style={{ margin: 0 }}><Span>Let's Play</Span>東門店</p>
@@ -447,7 +447,7 @@ const PartnershipAndRecruit = () => {
                 <p style={{ margin: 0 }}><Span>Let's Play</Span>新莊店</p>
                 <p style={{ margin: 0 }}><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</p>
               </TextkeyIn4>
-
+              
             </WhiteArea>
           </Text>
         </TextArea>
