@@ -75,7 +75,7 @@ const Text = styled.p`
   justify-content:center;
   flex-direction: column;
   align-items: flex-start;
-  margin:0px 0px 0px 0px;
+  margin:0px;
   
  
    @media screen and  (max-width: 768px) {
@@ -205,7 +205,8 @@ const Contant = styled.p`
 `;
 
 const Contant2 = styled.p`
-  width:517px;
+  width:327px;
+  height:240px;
   font-family: 'Futura';
   font-style: normal;
   font-weight: 500;
@@ -218,7 +219,7 @@ const Contant2 = styled.p`
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
-    margin-top:20px;
+    margin-top:120px;
     margin-left:-25px;
     font-family: 'Futura';
     font-style: normal;
@@ -277,6 +278,10 @@ const Span = styled.span`
   font-size:20px;
   line-height:36px;
   letter-spacing:3%;
+
+   @media screen and  (max-width: 768px) {
+    
+  }
 `;
 
 
