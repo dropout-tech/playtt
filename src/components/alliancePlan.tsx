@@ -70,8 +70,8 @@ const Circle1 = styled.div`
   display:flex;
   justify-content:center;
   align-items: center;
-  width: 580px;
-  height: 580px;
+  width: 508px;
+  height: 508px;
   background: #FFFFFF;
   border-radius:294px;
   margin-right:-170px;
@@ -95,8 +95,8 @@ const Circle3 = styled.div`
   display:flex;
   justify-content:center;
   align-items: center;
-  width: 580px;
-  height: 580px;
+  width: 508px;
+  height: 508px;
   background: #FFFFFF;
   border-radius:294px;
   margin-left:-170px;
