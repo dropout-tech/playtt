@@ -75,7 +75,7 @@ const Row1 = styled.div`
     display: flex;
     justify-content:center;
     flex-direction: column;
-    margin-left:40px;
+   
   }
 `;
 
@@ -380,7 +380,7 @@ const Name1 = styled.div`
     display: flex;
     flex-direction: column;
     margin-top:40px;
-    margin-left:20px;
+   
   }
   
 `;
@@ -390,7 +390,7 @@ const Name2 = styled.div`
     display: flex;
     flex-direction: column;
     margin-top:40px;
-    margin-left:100px;
+   
   }
   
 `;
@@ -409,11 +409,7 @@ const SpanEVA = styled.span`
   margin-left:10px;
 `;
 
-const SpanLeft = styled.div`
-  margin-left:-10px;
 
-
-`;
 
 /* desktop thw newest info style end */
 const OurCouchMembers = () => {
