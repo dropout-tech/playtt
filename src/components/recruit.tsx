@@ -40,7 +40,9 @@ const Container = styled.div`
   
    @media screen and (max-width: 768px) {
     display:flex;
+    justify-content:center;
     flex-direction:column;
+    margin-left:0px;
   }
 `;
 

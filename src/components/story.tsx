@@ -38,7 +38,7 @@ const Container = styled.div`
     height:90%;
     display:flex;
     flex-direction:column;
-    margin-top:-20px;
+    margin-top:0px;
     height:1116px;
  
   
@@ -79,7 +79,7 @@ const Text = styled.p`
   
  
    @media screen and  (max-width: 768px) {
-    margin-top:30px;
+    margin-top:60px;
     margin-left:60px;
 
   }
