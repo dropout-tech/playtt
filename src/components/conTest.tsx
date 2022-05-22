@@ -25,7 +25,6 @@ const Container = styled.div`
   justify-content:center;
   align-items:center;
   margin-top:80px;
-
   background-image: url('${halfcircle}');
   background-size: cover;
   
@@ -64,6 +63,7 @@ const TextContainer1 = styled.div`
  margin-top:-7px;
   @media screen and (max-width: 768px) {
     margin-top:120px;
+    align-items: center;
   }
 `;
 
@@ -80,6 +80,7 @@ const TextContainer2 = styled.div`
   @media screen and (max-width: 768px) {
     margin-top:-24px;
     justify-content:center;
+    margin-left:0px;
     margin-left:0px;
   }
 `;
@@ -276,6 +277,7 @@ const MobileContainer = styled.div`
   padding-top:80px;
   padding-bottom: 80px;
   flex-direction: column;
+  margin-right:380px;
 
  @media screen and (min-width: 768px) {
   display:none;
