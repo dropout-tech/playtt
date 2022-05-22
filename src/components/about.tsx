@@ -196,7 +196,7 @@ const Hope1 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
-   margin-left:-3px;
+   margin-left:0px;
   }
 `;
 
@@ -288,7 +288,7 @@ const Slogan = styled.p`
     letter-spacing: 0.04em;
     color: #005CB9;
     margin-top:0px;
-    margin:0px 20px 0px 0px;
+    margin:0px 70px 0px 0px;
   
   }
 `;
