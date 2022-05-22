@@ -25,7 +25,7 @@ const Container = styled.div`
  padding-bottom: 80px;
  margin-left:-40px;
   @media screen and (max-width: 768px) {
-
+  margin-top:30px;
   }
 `;
 
@@ -55,6 +55,8 @@ const Title1 = styled.p`
   color: #1A1A1A;
     @media screen and (max-width: 768px) {
     margin-left:30px;
+    font-size: 26px;
+    line-height: 40px;
   }
 `;
 
@@ -74,6 +76,9 @@ const Title2 = styled.p`
   line-Height:52px;
     @media screen and (max-width: 768px) {
     margin-left:40px;
+    margin-top:-36px;
+    font-size: 26px;
+    line-height: 40px;
   }
 `;
 
@@ -324,7 +329,7 @@ const OtherService = () => {
               平日上午包場優惠<br />
               歡迎洽談，提早預約<br />
               平日<Span>14:00–21:00 </Span> 與周末租桌服務
-            </Text> 
+            </Text>
           </TextSize>
           <ImgContainer>
             <Img2 src={img2} alt="" />
@@ -408,14 +413,14 @@ const OtherService = () => {
       </div>
 
       <TextContainer>
-        
-          <Title3>桌球俱樂部</Title3>
-          <Text>
-            合作機構：華江高中<br />
-            聚集桌球愛好打手<br />
-            舉辦活動分享知識增加凝聚力
-          </Text>
-      
+
+        <Title3>桌球俱樂部</Title3>
+        <Text>
+          合作機構：華江高中<br />
+          聚集桌球愛好打手<br />
+          舉辦活動分享知識增加凝聚力
+        </Text>
+
         <ImgContainer>
           <Img1 src={img1} alt="" />
         </ImgContainer>
