@@ -22,12 +22,13 @@ const StartImg1 = styled.img`
   margin-top:14px;
   margin-right:40px;
   @media screen and (max-width: 768px) {
-    margin-left:60px;
+    margin-left:113px;
     margin-top:105px;
     width: 38px;
     height:38px;
   }
 `;
+
 
 const StartImg2 = styled.img`
   width: 63px;
@@ -285,8 +286,9 @@ const Slogan = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-left:0px;
-    
+    margin-top:0px;
+    margin:0px 20px 0px 0px;
+  
   }
 `;
 
@@ -402,7 +404,7 @@ const Span = styled.span`
 
 const HopeContainer = styled.div`
   display:flex;
-  justify-content:flex-end;
+  justify-content:space-between;
   margin:0px;
   
   @media screen and (max-width: 768px) {
@@ -647,7 +649,7 @@ const About = () => {
       <TopArea>
 
         <HopeContainer>
-          <StartImg1 src={start} alt="" />
+           <StartImg1 src={start} alt="" />
           <TextArea>
             <Hope1>願景</Hope1>
             <Slogan>Let's Play <Span>Dream</Span></Slogan>
