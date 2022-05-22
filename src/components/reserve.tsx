@@ -38,8 +38,10 @@ const GreenButton = styled.button`
    @media screen and (max-width: 768px) {
     width:211px;
     height:48px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
     margin-top:150px;
-
   }
 
 `;
@@ -55,21 +57,17 @@ const ButtonText = styled.p`
   letter-spacing: 0.04em;
   color: #FFFFFF;
   
- 
-
   @media screen and (max-width: 768px) {
-    margin-top:10px;
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
     line-height:48px;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.04em;
-    color: #FFFFFF;
-
   }
 `;
 
@@ -142,7 +140,11 @@ const Text = styled.div`
   height:60px;
   margin-top:-10px;
    @media screen and (max-width: 768px) {
-    
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-top:0px;
+ 
   }
 
 `;
