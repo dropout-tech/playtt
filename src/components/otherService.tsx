@@ -45,35 +45,35 @@ const Title1 = styled.p`
   margin-top:50px;
   display: flex;
   justify-content:center;
+  text-align: center;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 900;
   font-size: 36px;
   line-height: 52px;
-  text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
     @media screen and (max-width: 768px) {
-    
+    margin-left:30px;
   }
 `;
 
 const Title2 = styled.p`
   display: flex;
   justify-content:center;
+  text-align: center;
   font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 48px;
-  text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:-30px;
   margin-bottom:60px;
   line-Height:52px;
     @media screen and (max-width: 768px) {
-    
+    margin-left:40px;
   }
 `;
 
@@ -149,7 +149,9 @@ const TextContainer = styled.div`
     @media screen and (max-width: 768px) {
      margin-top:30px;
      padding-left:30px;
-     margin-left:20px;
+     margin-left:40px;
+     width:327px;
+     height:327px;
   }
 `;
 
@@ -246,7 +248,9 @@ const TextSize = styled.div`
   height:100%;
   margin-left:32px;
   margin-top:-10px;
-
+  @media screen and (max-width: 768px) {
+   
+    }
 
 `;
 
