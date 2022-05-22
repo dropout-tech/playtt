@@ -80,8 +80,8 @@ const TextContainer2 = styled.div`
   @media screen and (max-width: 768px) {
     margin-top:-24px;
     justify-content:center;
-    margin-left:0px;
-    margin-left:0px;
+    margin-left:-25px;
+   
   }
 `;
 
@@ -171,6 +171,7 @@ const Title2 = styled.p`
    text-align: center;
    letter-spacing: 0.04em;
    color: #CFD2D3;
+
   }
 `;
 
@@ -227,7 +228,7 @@ const TextContent = styled.p`
     transform: matrix(1, 0, 0, 1, 0, 0);
     margin-top:40px;
     width:340px;
-    margin-left:12px;
+    margin-left:-20px;
 
   }
   
@@ -300,7 +301,7 @@ const CircleImg = styled.img`
 
 const Ball = styled.div`
   @media screen and (max-width: 768px) {
-   margin-left:145px;
+   margin-left:110px;
    margin-top:-20px;
   }
 
