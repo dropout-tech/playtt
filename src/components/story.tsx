@@ -205,8 +205,8 @@ const Contant = styled.p`
 `;
 
 const Contant2 = styled.p`
-  width:327px;
-  height:240px;
+  width:517px;
+  height:252px;
   font-family: 'Futura';
   font-style: normal;
   font-weight: 500;
