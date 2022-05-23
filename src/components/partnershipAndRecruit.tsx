@@ -221,6 +221,7 @@ const WhiteArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media screen and (max-width: 768px) {
     width: 211px;
     height: 256px;
@@ -240,6 +241,9 @@ const TextkeyIn1 = styled.p`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  display:flex;
+  justify-content:center;
+  align-items: center;
 
   @media screen and (max-width: 768px) {
     margin-left:50px;
@@ -268,6 +272,7 @@ const TextkeyIn2 = styled.p`
   display: flex;
   align-items: center;
   text-align: center;
+  flex-direction:column;
   letter-spacing: 0.04em;
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
@@ -297,9 +302,9 @@ const TextkeyIn3 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  flex-direction:column;
+
+
 
   @media screen and (max-width: 768px) {
     margin-left:50px;
@@ -387,13 +392,13 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn1>
-                舞動陽光<br />
-                華江俱樂部<br />
-                三峽運動中心<br />
-                中正運動中心<br />
-                等<br />
-                ⋯⋯</TextkeyIn1>
+              <TextkeyIn2>
+                <p style={{ margin: 0 }}>舞動陽光</p>
+                <p style={{ margin: 0 }}>華江俱樂部</p>
+                <p style={{ margin: 0 }}>三峽運動中心</p>
+                <p style={{ margin: 0 }}>中正運動中心</p>
+                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+               </TextkeyIn2>
             </WhiteArea>
 
           </Text>
@@ -407,10 +412,10 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn2>
-                大龍國小<br />
-                懷生國小<br />
-                等<br />
-                ⋯⋯</TextkeyIn2>
+                <p style={{ margin: 0 }}>大龍國小</p>
+                <p style={{ margin: 0 }}>懷生國小</p>
+                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+              </TextkeyIn2>
             </WhiteArea>
           </Text>
 
@@ -423,11 +428,11 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn3>
-                何嘉仁幼兒園<br />
-                維多利亞<br />
-                喬鈴補習班<br />
-                等<br />
-                ⋯⋯</TextkeyIn3>
+                <p style={{ margin: 0 }}>何嘉仁幼兒園</p>
+                <p style={{ margin: 0 }}>維多利亞</p>
+                <p style={{ margin: 0 }}>喬鈴補習班</p>
+                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+              </TextkeyIn3>
             </WhiteArea>
           </Text>
 
@@ -440,13 +445,13 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn4>
-                <p style={{margin:0}}><Span>Let's Play</Span>蘆洲店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play</Span>蘆洲店</p>
                 <p style={{ margin: 0 }}><Span>Let's Play</Span>東門店</p>
                 <p style={{ margin: 0 }}><Span>Let's Play</Span>善導寺店</p>
                 <p style={{ margin: 0 }}><Span>Let's Play</Span>新莊店</p>
                 <p style={{ margin: 0 }}><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</p>
               </TextkeyIn4>
-              
+
             </WhiteArea>
           </Text>
         </TextArea>

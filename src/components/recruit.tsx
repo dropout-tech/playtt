@@ -237,14 +237,14 @@ const Recruit = () => {
           <TextArea>
             <Span>・</Span>
             <TextDot>
-              補習班 / 幼兒園 /學校社團<br />
+              補習班 / 幼兒園 / 學校社團<br />
             </TextDot>
           </TextArea>
 
           <TextArea>
             <Span>・</Span>
             <TextDot>
-              家裡 / 運動中心 /公司社團 /公家機構<br />
+              家裡 / 運動中心 / 公司社團 / 公家機構<br />
             </TextDot>
           </TextArea>
 
