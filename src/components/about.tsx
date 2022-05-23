@@ -540,7 +540,15 @@ const HOPE = styled.div`
   }
 `;
 
+const Span3 = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+  margin:0px;
 
+`;
 
 /* desktop thw newest info style end */
 const About = () => {
@@ -565,7 +573,7 @@ const About = () => {
               <TextContainer>
 
                 <Contants>
-                  我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起<Span2>&ensp;Let's Play！</Span2> 
+                  我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起&ensp;<Span2>Let's Play！</Span2>
                 </Contants>
               </TextContainer>
             </TextArea11>
@@ -600,7 +608,7 @@ const About = () => {
                 <div>
                   <Hope3>使命</Hope3>
                   <Slogan>
-                    Let’s Play&ensp; 
+                    Let’s Play&ensp;
                     <Span>Goal</Span>
                   </Slogan>
                 </div>
@@ -627,7 +635,7 @@ const About = () => {
                   <Contants>
                     學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span2>Let's Play</Span2> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
                   </Contants>
-               </TextContainer>
+                </TextContainer>
               </TextArea3>
             </TextArea>
           </BrandContainer>
@@ -645,13 +653,13 @@ const About = () => {
       <TopArea>
 
         <HopeContainer>
-           <StartImg1 src={start} alt="" />
+          <StartImg1 src={start} alt="" />
           <TextArea>
             <HOPE>
               <Hope1>願景</Hope1>
               <Slogan>Let's Play <Span>Dream</Span></Slogan>
             </HOPE>
-            <Contants1>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！</Contants1>
+            <Contants1>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起<Span3>Let's Play</Span3>！</Contants1>
           </TextArea>
         </HopeContainer>
 
@@ -674,7 +682,7 @@ const About = () => {
               <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
             </HOPE>
             <Contants3>感受發自內心的快樂，一起來玩吧！
-              品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants3>
+              品牌的核心價值在於「讓來到 <Span3>Let's Play</Span3> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants3>
           </TextArea>
         </HopeContainer2>
 
@@ -685,11 +693,11 @@ const About = () => {
               <Hope1>教學理念</Hope1>
               <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
             </HOPE>
-            <Contants>學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let’s Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！</Contants>
+            <Contants>學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span3>Let’s Play</Span3> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！</Contants>
           </TextArea>
         </HopeContainer2>
 
-      
+
 
       </TopArea>
     </MobileContainer>
