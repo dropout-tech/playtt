@@ -72,11 +72,12 @@ const ButtonText = styled.p`
 `;
 
 const BelowText = styled.p`
-  font-family: 'Futura ';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
+  font-size:'Noto Sans TC';
+  font-weight:500;
+  font-size:18px;
+  line-height:32px;
+  letter-spacing:4%;
+
   display: flex;
   align-items: center;
   text-align: center;
