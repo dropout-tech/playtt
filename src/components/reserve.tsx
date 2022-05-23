@@ -82,7 +82,7 @@ const BelowText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #3C3D3D;
-  margin-top:20px;
+  margin-top:2px;
    @media screen and (max-width: 768px) {
     font-size: 14px;
     margin-top:10px;
