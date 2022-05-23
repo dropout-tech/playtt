@@ -51,8 +51,8 @@ const PicImg = styled.img`
   height:300px;
   margin-left:80px;
     @media screen and (max-width: 768px) {
-    width:181px;
-    height:181px;
+    width:211px;
+    height:201px;
   }
 `;
 
@@ -61,8 +61,8 @@ const PicImg2 = styled.img`
   height:300px;
   margin-left:80px;
     @media screen and (max-width: 768px) {
-    width:181px;
-    height:181px;
+    width:211px;
+    height:201px;
     margin-left:-100px;
   }
 `;

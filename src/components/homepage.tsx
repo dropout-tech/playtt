@@ -31,7 +31,7 @@ const BannerImg2 = styled.img`
    @media screen and (max-width: 768px) {
   display: flex;
    width:100% ;
-   height:804px ;
+   height:100%;
 
   }
 
