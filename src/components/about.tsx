@@ -79,8 +79,8 @@ const TopArea = styled.div`
   width:90%;
   display:flex;
   justify-content:center;
-  margin-left:40px;
-  padding:0px -15px 0px 80px;
+  margin-left:22px;
+  padding:0px 0px 0px 80px;
   margin-top:-30px;
   margin-bottom:20px;
   
