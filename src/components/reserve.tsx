@@ -82,7 +82,7 @@ const BelowText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #3C3D3D;
-  margin-top:25px;
+  margin-top:20px;
    @media screen and (max-width: 768px) {
     font-size: 14px;
     margin-top:10px;
@@ -97,6 +97,7 @@ const BelowText = styled.p`
     text-align: center;
     letter-spacing: 0.06em;
     color: #3C3D3D;
+    
  
   }
 `;
@@ -112,6 +113,7 @@ const TextArea = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position:center;
+  
    @media screen and (max-width: 768px) {
     background-image: url('${bg2}');
     background-size:contain ;
@@ -128,7 +130,7 @@ const AlignText = styled.div`
  align-items: center;
  justify-content:center;
  flex-direction: column;
- margin-top:20px;
+ margin-top:18px;
 ;
   @media screen and (max-width: 768px) {
    margin-top:-120px;
