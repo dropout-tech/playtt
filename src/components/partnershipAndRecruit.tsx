@@ -336,6 +336,7 @@ const TextkeyIn4 = styled.div`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -445,10 +446,10 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn4>
-                <p style={{ margin: 0 }}><Span>Let's Play</Span>蘆洲店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play</Span>東門店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play</Span>善導寺店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play</Span>新莊店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play </Span>蘆洲店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play </Span>東門店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play </Span>善導寺店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play </Span>新莊店</p>
                 <p style={{ margin: 0 }}><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</p>
               </TextkeyIn4>
 
