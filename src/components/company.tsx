@@ -68,7 +68,7 @@ const Background2 = styled.div`
  display:flex;  
  justify-content: center;
  width:373px;
- height:981px;
+ height:977px;
  align-items: center;
  
   @media screen and (max-width: 768px) {
@@ -324,7 +324,7 @@ const TopBelow = styled.div`
 
 const UnderBelow = styled.div`
   margin-left:160px;
-  margin-top:40px;
+  margin-top:35px;
 
  @media screen and (max-width: 768px) {
     margin-left:0px;
@@ -358,7 +358,7 @@ const Title2 = styled.p`
 const BelowTextContainer = styled.div`
  background: #FFFFFF;
  width:827px;
- height:981px;
+ height:977px;
  
 
 
@@ -442,7 +442,7 @@ const Background = styled.div`
   width:100%;
   height:1388px;
   padding-top:30px;
-  padding-bottom:51px;
+  padding-bottom:47px;
  
 `;
 
