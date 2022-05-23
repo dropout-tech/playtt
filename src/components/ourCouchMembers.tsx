@@ -355,6 +355,33 @@ const Span2 = styled.span`
   }
 `;
 
+const Span3 = styled.span`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:-2px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    align-items: flex-start;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:100px;
+    margin-left:60px;
+  }
+`;
+
+
 const Pic = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
@@ -419,7 +446,7 @@ const OurCouchMembers = () => {
         <Row1>
           <Couch>
             <PicImg src={img1} alt="" />
-            <TextEVA>呂昀      <Span><SpanEVA>Eva</SpanEVA>教練</Span>   </TextEVA>
+            <TextEVA>呂昀<Span3>  <SpanEVA>Eva</SpanEVA>  教練</Span3>  </TextEVA>
           </Couch>
 
           <Couch>

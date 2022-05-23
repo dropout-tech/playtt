@@ -46,7 +46,6 @@ const Title2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-left:30px;
   line-Height:52px;
   margin-top:8px;
   @media screen and (max-width: 768px) {
