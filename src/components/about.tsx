@@ -299,7 +299,7 @@ const AboutItems = styled.div`
   flex-direction: column;
   margin-top:194px;
   @media screen and (max-width: 768px) {
-    
+    margin-left:150px;
   }
 `;
 
@@ -423,15 +423,6 @@ const HopeContainer2 = styled.div`
   }
 `;
 
-const HopeContainer3 = styled.div`
-  display:flex;
-  justify-content:space-between;
-  
-  
-  @media screen and (max-width: 768px) {
-    margin-top:-30px;
-  }
-`;
 
 const BrandContainer = styled.div`
   display:flex;
@@ -461,13 +452,13 @@ const TextArea = styled.div`
 
 const TextArea11 = styled.div`
 
-  
-
   @media screen and (max-width: 768px) {
    
   }
   
 `;
+
+
 const TextArea3 = styled.div`
   display:flex;
   justify-content:center;
@@ -501,6 +492,7 @@ const MobileContainer = styled.div`
    width:100%;
    margin-top: -190px;
    padding-bottom: 80px;
+   margin-left:-80px;
    @media screen and (min-width: 768px) {
     display:none;
   }
