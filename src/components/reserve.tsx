@@ -133,7 +133,7 @@ const AlignText = styled.div`
  margin-top:40px;
 ;
   @media screen and (max-width: 768px) {
-   margin-top:-120px;
+   margin-top:-136px;
   }
 
 `;
