@@ -174,7 +174,7 @@ const Title4 = styled.p`
 
 `;
 
-const Contant = styled.p`
+const Contant = styled.div`
   width:517px;
   font-family: 'Futura';
   font-style: normal;
@@ -189,7 +189,6 @@ const Contant = styled.p`
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
-    display:flex;
     margin-left:-25px;
     font-family: 'Futura';
     font-style: normal;
@@ -219,7 +218,7 @@ const Contant2 = styled.p`
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
-    margin-top:120px;
+    margin-top:20px;
     margin-left:-25px;
     font-family: 'Futura';
     font-style: normal;

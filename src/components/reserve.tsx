@@ -119,7 +119,6 @@ const TextArea = styled.div`
     background-size:contain ;
     background-repeat: no-repeat;
     background-position:center;
-  
     width:100%;
     height:310px; 
    }
@@ -130,7 +129,7 @@ const AlignText = styled.div`
  align-items: center;
  justify-content:center;
  flex-direction: column;
- margin-top:18px;
+ margin-top:40px;
 ;
   @media screen and (max-width: 768px) {
    margin-top:-120px;
