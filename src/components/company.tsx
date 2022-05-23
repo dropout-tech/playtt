@@ -27,6 +27,7 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     display:none;
     flex-direction: column;
+  
   }
 `;
 
@@ -401,6 +402,7 @@ const MobileContainer = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-top:164px;
   }
 
 `;
@@ -422,6 +424,16 @@ const TitleOne = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  @media screen and (max-width: 768px) {
+   font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 4%;
+    color: #1A1A1A;
+  }
 `;
 
 const TitleTwo = styled.p`
@@ -435,6 +447,15 @@ const TitleTwo = styled.p`
   color: #CFD2D3;
   margin-top:-30px;
   margin-bottom:60px;
+  @media screen and (max-width: 768px) {
+   font-family: 'Futura';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 26px;
+   line-height: 40px;
+   text-align: center;
+   letter-spacing: 4%;
+  }
 `;
 
 const Background = styled.div`
@@ -518,19 +539,14 @@ const Text33 = styled.div`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-@media screen and (max-width: 768px) {
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 32px;
-/* identical to box height, or 200% */
-
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
 
   }
 `;
@@ -544,6 +560,12 @@ letter-spacing: 0.04em;
 color: #005CB9;
 `;
 
+const MobileTitle = styled.div`
+  @media screen and (max-width: 768px) {
+    margin-top:-200px;
+  }
+
+`;
 /* desktop thw newest info style end */
 const Company = () => {
   return <PageContainer>
@@ -639,6 +661,10 @@ const Company = () => {
     </Container>
 
     <MobileContainer>
+      <MobileTitle>
+        <TitleOne>聯絡我們</TitleOne>
+        <TitleTwo>Contact Us</TitleTwo>
+      </MobileTitle>
       <TopLeftArea>
         <TopContainer>
           <Background1>
