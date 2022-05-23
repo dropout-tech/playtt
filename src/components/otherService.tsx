@@ -52,6 +52,7 @@ const Title1 = styled.p`
   font-size: 36px;
   line-height: 52px;
   letter-spacing: 0.04em;
+  margin-left:30px;
   color: #1A1A1A;
     @media screen and (max-width: 768px) {
     margin-left:30px;
@@ -74,6 +75,7 @@ const Title2 = styled.p`
   margin-top:-30px;
   margin-bottom:60px;
   line-Height:52px;
+  margin-left:20px;
     @media screen and (max-width: 768px) {
     margin-left:40px;
     margin-top:-36px;
@@ -277,18 +279,6 @@ const TextSize3 = styled.div`
 
 `;
 
-const TextSize4 = styled.div`
-  width:309px;
-  height:100%;
-  margin-left:110px;
-
-
-`;
-const TextArea = styled.div`
-  display:flex;
-  justify-content:center;
-
-`
 const Span = styled.span`
   font-family: 'Futura';
   font-weight:500;
@@ -297,15 +287,34 @@ const Span = styled.span`
   letter-spacing:3%;
 `;
 
+const Span2 = styled.span`
+  font-family: 'Futura';
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 0.04em ;
+`;
+
+const Span3 = styled.span`
+  font-family: 'Futura';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+
+`;
+const Title = styled.div`
+
+`;
 
 /* desktop thw newest info style end */
 const OtherService = () => {
   return <PageContainer>
     <Container>
-      <div>
+      <Title>
         <Title1>其他服務</Title1>
         <Title2>Other Service</Title2>
-      </div>
+      </Title>
 
       <TopArea>
         <TextContainer>
@@ -328,7 +337,7 @@ const OtherService = () => {
             <Text>
               平日上午包場優惠<br />
               歡迎洽談，提早預約<br />
-              平日<Span>14:00–21:00 </Span> 與周末租桌服務
+              平日<Span3> 14:00–21:00 </Span3> 與周末租桌服務
             </Text>
           </TextSize>
           <ImgContainer>
@@ -340,7 +349,7 @@ const OtherService = () => {
           <TextSize5>
             <Title4>球具販售</Title4>
             <Text>
-              依據需求協助搭配和製作球具，<br />
+              依據需求協助搭配和製作球具，
               以達到學習和運動成效為主要目的。
             </Text>
           </TextSize5>
@@ -356,9 +365,9 @@ const OtherService = () => {
           <TextSize2>
             <Title3>場館加盟與聯盟合作</Title3>
             <Text>
-              提供系統化的 <Span>SOP</Span> 協助桌球產業發<br />
-              展更全面，並且共享產業資源互利，<br />
-              提供有心推廣桌球的同業更好的機會。<br />
+              提供系統化的 <Span3> SOP </Span3> 協助桌球產業發
+              展更全面，並且共享產業資源互利，
+              提供有心推廣桌球的同業更好的機會。
             </Text>
           </TextSize2>
           <ImgContainer>
@@ -382,12 +391,12 @@ const OtherService = () => {
 
         <TextContainer>
           <TextSize3>
-            <Title3><Span>VIP</Span>專區</Title3>
+            <Title3><Span2>VIP </Span2>專區</Title3>
             <Text>
-              特別精心打造的桌球 <Span>VIP</Span> 包廂空間，<br />
-              讓玩樂和歡笑回憶留在美好的空間，<br />
-              更方便拍照留念。目標成為雙北桌球<br />
-              跨足休閒娛樂的業界首選，<br />
+              特別精心打造的桌球 <Span3> VIP </Span3> 包廂空間，<br />
+              讓玩樂和歡笑回憶留在美好的空間，
+              更方便拍照留念。目標成為雙北桌球
+              跨足休閒娛樂的業界首選，
               開創桌球產業藍海。
             </Text>
           </TextSize3>

@@ -441,8 +441,8 @@ const Background = styled.div`
   background: #38D430;
   width:100%;
   height:1388px;
-  padding-top:80px;
-  padding-bottom:-180px;
+  padding-top:30px;
+  padding-bottom:51px;
  
 `;
 
@@ -535,6 +535,15 @@ color: #1A1A1A;
   }
 `;
 
+const Span2 = styled.span`
+font-family: 'Futura';
+font-weight: 500;
+font-size: 16px;
+line-height: 32px;
+letter-spacing: 0.04em;
+color: #005CB9;
+`;
+
 /* desktop thw newest info style end */
 const Company = () => {
   return <PageContainer>
@@ -556,7 +565,7 @@ const Company = () => {
                 <Text12>創辦人 / 總教練</Text12>
               </TextArea1>
               <TextArea3>
-                <Text32>新北市蘆洲區長樂路106號3樓</Text32>
+                <Text32>新北市蘆洲區長樂路<Span>106</Span>號<Span>3</Span>樓</Text32>
                 <Text32><Span>0988 521 012</Span></Text32>
                 <Text32><Span>playpp2018@gmail.com</Span></Text32>
                 <Text32>週一至週五 <Span>10:00–19:00</Span>（週末請撥各館電話）</Text32>
@@ -578,30 +587,30 @@ const Company = () => {
 
               <Time>
                 <SmallTitle>各館營業時間</SmallTitle>
-                <Text22>週一至週五 <Span>13:00–21:00</Span>　週六日<Span> 9:00–19:00</Span></Text22>
+                <Text22>週一至週五 <Span> 13:00–21:00 </Span>　週六日<Span> 9:00–19:00  </Span></Text22>
               </Time>
 
               <Shop>
-                <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲 </SmallTitle>
-                <Text2>新北市蘆洲區長樂路106號3樓</Text2>
+                <SmallTitle><Span2>Let's Play</Span2> 蘆洲店 － 捷運蘆洲 </SmallTitle>
+                <Text2>新北市蘆洲區長樂路<Span>106</Span>號<Span>3</Span>樓</Text2>
                 <Span>02 8286 1011</Span>
               </Shop>
 
               <Shop1>
-                <SmallTitle><Span>Let's Play</Span> 東門店<Span>X</Span>  東門桌球 － 捷運東門 </SmallTitle>
-                <Text2>台北市中正區金山南路一段121號</Text2>
+                <SmallTitle><Span2>Let's Play</Span2> 東門店<Span2> X </Span2>  東門桌球 － 捷運東門 </SmallTitle>
+                <Text2>台北市中正區金山南路一段<Span>121</Span>號</Text2>
                 <Span>02 2356 7106</Span>
               </Shop1>
 
               <Shop1>
-                <SmallTitle><Span>Let's Play</Span> 新莊店 <Span>X</Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-                <Text2>台北市新莊區民樂街37號B1</Text2>
+                <SmallTitle><Span2>Let's Play</Span2> 新莊店 <Span2>X</Span2> 卓越乒乓 － 捷運頭前庄</SmallTitle>
+                <Text2>台北市新莊區民樂街<Span>37</Span>號<Span>B1</Span></Text2>
                 <Span>02 2990 0566</Span>
               </Shop1>
 
               <Shop1>
-                <SmallTitle><Span>Let's Play</Span> 善導寺店 <Span>X</Span> 乒乓世界 － 捷運善導寺</SmallTitle>
-                <Text2>台北市中正區杭州南路一段63號B1</Text2>
+                <SmallTitle><Span2>Let's Play</Span2> 善導寺店 <Span2>X</Span2> 乒乓世界 － 捷運善導寺</SmallTitle>
+                <Text2>台北市中正區杭州南路一段<Span>63</Span>號<Span>B1</Span></Text2>
                 <Span>02 2391 9659</Span>
               </Shop1>
             </TopBelow>
@@ -609,13 +618,13 @@ const Company = () => {
             <UnderBelow>
               <Title22>聯盟場館經營</Title22>
               <Shop2>
-                <SmallTitle><Span>ONWARD TT</Span> 乒乓吧 <Span>X Let's Play</Span> － 捷運南港 & 昆陽</SmallTitle>
+                <SmallTitle><Span2>ONWARD TT</Span2> 乒乓吧 <Span2> X Let's Play</Span2> － 捷運南港 <Span2> & </Span2> 昆陽</SmallTitle>
                 <Text2>台北市南港區南港路二段<Span>141</Span>號<Span>1</Span>樓</Text2>
                 <Span>02 2651 0652</Span>
               </Shop2>
 
               <Shop2>
-                <SmallTitle>舞動華江高中 & <Span>Let's Play</Span> － 捷運龍山寺</SmallTitle>
+                <SmallTitle>舞動華江高中 <Span2> & Let's Play</Span2> － 捷運龍山寺</SmallTitle>
                 <Text2>台北市萬華區西藏路<Span>213</Span>號</Text2>
                 <Span>02 2339 6689</Span>
               </Shop2>
@@ -679,7 +688,7 @@ const Company = () => {
 
             <div>
               <SmallTitle>各館營業時間</SmallTitle>
-              <Text>週一至週五 13:00–21:00　週六日<br/> 9:00–19:00</Text>
+              <Text>週一至週五 13:00–21:00　週六日<br /> 9:00–19:00</Text>
             </div>
 
             <div>

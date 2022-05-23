@@ -371,6 +371,15 @@ const Span = styled.span`
 
 `;
 
+const Sapn2 = styled.span`
+ font-family: 'Futura';
+ font-weight: 700;
+ font-size: 30px;
+ line-height: 44px;
+ letter-spacing: 0.04em;
+
+`;
+
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
   return <PageContainer>
@@ -381,7 +390,7 @@ const PartnershipAndRecruit = () => {
       </TitleContainer>
 
       <BlueArea>
-        <BigTitle> 目前已超過 30 個合作機構<br />
+        <BigTitle> 目前已超過<Sapn2> 30 </Sapn2>個合作機構<br />
           企業機構、法人團體熱烈招募合作中！
         </BigTitle>
         <TextArea>

@@ -480,13 +480,13 @@ const alliancePlan = () => {
             <Text1>
               <Img src={cho} alt="" />
               <Title2>創立初衷</Title2>
-              <TextForm>將既有的桌球經營 Know How 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm>
+              <TextForm>將既有的桌球經營 <Span>Know How</Span> 傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm>
             </Text1>
             <TextArea>
               <Text2>
                 <Img src={hha} alt="" />
                 <Title2>計畫簡介</Title2>
-                <TextForm><Span>Let's Play</Span> 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作<Span>X</Span>  全齡複合空間 <Span>X</Span> 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
+                <TextForm><Span>Let's Play</Span> 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作<Span> X </Span>  全齡複合空間 <Span> X </Span> 運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm>
               </Text2>
             </TextArea>
 

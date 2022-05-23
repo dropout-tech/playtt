@@ -475,11 +475,11 @@ const Classes = () => {
             </Background1>
             <ContantText>
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>個人班 / 團體班 / 選手班 /親子 / 包班</TextArea>
+                <SpanDot>・</SpanDot> <TextArea>個人班 / 團體班 / 選手班 / 親子 / 包班</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot><TextArea>幼兒 / 兒童 / 國高中 / 大學/ 成人 / 銀髮</TextArea>
+                <SpanDot>・</SpanDot><TextArea>幼兒 / 兒童 / 國高中 / 大學 / 成人 / 銀髮</TextArea>
               </DotContainer>
 
               <DotContainer>
