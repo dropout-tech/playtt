@@ -506,7 +506,7 @@ const Classes = () => {
               <ContantText>
                 <DotContainer>
                   <SpanDot>・</SpanDot>
-                  <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
+                  <TextArea>暖身做操<Span> & </Span>趣味體適能桌球</TextArea>
                 </DotContainer>
 
                 <DotContainer>

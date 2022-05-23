@@ -105,6 +105,7 @@ const Circle3 = styled.div`
 
 const Text1 = styled.div`
  margin-top:-100px;
+ margin-right:130px;
  
 `;
 
@@ -115,7 +116,7 @@ const Text2 = styled.div`
 `;
 const Text3 = styled.div`
  margin-top:-98px;
-
+ margin-left:130px;
 
 
 `;
