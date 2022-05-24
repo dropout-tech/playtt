@@ -3,6 +3,7 @@ import styled from "styled-components";
 import cho from "../assets/alliancePlan/cho.png";
 import hha from "../assets/alliancePlan/hha.png";
 import ho from "../assets/alliancePlan/ho.png";
+import phone1 from "../assets/alliancePlan/phone1.png";
 import phone2 from "../assets/alliancePlan/phone2.png";
 import phone3 from "../assets/alliancePlan/phone3.png";
 import BgWeb from "../assets/alliancePlan/BgWeb.png";
@@ -54,7 +55,11 @@ const Background = styled.div`
   width:100%;
   height:80%;
   margin-top:60px;
+  @media screen and (max-width: 768px) {
+   margin-top:164px;
+  
 
+  }
 
 `;
 
@@ -132,7 +137,7 @@ const Container2 = styled.div`
  width:100%;
  display: flex;
  padding-bottom: 80px;
- padding-top:80px;
+ padding-top:180px;
  }
 
 `;
@@ -187,68 +192,11 @@ const TitleWord2 = styled.p`
  }
 `;
 
-const Circle11 = styled.div`
-  
-  @media screen and (max-width: 768px) {
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    width: 375px;
-    height:375px;
-    background: #FFFFFF;
-    border-radius:294px;
-    margin-top:30px;
-    margin-right:-50px;
-    z-index: 1;
-
-
-   
- }
-  
-`;
-
-const Circle22 = styled.div`
-
-  @media screen and (max-width: 768px) {
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    width: 375px;
-    height:375px;
-    background: #FFFFFF;
-    border-radius:294px;
-    margin-top:-60px;
-    margin-right:-50px;
-    z-index: 1;
-
-
-  }
-  
-`;
-
-const Circle33 = styled.div`
-  
-  @media screen and (max-width: 768px) {
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    width: 375px;
-    height:375px;
-    background: #FFFFFF;
-    border-radius:294px;
-    margin-top:-89px;
-    margin-right:-50px;
-    z-index: 1;
-   
-    
- }
-`;
-
 
 const Text11 = styled.div`
 @media screen and (max-width: 768px) {
- margin-top:0px;
- margin-left:60px;
+    margin-top:30px;
+    margin-left:-130px;
 
   }
  
@@ -256,8 +204,8 @@ const Text11 = styled.div`
 
 const Text22 = styled.div`
 @media screen and (max-width: 768px) {
-    margin-top:0px;
-    margin-left:60px;
+    margin-top:-120px;
+    margin-left:-130px;
 
   }
  
@@ -265,8 +213,8 @@ const Text22 = styled.div`
 `;
 const Text33 = styled.div`
 @media screen and (max-width: 768px) {
-   
-    margin-left:60px;
+    margin-bottom:100px;
+    margin-left:-130px;
 
   }
 
@@ -278,11 +226,7 @@ const MobleCircleDiv = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
-  padding:10px;
-  padding-top:70px;
-  margin-top:-150px;
-  margin-left:-55px;
+  justify-content:space-between;
   height:965px;
   background-image: url('${BgMobile}');
   background-size:contain ;
@@ -292,19 +236,15 @@ const MobleCircleDiv = styled.div`
 }`;
 
 const Img1 = styled.img`
-  @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
-   margin-left:-10px;
-}
 
 `;
-
 const Img2 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
-   margin-left:-10px;
+  
 }
 
 `;
@@ -313,7 +253,7 @@ const Img3 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
-  margin-left:-10px;
+  
 }
 
 `;
@@ -326,7 +266,7 @@ const TitleContainer = styled.div`
   align-items: center;
   z-index: 10;
   flex-direction: column;
-     margin-top:-99px;
+  margin-top:-99px;
 }
 
 `;
@@ -386,15 +326,6 @@ const Span = styled.span`
 
 `;
 
-// const BgWebImg = styled.img`
-//   width:1440px;
-//   height:804px;
-//   position:relative;
-//   z-index:1;
-//   @media screen and (max-width: 768px) {
-
-//   }
-// `;
 
 const TextArea = styled.div`
   position:relative;
@@ -410,6 +341,7 @@ const TextArea = styled.div`
 
 `;
 
+
 const BgWebDiv = styled.div`
  height:804px;
  background-image: url('${BgWeb}');
@@ -419,6 +351,8 @@ const BgWebDiv = styled.div`
  
 
 `;
+
+
 /* desktop thw newest info style end */
 const alliancePlan = () => {
   return <PageContainer>
@@ -454,12 +388,7 @@ const alliancePlan = () => {
 
           </TextArea>
         </BgWebDiv>
-        <Circle>
-
-         
-
-
-          
+        <Circle> 
 
         </Circle>
 
@@ -476,6 +405,7 @@ const alliancePlan = () => {
         <Background>
           <MobleCircleDiv>
             <Text11>
+              <Img1 src={phone1} alt="" />
               <Title22>創立初衷</Title22>
               <TextForm222>將既有的桌球經營 <Span>Know How </Span>傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm222>
             </Text11>
