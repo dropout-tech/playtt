@@ -65,41 +65,41 @@ const Background = styled.div`
 `;
 
 
-const Circle1 = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  width: 588px;
-  height: 588px;
-  background: #FFFFFF;
-  border-radius:294px;
-  margin-right:-170px;
+// const Circle1 = styled.div`
+//   display:flex;
+//   justify-content:center;
+//   align-items: center;
+//   width: 588px;
+//   height: 588px;
+//   background: #FFFFFF;
+//   border-radius:294px;
+//   margin-right:-170px;
   
-`;
+// `;
 
-const Circle2 = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  width: 660px;
-  height: 660px;
-  background: #FFFFFF;
-  border-radius:330px;
+// const Circle2 = styled.div`
+//   display:flex;
+//   justify-content:center;
+//   align-items: center;
+//   width: 660px;
+//   height: 660px;
+//   background: #FFFFFF;
+//   border-radius:330px;
 
 
   
-`;
+// `;
 
-const Circle3 = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  width: 588px;
-  height: 588px;
-  background: #FFFFFF;
-  border-radius:294px;
-  margin-left:-170px;
-`;
+// const Circle3 = styled.div`
+//   display:flex;
+//   justify-content:center;
+//   align-items: center;
+//   width: 588px;
+//   height: 588px;
+//   background: #FFFFFF;
+//   border-radius:294px;
+//   margin-left:-170px;
+// `;
 
 
 
@@ -436,15 +436,15 @@ const Span = styled.span`
 
 `;
 
-const BgWebImg = styled.img`
-  width:1440px;
-  height:804px;
-  position:relative;
-  z-index:1;
-  @media screen and (max-width: 768px) {
+// const BgWebImg = styled.img`
+//   width:1440px;
+//   height:804px;
+//   position:relative;
+//   z-index:1;
+//   @media screen and (max-width: 768px) {
 
-  }
-`;
+//   }
+// `;
 
 const TextArea = styled.div`
   position:relative;
