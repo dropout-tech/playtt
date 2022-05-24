@@ -56,7 +56,7 @@ const Background = styled.div`
   height:80%;
   margin-top:60px;
   @media screen and (max-width: 768px) {
-   margin-top:164px;
+   margin-top:14px;
   
 
   }
@@ -149,7 +149,7 @@ display:none;
    display:flex;
    flex-direction: column;
    width:100%;
-   display: flex;
+
 
 
  }
