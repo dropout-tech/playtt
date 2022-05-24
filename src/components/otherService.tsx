@@ -279,13 +279,13 @@ const TextSize3 = styled.div`
 
 `;
 
-const Span = styled.span`
-  font-family: 'Futura';
-  font-weight:500;
-  font-size:20px;
-  line-height:36px;
-  letter-spacing:3%;
-`;
+// const Span = styled.span`
+//   font-family: 'Futura';
+//   font-weight:500;
+//   font-size:20px;
+//   line-height:36px;
+//   letter-spacing:3%;
+// `;
 
 const Span2 = styled.span`
   font-family: 'Futura';

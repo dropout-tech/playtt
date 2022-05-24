@@ -54,9 +54,9 @@ const Background = styled.div`
   width:100%;
   height:80%;
   margin-top:60px;
+
+
 `;
-
-
 
 const Text1 = styled.div`
  margin-top:-100px;
@@ -386,15 +386,15 @@ const Span = styled.span`
 
 `;
 
-const BgWebImg = styled.img`
-  width:1440px;
-  height:804px;
-  position:relative;
-  z-index:1;
-  @media screen and (max-width: 768px) {
+// const BgWebImg = styled.img`
+//   width:1440px;
+//   height:804px;
+//   position:relative;
+//   z-index:1;
+//   @media screen and (max-width: 768px) {
 
-  }
-`;
+//   }
+// `;
 
 const TextArea = styled.div`
   position:relative;

@@ -36,15 +36,15 @@ const Container = styled.div`
 
 `;
 
-const HalfcircleImg = styled.img`
-  width:100%;
-  height:100%;
-  z-index:1;
-   @media screen and (max-width: 768px) {
+// const HalfcircleImg = styled.img`
+//   width:100%;
+//   height:100%;
+//   z-index:1;
+//    @media screen and (max-width: 768px) {
 
-  }
+//   }
 
-`;
+// `;
 
 const ImgContainer = styled.div`
  z-index:1;

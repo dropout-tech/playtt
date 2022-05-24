@@ -467,16 +467,16 @@ const Background = styled.div`
  
 `;
 
-const Num = styled.p`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height:32px;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin:0px;
-`;
+// const Num = styled.p`
+//   font-family: 'Futura';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 18px;
+//   line-height:32px;
+//   letter-spacing: 0.04em;
+//   color: #1A1A1A;
+//   margin:0px;
+// `;
 
 const Span = styled.span`
   font-family: 'Futura';
