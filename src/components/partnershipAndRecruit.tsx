@@ -46,7 +46,6 @@ const Title2 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #CFD2D3;
-  margin-left:30px;
   line-Height:52px;
   margin-top:8px;
   @media screen and (max-width: 768px) {
@@ -58,16 +57,16 @@ const Title2 = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-
+    margin-top:0px;
   }
 `;
 
 const Container = styled.div`
   width: 100%;
   height:100%;
-  padding-bottom: 80px;
+
   @media screen and (max-width: 768px) {
-    margin-top:-120px;
+    margin-top:-80px;
   }
 `;
 
@@ -80,14 +79,15 @@ const TitleContainer = styled.div`
 
 const BlueArea = styled.div`
   width: 100%;
-  height:804px;
+  height:100%;
   background: #005CB9;  
   z-index:1;
-  padding-bottom:60px;
+  padding-bottom:90px;
   margin-top:60px;
   @media screen and (max-width: 768px) {
     width:100%;
     height:100%;
+    margin-top:60px;
   }
 `;
 
@@ -99,6 +99,8 @@ const ColorLineImg = styled.img`
    @media screen and (max-width: 768px) {
      margin-left:10px;
      margin-top:10px;
+     width: 75px;
+     height: 27px;
   }
 `;
 
@@ -119,7 +121,7 @@ const GrayArea = styled.div`
     display:flex;
     justify-content:center;
     flex-direction: column;
-  
+    margin-left:-12px;
   }
 `;
 
@@ -128,6 +130,7 @@ const TextArea = styled.div`
  justify-content:center;
  align-items: center;
  margin-right:40px;
+ margin-top:-10px;
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content:center;
@@ -148,6 +151,7 @@ const Text = styled.div`
     display:flex;
     flex-direction:row;
     margin-top:20px;
+
   
   }
 
@@ -162,7 +166,7 @@ const BigTitle = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
-  padding-top:80px;
+  padding-top:70px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -205,7 +209,8 @@ const TopText = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:20px;
+    margin-left:40px;
+    margin-top:8px;
   }
 `;
 
@@ -216,6 +221,7 @@ const WhiteArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media screen and (max-width: 768px) {
     width: 211px;
     height: 256px;
@@ -227,31 +233,35 @@ const WhiteArea = styled.div`
 `;
 
 
-const TextkeyIn1 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
+// const TextkeyIn1 = styled.p`
+//   font-family: 'Noto Sans TC';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 18px;
+//   line-height: 32px;
+//   letter-spacing: 0.04em;
+//   color: #1A1A1A;
+//   display:flex;
+//   justify-content:center;
+//   align-items: center;
 
-  @media screen and (max-width: 768px) {
-    margin-left:50px;
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
+//   @media screen and (max-width: 768px) {
+//     margin-left:50px;
+//     font-family: 'Noto Sans TC';
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 16px;
+//     line-height: 32px;
+//     display: flex;
+//     align-items: center;
+//     text-align: center;
+//     letter-spacing: 0.04em;
+//     color: #1A1A1A;
+//     margin-left:5px;
 
 
-  }
-`;
+//   }
+// `;
 
 const TextkeyIn2 = styled.p`
   font-family: 'Noto Sans TC';
@@ -262,6 +272,7 @@ const TextkeyIn2 = styled.p`
   display: flex;
   align-items: center;
   text-align: center;
+  flex-direction:column;
   letter-spacing: 0.04em;
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
@@ -276,6 +287,7 @@ const TextkeyIn2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-left:5px;
   }
 `;
 
@@ -290,9 +302,9 @@ const TextkeyIn3 = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  flex-direction:column;
+
+
 
   @media screen and (max-width: 768px) {
     margin-left:50px;
@@ -306,10 +318,11 @@ const TextkeyIn3 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-left:5px;
   }
 `;
 
-const TextkeyIn4 = styled.p`
+const TextkeyIn4 = styled.div`
   width: 210px;
   height:224px;
   font-family: 'Noto Sans TC';
@@ -318,10 +331,12 @@ const TextkeyIn4 = styled.p`
   font-size: 18px;
   line-height: 32px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -333,6 +348,7 @@ const TextkeyIn4 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-left:5px;
   }
 `;
 
@@ -346,6 +362,23 @@ const Textcontainer = styled.div`
 
 `;
 
+const Span = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:18px;
+  line-height:32px;
+  letter-spacing:4%;
+
+`;
+
+const Sapn2 = styled.span`
+ font-family: 'Futura';
+ font-weight: 700;
+ font-size: 30px;
+ line-height: 44px;
+ letter-spacing: 0.04em;
+
+`;
 
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
@@ -357,7 +390,7 @@ const PartnershipAndRecruit = () => {
       </TitleContainer>
 
       <BlueArea>
-        <BigTitle> 目前已超過 30 個合作機構<br />
+        <BigTitle> 目前已超過<Sapn2> 30 </Sapn2>個合作機構<br />
           企業機構、法人團體熱烈招募合作中！
         </BigTitle>
         <TextArea>
@@ -369,13 +402,13 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn1>
-                舞動陽光<br />
-                華江俱樂部<br />
-                三峽運動中心<br />
-                中正運動中心<br />
-                等<br />
-                ⋯⋯</TextkeyIn1>
+              <TextkeyIn2>
+                <p style={{ margin: 0 }}>舞動陽光</p>
+                <p style={{ margin: 0 }}>華江俱樂部</p>
+                <p style={{ margin: 0 }}>三峽運動中心</p>
+                <p style={{ margin: 0 }}>中正運動中心</p>
+                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+               </TextkeyIn2>
             </WhiteArea>
 
           </Text>
@@ -389,10 +422,10 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn2>
-                大龍國小<br />
-                懷生國小<br />
-                等<br />
-                ⋯⋯</TextkeyIn2>
+                <p style={{ margin: 0 }}>大龍國小</p>
+                <p style={{ margin: 0 }}>懷生國小</p>
+                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+              </TextkeyIn2>
             </WhiteArea>
           </Text>
 
@@ -405,11 +438,11 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn3>
-                何嘉仁幼兒園<br />
-                維多利亞<br />
-                喬鈴補習班<br />
-                等<br />
-                ⋯⋯</TextkeyIn3>
+                <p style={{ margin: 0 }}>何嘉仁幼兒園</p>
+                <p style={{ margin: 0 }}>維多利亞</p>
+                <p style={{ margin: 0 }}>喬鈴補習班</p>
+                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+              </TextkeyIn3>
             </WhiteArea>
           </Text>
 
@@ -422,13 +455,13 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn4>
-                Let's Play 蘆洲店<br />
-                Let's Play 東門店<br />
-                Let's Play 善導寺店<br />
-                Let's Play 新莊店<br />
-                Onward TT 乒乓吧 X Let's Play<br />
-                乒運動桌球館
+                <p style={{ margin: 0 }}><Span>Let's Play </Span>蘆洲店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play </Span>東門店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play </Span>善導寺店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play </Span>新莊店</p>
+                <p style={{ margin: 0 }}><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</p>
               </TextkeyIn4>
+
             </WhiteArea>
           </Text>
         </TextArea>

@@ -24,7 +24,9 @@ const ColorcircleImg = styled.img`
     width: 251px;
     height:127px;
     margin-top:-160px;
-    margin-left:15px;
+
+  
+  
     
   }
 `;
@@ -32,12 +34,15 @@ const ColorcircleImg = styled.img`
 const Container = styled.div`
   display:flex;
   justify-content:flex-end;
-  padding-top:21px;
+  margin-top:101px;
   padding-bottom: 20px;
+  margin-left:110px;
   
    @media screen and (max-width: 768px) {
     display:flex;
+    justify-content:center;
     flex-direction:column;
+    margin-left:0px;
   }
 `;
 
@@ -50,7 +55,8 @@ const ImgContainer = styled.div`
  
    @media screen and (max-width: 768px) {
    margin-top:120px;
-   margin-left:90px;
+   margin-left:120px;
+ 
 
   }
 `;
@@ -60,7 +66,6 @@ const TextContainer = styled.div`
  margin-left:143px;
  display:flex;
  justify-content:flex-start;
- /* align-items:center; */
  flex-direction: column;
   @media screen and (max-width: 768px) {
    display:flex;
@@ -68,6 +73,7 @@ const TextContainer = styled.div`
    flex-direction:column;
    align-items: center;
    margin-left:0px;
+   margin-top:-56px;
   }
 `;
 
@@ -83,17 +89,18 @@ const Title = styled.p`
   
    @media screen and (max-width: 768px) {
     margin-top:16px;
-    font-family: 'Futura';
+    font-family: 'Noto Sans TC';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 18px;
     line-height: 32px;
     display: flex;
     align-items: center;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-left:20px;
-    margin-top:10px;
+    margin-left:18px;
+
+   
   }
 `;
 
@@ -107,6 +114,7 @@ const Text = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:40px;
+  margin-left:15px;
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -133,6 +141,8 @@ const Text2 = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:8px;
+  margin-left:15px;
+
   
    @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
@@ -146,7 +156,7 @@ const Text2 = styled.p`
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 16px 0px;
+    margin:0px;
 
   }
  
@@ -160,9 +170,9 @@ const Background = styled.div`
    @media screen and (max-width: 768px) {
     display:flex;
     align-items: center;
-    width: 170px;
-    height: 32px;
-    margin-left:20px;
+    width: 176px;
+    height: 44px;
+  
   }
 `;
 
@@ -227,14 +237,14 @@ const Recruit = () => {
           <TextArea>
             <Span>・</Span>
             <TextDot>
-              補習班 / 幼兒園 /學校社團<br />
+              補習班 / 幼兒園 / 學校社團<br />
             </TextDot>
           </TextArea>
 
           <TextArea>
             <Span>・</Span>
             <TextDot>
-              家裡 / 運動中心 /公司社團 /公家機構<br />
+              家裡 / 運動中心 / 公司社團 / 公家機構<br />
             </TextDot>
           </TextArea>
 

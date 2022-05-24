@@ -22,12 +22,13 @@ const StartImg1 = styled.img`
   margin-top:14px;
   margin-right:40px;
   @media screen and (max-width: 768px) {
-    margin-left:60px;
+    margin-left:110px;
     margin-top:105px;
     width: 38px;
     height:38px;
   }
 `;
+
 
 const StartImg2 = styled.img`
   width: 63px;
@@ -75,16 +76,21 @@ const StartImg4 = styled.img`
 `;
 
 const TopArea = styled.div`
-  width:100%;
+  width:90%;
   display:flex;
-  padding:0px -15px 0px 80px;
+  justify-content:center;
+  margin-left:22px;
+  padding:0px 0px 0px 80px;
+  margin-top:-30px;
+  margin-bottom:20px;
+  
   @media screen and (max-width: 768px) {
     width:100%;
-    display:flex;
-    justify-content:flex-start;
-    align-items: flex-start;
+    margin-left:-30px;
     flex-direction: column;
     margin-top:-90px;
+    margin-bottom:0px;
+    margin-left:-65px;
   }
 `;
 
@@ -107,8 +113,8 @@ const RightItems = styled.div`
  flex-direction: column;
  align-items: flex-start;
  width:50%;
- margin-left:0px;
- margin-top:100px;
+ margin-left:60px;
+ margin-top:101px;
  @media screen and (max-width: 768px) {
     
   }
@@ -116,8 +122,9 @@ const RightItems = styled.div`
 
 const Container = styled.div`
  width:100%;
- margin-top: -46px;
+ margin-top:-104px;
  padding-bottom: 104px;
+
  @media screen and (max-width: 768px) {
     display:none;
   }
@@ -189,7 +196,7 @@ const Hope1 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
-   margin-left:20px;
+   margin-left:0px;
   }
 `;
 
@@ -257,10 +264,11 @@ const Hope4 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
+   margin-left:-10px;
   }
 `;
 
-const Slogan = styled.p`
+const Slogan = styled.div`
   font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
@@ -269,6 +277,7 @@ const Slogan = styled.p`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin:4px;
+  margin-left:1px;
 
   @media screen and (max-width: 768px) {
     font-family: 'Futura';
@@ -278,7 +287,9 @@ const Slogan = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #005CB9;
-    
+    margin-top:0px;
+    margin:0px 70px 0px 0px;
+  
   }
 `;
 
@@ -286,22 +297,23 @@ const AboutItems = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top:100px;
+  margin-top:194px;
   @media screen and (max-width: 768px) {
-    
+    margin-left:150px;
   }
 `;
 
 
-const Contants = styled.div`
+const Contants1 = styled.div`
   width:477px;
-  height:252px;
+  height:270px;
   font-family: "Noto Sans TC";
   font-weight: 500;
   font-size: 20px;
   line-height: 36px;
   letter-spacing: 0.6px;
   margin-top:-6px;
+  margin-left:4px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -313,11 +325,64 @@ const Contants = styled.div`
     width:300px;
     display: flex;
     justify-content:center;
-    margin-left:-40px;
+    margin-top:8px; 
+    margin-left:0px;
+  }
+`;
+
+const Contants = styled.div`
+  width:477px;
+  height:252px;
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.6px;
+  margin-top:-6px;
+  margin-left:4px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:300px;
+    display: flex;
+    justify-content:center;
+    margin-left:-36px;
+    margin-top:8px; 
 
   }
 `;
 
+const Contants3 = styled.div`
+  width:477px;
+  height:190px;
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.6px;
+  margin-top:-6px;
+  margin-left:4px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:300px;
+    display: flex;
+    justify-content:center;
+    margin-left:-36px;
+    margin-top:8px; 
+
+  }
+`;
 const Span = styled.span`
   font-family: 'Futura';
   font-style: normal;
@@ -350,22 +415,13 @@ const HopeContainer = styled.div`
 const HopeContainer2 = styled.div`
   display:flex;
   justify-content:space-between;
-  
+  margin:0px;
   
   @media screen and (max-width: 768px) {
-    margin-top:-30px;
+   margin-top:-30px;
   }
 `;
 
-const HopeContainer3 = styled.div`
-  display:flex;
-  justify-content:space-between;
-  
-  
-  @media screen and (max-width: 768px) {
-    margin-top:-100px;
-  }
-`;
 
 const BrandContainer = styled.div`
   display:flex;
@@ -380,12 +436,12 @@ const BrandContainer = styled.div`
 
 const TextArea = styled.div`
   margin-top:100px;
-  
+
 
   @media screen and (max-width: 768px) {
     display:flex;
-    justify-content:flex-start;
-    align-items: flex-start;
+    justify-content:center;
+    align-items: center;
     flex-direction: column;
     margin-left:-30px;
   }
@@ -394,14 +450,29 @@ const TextArea = styled.div`
 
 
 const TextArea11 = styled.div`
-  
-  
 
   @media screen and (max-width: 768px) {
-    
+   
   }
   
 `;
+
+
+const TextArea3 = styled.div`
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  margin-left:40px;
+  margin-top:-2px;
+  
+  @media screen and (max-width: 768px) {
+   margin-left:-20px;
+   margin-top:30px;
+   display:flex;
+  }
+  
+`;
+
 const TextArea2 = styled.div`
   display:flex;
   justify-content:center;
@@ -420,22 +491,69 @@ const MobileContainer = styled.div`
    width:100%;
    margin-top: -190px;
    padding-bottom: 80px;
+   margin-left:-80px;
    @media screen and (min-width: 768px) {
     display:none;
   }
 
 `;
 
-
-
 const TextContainer = styled.div`
- 
+  margin-top:23px;
+
 `;
 
 const PicturAndText = styled.div`
  display:flex;
+ margin-left:-100px;
+  @media screen and (max-width: 768px) {
+   
+  }
 
 
+`;
+
+
+
+const AlignText = styled.div`
+ display:flex;
+ flex-direction: column;
+`;
+
+const Span2 = styled.span`
+font-family: 'Futura';
+font-weight:500;
+font-size:20px;
+line-height:36px;
+letter-spacing:3%;
+
+`;
+
+
+const HOPE = styled.div`
+ @media screen and (max-width: 768px) {
+   display:flex;
+   justify-content:flex-start;
+   align-items: flex-start;
+   flex-direction: column;
+  }
+`;
+
+const Span33 = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+  margin:0px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight:500;
+    font-size:16px;
+    line-height:30px;
+    letter-spacing:2%;
+    margin:0px;
+  }
 
 `;
 
@@ -448,22 +566,21 @@ const About = () => {
         <AboutUs>About Us</AboutUs>
       </AboutItems>
       <TopArea>
-
         <LeftItems>
           <HopeContainer>
 
             <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
-                <div>
+                <AlignText>
                   <Hope1>願景</Hope1>
                   <Slogan>Let's Play <Span>Dream</Span></Slogan>
-                </div>
+                </AlignText>
               </PicturAndText>
               <TextContainer>
 
                 <Contants>
-                  我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！
+                  我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起&ensp;<Span2>Let's Play！</Span2>
                 </Contants>
               </TextContainer>
             </TextArea11>
@@ -483,7 +600,7 @@ const About = () => {
 
                 <Contants>
                   感受發自內心的快樂，一起來玩吧！<br />
-                  品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。
+                  品牌的核心價值在於「讓來到 <Span2>Let's Play</Span2> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。
                 </Contants>
               </TextContainer>
             </TextArea>
@@ -498,7 +615,7 @@ const About = () => {
                 <div>
                   <Hope3>使命</Hope3>
                   <Slogan>
-                    Let’s Play&ensp; 
+                    Let’s Play&ensp;
                     <Span>Goal</Span>
                   </Slogan>
                 </div>
@@ -513,7 +630,7 @@ const About = () => {
           <BrandContainer>
 
             <TextArea>
-              <TextArea2>
+              <TextArea3>
                 <PicturAndText>
                   <StartImg4 src={start} alt="" />
                   <div>
@@ -521,17 +638,16 @@ const About = () => {
                     <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
                   </div>
                 </PicturAndText>
-
-                <Contants>
-                  學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，Let's Play 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
-                </Contants>
-              </TextArea2>
+                <TextContainer>
+                  <Contants>
+                    學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span2>Let's Play</Span2> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
+                  </Contants>
+                </TextContainer>
+              </TextArea3>
             </TextArea>
           </BrandContainer>
 
         </RightItems>
-
-
 
       </TopArea>
     </Container>
@@ -546,41 +662,49 @@ const About = () => {
         <HopeContainer>
           <StartImg1 src={start} alt="" />
           <TextArea>
-            <Hope1>願景</Hope1>
-            <Slogan>Let's Play <Span>Dream</Span></Slogan>
-            <Contants>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！</Contants>
+            <HOPE>
+              <Hope1>願景</Hope1>
+              <Slogan>Let's Play <Span>Dream</Span></Slogan>
+            </HOPE>
+            <Contants1>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起<Span33>Let's Play</Span33>！</Contants1>
           </TextArea>
         </HopeContainer>
 
         <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
-            <Hope1>使命</Hope1>
-            <Slogan>Let’s Play <Span>Goal</Span></Slogan>
-            <Contants>我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。</Contants>
+            <HOPE>
+              <Hope1>使命</Hope1>
+              <Slogan>Let’s Play <Span>Goal</Span></Slogan>
+            </HOPE>
+            <Contants3>我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。</Contants3>
           </TextArea>
         </HopeContainer2>
 
-        <HopeContainer3>
+        <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
-            <Hope1>品牌理念</Hope1>
-            <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
-            <Contants>感受發自內心的快樂，一起來玩吧！
-              品牌的核心價值在於「讓來到 Let's Play 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants>
+            <HOPE>
+              <Hope1>品牌理念</Hope1>
+              <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
+            </HOPE>
+            <Contants3>感受發自內心的快樂，一起來玩吧！
+              品牌的核心價值在於「讓來到 <Span33>Let's Play</Span33> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants3>
           </TextArea>
-        </HopeContainer3>
+        </HopeContainer2>
 
-        <HopeContainer3>
+        <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
-            <Hope1>教學理念</Hope1>
-            <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
-            <Contants>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 Let's Play！</Contants>
+            <HOPE>
+              <Hope1>教學理念</Hope1>
+              <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
+            </HOPE>
+            <Contants>學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span33>Let’s Play</Span33> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！</Contants>
           </TextArea>
-        </HopeContainer3>
+        </HopeContainer2>
 
-      
+
 
       </TopArea>
     </MobileContainer>

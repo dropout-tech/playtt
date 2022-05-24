@@ -38,7 +38,8 @@ const Container = styled.div`
  display:flex;
  justify-content:center;
  align-items: center;
- margin-left:-30px;
+ margin-left:-65px;
+
    @media screen and (max-width: 768px) {
     display:none;
   }
@@ -50,8 +51,8 @@ const PicImg = styled.img`
   height:300px;
   margin-left:80px;
     @media screen and (max-width: 768px) {
-    width:181px;
-    height:181px;
+    width:211px;
+    height:201px;
   }
 `;
 
@@ -60,8 +61,8 @@ const PicImg2 = styled.img`
   height:300px;
   margin-left:80px;
     @media screen and (max-width: 768px) {
-    width:181px;
-    height:181px;
+    width:211px;
+    height:201px;
     margin-left:-100px;
   }
 `;
@@ -74,7 +75,7 @@ const Row1 = styled.div`
     display: flex;
     justify-content:center;
     flex-direction: column;
-    margin-left:40px;
+   
   }
 `;
 
@@ -113,7 +114,7 @@ const MobileContainer = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
-  margin-left:3px;
+  margin-left:5px;
   width:327px;
   
    
@@ -124,7 +125,7 @@ const MobileContainer = styled.div`
 `;
 
 const Text = styled.p`
-  margin-left:170px;
+  margin-left:150px;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 900;
@@ -134,6 +135,36 @@ const Text = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;  
+  @media screen and (max-width: 768px) {
+   margin-left:0px;
+   display:flex;
+   flex-direction: column;
+   margin-right:100px;
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 20px;
+   line-height: 36px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 0.03em;
+   color: #1A1A1A;
+
+  }
+`;
+
+const TextEVA = styled.p`
+  margin-left:10px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:170px;  
   @media screen and (max-width: 768px) {
    margin-left:0px;
    display:flex;
@@ -223,6 +254,7 @@ const Text2 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin-left:150px;
   @media screen and (max-width: 768px) {
    margin-left:0px;
    display:flex;
@@ -266,6 +298,7 @@ const Span = styled.span`
     margin-left:60px;
   }
 `;
+
 
 const Span1 = styled.span`
   font-family: 'Noto Sans TC';
@@ -322,6 +355,33 @@ const Span2 = styled.span`
   }
 `;
 
+const Span3 = styled.span`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin-left:-2px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    align-items: flex-start;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    width:100px;
+    margin-left:60px;
+  }
+`;
+
+
 const Pic = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
@@ -347,7 +407,7 @@ const Name1 = styled.div`
     display: flex;
     flex-direction: column;
     margin-top:40px;
-    margin-left:20px;
+   
   }
   
 `;
@@ -357,7 +417,7 @@ const Name2 = styled.div`
     display: flex;
     flex-direction: column;
     margin-top:40px;
-    margin-left:100px;
+   
   }
   
 `;
@@ -367,6 +427,14 @@ const Couch = styled.div`
 
 `;
 
+const SpanEVA = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+  margin-left:10px;
+`;
 
 
 
@@ -378,7 +446,7 @@ const OurCouchMembers = () => {
         <Row1>
           <Couch>
             <PicImg src={img1} alt="" />
-            <Text>呂昀<Span>Eva教練</Span></Text>
+            <TextEVA>呂昀<Span3>  <SpanEVA>Eva</SpanEVA>  教練</Span3>  </TextEVA>
           </Couch>
 
           <Couch>
@@ -532,8 +600,6 @@ const OurCouchMembers = () => {
         </Pic2>
       </Row1>
     </MobileContainer>
-
-
   </PageContainer>;
 };
 

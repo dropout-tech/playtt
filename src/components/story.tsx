@@ -33,13 +33,13 @@ const Container = styled.div`
  height:920px;
  display:flex;
  background:#F5F6F6;
- padding-bottom:70px;
   @media screen and  (max-width: 768px) {
     width:100% ;
     height:90%;
     display:flex;
     flex-direction:column;
-    margin-top:40px;
+    margin-top:0px;
+    height:1116px;
  
   
   }
@@ -75,11 +75,11 @@ const Text = styled.p`
   justify-content:center;
   flex-direction: column;
   align-items: flex-start;
-  margin:10px 0px 0px 0px;
+  margin:0px;
   
-  margin-bottom:30px;
+ 
    @media screen and  (max-width: 768px) {
-    margin-top:30px;
+    margin-top:60px;
     margin-left:60px;
 
   }
@@ -158,7 +158,7 @@ const Title4 = styled.p`
   font-family: 'Noto Sans TC';
   font-weight: 900;
   font-size: 26px;
-  margin:-13px 0px 0px 0px;
+  margin:0px;
 
    @media screen and  (max-width: 768px) {
     font-family: 'Futura';
@@ -174,7 +174,7 @@ const Title4 = styled.p`
 
 `;
 
-const Contant = styled.p`
+const Contant = styled.div`
   width:517px;
   font-family: 'Futura';
   font-style: normal;
@@ -189,7 +189,6 @@ const Contant = styled.p`
    @media screen and  (max-width: 768px) {
     width:327px;
     height:240px;
-    display:flex;
     margin-left:-25px;
     font-family: 'Futura';
     font-style: normal;
@@ -206,6 +205,7 @@ const Contant = styled.p`
 
 const Contant2 = styled.p`
   width:517px;
+  height:252px;
   font-family: 'Futura';
   font-style: normal;
   font-weight: 500;
@@ -271,6 +271,17 @@ const Span2 = styled.span`
   }
 `;
 
+const Span = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+
+   @media screen and  (max-width: 768px) {
+    
+  }
+`;
 
 
 /* desktop thw newest info style end */
@@ -286,7 +297,7 @@ const Story = () => {
         <div>
           <Title1>我們的故事</Title1>
           <Title2>Let’s Play Story</Title2>
-          <Contant>Let's Play 創立於 2018 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球，一起感受其中的樂趣！小孩子來到這裡可以培養信心與專注力、上班族可以擁有用運動釋放壓力的時光、年長者可以實現豐富退休生活的樂趣！</Contant>
+          <Contant><Span>Let's Play</Span> 創立於 <Span>2018</Span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球，一起感受其中的樂趣！小孩子來到這裡可以培養信心與專注力、上班族可以擁有用運動釋放壓力的時光、年長者可以實現豐富退休生活的樂趣！</Contant>
 
           <Contant2>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！</Contant2>
         </div>

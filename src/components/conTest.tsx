@@ -19,26 +19,32 @@ const PageContainer = styled.div`
 
 const Container = styled.div`
   width:100%;
-  height:100%;
+  height:804px;
   background: rgba(207, 210, 211,0.2);
   display: flex;
+  justify-content:center;
+  align-items:center;
   margin-top:80px;
+  background-image: url('${halfcircle}');
+  background-size: cover;
+  
+  ;
    @media screen and (max-width: 768px) {
     display:none;
-   
-  }
-  
-`;
-
-const HalfcircleImg = styled.img`
-  width:100%;
-  height:100%;
-  z-index:1;
-   @media screen and (max-width: 768px) {
 
   }
 
 `;
+
+// const HalfcircleImg = styled.img`
+//   width:100%;
+//   height:100%;
+//   z-index:1;
+//    @media screen and (max-width: 768px) {
+
+//   }
+
+// `;
 
 const ImgContainer = styled.div`
  z-index:1;
@@ -52,11 +58,12 @@ const TextContainer1 = styled.div`
  width:100%;
  z-index:10;
  display:flex;
+ align-items: flex-end;
  flex-direction: column;
- margin-top:-100px;
-
+ margin-top:-7px;
   @media screen and (max-width: 768px) {
     margin-top:120px;
+    align-items: center;
   }
 `;
 
@@ -64,25 +71,26 @@ const TextContainer2 = styled.div`
  width:100%;
  z-index:10;
  display:flex;
- justify-content:space-between;
+ justify-content:flex-start;
  align-items: center;
  margin-right:150px;
+ margin-left:143px;
+ margin-top:-60px;
  
   @media screen and (max-width: 768px) {
     margin-top:-24px;
     justify-content:center;
+    margin-left:-25px;
+   
   }
 `;
 
 const LeftText = styled.div`
   margin-left:-180px;
-  margin-top:400px;
    @media screen and (max-width: 768px) {
     z-index:10;
     margin-top:-240px;
     margin-left:20px;
-  
-    
   }
 
 `;
@@ -150,7 +158,7 @@ const Title2 = styled.p`
   display:flex;
   justify-content: flex-start;
   line-Height:52px;
-  margin-top:-38px;
+  margin-top:-28px;
   @media screen and (max-width: 768px) {
    margin-left:-80px;
    font-family: 'Futura';
@@ -163,6 +171,7 @@ const Title2 = styled.p`
    text-align: center;
    letter-spacing: 0.04em;
    color: #CFD2D3;
+
   }
 `;
 
@@ -219,7 +228,7 @@ const TextContent = styled.p`
     transform: matrix(1, 0, 0, 1, 0, 0);
     margin-top:40px;
     width:340px;
-    margin-left:12px;
+    margin-left:-20px;
 
   }
   
@@ -269,6 +278,7 @@ const MobileContainer = styled.div`
   padding-top:80px;
   padding-bottom: 80px;
   flex-direction: column;
+  margin-right:380px;
 
  @media screen and (min-width: 768px) {
   display:none;
@@ -291,71 +301,83 @@ const CircleImg = styled.img`
 
 const Ball = styled.div`
   @media screen and (max-width: 768px) {
-   margin-left:145px;
+   margin-left:110px;
    margin-top:-20px;
   }
 
 
 `;
 
+const AlignText = styled.div`
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ margin-left:330px;
+`;
+
+const Span = styled.span`
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
+
+`;
 
 /* desktop thw newest info style end */
 const ConTest = () => {
   return <PageContainer>
     <Container>
-      <ImgContainer>
-        <HalfcircleImg src={halfcircle} alt="" />
-      </ImgContainer>
 
-
-      <TextContainer1>
-        <LeftText>
-          <div>
-            <Title1>桌球賽事</Title1>
-            <Title2>Let’s Play Match</Title2>
-          </div>
-          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
-        </LeftText>
-      </TextContainer1>
-
-
-      <TextContainer2>
-        <RightText>
-          <TextContainer>
-            <Background>
-              <Title3>邀請賽</Title3>
-            </Background>
+      <AlignText>
+        <TextContainer1>
+          <LeftText>
             <div>
-              <Text>
-                由 Let's Play 發出邀請，讓小小選手們有發光表現的舞台。
-              </Text>
+              <Title1>桌球賽事</Title1>
+              <Title2>Let’s Play Match</Title2>
             </div>
-          </TextContainer>
+            <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
+          </LeftText>
+        </TextContainer1>
 
-          <TextContainer>
-            <Background>
-              <Title3>積分賽</Title3>
-            </Background>
-            <div>
-              <Text>
-                於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
-              </Text>
-            </div>
-          </TextContainer>
 
-          <TextContainer>
-            <Background>
-              <Title3>學員盃</Title3>
-            </Background>
-            <div>
-              <Text>
-                Let's Play 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
-              </Text>
-            </div>
-          </TextContainer>
-        </RightText>
-      </TextContainer2>
+        <TextContainer2>
+          <RightText>
+            <TextContainer>
+              <Background>
+                <Title3>邀請賽</Title3>
+              </Background>
+              <div>
+                <Text>
+                  由 <Span>Let's Play</Span> 發出邀請，讓小小選手們有發光表現的舞台。
+                </Text>
+              </div>
+            </TextContainer>
 
+            <TextContainer>
+              <Background>
+                <Title3>積分賽</Title3>
+              </Background>
+              <div>
+                <Text>
+                  於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
+                </Text>
+              </div>
+            </TextContainer>
+
+            <TextContainer>
+              <Background>
+                <Title3>學員盃</Title3>
+              </Background>
+              <div>
+                <Text>
+                  <Span>Let's Play</Span> 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+                </Text>
+              </div>
+            </TextContainer>
+          </RightText>
+        </TextContainer2>
+      </AlignText>
 
     </Container>
 
@@ -384,7 +406,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                由 Let's Play 發出邀請，讓小小選手們有<br />發光表現的舞台。
+                由<Span>Let's Play</Span> 發出邀請，讓小小選手們有<br />發光表現的舞台。
               </Text>
             </div>
           </TextContainer>
@@ -406,7 +428,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                Let's Play 分店館內學員的定期對內交流<br />比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+                <Span>Let's Play</Span> 分店館內學員的定期對內交流<br />比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
               </Text>
             </div>
           </TextContainer>

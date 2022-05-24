@@ -196,6 +196,15 @@ const ButtonAreas = styled.div`
   }
 `;
 
+const Span = styled.span`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+`;
 /* desktop thw newest info style end */
 const HaveATry = () => {
   return <PageContainer>
@@ -213,7 +222,7 @@ const HaveATry = () => {
           </Button>
         </ButtonAreas>
 
-        <Text2>統一由臉書私訊洽詢想預約試上的分店 Line</Text2>
+        <Text2>統一由臉書私訊洽詢想預約試上的分店&ensp;<Span>Line</Span></Text2>
 
       </BlueArea>
 

@@ -19,7 +19,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
   height:100%;
   width:100%;
-  margin-top:55px;
+  margin-top:44px;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +27,7 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     display:none;
     flex-direction: column;
+  
   }
 `;
 
@@ -34,7 +35,8 @@ const BelowArea = styled.div`
   display: flex;
   justify-content: center;
   align-items:center;
-  margin-top:70px;
+  margin-top:40px;
+  margin-left:30px;
   
   @media screen and (max-width: 768px) {
     display: flex;
@@ -53,7 +55,7 @@ const Background1 = styled.div`
  margin-top:50px;
  width:373px;
  height:288px;
- margin-left:-30px;
+ 
  
   @media screen and (max-width: 768px) {
     width:327px;
@@ -67,8 +69,9 @@ const Background2 = styled.div`
  display:flex;  
  justify-content: center;
  width:373px;
- height:980px;
+ height:977px;
  align-items: center;
+ 
   @media screen and (max-width: 768px) {
     width:327px;
     height:84px;
@@ -79,11 +82,11 @@ const Background2 = styled.div`
 `;
 
 const TopLeftArea = styled.div`
-
  display: flex;
  justify-content: center;
  align-items:center;
  margin-left:30px;
+
 
   @media screen and (max-width: 768px) {
     width:90%;
@@ -111,21 +114,13 @@ const TextArea = styled.div`
     margin-right:30px;
     margin-top:0px;
     
-  
-    
-    
-
-
-
   }
 `;
 
 const TextArea1 = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items: start;
-  flex-direction: column;
+  margin-top:28px;
   margin-left:48px;
+  
   @media screen and (max-width: 768px) {
    margin-bottom:30px;
    margin-left:0px;
@@ -135,8 +130,16 @@ const TextArea1 = styled.div`
 const TextArea2 = styled.div`
   display:flex;
   justify-content:center;
-  flex-direction: column;
-  margin-top:-3px;
+  margin-left:30px;
+
+
+  @media screen and (max-width: 768px) {
+    
+  }
+`;
+
+const TextArea3 = styled.div`
+  margin-top:28px;
   margin-left:70px;
 
 
@@ -237,7 +240,31 @@ const Text12 = styled.p`
     
   }
   
-// `;
+`;
+
+const Text32 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  margin:0px;
+  margin-top:12px;
+  padding:0px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    
+  }
+  
+`;
 
 
 const Title = styled.p`
@@ -277,7 +304,7 @@ const Title22 = styled.p`
 `;
 
 const TopBelow = styled.div`
-  margin-left:-150px;
+  margin-left:160px;
    @media screen and (max-width: 768px) {
    display:flex;
    justify-content:center;
@@ -297,8 +324,9 @@ const TopBelow = styled.div`
 `;
 
 const UnderBelow = styled.div`
-  margin-left:-130px;
-  margin-top:40px;
+  margin-left:160px;
+  margin-top:35px;
+
  @media screen and (max-width: 768px) {
     margin-left:0px;
   }
@@ -330,22 +358,17 @@ const Title2 = styled.p`
 
 const BelowTextContainer = styled.div`
  background: #FFFFFF;
- display:flex;  
- flex-direction:column;
- align-items:center ;
- justify-content:center;
  width:827px;
- height:980px;
-
-
+ height:977px;
  
+
+
+
   @media screen and (max-width: 768px) {
     width:327px;
     height:993px;
     padding-left:0px;
     margin-bottom:80px;
-
-
   }
 
 `;
@@ -379,8 +402,7 @@ const MobileContainer = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-   
-
+    margin-top:164px;
   }
 
 `;
@@ -402,6 +424,16 @@ const TitleOne = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  @media screen and (max-width: 768px) {
+   font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 4%;
+    color: #1A1A1A;
+  }
 `;
 
 const TitleTwo = styled.p`
@@ -415,29 +447,36 @@ const TitleTwo = styled.p`
   color: #CFD2D3;
   margin-top:-30px;
   margin-bottom:60px;
+  @media screen and (max-width: 768px) {
+   font-family: 'Futura';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 26px;
+   line-height: 40px;
+   text-align: center;
+   letter-spacing: 4%;
+  }
 `;
 
 const Background = styled.div`
   background: #38D430;
   width:100%;
-  height:1450px;
-  padding-top:80px;
+  height:1388px;
+  padding-top:30px;
+  padding-bottom:47px;
  
 `;
 
-const Num = styled.p`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height:32px;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin:0px;
-
-
-
-`;
+// const Num = styled.p`
+//   font-family: 'Futura';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 18px;
+//   line-height:32px;
+//   letter-spacing: 0.04em;
+//   color: #1A1A1A;
+//   margin:0px;
+// `;
 
 const Span = styled.span`
   font-family: 'Futura';
@@ -468,15 +507,15 @@ font-size: 18px;
 line-height: 32px;
 letter-spacing: 0.72px;
 color:#1A1A1A;
-margin-top:12px;
+
 `;
 
 const Time = styled.div`
-
+ margin-top:20px;
 `;
 
 const Shop = styled.div`
-margin-top:0px;
+margin-top:20px;
 
 
 `;
@@ -488,7 +527,7 @@ margin-top:20px;
 `;
 
 const Shop2 = styled.div`
-margin:0px;
+margin-top:20px;
 
 
 `;
@@ -500,23 +539,33 @@ const Text33 = styled.div`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-@media screen and (max-width: 768px) {
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 32px;
-/* identical to box height, or 200% */
-
-letter-spacing: 0.04em;
-
-/* black */
-
-color: #1A1A1A;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
 
   }
 `;
 
+const Span2 = styled.span`
+font-family: 'Futura';
+font-weight: 500;
+font-size: 16px;
+line-height: 32px;
+letter-spacing: 0.04em;
+color: #005CB9;
+`;
+
+const MobileTitle = styled.div`
+  @media screen and (max-width: 768px) {
+    margin-top:-200px;
+  }
+
+`;
 /* desktop thw newest info style end */
 const Company = () => {
   return <PageContainer>
@@ -529,19 +578,21 @@ const Company = () => {
             <Title>＃ 總公司</Title>
           </Background1>
           <TextArea>
-            <TextArea1>
-              <Text12>地址</Text12>
-              <Text12>連絡電話</Text12>
-              <Text12>信箱</Text12>
-              <Text12>總公司客服時間</Text12>
-              <Text12>創辦人 / 總教練</Text12>
-            </TextArea1>
             <TextArea2>
-              <Text22>新北市蘆洲區長樂路106號3樓</Text22>
-              <Text22>0988 521 012</Text22>
-              <Text22>playpp2018@gmail.com</Text22>
-              <Text22>週一至週五 10:00–19:00（週末請撥各館電話）</Text22>
-              <Text22>郭教練 <Span>0988 521 012</Span></Text22>
+              <TextArea1>
+                <Text12>地址</Text12>
+                <Text12>連絡電話</Text12>
+                <Text12>信箱</Text12>
+                <Text12>總公司客服時間</Text12>
+                <Text12>創辦人 / 總教練</Text12>
+              </TextArea1>
+              <TextArea3>
+                <Text32>新北市蘆洲區長樂路<Span>106</Span>號<Span>3</Span>樓</Text32>
+                <Text32><Span>0988 521 012</Span></Text32>
+                <Text32><Span>playpp2018@gmail.com</Span></Text32>
+                <Text32>週一至週五 <Span>10:00–19:00</Span>（週末請撥各館電話）</Text32>
+                <Text32>郭教練 <Span>0988 521 012</Span></Text32>
+              </TextArea3>
             </TextArea2>
           </TextArea>
 
@@ -558,46 +609,46 @@ const Company = () => {
 
               <Time>
                 <SmallTitle>各館營業時間</SmallTitle>
-                <Text>週一至週五 <Span>13:00–21:00</Span>　週六日<Span> 9:00–19:00</Span></Text>
+                <Text22>週一至週五 <Span> 13:00–21:00 </Span>　週六日<Span> 9:00–19:00  </Span></Text22>
               </Time>
 
               <Shop>
-                <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲 </SmallTitle>
-                <Text2>新北市蘆洲區長樂路106號3樓</Text2>
-                <Num>02 8286 1011</Num>
+                <SmallTitle><Span2>Let's Play</Span2> 蘆洲店 － 捷運蘆洲 </SmallTitle>
+                <Text2>新北市蘆洲區長樂路<Span>106</Span>號<Span>3</Span>樓</Text2>
+                <Span>02 8286 1011</Span>
               </Shop>
 
               <Shop1>
-                <SmallTitle>Let's Play 東門店 X 東門桌球 － 捷運東門 </SmallTitle>
-                <Text2>台北市中正區金山南路一段121號</Text2>
-                <Num>02 2356 7106</Num>
+                <SmallTitle><Span2>Let's Play</Span2> 東門店<Span2> X </Span2>  東門桌球 － 捷運東門 </SmallTitle>
+                <Text2>台北市中正區金山南路一段<Span>121</Span>號</Text2>
+                <Span>02 2356 7106</Span>
               </Shop1>
 
               <Shop1>
-                <SmallTitle>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</SmallTitle>
-                <Text2>台北市新莊區民樂街37號B1</Text2>
-                <Num>02 2990 0566</Num>
+                <SmallTitle><Span2>Let's Play</Span2> 新莊店 <Span2>X</Span2> 卓越乒乓 － 捷運頭前庄</SmallTitle>
+                <Text2>台北市新莊區民樂街<Span>37</Span>號<Span>B1</Span></Text2>
+                <Span>02 2990 0566</Span>
               </Shop1>
 
               <Shop1>
-                <SmallTitle>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</SmallTitle>
-                <Text2>台北市中正區杭州南路一段63號B1</Text2>
-                <Num>02 2391 9659</Num>
+                <SmallTitle><Span2>Let's Play</Span2> 善導寺店 <Span2>X</Span2> 乒乓世界 － 捷運善導寺</SmallTitle>
+                <Text2>台北市中正區杭州南路一段<Span>63</Span>號<Span>B1</Span></Text2>
+                <Span>02 2391 9659</Span>
               </Shop1>
             </TopBelow>
 
             <UnderBelow>
               <Title22>聯盟場館經營</Title22>
               <Shop2>
-                <SmallTitle>ONWARD TT 乒乓吧 X Let's Play － 捷運南港 & 昆陽</SmallTitle>
-                <Text2>台北市南港區南港路二段141號1樓</Text2>
-                <Num>02 2651 0652</Num>
+                <SmallTitle><Span2>ONWARD TT</Span2> 乒乓吧 <Span2> X Let's Play</Span2> － 捷運南港 <Span2> & </Span2> 昆陽</SmallTitle>
+                <Text2>台北市南港區南港路二段<Span>141</Span>號<Span>1</Span>樓</Text2>
+                <Span>02 2651 0652</Span>
               </Shop2>
 
               <Shop2>
-                <SmallTitle>舞動華江高中 & Let's Play － 捷運龍山寺</SmallTitle>
-                <Text2>台北市萬華區西藏路213號</Text2>
-                <Num>02 2339 6689</Num>
+                <SmallTitle>舞動華江高中 <Span2> & Let's Play</Span2> － 捷運龍山寺</SmallTitle>
+                <Text2>台北市萬華區西藏路<Span>213</Span>號</Text2>
+                <Span>02 2339 6689</Span>
               </Shop2>
 
             </UnderBelow>
@@ -610,6 +661,10 @@ const Company = () => {
     </Container>
 
     <MobileContainer>
+      <MobileTitle>
+        <TitleOne>聯絡我們</TitleOne>
+        <TitleTwo>Contact Us</TitleTwo>
+      </MobileTitle>
       <TopLeftArea>
         <TopContainer>
           <Background1>
@@ -659,7 +714,7 @@ const Company = () => {
 
             <div>
               <SmallTitle>各館營業時間</SmallTitle>
-              <Text>週一至週五 13:00–21:00　週六日<br/> 9:00–19:00</Text>
+              <Text>週一至週五 13:00–21:00　週六日<br /> 9:00–19:00</Text>
             </div>
 
             <div>

@@ -19,7 +19,7 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
-  margin-top:30px;
+  margin-top:-10px;
   padding-top:60px;
   padding-bottom:40px;
    @media screen and (max-width: 768px) {
@@ -38,8 +38,10 @@ const GreenButton = styled.button`
    @media screen and (max-width: 768px) {
     width:211px;
     height:48px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
     margin-top:150px;
-
   }
 
 `;
@@ -54,35 +56,34 @@ const ButtonText = styled.p`
   justify-content:center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
- 
-
+  
   @media screen and (max-width: 768px) {
-    margin-top:10px;
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
     line-height:48px;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.04em;
-    color: #FFFFFF;
-
   }
 `;
 
 const BelowText = styled.p`
-  font-family: 'Futura ';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
+  font-size:'Noto Sans TC';
+  font-weight:500;
+  font-size:18px;
+  line-height:32px;
+  letter-spacing:4%;
+
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
   color: #3C3D3D;
+  margin-top:2px;
    @media screen and (max-width: 768px) {
     font-size: 14px;
     margin-top:10px;
@@ -97,6 +98,7 @@ const BelowText = styled.p`
     text-align: center;
     letter-spacing: 0.06em;
     color: #3C3D3D;
+    
  
   }
 `;
@@ -112,12 +114,12 @@ const TextArea = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position:center;
+  
    @media screen and (max-width: 768px) {
     background-image: url('${bg2}');
     background-size:contain ;
     background-repeat: no-repeat;
     background-position:center;
-  
     width:100%;
     height:310px; 
    }
@@ -128,20 +130,33 @@ const AlignText = styled.div`
  align-items: center;
  justify-content:center;
  flex-direction: column;
+ margin-top:40px;
 ;
   @media screen and (max-width: 768px) {
-   margin-top:-120px;
+   margin-top:-136px;
   }
 
 `;
 
 const Text = styled.div`
   height:60px;
-  margin-top:-8px;
+  margin-top:-10px;
    @media screen and (max-width: 768px) {
-    
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-top:0px;
+ 
   }
 
+`;
+
+const Span = styled.p`
+  font-family:'Futura';
+  font-weight:500;
+  font-size:18px;
+  line-height:32px;
+  letter-spacing:4%;
 `;
 
 /* desktop thw newest info style end */
@@ -156,7 +171,7 @@ const Reserve = () => {
               <ButtonText>立即預約體驗</ButtonText>
             </Text>
           </GreenButton>
-          <BelowText>統一由臉書私訊洽詢想預約試上的分店 Line</BelowText>
+          <BelowText>統一由臉書私訊洽詢想預約試上的分店&ensp; <Span>Line</Span></BelowText>
         </AlignText>
       </TextArea>
 

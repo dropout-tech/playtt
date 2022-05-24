@@ -20,10 +20,10 @@ const PageContainer = styled.div`
 `;
 
 const Container = styled.div`
- margin-top:44px;
+ margin-top:91px;
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
-    margin-top:-70px;
+    margin-top:-56px;
   }
 
 `;
@@ -71,7 +71,7 @@ const Title3 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:40px;
+  margin-left:32px;
 
    @media screen and (max-width: 768px) {
     margin-top:20px;
@@ -122,7 +122,7 @@ const Title4 = styled.p`
   align-items: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-left:40px;
+  margin-left:32px;
 
    @media screen and (max-width: 768px) {
     margin-top:20px;
@@ -233,13 +233,13 @@ const LeftArea = styled.div`
 //    justify-content:center;
 //    align-items: center;
 //    margin-top:21px;
-    
+
 //    @media screen and (max-width: 768px) {
 //     display:flex;
 //     align-items:flex-start;
 //     flex-direction: column;
 //     margin-top:-128px;
-    
+
 //   }
 // `;
 
@@ -345,7 +345,9 @@ const TextArea1 = styled.div`
   justify-content:center;
   align-items: center;
   flex-direction: column;
-  margin-top:30px;
+  margin-top:6px;
+  margin-left:-20px;
+
   @media screen and (max-width: 768px) {
   
     
@@ -388,9 +390,9 @@ const LetsPlayStar = () => {
               </LeftArea>
 
               <LeftArea>
-                  <Img2 src={img2} alt="" />
-                  <Img4 src={img3} alt="" />
-                  <Title4>公益桌球賽</Title4>
+                <Img2 src={img2} alt="" />
+                <Img4 src={img3} alt="" />
+                <Title4>公益桌球賽</Title4>
               </LeftArea>
             </TextArea1>
           </Background>
@@ -398,11 +400,11 @@ const LetsPlayStar = () => {
           <GrayArea>
             <GrayAreaText>
               <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
-              <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄<Span2 >& </Span2>阿寬教練 郭則寬<br />
+              <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄<Span2 > & </Span2>阿寬教練 郭則寬<br />
               <Span>・</Span> 由專業教練團隊協助持續訓練<br />
               <Span>・</Span>  大幅提升桌技和認知<br />
               <Span>・</Span>  與贊助廠商合作營運<br />
-              <Span>・</Span>  每週練習<Span2>1-2</Span2>次<br />
+              <Span>・</Span>  每週練習<Span2> 1-2 </Span2>次<br />
               <Span>・</Span> 與全明星運動會紅隊交流<br />
               <Span>・</Span>  明星交流賽與檢定
             </GrayAreaText>
@@ -436,11 +438,11 @@ const LetsPlayStar = () => {
           <GrayArea>
             <GrayAreaText>
               <Dot>
-                <Span>・</Span> 成立於 2020/12/15 <br />
+                <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
               </Dot>
 
               <Dot>
-                <Span>・</Span> 召集人 —— Hero 戴祖雄 & 阿<br />&emsp; &emsp; &ensp; 寬教練 郭則寬<br />
+                <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄 & 阿<br />&emsp; &emsp; &ensp; 寬教練 郭則寬<br />
               </Dot>
 
               <Dot>
