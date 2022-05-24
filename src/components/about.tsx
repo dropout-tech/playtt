@@ -327,6 +327,8 @@ const Contants1 = styled.div`
     justify-content:center;
     margin-top:8px; 
     margin-left:0px;
+   
+  
   }
 `;
 
@@ -500,14 +502,16 @@ const MobileContainer = styled.div`
 
 const TextContainer = styled.div`
   margin-top:23px;
-
+  @media screen and (max-width: 768px) {
+    
+    }
 `;
 
 const PicturAndText = styled.div`
  display:flex;
  margin-left:-100px;
   @media screen and (max-width: 768px) {
-   
+  
   }
 
 
@@ -521,11 +525,11 @@ const AlignText = styled.div`
 `;
 
 const Span2 = styled.span`
-font-family: 'Futura';
-font-weight:500;
-font-size:20px;
-line-height:36px;
-letter-spacing:3%;
+  font-family: 'Futura';
+  font-weight:500;
+  font-size:20px;
+  line-height:36px;
+  letter-spacing:3%;
 
 `;
 
@@ -553,9 +557,13 @@ const Span33 = styled.span`
     line-height:30px;
     letter-spacing:2%;
     margin:0px;
+
+
   }
 
 `;
+
+
 
 /* desktop thw newest info style end */
 const About = () => {
@@ -666,7 +674,11 @@ const About = () => {
               <Hope1>願景</Hope1>
               <Slogan>Let's Play <Span>Dream</Span></Slogan>
             </HOPE>
-            <Contants1>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起<Span33>Let's Play</Span33>！</Contants1>
+  
+            <Contants1>
+              我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起<Span33>Let's Play</Span33>！
+            </Contants1>
+     
           </TextArea>
         </HopeContainer>
 

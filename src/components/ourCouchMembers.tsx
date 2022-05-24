@@ -75,7 +75,7 @@ const Row1 = styled.div`
     display: flex;
     justify-content:center;
     flex-direction: column;
-   
+  
   }
 `;
 
@@ -114,12 +114,15 @@ const MobileContainer = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
+  justify-content:center;
   margin-left:5px;
   width:327px;
   
    
   @media screen and (min-width: 768px) {
     display:none;
+   
+   
    
   }
 `;
@@ -146,6 +149,7 @@ const Text = styled.p`
    font-size: 20px;
    line-height: 36px;
    display: flex;
+   justify-content:center;
    align-items: center;
    letter-spacing: 0.03em;
    color: #1A1A1A;
@@ -166,10 +170,9 @@ const TextEVA = styled.p`
   color: #1A1A1A;
   margin-left:170px;  
   @media screen and (max-width: 768px) {
-   margin-left:0px;
+   margin:0px;
    display:flex;
    flex-direction: column;
-   margin-right:100px;
    font-family: 'Noto Sans TC';
    font-style: normal;
    font-weight: 900;
@@ -195,7 +198,7 @@ const Text11 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;  
   @media screen and (max-width: 768px) {
-   margin-left:0px;
+   margin:0px;
    display:flex;
    flex-direction: column;
    margin-right:100px;
@@ -208,7 +211,7 @@ const Text11 = styled.p`
    align-items: center;
    letter-spacing: 0.03em;
    color: #1A1A1A;
-   margin-left:-45px;
+   
 
   }
 `;
@@ -236,9 +239,10 @@ const Text111 = styled.p`
    line-height: 36px;
    display: flex;
    align-items: center;
+   justify-content:center;
    letter-spacing: 0.03em;
    color: #1A1A1A;
-   margin-left:-20px;
+ 
 
   }
 `;
@@ -265,6 +269,7 @@ const Text2 = styled.p`
    font-size: 20px;
    line-height: 36px;
    display: flex;
+   justify-content:center;
    align-items: center;
    letter-spacing: 0.03em;
    color: #1A1A1A;
@@ -407,7 +412,8 @@ const Name1 = styled.div`
     display: flex;
     flex-direction: column;
     margin-top:40px;
-   
+ 
+  
   }
   
 `;
