@@ -43,6 +43,7 @@ const BelowArea = styled.div`
     flex-direction: column;
     align-items:center;
     margin-left:0px;
+     margin-top:20px;
 
   }
 
@@ -284,6 +285,7 @@ const Title = styled.p`
     align-items: center;
     text-align: center;
     letter-spacing: 0.03em;
+    margin-top:0px;
   }
 `;
 
@@ -394,6 +396,28 @@ const SmallTitle = styled.p`
   }
 `;
 
+const SmallTitle1 = styled.p`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #005CB9;
+  margin-bottom:0px;
+   @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    color: #005CB9;
+    margin-top:0px;
+  }
+`;
+
+
 const MobileContainer = styled.div`
   display:none;
  @media screen and (max-width: 768px) {
@@ -405,6 +429,7 @@ const MobileContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top:164px;
+    
    
   }
 
@@ -497,7 +522,26 @@ const Span = styled.span`
     font-size: 16px;
     line-height: 32px;
     letter-spacing: 0.04em;
-    color: #1A1A1A;
+    color: #005CB9;
+  }
+`;
+
+const Span1 = styled.span`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color:  #1A1A1A;
   }
 `;
 
@@ -692,26 +736,26 @@ const Company = () => {
             <TextArea1>
               <Column>
                 <Text3>地址</Text3>
-                <Text33>新北市蘆洲區長樂路<Span>106</Span>106號<Span>3</Span>樓</Text33>
+                <Text33>新北市蘆洲區長樂路<Span1>106</Span1>106號<Span1>3</Span1>樓</Text33>
               </Column>
               <Column>
                 <Text3>連絡電話</Text3>
-                <Text33><Span>0988 521 012</Span></Text33>
+                <Text33><Span1>0988 521 012</Span1></Text33>
               </Column>
 
               <Column>
                 <Text3>信箱</Text3>
-                <Text33> <Span>playpp2018@gmail.com</Span></Text33>
+                <Text33> <Span1>playpp2018@gmail.com</Span1></Text33>
               </Column>
 
               <Column>
                 <Text3>總公司客服時間</Text3>
-                <Text33>週一至週五 <Span> 10:00–19:00</Span>（週末請撥各館電話）</Text33>
+                <Text33>週一至週五 <Span1> 10:00–19:00</Span1>（週末請撥各館電話）</Text33>
               </Column>
 
               <Column>
                 <Text3>創辦人 / 總教練</Text3>
-                <Text33>郭教練 <Span> 0988 521 012</Span></Text33>
+                <Text33>郭教練 <Span1> 0988 521 012</Span1></Text33>
                 </Column>
             </TextArea1>
 
@@ -730,28 +774,28 @@ const Company = () => {
             <Title>分館資訊</Title>
 
             <div>
-              <SmallTitle>各館營業時間</SmallTitle>
-              <Text>週一至週五 <Span> 13:00–21:00</Span>　週六日<br /> <Span> 9:00–19:00</Span></Text>
+              <SmallTitle1>各館營業時間</SmallTitle1>
+              <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日<br /> <Span1> 9:00–19:00</Span1></Text>
             </div>
 
             <div>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
               <Text>台北市中正區金山南路一段121號</Text>
-              <Text><Span> 02 2356 7106</Span></Text>
+              <Text><Span1> 02 2356 7106</Span1></Text>
 
             </div>
 
             <div>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
               <Text>台北市新莊區民樂街37號B1</Text>
-              <Text><Span>02 2990 0566</Span></Text>
+              <Text><Span1>02 2990 0566</Span1></Text>
 
             </div>
 
             <div>
               <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
               <Text>台北市中正區杭州南路一段63號B1</Text>
-              <Text><Span>02 2391 9659</Span></Text>
+              <Text><Span1>02 2391 9659</Span1></Text>
 
             </div>
           </TopBelow>
@@ -761,13 +805,13 @@ const Company = () => {
             <div>
               <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
               <Text>台北市南港區南港路二段141號1樓</Text>
-              <Text><Span>02 2651 0652</Span></Text>
+              <Text><Span1>02 2651 0652</Span1></Text>
             </div>
 
             <div>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
               <Text>台北市萬華區西藏路213號</Text>
-              <Text> <Span>02 2339 6689</Span></Text>
+              <Text> <Span1>02 2339 6689</Span1></Text>
             </div>
 
           </UnderBelow>
