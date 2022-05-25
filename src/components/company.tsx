@@ -62,7 +62,7 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:327px;
     height:84px;
-    margin-top:0px;
+    margin-top:-8px;
   ;
   }
 `;
@@ -429,7 +429,8 @@ const MobileContainer = styled.div`
     justify-content:center;
     flex-direction: column;
     align-items: center;
-    margin-top:164px;
+    margin-top:40px;
+    margin-bottom:-20px;
     
    
   }
@@ -626,7 +627,7 @@ color: #005CB9;
 
 const MobileTitle = styled.div`
   @media screen and (max-width: 768px) {
-   margin-top:-71px;
+   margin-top:54px;
  ;
   }
 
@@ -724,12 +725,15 @@ const Company = () => {
         </BelowArea>
       </Background>
     </Container>
+    
+    <MobileTitle>
+      <TitleOne>聯絡我們</TitleOne>
+      <TitleTwo>Contact Us</TitleTwo>
+    </MobileTitle>
+
 
     <MobileContainer>
-      <MobileTitle>
-        <TitleOne>聯絡我們</TitleOne>
-        <TitleTwo>Contact Us</TitleTwo>
-      </MobileTitle>
+  
       <TopLeftArea>
         <TopContainer>
           <Background1>
