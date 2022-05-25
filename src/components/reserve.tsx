@@ -113,8 +113,8 @@ const TextArea = styled.div`
   
    @media screen and (max-width: 768px) {
     background-image: url('${bg2}');
-    background-size:contain ;
-    background-repeat: no-repeat;
+    background-size:cover ;
+    /* background-repeat: no-repeat; */
     background-position:center;
     width:100%;
     height:310px;

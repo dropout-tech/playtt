@@ -23,6 +23,7 @@ const StartImg1 = styled.img`
   margin-right:40px;
   @media screen and (max-width: 768px) {
     margin-left:110px;
+    margin-right:30px;
     margin-top:105px;
     width: 38px;
     height:38px;
@@ -37,10 +38,12 @@ const StartImg2 = styled.img`
   margin-right:40px;
 
   @media screen and (max-width: 768px) {
-    margin-left:50px;
+    margin-left:70px;
     width: 38px;
     height:38px;
-    margin-top:155px;
+    margin-top:110px;
+   
+    
     
   }
 `;
@@ -173,7 +176,7 @@ const AboutUs = styled.p`
     letter-spacing: 0.04em;
     color: #CFD2D3;
     margin-left:10px;
-    margin-top:-20px;
+    margin-top:-10px;
 
   }
 `;
@@ -400,17 +403,17 @@ const Span = styled.span`
 
 const HopeContainer = styled.div`
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
   margin:0px;
   
   @media screen and (max-width: 768px) {
-
+   margin-left:8px;
   }
 `;
 
 const HopeContainer2 = styled.div`
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
   margin:0px;
   
   @media screen and (max-width: 768px) {
@@ -544,6 +547,17 @@ const HOPE2 = styled.div`
    align-items: flex-start;
    flex-direction: column;
    margin-left:-16px;
+  }
+`;
+
+const HOPE22 = styled.div`
+ @media screen and (max-width: 768px) {
+   display:flex;
+   justify-content:flex-start;
+   align-items: flex-start;
+   flex-direction: column;
+   
+ 
   }
 `;
 
@@ -710,10 +724,10 @@ const About = () => {
         <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
-            <HopeContainer2>
+            <HOPE22>
               <Hope1>品牌理念</Hope1>
               <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
-            </HopeContainer2>
+            </HOPE22>
             <Contants3>感受發自內心的快樂，一起來玩吧！
               品牌的核心價值在於「讓來到 <Span33>Let's Play</Span33> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants3>
           </TextArea>
