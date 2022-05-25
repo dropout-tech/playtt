@@ -109,14 +109,14 @@ const TextArea = styled.div`
  margin-top:50px;
 
   @media screen and (max-width: 768px) {
-    width:303px;
+    width:279px;
     height:468px;
     display:flex;  
     justify-content: center;
     align-items:center;
     margin-top:0px;
     padding-left:24px;
-    
+    padding-right:24px;
   }
 `;
 
@@ -308,20 +308,15 @@ const TopBelow = styled.div`
   margin-left:160px;
    @media screen and (max-width: 768px) {
    display:flex;
-   justify-content:center;
+   justify-content:flex-start;
    align-items:flex-start;
    flex-direction:column;
    margin-top:24px;
    padding-left:24px;
-  
-  }
-
- 
- 
-
- @media screen and (max-width: 768px) {
+   padding-right:24px;
    margin-left:0px;
   }
+
 
 `;
 
@@ -332,6 +327,7 @@ const UnderBelow = styled.div`
  @media screen and (max-width: 768px) {
     margin-left:0px;
     padding-left:24px;
+    padding-right:24px;
   }
   
 `;
@@ -356,6 +352,8 @@ const Title2 = styled.p`
     letter-spacing: 0.04em;
     color: #1A1A1A;
     margin:0px;
+  
+    
   }
 `;
 
@@ -729,7 +727,7 @@ const Company = () => {
         </Background2>
         <BelowTextContainer>
           <TopBelow>
-            <Title2>分館資訊</Title2>
+            <Title>分館資訊</Title>
 
             <div>
               <SmallTitle>各館營業時間</SmallTitle>
