@@ -62,6 +62,7 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:327px;
     height:84px;
+    margin-top:0px;
   ;
   }
 `;
@@ -484,6 +485,7 @@ const TitleTwo = styled.p`
    line-height: 40px;
    text-align: center;
    letter-spacing: 4%;
+   margin-bottom:0px;
   }
 `;
 
@@ -624,7 +626,8 @@ color: #005CB9;
 
 const MobileTitle = styled.div`
   @media screen and (max-width: 768px) {
-    margin-top:-200px;
+   margin-top:-71px;
+ ;
   }
 
 `;
