@@ -537,6 +537,26 @@ const HOPE = styled.div`
   }
 `;
 
+const HOPE2 = styled.div`
+ @media screen and (max-width: 768px) {
+   display:flex;
+   justify-content:flex-start;
+   align-items: flex-start;
+   flex-direction: column;
+   margin-left:-16px;
+  }
+`;
+
+const HOPE3 = styled.div`
+ @media screen and (max-width: 768px) {
+   display:flex;
+   justify-content:flex-start;
+   align-items: flex-start;
+   flex-direction: column;
+   margin-left:-9px;
+  }
+`;
+
 const Span33 = styled.span`
   font-family: 'Futura';
   font-weight:500;
@@ -679,10 +699,10 @@ const About = () => {
         <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
-            <HOPE>
+            <HOPE2>
               <Hope1>使命</Hope1>
               <Slogan>Let’s Play <Span>Goal</Span></Slogan>
-            </HOPE>
+            </HOPE2>
             <Contants3>我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。</Contants3>
           </TextArea>
         </HopeContainer2>
@@ -690,10 +710,10 @@ const About = () => {
         <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
-            <HOPE>
+            <HopeContainer2>
               <Hope1>品牌理念</Hope1>
               <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
-            </HOPE>
+            </HopeContainer2>
             <Contants3>感受發自內心的快樂，一起來玩吧！
               品牌的核心價值在於「讓來到 <Span33>Let's Play</Span33> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants3>
           </TextArea>
@@ -702,10 +722,10 @@ const About = () => {
         <HopeContainer2>
           <StartImg1 src={start} alt="" />
           <TextArea>
-            <HOPE>
+            <HOPE3>
               <Hope1>教學理念</Hope1>
               <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
-            </HOPE>
+            </HOPE3>
             <Contants>學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span33>Let’s Play</Span33> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！</Contants>
           </TextArea>
         </HopeContainer2>
