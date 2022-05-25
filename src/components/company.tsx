@@ -42,6 +42,7 @@ const BelowArea = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
+    margin-left:0px;
 
   }
 
@@ -94,6 +95,8 @@ const TopLeftArea = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-left:0px;
+   
   }
 `;
 
@@ -107,7 +110,7 @@ const TextArea = styled.div`
 
   @media screen and (max-width: 768px) {
     width:303px;
-    height:550px;
+    height:468px;
     display:flex;  
     justify-content: center;
     align-items:center;
@@ -398,11 +401,13 @@ const MobileContainer = styled.div`
  @media screen and (max-width: 768px) {
     background: #38D430;
     width:100%;
-    height:40%;
+    height:1749px;
     display:flex;
+    justify-content:center;
     flex-direction: column;
     align-items: center;
     margin-top:164px;
+   
   }
 
 `;
@@ -507,6 +512,8 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top:-92px;
+ 
   }
 `;
 
@@ -517,6 +524,7 @@ font-size: 18px;
 line-height: 32px;
 letter-spacing: 0.72px;
 color:#1A1A1A;
+
 
 `;
 
