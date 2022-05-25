@@ -77,7 +77,6 @@ const BelowText = styled.p`
   font-size:18px;
   line-height:32px;
   letter-spacing:4%;
-
   display: flex;
   align-items: center;
   text-align: center;
@@ -93,12 +92,9 @@ const BelowText = styled.p`
     font-weight: 500;
     font-size: 14px;
     line-height: 28px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     letter-spacing: 0.06em;
     color: #3C3D3D;
-    
+    margin-top:6px;
  
   }
 `;
@@ -121,7 +117,8 @@ const TextArea = styled.div`
     background-repeat: no-repeat;
     background-position:center;
     width:100%;
-    height:310px; 
+    height:310px;
+   
    }
 `;
 
@@ -133,7 +130,7 @@ const AlignText = styled.div`
  margin-top:40px;
 ;
   @media screen and (max-width: 768px) {
-   margin-top:-136px;
+   margin-top:-122px;
   }
 
 `;
@@ -156,7 +153,14 @@ const Span = styled.p`
   font-weight:500;
   font-size:18px;
   line-height:32px;
-  letter-spacing:4%;
+  letter-spacing:6%;
+  @media screen and (max-width: 768px) {
+    font-family:'Futura';
+    font-weight:500;
+    font-size:14px;
+    line-height:28px;
+    letter-spacing:6%;
+  }
 `;
 
 /* desktop thw newest info style end */
