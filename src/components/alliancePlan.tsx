@@ -194,18 +194,17 @@ const TitleWord2 = styled.p`
 
 
 const Text11 = styled.div`
-@media screen and (max-width: 768px) {
-    margin-top:30px;
-    margin-left:-130px;
-
+  @media screen and (max-width: 768px) {
+  margin-top:30px;
+  margin-right:145px;
   }
  
 `;
 
 const Text22 = styled.div`
 @media screen and (max-width: 768px) {
-    margin-top:-120px;
-    margin-left:-130px;
+    margin-top:180px;
+    margin-right:145px;
 
   }
  
@@ -213,9 +212,8 @@ const Text22 = styled.div`
 `;
 const Text33 = styled.div`
 @media screen and (max-width: 768px) {
-    margin-bottom:100px;
-    margin-left:-130px;
-
+  margin-top:260px;
+  margin-right:140px;
   }
 
 
@@ -226,7 +224,6 @@ const MobleCircleDiv = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content:space-between;
   height:965px;
   background-image: url('${BgMobile}');
   background-size:contain ;
@@ -281,7 +278,7 @@ const Title22 = styled.p`
     line-height: 36px;
     letter-spacing: 0.03em;
     color: #005CB9;
-    margin-top:1px;
+    margin-top:9px;
    
   }
 `;
@@ -313,7 +310,7 @@ const TextForm2222 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-top:-8px;
+    margin-top:92px;
   }
 `;
 
@@ -323,7 +320,13 @@ const Span = styled.span`
   font-size:20px;
   line-height:36px;
   letter-spacing:3%;
-
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight:500;
+    font-size:16px;
+    line-height:30px;
+    letter-spacing:2%;
+  }
 `;
 
 
@@ -388,7 +391,7 @@ const alliancePlan = () => {
 
           </TextArea>
         </BgWebDiv>
-        <Circle> 
+        <Circle>
 
         </Circle>
 
@@ -409,7 +412,7 @@ const alliancePlan = () => {
               <Title22>創立初衷</Title22>
               <TextForm222>將既有的桌球經營 <Span>Know How </Span>傳承與系統規劃，改善桌球產業發展，希望透過每位老闆力量，共同團結讓台灣桌球被更多人看見！</TextForm222>
             </Text11>
-  
+
             <Text22>
               <Img2 src={phone2} alt="" />
               <Title22>計畫簡介</Title22>
@@ -422,7 +425,7 @@ const alliancePlan = () => {
               <TextForm222>全台目前分店為 <Span>4</Span> 家，合作聯盟據點 <Span>10</Span> 個以上，聯盟球館</TextForm222>
               <TextForm2222>陸續招募中！</TextForm2222>
             </Text33>
-          
+
           </MobleCircleDiv>
 
         </Background>
