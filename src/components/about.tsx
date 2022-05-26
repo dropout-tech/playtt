@@ -654,7 +654,7 @@ const About = () => {
 
       </TopArea>
     </Container>
-    <div style={{ display: "flex", flexDirection: "column",padding:"24px" }}>
+    {/* <div style={{ display: "flex", flexDirection: "column",padding:"24px" }}>
       <div style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
         <img src={start} alt="" style={{width:"38px",height:"38px",marginRight:"20px"}}/>
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -667,8 +667,8 @@ const About = () => {
           我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起
         </p>
       </div>
-    </div>
-    {/* <MobileContainer>
+    </div> */}
+    <MobileContainer>
       <AboutItems>
         <AboutText>關於我們</AboutText>
         <AboutUs>About Us</AboutUs>
@@ -729,7 +729,7 @@ const About = () => {
 
 
       </TopArea>
-    </MobileContainer> */}
+    </MobileContainer>
 
 
 

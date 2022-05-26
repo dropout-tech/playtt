@@ -445,10 +445,47 @@ const Members = styled.div`
   flex-direction: row;
   justify-content:center;
   align-items:center;
+  margin-top:20px;
    
   }
   
 `
+
+const MemberName = styled.p`
+  @media screen and (max-width: 768px) {
+  margin: 0;
+  font-family: 'Noto Sans TC';
+  font-weight:900;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 3%;
+  color: #1A1A1A;
+    }
+`;
+
+const NickName = styled.p`
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    font-family: 'Futura';
+    font-weight:500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 2%;
+    color: #1A1A1A;
+    }
+`;
+
+const SpanEva = styled.span`
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    font-family: 'Futura';
+    font-weight:500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 2%;
+    color: #1A1A1A;
+    }
+`;
 
 
 /* desktop thw newest info style end */
@@ -459,7 +496,7 @@ const OurCouchMembers = () => {
         <Row1>
           <Couch>
             <PicImg src={img1} alt="" />
-            <TextEVA>呂昀<Span3>  <SpanEVA>Eva</SpanEVA>  教練</Span3>  </TextEVA>
+            <TextEVA>呂昀<Span3><SpanEVA>Eva</SpanEVA>123教練</Span3></TextEVA>
           </Couch>
 
           <Couch>
@@ -504,53 +541,7 @@ const OurCouchMembers = () => {
           </Couch>
         </Row3>
       </Picture>
-      <MobileContainer>
-        <Row1>
-          <Pic>
-            <PicImg src={img1} alt="" />
-            <Text>呂昀<Span>Eva教練</Span></Text>
-          </Pic>
 
-          <div>
-            <Text>鍾達威<Span>威廉教練</Span></Text>
-            <PicImg src={img2} alt="" />
-
-          </div>
-
-          <div>
-            <PicImg src={img3} alt="" />
-            <Text>林培中<Span>派派教練</Span></Text>
-          </div>
-
-          <div>
-            <Text2>郭則寬<Span>阿寬教練</Span></Text2>
-            <PicImg src={img4} alt="" />
-
-          </div>
-
-          <div>
-            <PicImg src={img5} alt="" />
-            <Text2>林晏先<Span>先先教練</Span></Text2>
-          </div>
-
-          <div>
-            <Text>顏兆寅<Span>小顏教練</Span></Text>
-            <PicImg src={img6} alt="" />
-
-          </div>
-
-          <div>
-            <PicImg src={img7} alt="" />
-            <Text>林政蔚<Span>政蔚教練</Span></Text>
-          </div>
-
-          <div>
-            <Text>夏振凱<Span>凱凱教練</Span></Text>
-            <PicImg src={img8} alt="" />
-
-          </div>
-        </Row1>
-      </MobileContainer>
 
     </Container>
 
@@ -558,8 +549,8 @@ const OurCouchMembers = () => {
       <Members>
         <img src={img11} alt="" style={{ width: "211px", height: "201px" }} />
         <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
-          <p style={{ margin: 0 }}>呂昀</p>
-          <p style={{ margin: 0 }}>Eva教練</p>
+          <MemberName>呂昀</MemberName>
+          <NickName><SpanEva>Eva</SpanEva>教練</NickName>
         </div>
 
       </Members>
@@ -567,8 +558,8 @@ const OurCouchMembers = () => {
       <Members>
 
         <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
-          <p style={{ margin: 0 }}>鍾達威</p>
-          <p style={{ margin: 0 }}>威廉教練</p>
+          <MemberName>鍾達威</MemberName>
+          <NickName>威廉教練</NickName>
         </div>
         <img src={img22} alt="" style={{ width: "211px", height: "201px" }} />
 
@@ -577,8 +568,8 @@ const OurCouchMembers = () => {
       <Members>
         <img src={img33} alt="" style={{ width: "211px", height: "201px" }} />
         <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
-          <p style={{ margin: 0 }}>林培中</p>
-          <p style={{ margin: 0 }}>派派教練</p>
+          <MemberName>林培中</MemberName>
+          <NickName>派派教練</NickName>
         </div>
 
 
@@ -587,8 +578,8 @@ const OurCouchMembers = () => {
       <Members>
 
         <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
-          <p style={{ margin: 0 }}>郭則寬</p>
-          <p style={{ margin: 0 }}>阿寬教練</p>
+          <MemberName>郭則寬</MemberName>
+          <NickName>阿寬教練</NickName>
         </div>
         <img src={img44} alt="" style={{ width: "211px", height: "201px" }} />
 
@@ -597,8 +588,8 @@ const OurCouchMembers = () => {
       <Members>
         <img src={img55} alt="" style={{ width: "211px", height: "201px" }} />
         <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
-          <p style={{ margin: 0 }}>林晏先</p>
-          <p style={{ margin: 0 }}>派派教練</p>
+          <MemberName>林晏先</MemberName>
+          <NickName>派派教練</NickName>
         </div>
 
 
@@ -607,8 +598,8 @@ const OurCouchMembers = () => {
       <Members>
 
         <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
-          <p style={{ margin: 0 }}>顏兆寅</p>
-          <p style={{ margin: 0 }}>小顏教練</p>
+          <MemberName>顏兆寅</MemberName>
+          <NickName>小顏教練</NickName>
         </div>
         <img src={img66} alt="" style={{ width: "211px", height: "201px" }} />
 
@@ -617,8 +608,8 @@ const OurCouchMembers = () => {
       <Members>
         <img src={img77} alt="" style={{ width: "211px", height: "201px" }} />
         <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
-          <p style={{ margin: 0 }}>林政蔚</p>
-          <p style={{ margin: 0 }}>政蔚教練</p>
+          <MemberName>林政蔚</MemberName>
+          <NickName>政蔚教練</NickName>
         </div>
 
 
@@ -627,13 +618,13 @@ const OurCouchMembers = () => {
       <Members>
 
         <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
-          <p style={{ margin: 0 }}>夏振凱</p>
-          <p style={{ margin: 0 }}>凱凱教練</p>
+          <MemberName>夏振凱</MemberName>
+          <NickName>凱凱教練</NickName>
         </div>
         <img src={img88} alt="" style={{ width: "211px", height: "201px" }} />
 
       </Members>
-      
+
     </MobileContainer>
   </PageContainer>;
 };
