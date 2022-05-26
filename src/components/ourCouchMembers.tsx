@@ -487,6 +487,33 @@ const SpanEva = styled.span`
     }
 `;
 
+const NameComponentLeft = styled.div`
+  display: flex;
+  flex-Direction: column; 
+  margin-left: 20px;
+`;
+
+const NameComponentRight = styled.div`
+  display: flex;
+  flex-Direction: column; 
+  margin-Right: 20px;
+`;
+
+
+const MemberPic = styled.img`
+  width: 211px;
+  height: 201px; 
+
+`;
+
+
+
+
+
+
+
+
+
 
 /* desktop thw newest info style end */
 const OurCouchMembers = () => {
@@ -496,7 +523,7 @@ const OurCouchMembers = () => {
         <Row1>
           <Couch>
             <PicImg src={img1} alt="" />
-            <TextEVA>呂昀<Span3><SpanEVA>Eva</SpanEVA>123教練</Span3></TextEVA>
+            <TextEVA>呂昀<Span3><SpanEVA>Eva</SpanEVA></Span3></TextEVA>
           </Couch>
 
           <Couch>
@@ -547,81 +574,80 @@ const OurCouchMembers = () => {
 
     <MobileContainer>
       <Members>
-        <img src={img11} alt="" style={{ width: "211px", height: "201px" }} />
-        <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+        <MemberPic src={img11} alt="" />
+        <NameComponentLeft>
           <MemberName>呂昀</MemberName>
-          <NickName><SpanEva>Eva</SpanEva>教練</NickName>
-        </div>
+          <NickName><SpanEva>Eva </SpanEva>教練</NickName>
+        </NameComponentLeft>
 
       </Members>
 
       <Members>
 
-        <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
+        <NameComponentRight>
           <MemberName>鍾達威</MemberName>
           <NickName>威廉教練</NickName>
-        </div>
-        <img src={img22} alt="" style={{ width: "211px", height: "201px" }} />
+        </NameComponentRight>
+        <MemberPic src={img22} alt=""  />
 
       </Members>
 
       <Members>
-        <img src={img33} alt="" style={{ width: "211px", height: "201px" }} />
-        <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+        <MemberPic src={img33} alt="" />
+        <NameComponentLeft>
           <MemberName>林培中</MemberName>
           <NickName>派派教練</NickName>
-        </div>
+        </NameComponentLeft>
 
 
       </Members>
 
       <Members>
 
-        <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
+        <NameComponentRight>
           <MemberName>郭則寬</MemberName>
           <NickName>阿寬教練</NickName>
-        </div>
-        <img src={img44} alt="" style={{ width: "211px", height: "201px" }} />
+        </NameComponentRight>
+        <MemberPic src={img44} alt="" />
 
       </Members>
 
       <Members>
-        <img src={img55} alt="" style={{ width: "211px", height: "201px" }} />
-        <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+        <MemberPic src={img55} alt=""  />
+        <NameComponentLeft>
           <MemberName>林晏先</MemberName>
           <NickName>派派教練</NickName>
-        </div>
-
+        </NameComponentLeft>
 
       </Members>
 
       <Members>
 
-        <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
+        <NameComponentRight>
           <MemberName>顏兆寅</MemberName>
           <NickName>小顏教練</NickName>
-        </div>
-        <img src={img66} alt="" style={{ width: "211px", height: "201px" }} />
+        </NameComponentRight>
+        <MemberPic src={img66} alt=""  />
 
       </Members>
 
       <Members>
-        <img src={img77} alt="" style={{ width: "211px", height: "201px" }} />
-        <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+        <MemberPic src={img77} alt=""  />
+        <NameComponentLeft>
           <MemberName>林政蔚</MemberName>
           <NickName>政蔚教練</NickName>
-        </div>
+        </NameComponentLeft>
 
 
       </Members>
 
       <Members>
 
-        <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
+        <NameComponentRight>
           <MemberName>夏振凱</MemberName>
           <NickName>凱凱教練</NickName>
-        </div>
-        <img src={img88} alt="" style={{ width: "211px", height: "201px" }} />
+        </NameComponentRight>
+        <MemberPic src={img88} alt=""  />
 
       </Members>
 
