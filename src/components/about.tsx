@@ -152,7 +152,9 @@ const AboutText = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin:0px 0px 10px 0px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
 
   }
 `;
@@ -300,9 +302,9 @@ const AboutItems = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top:194px;
+  margin-top:82px;
   @media screen and (max-width: 768px) {
-    margin-left:150px;
+    
   }
 `;
 
@@ -534,6 +536,27 @@ const Span33 = styled.span`
 
 `;
 
+const TextContener = styled.div`
+ @media screen and (max-width: 768px) {
+   display: flex;
+   flex-direction:column; 
+   padding: 24px;
+  }
+`;
+
+const AlignContener = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+`;
+
+const StartImg = styled.img`
+  width: 38px;
+  height: 38px ;
+  margin-right: 20px;
+
+`;
 
 
 /* desktop thw newest info style end */
@@ -630,81 +653,78 @@ const About = () => {
 
       </TopArea>
     </Container>
-    {/* <div style={{ display: "flex", flexDirection: "column",padding:"24px" }}>
-      <div style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
-        <img src={start} alt="" style={{width:"38px",height:"38px",marginRight:"20px"}}/>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <p style={{ margin: 0 }}>願景</p>
-          <p style={{ margin: 0 }}>Let's Play</p>
-        </div>
-      </div>
-      <div>
-        <p>
-          我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起
-        </p>
-      </div>
-    </div> */}
+ 
     <MobileContainer>
       <AboutItems>
         <AboutText>關於我們</AboutText>
         <AboutUs>About Us</AboutUs>
       </AboutItems>
       
-      <TopArea>
-        
-        <HopeContainer>
-          <StartImg1 src={start} alt="" />
-          <TextArea>
-            <HOPE>
-              
-              <Hope1>願景</Hope1>
-              <Slogan>Let's Play <Span>Dream</Span></Slogan>
-            </HOPE>
-  
-            <Contants>
-              我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起<Span33>Let's Play</Span33>！
-            </Contants>
-     
-          </TextArea>
-        </HopeContainer>
+      <TextContener>
+        <AlignContener>
+          <StartImg src={start} alt=""  />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Hope1>願景</Hope1>
+            <Slogan>Let's Play <Span>Dream</Span></Slogan>
+          </div>
+        </AlignContener>
+        <div>
+          <p>
+            我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起。
+          </p>
+        </div>
+      </TextContener>
 
-        <HopeContainer2>
-          <StartImg1 src={start} alt="" />
-          <TextArea>
-            <HOPE>
-              <Hope1>使命</Hope1>
-              <Slogan>Let’s Play <Span>Goal</Span></Slogan>
-            </HOPE>
-            <Contants3>我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。</Contants3>
-          </TextArea>
-        </HopeContainer2>
+      <TextContener>
+        <AlignContener>
+          <StartImg src={start} alt="" />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Hope1>使命</Hope1>
+            <Slogan>Let’s Play <Span>Goal</Span></Slogan>
+          </div>
+        </AlignContener>
+        <div>
+          <p>
+            我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。
+          </p>
+        </div>
+      </TextContener>
 
-        <HopeContainer2>
-          <StartImg1 src={start} alt="" />
-          <TextArea>
-            <HOPE>
-              <Hope1>品牌理念</Hope1>
-              <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
-            </HOPE>
-            <Contants3>感受發自內心的快樂，一起來玩吧！
-              品牌的核心價值在於「讓來到 <Span33>Let's Play</Span33> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。</Contants3>
-          </TextArea>
-        </HopeContainer2>
+      <TextContener>
+        <AlignContener>
+          <StartImg src={start} alt="" />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Hope1>品牌理念</Hope1>
+            <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
+          </div>
+        </AlignContener>
+        <div>
+          <p>
+            
+            感受發自內心的快樂，一起來玩吧！品牌的核心價值在於「讓來到 <Span33>Let's Play</Span33> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。
+   
+          </p>
+        </div>
+      </TextContener>
 
-        <HopeContainer2>
-          <StartImg1 src={start} alt="" />
-          <TextArea>
-            <HOPE>
-              <Hope1>教學理念</Hope1>
-              <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
-            </HOPE>
-            <Contants>學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span33>Let’s Play</Span33> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！</Contants>
-          </TextArea>
-        </HopeContainer2>
+      <TextContener>
+        <AlignContener>
+          <StartImg src={start} alt="" />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Hope1>教學理念</Hope1>
+            <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
+          </div>
+        </AlignContener>
+        <div>
+          <p>
+            學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span33>Let’s Play</Span33> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
+          </p>
+        </div>
+      </TextContener>
 
-
-
-      </TopArea>
+      
+      
+      
     </MobileContainer>
 
 
