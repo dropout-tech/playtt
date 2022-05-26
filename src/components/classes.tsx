@@ -178,8 +178,9 @@ const Img2 = styled.img`
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
-    margin-left:35px;
-    margin-top:80px;
+    display:flex;
+    justify-content: center;
+    margin-left:0px;
 
    
   }

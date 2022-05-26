@@ -293,7 +293,7 @@ const BelowText = styled.p`
     flex-direction: column;
     margin: 0px;
     margin-top:40px;
-]
+
   }
 `;
 
