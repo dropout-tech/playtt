@@ -75,12 +75,12 @@ const Picture = styled.div`
 `;
 
 const Text = styled.div`
-  /* width:50%;
+  width:50%;
   display:flex;
   justify-content:center;
   flex-direction: column;
   align-items: flex-start;
-  margin:0px; */
+  margin:0px;
   
  
    @media screen and  (max-width: 768px) {
@@ -88,8 +88,8 @@ const Text = styled.div`
     margin-top:60px;
     display:flex;
     align-items: center;
-    padding:20px;
-flex-direction: column;
+    padding:24px;
+    flex-direction: column;
   }
 `;
 
@@ -114,6 +114,7 @@ const Title1 = styled.p`
     letter-spacing: 0.03em;
     color: #1A1A1A;
     margin-left:2px;
+    margin-top:60px;
    
 
   }
@@ -141,6 +142,7 @@ const Title2 = styled.p`
    letter-spacing: 0.04em;
    color: #1A1A1A;
    margin-top:0px;
+   margin-bottom:40px;
 
   }
 `;
@@ -320,6 +322,12 @@ const Span = styled.span`
   letter-spacing:3%;
 
    @media screen and  (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight:500;
+    font-size:16px;
+    line-height:30px;
+    letter-spacing:2%;
+
     
   }
 `;
@@ -378,8 +386,8 @@ const Story = () => {
       </Picture>
 
       <MobieContent>
-        <h2>我們的故事</h2>
-        <h2>Let’s Play Story</h2>
+        <Title1>我們的故事</Title1>
+        <Title2>Let’s Play Story</Title2>
         <Contant5><Span>Let's Play</Span> 創立於 <Span>2018</Span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球，一起感受其中的樂趣！小孩子來到這裡可以培養信心與專注力、上班族可以擁有用運動釋放壓力的時光、年長者可以實現豐富退休生活的樂趣！</Contant5>
       </MobieContent>
 
