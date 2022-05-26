@@ -201,6 +201,8 @@ const TextContent = styled.p`
    display:flex;
    justify-content: center;
    margin-top:20px;
+   position: relative;
+   z-index:10;
 
   }
 `;

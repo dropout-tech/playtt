@@ -171,7 +171,7 @@ const Title2 = styled.p`
    text-align: center;
    letter-spacing: 0.04em;
    color: #CFD2D3;
-
+   margin-top:-26px;
   }
 `;
 
@@ -270,12 +270,11 @@ const TextContainer = styled.div`
 `;
 
 const MobileContainer = styled.div`
-  margin-top:100px;
+  margin-top:14px;
   width:100%;
   height:100%;
   background: rgba(207, 210, 211,0.2);
   display: flex;
-  padding-top:80px;
   padding-bottom: 80px;
   flex-direction: column;
   margin-right:380px;
@@ -289,10 +288,11 @@ const MobileContainer = styled.div`
 const CircleImg = styled.img`
   width:100%;
   height:200px;
- 
   margin-top:-100px;
   display:flex;
   align-items: center;
+  position: relative;
+  z-index:1;
 
 @media screen and (max-width: 768px) {
   
@@ -385,7 +385,6 @@ const ConTest = () => {
       <ImgContainer>
         <CircleImg src={circle} alt="" />
       </ImgContainer>
-
 
       <TextContainer1>
         <LeftText>
