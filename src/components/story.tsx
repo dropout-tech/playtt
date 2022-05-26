@@ -34,21 +34,25 @@ const Container = styled.div`
  display:flex;
  background:#F5F6F6;
   @media screen and  (max-width: 768px) {
-    width:100% ;
-    height:90%;
-    display:flex;
-    flex-direction:column;
-    margin-top:0px;
-    height:1116px;
- 
-  
+   display:none;
   }
+`;
+
+const MobileContainer = styled.div`
+  
+@media screen and  (max-width: 768px) {
+  width:100% ;
+  height:90%;
+  display:flex;
+  flex-direction:column;
+  }
+
 `;
 
 const Picture = styled.div`
   width:50%;
   display:flex;
-  justify-content:flex-end;
+  justify-content:center;
   align-items:center;
   margin-right:103px;
 ;
@@ -69,19 +73,22 @@ const Picture = styled.div`
 
 `;
 
-const Text = styled.p`
-  width:50%;
+const Text = styled.div`
+  /* width:50%;
   display:flex;
   justify-content:center;
   flex-direction: column;
   align-items: flex-start;
-  margin:0px;
+  margin:0px; */
   
  
    @media screen and  (max-width: 768px) {
+    /* width:100%; */
     margin-top:60px;
-    margin-left:60px;
-
+    display:flex;
+    align-items: center;
+    padding:20px;
+flex-direction: column;
   }
 `;
 
@@ -105,7 +112,7 @@ const Title1 = styled.p`
     text-align: center;
     letter-spacing: 0.03em;
     color: #1A1A1A;
-    margin-left:-20px;
+    margin-left:2px;
    
 
   }
@@ -127,11 +134,13 @@ const Title2 = styled.p`
    font-weight: 700;
    font-size: 18px;
    line-height: 32px;
+   display:flex;
+   justify-content: center;
    text-align: center;
    letter-spacing: 0.04em;
    color: #1A1A1A;
-   margin-left:10px;
-   margin-top:-10px;
+   margin-top:0px;
+
   }
 `;
 
@@ -187,9 +196,8 @@ const Contant = styled.div`
   margin:26px 0px 0px 0px;
 
    @media screen and  (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:240px;
-    margin-left:-25px;
     font-family: 'Futura';
     font-style: normal;
     font-weight: 500;
@@ -199,6 +207,38 @@ const Contant = styled.div`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:40px;
+    margin:0px;
+    
+
+  }
+`;
+
+const Contant5 = styled.p`
+  width:517px;
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+  margin:26px 0px 0px 0px;
+
+   @media screen and  (max-width: 768px) {
+    width:100%;
+    height:240px;
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+    margin-top:40px;
+    margin:0px;
+    
 
   }
 `;
@@ -216,10 +256,10 @@ const Contant2 = styled.p`
   color: #1A1A1A;
   margin-top:24px;
    @media screen and  (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:240px;
     margin-top:20px;
-    margin-left:-25px;
+    /* margin-left:-25px; */
     font-family: 'Futura';
     font-style: normal;
     font-weight: 500;
@@ -283,6 +323,26 @@ const Span = styled.span`
   }
 `;
 
+const MobieContent = styled.div`
+  
+   @media screen and  (max-width: 768px) {
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px;
+    align-items: center;
+  }
+`;
+
+const MobieContent2 = styled.div`
+  
+   @media screen and  (max-width: 768px) {
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px;
+    align-items: center;
+    margin-top:-20px;
+  }
+`;
 
 /* desktop thw newest info style end */
 const Story = () => {
@@ -292,8 +352,8 @@ const Story = () => {
         <ColorpicImg src={colorpic} alt="" />
       </Picture>
 
-
       <Text>
+
         <div>
           <Title1>我們的故事</Title1>
           <Title2>Let’s Play Story</Title2>
@@ -310,6 +370,24 @@ const Story = () => {
 
 
     </Container>
+
+    <MobileContainer>
+      <Picture>
+        <ColorpicImg src={colorpic} alt="" />
+      </Picture>
+
+      <MobieContent>
+        <h2>我們的故事</h2>
+        <h2>Let’s Play Story</h2>
+        <Contant5><Span>Let's Play</Span> 創立於 <Span>2018</Span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球，一起感受其中的樂趣！小孩子來到這裡可以培養信心與專注力、上班族可以擁有用運動釋放壓力的時光、年長者可以實現豐富退休生活的樂趣！</Contant5>
+      </MobieContent>
+
+      <MobieContent2>
+        <Contant5>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！！</Contant5>
+      </MobieContent2>
+
+
+    </MobileContainer>
 
 
 

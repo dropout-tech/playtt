@@ -583,7 +583,7 @@ const Span33 = styled.span`
     font-weight:500;
     font-size:16px;
     line-height:30px;
-    letter-spacing:2%;
+    letter-spacing:0.02em;
     margin:0px;
 
 
