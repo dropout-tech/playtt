@@ -33,7 +33,7 @@ const Container = styled.div`
 
 const MobileContainer = styled.div`
   margin-top:-36px;
-  padding-bottom:80px;
+ 
 @media screen and (min-width: 768px) {
  display:none;
    

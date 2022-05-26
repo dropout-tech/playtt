@@ -137,7 +137,7 @@ const Container2 = styled.div`
  width:100%;
  display: flex;
  padding-bottom: 80px;
- padding-top:180px;
+ padding-top:173px;
  }
 
 `;

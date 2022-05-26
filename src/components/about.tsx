@@ -307,31 +307,7 @@ const AboutItems = styled.div`
 `;
 
 
-const Contants1 = styled.div`
-  width:477px;
-  height:270px;
-  font-family: "Noto Sans TC";
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 36px;
-  letter-spacing: 0.6px;
-  margin-top:-6px;
-  margin-left:4px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.02em;
-    color: #1A1A1A;
-    width:300px;
-    margin-top:8px; 
-    margin-left:0px;
-   
-  
-  }
-`;
+
 
 const Contants = styled.div`
   width:477px;
