@@ -351,7 +351,7 @@ const Contants = styled.div`
     line-height: 30px;
     letter-spacing: 0.02em;
     color: #1A1A1A;
-    width:300px;
+    width:100%;
     margin-left:-36px;
     margin-top:8px; 
 
@@ -488,8 +488,6 @@ const TextArea2 = styled.div`
 
 const MobileContainer = styled.div`
    width:100%;
-   margin-top: -190px;
-   margin-left:-75px;
    @media screen and (min-width: 768px) {
     display:none;
   }
@@ -573,7 +571,7 @@ const About = () => {
       <TopArea>
         <LeftItems>
           <HopeContainer>
-
+            
             <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
@@ -656,18 +654,33 @@ const About = () => {
 
       </TopArea>
     </Container>
-
-    <MobileContainer>
+    <div style={{ display: "flex", flexDirection: "column",padding:"24px" }}>
+      <div style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
+        <img src={start} alt="" style={{width:"38px",height:"38px",marginRight:"20px"}}/>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <p style={{ margin: 0 }}>願景</p>
+          <p style={{ margin: 0 }}>Let's Play</p>
+        </div>
+      </div>
+      <div>
+        <p>
+          我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起
+        </p>
+      </div>
+    </div>
+    {/* <MobileContainer>
       <AboutItems>
         <AboutText>關於我們</AboutText>
         <AboutUs>About Us</AboutUs>
       </AboutItems>
+      
       <TopArea>
-
+        
         <HopeContainer>
           <StartImg1 src={start} alt="" />
           <TextArea>
             <HOPE>
+              
               <Hope1>願景</Hope1>
               <Slogan>Let's Play <Span>Dream</Span></Slogan>
             </HOPE>
@@ -716,7 +729,7 @@ const About = () => {
 
 
       </TopArea>
-    </MobileContainer>
+    </MobileContainer> */}
 
 
 

@@ -36,7 +36,7 @@ const Home = () => {
       <Story />
       <Classes />
       <Couch />
-      {/* <OurCouchMembers /> */}
+      <OurCouchMembers />
       <AlliancePlan />
       <LetsPlayStar />
       <PartnershipAndRecruit />

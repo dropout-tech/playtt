@@ -63,7 +63,7 @@ const PicImg2 = styled.img`
     @media screen and (max-width: 768px) {
     width:211px;
     height:201px;
-    margin-left:-100px;
+ 
   }
 `;
 
@@ -114,9 +114,6 @@ const MobileContainer = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
-  margin-left:5px;
-  width:327px;
   
    
   @media screen and (min-width: 768px) {
@@ -442,6 +439,16 @@ const SpanEVA = styled.span`
   margin-left:10px;
 `;
 
+const Members = styled.div`
+@media screen and (max-width: 768px) {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+   
+  }
+  
+`
 
 
 /* desktop thw newest info style end */
@@ -548,63 +555,85 @@ const OurCouchMembers = () => {
     </Container>
 
     <MobileContainer>
-      <Row1>
-        <Pic>
-          <PicImg src={img11} alt="" />
-          <Name1>
-            <Text11>呂昀<Span>Eva教練</Span></Text11>
-          </Name1>
-        </Pic>
+      <Members>
+        <img src={img11} alt="" style={{ width: "211px", height: "201px" }} />
+        <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+          <p style={{ margin: 0 }}>呂昀</p>
+          <p style={{ margin: 0 }}>Eva教練</p>
+        </div>
 
-        <Pic2>
-          <Name2>
-            <Text>鍾達威<Span2>威廉教練</Span2></Text>
-          </Name2>
-          <PicImg2 src={img22} alt="" />
-        </Pic2>
+      </Members>
 
-        <Pic>
-          <PicImg src={img33} alt="" />
-          <Name1>
-            <Text111>林培中<Span1>派派教練</Span1></Text111>
-          </Name1>
-        </Pic>
+      <Members>
 
-        <Pic2>
-          <Name2>
-            <Text>郭則寬<Span2>阿寬教練</Span2></Text>
-          </Name2>
-          <PicImg2 src={img44} alt="" />
-        </Pic2>
+        <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
+          <p style={{ margin: 0 }}>鍾達威</p>
+          <p style={{ margin: 0 }}>威廉教練</p>
+        </div>
+        <img src={img22} alt="" style={{ width: "211px", height: "201px" }} />
 
-        <Pic>
-          <PicImg src={img55} alt="" />
-          <Name1>
-            <Text111>林晏先<Span1>先先教練</Span1></Text111>
-          </Name1>
-        </Pic>
+      </Members>
 
-        <Pic2>
-          <Name2>
-            <Text>顏兆寅<Span2>小顏教練</Span2></Text>
-          </Name2>
-          <PicImg2 src={img66} alt="" />
-        </Pic2>
+      <Members>
+        <img src={img33} alt="" style={{ width: "211px", height: "201px" }} />
+        <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+          <p style={{ margin: 0 }}>林培中</p>
+          <p style={{ margin: 0 }}>派派教練</p>
+        </div>
 
-        <Pic>
-          <PicImg src={img77} alt="" />
-          <Name1>
-            <Text111>林政蔚<Span1>政蔚教練</Span1></Text111>
-          </Name1>
-        </Pic>
 
-        <Pic2>
-          <Name2>
-            <Text>夏振凱<Span2>凱凱教練</Span2></Text>
-          </Name2>
-          <PicImg2 src={img88} alt="" />
-        </Pic2>
-      </Row1>
+      </Members>
+
+      <Members>
+
+        <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
+          <p style={{ margin: 0 }}>郭則寬</p>
+          <p style={{ margin: 0 }}>阿寬教練</p>
+        </div>
+        <img src={img44} alt="" style={{ width: "211px", height: "201px" }} />
+
+      </Members>
+
+      <Members>
+        <img src={img55} alt="" style={{ width: "211px", height: "201px" }} />
+        <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+          <p style={{ margin: 0 }}>林晏先</p>
+          <p style={{ margin: 0 }}>派派教練</p>
+        </div>
+
+
+      </Members>
+
+      <Members>
+
+        <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
+          <p style={{ margin: 0 }}>顏兆寅</p>
+          <p style={{ margin: 0 }}>小顏教練</p>
+        </div>
+        <img src={img66} alt="" style={{ width: "211px", height: "201px" }} />
+
+      </Members>
+
+      <Members>
+        <img src={img77} alt="" style={{ width: "211px", height: "201px" }} />
+        <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+          <p style={{ margin: 0 }}>林政蔚</p>
+          <p style={{ margin: 0 }}>政蔚教練</p>
+        </div>
+
+
+      </Members>
+
+      <Members>
+
+        <div style={{ display: "flex", flexDirection: "column", marginRight: "20px" }}>
+          <p style={{ margin: 0 }}>夏振凱</p>
+          <p style={{ margin: 0 }}>凱凱教練</p>
+        </div>
+        <img src={img88} alt="" style={{ width: "211px", height: "201px" }} />
+
+      </Members>
+      
     </MobileContainer>
   </PageContainer>;
 };
