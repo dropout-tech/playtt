@@ -170,17 +170,18 @@ const Title4 = styled.p`
   font-family: 'Noto Sans TC';
   font-weight: 900;
   font-size: 26px;
+  line-height:40px;
+  letter-spacing:4%;
   margin:0px;
 
    @media screen and  (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 700;
+    font-family: 'Noto Sans TC';
+    font-weight: 900;
     font-size: 20px;
-    line-height: 36px;
-    text-align: center;
-    letter-spacing: 0.03em;
-    color: #1A1A1A;
+    line-height:36px;
+    letter-spacing:3%;
+    display:flex;
+    justify-content:center;
 
   }
 
@@ -286,7 +287,13 @@ const BelowText = styled.p`
   margin:20px 210px 0px 0px;
    @media screen and  (max-width: 768px) {
     margin-top:24px;
-    width:300px
+    width:300px;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    margin: 0px;
+    margin-top:40px;
+]
   }
 `;
 
@@ -298,7 +305,9 @@ const Span1 = styled.span`
   line-height: 40px;
   letter-spacing: 1.04px;
    @media screen and  (max-width: 768px) {
-    
+     font-size: 20px;
+     line-height: 36px;
+     letter-spacing: 3%;
   }
 `;
 
@@ -310,7 +319,9 @@ const Span2 = styled.span`
   line-height: 40px;
   letter-spacing: 1.04px;
    @media screen and  (max-width: 768px) {
-    
+     font-size: 20px;
+     line-height: 36px;
+     letter-spacing: 3%;
   }
 `;
 
@@ -353,6 +364,22 @@ const MobieContent2 = styled.div`
   }
 `;
 
+const Span3 = styled.span`
+    font-family: 'Futura';
+    font-weight:700;
+    font-size:26px;
+    line-height:40px;
+    letter-spacing:4%;
+   
+   @media screen and  (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight:700;
+    font-size:20px;
+    line-height:36px;
+    letter-spacing:3%;
+  }
+`;
+
 /* desktop thw newest info style end */
 const Story = () => {
   return <PageContainer>
@@ -372,7 +399,7 @@ const Story = () => {
         </div>
 
         <BelowText>
-          <Title3>Let's Play <Span1>運動</Span1> X <Span2>創新</Span2></Title3>
+          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1> X <Span2>創新</Span2></Title3>
           <Title4>邀請大家一起來玩！</Title4>
         </BelowText>
       </Text>
@@ -393,6 +420,11 @@ const Story = () => {
 
       <MobieContent2>
         <Contant5>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！！</Contant5>
+
+        <BelowText>
+          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span> X </Span><Span2>創新</Span2></Title3>
+          <Title4>邀請大家一起來玩！</Title4>
+        </BelowText>
       </MobieContent2>
 
 
