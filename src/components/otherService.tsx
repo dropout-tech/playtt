@@ -155,11 +155,12 @@ const TextContainer = styled.div`
   margin-top:10px;
   padding-top:10px;
     @media screen and (max-width: 768px) {
-     margin-top:-10px;
-     padding-left:30px;
-     margin-left:40px;
-     width:100%;
+     margin-left:0px;
+     margin-top:20px;
+     padding-top:0px;
      height:327px;
+     width:100%;
+ 
   }
 `;
 
@@ -235,7 +236,7 @@ const ImgContainer = styled.div`
 
 const MobileContainer = styled.div`
   display:none;
-  @media screen and (mix-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding-top:80px;
     padding-left:24px;
     padding-right:24px;

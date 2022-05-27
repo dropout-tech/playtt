@@ -93,7 +93,7 @@ const TopLeftArea = styled.div`
 
   @media screen and (max-width: 768px) {
     width:90%;
-    margin-top:160px;
+    margin-top:199px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -430,6 +430,7 @@ const MobileContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top:40px;
+    padding-bottom:19px;
  
     
    
@@ -626,6 +627,7 @@ color: #005CB9;
 `;
 
 const MobileTitle = styled.div`
+  
   @media screen and (max-width: 768px) {
    margin-top:54px;
  ;
