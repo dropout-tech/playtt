@@ -81,7 +81,8 @@ const TextContainer2 = styled.div`
     margin-top:-24px;
     justify-content:center;
     margin-left:-25px;
-   
+    margin-top:-7px;
+    margin-bottom:65px;
   }
 `;
 

@@ -29,7 +29,7 @@ const Container = styled.div`
 const TextContainer = styled.div`
  
  @media screen and (max-width: 768px) {
-    
+    margin-top:40px;
   }
 
 
@@ -217,9 +217,12 @@ const TestpicImg = styled.img`
    @media screen and (max-width: 768px) {
     width:251px;
     height:256px;
-    margin-left:82px;
+    margin-left:96px;
     margin-right:0px;
     margin-top:120px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     
     
   }
@@ -250,8 +253,9 @@ const Text123 = styled.p`
 `;
 
 const MobileContainer = styled.div`
-  margin-top:-120px;
+  margin-top:60px;
   padding:24px;
+
  
  @media screen and (min-width: 768px) {
     display:none;

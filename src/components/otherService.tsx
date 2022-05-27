@@ -79,7 +79,7 @@ const Title2 = styled.p`
   margin-left:20px;
     @media screen and (max-width: 768px) {
     margin-left:40px;
-    margin-top:-36px;
+    margin-top:-26px;
     font-size: 26px;
     line-height: 40px;
   }
@@ -155,10 +155,10 @@ const TextContainer = styled.div`
   margin-top:10px;
   padding-top:10px;
     @media screen and (max-width: 768px) {
-     margin-top:30px;
+     margin-top:-10px;
      padding-left:30px;
      margin-left:40px;
-     width:327px;
+     width:100%;
      height:327px;
   }
 `;
@@ -237,8 +237,9 @@ const MobileContainer = styled.div`
   display:none;
   @media screen and (mix-width: 768px) {
     padding-top:80px;
-
-
+    padding-left:24px;
+    padding-right:24px;
+    width:100%;
     }
 `;
 
