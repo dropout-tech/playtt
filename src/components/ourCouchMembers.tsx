@@ -56,16 +56,7 @@ const PicImg = styled.img`
   }
 `;
 
-const PicImg2 = styled.img`
-  width:310px;
-  height:300px;
-  margin-left:80px;
-    @media screen and (max-width: 768px) {
-    width:211px;
-    height:201px;
- 
-  }
-`;
+
 
 const Row1 = styled.div`
   display: flex;
@@ -184,66 +175,6 @@ const TextEVA = styled.p`
   }
 `;
 
-const Text11 = styled.p`
-  margin-left:170px;
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;  
-  @media screen and (max-width: 768px) {
-   margin:0px;
-   display:flex;
-   flex-direction: column;
-   margin-right:100px;
-   font-family: 'Noto Sans TC';
-   font-style: normal;
-   font-weight: 900;
-   font-size: 20px;
-   line-height: 36px;
-   display: flex;
-   align-items: center;
-   letter-spacing: 0.03em;
-   color: #1A1A1A;
-   
-
-  }
-`;
-
-const Text111 = styled.p`
-  margin-left:170px;
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;  
-  @media screen and (max-width: 768px) {
-   margin-left:0px;
-   display:flex;
-   flex-direction: column;
-   margin-right:100px;
-   font-family: 'Noto Sans TC';
-   font-style: normal;
-   font-weight: 900;
-   font-size: 20px;
-   line-height: 36px;
-   display: flex;
-   align-items: center;
-   justify-content:center;
-   letter-spacing: 0.03em;
-   color: #1A1A1A;
- 
-
-  }
-`;
 
 const Text2 = styled.p`
   margin-left:200px;
@@ -303,60 +234,6 @@ const Span = styled.span`
 `;
 
 
-const Span1 = styled.span`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin-left:10px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    display: flex;
-    align-items: flex-start;
-    letter-spacing: 0.02em;
-    color: #1A1A1A;
-    width:100px;
-    margin-left:40px;
-  }
-`;
-
-const Span2 = styled.span`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin-left:10px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.02em;
-    color: #1A1A1A;
-    width:100px;
-    margin-left:30px;
-    
-  
-    
-  }
-`;
 
 const Span3 = styled.span`
   font-family: 'Noto Sans TC';
@@ -384,47 +261,6 @@ const Span3 = styled.span`
   }
 `;
 
-
-const Pic = styled.div`
-  @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    flex-direction: row;
-    margin-top:20px;
-  }
-`;
-
-const Pic2 = styled.div`
-  @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    flex-direction: row;
-    margin-top:20px;
-  }
-`;
-
-
-const Name1 = styled.div`
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    margin-top:40px;
- 
-  
-  }
-  
-`;
-const Name2 = styled.div`
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    margin-top:40px;
-   
-  }
-  
-`;
 
 const Couch = styled.div`
   margin-left:50px;

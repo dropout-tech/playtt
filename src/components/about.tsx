@@ -336,30 +336,7 @@ const Contants = styled.div`
   }
 `;
 
-const Contants3 = styled.div`
-  width:477px;
-  height:190px;
-  font-family: "Noto Sans TC";
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 36px;
-  letter-spacing: 0.6px;
-  margin-top:-6px;
-  margin-left:4px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.02em;
-    color: #1A1A1A;
-    width:300px;
-    margin-left:-27px;
-    margin-top:8px; 
 
-  }
-`;
 const Span = styled.span`
   font-family: 'Futura';
   font-style: normal;
@@ -386,16 +363,6 @@ const HopeContainer = styled.div`
   
   @media screen and (max-width: 768px) {
    margin-left:8px;
-  }
-`;
-
-const HopeContainer2 = styled.div`
-  display:flex;
-  justify-content:center;
-  margin:0px;
-  
-  @media screen and (max-width: 768px) {
-   margin-top:-30px;
   }
 `;
 
@@ -506,15 +473,6 @@ const Span2 = styled.span`
 `;
 
 
-const HOPE = styled.div`
- @media screen and (max-width: 768px) {
-   display:flex;
-   justify-content:flex-start;
-   align-items: flex-start;
-   flex-direction: column;
-   margin-left:-10px;
-  }
-`;
 
 const Span33 = styled.span`
   font-family: 'Futura';
