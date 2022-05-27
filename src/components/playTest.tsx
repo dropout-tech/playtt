@@ -50,7 +50,8 @@ const Text2 = styled.div`
     display:flex;
     flex-direction: column;
     padding-left:30px;
-    margin-top:-42px;
+    margin-top:-36px;
+   
   }
 `;
 
@@ -200,6 +201,8 @@ const TextContent = styled.p`
    display:flex;
    justify-content: center;
    margin-top:20px;
+   position: relative;
+   z-index:10;
 
   }
 `;
@@ -214,7 +217,7 @@ const TestpicImg = styled.img`
    @media screen and (max-width: 768px) {
     width:251px;
     height:256px;
-    margin-left:80px;
+    margin-left:82px;
     margin-right:0px;
     margin-top:120px;
     
@@ -248,6 +251,7 @@ const Text123 = styled.p`
 
 const MobileContainer = styled.div`
   margin-top:-120px;
+  padding:24px;
  
  @media screen and (min-width: 768px) {
     display:none;

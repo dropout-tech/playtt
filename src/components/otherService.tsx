@@ -26,6 +26,7 @@ const Container = styled.div`
  margin-left:-40px;
   @media screen and (max-width: 768px) {
   margin-top:30px;
+  padding-bottom: 00px;
   }
 `;
 
@@ -236,7 +237,7 @@ const MobileContainer = styled.div`
   display:none;
   @media screen and (mix-width: 768px) {
     padding-top:80px;
-    padding-bottom: 80px;
+
 
     }
 `;

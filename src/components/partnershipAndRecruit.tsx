@@ -173,9 +173,6 @@ const BigTitle = styled.p`
     font-weight: 900;
     font-size: 20px;
     line-height: 36px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     letter-spacing: 0.03em;
     color: #FFFFFF;
     transform: matrix(1, 0, 0, 1, 0, 0);
@@ -377,7 +374,13 @@ const Sapn2 = styled.span`
  font-size: 30px;
  line-height: 44px;
  letter-spacing: 0.04em;
-
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 3%;
+  }
 `;
 
 /* desktop thw newest info style end */
@@ -408,7 +411,7 @@ const PartnershipAndRecruit = () => {
                 <p style={{ margin: 0 }}>三峽運動中心</p>
                 <p style={{ margin: 0 }}>中正運動中心</p>
                 <p style={{ margin: 0 }}>等 ⋯⋯</p>
-               </TextkeyIn2>
+              </TextkeyIn2>
             </WhiteArea>
 
           </Text>

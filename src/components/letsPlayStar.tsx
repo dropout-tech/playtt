@@ -23,7 +23,7 @@ const Container = styled.div`
  margin-top:91px;
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
-    margin-top:-56px;
+    margin-top:-46px;
   }
 
 `;
@@ -59,6 +59,7 @@ const Title2 = styled.p`
   @media screen and (max-width: 768px) {
     font-size: 26px;
     line-height: 40px;
+    margin-top:-26px;
   }
 `;
 const Title3 = styled.p`
@@ -83,6 +84,7 @@ const Title3 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-top:8px;
   }
 `;
 const Title5 = styled.p`
@@ -136,6 +138,7 @@ const Title4 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-top:8px;
   }
 `;
 

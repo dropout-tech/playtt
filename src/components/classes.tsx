@@ -178,8 +178,9 @@ const Img2 = styled.img`
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
-    margin-left:35px;
-    margin-top:80px;
+    display:flex;
+    justify-content: center;
+    margin-left:0px;
 
    
   }
@@ -452,6 +453,13 @@ const Span = styled.span`
   font-size:20px;
   line-height:36px;
   letter-spacing:3%;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight:500;
+    font-size:16px;
+    line-height:32px;
+    letter-spacing:4%;
+    }
 `;
 
 

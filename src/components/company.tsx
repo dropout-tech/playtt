@@ -42,6 +42,8 @@ const BelowArea = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
+    margin-left:0px;
+     margin-top:20px;
 
   }
 
@@ -60,6 +62,7 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:327px;
     height:84px;
+    margin-top:-8px;
   ;
   }
 `;
@@ -94,6 +97,8 @@ const TopLeftArea = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-left:0px;
+   
   }
 `;
 
@@ -106,14 +111,14 @@ const TextArea = styled.div`
  margin-top:50px;
 
   @media screen and (max-width: 768px) {
-    width:327px;
+    width:279px;
     height:468px;
     display:flex;  
     justify-content: center;
     align-items:center;
-    margin-right:30px;
     margin-top:0px;
-    
+    padding-left:24px;
+    padding-right:24px;
   }
 `;
 
@@ -124,6 +129,7 @@ const TextArea1 = styled.div`
   @media screen and (max-width: 768px) {
    margin-bottom:30px;
    margin-left:0px;
+   margin-top:-9px;
   }
 `;
 
@@ -158,22 +164,19 @@ const Text3 = styled.p`
   color: #3C3D3D;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 28px;
-/* identical to box height, or 200% */
-
-letter-spacing: 0.06em;
-
-/* gray */
-
-color: #3C3D3D;
-
-    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em; 
+    color: #3C3D3D;
+   
+  
   }
   
 `;
+
+
 const Text = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
@@ -283,6 +286,7 @@ const Title = styled.p`
     align-items: center;
     text-align: center;
     letter-spacing: 0.03em;
+    margin-top:0px;
   }
 `;
 
@@ -307,19 +311,15 @@ const TopBelow = styled.div`
   margin-left:160px;
    @media screen and (max-width: 768px) {
    display:flex;
-   justify-content:center;
+   justify-content:flex-start;
    align-items:flex-start;
    flex-direction:column;
-   margin-top:-100px;
-   margin-left:200px;
-  }
-
- 
- 
-
- @media screen and (max-width: 768px) {
+   margin-top:24px;
+   padding-left:24px;
+   padding-right:24px;
    margin-left:0px;
   }
+
 
 `;
 
@@ -329,6 +329,8 @@ const UnderBelow = styled.div`
 
  @media screen and (max-width: 768px) {
     margin-left:0px;
+    padding-left:24px;
+    padding-right:24px;
   }
   
 `;
@@ -353,6 +355,8 @@ const Title2 = styled.p`
     letter-spacing: 0.04em;
     color: #1A1A1A;
     margin:0px;
+  
+    
   }
 `;
 
@@ -393,16 +397,42 @@ const SmallTitle = styled.p`
   }
 `;
 
+const SmallTitle1 = styled.p`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #005CB9;
+  margin-bottom:0px;
+   @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    color: #005CB9;
+    margin-top:0px;
+  }
+`;
+
+
 const MobileContainer = styled.div`
   display:none;
  @media screen and (max-width: 768px) {
     background: #38D430;
     width:100%;
-    height:40%;
+    height:1709px;
     display:flex;
+    justify-content:center;
     flex-direction: column;
     align-items: center;
-    margin-top:164px;
+    margin-top:40px;
+ 
+    
+   
   }
 
 `;
@@ -412,6 +442,7 @@ const Column = styled.div`
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
+    margin-top:6px;
   }
 `;
 
@@ -455,6 +486,7 @@ const TitleTwo = styled.p`
    line-height: 40px;
    text-align: center;
    letter-spacing: 4%;
+   margin-bottom:0px;
   }
 `;
 
@@ -486,6 +518,34 @@ const Span = styled.span`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #005CB9;
+  }
+`;
+
+const Span1 = styled.span`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color:  #1A1A1A;
+  }
 `;
 
 
@@ -497,6 +557,8 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top:-92px;
+ 
   }
 `;
 
@@ -507,6 +569,7 @@ font-size: 18px;
 line-height: 32px;
 letter-spacing: 0.72px;
 color:#1A1A1A;
+
 
 `;
 
@@ -547,6 +610,8 @@ const Text33 = styled.div`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-top:-14px;
+   
 
   }
 `;
@@ -562,7 +627,8 @@ color: #005CB9;
 
 const MobileTitle = styled.div`
   @media screen and (max-width: 768px) {
-    margin-top:-200px;
+   margin-top:54px;
+ ;
   }
 
 `;
@@ -659,12 +725,15 @@ const Company = () => {
         </BelowArea>
       </Background>
     </Container>
+    
+    <MobileTitle>
+      <TitleOne>聯絡我們</TitleOne>
+      <TitleTwo>Contact Us</TitleTwo>
+    </MobileTitle>
+
 
     <MobileContainer>
-      <MobileTitle>
-        <TitleOne>聯絡我們</TitleOne>
-        <TitleTwo>Contact Us</TitleTwo>
-      </MobileTitle>
+  
       <TopLeftArea>
         <TopContainer>
           <Background1>
@@ -674,28 +743,27 @@ const Company = () => {
             <TextArea1>
               <Column>
                 <Text3>地址</Text3>
-                <Text33>新北市蘆洲區長樂路106號3樓</Text33>
+                <Text33>新北市蘆洲區長樂路<Span1>106</Span1>106號<Span1>3</Span1>樓</Text33>
               </Column>
               <Column>
                 <Text3>連絡電話</Text3>
-                <Text33>0988 521 012</Text33>
+                <Text33><Span1>0988 521 012</Span1></Text33>
               </Column>
 
               <Column>
                 <Text3>信箱</Text3>
-                <Text33>playpp2018@gmail.com</Text33>
+                <Text33> <Span1>playpp2018@gmail.com</Span1></Text33>
               </Column>
 
               <Column>
                 <Text3>總公司客服時間</Text3>
+                <Text33>週一至週五 <Span1> 10:00–19:00</Span1>（週末請撥各館電話）</Text33>
               </Column>
 
               <Column>
-                <Text3>週一至週五 10:00–19:00（週末請撥各館電話）</Text3>
-              </Column>
-
-              <Text3>創辦人 / 總教練</Text3>
-              <Text33>郭教練 0988 521 012</Text33>
+                <Text3>創辦人 / 總教練</Text3>
+                <Text33>郭教練 <Span1> 0988 521 012</Span1></Text33>
+                </Column>
             </TextArea1>
 
           </TextArea>
@@ -710,31 +778,31 @@ const Company = () => {
         </Background2>
         <BelowTextContainer>
           <TopBelow>
-            <Title2>分館資訊</Title2>
+            <Title>分館資訊</Title>
 
             <div>
-              <SmallTitle>各館營業時間</SmallTitle>
-              <Text>週一至週五 13:00–21:00　週六日<br /> 9:00–19:00</Text>
+              <SmallTitle1>各館營業時間</SmallTitle1>
+              <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日<br /> <Span1> 9:00–19:00</Span1></Text>
             </div>
 
             <div>
-              <SmallTitle>Let's Play 蘆洲店 － 捷運蘆洲</SmallTitle>
+              <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
               <Text>台北市中正區金山南路一段121號</Text>
-              <Text>02 2356 7106</Text>
+              <Text><Span1> 02 2356 7106</Span1></Text>
 
             </div>
 
             <div>
-              <SmallTitle>Let's Play 新莊店 X 卓越乒乓 － 捷運頭前庄</SmallTitle>
+              <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
               <Text>台北市新莊區民樂街37號B1</Text>
-              <Text>02 2990 0566</Text>
+              <Text><Span1>02 2990 0566</Span1></Text>
 
             </div>
 
             <div>
-              <SmallTitle>Let's Play 善導寺店 X 乒乓世界 － 捷運善導寺</SmallTitle>
+              <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
               <Text>台北市中正區杭州南路一段63號B1</Text>
-              <Text>02 2391 9659</Text>
+              <Text><Span1>02 2391 9659</Span1></Text>
 
             </div>
           </TopBelow>
@@ -742,15 +810,15 @@ const Company = () => {
           <UnderBelow>
             <Title>聯盟場館經營</Title>
             <div>
-              <SmallTitle>ONWARD TT 乒乓吧 X Let's Play － 捷運南港 & 昆陽</SmallTitle>
+              <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
               <Text>台北市南港區南港路二段141號1樓</Text>
-              <Text>02 2651 0652</Text>
+              <Text><Span1>02 2651 0652</Span1></Text>
             </div>
 
             <div>
-              <SmallTitle>舞動華江高中 & Let's Play － 捷運龍山寺</SmallTitle>
+              <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
               <Text>台北市萬華區西藏路213號</Text>
-              <Text>02 2339 6689</Text>
+              <Text> <Span1>02 2339 6689</Span1></Text>
             </div>
 
           </UnderBelow>

@@ -171,7 +171,7 @@ const Title2 = styled.p`
    text-align: center;
    letter-spacing: 0.04em;
    color: #CFD2D3;
-
+   margin-top:-26px;
   }
 `;
 
@@ -270,16 +270,15 @@ const TextContainer = styled.div`
 `;
 
 const MobileContainer = styled.div`
-  margin-top:100px;
+  margin-top:14px;
   width:100%;
   height:100%;
   background: rgba(207, 210, 211,0.2);
   display: flex;
-  padding-top:80px;
-  padding-bottom: 80px;
   flex-direction: column;
   margin-right:380px;
-
+  padding-left:24px;
+  padding-right:24px;
  @media screen and (min-width: 768px) {
   display:none;
  }
@@ -289,10 +288,11 @@ const MobileContainer = styled.div`
 const CircleImg = styled.img`
   width:100%;
   height:200px;
- 
   margin-top:-100px;
   display:flex;
   align-items: center;
+  position: relative;
+  z-index:1;
 
 @media screen and (max-width: 768px) {
   
@@ -386,14 +386,13 @@ const ConTest = () => {
         <CircleImg src={circle} alt="" />
       </ImgContainer>
 
-
       <TextContainer1>
         <LeftText>
           <Ball>
             <Title1>桌球賽事</Title1>
             <Title2>Let’s Play Match</Title2>
           </Ball>
-          <TextContent>比賽可以幫助你們靈活應用桌球小<br />技巧，是很好的自我檢視方式。</TextContent>
+          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
         </LeftText>
       </TextContainer1>
 
@@ -406,7 +405,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                由<Span>Let's Play</Span> 發出邀請，讓小小選手們有<br />發光表現的舞台。
+                由<Span>Let's Play</Span> 發出邀請，讓小小選手們有發光表現的舞台。
               </Text>
             </div>
           </TextContainer>
@@ -417,7 +416,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                於台灣桌球積分賽平台刊登，是一個訓練比<br />賽經驗的平台，每一個月最少兩次的比賽。
+                於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
               </Text>
             </div>
           </TextContainer>
@@ -428,7 +427,7 @@ const ConTest = () => {
             </Background>
             <div>
               <Text>
-                <Span>Let's Play</Span> 分店館內學員的定期對內交流<br />比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+                <Span>Let's Play</Span> 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
               </Text>
             </div>
           </TextContainer>

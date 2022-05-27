@@ -56,16 +56,7 @@ const PicImg = styled.img`
   }
 `;
 
-const PicImg2 = styled.img`
-  width:310px;
-  height:300px;
-  margin-left:80px;
-    @media screen and (max-width: 768px) {
-    width:211px;
-    height:201px;
-    margin-left:-100px;
-  }
-`;
+
 
 const Row1 = styled.div`
   display: flex;
@@ -75,7 +66,7 @@ const Row1 = styled.div`
     display: flex;
     justify-content:center;
     flex-direction: column;
-   
+  
   }
 `;
 
@@ -114,12 +105,13 @@ const MobileContainer = styled.div`
   display:flex;
   flex-direction: column;
   align-items: center;
-  margin-left:5px;
-  width:327px;
+  margin-top:17px;
   
    
   @media screen and (min-width: 768px) {
     display:none;
+   
+   
    
   }
 `;
@@ -146,6 +138,7 @@ const Text = styled.p`
    font-size: 20px;
    line-height: 36px;
    display: flex;
+   justify-content:center;
    align-items: center;
    letter-spacing: 0.03em;
    color: #1A1A1A;
@@ -166,10 +159,9 @@ const TextEVA = styled.p`
   color: #1A1A1A;
   margin-left:170px;  
   @media screen and (max-width: 768px) {
-   margin-left:0px;
+   margin:0px;
    display:flex;
    flex-direction: column;
-   margin-right:100px;
    font-family: 'Noto Sans TC';
    font-style: normal;
    font-weight: 900;
@@ -183,65 +175,6 @@ const TextEVA = styled.p`
   }
 `;
 
-const Text11 = styled.p`
-  margin-left:170px;
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;  
-  @media screen and (max-width: 768px) {
-   margin-left:0px;
-   display:flex;
-   flex-direction: column;
-   margin-right:100px;
-   font-family: 'Noto Sans TC';
-   font-style: normal;
-   font-weight: 900;
-   font-size: 20px;
-   line-height: 36px;
-   display: flex;
-   align-items: center;
-   letter-spacing: 0.03em;
-   color: #1A1A1A;
-   margin-left:-45px;
-
-  }
-`;
-
-const Text111 = styled.p`
-  margin-left:170px;
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;  
-  @media screen and (max-width: 768px) {
-   margin-left:0px;
-   display:flex;
-   flex-direction: column;
-   margin-right:100px;
-   font-family: 'Noto Sans TC';
-   font-style: normal;
-   font-weight: 900;
-   font-size: 20px;
-   line-height: 36px;
-   display: flex;
-   align-items: center;
-   letter-spacing: 0.03em;
-   color: #1A1A1A;
-   margin-left:-20px;
-
-  }
-`;
 
 const Text2 = styled.p`
   margin-left:200px;
@@ -265,6 +198,7 @@ const Text2 = styled.p`
    font-size: 20px;
    line-height: 36px;
    display: flex;
+   justify-content:center;
    align-items: center;
    letter-spacing: 0.03em;
    color: #1A1A1A;
@@ -300,60 +234,6 @@ const Span = styled.span`
 `;
 
 
-const Span1 = styled.span`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin-left:10px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    display: flex;
-    align-items: flex-start;
-    letter-spacing: 0.02em;
-    color: #1A1A1A;
-    width:100px;
-    margin-left:40px;
-  }
-`;
-
-const Span2 = styled.span`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin-left:10px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.02em;
-    color: #1A1A1A;
-    width:100px;
-    margin-left:30px;
-    
-  
-    
-  }
-`;
 
 const Span3 = styled.span`
   font-family: 'Noto Sans TC';
@@ -382,46 +262,6 @@ const Span3 = styled.span`
 `;
 
 
-const Pic = styled.div`
-  @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    flex-direction: row;
-    margin-top:20px;
-  }
-`;
-
-const Pic2 = styled.div`
-  @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    flex-direction: row;
-    margin-top:20px;
-  }
-`;
-
-
-const Name1 = styled.div`
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    margin-top:40px;
-   
-  }
-  
-`;
-const Name2 = styled.div`
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    margin-top:40px;
-   
-  }
-  
-`;
-
 const Couch = styled.div`
   margin-left:50px;
 
@@ -436,6 +276,80 @@ const SpanEVA = styled.span`
   margin-left:10px;
 `;
 
+const Members = styled.div`
+@media screen and (max-width: 768px) {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+  margin-top:20px;
+   
+  }
+  
+`
+
+const MemberName = styled.p`
+  @media screen and (max-width: 768px) {
+  margin: 0;
+  font-family: 'Noto Sans TC';
+  font-weight:900;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 3%;
+  color: #1A1A1A;
+    }
+`;
+
+const NickName = styled.p`
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    font-family: 'Futura';
+    font-weight:500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 2%;
+    color: #1A1A1A;
+    }
+`;
+
+const SpanEva = styled.span`
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    font-family: 'Futura';
+    font-weight:500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 2%;
+    color: #1A1A1A;
+    }
+`;
+
+const NameComponentLeft = styled.div`
+  display: flex;
+  flex-Direction: column; 
+  margin-left: 20px;
+`;
+
+const NameComponentRight = styled.div`
+  display: flex;
+  flex-Direction: column; 
+  margin-Right: 20px;
+`;
+
+
+const MemberPic = styled.img`
+  width: 211px;
+  height: 201px; 
+
+`;
+
+
+
+
+
+
+
+
 
 
 /* desktop thw newest info style end */
@@ -446,7 +360,7 @@ const OurCouchMembers = () => {
         <Row1>
           <Couch>
             <PicImg src={img1} alt="" />
-            <TextEVA>呂昀<Span3>  <SpanEVA>Eva</SpanEVA>  教練</Span3>  </TextEVA>
+            <TextEVA>呂昀<Span3><SpanEVA>Eva</SpanEVA></Span3></TextEVA>
           </Couch>
 
           <Couch>
@@ -491,114 +405,89 @@ const OurCouchMembers = () => {
           </Couch>
         </Row3>
       </Picture>
-      <MobileContainer>
-        <Row1>
-          <Pic>
-            <PicImg src={img1} alt="" />
-            <Text>呂昀<Span>Eva教練</Span></Text>
-          </Pic>
 
-          <div>
-            <Text>鍾達威<Span>威廉教練</Span></Text>
-            <PicImg src={img2} alt="" />
-
-          </div>
-
-          <div>
-            <PicImg src={img3} alt="" />
-            <Text>林培中<Span>派派教練</Span></Text>
-          </div>
-
-          <div>
-            <Text2>郭則寬<Span>阿寬教練</Span></Text2>
-            <PicImg src={img4} alt="" />
-
-          </div>
-
-          <div>
-            <PicImg src={img5} alt="" />
-            <Text2>林晏先<Span>先先教練</Span></Text2>
-          </div>
-
-          <div>
-            <Text>顏兆寅<Span>小顏教練</Span></Text>
-            <PicImg src={img6} alt="" />
-
-          </div>
-
-          <div>
-            <PicImg src={img7} alt="" />
-            <Text>林政蔚<Span>政蔚教練</Span></Text>
-          </div>
-
-          <div>
-            <Text>夏振凱<Span>凱凱教練</Span></Text>
-            <PicImg src={img8} alt="" />
-
-          </div>
-        </Row1>
-      </MobileContainer>
 
     </Container>
 
     <MobileContainer>
-      <Row1>
-        <Pic>
-          <PicImg src={img11} alt="" />
-          <Name1>
-            <Text11>呂昀<Span>Eva教練</Span></Text11>
-          </Name1>
-        </Pic>
+      <Members>
+        <MemberPic src={img11} alt="" />
+        <NameComponentLeft>
+          <MemberName>呂昀</MemberName>
+          <NickName><SpanEva>Eva </SpanEva>教練</NickName>
+        </NameComponentLeft>
 
-        <Pic2>
-          <Name2>
-            <Text>鍾達威<Span2>威廉教練</Span2></Text>
-          </Name2>
-          <PicImg2 src={img22} alt="" />
-        </Pic2>
+      </Members>
 
-        <Pic>
-          <PicImg src={img33} alt="" />
-          <Name1>
-            <Text111>林培中<Span1>派派教練</Span1></Text111>
-          </Name1>
-        </Pic>
+      <Members>
 
-        <Pic2>
-          <Name2>
-            <Text>郭則寬<Span2>阿寬教練</Span2></Text>
-          </Name2>
-          <PicImg2 src={img44} alt="" />
-        </Pic2>
+        <NameComponentRight>
+          <MemberName>鍾達威</MemberName>
+          <NickName>威廉教練</NickName>
+        </NameComponentRight>
+        <MemberPic src={img22} alt=""  />
 
-        <Pic>
-          <PicImg src={img55} alt="" />
-          <Name1>
-            <Text111>林晏先<Span1>先先教練</Span1></Text111>
-          </Name1>
-        </Pic>
+      </Members>
 
-        <Pic2>
-          <Name2>
-            <Text>顏兆寅<Span2>小顏教練</Span2></Text>
-          </Name2>
-          <PicImg2 src={img66} alt="" />
-        </Pic2>
+      <Members>
+        <MemberPic src={img33} alt="" />
+        <NameComponentLeft>
+          <MemberName>林培中</MemberName>
+          <NickName>派派教練</NickName>
+        </NameComponentLeft>
 
-        <Pic>
-          <PicImg src={img77} alt="" />
-          <Name1>
-            <Text111>林政蔚<Span1>政蔚教練</Span1></Text111>
-          </Name1>
-        </Pic>
 
-        <Pic2>
-          <Name2>
-            <Text>夏振凱<Span2>凱凱教練</Span2></Text>
-          </Name2>
-          <PicImg2 src={img88} alt="" />
-        </Pic2>
-      </Row1>
+      </Members>
+
+      <Members>
+
+        <NameComponentRight>
+          <MemberName>郭則寬</MemberName>
+          <NickName>阿寬教練</NickName>
+        </NameComponentRight>
+        <MemberPic src={img44} alt="" />
+
+      </Members>
+
+      <Members>
+        <MemberPic src={img55} alt=""  />
+        <NameComponentLeft>
+          <MemberName>林晏先</MemberName>
+          <NickName>派派教練</NickName>
+        </NameComponentLeft>
+
+      </Members>
+
+      <Members>
+
+        <NameComponentRight>
+          <MemberName>顏兆寅</MemberName>
+          <NickName>小顏教練</NickName>
+        </NameComponentRight>
+        <MemberPic src={img66} alt=""  />
+
+      </Members>
+
+      <Members>
+        <MemberPic src={img77} alt=""  />
+        <NameComponentLeft>
+          <MemberName>林政蔚</MemberName>
+          <NickName>政蔚教練</NickName>
+        </NameComponentLeft>
+
+
+      </Members>
+
+      <Members>
+
+        <NameComponentRight>
+          <MemberName>夏振凱</MemberName>
+          <NickName>凱凱教練</NickName>
+        </NameComponentRight>
+        <MemberPic src={img88} alt=""  />
+
+      </Members>
+
     </MobileContainer>
   </PageContainer>;
 };
