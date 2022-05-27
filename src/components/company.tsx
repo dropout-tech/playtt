@@ -286,7 +286,7 @@ const Title = styled.p`
     align-items: center;
     text-align: center;
     letter-spacing: 0.03em;
-    margin-top:0px;
+    margin-top:20px;
   }
 `;
 
@@ -314,7 +314,7 @@ const TopBelow = styled.div`
    justify-content:flex-start;
    align-items:flex-start;
    flex-direction:column;
-   margin-top:24px;
+   margin-top:4px;
    padding-left:24px;
    padding-right:24px;
    margin-left:0px;
@@ -431,6 +431,9 @@ const MobileContainer = styled.div`
     align-items: center;
     margin-top:40px;
     padding-bottom:19px;
+    padding-left:24px;
+    padding-right:24px;
+ 
  
     
    
