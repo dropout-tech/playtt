@@ -191,7 +191,7 @@ const Text = styled.p`
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
@@ -395,6 +395,7 @@ const SmallTitle = styled.p`
     line-height: 28px;
     letter-spacing: 0.06em;
     color: #005CB9;
+    margin-top:-2px;
   }
 `;
 
@@ -415,7 +416,7 @@ const SmallTitle1 = styled.p`
     line-height: 28px;
     letter-spacing: 0.06em;
     color: #005CB9;
-    margin-top:0px;
+    margin-top:-10px;
   }
 `;
 
@@ -636,8 +637,35 @@ const MobileTitle = styled.div`
   
   @media screen and (max-width: 768px) {
    margin-top:54px;
- ;
+ 
   }
+
+`;
+
+
+const AlignContener = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:10px;
+ 
+  }
+
+
+`;
+const AlignContener2 = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:10px;
+ 
+  }
+
+
+`;
+
+const AlignContener3 = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:16px;
+ 
+  }
+
 
 `;
 /* desktop thw newest info style end */
@@ -751,11 +779,11 @@ const Company = () => {
             <TextArea1>
               <Column>
                 <Text3>地址</Text3>
-                <Text33>新北市蘆洲區長樂路<Span1>106</Span1>106號<Span1>3</Span1>樓</Text33>
+                <Text33>新北市蘆洲區長樂路<Span1> 106 </Span1>號<Span1> 3 </Span1>樓</Text33>
               </Column>
               <Column>
                 <Text3>連絡電話</Text3>
-                <Text33><Span1>0988 521 012</Span1></Text33>
+                <Text33><Span1> 0988 521 012</Span1></Text33>
               </Column>
 
               <Column2>
@@ -788,46 +816,46 @@ const Company = () => {
           <TopBelow>
             <Title>分館資訊</Title>
 
-            <div>
+            <AlignContener>
               <SmallTitle1>各館營業時間</SmallTitle1>
               <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日<br /> <Span1> 9:00–19:00</Span1></Text>
-            </div>
+            </AlignContener>
 
-            <div>
+            <AlignContener>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
-              <Text>台北市中正區金山南路一段 <Span1>121</Span1>號</Text>
+              <Text>台北市中正區金山南路一段 <Span1> 121 </Span1>號</Text>
               <Text><Span1> 02 2356 7106</Span1></Text>
 
-            </div>
+            </AlignContener>
 
-            <div>
+            <AlignContener>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-              <Text>台北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
-              <Text><Span1>02 2990 0566</Span1></Text>
+              <Text>台北市新莊區民樂街<Span1> 37 </Span1>號<Span1> B1</Span1></Text>
+              <Text><Span1> 02 2990 0566</Span1></Text>
 
-            </div>
+            </AlignContener>
 
-            <div>
+            <AlignContener2>
               <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
-              <Text>台北市中正區杭州南路一段<Span1>63</Span1>號<Span1>B1</Span1></Text>
-              <Text><Span1>02 2391 9659</Span1></Text>
+              <Text>台北市中正區杭州南路一段<Span1> 63 </Span1>號<Span1> B1</Span1></Text>
+              <Text><Span1> 02 2391 9659</Span1></Text>
 
-            </div>
+            </AlignContener2>
           </TopBelow>
 
           <UnderBelow>
             <Title>聯盟場館經營</Title>
-            <div>
+            <AlignContener>
               <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
-              <Text>台北市南港區南港路二段<Span1>141</Span1>號<Span1>1</Span1>樓</Text>
-              <Text><Span1>02 2651 0652</Span1></Text>
-            </div>
+              <Text>台北市南港區南港路二段<Span1> 141 </Span1>號<Span1> 1 </Span1>樓</Text>
+              <Text><Span1> 02 2651 0652</Span1></Text>
+            </AlignContener>
 
-            <div>
+            <AlignContener3>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
-              <Text>台北市萬華區西藏路<Span1>213</Span1>號</Text>
-              <Text> <Span1>02 2339 6689</Span1></Text>
-            </div>
+              <Text>台北市萬華區西藏路<Span1> 213 </Span1>號</Text>
+              <Text> <Span1> 02 2339 6689 </Span1></Text>
+            </AlignContener3>
 
           </UnderBelow>
 
