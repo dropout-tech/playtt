@@ -19,7 +19,7 @@ const Container = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    
+   
   }
 `;
 
@@ -71,18 +71,18 @@ const Title2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-top:10px;
+    margin-top:0px;
 
   }
 `;
 
 const BlueArea = styled.div`
   background: #005CB9;
-  height:406px;
+  height:310px;
   padding-top:30px;
   padding-bottom:80px;
    @media screen and (max-width: 768px) {
-    
+    padding-bottom:0px;
   }
 `;
 
@@ -133,6 +133,7 @@ const TopText = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top:30px;
    
   }
 `;
