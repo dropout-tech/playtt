@@ -129,7 +129,7 @@ const TextArea1 = styled.div`
   @media screen and (max-width: 768px) {
    margin-bottom:30px;
    margin-left:0px;
-   margin-top:-9px;
+   margin-top:6px;
   }
 `;
 
@@ -331,6 +331,7 @@ const UnderBelow = styled.div`
     margin-left:0px;
     padding-left:24px;
     padding-right:24px;
+    margin-top:26px;
   }
   
 `;
@@ -440,6 +441,15 @@ const Column = styled.div`
     display:flex;
     flex-direction: column;
     margin-top:6px;
+  }
+`;
+
+const Column2 = styled.div`
+    
+ @media screen and (max-width: 768px) {
+    display:flex;
+    flex-direction: column;
+    margin-top:0px;
   }
 `;
 
@@ -748,10 +758,10 @@ const Company = () => {
                 <Text33><Span1>0988 521 012</Span1></Text33>
               </Column>
 
-              <Column>
+              <Column2>
                 <Text3>信箱</Text3>
                 <Text33> <Span1>playpp2018@gmail.com</Span1></Text33>
-              </Column>
+              </Column2>
 
               <Column>
                 <Text3>總公司客服時間</Text3>
@@ -785,21 +795,21 @@ const Company = () => {
 
             <div>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
-              <Text>台北市中正區金山南路一段121號</Text>
+              <Text>台北市中正區金山南路一段 <Span1>121</Span1>號</Text>
               <Text><Span1> 02 2356 7106</Span1></Text>
 
             </div>
 
             <div>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-              <Text>台北市新莊區民樂街37號B1</Text>
+              <Text>台北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
               <Text><Span1>02 2990 0566</Span1></Text>
 
             </div>
 
             <div>
               <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
-              <Text>台北市中正區杭州南路一段63號B1</Text>
+              <Text>台北市中正區杭州南路一段<Span1>63</Span1>號<Span1>B1</Span1></Text>
               <Text><Span1>02 2391 9659</Span1></Text>
 
             </div>
@@ -809,13 +819,13 @@ const Company = () => {
             <Title>聯盟場館經營</Title>
             <div>
               <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
-              <Text>台北市南港區南港路二段141號1樓</Text>
+              <Text>台北市南港區南港路二段<Span1>141</Span1>號<Span1>1</Span1>樓</Text>
               <Text><Span1>02 2651 0652</Span1></Text>
             </div>
 
             <div>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
-              <Text>台北市萬華區西藏路213號</Text>
+              <Text>台北市萬華區西藏路<Span1>213</Span1>號</Text>
               <Text> <Span1>02 2339 6689</Span1></Text>
             </div>
 
