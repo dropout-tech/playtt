@@ -277,9 +277,6 @@ const MobileContainer = styled.div`
   background: rgba(207, 210, 211,0.2);
   display: flex;
   flex-direction: column;
-  margin-right:380px;
-  padding-left:24px;
-  padding-right:24px;
  @media screen and (min-width: 768px) {
   display:none;
  }
