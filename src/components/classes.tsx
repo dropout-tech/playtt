@@ -233,7 +233,6 @@ const MobileContainer = styled.div`
    display: flex;
    justify-content:center;
    flex-direction: column;
-   margin-top:-56px;
    margin-left:30px;
 
  @media screen and (min-width: 768px) {

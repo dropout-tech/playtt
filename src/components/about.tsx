@@ -498,15 +498,25 @@ const TextContener = styled.div`
  @media screen and (max-width: 768px) {
    display: flex;
    flex-direction:column; 
-   padding: 24px;
+   padding-left:24px;
+   padding-right:24px;
   }
 `;
+
+
 
 const AlignContener = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top:54px;
+`;
 
+const AlignContener2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:24px;
 `;
 
 const StartImg = styled.img`
@@ -619,13 +629,13 @@ const About = () => {
       </AboutItems>
       
       <TextContener>
-        <AlignContener>
+        <AlignContener2>
           <StartImg src={start} alt=""  />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <Hope1>願景</Hope1>
             <Slogan>Let's Play <Span>Dream</Span></Slogan>
           </div>
-        </AlignContener>
+        </AlignContener2>
         <div>
           <p>
             我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起。
