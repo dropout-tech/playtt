@@ -67,13 +67,15 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     margin-top:-80px;
+    padding-left:24px;
+    padding-right:24px;
   }
 `;
 
 const TitleContainer = styled.div`
   margin-top:80px;
   @media screen and (min-width: 768px) {
-    
+    width:100%;
   }
 `;
 
@@ -84,10 +86,12 @@ const BlueArea = styled.div`
   z-index:1;
   padding-bottom:90px;
   margin-top:60px;
+ 
   @media screen and (max-width: 768px) {
     width:100%;
     height:100%;
     margin-top:60px;
+  
   }
 `;
 
@@ -177,6 +181,7 @@ const BigTitle = styled.p`
     color: #FFFFFF;
     transform: matrix(1, 0, 0, 1, 0, 0);
     margin-left:30px;
+    padding-top:54px;
   }
 `;
 
