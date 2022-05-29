@@ -178,7 +178,7 @@ const AboutUs = styled.p`
     letter-spacing: 0.04em;
     color: #CFD2D3;
     margin-left:10px;
-    margin-top:-10px;
+    margin-top:0px;
 
   }
 `;
@@ -500,7 +500,7 @@ const TextContener = styled.div`
    flex-direction:column; 
    padding-left:24px;
    padding-right:24px;
-   margin-top:16px;
+   margin-top:2px;
   }
 `;
 
@@ -511,6 +511,9 @@ const AlignContener = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top:54px;
+ @media screen and (max-width: 768px) {
+  margin-top:68px;
+  }
 `;
 
 const AlignContener2 = styled.div`
@@ -518,6 +521,9 @@ const AlignContener2 = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top:24px;
+ @media screen and (max-width: 768px) {
+  
+  }
 `;
 
 const StartImg = styled.img`
