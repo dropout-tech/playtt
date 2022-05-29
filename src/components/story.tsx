@@ -45,7 +45,7 @@ const MobileContainer = styled.div`
   height:90%;
   display:flex;
   flex-direction:column;
-  margin-top:20px;
+  margin-top:-16px;
   }
 
 `;
