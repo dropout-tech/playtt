@@ -292,7 +292,7 @@ const BelowText = styled.p`
     justify-content:center;
     flex-direction: column;
     margin: 0px;
-    margin-top:40px;
+    margin-top:36px;
 
   }
 `;

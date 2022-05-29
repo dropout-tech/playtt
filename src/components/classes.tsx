@@ -138,6 +138,7 @@ const ContantText = styled.p`
     flex-direction: column;
     align-items: center;
     line-height: 22px;
+
   }
 `;
 
@@ -180,7 +181,7 @@ const Img2 = styled.img`
     height:220px;
     display:flex;
     justify-content: center;
-    margin-left:0px;
+
 
    
   }
@@ -196,9 +197,8 @@ const Img3 = styled.img`
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
-    margin-left:10px;
     margin-top:130px;
-
+    margin-left:0px;
    
   }
 `;
@@ -233,7 +233,7 @@ const MobileContainer = styled.div`
    display: flex;
    justify-content:center;
    flex-direction: column;
-   margin-left:30px;
+   margin-top:4px;
 
  @media screen and (min-width: 768px) {
    display:none;
@@ -249,7 +249,7 @@ const Explain3 = styled.div`
  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    margin-top:-90px;
+    margin-top:-106px;
     margin-left:0px;
   }
 `;
@@ -372,7 +372,12 @@ const SpanDot = styled.div`
   letter-spacing: 0.6px;
   
  @media screen and (max-width: 768px) {
-   margin-top:-18px;
+    margin-top:-18px;
+    font-family: 'Futura';
+    font-Weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 4%;
   }
 `;
 
@@ -408,7 +413,6 @@ const TextArea = styled.p`
     font-weight: 500;
     font-size: 16px;
     line-height: 32px;
-    text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
     }
@@ -429,10 +433,11 @@ const TextArea2 = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 0px;
+    line-height: 32px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-top:-16px;
     }
 `;
 
@@ -586,7 +591,7 @@ const Classes = () => {
               <DotContainer>
                 <SpanDot2>・</SpanDot2>
                 <TextArea2>
-                  學習到球技 / 學習態度 / 品性 /運動家精神 /  獲得體悟
+                  學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
                 </TextArea2>
               </DotContainer>
             </ContantText>
