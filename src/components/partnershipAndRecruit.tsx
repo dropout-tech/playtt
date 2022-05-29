@@ -67,8 +67,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     margin-top:-80px;
-    padding-left:24px;
-    padding-right:24px;
+
   }
 `;
 
@@ -91,6 +90,8 @@ const BlueArea = styled.div`
     width:100%;
     height:100%;
     margin-top:60px;
+    padding-left:24px;
+    padding-right:24px;
   
   }
 `;
@@ -101,7 +102,7 @@ const ColorLineImg = styled.img`
 
   margin-top:50px;
    @media screen and (max-width: 768px) {
-     margin-left:10px;
+ 
      margin-top:10px;
      width: 75px;
      height: 27px;
@@ -125,7 +126,7 @@ const GrayArea = styled.div`
     display:flex;
     justify-content:center;
     flex-direction: column;
-    margin-left:-12px;
+  
   }
 `;
 
@@ -140,7 +141,8 @@ const TextArea = styled.div`
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    margin-left:12px;
+    margin-right:0px;
+
   
     
   }
@@ -150,11 +152,15 @@ const Text = styled.div`
   display:flex;
   margin-left:40px;
   margin-top:60px;
+  
   flex-direction:column;
    @media screen and (max-width: 768px) {
     display:flex;
+    justify-content:center;
     flex-direction:row;
     margin-top:20px;
+    margin-left:0px;
+   
 
   
   }
@@ -180,7 +186,6 @@ const BigTitle = styled.p`
     letter-spacing: 0.03em;
     color: #FFFFFF;
     transform: matrix(1, 0, 0, 1, 0, 0);
-    margin-left:30px;
     padding-top:54px;
   }
 `;
@@ -211,7 +216,6 @@ const TopText = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:40px;
     margin-top:8px;
   }
 `;
@@ -278,7 +282,6 @@ const TextkeyIn2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   @media screen and (max-width: 768px) {
-    margin-left:70px;
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
@@ -288,8 +291,7 @@ const TextkeyIn2 = styled.p`
     align-items: center;
     text-align: center;
     letter-spacing: 0.04em;
-    color: #1A1A1A;
-    margin-left:5px;
+ 
   }
 `;
 
@@ -306,10 +308,7 @@ const TextkeyIn3 = styled.p`
   color: #1A1A1A;
   flex-direction:column;
 
-
-
   @media screen and (max-width: 768px) {
-    margin-left:50px;
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
@@ -320,7 +319,7 @@ const TextkeyIn3 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:5px;
+    margin-left:0px;
   }
 `;
 
@@ -350,7 +349,7 @@ const TextkeyIn4 = styled.div`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:5px;
+    margin-left:0px;
   }
 `;
 
