@@ -388,6 +388,12 @@ const Sapn2 = styled.span`
   }
 `;
 
+const Text2 = styled.p`
+ @media screen and (max-width: 768px) {
+  margin: 0;
+  }
+`;
+
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
   return <PageContainer>
@@ -411,11 +417,11 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn2>
-                <p style={{ margin: 0 }}>舞動陽光</p>
-                <p style={{ margin: 0 }}>華江俱樂部</p>
-                <p style={{ margin: 0 }}>三峽運動中心</p>
-                <p style={{ margin: 0 }}>中正運動中心</p>
-                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+                <Text2>舞動陽光</Text2>
+                <Text2>華江俱樂部</Text2>
+                <Text2>三峽運動中心</Text2>
+                <Text2>中正運動中心</Text2>
+                <Text2>等 ⋯⋯</Text2>
               </TextkeyIn2>
             </WhiteArea>
 
@@ -430,9 +436,9 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn2>
-                <p style={{ margin: 0 }}>大龍國小</p>
-                <p style={{ margin: 0 }}>懷生國小</p>
-                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+                <Text2>大龍國小</Text2>
+                <Text2>懷生國小</Text2>
+                <Text2>等 ⋯⋯</Text2>
               </TextkeyIn2>
             </WhiteArea>
           </Text>
@@ -446,10 +452,10 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn3>
-                <p style={{ margin: 0 }}>何嘉仁幼兒園</p>
-                <p style={{ margin: 0 }}>維多利亞</p>
-                <p style={{ margin: 0 }}>喬鈴補習班</p>
-                <p style={{ margin: 0 }}>等 ⋯⋯</p>
+                <Text2>何嘉仁幼兒園</Text2>
+                <Text2>維多利亞</Text2>
+                <Text2>喬鈴補習班</Text2>
+                <Text2>等 ⋯⋯</Text2>
               </TextkeyIn3>
             </WhiteArea>
           </Text>
@@ -463,11 +469,11 @@ const PartnershipAndRecruit = () => {
             </GrayArea>
             <WhiteArea>
               <TextkeyIn4>
-                <p style={{ margin: 0 }}><Span>Let's Play </Span>蘆洲店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play </Span>東門店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play </Span>善導寺店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play </Span>新莊店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</p>
+                <Text2><Span>Let's Play </Span>蘆洲店</Text2>
+                <Text2><Span>Let's Play </Span>東門店</Text2>
+                <Text2><Span>Let's Play </Span>善導寺店</Text2>
+                <Text2><Span>Let's Play </Span>新莊店</Text2>
+                <Text2><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</Text2>
               </TextkeyIn4>
 
             </WhiteArea>
