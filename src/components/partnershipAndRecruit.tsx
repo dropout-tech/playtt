@@ -85,7 +85,7 @@ const BlueArea = styled.div`
   margin-top:60px;
  
   @media screen and (max-width: 768px) {
-    width:90%;
+    width:92%;
     height:100%;
     margin-top:60px;
     padding-left:24px;

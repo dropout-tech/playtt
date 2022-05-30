@@ -44,7 +44,7 @@ const BelowArea = styled.div`
     align-items:center;
     margin-left:0px;
     margin-top:20px;
-
+    width:100%;
   }
 
 `;
@@ -93,11 +93,13 @@ const TopLeftArea = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    margin-top:68px;
+    margin-top:48px;
     display:flex;
     flex-direction: column;
     align-items: center;
     margin-left:0px;
+    width:100%;
+  
    
   }
 `;
@@ -423,13 +425,15 @@ const MobileContainer = styled.div`
   display:none;
  @media screen and (max-width: 768px) {
     background: #38D430;
-    width:100%;
+    width:92%;
     display:flex;
     justify-content:center;
     flex-direction: column;
     align-items: center;
     padding-left:24px;
     padding-right:24px;
+    margin-top:40px;
+    margin-bottom:-40px;
    
   }
 
@@ -564,6 +568,7 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width:100%;
  
 
  
