@@ -24,7 +24,6 @@ const Title1 = styled.p`
   color: #1A1A1A;
   margin:0px;
   @media screen and (max-width: 768px) {
-    margin-left:0px;
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
@@ -49,7 +48,6 @@ const Title2 = styled.p`
   line-Height:52px;
   margin-top:8px;
   @media screen and (max-width: 768px) {
-    margin-left:0px;
     font-family: 'Futura';
     font-style: normal;
     font-weight: 700;
@@ -87,11 +85,12 @@ const BlueArea = styled.div`
   margin-top:60px;
  
   @media screen and (max-width: 768px) {
-    width:100%;
+    width:90%;
     height:100%;
     margin-top:60px;
     padding-left:24px;
     padding-right:24px;
+    padding-bottom:60px;
   
   }
 `;
@@ -126,7 +125,7 @@ const GrayArea = styled.div`
     display:flex;
     justify-content:center;
     flex-direction: column;
-  
+    width:100%;
   }
 `;
 
@@ -143,6 +142,7 @@ const TextArea = styled.div`
     flex-direction: column;
     margin-right:0px;
 
+
   
     
   }
@@ -152,14 +152,14 @@ const Text = styled.div`
   display:flex;
   margin-left:40px;
   margin-top:60px;
-  
   flex-direction:column;
    @media screen and (max-width: 768px) {
     display:flex;
     justify-content:center;
+    align-items: center;
     flex-direction:row;
-    margin-top:20px;
-    margin-left:0px;
+    margin:20px 0px 0px 0px;
+    width:100%;
    
 
   
@@ -205,6 +205,7 @@ const TopText = styled.p`
    @media screen and (max-width: 768px) {
     width:110px;
     display: flex;
+    justify-content:center;
     align-items: center;
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -234,6 +235,7 @@ const WhiteArea = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    width:100%;
   }
 
 `;
@@ -319,7 +321,7 @@ const TextkeyIn3 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:0px;
+  
   }
 `;
 
@@ -349,7 +351,7 @@ const TextkeyIn4 = styled.div`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:0px;
+  
   }
 `;
 
@@ -369,6 +371,14 @@ const Span = styled.span`
   font-size:18px;
   line-height:32px;
   letter-spacing:4%;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight:500;
+    font-size:16px;
+    line-height:32px;
+    letter-spacing:4%;
+  
+  }
 
 `;
 

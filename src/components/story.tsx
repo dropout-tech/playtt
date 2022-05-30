@@ -348,7 +348,8 @@ const MobieContent = styled.div`
    @media screen and  (max-width: 768px) {
     display: flex; 
     flex-direction: column; 
-    padding: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
     align-items: center;
   }
 `;
