@@ -44,7 +44,8 @@ const BelowArea = styled.div`
     align-items:center;
     margin-left:0px;
     margin-top:20px;
-    width:100%;
+    width:327px;
+    padding:20px;
   }
 
 `;
@@ -60,10 +61,10 @@ const Background1 = styled.div`
  
  
   @media screen and (max-width: 768px) {
-    width:100%;
+    width:327px;
     height:84px;
     margin-top:-8px;
-   
+    padding:20px;
   ;
   }
 `;
@@ -79,6 +80,7 @@ const Background2 = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     height:84px;
+    padding:20px;
  
    
     
@@ -119,7 +121,7 @@ const TextArea = styled.div`
     justify-content: center;
     align-items:center;
     margin-top:0px;
-    
+    padding:20px;
 
   }
 `;
@@ -371,9 +373,10 @@ const BelowTextContainer = styled.div`
  height:977px;
 
   @media screen and (max-width: 768px) {
-    width:100%;
+    width:327px;
     height:993px;
     margin-bottom:80px;
+    padding:20px;
   }
 
 `;
@@ -425,15 +428,16 @@ const MobileContainer = styled.div`
   display:none;
  @media screen and (max-width: 768px) {
     background: #38D430;
-    width:92%;
+    width:100%;
+    height:100%;
     display:flex;
     justify-content:center;
     flex-direction: column;
     align-items: center;
-    padding-left:24px;
-    padding-right:24px;
+    /* padding-left:24px;
+    padding-right:24px; */
     margin-top:40px;
-    margin-bottom:-40px;
+    /* margin-bottom:-40px; */
    
   }
 
@@ -568,7 +572,7 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width:100%;
+  width:327px;
  
 
  

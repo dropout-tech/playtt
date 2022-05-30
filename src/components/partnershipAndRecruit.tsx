@@ -64,7 +64,7 @@ const Container = styled.div`
   height:100%;
 
   @media screen and (max-width: 768px) {
-    margin-top:-80px;
+    margin-top:0px;
 
   }
 `;
@@ -73,6 +73,7 @@ const TitleContainer = styled.div`
   margin-top:80px;
   @media screen and (min-width: 768px) {
     width:100%;
+    
   }
 `;
 
@@ -85,11 +86,9 @@ const BlueArea = styled.div`
   margin-top:60px;
  
   @media screen and (max-width: 768px) {
-    width:92%;
+    width:100%;
     height:100%;
-    margin-top:60px;
-    padding-left:24px;
-    padding-right:24px;
+    margin-top:40px;
     padding-bottom:60px;
   
   }
@@ -141,8 +140,8 @@ const TextArea = styled.div`
     align-items: center;
     flex-direction: column;
     margin-right:0px;
-
-
+    padding-left:24px;
+    padding-right:24px;
   
     
   }

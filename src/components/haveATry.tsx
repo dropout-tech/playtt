@@ -19,7 +19,7 @@ const Container = styled.div`
 
 
   @media screen and (max-width: 768px) {
-   
+    width:100%;
   }
 `;
 
@@ -83,6 +83,7 @@ const BlueArea = styled.div`
   padding-bottom:80px;
    @media screen and (max-width: 768px) {
     padding-bottom:0px;
+    width:100%;
   }
 `;
 

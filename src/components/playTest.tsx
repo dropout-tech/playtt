@@ -253,7 +253,7 @@ const Text123 = styled.p`
 `;
 
 const MobileContainer = styled.div`
-  margin-top:60px;
+  margin-top:-44px;
   padding:24px;
 
  

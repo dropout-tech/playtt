@@ -43,6 +43,7 @@ const Container = styled.div`
     justify-content:center;
     flex-direction:column;
     margin-left:0px;
+    padding-bottom: 0px;
   }
 `;
 
@@ -56,6 +57,7 @@ const ImgContainer = styled.div`
    @media screen and (max-width: 768px) {
    margin-top:120px;
    margin-left:120px;
+   margin-bottom:80px;
  
 
   }
