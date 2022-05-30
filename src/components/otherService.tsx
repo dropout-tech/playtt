@@ -160,7 +160,7 @@ const TextContainer = styled.div`
      padding-top:0px;
      height:327px;
      width:100%;
- 
+    
   }
 `;
 
@@ -237,10 +237,11 @@ const ImgContainer = styled.div`
 const MobileContainer = styled.div`
   display:none;
   @media screen and (max-width: 768px) {
+    width:100%;
     padding-top:80px;
     padding-left:24px;
     padding-right:24px;
-    width:100%;
+    
     }
 `;
 

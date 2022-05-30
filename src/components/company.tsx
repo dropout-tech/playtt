@@ -43,7 +43,7 @@ const BelowArea = styled.div`
     flex-direction: column;
     align-items:center;
     margin-left:0px;
-     margin-top:20px;
+    margin-top:20px;
 
   }
 
@@ -60,9 +60,10 @@ const Background1 = styled.div`
  
  
   @media screen and (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:84px;
     margin-top:-8px;
+   
   ;
   }
 `;
@@ -76,7 +77,7 @@ const Background2 = styled.div`
  align-items: center;
  
   @media screen and (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:84px;
  
    
@@ -92,8 +93,7 @@ const TopLeftArea = styled.div`
 
 
   @media screen and (max-width: 768px) {
-
-    margin-top:199px;
+    margin-top:68px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -111,14 +111,14 @@ const TextArea = styled.div`
  margin-top:50px;
 
   @media screen and (max-width: 768px) {
-    width:279px;
+    width:100%;
     height:468px;
     display:flex;  
     justify-content: center;
     align-items:center;
     margin-top:0px;
-    padding-left:24px;
-    padding-right:24px;
+    
+
   }
 `;
 
@@ -130,6 +130,7 @@ const TextArea1 = styled.div`
    margin-bottom:30px;
    margin-left:0px;
    margin-top:6px;
+ 
   }
 `;
 
@@ -140,7 +141,7 @@ const TextArea2 = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    
+    margin-left:0px;
   }
 `;
 
@@ -150,7 +151,7 @@ const TextArea3 = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    
+  margin-left:0px;
   }
 `;
 
@@ -318,6 +319,7 @@ const TopBelow = styled.div`
    padding-left:24px;
    padding-right:24px;
    margin-left:0px;
+  
   }
 
 
@@ -365,14 +367,10 @@ const BelowTextContainer = styled.div`
  background: #FFFFFF;
  width:827px;
  height:977px;
- 
-
-
 
   @media screen and (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:993px;
-    padding-left:0px;
     margin-bottom:80px;
   }
 
@@ -426,11 +424,12 @@ const MobileContainer = styled.div`
  @media screen and (max-width: 768px) {
     background: #38D430;
     width:100%;
-    height:1709px;
     display:flex;
     justify-content:center;
     flex-direction: column;
     align-items: center;
+    padding-left:24px;
+    padding-right:24px;
    
   }
 
@@ -565,7 +564,8 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top:-92px;
+ 
+
  
   }
 `;
@@ -761,7 +761,7 @@ const Company = () => {
         </BelowArea>
       </Background>
     </Container>
-    
+
     <MobileTitle>
       <TitleOne>聯絡我們</TitleOne>
       <TitleTwo>Contact Us</TitleTwo>
@@ -769,7 +769,7 @@ const Company = () => {
 
 
     <MobileContainer>
-  
+
       <TopLeftArea>
         <TopContainer>
           <Background1>
@@ -799,7 +799,7 @@ const Company = () => {
               <Column>
                 <Text3>創辦人 / 總教練</Text3>
                 <Text33>郭教練 <Span1> 0988 521 012</Span1></Text33>
-                </Column>
+              </Column>
             </TextArea1>
 
           </TextArea>
