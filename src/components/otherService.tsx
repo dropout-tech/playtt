@@ -25,8 +25,7 @@ const Container = styled.div`
  padding-bottom: 80px;
  margin-left:-40px;
   @media screen and (max-width: 768px) {
-  margin-top:30px;
-  padding-bottom: 00px;
+  display:none;
   }
 `;
 
@@ -159,7 +158,9 @@ const TextContainer = styled.div`
      margin-top:20px;
      padding-top:0px;
      height:327px;
-     width:100%;
+   
+     padding-left:24px;
+     padding-right:24px;
     
   }
 `;
@@ -239,9 +240,8 @@ const MobileContainer = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     padding-top:80px;
-    padding-left:24px;
-    padding-right:24px;
-    
+    display:flex;
+    flex-direction:column;
     }
 `;
 
@@ -309,6 +309,16 @@ const Span3 = styled.span`
 `;
 const Title = styled.div`
 
+`;
+
+const TextArea = styled.div`
+  padding:24px;
+
+`;
+
+const TextArea2 = styled.div`
+  height: 300px ;
+  background: rgba(207, 210, 211, 0.2);
 `;
 
 /* desktop thw newest info style end */
@@ -424,89 +434,93 @@ const OtherService = () => {
         <Title1>其他服務</Title1>
         <Title2>Other Service</Title2>
       </div>
+      <TextArea>
+        <TextArea2>
+          <Title3>桌球俱樂部</Title3>
+          <Text>
+            合作機構：華江高中<br />
+            聚集桌球愛好打手<br />
+            舉辦活動分享知識增加凝聚力
+          </Text>
 
-      <TextContainer>
+          <ImgContainer>
+            <Img1 src={img1} alt="" />
+          </ImgContainer>
+        </TextArea2>
+      </TextArea>
 
-        <Title3>桌球俱樂部</Title3>
-        <Text>
-          合作機構：華江高中<br />
-          聚集桌球愛好打手<br />
-          舉辦活動分享知識增加凝聚力
-        </Text>
-
-        <ImgContainer>
-          <Img1 src={img1} alt="" />
-        </ImgContainer>
-      </TextContainer>
-
-      <TextContainer>
-        <Title3>場地租借</Title3>
-        <Text>
-          平日上午包場優惠<br />
-          歡迎洽談，提早預約<br />
-          平日 14:00–21:00 與周末租桌服務
-        </Text>
-        <ImgContainer>
-          <Img2 src={img2} alt="" />
-        </ImgContainer>
-      </TextContainer>
-
-      <TextContainer>
-        <Title3>球具販售</Title3>
-        <Text>
-          依據需求協助搭配和製作球具，<br />
-          以達到學習和運動成效為主要目的。
-        </Text>
-        <ImgContainer>
-          <Img3 src={img3} alt="" />
-        </ImgContainer>
-      </TextContainer>
+      <TextArea>
+        <TextArea2>
+          <Title3>場地租借</Title3>
+          <Text>
+            平日上午包場優惠<br />
+            歡迎洽談，提早預約<br />
+            平日 14:00–21:00 與周末租桌服務
+          </Text>
+          <ImgContainer>
+            <Img2 src={img2} alt="" />
+          </ImgContainer>
+        </TextArea2>
+      </TextArea>
 
 
-      <TextContainer>
-        <Title3>場館加盟與聯盟合作</Title3>
-        <Text>
-          提供系統化的 SOP 協助桌球產業發<br />
-          展更全面，並且共享產業資源互利，<br />
-          提供有心推廣桌球的同業更好的機會。<br />
-        </Text>
-        <ImgContainer>
-          <Img4 src={img4} alt="" />
-        </ImgContainer>
-      </TextContainer>
-
-      <TextContainer>
-        <Title3>趣味活動</Title3>
-        <Text>
-          桌球結合趣味競賽<br />
-          各式行銷活動協辦<br />
-          自媒體 / 媒體合作
-        </Text>
-        <ImgContainer>
-          <Img5 src={img5} alt="" />
-        </ImgContainer>
-      </TextContainer>
-
-      <TextContainer>
-        <Title3>VIP 專區</Title3>
-        <Text>
-          特別精心打造的桌球 VIP 包廂空間，<br />
-          讓玩樂和歡笑回憶留在美好的空間，<br />
-          更方便拍照留念。目標成為雙北桌球<br />
-          跨足休閒娛樂的業界首選，<br />
-          開創桌球產業藍海。
-        </Text>
-        <ImgContainer>
-          <Img6 src={img6} alt="" />
-        </ImgContainer>
-      </TextContainer>
+      <TextArea>
+        <TextArea2>
+          <Title3>球具販售</Title3>
+          <Text>
+            依據需求協助搭配和製作球具，<br />
+            以達到學習和運動成效為主要目的。
+          </Text>
+          <ImgContainer>
+            <Img3 src={img3} alt="" />
+          </ImgContainer>
+        </TextArea2>
+      </TextArea>
 
 
+      <TextArea>
+        <TextArea2>
+          <Title3>場館加盟與聯盟合作</Title3>
+          <Text>
+            提供系統化的 SOP 協助桌球產業發<br />
+            展更全面，並且共享產業資源互利，<br />
+            提供有心推廣桌球的同業更好的機會。<br />
+          </Text>
+          <ImgContainer>
+            <Img4 src={img4} alt="" />
+          </ImgContainer>
+        </TextArea2>
+      </TextArea>   
 
+      <TextArea>
+        <TextArea2>
+          <Title3>趣味活動</Title3>
+          <Text>
+            桌球結合趣味競賽<br />
+            各式行銷活動協辦<br />
+            自媒體 / 媒體合作
+          </Text>
+          <ImgContainer>
+            <Img5 src={img5} alt="" />
+          </ImgContainer>
+        </TextArea2>
+      </TextArea>   
 
-
-
-
+      <TextArea>
+        <TextArea2>
+          <Title3>VIP 專區</Title3>
+          <Text>
+            特別精心打造的桌球 VIP 包廂空間，<br />
+            讓玩樂和歡笑回憶留在美好的空間，<br />
+            更方便拍照留念。目標成為雙北桌球<br />
+            跨足休閒娛樂的業界首選，<br />
+            開創桌球產業藍海。
+          </Text>
+          <ImgContainer>
+            <Img6 src={img6} alt="" />
+          </ImgContainer>
+        </TextArea2>
+      </TextArea> 
 
     </MobileContainer>
   </PageContainer>;
