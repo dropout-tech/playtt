@@ -360,7 +360,7 @@ const Background3 = styled.div`
   }
 `;
 
-const SpanDot = styled.div`
+const SpanDot = styled.span`
   color: #CFD2D3;
   margin-top:-15px;
   width: 28px;
@@ -372,22 +372,26 @@ const SpanDot = styled.div`
   letter-spacing: 0.6px;
   
  @media screen and (max-width: 768px) {
-    margin-top:-18px;
-    font-family: 'Futura';
+    margin-top:-16px;
+    font-family: 'Noto Sans TC';
     font-Weight: 500;
     font-size: 16px;
     line-height: 32px;
     letter-spacing: 4%;
+    display: flex;
+    justify-content:center;
   }
 `;
 
-const SpanDot2 = styled.div`
+const SpanDot2 = styled.span`
   color: #CFD2D3;
   margin-top:4px;
   width: 36px;
   height: 36px;
  @media screen and (max-width: 768px) {
    margin-top:4px;
+   display: flex;
+   justify-content:center;
   }
 `;
 

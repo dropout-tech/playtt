@@ -177,7 +177,7 @@ const AboutUs = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-left:10px;
+    margin-left:0px;
     margin-top:0px;
 
   }
@@ -498,8 +498,8 @@ const TextContener = styled.div`
  @media screen and (max-width: 768px) {
    display: flex;
    flex-direction:column; 
-   padding-left:24px;
-   padding-right:24px;
+   padding-left:12px;
+   padding-right:12px;
    margin-top:2px;
   }
 `;
@@ -513,16 +513,18 @@ const AlignContener = styled.div`
   margin-top:54px;
  @media screen and (max-width: 768px) {
   margin-top:68px;
+  margin-left:10px;
   }
 `;
 
 const AlignContener2 = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top:24px;
+ 
  @media screen and (max-width: 768px) {
-  
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-top:24px;
+   margin-left:10px;
   }
 `;
 
@@ -535,7 +537,14 @@ const StartImg = styled.img`
 
 const Text = styled.div`
    @media screen and (max-width: 768px) {
-   margin-top:10px;
+    margin-top:10px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+
   }
 
 `;
@@ -551,7 +560,7 @@ const About = () => {
       <TopArea>
         <LeftItems>
           <HopeContainer>
-            
+
             <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
@@ -634,16 +643,16 @@ const About = () => {
 
       </TopArea>
     </Container>
- 
+
     <MobileContainer>
       <AboutItems>
         <AboutText>關於我們</AboutText>
         <AboutUs>About Us</AboutUs>
       </AboutItems>
-      
-      <Text>
+
+      <TextContener>
         <AlignContener2>
-          <StartImg src={start} alt=""  />
+          <StartImg src={start} alt="" />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <Hope1>願景</Hope1>
             <Slogan>Let's Play <Span>Dream</Span></Slogan>
@@ -654,7 +663,7 @@ const About = () => {
             我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起。
           </Text>
         </TextContener>
-      </Text>
+      </TextContener>
 
       <TextContener>
         <AlignContener>
@@ -694,16 +703,16 @@ const About = () => {
             <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
           </div>
         </AlignContener>
-        <div>
-          <p>
+        <TextContener>
+          <Text>
             學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span33>Let’s Play</Span33> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
-          </p>
-        </div>
+          </Text>
+        </TextContener>
       </TextContener>
 
-      
-      
-      
+
+
+
     </MobileContainer>
 
 

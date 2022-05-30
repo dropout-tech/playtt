@@ -31,6 +31,7 @@ const ColorpicImg = styled.img`
 const Container = styled.div`
  width:100% ;
  height:920px;
+ padding-bottom:0px;
  display:flex;
  background:#F5F6F6;
   @media screen and  (max-width: 768px) {
@@ -45,7 +46,9 @@ const MobileContainer = styled.div`
   height:90%;
   display:flex;
   flex-direction:column;
-  margin-top:-16px;
+  margin-top:80px;
+  background:#F5F6F6;
+
   }
 
 `;
@@ -286,13 +289,14 @@ const BelowText = styled.p`
   color: #1A1A1A;
   margin:20px 210px 0px 0px;
    @media screen and  (max-width: 768px) {
-    margin-top:24px;
-    width:300px;
+
     display:flex;
     justify-content:center;
+    align-items:center;
     flex-direction: column;
-    margin: 0px;
-    margin-top:36px;
+    margin:34px 0px 0px 0px;
+
+    
 
   }
 `;
@@ -325,6 +329,7 @@ const Span2 = styled.span`
   }
 `;
 
+
 const Span = styled.span`
   font-family: 'Futura';
   font-weight:500;
@@ -356,12 +361,11 @@ const MobieContent = styled.div`
 
 const MobieContent2 = styled.div`
   
-   @media screen and  (max-width: 768px) {
-    display: flex; 
-    flex-direction: column; 
-    padding: 20px;
-    align-items: center;
-    margin-top:-20px;
+  @media screen and  (max-width: 768px) {
+    margin-top:20px;
+    padding-bottom:60px;
+    padding-left:24px;
+    padding-right:24px;
   }
 `;
 
@@ -380,6 +384,7 @@ const Span3 = styled.span`
     letter-spacing:3%;
   }
 `;
+
 
 /* desktop thw newest info style end */
 const Story = () => {
@@ -400,7 +405,7 @@ const Story = () => {
         </div>
 
         <BelowText>
-          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1> X <Span2>創新</Span2></Title3>
+          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span3>X</Span3><Span2>創新</Span2></Title3>
           <Title4>邀請大家一起來玩！</Title4>
         </BelowText>
       </Text>
@@ -423,7 +428,7 @@ const Story = () => {
         <Contant5>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！！</Contant5>
 
         <BelowText>
-          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span> X </Span><Span2>創新</Span2></Title3>
+          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span3> X </Span3><Span2>創新</Span2></Title3>
           <Title4>邀請大家一起來玩！</Title4>
         </BelowText>
       </MobieContent2>
