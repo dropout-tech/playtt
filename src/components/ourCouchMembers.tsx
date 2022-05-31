@@ -280,7 +280,18 @@ const Members = styled.div`
 @media screen and (max-width: 768px) {
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content:flex-start;
+  align-items:center;
+  margin-top:20px;
+   
+  }
+  
+`
+const Members2 = styled.div`
+@media screen and (max-width: 768px) {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
   align-items:center;
   margin-top:20px;
    
@@ -288,7 +299,7 @@ const Members = styled.div`
   
 `
 
-const MemberName = styled.p`
+const MemberNameLeft = styled.p`
   @media screen and (max-width: 768px) {
   margin: 0;
   font-family: 'Noto Sans TC';
@@ -297,6 +308,22 @@ const MemberName = styled.p`
   line-height: 36px;
   letter-spacing: 3%;
   color: #1A1A1A;
+  display:flex;
+  justify-content:flex-start; 
+    }
+`;
+
+const MemberNameRight = styled.p`
+  @media screen and (max-width: 768px) {
+  margin: 0;
+  font-family: 'Noto Sans TC';
+  font-weight:900;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 3%;
+  color: #1A1A1A;
+  display:flex;
+  justify-content:flex-end; 
     }
 `;
 
@@ -332,7 +359,7 @@ const NameComponentLeft = styled.div`
 
 const NameComponentRight = styled.div`
   display: flex;
-  flex-Direction: column; 
+  flex-Direction: column;
   margin-Right: 20px;
 `;
 
@@ -343,6 +370,13 @@ const MemberPic = styled.img`
 
 `;
 
+
+const PictureContainer = styled.div`
+   @media screen and (max-width: 768px) {
+   width:80%
+    }
+
+`;
 
 
 
@@ -410,84 +444,85 @@ const OurCouchMembers = () => {
     </Container>
 
     <MobileContainer>
-      <Members>
-        <MemberPic src={img11} alt="" />
-        <NameComponentLeft>
-          <MemberName>呂昀</MemberName>
-          <NickName><SpanEva>Eva </SpanEva>教練</NickName>
-        </NameComponentLeft>
+      <PictureContainer>
+        <Members>
+          <MemberPic src={img11} alt="" />
+          <NameComponentLeft>
+            <MemberNameLeft>呂昀</MemberNameLeft>
+            <NickName><SpanEva>Eva </SpanEva>教練</NickName>
+          </NameComponentLeft>
 
-      </Members>
+        </Members>
 
-      <Members>
+        <Members2>
 
-        <NameComponentRight>
-          <MemberName>鍾達威</MemberName>
-          <NickName>威廉教練</NickName>
-        </NameComponentRight>
-        <MemberPic src={img22} alt=""  />
+          <NameComponentRight>
+            <MemberNameRight>鍾達威</MemberNameRight>
+            <NickName>威廉教練</NickName>
+          </NameComponentRight>
+          <MemberPic src={img22} alt="" />
 
-      </Members>
+        </Members2>
 
-      <Members>
-        <MemberPic src={img33} alt="" />
-        <NameComponentLeft>
-          <MemberName>林培中</MemberName>
-          <NickName>派派教練</NickName>
-        </NameComponentLeft>
-
-
-      </Members>
-
-      <Members>
-
-        <NameComponentRight>
-          <MemberName>郭則寬</MemberName>
-          <NickName>阿寬教練</NickName>
-        </NameComponentRight>
-        <MemberPic src={img44} alt="" />
-
-      </Members>
-
-      <Members>
-        <MemberPic src={img55} alt=""  />
-        <NameComponentLeft>
-          <MemberName>林晏先</MemberName>
-          <NickName>派派教練</NickName>
-        </NameComponentLeft>
-
-      </Members>
-
-      <Members>
-
-        <NameComponentRight>
-          <MemberName>顏兆寅</MemberName>
-          <NickName>小顏教練</NickName>
-        </NameComponentRight>
-        <MemberPic src={img66} alt=""  />
-
-      </Members>
-
-      <Members>
-        <MemberPic src={img77} alt=""  />
-        <NameComponentLeft>
-          <MemberName>林政蔚</MemberName>
-          <NickName>政蔚教練</NickName>
-        </NameComponentLeft>
+        <Members>
+          <MemberPic src={img33} alt="" />
+          <NameComponentLeft>
+            <MemberNameLeft>林培中</MemberNameLeft>
+            <NickName>派派教練</NickName>
+          </NameComponentLeft>
 
 
-      </Members>
+        </Members>
 
-      <Members>
+        <Members2>
 
-        <NameComponentRight>
-          <MemberName>夏振凱</MemberName>
-          <NickName>凱凱教練</NickName>
-        </NameComponentRight>
-        <MemberPic src={img88} alt=""  />
+          <NameComponentRight>
+            <MemberNameRight>郭則寬</MemberNameRight>
+            <NickName>阿寬教練</NickName>
+          </NameComponentRight>
+          <MemberPic src={img44} alt="" />
 
-      </Members>
+        </Members2>
 
+        <Members>
+          <MemberPic src={img55} alt="" />
+          <NameComponentLeft>
+            <MemberNameLeft>林晏先</MemberNameLeft>
+            <NickName>派派教練</NickName>
+          </NameComponentLeft>
+
+        </Members>
+
+        <Members2>
+
+          <NameComponentRight>
+            <MemberNameRight>顏兆寅</MemberNameRight>
+            <NickName>小顏教練</NickName>
+          </NameComponentRight>
+          <MemberPic src={img66} alt="" />
+
+        </Members2>
+
+        <Members>
+          <MemberPic src={img77} alt="" />
+          <NameComponentLeft>
+            <MemberNameLeft>林政蔚</MemberNameLeft>
+            <NickName>政蔚教練</NickName>
+          </NameComponentLeft>
+
+
+        </Members>
+
+        <Members2>
+
+          <NameComponentRight>
+            <MemberNameRight>夏振凱</MemberNameRight>
+            <NickName>凱凱教練</NickName>
+          </NameComponentRight>
+          <MemberPic src={img88} alt="" />
+
+        </Members2>
+      </PictureContainer>
     </MobileContainer>
   </PageContainer>;
 };
