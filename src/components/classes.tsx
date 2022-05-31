@@ -116,7 +116,7 @@ const ContantTitle = styled.p`
     align-items: center;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-top:20px;
+    margin-top:18px;
   }
 `;
 
@@ -137,7 +137,9 @@ const ContantText = styled.p`
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content:center;
     line-height: 22px;
+    margin-left:-8px;
 
   }
 `;
@@ -325,7 +327,7 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
-    margin-left:70px;
+
     margin-top:-6px;
 }
 `;

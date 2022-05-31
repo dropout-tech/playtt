@@ -147,8 +147,7 @@ const GroupImg = styled.img`
   width:100%;
   height:100%;
    @media screen and (max-width: 768px) {
-    z-index: 10;
-    position: relative;
+   display:none;
   }
 `;
 
@@ -371,6 +370,21 @@ const Span2 = styled.span`
 
 `;
 
+const GroupImg2 = styled.div`
+  display:none;
+  @media screen and (max-width: 768px) {
+    display:flex;
+    height:380px;
+    background-image: url('${group2}');
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position:center;
+
+    }
+
+
+`;
+
 
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
@@ -381,8 +395,9 @@ const LetsPlayStar = () => {
         <Title2>Let's Play Star </Title2>
       </div>
       <Container2>
-        <GroupImg src={group} alt="" />
 
+        <GroupImg src={group} alt="" />
+    
         <TextContainer>
           <Background>
             <TextArea1>
@@ -420,7 +435,7 @@ const LetsPlayStar = () => {
 
 
       <MobileContainer>
-        <GroupImg src={group2} alt="" />
+        <GroupImg2></GroupImg2>
 
         <TextContainer>
           <Background>

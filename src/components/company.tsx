@@ -643,10 +643,10 @@ color: #005CB9;
 `;
 
 const MobileTitle = styled.div`
-  
+  display:none;
   @media screen and (max-width: 768px) {
    margin-top:54px;
- 
+   display:flex;
   }
 
 `;
