@@ -23,8 +23,9 @@ const Container = styled.div`
  margin-top:91px;
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
-    margin-top:-46px;
+    margin-top:-6px;
     padding-bottom: 0px;
+    
   }
 
 `;
@@ -61,6 +62,7 @@ const Title2 = styled.p`
     font-size: 26px;
     line-height: 40px;
     margin-top:-26px;
+    margin-bottom:40px;
   }
 `;
 const Title3 = styled.p`
@@ -86,6 +88,7 @@ const Title3 = styled.p`
     letter-spacing: 0.04em;
     color: #1A1A1A;
     margin-top:8px;
+    margin-right:12px;
   }
 `;
 const Title5 = styled.p`
@@ -102,7 +105,7 @@ const Title5 = styled.p`
   margin-top:50px;
    @media screen and (max-width: 768px) {
     margin-right:10px;
-    margin-top:-20px;
+    margin-top:-18px;
     margin-right:10px;
     font-size: 18px;
     line-height: 32px;
@@ -111,6 +114,7 @@ const Title5 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-right:10px;
  
   }
 `;
@@ -140,6 +144,7 @@ const Title4 = styled.p`
     letter-spacing: 0.04em;
     color: #1A1A1A;
     margin-top:8px;
+    margin-right:12px;
   }
 `;
 
@@ -164,9 +169,11 @@ const Background = styled.div`
     justify-content: center;
     align-items: center;
     width:375px;
-    height:375px;
-    padding-top:2px;
+    height:368px;
     padding-bottom:0px;
+    padding-top:7px;
+  
+
 
       
     } 
@@ -185,6 +192,8 @@ const Img1 = styled.img`
    @media screen and (max-width: 768px) {
    width:101px;
    height:88px;
+   margin-top:0px;
+  
   }
 `;
 
@@ -227,7 +236,8 @@ const LeftArea = styled.div`
     display:flex;
     align-items:center;
     flex-direction: column;
-      margin-top:10px;
+    margin-top:10px;
+    margin-right:20px;
     
   }
 `;
@@ -262,6 +272,8 @@ const TextContainer = styled.div`
     flex-direction: column;
     margin-left:0px;
     width:100%;
+    margin-top:-145px;
+   
   }
 `;
 
@@ -275,6 +287,7 @@ const GrayArea = styled.div`
    @media screen and (max-width: 768px) {
    width:100%;
    height:375px;
+   
   }
   
 `;
@@ -311,6 +324,8 @@ const GrayAreaText = styled.p`
     flex-direction: column;
     align-items: center;
     margin-left:0px;
+    padding-left:24px;
+    padding-right:24px;
     
   }
 `;
@@ -323,13 +338,14 @@ const Container2 = styled.div`
  margin-top:60px;
   @media screen and (max-width: 768px) {
     display: none;
+    
       
     }
 
 `;
 
 const MobileContainer = styled.div`
-   
+  
   @media screen and (min-width: 768px) {
       display: none;
     }

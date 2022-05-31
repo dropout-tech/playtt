@@ -289,7 +289,7 @@ const TextForm2222 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-top:82px;
+    margin-top:-8px;
   }
 `;
 
