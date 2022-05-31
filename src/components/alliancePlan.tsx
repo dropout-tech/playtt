@@ -21,7 +21,7 @@ const Container = styled.div`
  width:100%;
  height:1011px;
  @media screen and (max-width: 768px) {
-display:none;
+  display:none;
  }
 `;
 
@@ -57,10 +57,7 @@ const Background = styled.div`
   margin-top:60px;
   @media screen and (max-width: 768px) {
    margin-top:14px;
-  
-
-  }
-
+  } 
 `;
 
 const Text1 = styled.div`
@@ -128,20 +125,16 @@ const Img = styled.img`
   margin-left:-15px;
 `;
 
-
-// Mobile
-
 const Container2 = styled.div`
  display: none;
-@media screen and (max-width: 768px) {
- width:100%;
- display: flex;
- padding-bottom: 80px;
- padding-top:173px;
- }
+  @media screen and (max-width: 768px) {
+    width:100%;
+    display: flex;
+    padding-bottom: 80px;
+    padding-top:173px;
+  }
 
 `;
-
 
 const MobileContainer = styled.div`
 display:none;
@@ -149,8 +142,6 @@ display:none;
    display:flex;
    flex-direction: column;
    width:100%;
-
-
 
  }
 `;
@@ -162,15 +153,10 @@ const Title02 = styled.p`
     font-weight: 900;
     font-size: 26px;
     line-height: 40px;
-    /* identical to box height, or 154% */
-
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: 0.04em;
-
-    /* black */
-
     color: #1A1A1A;
   }
 
@@ -188,10 +174,9 @@ const TitleWord2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-top:px;
+    margin-top:-26px;
  }
 `;
-
 
 const Text11 = styled.div`
   @media screen and (max-width: 768px) {
@@ -203,20 +188,16 @@ const Text11 = styled.div`
 
 const Text22 = styled.div`
 @media screen and (max-width: 768px) {
-    margin-top:180px;
+    margin-top:189px;
     margin-right:145px;
-
   }
- 
  
 `;
 const Text33 = styled.div`
 @media screen and (max-width: 768px) {
-  margin-top:260px;
+  margin-top:290px;
   margin-right:140px;
   }
-
-
 `;
 
 const MobleCircleDiv = styled.div`
@@ -226,7 +207,7 @@ const MobleCircleDiv = styled.div`
   align-items: center;
   height:965px;
   background-image: url('${BgMobile}');
-  background-size:contain ;
+  background-size:cover ;
   background-repeat: no-repeat;
   background-position:center;
  
@@ -235,13 +216,15 @@ const MobleCircleDiv = styled.div`
 const Img1 = styled.img`
    width:106px;
    height:42px;
-
+   margin-left:-8px;
+   margin-top:10px;
 `;
+
 const Img2 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
-  
+   margin-left:-8px;
 }
 
 `;
@@ -250,7 +233,7 @@ const Img3 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
-  
+   margin-left:-8px;
 }
 
 `;
@@ -278,7 +261,7 @@ const Title22 = styled.p`
     line-height: 36px;
     letter-spacing: 0.03em;
     color: #005CB9;
-    margin-top:9px;
+    margin-top:1px;
    
   }
 `;
@@ -310,7 +293,7 @@ const TextForm2222 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-top:92px;
+    margin-top:82px;
   }
 `;
 
@@ -351,8 +334,6 @@ const BgWebDiv = styled.div`
  background-size:contain ;
  background-repeat: no-repeat;
  background-position:center;
- 
-
 `;
 
 

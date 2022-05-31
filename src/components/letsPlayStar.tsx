@@ -165,7 +165,8 @@ const Background = styled.div`
     align-items: center;
     width:375px;
     height:375px;
-    padding-top:26.5px;
+    padding-top:2px;
+    padding-bottom:0px;
 
       
     } 
@@ -461,7 +462,7 @@ const LetsPlayStar = () => {
               </Dot>
 
               <Dot>
-                <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄 & 阿<br />&emsp; &emsp; &ensp; 寬教練 郭則寬<br />
+                <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄 & 阿寬教練 郭則寬<br />
               </Dot>
 
               <Dot>
