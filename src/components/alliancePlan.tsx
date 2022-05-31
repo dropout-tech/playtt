@@ -92,8 +92,7 @@ const TextForm = styled.div`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:30px;
-  position: relative;
-  z-index:10;
+ 
 `;
 
 const Title2 = styled.div`
@@ -180,23 +179,21 @@ const TitleWord2 = styled.p`
 
 const Text11 = styled.div`
   @media screen and (max-width: 768px) {
-  margin-top:30px;
-  margin-right:145px;
+   margin-top:40px;
+
   }
  
 `;
 
 const Text22 = styled.div`
 @media screen and (max-width: 768px) {
-    margin-top:189px;
-    margin-right:145px;
+   margin-top:52px;
   }
  
 `;
 const Text33 = styled.div`
 @media screen and (max-width: 768px) {
-  margin-top:290px;
-  margin-right:140px;
+  margin-top:52px;
   }
 `;
 
@@ -278,8 +275,7 @@ const TextForm222 = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:-8px;
-    position: absolute;
-    z-index: 10;
+   
   }
 `;
 
@@ -314,8 +310,6 @@ const Span = styled.span`
 
 
 const TextArea = styled.div`
-  position:relative;
-  z-index:10; 
   display:flex;
   justify-content:center; 
   align-items:center;
