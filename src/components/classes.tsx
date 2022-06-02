@@ -164,7 +164,6 @@ const ContantText2 = styled.p`
     align-items: center;
     justify-content:center;
     line-height: 22px;
-    margin-left:8px;
     margin-top:36px;
   }
 `;
@@ -193,6 +192,7 @@ const Img = styled.img`
     height:220px;
     display:flex;
     justify-content: center;
+    align-items: center;
     margin-top:14px;
   }
 `;
@@ -209,6 +209,8 @@ const Img2 = styled.img`
     height:220px;
     display:flex;
     justify-content: center;
+    align-items: center;
+    margin-left:0px;
 
 
    
@@ -261,6 +263,7 @@ const Explain22 = styled.div`
 const MobileContainer = styled.div`
    display: flex;
    justify-content:center;
+   align-items: center;
    flex-direction: column;
    margin-top:24px;
 
@@ -293,6 +296,7 @@ const Text1 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
+    align-items: center;
     margin-left:0px;
     margin-top:38px;
   
@@ -358,7 +362,8 @@ const Background1 = styled.div`
     width:208px;
     height:44px;
     margin-top:-6px;
-    margin-left:65px;
+    margin-left:0px;
+    align-items: center;
 }
 `;
 const Background2 = styled.div`
@@ -372,7 +377,7 @@ const Background2 = styled.div`
   @media screen and (max-width: 768px) {
     width:190px;
     height:44px;
-   
+    margin-top:-68px;
   }
 `;
 const Background3 = styled.div`
@@ -528,7 +533,9 @@ const Classes = () => {
             <Background1>
               <ContantTitle>班別課程豐富客製化</ContantTitle>
             </Background1>
+      
             <ContantText>
+              
               <DotContainer>
                 <SpanDot>・</SpanDot> <TextArea>個人班 / 團體班 / 選手班 / 親子 / 包班</TextArea>
               </DotContainer>
@@ -632,7 +639,7 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot2>・</SpanDot2>
+                <SpanDot>・</SpanDot>
                 <TextArea2>
                   學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
                 </TextArea2>
