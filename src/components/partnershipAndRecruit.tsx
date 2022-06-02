@@ -124,7 +124,7 @@ const GrayArea = styled.div`
     display:flex;
     justify-content:center;
     flex-direction: column;
-    width:100%;
+    
   }
 `;
 
@@ -320,7 +320,7 @@ const TextkeyIn3 = styled.p`
   }
 `;
 
-const TextkeyIn5 = styled.p`
+const TextkeyIn = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -343,8 +343,10 @@ const TextkeyIn5 = styled.p`
     display: flex;
     align-items: center;
     text-align: center;
+    flex-direction:column;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+  
   
   }
 `;
@@ -423,13 +425,13 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn5>
+              <TextkeyIn>
                 <Text2>舞動陽光</Text2>
                 <Text2>華江俱樂部</Text2>
                 <Text2>三峽運動中心</Text2>
                 <Text2>中正運動中心</Text2>
                 <Text2>等 ⋯⋯</Text2>
-              </TextkeyIn5>
+              </TextkeyIn>
             </WhiteArea>
 
           </Text>
@@ -442,11 +444,11 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn5>
+              <TextkeyIn>
                 <Text2>大龍國小</Text2>
                 <Text2>懷生國小</Text2>
                 <Text2>等 ⋯⋯</Text2>
-              </TextkeyIn5>
+              </TextkeyIn>
             </WhiteArea>
           </Text>
 
@@ -458,12 +460,12 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn5>
+              <TextkeyIn>
                 <Text2>何嘉仁幼兒園</Text2>
                 <Text2>維多利亞</Text2>
                 <Text2>喬鈴補習班</Text2>
                 <Text2>等 ⋯⋯</Text2>
-              </TextkeyIn5>
+              </TextkeyIn>
             </WhiteArea>
           </Text>
 
@@ -475,14 +477,14 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn5>
+              <TextkeyIn>
                 <Text2><Span>Let's Play </Span>蘆洲店</Text2>
                 <Text2><Span>Let's Play </Span>東門店</Text2>
                 <Text2><Span>Let's Play </Span>善導寺店</Text2>
                 <Text2><Span>Let's Play </Span>新莊店</Text2>
                 <Text2><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  </Text2>
                 <Text2>乒運動桌球館</Text2>
-              </TextkeyIn5>
+              </TextkeyIn>
 
             </WhiteArea>
           </Text>

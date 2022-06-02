@@ -312,13 +312,20 @@ const Title = styled.div`
 `;
 
 const TextArea = styled.div`
-  padding:24px;
+ @media screen and (max-width: 768px) {
+   padding-left:24px;
+   padding-right:24px;
+  }
+  
 
 `;
 
 const TextArea2 = styled.div`
   height: 300px ;
   background: rgba(207, 210, 211, 0.2);
+  @media screen and (max-width: 768px) {
+   padding:24px;
+    }
 `;
 
 /* desktop thw newest info style end */

@@ -433,6 +433,7 @@ const TextArea2 = styled.div`
 
 const MobileContainer = styled.div`
    width:100%;
+   margin-top:-32px;
    @media screen and (min-width: 768px) {
     display:none;
   }

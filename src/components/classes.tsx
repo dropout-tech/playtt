@@ -40,6 +40,7 @@ const ClassIntroduce = styled.div`
 ;
  @media screen and (max-width: 768px) {
    margin-left:0px;
+   margin-top:30px;
  
   }
 `;
@@ -92,6 +93,7 @@ const Title2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
+    margin-top:-26px;
   }
 `;
 
@@ -139,7 +141,7 @@ const ContantText = styled.div`
     align-items: center;
     justify-content:center;
     line-height: 22px;
-    margin-left:-8px;
+  
 
   }
 `;
@@ -176,7 +178,8 @@ const Contant = styled.div`
   margin-top:4px;
  
   @media screen and (max-width: 768px) {
-    margin-top:-30px;
+     margin-top:0px;
+    
   }
 `;
 
@@ -190,7 +193,7 @@ const Img = styled.img`
     height:220px;
     display:flex;
     justify-content: center;
-    margin-top:114px;
+    margin-top:14px;
   }
 `;
 
@@ -237,7 +240,9 @@ const Explain1 = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    margin-top:-60px;
+    justify-content: center;
+    align-items: center;
+    margin-top:0px;
   }
 `;
 
@@ -254,7 +259,6 @@ const Explain22 = styled.div`
 `;
 
 const MobileContainer = styled.div`
-   width:80%;
    display: flex;
    justify-content:center;
    flex-direction: column;
@@ -273,6 +277,8 @@ const Explain3 = styled.div`
  margin-left:118px;
  @media screen and (max-width: 768px) {
     display: flex;
+    align-items: center;
+    justify-content:center;
     flex-direction: column;
     margin-top:-106px;
     margin-left:0px;
@@ -287,7 +293,7 @@ const Text1 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:-20px;
+    margin-left:0px;
     margin-top:38px;
   
 
@@ -302,10 +308,9 @@ const Text33 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:-20px;
-    margin-top:134px;
-  
-
+    align-items: center;
+    margin-left:0px;
+    margin-top:38px;
   }
 `;
 
@@ -317,7 +322,8 @@ const Text = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:-20px;
+    align-items: center;
+    margin-left:0px;
 
   
 
@@ -331,7 +337,8 @@ const Text2 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:-20px;
+    
+    margin-left:0px;
   
 
   }
@@ -355,18 +362,17 @@ const Background1 = styled.div`
 }
 `;
 const Background2 = styled.div`
-  background: #FFD900;
-  border-radius: 28px;
-  height:56px;
-  text-align:center;
-  display:flex;
-  justify-content:center;
-  width:50%;
+   background: #FFD900;
+   border-radius: 28px;
+   height:56px;
+   display:flex;
+   justify-content:center;
+   text-align:center;
+   width:50%;
   @media screen and (max-width: 768px) {
-    width:208px;
+    width:190px;
     height:44px;
-    margin-left:82px;
-    margin-top:-68px;
+   
   }
 `;
 const Background3 = styled.div`
@@ -380,8 +386,13 @@ const Background3 = styled.div`
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
-    margin-left:65px;
-    margin-top:-102px;
+    margin-left:0px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    padding-left:10px;
+    padding-right:10px;
+  
   }
 `;
 
@@ -476,7 +487,10 @@ const AlignText = styled.div`
   margin-top:35px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
-    margin-top:20px
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     }
 `;
 
