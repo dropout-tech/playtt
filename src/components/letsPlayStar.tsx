@@ -62,7 +62,7 @@ const Title2 = styled.p`
     font-size: 26px;
     line-height: 40px;
     margin-top:-26px;
-    margin-bottom:40px;
+    margin-bottom:40px
   }
 `;
 const Title3 = styled.p`
@@ -300,7 +300,13 @@ const Span = styled.span`
  line-height: 36px;
  letter-spacing: 0.6px;
   @media screen and (max-width: 768px) {
-    
+    color: #FF40B4;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 4%;
+    padding-right:4px;
   }
 `;
 
@@ -354,6 +360,16 @@ const MobileContainer = styled.div`
 
 const Dot = styled.div`
   display:flex;
+  margin:0px;
+  text-align:center;
+ @media screen and (min-width: 768px) {
+      display: none;
+    }
+`;
+
+const Dot2 = styled.div`
+  margin:0px;
+  text-align:center;
  @media screen and (min-width: 768px) {
       display: none;
     }
@@ -402,7 +418,17 @@ const GroupImg2 = styled.div`
 
 `;
 
+const SpanHero = styled.div`
+  @media screen and (max-width: 768px) {
+  font-family: 'Futura';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+    
+    }
 
+`;
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
   return <PageContainer>
@@ -414,7 +440,7 @@ const LetsPlayStar = () => {
       <Container2>
 
         <GroupImg src={group} alt="" />
-    
+
         <TextContainer>
           <Background>
             <TextArea1>
@@ -477,9 +503,9 @@ const LetsPlayStar = () => {
                 <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
               </Dot>
 
-              <Dot>
-                <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄 & 阿寬教練 郭則寬<br />
-              </Dot>
+              <Dot2>
+                召集人 —— <Span2> Hero</Span2> 戴祖雄<Span2> & </Span2>   阿寬教練 郭則寬
+              </Dot2>
 
               <Dot>
                 <Span>・</Span> 由專業教練團隊協助持續訓練<br />

@@ -235,6 +235,7 @@ const WhiteArea = styled.div`
     align-items: center;
     justify-content: center;
     width:100%;
+
   }
 
 `;
@@ -276,12 +277,9 @@ const TextkeyIn2 = styled.p`
   font-weight: 500;
   font-size: 18px;
   line-height: 32px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction:column;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  margin:0px;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -302,12 +300,10 @@ const TextkeyIn3 = styled.p`
   font-weight: 500;
   font-size: 18px;
   line-height: 32px;
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  flex-direction:column;
+  margin:0px;
+  align-items: center;
 
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
@@ -324,21 +320,20 @@ const TextkeyIn3 = styled.p`
   }
 `;
 
-const TextkeyIn4 = styled.div`
-  width: 210px;
-  height:224px;
+const TextkeyIn5 = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  text-align:center;
+  margin:0px;
+  padding-left:30px;
+  padding-right:30px;
   
+
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -353,6 +348,8 @@ const TextkeyIn4 = styled.div`
   
   }
 `;
+
+
 
 const Textcontainer = styled.div`
   margin-top:-20px;
@@ -397,8 +394,10 @@ const Sapn2 = styled.span`
 `;
 
 const Text2 = styled.p`
+ margin:0px;
+ align-items: center;
  @media screen and (max-width: 768px) {
-  margin: 0;
+  margin:0px;
   }
 `;
 
@@ -424,13 +423,13 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn2>
+              <TextkeyIn5>
                 <Text2>舞動陽光</Text2>
                 <Text2>華江俱樂部</Text2>
                 <Text2>三峽運動中心</Text2>
                 <Text2>中正運動中心</Text2>
                 <Text2>等 ⋯⋯</Text2>
-              </TextkeyIn2>
+              </TextkeyIn5>
             </WhiteArea>
 
           </Text>
@@ -443,11 +442,11 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn2>
+              <TextkeyIn5>
                 <Text2>大龍國小</Text2>
                 <Text2>懷生國小</Text2>
                 <Text2>等 ⋯⋯</Text2>
-              </TextkeyIn2>
+              </TextkeyIn5>
             </WhiteArea>
           </Text>
 
@@ -459,12 +458,12 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn3>
+              <TextkeyIn5>
                 <Text2>何嘉仁幼兒園</Text2>
                 <Text2>維多利亞</Text2>
                 <Text2>喬鈴補習班</Text2>
                 <Text2>等 ⋯⋯</Text2>
-              </TextkeyIn3>
+              </TextkeyIn5>
             </WhiteArea>
           </Text>
 
@@ -476,13 +475,14 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn4>
+              <TextkeyIn5>
                 <Text2><Span>Let's Play </Span>蘆洲店</Text2>
                 <Text2><Span>Let's Play </Span>東門店</Text2>
                 <Text2><Span>Let's Play </Span>善導寺店</Text2>
                 <Text2><Span>Let's Play </Span>新莊店</Text2>
-                <Text2><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</Text2>
-              </TextkeyIn4>
+                <Text2><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  </Text2>
+                <Text2>乒運動桌球館</Text2>
+              </TextkeyIn5>
 
             </WhiteArea>
           </Text>

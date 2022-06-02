@@ -120,7 +120,7 @@ const ContantTitle = styled.p`
   }
 `;
 
-const ContantText = styled.p`
+const ContantText = styled.div`
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -129,7 +129,7 @@ const ContantText = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   width:550px;
-  margin-top:40px;
+  margin-top:36px;
 
 
   @media screen and (max-width: 768px) {
@@ -141,6 +141,29 @@ const ContantText = styled.p`
     line-height: 22px;
     margin-left:-8px;
 
+  }
+`;
+
+const ContantText2 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+  width:550px;
+  margin-top:40px;
+
+  @media screen and (max-width: 768px) {
+    width: 327px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    line-height: 22px;
+    margin-left:8px;
+    margin-top:36px;
   }
 `;
 
@@ -235,7 +258,7 @@ const MobileContainer = styled.div`
    display: flex;
    justify-content:center;
    flex-direction: column;
-   margin-top:4px;
+   margin-top:24px;
 
  @media screen and (min-width: 768px) {
    display:none;
@@ -327,8 +350,8 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
-
     margin-top:-6px;
+    margin-left:65px;
 }
 `;
 const Background2 = styled.div`
@@ -342,7 +365,7 @@ const Background2 = styled.div`
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
-    margin-left:70px;
+    margin-left:82px;
     margin-top:-68px;
   }
 `;
@@ -357,7 +380,7 @@ const Background3 = styled.div`
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
-    margin-left:70px;
+    margin-left:65px;
     margin-top:-102px;
   }
 `;
@@ -567,7 +590,7 @@ const Classes = () => {
               </ContantTitle>
             </Background2>
 
-            <ContantText>
+            <ContantText2>
 
               <DotContainer>
                 <SpanDot>・</SpanDot>
@@ -600,7 +623,7 @@ const Classes = () => {
                   學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
                 </TextArea2>
               </DotContainer>
-            </ContantText>
+            </ContantText2>
           </Text>
 
         </MobileContainer>
