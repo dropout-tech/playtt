@@ -26,6 +26,7 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
    margin-top:-80px;
    margin-left:0px;
+   margin-bottom:20px;
   }
 `;
 
@@ -227,7 +228,7 @@ const Img3 = styled.img`
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
-    margin-top:130px;
+    margin-top:74px;
     margin-left:0px;
    
   }
@@ -283,7 +284,7 @@ const Explain3 = styled.div`
     align-items: center;
     justify-content:center;
     flex-direction: column;
-    margin-top:-106px;
+    /* margin-top:-106px; */
     margin-left:0px;
   }
 `;
@@ -397,6 +398,7 @@ const Background3 = styled.div`
     align-items: center;
     padding-left:10px;
     padding-right:10px;
+    margin-top:-6px;
   
   }
 `;
@@ -615,7 +617,7 @@ const Classes = () => {
 
               <DotContainer>
                 <SpanDot>・</SpanDot>
-                <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
+                <TextArea>暖身做操<Span> & </Span>趣味體適能桌球</TextArea>
               </DotContainer>
 
               <DotContainer>

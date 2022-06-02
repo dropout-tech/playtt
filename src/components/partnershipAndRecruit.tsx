@@ -56,6 +56,8 @@ const Title2 = styled.p`
     letter-spacing: 0.04em;
     color: #CFD2D3;
     margin-top:0px;
+    padding-left:20px;
+    padding-right:20px
   }
 `;
 
@@ -159,6 +161,7 @@ const Text = styled.div`
     flex-direction:row;
     margin:20px 0px 0px 0px;
     width:100%;
+    background: #F5F6F6;
    
 
   
@@ -186,6 +189,8 @@ const BigTitle = styled.p`
     color: #FFFFFF;
     transform: matrix(1, 0, 0, 1, 0, 0);
     padding-top:54px;
+    padding-left:20px;
+    padding-right:20px
   }
 `;
 
@@ -240,36 +245,31 @@ const WhiteArea = styled.div`
 
 `;
 
+const WhiteArea2 = styled.div`
+  background: #FFFFFF;
+  width: 270px;
+  height: 333px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-// const TextkeyIn1 = styled.p`
-//   font-family: 'Noto Sans TC';
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 18px;
-//   line-height: 32px;
-//   letter-spacing: 0.04em;
-//   color: #1A1A1A;
-//   display:flex;
-//   justify-content:center;
-//   align-items: center;
+  @media screen and (max-width: 768px) {
+    width: 211px;
+    height: 256px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
 
-//   @media screen and (max-width: 768px) {
-//     margin-left:50px;
-//     font-family: 'Noto Sans TC';
-//     font-style: normal;
-//     font-weight: 500;
-//     font-size: 16px;
-//     line-height: 32px;
-//     display: flex;
-//     align-items: center;
-//     text-align: center;
-//     letter-spacing: 0.04em;
-//     color: #1A1A1A;
-//     margin-left:5px;
+  }
+  @media screen and (max-width: 355px) {
+    height: auto;
+  }
+
+`;
 
 
-//   }
-// `;
+
 
 const TextkeyIn2 = styled.p`
   font-family: 'Noto Sans TC';
@@ -330,8 +330,9 @@ const TextkeyIn = styled.p`
   color: #1A1A1A;
   text-align:center;
   margin:0px;
-  padding-left:30px;
-  padding-right:30px;
+  padding-left:16px;
+  padding-right:16px;
+
   
 
   @media screen and (max-width: 768px) {
@@ -476,7 +477,7 @@ const PartnershipAndRecruit = () => {
                 <TopText>桌球場館</TopText>
               </Textcontainer>
             </GrayArea>
-            <WhiteArea>
+            <WhiteArea2>
               <TextkeyIn>
                 <Text2><Span>Let's Play </Span>蘆洲店</Text2>
                 <Text2><Span>Let's Play </Span>東門店</Text2>
@@ -486,7 +487,7 @@ const PartnershipAndRecruit = () => {
                 <Text2>乒運動桌球館</Text2>
               </TextkeyIn>
 
-            </WhiteArea>
+            </WhiteArea2>
           </Text>
         </TextArea>
       </BlueArea>
