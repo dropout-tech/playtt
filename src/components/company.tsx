@@ -476,7 +476,9 @@ const TitleOne = styled.p`
     font-weight: 900;
     font-size: 26px;
     line-height: 40px;
-    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items:center;
     letter-spacing: 4%;
     color: #1A1A1A;
   }
@@ -502,6 +504,7 @@ const TitleTwo = styled.p`
    text-align: center;
    letter-spacing: 4%;
    margin-bottom:0px;
+   margin-top:-26px;
   }
 `;
 
@@ -647,6 +650,7 @@ const MobileTitle = styled.div`
   @media screen and (max-width: 768px) {
    margin-top:54px;
    display:flex;
+   flex-direction: column;
   }
 
 `;

@@ -43,6 +43,7 @@ const Container = styled.div`
     justify-content:center;
     flex-direction:column;
     margin-left:0px;
+    margin-top:83px;
     padding-bottom: 0px;
     padding-left:24px;
     padding-right:24px;

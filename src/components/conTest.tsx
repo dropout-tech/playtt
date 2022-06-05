@@ -49,7 +49,7 @@ const Container = styled.div`
 const ImgContainer = styled.div`
  z-index:1;
   @media screen and (max-width: 768px) {
-    
+ 
   }
 `;
 
@@ -271,7 +271,7 @@ const TextContainer = styled.div`
 `;
 
 const MobileContainer = styled.div`
-  margin-top:14px;
+  margin-top:54px;
   width:100%;
   height:100%;
   background: rgba(207, 210, 211,0.2);

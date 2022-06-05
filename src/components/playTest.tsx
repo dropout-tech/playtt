@@ -29,7 +29,7 @@ const Container = styled.div`
 const TextContainer = styled.div`
  
  @media screen and (max-width: 768px) {
-    margin-top:40px;
+  
   }
 
 
@@ -200,7 +200,7 @@ const TextContent = styled.p`
    width:327px;
    display:flex;
    justify-content: center;
-   margin-top:20px;
+   margin-top:12px;
    position: relative;
    z-index:10;
 
@@ -219,10 +219,11 @@ const TestpicImg = styled.img`
     height:256px;
     margin-left:96px;
     margin-right:0px;
-    margin-top:120px;
     display:flex;
     justify-content: center;
     align-items: center;
+    margin-top:100px;
+    margin-bottom:40px;
     
     
   }

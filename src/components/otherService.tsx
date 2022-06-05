@@ -94,7 +94,15 @@ const Title3 = styled.p`
   color: #1A1A1A;
   margin-top:32px;
     @media screen and (max-width: 768px) {
-    
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+    color: #1A1A1A;
+
+
   }
 `;
 
@@ -135,8 +143,17 @@ const Text = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin-top:-10px;
+  display:flex;
+  flex-direction:column;
     @media screen and (max-width: 768px) {
-    
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+      text-align: justify;
+      letter-spacing: 0.02em;
+      color: #1A1A1A;
   }
 `;
 
@@ -158,7 +175,6 @@ const TextContainer = styled.div`
      margin-top:20px;
      padding-top:0px;
      height:327px;
-   
      padding-left:24px;
      padding-right:24px;
     
@@ -171,7 +187,10 @@ const Img1 = styled.img`
   margin-right:0px;
   margin-top:14px;
     @media screen and (max-width: 768px) {
-    
+    width: 120px;
+    height:120px;
+    margin-top:-8px;
+  
   }
 `;
 
@@ -181,7 +200,9 @@ const Img2 = styled.img`
   margin-right:0px;
   margin-top:14px;
     @media screen and (max-width: 768px) {
-    
+    width: 120px;
+    height:120px;
+    margin-top:-10px;
   }
 `;
 
@@ -191,7 +212,9 @@ const Img3 = styled.img`
   margin-right:0px;
   margin-top:40px;
     @media screen and (max-width: 768px) {
-    
+    width: 120px;
+    height:120px;
+    margin-top:28px;
   }
 `;
 
@@ -201,7 +224,9 @@ const Img4 = styled.img`
   margin-right:0px;
   margin-top:-30px;
     @media screen and (max-width: 768px) {
-    
+    width: 120px;
+    height:120px;
+    margin-top:-10px;
   }
 `;
 
@@ -211,7 +236,9 @@ const Img5 = styled.img`
   margin-right:0px;
   margin-top:-35px;
     @media screen and (max-width: 768px) {
-    
+    width: 120px;
+    height:120px;
+    margin-top:-10px;
   }
 `;
 
@@ -221,7 +248,8 @@ const Img6 = styled.img`
   margin-right:0px;
   margin-top:-70px;
     @media screen and (max-width: 768px) {
-    
+    width: 120px;
+    height:120px;
   }
 `;
 
@@ -231,17 +259,19 @@ const ImgContainer = styled.div`
   margin-top:20px;
  
     @media screen and (max-width: 768px) {
-    
+     align-items:flex-end;
+     margin-top:0px;
   }
 `;
 
 const MobileContainer = styled.div`
   display:none;
   @media screen and (max-width: 768px) {
-    width:100%;
     padding-top:80px;
     display:flex;
     flex-direction:column;
+    padding-left:24px;
+    padding-right:24px;
     }
 `;
 
@@ -283,6 +313,13 @@ const TextSize3 = styled.div`
 
 `;
 
+const TextText = styled.p`
+  @media screen and (max-width: 768px) {
+   margin:0px;
+    }
+
+`;
+
 // const Span = styled.span`
 //   font-family: 'Futura';
 //   font-weight:500;
@@ -313,8 +350,7 @@ const Title = styled.div`
 
 const TextArea = styled.div`
  @media screen and (max-width: 768px) {
-   padding-left:24px;
-   padding-right:24px;
+  margin-top:24px;
   }
   
 
@@ -324,8 +360,16 @@ const TextArea2 = styled.div`
   height: 300px ;
   background: rgba(207, 210, 211, 0.2);
   @media screen and (max-width: 768px) {
-   padding:24px;
-    }
+   padding-top:24px;
+   padding-left:24px;
+  }
+`;
+
+const TopContainer = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-bottom:-40px;
+  }
+
 `;
 
 /* desktop thw newest info style end */
@@ -437,17 +481,17 @@ const OtherService = () => {
     </Container>
 
     <MobileContainer>
-      <div>
+      <TopContainer>
         <Title1>其他服務</Title1>
         <Title2>Other Service</Title2>
-      </div>
+      </TopContainer>
       <TextArea>
         <TextArea2>
           <Title3>桌球俱樂部</Title3>
           <Text>
-            合作機構：華江高中<br />
-            聚集桌球愛好打手<br />
-            舉辦活動分享知識增加凝聚力
+            <TextText>合作機構：華江高中</TextText>
+            <TextText>聚集桌球愛好打手</TextText>
+            <TextText>舉辦活動分享知識增加凝聚力</TextText>
           </Text>
 
           <ImgContainer>
@@ -460,9 +504,9 @@ const OtherService = () => {
         <TextArea2>
           <Title3>場地租借</Title3>
           <Text>
-            平日上午包場優惠<br />
-            歡迎洽談，提早預約<br />
-            平日 14:00–21:00 與周末租桌服務
+            <TextText>平日上午包場優惠</TextText>
+            <TextText>歡迎洽談，提早預約</TextText>
+            <TextText>平日 14:00–21:00 與周末租桌服務</TextText>
           </Text>
           <ImgContainer>
             <Img2 src={img2} alt="" />
@@ -475,7 +519,7 @@ const OtherService = () => {
         <TextArea2>
           <Title3>球具販售</Title3>
           <Text>
-            依據需求協助搭配和製作球具，<br />
+            依據需求協助搭配和製作球具，
             以達到學習和運動成效為主要目的。
           </Text>
           <ImgContainer>
@@ -489,23 +533,24 @@ const OtherService = () => {
         <TextArea2>
           <Title3>場館加盟與聯盟合作</Title3>
           <Text>
-            提供系統化的 SOP 協助桌球產業發<br />
-            展更全面，並且共享產業資源互利，<br />
-            提供有心推廣桌球的同業更好的機會。<br />
+            提供系統化的 SOP 協助桌球產業發
+            展更全面，並且共享產業資源互利，
+            提供有心推廣桌球的同業更好的機會。
           </Text>
           <ImgContainer>
             <Img4 src={img4} alt="" />
           </ImgContainer>
         </TextArea2>
+  
       </TextArea>   
 
       <TextArea>
         <TextArea2>
           <Title3>趣味活動</Title3>
           <Text>
-            桌球結合趣味競賽<br />
-            各式行銷活動協辦<br />
-            自媒體 / 媒體合作
+            <TextText>桌球結合趣味競賽</TextText>
+            <TextText>各式行銷活動協辦</TextText>
+            <TextText>自媒體 / 媒體合作</TextText>
           </Text>
           <ImgContainer>
             <Img5 src={img5} alt="" />
@@ -517,10 +562,10 @@ const OtherService = () => {
         <TextArea2>
           <Title3>VIP 專區</Title3>
           <Text>
-            特別精心打造的桌球 VIP 包廂空間，<br />
-            讓玩樂和歡笑回憶留在美好的空間，<br />
-            更方便拍照留念。目標成為雙北桌球<br />
-            跨足休閒娛樂的業界首選，<br />
+            特別精心打造的桌球 VIP 包廂空間，
+            讓玩樂和歡笑回憶留在美好的空間，
+            更方便拍照留念。目標成為雙北桌球
+            跨足休閒娛樂的業界首選，
             開創桌球產業藍海。
           </Text>
           <ImgContainer>
