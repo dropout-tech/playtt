@@ -101,7 +101,7 @@ const Title3 = styled.p`
     line-height: 36px;
     letter-spacing: 0.03em;
     color: #1A1A1A;
-
+    margin-top:0px;
 
   }
 `;
