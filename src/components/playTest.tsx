@@ -21,6 +21,8 @@ const Container = styled.div`
   justify-content:center;
   padding-top:180px;
   padding-bottom: 80px;
+  padding-left:24px;
+  padding-right:24px;
    @media screen and (max-width: 768px) {
     display: none;
   }
@@ -48,8 +50,9 @@ const Text2 = styled.div`
   margin-top:80px;
  @media screen and (max-width: 768px) {
     display:flex;
+    justify-content:center;
+    align-items:center;
     flex-direction: column;
-    padding-left:30px;
     margin-top:-36px;
    
   }
@@ -61,6 +64,7 @@ const Text3 = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+
   }
 `;
 
@@ -133,7 +137,6 @@ const Title3 = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:50px;
-    margin-left:18px;
     margin-bottom:32px;
 
   }
@@ -151,7 +154,6 @@ const Number = styled.span`
   color: #CFD2D3;
   margin-top:-40px;
    @media screen and (max-width: 768px) {
-    padding-left:12px;
     font-family: 'Futura';
     font-weight: 700;
     font-size: 18px;
@@ -176,7 +178,7 @@ const Number2 = styled.span`
   }
 `;
 
-const TextContent = styled.p`
+const TextContent = styled.div`
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -188,7 +190,7 @@ const TextContent = styled.p`
   width:517px;
   margin-top:30px;
    @media screen and (max-width: 768px) {
-   padding-left:0px;
+   width:100%;
    font-family: 'Noto Sans TC';
    font-style: normal;
    font-weight: 500;
@@ -197,12 +199,14 @@ const TextContent = styled.p`
    text-align: justify;
    letter-spacing: 0.02em;
    color: #1A1A1A; 
-   width:327px;
+
    display:flex;
    justify-content: center;
    margin-top:12px;
    position: relative;
    z-index:10;
+   padding-left:24px;
+   padding-right:24px;
 
   }
 `;
@@ -287,6 +291,15 @@ const ImgContainer = styled.div`
   }
 `;
 
+const TreeItems = styled.div`
+   @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    flex-direction: column;
+  }
+
+`;
 
 /* desktop thw newest info style end */
 const PlayTest = () => {
@@ -330,16 +343,21 @@ const PlayTest = () => {
         </Text1>
         <Text2>
           <Title3><Span> Let's Play </Span>  獨家精心規劃專屬檢定，結合</Title3>
-          <Number>1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
-          <Number>2.<Text123>筆試 —— 桌球知識</Text123></Number>
-          <Number>3.<Text123>體能</Text123></Number>
+          <TreeItems>
+            <Number>1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
+            <Number>2.<Text123>筆試 —— 桌球知識</Text123></Number>
+            <Number>3.<Text123>體能</Text123></Number>
+          </TreeItems>
         </Text2>
         <Text3>
           <TextContent>
-            設計成 <Span> pL1–L12 </Span> 檢定關卡，最後一關還有模擬比賽。
-            教學內容搭配好玩的教案，讓大家在樂趣中成長，
-            用來幫助大小朋友測驗學習技術成果。
-            你意想不到的玩桌球，也可以學到、揮灑汗水、歡笑滿滿！
+            <p>
+              設計成 <Span>L1–L12 </Span> 檢定關卡，最後一關還有模擬比賽。
+              教學內容搭配好玩的教案，讓大家在樂趣中成長，
+              用來幫助大小朋友測驗學習技術成果。
+              你意想不到的玩桌球，也可以學到、揮灑汗水、歡笑滿滿！
+            </p>
+            
           </TextContent>
         </Text3>
       </TextContainer>
