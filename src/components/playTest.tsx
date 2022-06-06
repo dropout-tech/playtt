@@ -217,15 +217,13 @@ const TestpicImg = styled.img`
    @media screen and (max-width: 768px) {
     width:251px;
     height:256px;
-    margin-left:96px;
-    margin-right:0px;
     display:flex;
     justify-content: center;
     align-items: center;
     margin-top:100px;
     margin-bottom:40px;
-    
-    
+    margin-left:83px;
+
   }
 `;
 
