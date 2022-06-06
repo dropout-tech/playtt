@@ -214,7 +214,11 @@ const TestpicImg = styled.img`
   justify-content: flex-start;
   align-items: flex-start;
   margin-left:103px;
-   @media screen and (max-width: 768px) {
+  
+`;
+
+const MobileImg = styled.img`
+  @media screen and (max-width: 768px) {
     width:251px;
     height:256px;
     display:flex;
@@ -222,9 +226,9 @@ const TestpicImg = styled.img`
     align-items: center;
     margin-top:100px;
     margin-bottom:40px;
-    margin-left:83px;
-
+    margin-left:0px;
   }
+
 `;
 
 const Text123 = styled.p`
@@ -255,7 +259,6 @@ const MobileContainer = styled.div`
   margin-top:-44px;
   padding:24px;
 
- 
  @media screen and (min-width: 768px) {
     display:none;
   }
@@ -275,6 +278,15 @@ const Span = styled.span`
     letter-spacing:2%;
   }
 `;
+
+const ImgContainer = styled.div`
+    @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+`;
+
 
 /* desktop thw newest info style end */
 const PlayTest = () => {
@@ -306,7 +318,10 @@ const PlayTest = () => {
     </Container>
 
     <MobileContainer>
-      <TestpicImg src={testpic} alt="" />
+      <ImgContainer> 
+        <MobileImg src={testpic} alt="" />
+      </ImgContainer>
+     
 
       <TextContainer>
         <Text1>
