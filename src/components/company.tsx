@@ -43,7 +43,8 @@ const BelowArea = styled.div`
     flex-direction: column;
     align-items:center;
     margin-left:0px;
-    width:327px;
+    width:auto;
+    
    
   }
 
@@ -60,8 +61,10 @@ const Background1 = styled.div`
  
  
   @media screen and (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:84px;
+    /* padding-left:24px;
+    padding-right:24px; */
   ;
   }
 `;
@@ -77,10 +80,8 @@ const Background2 = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     height:84px;
-    /* padding:20px; */
- 
-   
-    
+    /* padding-left:24px;
+    padding-right:24px; */
   }
 `;
 
@@ -97,7 +98,8 @@ const TopLeftArea = styled.div`
     flex-direction: column;
     align-items: center;
     margin-left:0px;
-    width:100%;
+    /* width:100%; */
+
   
    
   }
@@ -112,13 +114,14 @@ const TextArea = styled.div`
  margin-top:50px;
 
   @media screen and (max-width: 768px) {
-    width:100%;
+    width:auto;
     height:468px;
     display:flex;  
     justify-content: center;
     align-items:center;
     margin-top:0px;
-    /* padding:20px; */
+    padding-left:24px;
+    padding-right:24px;
 
   }
 `;
@@ -131,6 +134,8 @@ const TextArea1 = styled.div`
    margin-bottom:30px;
    margin-left:0px;
    margin-top:58px;
+   width:auto;
+   
  
   }
 `;
@@ -320,6 +325,7 @@ const TopBelow = styled.div`
    padding-left:24px;
    padding-right:24px;
    margin-left:0px;
+   width:auto;
   
   }
 
@@ -370,10 +376,10 @@ const BelowTextContainer = styled.div`
  height:977px;
 
   @media screen and (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:993px;
     margin-bottom:80px;
-    /* padding:20px; */
+    
   }
 
 `;
@@ -425,14 +431,14 @@ const MobileContainer = styled.div`
   display:none;
  @media screen and (max-width: 768px) {
     background: #38D430;
-    width:100%;
+    /* width:100%; */
     height:100%;
     display:flex;
     justify-content:center;
     flex-direction: column;
     align-items: center;
-    /* padding-left:24px;
-    padding-right:24px; */
+    padding-left:24px;
+    padding-right:24px;
     margin-top:40px;
     
    
@@ -572,8 +578,8 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width:327px;
- 
+  width:100%;
+
 
  
   }
@@ -649,6 +655,9 @@ const MobileTitle = styled.div`
    margin-top:54px;
    display:flex;
    flex-direction: column;
+   /* padding-left:24px;
+   padding-right:24px; */
+   width:auto;
   }
 
 `;
@@ -657,6 +666,7 @@ const MobileTitle = styled.div`
 const AlignContener = styled.div`
   @media screen and (max-width: 768px) {
    margin-top:10px;
+  
  
   }
 
@@ -674,7 +684,9 @@ const AlignContener2 = styled.div`
 const AlignContener3 = styled.div`
   @media screen and (max-width: 768px) {
    margin-top:16px;
- 
+   padding-left:24px;
+   padding-right:24px;
+   width:auto;
   }
 
 
@@ -846,12 +858,12 @@ const Company = () => {
 
             </AlignContener>
 
-            <AlignContener2>
+            <AlignContener>
               <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
               <Text>台北市中正區杭州南路一段<Span1> 63 </Span1>號<Span1> B1</Span1></Text>
               <Text><Span1> 02 2391 9659</Span1></Text>
 
-            </AlignContener2>
+            </AlignContener>
           </TopBelow>
 
           <UnderBelow>
@@ -862,11 +874,11 @@ const Company = () => {
               <Text><Span1> 02 2651 0652</Span1></Text>
             </AlignContener>
 
-            <AlignContener3>
+            <AlignContener>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
               <Text>台北市萬華區西藏路<Span1> 213 </Span1>號</Text>
               <Text> <Span1> 02 2339 6689 </Span1></Text>
-            </AlignContener3>
+            </AlignContener>
 
           </UnderBelow>
 
