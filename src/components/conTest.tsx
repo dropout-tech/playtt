@@ -46,12 +46,6 @@ const Container = styled.div`
 
 // `;
 
-const ImgContainer = styled.div`
- z-index:1;
-  @media screen and (max-width: 768px) {
- 
-  }
-`;
 
 
 const TextContainer1 = styled.div`
@@ -79,14 +73,14 @@ const TextContainer2 = styled.div`
  margin-top:-60px;
  
   @media screen and (max-width: 768px) {
-    margin-top:-24px;
     justify-content:center;
     margin-left:0px;
-    margin-top:0px;
-    margin-bottom:65px;
+    margin-top:-2px;
+    margin-bottom:60px;
     display:flex;
     justify-content:center;
     align-items: center;
+
     
   } 
 `;
@@ -238,7 +232,7 @@ const TextContent = styled.p`
     letter-spacing: 0.03em;
     color: #3C3D3D;
     transform: matrix(1, 0, 0, 1, 0, 0);
-    margin-top:40px;
+    margin-top:14px;
     width:100%;
    
    
@@ -267,18 +261,21 @@ const Text = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     width:auto;
-    margin:14px 0px 0px 20px;
+    margin:0px 0px 0px 20px;
     
     
   }
   
 `;
 
+
 const TextContainer = styled.div`
  margin-top:130px;
  @media screen and (max-width: 768px) {
   display:flex;
-  margin-top:10px;
+  justify-content:center;
+  align-items: center;
+  margin-top:20px;
  
  }
 `;
@@ -286,10 +283,11 @@ const TextContainer = styled.div`
 const MobileContainer = styled.div`
   margin-top:54px;
   width:100%;
-  height:100%;
   background: rgba(207, 210, 211,0.2);
   display: flex;
   flex-direction: column;
+
+  
 
  
 
@@ -298,18 +296,6 @@ const MobileContainer = styled.div`
  }
 `;
 
-
-const CircleImg = styled.img`
-  width:100%;
-  height:200px;
-  margin-top:0px;
-  display:flex;
-  align-items: center;
-  position: relative;
-  z-index:1;
-
-
-`;
 
 const CircleImg2 = styled.div`
   @media screen and (max-width: 768px) {
@@ -435,7 +421,7 @@ const ConTest = () => {
     </Container>
 
     <MobileContainer>
-        <CircleImg2></CircleImg2>
+      <CircleImg2></CircleImg2>
 
       <TextAlign>
 
@@ -494,7 +480,7 @@ const ConTest = () => {
           </RightText>
         </TextContainer2>
       </TextAlign>
-      
+
 
 
     </MobileContainer>

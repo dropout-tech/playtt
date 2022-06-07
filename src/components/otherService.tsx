@@ -273,7 +273,7 @@ const ImgContainer = styled.div`
 const MobileContainer = styled.div`
   display:none;
   @media screen and (max-width: 768px) {
-    padding-top:80px;
+    padding-top:30px;
     display:flex;
     flex-direction:column;
     padding-left:24px;
