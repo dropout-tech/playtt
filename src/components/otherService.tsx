@@ -196,7 +196,7 @@ const Img1 = styled.img`
   margin-top:14px;
    
   
-  }
+  
 `;
 
 const Img2 = styled.img`
@@ -205,7 +205,7 @@ const Img2 = styled.img`
   margin-right:0px;
   margin-top:14px;
    
-  }
+  
 `;
 
 const Img3 = styled.img`
@@ -214,7 +214,7 @@ const Img3 = styled.img`
   margin-right:0px;
   margin-top:40px;
    
-  }
+  
 `;
 
 const Img4 = styled.img`
@@ -223,7 +223,7 @@ const Img4 = styled.img`
   margin-right:0px;
   margin-top:-30px;
    
-  }
+  
 `;
 
 const Img5 = styled.img`
@@ -232,7 +232,7 @@ const Img5 = styled.img`
   margin-right:0px;
   margin-top:-35px;
    
-  }
+  
 `;
 
 const Img6 = styled.img`
@@ -241,7 +241,7 @@ const Img6 = styled.img`
   margin-right:0px;
   margin-top:-70px;
  
-  }
+  
 `;
 
 const MobileImg = styled.img`

@@ -62,8 +62,9 @@ const TextContainer1 = styled.div`
  flex-direction: column;
  margin-top:-7px;
   @media screen and (max-width: 768px) {
-    margin-top:120px;
+    margin-top:50px;
     align-items: center;
+    
   }
 `;
 
@@ -80,10 +81,14 @@ const TextContainer2 = styled.div`
   @media screen and (max-width: 768px) {
     margin-top:-24px;
     justify-content:center;
-    margin-left:-25px;
-    margin-top:-7px;
+    margin-left:0px;
+    margin-top:0px;
     margin-bottom:65px;
-  }
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+  } 
 `;
 
 const LeftText = styled.div`
@@ -91,7 +96,11 @@ const LeftText = styled.div`
    @media screen and (max-width: 768px) {
     z-index:10;
     margin-top:-240px;
-    margin-left:20px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    margin-left:0px;
   }
 
 `;
@@ -112,8 +121,10 @@ const Background = styled.div`
   @media screen and (max-width: 768px) {
     width:96px;
     height:44px;
-    margin-top:20px;
-    margin-left:30px;
+    margin-top:0px;
+    margin-left:0px;
+
+    
   }
    
 `;
@@ -137,10 +148,10 @@ const Title1 = styled.p`
     line-height: 40px;
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content:center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:-10px;
+   
 
 
   }
@@ -161,7 +172,6 @@ const Title2 = styled.p`
   line-Height:52px;
   margin-top:-28px;
   @media screen and (max-width: 768px) {
-   margin-left:-80px;
    font-family: 'Futura';
    font-style: normal;
    font-weight: 700;
@@ -169,7 +179,7 @@ const Title2 = styled.p`
    line-height: 40px;
    display: flex;
    align-items: center;
-   text-align: center;
+  justify-content: center;
    letter-spacing: 0.04em;
    color: #CFD2D3;
    margin-top:-26px;
@@ -202,6 +212,7 @@ const Title3 = styled.p`
     color: #005CB9;
     margin-top:5px;
     margin-left:20px;
+    
 
   }
 `;
@@ -228,9 +239,9 @@ const TextContent = styled.p`
     color: #3C3D3D;
     transform: matrix(1, 0, 0, 1, 0, 0);
     margin-top:40px;
-    width:340px;
-    margin-left:-20px;
-
+    width:100%;
+   
+   
   }
   
 `;
@@ -255,8 +266,9 @@ const Text = styled.p`
     text-align: justify;
     letter-spacing: 0.02em;
     color: #1A1A1A;
-    width:211px;
-    margin:15px 0px -5px 20px;
+    width:auto;
+    margin:14px 0px 0px 20px;
+    
     
   }
   
@@ -267,6 +279,7 @@ const TextContainer = styled.div`
  @media screen and (max-width: 768px) {
   display:flex;
   margin-top:10px;
+ 
  }
 `;
 
@@ -277,6 +290,9 @@ const MobileContainer = styled.div`
   background: rgba(207, 210, 211,0.2);
   display: flex;
   flex-direction: column;
+
+ 
+
  @media screen and (min-width: 768px) {
   display:none;
  }
@@ -286,25 +302,47 @@ const MobileContainer = styled.div`
 const CircleImg = styled.img`
   width:100%;
   height:200px;
-  margin-top:-100px;
+  margin-top:0px;
   display:flex;
   align-items: center;
   position: relative;
   z-index:1;
 
-@media screen and (max-width: 768px) {
-  
+
+`;
+
+const CircleImg2 = styled.div`
+  @media screen and (max-width: 768px) {
+   width:100%;
+   height:210px;
+   background-image: url('${circle}');
+   background-size:cover ;
+   background-repeat: no-repeat;
+   background-position:center;
 }
+
+
 `;
 
 const Ball = styled.div`
   @media screen and (max-width: 768px) {
-   margin-left:110px;
    margin-top:-20px;
+   display:flex;
+   justify-content:center;
+   flex-direction: column;
   }
 
 
 `;
+
+const TextAlign = styled.div`
+  @media screen and (max-width: 768px) {
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+`;
+
 
 const AlignText = styled.div`
  display:flex;
@@ -327,6 +365,17 @@ const Span = styled.span`
     letter-spacing:2%;
   }
 `;
+
+const YelloArea = styled.div`
+  @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+  }
+
+`;
+
 
 /* desktop thw newest info style end */
 const ConTest = () => {
@@ -386,57 +435,66 @@ const ConTest = () => {
     </Container>
 
     <MobileContainer>
-      <ImgContainer>
-        <CircleImg src={circle} alt="" />
-      </ImgContainer>
+        <CircleImg2></CircleImg2>
 
-      <TextContainer1>
-        <LeftText>
-          <Ball>
-            <Title1>桌球賽事</Title1>
-            <Title2>Let’s Play Match</Title2>
-          </Ball>
-          <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
-        </LeftText>
-      </TextContainer1>
+      <TextAlign>
+
+        <TextContainer1>
+          <LeftText>
+            <Ball>
+              <Title1>桌球賽事</Title1>
+              <Title2>Let’s Play Match</Title2>
+            </Ball>
+            <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
+          </LeftText>
+        </TextContainer1>
 
 
-      <TextContainer2>
-        <RightText>
-          <TextContainer>
-            <Background>
-              <Title3>邀請賽</Title3>
-            </Background>
-            <div>
-              <Text>
-                由<Span>Let's Play</Span> 發出邀請，讓小小選手們有發光表現的舞台。
-              </Text>
-            </div>
-          </TextContainer>
+        <TextContainer2>
+          <RightText>
+            <TextContainer>
+              <YelloArea>
+                <Background>
+                  <Title3>邀請賽</Title3>
+                </Background>
+              </YelloArea>
+              <div>
+                <Text>
+                  由<Span>Let's Play</Span> 發出邀請，讓小小選手們有發光表現的舞台。
+                </Text>
+              </div>
+            </TextContainer>
 
-          <TextContainer>
-            <Background>
-              <Title3>積分賽</Title3>
-            </Background>
-            <div>
-              <Text>
-                於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
-              </Text>
-            </div>
-          </TextContainer>
+            <TextContainer>
 
-          <TextContainer>
-            <Background>
-              <Title3>學員盃</Title3>
-            </Background>
-            <div>
-              <Text>
-                <Span>Let's Play</Span> 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
-              </Text>
-            </div>
-          </TextContainer>
-        </RightText>
-      </TextContainer2>
+              <YelloArea>
+                <Background>
+                  <Title3>積分賽</Title3>
+                </Background>
+              </YelloArea>
+              <div>
+                <Text>
+                  於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
+                </Text>
+              </div>
+            </TextContainer>
+
+            <TextContainer>
+              <YelloArea>
+                <Background>
+                  <Title3>學員盃</Title3>
+                </Background>
+              </YelloArea>
+              <div>
+                <Text>
+                  <Span>Let's Play</Span> 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
+                </Text>
+              </div>
+            </TextContainer>
+          </RightText>
+        </TextContainer2>
+      </TextAlign>
+      
 
 
     </MobileContainer>
