@@ -44,6 +44,7 @@ const BelowArea = styled.div`
     align-items:center;
     margin-left:0px;
     width:auto;
+     margin-top:20px;
     
    
   }
@@ -63,6 +64,7 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     height:84px;
+    margin:-8px;
     /* padding-left:24px;
     padding-right:24px; */
   ;
@@ -93,12 +95,15 @@ const TopLeftArea = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    margin-top:48px;
+    margin-top:-46px;
     display:flex;
     flex-direction: column;
     align-items: center;
     margin-left:0px;
-    /* width:100%; */
+    height: auto;
+
+   
+
 
   
    
@@ -321,7 +326,6 @@ const TopBelow = styled.div`
    justify-content:flex-start;
    align-items:flex-start;
    flex-direction:column;
-   margin-top:4px;
    padding-left:24px;
    padding-right:24px;
    margin-left:0px;
@@ -377,8 +381,8 @@ const BelowTextContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     width:100%;
-    height:993px;
-    margin-bottom:80px;
+    height:890px;
+    margin-bottom:-91px;
     
   }
 
@@ -432,14 +436,18 @@ const MobileContainer = styled.div`
  @media screen and (max-width: 768px) {
     background: #38D430;
     /* width:100%; */
-    height:100%;
+    height:1580px;
     display:flex;
     justify-content:center;
     flex-direction: column;
     align-items: center;
     padding-left:24px;
     padding-right:24px;
-    margin-top:40px;
+    padding-top:0px;
+    margin-top:0px;
+    padding-bottom:37px;
+   
+  
     
    
   }
