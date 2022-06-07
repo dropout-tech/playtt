@@ -55,9 +55,12 @@ const Title1 = styled.p`
   margin-left:30px;
   color: #1A1A1A;
     @media screen and (max-width: 768px) {
-    margin-left:30px;
+    margin-left:0px;
     font-size: 26px;
     line-height: 40px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
   }
 `;
 
@@ -77,10 +80,13 @@ const Title2 = styled.p`
   line-Height:52px;
   margin-left:20px;
     @media screen and (max-width: 768px) {
-    margin-left:40px;
+    margin-left:0px;
     margin-top:-26px;
     font-size: 26px;
     line-height: 40px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
   }
 `;
 
@@ -154,6 +160,8 @@ const Text = styled.p`
       text-align: justify;
       letter-spacing: 0.02em;
       color: #1A1A1A;
+      padding-right:24px;
+      margin-top:-4px;
   }
 `;
 
