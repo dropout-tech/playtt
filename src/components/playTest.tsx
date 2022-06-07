@@ -31,7 +31,7 @@ const Container = styled.div`
 const TextContainer = styled.div`
  
  @media screen and (max-width: 768px) {
-  
+   margin-top:-20px;
   }
 
 
@@ -199,7 +199,6 @@ const TextContent = styled.div`
    text-align: justify;
    letter-spacing: 0.02em;
    color: #1A1A1A; 
-
    display:flex;
    justify-content: center;
    margin-top:12px;
@@ -207,6 +206,7 @@ const TextContent = styled.div`
    z-index:10;
    padding-left:24px;
    padding-right:24px;
+   margin-top:-4px;
 
   }
 `;

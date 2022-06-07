@@ -186,10 +186,7 @@ const Img1 = styled.img`
   height:148px;
   margin-right:0px;
   margin-top:14px;
-    @media screen and (max-width: 768px) {
-    width: 120px;
-    height:120px;
-    margin-top:-8px;
+   
   
   }
 `;
@@ -199,10 +196,7 @@ const Img2 = styled.img`
   height:148px;
   margin-right:0px;
   margin-top:14px;
-    @media screen and (max-width: 768px) {
-    width: 120px;
-    height:120px;
-    margin-top:-10px;
+   
   }
 `;
 
@@ -211,10 +205,7 @@ const Img3 = styled.img`
   height:148px;
   margin-right:0px;
   margin-top:40px;
-    @media screen and (max-width: 768px) {
-    width: 120px;
-    height:120px;
-    margin-top:28px;
+   
   }
 `;
 
@@ -223,10 +214,7 @@ const Img4 = styled.img`
   height:148px;
   margin-right:0px;
   margin-top:-30px;
-    @media screen and (max-width: 768px) {
-    width: 120px;
-    height:120px;
-    margin-top:-10px;
+   
   }
 `;
 
@@ -235,10 +223,7 @@ const Img5 = styled.img`
   height:148px;
   margin-right:0px;
   margin-top:-35px;
-    @media screen and (max-width: 768px) {
-    width: 120px;
-    height:120px;
-    margin-top:-10px;
+   
   }
 `;
 
@@ -247,9 +232,22 @@ const Img6 = styled.img`
   height:148px;
   margin-right:0px;
   margin-top:-70px;
+ 
+  }
+`;
+
+const MobileImg = styled.img`
+  width: 148px;
+  height:148px;
+  margin-right:0px;
+  margin-top:-70px;
     @media screen and (max-width: 768px) {
     width: 120px;
     height:120px;
+    display:flex;
+    justify-content:flex-end;
+    align-items: flex-end;
+    margin-top:0px;
   }
 `;
 
@@ -360,8 +358,12 @@ const TextArea2 = styled.div`
   height: 300px ;
   background: rgba(207, 210, 211, 0.2);
   @media screen and (max-width: 768px) {
+   height: 100% ;
    padding-top:24px;
    padding-left:24px;
+   display:flex;
+   flex-direction: column;
+   justify-content:space-between;
   }
 `;
 
@@ -495,7 +497,7 @@ const OtherService = () => {
           </Text>
 
           <ImgContainer>
-            <Img1 src={img1} alt="" />
+            <MobileImg src={img1} alt="" />
           </ImgContainer>
         </TextArea2>
       </TextArea>
@@ -509,7 +511,7 @@ const OtherService = () => {
             <TextText>平日 14:00–21:00 與周末租桌服務</TextText>
           </Text>
           <ImgContainer>
-            <Img2 src={img2} alt="" />
+            <MobileImg src={img2} alt="" />
           </ImgContainer>
         </TextArea2>
       </TextArea>
@@ -523,7 +525,7 @@ const OtherService = () => {
             以達到學習和運動成效為主要目的。
           </Text>
           <ImgContainer>
-            <Img3 src={img3} alt="" />
+            <MobileImg src={img3} alt="" />
           </ImgContainer>
         </TextArea2>
       </TextArea>
@@ -538,7 +540,7 @@ const OtherService = () => {
             提供有心推廣桌球的同業更好的機會。
           </Text>
           <ImgContainer>
-            <Img4 src={img4} alt="" />
+            <MobileImg src={img4} alt="" />
           </ImgContainer>
         </TextArea2>
   
@@ -553,7 +555,7 @@ const OtherService = () => {
             <TextText>自媒體 / 媒體合作</TextText>
           </Text>
           <ImgContainer>
-            <Img5 src={img5} alt="" />
+            <MobileImg src={img5} alt="" />
           </ImgContainer>
         </TextArea2>
       </TextArea>   
@@ -569,7 +571,7 @@ const OtherService = () => {
             開創桌球產業藍海。
           </Text>
           <ImgContainer>
-            <Img6 src={img6} alt="" />
+            <MobileImg src={img6} alt="" />
           </ImgContainer>
         </TextArea2>
       </TextArea> 
