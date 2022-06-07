@@ -43,9 +43,8 @@ const BelowArea = styled.div`
     flex-direction: column;
     align-items:center;
     margin-left:0px;
-    margin-top:20px;
     width:327px;
-    padding:20px;
+   
   }
 
 `;
@@ -63,8 +62,6 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:327px;
     height:84px;
-    margin-top:-8px;
-    padding:20px;
   ;
   }
 `;
@@ -80,7 +77,7 @@ const Background2 = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     height:84px;
-    padding:20px;
+    /* padding:20px; */
  
    
     
@@ -121,7 +118,7 @@ const TextArea = styled.div`
     justify-content: center;
     align-items:center;
     margin-top:0px;
-    padding:20px;
+    /* padding:20px; */
 
   }
 `;
@@ -133,7 +130,7 @@ const TextArea1 = styled.div`
   @media screen and (max-width: 768px) {
    margin-bottom:30px;
    margin-left:0px;
-   margin-top:6px;
+   margin-top:58px;
  
   }
 `;
@@ -376,7 +373,7 @@ const BelowTextContainer = styled.div`
     width:327px;
     height:993px;
     margin-bottom:80px;
-    padding:20px;
+    /* padding:20px; */
   }
 
 `;
@@ -437,7 +434,7 @@ const MobileContainer = styled.div`
     /* padding-left:24px;
     padding-right:24px; */
     margin-top:40px;
-    /* margin-bottom:-40px; */
+    
    
   }
 
@@ -448,7 +445,7 @@ const Column = styled.div`
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
-    margin-top:6px;
+    margin-top:0px;
   }
 `;
 
@@ -630,7 +627,8 @@ const Text33 = styled.div`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-top:-14px;
+    margin-top:-21px;
+   
    
 
   }
