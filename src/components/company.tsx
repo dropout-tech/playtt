@@ -43,8 +43,9 @@ const BelowArea = styled.div`
     flex-direction: column;
     align-items:center;
     margin-left:0px;
-    width:auto;
-     margin-top:20px;
+    width:100%;
+    margin-top:20px;
+    
     
    
   }
@@ -63,8 +64,8 @@ const Background1 = styled.div`
  
   @media screen and (max-width: 768px) {
     width:100%;
-    height:84px;
-    margin:-8px;
+    height:88px;
+    margin:0px;
     /* padding-left:24px;
     padding-right:24px; */
   ;
@@ -121,10 +122,10 @@ const TextArea = styled.div`
 
   @media screen and (max-width: 768px) {
     width:100%;
-    height:468px;
+    height:398px;
     display:flex;  
     justify-content: center;
-    align-items:center;
+    align-items: flex-start;
     margin-top:0px;
    
 
@@ -136,12 +137,13 @@ const TextArea1 = styled.div`
   margin-left:48px;
   
   @media screen and (max-width: 768px) {
-   margin-bottom:30px;
-   margin-left:0px;
-   margin-top:24px;
-   width:100%;
+    width:100%;
+    height:100px;
+    margin-left:0px;
     padding-left:24px;
     padding-right:24px;
+    margin-top:0px;
+
   }
 `;
 
