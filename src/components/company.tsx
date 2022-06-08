@@ -96,6 +96,7 @@ const TopLeftArea = styled.div`
  margin-left:30px;
 
 
+
   @media screen and (max-width: 768px) {
     margin-top:24px;
     display:flex;
@@ -104,6 +105,7 @@ const TopLeftArea = styled.div`
     margin-left:0px;
     height: auto;
     width:100%;
+    
 
    
 
@@ -128,7 +130,7 @@ const TextArea = styled.div`
     justify-content: center;
     align-items: flex-start;
     margin-top:0px;
-    padding-bottom:1px;
+    padding-bottom:33px;
    
 
   }
@@ -404,6 +406,7 @@ const BelowTextContainer = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     height:798px;
+    padding-bottom:28px;
   }
 
 `;
@@ -465,7 +468,7 @@ const MobileContainer = styled.div`
     padding-right:24px;
     padding-top:0px;
     margin-top:40px;
-    padding-bottom:120px;
+    padding-bottom:112px;
   
   
     
@@ -596,6 +599,7 @@ const TopContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width:100%;
+ 
   
 
 
