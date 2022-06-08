@@ -65,7 +65,8 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     height:88px;
-    margin:0px;
+    margin-top:96px;
+    
     /* padding-left:24px;
     padding-right:24px; */
   ;
@@ -96,7 +97,7 @@ const TopLeftArea = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    margin-top:-46px;
+    margin-top:24px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -297,7 +298,7 @@ const Title = styled.p`
     align-items: center;
     text-align: center;
     letter-spacing: 0.03em;
-    margin-top:20px;
+    margin-top:24px;
   }
 `;
 
@@ -380,9 +381,7 @@ const BelowTextContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     width:100%;
-    height:890px;
-    margin-bottom:-91px;
-    
+    height:802px;
   }
 
 `;
@@ -435,7 +434,7 @@ const MobileContainer = styled.div`
  @media screen and (max-width: 768px) {
     background: #38D430;
     /* width:100%; */
-    height:1580px;
+    height:1351px;
     display:flex;
     justify-content:center;
     flex-direction: column;
@@ -444,7 +443,7 @@ const MobileContainer = styled.div`
     padding-right:24px;
     padding-top:0px;
     margin-top:0px;
-    padding-bottom:37px;
+    padding-bottom:120px;
   
   
     
@@ -575,6 +574,7 @@ const TopContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width:100%;
+  
 
 
  
@@ -780,20 +780,20 @@ const Company = () => {
                 <Text3>地址</Text3>
                 <Text33>新北市蘆洲區長樂路<Span1> 106 </Span1>號<Span1> 3 </Span1>樓</Text33>
               </Column>
-              <Column>
+              <Column2>
                 <Text3>連絡電話</Text3>
                 <Text33><Span1> 0988 521 012</Span1></Text33>
-              </Column>
+              </Column2>
 
               <Column2>
                 <Text3>信箱</Text3>
                 <Text33> <Span1>playpp2018@gmail.com</Span1></Text33>
               </Column2>
 
-              <Column>
+              <Column2>
                 <Text3>總公司客服時間</Text3>
                 <Text33>週一至週五 <Span1> 10:00–19:00</Span1>（週末請撥各館電話）</Text33>
-              </Column>
+              </Column2>
 
               <Column>
                 <Text3>創辦人 / 總教練</Text3>
