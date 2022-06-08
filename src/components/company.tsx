@@ -128,6 +128,7 @@ const TextArea = styled.div`
     justify-content: center;
     align-items: flex-start;
     margin-top:0px;
+    padding-bottom:40px;
    
 
   }
@@ -143,7 +144,7 @@ const TextArea1 = styled.div`
     margin-left:0px;
     padding-left:24px;
     padding-right:24px;
-    margin-top:0px;
+    margin-top:10px;
 
   }
 `;
@@ -191,7 +192,27 @@ const Text3 = styled.p`
   
 `;
 
-
+const Text1 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #3C3D3D;
+  margin:0px;
+  padding:0px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    margin-top:-6px;
+  }
+`;
 const Text = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
@@ -299,6 +320,7 @@ const Title = styled.p`
     text-align: center;
     letter-spacing: 0.03em;
     margin-top:24px;
+    margin-bottom:22px;
   }
 `;
 
@@ -381,7 +403,7 @@ const BelowTextContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     width:100%;
-    height:802px;
+    height:834px;
   }
 
 `;
@@ -434,7 +456,7 @@ const MobileContainer = styled.div`
  @media screen and (max-width: 768px) {
     background: #38D430;
     /* width:100%; */
-    height:1351px;
+    height:1424px;
     display:flex;
     justify-content:center;
     flex-direction: column;
@@ -442,7 +464,7 @@ const MobileContainer = styled.div`
     padding-left:24px;
     padding-right:24px;
     padding-top:0px;
-    margin-top:0px;
+    margin-top:40px;
     padding-bottom:120px;
   
   
@@ -629,7 +651,29 @@ const Text33 = styled.div`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-top:-21px;
+    margin-top:-14px;
+   
+   
+
+  }
+`;
+
+const Text11 = styled.div`
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    margin-top:-20px;
    
    
 
@@ -661,7 +705,17 @@ const MobileTitle = styled.div`
 
 const AlignContener = styled.div`
   @media screen and (max-width: 768px) {
-   margin-top:10px;
+   margin-top:16px;
+  
+ 
+  }
+
+
+`;
+
+const AlignContener2 = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:11px;
   
  
   }
@@ -775,19 +829,19 @@ const Company = () => {
             <Title>＃ 總公司</Title>
           </Background1>
           <TextArea>
-            <TextArea1>
+            <TextArea1> 
               <Column>
                 <Text3>地址</Text3>
                 <Text33>新北市蘆洲區長樂路<Span1> 106 </Span1>號<Span1> 3 </Span1>樓</Text33>
               </Column>
               <Column2>
                 <Text3>連絡電話</Text3>
-                <Text33><Span1> 0988 521 012</Span1></Text33>
+                <Text11><Span1> 0988 521 012</Span1></Text11>
               </Column2>
 
               <Column2>
                 <Text3>信箱</Text3>
-                <Text33> <Span1>playpp2018@gmail.com</Span1></Text33>
+                <Text11> <Span1>playpp2018@gmail.com</Span1></Text11>
               </Column2>
 
               <Column2>
@@ -823,37 +877,37 @@ const Company = () => {
             <AlignContener>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
               <Text>台北市中正區金山南路一段 <Span1> 121 </Span1>號</Text>
-              <Text><Span1> 02 2356 7106</Span1></Text>
+              <Text1><Span1> 02 2356 7106</Span1></Text1>
 
             </AlignContener>
 
             <AlignContener>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
               <Text>台北市新莊區民樂街<Span1> 37 </Span1>號<Span1> B1</Span1></Text>
-              <Text><Span1> 02 2990 0566</Span1></Text>
+              <Text1><Span1> 02 2990 0566</Span1></Text1>
 
             </AlignContener>
 
             <AlignContener>
               <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
               <Text>台北市中正區杭州南路一段<Span1> 63 </Span1>號<Span1> B1</Span1></Text>
-              <Text><Span1> 02 2391 9659</Span1></Text>
+              <Text1><Span1> 02 2391 9659</Span1></Text1>
 
             </AlignContener>
           </TopBelow>
 
           <UnderBelow>
             <Title>聯盟場館經營</Title>
-            <AlignContener>
+            <AlignContener2>
               <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
               <Text>台北市南港區南港路二段<Span1> 141 </Span1>號<Span1> 1 </Span1>樓</Text>
-              <Text><Span1> 02 2651 0652</Span1></Text>
-            </AlignContener>
+              <Text1><Span1> 02 2651 0652</Span1></Text1>
+            </AlignContener2>
 
             <AlignContener>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
               <Text>台北市萬華區西藏路<Span1> 213 </Span1>號</Text>
-              <Text> <Span1> 02 2339 6689 </Span1></Text>
+              <Text1> <Span1> 02 2339 6689 </Span1></Text1>
             </AlignContener>
 
           </UnderBelow>
