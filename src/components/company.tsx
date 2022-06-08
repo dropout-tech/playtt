@@ -44,7 +44,7 @@ const BelowArea = styled.div`
     align-items:center;
     margin-left:0px;
     width:100%;
-    margin-top:20px;
+    margin-top:-12px;
     
     
    
@@ -65,10 +65,9 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     height:88px;
-    margin-top:96px;
+    margin-top:0px;
     
-    /* padding-left:24px;
-    padding-right:24px; */
+
   ;
   }
 `;
@@ -98,13 +97,13 @@ const TopLeftArea = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    margin-top:24px;
     display:flex;
     flex-direction: column;
     align-items: center;
     margin-left:0px;
     height: auto;
     width:100%;
+    padding-bottom:32px;
     
 
    
@@ -125,12 +124,13 @@ const TextArea = styled.div`
 
   @media screen and (max-width: 768px) {
     width:100%;
-    height:398px;
+    height: auto;
     display:flex;  
     justify-content: center;
     align-items: flex-start;
     margin-top:0px;
     padding-bottom:33px;
+   
    
 
   }
@@ -142,7 +142,7 @@ const TextArea1 = styled.div`
   
   @media screen and (max-width: 768px) {
     width:100%;
-    height:100px;
+    height:auto;
     margin-left:0px;
     padding-left:24px;
     padding-right:24px;
@@ -405,7 +405,7 @@ const BelowTextContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     width:100%;
-    height:798px;
+    height:auto;
     padding-bottom:28px;
   }
 
@@ -459,16 +459,16 @@ const MobileContainer = styled.div`
  @media screen and (max-width: 768px) {
     background: #38D430;
     /* width:100%; */
-    height:1424px;
+    height:auto;
     display:flex;
     justify-content:center;
     flex-direction: column;
     align-items: center;
     padding-left:24px;
     padding-right:24px;
-    padding-top:0px;
-    margin-top:40px;
-    padding-bottom:112px;
+    padding-top:32px;
+    padding-bottom:32px;
+
   
   
     
@@ -699,9 +699,8 @@ const MobileTitle = styled.div`
    margin-top:54px;
    display:flex;
    flex-direction: column;
-   /* padding-left:24px;
-   padding-right:24px; */
    width:auto;
+   margin-bottom:40px;
   }
 
 `;
@@ -727,15 +726,7 @@ const AlignContener2 = styled.div`
 
 `;
 
-const AlignContener3 = styled.div`
-  @media screen and (max-width: 768px) {
-   margin-top:11px;
-  
- 
-  }
 
-
-`;
 
 
 /* desktop thw newest info style end */
