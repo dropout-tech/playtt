@@ -128,7 +128,7 @@ const TextArea = styled.div`
     justify-content: center;
     align-items: flex-start;
     margin-top:0px;
-    padding-bottom:40px;
+    padding-bottom:1px;
    
 
   }
@@ -403,7 +403,7 @@ const BelowTextContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     width:100%;
-    height:834px;
+    height:798px;
   }
 
 `;
@@ -705,7 +705,7 @@ const MobileTitle = styled.div`
 
 const AlignContener = styled.div`
   @media screen and (max-width: 768px) {
-   margin-top:16px;
+   margin-top:8px;
   
  
   }
@@ -714,6 +714,16 @@ const AlignContener = styled.div`
 `;
 
 const AlignContener2 = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:16px;
+  
+ 
+  }
+
+
+`;
+
+const AlignContener3 = styled.div`
   @media screen and (max-width: 768px) {
    margin-top:11px;
   
@@ -874,26 +884,26 @@ const Company = () => {
               <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日<br /> <Span1> 9:00–19:00</Span1></Text>
             </AlignContener>
 
-            <AlignContener>
+            <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
               <Text>台北市中正區金山南路一段 <Span1> 121 </Span1>號</Text>
               <Text1><Span1> 02 2356 7106</Span1></Text1>
 
-            </AlignContener>
+            </AlignContener2>
 
-            <AlignContener>
+            <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
               <Text>台北市新莊區民樂街<Span1> 37 </Span1>號<Span1> B1</Span1></Text>
               <Text1><Span1> 02 2990 0566</Span1></Text1>
 
-            </AlignContener>
+            </AlignContener2>
 
-            <AlignContener>
+            <AlignContener2>
               <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
               <Text>台北市中正區杭州南路一段<Span1> 63 </Span1>號<Span1> B1</Span1></Text>
               <Text1><Span1> 02 2391 9659</Span1></Text1>
 
-            </AlignContener>
+            </AlignContener2>
           </TopBelow>
 
           <UnderBelow>
@@ -904,11 +914,11 @@ const Company = () => {
               <Text1><Span1> 02 2651 0652</Span1></Text1>
             </AlignContener2>
 
-            <AlignContener>
+            <AlignContener2>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
               <Text>台北市萬華區西藏路<Span1> 213 </Span1>號</Text>
               <Text1> <Span1> 02 2339 6689 </Span1></Text1>
-            </AlignContener>
+            </AlignContener2>
 
           </UnderBelow>
 
