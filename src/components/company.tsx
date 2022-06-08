@@ -101,6 +101,7 @@ const TopLeftArea = styled.div`
     align-items: center;
     margin-left:0px;
     height: auto;
+    width:100%;
 
    
 
@@ -119,14 +120,13 @@ const TextArea = styled.div`
  margin-top:50px;
 
   @media screen and (max-width: 768px) {
-    width:auto;
+    width:100%;
     height:468px;
     display:flex;  
     justify-content: center;
     align-items:center;
     margin-top:0px;
-    padding-left:24px;
-    padding-right:24px;
+   
 
   }
 `;
@@ -138,10 +138,10 @@ const TextArea1 = styled.div`
   @media screen and (max-width: 768px) {
    margin-bottom:30px;
    margin-left:0px;
-   margin-top:58px;
-   width:auto;
-   
- 
+   margin-top:24px;
+   width:100%;
+    padding-left:24px;
+    padding-right:24px;
   }
 `;
 
@@ -162,7 +162,7 @@ const TextArea3 = styled.div`
 
 
   @media screen and (max-width: 768px) {
-  margin-left:0px;
+   margin-left:0px;
   }
 `;
 
@@ -207,9 +207,7 @@ const Text = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    
   }
-  
 `;
 
 const Text2 = styled.p`
@@ -252,7 +250,6 @@ const Text12 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    
   }
   
 `;
@@ -446,7 +443,7 @@ const MobileContainer = styled.div`
     padding-top:0px;
     margin-top:0px;
     padding-bottom:37px;
-   
+  
   
     
    
@@ -527,17 +524,6 @@ const Background = styled.div`
   padding-bottom:47px;
  
 `;
-
-// const Num = styled.p`
-//   font-family: 'Futura';
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 18px;
-//   line-height:32px;
-//   letter-spacing: 0.04em;
-//   color: #1A1A1A;
-//   margin:0px;
-// `;
 
 const Span = styled.span`
   font-family: 'Futura';
@@ -680,25 +666,8 @@ const AlignContener = styled.div`
 
 
 `;
-const AlignContener2 = styled.div`
-  @media screen and (max-width: 768px) {
-   margin-top:10px;
- 
-  }
 
 
-`;
-
-const AlignContener3 = styled.div`
-  @media screen and (max-width: 768px) {
-   margin-top:16px;
-   padding-left:24px;
-   padding-right:24px;
-   width:auto;
-  }
-
-
-`;
 /* desktop thw newest info style end */
 const Company = () => {
   return <PageContainer>
@@ -797,10 +766,7 @@ const Company = () => {
       <TitleOne>聯絡我們</TitleOne>
       <TitleTwo>Contact Us</TitleTwo>
     </MobileTitle>
-
-
     <MobileContainer>
-
       <TopLeftArea>
         <TopContainer>
           <Background1>
