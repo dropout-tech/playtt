@@ -120,7 +120,7 @@ const Title2 = styled.p`
 `;
 
 const Title3 = styled.p`
-  font-family: 'Futura';
+  font-family: ' Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -128,7 +128,7 @@ const Title3 = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
-    font-family: 'Futura';
+    font-family: ' Noto Sans TC';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;

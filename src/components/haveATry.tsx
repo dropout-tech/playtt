@@ -177,13 +177,14 @@ const UnderText = styled.p`
    @media screen and (max-width: 768px) {
     font-size: 12px;
     line-height: 24px;
-    margin-left:-10px;
+    
   }
 `;
 
 const UnderContainer = styled.div`
   display:flex;
   justify-content: center;
+  align-items: center;
   padding-top: 12px;
   padding-bottom: 12px;
    @media screen and (max-width: 768px) {
@@ -208,6 +209,15 @@ const Span = styled.span`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+  }
 `;
 /* desktop thw newest info style end */
 const HaveATry = () => {

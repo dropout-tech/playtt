@@ -192,7 +192,7 @@ const Title4 = styled.p`
 
 const Contant = styled.div`
   width:517px;
-  font-family: 'Futura';
+  font-family: ' Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -205,7 +205,7 @@ const Contant = styled.div`
    @media screen and  (max-width: 768px) {
     width:100%;
     height:240px;
-    font-family: 'Futura';
+    font-family: ' Noto Sans TC';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -253,7 +253,7 @@ const Contant5 = styled.p`
 const Contant2 = styled.p`
   width:517px;
   height:252px;
-  font-family: 'Futura';
+  font-family: ' Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -267,7 +267,7 @@ const Contant2 = styled.p`
     height:240px;
     margin-top:20px;
     /* margin-left:-25px; */
-    font-family: 'Futura';
+    font-family: ' Noto Sans TC';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;

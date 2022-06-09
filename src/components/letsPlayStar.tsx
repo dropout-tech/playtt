@@ -466,7 +466,7 @@ const LetsPlayStar = () => {
 
           <GrayArea>
             <GrayAreaText>
-              <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
+              <Span>・</Span> 成立於 <Span2> 2020/12/15</Span2> <br />
               <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄<Span2 > & </Span2>阿寬教練 郭則寬<br />
               <Span>・</Span> 由專業教練團隊協助持續訓練<br />
               <Span>・</Span>  大幅提升桌技和認知<br />

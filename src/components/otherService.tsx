@@ -324,6 +324,13 @@ const Span3 = styled.span`
   font-size: 18px;
   line-height: 32px;
   letter-spacing: 0.04em;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 2%;
+    }
 
 `;
 

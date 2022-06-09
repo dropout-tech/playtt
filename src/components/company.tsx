@@ -65,8 +65,10 @@ const Background1 = styled.div`
  
   @media screen and (max-width: 768px) {
     width:100%;
-    height:88px;
+    height:84px;
     margin-top:0px;
+    
+    
     
 
   ;
@@ -77,9 +79,10 @@ const Background2 = styled.div`
  background: #F5F6F6;
  display:flex;  
  justify-content: center;
+ align-items: center;
  width:373px;
  height:977px;
- align-items: center;
+
  
   @media screen and (max-width: 768px) {
     width:100%;
@@ -212,7 +215,7 @@ const Text1 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-top:-6px;
+    margin-top:0px;
   }
 `;
 const Text = styled.p`
@@ -314,14 +317,17 @@ const Title = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
 
-   @media screen and (max-width: 768px) {
-    font-size: 20px;
-    line-height: 36px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.03em;
-    margin-top:24px;
+   @media screen and (max-width: 768px) {   font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      text-align: center;
+ 
+   
    
  
   }
@@ -369,8 +375,8 @@ const UnderBelow = styled.div`
     margin-left:0px;
     padding-left:24px;
     padding-right:24px;
-    margin-top:26px;
-    padding-bottom:-2px;
+    margin-top:32px;
+    padding-bottom:4px;
   }
   
 `;
@@ -423,7 +429,7 @@ const SmallTitle = styled.p`
   color: #005CB9;
   margin-bottom:0px;
    @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
+    font-family: 'Futura';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -484,7 +490,7 @@ const Column = styled.div`
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
-    margin-top:0px;
+    margin-top:6px;
   }
 `;
 
@@ -565,9 +571,9 @@ const Span = styled.span`
     font-family: 'Futura';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    letter-spacing: 0.04em;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
     color: #005CB9;
   }
 `;
@@ -671,6 +677,7 @@ const Text11 = styled.div`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+ 
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -679,7 +686,30 @@ const Text11 = styled.div`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-top:-20px;
+    margin-top:-14px;
+   
+   
+
+  }
+`;
+
+const Text111 = styled.div`
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+ 
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    margin-top:6px;
    
    
 
@@ -710,7 +740,7 @@ const MobileTitle = styled.div`
 
 const AlignContener = styled.div`
   @media screen and (max-width: 768px) {
-   margin-top:8px;
+   margin-top:12px;
   
  
   }
@@ -720,7 +750,7 @@ const AlignContener = styled.div`
 
 const AlignContener2 = styled.div`
   @media screen and (max-width: 768px) {
-   margin-top:16px;
+   margin-top:22px;
   
  
   }
@@ -853,7 +883,7 @@ const Company = () => {
               </Column>
               <Column2>
                 <Text3>連絡電話</Text3>
-                <Text11><Span1> 0988 521 012</Span1></Text11>
+                <Text111><Span1> 0988 521 012</Span1></Text111>
               </Column2>
 
               <Column>
@@ -888,26 +918,26 @@ const Company = () => {
 
             <AlignContener>
               <SmallTitle1>各館營業時間</SmallTitle1>
-              <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日<br /> <Span1> 9:00–19:00</Span1></Text>
+              <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日 <Span1> 9:00–19:00</Span1></Text>
             </AlignContener>
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
-              <Text>台北市中正區金山南路一段 <Span1> 121 </Span1>號</Text>
+              <Text>台北市中正區金山南路一段 <Span1>121</Span1>號</Text>
               <Text1><Span1> 02 2356 7106</Span1></Text1>
 
             </AlignContener2>
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-              <Text>台北市新莊區民樂街<Span1> 37 </Span1>號<Span1> B1</Span1></Text>
+              <Text>台北市新莊區民樂街<Span1>37</Span1>號<Span1> B1</Span1></Text>
               <Text1><Span1> 02 2990 0566</Span1></Text1>
 
             </AlignContener2>
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
-              <Text>台北市中正區杭州南路一段<Span1> 63 </Span1>號<Span1> B1</Span1></Text>
+              <Text>台北市中正區杭州南路一段<Span1>63</Span1>號<Span1>B1</Span1></Text>
               <Text1><Span1> 02 2391 9659</Span1></Text1>
 
             </AlignContener2>
@@ -917,13 +947,13 @@ const Company = () => {
             <Title>聯盟場館經營</Title>
             <AlignContener22>
               <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
-              <Text>台北市南港區南港路二段<Span1> 141 </Span1>號<Span1> 1 </Span1>樓</Text>
+              <Text>台北市南港區南港路二段<Span1>141</Span1>號<Span1>1</Span1>樓</Text>
               <Text1><Span1> 02 2651 0652</Span1></Text1>
             </AlignContener22>
 
             <AlignContener2>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
-              <Text>台北市萬華區西藏路<Span1> 213 </Span1>號</Text>
+              <Text>台北市萬華區西藏路<Span1>213</Span1>號</Text>
               <Text1> <Span1> 02 2339 6689 </Span1></Text1>
             </AlignContener2>
 

@@ -391,7 +391,7 @@ const alliancePlan = () => {
             <Text22>
               <Img2 src={phone2} alt="" />
               <Title22>計畫簡介</Title22>
-              <TextForm222><Span>Let's Play</Span> 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 <Span>X </Span>全齡複合空間<Span>X</Span>  運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm222>
+              <TextForm222><Span>Let's Play</Span> 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 <Span> X </Span>全齡複合空間<Span> X </Span>  運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm222>
             </Text22>
 
             <Text33>

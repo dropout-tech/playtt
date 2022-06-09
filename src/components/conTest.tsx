@@ -442,7 +442,7 @@ const ConTest = () => {
               </YelloArea>
               <div>
                 <Text>
-                  由<Span>Let's Play</Span> 發出邀請，讓小小選手們有發光表現的舞台。
+                  由<Span> Let's Play </Span> 發出邀請，讓小小選手們有發光表現的舞台。
                 </Text>
               </div>
             </TextContainer>
