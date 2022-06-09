@@ -134,7 +134,7 @@ const Text = styled.div`
   text-align: justify;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin-top:6px;
+  margin-top:-2px;
   display:flex;
   flex-direction:column;
     @media screen and (max-width: 768px) {
@@ -282,7 +282,7 @@ const TextSize2 = styled.div`
   width:309px;
   height:100%;
   margin-left:32px;
-  margin-top:2px
+  margin-top:2px;
 
   @media screen and (max-width: 768px) {
     display:none;
@@ -290,6 +290,17 @@ const TextSize2 = styled.div`
 
 `;
 
+const TextSize3 = styled.div`
+  width:309px;
+  height:100%;
+  margin-left:32px;
+  margin-top:4px;
+
+  @media screen and (max-width: 768px) {
+    display:none;
+    }
+
+`;
 
 
 const TextText = styled.p`
@@ -358,21 +369,21 @@ const OtherService = () => {
 
       <TopArea>
         <TextContainer>
-          <TextSize>
+          <TextSize2>
             <Title3>桌球俱樂部</Title3>
             <Text>
               合作機構：華江高中<br/>
               聚集桌球愛好打手<br />
               舉辦活動分享知識增加凝聚力
             </Text>
-          </TextSize>
+          </TextSize2>
           <ImgContainer>
             <Img1 src={img1} alt="" />
           </ImgContainer>
         </TextContainer>
 
         <TextContainer>
-          <TextSize>
+          <TextSize3>
             <Title3>場地租借</Title3>
             <Text>
               <p style={{ margin: 0 }}>
@@ -381,7 +392,7 @@ const OtherService = () => {
                 平日<Span3> 14:00–21:00 </Span3> 與周末租桌服務
               </p>
             </Text>
-          </TextSize>
+          </TextSize3>
           <ImgContainer>
             <Img2 src={img2} alt="" />
           </ImgContainer>

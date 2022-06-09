@@ -308,10 +308,13 @@ const Span1 = styled.span`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
+  margin-right:12px;
+  margin-left:2px;
    @media screen and  (max-width: 768px) {
      font-size: 20px;
      line-height: 36px;
      letter-spacing: 3%;
+
   }
 `;
 
@@ -322,6 +325,7 @@ const Span2 = styled.span`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
+   margin-left:12px;
    @media screen and  (max-width: 768px) {
      font-size: 20px;
      line-height: 36px;
@@ -375,6 +379,7 @@ const Span3 = styled.span`
     font-size:26px;
     line-height:40px;
     letter-spacing:4%;
+
    
    @media screen and  (max-width: 768px) {
     font-family: 'Futura';

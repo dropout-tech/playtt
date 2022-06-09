@@ -394,7 +394,7 @@ const OurCouchMembers = () => {
         <Row1>
           <Couch>
             <PicImg src={img1} alt="" />
-            <TextEVA>呂昀<Span3><SpanEVA>Eva</SpanEVA></Span3></TextEVA>
+            <TextEVA>呂昀<Span3><SpanEVA>Eva</SpanEVA> 教練</Span3></TextEVA>
           </Couch>
 
           <Couch>
