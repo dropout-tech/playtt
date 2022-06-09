@@ -493,7 +493,7 @@ const Column2 = styled.div`
  @media screen and (max-width: 768px) {
     display:flex;
     flex-direction: column;
-    margin-top:0px;
+    margin-top:6px;
   }
 `;
 
@@ -856,20 +856,20 @@ const Company = () => {
                 <Text11><Span1> 0988 521 012</Span1></Text11>
               </Column2>
 
-              <Column2>
+              <Column>
                 <Text3>信箱</Text3>
                 <Text11> <Span1>playpp2018@gmail.com</Span1></Text11>
-              </Column2>
+              </Column>
 
               <Column2>
                 <Text3>總公司客服時間</Text3>
                 <Text33>週一至週五 <Span1> 10:00–19:00</Span1>（週末請撥各館電話）</Text33>
               </Column2>
 
-              <Column>
+              <Column2>
                 <Text3>創辦人 / 總教練</Text3>
                 <Text33>郭教練 <Span1> 0988 521 012</Span1></Text33>
-              </Column>
+              </Column2>
             </TextArea1>
 
           </TextArea>
