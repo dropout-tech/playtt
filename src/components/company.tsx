@@ -22,6 +22,7 @@ const Container = styled.div`
   margin-top:44px;
   display:flex;
   flex-direction: column;
+  justify-content:center;
   align-items: center;
 
   @media screen and (max-width: 768px) {
@@ -36,7 +37,7 @@ const BelowArea = styled.div`
   justify-content: center;
   align-items:center;
   margin-top:40px;
-  margin-left:30px;
+
   
   @media screen and (max-width: 768px) {
     display: flex;
@@ -83,8 +84,7 @@ const Background2 = styled.div`
   @media screen and (max-width: 768px) {
     width:100%;
     height:84px;
-    /* padding-left:24px;
-    padding-right:24px; */
+    
   }
 `;
 
@@ -92,7 +92,7 @@ const TopLeftArea = styled.div`
  display: flex;
  justify-content: center;
  align-items:center;
- margin-left:30px;
+
 
 
 
