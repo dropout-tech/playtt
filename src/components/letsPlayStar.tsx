@@ -392,6 +392,11 @@ const TextArea1 = styled.div`
 `;
 
 const Span2 = styled.span`
+  font-family: 'Futura';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 3%;
 @media screen and (max-width: 768px) {
   font-family: 'Futura';
   font-weight: 500;

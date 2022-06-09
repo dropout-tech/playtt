@@ -80,7 +80,7 @@ const BlueArea = styled.div`
   background: #005CB9;
   height:310px;
   padding-top:30px;
-  padding-bottom:80px;
+  padding-bottom:174px;
    @media screen and (max-width: 768px) {
     padding-bottom:0px;
     width:100%;
@@ -184,6 +184,8 @@ const UnderText = styled.p`
 const UnderContainer = styled.div`
   display:flex;
   justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
    @media screen and (max-width: 768px) {
     
   }
