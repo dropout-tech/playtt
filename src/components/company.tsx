@@ -322,7 +322,8 @@ const Title = styled.p`
     text-align: center;
     letter-spacing: 0.03em;
     margin-top:24px;
-    margin-bottom:22px;
+   
+ 
   }
 `;
 
@@ -369,6 +370,7 @@ const UnderBelow = styled.div`
     padding-left:24px;
     padding-right:24px;
     margin-top:26px;
+    padding-bottom:-2px;
   }
   
 `;
@@ -466,8 +468,8 @@ const MobileContainer = styled.div`
     align-items: center;
     padding-left:24px;
     padding-right:24px;
-    padding-top:32px;
-    padding-bottom:32px;
+    padding-top:40px;
+    padding-bottom:40px;
 
   
   
@@ -726,6 +728,16 @@ const AlignContener2 = styled.div`
 
 `;
 
+const AlignContener22 = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:-5px;
+  
+ 
+  }
+
+
+`;
+
 
 
 
@@ -903,11 +915,11 @@ const Company = () => {
 
           <UnderBelow>
             <Title>聯盟場館經營</Title>
-            <AlignContener2>
+            <AlignContener22>
               <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
               <Text>台北市南港區南港路二段<Span1> 141 </Span1>號<Span1> 1 </Span1>樓</Text>
               <Text1><Span1> 02 2651 0652</Span1></Text1>
-            </AlignContener2>
+            </AlignContener22>
 
             <AlignContener2>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
