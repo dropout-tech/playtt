@@ -3,7 +3,6 @@ import styled from "styled-components";
 import banner from "../assets/homepage/banner.png";
 import banner2 from "../assets/homepage/banner2.png";
 
-
 // styled components start 
 
 const PageContainer = styled.div`
