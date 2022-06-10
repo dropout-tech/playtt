@@ -19,7 +19,7 @@ const Container = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    
+    width:100%;
   }
 `;
 
@@ -71,18 +71,19 @@ const Title2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-top:10px;
+    margin-top:0px;
 
   }
 `;
 
 const BlueArea = styled.div`
   background: #005CB9;
-  height:406px;
+  height:310px;
   padding-top:30px;
-  padding-bottom:80px;
+  padding-bottom:174px;
    @media screen and (max-width: 768px) {
-    
+    padding-bottom:0px;
+    width:100%;
   }
 `;
 
@@ -133,6 +134,7 @@ const TopText = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top:30px;
    
   }
 `;
@@ -175,13 +177,16 @@ const UnderText = styled.p`
    @media screen and (max-width: 768px) {
     font-size: 12px;
     line-height: 24px;
-    margin-left:-10px;
+    
   }
 `;
 
 const UnderContainer = styled.div`
   display:flex;
   justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom:8px;
    @media screen and (max-width: 768px) {
     
   }
@@ -204,6 +209,15 @@ const Span = styled.span`
   line-height: 32px;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+  }
 `;
 /* desktop thw newest info style end */
 const HaveATry = () => {

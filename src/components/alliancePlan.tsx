@@ -21,7 +21,7 @@ const Container = styled.div`
  width:100%;
  height:1011px;
  @media screen and (max-width: 768px) {
-display:none;
+  display:none;
  }
 `;
 
@@ -53,14 +53,11 @@ const TitleWord = styled.p`
 const Background = styled.div`
   background: #F5F6F6;
   width:100%;
-  height:80%;
+
   margin-top:60px;
   @media screen and (max-width: 768px) {
    margin-top:14px;
-  
-
-  }
-
+  } 
 `;
 
 const Text1 = styled.div`
@@ -95,8 +92,7 @@ const TextForm = styled.div`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:30px;
-  position: relative;
-  z-index:10;
+ 
 `;
 
 const Title2 = styled.div`
@@ -128,20 +124,16 @@ const Img = styled.img`
   margin-left:-15px;
 `;
 
-
-// Mobile
-
 const Container2 = styled.div`
  display: none;
-@media screen and (max-width: 768px) {
- width:100%;
- display: flex;
- padding-bottom: 80px;
- padding-top:173px;
- }
+  @media screen and (max-width: 768px) {
+    width:100%;
+    display: flex;
+    padding-bottom: 80px;
+    padding-top:173px;
+  }
 
 `;
-
 
 const MobileContainer = styled.div`
 display:none;
@@ -149,8 +141,6 @@ display:none;
    display:flex;
    flex-direction: column;
    width:100%;
-
-
 
  }
 `;
@@ -162,15 +152,10 @@ const Title02 = styled.p`
     font-weight: 900;
     font-size: 26px;
     line-height: 40px;
-    /* identical to box height, or 154% */
-
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: 0.04em;
-
-    /* black */
-
     color: #1A1A1A;
   }
 
@@ -188,35 +173,28 @@ const TitleWord2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-top:-35px;
+    margin-top:-26px;
  }
 `;
 
-
 const Text11 = styled.div`
   @media screen and (max-width: 768px) {
-  margin-top:30px;
-  margin-right:145px;
+   margin-top:30px;
+
   }
  
 `;
 
 const Text22 = styled.div`
 @media screen and (max-width: 768px) {
-    margin-top:180px;
-    margin-right:145px;
-
+   margin-top:52px;
   }
- 
  
 `;
 const Text33 = styled.div`
 @media screen and (max-width: 768px) {
-  margin-top:260px;
-  margin-right:140px;
+  margin-top:52px;
   }
-
-
 `;
 
 const MobleCircleDiv = styled.div`
@@ -226,7 +204,7 @@ const MobleCircleDiv = styled.div`
   align-items: center;
   height:965px;
   background-image: url('${BgMobile}');
-  background-size:contain ;
+  background-size:cover ;
   background-repeat: no-repeat;
   background-position:center;
  
@@ -235,13 +213,15 @@ const MobleCircleDiv = styled.div`
 const Img1 = styled.img`
    width:106px;
    height:42px;
-
+   margin-left:-8px;
+   margin-top:10px;
 `;
+
 const Img2 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
-  
+   margin-left:-8px;
 }
 
 `;
@@ -250,7 +230,7 @@ const Img3 = styled.img`
   @media screen and (max-width: 768px) {
    width:106px;
    height:42px;
-  
+   margin-left:-8px;
 }
 
 `;
@@ -278,7 +258,7 @@ const Title22 = styled.p`
     line-height: 36px;
     letter-spacing: 0.03em;
     color: #005CB9;
-    margin-top:9px;
+    margin-top:1px;
    
   }
 `;
@@ -295,8 +275,7 @@ const TextForm222 = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:-8px;
-    position: absolute;
-    z-index: 10;
+   
   }
 `;
 
@@ -310,7 +289,7 @@ const TextForm2222 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-top:92px;
+    margin-top:-8px;
   }
 `;
 
@@ -331,8 +310,6 @@ const Span = styled.span`
 
 
 const TextArea = styled.div`
-  position:relative;
-  z-index:10; 
   display:flex;
   justify-content:center; 
   align-items:center;
@@ -351,8 +328,6 @@ const BgWebDiv = styled.div`
  background-size:contain ;
  background-repeat: no-repeat;
  background-position:center;
- 
-
 `;
 
 
@@ -416,7 +391,7 @@ const alliancePlan = () => {
             <Text22>
               <Img2 src={phone2} alt="" />
               <Title22>計畫簡介</Title22>
-              <TextForm222><Span>Let's Play</Span> 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 <Span>X </Span>全齡複合空間<Span>X</Span>  運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm222>
+              <TextForm222><Span>Let's Play</Span> 立志打造跨界聯盟的創新桌球團隊，主軸為三大方向：跨產業合作 <Span> X </Span>全齡複合空間<Span> X </Span>  運動設計美學。希望共享資源讓台灣桌球產業互利合作，推廣讓全年齡的朋友們愛上桌球，一起體驗桌球的好處和快樂！</TextForm222>
             </Text22>
 
             <Text33>

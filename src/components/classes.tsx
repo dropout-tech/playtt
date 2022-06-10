@@ -26,6 +26,7 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
    margin-top:-80px;
    margin-left:0px;
+   margin-bottom:20px;
   }
 `;
 
@@ -40,6 +41,7 @@ const ClassIntroduce = styled.div`
 ;
  @media screen and (max-width: 768px) {
    margin-left:0px;
+   margin-top:30px;
  
   }
 `;
@@ -92,6 +94,7 @@ const Title2 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #CFD2D3;
+    margin-top:-26px;
   }
 `;
 
@@ -116,11 +119,35 @@ const ContantTitle = styled.p`
     align-items: center;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-top:20px;
+    margin-top:18px;
   }
 `;
 
-const ContantText = styled.p`
+const ContantText = styled.div`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
+  width:550px;
+  margin-top:36px;
+
+
+  @media screen and (max-width: 768px) {
+    width: 327px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    line-height: 22px;
+  
+
+  }
+`;
+
+const ContantText2 = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -131,13 +158,14 @@ const ContantText = styled.p`
   width:550px;
   margin-top:40px;
 
-
   @media screen and (max-width: 768px) {
     width: 327px;
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content:center;
     line-height: 22px;
+    margin-top:36px;
   }
 `;
 
@@ -150,7 +178,8 @@ const Contant = styled.div`
   margin-top:4px;
  
   @media screen and (max-width: 768px) {
-    margin-top:-30px;
+     margin-top:0px;
+    
   }
 `;
 
@@ -164,7 +193,8 @@ const Img = styled.img`
     height:220px;
     display:flex;
     justify-content: center;
-    margin-top:114px;
+    align-items: center;
+    margin-top:14px;
   }
 `;
 
@@ -180,7 +210,9 @@ const Img2 = styled.img`
     height:220px;
     display:flex;
     justify-content: center;
+    align-items: center;
     margin-left:0px;
+
 
    
   }
@@ -196,9 +228,8 @@ const Img3 = styled.img`
   @media screen and (max-width: 768px) {
     width:251px;  
     height:220px;
-    margin-left:10px;
-    margin-top:130px;
-
+    margin-top:74px;
+    margin-left:0px;
    
   }
 `;
@@ -212,7 +243,9 @@ const Explain1 = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    margin-top:-60px;
+    justify-content: center;
+    align-items: center;
+    margin-top:0px;
   }
 `;
 
@@ -229,12 +262,11 @@ const Explain22 = styled.div`
 `;
 
 const MobileContainer = styled.div`
-   width:80%;
    display: flex;
    justify-content:center;
+   align-items: center;
    flex-direction: column;
-   margin-top:-56px;
-   margin-left:30px;
+   margin-top:24px;
 
  @media screen and (min-width: 768px) {
    display:none;
@@ -249,8 +281,10 @@ const Explain3 = styled.div`
  margin-left:118px;
  @media screen and (max-width: 768px) {
     display: flex;
+    align-items: center;
+    justify-content:center;
     flex-direction: column;
-    margin-top:-90px;
+    /* margin-top:-106px; */
     margin-left:0px;
   }
 `;
@@ -263,7 +297,8 @@ const Text1 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:-20px;
+    align-items: center;
+    margin-left:0px;
     margin-top:38px;
   
 
@@ -278,10 +313,9 @@ const Text33 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:-20px;
-    margin-top:134px;
-  
-
+    align-items: center;
+    margin-left:0px;
+    margin-top:38px;
   }
 `;
 
@@ -293,7 +327,8 @@ const Text = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:-20px;
+    align-items: center;
+    margin-left:0px;
 
   
 
@@ -307,7 +342,8 @@ const Text2 = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     justify-content: center;
-    margin-left:-20px;
+    
+    margin-left:0px;
   
 
   }
@@ -326,22 +362,22 @@ const Background1 = styled.div`
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
-    margin-left:70px;
     margin-top:-6px;
+    margin-left:0px;
+    align-items: center;
 }
 `;
 const Background2 = styled.div`
-  background: #FFD900;
-  border-radius: 28px;
-  height:56px;
-  text-align:center;
-  display:flex;
-  justify-content:center;
-  width:50%;
+   background: #FFD900;
+   border-radius: 28px;
+   height:56px;
+   display:flex;
+   justify-content:center;
+   text-align:center;
+   width:50%;
   @media screen and (max-width: 768px) {
-    width:208px;
+    width:190px;
     height:44px;
-    margin-left:70px;
     margin-top:-68px;
   }
 `;
@@ -356,12 +392,18 @@ const Background3 = styled.div`
   @media screen and (max-width: 768px) {
     width:208px;
     height:44px;
-    margin-left:70px;
-    margin-top:-102px;
+    margin-left:0px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    padding-left:10px;
+    padding-right:10px;
+    margin-top:-6px;
+  
   }
 `;
 
-const SpanDot = styled.div`
+const SpanDot = styled.span`
   color: #CFD2D3;
   margin-top:-15px;
   width: 28px;
@@ -373,19 +415,17 @@ const SpanDot = styled.div`
   letter-spacing: 0.6px;
   
  @media screen and (max-width: 768px) {
-   margin-top:-18px;
+    margin-top:-16px;
+    font-family: 'Noto Sans TC';
+    font-Weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 4%;
+    display: flex;
+    justify-content:center;
   }
 `;
 
-const SpanDot2 = styled.div`
-  color: #CFD2D3;
-  margin-top:4px;
-  width: 36px;
-  height: 36px;
- @media screen and (max-width: 768px) {
-   margin-top:4px;
-  }
-`;
 
 const DotContainer = styled.div`
  display:flex;
@@ -409,7 +449,6 @@ const TextArea = styled.p`
     font-weight: 500;
     font-size: 16px;
     line-height: 32px;
-    text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
     }
@@ -430,10 +469,11 @@ const TextArea2 = styled.p`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 0px;
+    line-height: 32px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-top:-16px;
     }
 `;
 
@@ -443,7 +483,10 @@ const AlignText = styled.div`
   margin-top:35px;
   @media screen and (max-width: 768px) {
     margin-left:0px;
-    margin-top:20px
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     }
 `;
 
@@ -481,7 +524,9 @@ const Classes = () => {
             <Background1>
               <ContantTitle>班別課程豐富客製化</ContantTitle>
             </Background1>
+      
             <ContantText>
+              
               <DotContainer>
                 <SpanDot>・</SpanDot> <TextArea>個人班 / 團體班 / 選手班 / 親子 / 包班</TextArea>
               </DotContainer>
@@ -557,11 +602,11 @@ const Classes = () => {
               </ContantTitle>
             </Background2>
 
-            <ContantText>
+            <ContantText2>
 
               <DotContainer>
                 <SpanDot>・</SpanDot>
-                <TextArea>暖身做操 & 趣味體適能桌球</TextArea>
+                <TextArea>暖身做操<Span> & </Span>趣味體適能桌球</TextArea>
               </DotContainer>
 
               <DotContainer>
@@ -585,12 +630,12 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot2>・</SpanDot2>
+                <SpanDot>・</SpanDot>
                 <TextArea2>
-                  學習到球技 / 學習態度 / 品性 /運動家精神 /  獲得體悟
+                  學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
                 </TextArea2>
               </DotContainer>
-            </ContantText>
+            </ContantText2>
           </Text>
 
         </MobileContainer>

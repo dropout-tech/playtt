@@ -177,8 +177,8 @@ const AboutUs = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #CFD2D3;
-    margin-left:10px;
-    margin-top:-10px;
+    margin-left:0px;
+    margin-top:0px;
 
   }
 `;
@@ -292,8 +292,8 @@ const Slogan = styled.div`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-top:0px;
-    margin:0px 70px 0px 0px;
+    margin:0px ;
+    
   
   }
 `;
@@ -302,7 +302,7 @@ const AboutItems = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top:82px;
+  margin-top:160px;
   @media screen and (max-width: 768px) {
     
   }
@@ -433,6 +433,7 @@ const TextArea2 = styled.div`
 
 const MobileContainer = styled.div`
    width:100%;
+   margin-top:-32px;
    @media screen and (min-width: 768px) {
     display:none;
   }
@@ -498,15 +499,34 @@ const TextContener = styled.div`
  @media screen and (max-width: 768px) {
    display: flex;
    flex-direction:column; 
-   padding: 24px;
+   padding-left:12px;
+   padding-right:12px;
+   margin-top:2px;
   }
 `;
+
+
 
 const AlignContener = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top:54px;
+ @media screen and (max-width: 768px) {
+  margin-top:68px;
+  margin-left:10px;
+  }
+`;
 
+const AlignContener2 = styled.div`
+ 
+ @media screen and (max-width: 768px) {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-top:24px;
+   margin-left:10px;
+  }
 `;
 
 const StartImg = styled.img`
@@ -516,6 +536,19 @@ const StartImg = styled.img`
 
 `;
 
+const Text = styled.div`
+   @media screen and (max-width: 768px) {
+    margin-top:10px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+
+  }
+
+`;
 
 /* desktop thw newest info style end */
 const About = () => {
@@ -528,7 +561,7 @@ const About = () => {
       <TopArea>
         <LeftItems>
           <HopeContainer>
-            
+
             <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
@@ -611,26 +644,26 @@ const About = () => {
 
       </TopArea>
     </Container>
- 
+
     <MobileContainer>
       <AboutItems>
         <AboutText>關於我們</AboutText>
         <AboutUs>About Us</AboutUs>
       </AboutItems>
-      
+
       <TextContener>
-        <AlignContener>
-          <StartImg src={start} alt=""  />
+        <AlignContener2>
+          <StartImg src={start} alt="" />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <Hope1>願景</Hope1>
             <Slogan>Let's Play <Span>Dream</Span></Slogan>
           </div>
-        </AlignContener>
-        <div>
-          <p>
+        </AlignContener2>
+        <TextContener>
+          <Text>
             我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起。
-          </p>
-        </div>
+          </Text>
+        </TextContener>
       </TextContener>
 
       <TextContener>
@@ -641,11 +674,11 @@ const About = () => {
             <Slogan>Let’s Play <Span>Goal</Span></Slogan>
           </div>
         </AlignContener>
-        <div>
-          <p>
+        <TextContener>
+          <Text>
             我們的使命就是讓你來玩的每一分鐘，都感受到放鬆與樂趣！來到這裡你可以輕鬆的玩、簡單的玩、隨心的玩，享受純粹的快樂！我們也致力於和不同產業領域聯盟合作，碰撞出創意無限的火花，提升整個桌球教學生態體系、創造新的無限可能。
-          </p>
-        </div>
+          </Text>
+        </TextContener>
       </TextContener>
 
       <TextContener>
@@ -656,13 +689,11 @@ const About = () => {
             <Slogan>Let’s Play <Span>Thinking</Span></Slogan>
           </div>
         </AlignContener>
-        <div>
-          <p>
-            
+        <TextContener>
+          <Text>
             感受發自內心的快樂，一起來玩吧！品牌的核心價值在於「讓來到 <Span33>Let's Play</Span33> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。
-   
-          </p>
-        </div>
+          </Text>
+        </TextContener>
       </TextContener>
 
       <TextContener>
@@ -673,16 +704,16 @@ const About = () => {
             <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
           </div>
         </AlignContener>
-        <div>
-          <p>
+        <TextContener>
+          <Text>
             學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span33>Let’s Play</Span33> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
-          </p>
-        </div>
+          </Text>
+        </TextContener>
       </TextContener>
 
-      
-      
-      
+
+
+
     </MobileContainer>
 
 

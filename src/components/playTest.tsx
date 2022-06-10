@@ -21,6 +21,8 @@ const Container = styled.div`
   justify-content:center;
   padding-top:180px;
   padding-bottom: 80px;
+  padding-left:24px;
+  padding-right:24px;
    @media screen and (max-width: 768px) {
     display: none;
   }
@@ -29,7 +31,7 @@ const Container = styled.div`
 const TextContainer = styled.div`
  
  @media screen and (max-width: 768px) {
-    
+   margin-top:-20px;
   }
 
 
@@ -48,8 +50,9 @@ const Text2 = styled.div`
   margin-top:80px;
  @media screen and (max-width: 768px) {
     display:flex;
+    justify-content:center;
+    align-items:center;
     flex-direction: column;
-    padding-left:30px;
     margin-top:-36px;
    
   }
@@ -61,6 +64,7 @@ const Text3 = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+
   }
 `;
 
@@ -116,7 +120,7 @@ const Title2 = styled.p`
 `;
 
 const Title3 = styled.p`
-  font-family: 'Futura';
+  font-family: ' Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -124,7 +128,7 @@ const Title3 = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
-    font-family: 'Futura';
+    font-family: ' Noto Sans TC';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -133,7 +137,6 @@ const Title3 = styled.p`
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:50px;
-    margin-left:18px;
     margin-bottom:32px;
 
   }
@@ -151,7 +154,6 @@ const Number = styled.span`
   color: #CFD2D3;
   margin-top:-40px;
    @media screen and (max-width: 768px) {
-    padding-left:12px;
     font-family: 'Futura';
     font-weight: 700;
     font-size: 18px;
@@ -176,7 +178,7 @@ const Number2 = styled.span`
   }
 `;
 
-const TextContent = styled.p`
+const TextContent = styled.div`
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
@@ -188,7 +190,7 @@ const TextContent = styled.p`
   width:517px;
   margin-top:30px;
    @media screen and (max-width: 768px) {
-   padding-left:0px;
+   width:100%;
    font-family: 'Noto Sans TC';
    font-style: normal;
    font-weight: 500;
@@ -197,12 +199,14 @@ const TextContent = styled.p`
    text-align: justify;
    letter-spacing: 0.02em;
    color: #1A1A1A; 
-   width:327px;
    display:flex;
    justify-content: center;
-   margin-top:20px;
+   margin-top:12px;
    position: relative;
    z-index:10;
+   padding-left:24px;
+   padding-right:24px;
+   margin-top:-4px;
 
   }
 `;
@@ -214,15 +218,21 @@ const TestpicImg = styled.img`
   justify-content: flex-start;
   align-items: flex-start;
   margin-left:103px;
-   @media screen and (max-width: 768px) {
+  
+`;
+
+const MobileImg = styled.img`
+  @media screen and (max-width: 768px) {
     width:251px;
     height:256px;
-    margin-left:82px;
-    margin-right:0px;
-    margin-top:120px;
-    
-    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:100px;
+    margin-bottom:40px;
+    margin-left:0px;
   }
+
 `;
 
 const Text123 = styled.p`
@@ -250,9 +260,9 @@ const Text123 = styled.p`
 `;
 
 const MobileContainer = styled.div`
-  margin-top:-120px;
+  margin-top:-44px;
   padding:24px;
- 
+
  @media screen and (min-width: 768px) {
     display:none;
   }
@@ -264,6 +274,31 @@ const Span = styled.span`
   font-size:20px;
   line-height:36px;
   letter-spacing:3%;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight:500;
+    font-size:16px;
+    line-height:30px;
+    letter-spacing:2%;
+  }
+`;
+
+const ImgContainer = styled.div`
+    @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+`;
+
+const TreeItems = styled.div`
+   @media screen and (max-width: 768px) {
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    flex-direction: column;
+  }
+
 `;
 
 /* desktop thw newest info style end */
@@ -296,7 +331,10 @@ const PlayTest = () => {
     </Container>
 
     <MobileContainer>
-      <TestpicImg src={testpic} alt="" />
+      <ImgContainer> 
+        <MobileImg src={testpic} alt="" />
+      </ImgContainer>
+     
 
       <TextContainer>
         <Text1>
@@ -304,17 +342,22 @@ const PlayTest = () => {
           <Title2>Let's Play Test</Title2>
         </Text1>
         <Text2>
-          <Title3>Let's Play 獨家精心規劃專屬檢定，結合</Title3>
-          <Number>1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
-          <Number>2.<Text123>筆試 —— 桌球知識</Text123></Number>
-          <Number>3.<Text123>體能</Text123></Number>
+          <Title3><Span> Let's Play </Span>  獨家精心規劃專屬檢定，結合</Title3>
+          <TreeItems>
+            <Number>1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
+            <Number>2.<Text123>筆試 —— 桌球知識</Text123></Number>
+            <Number>3.<Text123>體能</Text123></Number>
+          </TreeItems>
         </Text2>
         <Text3>
           <TextContent>
-            設計成 L1–L12 檢定關卡，最後一關還有模擬比賽。<br />
-            教學內容搭配好玩的教案，讓大家在樂趣中成長，<br />
-            用來幫助大小朋友測驗學習技術成果。<br />
-            你意想不到的玩桌球，也可以學到、揮灑汗水、歡笑滿滿！
+            <p>
+              設計成 <Span>L1–L12 </Span> 檢定關卡，最後一關還有模擬比賽。
+              教學內容搭配好玩的教案，讓大家在樂趣中成長，
+              用來幫助大小朋友測驗學習技術成果。
+              你意想不到的玩桌球，也可以學到、揮灑汗水、歡笑滿滿！
+            </p>
+            
           </TextContent>
         </Text3>
       </TextContainer>

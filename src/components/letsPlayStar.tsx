@@ -23,7 +23,9 @@ const Container = styled.div`
  margin-top:91px;
  padding-bottom: 80px;
   @media screen and (max-width: 768px) {
-    margin-top:-46px;
+    margin-top:-6px;
+    padding-bottom: 0px;
+    
   }
 
 `;
@@ -60,6 +62,7 @@ const Title2 = styled.p`
     font-size: 26px;
     line-height: 40px;
     margin-top:-26px;
+    margin-bottom:40px
   }
 `;
 const Title3 = styled.p`
@@ -85,6 +88,7 @@ const Title3 = styled.p`
     letter-spacing: 0.04em;
     color: #1A1A1A;
     margin-top:8px;
+    margin-right:12px;
   }
 `;
 const Title5 = styled.p`
@@ -101,7 +105,7 @@ const Title5 = styled.p`
   margin-top:50px;
    @media screen and (max-width: 768px) {
     margin-right:10px;
-    margin-top:-20px;
+    margin-top:-18px;
     margin-right:10px;
     font-size: 18px;
     line-height: 32px;
@@ -110,6 +114,7 @@ const Title5 = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-right:10px;
  
   }
 `;
@@ -139,6 +144,7 @@ const Title4 = styled.p`
     letter-spacing: 0.04em;
     color: #1A1A1A;
     margin-top:8px;
+    margin-right:12px;
   }
 `;
 
@@ -146,8 +152,7 @@ const GroupImg = styled.img`
   width:100%;
   height:100%;
    @media screen and (max-width: 768px) {
-    z-index: 10;
-    position: relative;
+   display:none;
   }
 `;
 
@@ -164,8 +169,11 @@ const Background = styled.div`
     justify-content: center;
     align-items: center;
     width:375px;
-    height:375px;
-    padding-top:26.5px;
+    height:368px;
+    padding-bottom:0px;
+    padding-top:7px;
+  
+
 
       
     } 
@@ -184,6 +192,8 @@ const Img1 = styled.img`
    @media screen and (max-width: 768px) {
    width:101px;
    height:88px;
+   margin-top:0px;
+  
   }
 `;
 
@@ -226,7 +236,8 @@ const LeftArea = styled.div`
     display:flex;
     align-items:center;
     flex-direction: column;
-      margin-top:10px;
+    margin-top:10px;
+    margin-right:20px;
     
   }
 `;
@@ -261,6 +272,8 @@ const TextContainer = styled.div`
     flex-direction: column;
     margin-left:0px;
     width:100%;
+    margin-top:-145px;
+   
   }
 `;
 
@@ -274,6 +287,7 @@ const GrayArea = styled.div`
    @media screen and (max-width: 768px) {
    width:100%;
    height:375px;
+   
   }
   
 `;
@@ -286,7 +300,13 @@ const Span = styled.span`
  line-height: 36px;
  letter-spacing: 0.6px;
   @media screen and (max-width: 768px) {
-    
+    color: #FF40B4;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 4%;
+    padding-right:4px;
   }
 `;
 
@@ -310,6 +330,8 @@ const GrayAreaText = styled.p`
     flex-direction: column;
     align-items: center;
     margin-left:0px;
+    padding-left:24px;
+    padding-right:24px;
     
   }
 `;
@@ -322,13 +344,14 @@ const Container2 = styled.div`
  margin-top:60px;
   @media screen and (max-width: 768px) {
     display: none;
+    
       
     }
 
 `;
 
 const MobileContainer = styled.div`
-   
+  
   @media screen and (min-width: 768px) {
       display: none;
     }
@@ -337,6 +360,16 @@ const MobileContainer = styled.div`
 
 const Dot = styled.div`
   display:flex;
+  margin:0px;
+  text-align:center;
+ @media screen and (min-width: 768px) {
+      display: none;
+    }
+`;
+
+const Dot2 = styled.div`
+  margin:0px;
+  text-align:center;
  @media screen and (min-width: 768px) {
       display: none;
     }
@@ -359,6 +392,11 @@ const TextArea1 = styled.div`
 `;
 
 const Span2 = styled.span`
+  font-family: 'Futura';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 3%;
 @media screen and (max-width: 768px) {
   font-family: 'Futura';
   font-weight: 500;
@@ -370,6 +408,20 @@ const Span2 = styled.span`
 
 `;
 
+const GroupImg2 = styled.div`
+  display:none;
+  @media screen and (max-width: 768px) {
+    display:flex;
+    height:380px;
+    background-image: url('${group2}');
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position:center;
+
+    }
+
+
+`;
 
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
@@ -380,6 +432,7 @@ const LetsPlayStar = () => {
         <Title2>Let's Play Star </Title2>
       </div>
       <Container2>
+
         <GroupImg src={group} alt="" />
 
         <TextContainer>
@@ -402,7 +455,7 @@ const LetsPlayStar = () => {
 
           <GrayArea>
             <GrayAreaText>
-              <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
+              <Span>・</Span> 成立於 <Span2> 2020/12/15</Span2> <br />
               <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄<Span2 > & </Span2>阿寬教練 郭則寬<br />
               <Span>・</Span> 由專業教練團隊協助持續訓練<br />
               <Span>・</Span>  大幅提升桌技和認知<br />
@@ -419,7 +472,7 @@ const LetsPlayStar = () => {
 
 
       <MobileContainer>
-        <GroupImg src={group2} alt="" />
+        <GroupImg2></GroupImg2>
 
         <TextContainer>
           <Background>
@@ -444,9 +497,9 @@ const LetsPlayStar = () => {
                 <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
               </Dot>
 
-              <Dot>
-                <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄 & 阿<br />&emsp; &emsp; &ensp; 寬教練 郭則寬<br />
-              </Dot>
+              <Dot2>
+                召集人 —— <Span2> Hero</Span2> 戴祖雄<Span2> & </Span2>   阿寬教練 郭則寬
+              </Dot2>
 
               <Dot>
                 <Span>・</Span> 由專業教練團隊協助持續訓練<br />

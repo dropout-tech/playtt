@@ -22,6 +22,7 @@ const Container = styled.div`
   margin-top:44px;
   display:flex;
   flex-direction: column;
+  justify-content:center;
   align-items: center;
 
   @media screen and (max-width: 768px) {
@@ -36,15 +37,18 @@ const BelowArea = styled.div`
   justify-content: center;
   align-items:center;
   margin-top:40px;
-  margin-left:30px;
+
   
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items:center;
     margin-left:0px;
-     margin-top:20px;
-
+    width:100%;
+    margin-top:-12px;
+    
+    
+   
   }
 
 `;
@@ -60,9 +64,13 @@ const Background1 = styled.div`
  
  
   @media screen and (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:84px;
-    margin-top:-8px;
+    margin-top:0px;
+    
+    
+    
+
   ;
   }
 `;
@@ -71,15 +79,14 @@ const Background2 = styled.div`
  background: #F5F6F6;
  display:flex;  
  justify-content: center;
+ align-items: center;
  width:373px;
  height:977px;
- align-items: center;
+
  
   @media screen and (max-width: 768px) {
-    width:327px;
+    width:100%;
     height:84px;
- 
-   
     
   }
 `;
@@ -88,16 +95,24 @@ const TopLeftArea = styled.div`
  display: flex;
  justify-content: center;
  align-items:center;
- margin-left:30px;
+
+
 
 
   @media screen and (max-width: 768px) {
-    width:90%;
-    margin-top:160px;
     display:flex;
     flex-direction: column;
     align-items: center;
     margin-left:0px;
+    height: auto;
+    width:100%;
+    padding-bottom:32px;
+    
+
+   
+
+
+  
    
   }
 `;
@@ -111,14 +126,16 @@ const TextArea = styled.div`
  margin-top:50px;
 
   @media screen and (max-width: 768px) {
-    width:279px;
-    height:468px;
+    width:100%;
+    height: auto;
     display:flex;  
     justify-content: center;
-    align-items:center;
+    align-items: flex-start;
     margin-top:0px;
-    padding-left:24px;
-    padding-right:24px;
+    padding-bottom:33px;
+   
+   
+
   }
 `;
 
@@ -127,9 +144,13 @@ const TextArea1 = styled.div`
   margin-left:48px;
   
   @media screen and (max-width: 768px) {
-   margin-bottom:30px;
-   margin-left:0px;
-   margin-top:-9px;
+    width:100%;
+    height:auto;
+    margin-left:0px;
+    padding-left:24px;
+    padding-right:24px;
+    margin-top:10px;
+
   }
 `;
 
@@ -140,7 +161,7 @@ const TextArea2 = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    
+    margin-left:0px;
   }
 `;
 
@@ -150,7 +171,7 @@ const TextArea3 = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    
+   margin-left:0px;
   }
 `;
 
@@ -176,7 +197,27 @@ const Text3 = styled.p`
   
 `;
 
-
+const Text1 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #3C3D3D;
+  margin:0px;
+  padding:0px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    margin-top:0px;
+  }
+`;
 const Text = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
@@ -191,13 +232,11 @@ const Text = styled.p`
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    
   }
-  
 `;
 
 const Text2 = styled.p`
@@ -240,7 +279,6 @@ const Text12 = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    
   }
   
 `;
@@ -279,16 +317,47 @@ const Title = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
 
-   @media screen and (max-width: 768px) {
-    font-size: 20px;
-    line-height: 36px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.03em;
-    margin-top:0px;
+   @media screen and (max-width: 768px) {   
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 36px;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      text-align: center;
+ 
+   
+   
+ 
   }
 `;
+
+const Title02 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+
+   @media screen and (max-width: 768px) {   
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 0.04em;
+      color: #1A1A1A;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-bottom:18px;
+  }
+`;
+
 
 const Title22 = styled.p`
   font-family: 'Noto Sans TC';
@@ -314,10 +383,11 @@ const TopBelow = styled.div`
    justify-content:flex-start;
    align-items:flex-start;
    flex-direction:column;
-   margin-top:24px;
    padding-left:24px;
    padding-right:24px;
    margin-left:0px;
+   width:auto;
+  
   }
 
 
@@ -331,6 +401,8 @@ const UnderBelow = styled.div`
     margin-left:0px;
     padding-left:24px;
     padding-right:24px;
+    margin-top:32px;
+    padding-bottom:4px;
   }
   
 `;
@@ -364,15 +436,11 @@ const BelowTextContainer = styled.div`
  background: #FFFFFF;
  width:827px;
  height:977px;
- 
-
-
 
   @media screen and (max-width: 768px) {
-    width:327px;
-    height:993px;
-    padding-left:0px;
-    margin-bottom:80px;
+    width:100%;
+    height:auto;
+    padding-bottom:28px;
   }
 
 `;
@@ -387,13 +455,14 @@ const SmallTitle = styled.p`
   color: #005CB9;
   margin-bottom:0px;
    @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
+    font-family: 'Futura';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 28px;
     letter-spacing: 0.06em;
     color: #005CB9;
+    margin-top:-2px;
   }
 `;
 
@@ -414,7 +483,7 @@ const SmallTitle1 = styled.p`
     line-height: 28px;
     letter-spacing: 0.06em;
     color: #005CB9;
-    margin-top:0px;
+    margin-top:-10px;
   }
 `;
 
@@ -423,14 +492,19 @@ const MobileContainer = styled.div`
   display:none;
  @media screen and (max-width: 768px) {
     background: #38D430;
-    width:100%;
-    height:1709px;
+    /* width:100%; */
+    height:auto;
     display:flex;
     justify-content:center;
     flex-direction: column;
     align-items: center;
-    margin-top:40px;
- 
+    padding-left:24px;
+    padding-right:24px;
+    padding-top:40px;
+    padding-bottom:40px;
+
+  
+  
     
    
   }
@@ -438,6 +512,15 @@ const MobileContainer = styled.div`
 `;
 
 const Column = styled.div`
+    
+ @media screen and (max-width: 768px) {
+    display:flex;
+    flex-direction: column;
+    margin-top:6px;
+  }
+`;
+
+const Column2 = styled.div`
     
  @media screen and (max-width: 768px) {
     display:flex;
@@ -461,7 +544,9 @@ const TitleOne = styled.p`
     font-weight: 900;
     font-size: 26px;
     line-height: 40px;
-    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items:center;
     letter-spacing: 4%;
     color: #1A1A1A;
   }
@@ -487,6 +572,7 @@ const TitleTwo = styled.p`
    text-align: center;
    letter-spacing: 4%;
    margin-bottom:0px;
+   margin-top:-26px;
   }
 `;
 
@@ -498,17 +584,6 @@ const Background = styled.div`
   padding-bottom:47px;
  
 `;
-
-// const Num = styled.p`
-//   font-family: 'Futura';
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 18px;
-//   line-height:32px;
-//   letter-spacing: 0.04em;
-//   color: #1A1A1A;
-//   margin:0px;
-// `;
 
 const Span = styled.span`
   font-family: 'Futura';
@@ -522,9 +597,9 @@ const Span = styled.span`
     font-family: 'Futura';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    letter-spacing: 0.04em;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
     color: #005CB9;
   }
 `;
@@ -557,7 +632,11 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top:-92px;
+  width:100%;
+ 
+  
+
+
  
   }
 `;
@@ -612,6 +691,53 @@ const Text33 = styled.div`
     color: #1A1A1A;
     margin-top:-14px;
    
+   
+
+  }
+`;
+
+const Text11 = styled.div`
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+ 
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    margin-top:-14px;
+   
+   
+
+  }
+`;
+
+const Text111 = styled.div`
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+ 
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+    margin-top:6px;
+   
+   
 
   }
 `;
@@ -626,12 +752,51 @@ color: #005CB9;
 `;
 
 const MobileTitle = styled.div`
+  display:none;
   @media screen and (max-width: 768px) {
    margin-top:54px;
- ;
+   display:flex;
+   flex-direction: column;
+   width:auto;
+   margin-bottom:40px;
   }
 
 `;
+
+
+const AlignContener = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:12px;
+  
+ 
+  }
+
+
+`;
+
+const AlignContener2 = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:22px;
+  
+ 
+  }
+
+
+`;
+
+const AlignContener22 = styled.div`
+  @media screen and (max-width: 768px) {
+   margin-top:-5px;
+  
+ 
+  }
+
+
+`;
+
+
+
+
 /* desktop thw newest info style end */
 const Company = () => {
   return <PageContainer>
@@ -725,45 +890,42 @@ const Company = () => {
         </BelowArea>
       </Background>
     </Container>
-    
+
     <MobileTitle>
       <TitleOne>聯絡我們</TitleOne>
       <TitleTwo>Contact Us</TitleTwo>
     </MobileTitle>
-
-
     <MobileContainer>
-  
       <TopLeftArea>
         <TopContainer>
           <Background1>
             <Title>＃ 總公司</Title>
           </Background1>
           <TextArea>
-            <TextArea1>
+            <TextArea1> 
               <Column>
                 <Text3>地址</Text3>
-                <Text33>新北市蘆洲區長樂路<Span1>106</Span1>106號<Span1>3</Span1>樓</Text33>
+                <Text33>新北市蘆洲區長樂路<Span1>106</Span1>號<Span1>3</Span1>樓</Text33>
               </Column>
-              <Column>
+              <Column2>
                 <Text3>連絡電話</Text3>
-                <Text33><Span1>0988 521 012</Span1></Text33>
-              </Column>
+                <Text11><Span1> 0988 521 012</Span1></Text11>
+              </Column2>
 
               <Column>
                 <Text3>信箱</Text3>
-                <Text33> <Span1>playpp2018@gmail.com</Span1></Text33>
+                <Text11> <Span1>playpp2018@gmail.com</Span1></Text11>
               </Column>
 
-              <Column>
+              <Column2>
                 <Text3>總公司客服時間</Text3>
                 <Text33>週一至週五 <Span1> 10:00–19:00</Span1>（週末請撥各館電話）</Text33>
-              </Column>
+              </Column2>
 
-              <Column>
+              <Column2>
                 <Text3>創辦人 / 總教練</Text3>
                 <Text33>郭教練 <Span1> 0988 521 012</Span1></Text33>
-                </Column>
+              </Column2>
             </TextArea1>
 
           </TextArea>
@@ -778,48 +940,48 @@ const Company = () => {
         </Background2>
         <BelowTextContainer>
           <TopBelow>
-            <Title>分館資訊</Title>
+            <Title02>分館資訊</Title02>
 
-            <div>
+            <AlignContener>
               <SmallTitle1>各館營業時間</SmallTitle1>
-              <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日<br /> <Span1> 9:00–19:00</Span1></Text>
-            </div>
+              <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日 <Span1> 9:00–19:00</Span1></Text>
+            </AlignContener>
 
-            <div>
+            <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
-              <Text>台北市中正區金山南路一段121號</Text>
-              <Text><Span1> 02 2356 7106</Span1></Text>
+              <Text>台北市中正區金山南路一段 <Span1>121</Span1>號</Text>
+              <Text1><Span1> 02 2356 7106</Span1></Text1>
 
-            </div>
+            </AlignContener2>
 
-            <div>
+            <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-              <Text>台北市新莊區民樂街37號B1</Text>
-              <Text><Span1>02 2990 0566</Span1></Text>
+              <Text>台北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
+              <Text1><Span1> 02 2990 0566</Span1></Text1>
 
-            </div>
+            </AlignContener2>
 
-            <div>
+            <AlignContener2>
               <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
-              <Text>台北市中正區杭州南路一段63號B1</Text>
-              <Text><Span1>02 2391 9659</Span1></Text>
+              <Text>台北市中正區杭州南路一段<Span1>63</Span1>號<Span1>B1</Span1></Text>
+              <Text1><Span1> 02 2391 9659</Span1></Text1>
 
-            </div>
+            </AlignContener2>
           </TopBelow>
 
           <UnderBelow>
-            <Title>聯盟場館經營</Title>
-            <div>
+            <Title02>聯盟場館經營</Title02>
+            <AlignContener22>
               <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
-              <Text>台北市南港區南港路二段141號1樓</Text>
-              <Text><Span1>02 2651 0652</Span1></Text>
-            </div>
+              <Text>台北市南港區南港路二段<Span1>141</Span1>號<Span1>1</Span1>樓</Text>
+              <Text1><Span1> 02 2651 0652</Span1></Text1>
+            </AlignContener22>
 
-            <div>
+            <AlignContener2>
               <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
-              <Text>台北市萬華區西藏路213號</Text>
-              <Text> <Span1>02 2339 6689</Span1></Text>
-            </div>
+              <Text>台北市萬華區西藏路<Span1>213</Span1>號</Text>
+              <Text1> <Span1> 02 2339 6689 </Span1></Text1>
+            </AlignContener2>
 
           </UnderBelow>
 

@@ -24,7 +24,6 @@ const Title1 = styled.p`
   color: #1A1A1A;
   margin:0px;
   @media screen and (max-width: 768px) {
-    margin-left:0px;
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
@@ -49,7 +48,6 @@ const Title2 = styled.p`
   line-Height:52px;
   margin-top:8px;
   @media screen and (max-width: 768px) {
-    margin-left:0px;
     font-family: 'Futura';
     font-style: normal;
     font-weight: 700;
@@ -58,6 +56,8 @@ const Title2 = styled.p`
     letter-spacing: 0.04em;
     color: #CFD2D3;
     margin-top:0px;
+    padding-left:20px;
+    padding-right:20px
   }
 `;
 
@@ -66,13 +66,15 @@ const Container = styled.div`
   height:100%;
 
   @media screen and (max-width: 768px) {
-    margin-top:-80px;
+    margin-top:0px;
+
   }
 `;
 
 const TitleContainer = styled.div`
   margin-top:80px;
   @media screen and (min-width: 768px) {
+    width:100%;
     
   }
 `;
@@ -84,10 +86,13 @@ const BlueArea = styled.div`
   z-index:1;
   padding-bottom:90px;
   margin-top:60px;
+ 
   @media screen and (max-width: 768px) {
     width:100%;
     height:100%;
-    margin-top:60px;
+    margin-top:40px;
+    padding-bottom:60px;
+  
   }
 `;
 
@@ -97,7 +102,7 @@ const ColorLineImg = styled.img`
 
   margin-top:50px;
    @media screen and (max-width: 768px) {
-     margin-left:10px;
+ 
      margin-top:10px;
      width: 75px;
      height: 27px;
@@ -121,7 +126,7 @@ const GrayArea = styled.div`
     display:flex;
     justify-content:center;
     flex-direction: column;
-    margin-left:-12px;
+    
   }
 `;
 
@@ -136,7 +141,9 @@ const TextArea = styled.div`
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    margin-left:12px;
+    margin-right:0px;
+    padding-left:24px;
+    padding-right:24px;
   
     
   }
@@ -149,8 +156,13 @@ const Text = styled.div`
   flex-direction:column;
    @media screen and (max-width: 768px) {
     display:flex;
+    justify-content:center;
+    align-items: center;
     flex-direction:row;
-    margin-top:20px;
+    margin:20px 0px 0px 0px;
+    width:100%;
+    background: #F5F6F6;
+   
 
   
   }
@@ -176,7 +188,9 @@ const BigTitle = styled.p`
     letter-spacing: 0.03em;
     color: #FFFFFF;
     transform: matrix(1, 0, 0, 1, 0, 0);
-    margin-left:30px;
+    padding-top:54px;
+    padding-left:20px;
+    padding-right:20px
   }
 `;
 
@@ -195,6 +209,7 @@ const TopText = styled.p`
    @media screen and (max-width: 768px) {
     width:110px;
     display: flex;
+    justify-content:center;
     align-items: center;
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -206,7 +221,6 @@ const TopText = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:40px;
     margin-top:8px;
   }
 `;
@@ -225,115 +239,50 @@ const WhiteArea = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    width:100%;
+
   }
 
 `;
 
-
-// const TextkeyIn1 = styled.p`
-//   font-family: 'Noto Sans TC';
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 18px;
-//   line-height: 32px;
-//   letter-spacing: 0.04em;
-//   color: #1A1A1A;
-//   display:flex;
-//   justify-content:center;
-//   align-items: center;
-
-//   @media screen and (max-width: 768px) {
-//     margin-left:50px;
-//     font-family: 'Noto Sans TC';
-//     font-style: normal;
-//     font-weight: 500;
-//     font-size: 16px;
-//     line-height: 32px;
-//     display: flex;
-//     align-items: center;
-//     text-align: center;
-//     letter-spacing: 0.04em;
-//     color: #1A1A1A;
-//     margin-left:5px;
-
-
-//   }
-// `;
-
-const TextkeyIn2 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
+const WhiteArea2 = styled.div`
+  background: #FFFFFF;
+  width: 270px;
+  height: 333px;
   display: flex;
   align-items: center;
-  text-align: center;
-  flex-direction:column;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  @media screen and (max-width: 768px) {
-    margin-left:70px;
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
-    margin-left:5px;
-  }
-`;
-
-const TextkeyIn3 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  flex-direction:column;
-
-
+  justify-content: center;
 
   @media screen and (max-width: 768px) {
-    margin-left:50px;
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
+    width: 211px;
+    height: 256px;
     display: flex;
     align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
-    margin-left:5px;
+    justify-content: center;
+    width:100%;
+
   }
+  @media screen and (max-width: 355px) {
+    height: auto;
+  }
+
 `;
 
-const TextkeyIn4 = styled.div`
-  width: 210px;
-  height:224px;
+const TextkeyIn = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.04em;
   color: #1A1A1A;
+  text-align:center;
+  margin:0px;
+  padding-left:16px;
+  padding-right:16px;
+
   
+
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -343,11 +292,15 @@ const TextkeyIn4 = styled.div`
     display: flex;
     align-items: center;
     text-align: center;
+    flex-direction:column;
     letter-spacing: 0.04em;
     color: #1A1A1A;
-    margin-left:5px;
+  
+  
   }
 `;
+
+
 
 const Textcontainer = styled.div`
   margin-top:-20px;
@@ -365,6 +318,14 @@ const Span = styled.span`
   font-size:18px;
   line-height:32px;
   letter-spacing:4%;
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight:500;
+    font-size:16px;
+    line-height:32px;
+    letter-spacing:4%;
+  
+  }
 
 `;
 
@@ -380,6 +341,14 @@ const Sapn2 = styled.span`
     font-size: 20px;
     line-height: 36px;
     letter-spacing: 3%;
+  }
+`;
+
+const Text2 = styled.p`
+ margin:0px;
+ align-items: center;
+ @media screen and (max-width: 768px) {
+  margin:0px;
   }
 `;
 
@@ -405,13 +374,13 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn2>
-                <p style={{ margin: 0 }}>舞動陽光</p>
-                <p style={{ margin: 0 }}>華江俱樂部</p>
-                <p style={{ margin: 0 }}>三峽運動中心</p>
-                <p style={{ margin: 0 }}>中正運動中心</p>
-                <p style={{ margin: 0 }}>等 ⋯⋯</p>
-              </TextkeyIn2>
+              <TextkeyIn>
+                <Text2>舞動陽光</Text2>
+                <Text2>華江俱樂部</Text2>
+                <Text2>三峽運動中心</Text2>
+                <Text2>中正運動中心</Text2>
+                <Text2>等 ⋯⋯</Text2>
+              </TextkeyIn>
             </WhiteArea>
 
           </Text>
@@ -424,11 +393,11 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn2>
-                <p style={{ margin: 0 }}>大龍國小</p>
-                <p style={{ margin: 0 }}>懷生國小</p>
-                <p style={{ margin: 0 }}>等 ⋯⋯</p>
-              </TextkeyIn2>
+              <TextkeyIn>
+                <Text2>大龍國小</Text2>
+                <Text2>懷生國小</Text2>
+                <Text2>等 ⋯⋯</Text2>
+              </TextkeyIn>
             </WhiteArea>
           </Text>
 
@@ -440,12 +409,12 @@ const PartnershipAndRecruit = () => {
               </Textcontainer>
             </GrayArea>
             <WhiteArea>
-              <TextkeyIn3>
-                <p style={{ margin: 0 }}>何嘉仁幼兒園</p>
-                <p style={{ margin: 0 }}>維多利亞</p>
-                <p style={{ margin: 0 }}>喬鈴補習班</p>
-                <p style={{ margin: 0 }}>等 ⋯⋯</p>
-              </TextkeyIn3>
+              <TextkeyIn>
+                <Text2>何嘉仁幼兒園</Text2>
+                <Text2>維多利亞</Text2>
+                <Text2>喬鈴補習班</Text2>
+                <Text2>等 ⋯⋯</Text2>
+              </TextkeyIn>
             </WhiteArea>
           </Text>
 
@@ -456,16 +425,17 @@ const PartnershipAndRecruit = () => {
                 <TopText>桌球場館</TopText>
               </Textcontainer>
             </GrayArea>
-            <WhiteArea>
-              <TextkeyIn4>
-                <p style={{ margin: 0 }}><Span>Let's Play </Span>蘆洲店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play </Span>東門店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play </Span>善導寺店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play </Span>新莊店</p>
-                <p style={{ margin: 0 }}><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  乒運動桌球館</p>
-              </TextkeyIn4>
+            <WhiteArea2>
+              <TextkeyIn>
+                <Text2><Span>Let's Play </Span>蘆洲店</Text2>
+                <Text2><Span>Let's Play </Span>東門店</Text2>
+                <Text2><Span>Let's Play </Span>善導寺店</Text2>
+                <Text2><Span>Let's Play </Span>新莊店</Text2>
+                <Text2><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  </Text2>
+                <Text2>乒運動桌球館</Text2>
+              </TextkeyIn>
 
-            </WhiteArea>
+            </WhiteArea2>
           </Text>
         </TextArea>
       </BlueArea>

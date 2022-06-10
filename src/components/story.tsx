@@ -31,6 +31,7 @@ const ColorpicImg = styled.img`
 const Container = styled.div`
  width:100% ;
  height:920px;
+ padding-bottom:0px;
  display:flex;
  background:#F5F6F6;
   @media screen and  (max-width: 768px) {
@@ -40,12 +41,14 @@ const Container = styled.div`
 
 const MobileContainer = styled.div`
   display:none;
-@media screen and  (max-width: 768px) {
-  width:100% ;
-  height:90%;
-  display:flex;
-  flex-direction:column;
-  margin-top:20px;
+  @media screen and  (max-width: 768px) {
+    width:100% ;
+    height:90%;
+    display:flex;
+    flex-direction:column;
+    margin-top:80px;
+    background:#F5F6F6;
+
   }
 
 `;
@@ -68,10 +71,7 @@ const Picture = styled.div`
     margin-top:60px;
     margin-right:0px;
 
- 
   }
-
-
 `;
 
 const Text = styled.div`
@@ -163,7 +163,6 @@ const Title3 = styled.p`
     color: #1A1A1A;
   }
   
-
 `;
 
 const Title4 = styled.p`
@@ -189,7 +188,7 @@ const Title4 = styled.p`
 
 const Contant = styled.div`
   width:517px;
-  font-family: 'Futura';
+  font-family: ' Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -202,55 +201,22 @@ const Contant = styled.div`
    @media screen and  (max-width: 768px) {
     width:100%;
     height:240px;
-    font-family: 'Futura';
-    font-style: normal;
+    font-family: ' Noto Sans TC';
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
-    text-align: justify;
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:40px;
     margin:0px;
-    
-
-  }
-`;
-
-const Contant5 = styled.p`
-  width:517px;
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 36px;
-  text-align: justify;
-  letter-spacing: 0.03em;
-  color: #1A1A1A;
-  margin:26px 0px 0px 0px;
-
-   @media screen and  (max-width: 768px) {
-    width:100%;
-    
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    text-align: justify;
-    letter-spacing: 0.02em;
-    color: #1A1A1A;
-    margin-top:40px;
-    margin:0px;
-    
-
+  
   }
 `;
 
 const Contant2 = styled.p`
   width:517px;
   height:252px;
-  font-family: 'Futura';
+  font-family: ' Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -263,8 +229,7 @@ const Contant2 = styled.p`
     width:100%;
     height:240px;
     margin-top:20px;
-    /* margin-left:-25px; */
-    font-family: 'Futura';
+    font-family: ' Noto Sans TC';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -286,13 +251,11 @@ const BelowText = styled.p`
   color: #1A1A1A;
   margin:20px 210px 0px 0px;
    @media screen and  (max-width: 768px) {
-    margin-top:24px;
-    width:300px;
     display:flex;
     justify-content:center;
+    align-items:center;
     flex-direction: column;
-    margin: 0px;
-    margin-top:40px;
+    margin:34px 0px 0px 0px;
 
   }
 `;
@@ -304,11 +267,13 @@ const Span1 = styled.span`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
+  margin-right:12px;
+  margin-left:2px;
    @media screen and  (max-width: 768px) {
      font-size: 20px;
      line-height: 36px;
      letter-spacing: 3%;
-  }
+    }
 `;
 
 const Span2 = styled.span`
@@ -318,12 +283,14 @@ const Span2 = styled.span`
   font-size: 26px;
   line-height: 40px;
   letter-spacing: 1.04px;
+   margin-left:12px;
    @media screen and  (max-width: 768px) {
      font-size: 20px;
      line-height: 36px;
      letter-spacing: 3%;
   }
 `;
+
 
 const Span = styled.span`
   font-family: 'Futura';
@@ -338,8 +305,6 @@ const Span = styled.span`
     font-size:16px;
     line-height:30px;
     letter-spacing:2%;
-
-    
   }
 `;
 
@@ -348,19 +313,19 @@ const MobieContent = styled.div`
    @media screen and  (max-width: 768px) {
     display: flex; 
     flex-direction: column; 
-    padding: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
     align-items: center;
   }
 `;
 
 const MobieContent2 = styled.div`
   
-   @media screen and  (max-width: 768px) {
-    display: flex; 
-    flex-direction: column; 
-    padding: 20px;
-    align-items: center;
-    margin-top:-20px;
+  @media screen and  (max-width: 768px) {
+    margin-top:20px;
+    padding-bottom:60px;
+    padding-left:24px;
+    padding-right:24px;
   }
 `;
 
@@ -370,6 +335,7 @@ const Span3 = styled.span`
     font-size:26px;
     line-height:40px;
     letter-spacing:4%;
+
    
    @media screen and  (max-width: 768px) {
     font-family: 'Futura';
@@ -380,6 +346,7 @@ const Span3 = styled.span`
   }
 `;
 
+
 /* desktop thw newest info style end */
 const Story = () => {
   return <PageContainer>
@@ -389,7 +356,6 @@ const Story = () => {
       </Picture>
 
       <Text>
-
         <div>
           <Title1>我們的故事</Title1>
           <Title2>Let’s Play Story</Title2>
@@ -399,12 +365,10 @@ const Story = () => {
         </div>
 
         <BelowText>
-          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1> X <Span2>創新</Span2></Title3>
+          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span3>X</Span3><Span2>創新</Span2></Title3>
           <Title4>邀請大家一起來玩！</Title4>
         </BelowText>
       </Text>
-
-
     </Container>
 
     <MobileContainer>
@@ -415,25 +379,18 @@ const Story = () => {
       <MobieContent>
         <Title1>我們的故事</Title1>
         <Title2>Let’s Play Story</Title2>
-        <Contant5><Span>Let's Play</Span> 創立於 <Span>2018</Span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球，一起感受其中的樂趣！小孩子來到這裡可以培養信心與專注力、上班族可以擁有用運動釋放壓力的時光、年長者可以實現豐富退休生活的樂趣！</Contant5>
+        <Contant><Span>Let's Play</Span> 創立於 <Span>2018</Span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球，一起感受其中的樂趣！小孩子來到這裡可以培養信心與專注力、上班族可以擁有用運動釋放壓力的時光、年長者可以實現豐富退休生活的樂趣！</Contant>
       </MobieContent>
 
       <MobieContent2>
-        <Contant5>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！！</Contant5>
+        <Contant2>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！！</Contant2>
 
         <BelowText>
-          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span> X </Span><Span2>創新</Span2></Title3>
+          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span3> X </Span3><Span2>創新</Span2></Title3>
           <Title4>邀請大家一起來玩！</Title4>
         </BelowText>
       </MobieContent2>
-
-
     </MobileContainer>
-
-
-
-
-
   </PageContainer>;
 };
 
