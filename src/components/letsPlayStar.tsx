@@ -425,7 +425,7 @@ const GroupImg2 = styled.div`
 
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
-  return <PageContainer>
+  return <PageContainer id="letsPlayStar">
     <Container>
       <div>
         <Title1>藝人明星桌球隊</Title1>

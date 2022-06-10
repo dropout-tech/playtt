@@ -303,7 +303,7 @@ const TreeItems = styled.div`
 
 /* desktop thw newest info style end */
 const PlayTest = () => {
-  return <PageContainer>
+  return <PageContainer id="playTest">
     <Container>
       <TextContainer>
         <Text1>

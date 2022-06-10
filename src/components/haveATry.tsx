@@ -221,7 +221,7 @@ const Span = styled.span`
 `;
 /* desktop thw newest info style end */
 const HaveATry = () => {
-  return <PageContainer>
+  return <PageContainer id="haveATry">
     <Container>
       <BlueArea>
         <TopText>

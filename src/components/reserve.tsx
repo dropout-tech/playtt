@@ -167,7 +167,7 @@ const Span = styled.p`
 
 /* desktop thw newest info style end */
 const Reserve = () => {
-  return <PageContainer>
+  return <PageContainer id="reserve">
     <Container>
 
       <TextArea>

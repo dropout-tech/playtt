@@ -388,7 +388,7 @@ const PictureContainer = styled.div`
 
 /* desktop thw newest info style end */
 const OurCouchMembers = () => {
-  return <PageContainer>
+  return <PageContainer id="ourCouchMembers">
     <Container>
       <Picture>
         <Row1>

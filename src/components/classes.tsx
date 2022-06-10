@@ -508,7 +508,7 @@ const Span = styled.span`
 
 /* desktop thw newest info style end */
 const Classes = () => {
-  return <PageContainer>
+  return <PageContainer id="classes">
     <Container>
 
       <ClassIntroduce>

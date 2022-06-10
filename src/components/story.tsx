@@ -349,7 +349,7 @@ const Span3 = styled.span`
 
 /* desktop thw newest info style end */
 const Story = () => {
-  return <PageContainer>
+  return <PageContainer id="story">
     <Container>
       <Picture>
         <ColorpicImg src={colorpic} alt="" />

@@ -224,7 +224,7 @@ const TextArea = styled.div`
 
 /* desktop thw newest info style end */
 const Recruit = () => {
-  return <PageContainer>
+  return <PageContainer id="recruit">
     <Container>
       <ImgContainer>
         <ColorcircleImg src={colorcircle} alt="" />

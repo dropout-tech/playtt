@@ -367,7 +367,7 @@ const TopContainer = styled.div`
 
 /* desktop thw newest info style end */
 const OtherService = () => {
-  return <PageContainer>
+  return <PageContainer id="otherService">
     <Container>
       <Title>
         <Title1>其他服務</Title1>

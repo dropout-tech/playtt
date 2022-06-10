@@ -10,8 +10,8 @@ const PageContainer = styled.div`
   height:100%;
   display: flex;
   flex-direction: column;
-
-   @media screen and (max-width: 768px) {
+  margin-top: 80px;
+  @media screen and (max-width: 768px) {
     
   }
 `;
@@ -42,7 +42,7 @@ const EmptyContainer = styled.div`
 
 /* desktop thw newest info style end */
 const homepage = () => {
-  return <PageContainer>
+  return <PageContainer id="home">
     <EmptyContainer>
       <BannerImg src={banner} />
       <BannerImg2 src={banner2} />
