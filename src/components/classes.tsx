@@ -426,17 +426,6 @@ const SpanDot = styled.span`
   }
 `;
 
-const SpanDot2 = styled.span`
-  color: #CFD2D3;
-  margin-top:4px;
-  width: 36px;
-  height: 36px;
- @media screen and (max-width: 768px) {
-   margin-top:4px;
-   display: flex;
-   justify-content:center;
-  }
-`;
 
 const DotContainer = styled.div`
  display:flex;

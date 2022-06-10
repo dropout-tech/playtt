@@ -268,58 +268,6 @@ const WhiteArea2 = styled.div`
 
 `;
 
-
-
-
-const TextkeyIn2 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin:0px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
- 
-  }
-`;
-
-const TextkeyIn3 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin:0px;
-  align-items: center;
-
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
-  
-  }
-`;
-
 const TextkeyIn = styled.p`
   font-family: 'Noto Sans TC';
   font-style: normal;

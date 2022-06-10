@@ -423,17 +423,6 @@ const GroupImg2 = styled.div`
 
 `;
 
-const SpanHero = styled.div`
-  @media screen and (max-width: 768px) {
-  font-family: 'Futura';
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 32px;
-  letter-spacing: 0.04em;
-    
-    }
-
-`;
 /* desktop thw newest info style end */
 const LetsPlayStar = () => {
   return <PageContainer>
