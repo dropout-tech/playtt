@@ -94,7 +94,7 @@ const Title = styled.p`
   margin-top:-1px;
   
    @media screen and (max-width: 768px) {
-    margin-top:16px;
+    margin-top:18px;
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
@@ -106,6 +106,7 @@ const Title = styled.p`
     letter-spacing: 0.04em;
     color: #005CB9;
     margin-left:20px;
+  
     
 
    
@@ -185,7 +186,8 @@ const Background = styled.div`
     align-items: center;
     width: 176px;
     height: 44px;
-    margin-top:-1px;
+   
+   
   
   }
 `;

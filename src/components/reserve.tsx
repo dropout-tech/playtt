@@ -162,6 +162,7 @@ const Span = styled.p`
     font-size:14px;
     line-height:28px;
     letter-spacing:6%;
+    margin-left:4px;
   }
 `;
 
@@ -177,7 +178,7 @@ const Reserve = () => {
               <ButtonText>立即預約體驗</ButtonText>
             </Text>
           </GreenButton>
-          <BelowText>統一由臉書私訊洽詢想預約試上的分店&ensp; <Span>Line</Span></BelowText>
+          <BelowText>統一由臉書私訊洽詢想預約試上的分店 <Span>Line</Span></BelowText>
         </AlignText>
       </TextArea>
 

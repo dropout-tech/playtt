@@ -117,6 +117,7 @@ const Background = styled.div`
     height:44px;
     margin-top:0px;
     margin-left:0px;
+   
 
     
   }
@@ -204,7 +205,7 @@ const Title3 = styled.p`
     align-items: center;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-top:5px;
+    margin-top:6px;
     margin-left:20px;
     
 

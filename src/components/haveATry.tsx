@@ -219,6 +219,26 @@ const Span = styled.span`
     color: #FFFFFF;
   }
 `;
+
+const SpanLine = styled.span`
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    margin-left:4px;
+  }
+`;
 /* desktop thw newest info style end */
 const HaveATry = () => {
   return <PageContainer>
@@ -236,7 +256,7 @@ const HaveATry = () => {
           </Button>
         </ButtonAreas>
 
-        <Text2>統一由臉書私訊洽詢想預約試上的分店&ensp;<Span>Line</Span></Text2>
+        <Text2>統一由臉書私訊洽詢想預約試上的分店<SpanLine>Line</SpanLine></Text2>
 
       </BlueArea>
 

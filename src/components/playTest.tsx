@@ -120,7 +120,7 @@ const Title2 = styled.p`
 `;
 
 const Title3 = styled.p`
-  font-family: ' Noto Sans TC';
+  font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -128,12 +128,10 @@ const Title3 = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
    @media screen and (max-width: 768px) {
-    font-family: ' Noto Sans TC';
-    font-style: normal;
+    font-family: 'Noto Sans TC';
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
-    text-align: justify;
     letter-spacing: 0.02em;
     color: #1A1A1A;
     margin-top:50px;
@@ -318,7 +316,7 @@ const PlayTest = () => {
         </Text2>
         <Text3>
           <TextContent>
-            設計成 <Span>L1–L12</Span> 檢定關卡，最後一關還有模擬比賽。
+            設計成<Span> L1–L12 </Span>檢定關卡，最後一關還有模擬比賽。
             教學內容搭配好玩的教案，讓大家在樂趣中成長，
             用來幫助大小朋友測驗學習技術成果。
             你意想不到的玩桌球，也可以學到、揮灑汗水、歡笑滿滿！

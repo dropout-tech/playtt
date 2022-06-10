@@ -302,7 +302,7 @@ const AboutItems = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top:160px;
+  margin-top:80px;
   @media screen and (max-width: 768px) {
     
   }

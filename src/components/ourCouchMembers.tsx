@@ -373,7 +373,7 @@ const MemberPic = styled.img`
 
 const PictureContainer = styled.div`
    @media screen and (max-width: 768px) {
-   width:80%
+   width:85%
     }
 
 `;
@@ -451,17 +451,14 @@ const OurCouchMembers = () => {
             <MemberNameLeft>呂昀</MemberNameLeft>
             <NickName><SpanEva>Eva </SpanEva>教練</NickName>
           </NameComponentLeft>
-
         </Members>
 
         <Members2>
-
           <NameComponentRight>
             <MemberNameRight>鍾達威</MemberNameRight>
             <NickName>威廉教練</NickName>
           </NameComponentRight>
           <MemberPic src={img22} alt="" />
-
         </Members2>
 
         <Members>
@@ -470,18 +467,14 @@ const OurCouchMembers = () => {
             <MemberNameLeft>林培中</MemberNameLeft>
             <NickName>派派教練</NickName>
           </NameComponentLeft>
-
-
         </Members>
 
         <Members2>
-
           <NameComponentRight>
             <MemberNameRight>郭則寬</MemberNameRight>
             <NickName>阿寬教練</NickName>
           </NameComponentRight>
           <MemberPic src={img44} alt="" />
-
         </Members2>
 
         <Members>
@@ -494,13 +487,11 @@ const OurCouchMembers = () => {
         </Members>
 
         <Members2>
-
           <NameComponentRight>
             <MemberNameRight>顏兆寅</MemberNameRight>
             <NickName>小顏教練</NickName>
           </NameComponentRight>
           <MemberPic src={img66} alt="" />
-
         </Members2>
 
         <Members>

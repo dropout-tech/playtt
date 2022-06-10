@@ -200,8 +200,7 @@ const Contant = styled.div`
 
    @media screen and  (max-width: 768px) {
     width:100%;
-    height:240px;
-    font-family: ' Noto Sans TC';
+    font-family: 'Noto Sans TC';
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
@@ -216,7 +215,7 @@ const Contant = styled.div`
 const Contant2 = styled.p`
   width:517px;
   height:252px;
-  font-family: ' Noto Sans TC';
+  font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -227,9 +226,9 @@ const Contant2 = styled.p`
   margin-top:24px;
    @media screen and  (max-width: 768px) {
     width:100%;
-    height:240px;
+    height:auto;
     margin-top:20px;
-    font-family: ' Noto Sans TC';
+    font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -255,8 +254,9 @@ const BelowText = styled.p`
     justify-content:center;
     align-items:center;
     flex-direction: column;
-    margin:34px 0px 0px 0px;
-
+    margin:31px 0px 0px 0px;
+    padding-bottom:60px;
+    margin-top:24px;
   }
 `;
 
@@ -273,6 +273,8 @@ const Span1 = styled.span`
      font-size: 20px;
      line-height: 36px;
      letter-spacing: 3%;
+     margin-right:8px;
+     margin-left:1px;
     }
 `;
 
@@ -288,6 +290,7 @@ const Span2 = styled.span`
      font-size: 20px;
      line-height: 36px;
      letter-spacing: 3%;
+     margin-left:8px;
   }
 `;
 
@@ -322,8 +325,6 @@ const MobieContent = styled.div`
 const MobieContent2 = styled.div`
   
   @media screen and  (max-width: 768px) {
-    margin-top:20px;
-    padding-bottom:60px;
     padding-left:24px;
     padding-right:24px;
   }
@@ -336,7 +337,6 @@ const Span3 = styled.span`
     line-height:40px;
     letter-spacing:4%;
 
-   
    @media screen and  (max-width: 768px) {
     font-family: 'Futura';
     font-weight:700;
@@ -384,12 +384,11 @@ const Story = () => {
 
       <MobieContent2>
         <Contant2>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！！</Contant2>
-
-        <BelowText>
-          <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span3> X </Span3><Span2>創新</Span2></Title3>
-          <Title4>邀請大家一起來玩！</Title4>
-        </BelowText>
       </MobieContent2>
+      <BelowText>
+        <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span3>X</Span3><Span2>創新</Span2></Title3>
+        <Title4>邀請大家一起來玩！</Title4>
+      </BelowText>
     </MobileContainer>
   </PageContainer>;
 };
