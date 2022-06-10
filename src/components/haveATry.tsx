@@ -185,8 +185,8 @@ const UnderContainer = styled.div`
   display:flex;
   justify-content: center;
   align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom:8px;
    @media screen and (max-width: 768px) {
     
   }

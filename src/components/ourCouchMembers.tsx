@@ -329,13 +329,13 @@ const MemberNameRight = styled.p`
 
 const NickName = styled.p`
   @media screen and (max-width: 768px) {
-    margin: 0;
-    font-family: ' Noto Sans TC';
+    font-family: 'Noto Sans TC';
     font-weight:500;
     font-size: 16px;
     line-height: 30px;
     letter-spacing: 0.02em;
     color: #1A1A1A;
+    margin: 0;
     }
 `;
 

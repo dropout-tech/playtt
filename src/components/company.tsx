@@ -317,12 +317,13 @@ const Title = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
 
-   @media screen and (max-width: 768px) {   font-family: 'Noto Sans TC';
+   @media screen and (max-width: 768px) {   
+      font-family: 'Noto Sans TC';
       font-style: normal;
       font-weight: 900;
-      font-size: 18px;
-      line-height: 32px;
-      letter-spacing: 0.04em;
+      font-size: 20px;
+      line-height: 36px;
+      letter-spacing: 0.03em;
       display: flex;
       align-items: center;
       text-align: center;
@@ -332,6 +333,31 @@ const Title = styled.p`
  
   }
 `;
+
+const Title02 = styled.p`
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+
+   @media screen and (max-width: 768px) {   
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 0.04em;
+      color: #1A1A1A;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-bottom:18px;
+  }
+`;
+
 
 const Title22 = styled.p`
   font-family: 'Noto Sans TC';
@@ -879,11 +905,11 @@ const Company = () => {
             <TextArea1> 
               <Column>
                 <Text3>地址</Text3>
-                <Text33>新北市蘆洲區長樂路<Span1> 106 </Span1>號<Span1> 3 </Span1>樓</Text33>
+                <Text33>新北市蘆洲區長樂路<Span1>106</Span1>號<Span1>3</Span1>樓</Text33>
               </Column>
               <Column2>
                 <Text3>連絡電話</Text3>
-                <Text111><Span1> 0988 521 012</Span1></Text111>
+                <Text11><Span1> 0988 521 012</Span1></Text11>
               </Column2>
 
               <Column>
@@ -914,7 +940,7 @@ const Company = () => {
         </Background2>
         <BelowTextContainer>
           <TopBelow>
-            <Title>分館資訊</Title>
+            <Title02>分館資訊</Title02>
 
             <AlignContener>
               <SmallTitle1>各館營業時間</SmallTitle1>
@@ -930,7 +956,7 @@ const Company = () => {
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-              <Text>台北市新莊區民樂街<Span1>37</Span1>號<Span1> B1</Span1></Text>
+              <Text>台北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
               <Text1><Span1> 02 2990 0566</Span1></Text1>
 
             </AlignContener2>
@@ -944,7 +970,7 @@ const Company = () => {
           </TopBelow>
 
           <UnderBelow>
-            <Title>聯盟場館經營</Title>
+            <Title02>聯盟場館經營</Title02>
             <AlignContener22>
               <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
               <Text>台北市南港區南港路二段<Span1>141</Span1>號<Span1>1</Span1>樓</Text>
