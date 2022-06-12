@@ -78,11 +78,11 @@ const Title2 = styled.p`
 
 const BlueArea = styled.div`
   background: #005CB9;
-  height:310px;
+  height:306px;
   padding-top:30px;
   padding-bottom:174px;
    @media screen and (max-width: 768px) {
-    padding-bottom:0px;
+    padding-bottom:0;
     width:100%;
   }
 `;

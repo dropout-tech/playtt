@@ -113,7 +113,6 @@ const Title1 = styled.p`
     text-align: center;
     letter-spacing: 0.03em;
     color: #1A1A1A;
-    margin-left:2px;
     margin-top:60px;
    
 
