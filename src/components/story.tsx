@@ -11,7 +11,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-   @media screen and (max-width: 768px) {
+   @media screen and (max-width: 414px) {
     
   }
   
@@ -22,7 +22,7 @@ const ColorpicImg = styled.img`
   height:517px ;
   margin-top:0px;
 
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
      width:251px ;
      height:251px ;
   }
@@ -36,14 +36,14 @@ const Container = styled.div`
  padding-bottom:0px;
  display:flex;
  background:#F5F6F6;
-  @media screen and  (max-width: 768px) {
+  @media screen and  (max-width: 414px) {
    display:none;
   }
 `;
 
 const MobileContainer = styled.div`
   display:none;
-  @media screen and  (max-width: 768px) {
+  @media screen and  (max-width: 414px) {
     width:100% ;
     height:90%;
     display:flex;
@@ -65,7 +65,7 @@ const Picture = styled.div`
 
 
 
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
     width:100%;
     display:flex;
     justify-content:center;
@@ -85,7 +85,7 @@ const Text = styled.div`
   margin:0px;
   
  
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
     /* width:100%; */
     margin-top:60px;
     display:flex;
@@ -104,7 +104,7 @@ const Title1 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin:0px;
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
@@ -130,7 +130,7 @@ const Title2 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin:4px 0px 0px 0px;
-  @media screen and  (max-width: 768px) {
+  @media screen and  (max-width: 414px) {
    width:250px;
    font-family: 'Futura';
    font-style: normal;
@@ -156,7 +156,7 @@ const Title3 = styled.p`
   letter-spacing: 1.04px;
   margin:0px;
   
- @media screen and  (max-width: 768px) {
+ @media screen and  (max-width: 414px) {
     font-size: 20px;
     line-height: 36px;
     text-align: center;
@@ -174,7 +174,7 @@ const Title4 = styled.p`
   letter-spacing:4%;
   margin:0px;
 
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
     font-family: 'Noto Sans TC';
     font-weight: 900;
     font-size: 20px;
@@ -199,8 +199,12 @@ const Contant = styled.div`
   color: #1A1A1A;
   margin:26px 0px 0px 0px;
 
-   @media screen and  (max-width: 768px) {
-    width:100%;
+  @media screen and  (max-width: 1280px) {
+      width:450px ;
+      
+    }
+   @media screen and  (max-width: 414px) {
+    width:auto;
     font-family: 'Noto Sans TC';
     font-weight: 500;
     font-size: 16px;
@@ -212,10 +216,7 @@ const Contant = styled.div`
   
   }
 
-  @media screen and  (max-width: 1280px) {
-     width:450px ;
-    
-  }
+  
 `;
 
 const Contant2 = styled.p`
@@ -230,8 +231,8 @@ const Contant2 = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:24px;
-   @media screen and  (max-width: 768px) {
-    width:100%;
+   @media screen and  (max-width: 414px) {
+    width:auto;
     height:auto;
     margin-top:20px;
     font-family: 'Noto Sans TC';
@@ -260,7 +261,12 @@ const BelowText = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin:20px 210px 0px 0px;
-   @media screen and  (max-width: 768px) {
+
+  @media screen and  (max-width: 1280px) {
+    margin-top:20px; ;
+    
+  }
+   @media screen and  (max-width: 414px) {
     display:flex;
     justify-content:center;
     align-items:center;
@@ -270,10 +276,7 @@ const BelowText = styled.p`
     margin-top:24px;
   }
 
-  @media screen and  (max-width: 1280px) {
-    margin-top:20px; ;
-    
-  }
+  
 `;
 
 const Span1 = styled.span`
@@ -285,7 +288,7 @@ const Span1 = styled.span`
   letter-spacing: 1.04px;
   margin-right:12px;
   margin-left:2px;
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
      font-size: 20px;
      line-height: 36px;
      letter-spacing: 3%;
@@ -302,7 +305,7 @@ const Span2 = styled.span`
   line-height: 40px;
   letter-spacing: 1.04px;
    margin-left:12px;
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
      font-size: 20px;
      line-height: 36px;
      letter-spacing: 3%;
@@ -318,7 +321,7 @@ const Span = styled.span`
   line-height:36px;
   letter-spacing:3%;
 
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
     font-family: 'Futura';
     font-weight:500;
     font-size:16px;
@@ -329,7 +332,7 @@ const Span = styled.span`
 
 const MobieContent = styled.div`
   
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
     display: flex; 
     flex-direction: column; 
     padding-left: 24px;
@@ -340,7 +343,7 @@ const MobieContent = styled.div`
 
 const MobieContent2 = styled.div`
   
-  @media screen and  (max-width: 768px) {
+  @media screen and  (max-width: 414px) {
     padding-left:24px;
     padding-right:24px;
   }
@@ -353,7 +356,7 @@ const Span3 = styled.span`
     line-height:40px;
     letter-spacing:4%;
 
-   @media screen and  (max-width: 768px) {
+   @media screen and  (max-width: 414px) {
     font-family: 'Futura';
     font-weight:700;
     font-size:20px;
@@ -399,7 +402,7 @@ const Story = () => {
       </MobieContent>
 
       <MobieContent2>
-        <Contant2>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！！</Contant2>
+        <Contant>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！！</Contant>
       </MobieContent2>
       <BelowText>
         <Title3><Span3>Let's Play</Span3> <Span1>運動</Span1><Span3>X</Span3><Span2>創新</Span2></Title3>
