@@ -21,6 +21,12 @@ const PageContainer = styled.div`
 `;
 
 const BannerImg1 = styled.img`
+ @media screen and (min-width: 1440px) {
+    display:flex;
+    width:100%;
+    height:100%;
+  }
+
   @media screen and (max-width: 1440px) {
     display:flex;
     width:100%;
@@ -43,6 +49,9 @@ const BannerImg1 = styled.img`
 `;
 
 const BannerImg2 = styled.img`
+  @media screen and (min-width: 1440px) {
+     display: none;
+  }
   @media screen and (max-width: 1440px) {
     display: none;
   }
@@ -65,6 +74,10 @@ const BannerImg2 = styled.img`
 `;
 
 const BannerImg3 = styled.img`
+
+  @media screen and (min-width: 1440px) {
+     display: none;
+  }
   @media screen and (max-width: 1440px) {
     display: none;
   }
@@ -86,6 +99,10 @@ const BannerImg3 = styled.img`
 `;
 
 const BannerImg4 = styled.img`
+
+  @media screen and (min-width: 1440px) {
+     display: none;
+  }
   @media screen and (max-width: 1440px) {
     display: none;
   }
@@ -107,6 +124,9 @@ const BannerImg4 = styled.img`
 `;
 
 const BannerImg5 = styled.img`
+  @media screen and (min-width: 1440px) {
+     display: none;
+  }
   @media screen and (max-width: 1440px) {
     display: none;
   }
