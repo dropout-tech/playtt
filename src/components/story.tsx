@@ -26,6 +26,8 @@ const ColorpicImg = styled.img`
      width:251px ;
      height:251px ;
   }
+
+  
 `;
 
 const Container = styled.div`
@@ -209,6 +211,11 @@ const Contant = styled.div`
     margin:0px;
   
   }
+
+  @media screen and  (max-width: 1280px) {
+     width:450px ;
+    
+  }
 `;
 
 const Contant2 = styled.p`
@@ -237,6 +244,11 @@ const Contant2 = styled.p`
     color: #1A1A1A;
 
   }
+  @media screen and  (max-width: 1280px) {
+     width:450px ;
+     height:auto;
+    
+  }
 `;
 
 const BelowText = styled.p`
@@ -256,6 +268,11 @@ const BelowText = styled.p`
     margin:31px 0px 0px 0px;
     padding-bottom:60px;
     margin-top:24px;
+  }
+
+  @media screen and  (max-width: 1280px) {
+    margin-top:20px; ;
+    
   }
 `;
 
