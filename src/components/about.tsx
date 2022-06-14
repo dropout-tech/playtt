@@ -560,7 +560,7 @@ const StartImg = styled.img`
   height: 38px ;
   margin-right: 20px;
     @media screen and (max-width: 768px) {
-     margin-top:-176px;
+     margin-top:-207px;
   }
 
     @media screen and (max-width: 414px) {
@@ -579,6 +579,8 @@ const Text = styled.div`
     text-align: justify;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-top:24px;
+
   }
 
    @media screen and (max-width: 414px) {
