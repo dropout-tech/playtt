@@ -234,6 +234,7 @@ const Slogan = styled.div`
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-left:1px;
+  margin-top:4px;
  @media screen and (max-width:768px) {
     font-family: 'Futura';
     font-style: normal;
@@ -498,7 +499,7 @@ const Span33 = styled.span`
 const TextContener1 = styled.div`
 @media screen and (max-width: 768px) {
    display: flex;
-   margin-top:78px;
+   margin-top:42px;
 
   }
  @media screen and (max-width: 414px) {
@@ -561,6 +562,7 @@ const StartImg = styled.img`
   margin-right: 20px;
     @media screen and (max-width: 768px) {
      margin-top:-207px;
+     margin-left:10px;
   }
 
     @media screen and (max-width: 414px) {
@@ -609,6 +611,7 @@ const IpadConainer = styled.div`
     flex-direction:column;
     padding-right:80px;
     padding-left:80px;
+    margin-top:-88px;
   }
   @media screen and (max-width: 414px) {
     display:none;

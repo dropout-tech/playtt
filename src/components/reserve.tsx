@@ -41,6 +41,14 @@ const GreenButton = styled.button`
   background: #38D430;
   box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);
   border:none;
+  @media screen and (max-width: 1024px) {
+    width:342px;
+    height:68px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-top:150px;
+  }
    @media screen and (max-width: 768px) {
     width:211px;
     height:48px;
@@ -49,7 +57,6 @@ const GreenButton = styled.button`
     align-items: center;
     margin-top:150px;
   }
-
 `;
 
 const GreenButton6 = styled.button`
@@ -66,7 +73,6 @@ const GreenButton6 = styled.button`
     align-items: center;
     margin-top:150px;
   }
-
 `;
 
 const ButtonText = styled.p`
@@ -79,20 +85,35 @@ const ButtonText = styled.p`
   justify-content:center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
+
+   @media screen and (max-width:1024px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 23px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
   
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
-    font-size: 18px;
-    line-height:48px;
-    letter-spacing: 0.04em;
-    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 36px;
     display: flex;
     align-items: center;
     text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
   }
 `;
+
+
 
 const BelowText = styled.p`
   font-size:'Noto Sans TC';
@@ -118,7 +139,6 @@ const BelowText = styled.p`
     letter-spacing: 0.06em;
     color: #3C3D3D;
     margin-top:6px;
- 
   }
 `;
 
@@ -134,7 +154,6 @@ const TextArea1 = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position:center;
-
  }
 @media screen and (max-width: 1440px) {
   display:none;
@@ -154,8 +173,7 @@ const TextArea1 = styled.div`
 
  @media screen and (max-width: 414px) {
     display:none;
-   
- }
+  }
 `;
 
 const TextArea2 = styled.div`
@@ -186,12 +204,9 @@ const TextArea2 = styled.div`
   @media screen and (max-width: 768px) {
    display:none;
  }
-
-
-
-   @media screen and (max-width: 414px) {
-    display:none;
-   }
+  @media screen and (max-width: 414px) {
+  display:none;
+  }
 `;
 
 const TextArea3 = styled.div`
@@ -225,7 +240,7 @@ const TextArea3 = styled.div`
 
   @media screen and (max-width: 414px) {
   display:none;
-  
+
   }
 `;
 
@@ -242,17 +257,17 @@ display:none;
  }
 
  @media screen and (max-width: 1024px) {
-  width:100%;
-  height:610px;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  flex-direction: column;
-  background-image: url('${bg768}');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position:center;
- }
+    width:100%;
+    height:610px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    background-image: url('${bg768}');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center;
+  }
 
   @media screen and (max-width: 768px) {
   display:none;
@@ -260,13 +275,12 @@ display:none;
 
   @media screen and (max-width: 414px) {
   display:none;
-  
   }
 `;
 
 const TextArea5 = styled.div`
  @media screen and (min-width: 1440px) {
- display:none;
+  display:none;
  }
 @media screen and (max-width: 1440px) {
   display:none;
@@ -295,13 +309,12 @@ const TextArea5 = styled.div`
 
   @media screen and (max-width: 414px) {
     display:none;
-
    }
 `;
 
 const TextArea6 = styled.div`
  @media screen and (min-width: 1440px) {
- display:none;
+  display:none;
  }
 @media screen and (max-width: 1440px) {
   display:none;
@@ -319,17 +332,17 @@ const TextArea6 = styled.div`
   display:none;
  }
 
-   @media screen and (max-width: 414px) {
-    background-image: url('${bg414}');
-    background-size:contain ;
-    background-repeat: no-repeat;
-    background-position:center;
-    width:100%;
-    height:310px;
-    display:flex;
-    justify-content:center;
-   
-   }
+  @media screen and (max-width: 414px) {
+  background-image: url('${bg414}');
+  background-size:contain ;
+  background-repeat: no-repeat;
+  background-position:center;
+  width:100%;
+  height:310px;
+  display:flex;
+  justify-content:center;
+  
+  }
 `;
 
 const AlignText = styled.div`
@@ -356,7 +369,6 @@ const AlignText6 = styled.div`
   @media screen and (max-width: 768px) {
    margin-top:-122px;
   }
-
 `;
 
 const Text = styled.div`
@@ -367,9 +379,7 @@ const Text = styled.div`
     justify-content:center;
     align-items: center;
     margin-top:0px;
- 
   }
-
 `;
 
 const Span = styled.p`
