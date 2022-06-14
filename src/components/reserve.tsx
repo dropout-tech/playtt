@@ -31,6 +31,10 @@ const Container = styled.div`
     padding-bottom:0px;
     width:100%;
   }
+
+   @media screen and (max-width: 414px) {
+    margin-top:-82px;
+  }
 `;
 
 
@@ -111,6 +115,19 @@ const ButtonText = styled.p`
     text-align: center;
     letter-spacing: 0.03em;
     color: #FFFFFF;
+    margin-top:20px;
+  }
+  @media screen and (max-width: 414px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+
   }
 `;
 
@@ -296,7 +313,7 @@ const TextArea5 = styled.div`
 
   @media screen and (max-width: 768px) {
     width:100%;
-    height:610px;
+    height:400px;
     display: flex;
     align-items: center;
     justify-content:center;
@@ -305,6 +322,7 @@ const TextArea5 = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-position:center;
+   
  }
 
   @media screen and (max-width: 414px) {
@@ -389,6 +407,30 @@ const Span = styled.p`
   font-size:18px;
   line-height:32px;
   letter-spacing:6%;
+   @media screen and (max-width: 1440px) {
+    font-family:'Futura';
+    font-weight:500;
+    font-size:18px;
+    line-height:32px;
+    letter-spacing:4%;
+    margin-left:4px;
+  }
+   @media screen and (max-width: 1280px) {
+    font-family:'Futura';
+    font-weight:500;
+    font-size:18px;
+    line-height:32px;
+    letter-spacing:4%;
+    margin-left:4px;
+  }
+   @media screen and (max-width: 768px) {
+    font-family:'Futura';
+    font-weight:500;
+    font-size:18px;
+    line-height:32px;
+    letter-spacing:4%;
+    margin-left:4px;
+  }
   @media screen and (max-width: 768px) {
     font-family:'Futura';
     font-weight:500;
