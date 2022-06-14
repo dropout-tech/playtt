@@ -148,7 +148,7 @@ const AboutText = styled.p`
     display:flex;
     justify-content:center;
     align-items: center;
-
+    margin-top:-10px;
   }
 `;
 
@@ -494,6 +494,15 @@ const TextArea22 = styled.div`
     margin-top:137px;
    
   }
+
+  @media screen and (max-width: 1024px) {
+    display:flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top:66px;
+   
+  }
   
 `;
 
@@ -580,11 +589,7 @@ const TextContainer = styled.div`
     margin-top:30px;
     }
 `;
-const TextContainer2 = styled.div`
-  @media screen and (max-width: 1440px) {
-    margin-top:102px;
-    }
-`;
+
 
 const PicturAndText = styled.div`
  display:flex;
