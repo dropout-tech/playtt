@@ -201,25 +201,6 @@ const ButtonAreas = styled.div`
   }
 `;
 
-const Span = styled.span`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0.04em;
-  color: #FFFFFF;
-   @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 28px;
-    letter-spacing: 0.06em;
-    color: #FFFFFF;
-  }
-`;
-
 const SpanLine = styled.span`
   font-family: 'Futura';
   font-style: normal;
