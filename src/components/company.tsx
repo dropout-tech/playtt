@@ -721,29 +721,6 @@ const Text11 = styled.div`
   }
 `;
 
-const Text111 = styled.div`
-  font-family: 'Noto Sans TC';
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
- 
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
-    margin-top:6px;
-   
-   
-
-  }
-`;
-
 const Span2 = styled.span`
 font-family: 'Futura';
 font-weight: 500;
@@ -801,7 +778,7 @@ const AlignContener22 = styled.div`
 
 /* desktop thw newest info style end */
 const Company = () => {
-  return <PageContainer>
+  return <PageContainer id="company">
     <Container>
       <TitleOne>聯絡我們</TitleOne>
       <TitleTwo>Contact Us</TitleTwo>

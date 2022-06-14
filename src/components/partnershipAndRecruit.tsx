@@ -355,7 +355,7 @@ const Text2 = styled.p`
 
 /* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
-  return <PageContainer>
+  return <PageContainer id="partnershipAndRecruit">
     <Container>
       <TitleContainer>
         <Title1>合作與招募</Title1>

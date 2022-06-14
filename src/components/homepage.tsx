@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
+<<<<<<< HEAD
 import banner1440 from "../assets/homepage/banner1440.png";
 import banner1024 from "../assets/homepage/banner1024.png";
 import banner1280 from "../assets/homepage/banner1280.png";
 import banner768 from "../assets/homepage/banner768.png";
 import banner414 from "../assets/homepage/banner414.png";
 
+=======
+>>>>>>> master
 // styled components start 
 
 const PageContainer = styled.div`
@@ -14,8 +17,13 @@ const PageContainer = styled.div`
   height:100%;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
 
    @media screen and (max-width: 414px) {
+=======
+  margin-top: 80px;
+  @media screen and (max-width: 768px) {
+>>>>>>> master
     
   }
 `;
@@ -156,7 +164,7 @@ const EmptyContainer = styled.div`
 
 /* desktop thw newest info style end */
 const homepage = () => {
-  return <PageContainer>
+  return <PageContainer id="home">
     <EmptyContainer>
       <BannerImg1 src={banner1440} />
       <BannerImg2 src={banner1280} />

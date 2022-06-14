@@ -49,7 +49,7 @@ const CouchMobileImg = styled.img`
 
 /* desktop thw newest info style end */
 const Couch = () => {
-  return <PageContainer>
+  return <PageContainer id="couch">
     <Container>
       <CouchImg src={couch} alt="" />
     </Container>

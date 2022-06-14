@@ -610,7 +610,7 @@ const Textcontainer2 = styled.div`
 
 /* desktop thw newest info style end */
 const About = () => {
-  return <PageContainer>
+  return <PageContainer id="about">
     <Container>
       <AboutItems>
         <AboutText>關於我們</AboutText>

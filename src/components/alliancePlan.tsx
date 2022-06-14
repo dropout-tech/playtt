@@ -333,7 +333,7 @@ const BgWebDiv = styled.div`
 
 /* desktop thw newest info style end */
 const alliancePlan = () => {
-  return <PageContainer>
+  return <PageContainer id="alliancePlan">
     <Container>
       <Title>聯盟計畫</Title>
       <TitleWord>Alliance</TitleWord>
