@@ -413,6 +413,23 @@ const TextArea2 = styled.div`
 `;
 
 const MobileContainer = styled.div`
+ @media screen and (min-width: 1440px) {
+  
+   display:none;
+  }
+ @media screen and (max-width: 1440px) {
+  
+   display:none;
+  }
+ @media screen and (max-width: 1280px) {
+  
+   display:none;
+  }
+
+   @media screen and (max-width: 1024px) {
+  
+   display:none;
+  }
    @media screen and (max-width: 768px) {
   
    display:none;
