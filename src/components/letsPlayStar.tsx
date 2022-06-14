@@ -293,14 +293,14 @@ const GrayArea = styled.div`
 `;
 
 const Span = styled.span`
- color: #FF40B4;
+ color: #1A1A1A;
  font-family: 'Noto Sans TC';
  font-weight: 500;
  font-size: 20px;
  line-height: 36px;
  letter-spacing: 0.6px;
   @media screen and (max-width: 768px) {
-    color: #FF40B4;
+    color: #1A1A1A;
     font-family: 'Noto Sans TC';
     font-weight: 500;
     font-size: 16px;

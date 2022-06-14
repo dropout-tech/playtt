@@ -21,7 +21,10 @@ const ColorpicImg = styled.img`
   width:517px ;
   height:517px ;
   margin-top:0px;
-
+  @media screen and  (max-width: 1024px) {
+     width:377px ;
+     height:376px ;
+  }
    @media screen and  (max-width: 414px) {
      width:251px ;
      height:251px ;
@@ -203,6 +206,11 @@ const Contant = styled.div`
       width:450px ;
       
     }
+
+    @media screen and  (max-width: 1024px) {
+      width:412px ;
+      
+    }
    @media screen and  (max-width: 414px) {
     width:auto;
     font-family: 'Noto Sans TC';
@@ -231,6 +239,14 @@ const Contant2 = styled.p`
   letter-spacing: 0.03em;
   color: #1A1A1A;
   margin-top:24px;
+
+   @media screen and  (max-width: 1280px) {
+    width:450px ;
+    }
+   @media screen and  (max-width: 1024px) {
+    width:412px ;
+    }
+   
    @media screen and  (max-width: 414px) {
     width:auto;
     height:auto;
@@ -246,7 +262,7 @@ const Contant2 = styled.p`
 
   }
   @media screen and  (max-width: 1280px) {
-     width:450px ;
+     width:412px ;
      height:auto;
     
   }
@@ -380,7 +396,7 @@ const Story = () => {
           <Title2>Let’s Play Story</Title2>
           <Contant><Span>Let's Play</Span> 創立於 <Span>2018</Span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球，一起感受其中的樂趣！小孩子來到這裡可以培養信心與專注力、上班族可以擁有用運動釋放壓力的時光、年長者可以實現豐富退休生活的樂趣！</Contant>
 
-          <Contant2>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！</Contant2>
+          <Contant2>我們期望讓人感受像是回到家一般的親切，教練們如同鄰居大哥哥一樣帶著大家一起玩！根據不同水平慢慢地引導，用簡單的口訣輕鬆的氣氛中自然而然地上手，原來，桌球一點也不難！此外，從桌球同業的夥伴聯盟合作與跨領域的異41業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！</Contant2>
         </div>
 
         <BelowText>

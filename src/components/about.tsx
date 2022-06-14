@@ -19,8 +19,31 @@ const PageContainer = styled.div`
 const StartImg1 = styled.img`
   width: 63px;
   height:63px;
-  margin-top:32px;
+  margin-top:40px;
   margin-right:40px;
+
+   @media screen and (min-width: 1440px) {
+   
+    margin-right:30px;
+    margin-top:20px;
+    width: 60px;
+    height:60px;
+  }
+
+    @media screen and (max-width: 1440px) {
+    
+      margin-right:30px;
+      margin-top:45px;
+      width: 60px;
+      height:60px;
+  }
+  @media screen and (max-width: 768px) {
+    margin-right:30px;
+    margin-top:40px;
+    width: 60px;
+    height:60px;
+  }
+  
   @media screen and (max-width: 414px) {
     margin-left:110px;
     margin-right:30px;
@@ -34,8 +57,26 @@ const TopArea = styled.div`
   width:100%;
   display:flex;
   justify-content:center;
-  margin-top:-30px;
+  margin-top:-59px;
   margin-bottom:20px;
+
+  @media screen and (max-width: 1280px) {
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:-59px;
+    margin-bottom:20px;
+
+   }
+
+   @media screen and (max-width: 768px) {
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:-42px;
+    margin-bottom:20px;
+
+   }
   
   @media screen and (max-width: 414px) {
     width:100%;
@@ -46,15 +87,7 @@ const TopArea = styled.div`
     margin-left:-65px;
   }
 
-   @media screen and (max-width: 1280px) {
-    width:100%;
-    display:flex;
-    justify-content:center;
-    margin-top:-30px;
-    margin-bottom:20px;
-    
-
-   }
+   
 `;
 
 
@@ -83,12 +116,24 @@ const RightItems = styled.div`
 `;
 
 const Container = styled.div`
- width:100%;
- margin-top:-104px;
- padding-bottom: 104px;
+ @media screen and (min-width: 1440px) {
+     width:100%;
+     margin-top:124px;
+     padding-bottom: 124px;
+  }
+  @media screen and (max-width: 1440px) {
+     width:100%;
+     margin-top:10px;
+     padding-bottom: 104px;
+  }
 
+  @media screen and (max-width: 1280px) {
+    display:flex;
+    flex-direction: column;
+  }
+  
  @media screen and (max-width: 768px) {
-    display:none;
+   display:none;
   }
 
  @media screen and (max-width: 414px) {
@@ -107,6 +152,19 @@ const AboutText = styled.p`
   color: #1A1A1A;
   text-align: center;
   margin:0px;
+  @media screen and (max-width: 768px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+
+    
+
+  }
   @media screen and (max-width: 414px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -118,7 +176,7 @@ const AboutText = styled.p`
     display:flex;
     justify-content:center;
     align-items: center;
-
+    margin-top:-10px;
   }
 `;
 
@@ -132,6 +190,16 @@ const AboutUs = styled.p`
   letter-spacing: 0.04em;
   color: #CFD2D3;
   margin-top:8px;
+
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
   @media screen and (max-width: 414px) {
     font-family: 'Futura';
     font-style: normal;
@@ -155,7 +223,16 @@ const Hope1 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin:0px;
+@media screen and (max-width: 1024px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
 
+  }
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -174,7 +251,8 @@ const Hope1 = styled.p`
    line-height: 36px;
    letter-spacing: 0.03em;
    color: #1A1A1A;
-   margin-left:0px;
+   margin-left:20px;
+
   }
 `;
 
@@ -187,7 +265,17 @@ const Hope3 = styled.p`
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #1A1A1A;
-  margin:0px;
+  margin:-1px;
+  @media screen and (max-width: 1024px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+
+  }
 
   @media screen and (max-width: 414px) {
    margin-top:-10px;
@@ -212,6 +300,17 @@ const Hope4 = styled.p`
   letter-spacing: 0.04em;
   color: #1A1A1A;
   margin:0px;
+
+  @media screen and (max-width: 1024px) {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    color: #1A1A1A;
+
+  }
   @media screen and (max-width: 414px) {
    margin-top:-80px;
    font-family: 'Noto Sans TC';
@@ -230,10 +329,20 @@ const Slogan = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
-  line-height: 40px;
+  line-height: 36px;
   letter-spacing: 0.04em;
   color: #005CB9;
   margin-left:1px;
+  margin-top:4px;
+  @media screen and (max-width:1024px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 36px;
+    letter-spacing: 0.04em;
+    color: #005CB9;
+  }
  @media screen and (max-width:768px) {
     font-family: 'Futura';
     font-style: normal;
@@ -251,7 +360,8 @@ const Slogan = styled.div`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin:0px ;
+    margin-left:20px ;
+    
     
   
   }
@@ -268,11 +378,9 @@ const AboutItems = styled.div`
 `;
 
 
-
-
 const Contants = styled.div`
   width:477px;
-  height:252px;
+  height:auto;
   font-family: "Noto Sans TC";
   font-weight: 500;
   font-size: 20px;
@@ -280,7 +388,18 @@ const Contants = styled.div`
   letter-spacing: 0.6px;
   margin-top:24px;
   
+ @media screen and (max-width: 1024px) {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: justify;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
 
+    
+  }
   @media screen and (max-width: 414px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -317,6 +436,16 @@ const Span = styled.span`
   line-height: 40px;
   letter-spacing: 0.04em;
   color:#38D430;
+
+  @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 36px;
+    letter-spacing: 0.04em;
+    color:#38D430;
+  }
 
   @media screen and (max-width: 768px) {
     font-family: 'Futura';
@@ -364,12 +493,42 @@ const TextArea = styled.div`
   margin-top:100px;
   display:flex;
   justify-content:space-between;
-
+  @media screen and (max-width: 1440px) {
+    display:flex;
+    justify-content:center;
+    align-items: flex-start;
+    margin-top:70px;
+   
+    
+   
+  }
   @media screen and (max-width: 414px) {
     display:flex;
     justify-content:center;
     align-items: flex-start;
     flex-direction: column;
+   
+  }
+  
+`;
+
+const TextArea22 = styled.div`
+
+  @media screen and (max-width: 1440px) {
+    display:flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top:137px;
+   
+  }
+
+  @media screen and (max-width: 1024px) {
+    display:flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top:66px;
    
   }
   
@@ -390,9 +549,23 @@ const TextArea11 = styled.div`
 const TextArea3 = styled.div`
   display:flex;
   justify-content:space-between;
-
   margin-top:-2px;
+
+   @media screen and (min-width: 1440px) {
+    margin-top:173px;
+  }
   
+   @media screen and (max-width: 1440px) {
+    margin-top:7px;
+  }
+
+   @media screen and (max-width: 1280px) {
+    margin-top:-70px;
+  }
+
+   @media screen and (max-width: 768px) {
+    margin-top:0px;
+  }
   @media screen and (max-width: 414px) {
    margin-left:-20px;
    margin-top:30px;
@@ -413,6 +586,23 @@ const TextArea2 = styled.div`
 `;
 
 const MobileContainer = styled.div`
+ @media screen and (min-width: 1440px) {
+  
+   display:none;
+  }
+ @media screen and (max-width: 1440px) {
+  
+   display:none;
+  }
+ @media screen and (max-width: 1280px) {
+  
+   display:none;
+  }
+
+   @media screen and (max-width: 1024px) {
+  
+   display:none;
+  }
    @media screen and (max-width: 768px) {
   
    display:none;
@@ -426,11 +616,12 @@ const MobileContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  margin-top:23px;
-  @media screen and (max-width: 414px) {
-    
+  margin-top:2px;
+  @media screen and (max-width: 1440px) {
+    margin-top:30px;
     }
 `;
+
 
 const PicturAndText = styled.div`
  display:flex;
@@ -445,6 +636,8 @@ const PicturAndText = styled.div`
 const AlignText = styled.div`
  display:flex;
  flex-direction: column;
+ 
+
 `;
 
 const Span2 = styled.span`
@@ -481,7 +674,7 @@ const Span33 = styled.span`
 const TextContener1 = styled.div`
 @media screen and (max-width: 768px) {
    display: flex;
-   margin-top:78px;
+   margin-top:42px;
 
   }
  @media screen and (max-width: 414px) {
@@ -493,12 +686,30 @@ const TextContener1 = styled.div`
 `;
 
 const TextContener = styled.div`
+
  @media screen and (max-width: 768px) {
+   display: flex;
+   flex-direction:column; 
+   /* padding-left:12px;
+   padding-right:12px; */
+   margin-top:18px;
+  }
+ @media screen and (max-width: 414px) {
    display: flex;
    flex-direction:column; 
    padding-left:12px;
    padding-right:12px;
    margin-top:2px;
+  }
+`;
+
+const TextContener2 = styled.div`
+ @media screen and (max-width: 768px) {
+   display: flex;
+   flex-direction:column; 
+   /* padding-left:12px;
+   padding-right:12px; */
+   margin-top:18px;
   }
  @media screen and (max-width: 414px) {
    display: flex;
@@ -514,6 +725,9 @@ const AlignContener = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top:54px;
+  @media screen and (max-width: 414px) {
+  margin-left:0px;
+  }
  @media screen and (max-width: 414px) {
   margin-top:68px;
   margin-left:10px;
@@ -541,9 +755,11 @@ const AlignContener2 = styled.div`
 const StartImg = styled.img`
   width: 38px;
   height: 38px ;
-  margin-right: 20px;
+  margin-right: 8px;
     @media screen and (max-width: 768px) {
-     margin-top:-176px;
+     margin-top:-207px;
+     width: 60px;
+     height: 60px ;
   }
 
     @media screen and (max-width: 414px) {
@@ -562,6 +778,8 @@ const Text = styled.div`
     text-align: justify;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-top:24px;
+
   }
 
    @media screen and (max-width: 414px) {
@@ -578,6 +796,9 @@ const Text = styled.div`
 `;
 
 const IpadConainer = styled.div`
+  @media screen and (min-width: 1440px) {
+    display:none;
+  }
   @media screen and (max-width: 1440px) {
     display:none;
   }
@@ -588,8 +809,9 @@ const IpadConainer = styled.div`
   @media screen and (max-width: 768px) {
     display:flex;
     flex-direction:column;
-    padding-right:80px;
-    padding-left:80px;
+    padding-right:60px;
+    padding-left:60px;
+    margin-top:-88px;
   }
   @media screen and (max-width: 414px) {
     display:none;
@@ -645,11 +867,11 @@ const About = () => {
 
               <TextContainer>
                 <AlignText>
-                  <Hope1>願景</Hope1>
-                  <Slogan>Let's Play <Span>Dream</Span></Slogan>
+                  <Hope1>品牌理念</Hope1>
+                  <Slogan>Let's Play <Span>Thinking</Span></Slogan>
                 </AlignText>
                 <Contants>
-                  感受發自內心的快樂，一起來玩吧！<br />
+                  感受發自內心的快樂，一起來玩吧！<br/>
                   品牌的核心價值在於「讓來到 <Span2>Let's Play</Span2> 的人能發自內心的感受純粹的快樂」，孩子從中獲得專注力與成就感、上班族重新找回喜愛一件事物的單純與雀躍感、長者獲得豐富退休生活的歸屬感。
                 </Contants>
               </TextContainer>
@@ -662,7 +884,6 @@ const About = () => {
             <TextArea2>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
-               
               </PicturAndText>
               <TextContainer>
                 <div>
@@ -680,11 +901,11 @@ const About = () => {
           </HopeContainer>
           <BrandContainer>
 
-            <TextArea>
+            <TextArea22>
               <TextArea3>
                 <PicturAndText>
                   <StartImg1 src={start} alt="" />
-                
+
                 </PicturAndText>
                 <TextContainer>
                   <div>
@@ -696,7 +917,7 @@ const About = () => {
                   </Contants>
                 </TextContainer>
               </TextArea3>
-            </TextArea>
+            </TextArea22>
           </BrandContainer>
 
         </RightItems>
@@ -728,7 +949,7 @@ const About = () => {
       <TextContener1>
         <AlignContener>
           <StartImg src={start} alt="" />
-        
+
         </AlignContener>
         <TextContener>
           <Textcontainer2 >
@@ -744,7 +965,7 @@ const About = () => {
       <TextContener1>
         <AlignContener>
           <StartImg src={start} alt="" />
-         
+
         </AlignContener>
         <TextContener>
           <Textcontainer2 >
@@ -760,7 +981,7 @@ const About = () => {
       <TextContener1>
         <AlignContener>
           <StartImg src={start} alt="" />
-          
+
         </AlignContener>
         <TextContener>
           <Textcontainer2 >
@@ -827,7 +1048,7 @@ const About = () => {
         </TextContener>
       </TextContener>
 
-      <TextContener>
+      <TextContener2>
         <AlignContener>
           <StartImg src={start} alt="" />
           <Textcontainer2>
@@ -840,7 +1061,7 @@ const About = () => {
             學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span33>Let’s Play</Span33> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
           </Text>
         </TextContener>
-      </TextContener>
+      </TextContener2>
 
 
 
