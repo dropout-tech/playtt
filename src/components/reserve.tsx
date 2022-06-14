@@ -47,11 +47,11 @@ const GreenButton = styled.button`
     display:flex;
     justify-content:center;
     align-items: center;
-    margin-top:150px;
+ 
   }
    @media screen and (max-width: 768px) {
-    width:211px;
-    height:48px;
+    width:294px;
+    height:60px;
     display:flex;
     justify-content:center;
     align-items: center;
@@ -97,6 +97,7 @@ const ButtonText = styled.p`
     text-align: center;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+    margin-top:17px;
   }
   
   @media screen and (max-width: 768px) {
@@ -128,17 +129,16 @@ const BelowText = styled.p`
   color: #3C3D3D;
   margin-top:2px;
    @media screen and (max-width: 768px) {
-    font-size: 14px;
-    margin-top:10px;
-    display: flex; 
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 28px;
-    letter-spacing: 0.06em;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
     color: #3C3D3D;
-    margin-top:6px;
   }
 `;
 
@@ -391,9 +391,9 @@ const Span = styled.p`
   @media screen and (max-width: 768px) {
     font-family:'Futura';
     font-weight:500;
-    font-size:14px;
-    line-height:28px;
-    letter-spacing:6%;
+    font-size:18px;
+    line-height:32px;
+    letter-spacing:4%;
     margin-left:4px;
   }
 `;
