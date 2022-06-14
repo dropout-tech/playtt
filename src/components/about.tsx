@@ -560,7 +560,7 @@ const TextArea3 = styled.div`
   }
 
    @media screen and (max-width: 1280px) {
-    margin-top:0px;
+    margin-top:-70px;
   }
 
    @media screen and (max-width: 768px) {
@@ -686,6 +686,24 @@ const TextContener1 = styled.div`
 `;
 
 const TextContener = styled.div`
+
+ @media screen and (max-width: 768px) {
+   display: flex;
+   flex-direction:column; 
+   /* padding-left:12px;
+   padding-right:12px; */
+   margin-top:18px;
+  }
+ @media screen and (max-width: 414px) {
+   display: flex;
+   flex-direction:column; 
+   padding-left:12px;
+   padding-right:12px;
+   margin-top:2px;
+  }
+`;
+
+const TextContener2 = styled.div`
  @media screen and (max-width: 768px) {
    display: flex;
    flex-direction:column; 
@@ -1030,7 +1048,7 @@ const About = () => {
         </TextContener>
       </TextContener>
 
-      <TextContener>
+      <TextContener2>
         <AlignContener>
           <StartImg src={start} alt="" />
           <Textcontainer2>
@@ -1043,7 +1061,7 @@ const About = () => {
             學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span33>Let’s Play</Span33> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
           </Text>
         </TextContener>
-      </TextContener>
+      </TextContener2>
 
 
 
