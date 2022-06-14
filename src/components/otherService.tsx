@@ -365,6 +365,28 @@ const TopContainer = styled.div`
 
 `;
 
+const Span = styled.span`
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 3%;
+  }
+
+`;
+
+const Span22 = styled.span`
+   @media screen and (max-width: 768px) {
+    font-family: 'Futura';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 2%;
+  }
+
+`;
+
 /* desktop thw newest info style end */
 const OtherService = () => {
   return <PageContainer id="otherService">
@@ -500,7 +522,7 @@ const OtherService = () => {
           <Text>
             <TextText>平日上午包場優惠</TextText>
             <TextText>歡迎洽談，提早預約</TextText>
-            <TextText>平日 14:00–21:00 與周末租桌服務</TextText>
+            <TextText>平日 <Span22>14:00–21:00</Span22>  與周末租桌服務</TextText>
           </Text>
           <ImgContainer>
             <MobileImg src={img2} alt="" />
@@ -527,9 +549,12 @@ const OtherService = () => {
         <TextArea2>
           <Title3>場館加盟與聯盟合作</Title3>
           <Text>
-            提供系統化的 SOP 協助桌球產業發
-            展更全面，並且共享產業資源互利，
-            提供有心推廣桌球的同業更好的機會。
+            <p style={{ margin: 0 }}>
+              提供系統化的<Span22> SOP </Span22>協助桌球產業發
+              展更全面，並且共享產業資源互利，
+              提供有心推廣桌球的同業更好的機會。
+            </p>
+            
           </Text>
           <ImgContainer>
             <MobileImg src={img4} alt="" />
@@ -554,13 +579,16 @@ const OtherService = () => {
 
       <TextArea>
         <TextArea2>
-          <Title3>VIP 專區</Title3>
+          <Title3><Span>VIP</Span> 專區</Title3>
           <Text>
-            特別精心打造的桌球 VIP 包廂空間，
-            讓玩樂和歡笑回憶留在美好的空間，
-            更方便拍照留念。目標成為雙北桌球
-            跨足休閒娛樂的業界首選，
-            開創桌球產業藍海。
+            <p style={{margin:0}}>
+              特別精心打造的桌球 <Span22>VIP</Span22> 包廂空間，
+              讓玩樂和歡笑回憶留在美好的空間，
+              更方便拍照留念。目標成為雙北桌球
+              跨足休閒娛樂的業界首選，
+              開創桌球產業藍海。
+            </p>
+            
           </Text>
           <ImgContainer>
             <MobileImg src={img6} alt="" />

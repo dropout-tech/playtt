@@ -149,7 +149,7 @@ const TextArea1 = styled.div`
     margin-left:0px;
     padding-left:24px;
     padding-right:24px;
-    margin-top:10px;
+    margin-top:4px;
 
   }
 `;
@@ -354,7 +354,7 @@ const Title02 = styled.p`
       display: flex;
       align-items: center;
       text-align: center;
-      margin-bottom:18px;
+      margin-bottom:25px;
   }
 `;
 
@@ -387,6 +387,7 @@ const TopBelow = styled.div`
    padding-right:24px;
    margin-left:0px;
    width:auto;
+   margin-top:6px;
   
   }
 
@@ -446,7 +447,7 @@ const BelowTextContainer = styled.div`
 `;
 
 const SmallTitle = styled.p`
-  font-family: 'Futura';
+  font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -455,19 +456,20 @@ const SmallTitle = styled.p`
   color: #005CB9;
   margin-bottom:0px;
    @media screen and (max-width: 768px) {
-    font-family: 'Futura';
+    font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 28px;
     letter-spacing: 0.06em;
     color: #005CB9;
+    margin-top:-10px;
     margin-top:-2px;
   }
 `;
 
 const SmallTitle1 = styled.p`
-  font-family: 'Futura';
+  font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -743,7 +745,7 @@ const MobileTitle = styled.div`
 
 const AlignContener = styled.div`
   @media screen and (max-width: 768px) {
-   margin-top:12px;
+   margin-top:7px;
   
  
   }
@@ -926,7 +928,7 @@ const Company = () => {
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
-              <Text>台北市中正區金山南路一段 <Span1>121</Span1>號</Text>
+              <Text>台北市中正區金山南路一段<Span1>121</Span1>號</Text>
               <Text1><Span1> 02 2356 7106</Span1></Text1>
 
             </AlignContener2>

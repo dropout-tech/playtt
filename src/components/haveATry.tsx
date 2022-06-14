@@ -78,11 +78,11 @@ const Title2 = styled.p`
 
 const BlueArea = styled.div`
   background: #005CB9;
-  height:310px;
+  height:306px;
   padding-top:30px;
   padding-bottom:174px;
    @media screen and (max-width: 768px) {
-    padding-bottom:0px;
+    padding-bottom:0;
     width:100%;
   }
 `;
@@ -201,7 +201,7 @@ const ButtonAreas = styled.div`
   }
 `;
 
-const Span = styled.span`
+const SpanLine = styled.span`
   font-family: 'Futura';
   font-style: normal;
   font-weight: 500;
@@ -217,6 +217,7 @@ const Span = styled.span`
     line-height: 28px;
     letter-spacing: 0.06em;
     color: #FFFFFF;
+    margin-left:4px;
   }
 `;
 /* desktop thw newest info style end */
@@ -236,7 +237,7 @@ const HaveATry = () => {
           </Button>
         </ButtonAreas>
 
-        <Text2>統一由臉書私訊洽詢想預約試上的分店&ensp;<Span>Line</Span></Text2>
+        <Text2>統一由臉書私訊洽詢想預約試上的分店<SpanLine>Line</SpanLine></Text2>
 
       </BlueArea>
 

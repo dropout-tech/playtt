@@ -144,6 +144,7 @@ const TextArea = styled.div`
     margin-right:0px;
     padding-left:24px;
     padding-right:24px;
+    margin-top:0px;
   
     
   }
@@ -379,7 +380,8 @@ const PartnershipAndRecruit = () => {
                 <Text2>華江俱樂部</Text2>
                 <Text2>三峽運動中心</Text2>
                 <Text2>中正運動中心</Text2>
-                <Text2>等 ⋯⋯</Text2>
+                <Text2>等 </Text2>
+                <Text2>⋯⋯</Text2>
               </TextkeyIn>
             </WhiteArea>
 
@@ -396,7 +398,8 @@ const PartnershipAndRecruit = () => {
               <TextkeyIn>
                 <Text2>大龍國小</Text2>
                 <Text2>懷生國小</Text2>
-                <Text2>等 ⋯⋯</Text2>
+                <Text2>等</Text2>
+                <Text2>⋯⋯</Text2>
               </TextkeyIn>
             </WhiteArea>
           </Text>
@@ -413,7 +416,8 @@ const PartnershipAndRecruit = () => {
                 <Text2>何嘉仁幼兒園</Text2>
                 <Text2>維多利亞</Text2>
                 <Text2>喬鈴補習班</Text2>
-                <Text2>等 ⋯⋯</Text2>
+                <Text2>等</Text2>
+                <Text2>⋯⋯</Text2>
               </TextkeyIn>
             </WhiteArea>
           </Text>

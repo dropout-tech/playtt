@@ -20,7 +20,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
  width:100%;
  height:1011px;
- @media screen and (max-width: 768px) {
+ @media screen and (max-width: 414px) {
   display:none;
  }
 `;
@@ -55,7 +55,7 @@ const Background = styled.div`
   width:100%;
 
   margin-top:60px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
    margin-top:14px;
   } 
 `;
@@ -126,7 +126,7 @@ const Img = styled.img`
 
 const Container2 = styled.div`
  display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
     width:100%;
     display: flex;
     padding-bottom: 80px;
@@ -137,7 +137,7 @@ const Container2 = styled.div`
 
 const MobileContainer = styled.div`
 display:none;
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 414px) {
    display:flex;
    flex-direction: column;
    width:100%;
@@ -146,7 +146,7 @@ display:none;
 `;
 
 const Title02 = styled.p`
-   @media screen and (max-width: 768px) {
+   @media screen and (max-width: 414px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
@@ -162,7 +162,7 @@ const Title02 = styled.p`
 `;
 
 const TitleWord2 = styled.p`
-   @media screen and (max-width: 768px) {
+   @media screen and (max-width: 414px) {
     font-family: 'Futura';
     font-style: normal;
     font-weight: 700;
@@ -178,7 +178,7 @@ const TitleWord2 = styled.p`
 `;
 
 const Text11 = styled.div`
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
    margin-top:30px;
 
   }
@@ -186,19 +186,19 @@ const Text11 = styled.div`
 `;
 
 const Text22 = styled.div`
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 414px) {
    margin-top:52px;
   }
  
 `;
 const Text33 = styled.div`
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 414px) {
   margin-top:52px;
   }
 `;
 
 const MobleCircleDiv = styled.div`
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 414px) {
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -218,7 +218,7 @@ const Img1 = styled.img`
 `;
 
 const Img2 = styled.img`
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
    width:106px;
    height:42px;
    margin-left:-8px;
@@ -227,7 +227,7 @@ const Img2 = styled.img`
 `;
 
 const Img3 = styled.img`
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
    width:106px;
    height:42px;
    margin-left:-8px;
@@ -237,7 +237,7 @@ const Img3 = styled.img`
 
 const TitleContainer = styled.div`
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
   z-index:10px;
   display:flex;
   align-items: center;
@@ -250,7 +250,7 @@ const TitleContainer = styled.div`
 
 const Title22 = styled.p`
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
@@ -264,7 +264,7 @@ const Title22 = styled.p`
 `;
 const TextForm222 = styled.p`
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
     width:251px;
     font-family: 'Noto Sans TC';
     font-style: normal;
@@ -281,7 +281,7 @@ const TextForm222 = styled.p`
 
 const TextForm2222 = styled.p`
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
@@ -299,7 +299,7 @@ const Span = styled.span`
   font-size:20px;
   line-height:36px;
   letter-spacing:3%;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 414px) {
     font-family: 'Futura';
     font-weight:500;
     font-size:16px;
@@ -315,7 +315,7 @@ const TextArea = styled.div`
   align-items:center;
   height:804px;
 
-   @media screen and (max-width: 768px) {
+   @media screen and (max-width: 414px) {
 
   }
 

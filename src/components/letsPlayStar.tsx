@@ -306,7 +306,10 @@ const Span = styled.span`
     font-size: 16px;
     line-height: 32px;
     letter-spacing: 4%;
-    padding-right:4px;
+    width: 20px;
+    height: 32px;
+    text-align:left;
+
   }
 `;
 
@@ -407,6 +410,19 @@ const Span2 = styled.span`
     }
 
 `;
+const Span3 = styled.span`
+  
+@media screen and (max-width: 768px) {
+  font-family: 'Futura';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  margin-left:4px;
+    
+    }
+
+`;
 
 const GroupImg2 = styled.div`
   display:none;
@@ -455,7 +471,7 @@ const LetsPlayStar = () => {
 
           <GrayArea>
             <GrayAreaText>
-              <Span>・</Span> 成立於 <Span2> 2020/12/15</Span2> <br />
+              <Span>・</Span> 成立於 <Span> 2020/12/15</Span> <br />
               <Span>・</Span> 召集人 —— <Span2>Hero</Span2> 戴祖雄<Span2 > & </Span2>阿寬教練 郭則寬<br />
               <Span>・</Span> 由專業教練團隊協助持續訓練<br />
               <Span>・</Span>  大幅提升桌技和認知<br />
@@ -494,11 +510,11 @@ const LetsPlayStar = () => {
           <GrayArea>
             <GrayAreaText>
               <Dot>
-                <Span>・</Span> 成立於 <Span2>2020/12/15</Span2> <br />
+                <Span>・</Span> 成立於 <Span3> 2020/12/15</Span3> <br />
               </Dot>
 
               <Dot2>
-                召集人 —— <Span2> Hero</Span2> 戴祖雄<Span2> & </Span2>   阿寬教練 郭則寬
+                <Span>・</Span> 召集人 —— <Span2> Hero</Span2> 戴祖雄<Span2> & </Span2>   阿寬教練 郭則寬
               </Dot2>
 
               <Dot>

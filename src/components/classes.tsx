@@ -136,12 +136,14 @@ const ContantText = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    width: 327px;
+    width: auto;
     display:flex;
     flex-direction: column;
-    align-items: center;
     justify-content:center;
+    align-items: center;
     line-height: 22px;
+    padding-left:24px;
+    padding-right:24px;
   
 
   }
@@ -159,7 +161,7 @@ const ContantText2 = styled.p`
   margin-top:40px;
 
   @media screen and (max-width: 768px) {
-    width: 327px;
+    width: auto;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -170,7 +172,7 @@ const ContantText2 = styled.p`
 `;
 
 const Contant = styled.div`
-  width:100%;
+  width:auto;
   height:100%;
   display:flex;
   flex-direction: column;
@@ -179,6 +181,7 @@ const Contant = styled.div`
  
   @media screen and (max-width: 768px) {
      margin-top:0px;
+  
     
   }
 `;
@@ -267,6 +270,8 @@ const MobileContainer = styled.div`
    align-items: center;
    flex-direction: column;
    margin-top:24px;
+   padding-left:24px;
+   padding-right:24px;
 
  @media screen and (min-width: 768px) {
    display:none;
@@ -406,8 +411,8 @@ const Background3 = styled.div`
 const SpanDot = styled.span`
   color: #CFD2D3;
   margin-top:-15px;
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 32px;
   font-family: 'Noto Sans TC';
   font-Weight: 500;
   font-size: 20px;
@@ -422,7 +427,7 @@ const SpanDot = styled.span`
     line-height: 32px;
     letter-spacing: 4%;
     display: flex;
-    justify-content:center;
+    text-align:left;
   }
 `;
 
@@ -430,7 +435,7 @@ const SpanDot = styled.span`
 const DotContainer = styled.div`
  display:flex;
   @media screen and (max-width: 768px) {
- 
+   
   }
 `;
 const TextArea = styled.p`
@@ -451,6 +456,7 @@ const TextArea = styled.p`
     line-height: 32px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    text-align:center;
     }
 `;
 
@@ -524,9 +530,9 @@ const Classes = () => {
             <Background1>
               <ContantTitle>班別課程豐富客製化</ContantTitle>
             </Background1>
-      
+
             <ContantText>
-              
+
               <DotContainer>
                 <SpanDot>・</SpanDot> <TextArea>個人班 / 團體班 / 選手班 / 親子 / 包班</TextArea>
               </DotContainer>
