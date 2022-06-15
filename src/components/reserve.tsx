@@ -402,11 +402,14 @@ const Text = styled.div`
 `;
 
 const Span = styled.p`
-  font-family:'Futura';
-  font-weight:500;
-  font-size:18px;
-  line-height:32px;
-  letter-spacing:6%;
+   @media screen and (min-width:1440px) {
+    font-family:'Futura';
+    font-weight:500;
+    font-size:18px;
+    line-height:32px;
+    letter-spacing:4%;
+    margin-left:4px;
+  }
    @media screen and (max-width: 1440px) {
     font-family:'Futura';
     font-weight:500;
@@ -502,7 +505,7 @@ const Reserve = () => {
       </TextArea5>
 
       <TextArea6>
-        <AlignText6> 
+        <AlignText6>
           <GreenButton6>
             <Text>
               <ButtonText>立即預約體驗</ButtonText>

@@ -30,12 +30,11 @@ const StartImg1 = styled.img`
     height:60px;
   }
 
-    @media screen and (max-width: 1440px) {
-    
-      margin-right:30px;
-      margin-top:45px;
-      width: 60px;
-      height:60px;
+  @media screen and (max-width: 1440px) {
+    margin-right:30px;
+    margin-top:45px;
+    width: 60px;
+    height:60px;
   }
   @media screen and (max-width: 768px) {
     margin-right:30px;
@@ -241,6 +240,7 @@ const Hope1 = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-left:12px;
   }
   @media screen and (max-width: 414px) {
    margin-top:-10px;
@@ -311,6 +311,7 @@ const Hope4 = styled.p`
     color: #1A1A1A;
 
   }
+ 
   @media screen and (max-width: 414px) {
    margin-top:-80px;
    font-family: 'Noto Sans TC';
@@ -351,6 +352,7 @@ const Slogan = styled.div`
     line-height: 36px;
     letter-spacing: 0.04em;
     color: #005CB9;
+    margin-left:12px;
   }
   @media screen and (max-width: 414px) {
     font-family: 'Futura';
@@ -626,9 +628,6 @@ const TextContainer = styled.div`
 const PicturAndText = styled.div`
  display:flex;
 
-  @media screen and (max-width:  414px) {
-  
-  }
 
 `;
 
@@ -725,7 +724,7 @@ const AlignContener = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top:54px;
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 768px) {
   margin-left:0px;
   }
  @media screen and (max-width: 414px) {
@@ -757,7 +756,55 @@ const StartImg = styled.img`
   height: 38px ;
   margin-right: 8px;
     @media screen and (max-width: 768px) {
-     margin-top:-207px;
+     margin-top:-165px;
+     width: 60px;
+     height: 60px ;
+  }
+
+    @media screen and (max-width: 414px) {
+     margin-top:0px;
+  }
+
+`;
+
+const StartImg2 = styled.img`
+  width: 38px;
+  height: 38px ;
+  margin-right: 8px;
+    @media screen and (max-width: 768px) {
+     margin-top:-191px;
+     width: 60px;
+     height: 60px ;
+  }
+
+    @media screen and (max-width: 414px) {
+     margin-top:0px;
+  }
+
+`;
+
+const StartImg3 = styled.img`
+  width: 38px;
+  height: 38px ;
+  margin-right: 8px;
+    @media screen and (max-width: 768px) {
+     margin-top:-195px;
+     width: 60px;
+     height: 60px ;
+  }
+
+    @media screen and (max-width: 414px) {
+     margin-top:0px;
+  }
+
+`;
+
+const StartImg4 = styled.img`
+  width: 38px;
+  height: 38px ;
+  margin-right: 8px;
+    @media screen and (max-width: 768px) {
+     margin-top:-225px;
      width: 60px;
      height: 60px ;
   }
@@ -844,7 +891,6 @@ const About = () => {
             <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
-
               </PicturAndText>
               <TextContainer>
                 <AlignText>
@@ -948,7 +994,7 @@ const About = () => {
 
       <TextContener1>
         <AlignContener>
-          <StartImg src={start} alt="" />
+          <StartImg2 src={start} alt="" />
 
         </AlignContener>
         <TextContener>
@@ -964,7 +1010,7 @@ const About = () => {
 
       <TextContener1>
         <AlignContener>
-          <StartImg src={start} alt="" />
+          <StartImg3 src={start} alt="" />
 
         </AlignContener>
         <TextContener>
@@ -980,7 +1026,7 @@ const About = () => {
 
       <TextContener1>
         <AlignContener>
-          <StartImg src={start} alt="" />
+          <StartImg4 src={start} alt="" />
 
         </AlignContener>
         <TextContener>
