@@ -39,6 +39,10 @@ const Container = styled.div`
  padding-bottom:0px;
  display:flex;
  background:#F5F6F6;
+
+ @media screen and  (max-width: 768px) {
+   display:none;
+  }
   @media screen and  (max-width: 414px) {
    display:none;
   }
@@ -46,7 +50,17 @@ const Container = styled.div`
 
 const MobileContainer = styled.div`
   display:none;
-  @media screen and  (max-width: 414px) {
+  @media screen and  (max-width: 768px) {
+    width:100% ;
+    height:90%;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    margin-top:80px;
+    background:#F5F6F6;
+
+  }
+   @media screen and  (max-width: 414px) {
     width:100% ;
     height:90%;
     display:flex;
@@ -66,8 +80,25 @@ const Picture = styled.div`
   margin-right:103px;
 ;
 
+ @media screen and  (max-width: 1440px) {
+   
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    margin-top:60px;
+    margin-right:103px;
 
+  }
 
+   @media screen and  (max-width: 768px) {
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:60px;
+    margin-right:0px;
+
+  }
    @media screen and  (max-width: 414px) {
     width:100%;
     display:flex;
@@ -84,9 +115,26 @@ const Text = styled.div`
   display:flex;
   justify-content:center;
   flex-direction: column;
-  align-items: flex-start;
+  align-items:flex-start;
   margin:0px;
+
+   @media screen and  (max-width: 1440px) {
+
+    margin-top:60px;
+    display:flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-direction: column;
   
+  }
+  @media screen and  (max-width: 768px) {
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    padding:24px;
+    flex-direction: column;
+  }
  
    @media screen and  (max-width: 414px) {
     /* width:100%; */
@@ -207,7 +255,16 @@ const Contant = styled.div`
       
     }
 
+     @media screen and  (max-width: 768px) {
+      width:412px ;
+      
+    }
     @media screen and  (max-width: 1024px) {
+      width:412px ;
+      
+    }
+
+     @media screen and  (max-width: 768px) {
       width:412px ;
       
     }
@@ -246,6 +303,21 @@ const Contant2 = styled.p`
    @media screen and  (max-width: 1024px) {
     width:412px ;
     }
+
+     @media screen and  (max-width: 768px) {
+    width:auto;
+    height:auto;
+    margin-top:20px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+    letter-spacing: 0.02em;
+    color: #1A1A1A;
+
+  }
    
    @media screen and  (max-width: 414px) {
     width:auto;
@@ -261,11 +333,7 @@ const Contant2 = styled.p`
     color: #1A1A1A;
 
   }
-  @media screen and  (max-width: 1280px) {
-     width:412px ;
-     height:auto;
-    
-  }
+
 `;
 
 const BelowText = styled.p`
@@ -281,6 +349,15 @@ const BelowText = styled.p`
   @media screen and  (max-width: 1280px) {
     margin-top:20px; ;
     
+  }
+  @media screen and  (max-width: 768px) {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    margin:31px 0px 0px 0px;
+    padding-bottom:60px;
+    margin-top:24px;
   }
    @media screen and  (max-width: 414px) {
     display:flex;
@@ -347,6 +424,13 @@ const Span = styled.span`
 `;
 
 const MobieContent = styled.div`
+ @media screen and  (max-width: 768px) {
+    display: flex; 
+    flex-direction: column; 
+    padding-left: 24px;
+    padding-right: 24px;
+    align-items: center;
+  }
   
    @media screen and  (max-width: 414px) {
     display: flex; 
@@ -358,7 +442,12 @@ const MobieContent = styled.div`
 `;
 
 const MobieContent2 = styled.div`
-  
+  @media screen and  (max-width: 768px) {
+    display:flex;
+    justify-content:center;
+    padding-left:24px;
+    padding-right:24px;
+  }
   @media screen and  (max-width: 414px) {
     padding-left:24px;
     padding-right:24px;

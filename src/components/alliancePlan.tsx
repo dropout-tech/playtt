@@ -20,6 +20,10 @@ const PageContainer = styled.div`
 const Container = styled.div`
  width:100%;
  height:1011px;
+
+  @media screen and (max-width: 768px) {
+  display:none;
+ }
  @media screen and (max-width: 414px) {
   display:none;
  }
@@ -126,6 +130,13 @@ const Img = styled.img`
 
 const Container2 = styled.div`
  display: none;
+
+  @media screen and (max-width: 768px) {
+    width:100%;
+    display: flex;
+    padding-bottom: 80px;
+    padding-top:173px;
+  }
   @media screen and (max-width: 414px) {
     width:100%;
     display: flex;
@@ -137,6 +148,13 @@ const Container2 = styled.div`
 
 const MobileContainer = styled.div`
 display:none;
+
+@media screen and (max-width: 768px) {
+   display:flex;
+   flex-direction: column;
+   width:100%;
+
+ }
 @media screen and (max-width: 414px) {
    display:flex;
    flex-direction: column;

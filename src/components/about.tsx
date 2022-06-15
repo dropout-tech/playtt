@@ -30,13 +30,13 @@ const StartImg1 = styled.img`
     height:60px;
   }
 
-    @media screen and (max-width: 1440px) {
-    
-      margin-right:30px;
-      margin-top:45px;
-      width: 60px;
-      height:60px;
+  @media screen and (max-width: 1440px) {
+    margin-right:30px;
+    margin-top:45px;
+    width: 60px;
+    height:60px;
   }
+
   @media screen and (max-width: 768px) {
     margin-right:30px;
     margin-top:40px;
@@ -51,6 +51,30 @@ const StartImg1 = styled.img`
     width: 38px;
     height:38px;
   }
+`;
+
+const StartImg22 = styled.img`
+  width: 63px;
+  height:63px;
+  margin-top:40px;
+  margin-right:40px;
+
+  @media screen and (max-width: 1440px) {
+    margin-right:30px;
+    margin-top:12px;
+    width: 60px;
+    height:60px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    margin-right:30px;
+    margin-top:52px;
+    width: 60px;
+    height:60px;
+  }
+
+  
+
 `;
 
 const TopArea = styled.div`
@@ -119,7 +143,7 @@ const Container = styled.div`
  @media screen and (min-width: 1440px) {
      width:100%;
      margin-top:124px;
-     padding-bottom: 124px;
+     padding-bottom: 104px;
   }
   @media screen and (max-width: 1440px) {
      width:100%;
@@ -241,6 +265,7 @@ const Hope1 = styled.p`
     line-height: 40px;
     letter-spacing: 0.04em;
     color: #1A1A1A;
+    margin-left:12px;
   }
   @media screen and (max-width: 414px) {
    margin-top:-10px;
@@ -311,6 +336,7 @@ const Hope4 = styled.p`
     color: #1A1A1A;
 
   }
+ 
   @media screen and (max-width: 414px) {
    margin-top:-80px;
    font-family: 'Noto Sans TC';
@@ -351,6 +377,7 @@ const Slogan = styled.div`
     line-height: 36px;
     letter-spacing: 0.04em;
     color: #005CB9;
+    margin-left:12px;
   }
   @media screen and (max-width: 414px) {
     font-family: 'Futura';
@@ -523,6 +550,15 @@ const TextArea22 = styled.div`
    
   }
 
+  @media screen and (max-width: 1280px) {
+    display:flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top:66px;
+   
+  }
+
   @media screen and (max-width: 1024px) {
     display:flex;
     justify-content:center;
@@ -556,11 +592,15 @@ const TextArea3 = styled.div`
   }
   
    @media screen and (max-width: 1440px) {
-    margin-top:7px;
+    margin-top:27px;
   }
 
    @media screen and (max-width: 1280px) {
     margin-top:-70px;
+  }
+
+    @media screen and (max-width: 1280px) {
+    margin-top:1px;
   }
 
    @media screen and (max-width: 768px) {
@@ -622,13 +662,19 @@ const TextContainer = styled.div`
     }
 `;
 
+const TextContainer2 = styled.div`
+  margin-top:2px;
+  @media screen and (max-width: 1280px) {
+    margin-top:34px;
+  }
+
+ 
+`;
+
 
 const PicturAndText = styled.div`
  display:flex;
 
-  @media screen and (max-width:  414px) {
-  
-  }
 
 `;
 
@@ -692,7 +738,7 @@ const TextContener = styled.div`
    flex-direction:column; 
    /* padding-left:12px;
    padding-right:12px; */
-   margin-top:18px;
+   margin-top:8px;
   }
  @media screen and (max-width: 414px) {
    display: flex;
@@ -725,7 +771,7 @@ const AlignContener = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top:54px;
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 768px) {
   margin-left:0px;
   }
  @media screen and (max-width: 414px) {
@@ -757,7 +803,55 @@ const StartImg = styled.img`
   height: 38px ;
   margin-right: 8px;
     @media screen and (max-width: 768px) {
-     margin-top:-207px;
+     margin-top:-165px;
+     width: 60px;
+     height: 60px ;
+  }
+
+    @media screen and (max-width: 414px) {
+     margin-top:0px;
+  }
+
+`;
+
+const StartImg2 = styled.img`
+  width: 38px;
+  height: 38px ;
+  margin-right: 8px;
+    @media screen and (max-width: 768px) {
+     margin-top:-191px;
+     width: 60px;
+     height: 60px ;
+  }
+
+    @media screen and (max-width: 414px) {
+     margin-top:0px;
+  }
+
+`;
+
+const StartImg3 = styled.img`
+  width: 38px;
+  height: 38px ;
+  margin-right: 8px;
+    @media screen and (max-width: 768px) {
+     margin-top:-195px;
+     width: 60px;
+     height: 60px ;
+  }
+
+    @media screen and (max-width: 414px) {
+     margin-top:0px;
+  }
+
+`;
+
+const StartImg4 = styled.img`
+  width: 38px;
+  height: 38px ;
+  margin-right: 8px;
+    @media screen and (max-width: 768px) {
+     margin-top:-225px;
      width: 60px;
      height: 60px ;
   }
@@ -811,7 +905,8 @@ const IpadConainer = styled.div`
     flex-direction:column;
     padding-right:60px;
     padding-left:60px;
-    margin-top:-88px;
+    margin-top:10px;
+    margin-bottom:120px;
   }
   @media screen and (max-width: 414px) {
     display:none;
@@ -844,7 +939,6 @@ const About = () => {
             <TextArea11>
               <PicturAndText>
                 <StartImg1 src={start} alt="" />
-
               </PicturAndText>
               <TextContainer>
                 <AlignText>
@@ -904,10 +998,9 @@ const About = () => {
             <TextArea22>
               <TextArea3>
                 <PicturAndText>
-                  <StartImg1 src={start} alt="" />
-
+                  <StartImg22 src={start} alt="" />
                 </PicturAndText>
-                <TextContainer>
+                <TextContainer2>
                   <div>
                     <Hope4>教學理念</Hope4>
                     <Slogan>Let’s Play  <Span>Teach</Span></Slogan>
@@ -915,7 +1008,7 @@ const About = () => {
                   <Contants>
                     學習桌球這件事情除了提升球技，我們更享受一起參與課程和遊戲的你們，獲得更多生命中的禮物，像是運動家精神、人生體悟、培養品性和歡笑與汗水。一起養成良好的運動習慣，多一種社交的方式，<Span2>Let's Play</Span2> 希望打破大家對桌球的認知，原來桌球可以在玩樂中學習成長！
                   </Contants>
-                </TextContainer>
+                </TextContainer2>
               </TextArea3>
             </TextArea22>
           </BrandContainer>
@@ -948,7 +1041,7 @@ const About = () => {
 
       <TextContener1>
         <AlignContener>
-          <StartImg src={start} alt="" />
+          <StartImg2 src={start} alt="" />
 
         </AlignContener>
         <TextContener>
@@ -964,7 +1057,7 @@ const About = () => {
 
       <TextContener1>
         <AlignContener>
-          <StartImg src={start} alt="" />
+          <StartImg3 src={start} alt="" />
 
         </AlignContener>
         <TextContener>
@@ -980,7 +1073,7 @@ const About = () => {
 
       <TextContener1>
         <AlignContener>
-          <StartImg src={start} alt="" />
+          <StartImg4 src={start} alt="" />
 
         </AlignContener>
         <TextContener>
