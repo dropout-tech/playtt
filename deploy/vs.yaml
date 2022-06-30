@@ -6,6 +6,7 @@ metadata:
 spec:
   hosts:
     - letsplay.aptan.cloud
+    - letsplay2018.com
   gateways:
     - istio-system/gateway
   http:

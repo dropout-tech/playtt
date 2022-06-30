@@ -15,9 +15,9 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-   @media screen and (max-width: 414px) {
+  @media screen and (max-width: 414px) {
   margin-top: 80px;
-   }
+  }
   @media screen and (max-width: 768px) {
     
   }

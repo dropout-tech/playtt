@@ -43,7 +43,7 @@ const Container = styled.div`
   justify-content: space-between;
   overflow: scroll;
   @media screen and (max-width: 414px) {
-    height: calc(100vh - 80px);
+    height: 100vh;
   }
 `;
 
