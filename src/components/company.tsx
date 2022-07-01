@@ -830,7 +830,7 @@ const Company = () => {
 
               <Shop1>
                 <SmallTitle><Span2>Let's Play</Span2> 東門店<Span2> X </Span2>  東門桌球 － 捷運東門 </SmallTitle>
-                <Text2>台北市中正區金山南路一段<Span>121</Span>號</Text2>
+                <Text2>台北市中正區金山南路一段<Span>121</Span>號B1</Text2>
                 <Span>02 2356 7106</Span>
               </Shop1>
 
@@ -928,7 +928,14 @@ const Company = () => {
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
-              <Text>台北市中正區金山南路一段<Span1>121</Span1>號</Text>
+              <Text>新北市蘆洲區長樂路<Span1>106</Span1>號3樓</Text>
+              <Text1><Span1> 02 8286 1011</Span1></Text1>
+
+            </AlignContener2>
+
+            <AlignContener2>
+              <SmallTitle><Span>Let's Play </Span> 東門店 X 東門桌球</SmallTitle>
+              <Text>台北市中正區金山南路一段<Span1>121</Span1>號B1</Text>
               <Text1><Span1> 02 2356 7106</Span1></Text1>
 
             </AlignContener2>
