@@ -26,11 +26,11 @@ const Container = styled.div`
  @media screen and (min-width: 1440px) {
      width:100%;
      margin-top:200px;
-     padding-bottom: 104px;
+     /* padding-bottom: 104px; */
   }
   @media screen and (max-width: 1440px) {
      width:100%;
-     padding-bottom: 104px;
+     /* padding-bottom: 104px; */
      margin-top:200px;
 
   }
@@ -175,7 +175,7 @@ const About = () => {
           <div style={{display:"flex",flexDirection:"column",width:"680px"}}>
               <h2 style={{fontSize:"30px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0}}>我們的夢想</h2>
               <h2  style={{fontSize:"26px",fontWeight:"700",color:"#1A1A1A",fontFamily:"Futura",fontStyle:"normal",marginTop:10,marginBottom:24}}>Let's Play Dream</h2>
-              <p  style={{fontSize:"20px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>我我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感!我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 <span style={{fontFamily:"Futura"}}>Let's Play !</span></p>
+              <p  style={{fontSize:"20px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 <span style={{fontFamily:"Futura"}}>Let's Play !</span></p>
               <p style={{fontSize:"20px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",marginTop:16}}>感受發自內心的快樂，一起來玩吧！</p>
           </div>
       </div>
@@ -184,7 +184,7 @@ const About = () => {
           <div style={{display:"flex",flexDirection:"column",width:"680px"}}>
               <h2 style={{fontSize:"30px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0}}>我們的故事</h2>
               <h2  style={{fontSize:"26px",fontWeight:"700",color:"#1A1A1A",fontFamily:"Futura",fontStyle:"normal",marginTop:10,marginBottom:24}}>Let's Play Story</h2>
-              <p  style={{fontSize:"20px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}><span style={{fontFamily:"Futura"}}>Let's Play !</span> 創立於 <span style={{fontFamily:"Futura"}}>2018</span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球！孩子可以培養信心與專注力、上班族可以釋放壓力、年長者可以擁有豐富退休生活的樂趣!</p>
+              <p  style={{fontSize:"20px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}><span style={{fontFamily:"Futura"}}>Let's Play !</span> 創立於 <span style={{fontFamily:"Futura"}}>2018</span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球！孩子可以培養信心與專注力、上班族可以釋放壓力、年長者可以擁有豐富退休生活的樂趣！</p>
               <p style={{fontSize:"20px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！</p>
               <p style={{fontSize:"20px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",marginTop:16}}><span style={{fontFamily:"Futura"}}>Let's Play !</span> 運動 <span style={{fontFamily:"Futura"}}>X</span> 創新，邀請大家一起來玩！</p>
           </div>
@@ -194,7 +194,9 @@ const About = () => {
           <div style={{display:"flex",flexDirection:"column",width:"680px"}}>
               <h2 style={{fontSize:"30px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0}}>教學理念</h2>
               <h2  style={{fontSize:"26px",fontWeight:"700",color:"#1A1A1A",fontFamily:"Futura",fontStyle:"normal",marginTop:10,marginBottom:24}}>Let's Play Teach</h2>
-              <p  style={{fontSize:"20px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>我我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感!我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 <span style={{fontFamily:"Futura"}}>Let's Play !</span></p>
+              <p  style={{fontSize:"20px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>學習桌球除了提升球技，我們希望參與課程和遊戲的你們，一起養成良好的運動習慣、多一種社交方式，甚至可以獲得更多生命中的禮物：如運動家精神、人生體悟、品性培養、歡笑與汗水的美好回憶。</p>
+              <p  style={{fontSize:"20px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>
+              <span style={{fontFamily:"Futura"}}>Let's Play !</span> 希望打破大家對桌球的認知，根據不同水平慢慢引導，用簡單的口訣在輕鬆的氣氛中自然而然地上手。原來，桌球一點也不難；原來，桌球可以在玩樂中學習成長！ </p>
           </div>
       </div>
  
@@ -210,7 +212,7 @@ const About = () => {
           <div style={{display:"flex",flexDirection:"column"}}>
               <h2 style={{fontSize:"20px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,marginTop:20}}>我們的夢想</h2>
               <h2  style={{fontSize:"18px",fontWeight:"700",color:"#1A1A1A",fontFamily:"Futura",fontStyle:"normal",marginTop:10,marginBottom:20}}>Let's Play Dream</h2>
-              <p  style={{fontSize:"16px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>我我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感!我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 <span style={{fontFamily:"Futura"}}>Let's Play !</span></p>
+              <p  style={{fontSize:"16px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感！我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 <span style={{fontFamily:"Futura"}}>Let's Play !</span></p>
               <p style={{fontSize:"16px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",marginTop:16}}>感受發自內心的快樂，一起來玩吧！</p>
           </div>
       </div>
@@ -219,7 +221,7 @@ const About = () => {
           <div style={{display:"flex",flexDirection:"column"}}>
               <h2 style={{fontSize:"20px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,marginTop:20}}>我們的故事</h2>
               <h2  style={{fontSize:"18px",fontWeight:"700",color:"#1A1A1A",fontFamily:"Futura",fontStyle:"normal",marginTop:10,marginBottom:20}}>Let's Play Story</h2>
-              <p  style={{fontSize:"16px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}><span style={{fontFamily:"Futura"}}>Let's Play !</span> 創立於 <span style={{fontFamily:"Futura"}}>2018</span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球！孩子可以培養信心與專注力、上班族可以釋放壓力、年長者可以擁有豐富退休生活的樂趣!</p>
+              <p  style={{fontSize:"16px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}><span style={{fontFamily:"Futura"}}>Let's Play !</span> 創立於 <span style={{fontFamily:"Futura"}}>2018</span> 年，創辦人阿寬教練畢業於桌球名校麗山國中與松山家商，大學時期深受林學宜教授的啟發，非常懂得職業球員訓練的辛苦，但他其實更想分享給大家的是，如何和大家快樂的「玩」桌球！孩子可以培養信心與專注力、上班族可以釋放壓力、年長者可以擁有豐富退休生活的樂趣！</p>
               <p style={{fontSize:"16px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>此外，從桌球同業的夥伴聯盟合作與跨領域的異業結合，到建立桌球教練創業輔導的平台，甚至邀請名人一起玩桌球，越來越多的創意可能性等著我們去實現！</p>
               <p style={{fontSize:"16px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",marginTop:8}}><span style={{fontFamily:"Futura"}}>Let's Play !</span> 運動 <span style={{fontFamily:"Futura"}}>X</span> 創新，邀請大家一起來玩！</p>
           </div>
@@ -229,7 +231,8 @@ const About = () => {
           <div style={{display:"flex",flexDirection:"column"}}>
               <h2 style={{fontSize:"20px",fontWeight:"900",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,marginTop:20}}>教學理念</h2>
               <h2  style={{fontSize:"18px",fontWeight:"700",color:"#1A1A1A",fontFamily:"Futura",fontStyle:"normal",marginTop:10,marginBottom:20}}>Let's Play Teach</h2>
-              <p  style={{fontSize:"16px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>我我們有個小小的願望，就是和大家一起「玩」桌球，透過輕鬆玩，讓全身細胞體會動起來的暢快感!我們有個大大的夢想，藉由「玩」桌球，跨越單純的運動本身、與各種可能性結合，讓桌球走進你我的生活中，帶著爸爸、媽媽、阿公、阿嬤、叔叔、伯伯、阿姨、姑姑、哥哥、姊姊、弟弟、妹妹、朋友所有人一起 <span style={{fontFamily:"Futura"}}>Let's Play !</span></p>
+              <p  style={{fontSize:"16px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}>學習桌球除了提升球技，我們希望參與課程和遊戲的你們，一起養成良好的運動習慣、多一種社交方式，甚至可以獲得更多生命中的禮物：如運動家精神、人生體悟、品性培養、歡笑與汗水的美好回憶。</p>
+              <p  style={{fontSize:"16px",fontWeight:"500",color:"#1A1A1A",fontFamily:"Noto Sans TC",margin:0,lineHeight:"36px",textAlign:"justify"}}> <span style={{fontFamily:"Futura"}}>Let's Play !</span> 希望打破大家對桌球的認知，根據不同水平慢慢引導，用簡單的口訣在輕鬆的氣氛中自然而然地上手。原來，桌球一點也不難；原來，桌球可以在玩樂中學習成長！</p>
           </div>
       </div>
 

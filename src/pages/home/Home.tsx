@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Homepage from "../../components/homepage";
-import Story from "../../components/story";
+// import Story from "../../components/story";
 import About from "../../components/about";
 import Classes from "../../components/classes";
 import OurCouchMembers from "../../components/ourCouchMembers";
@@ -488,7 +488,7 @@ const Home = () => {
         <Homepage/>
         <Reserve />
         <About />
-        <Story />
+        {/* <Story /> */}
         <Classes />
         <Couch />
         <OurCouchMembers />

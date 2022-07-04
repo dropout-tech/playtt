@@ -836,7 +836,7 @@ const Company = () => {
 
               <Shop1>
                 <SmallTitle><Span2>Let's Play</Span2> 新莊店 <Span2>X</Span2> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-                <Text2>台北市新莊區民樂街<Span>37</Span>號<Span>B1</Span></Text2>
+                <Text2>新北市新莊區民樂街<Span>37</Span>號<Span>B1</Span></Text2>
                 <Span>02 2990 0566</Span>
               </Shop1>
 
@@ -942,7 +942,7 @@ const Company = () => {
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-              <Text>台北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
+              <Text>新北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
               <Text1><Span1> 02 2990 0566</Span1></Text1>
 
             </AlignContener2>
