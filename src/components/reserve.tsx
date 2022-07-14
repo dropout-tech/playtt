@@ -45,7 +45,7 @@ const Reserve = () => {
     <div style={{display:"flex",flexDirection:"row",justifyContent:"center",marginTop:160}}>
       <div style={{display:"flex",flexDirection:"column",background:"#F5F6F6",height:284,width:"80%",justifyContent:"center",alignItems:"center"}}>
           <button style={{border:"none",background:"#38D430",width:374,height:72,fontSize:"26px",fontWeight:"900",color:"white",fontFamily:"Noto Sans TC"}} onClick={()=>{
-            window.open("https://www.facebook.com/messages/t/2049152825349201","_blank")
+            window.open("https://www.facebook.com/playpp2018","_blank")
           }}>
             立即預約體驗
           </button>
@@ -57,7 +57,7 @@ const Reserve = () => {
     <div style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
       <div style={{display:"flex",flexDirection:"column",background:"#F5F6F6",height:284,width:"100%",justifyContent:"center",alignItems:"center"}}>
           <button style={{border:"none",background:"#38D430",width:211,height:48,fontSize:"18px",fontWeight:"900",color:"white",fontFamily:"Noto Sans TC"}} onClick={()=>{
-            window.open("https://www.facebook.com/messages/t/2049152825349201","_blank")
+            window.open("https://www.facebook.com/playpp2018","_blank")
           }}>
             立即預約體驗
           </button>

@@ -448,8 +448,7 @@ const OtherService = () => {
             <Title3>場館加盟與聯盟合作</Title3>
             <Text>
               <p style={{ margin: 0 }}>
-                提供系統化的 <Span3> SOP </Span3> 協助桌球產業發
-                展更全面，並且共享產業資源互利，
+                提供系統化的 <Span3> SOP </Span3> 協助桌球產業發展更全面，並且共享產業資源互利，
                 提供有心推廣桌球的同業更好的機會。
               </p>
 
@@ -548,8 +547,7 @@ const OtherService = () => {
           <Title3>場館加盟與聯盟合作</Title3>
           <Text>
             <p style={{ margin: 0 }}>
-              提供系統化的<Span22> SOP </Span22>協助桌球產業發
-              展更全面，並且共享產業資源互利，
+              提供系統化的<Span22> SOP </Span22>協助桌球產業發展更全面，並且共享產業資源互利，
               提供有心推廣桌球的同業更好的機會。
             </p>
             

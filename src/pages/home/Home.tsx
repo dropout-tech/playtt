@@ -84,7 +84,7 @@ const MobileHeader = styled.div`
   background-color: white;
   z-index: 999999;
   width: 88%;
-  @media screen and (min-width: 414px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 `;

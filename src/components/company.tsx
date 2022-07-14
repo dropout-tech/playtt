@@ -850,8 +850,8 @@ const Company = () => {
             <UnderBelow>
               <Title22>聯盟場館經營</Title22>
               <Shop2>
-                <SmallTitle><Span2>ONWARD TT</Span2> 乒乓吧 <Span2> X Let's Play</Span2> － 捷運南港 <Span2> & </Span2> 昆陽</SmallTitle>
-                <Text2>台北市南港區南港路二段<Span>141</Span>號<Span>1</Span>樓</Text2>
+                <SmallTitle><Span2>ONWARD tt</Span2> 乒乓吧 <Span2> X Let's Play</Span2> － 捷運南港 <Span2> & </Span2> 昆陽</SmallTitle>
+                <Text2>台北市南港區南港路二段<Span>141-1</Span>號<Span>1</Span>樓</Text2>
                 <Span>02 2651 0652</Span>
               </Shop2>
 
@@ -958,8 +958,8 @@ const Company = () => {
           <UnderBelow>
             <Title02>聯盟場館經營</Title02>
             <AlignContener22>
-              <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
-              <Text>台北市南港區南港路二段<Span1>141</Span1>號<Span1>1</Span1>樓</Text>
+              <SmallTitle><Span>ONWARD tt </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
+              <Text>台北市南港區南港路二段<Span1>141-1</Span1>號<Span1>1</Span1>樓</Text>
               <Text1><Span1> 02 2651 0652</Span1></Text1>
             </AlignContener22>
 

@@ -435,8 +435,7 @@ const PartnershipAndRecruit = () => {
                 <Text2><Span>Let's Play </Span>東門店</Text2>
                 <Text2><Span>Let's Play </Span>善導寺店</Text2>
                 <Text2><Span>Let's Play </Span>新莊店</Text2>
-                <Text2><Span>Let's Play Onward TT </Span>乒乓吧 <Span>X Let's Play </Span>  </Text2>
-                <Text2>乒運動桌球館</Text2>
+                <Text2><Span>Let's Play Onward tt </Span>乒乓吧 <Span>X Let's Play </Span>  </Text2>
               </TextkeyIn>
 
             </WhiteArea2>
