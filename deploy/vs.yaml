@@ -5,9 +5,9 @@ metadata:
   namespace: letsplay
 spec:
   hosts:
-    - letsplay.aptan.cloud
+    # - letsplay.aptan.cloud
     - letsplay2018.com
-    - test.letsplay2018.com
+    # - test.letsplay2018.com
   gateways:
     - istio-system/gateway
   http:
