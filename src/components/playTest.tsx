@@ -312,7 +312,7 @@ const PlayTest = () => {
           <Title3><Span>Let's Play </Span>獨家精心規劃專屬檢定，結合</Title3>
           <Number> 1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
           <Number2>2.<Text123>筆試 —— 桌球知識</Text123></Number2>
-          <Number2>3.<Text123>體能</Text123></Number2>
+          <Number2>3.<Text123>體能 —— 敏捷反應</Text123></Number2>
         </Text2>
         <Text3>
           <TextContent>
@@ -344,7 +344,7 @@ const PlayTest = () => {
           <TreeItems>
             <Number>1.<Text123>品勢 —— 揮拍姿勢</Text123></Number>
             <Number>2.<Text123>筆試 —— 桌球知識</Text123></Number>
-            <Number>3.<Text123>體能</Text123></Number>
+            <Number>3.<Text123>體能 —— 敏捷反應</Text123></Number>
           </TreeItems>
         </Text2>
         <Text3>

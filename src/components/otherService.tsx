@@ -340,7 +340,7 @@ const Title = styled.div`
 
 const TextArea = styled.div`
  @media screen and (max-width: 768px) {
-  margin-top:20px;
+  margin-top:40px;
   }
 
 `;
@@ -448,8 +448,7 @@ const OtherService = () => {
             <Title3>場館加盟與聯盟合作</Title3>
             <Text>
               <p style={{ margin: 0 }}>
-                提供系統化的 <Span3> SOP </Span3> 協助桌球產業發
-                展更全面，並且共享產業資源互利，
+                提供系統化的 <Span3> SOP </Span3> 協助桌球產業發展更全面，並且共享產業資源互利，
                 提供有心推廣桌球的同業更好的機會。
               </p>
 
@@ -480,9 +479,7 @@ const OtherService = () => {
             <Text>
               <p style={{ margin: 0 }}>
                 特別精心打造的桌球 <Span3> VIP </Span3> 包廂空間，
-                讓玩樂和歡笑回憶留在美好的空間，
-                更方便拍照留念。目標成為雙北桌球
-                跨足休閒娛樂的業界首選，
+                讓玩樂和歡笑回憶留在美好的空間，更方便拍照留念。目標成為雙北桌球跨足休閒娛樂的業界首選，
                 開創桌球產業藍海。
               </p>
             </Text>
@@ -550,8 +547,7 @@ const OtherService = () => {
           <Title3>場館加盟與聯盟合作</Title3>
           <Text>
             <p style={{ margin: 0 }}>
-              提供系統化的<Span22> SOP </Span22>協助桌球產業發
-              展更全面，並且共享產業資源互利，
+              提供系統化的<Span22> SOP </Span22>協助桌球產業發展更全面，並且共享產業資源互利，
               提供有心推廣桌球的同業更好的機會。
             </p>
             
@@ -583,9 +579,7 @@ const OtherService = () => {
           <Text>
             <p style={{margin:0}}>
               特別精心打造的桌球 <Span22>VIP</Span22> 包廂空間，
-              讓玩樂和歡笑回憶留在美好的空間，
-              更方便拍照留念。目標成為雙北桌球
-              跨足休閒娛樂的業界首選，
+              讓玩樂和歡笑回憶留在美好的空間，更方便拍照留念。目標成為雙北桌球跨足休閒娛樂的業界首選，
               開創桌球產業藍海。
             </p>
             

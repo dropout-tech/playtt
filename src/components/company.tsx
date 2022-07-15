@@ -830,13 +830,13 @@ const Company = () => {
 
               <Shop1>
                 <SmallTitle><Span2>Let's Play</Span2> 東門店<Span2> X </Span2>  東門桌球 － 捷運東門 </SmallTitle>
-                <Text2>台北市中正區金山南路一段<Span>121</Span>號</Text2>
+                <Text2>台北市中正區金山南路一段<Span>121</Span>號B1</Text2>
                 <Span>02 2356 7106</Span>
               </Shop1>
 
               <Shop1>
                 <SmallTitle><Span2>Let's Play</Span2> 新莊店 <Span2>X</Span2> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-                <Text2>台北市新莊區民樂街<Span>37</Span>號<Span>B1</Span></Text2>
+                <Text2>新北市新莊區民樂街<Span>37</Span>號<Span>B1</Span></Text2>
                 <Span>02 2990 0566</Span>
               </Shop1>
 
@@ -850,8 +850,8 @@ const Company = () => {
             <UnderBelow>
               <Title22>聯盟場館經營</Title22>
               <Shop2>
-                <SmallTitle><Span2>ONWARD TT</Span2> 乒乓吧 <Span2> X Let's Play</Span2> － 捷運南港 <Span2> & </Span2> 昆陽</SmallTitle>
-                <Text2>台北市南港區南港路二段<Span>141</Span>號<Span>1</Span>樓</Text2>
+                <SmallTitle><Span2>ONWARD tt</Span2> 乒乓吧 <Span2> X Let's Play</Span2> － 捷運南港 <Span2> & </Span2> 昆陽</SmallTitle>
+                <Text2>台北市南港區南港路二段<Span>141-1</Span>號<Span>1</Span>樓</Text2>
                 <Span>02 2651 0652</Span>
               </Shop2>
 
@@ -928,14 +928,21 @@ const Company = () => {
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
-              <Text>台北市中正區金山南路一段<Span1>121</Span1>號</Text>
+              <Text>新北市蘆洲區長樂路<Span1>106</Span1>號3樓</Text>
+              <Text1><Span1> 02 8286 1011</Span1></Text1>
+
+            </AlignContener2>
+
+            <AlignContener2>
+              <SmallTitle><Span>Let's Play </Span> 東門店 X 東門桌球</SmallTitle>
+              <Text>台北市中正區金山南路一段<Span1>121</Span1>號B1</Text>
               <Text1><Span1> 02 2356 7106</Span1></Text1>
 
             </AlignContener2>
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-              <Text>台北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
+              <Text>新北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
               <Text1><Span1> 02 2990 0566</Span1></Text1>
 
             </AlignContener2>
@@ -951,8 +958,8 @@ const Company = () => {
           <UnderBelow>
             <Title02>聯盟場館經營</Title02>
             <AlignContener22>
-              <SmallTitle><Span>ONWARD TT </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
-              <Text>台北市南港區南港路二段<Span1>141</Span1>號<Span1>1</Span1>樓</Text>
+              <SmallTitle><Span>ONWARD tt </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
+              <Text>台北市南港區南港路二段<Span1>141-1</Span1>號<Span1>1</Span1>樓</Text>
               <Text1><Span1> 02 2651 0652</Span1></Text1>
             </AlignContener22>
 

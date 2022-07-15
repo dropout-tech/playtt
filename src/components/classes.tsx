@@ -16,7 +16,7 @@ const PageContainer = styled.div`
 const Container = styled.div`
   width:100%;
   height:100%;
-  padding-top:140px;
+  padding-top:80px;
   padding-bottom:80px;
   display:flex;
   justify-content: center;
@@ -519,7 +519,7 @@ const Classes = () => {
 
       <ClassIntroduce>
         <Title1>課程介紹</Title1>
-        <Title2>Our Class</Title2>
+        <Title2>Our Course</Title2>
       </ClassIntroduce>
 
       <Contant>
@@ -542,11 +542,11 @@ const Classes = () => {
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot><TextArea>小班客製化教學 / 大班休閒娛樂教學髮</TextArea>
+                <SpanDot>・</SpanDot><TextArea>小班客製化教學 / 大班休閒娛樂教學</TextArea>
               </DotContainer>
 
               <DotContainer>
-                <SpanDot>・</SpanDot> <TextArea>冬令營 / 夏令營 / 多元冬夏令營</TextArea>
+                <SpanDot>・</SpanDot> <TextArea>冬令營 / 夏令營(搭配多元才藝合作)</TextArea>
               </DotContainer>
             </ContantText>
           </Text1>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Homepage from "../../components/homepage";
-import Story from "../../components/story";
+// import Story from "../../components/story";
 import About from "../../components/about";
 import Classes from "../../components/classes";
 import OurCouchMembers from "../../components/ourCouchMembers";
@@ -43,7 +43,7 @@ const Container = styled.div`
   justify-content: space-between;
   overflow: scroll;
   @media screen and (max-width: 414px) {
-    height: calc(100vh - 80px);
+    height: 100vh;
   }
 `;
 
@@ -84,7 +84,7 @@ const MobileHeader = styled.div`
   background-color: white;
   z-index: 999999;
   width: 88%;
-  @media screen and (min-width: 414px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 `;
@@ -488,7 +488,7 @@ const Home = () => {
         <Homepage/>
         <Reserve />
         <About />
-        <Story />
+        {/* <Story /> */}
         <Classes />
         <Couch />
         <OurCouchMembers />
