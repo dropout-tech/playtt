@@ -233,9 +233,9 @@ const HaveATry = () => {
 
         <ButtonAreas>
           <Button  onClick={()=>{
-            window.open("https://www.facebook.com/playpp2018","_blank")
+            window.open("https://www.facebook.com/playpp2018","_parent")
           }}>
-            <ButtonText>立即預約體驗</ButtonText>
+            <ButtonText>立即預約免費試上</ButtonText>
           </Button>
         </ButtonAreas>
 

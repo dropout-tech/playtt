@@ -15,7 +15,7 @@ spec:
       containers:
         - name: letsplay
 
-          image: harbor-staging.aptan.cloud/letsplay/letsplay:23
+          image: harbor-staging.aptan.cloud/letsplay/letsplay:24
 
           ports:
             - containerPort: 8080

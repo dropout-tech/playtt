@@ -45,9 +45,9 @@ const Reserve = () => {
     <div style={{display:"flex",flexDirection:"row",justifyContent:"center",marginTop:160}}>
       <div style={{display:"flex",flexDirection:"column",background:"#F5F6F6",height:284,width:"80%",justifyContent:"center",alignItems:"center"}}>
           <button style={{border:"none",background:"#38D430",width:374,height:72,fontSize:"26px",fontWeight:"900",color:"white",fontFamily:"Noto Sans TC"}} onClick={()=>{
-            window.open("https://www.facebook.com/playpp2018","_blank")
+            window.open("https://www.facebook.com/playpp2018","_parent")
           }}>
-            立即預約體驗
+            立即預約免費試上
           </button>
           <p style={{margin:0,marginTop:20,fontSize:"18px",fontWeight:"500",fontFamily:"Noto Sans TC"}}>統一由臉書私訊洽詢想預約試上的分店 Line</p>
       </div>
@@ -57,9 +57,9 @@ const Reserve = () => {
     <div style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
       <div style={{display:"flex",flexDirection:"column",background:"#F5F6F6",height:284,width:"100%",justifyContent:"center",alignItems:"center"}}>
           <button style={{border:"none",background:"#38D430",width:211,height:48,fontSize:"18px",fontWeight:"900",color:"white",fontFamily:"Noto Sans TC"}} onClick={()=>{
-            window.open("https://www.facebook.com/playpp2018","_blank")
+            window.open("https://www.facebook.com/playpp2018","_parent")
           }}>
-            立即預約體驗
+            立即預約免費試上
           </button>
           <p style={{margin:0,marginTop:20,fontSize:"14px",fontWeight:"500",fontFamily:"Noto Sans TC"}}>統一由臉書私訊洽詢想預約試上的分店 Line</p>
       </div>
