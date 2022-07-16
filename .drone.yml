@@ -28,7 +28,7 @@ steps:
   - name: Harbor
     image: banzaicloud/drone-kaniko
     settings:
-      registry: harbor-staging.aptan.cloud
+      registry: harbor.aptan.cloud
       repo: letsplay/letsplay
       dockerfile: ./Dockerfile
       tags: ${DRONE_BUILD_NUMBER}
