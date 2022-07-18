@@ -94,6 +94,13 @@ const BlueArea = styled.div`
     padding-bottom:60px;
   
   }
+  @media screen and (max-width: 414px) {
+    width:100%;
+    height:1240px;
+    margin-top:40px;
+    padding-bottom:60px;
+  
+  }
 `;
 
 const ColorLineImg = styled.img`
