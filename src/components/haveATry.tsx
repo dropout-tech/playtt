@@ -93,6 +93,9 @@ const Button = styled.button`
   height:72px;
   background: #FFD900;
   box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);
+  display:flex;
+  justify-content:center;
+  align-items:center;
    @media screen and (max-width: 768px) {
     width:211px;
     height:48px;
@@ -104,27 +107,22 @@ const ButtonText = styled.p`
   font-style: normal;
   font-weight: 900;
   font-size: 26px;
-  line-height: 40px;
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
   color: #005CB9;
-  margin-left:100px;
-  margin-top:13px;
+  margin:0;
   @media screen and (max-width: 768px) {
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
-    line-height: 48px;
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: 0.04em;
     color: #005CB9;
-    margin-top:-1px;
-    margin-left:45px;
   }
 `;
 

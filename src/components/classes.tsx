@@ -590,7 +590,7 @@ const Classes = () => {
 
                 <DotContainer>
                   <SpanDot>・</SpanDot>
-                  <TextArea>學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
+                  <TextArea>球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟</TextArea>
                 </DotContainer>
               </ContantText>
             </AlignText>
@@ -638,7 +638,7 @@ const Classes = () => {
               <DotContainer>
                 <SpanDot>・</SpanDot>
                 <TextArea2>
-                  學習到球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
+                  球技 / 學習態度 / 品性 / 運動家精神 / 獲得體悟
                 </TextArea2>
               </DotContainer>
             </ContantText2>
