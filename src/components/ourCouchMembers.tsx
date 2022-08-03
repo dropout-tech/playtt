@@ -214,6 +214,20 @@ const Span = styled.span`
   }
 `;
 
+const ContentText = styled.p`
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    margin-top:3px;
+
+  }
+
+`
+
 const Span3 = styled.span`
   font-family: "Noto Sans TC";
   font-style: normal;
@@ -343,7 +357,7 @@ const MemberPic = styled.img`
 
 const PictureContainer = styled.div`
   @media screen and (max-width: 768px) {
-    width: 85%;
+    width: 90%;
   }
 `;
 
@@ -362,6 +376,21 @@ const OurCouchMembers = () => {
                   <SpanEVA>Eva</SpanEVA> 教練
                 </Span3>
               </TextEVA>
+              <div style={{ width: 200, marginLeft: 170, marginTop: -20 }}>
+                <ContentText>
+                  · 教學經驗5年
+                </ContentText>
+                <div style={{ display: "flex", marginTop: 5 }}>
+                  <ContentText>
+                    · 特色：
+                  </ContentText>
+                  <div>
+                    <ContentText>溫柔與嚴格併行</ContentText>
+                    <ContentText>朋友般的親和互動</ContentText>
+                    <ContentText>幼幼/親子班指定</ContentText>
+                  </div>
+                </div>
+              </div>
             </Couch>
 
             <Couch>
@@ -369,6 +398,22 @@ const OurCouchMembers = () => {
               <Text>
                 温達威<Span>威廉教練</Span>
               </Text>
+              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
+                <ContentText>
+                  · 教學經驗3年
+                </ContentText>
+                <div style={{ display: "flex", marginTop: 5 }}>
+                  <ContentText>
+                    · 特色：
+                  </ContentText>
+                  <div>
+                    <ContentText>耐心使人易上手</ContentText>
+                    <ContentText>引發主動學習</ContentText>
+                    <ContentText>兒童團體指定</ContentText>
+                  </div>
+                </div>
+              </div>
+
             </Couch>
 
             <Couch>
@@ -376,6 +421,21 @@ const OurCouchMembers = () => {
               <Text>
                 林培中<Span>派派教練</Span>
               </Text>
+              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
+                <ContentText>
+                  · 教學經驗7年
+                </ContentText>
+                <div style={{ display: "flex", marginTop: 5 }}>
+                  <ContentText>
+                    · 特色：
+                  </ContentText>
+                  <div>
+                    <ContentText>教學生動活潑</ContentText>
+                    <ContentText>親和力十足</ContentText>
+                    <ContentText>啟蒙與小選手培訓</ContentText>
+                  </div>
+                </div>
+              </div>
             </Couch>
           </Row1>
 
@@ -385,6 +445,21 @@ const OurCouchMembers = () => {
               <Text2>
                 郭則寬<Span>阿寬教練</Span>
               </Text2>
+              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
+                <ContentText>
+                  · 教學經驗10年
+                </ContentText>
+                <div style={{ display: "flex", marginTop: 5 }}>
+                  <ContentText>
+                    · 特色：
+                  </ContentText>
+                  <div>
+                    <ContentText>引導式教學</ContentText>
+                    <ContentText>全年齡快速上手</ContentText>
+                    <ContentText>成人團體與企業合作</ContentText>
+                  </div>
+                </div>
+              </div>
             </Couch>
 
             <Couch>
@@ -392,6 +467,21 @@ const OurCouchMembers = () => {
               <Text2>
                 林晏先<Span>先先教練</Span>
               </Text2>
+              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
+                <ContentText>
+                  · 教學經驗3年
+                </ContentText>
+                <div style={{ display: "flex", marginTop: 5 }}>
+                  <ContentText>
+                    · 特色：
+                  </ContentText>
+                  <div>
+                    <ContentText>遊戲方式教學</ContentText>
+                    <ContentText>引導小朋友喜愛桌球</ContentText>
+                    <ContentText>兒童團體班指定</ContentText>
+                  </div>
+                </div>
+              </div>
             </Couch>
           </Row2>
 
@@ -401,6 +491,21 @@ const OurCouchMembers = () => {
               <Text>
                 顏兆寅<Span>小顏教練</Span>
               </Text>
+              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
+                <ContentText>
+                  · 教學經驗10年
+                </ContentText>
+                <div style={{ display: "flex", marginTop: 5 }}>
+                  <ContentText>
+                    · 特色：
+                  </ContentText>
+                  <div>
+                    <ContentText>全年齡皆可</ContentText>
+                    <ContentText>細心、耐心、責任心</ContentText>
+                    <ContentText>休閒與小小選手指定</ContentText>
+                  </div>
+                </div>
+              </div>
             </Couch>
 
             <Couch>
@@ -408,6 +513,21 @@ const OurCouchMembers = () => {
               <Text>
                 林政蔚<Span>政蔚教練</Span>
               </Text>
+              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
+                <ContentText>
+                  · 教學經驗10年
+                </ContentText>
+                <div style={{ display: "flex", marginTop: 5 }}>
+                  <ContentText>
+                    · 特色：
+                  </ContentText>
+                  <div>
+                    <ContentText>學習中培養信心</ContentText>
+                    <ContentText>引發終身學習</ContentText>
+                    <ContentText>成人團體與企業合作</ContentText>
+                  </div>
+                </div>
+              </div>
             </Couch>
 
             <Couch>
@@ -415,6 +535,21 @@ const OurCouchMembers = () => {
               <Text>
                 夏振凱<Span>凱凱教練</Span>
               </Text>
+              <div style={{ width: 210, marginLeft: 150, marginTop: -20 }}>
+                <ContentText>
+                  · 教學經驗4年
+                </ContentText>
+                <div style={{ display: "flex", marginTop: 5 }}>
+                  <ContentText style={{width:67}}>
+                    · 特色：
+                  </ContentText>
+                  <div>
+                    <ContentText>學習失敗中成長</ContentText>
+                    <ContentText>學習態度與品行教育</ContentText>
+                    <ContentText>兒童個人/團體班指定</ContentText>
+                  </div>
+                </div>
+              </div>
             </Couch>
           </Row3>
         </Picture>
@@ -429,13 +564,29 @@ const OurCouchMembers = () => {
               <NickName>
                 <SpanEva>Eva </SpanEva>教練
               </NickName>
+              <div>
+                <ContentText>
+                  教學經驗5年
+                </ContentText>
+                <ContentText>溫柔與嚴格併行</ContentText>
+                <ContentText>朋友般的親和互動</ContentText>
+                <ContentText>幼幼/親子班指定</ContentText>
+              </div>
             </NameComponentLeft>
           </Members>
 
           <Members2>
-            <NameComponentRight>
+            <NameComponentRight style={{textAlign:"right"}}>
               <MemberNameRight>温達威</MemberNameRight>
               <NickName>威廉教練</NickName>
+              <div>
+                <ContentText>
+                  教學經驗3年
+                </ContentText>
+                <ContentText>耐心使人易上手</ContentText>
+                <ContentText>引發主動學習</ContentText>
+                <ContentText>兒童團體指定</ContentText>
+              </div>
             </NameComponentRight>
             <MemberPic src={img22} alt="" />
           </Members2>
@@ -445,13 +596,29 @@ const OurCouchMembers = () => {
             <NameComponentLeft>
               <MemberNameLeft>林培中</MemberNameLeft>
               <NickName>派派教練</NickName>
+              <div>
+                <ContentText>
+                  教學經驗7年
+                </ContentText>
+                <ContentText>教學生動活潑</ContentText>
+                <ContentText>親和力十足</ContentText>
+                <ContentText>啟蒙與小選手培訓</ContentText>
+              </div>
             </NameComponentLeft>
           </Members>
 
           <Members2>
-            <NameComponentRight>
+            <NameComponentRight style={{textAlign:"right"}}>
               <MemberNameRight>郭則寬</MemberNameRight>
               <NickName>阿寬教練</NickName>
+              <div>
+                <ContentText>
+                  教學經驗10年
+                </ContentText>
+                <ContentText>引導式教學</ContentText>
+                <ContentText>全年齡快速上手</ContentText>
+                <ContentText>成人團體與企業合作</ContentText>
+              </div>
             </NameComponentRight>
             <MemberPic src={img44} alt="" />
           </Members2>
@@ -461,13 +628,29 @@ const OurCouchMembers = () => {
             <NameComponentLeft>
               <MemberNameLeft>林晏先</MemberNameLeft>
               <NickName>先先教練</NickName>
+              <div>
+                <ContentText>
+                  教學經驗3年
+                </ContentText>
+                <ContentText>遊戲方式教學</ContentText>
+                <ContentText>引導小朋友喜愛桌球</ContentText>
+                <ContentText>兒童團體班指定</ContentText>
+              </div>
             </NameComponentLeft>
           </Members>
 
           <Members2>
-            <NameComponentRight>
+            <NameComponentRight style={{textAlign:"right"}}>
               <MemberNameRight>顏兆寅</MemberNameRight>
               <NickName>小顏教練</NickName>
+              <div>
+                <ContentText>
+                  教學經驗10年
+                </ContentText>
+                <ContentText>全年齡皆可</ContentText>
+                <ContentText>細心、耐心、責任心</ContentText>
+                <ContentText>休閒與小小選手指定</ContentText>
+              </div>
             </NameComponentRight>
             <MemberPic src={img66} alt="" />
           </Members2>
@@ -477,13 +660,29 @@ const OurCouchMembers = () => {
             <NameComponentLeft>
               <MemberNameLeft>林政蔚</MemberNameLeft>
               <NickName>政蔚教練</NickName>
+              <div>
+                <ContentText>
+                  教學經驗10年
+                </ContentText>
+                <ContentText>學習中培養信心</ContentText>
+                <ContentText>引發終身學習</ContentText>
+                <ContentText>成人團體與企業合作</ContentText>
+              </div>
             </NameComponentLeft>
           </Members>
 
           <Members2>
-            <NameComponentRight>
+            <NameComponentRight style={{textAlign:"right"}}>
               <MemberNameRight>夏振凱</MemberNameRight>
               <NickName>凱凱教練</NickName>
+              <div>
+                <ContentText>
+                  教學經驗4年
+                </ContentText>
+                <ContentText>學習失敗中成長</ContentText>
+                <ContentText>學習態度與品行教育</ContentText>
+                <ContentText>兒童個人/團體班指定</ContentText>
+              </div>
             </NameComponentRight>
             <MemberPic src={img88} alt="" />
           </Members2>
