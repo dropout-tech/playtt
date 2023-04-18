@@ -19,7 +19,7 @@ steps:
       - sleep 10
       - git clone https://gitea.aptan.cloud/Aptan/letsplay_front.git .
 
-  - name: Build
+  - name: Build 
     image: node:17-alpine
     commands:
         - yarn
