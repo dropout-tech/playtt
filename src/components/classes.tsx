@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { PageContainer, Container, SectionTitle, SectionSubtitle, TitleGroup } from "../styles/components";
-import { theme, media } from "../styles/theme";
+import { media } from "../styles/theme";
 import img1 from "../assets/classes/img1.png";
 import img2 from "../assets/classes/img2.png";
 import img3 from "../assets/classes/img3.png";

@@ -6,7 +6,6 @@ import {
   MobileContainer,
   SectionTitle,
   SectionSubtitle,
-  TitleGroup,
   ContentTitle,
   ContentSubtitle,
   BodyText,

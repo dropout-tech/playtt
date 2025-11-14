@@ -289,17 +289,17 @@ const MobileContainer = styled.div`
 `;
 
 
+// 使用 CSS 替代 circle.png - 圓形漸層裝飾
 const CircleImg2 = styled.div`
   @media screen and (max-width: 768px) {
-   width:100%;
-   height:210px;
-   background-image: url('${circle}');
-   background-size:cover ;
-   background-repeat: no-repeat;
-   background-position:center;
-}
-
-
+    width: 100%;
+    height: 210px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, ${theme.colors.primary}20 0%, ${theme.colors.secondary}20 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 `;
 
 const Ball = styled.div`
