@@ -28,14 +28,12 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: letsplay_front/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        working-directory: ./letsplay_front
         run: npm ci
 
       - name: Build
-        working-directory: ./letsplay_front
         run: npm run build
 
       - name: Setup Pages
@@ -44,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './letsplay_front/build'
+          path: './build'
 
   deploy:
     environment:
