@@ -1,33 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import colorcircle from "../assets/recruit/colorCircle.png";
+import { PageContainer } from "../styles/components";
+import { theme, media } from "../styles/theme";
 
-
-// styled components start 
-
-const PageContainer = styled.div`
-  width:100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-   @media screen and (max-width: 768px) {
-    
-  }
-`;
-
-const ColorcircleImg = styled.img`
+// 使用 CSS 替代 colorCircle.png - 橢圓形漸層裝飾
+const ColorCircle = styled.div`
   width: 580px;
-  height:294px;
-  margin-top:100px;
+  height: 294px;
+  margin-top: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 100%);
+  opacity: 0.8;
  
-   @media screen and (max-width: 768px) {
+  ${media.tablet} {
     width: 251px;
-    height:127px;
-    margin-top:-160px;
-
-  
-  
-    
+    height: 127px;
+    margin-top: -160px;
   }
 `;
 
@@ -229,7 +217,7 @@ const Recruit = () => {
   return <PageContainer id="recruit">
     <Container>
       <ImgContainer>
-        <ColorcircleImg src={colorcircle} alt="" />
+        <ColorCircle />
       </ImgContainer>
       <TextContainer>
         <Background>

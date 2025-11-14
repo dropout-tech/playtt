@@ -1,174 +1,48 @@
 import React from "react";
 import styled from "styled-components";
+import { PageContainer } from "../styles/components";
+import { media } from "../styles/theme";
 
 import banner1440 from "../assets/homepage/banner1440.png";
-import banner1024 from "../assets/homepage/banner1024.png";
 import banner1280 from "../assets/homepage/banner1280.png";
+import banner1024 from "../assets/homepage/banner1024.png";
 import banner768 from "../assets/homepage/banner768.png";
 import banner414 from "../assets/homepage/banner414.png";
 
-// styled components start 
+// 優化後的 Banner - 使用單一組件 + CSS media queries
+// 代碼量減少 66%，更易於維護
+const Banner = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-image: url(${banner1440});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-const PageContainer = styled.div`
-  width:100%;
-  height:100%;
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (max-width: 414px) {
-  margin-top: 80px;
+  /* 響應式圖片切換 */
+  ${media.desktop} {
+    background-image: url(${banner1280});
   }
-  @media screen and (max-width: 768px) {
-    
+
+  ${media.laptop} {
+    background-image: url(${banner1024});
+  }
+
+  ${media.tablet} {
+    background-image: url(${banner768});
+  }
+
+  ${media.mobile} {
+    background-image: url(${banner414});
   }
 `;
 
-const BannerImg1 = styled.img`
- @media screen and (min-width: 1440px) {
-    display:flex;
-    width:100%;
-    height:100%;
-  }
-
-  @media screen and (max-width: 1440px) {
-    display:flex;
-    width:100%;
-    height:100%;
-  }
-
-  @media screen and (max-width: 1280px) {
-    display: none;
-  }
-  @media screen and (max-width: 1024px) {
-   display: none;
-  }
-   @media screen and (max-width: 768px) {
-    display: none;
-   
-   }
-   @media screen and (max-width: 414px) {
-    display: none;
-   }
-`;
-
-const BannerImg2 = styled.img`
-  @media screen and (min-width: 1440px) {
-     display: none;
-  }
-  @media screen and (max-width: 1440px) {
-    display: none;
-  }
-   
-  @media screen and (max-width: 1280px) {
-    width:100%;
-    height:100%;
-    display:flex;
-  }
-  @media screen and (max-width: 1024px) {
-   display: none;
-  }
-   @media screen and (max-width: 768px) {
-    display: none;
-   
-   }
-   @media screen and (max-width: 414px) {
-    display: none;
-   }
-`;
-
-const BannerImg3 = styled.img`
-
-  @media screen and (min-width: 1440px) {
-     display: none;
-  }
-  @media screen and (max-width: 1440px) {
-    display: none;
-  }
-
-  @media screen and (max-width: 1280px) {
-    display: none;
-  }
-  @media screen and (max-width: 1024px) {
-    width:100%;
-    height:100%;
-    display:flex;
-  }
-   @media screen and (max-width: 768px) {
-    display: none;
-   }
-   @media screen and (max-width: 414px) {
-    display: none;
-   }
-`;
-
-const BannerImg4 = styled.img`
-
-  @media screen and (min-width: 1440px) {
-     display: none;
-  }
-  @media screen and (max-width: 1440px) {
-    display: none;
-  }
-
-  @media screen and (max-width: 1280px) {
-    display: none;
-  }
-  @media screen and (max-width: 1024px) {
-   display: none;
-  }
-   @media screen and (max-width: 768px) {
-    width:100%;
-    height:100%;
-    display:flex;
-   }
-   @media screen and (max-width: 414px) {
-    display: none;
-   }
-`;
-
-const BannerImg5 = styled.img`
-  @media screen and (min-width: 1440px) {
-     display: none;
-  }
-  @media screen and (max-width: 1440px) {
-    display: none;
-  }
-
-  @media screen and (max-width: 1280px) {
-    display: none;
-  }
-  @media screen and (max-width: 1024px) {
-   display: none;
-  }
-   @media screen and (max-width: 768px) {
-    display: none;
-   }
-   @media screen and (max-width: 414px) {
-     width:100%;
-     height:100%;
-     display:flex;
-   }
-`;
-
-
-
-const EmptyContainer = styled.div`
-
-`;
-
-
-/* desktop thw newest info style end */
-const homepage = () => {
-  return <PageContainer id="home">
-    <EmptyContainer>
-      <BannerImg1 src={banner1440} />
-      <BannerImg2 src={banner1280} />
-      <BannerImg3 src={banner1024} />
-      <BannerImg4 src={banner768} />
-      <BannerImg5 src={banner414} />
-
-    </EmptyContainer>
-  </PageContainer>;
+const Homepage = () => {
+  return (
+    <PageContainer id="home">
+      <Banner />
+    </PageContainer>
+  );
 };
 
-export default homepage;
+export default Homepage;

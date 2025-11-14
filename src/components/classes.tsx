@@ -1,100 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import { PageContainer, Container, SectionTitle, SectionSubtitle, TitleGroup } from "../styles/components";
+import { theme, media } from "../styles/theme";
 import img1 from "../assets/classes/img1.png";
 import img2 from "../assets/classes/img2.png";
 import img3 from "../assets/classes/img3.png";
 
-const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @media screen and (min-width: 768px) {
-    
+const ClassesContainer = styled(Container)`
+  ${media.tablet} {
+    margin-top: -80px;
+    margin-left: 0px;
+    margin-bottom: 20px;
   }
 `;
 
-const Container = styled.div`
-  width:100%;
-  height:100%;
-  padding-top:80px;
-  padding-bottom:80px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  @media screen and (max-width: 768px) {
-   margin-top:-80px;
-   margin-left:0px;
-   margin-bottom:20px;
-  }
-`;
-
-
-const ClassIntroduce = styled.div`
- margin-top:30px;
- width:100%;
- display: flex;
- align-items: center;
- justify-content:center;
- flex-direction: column;
-;
- @media screen and (max-width: 768px) {
-   margin-left:0px;
-   margin-top:30px;
- 
-  }
-`;
-
-const Title1 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 52px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin-top:-10px;
-
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 26px;
-    line-height: 40px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color:#1A1A1A
-  }
-`;
-
-const Title2 = styled.p`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 48px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #CFD2D3;
-  margin-top:-30px;
-  line-Height:52px;
+const ClassIntroduce = styled(TitleGroup)`
+  margin-top: 30px;
   
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 40px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #CFD2D3;
-    margin-top:-26px;
+  ${media.tablet} {
+    margin-left: 0px;
+    margin-top: 30px;
   }
 `;
 
@@ -515,11 +440,11 @@ const Span = styled.span`
 /* desktop thw newest info style end */
 const Classes = () => {
   return <PageContainer id="classes">
-    <Container>
+    <ClassesContainer>
 
       <ClassIntroduce>
-        <Title1>課程介紹</Title1>
-        <Title2>Our Course</Title2>
+        <SectionTitle>課程介紹</SectionTitle>
+        <SectionSubtitle>Our Course</SectionSubtitle>
       </ClassIntroduce>
 
       <Contant>
@@ -675,7 +600,7 @@ const Classes = () => {
           </Text33>
         </Explain3>
       </Contant>
-    </Container>
+    </ClassesContainer>
   </PageContainer>;
 };
 

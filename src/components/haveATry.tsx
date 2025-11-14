@@ -1,251 +1,147 @@
 import React from "react";
 import styled from "styled-components";
+import { PageContainer, PrimaryButton, ButtonText as ButtonTextComponent, SectionTitle, SectionSubtitle } from "../styles/components";
+import { theme, media } from "../styles/theme";
 
-
-
-// styled components start 
-
-const PageContainer = styled.div`
-  width:100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-   @media screen and (max-width: 768px) {
-    
-  }
-`;
-
+// 優化後的樣式組件
 const Container = styled.div`
-
-
-  @media screen and (max-width: 768px) {
-    width:100%;
-  }
-`;
-
-const Title1 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 52px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #FFFFFF;
-  margin:0px;
-   @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 26px;
-    line-height: 40px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #FFFFFF;
-
-  }
-  
-`;
-
-const Title2 = styled.p`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 48px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #CFD2D3;
-  line-Height:52px;
-  margin-top:8px;
-   @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 40px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #CFD2D3;
-    margin-top:0px;
-
+  ${media.tablet} {
+    width: 100%;
   }
 `;
 
 const BlueArea = styled.div`
-  background: #005CB9;
-  height:306px;
-  padding-top:30px;
-  padding-bottom:174px;
-   @media screen and (max-width: 768px) {
-    padding-bottom:0;
-    width:100%;
-  }
-`;
-
-const Button = styled.button`
-  border:none;
-  width:374px;
-  height:72px;
-  background: #FFD900;
-  box-shadow: 0px 4px 20px rgba(26, 26, 26, 0.07);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-   @media screen and (max-width: 768px) {
-    width:211px;
-    height:48px;
-  }
-`;
-
-const ButtonText = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #005CB9;
-  margin:0;
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #005CB9;
+  background: ${theme.colors.primary};
+  height: 306px;
+  padding-top: ${theme.spacing.lg};
+  padding-bottom: 174px;
+  
+  ${media.tablet} {
+    padding-bottom: 0;
+    width: 100%;
   }
 `;
 
 const TopText = styled.div`
- margin-top:50px;
- @media screen and (max-width: 768px) {
+  margin-top: 50px;
+  
+  ${media.tablet} {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:30px;
-   
+    margin-top: ${theme.spacing.lg};
   }
 `;
 
-const Text2 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
+const WhiteTitle = styled(SectionTitle)`
+  color: ${theme.colors.background};
+`;
+
+const WhiteSubtitle = styled(SectionSubtitle)`
+  color: ${theme.colors.textMuted};
+`;
+
+const ButtonAreas = styled.div`
   display: flex;
-  letter-spacing: 0.04em;
-  color: #FFFFFF;
-  display:flex;
+  margin-top: ${theme.spacing.xxl};
   justify-content: center;
-   @media screen and (max-width: 768px) {
-    font-size: 14px;
+  
+  ${media.tablet} {
+    margin-top: 14px;
+  }
+`;
+
+const InfoText = styled.p`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.lg};
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: ${theme.colors.background};
+  display: flex;
+  justify-content: center;
+  
+  ${media.tablet} {
+    font-size: ${theme.fontSize.sm};
     line-height: 28px;
-    display: flex;
+    letter-spacing: 0.06em;
+    margin-top: ${theme.spacing.md};
     align-items: center;
     text-align: center;
-    letter-spacing: 0.06em;
-    margin-top:20px;
-  
-    
   }
 `;
 
-const UnderText = styled.p`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
+const SpanLine = styled.span`
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.lg};
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: ${theme.colors.background};
+  
+  ${media.tablet} {
+    font-size: ${theme.fontSize.sm};
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    margin-left: 4px;
+  }
+`;
+
+const UnderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: ${theme.spacing.xs};
+  padding-bottom: ${theme.spacing.xs};
+`;
+
+const CopyrightText = styled.p`
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.sm};
   line-height: 24px;
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.08em;
-  color: #3C3D3D;
-   @media screen and (max-width: 768px) {
+  color: ${theme.colors.textLight};
+  
+  ${media.tablet} {
     font-size: 12px;
     line-height: 24px;
-    
   }
 `;
-
-const UnderContainer = styled.div`
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 8px;
-  padding-bottom:8px;
-   @media screen and (max-width: 768px) {
-    
-  }
-`;
-
-const ButtonAreas = styled.div`
-  display: flex;
-  margin-top:80px;
-  justify-content: center;
-   @media screen and (max-width: 768px) {
-    margin-top:14px;
-  }
-`;
-
-const SpanLine = styled.span`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0.04em;
-  color: #FFFFFF;
-   @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 28px;
-    letter-spacing: 0.06em;
-    color: #FFFFFF;
-    margin-left:4px;
-  }
-`;
-/* desktop thw newest info style end */
 const HaveATry = () => {
-  return <PageContainer id="haveATry">
-    <Container>
-      <BlueArea>
-        <TopText>
-          <Title1>預約體驗</Title1>
-          <Title2>Have a Try</Title2>
-        </TopText>
+  return (
+    <PageContainer id="haveATry">
+      <Container>
+        <BlueArea>
+          <TopText>
+            <WhiteTitle>預約體驗</WhiteTitle>
+            <WhiteSubtitle>Have a Try</WhiteSubtitle>
+          </TopText>
 
+          <ButtonAreas>
+            <PrimaryButton
+              onClick={() => {
+                window.open("https://www.facebook.com/playpp2018", "_parent");
+              }}
+            >
+              <ButtonTextComponent>立即預約免費試上</ButtonTextComponent>
+            </PrimaryButton>
+          </ButtonAreas>
 
-        <ButtonAreas>
-          <Button  onClick={()=>{
-            window.open("https://www.facebook.com/playpp2018","_parent")
-          }}>
-            <ButtonText>立即預約免費試上</ButtonText>
-          </Button>
-        </ButtonAreas>
+          <InfoText>
+            統一由臉書私訊洽詢想預約試上的分店<SpanLine>Line</SpanLine>
+          </InfoText>
+        </BlueArea>
 
-        <Text2>統一由臉書私訊洽詢想預約試上的分店<SpanLine>Line</SpanLine></Text2>
-
-      </BlueArea>
-
-      <UnderContainer>
-        <UnderText>Copyright © 2022 Let's Play</UnderText>
-      </UnderContainer>
-    </Container>
-  </PageContainer>;
+        <UnderContainer>
+          <CopyrightText>Copyright © 2025 Let's Play</CopyrightText>
+        </UnderContainer>
+      </Container>
+    </PageContainer>
+  );
 };
 
 export default HaveATry;

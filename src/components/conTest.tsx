@@ -1,39 +1,34 @@
 import React from "react";
 import styled from "styled-components";
-import halfcircle from "../assets/conTest/halfcircle.png";
-import circle from "../assets/conTest/circle.png";
+import { PageContainer } from "../styles/components";
+import { theme, media } from "../styles/theme";
 
-
-
-// styled components start 
-
-const PageContainer = styled.div`
-  width:100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-   @media screen and (max-width: 768px) {
- 
-  }
+// 使用 CSS 替代 halfcircle.png - 半圓形漸層裝飾
+const HalfCircleDecoration = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(135deg, ${theme.colors.primary}20 0%, ${theme.colors.secondary}20 100%);
+  border-radius: 0 0 50% 50%;
+  z-index: 1;
 `;
 
 const Container = styled.div`
-  width:100%;
-  height:804px;
-  background: rgba(207, 210, 211,0.2);
+  width: 100%;
+  height: 804px;
+  background: rgba(207, 210, 211, 0.2);
   display: flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:80px;
-  background-image: url('${halfcircle}');
-  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
   
-  ;
-   @media screen and (max-width: 768px) {
-    display:none;
-
+  ${media.tablet} {
+    display: none;
   }
-
 `;
 
 // const HalfcircleImg = styled.img`
@@ -364,7 +359,7 @@ const YelloArea = styled.div`
 const ConTest = () => {
   return <PageContainer id="conTest">
     <Container>
-
+      <HalfCircleDecoration />
       <AlignText>
         <TextContainer1>
           <LeftText>
