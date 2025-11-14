@@ -76,12 +76,12 @@ export const SectionSubtitle = styled.h3`
   font-family: ${theme.fonts.secondary};
   font-weight: ${theme.fontWeight.bold};
   font-size: ${theme.fontSize.xxxl};
-  line-height: 48px;
+  line-height: 52px;
   text-align: center;
   letter-spacing: 0.04em;
   color: ${theme.colors.textMuted};
   margin-top: -30px;
-  line-height: 52px;
+  margin-bottom: 0;
 
   ${media.tablet} {
     font-size: ${theme.fontSize.xxl};
