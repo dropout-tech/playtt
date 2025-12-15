@@ -1,0 +1,14 @@
+server {
+  listen       ${PORT};
+  listen  [::]:${PORT};
+
+  server_name  _;
+
+  root   /usr/share/nginx/html;
+  index  index.html;
+
+  # SPA routing (React Router)
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+}

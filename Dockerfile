@@ -21,4 +21,8 @@ RUN npm run build
 
 FROM nginx:alpine
 
+ENV PORT=80
+
+COPY nginx/default.conf.template /etc/nginx/templates/default.conf.template
+
 COPY --from=build /app/build /usr/share/nginx/html
