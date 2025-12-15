@@ -1,482 +1,197 @@
 import React from "react";
-import styled from "styled-components";
-import { PageContainer } from "../styles/components";
-import { theme, media } from "../styles/theme";
+import styled, { keyframes } from "styled-components";
+import {
+  Card,
+  Container,
+  ContentWrapper,
+  PageContainer,
+  SectionSubtitle,
+  SectionTitle,
+  TitleGroup,
+} from "../styles/components";
+import { media, theme } from "../styles/theme";
 
-// 使用 CSS 替代 halfcircle.png - 半圓形漸層裝飾
-const HalfCircleDecoration = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(135deg, ${theme.colors.primary}20 0%, ${theme.colors.secondary}20 100%);
-  border-radius: 0 0 50% 50%;
-  z-index: 1;
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 `;
 
-const Container = styled.div`
+const SectionBg = styled.div`
   width: 100%;
-  height: 804px;
   background: rgba(207, 210, 211, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 80px;
   position: relative;
   overflow: hidden;
-  
+`;
+
+const HalfCircle = styled.div`
+  position: absolute;
+  top: -240px;
+  left: -240px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, ${theme.colors.primary}20 0%, ${theme.colors.secondary}20 100%);
+  z-index: 0;
+  animation: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+
   ${media.tablet} {
-    display: none;
+    width: 380px;
+    height: 380px;
+    top: -190px;
+    left: -190px;
   }
 `;
 
-// const HalfcircleImg = styled.img`
-//   width:100%;
-//   height:100%;
-//   z-index:1;
-//    @media screen and (max-width: 768px) {
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: ${theme.spacing.lg};
+  align-items: start;
+  position: relative;
+  z-index: 1;
 
-//   }
-
-// `;
-
-
-
-const TextContainer1 = styled.div`
- width:100%;
- z-index:10;
- display:flex;
- align-items: flex-end;
- flex-direction: column;
- margin-top:-7px;
-  @media screen and (max-width: 768px) {
-    margin-top:50px;
-    align-items: center;
-    
+  ${media.tablet} {
+    grid-template-columns: 1fr;
+    gap: ${theme.spacing.md};
   }
 `;
 
-const TextContainer2 = styled.div`
- width:100%;
- z-index:10;
- display:flex;
- justify-content:flex-start;
- align-items: center;
- margin-right:150px;
- margin-left:143px;
- margin-top:-60px;
- 
-  @media screen and (max-width: 768px) {
-    justify-content:center;
-    margin-left:0px;
-    margin-top:-2px;
-    margin-bottom:60px;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-
-    
-  } 
+const Intro = styled.div`
+  animation: ${fadeUp} 520ms ease both;
 `;
 
-const LeftText = styled.div`
-  margin-left:-180px;
-   @media screen and (max-width: 768px) {
-    z-index:10;
-    margin-top:-240px;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: column;
-    margin-left:0px;
-  }
-
-`;
-
-const RightText = styled.div`
-  @media screen and (max-width: 768px) {
-    
-  }
-
-`;
-
-const Background = styled.div`
-  background: #FFD900;
-  border-radius: 28px;
-  width:129px;
-  height:56px;
-  margin-top:-70px;
-  @media screen and (max-width: 768px) {
-    width:96px;
-    height:44px;
-    margin-top:0px;
-    margin-left:0px;
-   
-
-    
-  }
-   
-`;
-
-const Title1 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 52px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  display:flex;
-  justify-content: flex-start;
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 26px;
-    line-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
-   
-
-
-  }
-`;
-
-
-const Title2 = styled.p`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 48px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #CFD2D3;
-  display:flex;
-  justify-content: flex-start;
-  line-Height:52px;
-  margin-top:-28px;
-  @media screen and (max-width: 768px) {
-   font-family: 'Futura';
-   font-style: normal;
-   font-weight: 700;
-   font-size: 26px;
-   line-height: 40px;
-   display: flex;
-   align-items: center;
-  justify-content: center;
-   letter-spacing: 0.04em;
-   color: #CFD2D3;
-   margin-top:-26px;
-  }
-`;
-
-const Title3 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 56px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #005CB9;
-  margin:0px 0px 0px 24px;
-  
-
-
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.04em;
-    color: #005CB9;
-    margin-top:6px;
-    margin-left:20px;
-    
-
-  }
-`;
-
-const TextContent = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
+const Lead = styled.p`
+  margin: ${theme.spacing.sm} 0 0;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
   font-size: 30px;
   line-height: 44px;
-  text-align: justify;
   letter-spacing: 0.04em;
-  color: #3C3D3D;
-  margin-top:80px;
-  width:477px;
-  @media screen and (max-width: 768px) {
+  color: ${theme.colors.textLight};
+
+  ${media.tablet} {
     font-size: 20px;
-    line-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    text-align: center;
-    letter-spacing: 0.03em;
-    color: #3C3D3D;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-    margin-top:14px;
-    width:100%;
-   
-   
+    line-height: 34px;
   }
-  
 `;
 
-const Text = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 36px;
-  text-align: justify;
-  letter-spacing: 0.03em;
-  color: #1A1A1A;
-  width:374px;
-  margin:24px 0px 0px 0px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    text-align: justify;
-    letter-spacing: 0.02em;
-    color: #1A1A1A;
-    width:auto;
-    margin:0px 0px 0px 20px;
-    
-    
+const Cards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: ${theme.spacing.md};
+  animation: ${fadeUp} 520ms ease both;
+  animation-delay: 120ms;
+
+  ${media.tablet} {
+    grid-template-columns: 1fr;
+    gap: ${theme.spacing.sm};
   }
-  
 `;
 
+const MatchCard = styled(Card)`
+  padding: ${theme.spacing.lg};
 
-const TextContainer = styled.div`
- margin-top:130px;
- @media screen and (max-width: 768px) {
-  display:flex;
-  justify-content:center;
+  ${media.tablet} {
+    padding: ${theme.spacing.md};
+  }
+`;
+
+const Pill = styled.div`
+  display: inline-flex;
   align-items: center;
-  margin-top:20px;
- 
- }
+  padding: 10px 16px;
+  border-radius: 28px;
+  background: ${theme.colors.secondary};
+  box-shadow: 0 4px 20px rgba(26, 26, 26, 0.07);
 `;
 
-const MobileContainer = styled.div`
-  margin-top:54px;
-  width:100%;
-  background: rgba(207, 210, 211,0.2);
-  display: flex;
-  flex-direction: column;
+const PillText = styled.div`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
+  font-size: ${theme.fontSize.xxl};
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: ${theme.colors.primary};
 
- @media screen and (min-width: 768px) {
-  display:none;
- }
-`;
-
-
-// 使用 CSS 替代 circle.png - 圓形漸層裝飾
-const CircleImg2 = styled.div`
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    height: 210px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, ${theme.colors.primary}20 0%, ${theme.colors.secondary}20 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  ${media.tablet} {
+    font-size: ${theme.fontSize.lg};
+    line-height: 28px;
   }
 `;
 
-const Ball = styled.div`
-  @media screen and (max-width: 768px) {
-   margin-top:-20px;
-   display:flex;
-   justify-content:center;
-   flex-direction: column;
-  }
-
-
+const Desc = styled.p`
+  margin: ${theme.spacing.sm} 0 0;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.md};
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  color: ${theme.colors.text};
 `;
 
-const TextAlign = styled.div`
-  @media screen and (max-width: 768px) {
-    padding-left:24px;
-    padding-right:24px;
-  }
-
+const Em = styled.span`
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.bold};
 `;
 
-
-const AlignText = styled.div`
- display:flex;
- justify-content: center;
- align-items: center;
- margin-left:330px;
-`;
-
-const Span = styled.span`
-  font-family: 'Futura';
-  font-weight:500;
-  font-size:20px;
-  line-height:36px;
-  letter-spacing:3%;
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-weight:500;
-    font-size:16px;
-    line-height:30px;
-    letter-spacing:2%;
-  }
-`;
-
-const YelloArea = styled.div`
-  @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    
-  }
-
-`;
-
-
-/* desktop thw newest info style end */
 const ConTest = () => {
-  return <PageContainer id="conTest">
-    <Container>
-      <HalfCircleDecoration />
-      <AlignText>
-        <TextContainer1>
-          <LeftText>
-            <div>
-              <Title1>桌球賽事</Title1>
-              <Title2>Let’s Play Match</Title2>
-            </div>
-            <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
-          </LeftText>
-        </TextContainer1>
+  return (
+    <PageContainer id="conTest">
+      <SectionBg>
+        <HalfCircle aria-hidden />
+        <Container>
+          <ContentWrapper>
+            <TitleGroup>
+              <SectionTitle>桌球賽事</SectionTitle>
+              <SectionSubtitle>Let’s Play Match</SectionSubtitle>
+            </TitleGroup>
 
+            <Grid>
+              <Intro>
+                <Lead>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</Lead>
+              </Intro>
 
-        <TextContainer2>
-          <RightText>
-            <TextContainer>
-              <Background>
-                <Title3>邀請賽</Title3>
-              </Background>
-              <div>
-                <Text>
-                  由 <Span>Let's Play</Span> 發出邀請，讓小小選手們有發光表現的舞台。
-                </Text>
-              </div>
-            </TextContainer>
+              <Cards>
+                <MatchCard>
+                  <Pill>
+                    <PillText>邀請賽</PillText>
+                  </Pill>
+                  <Desc>
+                    由 <Em>Let’s Play</Em> 發出邀請，讓小小選手們有發光表現的舞台。
+                  </Desc>
+                </MatchCard>
 
-            <TextContainer>
-              <Background>
-                <Title3>積分賽</Title3>
-              </Background>
-              <div>
-                <Text>
-                  於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
-                </Text>
-              </div>
-            </TextContainer>
+                <MatchCard>
+                  <Pill>
+                    <PillText>積分賽</PillText>
+                  </Pill>
+                  <Desc>於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。</Desc>
+                </MatchCard>
 
-            <TextContainer>
-              <Background>
-                <Title3>學員盃</Title3>
-              </Background>
-              <div>
-                <Text>
-                  <Span>Let's Play</Span> 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
-                </Text>
-              </div>
-            </TextContainer>
-          </RightText>
-        </TextContainer2>
-      </AlignText>
-
-    </Container>
-
-    <MobileContainer>
-      <CircleImg2></CircleImg2>
-
-      <TextAlign>
-
-        <TextContainer1>
-          <LeftText>
-            <Ball>
-              <Title1>桌球賽事</Title1>
-              <Title2>Let’s Play Match</Title2>
-            </Ball>
-            <TextContent>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</TextContent>
-          </LeftText>
-        </TextContainer1>
-
-
-        <TextContainer2>
-          <RightText>
-            <TextContainer>
-              <YelloArea>
-                <Background>
-                  <Title3>邀請賽</Title3>
-                </Background>
-              </YelloArea>
-              <div>
-                <Text>
-                  由<Span> Let's Play </Span> 發出邀請，讓小小選手們有發光表現的舞台。
-                </Text>
-              </div>
-            </TextContainer>
-
-            <TextContainer>
-
-              <YelloArea>
-                <Background>
-                  <Title3>積分賽</Title3>
-                </Background>
-              </YelloArea>
-              <div>
-                <Text>
-                  於台灣桌球積分賽平台刊登，是一個訓練比賽經驗的平台，每一個月最少兩次的比賽。
-                </Text>
-              </div>
-            </TextContainer>
-
-            <TextContainer>
-              <YelloArea>
-                <Background>
-                  <Title3>學員盃</Title3>
-                </Background>
-              </YelloArea>
-              <div>
-                <Text>
-                  <Span>Let's Play</Span> 分店館內學員的定期對內交流比賽，增加小朋友的學習動力和學習成果技巧的靈活運用。
-                </Text>
-              </div>
-            </TextContainer>
-          </RightText>
-        </TextContainer2>
-      </TextAlign>
-
-
-
-    </MobileContainer>
-  </PageContainer>;
+                <MatchCard>
+                  <Pill>
+                    <PillText>學員盃</PillText>
+                  </Pill>
+                  <Desc>
+                    <Em>Let’s Play</Em> 館內學員定期對內交流比賽，增加小朋友的學習動力與成果技巧的靈活運用。
+                  </Desc>
+                </MatchCard>
+              </Cards>
+            </Grid>
+          </ContentWrapper>
+        </Container>
+      </SectionBg>
+    </PageContainer>
+  );
 };
 
 export default ConTest;

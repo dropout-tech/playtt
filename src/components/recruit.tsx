@@ -1,322 +1,162 @@
 import React from "react";
-import styled from "styled-components";
-import { PageContainer } from "../styles/components";
-import { theme, media } from "../styles/theme";
+import styled, { keyframes } from "styled-components";
+import {
+  Card,
+  Container,
+  ContentWrapper,
+  PageContainer,
+  SectionSubtitle,
+  SectionTitle,
+  TitleGroup,
+} from "../styles/components";
+import { media, theme } from "../styles/theme";
 
-// 使用 CSS 替代 colorCircle.png - 橢圓形漸層裝飾
-const ColorCircle = styled.div`
-  width: 580px;
-  height: 294px;
-  margin-top: 100px;
-  border-radius: 50%;
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+`;
+
+const SectionBg = styled.div`
+  width: 100%;
+  background: ${theme.colors.background};
+  position: relative;
+  overflow: hidden;
+`;
+
+const Decor = styled.div`
+  position: absolute;
+  right: -180px;
+  top: 80px;
+  width: 460px;
+  height: 260px;
+  border-radius: 999px;
   background: linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 100%);
-  opacity: 0.8;
- 
+  opacity: 0.18;
+  animation: float 7s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+
   ${media.tablet} {
-    width: 251px;
-    height: 127px;
-    margin-top: -160px;
+    right: -220px;
+    top: 40px;
+    width: 420px;
+    height: 240px;
   }
 `;
 
-const Container = styled.div`
-  display:flex;
-  justify-content:flex-end;
-  margin-top:101px;
-  padding-bottom: 20px;
-  margin-left:110px;
-  
-   @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
-    margin-left:0px;
-    margin-top:83px;
-    padding-bottom: 0px;
-    padding-left:24px;
-    padding-right:24px;
+const Layout = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: ${theme.spacing.md};
+`;
+
+const Banner = styled(Card)`
+  background: rgba(207, 210, 211, 0.2);
+  padding: ${theme.spacing.lg};
+  animation: ${fadeUp} 520ms ease both;
+
+  ${media.tablet} {
+    padding: ${theme.spacing.md};
   }
 `;
 
-const ImgContainer = styled.div`
-  width:50%;
-  display:flex;
-  justify-content:flex-end;
+const Pill = styled.div`
+  display: inline-flex;
   align-items: center;
-  margin-bottom:80px;
- 
-   @media screen and (max-width: 768px) {
-   margin-top:120px;
-   margin-bottom:80px;
-   justify-content:center;
-   width:100%;
- 
-
-  }
-`;
-
-const TextContainer = styled.div`
- width:50%;
- margin-left:143px;
- display:flex;
- justify-content:flex-start;
- flex-direction: column;
-  @media screen and (max-width: 768px) {
-   display:flex;
-   width:100%;
-   flex-direction:column;
-   align-items: center;
-   margin-left:0px;
-   margin-top:-56px;
-  }
-`;
-
-const Title = styled.p`
-  font-family: 'Noto Sans TC';
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 56px;
-  letter-spacing: 1.04px;
-  color: #005CB9;
-  margin-left:25px;
-  margin-top:-1px;
-  
-   @media screen and (max-width: 768px) {
-    margin-top:18px;
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 32px;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    letter-spacing: 0.04em;
-    color: #005CB9;
-    margin-left:20px;
-  
-    
-
-   
-  }
-`;
-
-const Text = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 36px;
-  text-align: justify;
-  letter-spacing: 0.03em;
-  color: #1A1A1A;
-  margin-top:40px;
-  margin-left:15px;
-   @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin-top:20px;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: column;
-
-  }
-`;
-
-const Text2 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 36px;
-  text-align: justify;
-  letter-spacing: 0.03em;
-  color: #1A1A1A;
-  margin-top:8px;
-  margin-left:15px;
-
-  
-   @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color:  #1A1A1A;
-    margin-top:0px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-  }
- 
-`;
-
-const Background = styled.div`
-  background: #FFD900;
+  padding: 10px 16px;
   border-radius: 28px;
-  width: 244px;
-  height: 56px;
-   @media screen and (max-width: 768px) {
-    display:flex;
-    align-items: center;
-    width: 176px;
-    height: 44px;
-   
-   
-  
+  background: ${theme.colors.secondary};
+  box-shadow: 0 4px 20px rgba(26, 26, 26, 0.07);
+`;
+
+const PillText = styled.div`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
+  font-size: ${theme.fontSize.xxl};
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: ${theme.colors.primary};
+
+  ${media.tablet} {
+    font-size: ${theme.fontSize.lg};
+    line-height: 28px;
   }
 `;
 
-const Span = styled.div`
-  color: #CFD2D3;
-  font-family: 'Noto Sans TC';
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 36px;
-  letter-spacing: 0.6px;
-  margin-left:-20px;
-  @media screen and (max-width: 768px) {
-   font-family: 'Noto Sans TC';
-   font-weight: 500;
-   font-size: 16px;
-   line-height: 32px;
-   letter-spacing: 4%;
-   margin-right:-6px;
-  
+const List = styled.ul`
+  margin: ${theme.spacing.md} 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+
+  ${media.tablet} {
+    grid-template-columns: 1fr;
   }
- 
-
 `;
 
-const TextDot = styled.div`
-  display:flex;
-  margin-left:10px;
+const Item = styled.li`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.md};
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: ${theme.colors.text};
+  display: flex;
+  gap: 10px;
 
-
+  &::before {
+    content: "・";
+    color: ${theme.colors.textMuted};
+    flex: 0 0 auto;
+  }
 `;
 
-const TextArea = styled.div`
-  display:flex;
-`;
-
-/* desktop thw newest info style end */
 const Recruit = () => {
-  return <PageContainer id="recruit">
-    <Container>
-      <ImgContainer>
-        <ColorCircle />
-      </ImgContainer>
-      <TextContainer>
-        <Background>
-          <Title>＃ 熱烈招募中！</Title>
-        </Background>
-        <Text>
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              讓雙北小朋友有更完善的學習資源<br />
-            </TextDot>
-          </TextArea>
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              推廣桌球讓更多成人共同參與<br />
-            </TextDot>
-          </TextArea>
-        </Text>
+  return (
+    <PageContainer id="recruit">
+      <SectionBg>
+        <Decor aria-hidden />
+        <Container>
+          <ContentWrapper>
+            <TitleGroup>
+              <SectionTitle>合作招募</SectionTitle>
+              <SectionSubtitle>Recruit</SectionSubtitle>
+            </TitleGroup>
 
-        <Text2>
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              除館內課程推出也提供外派教練進駐服務<br />
-            </TextDot>
-          </TextArea>
-
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              補習班 / 幼兒園 / 學校社團<br />
-            </TextDot>
-          </TextArea>
-
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              家裡 / 運動中心 / 公司社團 / 公家機構<br />
-            </TextDot>
-          </TextArea>
-
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              休閒運動體系創新合作教案（歡樂 / 技術）<br />
-            </TextDot>
-          </TextArea>
-
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              公司福委會競技休閒活動
-            </TextDot>
-          </TextArea>
-        </Text2>
-
-        <Text2>
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              期望結合不同類別才藝發展多元課程<br />
-            </TextDot>
-          </TextArea>
-
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              街舞、 兒童舞蹈、 畫畫、音樂等
-            </TextDot>
-          </TextArea>
-        </Text2>
-
-        <Text2>
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              桌球趣味比賽協辦<br />
-            </TextDot>
-          </TextArea>
-
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              乒乓球表演者<br />
-            </TextDot>
-          </TextArea>
-
-          <TextArea>
-            <Span>・</Span>
-            <TextDot>
-              提供桌球產業教練獨特升遷制度
-            </TextDot>
-          </TextArea>
-        </Text2>
-      </TextContainer>
-    </Container>
-
-  </PageContainer>;
+            <Layout>
+              <Banner>
+                <Pill>
+                  <PillText>＃ 熱烈招募中！</PillText>
+                </Pill>
+                <List>
+                  <Item>讓雙北小朋友有更完善的學習資源</Item>
+                  <Item>推廣桌球讓更多成人共同參與</Item>
+                  <Item>除館內課程也提供外派教練進駐服務</Item>
+                  <Item>補習班 / 幼兒園 / 學校社團</Item>
+                  <Item>家裡 / 運動中心 / 公司社團 / 公家機構</Item>
+                  <Item>休閒運動體系創新合作教案（歡樂 / 技術）</Item>
+                  <Item>公司福委會競技休閒活動</Item>
+                  <Item>期望結合不同類別才藝發展多元課程（街舞、兒童舞蹈、畫畫、音樂等）</Item>
+                  <Item>桌球趣味比賽協辦</Item>
+                  <Item>乒乓球表演者</Item>
+                  <Item>提供桌球產業教練獨特升遷制度</Item>
+                </List>
+              </Banner>
+            </Layout>
+          </ContentWrapper>
+        </Container>
+      </SectionBg>
+    </PageContainer>
+  );
 };
 
 export default Recruit;

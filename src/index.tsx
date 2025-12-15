@@ -57,6 +57,19 @@ function applySeo() {
             streetAddress: "長樂路106號3樓",
           },
         },
+        {
+          "@type": "LocalBusiness",
+          name: "Let’s Play 林口店",
+          url: canonical,
+          telephone: "+886-2-8286-1011",
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "TW",
+            addressRegion: "新北市",
+            addressLocality: "林口區",
+            streetAddress: "（資訊更新中）",
+          },
+        },
       ],
     };
 

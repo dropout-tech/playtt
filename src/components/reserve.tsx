@@ -1,71 +1,123 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import {
+  ButtonText,
+  Card,
+  Container,
+  ContentWrapper,
+  PageContainer,
+  SectionSubtitle,
+  SectionTitle,
+  TitleGroup,
+} from "../styles/components";
+import { media, theme } from "../styles/theme";
 
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+`;
 
+const SectionBg = styled.div`
+  width: 100%;
+  background: ${theme.colors.backgroundLight};
+`;
 
-
-// styled components start 
-
-const PageContainer = styled.div`
-  width:100%;
+const ReserveCard = styled(Card)`
+  width: 100%;
+  padding: ${theme.spacing.xl};
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-   @media screen and (max-width: 768px) {
-    
+  align-items: center;
+  gap: ${theme.spacing.md};
+  animation: ${fadeUp} 520ms ease both;
+
+  ${media.tablet} {
+    padding: ${theme.spacing.lg};
   }
 `;
 
-const Container = styled.div`
-  /* margin-top:-10px;
-  padding-top:60px;
-  padding-bottom:40px; */
-   @media screen and (max-width: 768px) {
-    /* margin-top:-50px;
-    padding-bottom:0px;
-    width:100%; */
+const AccentButton = styled.button`
+  border: none;
+  width: 374px;
+  height: 72px;
+  border-radius: 12px;
+  background: ${theme.colors.accent};
+  box-shadow: 0px 6px 24px rgba(26, 26, 26, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 10px 30px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
   }
 
-   @media screen and (max-width: 768px) {
-     display:none
+  &:active {
+    transform: translateY(0);
+  }
+
+  ${media.tablet} {
+    width: 211px;
+    height: 48px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
   }
 `;
 
-const MobileContainer = styled.div`
-   margin-bottom:80px;
-   @media screen and (min-width: 768px) {
-     display:none
+const AccentButtonText = styled(ButtonText)`
+  color: ${theme.colors.background};
+`;
+
+const Hint = styled.p`
+  margin: 0;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.md};
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: ${theme.colors.text};
+  text-align: center;
+
+  ${media.tablet} {
+    font-size: ${theme.fontSize.sm};
+    line-height: 24px;
   }
 `;
 
-/* desktop thw newest info style end */
 const Reserve = () => {
-  return <PageContainer id="reserve">
-    <Container>
-    <div style={{display:"flex",flexDirection:"row",justifyContent:"center",marginTop:160}}>
-      <div style={{display:"flex",flexDirection:"column",background:"#F5F6F6",height:284,width:"80%",justifyContent:"center",alignItems:"center"}}>
-          <button style={{border:"none",background:"#38D430",width:374,height:72,fontSize:"26px",fontWeight:"900",color:"white",fontFamily:"Noto Sans TC"}} onClick={()=>{
-            window.open("https://www.facebook.com/playpp2018","_parent")
-          }}>
-            立即預約免費試上
-          </button>
-          <p style={{margin:0,marginTop:20,fontSize:"18px",fontWeight:"500",fontFamily:"Noto Sans TC"}}>統一由臉書私訊洽詢想預約試上的分店 Line</p>
-      </div>
-    </div>
-    </Container>
-    <MobileContainer>
-    <div style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
-      <div style={{display:"flex",flexDirection:"column",background:"#F5F6F6",height:284,width:"100%",justifyContent:"center",alignItems:"center"}}>
-          <button style={{border:"none",background:"#38D430",width:211,height:48,fontSize:"18px",fontWeight:"900",color:"white",fontFamily:"Noto Sans TC"}} onClick={()=>{
-            window.open("https://www.facebook.com/playpp2018","_parent")
-          }}>
-            立即預約免費試上
-          </button>
-          <p style={{margin:0,marginTop:20,fontSize:"14px",fontWeight:"500",fontFamily:"Noto Sans TC"}}>統一由臉書私訊洽詢想預約試上的分店 Line</p>
-      </div>
-    </div>
-    </MobileContainer>
-  </PageContainer>;
+  return (
+    <PageContainer id="reserve">
+      <SectionBg>
+        <Container>
+          <ContentWrapper>
+            <TitleGroup>
+              <SectionTitle>立即預約</SectionTitle>
+              <SectionSubtitle>Reserve</SectionSubtitle>
+            </TitleGroup>
+
+            <ReserveCard>
+              <AccentButton
+                onClick={() => {
+                  window.open("https://www.facebook.com/playpp2018", "_parent");
+                }}
+              >
+                <AccentButtonText>立即預約免費試上</AccentButtonText>
+              </AccentButton>
+              <Hint>統一由臉書私訊洽詢想預約試上的分店（也可先私訊 Line @869usyqy）</Hint>
+            </ReserveCard>
+          </ContentWrapper>
+        </Container>
+      </SectionBg>
+    </PageContainer>
+  );
 };
 
 export default Reserve;

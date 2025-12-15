@@ -1,455 +1,173 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import {
+  Card,
+  Container,
+  ContentWrapper,
+  PageContainer,
+  SectionSubtitle,
+  SectionTitle,
+  TitleGroup,
+} from "../styles/components";
+import { media, theme } from "../styles/theme";
 import colorLine from "../assets/partnershipAndRecruit/colorLine.png";
 
+type Category = {
+  title: string;
+  items: string[];
+};
 
+const CATEGORIES: Category[] = [
+  { title: "運動場館", items: ["舞動陽光", "華江俱樂部", "三峽運動中心", "中正運動中心", "等…"] },
+  { title: "學校社團", items: ["大龍國小", "懷生國小", "等…"] },
+  { title: "教育機構", items: ["何嘉仁幼兒園", "維多利亞", "喬鈴補習班", "等…"] },
+  { title: "桌球場館", items: ["Let’s Play 蘆洲店", "Let’s Play 林口店"] },
+];
 
-// styled components start 
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+`;
 
-const PageContainer = styled.div`
-  width:100%;
+const SectionBg = styled.div`
+  width: 100%;
+  background: ${theme.colors.primary};
+`;
+
+const WhiteTitle = styled(SectionTitle)`
+  color: ${theme.colors.background};
+`;
+
+const WhiteSubtitle = styled(SectionSubtitle)`
+  color: ${theme.colors.textMuted};
+`;
+
+const Big = styled.p`
+  margin: ${theme.spacing.lg} 0 0;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
+  font-size: 30px;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  color: ${theme.colors.background};
+  text-align: center;
+
+  ${media.tablet} {
+    font-size: 20px;
+    line-height: 34px;
+  }
+`;
+
+const Number = styled.span`
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.bold};
+  color: ${theme.colors.secondary};
+`;
+
+const Grid = styled.div`
+  margin-top: ${theme.spacing.xl};
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: ${theme.spacing.md};
+
+  ${media.tablet} {
+    grid-template-columns: 1fr;
+    gap: ${theme.spacing.sm};
+  }
+`;
+
+const Block = styled(Card)`
+  background: rgba(245, 246, 246, 0.96);
+  padding: ${theme.spacing.lg};
+  animation: ${fadeUp} 520ms ease both;
+
+  ${media.tablet} {
+    padding: ${theme.spacing.md};
+  }
+`;
+
+const Head = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 `;
 
-const Title1 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 52px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin:0px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 26px;
-    line-height: 40px;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
-
-  }
-  
-`;
-
-const Title2 = styled.p`
-  font-family: 'Futura';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 48px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #CFD2D3;
-  line-Height:52px;
-  margin-top:8px;
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 40px;
-    letter-spacing: 0.04em;
-    color: #CFD2D3;
-    margin-top:0px;
-    padding-left:20px;
-    padding-right:20px
-  }
-`;
-
-const Container = styled.div`
-  width: 100%;
-  height:100%;
-
-  @media screen and (max-width: 768px) {
-    margin-top:0px;
-
-  }
-`;
-
-const TitleContainer = styled.div`
-  margin-top:80px;
-  @media screen and (min-width: 768px) {
-    width:100%;
-    
-  }
-`;
-
-const BlueArea = styled.div`
-  width: 100%;
-  height:100%;
-  background: #005CB9;  
-  z-index:1;
-  padding-bottom:90px;
-  margin-top:60px;
- 
-  @media screen and (max-width: 768px) {
-    width:100%;
-    height:100%;
-    margin-top:40px;
-    padding-bottom:60px;
-  
-  }
-  @media screen and (max-width: 414px) {
-    width:100%;
-    height:1240px;
-    margin-top:40px;
-    padding-bottom:60px;
-  
-  }
-`;
-
-const ColorLineImg = styled.img`
+const LineImg = styled.img`
   width: 98px;
   height: 27px;
 
-  margin-top:50px;
-   @media screen and (max-width: 768px) {
- 
-     margin-top:10px;
-     width: 75px;
-     height: 27px;
+  ${media.tablet} {
+    width: 75px;
+    height: 27px;
   }
 `;
 
-
-const GrayArea = styled.div`
-  z-index:10;
-  background: #F5F6F6;
-  width: 270px;
-  height:150px;
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  
-
-   @media screen and (max-width: 768px) {
-    width: 116px;
-    height:256px;
-    display:flex;
-    justify-content:center;
-    flex-direction: column;
-    
-  }
-`;
-
-const TextArea = styled.div`
- display:flex;
- justify-content:center;
- align-items: center;
- margin-right:40px;
- margin-top:-10px;
-  @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: column;
-    margin-right:0px;
-    padding-left:24px;
-    padding-right:24px;
-    margin-top:0px;
-  
-    
-  }
-`;
-
-const Text = styled.div`
-  display:flex;
-  margin-left:40px;
-  margin-top:60px;
-  flex-direction:column;
-   @media screen and (max-width: 768px) {
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction:row;
-    margin:20px 0px 0px 0px;
-    width:100%;
-    background: #F5F6F6;
-   
-
-  
-  }
-
-`;
-
-const BigTitle = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 30px;
-  line-height: 44px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #FFFFFF;
-  padding-top:70px;
-   @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 36px;
-    letter-spacing: 0.03em;
-    color: #FFFFFF;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-    padding-top:54px;
-    padding-left:20px;
-    padding-right:20px
-  }
-`;
-
-const TopText = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  margin-top:12px;
-   @media screen and (max-width: 768px) {
-    width:110px;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
-    margin-top:8px;
-  }
-`;
-
-const WhiteArea = styled.div`
-  background: #FFFFFF;
-  width: 270px;
-  height: 333px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 768px) {
-    width: 211px;
-    height: 256px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-
-  }
-
-`;
-
-const WhiteArea2 = styled.div`
-  background: #FFFFFF;
-  width: 270px;
-  height: 333px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 768px) {
-    width: 211px;
-    height: 256px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-
-  }
-  @media screen and (max-width: 355px) {
-    height: auto;
-  }
-
-`;
-
-const TextkeyIn = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
+const CatTitle = styled.h3`
+  margin: 0;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
+  font-size: ${theme.fontSize.xxl};
   line-height: 32px;
   letter-spacing: 0.04em;
-  color: #1A1A1A;
-  text-align:center;
-  margin:0px;
-  padding-left:16px;
-  padding-right:16px;
+  color: ${theme.colors.text};
 
-  
-
-  @media screen and (max-width: 768px) {
-    font-family: 'Noto Sans TC';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction:column;
-    letter-spacing: 0.04em;
-    color: #1A1A1A;
-  
-  
+  ${media.tablet} {
+    font-size: ${theme.fontSize.lg};
+    line-height: 28px;
   }
 `;
 
-
-
-const Textcontainer = styled.div`
-  margin-top:-20px;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
- 
-
+const List = styled.ul`
+  margin: ${theme.spacing.md} 0 0;
+  padding-left: 18px;
 `;
 
-const Span = styled.span`
-  font-family: 'Futura';
-  font-weight:500;
-  font-size:18px;
-  line-height:32px;
-  letter-spacing:4%;
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-weight:500;
-    font-size:16px;
-    line-height:32px;
-    letter-spacing:4%;
-  
-  }
-
+const Item = styled.li`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.md};
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: ${theme.colors.text};
 `;
 
-const Sapn2 = styled.span`
- font-family: 'Futura';
- font-weight: 700;
- font-size: 30px;
- line-height: 44px;
- letter-spacing: 0.04em;
-  @media screen and (max-width: 768px) {
-    font-family: 'Futura';
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 36px;
-    letter-spacing: 3%;
-  }
-`;
-
-const Text2 = styled.p`
- margin:0px;
- align-items: center;
- @media screen and (max-width: 768px) {
-  margin:0px;
-  }
-`;
-
-/* desktop thw newest info style end */
 const PartnershipAndRecruit = () => {
-  return <PageContainer id="partnershipAndRecruit">
-    <Container>
-      <TitleContainer>
-        <Title1>合作與招募</Title1>
-        <Title2>Partnership & Recruit</Title2>
-      </TitleContainer>
+  return (
+    <PageContainer id="partnershipAndRecruit">
+      <SectionBg>
+        <Container>
+          <ContentWrapper>
+            <TitleGroup>
+              <WhiteTitle>合作與招募</WhiteTitle>
+              <WhiteSubtitle>Partnership & Recruit</WhiteSubtitle>
+            </TitleGroup>
 
-      <BlueArea>
-        <BigTitle> 目前已超過<Sapn2> 30 </Sapn2>個合作機構<br />
-          企業機構、法人團體熱烈招募合作中！
-        </BigTitle>
-        <TextArea>
-          <Text>
-            <GrayArea>
-              <Textcontainer>
-                <ColorLineImg src={colorLine} alt="" />
-                <TopText>運動場館</TopText>
-              </Textcontainer>
-            </GrayArea>
-            <WhiteArea>
-              <TextkeyIn>
-                <Text2>舞動陽光</Text2>
-                <Text2>華江俱樂部</Text2>
-                <Text2>三峽運動中心</Text2>
-                <Text2>中正運動中心</Text2>
-                <Text2>等 </Text2>
-                <Text2>⋯⋯</Text2>
-              </TextkeyIn>
-            </WhiteArea>
+            <Big>
+              目前已超過 <Number>30</Number> 個合作機構
+              <br />
+              企業機構、法人團體熱烈招募合作中！
+            </Big>
 
-          </Text>
-
-          <Text>
-            <GrayArea>
-              <Textcontainer>
-                <ColorLineImg src={colorLine} alt="" />
-                <TopText>學校社團</TopText>
-              </Textcontainer>
-            </GrayArea>
-            <WhiteArea>
-              <TextkeyIn>
-                <Text2>大龍國小</Text2>
-                <Text2>懷生國小</Text2>
-                <Text2>等</Text2>
-                <Text2>⋯⋯</Text2>
-              </TextkeyIn>
-            </WhiteArea>
-          </Text>
-
-          <Text>
-            <GrayArea>
-              <Textcontainer>
-                <ColorLineImg src={colorLine} alt="" />
-                <TopText>教育機構</TopText>
-              </Textcontainer>
-            </GrayArea>
-            <WhiteArea>
-              <TextkeyIn>
-                <Text2>何嘉仁幼兒園</Text2>
-                <Text2>維多利亞</Text2>
-                <Text2>喬鈴補習班</Text2>
-                <Text2>等</Text2>
-                <Text2>⋯⋯</Text2>
-              </TextkeyIn>
-            </WhiteArea>
-          </Text>
-
-          <Text>
-            <GrayArea>
-              <Textcontainer>
-                <ColorLineImg src={colorLine} alt="" />
-                <TopText>桌球場館</TopText>
-              </Textcontainer>
-            </GrayArea>
-            <WhiteArea2>
-              <TextkeyIn>
-                <Text2><Span>Let's Play </Span>蘆洲店</Text2>
-                <Text2><Span>Let's Play </Span>林口店</Text2>
-              </TextkeyIn>
-
-            </WhiteArea2>
-          </Text>
-        </TextArea>
-      </BlueArea>
-
-    </Container>
-
-  </PageContainer>;
+            <Grid>
+              {CATEGORIES.map((c, idx) => (
+                <Block key={c.title} style={{ animationDelay: `${idx * 80}ms` }}>
+                  <Head>
+                    <LineImg src={colorLine} alt="" aria-hidden />
+                    <CatTitle>{c.title}</CatTitle>
+                  </Head>
+                  <List>
+                    {c.items.map((it) => (
+                      <Item key={`${c.title}-${it}`}>{it}</Item>
+                    ))}
+                  </List>
+                </Block>
+              ))}
+            </Grid>
+          </ContentWrapper>
+        </Container>
+      </SectionBg>
+    </PageContainer>
+  );
 };
 
 export default PartnershipAndRecruit;
