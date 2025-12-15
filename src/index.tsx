@@ -4,7 +4,6 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Router from "./routes/Router";
 import { HashRouter } from "react-router-dom";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 function applySeo() {
   const origin = window.location.origin;
@@ -77,20 +76,13 @@ function applySeo() {
   }
 }
 
-const client = new ApolloClient({
-  uri: "https://localhost:8080/query",
-  cache: new InMemoryCache(),
-});
-
 applySeo();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <HashRouter>
-        <Router />
-      </HashRouter>
-    </ApolloProvider>
+    <HashRouter>
+      <Router />
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

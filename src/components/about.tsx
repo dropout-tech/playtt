@@ -1,15 +1,17 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import {
   PageContainer,
-  DesktopContainer,
-  MobileContainer,
+  Container,
+  ContentWrapper,
   SectionTitle,
   SectionSubtitle,
+  TitleGroup,
   ContentTitle,
   ContentSubtitle,
   BodyText,
   BoldText,
+  Card,
 } from "../styles/components";
 import { theme, media } from "../styles/theme";
 import about1 from "../assets/about/about1.png";
@@ -18,78 +20,6 @@ import about3 from "../assets/about/about3.png";
 import about1m from "../assets/about/about1-m.png";
 import about2m from "../assets/about/about2-m.png";
 import about3m from "../assets/about/about3-m.png";
-
-// 內容區塊組件（重用）
-const ContentBlock = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding-left: ${theme.spacing.lg};
-  padding-right: ${theme.spacing.lg};
-  margin-bottom: 120px;
-  margin-top: 200px;
-
-  ${media.desktop} {
-    margin-top: 200px;
-  }
-
-  ${media.tablet} {
-    flex-direction: column;
-    margin-bottom: ${theme.spacing.xxl};
-    margin-top: 0;
-  }
-`;
-
-const ContentImage = styled.img`
-  width: 207px;
-  height: 370px;
-  margin-right: 103px;
-
-  ${media.tablet} {
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-    margin-bottom: ${theme.spacing.md};
-  }
-`;
-
-const ContentTextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 680px;
-
-  ${media.tablet} {
-    width: 100%;
-  }
-`;
-
-const MobileContentImage = styled.img`
-  width: 100%;
-  margin-bottom: ${theme.spacing.md};
-`;
-
-const MobileContentBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-left: ${theme.spacing.lg};
-  padding-right: ${theme.spacing.lg};
-  margin-bottom: ${theme.spacing.xxl};
-`;
-
-const TitleGroupWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 100px;
-
-  ${media.tablet} {
-    margin-bottom: 60px;
-  }
-`;
-
 
 // 內容資料（數據驅動，易於維護）
 const aboutContent = [
@@ -144,65 +74,291 @@ const formatText = (text: string) => {
   });
 };
 
+// ============================================
+// 大膽的「玩」：背景/動效（但可控 + respects reduced-motion）
+// ============================================
+
+const popIn = keyframes`
+  0% { opacity: 0; transform: translateY(14px) scale(0.98); }
+  60% { opacity: 1; transform: translateY(-2px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+`;
+
+const floatBall = keyframes`
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+`;
+
+const drift = keyframes`
+  0% { transform: translate3d(-6%, -2%, 0) rotate(-3deg); opacity: 0.55; }
+  50% { transform: translate3d(2%, 2%, 0) rotate(2deg); opacity: 0.75; }
+  100% { transform: translate3d(6%, -1%, 0) rotate(-2deg); opacity: 0.6; }
+`;
+
+const SectionShell = styled(PageContainer)`
+  position: relative;
+  overflow: hidden;
+`;
+
+const Bg = styled.div`
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: ${theme.borderRadius.full};
+    filter: blur(0.2px);
+    opacity: 0.6;
+    animation: ${drift} 9.5s ease-in-out infinite;
+  }
+
+  /* 大顆漸層球（像桌球的光澤感） */
+  &::before {
+    width: 560px;
+    height: 560px;
+    right: -220px;
+    top: -220px;
+    background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.85) 0 16%, rgba(255, 255, 255, 0) 30%),
+      linear-gradient(135deg, rgba(42, 210, 105, 0.42) 0%, rgba(242, 183, 43, 0.38) 100%);
+  }
+
+  /* 散落小球點點（更「玩」） */
+  &::after {
+    width: 760px;
+    height: 420px;
+    left: -260px;
+    bottom: -200px;
+    background-image:
+      radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.70) 0 6px, rgba(255, 255, 255, 0) 7px),
+      radial-gradient(circle at 22% 72%, rgba(255, 255, 255, 0.65) 0 5px, rgba(255, 255, 255, 0) 6px),
+      radial-gradient(circle at 42% 34%, rgba(255, 255, 255, 0.55) 0 4px, rgba(255, 255, 255, 0) 5px),
+      radial-gradient(circle at 58% 66%, rgba(255, 255, 255, 0.55) 0 4px, rgba(255, 255, 255, 0) 5px),
+      radial-gradient(circle at 76% 26%, rgba(255, 255, 255, 0.60) 0 5px, rgba(255, 255, 255, 0) 6px),
+      radial-gradient(circle at 86% 74%, rgba(255, 255, 255, 0.50) 0 4px, rgba(255, 255, 255, 0) 5px);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before,
+    &::after {
+      animation: none;
+    }
+  }
+`;
+
+const AboutWrapper = styled(ContentWrapper)`
+  position: relative;
+  z-index: 1;
+`;
+
+const Rows = styled.div`
+  margin-top: ${theme.spacing.xxl};
+
+  ${media.tablet} {
+    margin-top: ${theme.spacing.xl};
+  }
+`;
+
+const Row = styled.section<{ $reverse?: boolean }>`
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  grid-template-areas: "media text";
+  gap: 36px;
+  align-items: center;
+  margin-top: 54px;
+  animation: ${popIn} 700ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+
+  ${props =>
+    props.$reverse &&
+    css`
+      grid-template-areas: "text media";
+    `}
+
+  ${media.tablet} {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "media"
+      "text";
+    gap: 16px;
+    margin-top: 26px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+`;
+
+const MediaCard = styled(Card)`
+  grid-area: media;
+  position: relative;
+  padding: 10px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.90) 100%);
+
+  /* 讓圖片卡更「彈」 */
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(42, 210, 105, 0.55), rgba(242, 183, 43, 0.55));
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-6px) rotate(-0.6deg) scale(1.01);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
+`;
+
+const MediaInner = styled.div`
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: ${theme.colors.background};
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateZ(0);
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1);
+
+  ${MediaCard}:hover & {
+    transform: scale(1.04);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    ${MediaCard}:hover & {
+      transform: none;
+    }
+  }
+`;
+
+const Ball = styled.div<{ $size: number; $x: string; $y: string; $delay: string; $opacity: number }>`
+  position: absolute;
+  width: ${props => props.$size}px;
+  height: ${props => props.$size}px;
+  left: ${props => props.$x};
+  top: ${props => props.$y};
+  border-radius: ${theme.borderRadius.full};
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.95) 0 28%, rgba(255, 255, 255, 0.25) 45%, rgba(255, 255, 255, 0.06) 60%, rgba(255, 255, 255, 0) 72%),
+    linear-gradient(135deg, rgba(42, 210, 105, 0.18) 0%, rgba(242, 183, 43, 0.16) 100%);
+  box-shadow: 0 10px 22px rgba(26, 26, 26, 0.10);
+  opacity: ${props => props.$opacity};
+  animation: ${floatBall} 2.9s ease-in-out infinite;
+  animation-delay: ${props => props.$delay};
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+`;
+
+const TextCard = styled(Card)`
+  grid-area: text;
+  padding: 22px 22px 20px;
+  border-radius: 20px;
+  position: relative;
+
+  /* 一點「貼紙」感 */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: radial-gradient(circle at 12% 10%, rgba(42, 210, 105, 0.10) 0 22%, rgba(42, 210, 105, 0) 45%),
+      radial-gradient(circle at 92% 84%, rgba(242, 183, 43, 0.10) 0 26%, rgba(242, 183, 43, 0) 52%);
+    pointer-events: none;
+  }
+
+  ${media.tablet} {
+    padding: 16px 16px 14px;
+  }
+`;
+
+const Sticker = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(26, 26, 26, 0.06);
+  color: ${theme.colors.textMuted};
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.bold};
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  margin-bottom: 10px;
+
+  &::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: ${theme.borderRadius.full};
+    background: ${theme.colors.secondary};
+    box-shadow: 0 6px 14px rgba(242, 183, 43, 0.25);
+  }
+`;
+
 const About = () => {
   return (
-    <PageContainer id="about">
-      {/* 桌面版 */}
-      <DesktopContainer>
-        <TitleGroupWrapper>
-          <SectionTitle>關於我們</SectionTitle>
-          <SectionSubtitle>About Us</SectionSubtitle>
-        </TitleGroupWrapper>
+    <SectionShell id="about">
+      <Bg aria-hidden="true" />
+      <Container>
+        <AboutWrapper>
+          <TitleGroup>
+            <SectionTitle>關於我們</SectionTitle>
+            <SectionSubtitle>About Us</SectionSubtitle>
+          </TitleGroup>
 
-        {aboutContent.map((content) => (
-          <ContentBlock key={content.id}>
-            <ContentImage src={content.image} alt={content.title} />
-            <ContentTextWrapper>
-              <ContentTitle>{content.title}</ContentTitle>
-              <ContentSubtitle>{content.subtitle}</ContentSubtitle>
-              {content.paragraphs.map((paragraph, index) => {
-                const isLastBold = index === content.paragraphs.length - 1 && paragraph.length < 50;
-                const TextComponent = isLastBold ? BoldText : BodyText;
-                
-                return (
-                  <TextComponent key={index}>
-                    {formatText(paragraph)}
-                  </TextComponent>
-                );
-              })}
-            </ContentTextWrapper>
-          </ContentBlock>
-        ))}
-      </DesktopContainer>
+          <Rows>
+            {aboutContent.map((content, idx) => (
+              <Row key={content.id} $reverse={idx % 2 === 1} style={{ animationDelay: `${idx * 120}ms` }}>
+                <MediaCard>
+                  <MediaInner>
+                    <picture>
+                      <source media="(max-width: 768px)" srcSet={content.mobileImage} />
+                      <Img src={content.image} alt={content.title} loading="lazy" />
+                    </picture>
+                    <Ball $size={64} $x="8%" $y="12%" $delay={`${idx * 0.08}s`} $opacity={0.52} />
+                    <Ball $size={42} $x="76%" $y="14%" $delay={`${0.6 + idx * 0.06}s`} $opacity={0.42} />
+                    <Ball $size={54} $x="62%" $y="72%" $delay={`${1.05 + idx * 0.05}s`} $opacity={0.36} />
+                  </MediaInner>
+                </MediaCard>
 
-      {/* 移動版 */}
-      <MobileContainer>
-        <TitleGroupWrapper>
-          <SectionTitle>關於我們</SectionTitle>
-          <SectionSubtitle>About Us</SectionSubtitle>
-        </TitleGroupWrapper>
-
-        {aboutContent.map((content) => (
-          <MobileContentBlock key={content.id}>
-            <MobileContentImage src={content.mobileImage} alt={content.title} />
-            <ContentTextWrapper>
-              <ContentTitle>{content.title}</ContentTitle>
-              <ContentSubtitle>{content.subtitle}</ContentSubtitle>
-              {content.paragraphs.map((paragraph, index) => {
-                const isLastBold = index === content.paragraphs.length - 1 && paragraph.length < 50;
-                const TextComponent = isLastBold ? BoldText : BodyText;
-                
-                return (
-                  <TextComponent key={index}>
-                    {formatText(paragraph)}
-                  </TextComponent>
-                );
-              })}
-            </ContentTextWrapper>
-          </MobileContentBlock>
-        ))}
-      </MobileContainer>
-    </PageContainer>
+                <TextCard>
+                  <Sticker>{content.subtitle}</Sticker>
+                  <ContentTitle>{content.title}</ContentTitle>
+                  <ContentSubtitle>Let’s Play</ContentSubtitle>
+                  {content.paragraphs.map((paragraph, pIdx) => {
+                    const isLastBold = pIdx === content.paragraphs.length - 1 && paragraph.length < 50;
+                    const TextComponent = isLastBold ? BoldText : BodyText;
+                    return <TextComponent key={pIdx}>{formatText(paragraph)}</TextComponent>;
+                  })}
+                </TextCard>
+              </Row>
+            ))}
+          </Rows>
+        </AboutWrapper>
+      </Container>
+    </SectionShell>
   );
 };
 

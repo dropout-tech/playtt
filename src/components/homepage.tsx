@@ -44,6 +44,69 @@ const overlayIn = keyframes`
   100% { opacity: 1; transform: translateY(0); }
 `;
 
+const float = keyframes`
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -12px, 0); }
+`;
+
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+const BallField = styled.div`
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+  opacity: 0.9;
+
+  /* 用純 CSS 畫出「桌球光澤點」：大膽但不會破壞品牌色 */
+  background-image:
+    radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.70) 0 6px, rgba(255, 255, 255, 0) 7px),
+    radial-gradient(circle at 22% 78%, rgba(255, 255, 255, 0.55) 0 5px, rgba(255, 255, 255, 0) 6px),
+    radial-gradient(circle at 42% 30%, rgba(255, 255, 255, 0.50) 0 4px, rgba(255, 255, 255, 0) 5px),
+    radial-gradient(circle at 60% 64%, rgba(255, 255, 255, 0.52) 0 5px, rgba(255, 255, 255, 0) 6px),
+    radial-gradient(circle at 78% 26%, rgba(255, 255, 255, 0.60) 0 6px, rgba(255, 255, 255, 0) 7px),
+    radial-gradient(circle at 86% 78%, rgba(255, 255, 255, 0.45) 0 4px, rgba(255, 255, 255, 0) 5px),
+    radial-gradient(circle at 50% 50%, rgba(42, 210, 105, 0.20) 0 220px, rgba(42, 210, 105, 0) 420px),
+    radial-gradient(circle at 70% 30%, rgba(242, 183, 43, 0.22) 0 200px, rgba(242, 183, 43, 0) 420px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: saturate(1.06);
+  animation: ${float} 6.2s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+`;
+
+const Spinner = styled.div`
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 999px;
+  left: -220px;
+  top: 10%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.55) 0 12%, rgba(255, 255, 255, 0) 30%),
+    conic-gradient(from 90deg, rgba(42, 210, 105, 0.20), rgba(242, 183, 43, 0.18), rgba(42, 210, 105, 0.20));
+  mix-blend-mode: soft-light;
+  opacity: 0.55;
+  animation: ${spin} 16s linear infinite;
+
+  ${media.tablet} {
+    width: 360px;
+    height: 360px;
+    left: -180px;
+    opacity: 0.45;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+`;
+
 const Overlay = styled.div`
   position: absolute;
   inset: 0;
@@ -73,6 +136,11 @@ const HeroBox = styled.div`
   width: 100%;
   max-width: 1200px;
   animation: ${overlayIn} 520ms ease both;
+
+  /* 更「敢玩」的互動：滑入時微微彈一下 */
+  @media (prefers-reduced-motion: no-preference) {
+    will-change: transform;
+  }
 `;
 
 const H1 = styled.h1`
@@ -165,6 +233,8 @@ const Homepage = () => {
   return (
     <PageContainer id="home">
       <Banner aria-label="Let’s Play 桌球聯盟首頁主視覺">
+        <BallField aria-hidden="true" />
+        <Spinner aria-hidden="true" />
         <Overlay>
           <HeroBox>
             <H1>Let’s Play 桌球聯盟</H1>
