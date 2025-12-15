@@ -36,7 +36,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://dropout-tech.github.io/playtt",
+  "homepage": ".",
   "eslintConfig": {
     "extends": [
       "react-app",
