@@ -1,693 +1,307 @@
 import React from "react";
 import styled from "styled-components";
-import img1 from "../assets/ourCouchMenber/img1.png";
-import img2 from "../assets/ourCouchMenber/img2.png";
-import img3 from "../assets/ourCouchMenber/img3.png";
-import img4 from "../assets/ourCouchMenber/img4.png";
-import img5 from "../assets/ourCouchMenber/img5.png";
-import img6 from "../assets/ourCouchMenber/img6.png";
-import img7 from "../assets/ourCouchMenber/img7.png";
-import img8 from "../assets/ourCouchMenber/img8.png";
-import img11 from "../assets/ourCouchMenber/img-1.png";
-import img22 from "../assets/ourCouchMenber/img-2.png";
-import img33 from "../assets/ourCouchMenber/img-3.png";
-import img44 from "../assets/ourCouchMenber/img-4.png";
-import img55 from "../assets/ourCouchMenber/img-5.png";
-import img66 from "../assets/ourCouchMenber/img-6.png";
-import img77 from "../assets/ourCouchMenber/img-7.png";
-import img88 from "../assets/ourCouchMenber/img-8.png";
 
-// styled components start
+type CoachSection = {
+  title: string;
+  items: string[];
+};
+
+type Coach = {
+  name: string;
+  nickname?: string;
+  sections: CoachSection[];
+};
+
+const COACHES: Coach[] = [
+  {
+    name: "郭則寬",
+    nickname: "阿寬",
+    sections: [
+      {
+        title: "教練歷程",
+        items: ["華江高中運動中心", "台北市民權國小", "現任 Let’s Play 執行長"],
+      },
+      {
+        title: "學習歷程",
+        items: ["麗山國中體育班", "松山家商體育班", "宜蘭大學休閒產業與健康促進學系"],
+      },
+      {
+        title: "比賽成績",
+        items: [
+          "全國自由杯錦標賽高中團體第五名",
+          "中港澳臺兩岸四地交流賽單打第三名",
+          "全國大專院校公開組團體第八名",
+        ],
+      },
+      {
+        title: "帶隊成績",
+        items: ["國泰陳慈庭 104 年 15 歲青少年國手第 10 名", "105 年 15 歲青少年國手第 5 名", "107 年 18 歲青少年國手第 10 名"],
+      },
+      {
+        title: "證照",
+        items: ["C 級桌球教練證照", "B 級桌球教練證照", "C 級桌球裁判證照", "中華民國體適能協會健身指導員 C 級"],
+      },
+      {
+        title: "教學特色",
+        items: ["透過引導教學方式，讓不管是大學員小學員，皆能夠快速上手桌球。"],
+      },
+    ],
+  },
+  {
+    name: "林培中",
+    nickname: "派派",
+    sections: [
+      {
+        title: "教練歷程",
+        items: ["102 年桌球助理指導教練受邀請至中天新聞與記者對打", "105 年 7、8 月桌球校隊助理教練擔任雨農國小桌球校隊培訓員", "109 年 12 月至 7 月擔任華江高中校隊培訓員"],
+      },
+      {
+        title: "學習歷程",
+        items: ["台北市麗山國中", "臺北市立松山高商", "國立宜蘭大學休閒系學士學位"],
+      },
+      {
+        title: "比賽成績",
+        items: ["全國自由盃社男甲組團體第二名", "宜蘭縣桌球錦標賽團體冠軍", "全國大專院校運動會甲組團體第八名"],
+      },
+      {
+        title: "證照",
+        items: ["C 級桌球教練證照"],
+      },
+      {
+        title: "教學特色",
+        items: ["教學生動活潑，親和力十足。", "因應學員程度不同，給予適合的教學課程。"],
+      },
+    ],
+  },
+  {
+    name: "楊秉翰",
+    nickname: "羊羊",
+    sections: [
+      {
+        title: "學習歷程",
+        items: ["新莊國中體育班", "長榮中學體育班", "國立體育大學球類系"],
+      },
+      {
+        title: "教學特色",
+        items: ["透過遊戲讓學員產生興趣以及學習相關技術。", "靈活應對不同學習需求，並調整教學內容。"],
+      },
+      {
+        title: "教學相關歷程",
+        items: ["台南小霸王乒乓世界", "台南崇學國小", "台北雨農國小", "新北路亞實驗小學社團", "Let's Play 善導寺店"],
+      },
+      {
+        title: "比賽成績",
+        items: ["自由盃高中團體第五"],
+      },
+      {
+        title: "證照",
+        items: ["中華桌協 C 級教練"],
+      },
+    ],
+  },
+  {
+    name: "黃兆銨",
+    nickname: "小銨",
+    sections: [
+      {
+        title: "學習歷程",
+        items: ["桃園永豐高中桌球隊", "國立台北教育大學體育系師資生"],
+      },
+      {
+        title: "服務資歷",
+        items: ["桃園市 文山國小桌球社團教練", "桃園市 中正國小桌球社團教練", "桃園市 桃園國中桌球社團教練", "桃園市 永豐高中桌球社團教練", "1v1 個別教練"],
+      },
+      {
+        title: "教學理念",
+        items: ["學得開心，對打球更有信心"],
+      },
+      {
+        title: "比賽成績",
+        items: [
+          "全國國語日報盃高年級團體季軍",
+          "全國國小觀音盃殿軍",
+          "桃園市市長盃高中團體亞軍",
+          "桃園市市長盃社會團體季軍",
+          "全國中等學校運動會高中團體第五名",
+        ],
+      },
+      {
+        title: "教學特色",
+        items: ["利用小口訣、遊戲的方式讓學生喜歡桌球，並用有耐心、細心的教學模式對待學生，讓學生更輕鬆學桌球。"],
+      },
+    ],
+  },
+  {
+    name: "王韻涵",
+    nickname: "Amber",
+    sections: [
+      {
+        title: "學習歷程",
+        items: ["新北市新興國小桌球隊畢業生", "苗栗縣維真國中體育班", "苗栗縣大同高中體育班", "國立體育大學球類系"],
+      },
+      {
+        title: "教學特色",
+        items: ["培養學生興趣，激起學生對運動的熱忱並開心運動。", "擅長以簡單易懂的教學模式，使學員能輕鬆學習基礎技巧與桌球知識。"],
+      },
+      {
+        title: "教學相關歷程",
+        items: ["Let's Play 蘆洲店", "雲林大埤國小桌球隊", "桃園大業國小桌球隊", "新北厚德國小桌球隊"],
+      },
+      {
+        title: "比賽成績",
+        items: ["110 全國中等學校運動會團體冠軍", "111 全國中等學校運動會團體亞軍", "112 全國中等學校運動會女雙亞軍"],
+      },
+    ],
+  },
+  {
+    name: "蔡鎮宇",
+    nickname: "小蔡",
+    sections: [
+      {
+        title: "教練資料",
+        items: ["資料更新中。"],
+      },
+    ],
+  },
+  {
+    name: "溫達威",
+    nickname: "威廉",
+    sections: [
+      {
+        title: "學習歷程",
+        items: ["元生國小體育班", "內壢國中體育班", "臺灣師範大學體育系"],
+      },
+      {
+        title: "比賽成績",
+        items: ["桃園市市長盃團體亞軍", "積分賽 2200 分以下冠軍／亞軍／季軍皆有"],
+      },
+      {
+        title: "教學特色",
+        items: ["透過耐心及基本動作的磨練及目標達成，能讓學生更容易上手，和其他項目的特色差異，並且從中感到成就感，引發主動學習動機！"],
+      },
+    ],
+  },
+];
 
 const PageContainer = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @media screen and (max-width: 768px) {
-  }
+  box-sizing: border-box;
+  padding: 80px 24px;
+  overflow-x: hidden;
 `;
 
-const Container = styled.div`
-  padding-top: 80px;
-  padding-bottom: 80px;
+const Grid = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: -65px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 `;
 
-const PicImg = styled.img`
-  width: 310px;
-  height: 300px;
-  margin-left: 80px;
-  @media screen and (max-width: 768px) {
-    width: 211px;
-    height: 201px;
-  }
+const Card = styled.div`
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  min-width: 0;
 `;
 
-const Row1 = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: -65px;
-  @media screen and (max-width: 768px) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-`;
-
-const Row2 = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-top: 50px;
-  justify-content: center;
-  align-items: center;
-  @media screen and (max-width: 768px) {
-  }
-`;
-
-const Row3 = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: 50px;
-  margin-bottom: 94px;
-  @media screen and (max-width: 768px) {
-  }
-`;
-
-const Picture = styled.div`
-  width: 100%;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const MobileContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 17px;
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-`;
-
-const Text = styled.p`
-  margin-left: 150px;
-  font-family: "Noto Sans TC";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
+const Header = styled.div`
   display: flex;
   align-items: center;
-  letter-spacing: 0.04em;
+  gap: 12px;
+  margin-bottom: 16px;
+`;
+
+const Avatar = styled.div`
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #f5f6f6;
   color: #1a1a1a;
-  @media screen and (max-width: 768px) {
-    margin-left: 0px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 100px;
-    font-family: "Noto Sans TC";
-    font-style: normal;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 0.03em;
-    color: #1a1a1a;
-  }
-`;
-
-const TextEVA = styled.p`
-  margin-left: 10px;
-  font-family: "Noto Sans TC";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  letter-spacing: 0.04em;
-  color: #1a1a1a;
-  margin-left: 170px;
-  @media screen and (max-width: 768px) {
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    font-family: "Noto Sans TC";
-    font-style: normal;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 36px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.03em;
-    color: #1a1a1a;
-  }
-`;
-
-const Text2 = styled.p`
-  margin-left: 200px;
   font-family: "Noto Sans TC";
-  font-style: normal;
   font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1a1a1a;
-  margin-left: 150px;
-  @media screen and (max-width: 768px) {
-    margin-left: 0px;
-    display: flex;
-    flex-direction: column;
-    font-family: "Noto Sans TC";
-    font-style: normal;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 0.03em;
-    color: #1a1a1a;
-  }
-`;
-
-const Span = styled.span`
-  font-family: "Noto Sans TC";
-  font-style: normal;
-  font-weight: 500;
   font-size: 18px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1a1a1a;
-  margin-left: 10px;
-  @media screen and (max-width: 768px) {
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    display: flex;
-    align-items: flex-start;
-    letter-spacing: 0.02em;
-    color: #1a1a1a;
-    width: 100px;
-    margin-left: 60px;
-  }
+  flex: 0 0 auto;
 `;
 
-const ContentText = styled.p`
+const Name = styled.div`
   font-family: "Noto Sans TC";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  margin: 0;
-  @media screen and (max-width: 768px) {
-    font-size: 12px;
-    margin-top:3px;
-
-  }
-
-`
-
-const Span3 = styled.span`
-  font-family: "Noto Sans TC";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.04em;
-  color: #1a1a1a;
-  margin-left: -2px;
-  @media screen and (max-width: 768px) {
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    display: flex;
-    align-items: flex-start;
-    letter-spacing: 0.02em;
-    color: #1a1a1a;
-    width: 100px;
-    margin-left: 60px;
-  }
-`;
-
-const Couch = styled.div`
-  margin-left: 50px;
-`;
-
-const SpanEVA = styled.span`
-  font-family: "Futura";
-  font-weight: 500;
+  font-weight: 900;
   font-size: 20px;
-  line-height: 36px;
-  letter-spacing: 3%;
-  margin-left: 10px;
+  line-height: 28px;
+  color: #1a1a1a;
 `;
 
-const Members = styled.div`
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 20px;
-  }
-`;
-const Members2 = styled.div`
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 20px;
-  }
+const Nickname = styled.div`
+  font-family: "Noto Sans TC";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #3c3d3d;
+  margin-top: 2px;
 `;
 
-const MemberNameLeft = styled.p`
-  @media screen and (max-width: 768px) {
-    margin: 0;
-    font-family: "Noto Sans TC";
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 36px;
-    letter-spacing: 3%;
-    color: #1a1a1a;
-    display: flex;
-    justify-content: flex-start;
-  }
+const SectionTitle = styled.div`
+  font-family: "Noto Sans TC";
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 22px;
+  color: #005cb9;
+  margin-top: 12px;
+  margin-bottom: 6px;
 `;
 
-const MemberNameRight = styled.p`
-  @media screen and (max-width: 768px) {
-    margin: 0;
-    font-family: "Noto Sans TC";
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 36px;
-    letter-spacing: 3%;
-    color: #1a1a1a;
-    display: flex;
-    justify-content: flex-end;
-  }
+const List = styled.ul`
+  margin: 0;
+  padding-left: 18px;
 `;
 
-const NickName = styled.p`
-  @media screen and (max-width: 768px) {
-    font-family: "Noto Sans TC";
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.02em;
-    color: #1a1a1a;
-    margin: 0;
-  }
+const ListItem = styled.li`
+  font-family: "Noto Sans TC";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #1a1a1a;
+  word-break: break-word;
 `;
 
-const SpanEva = styled.span`
-  @media screen and (max-width: 768px) {
-    margin: 0;
-    font-family: "Futura";
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 2%;
-    color: #1a1a1a;
-  }
-`;
-
-const NameComponentLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-`;
-
-const NameComponentRight = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-`;
-
-const MemberPic = styled.img`
-  width: 211px;
-  height: 201px;
-`;
-
-const PictureContainer = styled.div`
-  @media screen and (max-width: 768px) {
-    width: 90%;
-  }
-`;
-
-/* desktop thw newest info style end */
 const OurCouchMembers = () => {
   return (
     <PageContainer id="ourCouchMembers">
-      <Container>
-        <Picture>
-          <Row1>
-            <Couch>
-              <PicImg src={img1} alt="" />
-              <TextEVA>
-                呂昀
-                <Span3>
-                  <SpanEVA>Eva</SpanEVA> 教練
-                </Span3>
-              </TextEVA>
-              <div style={{ width: 200, marginLeft: 170, marginTop: -20 }}>
-                <ContentText>
-                  · 教學經驗5年
-                </ContentText>
-                <div style={{ display: "flex", marginTop: 5 }}>
-                  <ContentText>
-                    · 特色：
-                  </ContentText>
-                  <div>
-                    <ContentText>溫柔與嚴格併行</ContentText>
-                    <ContentText>朋友般的親和互動</ContentText>
-                    <ContentText>幼幼/親子班指定</ContentText>
-                  </div>
-                </div>
-              </div>
-            </Couch>
-
-            <Couch>
-              <PicImg src={img2} alt="" />
-              <Text>
-                温達威<Span>威廉教練</Span>
-              </Text>
-              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
-                <ContentText>
-                  · 教學經驗3年
-                </ContentText>
-                <div style={{ display: "flex", marginTop: 5 }}>
-                  <ContentText>
-                    · 特色：
-                  </ContentText>
-                  <div>
-                    <ContentText>耐心使人易上手</ContentText>
-                    <ContentText>引發主動學習</ContentText>
-                    <ContentText>兒童團體指定</ContentText>
-                  </div>
-                </div>
-              </div>
-
-            </Couch>
-
-            <Couch>
-              <PicImg src={img3} alt="" />
-              <Text>
-                林培中<Span>派派教練</Span>
-              </Text>
-              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
-                <ContentText>
-                  · 教學經驗7年
-                </ContentText>
-                <div style={{ display: "flex", marginTop: 5 }}>
-                  <ContentText>
-                    · 特色：
-                  </ContentText>
-                  <div>
-                    <ContentText>教學生動活潑</ContentText>
-                    <ContentText>親和力十足</ContentText>
-                    <ContentText>啟蒙與小選手培訓</ContentText>
-                  </div>
-                </div>
-              </div>
-            </Couch>
-          </Row1>
-
-          <Row2>
-            <Couch>
-              <PicImg src={img4} alt="" />
-              <Text2>
-                郭則寬<Span>阿寬教練</Span>
-              </Text2>
-              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
-                <ContentText>
-                  · 教學經驗10年
-                </ContentText>
-                <div style={{ display: "flex", marginTop: 5 }}>
-                  <ContentText>
-                    · 特色：
-                  </ContentText>
-                  <div>
-                    <ContentText>引導式教學</ContentText>
-                    <ContentText>全年齡快速上手</ContentText>
-                    <ContentText>成人團體與企業合作</ContentText>
-                  </div>
-                </div>
-              </div>
-            </Couch>
-
-            <Couch>
-              <PicImg src={img5} alt="" />
-              <Text2>
-                林晏先<Span>先先教練</Span>
-              </Text2>
-              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
-                <ContentText>
-                  · 教學經驗3年
-                </ContentText>
-                <div style={{ display: "flex", marginTop: 5 }}>
-                  <ContentText>
-                    · 特色：
-                  </ContentText>
-                  <div>
-                    <ContentText>遊戲方式教學</ContentText>
-                    <ContentText>引導小朋友喜愛桌球</ContentText>
-                    <ContentText>兒童團體班指定</ContentText>
-                  </div>
-                </div>
-              </div>
-            </Couch>
-          </Row2>
-
-          <Row3>
-            <Couch>
-              <PicImg src={img6} alt="" />
-              <Text>
-                顏兆寅<Span>小顏教練</Span>
-              </Text>
-              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
-                <ContentText>
-                  · 教學經驗10年
-                </ContentText>
-                <div style={{ display: "flex", marginTop: 5 }}>
-                  <ContentText>
-                    · 特色：
-                  </ContentText>
-                  <div>
-                    <ContentText>全年齡皆可</ContentText>
-                    <ContentText>細心、耐心、責任心</ContentText>
-                    <ContentText>休閒與小小選手指定</ContentText>
-                  </div>
-                </div>
-              </div>
-            </Couch>
-
-            <Couch>
-              <PicImg src={img7} alt="" />
-              <Text>
-                林政蔚<Span>政蔚教練</Span>
-              </Text>
-              <div style={{ width: 200, marginLeft: 150, marginTop: -20 }}>
-                <ContentText>
-                  · 教學經驗10年
-                </ContentText>
-                <div style={{ display: "flex", marginTop: 5 }}>
-                  <ContentText>
-                    · 特色：
-                  </ContentText>
-                  <div>
-                    <ContentText>學習中培養信心</ContentText>
-                    <ContentText>引發終身學習</ContentText>
-                    <ContentText>成人團體與企業合作</ContentText>
-                  </div>
-                </div>
-              </div>
-            </Couch>
-
-            <Couch>
-              <PicImg src={img8} alt="" />
-              <Text>
-                夏振凱<Span>凱凱教練</Span>
-              </Text>
-              <div style={{ width: 210, marginLeft: 150, marginTop: -20 }}>
-                <ContentText>
-                  · 教學經驗4年
-                </ContentText>
-                <div style={{ display: "flex", marginTop: 5 }}>
-                  <ContentText style={{width:67}}>
-                    · 特色：
-                  </ContentText>
-                  <div>
-                    <ContentText>學習失敗中成長</ContentText>
-                    <ContentText>學習態度與品行教育</ContentText>
-                    <ContentText>兒童個人/團體班指定</ContentText>
-                  </div>
-                </div>
-              </div>
-            </Couch>
-          </Row3>
-        </Picture>
-      </Container>
-
-      <MobileContainer>
-        <PictureContainer>
-          <Members>
-            <MemberPic src={img11} alt="" />
-            <NameComponentLeft>
-              <MemberNameLeft>呂昀</MemberNameLeft>
-              <NickName>
-                <SpanEva>Eva </SpanEva>教練
-              </NickName>
+      <Grid>
+        {COACHES.map((coach) => (
+          <Card key={coach.name}>
+            <Header>
+              <Avatar aria-hidden>{coach.name.slice(0, 1)}</Avatar>
               <div>
-                <ContentText>
-                  教學經驗5年
-                </ContentText>
-                <ContentText>溫柔與嚴格併行</ContentText>
-                <ContentText>朋友般的親和互動</ContentText>
-                <ContentText>幼幼/親子班指定</ContentText>
+                <Name>{coach.name}</Name>
+                {coach.nickname ? <Nickname>（{coach.nickname}）</Nickname> : null}
               </div>
-            </NameComponentLeft>
-          </Members>
+            </Header>
 
-          <Members2>
-            <NameComponentRight style={{textAlign:"right"}}>
-              <MemberNameRight>温達威</MemberNameRight>
-              <NickName>威廉教練</NickName>
-              <div>
-                <ContentText>
-                  教學經驗3年
-                </ContentText>
-                <ContentText>耐心使人易上手</ContentText>
-                <ContentText>引發主動學習</ContentText>
-                <ContentText>兒童團體指定</ContentText>
+            {coach.sections.map((section) => (
+              <div key={`${coach.name}-${section.title}`}>
+                <SectionTitle>{section.title}</SectionTitle>
+                <List>
+                  {section.items.map((item) => (
+                    <ListItem key={`${coach.name}-${section.title}-${item}`}>{item}</ListItem>
+                  ))}
+                </List>
               </div>
-            </NameComponentRight>
-            <MemberPic src={img22} alt="" />
-          </Members2>
-
-          <Members>
-            <MemberPic src={img33} alt="" />
-            <NameComponentLeft>
-              <MemberNameLeft>林培中</MemberNameLeft>
-              <NickName>派派教練</NickName>
-              <div>
-                <ContentText>
-                  教學經驗7年
-                </ContentText>
-                <ContentText>教學生動活潑</ContentText>
-                <ContentText>親和力十足</ContentText>
-                <ContentText>啟蒙與小選手培訓</ContentText>
-              </div>
-            </NameComponentLeft>
-          </Members>
-
-          <Members2>
-            <NameComponentRight style={{textAlign:"right"}}>
-              <MemberNameRight>郭則寬</MemberNameRight>
-              <NickName>阿寬教練</NickName>
-              <div>
-                <ContentText>
-                  教學經驗10年
-                </ContentText>
-                <ContentText>引導式教學</ContentText>
-                <ContentText>全年齡快速上手</ContentText>
-                <ContentText>成人團體與企業合作</ContentText>
-              </div>
-            </NameComponentRight>
-            <MemberPic src={img44} alt="" />
-          </Members2>
-
-          <Members>
-            <MemberPic src={img55} alt="" />
-            <NameComponentLeft>
-              <MemberNameLeft>林晏先</MemberNameLeft>
-              <NickName>先先教練</NickName>
-              <div>
-                <ContentText>
-                  教學經驗3年
-                </ContentText>
-                <ContentText>遊戲方式教學</ContentText>
-                <ContentText>引導小朋友喜愛桌球</ContentText>
-                <ContentText>兒童團體班指定</ContentText>
-              </div>
-            </NameComponentLeft>
-          </Members>
-
-          <Members2>
-            <NameComponentRight style={{textAlign:"right"}}>
-              <MemberNameRight>顏兆寅</MemberNameRight>
-              <NickName>小顏教練</NickName>
-              <div>
-                <ContentText>
-                  教學經驗10年
-                </ContentText>
-                <ContentText>全年齡皆可</ContentText>
-                <ContentText>細心、耐心、責任心</ContentText>
-                <ContentText>休閒與小小選手指定</ContentText>
-              </div>
-            </NameComponentRight>
-            <MemberPic src={img66} alt="" />
-          </Members2>
-
-          <Members>
-            <MemberPic src={img77} alt="" />
-            <NameComponentLeft>
-              <MemberNameLeft>林政蔚</MemberNameLeft>
-              <NickName>政蔚教練</NickName>
-              <div>
-                <ContentText>
-                  教學經驗10年
-                </ContentText>
-                <ContentText>學習中培養信心</ContentText>
-                <ContentText>引發終身學習</ContentText>
-                <ContentText>成人團體與企業合作</ContentText>
-              </div>
-            </NameComponentLeft>
-          </Members>
-
-          <Members2>
-            <NameComponentRight style={{textAlign:"right"}}>
-              <MemberNameRight>夏振凱</MemberNameRight>
-              <NickName>凱凱教練</NickName>
-              <div>
-                <ContentText>
-                  教學經驗4年
-                </ContentText>
-                <ContentText>學習失敗中成長</ContentText>
-                <ContentText>學習態度與品行教育</ContentText>
-                <ContentText>兒童個人/團體班指定</ContentText>
-              </div>
-            </NameComponentRight>
-            <MemberPic src={img88} alt="" />
-          </Members2>
-        </PictureContainer>
-      </MobileContainer>
+            ))}
+          </Card>
+        ))}
+      </Grid>
     </PageContainer>
   );
 };

@@ -158,7 +158,7 @@ const GroupImg = styled.img`
 
 const Background = styled.div`
   background: #FFD900;
-  width:150%;
+  width:100%;
   padding-bottom:30px;
   display:flex;
   justify-content: center;
@@ -168,7 +168,7 @@ const Background = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:375px;
+    width:100%;
     height:368px;
     padding-bottom:0px;
     padding-top:7px;
@@ -279,7 +279,7 @@ const TextContainer = styled.div`
 
 const GrayArea = styled.div`
   background: #F5F6F6;
-  width:150%;
+  width:100%;
   display: flex;
   justify-content:center;
   align-items:center;

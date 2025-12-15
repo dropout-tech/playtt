@@ -41,7 +41,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: scroll;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   @media screen and (max-width: 414px) {
     height: 100vh;
   }
@@ -59,13 +62,10 @@ const Header = styled.div`
   position: absolute;
   background-color: white;
   z-index: 99999999;
-  width: 96.5%;
-  @media screen and (max-width: 1280px) {
-    width: 96%;
-  }
-  @media screen and (max-width: 768px) {
-    width: 92.2%;
-  }
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
   @media screen and (max-width: 414px) {
     display: none;
   }
@@ -83,7 +83,10 @@ const MobileHeader = styled.div`
   position: fixed;
   background-color: white;
   z-index: 999999;
-  width: 88%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -113,7 +116,7 @@ const MenuImage = styled.img`
 `;
 
 const FocusImage = styled.img<{ index: number, active: number }>`
-  width: ${props => props.index === 4 ? "110px" : props => props.index === 5 ? "80px" : "66px"};
+  width: ${(props) => (props.index === 4 ? "110px" : props.index === 5 ? "80px" : "66px")};
   height: 6px;
   margin-top:8px;
   display: ${props => props.index === props.active ? "block" : "none"};
