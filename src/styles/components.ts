@@ -92,13 +92,12 @@ export const SectionSubtitle = styled.h3`
   text-align: center;
   letter-spacing: 0.04em;
   color: ${theme.colors.textMuted};
-  margin-top: -30px;
-  margin-bottom: 0;
+  margin: 6px 0 0;
 
   ${media.tablet} {
     font-size: ${theme.fontSize.xxl};
     line-height: 40px;
-    margin-top: -26px;
+    margin-top: 4px;
   }
 `;
 
