@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
 import {
   Card,
   Container,
@@ -130,8 +131,9 @@ const Grid = styled.div`
 `;
 
 const fadeUp = keyframes`
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 `;
 
 const wiggle = keyframes`
@@ -142,19 +144,82 @@ const wiggle = keyframes`
   100% { transform: rotate(0deg); }
 `;
 
+const shine = keyframes`
+  0% { transform: translateX(-120%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(220%) skewX(-12deg); opacity: 0; }
+`;
+
+const iconPop = keyframes`
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  35% { transform: translate3d(0, -4px, 0) scale(1.06) rotate(-6deg); }
+  70% { transform: translate3d(0, 0, 0) scale(1.02) rotate(6deg); }
+  100% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+`;
+
 const ServiceCard = styled(Card)`
   position: relative;
   padding: ${theme.spacing.lg};
   background: rgba(207, 210, 211, 0.2);
-  animation: ${fadeUp} 520ms ease both;
+  overflow: hidden;
+
+  /* 解掉「圖示壓到文字」：改成 2 欄版面 */
+  display: grid;
+  grid-template-columns: 1fr 132px;
+  grid-template-areas:
+    "title icon"
+    "desc  icon";
+  column-gap: 18px;
+  row-gap: 10px;
+  align-items: start;
+
+  /* 預設先隱藏，等進入視窗才播放 */
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 640ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  /* 更大膽的 hover：tilt + 亮面掃過 */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "desc"
+      "icon";
+    row-gap: 12px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
   }
 `;
 
 const ServiceTitle = styled.h3`
   margin: 0;
+  grid-area: title;
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.black};
   font-size: ${theme.fontSize.xxl};
@@ -169,43 +234,87 @@ const ServiceTitle = styled.h3`
 `;
 
 const ServiceDesc = styled.p`
-  margin: ${theme.spacing.sm} 0 0;
+  margin: 0;
+  grid-area: desc;
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.normal};
   font-size: ${theme.fontSize.md};
   line-height: 28px;
   letter-spacing: 0.03em;
   color: ${theme.colors.text};
+  padding-right: 6px;
+`;
+
+const IconWrap = styled.div`
+  grid-area: icon;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  ${media.tablet} {
+    justify-content: flex-start;
+    align-items: center;
+  }
 `;
 
 const Icon = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 112px;
+  height: 112px;
   object-fit: contain;
-  position: absolute;
-  right: ${theme.spacing.md};
-  bottom: ${theme.spacing.md};
   transform-origin: 70% 70%;
+  filter: drop-shadow(0 10px 18px rgba(26, 26, 26, 0.12));
 
   ${media.tablet} {
     width: 96px;
     height: 96px;
-    right: ${theme.spacing.sm};
-    bottom: ${theme.spacing.sm};
   }
 `;
 
 const MotionCard = styled(ServiceCard)`
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  &:hover {
+    transform: translate3d(0, -6px, 0) rotate(-0.35deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
+  }
+
   &:hover ${Icon} {
-    animation: ${wiggle} 520ms ease-in-out;
+    animation: ${iconPop} 520ms ease-in-out, ${wiggle} 520ms ease-in-out;
   }
 
   @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
+    }
     &:hover ${Icon} {
       animation: none;
     }
   }
 `;
+
+const ServiceItem = ({ s, idx }: { s: Service; idx: number }) => {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -8% 0px", threshold: 0.18 });
+
+  return (
+    <MotionCard ref={ref} data-inview={inView} style={{ animationDelay: `${idx * 90}ms` }}>
+      <ServiceTitle>{s.title}</ServiceTitle>
+      <ServiceDesc>{s.description}</ServiceDesc>
+      <IconWrap>
+        <Icon src={s.iconSrc} alt="" aria-hidden />
+      </IconWrap>
+    </MotionCard>
+  );
+};
 
 const OtherService = () => {
   return (
@@ -220,11 +329,7 @@ const OtherService = () => {
 
             <Grid>
               {SERVICES.map((s, idx) => (
-                <MotionCard key={idx} style={{ animationDelay: `${idx * 80}ms` }}>
-                  <ServiceTitle>{s.title}</ServiceTitle>
-                  <ServiceDesc>{s.description}</ServiceDesc>
-                  <Icon src={s.iconSrc} alt="" aria-hidden />
-                </MotionCard>
+                <ServiceItem key={idx} s={s} idx={idx} />
               ))}
             </Grid>
           </ContentWrapper>
