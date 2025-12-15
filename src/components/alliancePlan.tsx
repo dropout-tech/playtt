@@ -376,7 +376,7 @@ const alliancePlan = () => {
               <Text3>
                 <Img src={ho} alt="" />
                 <Title2>聯盟分佈</Title2>
-                <TextForm>全台目前分店為 <Span>4</Span> 家，合作聯盟據點  <Span>10</Span> 個以上，聯盟球館</TextForm>
+                <TextForm>全台目前據點為 <Span>2</Span> 家（蘆洲店、林口店）</TextForm>
                 <TextForm2>陸續招募中！</TextForm2>
               </Text3>
             </TextArea>
@@ -415,7 +415,7 @@ const alliancePlan = () => {
             <Text33>
               <Img3 src={phone3} alt="" />
               <Title22>聯盟分佈</Title22>
-              <TextForm222>全台目前分店為 <Span>4</Span> 家，合作聯盟據點 <Span>10</Span> 個以上，聯盟球館</TextForm222>
+              <TextForm222>全台目前據點為 <Span>2</Span> 家（蘆洲店、林口店）</TextForm222>
               <TextForm2222>陸續招募中！</TextForm2222>
             </Text33>
 

@@ -358,24 +358,6 @@ const Title02 = styled.p`
   }
 `;
 
-
-const Title22 = styled.p`
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 40px;
-  letter-spacing: 0.04em;
-  color: #1A1A1A;
-  display:flex;
-  justify-content:flex-start;
-  margin:0px 8px 0px 0px;
-
-   @media screen and (max-width: 768px) {
-   
-  }
-`;
-
 const TopBelow = styled.div`
   margin-left:160px;
    @media screen and (max-width: 768px) {
@@ -393,21 +375,6 @@ const TopBelow = styled.div`
 
 
 `;
-
-const UnderBelow = styled.div`
-  margin-left:160px;
-  margin-top:35px;
-
- @media screen and (max-width: 768px) {
-    margin-left:0px;
-    padding-left:24px;
-    padding-right:24px;
-    margin-top:32px;
-    padding-bottom:4px;
-  }
-  
-`;
-
 
 const Title2 = styled.p`
   font-family: 'Noto Sans TC';
@@ -670,12 +637,6 @@ margin-top:20px;
 
 `;
 
-const Shop2 = styled.div`
-margin-top:20px;
-
-
-`;
-
 const Text33 = styled.div`
   font-family: 'Noto Sans TC';
   font-weight: 500;
@@ -763,16 +724,6 @@ const AlignContener2 = styled.div`
 
 `;
 
-const AlignContener22 = styled.div`
-  @media screen and (max-width: 768px) {
-   margin-top:-5px;
-  
- 
-  }
-
-
-`;
-
 
 
 
@@ -791,17 +742,21 @@ const Company = () => {
             <TextArea2>
               <TextArea1>
                 <Text12>地址</Text12>
-                <Text12>連絡電話</Text12>
+                <Text12>連絡方式</Text12>
+                <Text12>Line</Text12>
+                <Text12>電話</Text12>
                 <Text12>信箱</Text12>
                 <Text12>總公司客服時間</Text12>
                 <Text12>創辦人 / 總教練</Text12>
               </TextArea1>
               <TextArea3>
                 <Text32>新北市蘆洲區長樂路<Span>106</Span>號<Span>3</Span>樓</Text32>
-                <Text32><Span>0988 521 012</Span></Text32>
+                <Text32>（請優先使用 <Span>Line</Span> 聯繫）</Text32>
+                <Text32><Span>@869usyqy</Span></Text32>
+                <Text32><Span>02-8286-1011</Span></Text32>
                 <Text32><Span>playpp2018@gmail.com</Span></Text32>
                 <Text32>週一至週五 <Span>10:00–19:00</Span>（週末請撥各館電話）</Text32>
-                <Text32>郭教練 <Span>0988 521 012</Span></Text32>
+                <Text32>郭則寬（阿寬）</Text32>
               </TextArea3>
             </TextArea2>
           </TextArea>
@@ -810,7 +765,7 @@ const Company = () => {
 
         <BelowArea>
           <Background2>
-            <Title>＃ 分店與聯盟</Title>
+            <Title>＃ 據點資訊</Title>
           </Background2>
 
           <BelowTextContainer>
@@ -819,49 +774,25 @@ const Company = () => {
 
               <Time>
                 <SmallTitle>各館營業時間</SmallTitle>
-                <Text22>週一至週五 <Span> 13:00–21:00 </Span>　週六日<Span> 9:00–19:00  </Span></Text22>
+                <Text22>
+                  週一至週五 <Span>13:00–21:00</Span>（會視課程狀況開店與關店；周一二課程較少會視情況調整；部分早上有開早鳥班）
+                  <br />
+                  週六日 <Span>9:00–18:00</Span>（視情況提早和延後開關店）
+                </Text22>
               </Time>
 
               <Shop>
                 <SmallTitle><Span2>Let's Play</Span2> 蘆洲店 － 捷運蘆洲 </SmallTitle>
                 <Text2>新北市蘆洲區長樂路<Span>106</Span>號<Span>3</Span>樓</Text2>
-                <Span>02 8286 1011</Span>
+                <Text2>Line：<Span>@869usyqy</Span></Text2>
+                <Span>02-8286-1011</Span>
               </Shop>
 
               <Shop1>
-                <SmallTitle><Span2>Let's Play</Span2> 東門店<Span2> X </Span2>  東門桌球 － 捷運東門 </SmallTitle>
-                <Text2>台北市中正區金山南路一段<Span>121</Span>號B1</Text2>
-                <Span>02 2356 7106</Span>
-              </Shop1>
-
-              <Shop1>
-                <SmallTitle><Span2>Let's Play</Span2> 新莊店 <Span2>X</Span2> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-                <Text2>新北市新莊區民樂街<Span>37</Span>號<Span>B1</Span></Text2>
-                <Span>02 2990 0566</Span>
-              </Shop1>
-
-              <Shop1>
-                <SmallTitle><Span2>Let's Play</Span2> 善導寺店 <Span2>X</Span2> 乒乓世界 － 捷運善導寺</SmallTitle>
-                <Text2>台北市中正區杭州南路一段<Span>63</Span>號<Span>B1</Span></Text2>
-                <Span>02 2391 9659</Span>
+                <SmallTitle><Span2>Let's Play</Span2> 林口店</SmallTitle>
+                <Text2>資訊更新中，請洽 Line：<Span>@869usyqy</Span></Text2>
               </Shop1>
             </TopBelow>
-
-            <UnderBelow>
-              <Title22>聯盟場館經營</Title22>
-              <Shop2>
-                <SmallTitle><Span2>ONWARD tt</Span2> 乒乓吧 <Span2> X Let's Play</Span2> － 捷運南港 <Span2> & </Span2> 昆陽</SmallTitle>
-                <Text2>台北市南港區南港路二段<Span>141-1</Span>號<Span>1</Span>樓</Text2>
-                <Span>02 2651 0652</Span>
-              </Shop2>
-
-              <Shop2>
-                <SmallTitle>舞動華江高中 <Span2> & Let's Play</Span2> － 捷運龍山寺</SmallTitle>
-                <Text2>台北市萬華區西藏路<Span>213</Span>號</Text2>
-                <Span>02 2339 6689</Span>
-              </Shop2>
-
-            </UnderBelow>
 
           </BelowTextContainer>
 
@@ -887,9 +818,19 @@ const Company = () => {
                 <Text33>新北市蘆洲區長樂路<Span1>106</Span1>號<Span1>3</Span1>樓</Text33>
               </Column>
               <Column2>
-                <Text3>連絡電話</Text3>
-                <Text11><Span1> 0988 521 012</Span1></Text11>
+                <Text3>連絡方式</Text3>
+                <Text11>（請優先使用 Line 聯繫）</Text11>
               </Column2>
+
+              <Column>
+                <Text3>Line</Text3>
+                <Text11><Span1>@869usyqy</Span1></Text11>
+              </Column>
+
+              <Column>
+                <Text3>電話</Text3>
+                <Text11><Span1>02-8286-1011</Span1></Text11>
+              </Column>
 
               <Column>
                 <Text3>信箱</Text3>
@@ -903,7 +844,7 @@ const Company = () => {
 
               <Column2>
                 <Text3>創辦人 / 總教練</Text3>
-                <Text33>郭教練 <Span1> 0988 521 012</Span1></Text33>
+                <Text33>郭則寬（阿寬）</Text33>
               </Column2>
             </TextArea1>
 
@@ -915,7 +856,7 @@ const Company = () => {
 
       <BelowArea>
         <Background2>
-          <Title>＃ 分店與聯盟</Title>
+          <Title>＃ 據點資訊</Title>
         </Background2>
         <BelowTextContainer>
           <TopBelow>
@@ -923,53 +864,26 @@ const Company = () => {
 
             <AlignContener>
               <SmallTitle1>各館營業時間</SmallTitle1>
-              <Text>週一至週五 <Span1> 13:00–21:00</Span1>　週六日 <Span1> 9:00–19:00</Span1></Text>
+              <Text>
+                週一至週五 <Span1>13:00–21:00</Span1>（會視課程狀況開店與關店；周一二課程較少會視情況調整；部分早上有開早鳥班）
+                <br />
+                週六日 <Span1>9:00–18:00</Span1>（視情況提早和延後開關店）
+              </Text>
             </AlignContener>
 
             <AlignContener2>
               <SmallTitle><Span>Let's Play </Span> 蘆洲店 － 捷運蘆洲</SmallTitle>
               <Text>新北市蘆洲區長樂路<Span1>106</Span1>號3樓</Text>
-              <Text1><Span1> 02 8286 1011</Span1></Text1>
+              <Text>Line：<Span1>@869usyqy</Span1></Text>
+              <Text1><Span1>02-8286-1011</Span1></Text1>
 
             </AlignContener2>
 
             <AlignContener2>
-              <SmallTitle><Span>Let's Play </Span> 東門店 X 東門桌球</SmallTitle>
-              <Text>台北市中正區金山南路一段<Span1>121</Span1>號B1</Text>
-              <Text1><Span1> 02 2356 7106</Span1></Text1>
-
-            </AlignContener2>
-
-            <AlignContener2>
-              <SmallTitle><Span>Let's Play </Span> 新莊店 <Span> X </Span> 卓越乒乓 － 捷運頭前庄</SmallTitle>
-              <Text>新北市新莊區民樂街<Span1>37</Span1>號<Span1>B1</Span1></Text>
-              <Text1><Span1> 02 2990 0566</Span1></Text1>
-
-            </AlignContener2>
-
-            <AlignContener2>
-              <SmallTitle><Span>Let's Play </Span>  善導寺店 <Span> X </Span> 乒乓世界 － 捷運善導寺</SmallTitle>
-              <Text>台北市中正區杭州南路一段<Span1>63</Span1>號<Span1>B1</Span1></Text>
-              <Text1><Span1> 02 2391 9659</Span1></Text1>
-
+              <SmallTitle><Span>Let's Play </Span> 林口店</SmallTitle>
+              <Text>資訊更新中，請洽 Line：<Span1>@869usyqy</Span1></Text>
             </AlignContener2>
           </TopBelow>
-
-          <UnderBelow>
-            <Title02>聯盟場館經營</Title02>
-            <AlignContener22>
-              <SmallTitle><Span>ONWARD tt </Span> 乒乓吧 <Span> X Let's Play </Span> － 捷運南港 & 昆陽</SmallTitle>
-              <Text>台北市南港區南港路二段<Span1>141-1</Span1>號<Span1>1</Span1>樓</Text>
-              <Text1><Span1> 02 2651 0652</Span1></Text1>
-            </AlignContener22>
-
-            <AlignContener2>
-              <SmallTitle>舞動華江高中<Span> & </Span>  <Span> Let's Play </Span> － 捷運龍山寺</SmallTitle>
-              <Text>台北市萬華區西藏路<Span1>213</Span1>號</Text>
-              <Text1> <Span1> 02 2339 6689 </Span1></Text1>
-            </AlignContener2>
-
-          </UnderBelow>
 
         </BelowTextContainer>
 
