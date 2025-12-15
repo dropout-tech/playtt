@@ -68,6 +68,19 @@ const Card = styled.section`
   box-shadow: 0 10px 28px rgba(26, 26, 26, 0.12);
   overflow: hidden;
   min-width: 0;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(26, 26, 26, 0.16);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
 `;
 
 const CardHeader = styled.div`

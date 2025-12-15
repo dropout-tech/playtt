@@ -1,5 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { theme, media } from './theme';
+
+const floatY = keyframes`
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+`;
+
+const shine = keyframes`
+  0% { transform: translateX(-120%) skewX(-12deg); opacity: 0; }
+  20% { opacity: 0.35; }
+  60% { opacity: 0.2; }
+  100% { transform: translateX(220%) skewX(-12deg); opacity: 0; }
+`;
 
 // ============================================
 // 基礎容器組件
@@ -184,15 +196,39 @@ export const PrimaryButton = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: ${shine} 2.4s ease-in-out infinite;
+    pointer-events: none;
+  }
 
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0px 6px 24px rgba(26, 26, 26, 0.12);
+    filter: saturate(1.03);
   }
 
   &:active {
     transform: translateY(0);
+    filter: saturate(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::after {
+      animation: none;
+    }
   }
 
   ${media.tablet} {
@@ -226,10 +262,15 @@ export const DecorativeCircle = styled.div<{ size?: string }>`
   height: ${props => props.size || '580px'};
   border-radius: ${theme.borderRadius.full};
   background: linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 100%);
+  animation: ${floatY} 6s ease-in-out infinite;
 
   ${media.tablet} {
     width: 251px;
     height: 251px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 `;
 
@@ -249,6 +290,11 @@ export const DecorativeHalfCircle = styled.div`
   height: 100px;
   border-radius: 200px 200px 0 0;
   background: linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 100%);
+  animation: ${floatY} 7s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 `;
 
 // ============================================
@@ -328,5 +374,18 @@ export const Card = styled.div`
   box-shadow: 0 10px 28px rgba(26, 26, 26, 0.12);
   overflow: hidden;
   min-width: 0;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(26, 26, 26, 0.16);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
 `;
 

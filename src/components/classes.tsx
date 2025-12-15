@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import {
   Card,
   Container,
@@ -72,11 +72,17 @@ const FeatureList = styled.div`
   }
 `;
 
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+`;
+
 const FeatureRow = styled.div<{ reverse?: boolean }>`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: ${theme.spacing.md};
   align-items: stretch;
+  animation: ${fadeUp} 520ms ease both;
 
   ${media.tablet} {
     grid-template-columns: 1fr;
@@ -102,6 +108,7 @@ const FeatureImage = styled.img`
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 10px 28px rgba(26, 26, 26, 0.12);
+  transition: transform 0.22s ease;
 
   ${media.tablet} {
     max-height: 260px;
@@ -113,6 +120,7 @@ const FeatureCard = styled(Card)`
   flex-direction: column;
   justify-content: center;
   padding: ${theme.spacing.lg};
+  transition: transform 0.22s ease;
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
@@ -193,7 +201,7 @@ const Classes = () => {
 
             <FeatureList>
               {FEATURES.map((feature, idx) => (
-                <FeatureRow key={feature.title} reverse={idx % 2 === 1}>
+                <FeatureRow key={feature.title} reverse={idx % 2 === 1} style={{ animationDelay: `${idx * 90}ms` }}>
                   <FeatureImage src={feature.imageSrc} alt={feature.title} />
                   <FeatureCard>
                     <Pill>

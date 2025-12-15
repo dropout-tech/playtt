@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import {
   Card,
   Container,
@@ -129,10 +129,24 @@ const Grid = styled.div`
   }
 `;
 
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+`;
+
+const wiggle = keyframes`
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+`;
+
 const ServiceCard = styled(Card)`
   position: relative;
   padding: ${theme.spacing.lg};
   background: rgba(207, 210, 211, 0.2);
+  animation: ${fadeUp} 520ms ease both;
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
@@ -171,12 +185,25 @@ const Icon = styled.img`
   position: absolute;
   right: ${theme.spacing.md};
   bottom: ${theme.spacing.md};
+  transform-origin: 70% 70%;
 
   ${media.tablet} {
     width: 96px;
     height: 96px;
     right: ${theme.spacing.sm};
     bottom: ${theme.spacing.sm};
+  }
+`;
+
+const MotionCard = styled(ServiceCard)`
+  &:hover ${Icon} {
+    animation: ${wiggle} 520ms ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:hover ${Icon} {
+      animation: none;
+    }
   }
 `;
 
@@ -193,11 +220,11 @@ const OtherService = () => {
 
             <Grid>
               {SERVICES.map((s, idx) => (
-                <ServiceCard key={idx}>
+                <MotionCard key={idx} style={{ animationDelay: `${idx * 80}ms` }}>
                   <ServiceTitle>{s.title}</ServiceTitle>
                   <ServiceDesc>{s.description}</ServiceDesc>
                   <Icon src={s.iconSrc} alt="" aria-hidden />
-                </ServiceCard>
+                </MotionCard>
               ))}
             </Grid>
           </ContentWrapper>

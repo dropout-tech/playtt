@@ -305,6 +305,19 @@ const Card = styled.article`
   box-shadow: 0 6px 24px rgba(26, 26, 26, 0.08);
   overflow: hidden;
   min-width: 0;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(26, 26, 26, 0.14);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
 `;
 
 const Photo = styled.img`
@@ -312,6 +325,7 @@ const Photo = styled.img`
   height: 240px;
   object-fit: cover;
   display: block;
+  transition: transform 0.22s ease;
 
   @media screen and (max-width: ${theme.breakpoints.tablet}) {
     height: 220px;
@@ -320,6 +334,18 @@ const Photo = styled.img`
 
 const CardBody = styled.div`
   padding: ${theme.spacing.md};
+`;
+
+const MotionCard = styled(Card)`
+  &:hover ${Photo} {
+    transform: scale(1.02);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:hover ${Photo} {
+      transform: none;
+    }
+  }
 `;
 
 const CoachHeader = styled.div`
@@ -475,7 +501,7 @@ const OurCouchMembers = () => {
               const roleTag = coach.nickname ? `${coach.nickname}` : "教練";
 
               return (
-                <Card key={coach.name}>
+                <MotionCard key={coach.name}>
                   <Photo src={coach.photoSrc} alt={`${coach.name}${coach.nickname ? `（${coach.nickname}）` : ""} 教練`} />
                   <CardBody>
                     <CoachHeader>
@@ -511,7 +537,7 @@ const OurCouchMembers = () => {
                       ))}
                     </Details>
                   </CardBody>
-                </Card>
+                </MotionCard>
               );
             })}
           </Grid>
