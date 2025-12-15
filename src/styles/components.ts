@@ -301,3 +301,32 @@ export const TitleGroup = styled.div`
   }
 `;
 
+// ============================================
+// 版面骨架（統一寬度/留白）
+// ============================================
+
+export const ContentWrapper = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: ${theme.spacing.md};
+  padding-right: ${theme.spacing.md};
+
+  ${media.tablet} {
+    padding-left: ${theme.spacing.sm};
+    padding-right: ${theme.spacing.sm};
+  }
+`;
+
+// ============================================
+// 通用卡片（沿用既有陰影/圓角語言）
+// ============================================
+
+export const Card = styled.div`
+  background: ${theme.colors.background};
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.12);
+  overflow: hidden;
+  min-width: 0;
+`;
+
