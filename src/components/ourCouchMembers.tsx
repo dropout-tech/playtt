@@ -1,5 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { theme } from "../styles/theme";
+import { Container as SectionContainer } from "../styles/components";
+
+import coachImg1 from "../assets/ourCouchMenber/img1.png";
+import coachImg2 from "../assets/ourCouchMenber/img2.png";
+import coachImg3 from "../assets/ourCouchMenber/img3.png";
+import coachImg4 from "../assets/ourCouchMenber/img4.png";
+import coachImg6 from "../assets/ourCouchMenber/img6.png";
+import coachImg7 from "../assets/ourCouchMenber/img7.png";
+import coachImg8 from "../assets/ourCouchMenber/img8.png";
 
 type CoachSection = {
   title: string;
@@ -10,6 +20,18 @@ type Coach = {
   name: string;
   nickname?: string;
   sections: CoachSection[];
+};
+
+type CoachWithPhoto = Coach & { photoSrc: string };
+
+const COACH_PHOTOS: Record<string, string> = {
+  郭則寬: coachImg4,
+  林培中: coachImg3,
+  楊秉翰: coachImg6,
+  黃兆銨: coachImg7,
+  王韻涵: coachImg1,
+  蔡鎮宇: coachImg8,
+  溫達威: coachImg2,
 };
 
 const COACHES: Coach[] = [
@@ -185,123 +207,316 @@ const COACHES: Coach[] = [
 
 const PageContainer = styled.div`
   width: 100%;
-  box-sizing: border-box;
-  padding: 80px 24px;
-  overflow-x: hidden;
+  background: ${theme.colors.backgroundLight};
+`;
+
+const Inner = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  padding-left: ${theme.spacing.md};
+  padding-right: ${theme.spacing.md};
+  margin: 0 auto;
+
+  @media screen and (max-width: ${theme.breakpoints.tablet}) {
+    padding-left: ${theme.spacing.sm};
+    padding-right: ${theme.spacing.sm};
+  }
+`;
+
+const Header = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: ${theme.spacing.lg};
+
+  @media screen and (max-width: ${theme.breakpoints.tablet}) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: ${theme.spacing.md};
+  }
+`;
+
+const TitleGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Title = styled.h2`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
+  font-size: ${theme.fontSize.xxxl};
+  line-height: 52px;
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: ${theme.colors.text};
+
+  @media screen and (max-width: ${theme.breakpoints.tablet}) {
+    font-size: ${theme.fontSize.xxl};
+    line-height: 40px;
+  }
+`;
+
+const Subtitle = styled.p`
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.bold};
+  font-size: ${theme.fontSize.xxxl};
+  line-height: 52px;
+  letter-spacing: 0.04em;
+  margin: -24px 0 0;
+  color: ${theme.colors.textMuted};
+
+  @media screen and (max-width: ${theme.breakpoints.tablet}) {
+    font-size: ${theme.fontSize.xxl};
+    line-height: 40px;
+    margin-top: -20px;
+  }
+`;
+
+const Hint = styled.p`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.sm};
+  line-height: 22px;
+  margin: 0;
+  color: ${theme.colors.textLight};
 `;
 
 const Grid = styled.div`
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: ${theme.spacing.md};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${theme.breakpoints.desktop}) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: ${theme.spacing.sm};
   }
 `;
 
-const Card = styled.div`
+const Card = styled.article`
   background: #ffffff;
   border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 24px rgba(26, 26, 26, 0.08);
+  overflow: hidden;
   min-width: 0;
 `;
 
-const Header = styled.div`
+const Photo = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+
+  @media screen and (max-width: ${theme.breakpoints.tablet}) {
+    height: 220px;
+  }
+`;
+
+const CardBody = styled.div`
+  padding: ${theme.spacing.md};
+`;
+
+const CoachHeader = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: ${theme.spacing.sm};
 `;
 
-const Avatar = styled.div`
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  background: #f5f6f6;
-  color: #1a1a1a;
-  display: flex;
-  justify-content: center;
+const CoachName = styled.h3`
+  margin: 0;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
+  font-size: ${theme.fontSize.xxl};
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: ${theme.colors.text};
+`;
+
+const CoachNick = styled.span`
+  font-weight: ${theme.fontWeight.bold};
+  font-size: ${theme.fontSize.md};
+  color: ${theme.colors.textLight};
+  margin-left: 8px;
+`;
+
+const Tag = styled.span`
+  display: inline-flex;
   align-items: center;
-  font-family: "Noto Sans TC";
-  font-weight: 900;
-  font-size: 18px;
-  flex: 0 0 auto;
-`;
-
-const Name = styled.div`
-  font-family: "Noto Sans TC";
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 28px;
-  color: #1a1a1a;
-`;
-
-const Nickname = styled.div`
-  font-family: "Noto Sans TC";
-  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: ${theme.colors.backgroundLight};
+  color: ${theme.colors.primary};
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.bold};
   font-size: 14px;
-  line-height: 22px;
-  color: #3c3d3d;
-  margin-top: 2px;
+  line-height: 20px;
+  white-space: nowrap;
 `;
 
-const SectionTitle = styled.div`
-  font-family: "Noto Sans TC";
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 22px;
-  color: #005cb9;
-  margin-top: 12px;
-  margin-bottom: 6px;
-`;
-
-const List = styled.ul`
+const SummaryList = styled.ul`
   margin: 0;
   padding-left: 18px;
 `;
 
-const ListItem = styled.li`
-  font-family: "Noto Sans TC";
-  font-weight: 400;
+const SummaryItem = styled.li`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.md};
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: ${theme.colors.text};
+`;
+
+const Details = styled.details`
+  margin-top: ${theme.spacing.sm};
+  border-top: 1px solid rgba(60, 61, 61, 0.12);
+  padding-top: ${theme.spacing.sm};
+
+  &[open] summary {
+    color: ${theme.colors.primary};
+  }
+`;
+
+const DetailsSummary = styled.summary`
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.bold};
+  font-size: ${theme.fontSize.md};
+  line-height: 28px;
+  color: ${theme.colors.textLight};
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+`;
+
+const Chevron = styled.span`
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+
+  details[open] & {
+    transform: rotate(-135deg);
+  }
+`;
+
+const Section = styled.div`
+  margin-top: ${theme.spacing.sm};
+`;
+
+const SectionLabel = styled.div`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
   font-size: 14px;
+  line-height: 22px;
+  color: ${theme.colors.primary};
+  margin-bottom: 6px;
+`;
+
+const SectionList = styled.ul`
+  margin: 0;
+  padding-left: 18px;
+`;
+
+const SectionItem = styled.li`
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.normal};
+  font-size: ${theme.fontSize.sm};
   line-height: 24px;
-  color: #1a1a1a;
+  color: ${theme.colors.text};
   word-break: break-word;
 `;
 
+function getSummaryItems(coach: Coach): string[] {
+  const teaching = coach.sections.find((s) => s.title === "教學特色")?.items ?? [];
+  if (teaching.length > 0) return teaching.slice(0, 2);
+
+  const firstNonEmpty = coach.sections.find((s) => s.items.length > 0);
+  return firstNonEmpty ? firstNonEmpty.items.slice(0, 2) : [];
+}
+
 const OurCouchMembers = () => {
+  const coaches: CoachWithPhoto[] = COACHES.map((c) => ({
+    ...c,
+    photoSrc: COACH_PHOTOS[c.name] ?? coachImg8,
+  }));
+
   return (
     <PageContainer id="ourCouchMembers">
-      <Grid>
-        {COACHES.map((coach) => (
-          <Card key={coach.name}>
-            <Header>
-              <Avatar aria-hidden>{coach.name.slice(0, 1)}</Avatar>
-              <div>
-                <Name>{coach.name}</Name>
-                {coach.nickname ? <Nickname>（{coach.nickname}）</Nickname> : null}
-              </div>
-            </Header>
+      <SectionContainer>
+        <Inner>
+          <Header>
+            <TitleGroup>
+              <Title>師資介紹</Title>
+              <Subtitle>Our Coach</Subtitle>
+            </TitleGroup>
+            <Hint>點選「展開」可查看完整教練履歷與證照</Hint>
+          </Header>
 
-            {coach.sections.map((section) => (
-              <div key={`${coach.name}-${section.title}`}>
-                <SectionTitle>{section.title}</SectionTitle>
-                <List>
-                  {section.items.map((item) => (
-                    <ListItem key={`${coach.name}-${section.title}-${item}`}>{item}</ListItem>
-                  ))}
-                </List>
-              </div>
-            ))}
-          </Card>
-        ))}
-      </Grid>
+          <Grid>
+            {coaches.map((coach) => {
+              const summaryItems = getSummaryItems(coach);
+              const roleTag = coach.nickname ? `${coach.nickname}` : "教練";
+
+              return (
+                <Card key={coach.name}>
+                  <Photo src={coach.photoSrc} alt={`${coach.name}${coach.nickname ? `（${coach.nickname}）` : ""} 教練`} />
+                  <CardBody>
+                    <CoachHeader>
+                      <CoachName>
+                        {coach.name}
+                        {coach.nickname ? <CoachNick>（{coach.nickname}）</CoachNick> : null}
+                      </CoachName>
+                      <Tag>{roleTag}</Tag>
+                    </CoachHeader>
+
+                    {summaryItems.length > 0 ? (
+                      <SummaryList>
+                        {summaryItems.map((item) => (
+                          <SummaryItem key={`${coach.name}-summary-${item}`}>{item}</SummaryItem>
+                        ))}
+                      </SummaryList>
+                    ) : null}
+
+                    <Details>
+                      <DetailsSummary>
+                        展開完整資料 <Chevron aria-hidden />
+                      </DetailsSummary>
+
+                      {coach.sections.map((section) => (
+                        <Section key={`${coach.name}-${section.title}`}>
+                          <SectionLabel>{section.title}</SectionLabel>
+                          <SectionList>
+                            {section.items.map((item) => (
+                              <SectionItem key={`${coach.name}-${section.title}-${item}`}>{item}</SectionItem>
+                            ))}
+                          </SectionList>
+                        </Section>
+                      ))}
+                    </Details>
+                  </CardBody>
+                </Card>
+              );
+            })}
+          </Grid>
+        </Inner>
+      </SectionContainer>
     </PageContainer>
   );
 };
