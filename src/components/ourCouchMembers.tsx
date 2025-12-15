@@ -1,7 +1,16 @@
 import React from "react";
-import styled from "styled-components";
-import { theme } from "../styles/theme";
-import { Container as SectionContainer } from "../styles/components";
+import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
+import { media, theme } from "../styles/theme";
+import {
+  Card as BaseCard,
+  Container,
+  ContentWrapper,
+  PageContainer as BasePageContainer,
+  SectionSubtitle,
+  SectionTitle,
+  TitleGroup as BaseTitleGroup,
+} from "../styles/components";
 
 import coachImg1 from "../assets/ourCouchMenber/img1.png";
 import coachImg2 from "../assets/ourCouchMenber/img2.png";
@@ -205,22 +214,27 @@ const COACHES: Coach[] = [
   },
 ];
 
-const PageContainer = styled.div`
+const SectionShell = styled(BasePageContainer)`
   width: 100%;
   background: ${theme.colors.backgroundLight};
+  position: relative;
+  overflow: hidden;
 `;
 
-const Inner = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  padding-left: ${theme.spacing.md};
-  padding-right: ${theme.spacing.md};
-  margin: 0 auto;
-
-  @media screen and (max-width: ${theme.breakpoints.tablet}) {
-    padding-left: ${theme.spacing.sm};
-    padding-right: ${theme.spacing.sm};
-  }
+const Bg = styled.div`
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.7;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(42, 210, 105, 0.14) 0 240px, rgba(42, 210, 105, 0) 520px),
+    radial-gradient(circle at 82% 30%, rgba(242, 183, 43, 0.16) 0 220px, rgba(242, 183, 43, 0) 520px),
+    radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.55) 0 6px, rgba(255, 255, 255, 0) 7px),
+    radial-gradient(circle at 24% 66%, rgba(255, 255, 255, 0.42) 0 5px, rgba(255, 255, 255, 0) 6px),
+    radial-gradient(circle at 76% 78%, rgba(255, 255, 255, 0.46) 0 5px, rgba(255, 255, 255, 0) 6px),
+    radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.40) 0 4px, rgba(255, 255, 255, 0) 5px);
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Header = styled.div`
@@ -238,40 +252,8 @@ const Header = styled.div`
   }
 `;
 
-const TitleGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Title = styled.h2`
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.black};
-  font-size: ${theme.fontSize.xxxl};
-  line-height: 52px;
-  letter-spacing: 0.04em;
-  margin: 0;
-  color: ${theme.colors.text};
-
-  @media screen and (max-width: ${theme.breakpoints.tablet}) {
-    font-size: ${theme.fontSize.xxl};
-    line-height: 40px;
-  }
-`;
-
-const Subtitle = styled.p`
-  font-family: ${theme.fonts.secondary};
-  font-weight: ${theme.fontWeight.bold};
-  font-size: ${theme.fontSize.xxxl};
-  line-height: 52px;
-  letter-spacing: 0.04em;
-  margin: -24px 0 0;
-  color: ${theme.colors.textMuted};
-
-  @media screen and (max-width: ${theme.breakpoints.tablet}) {
-    font-size: ${theme.fontSize.xxl};
-    line-height: 40px;
-    margin-top: -20px;
-  }
+const TitleGroup = styled(BaseTitleGroup)`
+  margin-bottom: 0;
 `;
 
 const Hint = styled.p`
@@ -289,46 +271,74 @@ const Grid = styled.div`
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: ${theme.spacing.md};
 
-  @media screen and (max-width: ${theme.breakpoints.desktop}) {
+  ${media.desktop} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media screen and (max-width: ${theme.breakpoints.tablet}) {
+  ${media.tablet} {
     grid-template-columns: 1fr;
     gap: ${theme.spacing.sm};
   }
 `;
 
-const Card = styled.article`
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(26, 26, 26, 0.08);
-  overflow: hidden;
-  min-width: 0;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+`;
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(26, 26, 26, 0.14);
+const shine = keyframes`
+  0% { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(240%) skewX(-12deg); opacity: 0; }
+`;
+
+const Card = styled(BaseCard)`
+  background: #ffffff;
+  box-shadow: 0 6px 24px rgba(26, 26, 26, 0.08);
+  position: relative;
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 640ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    transition: none;
-    &:hover {
-      transform: none;
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
     }
   }
 `;
 
 const Photo = styled.img`
   width: 100%;
-  height: 240px;
+  aspect-ratio: 16 / 10;
+  height: auto;
   object-fit: cover;
   display: block;
   transition: transform 0.22s ease;
 
-  @media screen and (max-width: ${theme.breakpoints.tablet}) {
-    height: 220px;
+  ${media.tablet} {
+    aspect-ratio: 16 / 11;
   }
 `;
 
@@ -337,11 +347,31 @@ const CardBody = styled.div`
 `;
 
 const MotionCard = styled(Card)`
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
   &:hover ${Photo} {
-    transform: scale(1.02);
+    transform: scale(1.04);
+  }
+
+  &:hover {
+    transform: translate3d(0, -6px, 0) rotate(-0.35deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
   }
 
   @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
+    }
     &:hover ${Photo} {
       transform: none;
     }
@@ -477,6 +507,52 @@ function getSummaryItems(coach: Coach): string[] {
   return firstNonEmpty ? firstNonEmpty.items.slice(0, 2) : [];
 }
 
+const CoachCardItem = ({ coach, idx }: { coach: CoachWithPhoto; idx: number }) => {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -8% 0px", threshold: 0.18 });
+  const summaryItems = getSummaryItems(coach);
+  const roleTag = coach.nickname ? `${coach.nickname}` : "教練";
+
+  return (
+    <MotionCard ref={ref} data-inview={inView} style={{ animationDelay: `${idx * 90}ms` }}>
+      <Photo src={coach.photoSrc} alt={`${coach.name}${coach.nickname ? `（${coach.nickname}）` : ""} 教練`} loading="lazy" />
+      <CardBody>
+        <CoachHeader>
+          <CoachName>
+            {coach.name}
+            {coach.nickname ? <CoachNick>（{coach.nickname}）</CoachNick> : null}
+          </CoachName>
+          <Tag>{roleTag}</Tag>
+        </CoachHeader>
+
+        {summaryItems.length > 0 ? (
+          <SummaryList>
+            {summaryItems.map((item) => (
+              <SummaryItem key={`${coach.name}-summary-${item}`}>{item}</SummaryItem>
+            ))}
+          </SummaryList>
+        ) : null}
+
+        <Details>
+          <DetailsSummary>
+            展開完整資料 <Chevron aria-hidden />
+          </DetailsSummary>
+
+          {coach.sections.map((section) => (
+            <Section key={`${coach.name}-${section.title}`}>
+              <SectionLabel>{section.title}</SectionLabel>
+              <SectionList>
+                {section.items.map((item) => (
+                  <SectionItem key={`${coach.name}-${section.title}-${item}`}>{item}</SectionItem>
+                ))}
+              </SectionList>
+            </Section>
+          ))}
+        </Details>
+      </CardBody>
+    </MotionCard>
+  );
+};
+
 const OurCouchMembers = () => {
   const coaches: CoachWithPhoto[] = COACHES.map((c) => ({
     ...c,
@@ -484,66 +560,26 @@ const OurCouchMembers = () => {
   }));
 
   return (
-    <PageContainer id="ourCouchMembers">
-      <SectionContainer>
-        <Inner>
+    <SectionShell id="ourCouchMembers">
+      <Bg aria-hidden="true" />
+      <Container>
+        <ContentWrapper style={{ position: "relative", zIndex: 1 }}>
           <Header>
             <TitleGroup>
-              <Title>師資介紹</Title>
-              <Subtitle>Our Coach</Subtitle>
+              <SectionTitle>師資介紹</SectionTitle>
+              <SectionSubtitle>Our Coach</SectionSubtitle>
             </TitleGroup>
             <Hint>點選「展開」可查看完整教練履歷與證照</Hint>
           </Header>
 
           <Grid>
-            {coaches.map((coach) => {
-              const summaryItems = getSummaryItems(coach);
-              const roleTag = coach.nickname ? `${coach.nickname}` : "教練";
-
-              return (
-                <MotionCard key={coach.name}>
-                  <Photo src={coach.photoSrc} alt={`${coach.name}${coach.nickname ? `（${coach.nickname}）` : ""} 教練`} />
-                  <CardBody>
-                    <CoachHeader>
-                      <CoachName>
-                        {coach.name}
-                        {coach.nickname ? <CoachNick>（{coach.nickname}）</CoachNick> : null}
-                      </CoachName>
-                      <Tag>{roleTag}</Tag>
-                    </CoachHeader>
-
-                    {summaryItems.length > 0 ? (
-                      <SummaryList>
-                        {summaryItems.map((item) => (
-                          <SummaryItem key={`${coach.name}-summary-${item}`}>{item}</SummaryItem>
-                        ))}
-                      </SummaryList>
-                    ) : null}
-
-                    <Details>
-                      <DetailsSummary>
-                        展開完整資料 <Chevron aria-hidden />
-                      </DetailsSummary>
-
-                      {coach.sections.map((section) => (
-                        <Section key={`${coach.name}-${section.title}`}>
-                          <SectionLabel>{section.title}</SectionLabel>
-                          <SectionList>
-                            {section.items.map((item) => (
-                              <SectionItem key={`${coach.name}-${section.title}-${item}`}>{item}</SectionItem>
-                            ))}
-                          </SectionList>
-                        </Section>
-                      ))}
-                    </Details>
-                  </CardBody>
-                </MotionCard>
-              );
-            })}
+            {coaches.map((coach, idx) => (
+              <CoachCardItem key={coach.name} coach={coach} idx={idx} />
+            ))}
           </Grid>
-        </Inner>
-      </SectionContainer>
-    </PageContainer>
+        </ContentWrapper>
+      </Container>
+    </SectionShell>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
 import {
   PageContainer,
   SectionTitle,
@@ -62,23 +63,75 @@ const Grid = styled.div`
   }
 `;
 
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+`;
+
+const shine = keyframes`
+  0% { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(240%) skewX(-12deg); opacity: 0; }
+`;
+
 const Card = styled.section`
   background: ${theme.colors.background};
   border-radius: 16px;
   box-shadow: 0 10px 28px rgba(26, 26, 26, 0.12);
   overflow: hidden;
   min-width: 0;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  /* 預設先隱藏，等進入視窗才播放 */
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  /* 亮面掃過（更敢玩） */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
 
   &:hover {
-    transform: translateY(-3px);
+    transform: translate3d(0, -6px, 0) rotate(-0.25deg);
     box-shadow: 0 14px 32px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
   }
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
     &:hover {
       transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
     }
   }
 `;
@@ -166,6 +219,28 @@ const Link = styled.a`
   }
 `;
 
+const InfoCardItem = ({ card, idx }: { card: InfoCardData; idx: number }) => {
+  const { ref, inView } = useInViewOnce<HTMLElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
+  return (
+    <Card ref={ref as any} data-inview={inView} style={{ animationDelay: `${idx * 110}ms` }}>
+      <CardHeader>
+        <CardTitle>{card.title}</CardTitle>
+        {card.subtitle ? <CardSubtitle>{card.subtitle}</CardSubtitle> : null}
+      </CardHeader>
+      <CardBody>
+        <Rows>
+          {card.rows.map((row) => (
+            <Row key={`${card.title}-${row.label}`}>
+              <Label>{row.label}</Label>
+              <Value>{row.value}</Value>
+            </Row>
+          ))}
+        </Rows>
+      </CardBody>
+    </Card>
+  );
+};
+
 function getContactCards(): InfoCardData[] {
   const lineUrl = "https://line.me/R/ti/p/@869usyqy";
 
@@ -250,23 +325,8 @@ const Company = () => {
           </HeaderArea>
 
           <Grid>
-            {cards.map((card) => (
-              <Card key={card.title}>
-                <CardHeader>
-                  <CardTitle>{card.title}</CardTitle>
-                  {card.subtitle ? <CardSubtitle>{card.subtitle}</CardSubtitle> : null}
-                </CardHeader>
-                <CardBody>
-                  <Rows>
-                    {card.rows.map((row) => (
-                      <Row key={`${card.title}-${row.label}`}>
-                        <Label>{row.label}</Label>
-                        <Value>{row.value}</Value>
-                      </Row>
-                    ))}
-                  </Rows>
-                </CardBody>
-              </Card>
+            {cards.map((card, idx) => (
+              <InfoCardItem key={card.title} card={card} idx={idx} />
             ))}
           </Grid>
         </Inner>

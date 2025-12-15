@@ -5,7 +5,6 @@ import Homepage from "../../components/homepage";
 import About from "../../components/about";
 import Classes from "../../components/classes";
 import OurCouchMembers from "../../components/ourCouchMembers";
-import Couch from "../../components/couch";
 import AlliancePlan from "../../components/alliancePlan";
 import PartnershipAndRecruit from "../../components/partnershipAndRecruit";
 import Recruit from "../../components/recruit";
@@ -208,7 +207,7 @@ const Home = () => {
           <ButtonContainer>
             <HeaderButton index={2} active={active} onClick={() => {
               setActive(2)
-              const section = document.querySelector( '#couch' );
+              const section = document.querySelector( '#ourCouchMembers' );
               section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
             }}>師資介紹</HeaderButton>
             <FocusImage src={Focused} index={2} active={active} />
@@ -264,7 +263,7 @@ const Home = () => {
           <ButtonContainer>
             <HeaderButton index={9} active={active} onClick={() => {
               setActive(9)
-              const section = document.querySelector( '#haveATry' );
+              const section = document.querySelector( '#company' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
             }}>聯絡我們</HeaderButton>
             <FocusImage src={Focused} index={9} active={active} />
@@ -301,7 +300,7 @@ const Home = () => {
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(2)
             setOpen(false)
-            const section = document.querySelector( '#couch' );
+            const section = document.querySelector( '#ourCouchMembers' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 2 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
@@ -364,7 +363,7 @@ const Home = () => {
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(9)
             setOpen(false)
-            const section = document.querySelector( '#haveATry' );
+            const section = document.querySelector( '#company' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 9 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
@@ -401,7 +400,7 @@ const Home = () => {
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(2)
             setMobileOpen(false)
-            const section = document.querySelector( '#couch' );
+            const section = document.querySelector( '#ourCouchMembers' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 2 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
@@ -464,7 +463,7 @@ const Home = () => {
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(9)
             setMobileOpen(false)
-            const section = document.querySelector( '#haveATry' );
+            const section = document.querySelector( '#company' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 9 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
@@ -493,7 +492,6 @@ const Home = () => {
         <About />
         {/* <Story /> */}
         <Classes />
-        <Couch />
         <OurCouchMembers />
         <AlliancePlan />
         <LetsPlayStar />

@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
 import {
   Card,
   Container,
@@ -73,8 +74,59 @@ const FeatureList = styled.div`
 `;
 
 const fadeUp = keyframes`
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+`;
+
+const shine = keyframes`
+  0% { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(240%) skewX(-12deg); opacity: 0; }
+`;
+
+const FeatureImage = styled.img`
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.12);
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1);
+
+  ${media.tablet} {
+    aspect-ratio: 16 / 11;
+  }
+`;
+
+const FeatureCard = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: ${theme.spacing.lg};
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  ${media.tablet} {
+    padding: ${theme.spacing.md};
+  }
 `;
 
 const FeatureRow = styled.div<{ reverse?: boolean }>`
@@ -82,7 +134,30 @@ const FeatureRow = styled.div<{ reverse?: boolean }>`
   grid-template-columns: 1fr 1fr;
   gap: ${theme.spacing.md};
   align-items: stretch;
-  animation: ${fadeUp} 520ms ease both;
+  position: relative;
+
+  /* 預設先隱藏，等進入視窗才播放 */
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  /* 更大膽的 hover：圖片放大 + 卡片 tilt + 亮面 */
+  &:hover ${FeatureImage} {
+    transform: scale(1.035);
+  }
+
+  &:hover ${FeatureCard} {
+    transform: translate3d(0, -6px, 0) rotate(-0.25deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover ${FeatureCard}::after {
+    animation: ${shine} 720ms ease both;
+  }
 
   ${media.tablet} {
     grid-template-columns: 1fr;
@@ -99,31 +174,24 @@ const FeatureRow = styled.div<{ reverse?: boolean }>`
     }
   `
       : ""}
-`;
 
-const FeatureImage = styled.img`
-  width: 100%;
-  height: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.12);
-  transition: transform 0.22s ease;
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
 
-  ${media.tablet} {
-    max-height: 260px;
-  }
-`;
-
-const FeatureCard = styled(Card)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: ${theme.spacing.lg};
-  transition: transform 0.22s ease;
-
-  ${media.tablet} {
-    padding: ${theme.spacing.md};
+    &:hover ${FeatureImage} {
+      transform: none;
+    }
+    &:hover ${FeatureCard} {
+      transform: none;
+      filter: none;
+    }
+    &:hover ${FeatureCard}::after {
+      animation: none;
+    }
   }
 `;
 
@@ -188,6 +256,32 @@ const BulletItem = styled.li`
   }
 `;
 
+const FeatureItem = ({ feature, idx }: { feature: Feature; idx: number }) => {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
+  const reverse = idx % 2 === 1;
+
+  return (
+    <FeatureRow
+      ref={ref}
+      data-inview={inView}
+      reverse={reverse}
+      style={{ animationDelay: `${idx * 90}ms` }}
+    >
+      <FeatureImage src={feature.imageSrc} alt={feature.title} loading="lazy" />
+      <FeatureCard>
+        <Pill>
+          <PillTitle>{feature.title}</PillTitle>
+        </Pill>
+        <BulletList>
+          {feature.bullets.map((b) => (
+            <BulletItem key={`${feature.title}-${b}`}>{b}</BulletItem>
+          ))}
+        </BulletList>
+      </FeatureCard>
+    </FeatureRow>
+  );
+};
+
 const Classes = () => {
   return (
     <PageContainer id="classes">
@@ -201,19 +295,7 @@ const Classes = () => {
 
             <FeatureList>
               {FEATURES.map((feature, idx) => (
-                <FeatureRow key={feature.title} reverse={idx % 2 === 1} style={{ animationDelay: `${idx * 90}ms` }}>
-                  <FeatureImage src={feature.imageSrc} alt={feature.title} />
-                  <FeatureCard>
-                    <Pill>
-                      <PillTitle>{feature.title}</PillTitle>
-                    </Pill>
-                    <BulletList>
-                      {feature.bullets.map((b) => (
-                        <BulletItem key={`${feature.title}-${b}`}>{b}</BulletItem>
-                      ))}
-                    </BulletList>
-                  </FeatureCard>
-                </FeatureRow>
+                <FeatureItem key={feature.title} feature={feature} idx={idx} />
               ))}
             </FeatureList>
           </ContentWrapper>
