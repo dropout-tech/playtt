@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
 import {
   Card,
   Container,
@@ -12,8 +13,16 @@ import {
 import { media, theme } from "../styles/theme";
 
 const fadeUp = keyframes`
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+`;
+
+const shine = keyframes`
+  0% { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(240%) skewX(-12deg); opacity: 0; }
 `;
 
 const SectionBg = styled.div`
@@ -66,7 +75,20 @@ const Grid = styled.div`
 `;
 
 const Intro = styled.div`
-  animation: ${fadeUp} 520ms ease both;
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
+  }
 `;
 
 const Lead = styled.p`
@@ -88,20 +110,71 @@ const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: ${theme.spacing.md};
-  animation: ${fadeUp} 520ms ease both;
-  animation-delay: 120ms;
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
 
   ${media.tablet} {
     grid-template-columns: 1fr;
     gap: ${theme.spacing.sm};
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
+  }
 `;
 
 const MatchCard = styled(Card)`
   padding: ${theme.spacing.lg};
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translate3d(0, -6px, 0) rotate(-0.2deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
+  }
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
+    }
   }
 `;
 
@@ -144,6 +217,8 @@ const Em = styled.span`
 `;
 
 const ConTest = () => {
+  const { ref: introRef, inView: introInView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
+  const { ref: cardsRef, inView: cardsInView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
   return (
     <PageContainer id="conTest">
       <SectionBg>
@@ -156,11 +231,11 @@ const ConTest = () => {
             </TitleGroup>
 
             <Grid>
-              <Intro>
+              <Intro ref={introRef} data-inview={introInView}>
                 <Lead>比賽可以幫助你們靈活應用桌球小技巧，是很好的自我檢視方式。</Lead>
               </Intro>
 
-              <Cards>
+              <Cards ref={cardsRef} data-inview={cardsInView} style={{ animationDelay: "120ms" }}>
                 <MatchCard>
                   <Pill>
                     <PillText>邀請賽</PillText>

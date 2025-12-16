@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
 import {
   Card,
   Container,
@@ -64,13 +65,46 @@ const BLOCKS: Block[] = [
 ];
 
 const fadeUp = keyframes`
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+`;
+
+const shine = keyframes`
+  0% { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(240%) skewX(-12deg); opacity: 0; }
+`;
+
+const iconPop = keyframes`
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  35% { transform: translate3d(0, -4px, 0) scale(1.06) rotate(-6deg); }
+  70% { transform: translate3d(0, 0, 0) scale(1.02) rotate(6deg); }
+  100% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
 `;
 
 const SectionBg = styled.div`
   width: 100%;
   background: ${theme.colors.backgroundLight};
+  position: relative;
+  overflow: hidden;
+`;
+
+const Bg = styled.div`
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.7;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(42, 210, 105, 0.14) 0 240px, rgba(42, 210, 105, 0) 520px),
+    radial-gradient(circle at 82% 30%, rgba(242, 183, 43, 0.16) 0 220px, rgba(242, 183, 43, 0) 520px),
+    radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.55) 0 6px, rgba(255, 255, 255, 0) 7px),
+    radial-gradient(circle at 24% 66%, rgba(255, 255, 255, 0.42) 0 5px, rgba(255, 255, 255, 0) 6px),
+    radial-gradient(circle at 76% 78%, rgba(255, 255, 255, 0.46) 0 5px, rgba(255, 255, 255, 0) 6px),
+    radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.40) 0 4px, rgba(255, 255, 255, 0) 5px);
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Grid = styled.div`
@@ -90,10 +124,69 @@ const Grid = styled.div`
 
 const BlockCard = styled(Card)`
   padding: ${theme.spacing.lg};
-  animation: ${fadeUp} 520ms ease both;
+  position: relative;
+  overflow: hidden;
+
+  /* 捲到才播放 */
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translate3d(0, -6px, 0) rotate(-0.25deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
+  }
+
+  &:hover img[data-role="icon"] {
+    animation: ${iconPop} 520ms ease-in-out;
+  }
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
+    }
+    &:hover img[data-role="icon"] {
+      animation: none;
+    }
   }
 `;
 
@@ -107,6 +200,7 @@ const Icon = styled.img`
   width: 130px;
   height: 64px;
   object-fit: contain;
+  transform-origin: 70% 70%;
 
   ${media.tablet} {
     width: 110px;
@@ -144,10 +238,24 @@ const Body = styled.p`
   }
 `;
 
+const BlockItem = ({ b, idx }: { b: Block; idx: number }) => {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
+  return (
+    <BlockCard ref={ref} data-inview={inView} style={{ animationDelay: `${idx * 110}ms` }}>
+      <IconRow>
+        <Icon data-role="icon" src={b.iconSrc} alt="" aria-hidden />
+        <BlockTitle>{b.title}</BlockTitle>
+      </IconRow>
+      <Body>{b.content}</Body>
+    </BlockCard>
+  );
+};
+
 const AlliancePlan = () => {
   return (
     <PageContainer id="alliancePlan">
       <SectionBg>
+        <Bg aria-hidden="true" />
         <Container>
           <ContentWrapper>
             <TitleGroup>
@@ -157,13 +265,7 @@ const AlliancePlan = () => {
 
             <Grid>
               {BLOCKS.map((b, idx) => (
-                <BlockCard key={b.title} style={{ animationDelay: `${idx * 90}ms` }}>
-                  <IconRow>
-                    <Icon src={b.iconSrc} alt="" aria-hidden />
-                    <BlockTitle>{b.title}</BlockTitle>
-                  </IconRow>
-                  <Body>{b.content}</Body>
-                </BlockCard>
+                <BlockItem key={b.title} b={b} idx={idx} />
               ))}
             </Grid>
           </ContentWrapper>

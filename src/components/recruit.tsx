@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
 import {
   Card,
   Container,
@@ -12,8 +13,16 @@ import {
 import { media, theme } from "../styles/theme";
 
 const fadeUp = keyframes`
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+`;
+
+const shine = keyframes`
+  0% { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(240%) skewX(-12deg); opacity: 0; }
 `;
 
 const SectionBg = styled.div`
@@ -60,10 +69,62 @@ const Layout = styled.div`
 const Banner = styled(Card)`
   background: rgba(207, 210, 211, 0.2);
   padding: ${theme.spacing.lg};
-  animation: ${fadeUp} 520ms ease both;
+  position: relative;
+  overflow: hidden;
+
+  /* 捲到才播放 */
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translate3d(0, -6px, 0) rotate(-0.2deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
+  }
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
+    }
   }
 `;
 
@@ -121,6 +182,7 @@ const Item = styled.li`
 `;
 
 const Recruit = () => {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
   return (
     <PageContainer id="recruit">
       <SectionBg>
@@ -133,7 +195,7 @@ const Recruit = () => {
             </TitleGroup>
 
             <Layout>
-              <Banner>
+              <Banner ref={ref} data-inview={inView}>
                 <Pill>
                   <PillText>＃ 熱烈招募中！</PillText>
                 </Pill>

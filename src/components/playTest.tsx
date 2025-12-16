@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
 import {
   Card,
   Container,
@@ -13,8 +14,16 @@ import { media, theme } from "../styles/theme";
 import testpic from "../assets/playTest/testpic.png";
 
 const fadeUp = keyframes`
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+`;
+
+const shine = keyframes`
+  0% { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(240%) skewX(-12deg); opacity: 0; }
 `;
 
 const SectionBg = styled.div`
@@ -36,34 +45,131 @@ const Grid = styled.div`
 
 const TextCard = styled(Card)`
   padding: ${theme.spacing.lg};
-  animation: ${fadeUp} 520ms ease both;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translate3d(0, -6px, 0) rotate(-0.2deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
+  }
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
+    }
+  }
 `;
 
 const ImageCard = styled(Card)`
-  animation: ${fadeUp} 520ms ease both;
-  animation-delay: 120ms;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translate3d(0, -6px, 0) rotate(0.2deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
+    }
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 100%;
-  max-height: 560px;
+  aspect-ratio: 4 / 5;
+  height: auto;
   object-fit: cover;
   display: block;
   transition: transform 0.22s ease;
 
   ${media.tablet} {
-    max-height: 320px;
+    aspect-ratio: 16 / 10;
   }
 `;
 
 const MotionImageCard = styled(ImageCard)`
   &:hover ${Image} {
-    transform: scale(1.02);
+    transform: scale(1.04);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -152,6 +258,8 @@ const Em = styled.span`
 `;
 
 const PlayTest = () => {
+  const { ref: textRef, inView: textInView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
+  const { ref: imgRef, inView: imgInView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
   return (
     <PageContainer id="playTest">
       <SectionBg>
@@ -163,7 +271,7 @@ const PlayTest = () => {
             </TitleGroup>
 
             <Grid>
-              <TextCard>
+              <TextCard ref={textRef} data-inview={textInView}>
                 <Lead>
                   <Em>Let’s Play</Em> 獨家精心規劃專屬檢定，結合三大面向，讓你在「玩」的過程裡進步看得見。
                 </Lead>
@@ -190,8 +298,8 @@ const PlayTest = () => {
                 </Description>
               </TextCard>
 
-              <MotionImageCard>
-                <Image src={testpic} alt="桌球檢定示意圖片" />
+              <MotionImageCard ref={imgRef} data-inview={imgInView} style={{ animationDelay: "120ms" }}>
+                <Image src={testpic} alt="桌球檢定示意圖片" loading="lazy" />
               </MotionImageCard>
             </Grid>
           </ContentWrapper>

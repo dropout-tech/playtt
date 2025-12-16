@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useInViewOnce } from "../hooks/useInViewOnce";
 import {
   Card,
   Container,
@@ -25,13 +26,38 @@ const CATEGORIES: Category[] = [
 ];
 
 const fadeUp = keyframes`
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  60% { opacity: 1; transform: translate3d(0, -2px, 0) scale(1.01); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+`;
+
+const shine = keyframes`
+  0% { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.55; }
+  70% { opacity: 0.18; }
+  100% { transform: translateX(240%) skewX(-12deg); opacity: 0; }
 `;
 
 const SectionBg = styled.div`
   width: 100%;
   background: ${theme.colors.primary};
+  position: relative;
+  overflow: hidden;
+`;
+
+const Bg = styled.div`
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.75;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(42, 210, 105, 0.16) 0 240px, rgba(42, 210, 105, 0) 520px),
+    radial-gradient(circle at 82% 30%, rgba(242, 183, 43, 0.18) 0 220px, rgba(242, 183, 43, 0) 520px),
+    radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.52) 0 6px, rgba(255, 255, 255, 0) 7px),
+    radial-gradient(circle at 24% 66%, rgba(255, 255, 255, 0.42) 0 5px, rgba(255, 255, 255, 0) 6px),
+    radial-gradient(circle at 76% 78%, rgba(255, 255, 255, 0.44) 0 5px, rgba(255, 255, 255, 0) 6px);
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const WhiteTitle = styled(SectionTitle)`
@@ -79,10 +105,62 @@ const Grid = styled.div`
 const Block = styled(Card)`
   background: rgba(245, 246, 246, 0.96);
   padding: ${theme.spacing.lg};
-  animation: ${fadeUp} 520ms ease both;
+  position: relative;
+  overflow: hidden;
+
+  /* 捲到才播放 */
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+
+  &[data-inview="true"] {
+    animation: ${fadeUp} 680ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 220ms ease, filter 220ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translate3d(0, -6px, 0) rotate(-0.25deg);
+    box-shadow: 0 16px 34px rgba(26, 26, 26, 0.16);
+    filter: saturate(1.04);
+  }
+
+  &:hover::after {
+    animation: ${shine} 720ms ease both;
+  }
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    &[data-inview="true"] {
+      animation: none;
+    }
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+    &:hover::after {
+      animation: none;
+    }
   }
 `;
 
@@ -131,10 +209,39 @@ const Item = styled.li`
   color: ${theme.colors.text};
 `;
 
+const BigItem = () => {
+  const { ref, inView } = useInViewOnce<HTMLParagraphElement>({ rootMargin: "0px 0px -12% 0px", threshold: 0.18 });
+  return (
+    <Big ref={ref} data-inview={inView} style={{ opacity: inView ? 1 : 0, transition: "opacity 240ms ease" }}>
+      目前已超過 <Number>30</Number> 個合作機構
+      <br />
+      企業機構、法人團體熱烈招募合作中！
+    </Big>
+  );
+};
+
+const CategoryItem = ({ c, idx }: { c: Category; idx: number }) => {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>({ rootMargin: "0px 0px -10% 0px", threshold: 0.18 });
+  return (
+    <Block ref={ref} data-inview={inView} style={{ animationDelay: `${idx * 90}ms` }}>
+      <Head>
+        <LineImg src={colorLine} alt="" aria-hidden />
+        <CatTitle>{c.title}</CatTitle>
+      </Head>
+      <List>
+        {c.items.map((it) => (
+          <Item key={`${c.title}-${it}`}>{it}</Item>
+        ))}
+      </List>
+    </Block>
+  );
+};
+
 const PartnershipAndRecruit = () => {
   return (
     <PageContainer id="partnershipAndRecruit">
       <SectionBg>
+        <Bg aria-hidden="true" />
         <Container>
           <ContentWrapper>
             <TitleGroup>
@@ -142,25 +249,11 @@ const PartnershipAndRecruit = () => {
               <WhiteSubtitle>Partnership & Recruit</WhiteSubtitle>
             </TitleGroup>
 
-            <Big>
-              目前已超過 <Number>30</Number> 個合作機構
-              <br />
-              企業機構、法人團體熱烈招募合作中！
-            </Big>
+            <BigItem />
 
             <Grid>
               {CATEGORIES.map((c, idx) => (
-                <Block key={c.title} style={{ animationDelay: `${idx * 80}ms` }}>
-                  <Head>
-                    <LineImg src={colorLine} alt="" aria-hidden />
-                    <CatTitle>{c.title}</CatTitle>
-                  </Head>
-                  <List>
-                    {c.items.map((it) => (
-                      <Item key={`${c.title}-${it}`}>{it}</Item>
-                    ))}
-                  </List>
-                </Block>
+                <CategoryItem key={c.title} c={c} idx={idx} />
               ))}
             </Grid>
           </ContentWrapper>
