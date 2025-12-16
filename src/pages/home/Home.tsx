@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useCallback, useMemo, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import Homepage from "../../components/homepage";
 // import Story from "../../components/story";
 import About from "../../components/about";
@@ -27,6 +27,38 @@ import Drawer from 'react-modern-drawer'
 //import styles 👇
 import 'react-modern-drawer/dist/index.css'
 
+type NavItem = {
+  key: number;
+  label: string;
+  targetId: string;
+  focusWidth?: number;
+};
+
+const NAV_ITEMS: NavItem[] = [
+  { key: 0, label: "關於我們", targetId: "about" },
+  { key: 1, label: "課程介紹", targetId: "classes" },
+  { key: 2, label: "師資介紹", targetId: "ourCouchMembers" },
+  { key: 3, label: "聯盟計畫", targetId: "alliancePlan" },
+  { key: 4, label: "藝人明星桌球隊", targetId: "letsPlayStar", focusWidth: 110 },
+  { key: 5, label: "合作與招募", targetId: "partnershipAndRecruit", focusWidth: 80 },
+  { key: 6, label: "合作招募", targetId: "recruit" },
+  { key: 7, label: "桌球檢定", targetId: "playTest" },
+  { key: 8, label: "桌球賽事", targetId: "conTest" },
+  { key: 9, label: "其他服務", targetId: "otherService" },
+  { key: 10, label: "聯絡我們", targetId: "company" },
+];
+
+const pop = keyframes`
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  40% { transform: translate3d(0, -2px, 0) scale(1.04); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+`;
+
+const float = keyframes`
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -6px, 0); }
+`;
+
 
 const SideDrawer = styled(Drawer)`
   /* margin-top:80px; */
@@ -42,15 +74,11 @@ const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   overflow-x: hidden;
-  overflow-y: auto;
-  @media screen and (max-width: 414px) {
-    height: 100vh;
-  }
 `;
 
 const Header = styled.div`
-  /* width: 100%; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,9 +86,13 @@ const Header = styled.div`
   align-items: center;
   padding-left:30px;
   padding-right:30px;
-  position: absolute;
-  background-color: white;
-  z-index: 99999999;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+  z-index: 1000;
   left: 0;
   right: 0;
   width: 100%;
@@ -71,7 +103,6 @@ const Header = styled.div`
 `;
 
 const MobileHeader = styled.div`
-  /* width: 100%; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -80,8 +111,12 @@ const MobileHeader = styled.div`
   padding-left:20px;
   padding-right:30px;
   position: fixed;
-  background-color: white;
-  z-index: 999999;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+  z-index: 1000;
   left: 0;
   right: 0;
   width: 100%;
@@ -109,16 +144,44 @@ const MenuImage = styled.img`
   height: 32px;
   margin-bottom:-4px;
   margin-right:30px;
+  transition: transform 0.22s ease, filter 0.22s ease;
+
+  &:hover {
+    transform: translate3d(0, -1px, 0) scale(1.03);
+    filter: saturate(1.05);
+  }
+
+  &:active {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
   @media screen and (min-width: 1280px) {
     display: none;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+      filter: none;
+    }
+  }
 `;
 
-const FocusImage = styled.img<{ index: number, active: number }>`
-  width: ${(props) => (props.index === 4 ? "110px" : props.index === 5 ? "80px" : "66px")};
+const FocusImage = styled.img<{ $width: number; $active: boolean }>`
+  width: ${props => `${props.$width}px`};
   height: 6px;
   margin-top:8px;
-  display: ${props => props.index === props.active ? "block" : "none"};
+  opacity: ${props => (props.$active ? 1 : 0)};
+  transform: ${props => (props.$active ? "translate3d(0, 0, 0) scaleX(1)" : "translate3d(0, -2px, 0) scaleX(0.85)")};
+  transform-origin: center;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  animation: ${props => (props.$active ? pop : "none")} 420ms ease both;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    animation: none;
+  }
 `;
 
 const HeaderButton = styled.button<{ index: number, active: number }>`
@@ -129,6 +192,19 @@ const HeaderButton = styled.button<{ index: number, active: number }>`
     font-size: 16px;
     margin-top: ${props => props.index === props.active ? "14px" : "0"};
     cursor: pointer;
+    transition: transform 0.18s ease, color 0.18s ease;
+
+    &:hover {
+      transform: translate3d(0, -1px, 0);
+      color: #1a1a1a;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+      &:hover {
+        transform: none;
+      }
+    }
 `;
 
 const ButtonContainer = styled.div`
@@ -148,12 +224,6 @@ const RowContainer = styled.div`
   }
 `;
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
 const MobileText = styled.p`
   display: flex;
   flex-direction: row;
@@ -165,12 +235,73 @@ const MobileText = styled.p`
   margin-bottom:20px;
 `;
 
+const DrawerItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+
+  &:hover {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover {
+      transform: none;
+    }
+  }
+`;
+
+const DrawerHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+`;
+
+const DrawerHint = styled.div`
+  font-family: "Noto Sans TC";
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(26, 26, 26, 0.55);
+`;
+
 
 /* desktop thw newest info style end */
 const Home = () => {
   const [active, setActive] = useState(-1)
   const [open, setOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  const focusWidthByKey = useMemo(() => {
+    const map = new Map<number, number>();
+    NAV_ITEMS.forEach((it) => map.set(it.key, it.focusWidth ?? 66));
+    return map;
+  }, []);
+
+  const scrollToId = useCallback((targetId: string) => {
+    const section = document.getElementById(targetId);
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
+  const goHome = useCallback(() => {
+    setActive(-1);
+    scrollToId("home");
+  }, [scrollToId]);
+
+  const onNav = useCallback(
+    (item: NavItem, opts?: { closeDesktop?: boolean; closeMobile?: boolean }) => {
+      setActive(item.key);
+      if (opts?.closeDesktop) setOpen(false);
+      if (opts?.closeMobile) setMobileOpen(false);
+      scrollToId(item.targetId);
+    },
+    [scrollToId]
+  );
+
   return (
     <>
       <Header>
@@ -181,93 +312,23 @@ const Home = () => {
             setOpen(true)
           }} />}
 
-          <LogoImage src={Logo} onClick={() => {
-              setActive(-1)
-              const section = document.querySelector( '#home' );
-              section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }} />
+          <LogoImage src={Logo} onClick={goHome} />
         </div>
         <RowContainer>
-          <ButtonContainer>
-            <HeaderButton index={0} active={active} onClick={() => {
-              setActive(0)
-              const section = document.querySelector( '#about' );
-              section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>關於我們</HeaderButton>
-            <FocusImage src={Focused} index={0} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={1} active={active} onClick={() => {
-              setActive(1)
-              const section = document.querySelector( '#classes' );
-              section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }} >課程介紹</HeaderButton>
-            <FocusImage src={Focused} index={1} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={2} active={active} onClick={() => {
-              setActive(2)
-              const section = document.querySelector( '#ourCouchMembers' );
-              section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>師資介紹</HeaderButton>
-            <FocusImage src={Focused} index={2} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={3} active={active} onClick={() => {
-              setActive(3)
-              const section = document.querySelector( '#alliancePlan' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>聯盟計畫</HeaderButton>
-            <FocusImage src={Focused} index={3} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={4} active={active} onClick={() => {
-              setActive(4)
-              const section = document.querySelector( '#letsPlayStar' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>藝人明星桌球隊</HeaderButton>
-            <FocusImage src={Focused} index={4} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={5} active={active} onClick={() => {
-              setActive(5)
-              const section = document.querySelector( '#partnershipAndRecruit' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>合作與招募</HeaderButton>
-            <FocusImage src={Focused} index={5} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={6} active={active} onClick={() => {
-              setActive(6)
-              const section = document.querySelector( '#playTest' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>桌球檢定</HeaderButton>
-            <FocusImage src={Focused} index={6} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={7} active={active} onClick={() => {
-              setActive(7)
-              const section = document.querySelector( '#conTest' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>桌球賽事</HeaderButton>
-            <FocusImage src={Focused} index={7} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={8} active={active} onClick={() => {
-              setActive(8)
-              const section = document.querySelector( '#otherService' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>其他服務</HeaderButton>
-            <FocusImage src={Focused} index={8} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={9} active={active} onClick={() => {
-              setActive(9)
-              const section = document.querySelector( '#company' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>聯絡我們</HeaderButton>
-            <FocusImage src={Focused} index={9} active={active} />
-          </ButtonContainer>
+          {NAV_ITEMS.slice(0, 6).map((item) => (
+            <ButtonContainer key={item.key}>
+              <HeaderButton index={item.key} active={active} onClick={() => onNav(item)}>
+                {item.label}
+              </HeaderButton>
+              <FocusImage
+                src={Focused}
+                $width={focusWidthByKey.get(item.key) ?? 66}
+                $active={item.key === active}
+                alt=""
+                aria-hidden
+              />
+            </ButtonContainer>
+          ))}
         </RowContainer>
       </Header>
       <Container>
@@ -279,96 +340,19 @@ const Home = () => {
           size={286}
           zIndex={10000}
         >
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(0)
-            setOpen(false)
-            const section = document.querySelector( '#about' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 0 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>關於我們</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(1)
-            setOpen(false)
-            const section = document.querySelector( '#classes' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 1 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>課程介紹</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(2)
-            setOpen(false)
-            const section = document.querySelector( '#ourCouchMembers' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 2 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>師資介紹</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(3)
-            setOpen(false)
-            const section = document.querySelector( '#alliancePlan' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 3 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>聯盟計畫</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(4)
-            setOpen(false)
-            const section = document.querySelector( '#letsPlayStar' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 4 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>藝人明星桌球隊</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(5)
-            setOpen(false)
-            const section = document.querySelector( '#partnershipAndRecruit' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 5 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>合作與招募</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(6)
-            setOpen(false)
-            const section = document.querySelector( '#playTest' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 6 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>桌球檢定</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(7)
-            setOpen(false)
-            const section = document.querySelector( '#conTest' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 7 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>桌球賽事</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(8)
-            setOpen(false)
-            const section = document.querySelector( '#otherService' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 8 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>其他服務</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(9)
-            setOpen(false)
-            const section = document.querySelector( '#company' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 9 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>聯絡我們</MobileText>
-          </Row>
+          <DrawerHeader>
+            <LightImage src={GreenLight} alt="" />
+            <DrawerHint>選單</DrawerHint>
+          </DrawerHeader>
+
+          {NAV_ITEMS.map((item) => (
+            <DrawerItem key={`desktop-${item.key}`} onClick={() => onNav(item, { closeDesktop: true })}>
+              {active === item.key ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
+              <MobileText style={{ animation: active === item.key ? `${float} 1.8s ease-in-out infinite` : "none" }}>
+                {item.label}
+              </MobileText>
+            </DrawerItem>
+          ))}
 
         </SideDrawer>
         <SideDrawer
@@ -379,96 +363,19 @@ const Home = () => {
           size={"100%"}
           zIndex={100000}
         >
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(0)
-            setMobileOpen(false)
-            const section = document.querySelector( '#about' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 0 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>關於我們</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(1)
-            setMobileOpen(false)
-            const section = document.querySelector( '#classes' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 1 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>課程介紹</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(2)
-            setMobileOpen(false)
-            const section = document.querySelector( '#ourCouchMembers' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 2 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>師資介紹</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(3)
-            setMobileOpen(false)
-            const section = document.querySelector( '#alliancePlan' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 3 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>聯盟計畫</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(4)
-            setMobileOpen(false)
-            const section = document.querySelector( '#letsPlayStar' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 4 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>藝人明星桌球隊</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(5)
-            setMobileOpen(false)
-            const section = document.querySelector( '#partnershipAndRecruit' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 5 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>合作與招募</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(6)
-            setMobileOpen(false)
-            const section = document.querySelector( '#playTest' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 6 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>桌球檢定</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(7)
-            setMobileOpen(false)
-            const section = document.querySelector( '#conTest' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 7 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>桌球賽事</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(8)
-            setMobileOpen(false)
-            const section = document.querySelector( '#otherService' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 8 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>其他服務</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(9)
-            setMobileOpen(false)
-            const section = document.querySelector( '#company' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 9 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>聯絡我們</MobileText>
-          </Row>
+          <DrawerHeader>
+            <LightImage src={GreenLight} alt="" />
+            <DrawerHint>選單</DrawerHint>
+          </DrawerHeader>
+
+          {NAV_ITEMS.map((item) => (
+            <DrawerItem key={`mobile-${item.key}`} onClick={() => onNav(item, { closeMobile: true })}>
+              {active === item.key ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
+              <MobileText style={{ animation: active === item.key ? `${float} 1.8s ease-in-out infinite` : "none" }}>
+                {item.label}
+              </MobileText>
+            </DrawerItem>
+          ))}
 
         </SideDrawer>
         <MobileHeader>
@@ -479,11 +386,7 @@ const Home = () => {
             setMobileOpen(true)
 
           }} />}
-          <LogoImage src={Logo} onClick={() => {
-              setActive(-1)
-              const section = document.querySelector( '#home' );
-              section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}/>
+          <LogoImage src={Logo} onClick={goHome}/>
           <div></div>
         </MobileHeader>
 

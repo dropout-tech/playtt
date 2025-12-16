@@ -13,7 +13,9 @@ import banner414 from "../assets/homepage/banner414.png";
 // 代碼量減少 66%，更易於維護
 const Banner = styled.section`
   width: 100%;
+  /* 手機瀏覽器動態工具列：用 svh 更穩 */
   height: 100vh;
+  height: 100svh;
   background-image: url(${banner1440});
   background-size: cover;
   background-position: center;
