@@ -18,113 +18,28 @@ const Inner = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: ${theme.spacing.xxl} ${theme.spacing.md} ${theme.spacing.lg};
+  /* 讓 Footer 更緊湊：避免超出一整個螢幕高度 */
+  padding: ${theme.spacing.lg} ${theme.spacing.md} ${theme.spacing.md};
 
   ${media.tablet} {
-    padding: ${theme.spacing.xl} ${theme.spacing.sm} ${theme.spacing.md};
+    padding: ${theme.spacing.md} ${theme.spacing.sm};
   }
 `;
 
 const HeaderRow = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: ${theme.spacing.lg};
-  align-items: end;
-
-  ${media.tablet} {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: ${theme.spacing.md};
-  }
-`;
-
-const Title = styled.h2`
-  margin: 0;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.black};
-  font-size: ${theme.fontSize.xxxl};
-  line-height: 52px;
-  letter-spacing: 0.04em;
-  color: ${theme.colors.background};
-
-  ${media.tablet} {
-    font-size: ${theme.fontSize.xxl};
-    line-height: 40px;
-  }
-`;
-
-const Subtitle = styled.p`
-  margin: 6px 0 0;
-  font-family: ${theme.fonts.secondary};
-  font-weight: ${theme.fontWeight.bold};
-  font-size: ${theme.fontSize.xxxl};
-  line-height: 52px;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.72);
-
-  ${media.tablet} {
-    font-size: ${theme.fontSize.xxl};
-    line-height: 40px;
-  }
-`;
-
-const Hint = styled.p`
-  margin: ${theme.spacing.sm} 0 0;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.normal};
-  font-size: ${theme.fontSize.md};
-  line-height: 28px;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 720px;
-`;
-
-const FooterButton = styled(PrimaryButton)`
-  width: 280px;
-  height: 56px;
-  border-radius: 12px;
-
-  ${media.tablet} {
-    width: 100%;
-    height: 52px;
-  }
-`;
-
-const FooterButtonText = styled(ButtonText)`
-  font-size: ${theme.fontSize.lg};
-  ${media.tablet} {
-    font-size: ${theme.fontSize.lg};
-  }
-`;
-
-const Divider = styled.div`
-  margin-top: ${theme.spacing.lg};
-  height: 1px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.18);
-`;
-
-const Grid = styled.div`
-  margin-top: ${theme.spacing.lg};
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) 320px;
   gap: ${theme.spacing.md};
+  align-items: center;
 
   ${media.tablet} {
     grid-template-columns: 1fr;
+    align-items: stretch;
     gap: ${theme.spacing.sm};
   }
 `;
 
-const Card = styled.section`
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 16px;
-  padding: ${theme.spacing.md};
-  min-width: 0;
-`;
-
-const CardTitle = styled.h3`
+const Title = styled.h2`
   margin: 0;
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.black};
@@ -134,32 +49,94 @@ const CardTitle = styled.h3`
   color: ${theme.colors.background};
 
   ${media.tablet} {
+    font-size: ${theme.fontSize.xxl};
+    line-height: 32px;
+  }
+`;
+
+const Subtitle = styled.p`
+  margin: 4px 0 0;
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.bold};
+  font-size: ${theme.fontSize.lg};
+  line-height: 28px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.72);
+
+  ${media.tablet} {
     font-size: ${theme.fontSize.lg};
     line-height: 28px;
   }
 `;
 
-const CardSubtitle = styled.p`
-  margin: 6px 0 0;
+const FooterButton = styled(PrimaryButton)`
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+
+  ${media.tablet} {
+    width: 100%;
+    height: 48px;
+  }
+`;
+
+const FooterButtonText = styled(ButtonText)`
+  font-size: ${theme.fontSize.lg};
+`;
+
+const Grid = styled.div`
+  margin-top: ${theme.spacing.md};
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: ${theme.spacing.md};
+
+  ${media.tablet} {
+    grid-template-columns: 1fr;
+    gap: ${theme.spacing.sm};
+  }
+`;
+
+const Section = styled.section`
+  min-width: 0;
+  padding-top: 2px;
+`;
+
+const SectionTitle = styled.h3`
+  margin: 0;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
+  font-size: ${theme.fontSize.lg};
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  color: ${theme.colors.background};
+
+  ${media.tablet} {
+    font-size: ${theme.fontSize.lg};
+    line-height: 26px;
+  }
+`;
+
+const SectionSubtitle = styled.p`
+  margin: 4px 0 0;
   font-family: ${theme.fonts.secondary};
   font-weight: ${theme.fontWeight.bold};
-  font-size: ${theme.fontSize.md};
-  line-height: 24px;
+  font-size: ${theme.fontSize.sm};
+  line-height: 22px;
   letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 0.72);
 `;
 
 const List = styled.div`
-  margin-top: ${theme.spacing.sm};
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 `;
 
 const Row = styled.div`
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 8px;
 
   ${media.tablet} {
     grid-template-columns: 1fr;
@@ -179,8 +156,8 @@ const Label = styled.div`
 const Value = styled.div`
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.normal};
-  font-size: ${theme.fontSize.md};
-  line-height: 28px;
+  font-size: ${theme.fontSize.sm};
+  line-height: 24px;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.96);
   word-break: break-word;
@@ -196,26 +173,14 @@ const Link = styled.a`
   }
 `;
 
-const BottomRow = styled.div`
-  margin-top: ${theme.spacing.lg};
-  padding-top: ${theme.spacing.sm};
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  display: flex;
-  justify-content: space-between;
-  gap: ${theme.spacing.md};
-  flex-wrap: wrap;
-
-  ${media.tablet} {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-
 const Copyright = styled.div`
+  margin-top: ${theme.spacing.md};
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
   font-family: ${theme.fonts.secondary};
   font-weight: ${theme.fontWeight.normal};
-  font-size: ${theme.fontSize.sm};
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 20px;
   letter-spacing: 0.06em;
   color: rgba(255, 255, 255, 0.72);
 `;
@@ -288,7 +253,6 @@ const Footer = () => {
             <div>
               <Title>聯絡我們</Title>
               <Subtitle>Contact Us</Subtitle>
-              <Hint>預約體驗、課程諮詢、場地與合作需求，歡迎直接透過 Line / 電話與我們聯繫。</Hint>
             </div>
 
             <FooterButton
@@ -300,13 +264,11 @@ const Footer = () => {
             </FooterButton>
           </HeaderRow>
 
-          <Divider />
-
           <Grid>
             {cards.map((card) => (
-              <Card key={card.title}>
-                <CardTitle>{card.title}</CardTitle>
-                <CardSubtitle>{card.subtitle}</CardSubtitle>
+              <Section key={card.title}>
+                <SectionTitle>{card.title}</SectionTitle>
+                <SectionSubtitle>{card.subtitle}</SectionSubtitle>
                 <List>
                   {card.items.map((item) => (
                     <Row key={`${card.title}-${item.label}`}>
@@ -315,13 +277,11 @@ const Footer = () => {
                     </Row>
                   ))}
                 </List>
-              </Card>
+              </Section>
             ))}
           </Grid>
 
-          <BottomRow>
-            <Copyright>Copyright © 2026 Let's Play</Copyright>
-          </BottomRow>
+          <Copyright>Copyright © 2026 Let's Play</Copyright>
         </Inner>
       </FooterBg>
     </PageContainer>
