@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Homepage from "../../components/homepage";
 // import Story from "../../components/story";
 import About from "../../components/about";
@@ -13,13 +13,12 @@ import PlayTest from "../../components/playTest";
 import ConTest from "../../components/conTest";
 import OtherService from "../../components/otherService";
 import Footer from "../../components/footer";
-import Reserve from "../../components/reserve";
 import Logo from "../../assets/homepage/logo.png";
 import Menu from "../../assets/homepage/menu.png";
 import Close from "../../assets/homepage/close.png";
 import Light from "../../assets/homepage/light.png";
 import GreenLight from "../../assets/homepage/green-light.png";
-import { theme } from "../../styles/theme";
+import { media, theme } from "../../styles/theme";
 // import component 👇
 import Drawer from 'react-modern-drawer'
 
@@ -34,6 +33,66 @@ const SideDrawer = styled(Drawer)`
   padding-left: 30px;
   padding-top: 20px;
 `
+
+const pulse = keyframes`
+  0% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(-50%) scale(1.03); }
+  100% { transform: translateY(-50%) scale(1); }
+`;
+
+const FloatingReserveButton = styled.button`
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  background: ${theme.colors.accent};
+  color: ${theme.colors.background};
+  cursor: pointer;
+  z-index: 1000001;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+  display: grid;
+  place-items: center;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.black};
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+
+  animation: ${pulse} 1.8s ease-in-out infinite;
+
+  &:hover {
+    filter: saturate(1.05);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: 4px solid rgba(255, 217, 0, 0.45);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+
+  ${media.tablet} {
+    top: auto;
+    bottom: 18px;
+    right: 14px;
+    transform: none;
+    width: 60px;
+    height: 60px;
+  }
+`;
+
+const FloatingText = styled.span`
+  font-size: 13px;
+`;
 
 const Container = styled.div`
   display: flex;
@@ -260,6 +319,17 @@ const Home = () => {
         </RowContainer>
       </Header>
       <Container>
+        <FloatingReserveButton
+          type="button"
+          aria-label="立即預約免費試上（開啟 Facebook 私訊）"
+          onClick={() => {
+            window.open("https://www.facebook.com/playpp2018", "_parent");
+          }}
+        >
+          <FloatingText>立即</FloatingText>
+          <FloatingText>預約</FloatingText>
+        </FloatingReserveButton>
+
         <SideDrawer
           open={open}
           onClose={() => { setOpen(false) }}
@@ -317,7 +387,6 @@ const Home = () => {
         </MobileHeader>
 
         <Homepage/>
-        <Reserve />
         <About />
         {/* <Story /> */}
         <Classes />

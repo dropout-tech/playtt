@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { PageContainer, PrimaryButton, ButtonText } from "../styles/components";
+import { PageContainer } from "../styles/components";
 import { media, theme } from "../styles/theme";
 
 import banner1440 from "../assets/homepage/banner1440.png";
@@ -103,95 +103,6 @@ const H1 = styled.h1`
   }
 `;
 
-const CtaPanel = styled.div`
-  margin-top: 0;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px 16px 14px;
-  border-radius: 16px;
-  background: rgba(26, 26, 26, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
-
-  ${media.tablet} {
-    width: 100%;
-    max-width: 520px;
-  }
-`;
-
-const MicroCopy = styled.p`
-  margin: 0;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.bold};
-  font-size: ${theme.fontSize.md};
-  line-height: 26px;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.92);
-`;
-
-const Sub = styled.p`
-  margin: 0;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.normal};
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 720px;
-
-  ${media.tablet} {
-    font-size: 16px;
-    line-height: 28px;
-  }
-`;
-
-const Buttons = styled.div`
-  margin-top: 0;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-
-  @media screen and (min-width: ${theme.breakpoints.laptop}) {
-    justify-content: flex-start;
-  }
-`;
-
-const GhostButton = styled.button`
-  border: 2px solid rgba(255, 255, 255, 0.75);
-  background: rgba(26, 26, 26, 0.18);
-  color: ${theme.colors.background};
-  width: 210px;
-  height: 56px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.black};
-  font-size: 18px;
-  letter-spacing: 0.04em;
-  transition: transform 0.18s ease, background 0.18s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    background: rgba(26, 26, 26, 0.28);
-  }
-
-  ${media.tablet} {
-    width: 211px;
-    height: 48px;
-    font-size: 16px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    transition: none;
-    &:hover {
-      transform: none;
-    }
-  }
-`;
-
 const Homepage = () => {
   return (
     <PageContainer id="home">
@@ -199,29 +110,6 @@ const Homepage = () => {
         <Overlay>
           <HeroBox>
             <H1>Let’s Play 桌球聯盟</H1>
-            <CtaPanel>
-              <MicroCopy>蘆洲・林口｜桌球教學・課程・場地｜親子・兒童・成人・進階</MicroCopy>
-              <Sub>一起玩、一起進步。玩得開心，學得更快。</Sub>
-
-              <Buttons>
-                <PrimaryButton
-                  onClick={() => {
-                    const section = document.querySelector("#reserve");
-                    section?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
-                >
-                  <ButtonText>立即預約</ButtonText>
-                </PrimaryButton>
-                <GhostButton
-                  onClick={() => {
-                    const section = document.querySelector("#company");
-                    section?.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
-                >
-                  聯絡我們
-                </GhostButton>
-              </Buttons>
-            </CtaPanel>
           </HeroBox>
         </Overlay>
       </Banner>
