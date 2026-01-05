@@ -14,7 +14,6 @@ import ConTest from "../../components/conTest";
 import OtherService from "../../components/otherService";
 import Company from "../../components/company";
 import HaveATry from "../../components/haveATry";
-import LetsPlayStar from "../../components/letsPlayStar";
 import Reserve from "../../components/reserve";
 import Logo from "../../assets/homepage/logo.png";
 import Focused from "../../assets/homepage/focused.png";
@@ -116,7 +115,7 @@ const MenuImage = styled.img`
 `;
 
 const FocusImage = styled.img<{ index: number, active: number }>`
-  width: ${(props) => (props.index === 4 ? "110px" : props.index === 5 ? "80px" : "66px")};
+  width: ${(props) => (props.index === 4 ? "110px" : "66px")};
   height: 6px;
   margin-top:8px;
   display: ${props => props.index === props.active ? "block" : "none"};
@@ -224,50 +223,42 @@ const Home = () => {
           <ButtonContainer>
             <HeaderButton index={4} active={active} onClick={() => {
               setActive(4)
-              const section = document.querySelector( '#letsPlayStar' );
+              const section = document.querySelector( '#partnershipAndRecruit' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>藝人明星桌球隊</HeaderButton>
+            }}>合作與招募</HeaderButton>
             <FocusImage src={Focused} index={4} active={active} />
           </ButtonContainer>
           <ButtonContainer>
             <HeaderButton index={5} active={active} onClick={() => {
               setActive(5)
-              const section = document.querySelector( '#partnershipAndRecruit' );
+              const section = document.querySelector( '#playTest' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>合作與招募</HeaderButton>
+            }}>桌球檢定</HeaderButton>
             <FocusImage src={Focused} index={5} active={active} />
           </ButtonContainer>
           <ButtonContainer>
             <HeaderButton index={6} active={active} onClick={() => {
               setActive(6)
-              const section = document.querySelector( '#playTest' );
+              const section = document.querySelector( '#conTest' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>桌球檢定</HeaderButton>
+            }}>桌球賽事</HeaderButton>
             <FocusImage src={Focused} index={6} active={active} />
           </ButtonContainer>
           <ButtonContainer>
             <HeaderButton index={7} active={active} onClick={() => {
               setActive(7)
-              const section = document.querySelector( '#conTest' );
+              const section = document.querySelector( '#otherService' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>桌球賽事</HeaderButton>
+            }}>其他服務</HeaderButton>
             <FocusImage src={Focused} index={7} active={active} />
           </ButtonContainer>
           <ButtonContainer>
             <HeaderButton index={8} active={active} onClick={() => {
               setActive(8)
-              const section = document.querySelector( '#otherService' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}>其他服務</HeaderButton>
-            <FocusImage src={Focused} index={8} active={active} />
-          </ButtonContainer>
-          <ButtonContainer>
-            <HeaderButton index={9} active={active} onClick={() => {
-              setActive(9)
               const section = document.querySelector( '#haveATry' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
             }}>聯絡我們</HeaderButton>
-            <FocusImage src={Focused} index={9} active={active} />
+            <FocusImage src={Focused} index={8} active={active} />
           </ButtonContainer>
         </RowContainer>
       </Header>
@@ -319,55 +310,46 @@ const Home = () => {
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(4)
             setOpen(false)
-            const section = document.querySelector( '#letsPlayStar' );
+            const section = document.querySelector( '#partnershipAndRecruit' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 4 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>藝人明星桌球隊</MobileText>
+            <MobileText>合作與招募</MobileText>
           </Row>
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(5)
             setOpen(false)
-            const section = document.querySelector( '#partnershipAndRecruit' );
+            const section = document.querySelector( '#playTest' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 5 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>合作與招募</MobileText>
+            <MobileText>桌球檢定</MobileText>
           </Row>
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(6)
             setOpen(false)
-            const section = document.querySelector( '#playTest' );
+            const section = document.querySelector( '#conTest' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 6 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>桌球檢定</MobileText>
+            <MobileText>桌球賽事</MobileText>
           </Row>
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(7)
             setOpen(false)
-            const section = document.querySelector( '#conTest' );
+            const section = document.querySelector( '#otherService' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 7 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>桌球賽事</MobileText>
+            <MobileText>其他服務</MobileText>
           </Row>
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(8)
             setOpen(false)
-            const section = document.querySelector( '#otherService' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 8 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>其他服務</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(9)
-            setOpen(false)
             const section = document.querySelector( '#haveATry' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
-            {active === 9 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
+            {active === 8 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
             <MobileText>聯絡我們</MobileText>
           </Row>
 
@@ -419,55 +401,46 @@ const Home = () => {
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(4)
             setMobileOpen(false)
-            const section = document.querySelector( '#letsPlayStar' );
+            const section = document.querySelector( '#partnershipAndRecruit' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 4 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>藝人明星桌球隊</MobileText>
+            <MobileText>合作與招募</MobileText>
           </Row>
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(5)
             setMobileOpen(false)
-            const section = document.querySelector( '#partnershipAndRecruit' );
+            const section = document.querySelector( '#playTest' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 5 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>合作與招募</MobileText>
+            <MobileText>桌球檢定</MobileText>
           </Row>
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(6)
             setMobileOpen(false)
-            const section = document.querySelector( '#playTest' );
+            const section = document.querySelector( '#conTest' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 6 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>桌球檢定</MobileText>
+            <MobileText>桌球賽事</MobileText>
           </Row>
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(7)
             setMobileOpen(false)
-            const section = document.querySelector( '#conTest' );
+            const section = document.querySelector( '#otherService' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
             {active === 7 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>桌球賽事</MobileText>
+            <MobileText>其他服務</MobileText>
           </Row>
           <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
             setActive(8)
             setMobileOpen(false)
-            const section = document.querySelector( '#otherService' );
-            section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-          }}>
-            {active === 8 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-            <MobileText>其他服務</MobileText>
-          </Row>
-          <Row style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-            setActive(9)
-            setMobileOpen(false)
             const section = document.querySelector( '#haveATry' );
             section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
           }}>
-            {active === 9 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
+            {active === 8 ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
             <MobileText>聯絡我們</MobileText>
           </Row>
 
@@ -496,7 +469,6 @@ const Home = () => {
         <Couch />
         <OurCouchMembers />
         <AlliancePlan />
-        <LetsPlayStar />
         <PartnershipAndRecruit />
         <Recruit />
         <PlayTest />
