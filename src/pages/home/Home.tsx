@@ -115,7 +115,7 @@ const MenuImage = styled.img`
 `;
 
 const FocusImage = styled.img<{ index: number, active: number }>`
-  width: ${(props) => (props.index === 4 ? "110px" : "66px")};
+  width: ${(props) => (props.index === 4 ? "80px" : "66px")};
   height: 6px;
   margin-top:8px;
   display: ${props => props.index === props.active ? "block" : "none"};

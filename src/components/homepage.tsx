@@ -93,6 +93,19 @@ const H1 = styled.h1`
     font-size: 34px;
     line-height: 48px;
   }
+
+  /* Hero 背景本身已含大量視覺資訊：桌機版將標題改為「僅供輔助科技」以降噪 */
+  @media screen and (min-width: ${theme.breakpoints.laptop}) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 `;
 
 const Sub = styled.p`
@@ -109,6 +122,11 @@ const Sub = styled.p`
     font-size: 16px;
     line-height: 28px;
   }
+
+  /* 桌機版避免與 Banner 文字資訊互相干擾 */
+  @media screen and (min-width: ${theme.breakpoints.laptop}) {
+    display: none;
+  }
 `;
 
 const Tagline = styled.p`
@@ -119,6 +137,10 @@ const Tagline = styled.p`
   line-height: 28px;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.85);
+
+  @media screen and (min-width: ${theme.breakpoints.laptop}) {
+    display: none;
+  }
 `;
 
 const Buttons = styled.div`
@@ -126,6 +148,11 @@ const Buttons = styled.div`
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+
+  @media screen and (min-width: ${theme.breakpoints.laptop}) {
+    margin-top: 0;
+    justify-content: flex-start;
+  }
 `;
 
 const GhostButton = styled.button`
