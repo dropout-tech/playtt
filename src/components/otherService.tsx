@@ -145,11 +145,16 @@ const wiggle = keyframes`
 const ServiceCard = styled(Card)`
   position: relative;
   padding: ${theme.spacing.lg};
+  /* Icon 使用 absolute 佔位，需為文字預留安全區避免重疊 */
+  padding-right: calc(${theme.spacing.lg} + 140px);
+  padding-bottom: calc(${theme.spacing.lg} + 92px);
   background: rgba(207, 210, 211, 0.2);
   animation: ${fadeUp} 520ms ease both;
 
   ${media.tablet} {
     padding: ${theme.spacing.md};
+    padding-right: calc(${theme.spacing.md} + 112px);
+    padding-bottom: calc(${theme.spacing.md} + 80px);
   }
 `;
 

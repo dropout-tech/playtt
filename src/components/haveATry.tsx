@@ -12,12 +12,14 @@ const Container = styled.div`
 
 const BlueArea = styled.div`
   background: ${theme.colors.primary};
-  height: 306px;
+  /* 避免固定高度造成 RWD 壓縮/截斷 */
+  min-height: 306px;
   padding-top: ${theme.spacing.lg};
-  padding-bottom: 174px;
+  padding-bottom: ${theme.spacing.xxl};
   
   ${media.tablet} {
-    padding-bottom: 0;
+    min-height: unset;
+    padding-bottom: ${theme.spacing.xl};
     width: 100%;
   }
 `;
@@ -91,8 +93,10 @@ const UnderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: ${theme.spacing.xs};
-  padding-bottom: ${theme.spacing.xs};
+  width: 100%;
+  padding: 12px ${theme.spacing.sm};
+  background: ${theme.colors.backgroundLight};
+  border-top: 1px solid rgba(60, 61, 61, 0.12);
 `;
 
 const CopyrightText = styled.p`
@@ -100,15 +104,15 @@ const CopyrightText = styled.p`
   font-weight: ${theme.fontWeight.normal};
   font-size: ${theme.fontSize.sm};
   line-height: 24px;
-  display: flex;
-  align-items: center;
+  margin: 0;
   text-align: center;
   letter-spacing: 0.08em;
-  color: ${theme.colors.textLight};
+  color: ${theme.colors.text};
   
   ${media.tablet} {
     font-size: 12px;
     line-height: 24px;
+    letter-spacing: 0.06em;
   }
 `;
 const HaveATry = () => {
