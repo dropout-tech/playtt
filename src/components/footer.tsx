@@ -135,7 +135,7 @@ const List = styled.div`
 
 const Row = styled.div`
   display: grid;
-  grid-template-columns: 110px minmax(0, 1fr);
+  grid-template-columns: 96px minmax(0, 1fr);
   gap: 8px;
 
   ${media.tablet} {
@@ -161,6 +161,11 @@ const Value = styled.div`
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.96);
   word-break: break-word;
+`;
+
+const EmphasisValue = styled(Value)`
+  font-weight: ${theme.fontWeight.bold};
+  color: rgba(255, 255, 255, 1);
 `;
 
 const Link = styled.a`
@@ -273,7 +278,11 @@ const Footer = () => {
                   {card.items.map((item) => (
                     <Row key={`${card.title}-${item.label}`}>
                       <Label>{item.label}</Label>
-                      <Value>{item.value}</Value>
+                      {item.label === "地址" || item.label === "Line" || item.label === "電話" ? (
+                        <EmphasisValue>{item.value}</EmphasisValue>
+                      ) : (
+                        <Value>{item.value}</Value>
+                      )}
                     </Row>
                   ))}
                 </List>

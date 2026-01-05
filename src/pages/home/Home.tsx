@@ -15,11 +15,11 @@ import OtherService from "../../components/otherService";
 import Footer from "../../components/footer";
 import Reserve from "../../components/reserve";
 import Logo from "../../assets/homepage/logo.png";
-import Focused from "../../assets/homepage/focused.png";
 import Menu from "../../assets/homepage/menu.png";
 import Close from "../../assets/homepage/close.png";
 import Light from "../../assets/homepage/light.png";
 import GreenLight from "../../assets/homepage/green-light.png";
+import { theme } from "../../styles/theme";
 // import component 👇
 import Drawer from 'react-modern-drawer'
 
@@ -114,21 +114,47 @@ const MenuImage = styled.img`
   }
 `;
 
-const FocusImage = styled.img<{ index: number, active: number }>`
-  width: 66px;
-  height: 6px;
-  margin-top:8px;
-  display: ${props => props.index === props.active ? "block" : "none"};
-`;
+const HeaderButton = styled.button<{ $active: boolean }>`
+  background: transparent;
+  border: none;
+  padding: 10px 6px 12px;
+  font-family: "Noto Sans TC";
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: ${props => (props.$active ? "#005CB9" : "#1A1A1A")};
+  cursor: pointer;
+  position: relative;
 
-const HeaderButton = styled.button<{ index: number, active: number }>`
-    background: transparent;
-    border:none;
-    font-family: "Noto Sans TC";
-    font-weight: 700;
-    font-size: 16px;
-    margin-top: ${props => props.index === props.active ? "14px" : "0"};
-    cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    height: 3px;
+    border-radius: 999px;
+    background: ${theme.colors.accent};
+    transform: scaleX(${props => (props.$active ? 1 : 0)});
+    transform-origin: left;
+    transition: transform 0.16s ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(56, 212, 48, 0.35);
+    outline-offset: 4px;
+    border-radius: 10px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::after {
+      transition: none;
+    }
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -136,7 +162,7 @@ const ButtonContainer = styled.div`
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  margin-left:20px;
+  margin-left: 14px;
 `;
 
 const RowContainer = styled.div`
@@ -148,21 +174,34 @@ const RowContainer = styled.div`
   }
 `;
 
-const Row = styled.div`
+const DrawerItemButton = styled.button<{ $active: boolean }>`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 12px;
+  padding: 10px 10px;
+  border: none;
+  background: ${props => (props.$active ? "rgba(0, 92, 185, 0.06)" : "transparent")};
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    background: rgba(0, 92, 185, 0.08);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(56, 212, 48, 0.35);
+    outline-offset: 3px;
+  }
 `;
 
-const MobileText = styled.p`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+const MobileText = styled.span`
   font-family: "Noto Sans TC";
   font-weight: 700;
   font-size: 16px;
-  margin-left:20px;
-  margin-bottom:20px;
+  line-height: 22px;
 `;
 
 type NavItem = {
@@ -212,11 +251,10 @@ const Home = () => {
         <RowContainer>
           {NAV_ITEMS.map((item, idx) => (
             <ButtonContainer key={item.id}>
-              <HeaderButton index={idx} active={active} onClick={() => {
+              <HeaderButton $active={active === idx} onClick={() => {
                 setActive(idx)
                 scrollToSection(item.id)
               }}>{item.label}</HeaderButton>
-              <FocusImage src={Focused} index={idx} active={active} />
             </ButtonContainer>
           ))}
         </RowContainer>
@@ -231,14 +269,14 @@ const Home = () => {
           zIndex={10000}
         >
           {NAV_ITEMS.map((item, idx) => (
-            <Row key={item.id} style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-              setActive(idx)
-              setOpen(false)
-              scrollToSection(item.id)
+            <DrawerItemButton key={item.id} $active={active === idx} onClick={() => {
+              setActive(idx);
+              setOpen(false);
+              scrollToSection(item.id);
             }}>
               {active === idx ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
               <MobileText>{item.label}</MobileText>
-            </Row>
+            </DrawerItemButton>
           ))}
 
         </SideDrawer>
@@ -251,14 +289,14 @@ const Home = () => {
           zIndex={100000}
         >
           {NAV_ITEMS.map((item, idx) => (
-            <Row key={item.id} style={{ display: "flex", flexDirection: "row", alignItems: "center" }} onClick={() => {
-              setActive(idx)
-              setMobileOpen(false)
-              scrollToSection(item.id)
+            <DrawerItemButton key={item.id} $active={active === idx} onClick={() => {
+              setActive(idx);
+              setMobileOpen(false);
+              scrollToSection(item.id);
             }}>
               {active === idx ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
               <MobileText>{item.label}</MobileText>
-            </Row>
+            </DrawerItemButton>
           ))}
 
         </SideDrawer>

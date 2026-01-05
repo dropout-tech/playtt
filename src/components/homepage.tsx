@@ -3,39 +3,23 @@ import styled, { keyframes } from "styled-components";
 import { PageContainer, PrimaryButton, ButtonText } from "../styles/components";
 import { media, theme } from "../styles/theme";
 
-import banner1440 from "../assets/homepage/banner1440.png";
-import banner1280 from "../assets/homepage/banner1280.png";
-import banner1024 from "../assets/homepage/banner1024.png";
-import banner768 from "../assets/homepage/banner768.png";
-import banner414 from "../assets/homepage/banner414.png";
-
-// 優化後的 Banner - 使用單一組件 + CSS media queries
-// 代碼量減少 66%，更易於維護
 const Banner = styled.section`
   width: 100%;
   height: 100vh;
-  background-image: url(${banner1440});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: radial-gradient(circle at 18% 28%, rgba(56, 212, 48, 0.22) 0%, rgba(56, 212, 48, 0) 52%),
+    radial-gradient(circle at 86% 62%, rgba(255, 217, 0, 0.22) 0%, rgba(255, 217, 0, 0) 58%),
+    linear-gradient(135deg, #005cb9 0%, #004894 44%, #00346a 100%);
   position: relative;
   overflow: hidden;
 
-  /* 響應式圖片切換 */
-  ${media.desktop} {
-    background-image: url(${banner1280});
-  }
-
-  ${media.laptop} {
-    background-image: url(${banner1024});
-  }
-
-  ${media.tablet} {
-    background-image: url(${banner768});
-  }
-
-  ${media.mobile} {
-    background-image: url(${banner414});
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 40%),
+      radial-gradient(circle at 65% 65%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 44%);
+    transform: rotate(10deg);
+    pointer-events: none;
   }
 `;
 
@@ -48,26 +32,14 @@ const Overlay = styled.div`
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: 0 ${theme.spacing.md};
-  background: linear-gradient(
-    90deg,
-    rgba(26, 26, 26, 0.32) 0%,
-    rgba(26, 26, 26, 0.12) 55%,
-    rgba(26, 26, 26, 0.02) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.08) 36%, rgba(0, 0, 0, 0.02) 100%);
 
   ${media.tablet} {
-    align-items: center;
-    justify-content: center;
     padding: 0 ${theme.spacing.sm};
-    background: linear-gradient(
-      180deg,
-      rgba(26, 26, 26, 0.30) 0%,
-      rgba(26, 26, 26, 0.10) 55%,
-      rgba(26, 26, 26, 0.02) 100%
-    );
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.06) 60%, rgba(0, 0, 0, 0.02) 100%);
   }
 `;
 
@@ -75,11 +47,6 @@ const HeroBox = styled.div`
   width: 100%;
   max-width: 1200px;
   animation: ${overlayIn} 520ms ease both;
-  padding-bottom: ${theme.spacing.xl};
-
-  ${media.tablet} {
-    padding-bottom: 0;
-  }
 `;
 
 const H1 = styled.h1`
@@ -100,31 +67,20 @@ const H1 = styled.h1`
     font-size: 34px;
     line-height: 48px;
   }
-
-  /* Hero 背景本身已含大量視覺資訊：桌機版將標題改為「僅供輔助科技」以降噪 */
-  @media screen and (min-width: ${theme.breakpoints.laptop}) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
 `;
 
 const CtaPanel = styled.div`
-  display: inline-flex;
+  margin-top: 16px;
+  display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 18px 18px 16px;
+  gap: 12px;
+  padding: 18px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
 
   ${media.tablet} {
     width: 100%;
@@ -139,27 +95,22 @@ const MicroCopy = styled.p`
   font-size: ${theme.fontSize.md};
   line-height: 26px;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.92);
+  color: ${theme.colors.text};
 `;
 
 const Sub = styled.p`
-  margin: 10px 0 0;
+  margin: 0;
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.normal};
   font-size: 18px;
   line-height: 32px;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(26, 26, 26, 0.86);
   max-width: 720px;
 
   ${media.tablet} {
     font-size: 16px;
     line-height: 28px;
-  }
-
-  /* 桌機版避免與 Banner 文字資訊互相干擾 */
-  @media screen and (min-width: ${theme.breakpoints.laptop}) {
-    display: none;
   }
 `;
 
@@ -175,9 +126,9 @@ const Buttons = styled.div`
 `;
 
 const GhostButton = styled.button`
-  border: 2px solid rgba(255, 255, 255, 0.75);
-  background: rgba(26, 26, 26, 0.18);
-  color: ${theme.colors.background};
+  border: 2px solid rgba(0, 92, 185, 0.65);
+  background: rgba(255, 255, 255, 0.85);
+  color: ${theme.colors.primary};
   width: 210px;
   height: 56px;
   border-radius: 12px;
@@ -190,7 +141,7 @@ const GhostButton = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    background: rgba(26, 26, 26, 0.28);
+    background: rgba(255, 255, 255, 1);
   }
 
   ${media.tablet} {
