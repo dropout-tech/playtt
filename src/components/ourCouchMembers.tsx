@@ -10,6 +10,8 @@ import coachImg4 from "../assets/ourCouchMenber/img4.png";
 import coachImg6 from "../assets/ourCouchMenber/img6.png";
 import coachImg7 from "../assets/ourCouchMenber/img7.png";
 import coachImg8 from "../assets/ourCouchMenber/img8.png";
+import coachLiuYaHan from "../assets/ourCouchMenber/liu-yahan.svg";
+import coachWangYongCheng from "../assets/ourCouchMenber/wang-yongcheng.svg";
 
 type CoachSection = {
   title: string;
@@ -32,6 +34,8 @@ const COACH_PHOTOS: Record<string, string> = {
   王韻涵: coachImg1,
   蔡鎮宇: coachImg8,
   溫達威: coachImg2,
+  劉亞翰: coachLiuYaHan,
+  王泳程: coachWangYongCheng,
 };
 
 const COACHES: Coach[] = [
@@ -200,6 +204,66 @@ const COACHES: Coach[] = [
       {
         title: "教學特色",
         items: ["透過耐心及基本動作的磨練及目標達成，能讓學生更容易上手，和其他項目的特色差異，並且從中感到成就感，引發主動學習動機！"],
+      },
+    ],
+  },
+  {
+    name: "劉亞翰",
+    nickname: "小劉",
+    sections: [
+      {
+        title: "教學年資",
+        items: ["8 年"],
+      },
+      {
+        title: "學習歷程",
+        items: ["建華國中", "東泰高中", "台北市立大學"],
+      },
+      {
+        title: "教學經歷",
+        items: ["虎林國小教練", "東山高中", "香山高中", "新興俱樂部教練"],
+      },
+      {
+        title: "教學證照",
+        items: ["C 級桌球教練"],
+      },
+      {
+        title: "比賽成績",
+        items: ["新竹市長盃單打第一", "自由盃桌球團體第五"],
+      },
+      {
+        title: "教學特色",
+        items: ["強調基本功和小朋友姿勢有美有正確，並且耐心及細心地教導。"],
+      },
+    ],
+  },
+  {
+    name: "王泳程",
+    nickname: "程程",
+    sections: [
+      {
+        title: "教學年資",
+        items: ["8 年"],
+      },
+      {
+        title: "學習歷程",
+        items: ["桃園市立壽山高中", "彰化師範大學"],
+      },
+      {
+        title: "教學經歷",
+        items: ["新北市厚德國小教練"],
+      },
+      {
+        title: "教學證照",
+        items: ["C 級桌球教練"],
+      },
+      {
+        title: "比賽成績",
+        items: ["大專盃團體第四", "全中運團體第六"],
+      },
+      {
+        title: "教學特色",
+        items: ["強調基本功和小朋友姿勢有美有正確，並且耐心及細心地教導。"],
       },
     ],
   },
