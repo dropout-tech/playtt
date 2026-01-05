@@ -3,23 +3,37 @@ import styled, { keyframes } from "styled-components";
 import { PageContainer, PrimaryButton, ButtonText } from "../styles/components";
 import { media, theme } from "../styles/theme";
 
+import banner1440 from "../assets/homepage/banner1440.png";
+import banner1280 from "../assets/homepage/banner1280.png";
+import banner1024 from "../assets/homepage/banner1024.png";
+import banner768 from "../assets/homepage/banner768.png";
+import banner414 from "../assets/homepage/banner414.png";
+
 const Banner = styled.section`
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle at 18% 28%, rgba(56, 212, 48, 0.22) 0%, rgba(56, 212, 48, 0) 52%),
-    radial-gradient(circle at 86% 62%, rgba(255, 217, 0, 0.22) 0%, rgba(255, 217, 0, 0) 58%),
-    linear-gradient(135deg, #005cb9 0%, #004894 44%, #00346a 100%);
+  background-image: url(${banner1440});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -40%;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 40%),
-      radial-gradient(circle at 65% 65%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 44%);
-    transform: rotate(10deg);
-    pointer-events: none;
+  /* 響應式圖片切換 */
+  ${media.desktop} {
+    background-image: url(${banner1280});
+  }
+
+  ${media.laptop} {
+    background-image: url(${banner1024});
+  }
+
+  ${media.tablet} {
+    background-image: url(${banner768});
+  }
+
+  ${media.mobile} {
+    background-image: url(${banner414});
   }
 `;
 
@@ -32,14 +46,16 @@ const Overlay = styled.div`
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   padding: 0 ${theme.spacing.md};
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.08) 36%, rgba(0, 0, 0, 0.02) 100%);
+  /* 保留海報風格：只在底部加輕遮罩，讓 CTA 有穩定可讀性 */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.10) 55%, rgba(0, 0, 0, 0.22) 100%);
 
   ${media.tablet} {
+    align-items: center;
     padding: 0 ${theme.spacing.sm};
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.06) 60%, rgba(0, 0, 0, 0.02) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.10) 60%, rgba(0, 0, 0, 0.06) 100%);
   }
 `;
 
@@ -47,6 +63,11 @@ const HeroBox = styled.div`
   width: 100%;
   max-width: 1200px;
   animation: ${overlayIn} 520ms ease both;
+  padding-bottom: ${theme.spacing.xl};
+
+  ${media.tablet} {
+    padding-bottom: 0;
+  }
 `;
 
 const H1 = styled.h1`
@@ -67,17 +88,30 @@ const H1 = styled.h1`
     font-size: 34px;
     line-height: 48px;
   }
+
+  /* 桌機海報圖已含大標：保留可及性，但避免重疊造成雜亂 */
+  @media screen and (min-width: ${theme.breakpoints.laptop}) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 `;
 
 const CtaPanel = styled.div`
-  margin-top: 16px;
-  display: flex;
+  margin-top: 0;
+  display: inline-flex;
   flex-direction: column;
   gap: 12px;
-  padding: 18px;
+  padding: 16px 16px 14px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(26, 26, 26, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
@@ -95,7 +129,7 @@ const MicroCopy = styled.p`
   font-size: ${theme.fontSize.md};
   line-height: 26px;
   letter-spacing: 0.03em;
-  color: ${theme.colors.text};
+  color: rgba(255, 255, 255, 0.92);
 `;
 
 const Sub = styled.p`
@@ -105,7 +139,7 @@ const Sub = styled.p`
   font-size: 18px;
   line-height: 32px;
   letter-spacing: 0.03em;
-  color: rgba(26, 26, 26, 0.86);
+  color: rgba(255, 255, 255, 0.88);
   max-width: 720px;
 
   ${media.tablet} {
@@ -126,9 +160,9 @@ const Buttons = styled.div`
 `;
 
 const GhostButton = styled.button`
-  border: 2px solid rgba(0, 92, 185, 0.65);
-  background: rgba(255, 255, 255, 0.85);
-  color: ${theme.colors.primary};
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  background: rgba(26, 26, 26, 0.18);
+  color: ${theme.colors.background};
   width: 210px;
   height: 56px;
   border-radius: 12px;
@@ -141,7 +175,7 @@ const GhostButton = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 1);
+    background: rgba(26, 26, 26, 0.28);
   }
 
   ${media.tablet} {
