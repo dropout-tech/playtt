@@ -48,8 +48,8 @@ const Overlay = styled.div`
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   padding: 0 ${theme.spacing.md};
   background: linear-gradient(
     90deg,
@@ -59,6 +59,8 @@ const Overlay = styled.div`
   );
 
   ${media.tablet} {
+    align-items: center;
+    justify-content: center;
     padding: 0 ${theme.spacing.sm};
     background: linear-gradient(
       180deg,
@@ -73,6 +75,11 @@ const HeroBox = styled.div`
   width: 100%;
   max-width: 1200px;
   animation: ${overlayIn} 520ms ease both;
+  padding-bottom: ${theme.spacing.xl};
+
+  ${media.tablet} {
+    padding-bottom: 0;
+  }
 `;
 
 const H1 = styled.h1`
@@ -108,6 +115,33 @@ const H1 = styled.h1`
   }
 `;
 
+const CtaPanel = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 18px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 520px;
+  }
+`;
+
+const MicroCopy = styled.p`
+  margin: 0;
+  font-family: ${theme.fonts.primary};
+  font-weight: ${theme.fontWeight.bold};
+  font-size: ${theme.fontSize.md};
+  line-height: 26px;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.92);
+`;
+
 const Sub = styled.p`
   margin: 10px 0 0;
   font-family: ${theme.fonts.primary};
@@ -129,28 +163,13 @@ const Sub = styled.p`
   }
 `;
 
-const Tagline = styled.p`
-  margin: 14px 0 0;
-  font-family: ${theme.fonts.secondary};
-  font-weight: ${theme.fontWeight.bold};
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.85);
-
-  @media screen and (min-width: ${theme.breakpoints.laptop}) {
-    display: none;
-  }
-`;
-
 const Buttons = styled.div`
-  margin-top: 22px;
+  margin-top: 0;
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
 
   @media screen and (min-width: ${theme.breakpoints.laptop}) {
-    margin-top: 0;
     justify-content: flex-start;
   }
 `;
@@ -195,27 +214,29 @@ const Homepage = () => {
         <Overlay>
           <HeroBox>
             <H1>Let’s Play 桌球聯盟</H1>
-            <Sub>蘆洲、林口桌球教學與桌球課程。親子、兒童、成人到進階培訓，一起玩、一起進步。</Sub>
-            <Tagline>玩得開心，學得更快。一起玩 Let’s Play</Tagline>
+            <CtaPanel>
+              <MicroCopy>蘆洲・林口｜桌球教學・課程・場地｜親子・兒童・成人・進階</MicroCopy>
+              <Sub>一起玩、一起進步。玩得開心，學得更快。</Sub>
 
-            <Buttons>
-              <PrimaryButton
-                onClick={() => {
-                  const section = document.querySelector("#reserve");
-                  section?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-              >
-                <ButtonText>立即預約</ButtonText>
-              </PrimaryButton>
-              <GhostButton
-                onClick={() => {
-                  const section = document.querySelector("#company");
-                  section?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-              >
-                聯絡我們
-              </GhostButton>
-            </Buttons>
+              <Buttons>
+                <PrimaryButton
+                  onClick={() => {
+                    const section = document.querySelector("#reserve");
+                    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                >
+                  <ButtonText>立即預約</ButtonText>
+                </PrimaryButton>
+                <GhostButton
+                  onClick={() => {
+                    const section = document.querySelector("#company");
+                    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                >
+                  聯絡我們
+                </GhostButton>
+              </Buttons>
+            </CtaPanel>
           </HeroBox>
         </Overlay>
       </Banner>
