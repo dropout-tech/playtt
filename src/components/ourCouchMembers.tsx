@@ -541,6 +541,11 @@ function getSummaryItems(coach: Coach): string[] {
   return firstNonEmpty ? firstNonEmpty.items.slice(0, 2) : [];
 }
 
+function getCoachTag(coach: Coach): string {
+  const years = coach.sections.find((s) => s.title === "教學年資")?.items?.[0];
+  return years ? `教學 ${years}` : "教練";
+}
+
 const OurCouchMembers = () => {
   const coaches: CoachWithPhoto[] = COACHES.map((c) => ({
     ...c,
@@ -562,7 +567,7 @@ const OurCouchMembers = () => {
           <Grid>
             {coaches.map((coach) => {
               const summaryItems = getSummaryItems(coach);
-              const roleTag = coach.nickname ? `${coach.nickname}` : "教練";
+              const roleTag = getCoachTag(coach);
 
               return (
                 <MotionCard key={coach.name}>
