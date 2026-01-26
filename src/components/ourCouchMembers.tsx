@@ -11,7 +11,11 @@ import coachImg6 from "../assets/ourCouchMenber/img6.png";
 import coachImg7 from "../assets/ourCouchMenber/img7.png";
 import coachImg8 from "../assets/ourCouchMenber/img8.png";
 import coachLiuYaHan from "../assets/ourCouchMenber/liu-yahan.svg";
-import coachWangYongCheng from "../assets/ourCouchMenber/wang-yongcheng.svg";
+import coachWangYongCheng from "../assets/ourCouchMenber/coach-wang-yongcheng.jpg";
+import coachTsai from "../assets/ourCouchMenber/coach-tsai.jpg";
+import coachYang from "../assets/ourCouchMenber/coach-yang.jpg";
+import coachHuang from "../assets/ourCouchMenber/coach-huang-zhaoan.jpg";
+import coachWangYunHan from "../assets/ourCouchMenber/coach-wang-yunhan.jpg";
 
 type CoachSection = {
   title: string;
@@ -26,15 +30,13 @@ type Coach = {
 
 type CoachWithPhoto = Coach & { photoSrc: string };
 
-const COACH_PHOTOS: Record<string, string> = {
   郭則寬: coachImg4,
   林培中: coachImg3,
-  楊秉翰: coachImg6,
-  黃兆銨: coachImg7,
-  王韻涵: coachImg1,
-  蔡鎮宇: coachImg8,
+  楊秉翰: coachYang,
+  黃兆銨: coachHuang,
+  王韻涵: coachWangYunHan,
+  蔡鎮宇: coachTsai,
   溫達威: coachImg2,
-  劉亞翰: coachLiuYaHan,
   王泳程: coachWangYongCheng,
 };
 
@@ -184,8 +186,24 @@ const COACHES: Coach[] = [
     nickname: "小蔡",
     sections: [
       {
-        title: "教練資料",
-        items: ["資料更新中。"],
+        title: "學習歷程",
+        items: ["蘆洲國小", "桃園國中", "壽山高中", "虎尾科技大學"],
+      },
+      {
+        title: "教學相關歷程",
+        items: ["大埤國小", "文昌國小", "大埤國中"],
+      },
+      {
+        title: "教學特色",
+        items: ["專注基礎技巧、量身訂製訓練、強調戰術與心理素質、實戰演練、提供即時回饋，全面提升學員桌球實力。"],
+      },
+      {
+        title: "比賽成績",
+        items: ["15歲青少年國手", "全中運團體第三名", "全大運團體第五名"],
+      },
+      {
+        title: "帶隊成績",
+        items: ["虎科盃國小組團體第五名"],
       },
     ],
   },
@@ -207,36 +225,7 @@ const COACHES: Coach[] = [
       },
     ],
   },
-  {
-    name: "劉亞翰",
-    nickname: "小劉",
-    sections: [
-      {
-        title: "教學年資",
-        items: ["8 年"],
-      },
-      {
-        title: "學習歷程",
-        items: ["建華國中", "東泰高中", "台北市立大學"],
-      },
-      {
-        title: "教學經歷",
-        items: ["虎林國小教練", "東山高中", "香山高中", "新興俱樂部教練"],
-      },
-      {
-        title: "教學證照",
-        items: ["C 級桌球教練"],
-      },
-      {
-        title: "比賽成績",
-        items: ["新竹市長盃單打第一", "自由盃桌球團體第五"],
-      },
-      {
-        title: "教學特色",
-        items: ["強調基本功和小朋友姿勢有美有正確，並且耐心及細心地教導。"],
-      },
-    ],
-  },
+
   {
     name: "王泳程",
     nickname: "程程",
