@@ -11,6 +11,7 @@ import {
   BodyText,
   BoldText,
 } from "../styles/components";
+import SectionHeader from "./common/SectionHeader";
 import { theme, media } from "../styles/theme";
 import about1 from "../assets/about/about1.png";
 import about2 from "../assets/about/about2.png";
@@ -79,16 +80,7 @@ const MobileContentBlock = styled.div`
   margin-bottom: ${theme.spacing.xxl};
 `;
 
-const TitleGroupWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 100px;
 
-  ${media.tablet} {
-    margin-bottom: 60px;
-  }
-`;
 
 
 // 內容資料（數據驅動，易於維護）
@@ -149,10 +141,7 @@ const About = () => {
     <PageContainer id="about">
       {/* 桌面版 */}
       <DesktopContainer>
-        <TitleGroupWrapper>
-          <SectionTitle>關於我們</SectionTitle>
-          <SectionSubtitle>About Us</SectionSubtitle>
-        </TitleGroupWrapper>
+        <SectionHeader title="關於我們" subtitle="About Us" style={{ marginBottom: '100px' }} />
 
         {aboutContent.map((content) => (
           <ContentBlock key={content.id}>
@@ -163,7 +152,7 @@ const About = () => {
               {content.paragraphs.map((paragraph, index) => {
                 const isLastBold = index === content.paragraphs.length - 1 && paragraph.length < 50;
                 const TextComponent = isLastBold ? BoldText : BodyText;
-                
+
                 return (
                   <TextComponent key={index}>
                     {formatText(paragraph)}
@@ -177,10 +166,7 @@ const About = () => {
 
       {/* 移動版 */}
       <MobileContainer>
-        <TitleGroupWrapper>
-          <SectionTitle>關於我們</SectionTitle>
-          <SectionSubtitle>About Us</SectionSubtitle>
-        </TitleGroupWrapper>
+        <SectionHeader title="關於我們" subtitle="About Us" style={{ marginBottom: '60px' }} />
 
         {aboutContent.map((content) => (
           <MobileContentBlock key={content.id}>
@@ -191,7 +177,7 @@ const About = () => {
               {content.paragraphs.map((paragraph, index) => {
                 const isLastBold = index === content.paragraphs.length - 1 && paragraph.length < 50;
                 const TextComponent = isLastBold ? BoldText : BodyText;
-                
+
                 return (
                   <TextComponent key={index}>
                     {formatText(paragraph)}

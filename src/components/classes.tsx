@@ -9,6 +9,7 @@ import {
   SectionTitle,
   TitleGroup,
 } from "../styles/components";
+import SectionHeader from "./common/SectionHeader";
 import { media, theme } from "../styles/theme";
 
 import img1 from "../assets/classes/img1.png";
@@ -194,10 +195,7 @@ const Classes = () => {
       <SectionBg>
         <Container>
           <ContentWrapper>
-            <TitleGroup>
-              <SectionTitle>課程介紹</SectionTitle>
-              <SectionSubtitle>Our Course</SectionSubtitle>
-            </TitleGroup>
+            <SectionHeader title="課程介紹" subtitle="Our Course" />
 
             <FeatureList>
               {FEATURES.map((feature, idx) => (

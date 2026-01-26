@@ -9,6 +9,7 @@ import {
   SectionTitle,
   TitleGroup,
 } from "../styles/components";
+import SectionHeader from "./common/SectionHeader";
 import { media, theme } from "../styles/theme";
 
 import cho from "../assets/alliancePlan/cho.png";
@@ -150,10 +151,7 @@ const AlliancePlan = () => {
       <SectionBg>
         <Container>
           <ContentWrapper>
-            <TitleGroup>
-              <SectionTitle>聯盟計畫</SectionTitle>
-              <SectionSubtitle>Alliance</SectionSubtitle>
-            </TitleGroup>
+            <SectionHeader title="聯盟計畫" subtitle="Alliance" />
 
             <Grid>
               {BLOCKS.map((b, idx) => (

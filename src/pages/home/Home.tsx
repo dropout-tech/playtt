@@ -280,13 +280,13 @@ const Home = () => {
       />
       <Header>
         <div>
-          {open ? <MenuImage src={Close} onClick={() => {
+          {open ? <MenuImage src={Close} alt="關閉選單" onClick={() => {
             setOpen(false)
-          }} /> : <MenuImage src={Menu} onClick={() => {
+          }} /> : <MenuImage src={Menu} alt="開啟選單" onClick={() => {
             setOpen(true)
           }} />}
 
-          <LogoImage src={Logo} onClick={() => {
+          <LogoImage src={Logo} alt="Let's Play 桌球聯盟 Logo" onClick={() => {
             setActive(-1)
             const section = document.querySelector('#home');
             section!.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -343,13 +343,13 @@ const Home = () => {
         />
         <MobileHeader>
 
-          {mobileOpen ? <MenuImage src={Close} onClick={() => {
+          {mobileOpen ? <MenuImage src={Close} alt="關閉選單" onClick={() => {
             setMobileOpen(false)
-          }} /> : <MenuImage src={Menu} onClick={() => {
+          }} /> : <MenuImage src={Menu} alt="開啟選單" onClick={() => {
             setMobileOpen(true)
 
           }} />}
-          <LogoImage src={Logo} onClick={() => {
+          <LogoImage src={Logo} alt="Let's Play 桌球聯盟 Logo" onClick={() => {
             setActive(-1)
             const section = document.querySelector('#home');
             section!.scrollIntoView({ behavior: 'smooth', block: 'start' });

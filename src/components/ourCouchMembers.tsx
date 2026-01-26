@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../styles/theme";
+import { media, theme } from "../styles/theme";
 import { Container as SectionContainer } from "../styles/components";
+import SectionHeader from "./common/SectionHeader";
 
 import coachImg1 from "../assets/ourCouchMenber/img1.png";
 import coachImg2 from "../assets/ourCouchMenber/img2.png";
@@ -276,18 +277,11 @@ const Inner = styled.div`
   }
 `;
 
-const Header = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 16px;
-  margin-bottom: ${theme.spacing.lg};
+const Header = styled.header`
+  margin-bottom: ${theme.spacing.xxl};
 
-  @media screen and (max-width: ${theme.breakpoints.tablet}) {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: ${theme.spacing.md};
+  ${media.tablet} {
+    margin-bottom: ${theme.spacing.xl};
   }
 `;
 
@@ -377,6 +371,7 @@ const Photo = styled.img`
   width: 100%;
   height: 240px;
   object-fit: cover;
+  object-position: top center;
   display: block;
   transition: transform 0.22s ease;
 
@@ -546,10 +541,7 @@ const OurCouchMembers = () => {
       <SectionContainer>
         <Inner>
           <Header>
-            <TitleGroup>
-              <Title>師資介紹</Title>
-              <Subtitle>Our Coach</Subtitle>
-            </TitleGroup>
+            <SectionHeader title="師資介紹" subtitle="Our Coach" />
             <Hint>點選「展開」可查看完整教練履歷與證照</Hint>
           </Header>
 

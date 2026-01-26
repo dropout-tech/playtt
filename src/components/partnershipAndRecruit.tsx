@@ -9,6 +9,7 @@ import {
   SectionTitle,
   TitleGroup,
 } from "../styles/components";
+import SectionHeader from "./common/SectionHeader";
 import { media, theme } from "../styles/theme";
 import colorLine from "../assets/partnershipAndRecruit/colorLine.png";
 
@@ -34,13 +35,7 @@ const SectionBg = styled.div`
   background: ${theme.colors.primary};
 `;
 
-const WhiteTitle = styled(SectionTitle)`
-  color: ${theme.colors.background};
-`;
 
-const WhiteSubtitle = styled(SectionSubtitle)`
-  color: ${theme.colors.textMuted};
-`;
 
 const Big = styled.p`
   margin: ${theme.spacing.lg} 0 0;
@@ -137,10 +132,7 @@ const PartnershipAndRecruit = () => {
       <SectionBg>
         <Container>
           <ContentWrapper>
-            <TitleGroup>
-              <WhiteTitle>合作與招募</WhiteTitle>
-              <WhiteSubtitle>Partnership & Recruit</WhiteSubtitle>
-            </TitleGroup>
+            <SectionHeader title="合作與招募" subtitle="Partnership & Recruit" variant="white" />
 
             <Big>
               目前已超過 <Number>30</Number> 個合作機構
