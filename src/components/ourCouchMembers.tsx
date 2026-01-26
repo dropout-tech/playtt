@@ -32,12 +32,12 @@ type CoachWithPhoto = Coach & { photoSrc: string };
 const COACH_PHOTOS: Record<string, string> = {
   郭則寬: coachImg4,
   林培中: coachImg3,
-  楊秉翰: coachTsai,
-  黃兆銨: coachWangYongCheng,
+  楊秉翰: coachYang,
+  黃兆銨: coachHuang,
   王韻涵: coachWangYunHan,
-  蔡鎮宇: coachHuang,
+  蔡鎮宇: coachTsai,
   溫達威: coachImg2,
-  王泳程: coachYang,
+  王泳程: coachWangYongCheng,
 };
 
 const COACHES: Coach[] = [
