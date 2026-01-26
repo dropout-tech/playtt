@@ -8,7 +8,6 @@ import OurCouchMembers from "../../components/ourCouchMembers";
 import Couch from "../../components/couch";
 import AlliancePlan from "../../components/alliancePlan";
 import PartnershipAndRecruit from "../../components/partnershipAndRecruit";
-import Recruit from "../../components/recruit";
 import PlayTest from "../../components/playTest";
 import ConTest from "../../components/conTest";
 import OtherService from "../../components/otherService";
@@ -103,13 +102,15 @@ const Header = styled.div`
   align-items: center;
   padding-left:30px;
   padding-right:30px;
-  position: absolute;
+  position: fixed;
   background-color: white;
   z-index: 99999999;
   left: 0;
   right: 0;
+  top: 0;
   width: 100%;
   box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   @media screen and (max-width: 414px) {
     display: none;
   }
@@ -362,7 +363,6 @@ const Home = () => {
         <OurCouchMembers />
         <AlliancePlan />
         <PartnershipAndRecruit />
-        <Recruit />
         <PlayTest />
         <ConTest />
         <OtherService />

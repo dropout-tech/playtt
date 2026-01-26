@@ -163,6 +163,28 @@ const PartnershipAndRecruit = () => {
                 </Block>
               ))}
             </Grid>
+
+            <Big style={{ marginTop: theme.spacing.xxl }}>
+              ＃ 熱烈招募中！
+            </Big>
+
+            <Grid style={{ marginTop: theme.spacing.lg }}>
+              <Block style={{ gridColumn: '1 / -1' }}>
+                <List>
+                  <Item>讓雙北小朋友有更完善的學習資源</Item>
+                  <Item>推廣桌球讓更多成人共同參與</Item>
+                  <Item>除館內課程也提供外派教練進駐服務</Item>
+                  <Item>補習班 / 幼兒園 / 學校社團</Item>
+                  <Item>家裡 / 運動中心 / 公司社團 / 公家機構</Item>
+                  <Item>休閒運動體系創新合作教案（歡樂 / 技術）</Item>
+                  <Item>公司福委會競技休閒活動</Item>
+                  <Item>期望結合不同類別才藝發展多元課程（街舞、兒童舞蹈、畫畫、音樂等）</Item>
+                  <Item>桌球趣味比賽協辦</Item>
+                  <Item>乒乓球表演者</Item>
+                  <Item>提供桌球產業教練獨特升遷制度</Item>
+                </List>
+              </Block>
+            </Grid>
           </ContentWrapper>
         </Container>
       </SectionBg>
