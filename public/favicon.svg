@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&amp;display=swap');
+    </style>
+  </defs>
+  <!-- Optional: White background circle for visibility on all tab colors, or just the P -->
+  <!-- User asked for "Green P", implying the letter. But standard favicons usually have a bg or shape. 
+       Looking at the logo on the flag, it's just the letter on blue. 
+       For a favicon, a transparent background with a strong letter is common, 
+       but if the user has a dark theme browser, green works. 
+       If light theme, green works. 
+       Let's try just the letter P first, maximizing space. -->
+  
+  <text x="50%" y="50%" font-family="'Futura', 'Outfit', sans-serif" font-weight="900" font-size="140" fill="#38D430" dy=".35em" text-anchor="middle">P</text>
+</svg>
