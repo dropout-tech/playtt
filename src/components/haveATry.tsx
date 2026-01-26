@@ -118,14 +118,14 @@ const CopyrightText = styled.p`
 const HaveATry = () => {
   return (
     <PageContainer id="haveATry">
-      <Container>
-        <BlueArea>
-          <TopText>
+    <Container>
+      <BlueArea>
+        <TopText>
             <WhiteTitle>預約體驗</WhiteTitle>
             <WhiteSubtitle>Have a Try</WhiteSubtitle>
-          </TopText>
+        </TopText>
 
-          <ButtonAreas>
+        <ButtonAreas>
             <PrimaryButton
               onClick={() => {
                 window.open("https://www.facebook.com/playpp2018", "_parent");
@@ -133,17 +133,17 @@ const HaveATry = () => {
             >
               <ButtonTextComponent>立即預約免費試上</ButtonTextComponent>
             </PrimaryButton>
-          </ButtonAreas>
+        </ButtonAreas>
 
           <InfoText>
             統一由臉書私訊洽詢想預約試上的分店<SpanLine>Line</SpanLine>
           </InfoText>
-        </BlueArea>
+      </BlueArea>
 
-        <UnderContainer>
+      <UnderContainer>
           <CopyrightText>Copyright © 2025 Let's Play</CopyrightText>
-        </UnderContainer>
-      </Container>
+      </UnderContainer>
+    </Container>
     </PageContainer>
   );
 };

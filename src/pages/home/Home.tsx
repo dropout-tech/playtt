@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import styled, { keyframes } from "styled-components";
 import Homepage from "../../components/homepage";
 // import Story from "../../components/story";
-import About from "../../components/about";
-import Classes from "../../components/classes";
-import OurCouchMembers from "../../components/ourCouchMembers";
-import Couch from "../../components/couch";
-import AlliancePlan from "../../components/alliancePlan";
-import PartnershipAndRecruit from "../../components/partnershipAndRecruit";
-import PlayTest from "../../components/playTest";
-import ConTest from "../../components/conTest";
-import OtherService from "../../components/otherService";
-import Footer from "../../components/footer";
 import Logo from "../../assets/homepage/logo.png";
 import Menu from "../../assets/homepage/menu.png";
 import Close from "../../assets/homepage/close.png";
 import { media, theme } from "../../styles/theme";
 import DrawerMenu from "../../components/common/DrawerMenu";
 import SEO from "../../components/common/SEO";
+
+// Lazy-loaded components
+const About = lazy(() => import("../../components/about"));
+const Classes = lazy(() => import("../../components/classes"));
+const OurCouchMembers = lazy(() => import("../../components/ourCouchMembers"));
+const Couch = lazy(() => import("../../components/couch"));
+const AlliancePlan = lazy(() => import("../../components/alliancePlan"));
+const PartnershipAndRecruit = lazy(() => import("../../components/partnershipAndRecruit"));
+const PlayTest = lazy(() => import("../../components/playTest"));
+const ConTest = lazy(() => import("../../components/conTest"));
+const OtherService = lazy(() => import("../../components/otherService"));
+const Footer = lazy(() => import("../../components/footer"));
 
 const pulse = keyframes`
   0% { transform: translateY(-50%) scale(1); }
@@ -356,17 +358,18 @@ const Home = () => {
         </MobileHeader>
 
         <Homepage />
-        <About />
-        {/* <Story /> */}
-        <Classes />
-        <Couch />
-        <OurCouchMembers />
-        <AlliancePlan />
-        <PartnershipAndRecruit />
-        <PlayTest />
-        <ConTest />
-        <OtherService />
-        <Footer />
+        <Suspense fallback={null}>
+          <About />
+          <Classes />
+          <Couch />
+          <OurCouchMembers />
+          <AlliancePlan />
+          <PartnershipAndRecruit />
+          <PlayTest />
+          <ConTest />
+          <OtherService />
+          <Footer />
+        </Suspense>
       </Container>
     </>
   );

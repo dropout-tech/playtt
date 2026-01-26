@@ -46,31 +46,33 @@ function applySeo() {
           ],
         },
         {
-          "@type": "LocalBusiness",
-          name: "Let’s Play 蘆洲店",
-          url: canonical,
-          telephone: "+886-2-8286-1011",
-          address: {
+          "@type": "SportsActivityLocation",
+          "name": "Let’s Play 蘆洲店",
+          "url": canonical,
+          "telephone": "+886-2-8286-1011",
+          "description": "專業桌球課程、場地租借與社團活動。",
+          "address": {
             "@type": "PostalAddress",
-            addressCountry: "TW",
-            addressRegion: "新北市",
-            addressLocality: "蘆洲區",
-            streetAddress: "長樂路106號3樓",
-          },
+            "addressCountry": "TW",
+            "addressRegion": "新北市",
+            "addressLocality": "蘆洲區",
+            "streetAddress": "長樂路106號3樓"
+          }
         },
         {
-          "@type": "LocalBusiness",
-          name: "Let’s Play 林口店",
-          url: canonical,
-          telephone: "+886-2-8286-1011",
-          address: {
+          "@type": "SportsActivityLocation",
+          "name": "Let’s Play 林口店",
+          "url": canonical,
+          "telephone": "+886-2-8286-1011",
+          "description": "全新開幕的林口桌球教育中心。",
+          "address": {
             "@type": "PostalAddress",
-            addressCountry: "TW",
-            addressRegion: "新北市",
-            addressLocality: "林口區",
-            streetAddress: "（資訊更新中）",
-          },
-        },
+            "addressCountry": "TW",
+            "addressRegion": "新北市",
+            "addressLocality": "林口區",
+            "streetAddress": "（資訊更新中）"
+          }
+        }
       ],
     };
 

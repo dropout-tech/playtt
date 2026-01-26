@@ -22,7 +22,7 @@ const Banner = styled.section`
   /* 響應式圖片切換 */
   ${media.desktop} {
     background-image: url(${banner1280});
-  }
+   }
 
   ${media.laptop} {
     background-image: url(${banner1024});
@@ -34,7 +34,7 @@ const Banner = styled.section`
 
   ${media.mobile} {
     background-image: url(${banner414});
-  }
+   }
 `;
 
 const overlayIn = keyframes`
