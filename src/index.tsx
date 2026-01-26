@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import Router from "./routes/Router";
 import { HashRouter } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { HelmetProvider } from 'react-helmet-async';
 
 function applySeo() {
   const origin = window.location.origin;
@@ -84,13 +85,17 @@ const client = new ApolloClient({
 
 applySeo();
 
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <HashRouter>
-        <Router />
-      </HashRouter>
-    </ApolloProvider>
+    <HelmetProvider>
+      <ApolloProvider client={client}>
+        <HashRouter>
+          <Router />
+        </HashRouter>
+      </ApolloProvider>
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

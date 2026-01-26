@@ -10,7 +10,6 @@ import coachImg4 from "../assets/ourCouchMenber/img4.png";
 import coachImg6 from "../assets/ourCouchMenber/img6.png";
 import coachImg7 from "../assets/ourCouchMenber/img7.png";
 import coachImg8 from "../assets/ourCouchMenber/img8.png";
-import coachLiuYaHan from "../assets/ourCouchMenber/liu-yahan.svg";
 import coachWangYongCheng from "../assets/ourCouchMenber/coach-wang-yongcheng.jpg";
 import coachTsai from "../assets/ourCouchMenber/coach-tsai.jpg";
 import coachYang from "../assets/ourCouchMenber/coach-yang.jpg";

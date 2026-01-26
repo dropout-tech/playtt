@@ -16,23 +16,9 @@ import Footer from "../../components/footer";
 import Logo from "../../assets/homepage/logo.png";
 import Menu from "../../assets/homepage/menu.png";
 import Close from "../../assets/homepage/close.png";
-import Light from "../../assets/homepage/light.png";
-import GreenLight from "../../assets/homepage/green-light.png";
 import { media, theme } from "../../styles/theme";
-// import component 👇
-import Drawer from 'react-modern-drawer'
-
-//import styles 👇
-import 'react-modern-drawer/dist/index.css'
-
-
-const SideDrawer = styled(Drawer)`
-  /* margin-top:80px; */
-  display: flex;
-  flex-direction: column;
-  padding-left: 30px;
-  padding-top: 20px;
-`
+import DrawerMenu from "../../components/common/DrawerMenu";
+import SEO from "../../components/common/SEO";
 
 const pulse = keyframes`
   0% { transform: translateY(-50%) scale(1); }
@@ -158,10 +144,7 @@ const LogoImage = styled.img`
   }
 `;
 
-const LightImage = styled.img`
-  width: 24px;
-  height: 24px;
-`;
+
 
 const MenuImage = styled.img`
   width: 32px;
@@ -256,12 +239,7 @@ const DrawerItemButton = styled.button<{ $active: boolean }>`
   }
 `;
 
-const MobileText = styled.span`
-  font-family: "Noto Sans TC";
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-`;
+
 
 type NavItem = {
   id: string;
@@ -293,6 +271,10 @@ const Home = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
   return (
     <>
+      <SEO
+        title="Let's Play 桌球聯盟 | 專業桌球課程與場地"
+        description="Let's Play 提供最優質的桌球教學環境，無論是兒童桌球、成人桌球，還是場地租借，我們都有最專業的教練團隊與舒適的空間。"
+      />
       <Header>
         <div>
           {open ? <MenuImage src={Close} onClick={() => {
@@ -302,10 +284,10 @@ const Home = () => {
           }} />}
 
           <LogoImage src={Logo} onClick={() => {
-              setActive(-1)
-              const section = document.querySelector( '#home' );
-              section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }} />
+            setActive(-1)
+            const section = document.querySelector('#home');
+            section!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }} />
         </div>
         <RowContainer>
           {NAV_ITEMS.map((item, idx) => (
@@ -330,46 +312,32 @@ const Home = () => {
           <FloatingText>預約</FloatingText>
         </FloatingReserveButton>
 
-        <SideDrawer
+        <DrawerMenu
           open={open}
-          onClose={() => { setOpen(false) }}
-          direction='left'
-          className='bla bla bla'
+          onClose={() => setOpen(false)}
+          items={NAV_ITEMS}
+          activeIdx={active}
+          onItemClick={(idx, id) => {
+            setActive(idx);
+            setOpen(false);
+            scrollToSection(id);
+          }}
           size={286}
           zIndex={10000}
-        >
-          {NAV_ITEMS.map((item, idx) => (
-            <DrawerItemButton key={item.id} $active={active === idx} onClick={() => {
-              setActive(idx);
-              setOpen(false);
-              scrollToSection(item.id);
-            }}>
-              {active === idx ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-              <MobileText>{item.label}</MobileText>
-            </DrawerItemButton>
-          ))}
-
-        </SideDrawer>
-        <SideDrawer
+        />
+        <DrawerMenu
           open={mobileOpen}
-          onClose={() => { setMobileOpen(false) }}
-          direction='left'
-          className='bla bla bla'
+          onClose={() => setMobileOpen(false)}
+          items={NAV_ITEMS}
+          activeIdx={active}
+          onItemClick={(idx, id) => {
+            setActive(idx);
+            setMobileOpen(false);
+            scrollToSection(id);
+          }}
           size={"100%"}
           zIndex={100000}
-        >
-          {NAV_ITEMS.map((item, idx) => (
-            <DrawerItemButton key={item.id} $active={active === idx} onClick={() => {
-              setActive(idx);
-              setMobileOpen(false);
-              scrollToSection(item.id);
-            }}>
-              {active === idx ? <LightImage src={GreenLight} alt="" /> : <LightImage src={Light} alt="" />}
-              <MobileText>{item.label}</MobileText>
-            </DrawerItemButton>
-          ))}
-
-        </SideDrawer>
+        />
         <MobileHeader>
 
           {mobileOpen ? <MenuImage src={Close} onClick={() => {
@@ -379,14 +347,14 @@ const Home = () => {
 
           }} />}
           <LogoImage src={Logo} onClick={() => {
-              setActive(-1)
-              const section = document.querySelector( '#home' );
-              section!.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-            }}/>
+            setActive(-1)
+            const section = document.querySelector('#home');
+            section!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }} />
           <div></div>
         </MobileHeader>
 
-        <Homepage/>
+        <Homepage />
         <About />
         {/* <Story /> */}
         <Classes />
