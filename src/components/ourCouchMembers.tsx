@@ -30,6 +30,7 @@ type Coach = {
 
 type CoachWithPhoto = Coach & { photoSrc: string };
 
+const COACH_PHOTOS: Record<string, string> = {
   郭則寬: coachImg4,
   林培中: coachImg3,
   楊秉翰: coachYang,
