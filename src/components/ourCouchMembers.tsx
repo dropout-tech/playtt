@@ -550,11 +550,11 @@ const OurCouchMembers = () => {
               const summaryItems = getSummaryItems(coach);
               const roleTag = getCoachTag(coach);
 
-              let imgStyle: React.CSSProperties = { objectPosition: "top center" };
+              let imgStyle: React.CSSProperties = { objectPosition: "center" };
               if (coach.name.includes("王韻涵")) {
                 imgStyle = { objectPosition: "center 20%" };
-              } else if (coach.name.includes("蔡鎮宇") || coach.name.includes("楊秉翰") || coach.name.includes("黃兆銨") || coach.name.includes("王泳程")) {
-                imgStyle = { objectPosition: "top" };
+              } else if (coach.name.includes("蔡鎮宇")) {
+                imgStyle = { objectPosition: "center 5%" };
               }
 
               return (
