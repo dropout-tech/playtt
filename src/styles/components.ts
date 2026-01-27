@@ -24,7 +24,7 @@ export const PageContainer = styled.div`
   justify-content: space-between;
 
   ${media.mobile} {
-    margin-top: 80px;
+    margin-top: 0px; /* Reset fixed margin that causes gaps on mobile */
   }
 `;
 
@@ -42,8 +42,8 @@ export const Container = styled.div`
   flex-direction: column;
 
   ${media.tablet} {
-    padding-top: ${theme.spacing.xl};
-    padding-bottom: ${theme.spacing.xl};
+    padding-top: ${theme.spacing.lg};
+    padding-bottom: ${theme.spacing.lg};
   }
 `;
 
@@ -72,15 +72,15 @@ export const SectionTitle = styled.h2`
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.black};
   font-size: ${theme.fontSize.xxxl};
-  line-height: 52px;
+  line-height: 1.2;
   text-align: center;
   letter-spacing: 0.04em;
   color: ${theme.colors.text};
   margin: 0;
+  text-wrap: balance; /* Prevent widows */
 
   ${media.tablet} {
     font-size: ${theme.fontSize.xxl};
-    line-height: 40px;
   }
 `;
 
@@ -88,15 +88,14 @@ export const SectionSubtitle = styled.h3`
   font-family: ${theme.fonts.secondary};
   font-weight: ${theme.fontWeight.bold};
   font-size: ${theme.fontSize.xxxl};
-  line-height: 52px;
+  line-height: 1.2;
   text-align: center;
   letter-spacing: 0.04em;
   color: ${theme.colors.textMuted};
-  margin: 6px 0 0;
+  margin: 8px 0 0;
 
   ${media.tablet} {
     font-size: ${theme.fontSize.xxl};
-    line-height: 40px;
     margin-top: 4px;
   }
 `;
@@ -105,14 +104,13 @@ export const ContentTitle = styled.h3`
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.black};
   font-size: ${theme.fontSize.xxl};
-  line-height: 40px;
+  line-height: 1.3;
   letter-spacing: 0.04em;
   color: ${theme.colors.text};
   margin: 0;
 
   ${media.tablet} {
-    font-size: ${theme.fontSize.lg};
-    line-height: 32px;
+    font-size: ${theme.fontSize.xl};
   }
 `;
 
@@ -120,15 +118,14 @@ export const ContentSubtitle = styled.h4`
   font-family: ${theme.fonts.secondary};
   font-weight: ${theme.fontWeight.bold};
   font-size: ${theme.fontSize.xxl};
-  line-height: 40px;
+  line-height: 1.3;
   letter-spacing: 0.04em;
   color: ${theme.colors.text};
   margin-top: ${theme.spacing.sm};
   margin-bottom: ${theme.spacing.md};
 
   ${media.tablet} {
-    font-size: ${theme.fontSize.lg};
-    line-height: 32px;
+    font-size: ${theme.fontSize.xl};
   }
 `;
 
@@ -140,15 +137,17 @@ export const BodyText = styled.p`
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.normal};
   font-size: ${theme.fontSize.xl};
-  line-height: 36px;
-  letter-spacing: 0.03em;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
   color: ${theme.colors.text};
   margin: 0;
   text-align: justify;
+  word-break: break-word;
 
   ${media.tablet} {
     font-size: ${theme.fontSize.md};
-    line-height: 28px;
+    line-height: 1.7;
+    text-align: left; /* Justify often looks bad on narrow mobile screens */
   }
 `;
 

@@ -49,24 +49,26 @@ const Overlay = styled.div`
   align-items: flex-end;
   justify-content: center;
   padding: 0 ${theme.spacing.md};
-  /* 保留海報風格：只在底部加輕遮罩，讓 CTA 有穩定可讀性 */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.10) 55%, rgba(0, 0, 0, 0.22) 100%);
+  /* Gradient for readability of bottom content */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.15) 70%, rgba(0, 0, 0, 0.45) 100%);
 
   ${media.tablet} {
     align-items: center;
     padding: 0 ${theme.spacing.sm};
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.10) 60%, rgba(0, 0, 0, 0.06) 100%);
+    /* Stronger center/bottom contrast for mobile hero images which often have faces/text in center */
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
   }
 `;
 
 const HeroBox = styled.div`
   width: 100%;
   max-width: 1200px;
-  animation: ${overlayIn} 520ms ease both;
-  padding-bottom: ${theme.spacing.xl};
+  animation: ${overlayIn} 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  padding-bottom: ${theme.spacing.xxl};
 
   ${media.tablet} {
     padding-bottom: 0;
+    text-align: center;
   }
 `;
 
@@ -74,22 +76,26 @@ const H1 = styled.h1`
   margin: 0;
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.black};
-  font-size: 54px;
-  line-height: 68px;
-  letter-spacing: 0.04em;
+  font-size: 64px;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
   color: ${theme.colors.background};
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
   ${media.desktop} {
-    font-size: 48px;
-    line-height: 62px;
+    font-size: 54px;
   }
 
   ${media.tablet} {
-    font-size: 34px;
-    line-height: 48px;
+    font-size: 42px;
+    line-height: 1.2;
   }
 
-  /* 桌機海報圖已含大標：保留可及性，但避免重疊造成雜亂 */
+  ${media.mobile} {
+    font-size: 32px;
+  }
+
+  /* Only hide on large screens where poster already has text */
   @media screen and (min-width: ${theme.breakpoints.laptop}) {
     position: absolute;
     width: 1px;
@@ -109,7 +115,7 @@ const Homepage = () => {
       <Banner aria-label="Let’s Play 桌球聯盟首頁主視覺">
         <Overlay>
           <HeroBox>
-            <H1>Let’s Play 桌球聯盟</H1>
+            <H1>Let’s Play<br />桌球聯盟</H1>
           </HeroBox>
         </Overlay>
       </Banner>
