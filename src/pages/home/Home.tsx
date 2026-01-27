@@ -7,7 +7,7 @@ import SEO from "../../components/common/SEO";
 // Lazy-loaded components
 const About = lazy(() => import("../../components/about"));
 const OurCouchMembers = lazy(() => import("../../components/ourCouchMembers"));
-const Couch = lazy(() => import("../../components/couch"));
+const CoachList = lazy(() => import("../../components/CoachList"));
 const PlayTest = lazy(() => import("../../components/playTest"));
 const ConTest = lazy(() => import("../../components/conTest"));
 const OtherService = lazy(() => import("../../components/otherService"));
@@ -29,7 +29,7 @@ const Home = () => {
         <Homepage />
         <Suspense fallback={null}>
           <About />
-          <OurCouchMembers />
+          <CoachList />
           <PlayTest />
           <ConTest />
           <TrialClassBlock />
