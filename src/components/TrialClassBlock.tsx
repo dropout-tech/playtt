@@ -95,29 +95,36 @@ const HashTag = styled.span`
 const PremiumButton = styled.button`
   width: 100%;
   margin-top: 24px;
-  background: ${theme.colors.secondary};
+  background: linear-gradient(135deg, #FFD900 0%, #FF9900 100%);
   color: ${theme.colors.text};
   border: none;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-size: 18px;
+  padding: 20px 32px;
+  border-radius: 12px;
+  font-size: 20px;
   font-weight: 900;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 217, 0, 0.4);
-  transition: all 0.2s ease;
+  box-shadow: 0 8px 25px rgba(255, 153, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 217, 0, 0.5);
-    filter: brightness(1.02);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 153, 0, 0.45);
+    filter: brightness(1.05);
   }
 
   &:active {
-    transform: translateY(0);
+    transform: translateY(-2px) scale(0.98);
+  }
+
+  ${media.tablet} {
+    padding: 16px 24px;
+    font-size: 18px;
   }
 `;
 

@@ -8,38 +8,55 @@ import { media, theme } from "../../styles/theme";
 import DrawerMenu from "./DrawerMenu";
 import Footer from "../footer";
 
+const pulse = styled.keyframes`
+  0% { box-shadow: 0 0 0 0 rgba(56, 212, 48, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(56, 212, 48, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(56, 212, 48, 0); }
+`;
+
 const FloatingReserveButton = styled.button`
   position: fixed;
-  right: 18px;
+  right: 24px;
   top: 50%;
   transform: translateY(-50%);
-  width: 68px;
-  height: 68px;
+  width: 72px;
+  height: 72px;
   border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.55);
-  background: ${theme.colors.accent};
-  color: ${theme.colors.background};
+  border: none;
+  background: linear-gradient(135deg, #38D430 0%, #2BA325 100%);
+  color: white;
   cursor: pointer;
   z-index: 1000001;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
-  display: grid;
-  place-items: center;
+  box-shadow: 0 10px 25px rgba(43, 163, 37, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.black};
-  letter-spacing: 0.04em;
-  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: ${pulse} 2s infinite;
 
   &:hover {
-    filter: saturate(1.05);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 15px 35px rgba(43, 163, 37, 0.5);
+    background: linear-gradient(135deg, #42E639 0%, #2BA325 100%);
   }
 
   ${media.tablet} {
     top: auto;
-    bottom: 18px;
-    right: 14px;
+    bottom: 24px;
+    right: 20px;
     transform: none;
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
+    animation: none; /* Reduce noise on mobile */
+    
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `;
 
@@ -143,7 +160,7 @@ const NavLink = styled(Link) <{ $active: boolean }>`
 `;
 
 const NAV_ITEMS = [
-  { path: "/", label: "品牌核心", isHash: false },
+  { path: "/", label: "首頁", isHash: false },
   { path: "/class", label: "課程資訊", isHash: false },
   { path: "/partner", label: "合作招募", isHash: false },
   { path: "/#company", label: "聯絡我們", isHash: true },
