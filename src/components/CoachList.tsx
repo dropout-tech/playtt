@@ -258,224 +258,230 @@ const COACHES: Coach[] = [
     },
 ];
 
-const PageContainer = styled.div`
+const PageContainer = styled.section`
   width: 100%;
   background: ${theme.colors.backgroundLight};
+  padding: ${theme.spacing.xxl} 0;
+
+  ${media.tablet} {
+    padding: ${theme.spacing.xl} 0;
+  }
 `;
 
 const Inner = styled.div`
   width: 100%;
   max-width: 1200px;
-  padding-left: ${theme.spacing.md};
-  padding-right: ${theme.spacing.md};
+  padding: 0 ${theme.spacing.md};
   margin: 0 auto;
 
-  @media screen and (max-width: ${theme.breakpoints.tablet}) {
-    padding-left: ${theme.spacing.sm};
-    padding-right: ${theme.spacing.sm};
+  ${media.tablet} {
+    padding: 0 ${theme.spacing.sm};
   }
 `;
 
 const Header = styled.header`
-  margin-bottom: ${theme.spacing.xxl};
-  ${media.tablet} {
-    margin-bottom: ${theme.spacing.xl};
-  }
+  margin-bottom: ${theme.spacing.xl};
 `;
 
 const Hint = styled.p`
   font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.normal};
   font-size: ${theme.fontSize.sm};
-  line-height: 22px;
-  margin: 0;
   color: ${theme.colors.textLight};
+  margin-top: ${theme.spacing.xs};
 `;
 
 const Grid = styled.div`
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: ${theme.spacing.md};
+  /* Use auto-fill with a minimum width for naturally responsive behavior */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: ${theme.spacing.lg};
 
-  @media screen and (max-width: ${theme.breakpoints.desktop}) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media screen and (max-width: ${theme.breakpoints.tablet}) {
-    grid-template-columns: 1fr;
-    gap: ${theme.spacing.sm};
+  ${media.tablet} {
+     grid-template-columns: 1fr; /* Force 1 column on mobile */
+     gap: ${theme.spacing.md};
   }
 `;
 
 const Card = styled.article`
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(26, 26, 26, 0.08);
+  background: ${theme.colors.background};
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  min-width: 0;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(26, 26, 26, 0.14);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: ${theme.colors.primary}20;
   }
 `;
 
 const PhotoContainer = styled.div`
   width: 100%;
-  padding-bottom: 100%; /* Perfect Square */
-  position: relative;
+  aspect-ratio: 1 / 1; /* Robust square */
   overflow: hidden;
-  background: ${theme.colors.backgroundLight};
+  background: #f0f0f0;
+  position: relative;
 `;
 
 const Photo = styled.img<{ $isTsai?: boolean }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: ${props => props.$isTsai ? 'top center' : 'center'} !important;
-  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Strict non-distortion */
+  object-position: ${props => props.$isTsai ? 'top center' : 'center'};
+  transition: transform 0.5s ease;
+
+  ${Card}:hover & {
+    transform: scale(1.05);
+  }
 `;
 
 const CardBody = styled.div`
-  padding: ${theme.spacing.md};
+  padding: ${theme.spacing.lg};
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  ${media.tablet} {
+    padding: ${theme.spacing.md};
+  }
 `;
 
-const CoachHeader = styled.div`
+const NameHeader = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  align-items: flex-start;
   margin-bottom: ${theme.spacing.sm};
 `;
 
-const CoachName = styled.h3`
-  margin: 0;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.black};
+const Name = styled.h3`
   font-size: ${theme.fontSize.xxl};
-  line-height: 32px;
-  letter-spacing: 0.04em;
+  font-weight: ${theme.fontWeight.black};
   color: ${theme.colors.text};
-`;
-
-const CoachNick = styled.span`
-  font-weight: ${theme.fontWeight.bold};
-  font-size: ${theme.fontSize.md};
-  color: ${theme.colors.textLight};
-  margin-left: 8px;
-`;
-
-const Tag = styled.span`
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: ${theme.colors.backgroundLight};
-  color: ${theme.colors.primary};
-  font-family: ${theme.fonts.secondary};
-  font-weight: ${theme.fontWeight.bold};
-  font-size: 14px;
-`;
-
-const SummaryList = styled.ul`
   margin: 0;
-  padding-left: 18px;
+  line-height: 1.2;
 `;
 
-const SummaryItem = styled.li`
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.normal};
+const Nickname = styled.span`
+  display: block;
   font-size: ${theme.fontSize.md};
-  line-height: 28px;
+  font-weight: ${theme.fontWeight.bold};
+  color: ${theme.colors.textLight};
+  margin-top: 2px;
+`;
+
+const ExperienceTag = styled.span`
+  background: ${theme.colors.primary}10;
+  color: ${theme.colors.primary};
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: ${theme.fontSize.xs};
+  font-weight: ${theme.fontWeight.bold};
+  white-space: nowrap;
+`;
+
+const HighlightList = styled.ul`
+  margin: ${theme.spacing.sm} 0;
+  padding-left: ${theme.spacing.md};
+  list-style-type: none;
+`;
+
+const HighlightItem = styled.li`
+  font-size: ${theme.fontSize.md};
   color: ${theme.colors.text};
+  margin-bottom: 6px;
+  position: relative;
+
+  &::before {
+    content: "•";
+    color: ${theme.colors.primary};
+    position: absolute;
+    left: -15px;
+    font-weight: bold;
+  }
 `;
 
-const Details = styled.details`
-  margin-top: ${theme.spacing.sm};
-  border-top: 1px solid rgba(60, 61, 61, 0.12);
-  padding-top: ${theme.spacing.sm};
+const BioDetails = styled.details`
+  margin-top: auto;
+  padding-top: ${theme.spacing.md};
+  border-top: 1px solid ${theme.colors.backgroundLight};
+
+  &[open] summary svg {
+    transform: rotate(180deg);
+  }
 `;
 
-const DetailsSummary = styled.summary`
+const BioSummary = styled.summary`
   list-style: none;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.bold};
-  font-size: ${theme.fontSize.md};
-  color: ${theme.colors.textLight};
+  color: ${theme.colors.primary};
+  user-select: none;
+  outline: none;
 
   &::-webkit-details-marker {
     display: none;
   }
-`;
 
-const Chevron = styled.span`
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
-  transition: transform 0.2s ease;
-
-  details[open] & {
-    transform: rotate(-135deg);
+  &:focus-visible {
+    color: ${theme.colors.accent};
   }
 `;
 
-const Section = styled.div`
-  margin-top: ${theme.spacing.sm};
+const BioContent = styled.div`
+  padding-top: ${theme.spacing.md};
 `;
 
-const SectionLabel = styled.div`
-  font-weight: ${theme.fontWeight.black};
-  font-size: 14px;
-  color: ${theme.colors.primary};
-  margin-bottom: 6px;
+const BioSection = styled.div`
+  margin-bottom: ${theme.spacing.md};
 `;
 
-const SectionList = styled.ul`
-  margin: 0;
-  padding-left: 18px;
-`;
-
-const SectionItem = styled.li`
+const BioLabel = styled.h4`
   font-size: ${theme.fontSize.sm};
-  line-height: 24px;
-  color: ${theme.colors.text};
+  color: ${theme.colors.primary};
+  font-weight: ${theme.fontWeight.black};
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
 `;
 
-function getSummaryItems(coach: Coach): string[] {
-    const teaching = coach.sections.find((s) => s.title === "教學特色")?.items ?? [];
+const BioList = styled.ul`
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: ${theme.fontSize.sm};
+  color: ${theme.colors.textLight};
+  line-height: 1.6;
+`;
+
+function getHighlights(coach: Coach): string[] {
+    const teaching = coach.sections.find(s => s.title === "教學特色")?.items ?? [];
     return teaching.slice(0, 2);
 }
 
-function getCoachTag(coach: Coach): string {
-    const years = coach.sections.find((s) => s.title === "教學年資")?.items?.[0];
-    return years ? `教學 ${years}` : "教練";
+function getExperience(coach: Coach): string {
+    const years = coach.sections.find(s => s.title === "教學年資")?.items?.[0];
+    return years ? `教學 ${years}` : "專業教練";
 }
 
-const CoachList = () => {
+const CoachList: React.FC = () => {
     return (
         <PageContainer id="ourCouchMembers">
             <SectionContainer>
                 <Inner>
                     <Header>
-                        <SectionHeader title="師資介紹" subtitle="Our Coach" />
-                        <Hint>點選「展開」可查看完整教練履歷與證照</Hint>
+                        <SectionHeader title="專業師資團隊" subtitle="Elite Teaching Staff" />
+                        <Hint>我們引以為傲的教練群，為每一位學員量身打造專屬課程</Hint>
                     </Header>
 
                     <Grid>
                         {COACHES.map((coach) => {
-                            const summaryItems = getSummaryItems(coach);
-                            const roleTag = getCoachTag(coach);
+                            const highlights = getHighlights(coach);
+                            const experience = getExperience(coach);
                             const photoSrc = COACH_PHOTOS[coach.name];
 
                             return (
@@ -483,42 +489,48 @@ const CoachList = () => {
                                     <PhotoContainer>
                                         <Photo
                                             src={photoSrc}
-                                            alt={coach.name}
+                                            alt={`教練 ${coach.name}`}
                                             $isTsai={coach.name === "蔡鎮宇"}
+                                            width={400}
+                                            height={400}
+                                            loading="lazy"
                                         />
                                     </PhotoContainer>
                                     <CardBody>
-                                        <CoachHeader>
-                                            <CoachName>
-                                                {coach.name}
-                                                {coach.nickname ? <CoachNick>（{coach.nickname}）</CoachNick> : null}
-                                            </CoachName>
-                                            <Tag>{roleTag}</Tag>
-                                        </CoachHeader>
+                                        <NameHeader>
+                                            <div>
+                                                <Name>{coach.name}</Name>
+                                                {coach.nickname && <Nickname>（{coach.nickname}）</Nickname>}
+                                            </div>
+                                            <ExperienceTag>{experience}</ExperienceTag>
+                                        </NameHeader>
 
-                                        {summaryItems.length > 0 && (
-                                            <SummaryList>
-                                                {summaryItems.map((item) => (
-                                                    <SummaryItem key={item}>{item}</SummaryItem>
-                                                ))}
-                                            </SummaryList>
-                                        )}
-
-                                        <Details>
-                                            <DetailsSummary>
-                                                展開完整資料 <Chevron />
-                                            </DetailsSummary>
-                                            {coach.sections.map((section) => (
-                                                <Section key={section.title}>
-                                                    <SectionLabel>{section.title}</SectionLabel>
-                                                    <SectionList>
-                                                        {section.items.map((item) => (
-                                                            <SectionItem key={item}>{item}</SectionItem>
-                                                        ))}
-                                                    </SectionList>
-                                                </Section>
+                                        <HighlightList>
+                                            {highlights.map((item, idx) => (
+                                                <HighlightItem key={idx}>{item}</HighlightItem>
                                             ))}
-                                        </Details>
+                                        </HighlightList>
+
+                                        <BioDetails>
+                                            <BioSummary>
+                                                查看完整履歷
+                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transition: 'transform 0.3s ease' }}>
+                                                    <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                            </BioSummary>
+                                            <BioContent>
+                                                {coach.sections.map((section) => (
+                                                    <BioSection key={section.title}>
+                                                        <BioLabel>{section.title}</BioLabel>
+                                                        <BioList>
+                                                            {section.items.map((item, i) => (
+                                                                <li key={i}>{item}</li>
+                                                            ))}
+                                                        </BioList>
+                                                    </BioSection>
+                                                ))}
+                                            </BioContent>
+                                        </BioDetails>
                                     </CardBody>
                                 </Card>
                             );
@@ -531,3 +543,4 @@ const CoachList = () => {
 };
 
 export default CoachList;
+
