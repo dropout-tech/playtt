@@ -322,11 +322,17 @@ const Card = styled.article`
   }
 `;
 
+const PhotoContainer = styled.div`
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: ${theme.colors.backgroundLight};
+`;
+
 const Photo = styled.img`
   width: 100%;
-  height: 240px;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
 `;
 
@@ -467,19 +473,22 @@ const CoachList = () => {
                             const roleTag = getCoachTag(coach);
                             const photoSrc = COACH_PHOTOS[coach.name];
 
-                            // Simplified styling to prevent distortion: only use object-fit: cover
+                            // Core rule: object-fit cover to prevent distortion
+                            // Specific rule: object-position top for 蔡鎮宇
                             const imgStyle: React.CSSProperties = {
-                                objectPosition: "center",
+                                objectPosition: coach.name === "蔡鎮宇" ? "top" : "center",
                                 objectFit: "cover"
                             };
 
                             return (
                                 <Card key={coach.name}>
-                                    <Photo
-                                        src={photoSrc}
-                                        alt={coach.name}
-                                        style={imgStyle}
-                                    />
+                                    <PhotoContainer>
+                                        <Photo
+                                            src={photoSrc}
+                                            alt={coach.name}
+                                            style={imgStyle}
+                                        />
+                                    </PhotoContainer>
                                     <CardBody>
                                         <CoachHeader>
                                             <CoachName>
