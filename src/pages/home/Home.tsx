@@ -27,13 +27,13 @@ const Home = () => {
       />
       <HomeContainer>
         <Homepage />
-        <TrialClassBlock />
         <Suspense fallback={null}>
           <About />
           <Couch />
           <OurCouchMembers />
           <PlayTest />
           <ConTest />
+          <TrialClassBlock />
           <OtherService />
         </Suspense>
       </HomeContainer>
