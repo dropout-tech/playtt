@@ -467,10 +467,10 @@ const CoachList = () => {
                             const roleTag = getCoachTag(coach);
                             const photoSrc = COACH_PHOTOS[coach.name];
 
-                            let imgStyle: React.CSSProperties = { objectPosition: "center" };
-                            if (coach.name === "王韻涵") imgStyle = { objectPosition: "center 20%" };
-                            if (coach.name === "蔡鎮宇") imgStyle = { objectPosition: "center 20%" }; // Head is at top-third
-                            if (coach.name === "郭則寬") imgStyle = { objectPosition: "top" };
+                            let imgStyle: React.CSSProperties = { objectPosition: "center", objectFit: "cover" };
+                            if (coach.name === "王韻涵") imgStyle = { objectPosition: "center 30%", objectFit: "cover" };
+                            if (coach.name === "蔡鎮宇") imgStyle = { objectPosition: "center 15%", objectFit: "cover" };
+                            if (coach.name === "郭則寬") imgStyle = { objectPosition: "top", objectFit: "cover" };
 
                             return (
                                 <Card key={coach.name}>
