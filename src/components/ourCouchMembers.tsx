@@ -550,9 +550,20 @@ const OurCouchMembers = () => {
               const summaryItems = getSummaryItems(coach);
               const roleTag = getCoachTag(coach);
 
+              let imgStyle: React.CSSProperties = { objectPosition: "center" };
+              if (coach.name.includes("王韻涵")) {
+                imgStyle = { objectPosition: "center 20%" };
+              } else if (coach.name.includes("蔡鎮宇")) {
+                imgStyle = { objectPosition: "top" };
+              }
+
               return (
                 <MotionCard key={coach.name}>
-                  <Photo src={coach.photoSrc} alt={`${coach.name}${coach.nickname ? `（${coach.nickname}）` : ""} 教練`} />
+                  <Photo
+                    src={coach.photoSrc}
+                    alt={`${coach.name}${coach.nickname ? `（${coach.nickname}）` : ""} 教練`}
+                    style={imgStyle}
+                  />
                   <CardBody>
                     <CoachHeader>
                       <CoachName>

@@ -12,6 +12,11 @@ import {
 import { media, theme } from "../styles/theme";
 import testpic from "../assets/playTest/testpic.png";
 
+const Em = styled.span`
+  font-family: ${theme.fonts.secondary};
+  font-weight: ${theme.fontWeight.bold};
+`;
+
 const fadeUp = keyframes`
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -43,112 +48,75 @@ const TextCard = styled(Card)`
   }
 `;
 
-const ImageCard = styled(Card)`
+const DecorationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   animation: ${fadeUp} 520ms ease both;
   animation-delay: 120ms;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
+const DecorationImage = styled.img`
+  max-width: 100%;
+  height: auto;
   max-height: 560px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.22s ease;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.06));
 
   ${media.tablet} {
     max-height: 320px;
   }
 `;
 
-const MotionImageCard = styled(ImageCard)`
-  &:hover ${Image} {
-    transform: scale(1.02);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    &:hover ${Image} {
-      transform: none;
-    }
-  }
-`;
-
 const Lead = styled.p`
   margin: ${theme.spacing.sm} 0 0;
   font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.normal};
-  font-size: ${theme.fontSize.lg};
-  line-height: 32px;
-  letter-spacing: 0.03em;
-  color: ${theme.colors.text};
+  font-weight: ${theme.fontWeight.black};
+  font-size: 28px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: ${theme.colors.textLight};
 
   ${media.tablet} {
-    font-size: ${theme.fontSize.md};
-    line-height: 28px;
+    font-size: 20px;
   }
 `;
 
 const Steps = styled.div`
-  margin-top: ${theme.spacing.md};
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: ${theme.spacing.sm};
-
-  ${media.tablet} {
-    grid-template-columns: 1fr;
-  }
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 `;
 
 const Step = styled.div`
-  background: rgba(207, 210, 211, 0.2);
-  border-radius: 14px;
-  padding: 14px 14px 12px;
-  transition: transform 0.18s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    transition: none;
-    &:hover {
-      transform: none;
-    }
-  }
+  display: flex;
+  align-items: center;
+  gap: 16px;
 `;
 
 const StepNo = styled.div`
-  font-family: ${theme.fonts.secondary};
+  font-family: ${theme.fonts.primary};
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1;
+  color: #E0E0E0;
+`;
+
+const StepTitle = styled.h4`
+  margin: 0;
+  font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.bold};
-  font-size: 18px;
-  line-height: 24px;
-  color: ${theme.colors.textMuted};
-`;
-
-const StepTitle = styled.div`
-  margin-top: 6px;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.black};
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0.04em;
-  color: ${theme.colors.primary};
-`;
-
-const Description = styled.p`
-  margin: ${theme.spacing.md} 0 0;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.normal};
-  font-size: ${theme.fontSize.md};
-  line-height: 30px;
-  letter-spacing: 0.02em;
+  font-size: 20px;
   color: ${theme.colors.text};
 `;
 
-const Em = styled.span`
-  font-family: ${theme.fonts.secondary};
-  font-weight: ${theme.fontWeight.bold};
-  color: ${theme.colors.primary};
+const Description = styled.p`
+  margin-top: 32px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: ${theme.colors.textLight};
+  text-align: justify;
 `;
 
 const PlayTest = () => {
@@ -190,9 +158,9 @@ const PlayTest = () => {
                 </Description>
               </TextCard>
 
-              <MotionImageCard>
-                <Image src={testpic} alt="桌球檢定示意圖片" />
-              </MotionImageCard>
+              <DecorationContainer>
+                <DecorationImage src={testpic} alt="桌球檢定示意圖片" />
+              </DecorationContainer>
             </Grid>
           </ContentWrapper>
         </Container>
