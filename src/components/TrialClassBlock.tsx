@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { theme, media } from '../styles/theme';
-import { Container, ContentWrapper, SectionTitle, BodyText, BoldText, PrimaryButton, ButtonText } from '../styles/components';
+import { Container, ContentWrapper, SectionTitle, BodyText, BoldText } from '../styles/components';
 
 const SectionBg = styled.div`
   width: 100%;
@@ -92,6 +92,35 @@ const HashTag = styled.span`
   border-radius: 99px;
 `;
 
+const PremiumButton = styled.button`
+  width: 100%;
+  margin-top: 24px;
+  background: ${theme.colors.secondary};
+  color: ${theme.colors.text};
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 217, 0, 0.4);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 217, 0, 0.5);
+    filter: brightness(1.02);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+`;
+
 const TrialClassBlock = () => {
   return (
     <SectionBg id="trial-class">
@@ -116,12 +145,11 @@ const TrialClassBlock = () => {
                   我們相信親身體驗是最好的了解方式。先體驗、再決定，完全零壓力。
                 </BodyText>
 
-                <PrimaryButton
-                  style={{ width: '100%', marginTop: '24px' }}
+                <PremiumButton
                   onClick={() => window.open("https://line.me/R/ti/p/@869usyqy", "_blank")}
                 >
-                  <ButtonText>立即預約體驗</ButtonText>
-                </PrimaryButton>
+                  立即預約體驗
+                </PremiumButton>
               </HighlightBox>
 
               <TagContainer>
