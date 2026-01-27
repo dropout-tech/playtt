@@ -324,7 +324,7 @@ const Card = styled.article`
 
 const PhotoContainer = styled.div`
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: ${theme.colors.backgroundLight};
 `;
