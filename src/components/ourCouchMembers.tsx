@@ -33,12 +33,12 @@ type CoachWithPhoto = Coach & { photoSrc: string };
 const COACH_PHOTOS: Record<string, string> = {
   郭則寬: coachImg4,
   林培中: coachImg3,
-  楊秉翰: coachYang,
-  黃兆銨: coachHuang,
-  王韻涵: coachWangYunHan,
-  蔡鎮宇: coachTsai,
+  楊秉翰: coachImg8,
+  黃兆銨: coachImg6,
+  王韻涵: coachImg1,
+  蔡鎮宇: coachImg7,
   溫達威: coachImg2,
-  王泳程: coachWangYongCheng,
+  王泳程: coachImg6, // Defaulting to one of the red guys if specific one not clear
 };
 
 const COACHES: Coach[] = [
@@ -551,11 +551,9 @@ const OurCouchMembers = () => {
               const roleTag = getCoachTag(coach);
 
               let imgStyle: React.CSSProperties = { objectPosition: "center" };
-              if (coach.name.includes("王韻涵")) {
-                imgStyle = { objectPosition: "center 20%" };
-              } else if (coach.name.includes("蔡鎮宇")) {
-                imgStyle = { objectPosition: "center 5%" };
-              }
+              if (coach.name === "王韻涵") imgStyle = { objectPosition: "center 20%" };
+              if (coach.name === "蔡鎮宇") imgStyle = { objectPosition: "top center" };
+              if (coach.name === "郭則寬") imgStyle = { objectPosition: "top center" };
 
               return (
                 <MotionCard key={coach.name}>

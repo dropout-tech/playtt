@@ -29,7 +29,6 @@ const Home = () => {
         <Homepage />
         <Suspense fallback={null}>
           <About />
-          <Couch />
           <OurCouchMembers />
           <PlayTest />
           <ConTest />
