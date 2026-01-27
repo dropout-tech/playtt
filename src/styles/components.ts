@@ -68,19 +68,20 @@ export const MobileContainer = styled.div`
 // 標題組件
 // ============================================
 
-export const SectionTitle = styled.h2`
+export const SectionTitle = styled.h2<{ $textAlign?: string; $mobileCenter?: boolean }>`
   font-family: ${theme.fonts.primary};
   font-weight: ${theme.fontWeight.black};
   font-size: ${theme.fontSize.xxxl};
   line-height: 1.2;
-  text-align: center;
+  text-align: ${props => props.$textAlign || 'center'};
   letter-spacing: 0.04em;
   color: ${theme.colors.text};
   margin: 0;
-  text-wrap: balance; /* Prevent widows */
+  text-wrap: balance;
 
   ${media.tablet} {
     font-size: ${theme.fontSize.xxl};
+    text-align: ${props => props.$mobileCenter ? 'center' : (props.$textAlign || 'center')};
   }
 `;
 

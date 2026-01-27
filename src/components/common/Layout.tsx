@@ -229,7 +229,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             navigate(path);
           }
         }}
-        size="100%"
+        size="280px"
+        zIndex={100000000} // Higher than everything
       />
 
       <PageWrapper>

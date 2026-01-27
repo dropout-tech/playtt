@@ -12,6 +12,7 @@ import banner414 from "../assets/homepage/banner414.png";
 const Banner = styled.section`
   width: 100%;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for modern browsers */
   background-image: url(${banner1440});
   background-size: cover;
   background-position: center;
@@ -46,67 +47,30 @@ const Overlay = styled.div`
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding: 0 ${theme.spacing.md};
-  /* Gradient for readability of bottom content */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.15) 70%, rgba(0, 0, 0, 0.45) 100%);
-
-  ${media.tablet} {
-    align-items: center;
-    padding: 0 ${theme.spacing.sm};
-    /* Stronger center/bottom contrast for mobile hero images which often have faces/text in center */
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
-  }
+  /* Very light gradient to ensure the background image's own text is clear if needed */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);
 `;
 
 const HeroBox = styled.div`
   width: 100%;
   max-width: 1200px;
-  animation: ${overlayIn} 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  padding-bottom: ${theme.spacing.xxl};
-
-  ${media.tablet} {
-    padding-bottom: 0;
-    text-align: center;
-  }
+  animation: ${overlayIn} 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  text-align: center;
 `;
 
 const H1 = styled.h1`
-  margin: 0;
-  font-family: ${theme.fonts.primary};
-  font-weight: ${theme.fontWeight.black};
-  font-size: 64px;
-  line-height: 1.1;
-  letter-spacing: 0.05em;
-  color: ${theme.colors.background};
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
-  ${media.desktop} {
-    font-size: 54px;
-  }
-
-  ${media.tablet} {
-    font-size: 42px;
-    line-height: 1.2;
-  }
-
-  ${media.mobile} {
-    font-size: 32px;
-  }
-
-  /* Only hide on large screens where poster already has text */
-  @media screen and (min-width: ${theme.breakpoints.laptop}) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
+  /* Visually hidden but accessible for SEO */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 `;
 
 const Homepage = () => {
@@ -115,7 +79,7 @@ const Homepage = () => {
       <Banner aria-label="Let’s Play 桌球聯盟首頁主視覺">
         <Overlay>
           <HeroBox>
-            <H1>Let’s Play<br />桌球聯盟</H1>
+            <H1>Let’s Play 桌球聯盟 - 專業桌球課程與場地租借</H1>
           </HeroBox>
         </Overlay>
       </Banner>

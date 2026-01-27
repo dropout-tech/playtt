@@ -9,9 +9,9 @@ import GreenLight from "../../assets/homepage/green-light.png";
 const SideDrawer = styled(Drawer)`
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
-  padding-top: 20px;
-  /* Ensure proper z-index stacking context if needed */
+  padding-left: 24px;
+  padding-top: 60px; /* More padding to clear the top edge/header area */
+  background-color: white !important;
 `;
 
 const DrawerItemButton = styled.button<{ $active: boolean }>`
@@ -52,56 +52,56 @@ const MobileText = styled.span`
 `;
 
 type NavItem = {
-    id: string;
-    label: string;
+  id: string;
+  label: string;
 };
 
 interface DrawerMenuProps {
-    open: boolean;
-    onClose: () => void;
-    items: NavItem[];
-    activeIdx: number;
-    onItemClick: (idx: number, id: string) => void;
-    size?: number | string;
-    zIndex?: number;
-    className?: string;
+  open: boolean;
+  onClose: () => void;
+  items: NavItem[];
+  activeIdx: number;
+  onItemClick: (idx: number, id: string) => void;
+  size?: number | string;
+  zIndex?: number;
+  className?: string;
 }
 
 const DrawerMenu: React.FC<DrawerMenuProps> = ({
-    open,
-    onClose,
-    items,
-    activeIdx,
-    onItemClick,
-    size = 286,
-    zIndex = 10000,
-    className
+  open,
+  onClose,
+  items,
+  activeIdx,
+  onItemClick,
+  size = 286,
+  zIndex = 10000,
+  className
 }) => {
-    return (
-        <SideDrawer
-            open={open}
-            onClose={onClose}
-            direction='left'
-            size={size}
-            zIndex={zIndex}
-            className={className}
+  return (
+    <SideDrawer
+      open={open}
+      onClose={onClose}
+      direction='left'
+      size={size}
+      zIndex={zIndex}
+      className={className}
+    >
+      {items.map((item, idx) => (
+        <DrawerItemButton
+          key={item.id}
+          $active={activeIdx === idx}
+          onClick={() => onItemClick(idx, item.id)}
         >
-            {items.map((item, idx) => (
-                <DrawerItemButton
-                    key={item.id}
-                    $active={activeIdx === idx}
-                    onClick={() => onItemClick(idx, item.id)}
-                >
-                    {activeIdx === idx ? (
-                        <LightImage src={GreenLight} alt="" />
-                    ) : (
-                        <LightImage src={Light} alt="" />
-                    )}
-                    <MobileText>{item.label}</MobileText>
-                </DrawerItemButton>
-            ))}
-        </SideDrawer>
-    );
+          {activeIdx === idx ? (
+            <LightImage src={GreenLight} alt="" />
+          ) : (
+            <LightImage src={Light} alt="" />
+          )}
+          <MobileText>{item.label}</MobileText>
+        </DrawerItemButton>
+      ))}
+    </SideDrawer>
+  );
 };
 
 export default DrawerMenu;

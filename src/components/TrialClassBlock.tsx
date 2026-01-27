@@ -137,7 +137,7 @@ const TrialClassBlock = () => {
             <InfoBox>
               <div>
                 <HighlightBadge>限額體驗</HighlightBadge>
-                <SectionTitle style={{ textAlign: 'left', marginBottom: '16px' }}>團體班 (小班制)</SectionTitle>
+                <SectionTitle $textAlign="left" $mobileCenter style={{ marginBottom: '16px' }}>團體班 (小班制)</SectionTitle>
                 <BodyText style={{ fontSize: '18px', color: theme.colors.textLight }}>
                   3–6 人精緻小班教學，每堂 1.5 小時。<br />
                   確保每位學員都能獲得教練的完整指導與關注。
@@ -167,8 +167,8 @@ const TrialClassBlock = () => {
             </InfoBox>
 
             <InfoBox style={{ justifyContent: 'center' }}>
-              <div style={{ paddingLeft: '20px' }}>
-                <BoldText style={{ fontSize: '20px', marginBottom: '24px', display: 'block' }}>完善的課程規劃</BoldText>
+              <div>
+                <BoldText style={{ fontSize: '20px', marginBottom: '24px', display: 'block', textAlign: 'center' }}>完善的課程規劃</BoldText>
                 <FeatureList>
                   <FeatureItem><CheckIcon /> 下肢暖身與基本操</FeatureItem>
                   <FeatureItem><CheckIcon /> 互動遊戲式球感訓練</FeatureItem>

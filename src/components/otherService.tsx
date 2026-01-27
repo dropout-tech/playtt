@@ -152,9 +152,9 @@ const ServiceCard = styled(Card)`
   animation: ${fadeUp} 520ms ease both;
 
   ${media.tablet} {
-    padding: ${theme.spacing.md};
-    padding-right: calc(${theme.spacing.md} + 112px);
-    padding-bottom: calc(${theme.spacing.md} + 80px);
+    padding: ${theme.spacing.lg} ${theme.spacing.md};
+    padding-bottom: 120px; /* Space for icon at bottom */
+    text-align: center;
   }
 `;
 
@@ -193,10 +193,11 @@ const Icon = styled.img`
   transform-origin: 70% 70%;
 
   ${media.tablet} {
-    width: 96px;
-    height: 96px;
-    right: ${theme.spacing.sm};
-    bottom: ${theme.spacing.sm};
+    width: 80px;
+    height: 80px;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: ${theme.spacing.md};
   }
 `;
 
