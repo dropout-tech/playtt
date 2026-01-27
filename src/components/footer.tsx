@@ -71,17 +71,29 @@ const Subtitle = styled.p`
 
 const FooterButton = styled(PrimaryButton)`
   width: 100%;
-  height: 52px;
+  height: 56px;
   border-radius: 12px;
+  background: linear-gradient(135deg, #FFD900 0%, #FF9900 100%);
+  border: none;
+  box-shadow: 0 8px 20px rgba(255, 153, 0, 0.25);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 153, 0, 0.4);
+    filter: brightness(1.05);
+  }
 
   ${media.tablet} {
     width: 100%;
-    height: 48px;
+    height: 52px;
   }
 `;
 
 const FooterButtonText = styled(ButtonText)`
   font-size: ${theme.fontSize.lg};
+  font-weight: 900;
+  color: ${theme.colors.text};
 `;
 
 const Grid = styled.div`

@@ -1,6 +1,6 @@
 import React, { useState, Suspense, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Logo from "../../assets/homepage/logo.png";
 import Menu from "../../assets/homepage/menu.png";
 import Close from "../../assets/homepage/close.png";
@@ -8,7 +8,7 @@ import { media, theme } from "../../styles/theme";
 import DrawerMenu from "./DrawerMenu";
 import Footer from "../footer";
 
-const pulse = styled.keyframes`
+const pulse = keyframes`
   0% { box-shadow: 0 0 0 0 rgba(56, 212, 48, 0.7); }
   70% { box-shadow: 0 0 0 15px rgba(56, 212, 48, 0); }
   100% { box-shadow: 0 0 0 0 rgba(56, 212, 48, 0); }
