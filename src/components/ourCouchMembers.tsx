@@ -11,10 +11,10 @@ import coachImg4 from "../assets/ourCouchMenber/img4.png";
 import coachImg6 from "../assets/ourCouchMenber/img6.png";
 import coachImg7 from "../assets/ourCouchMenber/img7.png";
 import coachImg8 from "../assets/ourCouchMenber/img8.png";
-import coachWangYongCheng from "../assets/ourCouchMenber/coach-wang-yongcheng.jpg";
-import coachTsai from "../assets/ourCouchMenber/coach-tsai.jpg";
-import coachYang from "../assets/ourCouchMenber/coach-yang.jpg";
-import coachHuang from "../assets/ourCouchMenber/coach-huang-zhaoan.jpg";
+import coachWangYongCheng from "../assets/ourCouchMenber/coach-wang-new.jpg";
+import coachTsai from "../assets/ourCouchMenber/coach-tsai-new.jpg";
+import coachYang from "../assets/ourCouchMenber/coach-yang-new.jpg";
+import coachHuang from "../assets/ourCouchMenber/coach-huang-new.jpg";
 import coachWangYunHan from "../assets/ourCouchMenber/coach-wang-yunhan.jpg";
 
 type CoachSection = {
@@ -33,12 +33,12 @@ type CoachWithPhoto = Coach & { photoSrc: string };
 const COACH_PHOTOS: Record<string, string> = {
   郭則寬: coachImg4,
   林培中: coachImg3,
-  楊秉翰: coachImg8,
-  黃兆銨: coachImg6,
-  王韻涵: coachImg1,
-  蔡鎮宇: coachImg7,
+  楊秉翰: coachYang,
+  黃兆銨: coachHuang,
+  王韻涵: coachWangYunHan,
+  蔡鎮宇: coachTsai,
   溫達威: coachImg2,
-  王泳程: coachImg6, // Defaulting to one of the red guys if specific one not clear
+  王泳程: coachWangYongCheng,
 };
 
 const COACHES: Coach[] = [
@@ -552,8 +552,8 @@ const OurCouchMembers = () => {
 
               let imgStyle: React.CSSProperties = { objectPosition: "center" };
               if (coach.name === "王韻涵") imgStyle = { objectPosition: "center 20%" };
-              if (coach.name === "蔡鎮宇") imgStyle = { objectPosition: "top center" };
-              if (coach.name === "郭則寬") imgStyle = { objectPosition: "top center" };
+              if (coach.name === "蔡鎮宇") imgStyle = { objectPosition: "top" };
+              if (coach.name === "郭則寬") imgStyle = { objectPosition: "top" };
 
               return (
                 <MotionCard key={coach.name}>
