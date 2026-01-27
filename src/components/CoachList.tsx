@@ -324,15 +324,20 @@ const Card = styled.article`
 
 const PhotoContainer = styled.div`
   width: 100%;
-  aspect-ratio: 1 / 1;
+  padding-bottom: 100%; /* Perfect Square */
+  position: relative;
   overflow: hidden;
   background: ${theme.colors.backgroundLight};
 `;
 
-const Photo = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+const Photo = styled.img<{ $isTsai?: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: ${props => props.$isTsai ? 'top center' : 'center'} !important;
   display: block;
 `;
 
@@ -473,20 +478,13 @@ const CoachList = () => {
                             const roleTag = getCoachTag(coach);
                             const photoSrc = COACH_PHOTOS[coach.name];
 
-                            // Core rule: object-fit cover to prevent distortion
-                            // Specific rule: object-position top for 蔡鎮宇
-                            const imgStyle: React.CSSProperties = {
-                                objectPosition: coach.name === "蔡鎮宇" ? "top" : "center",
-                                objectFit: "cover"
-                            };
-
                             return (
                                 <Card key={coach.name}>
                                     <PhotoContainer>
                                         <Photo
                                             src={photoSrc}
                                             alt={coach.name}
-                                            style={imgStyle}
+                                            $isTsai={coach.name === "蔡鎮宇"}
                                         />
                                     </PhotoContainer>
                                     <CardBody>
@@ -529,6 +527,50 @@ const CoachList = () => {
                 </Inner>
             </SectionContainer>
         </PageContainer>
+    );
+};
+
+export default CoachList;
+<CardBody>
+    <CoachHeader>
+        <CoachName>
+            {coach.name}
+            {coach.nickname ? <CoachNick>（{coach.nickname}）</CoachNick> : null}
+        </CoachName>
+        <Tag>{roleTag}</Tag>
+    </CoachHeader>
+
+    {summaryItems.length > 0 && (
+        <SummaryList>
+            {summaryItems.map((item) => (
+                <SummaryItem key={item}>{item}</SummaryItem>
+            ))}
+        </SummaryList>
+    )}
+
+    <Details>
+        <DetailsSummary>
+            展開完整資料 <Chevron />
+        </DetailsSummary>
+        {coach.sections.map((section) => (
+            <Section key={section.title}>
+                <SectionLabel>{section.title}</SectionLabel>
+                <SectionList>
+                    {section.items.map((item) => (
+                        <SectionItem key={item}>{item}</SectionItem>
+                    ))}
+                </SectionList>
+            </Section>
+        ))}
+    </Details>
+</CardBody>
+                                </Card >
+                            );
+                        })}
+                    </Grid >
+                </Inner >
+            </SectionContainer >
+        </PageContainer >
     );
 };
 
