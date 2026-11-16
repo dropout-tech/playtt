@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-16T17:51:19.106Z",
+  "base": "https://playtt-wp-free-boot-probe.muzhi-garden-platform.workers.dev",
+  "scope": "CPU boot prerequisite only; no persisted content",
+  "results": [
+    {
+      "route": "/health",
+      "authenticated": false,
+      "status": 404,
+      "wallMs": 1159,
+      "cfRay": "a5b8574f69699841-EWR",
+      "body": "Not found"
+    },
+    {
+      "route": "/health",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 12734,
+      "cfRay": "a5b857554f8072b9-EWR",
+      "body": "{\"scope\":\"boot CPU prerequisite only; no persistence\",\"upstream\":\"9764022156a61ba7d2b4d8a2196b01ccb33b82b5\"}"
+    },
+    {
+      "route": "/worker?phase=php",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 798,
+      "cfRay": "a5b857a3e863f591-SJC",
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"php\",\"completed\":true,\"evidence\":{\"phpVersion\":\"8.5.8\"}}"
+    },
+    {
+      "route": "/worker?phase=streamed-files",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 698,
+      "cfRay": "a5b857a72e2bf591-SJC",
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"streamed-files\",\"completed\":true,\"evidence\":{\"materializedFiles\":2108,\"materializedBytes\":22960303,\"wordpressVersion\":\"7.0.2\"}}"
+    },
+    {
+      "route": "/worker?phase=mdi-wordpress",
+      "authenticated": true,
+      "status": 503,
+      "wallMs": 1559,
+      "cfRay": "a5b857ab8c4ef591-SJC",
+      "body": "<!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!--<![endif]-->\n<head>\n<title>Worker exceeded resource limits | playtt-wp-free-boot-probe.muzhi-garden-platform.workers.dev | Cloudflare</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<link rel=\"stylesheet\" id=\"cf_styles-css\" href=\"/cdn-cgi/styles/cf.errors.css\" />\n<!--[if lt IE 9]><link rel=\"stylesheet\" id='cf_styles-ie-css' href=\"/cdn-cgi/styles/cf.errors.ie.css\" /><![endif]-->\n<style>body{margin:0;padding:0}</style>\n\n\n<!--[if gte IE 10]><!-->\n<script>\n  if (!navigator.cookieEnabled) {\n    window.addEventListener('DOMContentLoaded', function () {\n      var cookieEl = document.getElementById('cookie-alert');\n      cookieEl.style.display = 'block';\n    })\n  }\n</script>\n<!--<![endif]-->\n\n</head>\n<body>\n    <div id=\"cf-wrapper\">\n        <div class=\"cf-alert cf-alert-error cf-cookie-error\" id=\"cookie-alert\" data-translate=\"enable_cookies\">Please enable cookies.</div>\n        <div id=\"cf-error-details\" class=\"cf-error-details-wrapper\">\n            <div class"
+    },
+    {
+      "route": "/durable-object?phase=php",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 954,
+      "cfRay": "a5b857b57e8a72b9-EWR",
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"php\",\"completed\":true,\"evidence\":{\"phpVersion\":\"8.5.8\"}}"
+    },
+    {
+      "route": "/durable-object?phase=streamed-files",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 1005,
+      "cfRay": "a5b857bb3f10f591-SJC",
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"streamed-files\",\"completed\":true,\"evidence\":{\"materializedFiles\":2108,\"materializedBytes\":22960303,\"wordpressVersion\":\"7.0.2\"}}"
+    },
+    {
+      "route": "/durable-object?phase=mdi-wordpress",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 2876,
+      "cfRay": "a5b857c1898af591-SJC",
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"mdi-wordpress\",\"completed\":true,\"evidence\":{\"wordpressVersion\":\"7.0.2\"}}"
+    }
+  ]
+}

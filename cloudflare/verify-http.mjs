@@ -29,10 +29,24 @@ async function request(url,options={}){
 }
 const results=[];
 async function walk(dir){return(await Promise.all((await readdir(dir,{withFileTypes:true})).map(e=>e.isDirectory()?walk(path.join(dir,e.name)):path.join(dir,e.name)))).flat();}
-for(const file of await walk(path.join(root,'public'))){
+const files=await walk(path.join(root,'public'));
+// Request the same versioned asset URLs as the published page. A bare CSS URL
+// can legitimately retain the prior version in a browser/CDN cache for its TTL.
+const assetUrls=new Map();
+for(const file of files.filter(file=>file.endsWith('.html'))){
+  for(const match of (await readFile(file,'utf8')).matchAll(/(?:src|href)=["'](\/[^"']*)["']/g)){
+    const url=new URL(match[1].replaceAll('&amp;','&'),base);
+    if(url.origin!==base.origin||!url.search)continue;
+    const key=decodeURIComponent(url.pathname).replace(/^\//,'');
+    assert.ok(!assetUrls.has(key)||assetUrls.get(key).href===url.href,'Conflicting asset versions: '+key);
+    assetUrls.set(key,url);
+  }
+}
+for(const file of files){
   const relative=path.relative(path.join(root,'public'),file).replaceAll('\\','/');
   if(relative.startsWith('_'))continue;
-  const response=await request(new URL('/'+relative,base),{signal:AbortSignal.timeout(20000)});
+  const requestUrl=assetUrls.get(relative)||new URL('/'+relative,base);
+  const response=await request(requestUrl,{signal:AbortSignal.timeout(20000)});
   assert.equal(response.status,200,relative);
   const body=Buffer.from(await response.arrayBuffer());
   const expected=await readFile(file);
@@ -46,7 +60,7 @@ for(const file of await walk(path.join(root,'public'))){
     compared=Buffer.from(html);
   }
   assert.equal(createHash('sha256').update(compared).digest('hex'),createHash('sha256').update(expected).digest('hex'),'Published bytes '+relative);
-  results.push({path:relative,status:response.status,bytes:body.length,match:true,matchMode:cloudflareAnalyticsScripts?'content-exact-after-recorded-cloudflare-beacon-removal':'byte-exact',cloudflareAnalyticsScripts});
+  results.push({path:relative,requestPath:requestUrl.pathname+requestUrl.search,status:response.status,bytes:body.length,match:true,matchMode:cloudflareAnalyticsScripts?'content-exact-after-recorded-cloudflare-beacon-removal':'byte-exact',cloudflareAnalyticsScripts});
 }
 const missing=await request(new URL('/missing-acceptance-fb4d7c/',base));
 assert.equal(missing.status,404);assert.match(await missing.text(),/這一球，出界了/);

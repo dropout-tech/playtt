@@ -1,6 +1,16 @@
 # WordPress / Cloudflare 可行性紀錄
 
-查核日：2026-11-16。區分本專案實測與第三方成果。
+查核日：2026-11-17。區分本專案實測與第三方成果。
+
+## 最新遠端結果（2026-11-17）
+
+使用者已授權 Wrangler 必要的 Scripts Write / Routes Write，限定 info 帳號且僅操作 playtt；先前審查阻礙已解除。帳號方案重新確認仍為 Free / $0 / Current plan。
+
+已實際部署隔離 `playtt-wp-free-boot-probe`（約28,997 KiB未壓縮，版本 bc78e4a1-6e45-4da5-a2b0-d538127290ca），設定隨機密鑰後執行八個請求。匿名404、授權health200；一般Worker及SQLite DO的PHP與核心展開均成功。一般Worker完整WordPress boot回503「Worker exceeded resource limits」，相同WordPress 7.0.2/PHP8.5.8在SQLite DO完整boot成功。證據 `docs/verification/cloudflare-boot-remote.json`，保留CF Ray。這裡記錄的是wall time，沒有把它當成CPU量測，也不把503逕自細分為CPU或記憶體原因。
+
+此結果支持繼續測試「把完整PHP執行放進SQLite DO」的免費路徑。探針只讀取打包核心，不保存內容；完整後台、媒體、重部署及還原尚未遠端驗收。尚未建立遠端R2測試桶，未升級付費，未將正式網域導向探針。
+
+## 先前本機與來源查核（2026-11-16）
 
 本專案 WordPress 7.1.4、PHP 8.3、官方 Playground CLI 3.1.64 本機 9 項整合測試通過，包含編輯、草稿、媒體、重啟、修訂和備份還原。本機 SQLite／磁碟保存不等於 Cloudflare 持久化。
 

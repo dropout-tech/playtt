@@ -1,6 +1,26 @@
 # PLAYTT 執行進度
 
-## 最新狀態（2026-11-16 19:13）
+## 最新狀態（2026-11-17 01:55）
+
+- 使用者已授權僅操作 playtt 的 Workers Scripts Write / Routes Write；OAuth 限定 info@dropout.tw 帳號，六項權限為原有四項加這兩項，未加入 Tail。登入成功，先前自動核准審查阻礙已解除。
+- 隔離探針 `playtt-wp-free-boot-probe` 已部署：版本 `bc78e4a1-6e45-4da5-a2b0-d538127290ca`（設定測試密鑰前的部署 ID），URL https://playtt-wp-free-boot-probe.muzhi-garden-platform.workers.dev 。無正式網域路由，隨機密鑰保存在本機與 Worker Secret，不提交程式庫；匿名回應 404。
+- 遠端八項請求中，PHP、核心展開在一般 Worker 與 SQLite DO 均成功。一般 Worker 的完整 WordPress boot 回應 503「Worker exceeded resource limits」；同套核心在 SQLite DO 完整 boot 成功，WordPress 7.0.2 / PHP 8.5.8。`cloudflare-boot-remote.json` 保存狀態、CF Ray 和結果；wall time 不冒充 CPU time。此探針不含資料持久化，不能宣稱遠端後台完成。
+- 下一步：把完整 runtime 的 PHP 執行放入隔離 SQLite DO，維持原生 WordPress 與協調器，先本機驗證，再測遠端登入、媒體、修訂、重部署、備份還原與並行寫入。無需改 CMS 或升級付費方案。現有公開官網保持 Pages 發布。
+- 使用者完成 Zeabur 永久刪除後，已用全新登入頁確認 LetsPlayWebsite 不在專案列表；唯一 playtt 服務及其設定屬該專案，無資料卷，其他專案仍在。模板備份已本機保存且未提交。刪除後正式站以一般公開 DNS 檢查 46 檔、404、/home/301 全數通過，不再需要邊緣 IP 覆寫。
+- 六個正式頁面已完成瀏覽器 console / HTTP 請求檢查，沒有觀察到 exception、console error、失敗請求、>=400 回應或混合內容。各頁 readyState complete，事件未截斷。證據 `production-console-0.2.3.json`。這是逐頁載入 smoke check，不是所有互動或輔助技術的完整驗收。
+- 正式主題 0.2.3、效能首頁 94／課程 99、兩頁 CLS 0；9 項本機 WordPress 整合與公開檔案證據維持通過。目標 active，完整遠端持久化及交付仍未完成。
+
+## 前次狀態（2026-11-16 19:29）
+
+- 正式網站已更新主題 0.2.3，commit `55dc51845b52350f59436c2eacbece17f15edfbf`，免費 Pages 部署 `32e92256-f71e-4ed6-afff-291b6cca3206`。固定快照 https://32e92256.playtt-brand-preview.pages.dev 。完整免費 WordPress 後台仍未驗收，目標保持 active。
+- PageSpeed 行動實驗室量測找到原首頁 CLS 0.711、效能 69。主題用原生圖片區塊 render filter 補上圖片真實尺寸，既有頁面不用重匯入或改寫區塊；保留原創桌機及手機主視覺。新版首頁效能 94、CLS 0、LCP 2.956 秒；課程 99、CLS 0、LCP 1.541 秒。兩頁的自動無障礙、最佳做法、SEO 均 100。沒有 CrUX 真實使用者資料，分數不是完整人工無障礙驗收。
+- 0.2.3 ZIP 9 項本機 WordPress 整合測試通過；六頁、48 檔靜態檢查新增圖片尺寸檢查。正式站與預覽站 46 檔、404、/home/301 通過。HTTP 驗證器改以頁面實際引用的 `?ver=0.2.3` CSS/JS 網址查驗，避免把 TTL 內舊裸網址快取誤判為發布失敗；報告記錄 requestPath。
+- 0.2.3 手機 375px：內容寬 360、scrollWidth 360、無壞圖，顯示 brand-mobile.webp；桌機 1280px 顯示 brand-desktop.webp，無溢出。保留既有 18 組版面、鍵盤與舊網址基準證據。
+- 主題 ZIP SHA256 `471aaf78e1d4a15d1357ec9500a067bcff27a9a4d803f7f8dcea48a00249a79e`；靜態備份 SHA256 `b24f497ca40ad9a274534337771fd288e462fda6b671e94e047e8fd1a1aec02a`。
+- Zeabur 重新核對 LetsPlayWebsite：唯一 playtt 服務仍暫停／未部署，沒有資料卷，舊根網域及 www 綁定顯示 INVALID_DNS；來源仍為本儲存庫 master，沒有啟用 InsForge。正在備妥專案移除清單及設定備份，尚未刪除。
+- Wrangler 額外 Scripts Write / Routes Write 的授權問題仍待回覆；未重試遭審查拒絕的權限擴大。遠端 WordPress CPU、資料保存及還原尚無結果。
+
+## 前次狀態（2026-11-16 19:13）
 
 - Gandi 已重新登入；18:52 活動紀錄確認 nameservers 更新為 `karl.ns.cloudflare.com`、`mariah.ns.cloudflare.com`。切換前即時重讀完整區域檔及 DNSSEC（未啟用），與原備份一致。Cloudflare zone 已 active。
 - `playtt.tw`、`www.playtt.tw` 已綁到免費 Pages，兩者 Active / SSL enabled；Universal 憑證涵蓋根網域及萬用子網域，效期至 2027-02-14。正式網址瀏覽器已呈現 0.2.2 新版，已啟用 Always Use HTTPS，www 301 至根網域並保留路徑及 query（規則 `eb8ac6c08c19418aa8f1b7150694558e`）。

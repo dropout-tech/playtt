@@ -1,0 +1,426 @@
+{
+  "at": "2026-11-16T17:46:15.369Z",
+  "base": "https://playtt.tw",
+  "resolver": {
+    "kind": "system-public-dns"
+  },
+  "result": "pass",
+  "files": [
+    {
+      "path": "404.html",
+      "requestPath": "/404.html",
+      "status": 200,
+      "bytes": 64127,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "about/index.html",
+      "requestPath": "/about/index.html",
+      "status": 200,
+      "bytes": 52071,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "class/index.html",
+      "requestPath": "/class/index.html",
+      "status": 200,
+      "bytes": 55555,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "coaches/index.html",
+      "requestPath": "/coaches/index.html",
+      "status": 200,
+      "bytes": 64802,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "index.html",
+      "requestPath": "/index.html",
+      "status": 200,
+      "bytes": 62386,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "locations/index.html",
+      "requestPath": "/locations/index.html",
+      "status": 200,
+      "bytes": 51719,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "partner/index.html",
+      "requestPath": "/partner/index.html",
+      "status": 200,
+      "bytes": 51587,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "robots.txt",
+      "requestPath": "/robots.txt",
+      "status": 200,
+      "bytes": 62,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "sitemap.xml",
+      "requestPath": "/sitemap.xml",
+      "status": 200,
+      "bytes": 387,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/logo.webp",
+      "requestPath": "/wp-content/themes/lets-play/assets/images/logo.webp",
+      "status": 200,
+      "bytes": 2678,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/share.jpg",
+      "requestPath": "/wp-content/themes/lets-play/assets/images/share.jpg",
+      "status": 200,
+      "bytes": 57657,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/legacy-links.js",
+      "requestPath": "/wp-content/themes/lets-play/assets/legacy-links.js?ver=0.2.3",
+      "status": 200,
+      "bytes": 1104,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/themes/lets-play/style.css",
+      "requestPath": "/wp-content/themes/lets-play/style.css?ver=0.2.3",
+      "status": 200,
+      "bytes": 12216,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/brand-desktop.webp",
+      "requestPath": "/wp-content/uploads/2026/11/brand-desktop.webp",
+      "status": 200,
+      "bytes": 65256,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/brand-mobile.webp",
+      "requestPath": "/wp-content/uploads/2026/11/brand-mobile.webp",
+      "status": 200,
+      "bytes": 41984,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/camp.webp",
+      "requestPath": "/wp-content/uploads/2026/11/camp.webp",
+      "status": 200,
+      "bytes": 92538,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/children.webp",
+      "requestPath": "/wp-content/uploads/2026/11/children.webp",
+      "status": 200,
+      "bytes": 74158,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-amber.webp",
+      "requestPath": "/wp-content/uploads/2026/11/coach-amber.webp",
+      "status": 200,
+      "bytes": 20624,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-huang.webp",
+      "requestPath": "/wp-content/uploads/2026/11/coach-huang.webp",
+      "status": 200,
+      "bytes": 36554,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-kuo.webp",
+      "requestPath": "/wp-content/uploads/2026/11/coach-kuo.webp",
+      "status": 200,
+      "bytes": 28312,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-lin.webp",
+      "requestPath": "/wp-content/uploads/2026/11/coach-lin.webp",
+      "status": 200,
+      "bytes": 29132,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-tsai.webp",
+      "requestPath": "/wp-content/uploads/2026/11/coach-tsai.webp",
+      "status": 200,
+      "bytes": 59322,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-wang.webp",
+      "requestPath": "/wp-content/uploads/2026/11/coach-wang.webp",
+      "status": 200,
+      "bytes": 40832,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-wen.webp",
+      "requestPath": "/wp-content/uploads/2026/11/coach-wen.webp",
+      "status": 200,
+      "bytes": 31188,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-yang.webp",
+      "requestPath": "/wp-content/uploads/2026/11/coach-yang.webp",
+      "status": 200,
+      "bytes": 41464,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-content/uploads/2026/11/individual.webp",
+      "requestPath": "/wp-content/uploads/2026/11/individual.webp",
+      "status": 200,
+      "bytes": 89448,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/button/style.min.css",
+      "requestPath": "/wp-includes/blocks/button/style.min.css",
+      "status": 200,
+      "bytes": 2559,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/buttons/style.min.css",
+      "requestPath": "/wp-includes/blocks/buttons/style.min.css",
+      "status": 200,
+      "bytes": 1395,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/details/style.min.css",
+      "requestPath": "/wp-includes/blocks/details/style.min.css",
+      "status": 200,
+      "bytes": 81,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/group/style.min.css",
+      "requestPath": "/wp-includes/blocks/group/style.min.css",
+      "status": 200,
+      "bytes": 117,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/group/theme.min.css",
+      "requestPath": "/wp-includes/blocks/group/theme.min.css",
+      "status": 200,
+      "bytes": 62,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/heading/style.min.css",
+      "requestPath": "/wp-includes/blocks/heading/style.min.css",
+      "status": 200,
+      "bytes": 1165,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/image/style.min.css",
+      "requestPath": "/wp-includes/blocks/image/style.min.css",
+      "status": 200,
+      "bytes": 8811,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/image/theme.min.css",
+      "requestPath": "/wp-includes/blocks/image/theme.min.css",
+      "status": 200,
+      "bytes": 198,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/list/style.min.css",
+      "requestPath": "/wp-includes/blocks/list/style.min.css",
+      "status": 200,
+      "bytes": 95,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/navigation/style.min.css",
+      "requestPath": "/wp-includes/blocks/navigation/style.min.css?ver=7.1.4",
+      "status": 200,
+      "bytes": 20776,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/navigation-link/style.min.css",
+      "requestPath": "/wp-includes/blocks/navigation-link/style.min.css",
+      "status": 200,
+      "bytes": 316,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/paragraph/style.min.css",
+      "requestPath": "/wp-includes/blocks/paragraph/style.min.css",
+      "status": 200,
+      "bytes": 655,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/post-content/style.min.css",
+      "requestPath": "/wp-includes/blocks/post-content/style.min.css",
+      "status": 200,
+      "bytes": 41,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/blocks/template-part/theme.min.css",
+      "requestPath": "/wp-includes/blocks/template-part/theme.min.css",
+      "status": 200,
+      "bytes": 105,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/css/dist/block-library/common.min.css",
+      "requestPath": "/wp-includes/css/dist/block-library/common.min.css",
+      "status": 200,
+      "bytes": 4203,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/css/wp-block-template-skip-link.min.css",
+      "requestPath": "/wp-includes/css/wp-block-template-skip-link.min.css",
+      "status": 200,
+      "bytes": 467,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/js/dist/script-modules/block-library/navigation/view.min.js",
+      "requestPath": "/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=1bf28ded04f9f188bdcb",
+      "status": 200,
+      "bytes": 3033,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/js/dist/script-modules/interactivity/index.min.js",
+      "requestPath": "/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=6a43cba92ed701f32cd9",
+      "status": 200,
+      "bytes": 42848,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/js/wp-emoji-loader.min.js",
+      "requestPath": "/wp-includes/js/wp-emoji-loader.min.js",
+      "status": 200,
+      "bytes": 2977,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    },
+    {
+      "path": "wp-includes/js/wp-emoji-release.min.js",
+      "requestPath": "/wp-includes/js/wp-emoji-release.min.js",
+      "status": 200,
+      "bytes": 22752,
+      "match": true,
+      "matchMode": "byte-exact",
+      "cloudflareAnalyticsScripts": 0
+    }
+  ],
+  "missingStatus": 404,
+  "homeRedirect": 301
+}
