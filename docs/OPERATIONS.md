@@ -28,21 +28,24 @@
 
 ## 免費 Cloudflare 靜態部署設定
 
-固定帳號 info@dropout.tw；專用預覽 Worker 名稱 `playtt-brand-preview`。
+固定帳號 info@dropout.tw；已部署的免費 Pages 專案 `playtt-brand-preview`，預覽 https://playtt-brand-preview.pages.dev 。這是官網恢復階段的靜態發布，完整 WordPress 後台仍未遠端驗收。
 
 | 設定 | 值 |
 | --- | --- |
 | Git repository | dropout-tech/playtt |
 | 預覽分支 | codex/playtt-wordpress-cloudflare |
 | 根目錄 | cloudflare |
-| 建置命令 | npm run build |
-| 部署命令 | npx wrangler deploy |
+| 建置命令 | node verify-static.mjs |
+| 發布方式 | Pages 原生 GitHub 整合，自動部署 |
+| 環境變數 | SKIP_DEPENDENCY_INSTALL=1（Production 與 Preview） |
 | 靜態目錄 | public |
 | 執行邏輯 | 純靜態資產，沒有 Worker 程式或付費綁定 |
 
 本機在 `cloudflare/` 執行 `node verify-static.mjs`。檢查會拒絕 PHP、資料庫、壓縮包、環境設定、本機網址、管理列、草稿標記、失效的站內相對連結及缺漏 SEO 設定。
 
-若使用 CLI，在使用者核准的 Cloudflare 登入之後執行 `npm ci`、`npm run build`、`npm run deploy`。若使用 GitHub 串接，只允許本儲存庫，不能擴大到整個組織所有儲存庫。此串接曾被自動審核要求額外權限確認，目前未授權成功。
+使用者已明確授權 GitHub 串接，範圍限定本儲存庫。已沿用既有 Cloudflare GitHub 連線，僅選取 playtt 作為專案來源，沒有擴大其他儲存庫權限。Pages 建置只使用 Node 內建模組；[官方支援 SKIP_DEPENDENCY_INSTALL](https://developers.cloudflare.com/pages/configuration/build-image/#skip-dependency-install)，用來避免根目錄舊 React Yarn lock 影響這次靜態發布。
+
+`wrangler.jsonc` 保留可選 Workers 靜態部署設定；Pages 因其未指定 pages_build_output_dir 而略過，使用儀表板設定。CLI 仍未登入，不能視為已能部署動態 Worker。
 
 ## DNS 切換與復原
 
@@ -50,7 +53,9 @@ Gandi 保留註冊及郵件服務。切換前完整區域檔有 14 筆服務記�
 
 新 Cloudflare NS：`karl.ns.cloudflare.com`、`mariah.ns.cloudflare.com`。舊 Gandi NS：`ns-60-a.gandi.net`、`ns-12-b.gandi.net`、`ns-90-c.gandi.net`。
 
-必須先驗證公開預覽的六頁、主要資產、404、手機選單和 HTTPS，再綁定根網域與 www，移除這兩筆舊 Zeabur 指向，最後變更 Gandi NS。保留 MX、SPF、DKIM、郵件 SRV 和 webmail；不要為網站搬遷改寫郵件政策。
+先驗證公開預覽的六頁、主要資產、404、手機選單和 HTTPS。Pages 儀表板目前要求 zone active 後才能加入根網域，因此先重核完整 DNS 備份和 Cloudflare 郵件記錄、在 Gandi 更換 NS，等 Cloudflare zone active 後立即完成 Pages 根網域及 www 綁定，將這兩筆舊 Zeabur 指向改為 Pages。保留 MX、SPF、DKIM、郵件 SRV 和 webmail；不要為網站搬遷改寫郵件政策。現況舊站為 502，DNS／TLS 傳播期間仍不可宣稱正式站已恢復。
+
+首個固定快照：https://06d099af.playtt-brand-preview.pages.dev （0.2.1，commit 3357a82）。有已驗證六頁和資產的靜態 ZIP 可重新部署；同頁 hashchange 修正將在 0.2.2 後使用較新快照。正式切換前應另外演練回滾並保存當時部署 ID。
 
 正式切換後驗證 NS、A／CNAME、MX、TXT、DKIM 和 HTTPS，記錄傳播中的查詢差異。Cloudflare 預先保存一個可用版本，回滾用 Cloudflare 的前一部署或相同靜態備份重新部署。舊 Zeabur 已經 502，不能把切回舊 IP 當作可用服務回復。
 

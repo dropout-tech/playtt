@@ -18,10 +18,14 @@
 ## 2026-11-16 結果
 
 - TypeScript、Wrangler dry-run 通過；未壓縮打包 23,364.67 KiB，gzip 8,386.02 KiB。
-- 一般完整啟動探針成功；瀏覽器成功登入原生後台，重啟後載入原生區塊編輯器及保存文章。未在此候選完成 Let’s Play 主題安裝或瀏覽器編輯儲存驗收。
+- 一般完整啟動探針成功；瀏覽器成功登入原生後台，重啟後載入原生區塊編輯器及保存文章。Let’s Play 主題與瀏覽器標題儲存的後續結果見下方。
 - HTTP 測試建立與重啟驗證均通過：文章、媒體 SHA256、匿名草稿 404、匿名後台轉登入。
 - 冷登入頁約 2,637ms、登入 POST 約 1,025ms、後台約 614ms，均為本機**經過時間**，不是 Cloudflare CPU 用量。
 - 設定雖為 `cpu_ms: 10`，本機 workerd 成功不能證明遠端 Free CPU／記憶體限制可通過。未建立遠端 R2、DO 或動態 Worker；也未驗證遠端備份還原及費用上限。
 - 可選網站匯入器契約錯誤仍未解決；它不影響此次有限範圍測試，但不可視為完整上游驗收。
 
-正式採用前仍須完成免費遠端實測、主題安裝、登入編輯、媒體、重部署、備份還原、併發修改及資源用量控制。
+其後 `playtt-theme-check.mjs` 已將 Let’s Play 0.2.1 ZIP 透過真正的 WordPress 上傳表單安裝並啟用。六頁／十四張品牌媒體匯入、標題修改、再次匯入不覆寫及不重複、Worker 重啟後六頁、主題 CSS 和 R2 品牌圖片 SHA256 均通過。證據為 `docs/verification/cloudflare-theme-local.json`。這項固定基準針對 0.2.1；重現時設定 `PLAYTT_THEME_ZIP` 為已交付的 0.2.1 ZIP，先執行 `node scripts/playtt-theme-check.mjs`，重啟後再加 `--verify-restart`。
+
+瀏覽器登入後開啟原生區塊編輯器，修改標題並儲存為「關於 Let’s Play｜瀏覽器編輯驗證」，顯示 Page updated。測試使用 code editor 模式的普通標題欄位，沒有手動修改頁面 HTML；切回 visual editor 後內容區塊正常。此後如要重跑保存驗證，應把本機測試 state 的 expectedAboutTitle 改為這個已知 UI 測試值，或回復到原本測試標題。
+
+正式採用前仍須完成免費遠端實測、完整視覺編輯操作、重部署、備份還原、併發修改及資源用量控制。

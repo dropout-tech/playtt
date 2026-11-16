@@ -10,7 +10,7 @@ add_action( 'after_setup_theme', function () {
 } );
 add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'lets-play', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
-    wp_enqueue_script( 'lets-play-legacy-links', get_theme_file_uri( 'assets/legacy-links.js' ), array(), '0.1.0', false );
+    wp_enqueue_script( 'lets-play-legacy-links', get_theme_file_uri( 'assets/legacy-links.js' ), array(), wp_get_theme()->get( 'Version' ), false );
     wp_add_inline_script( 'lets-play-legacy-links', 'window.letsPlayBase=' . wp_json_encode( home_url( '/' ) ) . ';', 'before' );
 } );
 add_action( 'init', function () {

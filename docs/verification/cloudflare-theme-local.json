@@ -1,0 +1,55 @@
+{
+  "scope": "Local workerd / simulated R2 and SQLite DO only; not remote Free plan acceptance.",
+  "at": "2026-11-16T10:16:43.269Z",
+  "mode": "after-restart",
+  "result": "pass",
+  "theme": "0.2.1",
+  "state": {
+    "zipSha256": "7aa5671c6fc1ee3e78e0f753158ca4b0db90ffe6f5cfc275695bd07f648d27af",
+    "pages": {
+      "home": 26,
+      "about": 27,
+      "class": 28,
+      "coaches": 29,
+      "locations": 30,
+      "partner": 31
+    },
+    "expectedAboutTitle": "關於 Let’s Play｜Worker 保存驗證",
+    "brand": {
+      "url": "http://127.0.0.1:9426/wp-content/uploads/2026/11/brand-desktop.webp",
+      "sha256": "411915acde994cdb34911a756486c7572ad5c58bea3444aba0c7ba4f980b2869"
+    }
+  },
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 2886
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 1507
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 502
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/themes",
+      "status": 200,
+      "wallMs": 253
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/pages/27",
+      "status": 200,
+      "wallMs": 219
+    }
+  ]
+}

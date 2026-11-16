@@ -1,6 +1,16 @@
 # PLAYTT 執行進度
 
-## 最新狀態（2026-11-16 18:10）
+## 最新狀態（2026-11-16 18:35）
+
+- 使用者已明確授權 Cloudflare GitHub 連線，限定 `dropout-tech/playtt`。沿用既有連線，只選取本儲存庫；沒有新增其他儲存庫的權限。
+- 免費 Pages 專案 `playtt-brand-preview` 已成功發布：https://playtt-brand-preview.pages.dev 。首個成功部署 `06d099af-c711-4b8f-b691-c2a752d57c3c`，來源 commit `3357a82df3ec93aee26b68e5d30af7fad757bd55`，固定快照 https://06d099af.playtt-brand-preview.pages.dev 。未合併 master。
+- 設定：production branch `codex/playtt-wordpress-cloudflare`、root `cloudflare`、build `node verify-static.mjs`、output `public`、`SKIP_DEPENDENCY_INSTALL=1`。首次因舊站 Yarn lock 被新版 Yarn 解析而失敗；修正後部署成功，沒有安裝或執行舊 React 站。Pages 顯示 automatic deployments enabled。
+- 公開預覽 46 個檔案 HTTP／SHA256 一致、404、/home/ 301 通過。375px 無溢出與壞圖、LINE 62px 按鈕可見，Enter 開選單、Escape 關閉及焦點回復通過。已保存靜態 ZIP 備份與 Cloudflare 固定版本，仍須正式網域及回滾實測。
+- 線上同頁變更舊 hash 網址未觸發原有啟動腳本，已修正為初次載入與 hashchange 均處理，並保留含問號的查詢值。主題更新為 0.2.2，5 項路由回歸、9 項 WordPress ZIP／資料保存／還原測試及新匯出驗證通過；待本次推送觸發線上更新並驗收。
+- 0.2.2 ZIP SHA256：`22ab72a918c37809af784506b7e994322ad0cb0cb559ea8186467cffcdfd7003`。Cloudflare 動態候選仍使用 0.2.1，已完成真實主題上傳啟用、六頁／十四張媒體、重複匯入不覆寫、編輯、重啟後六頁及品牌圖片／主題 CSS 保存；瀏覽器標題修改顯示 Page updated。這仍是本機 R2／DO 模擬，不是遠端免費 CPU 驗收。
+- Gandi 新開分頁已回到登入頁，已請使用者重新登入，未變更 NS。Cloudflare Pages 明確要求 zone active 後才能加根網域；待 Gandi 登入與 DNS 重核後切換 NS，再完成 Pages 根網域／www 綁定、HTTPS 和郵件驗證。Zeabur 未刪除，正式站仍未恢復。
+
+## 前次狀態（2026-11-16 18:10）
 
 - 主題 0.2.1 延續原站原創主視覺，桌機與手機有各自的圖片區塊、共用常駐 LINE 入口；頁面標題與內容可編輯。`BRAND_AND_CONTENT.md` 記錄視覺修正與待核對內容。
 - 原始 React 網站已在隔離資料夾還原供比較；沒有改動其來源或部署到正式網域。

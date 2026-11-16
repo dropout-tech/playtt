@@ -9,6 +9,7 @@
     "dev": "node scripts/dev.mjs",
     "assets": "node scripts/prepare-assets.mjs",
     "test": "node scripts/verify.mjs",
+    "test:legacy": "node --test scripts/legacy-links.test.mjs",
     "export": "node scripts/export.mjs"
   },
   "devDependencies": {
