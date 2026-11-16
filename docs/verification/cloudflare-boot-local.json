@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-16T10:58:20.407Z",
+  "base": "http://127.0.0.1:9427",
+  "scope": "CPU boot prerequisite only; no persisted content",
+  "results": [
+    {
+      "route": "/health",
+      "authenticated": false,
+      "status": 404,
+      "wallMs": 108,
+      "cfRay": null,
+      "body": "Not found"
+    },
+    {
+      "route": "/health",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 6,
+      "cfRay": null,
+      "body": "{\"scope\":\"boot CPU prerequisite only; no persistence\",\"upstream\":\"9764022156a61ba7d2b4d8a2196b01ccb33b82b5\"}"
+    },
+    {
+      "route": "/worker?phase=php",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 135,
+      "cfRay": null,
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"php\",\"completed\":true,\"evidence\":{\"phpVersion\":\"8.5.8\"}}"
+    },
+    {
+      "route": "/worker?phase=streamed-files",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 595,
+      "cfRay": null,
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"streamed-files\",\"completed\":true,\"evidence\":{\"materializedFiles\":2108,\"materializedBytes\":22960303,\"wordpressVersion\":\"7.0.2\"}}"
+    },
+    {
+      "route": "/worker?phase=mdi-wordpress",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 1991,
+      "cfRay": null,
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"mdi-wordpress\",\"completed\":true,\"evidence\":{\"wordpressVersion\":\"7.0.2\"}}"
+    },
+    {
+      "route": "/durable-object?phase=php",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 64,
+      "cfRay": null,
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"php\",\"completed\":true,\"evidence\":{\"phpVersion\":\"8.5.8\"}}"
+    },
+    {
+      "route": "/durable-object?phase=streamed-files",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 530,
+      "cfRay": null,
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"streamed-files\",\"completed\":true,\"evidence\":{\"materializedFiles\":2108,\"materializedBytes\":22960303,\"wordpressVersion\":\"7.0.2\"}}"
+    },
+    {
+      "route": "/durable-object?phase=mdi-wordpress",
+      "authenticated": true,
+      "status": 200,
+      "wallMs": 1826,
+      "cfRay": null,
+      "body": "{\"schema\":\"wp-codebox/cloudflare-boot-probe/v1\",\"phase\":\"mdi-wordpress\",\"completed\":true,\"evidence\":{\"wordpressVersion\":\"7.0.2\"}}"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "Cloudflare Pages public preview; not WordPress database rollback",
+  "oldDeployment": "06d099af-c711-4b8f-b691-c2a752d57c3c",
+  "restoredDeployment": "97a18f78-cbbf-4072-bd79-d8ed4ed35634",
+  "rollbackObserved": {
+    "at": "2026-11-16T10:42:02.913Z",
+    "status": 200,
+    "version": "Version: 0.2.1"
+  },
+  "restoreObserved": {
+    "at": "2026-11-16T10:43:18.964Z",
+    "result": "pass",
+    "files": 46,
+    "version": "0.2.2"
+  },
+  "result": "pass"
+}

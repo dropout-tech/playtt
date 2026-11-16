@@ -1,6 +1,20 @@
 # PLAYTT 執行進度
 
-## 最新狀態（2026-11-16 18:35）
+## 最新狀態（2026-11-16 19:13）
+
+- Gandi 已重新登入；18:52 活動紀錄確認 nameservers 更新為 `karl.ns.cloudflare.com`、`mariah.ns.cloudflare.com`。切換前即時重讀完整區域檔及 DNSSEC（未啟用），與原備份一致。Cloudflare zone 已 active。
+- `playtt.tw`、`www.playtt.tw` 已綁到免費 Pages，兩者 Active / SSL enabled；Universal 憑證涵蓋根網域及萬用子網域，效期至 2027-02-14。正式網址瀏覽器已呈現 0.2.2 新版，已啟用 Always Use HTTPS，www 301 至根網域並保留路徑及 query（規則 `eb8ac6c08c19418aa8f1b7150694558e`）。
+- 0.2.2 已由 GitHub push 自動發布：commit `132a9de834b26855a3aea0709cf5267162686226`，部署 `97a18f78-cbbf-4072-bd79-d8ed4ed35634`。18:42 實際回滾至 0.2.1，確認公開 CSS 版本，隨後恢復 0.2.2 並逐一驗證 46 檔。這是靜態發布回滾，不是遠端資料庫還原。
+- 正式根網域透過已查證 Cloudflare IP、保留真實 hostname/SNI 與 TLS 憑證驗證的 46 檔檢查通過；www 在設定 301 之前的一般公開 DNS 46 檔檢查通過。部分 Node/OS 解析仍命中舊 Zeabur IP，但瀏覽器及 1.1.1.1/8.8.8.8 已取得新版/新 DNS；不可宣稱所有解析器傳播完成。
+- 根網域 HTML 有 Cloudflare 自動分析 beacon 注入；驗證明確記錄這一轉換，移除唯一符合官方 URL/屬性格式的注入後，其餘 HTML 完全一致；資產仍逐一 bytes/SHA256 比對。原預覽沒有這項轉換。公開信箱的 Email Address Obfuscation 已關閉，使 mailto 與文字不依賴解碼 JS。
+- 正式站 375px 首頁與課程無水平溢出、壞圖；Enter 開選單、Escape 關閉及焦點回復正常；同頁 `/#/class?utm_source=formal-site` 正確到 `/class/?utm_source=formal-site`。桌機首頁無溢出／壞圖。完整 18 組版面基準仍是 0.2.1；0.2.2 未改 CSS。
+- DNS 後核對：14 筆中僅網站兩筆改為 Pages；12 筆郵件記錄完全相同且 DNS only。公開 1.1.1.1 查詢取得 MX、SPF、三筆 DKIM、webmail、五筆 SRV；此證據不包含實際信箱寄收測試。Gandi 註冊與郵件保留。
+- Workers 方案頁顯示 Free / Current plan。R2 已由帳號原本啟用，目前總量 158.57MB、當期 A 36/B 43、billable $0.00；本任務未建立遠端 R2、動態 Worker 或 DO。
+- 新的 CPU 啟動先決條件探針已完成：同一上游 PHP-WASM / WordPress，分別在 Worker 與 SQLite DO 本機執行 PHP、核心檔案展開、完整 WordPress boot 均成功；28,997.06 KiB 未壓縮，TypeScript/dry-run 通過。唯讀打包核心檔案，不含資料持久化；不能當作後台完成。
+- CLI OAuth 已更新為指定 info 帳號、User Read / Account Read / Workers Write / Background Access。遠端部署被 Cloudflare subdomain API 10000 拒絕。補充 Scripts/Routes/Tail 權限的操作遭自動核准審查拒絕；已停止該步，向使用者請求僅 Scripts Write / Routes Write 的必要授權，省略 Tail。等待回覆；不可繞過審查或宣稱探針已遠端執行。
+- Zeabur 尚未刪除。仍待免費完整 WordPress 實測、遠端資料保存／還原、完整可及性與行動效能、內容待確認事項及最終交付驗收。目標維持 active。
+
+## 前次狀態（2026-11-16 18:35）
 
 - 使用者已明確授權 Cloudflare GitHub 連線，限定 `dropout-tech/playtt`。沿用既有連線，只選取本儲存庫；沒有新增其他儲存庫的權限。
 - 免費 Pages 專案 `playtt-brand-preview` 已成功發布：https://playtt-brand-preview.pages.dev 。首個成功部署 `06d099af-c711-4b8f-b691-c2a752d57c3c`，來源 commit `3357a82df3ec93aee26b68e5d30af7fad757bd55`，固定快照 https://06d099af.playtt-brand-preview.pages.dev 。未合併 master。

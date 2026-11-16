@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-16T10:53:05.399Z",
+  "domain": "playtt.tw",
+  "gandi": "Nameservers updated, activity 2026-11-16 18:52 Asia/Taipei",
+  "before": [
+    "ns-60-a.gandi.net",
+    "ns-12-b.gandi.net",
+    "ns-90-c.gandi.net"
+  ],
+  "after": [
+    "karl.ns.cloudflare.com",
+    "mariah.ns.cloudflare.com"
+  ],
+  "dnssec": "disabled, verified immediately before and after change",
+  "cloudflare": "pending; manual check submitted",
+  "mailRecords": 12,
+  "mailChanges": false
+}

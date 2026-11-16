@@ -17,6 +17,10 @@
 
 2026-11-13 更新的 Workers 限制：Free 每日 100,000 動態請求、CPU 10ms、128MB 記憶體、64MiB 未壓縮 Worker 上限。不能沿用舊有免費 3MB 說法。SQLite Durable Objects 現在有免費方案。R2 免費額度不等於零付費風險，不得新增扣款授權。
 
+19:13 更新：指定帳號 Workers plan 已核對為 Free。另建同版本上游啟動探針，唯讀打包核心檔案，分別在 Worker 與 SQLite DO 測 PHP、核心展開及完整 WordPress boot，本機均成功，dry-run 未壓縮 28,997.06 KiB。DO 官方 CPU 限制與一般 Worker 不同，應分別遠端實測；不能由一般 Worker 的 10ms 直接斷定所有全 Cloudflare 路徑失敗。探針不做 R2／使用者資料保存，尚未遠端部署。
+
+Cloudflare CLI 已登入指定帳號，但 Workers subdomain API 回 10000。追加 OAuth Scripts/Routes/Tail 權限遭自動核准審查拒絕，已停止並詢問使用者僅 Scripts Write / Routes Write 的必要授權，等待回覆。這是權限阻礙，不是免費 CPU 失敗證據，也不代表架構已選定。
+
 下一個遠端驗收需測登入、區塊編輯發布、媒體上傳、匿名權限、冷啟動、重部署、備份還原與並行修改，記錄版本、免費方案及 CPU／記憶體結果。若明確要求付費，停下該路徑而不升級，提供證據與具體取捨。
 
 來源：
