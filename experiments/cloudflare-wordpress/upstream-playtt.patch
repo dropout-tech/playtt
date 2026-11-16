@@ -1,0 +1,56 @@
+diff --git a/packages/runtime-cloudflare/src/phase-trace.ts b/packages/runtime-cloudflare/src/phase-trace.ts
+index 5c21141..37755be 100644
+--- a/packages/runtime-cloudflare/src/phase-trace.ts
++++ b/packages/runtime-cloudflare/src/phase-trace.ts
+@@ -27,6 +27,12 @@ const MAX_PHASES = 64
+ const MAX_EVIDENCE_ENTRIES = 16
+ const SENSITIVE_EVIDENCE_KEY = /(?:authorization|cookie|credential|digest|host|key|password|path|revision|secret|token|url|(?:^id$|Id$|_id$|\.id$|-id$))/i
+ const PHASE_NAME = /^[a-z][a-z0-9_.-]{0,63}$/i
++let playttPhaseDiagnostics = false
++
++// Isolated probe only: emit bounded phase names, never request data or secrets.
++export function enablePlayttPhaseDiagnostics(): void {
++  playttPhaseDiagnostics = true
++}
+ 
+ function defaultNow(): number {
+   return typeof performance !== "undefined" ? performance.now() : Date.now()
+@@ -64,6 +70,7 @@ export class CloudflarePhaseTrace {
+     if (this.summary) throw new Error("Cloudflare phase trace is already complete.")
+     if (this.active || !PHASE_NAME.test(name) || this.phases.length + this.reservedPhases >= MAX_PHASES) throw new Error("Cloudflare phase must be a bounded, non-overlapping leaf.")
+     this.active = { name, startedAt: this.clock(), evidence }
++    if (playttPhaseDiagnostics) console.log(JSON.stringify({ probe: 'playtt', phase: name, event: 'start' }))
+   }
+ 
+   end(evidence?: Record<string, unknown>): void {
+@@ -71,6 +78,7 @@ export class CloudflarePhaseTrace {
+     const active = this.active
+     this.active = undefined
+     this.phases.push({ name: active.name, durationMs: boundedMs(this.clock() - active.startedAt), evidence: boundedEvidence({ ...active.evidence, ...evidence }) })
++    if (playttPhaseDiagnostics) console.log(JSON.stringify({ probe: 'playtt', phase: active.name, event: 'end', durationMs: this.phases.at(-1)!.durationMs }))
+   }
+ 
+   async measure<T>(name: string, work: () => Promise<T>, evidence?: Record<string, unknown>): Promise<T> {
+diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudflare/src/worker.ts
+index 598f1dd..ee9ea47 100644
+--- a/packages/runtime-cloudflare/src/worker.ts
++++ b/packages/runtime-cloudflare/src/worker.ts
+@@ -2064,7 +2064,7 @@ async function packagedCanonicalMarkdownSeed(): Promise<RuntimeFile[]> {
+   return files.sort((left, right) => left.path.localeCompare(right.path))
+ }
+ 
+-async function runBootProbe(phase: string, bucket: R2Bucket): Promise<Response> {
++export async function runBootProbe(phase: string, bucket: R2Bucket): Promise<Response> {
+   if (phase === "wordpress-archive" || phase === "sqlite-archive") {
+     const archiveBytes = phase === "wordpress-archive"
+       ? (await readWordPressRuntimeArtifact(bucket)).byteLength
+@@ -2302,6 +2302,9 @@ async function bootWordPressRuntime(
+   const websiteImporterZip = includeWebsiteImporter ? trace ? await trace.measure("runtime.archive.component.fetch-verify", () => readWebsiteImporterArtifact(runtimeBucket!)) : await readWebsiteImporterArtifact(runtimeBucket!) : undefined
+   const boot = () => bootWordPressAndRequestHandler({
+     createPhpRuntime: trace ? () => trace.measure("php.runtime.create", () => createPhpRuntime()) : createPhpRuntime,
++    // The WASM filesystem lives in the same 128 MiB isolate. A file-only
++    // opcode cache duplicates compiled PHP in that filesystem after each load.
++    phpIniEntries: { "opcache.enable": "0", "opcache.enable_cli": "0" },
+     constants: {
+       AUTOMATIC_UPDATER_DISABLED: true,
+       CONCATENATE_SCRIPTS: false,

@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-16T18:46:43.187Z",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n500 !== 200\n",
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 5075
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 14001
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 5273
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/theme-install.php",
+      "status": 500,
+      "wallMs": 34396
+    }
+  ]
+}

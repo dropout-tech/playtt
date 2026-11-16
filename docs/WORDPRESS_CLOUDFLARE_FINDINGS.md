@@ -8,7 +8,15 @@
 
 已實際部署隔離 `playtt-wp-free-boot-probe`（約28,997 KiB未壓縮，版本 bc78e4a1-6e45-4da5-a2b0-d538127290ca），設定隨機密鑰後執行八個請求。匿名404、授權health200；一般Worker及SQLite DO的PHP與核心展開均成功。一般Worker完整WordPress boot回503「Worker exceeded resource limits」，相同WordPress 7.0.2/PHP8.5.8在SQLite DO完整boot成功。證據 `docs/verification/cloudflare-boot-remote.json`，保留CF Ray。這裡記錄的是wall time，沒有把它當成CPU量測，也不把503逕自細分為CPU或記憶體原因。
 
-此結果支持繼續測試「把完整PHP執行放進SQLite DO」的免費路徑。探針只讀取打包核心，不保存內容；完整後台、媒體、重部署及還原尚未遠端驗收。尚未建立遠端R2測試桶，未升級付費，未將正式網域導向探針。
+後續已建立私有 R2 桶 `playtt-wordpress-probe` 與完整 DO 候選 `playtt-wp-free-cms-probe`。本機登入、發文、媒體、匿名權限與程序重啟保存通過；遠端最初登入頁 500，tail 明確記錄 DO CPU 超時。嘗試指定 60 秒 CPU 上限時，Cloudflare API 回 `100328: CPU limits are not supported for the Free plan`；設定已移除，沒有升級。證據 `cloudflare-cms-cpu-diagnostic.json`。
+
+階段診斷進一步觀察到：初始化已寫入 R2 並提交協調器，隨後 DO 觸及記憶體上限。下一次冷啟動在 2026-11-17 02:34 成功載入原生登入表單（HTTP 200、CF Ray `a5b894d0dd9714cc-SJC`）；84.9 秒經過時間包含協調器等待及暫時診斷寫入，不能當成正常速度或 CPU 數值。這只證明初始化狀態可讀回，仍未完成遠端登入、文章、媒體與還原驗收。
+
+02:37 關閉 PHP-WASM 檔案型 opcode 快取後，遠端完整登入、發文、草稿、媒體與匿名 WordPress 權限通過；02:40 重新部署後原文章與圖片 SHA256 保存通過。成功版本未做額外 R2 階段診斷寫入，仍為 Free、無 CPU override。登入頁約6.7秒、登入POST11.6秒、發文13秒、媒體12.1秒，均為經過時間，不能當CPU用量。證據 `cloudflare-cms-do-remote-create.json`、`cloudflare-cms-do-remote-after-redeploy.json`。
+
+測試入口需額外探針密鑰，未持有者回404。匿名 WordPress 權限測試指持有探針存取資格但沒有 WP cookie，不能混淆這兩層權限。正式站仍為 Pages，未導向此候選。下一步為遠端主題、視覺編輯、修訂、全空站初始化、獨立備份還原及並行寫入。
+
+02:46 主題驗收發現新的限制：雖然0.2.3本機DO安裝與六頁內容測試通過，遠端原生主題上傳頁在兩次測試均回500。tail明確顯示 `request.php` 階段 `Durable Object's isolate exceeded its memory limit and was reset.`，並非ZIP或品牌內容已上傳後的錯誤。基本CMS成功與完整品牌後台未通過需分開記錄；正比較官方PHP 8.3 WASM的記憶體需求，不升級付費。
 
 ## 先前本機與來源查核（2026-11-16）
 

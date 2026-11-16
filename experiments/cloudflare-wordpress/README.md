@@ -1,8 +1,28 @@
-# Cloudflare WordPress 本機候選測試
+# Cloudflare WordPress 候選測試
 
 這是可重現的實驗，不是正式後台部署。不得將此資料夾內公開的本機測試密碼部署到網際網路。
 
 上游：Automattic/wp-codebox，commit `9764022156a61ba7d2b4d8a2196b01ccb33b82b5`，`packages/runtime-cloudflare` 0.12.27；WordPress 7.0.2、PHP-WASM 8.5.8、Wrangler 4.127.1。主題另以 WordPress 7.1.4 / PHP 8.3 驗證，兩者證據分開保存。
+
+## 最新進度：2026-11-17
+
+使用者已授權 Scripts Write / Routes Write，原有權限阻礙解除。`playtt-wp-free-boot-probe` 已遠端測試：一般Worker完整WordPress boot遇503資源上限，SQLite DO同核心boot成功；匿名404。指定帳號方案再次確認為Free。下方2026-11-16的「未遠端部署」文字是歷史基準，不代表現在狀態。
+
+`worker-playtt-do.ts` 將完整 `createCloudflareRuntime` 放入 `PlayttWordPressExecution` SQLite DO，使用獨立 `WordPressStateCoordinator` 維持上游租約協定。各站執行佇列依序處理，入口只轉送；沒有排程或正式網域路由。四項後台/操作密鑰不齊時回503，所有回應含noindex。
+
+新候選已通過TypeScript、dry-run，以及本機9428的登入、發文、上傳、草稿/後台匿名限制和真正程序重啟保存。狀態目錄為 `../../../cf-cms-state`；不與先前9426基準混用。將 `worker-playtt-do.ts` 放上游 `src/`，三個 `playtt-cms-*.mjs` 放 `scripts/`，兩份 `wrangler.playtt-cms*.jsonc` 放套件根目錄。執行 `node scripts/playtt-cms-local-prepare.mjs`，再執行 `wrangler dev --local --config wrangler.playtt-cms-local.jsonc --ip 127.0.0.1 --port 9428 --persist-to ../../../cf-cms-state`；用 `node scripts/playtt-cms-check.mjs` 測試，重啟後加 `--verify-restart`。
+
+遠端隔離資源為 `playtt-wp-free-cms-probe`、私有標準R2桶 `playtt-wordpress-probe`、兩個SQLite DO類別。預置三個核心物件總量限制70MiB，先核對SHA256，再以 `node scripts/playtt-cms-provision.mjs --remote` 上傳。沒有可選website importer。
+
+02:37 遠端原生登入、發文、草稿、媒體與匿名 WordPress 權限測試通過；02:40 重新部署後再次登入、讀取原文章與媒體 SHA256、草稿及後台限制通過。證據 `cloudflare-cms-do-remote-create.json`、`cloudflare-cms-do-remote-after-redeploy.json`。成功版本依序為 `7537919b-1fe8-49d8-b0b2-303c60c7ef45` 與 `9c32513b-05bd-4662-8b12-3cabd0ee3d85`。這些是隔離候選驗收，不是正式品牌後台已上線。
+
+起初完整候選曾觸及 DO CPU 與記憶體限制。Free API 明確拒絕 `cpu_ms:60000`（100328），已移除此設定，沒有付費升級。上游 patch 關閉 PHP-WASM 檔案型 opcode 快取，避免在記憶體檔案系統累積編譯副本；密碼雜湊與驗證方式保持 WordPress 原生。暫時 R2 階段診斷寫入已移除，成功版本僅記錄不含請求資料的階段名稱。新的全空站初始化仍需單獨驗證，因目前成功樣本沿用已提交的初始化資料。
+
+重現時先在上游 checkout 根目錄套用 `upstream-playtt.patch`（包含 boot probe export、受控階段日誌與 opcode 設定），再依上述路徑放入探針檔案。設定 `PLAYTT_PROBE_GATE=true` 的遠端入口必須攜帶私有 `X-Playtt-Probe`；未持有者404，該標頭會在傳進 WordPress 前移除。匿名權限測試指持有探針存取資格、但沒有 WordPress 登入 cookie 的請求。額外探針保護不替代 WordPress 權限。
+
+`playtt-cms-theme-check.mjs` 測 0.2.3 真實 ZIP 上傳／啟用、六頁與十四張品牌媒體、編輯、再次匯入不覆寫及六頁輸出。預設本機9428，加遠端origin才測雲端；重部署後加 `--verify-restart`。ZIP來自交付 `outputs/lets-play-theme-0.2.3.zip`，以固定SHA256校驗。02:41 本機安裝通過；遠端兩次在原生 `theme-install.php?tab=upload` 回500，尚未上傳主題。02:46 tail確認 `request.php` 階段觸及DO記憶體上限，即使opcode關閉仍未通過。證據 `cloudflare-cms-theme-remote-failure.json`。不能把基本CMS通過視為完整品牌後台驗收。
+
+遠端四項隨機Secret只存本機 `work/playtt-cms-secrets.json` 與Worker Secrets，絕不提交。`wrangler.playtt-cms.jsonc`不含密碼；入口在配置Secrets前保持503。`node scripts/playtt-cms-check.mjs https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev` 才讀私有檔測試。正式網域仍由Pages提供，不指向這個探針。R2沿用帳號既有啟用狀態與免費額度，建立前用量158.57MB、當期0美元，未新增扣款或升級；最終仍需記錄測試後用量與清理策略。
 
 ## 重現方式
 
