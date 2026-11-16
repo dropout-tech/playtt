@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-16T19:25:43.544Z",
+  "result": "pass",
+  "checks": [
+    "anonymous denied",
+    "missing secret denied",
+    "cross-origin form denied",
+    "wrong token denied",
+    "signed cookie contains no operator secret",
+    "secure HttpOnly SameSite Strict 30-minute cookie",
+    "WordPress cookie preserved",
+    "tampering denied",
+    "different host denied",
+    "probe header removed before WordPress"
+  ]
+}

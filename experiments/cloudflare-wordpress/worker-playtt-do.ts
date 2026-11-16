@@ -1,7 +1,7 @@
 import { DurableObjectRevisionCoordinator, WordPressStateCoordinator } from './state-coordinator.js';
 import { createCloudflareRuntime, type RuntimeEnv } from './worker.js';
 import { enablePlayttPhaseDiagnostics } from './phase-trace.js';
-import { timingSafeEqual } from 'node:crypto';
+import { playttProbeAccess } from './playtt-probe-access.js';
 
 interface PlayttEnv extends RuntimeEnv {
   WORDPRESS_STATE: DurableObjectNamespace;
@@ -33,13 +33,9 @@ export class PlayttWordPressExecution implements DurableObject {
 export default {
   async fetch(request: Request, env: PlayttEnv): Promise<Response> {
     if (env.PLAYTT_PROBE_GATE === 'true') {
-      const provided = new TextEncoder().encode(request.headers.get('X-Playtt-Probe') || '');
-      const expected = new TextEncoder().encode(env.WORDPRESS_OPERATOR_TOKEN || '');
-      if (!expected.length || provided.length !== expected.length || !timingSafeEqual(provided, expected))
-        return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' } });
-      const privateRequest = new Request(request);
-      privateRequest.headers.delete('X-Playtt-Probe');
-      request = privateRequest;
+      const access = await playttProbeAccess(request, env.WORDPRESS_OPERATOR_TOKEN || '');
+      if (access instanceof Response) return access;
+      request = access;
     }
     if (!env.WORDPRESS_ADMIN_PASSWORD || !env.WORDPRESS_AUTH_SECRET ||
         !env.WORDPRESS_ADMIN_CLAIM_SECRET || !env.WORDPRESS_OPERATOR_TOKEN) {

@@ -4,7 +4,19 @@
 
 上游：Automattic/wp-codebox，commit `9764022156a61ba7d2b4d8a2196b01ccb33b82b5`，`packages/runtime-cloudflare` 0.12.27；WordPress 7.0.2、PHP-WASM 8.5.8、Wrangler 4.127.1。主題另以 WordPress 7.1.4 / PHP 8.3 驗證，兩者證據分開保存。
 
-## 最新進度：2026-11-17
+## 最新進度：2026-11-17 03:30
+
+目前候選使用 PHP-WASM 8.3.32（`@php-wasm/web-8-3@3.1.46`）。在下方原本依賴安裝完成後，執行 `npm install --no-save --package-lock=false --workspaces=false --ignore-scripts --no-audit --no-fund @php-wasm/web-8-3@3.1.46`，再執行 `node scripts/apply-development-patch.mjs`。新加入的 `playtt-php-compat.ts`、`playtt-probe-access.ts` 放入上游 `src/`；所有 `.mjs` 放 `scripts/`；jsonc仍放套件根目錄。套用新版 `upstream-playtt.patch`。
+
+品牌遠端已通過：0.2.3真實ZIP安裝與啟用、六頁／十四張品牌媒體匯入、編輯、再次匯入不覆寫不重複、六頁與R2圖片／CSS讀取，以及實際重新部署後保存。`cloudflare-cms-theme-remote-import.json` 是 `--resume-installed --optimized-starter` 流程，沿用前次已成功安裝的主題；不是在該次報告重複上傳ZIP。重部署證據 `cloudflare-cms-theme-remote-after-redeploy.json`。此前失敗紀錄保留，不能與最新結果混用。
+
+相容性處理僅釘選核心19處與MDI暫存檔3處`uniqid()`，使用128/192bit加密亂數且保留前綴；PHP原生函式、第三方外掛與WordPress原生密碼雜湊不替換。函式數量不合即停止，更新核心需重審。`FS_METHOD=direct`、opcode關閉、空站初始化合併為一次PHP請求；品牌素材已有最佳化，僅對`_lets_play_asset`略過多餘縮圖，一般媒體上傳仍維持WordPress原生行為。逐行PHP診斷已移除。`playtt-php-compat-check.mjs`需本專案`wordpress`工具依賴，測20,000個ID，結果是本機PHP8.3.36而非遠端PHP8.3.32。
+
+全新本機狀態使用`wrangler.playtt-cms-fresh-local.jsonc`、port9429、`../../../cf-cms-fresh-state`，先以`playtt-cms-local-prepare.mjs --fresh`預置，測試指令指定`http://127.0.0.1:9429 --optimized-starter`。這不替代全空遠端初始化驗收。
+
+受保護的瀏覽器入口為`/__playtt-probe-access`，以私有operator碼換30分鐘host-bound HMAC cookie（Secure、HttpOnly、SameSite Strict）；cookie不含operator secret，也不授權operator API，後台仍須WordPress登入。入口只供驗收，不作正式營運帳號設計。`playtt-probe-access-check.mjs`驗證未登入、錯誤碼、跨站表單、篡改及跨host拒絕。`playtt-cms-backup.mjs --remote`取得短期一致性鎖，下載manifest與restore pack並逐項驗證215物件，備份僅在本機outputs，不能提交；尚須獨立還原驗收。
+
+## 前次進度：2026-11-17 02:50
 
 使用者已授權 Scripts Write / Routes Write，原有權限阻礙解除。`playtt-wp-free-boot-probe` 已遠端測試：一般Worker完整WordPress boot遇503資源上限，SQLite DO同核心boot成功；匿名404。指定帳號方案再次確認為Free。下方2026-11-16的「未遠端部署」文字是歷史基準，不代表現在狀態。
 

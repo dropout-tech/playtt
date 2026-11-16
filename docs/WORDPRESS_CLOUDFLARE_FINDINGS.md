@@ -2,7 +2,17 @@
 
 查核日：2026-11-17。區分本專案實測與第三方成果。
 
-## 最新遠端結果（2026-11-17）
+## 最新品牌後台結果（2026-11-17 03:30）
+
+Let’s Play 0.2.3 已在 Free 隔離 DO 原生安裝並啟用；六頁、十四張品牌圖片、標題修改、重複匯入保護及重新部署後保存通過。匯入證據版本 `9942691e-59ab-478b-b714-5508e2f30f1e`，重部署版本 `4eb9bdca-1ea5-43aa-953d-c689168f5e9c`。`cloudflare-cms-theme-remote-import.json` 的成功流程沿用前次已成功安裝的 ZIP，並非在同一次報告重新上傳。
+
+先前上傳頁失敗不應單憑記憶體錯誤推論 WordPress 完全無法執行。[Cloudflare 的時鐘限制](https://developers.cloudflare.com/workers/reference/security-model/) 與 [PHP 8.3 uniqid 實作](https://raw.githubusercontent.com/php/php-src/PHP-8.3/ext/standard/uniqid.c) 顯示同步輪詢時間存在相容性衝突。遠端設定 `FS_METHOD=direct` 後上傳頁從500恢復200；再將釘選核心19處 `uniqid` 改成保留前綴的128/192bit加密亂數識別碼後，ZIP安裝與啟用通過。MDI儲存介面3處暫存檔命名也納入同樣處理。原生 PHP `uniqid`、任意外掛與 WordPress 密碼雜湊未覆寫；未將此變更宣稱為所有外掛相容。
+
+使用官方 PHP-WASM 8.3.32、關閉檔案 opcode 快取、合併空站初始化的密碼／網址設定為一次 WordPress 載入。品牌匯入曾在PHP完成後、R2圖片保存階段超出記憶體；候選僅對已優化的品牌素材略過未使用的縮圖生成，一般上傳不受這個條件影響。新候選在本機全新站與遠端成功匯入，且成功版本已移除臨時PHP逐行診斷。
+
+03:29遠端備份一致性與還原包所有檔案SHA256通過；獨立還原仍待。完整遠端視覺編輯、修訂、全空站啟動、並行修改與編輯到正式站發布尚未驗收，不能稱為完整目標完成。
+
+## 前次遠端結果（2026-11-17 02:50）
 
 使用者已授權 Wrangler 必要的 Scripts Write / Routes Write，限定 info 帳號且僅操作 playtt；先前審查阻礙已解除。帳號方案重新確認仍為 Free / $0 / Current plan。
 

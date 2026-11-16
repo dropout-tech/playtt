@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-16T19:21:48.818Z",
+  "scope": "Local PHP opaque ID helper; not remote timing acceptance",
+  "result": "pass",
+  "php": "8.3.36",
+  "count": 20000,
+  "unique": 20000,
+  "prefixAndFormat": true,
+  "nativeBuiltinUnchanged": true
+}
