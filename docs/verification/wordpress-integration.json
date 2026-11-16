@@ -1,6 +1,6 @@
 {
   "scope": "Local WordPress/PHP-WASM/SQLite only; NOT Cloudflare backend acceptance",
-  "at": "2026-11-16T09:40:40.537Z",
+  "at": "2026-11-16T09:58:51.398Z",
   "checks": [
     {
       "name": "ZIP installation using WordPress Theme_Upgrader and activation",

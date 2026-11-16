@@ -4,6 +4,10 @@
 
 本專案 WordPress 7.1.4、PHP 8.3、官方 Playground CLI 3.1.64 本機 9 項整合測試通過，包含編輯、草稿、媒體、重啟、修訂和備份還原。本機 SQLite／磁碟保存不等於 Cloudflare 持久化。
 
+另外，2026-11-16 已對 wp-codebox commit `9764022156a61ba7d2b4d8a2196b01ccb33b82b5` 實測本機 workerd + 模擬 R2 + SQLite Durable Object。WordPress 7.0.2 / PHP 8.5.8 原生登入、文章發布、媒體 SHA256、匿名草稿／後台限制與 Worker 停止後重啟保存通過。瀏覽器亦成功登入並載入區塊編輯器。未安裝 Let’s Play 主題到此候選，未做遠端實測，不能據此判定免費可用。
+
+上游 TypeScript 和 Wrangler dry-run 通過，未壓縮約 23MB。可選 website importer 1.3.6 的能力宣告與來源契約不符，生成命令在該步失敗；此次只配置已驗證的三個核心套件，沒有略過匯入器安全檢查。重現指引：`experiments/cloudflare-wordpress/README.md`；證據：`docs/verification/cloudflare-wordpress-local.json`。
+
 | 路徑 | 查核結果 |
 | --- | --- |
 | Containers PHP/MySQL | 官方要求 Workers Paid；不符合免費條件，排除 |

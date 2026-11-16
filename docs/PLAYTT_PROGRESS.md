@@ -1,16 +1,19 @@
 # PLAYTT 執行進度
 
-## 最新狀態（2026-11-16 17:53）
+## 最新狀態（2026-11-16 18:10）
 
 - 主題 0.2.1 延續原站原創主視覺，桌機與手機有各自的圖片區塊、共用常駐 LINE 入口；頁面標題與內容可編輯。`BRAND_AND_CONTENT.md` 記錄視覺修正與待核對內容。
 - 原始 React 網站已在隔離資料夾還原供比較；沒有改動其來源或部署到正式網域。
-- 0.2.0 主題九項 WordPress 整合測試全部通過，包含十四張媒體。0.2.1 僅加上共用 LINE 入口與樣式快取版本更新，匯出／HTTP／瀏覽器另已驗證；完整遠端後台仍未驗收。
+- 0.2.1 主題九項 WordPress 整合測試全部通過，包含十四張媒體、重啟與獨立備份還原；實際安裝目錄 style.css 版本亦核對為 0.2.1。報告時間 2026-11-16T09:58:51Z，仍僅為本機驗證。ZIP SHA256：`7aa5671c6fc1ee3e78e0f753158ca4b0db90ffe6f5cfc275695bd07f648d27af`。
 - 新發布檔 48 個、約 1.24MB；46 個公開檔案 HTTP 200 並逐一 SHA256 一致；404、舊 /home/ 301 正確。證據在 `docs/verification/`。
 - 匯出器會消耗 Playground 開機後一次性 self redirect，接著拒絕各頁重新導向，逐頁確認 canonical 等於請求路徑；避免將錯頁存成正常頁。
 - 真正量測 375／768／1440px 共十八組頁面，無水平溢出與已載入壞圖。Enter 開手機選單、Escape 關閉並回到可見焦點、Enter 導向課程成功；舊 #/class、#/partner 保留 query。尚未做完整螢幕閱讀器與效能量測。
 - WordPress 與 Cloudflare 新工具依賴 audit 0 已知漏洞；原始 React 依賴僅供隔離視覺對照，未納入新部署。
 - Cloudflare 14 筆 DNS 已補齊，Gandi NS 未切換；正式站仍未恢復。Cloudflare GitHub 連線需解決既有自動審核權限確認；未繞過。
-- 正在整理 Git 分支與 draft PR。此階段沒有完成全部搬遷；免費 WordPress Worker 持久化、公開發布、DNS 切換與 Zeabur 清除均保留未完成狀態。
+- 程式已推送至 `codex/playtt-wordpress-cloudflare`，draft PR：https://github.com/dropout-tech/playtt/pull/4 。Cloudflare GitHub 單一儲存庫授權問題已送出，等待使用者回覆；在此期間繼續本機後台驗證。
+- Automattic wp-codebox 候選 commit `9764022156a61ba7d2b4d8a2196b01ccb33b82b5` 已通過 TypeScript 與 Wrangler dry-run，未壓縮約 23MB。其可選 website importer 1.3.6 套件能力宣告與來源契約不符，完整生成命令失敗；一般 WordPress 啟動不載入此匯入器，因此隔離測試只配置三個已驗證的 WordPress／靜態／SQLite 套件至本機 R2 模擬。此調查不代表免費遠端可用。
+- 該候選在本機 workerd + R2／SQLite DO 模擬完成登入、發布、媒體 SHA256、匿名權限與重啟保存驗證。瀏覽器已登入原生後台、載入保存文章的區塊編輯器。主題尚未安裝至此候選、遠端免費 CPU 與持久化尚未驗收；本機 wall time 不能當作 CPU 用量。可重現實驗在 `experiments/cloudflare-wordpress/`。
+- 此階段沒有完成全部搬遷；免費 WordPress Worker 持久化、公開發布、DNS 切換與 Zeabur 清除均保留未完成狀態。
 
 ## 前次狀態（2026-11-16 17:40）
 
