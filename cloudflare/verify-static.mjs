@@ -14,6 +14,10 @@ for(const file of files){
   if(!file.endsWith('.html'))continue;
   assert.ok(!text.includes('id="wpadminbar"'),'Admin session content');
   assert.ok(!text.includes('PLAYTT_PRIVATE_DRAFT'),'Draft leak');
+  for (const image of text.matchAll(/<img\b[^>]*>/g)) {
+    assert.match(image[0], /\bwidth="[1-9]\d*"/, 'Image width missing: '+file);
+    assert.match(image[0], /\bheight="[1-9]\d*"/, 'Image height missing: '+file);
+  }
   for(const match of text.matchAll(/(?:src|href)=["'](\/[^"']*)["']/g)){
     const url=new URL(match[1],'https://playtt.tw');
     const relative=decodeURIComponent(url.pathname).replace(/^\//,'');

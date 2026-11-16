@@ -1,0 +1,22 @@
+{
+  "scope": "PageSpeed Insights mobile lab results; theme 0.2.2; not field data or a complete accessibility audit",
+  "device": "Moto G Power",
+  "network": "Slow 4G",
+  "lighthouse": "13.6.0",
+  "browser": "HeadlessChromium 157.0.8103.38",
+  "home": {
+    "at": "2026-11-16T19:15:13+08:00",
+    "url": "https://playtt.tw/",
+    "report": "https://pagespeed.web.dev/analysis/https-playtt-tw/vlyonet7t6?form_factor=mobile",
+    "scores": { "performance": 69, "accessibility": 100, "bestPractices": 100, "seo": 100 },
+    "metrics": { "fcpMs": 1572, "lcpMs": 3229, "tbtMs": 0, "cls": 0.711, "speedIndexMs": 2512 },
+    "finding": "brand-mobile.webp has no intrinsic width/height; FIND YOUR GAME section moves after the image loads"
+  },
+  "class": {
+    "at": "2026-11-16T19:15:35+08:00",
+    "url": "https://playtt.tw/class/",
+    "report": "https://pagespeed.web.dev/analysis/https-playtt-tw-class/hnptgwjxb9?form_factor=mobile",
+    "scores": { "performance": 100, "accessibility": 100, "bestPractices": 100, "seo": 100 },
+    "metrics": { "fcpMs": 901, "lcpMs": 901, "tbtMs": 0, "cls": 0, "speedIndexMs": 901 }
+  }
+}

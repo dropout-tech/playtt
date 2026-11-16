@@ -17,6 +17,38 @@ add_action( 'init', function () {
     register_block_pattern_category( 'lets-play', array( 'label' => 'Let’s Play 品牌版型' ) );
 } );
 
+// Reserve image space before download without changing saved block markup.
+// This also fixes previously imported pages when only the theme is updated.
+add_filter( 'render_block_core/image', function ( $html, $block ) {
+    static $dimensions = null;
+    if ( null === $dimensions ) {
+        $dimensions = array();
+        foreach ( glob( get_theme_file_path( 'assets/images/*.webp' ) ) as $file ) {
+            $size = wp_getimagesize( $file );
+            if ( $size ) { $dimensions[ get_theme_file_uri( 'assets/images/' . basename( $file ) ) ] = array( $size[0], $size[1] ); }
+        }
+        foreach ( get_posts( array( 'post_type' => 'attachment', 'post_status' => 'inherit', 'posts_per_page' => -1, 'meta_key' => '_lets_play_asset' ) ) as $attachment ) {
+            $metadata = wp_get_attachment_metadata( $attachment->ID );
+            if ( ! empty( $metadata['width'] ) && ! empty( $metadata['height'] ) ) {
+                $dimensions[ wp_get_attachment_url( $attachment->ID ) ] = array( $metadata['width'], $metadata['height'] );
+            }
+        }
+    }
+    $processor = new WP_HTML_Tag_Processor( $html );
+    while ( $processor->next_tag( 'IMG' ) ) {
+        $src = $processor->get_attribute( 'src' );
+        if ( isset( $dimensions[ $src ] ) && ! $processor->get_attribute( 'width' ) && ! $processor->get_attribute( 'height' ) ) {
+            $processor->set_attribute( 'width', (int) $dimensions[ $src ][0] );
+            $processor->set_attribute( 'height', (int) $dimensions[ $src ][1] );
+        }
+        if ( in_array( $block['attrs']['className'] ?? '', array( 'lp-brand-desktop', 'lp-brand-mobile' ), true ) ) {
+            $processor->set_attribute( 'loading', 'eager' );
+            $processor->set_attribute( 'fetchpriority', 'high' );
+        }
+    }
+    return $processor->get_updated_html();
+}, 20, 2 );
+
 // Keep core canonical output and sitemap. Provide defaults only when no SEO plugin owns them.
 add_action( 'wp_head', function () {
     if ( defined( 'WPSEO_VERSION' ) || defined( 'RANK_MATH_VERSION' ) || defined( 'AIOSEO_VERSION' ) || is_404() || ! is_singular() ) { return; }
