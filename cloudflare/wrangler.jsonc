@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "playtt-brand-preview",
+  "account_id": "3baadbd4abd9fd63c7f7e51664b26f67",
+  "compatibility_date": "2026-11-16",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

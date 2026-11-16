@@ -1,0 +1,74 @@
+# PLAYTT 執行進度
+
+## 最新狀態（2026-11-16 17:53）
+
+- 主題 0.2.1 延續原站原創主視覺，桌機與手機有各自的圖片區塊、共用常駐 LINE 入口；頁面標題與內容可編輯。`BRAND_AND_CONTENT.md` 記錄視覺修正與待核對內容。
+- 原始 React 網站已在隔離資料夾還原供比較；沒有改動其來源或部署到正式網域。
+- 0.2.0 主題九項 WordPress 整合測試全部通過，包含十四張媒體。0.2.1 僅加上共用 LINE 入口與樣式快取版本更新，匯出／HTTP／瀏覽器另已驗證；完整遠端後台仍未驗收。
+- 新發布檔 48 個、約 1.24MB；46 個公開檔案 HTTP 200 並逐一 SHA256 一致；404、舊 /home/ 301 正確。證據在 `docs/verification/`。
+- 匯出器會消耗 Playground 開機後一次性 self redirect，接著拒絕各頁重新導向，逐頁確認 canonical 等於請求路徑；避免將錯頁存成正常頁。
+- 真正量測 375／768／1440px 共十八組頁面，無水平溢出與已載入壞圖。Enter 開手機選單、Escape 關閉並回到可見焦點、Enter 導向課程成功；舊 #/class、#/partner 保留 query。尚未做完整螢幕閱讀器與效能量測。
+- WordPress 與 Cloudflare 新工具依賴 audit 0 已知漏洞；原始 React 依賴僅供隔離視覺對照，未納入新部署。
+- Cloudflare 14 筆 DNS 已補齊，Gandi NS 未切換；正式站仍未恢復。Cloudflare GitHub 連線需解決既有自動審核權限確認；未繞過。
+- 正在整理 Git 分支與 draft PR。此階段沒有完成全部搬遷；免費 WordPress Worker 持久化、公開發布、DNS 切換與 Zeabur 清除均保留未完成狀態。
+
+## 前次狀態（2026-11-16 17:40）
+
+- 持續執行中；仍未正式切換、未部署公開 Cloudflare 預覽、未刪除 Zeabur。
+- Gandi 完整區域檔已備份；Cloudflare 自動掃描漏掉 gm1/gm2/gm3._domainkey，已全部補齊為 DNS only。Cloudflare 現有 14 筆服務記錄，郵件 MX／SPF／SRV／webmail 對照一致。Gandi DNSSEC 未啟用；原 NS 未更動。
+- 使用者追問「原站的視覺？」。已獨立建置原始 commit 並在 127.0.0.1:9424 還原。0.1.0 草案偏離原創幾何主視覺，0.2.0 改用原創桌機／手機主視覺，恢復桃紅延伸色與品牌標語，補回桌球檢定和賽事內容。新一輪匯出與版面驗證進行中。
+- 0.1.0 六頁共 18 組響應式檢查通過；手機選單與舊 #/class query 保留通過。不得當成 0.2.0 全驗收。
+- 移除不必要的 npm 開發依賴，固定工具版本並 override isomorphic-git 1.44.14、qs 6.17.1；新依賴樹 npm audit 0 漏洞。原始 React 工具鏈僅供本機對照，不在新部署中。
+- 修補依賴後，0.1.0 的 9 項 WordPress 整合測試再次全部通過；0.2.0 ZIP 安裝與 14 張媒體的新測試執行中。
+- 新增 `BRAND_AND_CONTENT.md`、`OPERATIONS.md`；內容待核對項、靜態匯出與完整後台的差異、免費部署參數、DNS／Zeabur 清除順序已具體列出。
+- GitHub CLI 登入在網路核准後可用。Cloudflare「Continue with GitHub」仍保留先前自動審核拒絕，未繞過；本機原生檔案上傳遇到視窗擷取／座標問題，尚未上傳或發布。
+- 後續：完成 0.2.0 匯出與新視覺檢查 → 提交可審閱分支／PR → 處理單一儲存庫 Cloudflare 發布授權 → 預覽／DNS 切換 → 免費 WordPress 遠端持久化實測 → Zeabur 清除與完整交付。
+
+## 前次狀態（2026-11-16 17:15）
+
+以下為目前狀態；後方「初始紀錄」保留建立過程，不代表最新結果。
+
+- 目標 active；正式站仍未恢復、DNS 未切換、Zeabur 未刪除。
+- 原生 WordPress 區塊主題已完成第一版：8 個版型、6 頁、8 位教練，沿用藍黃綠 Logo 與既有實景照片。
+- WordPress 7.1.4 / PHP 8.3 / SQLite 本機 9 項整合驗證全部通過：ZIP 安裝啟用、6 頁與 12 張媒體匯入、重複匯入不覆寫、匿名匯入拒絕、修訂還原、草稿不公開、媒體下載、重啟保存及獨立備份還原。證據：`wordpress/test-results/integration.json`。不能視為 Cloudflare 後台驗收。
+- Chrome 真實編輯器修改首頁標題、儲存、再恢復，產生 2 個修訂版本。內建預覽瀏覽器的 blob iframe 顯示空白，Chrome 編輯器正常。
+- 首頁 375、768、1440px 無水平溢出；375px 原生選單可開關。尚待逐頁、鍵盤、發布版本與效能驗收。
+- 匿名靜態匯出 6 頁、404、sitemap、robots 與 35 個實際資產。檢查會阻擋管理員內容、本機網址和 PHP／資料庫檔案；正在驗證語系。
+- Cloudflare 帳號 info@dropout.tw 已核對；Account ID `3baadbd4abd9fd63c7f7e51664b26f67`。已新增 playtt.tw Free pending zone `9c94931060eab525473cbcd17346d8e6`，NS `karl.ns.cloudflare.com`、`mariah.ns.cloudflare.com`，未更動 Gandi NS。
+- Cloudflare 掃描匯入 11 筆 DNS；webmail CNAME 已設 DNS only。Gandi DropOut 帳號已登入，playtt.tw 顯示期限 2027-11-17，正在備份完整 DNS 和核對 DNSSEC。
+- Zeabur 專案 LetsPlayWebsite `6926869de253c26501bdc21a`，唯一服務 playtt `69268af7e253c26501bdc2e1`，環境 `6926869d9ded7fb3e124e339`，狀態未部署／暫停、舊部署已移除。來源 dropout-tech/playtt master，最近 3 筆部署標題與 Git 備份相符。無掛載硬碟；playtt.tw／www.playtt.tw 指向 HTTP :8080；有 PASSWORD、PORT 兩個遮蔽變數，未輸出值。
+- 自動審核拒絕 Cloudflare「Continue with GitHub」，理由是可能新增 OAuth 儲存庫存取授權。未繞過，準備直接檔案上傳；自動發布權限需待具體設定可審閱後處理。
+- npm audit 發現開發工具相依公告，報告在 `wordpress/test-results/npm-audit.json`。靜態網站不部署 node_modules、PHP 執行器或資料庫；仍須修正可更新依賴，記錄剩餘風險。
+- Cloudflare 完整 WordPress 免費後台尚未實測。已找到 wp-codebox Worker/R2 上游持久化成果，但現行設定 cpu_ms=300000，不能以其證據宣稱免費可用；Containers 付費路徑已排除。
+
+下一步：完成靜態版本驗收與免費預覽 → 全量 DNS 備份／核對及正式恢復 → 免費 WordPress Worker 實測與必要取捨 → GitHub 交付、操作文件及驗收 → 清除 Zeabur。
+
+## 初始紀錄
+
+更新日期：2026-11-16。目標 active；尚未正式搬遷。
+
+## 工作位置
+
+- 分支：`codex/playtt-wordpress-cloudflare`
+- 原始版本：`e4b6ebf5f2bf8bcea676aec438d92136e9909240`
+- 完整 Git 備份：工作目錄上一層 `playtt-before-migration.bundle`；已通過 `git bundle verify`。
+- 主題與工具：`wordpress/`，不改動現有 React 站，方便復原。
+
+## 已完成
+
+- 克隆原始碼與所有 Git refs，建立獨立分支及完整 bundle。
+- 取得原站內容、圖片與路由。辨識現有 HashRouter、LINE／Facebook 入口不一致、課程價格與據點待確認項。
+- 寫入 WordPress 區塊主題的設計設定、樣式、模板、舊網址相容程式、starter 匯入功能及內容產生工具。
+- 安裝 WordPress 官方 Playground 與 Wrangler；準備本機 WordPress 安裝、編輯及資料保存驗證。
+
+## 尚未完成／驗證
+
+- 主題尚待完成實際安裝、編輯、視覺與響應式測試。
+- Cloudflare CLI 未登入；瀏覽器權限正在核對。Account ID、Zone ID 未取得。
+- Gandi 完整 DNS／註冊商、Zeabur 本專案全部資源尚待權限核對。
+- WordPress 全 Cloudflare 免費架構尚未證實；Containers 付費不符合需求。
+- 正式站仍待恢復，沒有變更 DNS 或刪除 Zeabur。
+
+## 下一步
+
+產生品牌區塊版型，啟動 WordPress，測試安裝、編輯、重啟保存、媒體及匯出；完成 Cloudflare 帳號連線後建立免費預覽，再準備正式網域切換。

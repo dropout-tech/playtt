@@ -1,0 +1,100 @@
+[
+  {
+    "file": "assets/images/brand-desktop.webp",
+    "source": "src/assets/homepage/banner1440.png",
+    "width": 1920,
+    "height": 1072,
+    "bytes": 65256
+  },
+  {
+    "file": "assets/images/brand-mobile.webp",
+    "source": "src/assets/homepage/banner414.png",
+    "width": 828,
+    "height": 1479,
+    "bytes": 41984
+  },
+  {
+    "file": "assets/images/logo.webp",
+    "source": "src/assets/homepage/logo.png",
+    "width": 453,
+    "height": 74,
+    "bytes": 2678
+  },
+  {
+    "file": "assets/images/children.webp",
+    "source": "src/assets/classes/img1.png",
+    "width": 1100,
+    "height": 937,
+    "bytes": 74158
+  },
+  {
+    "file": "assets/images/individual.webp",
+    "source": "src/assets/classes/img2.png",
+    "width": 1100,
+    "height": 935,
+    "bytes": 89448
+  },
+  {
+    "file": "assets/images/camp.webp",
+    "source": "src/assets/classes/img3.png",
+    "width": 1100,
+    "height": 937,
+    "bytes": 92538
+  },
+  {
+    "file": "assets/images/coach-kuo.webp",
+    "source": "src/assets/ourCouchMenber/img4.png",
+    "width": 640,
+    "height": 619,
+    "bytes": 28312
+  },
+  {
+    "file": "assets/images/coach-lin.webp",
+    "source": "src/assets/ourCouchMenber/img3.png",
+    "width": 640,
+    "height": 619,
+    "bytes": 29132
+  },
+  {
+    "file": "assets/images/coach-yang.webp",
+    "source": "src/assets/ourCouchMenber/yang-correct.jpg",
+    "width": 640,
+    "height": 853,
+    "bytes": 41464
+  },
+  {
+    "file": "assets/images/coach-huang.webp",
+    "source": "src/assets/ourCouchMenber/huang-correct.jpg",
+    "width": 640,
+    "height": 853,
+    "bytes": 36554
+  },
+  {
+    "file": "assets/images/coach-amber.webp",
+    "source": "src/assets/ourCouchMenber/coach-wang-yunhan.jpg",
+    "width": 640,
+    "height": 758,
+    "bytes": 20624
+  },
+  {
+    "file": "assets/images/coach-tsai.webp",
+    "source": "src/assets/ourCouchMenber/tsai-correct.jpg",
+    "width": 559,
+    "height": 1024,
+    "bytes": 59322
+  },
+  {
+    "file": "assets/images/coach-wen.webp",
+    "source": "src/assets/ourCouchMenber/img2.png",
+    "width": 640,
+    "height": 619,
+    "bytes": 31188
+  },
+  {
+    "file": "assets/images/coach-wang.webp",
+    "source": "src/assets/ourCouchMenber/wang-correct.jpg",
+    "width": 640,
+    "height": 853,
+    "bytes": 40832
+  }
+]

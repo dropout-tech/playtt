@@ -1,0 +1,7 @@
+wordpress/** text=auto eol=lf
+cloudflare/** text=auto eol=lf
+docs/** text=auto eol=lf
+*.webp binary
+*.jpg binary
+*.png binary
+cloudflare/public/** linguist-generated=true

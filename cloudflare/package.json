@@ -1,0 +1,8 @@
+{
+  "name": "playtt-cloudflare-publication",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node verify-static.mjs", "test:http": "node verify-http.mjs", "deploy": "wrangler deploy" },
+  "devDependencies": { "wrangler": "4.162.0" }
+}
