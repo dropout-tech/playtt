@@ -2,6 +2,8 @@
 
 這是可重現的實驗，不是正式後台部署。不得將此資料夾內公開的本機測試密碼部署到網際網路。
 
+目前應使用 [security-update/README.md](security-update/README.md) 的WordPress7.1.4／PHP8.3.36候選與對應patch／鎖定檔；下方舊版本流程保留作歷史驗證與比較。舊釘選版本不作正式後台基準。
+
 上游：Automattic/wp-codebox，commit `9764022156a61ba7d2b4d8a2196b01ccb33b82b5`，`packages/runtime-cloudflare` 0.12.27；WordPress 7.0.2、PHP-WASM 8.5.8、Wrangler 4.127.1。主題另以 WordPress 7.1.4 / PHP 8.3 驗證，兩者證據分開保存。
 
 ## 最新進度：2026-11-17 12:02

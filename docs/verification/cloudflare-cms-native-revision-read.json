@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-17T04:20:44.326Z",
+  "scope": "Read-only REST verification after native revision restore UI action",
+  "aboutId": 25,
+  "markerPresent": false,
+  "title": "關於 Let’s Play｜DO 保存驗證",
+  "revisions": [
+    {
+      "id": 37,
+      "markerPresent": false
+    },
+    {
+      "id": 33,
+      "markerPresent": true
+    },
+    {
+      "id": 30,
+      "markerPresent": false
+    }
+  ],
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 94533
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 106851
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 5642
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/pages/25",
+      "status": 200,
+      "wallMs": 4356
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/pages/25/revisions",
+      "status": 200,
+      "wallMs": 4244
+    }
+  ]
+}

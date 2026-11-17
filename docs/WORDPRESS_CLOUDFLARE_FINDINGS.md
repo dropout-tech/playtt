@@ -2,7 +2,15 @@
 
 查核日：2026-11-17。區分本專案實測與第三方成果。
 
-## 最新結果（2026-11-17 12:02）
+## 最新結果（2026-11-17，安全更新驗收）
+
+經典原生修訂還原已通過UI與REST讀回；共用頁尾在原生網站編輯器修改、儲存、重載通過。它們有獨立瀏覽器證據，不以API紀錄代替UI操作。新版修訂面板、導覽與全域樣式仍需完整複核。
+
+上游釘選的舊核心已落後於[WordPress7.1.4安全更新](https://wordpress.org/news/2026/10/wordpress-7-1-4/)及[PHP8.3.36安全更新](https://www.php.net/releases/8_3_36.php)。候選已升級到這兩個版本與Playground3.1.64；本機全空啟動／品牌匯入通過，隔離遠端health回報確切新版本，舊備份六頁／主題／圖片核對通過。主要分區升級前已做224項備份，12:39實際重部署後的修訂還原、頁尾、新草稿與圖片／縮圖保存驗收通過。
+
+更新所需的釘選套件、WASM匯入調整、核心資產產生方式與完整patch保存在 `experiments/cloudflare-wordpress/security-update/`。正式後台發布整合仍未完成；不把更新成功等同完整架構交付。
+
+## 前次結果（2026-11-17 12:02）
 
 免費候選已通過Chrome原生視覺段落修改、儲存與重載、全空遠端初始化，以及從本機備份恢復到另一私有R2桶／獨立DO分區。還原後六頁、主題與品牌圖片雜湊一致，且保留備份時間點（沒有備份後新增的測試文字）；原分區資料未重設。證據 `cloudflare-cms-visual-editor.json`、`cloudflare-cms-remote-fresh-create.json`、`cloudflare-cms-independent-restore.json`、`cloudflare-cms-theme-independent-restore.json`。
 

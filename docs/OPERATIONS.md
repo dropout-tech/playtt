@@ -28,7 +28,7 @@
 
 ## 免費 Cloudflare 靜態部署設定
 
-固定帳號 info@dropout.tw；已部署的免費 Pages 專案 `playtt-brand-preview`，預覽 https://playtt-brand-preview.pages.dev 。這是官網恢復階段的靜態發布，完整 WordPress 後台仍未遠端驗收。
+固定帳號 info@dropout.tw；已部署的免費 Pages 專案 `playtt-brand-preview`，預覽 https://playtt-brand-preview.pages.dev 。這是官網恢復階段的靜態發布；免費隔離後台已通過原生編輯、修訂還原、頁尾、重部署與備份還原，正式發布整合仍待。
 
 | 設定 | 值 |
 | --- | --- |

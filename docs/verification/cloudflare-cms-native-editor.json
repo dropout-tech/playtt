@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-17T04:26:49.765Z",
+  "deployment": "06361624-ed24-4784-98a1-3335dbb2da0c",
+  "scope": "Private remote WordPress 7.0.2 / PHP 8.3.32; native Chrome UI",
+  "revisionRestore": {
+    "classicUi": true,
+    "aboutId": 25,
+    "restoredRevision": 30,
+    "newRevision": 37,
+    "markerRemoved": true,
+    "restReadback": true
+  },
+  "templatePart": {
+    "slug": "footer",
+    "visualEdit": true,
+    "saveToast": "Template part updated.",
+    "reloadRetainedMarker": true,
+    "marker": "【頁尾樣板驗收】"
+  },
+  "remaining": [
+    "New revision panel remains loading",
+    "Navigation and global styles save",
+    "Production publishing"
+  ]
+}
