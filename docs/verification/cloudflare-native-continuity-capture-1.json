@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-17T10:47:42.128Z",
+  "mode": "capture",
+  "round": "1",
+  "result": "pass",
+  "scope": "Private audit native UI-owned draft with 120 bounded REST reads while editor remains open; tail and UI separately prove saves and runtime retirements",
+  "evidence": {
+    "id": 106,
+    "initialVersion": 1,
+    "readCount": 0,
+    "observedSavedVersions": [],
+    "observedAutosaveVersions": [],
+    "finalVersion": 1,
+    "contentHash": "0e12b167561c80dd5bd8fbcd80140f594b993789086c471bd7758a75f1223ad7",
+    "originalPagesUnchanged": true
+  },
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "status": 200,
+      "wallMs": 3822
+    },
+    {
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 1327
+    },
+    {
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 9229
+    },
+    {
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 4480
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=draft&per_page=100&search=PLAYTT_NATIVE_CONTINUITY_20261117_1045",
+      "status": 200,
+      "wallMs": 1264
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "status": 200,
+      "wallMs": 2569
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106?context=edit",
+      "status": 200,
+      "wallMs": 1575
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "status": 200,
+      "wallMs": 5000
+    },
+    {
+      "path": "/__playtt-publishing",
+      "status": 200,
+      "wallMs": 148
+    }
+  ]
+}

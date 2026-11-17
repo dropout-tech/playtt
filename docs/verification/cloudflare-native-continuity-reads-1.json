@@ -1,0 +1,731 @@
+{
+  "at": "2026-11-17T10:55:54.503Z",
+  "mode": "reads",
+  "round": "1",
+  "result": "pass",
+  "scope": "Private audit native UI-owned draft with 120 bounded REST reads while editor remains open; tail and UI separately prove saves and runtime retirements",
+  "evidence": {
+    "id": 106,
+    "initialVersion": 1,
+    "readCount": 120,
+    "observedSavedVersions": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "observedAutosaveVersions": [],
+    "finalVersion": 3,
+    "contentHash": "16834d1e1269140d09238daa5ccc955ac7e603b664201fb82530ad1aacd5bcf9",
+    "originalPagesUnchanged": true
+  },
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "status": 200,
+      "wallMs": 471
+    },
+    {
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 1772
+    },
+    {
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 6162
+    },
+    {
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 4817
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=draft&per_page=100&search=PLAYTT_NATIVE_CONTINUITY_20261117_1045",
+      "status": 200,
+      "wallMs": 5016
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "status": 200,
+      "wallMs": 4619
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3364
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 11264
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 5241
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1977
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 5483
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1691
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1541
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 10073
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 8820
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1917
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 5740
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1347
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3136
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 4614
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 2397
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1299
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3503
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 4555
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 2062
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1522
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106?context=edit",
+      "status": 200,
+      "wallMs": 5490
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106/autosaves?context=edit",
+      "status": 200,
+      "wallMs": 2138
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3590
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 6043
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1705
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 5696
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 4096
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 2212
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 4672
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 2087
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3800
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 5843
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 2279
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 5069
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3196
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1746
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 4667
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 2044
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 4347
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 6014
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1928
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1686
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106?context=edit",
+      "status": 200,
+      "wallMs": 4709
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106/autosaves?context=edit",
+      "status": 200,
+      "wallMs": 1876
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3693
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 4637
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1474
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1561
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3326
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 6263
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 2036
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 4666
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 2539
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1651
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 10334
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 12168
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 7110
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1457
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1306
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 4162
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 2644
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1954
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 5259
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1728
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106?context=edit",
+      "status": 200,
+      "wallMs": 1750
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106/autosaves?context=edit",
+      "status": 200,
+      "wallMs": 1781
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 5446
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1992
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1599
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1302
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 5360
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1908
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1394
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 2110
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 5619
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 2041
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1721
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 4052
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3858
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 2082
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 5217
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1547
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3277
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 4260
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1455
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1318
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106?context=edit",
+      "status": 200,
+      "wallMs": 1288
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106/autosaves?context=edit",
+      "status": 200,
+      "wallMs": 1446
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 7201
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 2668
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 4007
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1717
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 2826
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1854
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 4704
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1977
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3079
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 3870
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 5436
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 8862
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3143
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 4192
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1529
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1160
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 2995
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 4420
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 1702
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1623
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106?context=edit",
+      "status": 200,
+      "wallMs": 3672
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106/autosaves?context=edit",
+      "status": 200,
+      "wallMs": 1825
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 3260
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1429
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 4777
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1693
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 2710
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1493
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 4095
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1257
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 2477
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1556
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 4078
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1655
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 2600
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1363
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 4015
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1425
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=20",
+      "status": 200,
+      "wallMs": 2688
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit",
+      "status": 200,
+      "wallMs": 1888
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit",
+      "status": 200,
+      "wallMs": 3998
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "status": 200,
+      "wallMs": 1553
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106?context=edit",
+      "status": 200,
+      "wallMs": 1354
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106/autosaves?context=edit",
+      "status": 200,
+      "wallMs": 1269
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/106?context=edit",
+      "status": 200,
+      "wallMs": 1766
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "status": 200,
+      "wallMs": 6506
+    },
+    {
+      "path": "/__playtt-publishing",
+      "status": 200,
+      "wallMs": 146
+    }
+  ]
+}

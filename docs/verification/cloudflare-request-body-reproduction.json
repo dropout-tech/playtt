@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-17T10:47:49.615363+00:00",
+  "result": "pass",
+  "scope": "Patch applied after snapshot-source candidate; exact LF-normalized source hashes",
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "normalizedSha256": "d62fbed93d8a8c340fdc012dd7395a48ff7bd2955098bac2b0754045b99a55a4"
+    },
+    {
+      "path": "src/phase-trace.ts",
+      "normalizedSha256": "4a55ee0f853d84ff9679ef3c87ecace6e84d15cae26eb59240387507531af3fd"
+    },
+    {
+      "path": "src/request-translation.ts",
+      "normalizedSha256": "b0770763cc40599e0ff747b55f7019a088cf03c0eefd0223e432500c401099f0"
+    }
+  ]
+}

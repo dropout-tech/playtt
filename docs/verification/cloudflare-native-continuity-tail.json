@@ -1,0 +1,34 @@
+{
+  "scope": "Finite audit controlled transport disconnect plus native editing/autosave/120 REST reads/reload/owned cleanup. Tail envelopes may contain multiple operations; not unique request counts.",
+  "versions": [
+    "f7cc0a9b-5772-45ff-8bda-09daab55312a"
+  ],
+  "firstAt": "2026-11-17T10:44:10.020Z",
+  "lastAt": "2026-11-17T10:56:45.253Z",
+  "observedEvents": 955,
+  "outcomes": {
+    "ok": 954,
+    "canceled": 1
+  },
+  "exceptions": [],
+  "requestFailures": [],
+  "incompletePhases": [],
+  "retirements": [
+    {
+      "at": "2026-11-17T10:48:57.295Z",
+      "requests": 98,
+      "heapBytes": 75956224
+    },
+    {
+      "at": "2026-11-17T10:51:48.484Z",
+      "requests": 98,
+      "heapBytes": 76152832
+    },
+    {
+      "at": "2026-11-17T10:54:18.630Z",
+      "requests": 98,
+      "heapBytes": 78905344
+    }
+  ],
+  "maxObservedWasmBytes": 78905344
+}
