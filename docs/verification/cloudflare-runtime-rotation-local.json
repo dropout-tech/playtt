@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-17T08:16:46.064Z",
+  "result": "pass",
+  "scope": "Same fixed PHP web WASM; reproduce previous failure at request 401, then cross two real automatic 400-request rotations with file and allocator environment preserved",
+  "results": [
+    {
+      "candidate": "previous-trace-reused",
+      "created": 1,
+      "completed": 400,
+      "error": "Error: Cloudflare phase trace is already complete."
+    },
+    {
+      "candidate": "initial-trace-only",
+      "created": 3,
+      "completed": 805
+    }
+  ]
+}

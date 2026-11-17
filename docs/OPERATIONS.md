@@ -6,7 +6,7 @@
 
 ## 自動發布候選操作界線
 
-私人還原區曾通過儲存後自動發布、草稿撤回與共用頁尾更新測試；完整版本才對訪客切換。後續原生樣式及繁中操作出現記憶體重置，後續追蹤分配器候選通過繁中與原生導覽編輯，發布合併候選已清空舊積壓，但建立頁面仍觸發記憶體重置；已回復測試內容。目前實驗發布器paused，僅限研究，不應用於營運。noindex 預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。這還不是正式後台交付，正式官網目前維持 Pages。
+私人還原區的初始化副本與核心檔案容量修正已通過完整七筆發布批次、樣式兩輪保存及繁中原生樣式儲存／重新部署／還原。先前記憶體重置的失敗證據仍保留；執行器400次請求輪替另有補丁與邊界驗證。最新候選7e59a586的遠端長時間讀取在完成386次後收到HTTP500，tail確認一次DO記憶體超限重置；接近預期400次PHP輪替邊界，尚未觀測到成功的第2代。重置後已獨立讀回確認原始頁面、頁尾、樣式與繁中完整。該次只做讀取，未變更頁面或樣式；此結果不列為穩定度通過。目前實驗發布器paused，僅供研究；noindex預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。正式playtt.tw依使用者決策維持Pages，整體後台交付尚未完成。
 
 維運端點的 pause／resume／retry 需要 operator 身分，密鑰不放前端。連續六次無進展會停止並保留原公開版本；先修復根因，再手動重試。重現與測試來源見 `experiments/cloudflare-wordpress/automatic-publication/README.md`。本機故障測試只操作 emulator，不可直接改成遠端物件刪除。
 

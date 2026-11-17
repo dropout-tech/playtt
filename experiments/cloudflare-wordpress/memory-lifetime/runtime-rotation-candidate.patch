@@ -1,0 +1,52 @@
+--- a/packages/runtime-cloudflare/src/worker.ts
++++ b/packages/runtime-cloudflare/src/worker.ts
+@@ -1,5 +1,6 @@
+ import { wordPressContentType } from './asset-content-type.js';
+ import { compactPlayttCoreFiles } from './playtt-core-memory.js';
++import { createPlayttRuntimeFactory } from './playtt-runtime-factory.js';
+ import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+ import { decodeZip } from "@php-wasm/stream-compression"
+@@ -2343,13 +2344,6 @@
+ require '/wordpress/wp-load.php';`
+ }
+ 
+-// Playground retains this factory for runtime rotation. Create its closure in
+-// a separate scope so it cannot retain bootWordPressRuntime's decoded content,
+-// language files and archive buffers after they have been copied into MEMFS.
+-function tracedPhpRuntimeFactory(trace: CloudflarePhaseTrace): typeof createPhpRuntime {
+-  return () => trace.measure("php.runtime.create", createPhpRuntime)
+-}
+-
+ async function bootWordPressRuntime(
+   wordpressInstallMode: WordPressInstallMode = "install-from-existing-files",
+   includeSqlite = true,
+@@ -2372,7 +2366,7 @@
+   const sqliteIntegrationPluginZip = includeSqlite ? trace ? await trace.measure("runtime.archive.sqlite.fetch-verify", () => readSqliteIntegrationArtifact(runtimeBucket!)) : await readSqliteIntegrationArtifact(runtimeBucket!) : undefined
+   const websiteImporterZip = includeWebsiteImporter ? trace ? await trace.measure("runtime.archive.component.fetch-verify", () => readWebsiteImporterArtifact(runtimeBucket!)) : await readWebsiteImporterArtifact(runtimeBucket!) : undefined
+   const boot = () => bootWordPressAndRequestHandler({
+-    createPhpRuntime: trace ? tracedPhpRuntimeFactory(trace) : createPhpRuntime,
++    createPhpRuntime: createPlayttRuntimeFactory(createPhpRuntime, trace),
+     // The WASM filesystem lives in the same 128 MiB isolate. A file-only
+     // opcode cache duplicates compiled PHP in that filesystem after each load.
+     phpIniEntries: { "opcache.enable": "0", "opcache.enable_cli": "0" },
+--- /dev/null
++++ b/packages/runtime-cloudflare/src/playtt-runtime-factory.ts
+@@ -0,0 +1,17 @@
++import type { CloudflarePhaseTrace } from './phase-trace.js';
++
++// Playground retains this callback for later rotation. Its closure must not
++// capture boot-time archives, and a completed request trace must never be reused.
++export function createPlayttRuntimeFactory<T>(createRuntime: () => Promise<T>, initialTrace?: CloudflarePhaseTrace): () => Promise<T> {
++  let pendingTrace=initialTrace;
++  let generation=0;
++  return () => {
++    const trace=pendingTrace;
++    pendingTrace=undefined;
++    const created=trace ? trace.measure('php.runtime.create',createRuntime) : createRuntime();
++    return created.then(runtime=>{
++      console.log(JSON.stringify({schema:'playtt-runtime-generation/v1',generation:++generation}));
++      return runtime;
++    });
++  };
++}

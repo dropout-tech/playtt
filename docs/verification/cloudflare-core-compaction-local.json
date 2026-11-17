@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-17T07:53:10.961Z",
+  "result": "pass",
+  "scope": "Pinned PHP web WASM: exact byte/hash preservation, PHP reads, future append growth, unchanged wp-content and temp buffers",
+  "files": 1,
+  "beforeBytes": 131072,
+  "afterBytes": 106496,
+  "releasedCapacityBytes": 24576
+}

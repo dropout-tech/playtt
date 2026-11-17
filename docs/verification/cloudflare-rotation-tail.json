@@ -1,0 +1,67 @@
+{
+  "at": "2026-11-17T08:32:04.473051+00:00",
+  "scope": "Sanitized finite remote tail interval; paired Worker and DO envelopes are not unique requests. WASM heap and selected MEMFS file capacity are not total isolate memory.",
+  "from": "2026-11-17T08:18:05.044Z",
+  "to": "2026-11-17T08:27:45.045Z",
+  "versions": {
+    "7e59a586-67c1-4938-af2d-265d923460f4": {
+      "events": 854,
+      "outcomes": {
+        "ok": 852,
+        "exceededMemory": 1,
+        "exception": 1
+      },
+      "exceptions": [
+        {
+          "at": "2026-11-17T08:25:13.639Z",
+          "errors": [
+            {
+              "name": "Error",
+              "message": "Durable Object's isolate exceeded its memory limit and was reset."
+            }
+          ]
+        },
+        {
+          "at": "2026-11-17T08:25:13.855Z",
+          "errors": [
+            {
+              "name": "Error",
+              "message": "Durable Object's isolate exceeded its memory limit and was reset."
+            }
+          ]
+        }
+      ],
+      "stages": {
+        "after-persist": {
+          "samples": 3,
+          "maxHeapBytes": 70516736,
+          "maxObservedFileBytes": 27211774
+        },
+        "after-request": {
+          "samples": 206,
+          "maxHeapBytes": 83296256,
+          "maxObservedFileBytes": 27210261
+        },
+        "before-request": {
+          "samples": 207,
+          "maxHeapBytes": 83296256,
+          "maxObservedFileBytes": 27211774
+        }
+      },
+      "generations": [
+        {
+          "at": "2026-11-17T08:18:05.955Z",
+          "values": [
+            1
+          ]
+        },
+        {
+          "at": "2026-11-17T08:27:23.542Z",
+          "values": [
+            1
+          ]
+        }
+      ]
+    }
+  }
+}

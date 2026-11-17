@@ -1,0 +1,89 @@
+--- a/packages/runtime-cloudflare/src/worker.ts
++++ b/packages/runtime-cloudflare/src/worker.ts
+@@ -41,7 +41,7 @@
+ import wordpressStaticArtifactManifest from "../assets/wordpress-static-artifact.json" with { type: "json" }
+ import sqliteIntegrationArtifactManifest from "../assets/sqlite-database-integration-artifact.json" with { type: "json" }
+ import websiteImporterArtifactManifest from "../assets/website-importer-artifact.json" with { type: "json" }
+-import { createCanonicalRestorePack, decodeCanonicalRestorePack, validateCanonicalRestorePackMetadata, type CanonicalRestorePackMetadata } from "./canonical-restore-pack.js"
++import { createStreamedCanonicalRestorePack, decodeCanonicalRestorePack, validateCanonicalRestorePackMetadata, type CanonicalRestorePackMetadata } from "./canonical-restore-pack.js"
+ 
+ const PHP_VERSION = "8.3.36"
+ const websiteImporterArtifact = websiteImporterArtifactManifest as RuntimeArchiveArtifactManifest
+@@ -2049,12 +2049,7 @@
+   validateWpContentManifestFiles(wpContent, site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   validateWpContentDeletedPaths(wpContentDeleted, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   // Canonical objects remain authoritative; independently re-read them before deriving the pack.
+-  const [markdown, restoredUploads, restoredWpContent] = await Promise.all([
+-    readManifestFiles(bucket, files, "Markdown"),
+-    readManifestFiles(bucket, uploads, "upload"),
+-    readManifestFiles(bucket, wpContent, "wp-content"),
+-  ])
+-  const pack = await createCanonicalRestorePack(siteStorageKeys(site).root, { markdown, uploads: restoredUploads, wpContent: restoredWpContent, wpContentDeleted })
++  const pack = await createStreamedCanonicalRestorePack(siteStorageKeys(site).root, bucket, { markdown: files, uploads, wpContent, wpContentDeleted })
+   await putImmutableBytes(bucket, pack.metadata.objectKey, pack.bytes, "application/zip")
+   const manifest: MarkdownManifest = { ...pointer, files, uploads, wpContent, wpContentDeleted, restorePack: pack.metadata }
+   await bucket.put(manifestKey, JSON.stringify(manifest), {
+--- a/packages/runtime-cloudflare/src/canonical-restore-pack.ts
++++ b/packages/runtime-cloudflare/src/canonical-restore-pack.ts
+@@ -69,6 +69,61 @@
+     bytes,
+   }
+ }
++
++// Preserve the v1 ZIP format and independent R2 integrity check while avoiding
++// retaining every decoded object and every File copy in the PHP isolate.
++export async function createStreamedCanonicalRestorePack(
++  root: string,
++  bucket: RestorePackBucket,
++  files: { markdown: CanonicalRestorePackFile[]; uploads: CanonicalRestorePackFile[]; wpContent: CanonicalRestorePackFile[]; wpContentDeleted: string[] },
++): Promise<{ metadata: CanonicalRestorePackMetadata; bytes: Uint8Array }> {
++  const sources = [
++    ...files.markdown.map(file => ({ domain: "markdown" as const, file })),
++    ...files.uploads.map(file => ({ domain: "uploads" as const, file })),
++    ...files.wpContent.map(file => ({ domain: "wp-content" as const, file })),
++  ].sort((a, b) => entryName(a.domain, a.file.path).localeCompare(entryName(b.domain, b.file.path)))
++  const decodedBytes = sources.reduce((sum, { file }) => sum + file.size, 0)
++  if (!Number.isSafeInteger(decodedBytes) || decodedBytes < 0 || decodedBytes > MAX_RESTORE_PACK_DECODED_BYTES) throw new Error("Canonical restore pack exceeds its decoded byte budget.")
++  type FileResult = { file: File; error?: never } | { error: unknown; file?: never }
++  async function read(index: number): Promise<FileResult> {
++    const { domain, file } = sources[index]
++    try {
++      const object = await bucket.get(file.objectKey)
++      if (!object || object.size !== file.size) throw new Error("Canonical restore pack source is missing or has an invalid size.")
++      const bytes = new Uint8Array(await object.arrayBuffer())
++      if (bytes.byteLength !== file.size || await sha256Hex(bytes) !== file.sha256) throw new Error("Canonical restore pack source failed integrity validation.")
++      return { file: new File([bytes as Uint8Array<ArrayBuffer>], entryName(domain, file.path), { lastModified: 0 }) }
++    } catch (error) { return { error } }
++  }
++  async function* verifiedFiles(): AsyncGenerator<File> {
++    const pending = new Map<number, Promise<FileResult>>()
++    let next = 0
++    const fill = () => { while (pending.size < 4 && next < sources.length) { pending.set(next, read(next)); next++ } }
++    fill()
++    try {
++      for (let index = 0; index < sources.length; index++) {
++        const result = await pending.get(index)!
++        pending.delete(index)
++        if ("error" in result) throw result.error
++        // Refill only once the consumer has accepted this file. At most four
++        // reads are pending plus the one file currently being compressed.
++        yield result.file
++        fill()
++      }
++      yield new File([JSON.stringify({ wpContentDeleted: files.wpContentDeleted })], CANONICAL_RESTORE_PACK_TOMBSTONES, { lastModified: 0, type: "application/json" })
++    } finally {
++      // Every read resolves to a result envelope, so failed/cancelled encodes
++      // cannot leave unhandled rejections from the bounded prefetch window.
++      await Promise.all(pending.values())
++      pending.clear()
++    }
++  }
++  const bytes = new Uint8Array(await new Response(encodeZip(verifiedFiles())).arrayBuffer())
++  if (bytes.byteLength > MAX_RESTORE_PACK_BYTES) throw new Error("Canonical restore pack exceeds its compressed byte budget.")
++  const sha256 = await sha256Hex(bytes)
++  return { metadata: { schema: CANONICAL_RESTORE_PACK_SCHEMA, objectKey: `${root}/restore-packs/${sha256}.zip`, sha256, size: bytes.byteLength, fileCount: sources.length, decodedBytes }, bytes }
++}
++
+ 
+ export async function decodeCanonicalRestorePack(
+   metadata: unknown,
