@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-17T03:56:13.989Z",
+  "source": "Cloudflare R2 overview visible account UI",
+  "account": "info@dropout.tw",
+  "period": "October 25 - November 25",
+  "displayed": {
+    "classA": 868,
+    "classB": "8.39k",
+    "accountTotalStorage": "322.05 MB",
+    "billableUsage": "$0.00",
+    "message": "No billable usage incurred yet",
+    "playttPrimary": {
+      "objects": 355,
+      "storage": "93.77 MB"
+    },
+    "playttRestore": {
+      "objects": 3,
+      "storage": "69.71 MB"
+    }
+  },
+  "limitations": "Account totals include unrelated existing resources; dashboard numbers lag recent restore uploads. No plan upgrade or payment authorization performed."
+}

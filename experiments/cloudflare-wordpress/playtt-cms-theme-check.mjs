@@ -67,8 +67,9 @@ try{
   }
   const themes=await api('themes?status=active');assert.equal(themes.length,1);assert.equal(themes[0].stylesheet,'lets-play');assert.equal(themes[0].version,'0.2.3');
   const about=await api('pages/'+state.pages.about+'?context=edit');assert.equal(about.title.raw,state.expectedAboutTitle);
+  if(process.argv.includes('--restored-backup'))assert.ok(!about.content.raw.includes('【遠端視覺編輯驗收】'),'Restore must represent the older backup cut, not current primary state');
   for(const slug of ['','about/','class/','coaches/','locations/','partner/']){const r=await probeFetch(origin+'/'+slug,{redirect:'manual'});assert.equal(r.status,200,slug);const html=await r.text();assert.ok(html.includes('line.me/R/ti/p/@869usyqy'));assert.ok(!html.includes('id="wpadminbar"'));}
   const media=await probeFetch(state.brand.url);assert.equal(media.status,200);assert.equal(media.headers.get('x-wp-codebox-static'),'r2-upload');assert.equal(sha(Buffer.from(await media.arrayBuffer())),state.brand.sha256);
   const style=await probeFetch(origin+'/wp-content/themes/lets-play/style.css');assert.equal(style.status,200);assert.equal(style.headers.get('x-wp-codebox-static'),'r2-wp-content');assert.ok((await style.text()).includes('Version: 0.2.3'));
-  const report={scope:remote?'Remote isolated Free DO/R2 theme probe':'Local workerd / simulated R2 and SQLite DO only',at:new Date().toISOString(),mode:restart?'after-restart':'install',result:'pass',theme:'0.2.3',state,checks};await writeFile(prefix+'-'+report.mode+'.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+  const report={scope:remote?'Remote isolated Free DO/R2 theme probe':'Local workerd / simulated R2 and SQLite DO only',at:new Date().toISOString(),mode:process.argv.includes('--restored-backup')?'independent-restore':restart?'after-restart':'install',result:'pass',theme:'0.2.3',state,checks};await writeFile(prefix+'-'+report.mode+'.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));
 }catch(error){await writeFile(prefix+'-failure.json',JSON.stringify({at:new Date().toISOString(),error:String(error),checks},null,2));throw error;}

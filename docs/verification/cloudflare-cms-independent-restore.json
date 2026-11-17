@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-17T03:56:13.861Z",
+  "result": "pass",
+  "scope": "Independent R2 bucket and DO partition restored from verified local backup; content checks follow separately",
+  "bucket": "playtt-wordpress-restore-probe",
+  "sourceRevision": "786cecdd-1830-40cb-a1c8-1cf5f60d26b1",
+  "targetFreshRevision": "1bc3158c-a1b9-4d7d-b9c6-725a889b4d84",
+  "after": {
+    "schema": "wp-codebox/cloudflare-cutover-status/v1",
+    "siteId": "default",
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "786cecdd-1830-40cb-a1c8-1cf5f60d26b1",
+        "manifestKey": "sites/default/markdown/revisions/786cecdd-1830-40cb-a1c8-1cf5f60d26b1.json",
+        "persistedAt": "2026-11-16T19:26:50.676Z"
+      },
+      "version": 1
+    },
+    "receipt": {
+      "revision": "786cecdd-1830-40cb-a1c8-1cf5f60d26b1",
+      "manifestKey": "sites/default/markdown/revisions/786cecdd-1830-40cb-a1c8-1cf5f60d26b1.json",
+      "persistedAt": "2026-11-16T19:26:50.676Z"
+    },
+    "manifest": {
+      "revision": "786cecdd-1830-40cb-a1c8-1cf5f60d26b1",
+      "manifestKey": "sites/default/markdown/revisions/786cecdd-1830-40cb-a1c8-1cf5f60d26b1.json",
+      "persistedAt": "2026-11-16T19:26:50.676Z"
+    },
+    "fence": {
+      "active": false
+    },
+    "coherent": true
+  }
+}

@@ -5,7 +5,8 @@ import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
 
 assert.ok(process.argv.includes('--remote'), 'Explicit --remote required for the isolated playtt bucket.');
-const root=resolve(import.meta.dirname,'..'), bucket='playtt-wordpress-probe', files=[];
+const restore=process.argv.includes('--restore-target');
+const root=resolve(import.meta.dirname,'..'), bucket=restore?'playtt-wordpress-restore-probe':'playtt-wordpress-probe', files=[];
 for(const [manifestName,fileName] of [
   ['wordpress-runtime-artifact','cloudflare-wordpress-runtime-corpus.zip'],
   ['wordpress-static-artifact','cloudflare-wordpress-static-corpus.bin'],
@@ -23,4 +24,4 @@ for(const file of files) {
     child.on('error',reject); child.on('exit',code=>code===0?accept():reject(Error('Remote provision failed: '+code)));
   });
 }
-await writeFile(resolve(root,'artifacts/playtt-cms-remote-provision.json'),JSON.stringify({at:new Date().toISOString(),bucket,scope:'Three immutable core artifacts only; optional importer excluded',files:files.map(({file,...metadata})=>metadata)},null,2));
+await writeFile(resolve(root,'artifacts/playtt-cms-'+(restore?'restore':'remote')+'-provision.json'),JSON.stringify({at:new Date().toISOString(),bucket,scope:'Three immutable core artifacts only; optional importer excluded',files:files.map(({file,...metadata})=>metadata)},null,2));

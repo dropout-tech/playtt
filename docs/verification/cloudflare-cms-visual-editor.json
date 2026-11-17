@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-17T03:48:51.629Z",
+  "result": "pass",
+  "scope": "Chrome native visual paragraph edit and Save; not revision/restore acceptance",
+  "workerVersion": "18d59eed-b2bb-4e12-bd9a-48496090727a",
+  "pageId": 25,
+  "marker": "【遠端視覺編輯驗收】",
+  "httpStatus": 200,
+  "toast": "Page updated.",
+  "earlierFailure": "Probe access cookie expired; reauthenticated without changing WordPress permissions",
+  "inAppBrowser": "Toolbar loaded but blob canvas did not render; Chrome rendered native blocks",
+  "reloadRetainedMarker": true
+}

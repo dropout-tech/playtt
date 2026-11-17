@@ -6,7 +6,7 @@ const origin = process.argv.find(arg => /^https?:/.test(arg)) || 'http://127.0.0
 assert.ok(['http://127.0.0.1:9428','http://127.0.0.1:9429','https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev'].includes(origin));
 const remote=origin.startsWith('https:'), mode=process.argv.includes('--verify-restart')?'after-restart':'create';
 const credentials=remote?JSON.parse(await readFile('../../../playtt-cms-secrets.json','utf8')):{WORDPRESS_ADMIN_PASSWORD:'playtt-cms-local-only-password'};
-const prefix='artifacts/playtt-cms-'+(remote?'remote':origin.endsWith(':9429')?'local-fresh':'local');
+const prefix='artifacts/playtt-cms-'+(remote?(process.argv.includes('--fresh-remote')?'remote-fresh':'remote'):origin.endsWith(':9429')?'local-fresh':'local');
 const cookies=new Map(), checks=[];
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 async function probeFetch(url, options = {}) {

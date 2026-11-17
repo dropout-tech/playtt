@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-17T03:50:22.587Z",
+  "result": "pass",
+  "scope": "Separate remote restore partition has no canonical WordPress state",
+  "status": {
+    "schema": "wp-codebox/cloudflare-cutover-status/v1",
+    "siteId": "default",
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": null,
+      "version": 0
+    },
+    "receipt": null,
+    "manifest": null,
+    "fence": {
+      "active": false
+    },
+    "coherent": true
+  }
+}

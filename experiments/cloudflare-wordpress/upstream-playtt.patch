@@ -32,7 +32,7 @@ index 5c21141..37755be 100644
  
    async measure<T>(name: string, work: () => Promise<T>, evidence?: Record<string, unknown>): Promise<T> {
 diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudflare/src/worker.ts
-index 598f1dd..c306258 100644
+index 598f1dd..fbf4aa6 100644
 --- a/packages/runtime-cloudflare/src/worker.ts
 +++ b/packages/runtime-cloudflare/src/worker.ts
 @@ -3,11 +3,12 @@ import { decodeZip } from "@php-wasm/stream-compression"
@@ -162,6 +162,15 @@ index 598f1dd..c306258 100644
  add_action( 'markdown_database_integration_flushed', static function ( $changes ) {
  	$json = json_encode( $changes, JSON_UNESCAPED_SLASHES );
  	if ( false === $json || false === file_put_contents( '${MARKDOWN_CHANGES_PATH}', $json, LOCK_EX ) ) {
+@@ -2905,7 +2886,7 @@ function wordPressContentType(path: string): string {
+   } as Record<string, string>)[extension] ?? "application/octet-stream"
+ }
+ 
+-async function serveWordPressStaticAsset(request: Request, bucket: R2Bucket): Promise<Response | null> {
++export async function serveWordPressStaticAsset(request: Request, bucket: R2Bucket): Promise<Response | null> {
+   if (request.method !== "GET" && request.method !== "HEAD") return null
+   const archivePath = wordpressStaticArchivePath(new URL(request.url).pathname)
+   if (!archivePath) return null
 @@ -2951,7 +2932,7 @@ async function serveWordPressStaticAsset(request: Request, bucket: R2Bucket): Pr
  
  function createPhpRuntime() {

@@ -4,7 +4,17 @@
 
 上游：Automattic/wp-codebox，commit `9764022156a61ba7d2b4d8a2196b01ccb33b82b5`，`packages/runtime-cloudflare` 0.12.27；WordPress 7.0.2、PHP-WASM 8.5.8、Wrangler 4.127.1。主題另以 WordPress 7.1.4 / PHP 8.3 驗證，兩者證據分開保存。
 
-## 最新進度：2026-11-17 03:30
+## 最新進度：2026-11-17 12:02
+
+Chrome已完成原生視覺段落編輯、Save200、Page updated及重新載入；重新部署切回原分區後仍保留。短效測試入口到期會404，需在另一分頁重新驗證資格，保留編輯頁後再儲存；這不是WordPress權限繞過。內建瀏覽器的blob畫布未渲染，Chrome可用。核心靜態資產透過原有R2/雜湊驗證在DO佇列外讀取；六個代表資產並行3.17秒、bytes/SHA256與匿名404通過，並非全編輯器載入時間。
+
+全空遠端與獨立還原皆已通過。操作順序是：先在原分區執行`playtt-cms-backup.mjs --remote`；另建`playtt-wordpress-restore-probe`，以`playtt-cms-provision.mjs --remote --restore-target`只預置核心；部署`wrangler.playtt-cms-restore.jsonc`；以`playtt-cms-restore.mjs --check-empty`確認pointer=null/version=0，執行`playtt-cms-check.mjs <remote-origin> --fresh-remote`測首次初始化；以`playtt-cms-restore.mjs --upload-backup`從本機備份複製去重後210物件，再執行`--restore`與`playtt-cms-theme-check.mjs <remote-origin> --verify-restart --restored-backup`。還原腳本必須取得`X-Playtt-Probe-State: restore-v1`才可重設合成測試分區；原分區不變。備份時間點不含其後視覺測試標記，還原有明確檢查。
+
+完成後已部署回`wrangler.playtt-cms.jsonc`原分區。`playtt-cms-editor-check.mjs`另驗證視覺修改與兩筆修訂紀錄、兩筆並行獨立草稿，以及未加品牌標記的1100×937圖片產生原生縮圖、原檔／縮圖SHA256；create與`--verify-restart`實際重部署後保存皆已通過，最後驗證部署06361624-ed24-4784-98a1-3335dbb2da0c。這不證明同頁同欄位自動合併，也不代替原生修訂還原介面驗收。
+
+Workers介面再次確認Free/$0/Current plan，R2顯示當期$0；細節與讀取延遲在`cloudflare-r2-current-usage.json`。正式官網仍為Pages，網站編輯器、原生修訂回復、正式CMS配置與發布整合仍未交付。
+
+## 前次進度：2026-11-17 03:30
 
 目前候選使用 PHP-WASM 8.3.32（`@php-wasm/web-8-3@3.1.46`）。在下方原本依賴安裝完成後，執行 `npm install --no-save --package-lock=false --workspaces=false --ignore-scripts --no-audit --no-fund @php-wasm/web-8-3@3.1.46`，再執行 `node scripts/apply-development-patch.mjs`。新加入的 `playtt-php-compat.ts`、`playtt-probe-access.ts` 放入上游 `src/`；所有 `.mjs` 放 `scripts/`；jsonc仍放套件根目錄。套用新版 `upstream-playtt.patch`。
 

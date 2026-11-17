@@ -1,7 +1,7 @@
 {
-  "at": "2026-11-16T10:49:57.788Z",
+  "at": "2026-11-17T04:00:04.006Z",
   "account": "info@dropout.tw",
-  "observed": "Workers plans: Free $0 — Current plan disabled; up to 10 ms CPU/request; 100000 requests/day",
+  "observed": "Workers plans: Free $0 — Current plan; Paid $5 + usage is available only through Upgrade",
   "url": "https://dash.cloudflare.com/3baadbd4abd9fd63c7f7e51664b26f67/workers/plans",
   "changed": false
 }
