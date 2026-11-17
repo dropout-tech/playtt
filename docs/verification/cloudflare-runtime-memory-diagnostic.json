@@ -1,0 +1,339 @@
+{
+  "at": "2026-11-17T06:22:16.486084+00:00",
+  "result": "not-accepted",
+  "scope": "Optional diagnostic candidate retained memory resets after smaller WASM growth increments",
+  "events": [
+    {
+      "at": "2026-11-17T06:13:56.506Z",
+      "outcome": "ok",
+      "cpuTime": 2497,
+      "wallTime": 5218,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "d223c010-65b3-48f5-abb9-dc000e11c9fc",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 67108864,
+          "fileBytes": 37829307,
+          "files": 973
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 96665600,
+          "fileBytes": 38173371,
+          "files": 973
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:14:02.136Z",
+      "outcome": "ok",
+      "cpuTime": 1950,
+      "wallTime": 12507,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "d223c010-65b3-48f5-abb9-dc000e11c9fc",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 96665600,
+          "fileBytes": 38173371,
+          "files": 973
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 115998720,
+          "fileBytes": 38165779,
+          "files": 973
+        },
+        {
+          "stage": "after-persist",
+          "heapBytes": 115998720,
+          "fileBytes": 38167408,
+          "files": 973
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:14:15.554Z",
+      "outcome": "ok",
+      "cpuTime": 2554,
+      "wallTime": 3826,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "d223c010-65b3-48f5-abb9-dc000e11c9fc",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 67108864,
+          "fileBytes": 37829500,
+          "files": 973
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 115998720,
+          "fileBytes": 38165742,
+          "files": 972
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:14:19.830Z",
+      "outcome": "ok",
+      "cpuTime": 2135,
+      "wallTime": 2934,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "d223c010-65b3-48f5-abb9-dc000e11c9fc",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 67108864,
+          "fileBytes": 37829500,
+          "files": 973
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 96665600,
+          "fileBytes": 38173564,
+          "files": 973
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:14:23.168Z",
+      "outcome": "ok",
+      "cpuTime": 2659,
+      "wallTime": 11702,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "d223c010-65b3-48f5-abb9-dc000e11c9fc",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 67108864,
+          "fileBytes": 37829500,
+          "files": 973
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 115998720,
+          "fileBytes": 35663556,
+          "files": 895
+        },
+        {
+          "stage": "after-persist",
+          "heapBytes": 115998720,
+          "fileBytes": 35665185,
+          "files": 895
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:14:35.039Z",
+      "outcome": "exception",
+      "cpuTime": 0,
+      "wallTime": 14585,
+      "executionModel": "stateless",
+      "version": "d223c010-65b3-48f5-abb9-dc000e11c9fc",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:14:35.309Z",
+      "outcome": "exception",
+      "cpuTime": 3078,
+      "wallTime": 14311,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "d223c010-65b3-48f5-abb9-dc000e11c9fc",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 67108864,
+          "fileBytes": 35319455,
+          "files": 894
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 115998720,
+          "fileBytes": 35593965,
+          "files": 893
+        },
+        {
+          "stage": "after-persist",
+          "heapBytes": 115998720,
+          "fileBytes": 35595594,
+          "files": 893
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:16:50.465Z",
+      "outcome": "ok",
+      "cpuTime": 2290,
+      "wallTime": 4048,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "fc2b88ef-df4c-461b-bb0d-8af4137c2d79",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 67108864,
+          "fileBytes": 35319455,
+          "files": 894
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 94961664,
+          "fileBytes": 35663519,
+          "files": 894
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:16:54.970Z",
+      "outcome": "ok",
+      "cpuTime": 1419,
+      "wallTime": 10383,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "fc2b88ef-df4c-461b-bb0d-8af4137c2d79",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 94961664,
+          "fileBytes": 35663519,
+          "files": 894
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 98631680,
+          "fileBytes": 35655734,
+          "files": 894
+        },
+        {
+          "stage": "after-persist",
+          "heapBytes": 98631680,
+          "fileBytes": 35657363,
+          "files": 894
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:17:05.978Z",
+      "outcome": "ok",
+      "cpuTime": 1459,
+      "wallTime": 1591,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "fc2b88ef-df4c-461b-bb0d-8af4137c2d79",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 98631680,
+          "fileBytes": 35657363,
+          "files": 894
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 111214592,
+          "fileBytes": 35657326,
+          "files": 893
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:17:06.713Z",
+      "outcome": "ok",
+      "cpuTime": 653,
+      "wallTime": 723,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "fc2b88ef-df4c-461b-bb0d-8af4137c2d79",
+      "exceptions": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 111214592,
+          "fileBytes": 35657326,
+          "files": 893
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 111214592,
+          "fileBytes": 35657326,
+          "files": 893
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:17:07.360Z",
+      "outcome": "exception",
+      "cpuTime": 1384,
+      "wallTime": 11052,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "fc2b88ef-df4c-461b-bb0d-8af4137c2d79",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 111214592,
+          "fileBytes": 35657326,
+          "files": 893
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 111214592,
+          "fileBytes": 35587772,
+          "files": 892
+        },
+        {
+          "stage": "after-persist",
+          "heapBytes": 111214592,
+          "fileBytes": 35587772,
+          "files": 892
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:17:08.772Z",
+      "outcome": "exception",
+      "cpuTime": 1,
+      "wallTime": 11068,
+      "executionModel": "stateless",
+      "version": "fc2b88ef-df4c-461b-bb0d-8af4137c2d79",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    }
+  ]
+}

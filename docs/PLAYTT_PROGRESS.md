@@ -1,5 +1,14 @@
 # PLAYTT 執行進度
 
+## 目前結論（2026-11-17 14:21）
+
+正式playtt.tw六頁與LINE入口再次唯讀確認正常，仍由Pages服務，原創視覺保留。全Cloudflare WordPress候選尚未通過穩定度驗收：小幅WASM記憶體擴充仍在原生樣式儲存後重置，不將成功的較小測試推論為完整可用。詳細證據與可重現候選見experiments/cloudflare-wordpress/memory-investigation/。
+
+私人還原區已保存294個索引項目的獨立一致性備份；R2確認77個語言檔、管理員zh_TW、初始化外掛已移除、全域樣式覆寫已清空。然而HTTP操作回應失敗，語系及編輯流程不算完整通過。測試發布器目前paused以免重試；這不是暫停整體目標，正式站及原主要資料區未更動。
+
+已提出零新增費用的架構選擇：先交付本機WordPress＋Cloudflare官網，或保留官網並繼續雲端後台研究。尚未收到選擇，不擅自更換架構或啟用付費。一般Workers付費方案也有128MB記憶體限制，不能當成已驗證解方。官方來源：https://developers.cloudflare.com/workers/platform/limits/#memory 。
+
+
 ## 最新進度（2026-11-17 14:00，原生樣式及記憶體複驗）
 
 原生全域樣式儲存、重新載入及實際重新部署後保留已驗證，global-styles42維持墨色設定。先前資料遺失的原因是GET建立的主題關聯沒有進入最後一次請求的變更清單；提交時改為完整、有限額的canonical檔案清單，仍只上傳hash改變的檔案。
