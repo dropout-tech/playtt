@@ -1,6 +1,15 @@
 # PLAYTT 執行進度
 
-## 最新狀態（2026-11-17，安全更新驗收）
+## 最新狀態（2026-11-17 13:14，自動發布候選）
+
+- 本機及遠端 restore-v1 自動發布通過：頁面編輯、撤回草稿、重新發布、共用頁尾同步六頁。alarm 每次產生一頁，完整版本才切換；無閒置 Cron。
+- 本機故障注入通過：隔離 emulator 的核心檔暫時不可用時，公開版本保持上一版；還原後重試成功。未刪除遠端核心物件。
+- 遠端發現 DO 快取刪除不支援，已以發布版本隔離快取修正；公開資產補正 MIME 並阻擋 PHP 原始碼。遠端公開預覽六頁／20資產／38請求通過，CMS重新部署後仍讀到同一完整發布版本。
+- CMS目前部署 ef8e840e-9db4-4d6c-a995-fd55ee0384a1，使用還原桶／分區。公開預覽 https://playtt-publication-preview.muzhi-garden-platform.workers.dev ，部署26d9657b-5559-44e5-8e48-64e1fadff1fe，noindex；正式 playtt.tw 仍為 Pages。主要分區資料未變更。
+- 可重現來源在 `experiments/cloudflare-wordpress/automatic-publication/`，證據 `cloudflare-publication-local.json`、`cloudflare-publication-recovery-local.json`、`cloudflare-publication-remote.json`、`cloudflare-public-reader-remote.json`。
+- 下一步：原生導覽／全域樣式、乾淨正式後台與登入、正式網域發布及備份回滾驗收。目標active，沒有宣稱整體完成。
+
+## 前次狀態（2026-11-17，安全更新驗收）
 
 - 經典原生修訂畫面成功還原關於頁到revision30；REST再讀確認測試文字移除並新增revision37。新版修訂面板曾持續載入，仍需在新版核心複核。
 - 網站編輯器成功修改共用頁尾，顯示Template part updated，重新載入保留內容。證據 `cloudflare-cms-native-editor.json`；導覽與全域樣式的儲存驗收仍待。

@@ -1,0 +1,415 @@
+{
+  "at": "2026-11-17T04:52:01.297Z",
+  "result": "pass",
+  "scope": "Local alarm-driven publication, page edit, unpublish, republish, shared template-part propagation and bounded public reader",
+  "checks": [
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2715
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 3860
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 964
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1326
+    },
+    {
+      "path": "/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1018
+    },
+    {
+      "path": "/about/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 904
+    },
+    {
+      "path": "/class/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 688
+    },
+    {
+      "path": "/coaches/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 718
+    },
+    {
+      "path": "/locations/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 704
+    },
+    {
+      "path": "/partner/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 734
+    },
+    {
+      "path": "/?phase=operator-publish",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 149
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 7
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 17
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1378
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 8
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1981
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1974
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 104
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 17
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2668
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1959
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1949
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1936
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2050
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2029
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 85
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 12
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 7
+    },
+    {
+      "path": "/__playtt-published/wp-admin/",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 8
+    },
+    {
+      "path": "/__playtt-published/?phase=r2-state",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 4
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 401,
+      "wallMs": 7
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2757
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 8
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1905
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1890
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 83
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 16
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1944
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts/lets-play%2F%2Ffooter",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1500
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1926
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1906
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1948
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1940
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2008
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2139
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 87
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6
+    },
+    {
+      "path": "/__playtt-published/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 16
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 14
+    },
+    {
+      "path": "/__playtt-published/class/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/__playtt-published/coaches/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 14
+    },
+    {
+      "path": "/__playtt-published/locations/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/__playtt-published/partner/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts/lets-play%2F%2Ffooter",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2689
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1878
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1942
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1969
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1992
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1953
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1896
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 83
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6
+    }
+  ]
+}

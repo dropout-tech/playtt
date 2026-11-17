@@ -4,6 +4,12 @@
 
 `wordpress/lets-play` 是可安裝的 WordPress 區塊主題。`cloudflare/public` 是匿名公開頁面的靜態匯出，不包含 WordPress 後台、PHP 或資料庫。免費隔離WordPress已通過原生視覺段落編輯、重部署保存、全空初始化與獨立R2/DO備份還原；正式後台與公開站發布整合仍待，不能把靜態發布視為全部完成。
 
+## 自動發布候選操作界線
+
+私人還原區已接上儲存後自動發布：一般編輯約數十秒，共用頁尾需重建六頁，需更久；完整版本才對訪客切換。草稿不會出現在公開版本。noindex 預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。這還不是正式後台交付，正式官網目前維持 Pages。
+
+維運端點的 pause／resume／retry 需要 operator 身分，密鑰不放前端。連續六次無進展會停止並保留原公開版本；先修復根因，再手動重試。重現與測試來源見 `experiments/cloudflare-wordpress/automatic-publication/README.md`。本機故障測試只操作 emulator，不可直接改成遠端物件刪除。
+
 ## 安裝與編輯
 
 1. 在 WordPress「外觀 → 佈景主題 → 安裝佈景主題」上傳主題 ZIP 並啟用。
