@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-17T09:34:49.384Z",
+  "bucket": "playtt-wordpress-retirement-audit",
+  "backupRevision": "9ab986fc-ac85-4fe5-85e4-0279bccaea03",
+  "result": "pass",
+  "scope": "Verified backup copied into separate private R2 audit bucket; fresh target DO remains empty",
+  "uploaded": 295,
+  "coreObjects": 3,
+  "archiveSha256": "85594bc9bd0c478390a892415a9edb3715a2cb8526b262dc0f6bf40c4aa98268"
+}

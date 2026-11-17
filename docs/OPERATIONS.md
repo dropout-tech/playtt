@@ -6,7 +6,7 @@
 
 ## 自動發布候選操作界線
 
-私人還原區最新a33083f3已通過410次混合讀取、原生auto-draft跨重建保存及匿名拒絕，後續七筆發布批次亦通過。執行器在已保存請求之間釋放，下一請求可能有冷啟動等待；上游400次保護保留。新備份已校驗，但目前候選的獨立還原、長期原生編輯與舊auto-draft清理仍待。私人發布器paused，noindex預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。正式playtt.tw依使用者決策保持Pages，暫不切換後台。
+私人還原區最新a33083f3已通過410次混合讀取、原生auto-draft跨重建保存及匿名拒絕，後續七筆發布批次亦通過。執行器在已保存請求之間釋放，下一請求可能有冷啟動等待；上游400次保護保留。最新295索引備份已在獨立Worker/R2/DO還原並讀回通過，15個媒體雜湊相符。新環境首次登入提交約33.8秒；長期原生編輯、延遲與舊auto-draft清理仍待。私人發布器paused，noindex預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。正式playtt.tw依使用者決策保持Pages，暫不切換後台。
 
 維運端點的 pause／resume／retry 需要 operator 身分，密鑰不放前端。連續六次無進展會停止並保留原公開版本；先修復根因，再手動重試。重現與測試來源見 `experiments/cloudflare-wordpress/automatic-publication/README.md`。本機故障測試只操作 emulator，不可直接改成遠端物件刪除。
 
@@ -89,7 +89,7 @@ Gandi 保留註冊及郵件服務。切換前完整區域檔有 14 筆服務記�
 
 本機 Playground 關閉後，備份整個 `.runtime/.../wordpress`，包含 SQLite、uploads、主題和設定；測試已驗證複製到獨立目錄後還原內容與媒體。此資料包含登入資訊，不能提交到公開 Git 或放入 `cloudflare/public`。
 
-先前候選的R2完整版本／協調器備份與另一分區還原已實測；最新版另保存295個索引項目的校驗備份，SHA256為85594bc9bd0c478390a892415a9edb3715a2cb8526b262dc0f6bf40c4aa98268。前版曾在386次讀取後記憶體重置；最新a33083f3已通過410次讀取及發布回歸，但這份新備份的獨立還原與長期營運仍待驗。使用者已選擇繼續研究全Cloudflare免費後台，正式站暫不切換。生產備份與還原須依最終架構再驗收。
+先前候選的R2完整版本／協調器備份與另一分區還原已實測；最新版另保存295個索引項目的校驗備份，SHA256為85594bc9bd0c478390a892415a9edb3715a2cb8526b262dc0f6bf40c4aa98268。前版曾在386次讀取後記憶體重置；最新a33083f3已通過410次讀取及發布回歸，且這份備份已在私人playtt-wp-free-restore-audit的獨立R2/DO還原通過，頁面、導覽、樣式與15個媒體檔一致。原資料內嵌網址保持原字串；長期營運與改網域的內容網址遷移仍待驗。詳見experiments/cloudflare-wordpress/runtime-retirement/RESTORE-AUDIT.md。使用者已選擇繼續研究全Cloudflare免費後台，正式站暫不切換。生產備份與還原須依最終架構再驗收。
 
 ## Zeabur 清除順序
 
