@@ -1,0 +1,88 @@
+{
+  "at": "2026-11-17T07:25:25.649Z",
+  "result": "pass",
+  "scope": "Restore only test-modified pages from exact pre-test content; remove only owned disposable test pages; verify unchanged footer and six marker-free published snapshots; publisher remains paused",
+  "changes": [
+    {
+      "id": 70,
+      "action": "remove-owned-test-page"
+    }
+  ],
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25?context=edit",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/26?context=edit",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/70?force=true",
+      "method": "DELETE",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/class/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/coaches/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/locations/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/partner/",
+      "method": "GET",
+      "status": 200
+    }
+  ]
+}

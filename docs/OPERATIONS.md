@@ -6,7 +6,7 @@
 
 ## 自動發布候選操作界線
 
-私人還原區曾通過儲存後自動發布、草稿撤回與共用頁尾更新測試；完整版本才對訪客切換。後續原生樣式及繁中操作出現記憶體重置，後續追蹤分配器候選通過繁中與原生導覽編輯，但發布積壓的完整回歸仍待；目前實驗發布器paused，僅限研究，不應用於營運。noindex 預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。這還不是正式後台交付，正式官網目前維持 Pages。
+私人還原區曾通過儲存後自動發布、草稿撤回與共用頁尾更新測試；完整版本才對訪客切換。後續原生樣式及繁中操作出現記憶體重置，後續追蹤分配器候選通過繁中與原生導覽編輯，發布合併候選已清空舊積壓，但建立頁面仍觸發記憶體重置；已回復測試內容。目前實驗發布器paused，僅限研究，不應用於營運。noindex 預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。這還不是正式後台交付，正式官網目前維持 Pages。
 
 維運端點的 pause／resume／retry 需要 operator 身分，密鑰不放前端。連續六次無進展會停止並保留原公開版本；先修復根因，再手動重試。重現與測試來源見 `experiments/cloudflare-wordpress/automatic-publication/README.md`。本機故障測試只操作 emulator，不可直接改成遠端物件刪除。
 

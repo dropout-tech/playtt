@@ -1,0 +1,105 @@
+--- a/packages/runtime-cloudflare/src/worker.ts
++++ b/packages/runtime-cloudflare/src/worker.ts
+@@ -1,4 +1,5 @@
+ import { wordPressContentType } from './asset-content-type.js';
++import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+ import { decodeZip } from "@php-wasm/stream-compression"
+ import { bootWordPressAndRequestHandler, type WordPressInstallMode } from "@wp-playground/wordpress"
+@@ -1080,8 +1081,8 @@
+ // Durable Object alarm. There is no external queue or client-supplied job key.
+ // Keep the upstream exact commit receipt, lease and atomic promotion checks.
+ export async function drainPlayttPublication(env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext): Promise<PublicationInvocationEvidence | null> {
+-  const jobs = await env.WORDPRESS_STATE_BUCKET.list({ prefix: siteStorageKeys(site).publicationJobPrefix + '/', limit: 1 })
+-  const jobKey = jobs.objects[0]?.key
++  const jobs = await env.WORDPRESS_STATE_BUCKET.list({ prefix: siteStorageKeys(site).publicationJobPrefix + '/', limit: MAX_PLAYTT_PUBLICATION_BATCH })
++  let jobKey = jobs.objects[0]?.key
+   if (!jobKey) return null
+   let lease: RevisionLease
+   try { lease = await coordinator.acquire() }
+@@ -1090,10 +1091,22 @@
+     return { schema: 'wp-codebox/cloudflare-publication/v1', status: 'pending', jobKey }
+   }
+   try {
++    const current = await readCurrentPublication(env.WORDPRESS_STATE_BUCKET, site)
++    const candidates = await Promise.all(jobs.objects.map(async ({ key }) => {
++      let job: PublicationJob
++      try { job = await readPublicationJob(env.WORDPRESS_STATE_BUCKET, key, site) }
++      catch { throw new Error('Publication outbox entry is invalid or unavailable.') }
++      const receipt = await coordinator.committed(job.coordinatorVersion)
++      return { key, version: job.coordinatorVersion, changes: job.changes, committed: receipt?.revision === job.canonical.revision && receipt.manifestKey === job.canonical.manifestKey && receipt.persistedAt === job.canonical.persistedAt }
++    }))
++    const batch = selectPublicationBatch(candidates, current?.publication.canonicalVersion ?? 0)
++    if (!batch) return null
++    jobKey = batch.key
++    lease = await coordinator.renew(lease)
+     // This DO serializes editor and alarm requests. Reuse its one runtime for
+     // the exact committed revision; rebuilding WASM for every route causes
+     // memory pressure before the platform collects disposed instances.
+-    const result = await drainPublicationJobWhileLeased(env, coordinator, site, jobKey, async () => { lease = await coordinator.renew(lease) }, undefined, true)
++    const result = await drainPublicationJobWhileLeased(env, coordinator, site, jobKey, async () => { lease = await coordinator.renew(lease) }, undefined, true, batch.changes)
+     if (!result) throw new Error('Publication outbox entry is invalid or unavailable.')
+     return result
+   } finally { await abortLease(coordinator, site.origin, lease) }
+@@ -1116,7 +1129,7 @@
+   }
+ }
+ 
+-async function drainPublicationJobWhileLeased(env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext, jobKey: string, renewLease: () => Promise<void>, operations?: D1OperationRepository, serializedRuntimeReuse = false): Promise<PublicationInvocationEvidence | null> {
++async function drainPublicationJobWhileLeased(env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext, jobKey: string, renewLease: () => Promise<void>, operations?: D1OperationRepository, serializedRuntimeReuse = false, combinedChanges?: PublicationChanges): Promise<PublicationInvocationEvidence | null> {
+   await assertActiveAllocation(env, site)
+   // A Queue body is an authority-bearing immutable job key, never permission to drain another job.
+   let exact: PublicationJob
+@@ -1160,8 +1173,12 @@
+       await env.WORDPRESS_STATE_BUCKET.delete([job.key, publicationProgressObjectKey(job, site)])
+       return { schema: "wp-codebox/cloudflare-publication/v1", status: "stale", jobKey: job.key }
+     }
+-    if (!progress.plan) {
+-      progress = { ...progress, plan: publicationPlan(current.publication, job.changes) }
++    const combinedPlan = combinedChanges ? publicationPlan(current.publication, combinedChanges) : undefined
++    if (!progress.plan || (combinedPlan && JSON.stringify(progress.plan) !== JSON.stringify(combinedPlan))) {
++      // A newer batch may subsume partially rendered jobs. Restart its plan,
++      // reuse only exact canonical page artifacts, and retain the old complete
++      // public pointer until every route in this combined plan is ready.
++      progress = { schema: PUBLICATION_PROGRESS_SCHEMA, next: 0, rendered: [], plan: combinedPlan ?? publicationPlan(current.publication, job.changes) }
+       await renewLease()
+       await writePublicationProgress(env.WORDPRESS_STATE_BUCKET, job, progress, site)
+     }
+--- /dev/null
++++ b/packages/runtime-cloudflare/src/playtt-publication-batch.ts
+@@ -0,0 +1,35 @@
++export const MAX_PLAYTT_PUBLICATION_BATCH = 32;
++export interface PublicationChanges { all: boolean; upsert: string[]; remove: string[] }
++export interface PublicationCandidate {
++  key: string;
++  version: number;
++  committed: boolean;
++  changes: PublicationChanges;
++}
++
++// Input is the bounded oldest-first R2 outbox window, verified against exact
++// coordinator receipts while holding the revision lease. Never cross an
++// uncommitted job: let the existing orphan/pending path resolve it first.
++export function selectPublicationBatch(jobs: PublicationCandidate[], publishedVersion: number): { key: string; changes?: PublicationChanges } | null {
++  if (!jobs.length) return null;
++  if (jobs.length > MAX_PLAYTT_PUBLICATION_BATCH || jobs.some((job, i) => !Number.isSafeInteger(job.version) || job.version < 1 || (i > 0 && job.version <= jobs[i - 1].version))) {
++    throw new Error('Publication batch must be bounded and strictly ordered.');
++  }
++  const first = jobs[0];
++  if (!first.committed || first.version <= publishedVersion) return { key: first.key };
++  const operations = new Map<string, 'upsert' | 'remove'>();
++  let all = false, key = first.key;
++  for (const job of jobs) {
++    if (!job.committed) break;
++    key = job.key;
++    all ||= job.changes.all;
++    // A job's existing publicationPlan gives upsert precedence on overlap.
++    for (const route of job.changes.remove) operations.set(route, 'remove');
++    for (const route of job.changes.upsert) operations.set(route, 'upsert');
++  }
++  return { key, changes: {
++    all,
++    upsert: [...operations].filter(([, operation]) => operation === 'upsert').map(([route]) => route).sort(),
++    remove: [...operations].filter(([, operation]) => operation === 'remove').map(([route]) => route).sort(),
++  } };
++}
