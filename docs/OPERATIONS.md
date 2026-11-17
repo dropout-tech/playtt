@@ -6,7 +6,7 @@
 
 ## 自動發布候選操作界線
 
-私人還原區已接上儲存後自動發布：一般編輯約數十秒，共用頁尾需重建六頁，需更久；完整版本才對訪客切換。草稿不會出現在公開版本。noindex 預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。這還不是正式後台交付，正式官網目前維持 Pages。
+私人還原區曾通過儲存後自動發布、草稿撤回與共用頁尾更新測試；完整版本才對訪客切換。後續原生樣式及繁中操作出現記憶體重置，後續追蹤分配器候選通過繁中與原生導覽編輯，但發布積壓的完整回歸仍待；目前實驗發布器paused，僅限研究，不應用於營運。noindex 預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。這還不是正式後台交付，正式官網目前維持 Pages。
 
 維運端點的 pause／resume／retry 需要 operator 身分，密鑰不放前端。連續六次無進展會停止並保留原公開版本；先修復根因，再手動重試。重現與測試來源見 `experiments/cloudflare-wordpress/automatic-publication/README.md`。本機故障測試只操作 emulator，不可直接改成遠端物件刪除。
 
@@ -17,6 +17,14 @@
 3. 在「頁面」修改標題、文案、課程價格、教練、據點和圖片。圖片已進入媒體庫，不依賴保留同一個主題資料夾。
 4. 在「外觀 → 編輯器」修改共用頁首、導覽與頁尾；在樣式中使用已提供的品牌色票。
 5. 儲存草稿、預覽，再發布。需要回復時使用「修訂版本」。新版主題不會自動改寫已編輯頁面，更新內容時須由編輯者套用新區塊版型或手動修改。
+
+## 第一次編輯導覽
+
+在新安裝主題中，導覽連結先跟著頁首範本提供，尚未另存成導覽選單。因此「導覽列」總覽初次可能沒有選單，這不代表主題缺少連結。
+
+到「外觀 → 編輯器 → 區塊版面配置 → 頁首 → 品牌頁首」，點選連結後修改右側「文字」與「連結至」。第一次修改會建立原生WordPress導覽選單；儲存確認面板應同時勾選「品牌頁首」與「選單」。完成後重新載入確認，再透過「導覽列」管理已建立的選單。網站頁面的內容則在「頁面」編輯；版型清單中的主題版型是建立頁面的來源，不是已匯入頁面的編輯入口。
+
+此流程已在私人Cloudflare繁中原生編輯器完成修改、儲存及重載驗證；正式官網仍為獨立Pages版本。
 
 ## 本機重現
 
@@ -53,11 +61,11 @@
 
 使用者已明確授權 GitHub 串接，範圍限定本儲存庫。已沿用既有 Cloudflare GitHub 連線，僅選取 playtt 作為專案來源，沒有擴大其他儲存庫權限。Pages 建置只使用 Node 內建模組；[官方支援 SKIP_DEPENDENCY_INSTALL](https://developers.cloudflare.com/pages/configuration/build-image/#skip-dependency-install)，用來避免根目錄舊 React Yarn lock 影響這次靜態發布。
 
-`wrangler.jsonc` 保留可選 Workers 靜態部署設定；Pages 因其未指定 pages_build_output_dir 而略過，使用儀表板設定。CLI 已登入指定 info 帳號；2026-11-17 使用者授權 Scripts/Routes 後已部署隔離 boot 探針，沒有加入 Tail 權限。正式官網仍為 Pages；完整動態後台未發布到正式網域。
+`wrangler.jsonc` 保留可選 Workers 靜態部署設定；Pages 因其未指定 pages_build_output_dir 而略過，使用儀表板設定。CLI 已登入指定 info 帳號；2026-11-17 已建立本專案獨立設定，包含使用者已授權的 Workers Scripts/Routes Write，以及必要的 Tail Read／Pages Write。以 XDG_CONFIG_HOME 指向本機 playtt 專案登入目錄，避免改動其他工作的共用登入；私有登入檔不可提交。正式官網仍為 Pages；完整動態後台未發布到正式網域。
 
 ## DNS 切換與復原
 
-目前正式內容為主題 0.2.3，commit `55dc518`，固定快照 https://32e92256.playtt-brand-preview.pages.dev 。主題 ZIP SHA256 `471aaf78e1d4a15d1357ec9500a067bcff27a9a4d803f7f8dcea48a00249a79e`。下方舊版快照仍可用作回滾。
+目前正式內容為主題 0.2.3；已驗證的內容快照為commit `55dc518`（後續文件提交可觸發內容相同的新部署），固定快照 https://32e92256.playtt-brand-preview.pages.dev 。主題 ZIP SHA256 `471aaf78e1d4a15d1357ec9500a067bcff27a9a4d803f7f8dcea48a00249a79e`。下方舊版快照仍可用作回滾。
 
 2026-11-16 PageSpeed 行動量測：首頁 94、課程 99，兩頁 CLS 0；無障礙、最佳做法、SEO 自動分數均 100。這是單次實驗室結果，不是完整人工無障礙驗收或真實使用者核心指標。首頁仍有約 3 秒 LCP，後續可用響應式圖片進一步減少傳輸。詳細報告連結及比較在 `docs/verification/pagespeed-after.json`。
 
@@ -81,7 +89,7 @@ Gandi 保留註冊及郵件服務。切換前完整區域檔有 14 筆服務記�
 
 本機 Playground 關閉後，備份整個 `.runtime/.../wordpress`，包含 SQLite、uploads、主題和設定；測試已驗證複製到獨立目錄後還原內容與媒體。此資料包含登入資訊，不能提交到公開 Git 或放入 `cloudflare/public`。
 
-遠端 WordPress 採用哪種持久化服務尚未定案；生產備份與還原必須隨架構實測，不能套用本機複製結果冒充遠端結果。
+遠端候選的R2完整版本／協調器備份與另一分區還原已實測；最新私人還原區另保存294個索引項目的校驗備份。這些驗收不代表正式後台已交付：候選仍有記憶體重置；使用者已選擇繼續研究全Cloudflare免費後台，正式站暫不切換。生產備份與還原須依最終架構再驗收。
 
 ## Zeabur 清除順序
 

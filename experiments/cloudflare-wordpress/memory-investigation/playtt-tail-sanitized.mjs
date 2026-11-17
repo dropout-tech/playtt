@@ -1,6 +1,8 @@
 import {spawn} from 'node:child_process';
 import {appendFile} from 'node:fs/promises';
-const output='artifacts/playtt-publication-memory-observation.jsonl';
+const label=process.argv.find(arg=>arg.startsWith('--label='))?.slice(8);
+if(label&&!/^[a-z0-9-]+$/.test(label))throw Error('Invalid diagnostic label');
+const output='artifacts/playtt-'+(label||'publication')+'-memory-observation.jsonl';
 const child=spawn(process.execPath,['node_modules/wrangler/bin/wrangler.js','tail','--config','wrangler.playtt-cms-publish-restore.jsonc','--format','json'],{stdio:['ignore','pipe','pipe']});
 let buffer='',depth=0,quoted=false,escaped=false,start=-1,index=0;
 child.stdout.on('data',chunk=>{
@@ -12,7 +14,7 @@ child.stdout.on('data',chunk=>{
   if(c==='"')quoted=true;else if(c==='{')depth++;else if(c==='}')depth--;
   if(depth===0){
    try {const raw=JSON.parse(buffer.slice(start,index+1));const safe={at:new Date(raw.eventTimestamp||Date.now()).toISOString(),outcome:raw.outcome,cpuTime:raw.cpuTime,wallTime:raw.wallTime,executionModel:raw.executionModel,entrypoint:raw.entrypoint,version:raw.scriptVersion?.id,exceptions:(raw.exceptions||[]).map(e=>({name:e.name,message:e.message}))};
-    const memory=[];for(const log of raw.logs||[])for(const message of log.message||[]){try{const m=typeof message==='string'?JSON.parse(message):message;if(m?.schema==='playtt-runtime-memory/v1')memory.push({stage:m.stage,heapBytes:m.heapBytes,fileBytes:m.fileBytes,files:m.files});}catch{}}if(memory.length){safe.memory=memory;console.log(JSON.stringify({at:safe.at,memory}));}
+    const memory=[];for(const log of raw.logs||[])for(const message of log.message||[]){try{const m=typeof message==='string'?JSON.parse(message):message;if(m?.schema==='playtt-runtime-memory/v1')memory.push({stage:m.stage,heapBytes:m.heapBytes,fileBytes:m.fileBytes,files:m.files,heapAliasedFileBytes:m.heapAliasedFileBytes,categories:m.categories?Object.fromEntries(Object.entries(m.categories).filter(([k,v])=>['temporary','runtime','wordpress-core','plugins-and-theme','canonical','languages','uploads'].includes(k)&&Number.isFinite(v))):undefined,phpMemory:m.phpMemory?Object.fromEntries(Object.entries(m.phpMemory).filter(([k,v])=>['used','allocated','peakUsed','peakAllocated'].includes(k)&&Number.isFinite(v))):undefined});}catch{}}if(memory.length){safe.memory=memory;console.log(JSON.stringify({at:safe.at,memory}));}
     appendFile(output,JSON.stringify(safe)+'\n').catch(()=>{});if(raw.outcome!=='ok')console.log(JSON.stringify(safe));
    }catch{console.log('Unparsed tail event omitted');}
    buffer=buffer.slice(index+1);index=-1;start=-1;

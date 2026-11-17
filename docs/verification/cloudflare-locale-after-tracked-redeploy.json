@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-17T06:51:27.715Z",
+  "result": "pass",
+  "scope": "After redeployment: official zh_TW admin and user locale persist without the one-time initializer plugin",
+  "remote": true,
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 4120
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 11170
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 1650
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 1311
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/users/me",
+      "status": 200,
+      "wallMs": 2852
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/plugins",
+      "status": 200,
+      "wallMs": 1093
+    }
+  ]
+}

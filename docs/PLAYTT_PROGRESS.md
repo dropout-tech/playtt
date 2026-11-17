@@ -1,12 +1,28 @@
 # PLAYTT 執行進度
 
+## 最新研究驗收（2026-11-17 15:10）
+
+使用者已選擇繼續全Cloudflare免費WordPress研究；正式Pages維持現況，暫不切換後台。追蹤分配器候選755bdb73通過私人遠端25請求、兩輪全域樣式儲存／讀回／還原，繁中控制台及編輯器在重部署後正常。原生導覽「據點→上課據點」儲存重載通過，已還原「據點」並再次重載確認。
+
+固定本機工作負載的WASM配置由115.4MB降至74.8MB；相同binary的60次循環參考清理及PHP上限拒絕後恢復通過。遠端觀察758事件，結果{"ok": 752, "canceled": 6}，無例外，最高WASM配置76,218,368 bytes。這不是整個isolate實體用量，也不是持續營運穩定度保證。
+
+發布回歸在開始前等待舊工作清空360秒逾時，新的編輯／草稿／重發回歸尚未執行。手動完整刷新另回409，未切換預覽指標；匿名GET讀到舊快照，未建立所需目前canonical頁面。私人發布器已paused；下一步處理積壓合併與完整發布回歸。正式六頁及預覽仍200。
+
+15:03私人還原區備份通過294個索引項目校驗，SHA256 e973ec543d3b25d50d18de3d4be1ddccb8b54b7246ec1b3a06e9c0fac1682ba4；這次新備份尚未另做還原演練。證據見docs/verification/cloudflare-tracked-*、cloudflare-navigation-tracked-native.json與cloudflare-publication-tracked-backlog-timeout.json。整體目標active，尚未完成營運交付。
+
+## 研究方向與新候選（2026-11-17 14:58）
+
+使用者已選擇繼續研究全Cloudflare免費後台；正式Pages維持現況，暫不切換。新追蹤分配器候選755bdb73將固定本機工作負載的WASM配置由115.4MB降低至74.8MB。相同WASM連續60次循環參考清理測試通過；PHP16MiB上限拒絕32MiB配置後，下一請求可正常執行。
+
+私人restore-v1的25次請求（兩輪樣式儲存／讀回／還原）通過，繁中控制台與原生網站編輯器正常，77個語言檔及admin語系在重部署後保留。自動發布正在處理先前暫停期間累積的工作，原生導覽保存與發布回歸仍待本輪完成。這些結果不代表完整營運驗收。新舊候選、固定版本與比較證據均保存在memory-investigation目錄；正式網站沒有切換。
+
 ## 目前結論（2026-11-17 14:21）
 
 正式playtt.tw六頁與LINE入口再次唯讀確認正常，仍由Pages服務，原創視覺保留。全Cloudflare WordPress候選尚未通過穩定度驗收：小幅WASM記憶體擴充仍在原生樣式儲存後重置，不將成功的較小測試推論為完整可用。詳細證據與可重現候選見experiments/cloudflare-wordpress/memory-investigation/。
 
 私人還原區已保存294個索引項目的獨立一致性備份；R2確認77個語言檔、管理員zh_TW、初始化外掛已移除、全域樣式覆寫已清空。然而HTTP操作回應失敗，語系及編輯流程不算完整通過。測試發布器目前paused以免重試；這不是暫停整體目標，正式站及原主要資料區未更動。
 
-已提出零新增費用的架構選擇：先交付本機WordPress＋Cloudflare官網，或保留官網並繼續雲端後台研究。尚未收到選擇，不擅自更換架構或啟用付費。一般Workers付費方案也有128MB記憶體限制，不能當成已驗證解方。官方來源：https://developers.cloudflare.com/workers/platform/limits/#memory 。
+2026-11-17 使用者已選擇繼續研究全Cloudflare免費後台；正式官網維持目前Pages，暫不切換後台。不改採本機後台，也不啟用付費。一般Workers付費方案也有128MB記憶體限制，不能當成已驗證解方。官方來源：https://developers.cloudflare.com/workers/platform/limits/#memory 。
 
 
 ## 最新進度（2026-11-17 14:00，原生樣式及記憶體複驗）

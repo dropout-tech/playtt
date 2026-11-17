@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-17T07:08:24.548976+00:00",
+  "result": "failed",
+  "scope": "Private restore-v1 manual baseline attempt; no pointer promotion",
+  "renderRequests": 6,
+  "renderRequestStatus": 200,
+  "publishStatus": 409,
+  "errorBodyCaptured": false,
+  "sourceFinding": "Anonymous route requests serve the existing published snapshot before PHP; they do not guarantee current canonical artifacts required by operator-publish.",
+  "productionChanged": false
+}

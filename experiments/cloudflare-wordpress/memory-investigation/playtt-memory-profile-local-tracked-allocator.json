@@ -1,0 +1,1169 @@
+[
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 67108864,
+    "fileBytes": 35334548,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 344064,
+      "runtime": 1422125,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 216108,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "files": 893
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 67108864,
+    "fileBytes": 35678925,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1422438,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 216108,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 35465781,
+      "allocated": 35466157,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 893
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 67108864,
+    "fileBytes": 35678925,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1422438,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 216108,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 35465781,
+      "allocated": 35466157,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 893
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 67108864,
+    "fileBytes": 35673372,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688165,
+      "runtime": 1422438,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 34991314,
+      "allocated": 34991690,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 893
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-persist",
+    "heapBytes": 67108864,
+    "fileBytes": 35675001,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688165,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 893
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 67108864,
+    "fileBytes": 35675001,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688165,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 893
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 70254592,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 39203104,
+      "allocated": 39203480,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 70254592,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 39203104,
+      "allocated": 39203480,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 70254592,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36321451,
+      "allocated": 36321827,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 70254592,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36321451,
+      "allocated": 36321827,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 70254592,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601703,
+      "allocated": 36602079,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 70254592,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601703,
+      "allocated": 36602079,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 41021213,
+      "allocated": 41021589,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 41021213,
+      "allocated": 41021589,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 37373892,
+      "allocated": 37374268,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 37373892,
+      "allocated": 37374268,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36685976,
+      "allocated": 36686352,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36685976,
+      "allocated": 36686352,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36546445,
+      "allocated": 36546821,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36546445,
+      "allocated": 36546821,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36253988,
+      "allocated": 36254364,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35674964,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 210518,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36253988,
+      "allocated": 36254364,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 892
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36643089,
+      "allocated": 36643465,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-persist",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601735,
+      "allocated": 36602111,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601735,
+      "allocated": 36602111,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36644114,
+      "allocated": 36644490,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-persist",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601744,
+      "allocated": 36602120,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601744,
+      "allocated": 36602120,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 41021255,
+      "allocated": 41021631,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 73793536,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 41021255,
+      "allocated": 41021631,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 37373892,
+      "allocated": 37374268,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 37373892,
+      "allocated": 37374268,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36685976,
+      "allocated": 36686352,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36685976,
+      "allocated": 36686352,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36546445,
+      "allocated": 36546821,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36546445,
+      "allocated": 36546821,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36253988,
+      "allocated": 36254364,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36253988,
+      "allocated": 36254364,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36645718,
+      "allocated": 36646094,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-persist",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601735,
+      "allocated": 36602111,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601735,
+      "allocated": 36602111,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36646743,
+      "allocated": 36647119,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-persist",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "before-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 638043,
+      "allocated": 638419,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  },
+  {
+    "schema": "playtt-runtime-memory/v1",
+    "stage": "after-request",
+    "heapBytes": 74842112,
+    "fileBytes": 35584801,
+    "heapAliasedFileBytes": 0,
+    "categories": {
+      "temporary": 688128,
+      "runtime": 1424067,
+      "wordpress-core": 28318714,
+      "plugins-and-theme": 1879860,
+      "canonical": 120355,
+      "languages": 2500119,
+      "uploads": 653558
+    },
+    "phpMemory": {
+      "used": 36601744,
+      "allocated": 36602120,
+      "peakUsed": 0,
+      "peakAllocated": 0
+    },
+    "files": 891
+  }
+]

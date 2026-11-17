@@ -1,7 +1,7 @@
 {
-  "at": "2026-11-17T06:21:16.817Z",
+  "at": "2026-11-17T07:03:32.104Z",
   "result": "pass",
-  "scope": "Formal Pages site remains available; private experimental publisher paused pending architecture decision",
+  "scope": "Formal Pages site remains available; private experimental publisher paused during authorized all-Cloudflare research",
   "formalPages": [
     {
       "path": "/",
