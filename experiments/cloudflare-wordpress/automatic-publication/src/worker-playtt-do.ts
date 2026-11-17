@@ -3,6 +3,7 @@ import { createCloudflareRuntime, drainPlayttPublication, serveWordPressStaticAs
 import { servePublicPublication } from './public-reader.js';
 import { PlayttPublicationAlarm } from './playtt-publication-alarm.js';
 import { enablePlayttPhaseDiagnostics } from './phase-trace.js';
+import { protectPlayttCms } from './playtt-cms-access.js';
 import { playttProbeAccess } from './playtt-probe-access.js';
 import { parseSiteContexts, resolveSiteContextFromRequest } from './site-context.js';
 
@@ -10,6 +11,7 @@ interface PlayttEnv extends RuntimeEnv {
   WORDPRESS_STATE: DurableObjectNamespace;
   PLAYTT_EXECUTION: DurableObjectNamespace;
   PLAYTT_PROBE_GATE?: string;
+  PLAYTT_CMS_MODE?: string;
   PLAYTT_STATE_PARTITION?: string;
   PLAYTT_AUTO_PUBLISH?: string;
 }
@@ -83,6 +85,10 @@ export class PlayttWordPressExecution implements DurableObject {
 
 export default {
   async fetch(request: Request, env: PlayttEnv): Promise<Response> {
+    if (env.PLAYTT_CMS_MODE === 'production') {
+      const denied = protectPlayttCms(request, env.WORDPRESS_OPERATOR_TOKEN || '');
+      if (denied) return denied;
+    }
     if (env.PLAYTT_PROBE_GATE === 'true') {
       const access = await playttProbeAccess(request, env.WORDPRESS_OPERATOR_TOKEN || '');
       if (access instanceof Response) return access;
@@ -115,6 +121,8 @@ export default {
     const response = asset || await env.PLAYTT_EXECUTION.getByName(partitionName(env, 'playtt-cms-v1')).fetch(request);
     const result = new Response(response.body, response);
     result.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    result.headers.set('X-Content-Type-Options', 'nosniff');
+    result.headers.set('Referrer-Policy', 'same-origin');
     result.headers.set('X-Playtt-Probe-State', thisPartition(env));
     return result;
   }

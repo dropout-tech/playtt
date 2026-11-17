@@ -21,9 +21,14 @@ try {
   const admin=await request('/wp-admin/');nonce=(await admin.text()).match(/"nonce":"([^"]+)"/)?.[1];assert.ok(nonce);
   const pages=await api('pages?context=edit&per_page=100'),about=pages.find(p=>p.slug==='about');assert.ok(about);
   await writeFile('artifacts/playtt-publication-original.json',JSON.stringify({about},null,2));
-  for(const route of routes)assert.equal((await request(route,{anonymous:true})).status,200);
-  const bootstrap=await request('/?phase=operator-publish',{anonymous:true,method:'POST',headers:{authorization:'Bearer '+operator,'content-type':'application/json'},body:JSON.stringify({routes})});assert.equal(bootstrap.status,200,await bootstrap.clone().text());
-  const initial=await bootstrap.json();await idle();
+  let initial; const existing=await published('/about/');
+  if(existing.status===200) initial={revision:existing.headers.get('x-wp-codebox-publication-revision')};
+  else {
+    for(const route of routes)assert.equal((await request(route,{anonymous:true})).status,200);
+    const bootstrap=await request('/?phase=operator-publish',{anonymous:true,method:'POST',headers:{authorization:'Bearer '+operator,'content-type':'application/json'},body:JSON.stringify({routes})});assert.equal(bootstrap.status,200,await bootstrap.clone().text());
+    initial=await bootstrap.json();
+  }
+  await idle();
   const before=await published('/about/');assert.equal(before.status,200);assert.equal(before.headers.get('x-wp-codebox-publication-revision'),initial.revision);
   const marker='PLAYTT_AUTOMATIC_PUBLICATION_'+Date.now();
   await api('pages/'+about.id,{content:about.content.raw+'\n<!-- wp:paragraph --><p>'+marker+'</p><!-- /wp:paragraph -->'});

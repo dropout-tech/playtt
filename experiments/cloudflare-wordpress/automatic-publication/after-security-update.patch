@@ -1,4 +1,3 @@
-diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudflare/src/worker.ts
 --- a/packages/runtime-cloudflare/src/worker.ts
 +++ b/packages/runtime-cloudflare/src/worker.ts
 @@ -1,3 +1,4 @@
@@ -43,12 +42,10 @@ diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudf
    const remove = changes.remove.filter((route) => !upsert.includes(route))
    if (new Set([...existing, ...upsert]).size > MAX_PUBLISHED_ROUTES) throw new Error("Incremental publication exceeds its route budget.")
    return { upsert, remove }
-@@ -1044,6 +1044,28 @@
-   } finally {
-     await abortLease(coordinator, site.origin, publicationLease)
+@@ -1046,6 +1046,29 @@
    }
-+}
-+
+ }
+ 
 +// Single-site deployments can drain the same committed R2 outbox from a SQLite
 +// Durable Object alarm. There is no external queue or client-supplied job key.
 +// Keep the upstream exact commit receipt, lease and atomic promotion checks.
@@ -63,16 +60,55 @@ diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudf
 +    return { schema: 'wp-codebox/cloudflare-publication/v1', status: 'pending', jobKey }
 +  }
 +  try {
-+    // Rendering a snapshot must not keep a second PHP WASM instance alive.
-+    await discardCachedRuntime(site.id)
-+    const result = await drainPublicationJobWhileLeased(env, coordinator, site, jobKey, async () => { lease = await coordinator.renew(lease) })
++    // This DO serializes editor and alarm requests. Reuse its one runtime for
++    // the exact committed revision; rebuilding WASM for every route causes
++    // memory pressure before the platform collects disposed instances.
++    const result = await drainPublicationJobWhileLeased(env, coordinator, site, jobKey, async () => { lease = await coordinator.renew(lease) }, undefined, true)
 +    if (!result) throw new Error('Publication outbox entry is invalid or unavailable.')
 +    return result
 +  } finally { await abortLease(coordinator, site.origin, lease) }
++}
++
+ async function reconcilePublicationReceipts(bucket: R2Bucket, site: SiteContext, operations?: D1OperationRepository): Promise<void> {
+   if (!operations) return
+   const pending = await operations.pendingPublicationJobs(site.id)
+@@ -1063,7 +1086,7 @@
+   }
  }
  
- async function reconcilePublicationReceipts(bucket: R2Bucket, site: SiteContext, operations?: D1OperationRepository): Promise<void> {
-@@ -1196,13 +1218,11 @@
+-async function drainPublicationJobWhileLeased(env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext, jobKey: string, renewLease: () => Promise<void>, operations?: D1OperationRepository): Promise<PublicationInvocationEvidence | null> {
++async function drainPublicationJobWhileLeased(env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext, jobKey: string, renewLease: () => Promise<void>, operations?: D1OperationRepository, serializedRuntimeReuse = false): Promise<PublicationInvocationEvidence | null> {
+   await assertActiveAllocation(env, site)
+   // A Queue body is an authority-bearing immutable job key, never permission to drain another job.
+   let exact: PublicationJob
+@@ -1119,7 +1142,9 @@
+       const objectKey = await publishedPageObjectKey(job.canonical.revision, route, site)
+       let snapshot = await readWordPressPageSnapshot(env.WORDPRESS_STATE_BUCKET, objectKey, job.canonical.revision, route)
+       if (!snapshot) {
+-        runtime = await bootRuntime(env.WORDPRESS_STATE_BUCKET, job.canonical, site.origin, await canonicalWordPressAuthConstants(env, site), false, site)
++        runtime = serializedRuntimeReuse
++          ? await getRuntime(env, job.canonical, site)
++          : await bootRuntime(env.WORDPRESS_STATE_BUCKET, job.canonical, site.origin, await canonicalWordPressAuthConstants(env, site), false, site)
+         const page = (await compilePublicationRoutes(runtime, [route], site.origin))[0]
+         snapshot = { schema: PUBLISHED_PAGE_SCHEMA, canonicalRevision: job.canonical.revision, route: page.route, status: page.status, statusText: page.statusText, headers: page.headers, body: page.body }
+         const serialized = JSON.stringify(snapshot)
+@@ -1157,10 +1182,14 @@
+     await env.WORDPRESS_STATE_BUCKET.delete([job.key, publicationProgressObjectKey(job, site)])
+     return { schema: "wp-codebox/cloudflare-publication/v1", status: "promoted", jobKey: job.key }
+   } catch (error) {
++    if (serializedRuntimeReuse && runtime) {
++      await discardRuntime(runtime, site)
++      runtime = undefined
++    }
+     console.error("Publication job failed.", error)
+     throw error
+   } finally {
+-    if (runtime) await discardRuntime(runtime, site)
++    if (runtime && !serializedRuntimeReuse) await discardRuntime(runtime, site)
+     try {
+       await renewLease()
+       await releasePublicationClaim(env.WORDPRESS_STATE_BUCKET, job, site, claim)
+@@ -1196,13 +1225,11 @@
  async function promoteIncrementalPublication(bucket: R2Bucket, current: CurrentPublication, staged: { serialized: string; invalidatedRoutes: string[] }, site: SiteContext): Promise<boolean> {
    const promoted = await bucket.put(siteStorageKeys(site).publishedCurrent, staged.serialized, { onlyIf: { etagMatches: current.etag }, httpMetadata: { contentType: "application/json" } })
    if (!promoted) return false
@@ -88,7 +124,101 @@ diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudf
  }
  
  function publishedPageResponse(response: Response, head: boolean, source: "edge" | "r2", revision?: string): Response {
-@@ -2666,8 +2686,13 @@
+@@ -1273,11 +1300,17 @@
+       return cachedPage
+     }
+     if (route === "static-artifact-import") await heartbeat?.("booting-runtime", 20)
+-    const previousRuntime = cachedRuntimes.get(site.id)
++    // Retain only scalar cache metadata across an invalidating boot. Keeping the
++    // old promise here also retains its entire PHP/WASM heap until this request
++    // returns, even after getRuntime() disposes it, doubling peak isolate memory.
++    const previousRuntimeInfo = (() => {
++      const cached = cachedRuntimes.get(site.id)
++      return cached ? { baseRevision: cached.baseRevision, state: cached.state } : undefined
++    })()
+     if (runtimeDisposition !== "cold") {
+-      runtimeDisposition = previousRuntime && previousRuntime.baseRevision === pointer.revision && route !== "static-artifact-import"
+-        ? previousRuntime.state === "pending" ? "shared-initialization" : "warm"
+-        : previousRuntime ? "invalidated" : "cold"
++      runtimeDisposition = previousRuntimeInfo && previousRuntimeInfo.baseRevision === pointer.revision && route !== "static-artifact-import"
++        ? previousRuntimeInfo.state === "pending" ? "shared-initialization" : "warm"
++        : previousRuntimeInfo ? "invalidated" : "cold"
+     }
+     const bootTrace = runtimeDisposition === "cold" || runtimeDisposition === "invalidated" ? trace : undefined
+     runtime = runtimeDisposition === "shared-initialization"
+@@ -1640,7 +1673,11 @@
+   validateUploadManifestFiles(currentManifest.uploads ?? [], site)
+   validateWpContentManifestFiles(currentManifest.wpContent ?? [], site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   validateWpContentDeletedPaths(currentManifest.wpContentDeleted ?? [], WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+-  const changedPaths = [...changes.created, ...changes.changed].sort((left, right) => left.localeCompare(right))
++  // A read can initialize WordPress globals (e.g. user theme styles and its
++  // wp_theme relationship) before a later save. MDI's last-request delta omits
++  // those earlier files. Reconcile the complete bounded inventory at commit;
++  // still upload only changed hashes and never commit merely for a GET.
++  const changedPaths = collectCanonicalRuntimePaths(runtime.php, MARKDOWN_ROOT)
+   const uploads = trace ? await trace.measure("persistence.upload.inventory", () => collectUploadFiles(runtime.php)) : await collectUploadFiles(runtime.php)
+   logMutationPhase(diagnosticsStartedAt, "upload-inventory", retained, { files: uploads.length, bytes: sumMetadataBytes(uploads) })
+   const uploadManifestFiles = trace ? await trace.measure("persistence.upload.write", () => persistRuntimeObjects(bucket, runtime.php, UPLOADS_ROOT, uploads, currentManifest.uploads ?? [], siteStorageKeys(site).uploadObjectPrefix, retained)) : await persistRuntimeObjects(bucket, runtime.php, UPLOADS_ROOT, uploads, currentManifest.uploads ?? [], siteStorageKeys(site).uploadObjectPrefix, retained)
+@@ -1650,8 +1687,8 @@
+   const wpContentManifestFiles = trace ? await trace.measure("persistence.wp-content.write", () => persistRuntimeObjects(bucket, runtime.php, "/wordpress/wp-content", wpContent.files, currentManifest.wpContent ?? [], siteStorageKeys(site).wpContentObjectPrefix, retained)) : await persistRuntimeObjects(bucket, runtime.php, "/wordpress/wp-content", wpContent.files, currentManifest.wpContent ?? [], siteStorageKeys(site).wpContentObjectPrefix, retained)
+   logMutationPhase(diagnosticsStartedAt, "wp-content-persist", retained, { files: wpContentManifestFiles.length })
+ 
+-  const manifestFiles = new Map(currentManifest.files.map((file) => [file.path, file]))
+-  for (const path of changes.deleted) manifestFiles.delete(path)
++  const previousFiles = new Map(currentManifest.files.map((file) => [file.path, file]))
++  const manifestFiles = new Map<string, MarkdownManifestFile>()
+   let markdownBytes = 0
+   if (trace) trace.start("persistence.markdown.write", { files: changedPaths.length })
+   try {
+@@ -1661,11 +1698,13 @@
+       if (runtime.php.isDir(absolute)) throw new Error(`Canonical runtime file is missing: ${path}`)
+       const bytes = runtime.php.readFileAsBuffer(absolute)
+       markdownBytes += bytes.byteLength
++      if (bytes.byteLength > MAX_MARKDOWN_FILE_BYTES || markdownBytes > MAX_MARKDOWN_TOTAL_BYTES) throw new Error('Canonical Markdown inventory exceeds its byte budget.')
+       retained.retain(bytes.byteLength)
+       try {
+         const sha256 = await sha256Hex(bytes)
+         const objectKey = `${siteStorageKeys(site).markdownObjectPrefix}/${sha256}`
+-        await bucket.put(objectKey, bytes)
++        const existing = previousFiles.get(path)
++        if (existing?.sha256 !== sha256 || existing.size !== bytes.byteLength) await bucket.put(objectKey, bytes)
+         manifestFiles.set(path, { path, objectKey, sha256, size: bytes.byteLength })
+       } finally {
+         retained.release(bytes.byteLength)
+@@ -1679,7 +1718,7 @@
+   logMutationPhase(diagnosticsStartedAt, "markdown-persist", retained, { files: changedPaths.length })
+ 
+   const files = [...manifestFiles.values()].sort((left, right) => left.path.localeCompare(right.path))
+-  const unchanged = !changes.created.length && !changes.changed.length && !changes.deleted.length
++  const unchanged = JSON.stringify(currentManifest.files) === JSON.stringify(files)
+     && JSON.stringify(currentManifest.uploads ?? []) === JSON.stringify(uploadManifestFiles)
+     && JSON.stringify(currentManifest.wpContent ?? []) === JSON.stringify(wpContentManifestFiles)
+     && JSON.stringify(currentManifest.wpContentDeleted ?? []) === JSON.stringify(wpContent.deleted)
+@@ -2417,6 +2456,23 @@
+   php.writeFile(path, new TextEncoder().encode(`${source.slice(0, index)}${fastPath}${source.slice(index)}`))
+ }
+ 
++function collectCanonicalRuntimePaths(php: PHP, root: string): string[] {
++  const paths: string[] = []
++  const visit = (directory: string): void => {
++    for (const name of php.listFiles(directory)) {
++      if (name === "." || name === "..") continue
++      const path = `${directory}/${name}`
++      if (php.isDir(path)) visit(path)
++      else if (!name.includes(".tmp.") && !name.startsWith("markdown-index.sqlite")) {
++        paths.push(path.slice(root.length + 1))
++        if (paths.length > MAX_MARKDOWN_FILES) throw new Error('Canonical Markdown inventory exceeds its file budget.')
++      }
++    }
++  }
++  visit(root)
++  return paths.sort((a, b) => a.localeCompare(b))
++}
++
+ function collectRuntimeFiles(php: PHP, root: string, paths?: string[]): RuntimeFile[] {
+   if (paths) {
+     return paths.map((path) => {
+@@ -2666,8 +2722,13 @@
  function wp_codebox_publication_record_post( $post_id, $remove = false ) {
  	if ( wp_is_post_revision( $post_id ) || wp_is_post_autosave( $post_id ) ) return;
  	$post = get_post( $post_id );
@@ -103,7 +233,7 @@ diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudf
  	$changes['upsert'][] = '/';
  	$route = wp_codebox_publication_route( get_permalink( $post ) );
  	if ( $route ) {
-@@ -2677,8 +2702,12 @@
+@@ -2677,8 +2738,12 @@
  	if ( 'publish' === $post->post_status ) {
  		$archive = get_post_type_archive_link( $post->post_type );
  		if ( $archive ) $changes['upsert'][] = wp_codebox_publication_route( $archive );
@@ -118,7 +248,16 @@ diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudf
  		foreach ( get_object_taxonomies( $post->post_type ) as $taxonomy ) {
  			$terms = get_the_terms( $post, $taxonomy );
  			if ( ! is_array( $terms ) ) continue;
-@@ -2855,36 +2884,7 @@
+@@ -2695,7 +2760,7 @@
+ add_action( 'before_delete_post', static function ( $post_id ) { wp_codebox_publication_record_post( $post_id, true ); }, 1 );
+ add_action( 'set_object_terms', static function ( $post_id ) { wp_codebox_publication_record_post( $post_id ); }, PHP_INT_MAX );
+ add_action( 'updated_option', static function ( $option, $old_value, $value ) {
+-	if ( in_array( $option, array( 'active_plugins', 'blogname', 'page_for_posts', 'page_on_front', 'permalink_structure', 'show_on_front', 'sidebars_widgets', 'stylesheet', 'template' ), true ) || str_starts_with( $option, 'theme_mods_' ) ) {
++	if ( in_array( $option, array( 'active_plugins', 'blogname', 'blogdescription', 'blog_public', 'site_icon', 'site_logo', 'WPLANG', 'page_for_posts', 'page_on_front', 'permalink_structure', 'show_on_front', 'sidebars_widgets', 'stylesheet', 'template' ), true ) || str_starts_with( $option, 'theme_mods_' ) ) {
+ 		$changes = wp_codebox_publication_read_changes();
+ 		$changes['all'] = true;
+ 		if ( 'page_on_front' === $option && 'page' === get_option( 'show_on_front' ) ) {
+@@ -2855,36 +2920,7 @@
    return new Request(url, { method: "GET" })
  }
  
@@ -156,7 +295,6 @@ diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudf
  
  export async function serveWordPressStaticAsset(request: Request, bucket: R2Bucket): Promise<Response | null> {
    if (request.method !== "GET" && request.method !== "HEAD") return null
-diff --git a/packages/runtime-cloudflare/src/public-reader.ts b/packages/runtime-cloudflare/src/public-reader.ts
 --- a/packages/runtime-cloudflare/src/public-reader.ts
 +++ b/packages/runtime-cloudflare/src/public-reader.ts
 @@ -1,3 +1,4 @@
