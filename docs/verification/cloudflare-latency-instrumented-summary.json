@@ -1,0 +1,189 @@
+{
+  "at": "2026-11-17T09:56:15.158533+00:00",
+  "label": "instrumented",
+  "result": "pass",
+  "scope": "Finite private audit request-header wall time and observed I/O-bounded remote phase intervals; clocks advance on I/O, so phase attribution is not CPU time. Tail envelopes are not unique requests.",
+  "timingDocumentation": "https://developers.cloudflare.com/workers/runtime-apis/performance/",
+  "versions": [
+    "b5bfeefe-91d2-48ba-b7f1-f59265735a0b"
+  ],
+  "observedEvents": 52,
+  "outcomes": {
+    "ok": 52
+  },
+  "exceptions": [],
+  "writeWallTime": {
+    "samples": 5,
+    "minMs": 18449,
+    "medianMs": 19021,
+    "maxMs": 20702
+  },
+  "writes": [
+    {
+      "at": "2026-11-17T09:53:36.127Z",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 18740
+    },
+    {
+      "at": "2026-11-17T09:54:01.869Z",
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 18449
+    },
+    {
+      "at": "2026-11-17T09:54:20.319Z",
+      "path": "/wp-json/wp/v2/pages/106",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 19021
+    },
+    {
+      "at": "2026-11-17T09:54:42.281Z",
+      "path": "/wp-json/wp/v2/pages/106",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 20702
+    },
+    {
+      "at": "2026-11-17T09:55:07.209Z",
+      "path": "/wp-json/wp/v2/pages/106?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 19344
+    }
+  ],
+  "mutationPhaseIntervals": {
+    "lease.acquire": {
+      "samples": 5,
+      "minMs": 39,
+      "medianMs": 74,
+      "maxMs": 94
+    },
+    "published.page-cache.lookup": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "runtime.cache.reuse": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "publication.current.read": {
+      "samples": 5,
+      "minMs": 272,
+      "medianMs": 460,
+      "maxMs": 559
+    },
+    "request.php": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "canonical.changes.collect": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "publication.changes.collect": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "canonical.manifest.current.read": {
+      "samples": 5,
+      "minMs": 704,
+      "medianMs": 1657,
+      "maxMs": 1747
+    },
+    "persistence.upload.inventory": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "persistence.upload.write": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "persistence.wp-content.inventory": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "persistence.wp-content.write": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "persistence.markdown.write": {
+      "samples": 5,
+      "minMs": 1263,
+      "medianMs": 1791,
+      "maxMs": 3433
+    },
+    "persistence.manifest.write": {
+      "samples": 5,
+      "minMs": 13846,
+      "medianMs": 14339,
+      "maxMs": 15223
+    },
+    "publication.enqueue": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "coordinator.commit": {
+      "samples": 5,
+      "minMs": 815,
+      "medianMs": 986,
+      "maxMs": 1270
+    },
+    "runtime.cache.promote": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    }
+  },
+  "snapshotIntervals": {
+    "read-and-verify": {
+      "samples": 5,
+      "minMs": 11834,
+      "medianMs": 12181,
+      "maxMs": 12530
+    },
+    "encode-and-upload": {
+      "samples": 5,
+      "minMs": 949,
+      "medianMs": 1171,
+      "maxMs": 2062
+    },
+    "manifest-upload": {
+      "samples": 5,
+      "minMs": 716,
+      "medianMs": 737,
+      "maxMs": 1602
+    }
+  },
+  "maxObservedHeapBytes": 71827456,
+  "cleanup": {
+    "publishedPageHash": "a6f6163dbd1a918e42298c9a57af027059aaa689a43dcfa4214fab2f01ecc3a7",
+    "createdAndEdited": true,
+    "ownedDraftRemoved": true,
+    "originalPagesUnchanged": true
+  }
+}

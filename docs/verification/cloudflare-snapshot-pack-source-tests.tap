@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: changed, added, deleted and renamed files produce the same complete archive as a full independent read
+ok 1 - changed, added, deleted and renamed files produce the same complete archive as a full independent read
+  ---
+  duration_ms: 152.2286
+  type: 'test'
+  ...
+# Subtest: unchanged content is read from the committed pack even when its loose replica is unavailable
+ok 2 - unchanged content is read from the committed pack even when its loose replica is unavailable
+  ---
+  duration_ms: 41.7979
+  type: 'test'
+  ...
+# Subtest: legacy manifests without a pack independently read all objects with bounded concurrency
+ok 3 - legacy manifests without a pack independently read all objects with bounded concurrency
+  ---
+  duration_ms: 80.6701
+  type: 'test'
+  ...
+# Subtest: same path in another domain cannot reuse unrelated bytes
+ok 4 - same path in another domain cannot reuse unrelated bytes
+  ---
+  duration_ms: 30.9029
+  type: 'test'
+  ...
+# Subtest: prior committed pack missing failure rejects reuse
+ok 5 - prior committed pack missing failure rejects reuse
+  ---
+  duration_ms: 15.8257
+  type: 'test'
+  ...
+# Subtest: prior committed pack size failure rejects reuse
+ok 6 - prior committed pack size failure rejects reuse
+  ---
+  duration_ms: 15.0154
+  type: 'test'
+  ...
+# Subtest: prior committed pack bytes failure rejects reuse
+ok 7 - prior committed pack bytes failure rejects reuse
+  ---
+  duration_ms: 30.7291
+  type: 'test'
+  ...
+# Subtest: prior pack must match every previous manifest file hash
+ok 8 - prior pack must match every previous manifest file hash
+  ---
+  duration_ms: 35.0149
+  type: 'test'
+  ...
+# Subtest: changed object missing failure rejects the whole new snapshot
+ok 9 - changed object missing failure rejects the whole new snapshot
+  ---
+  duration_ms: 42.7675
+  type: 'test'
+  ...
+# Subtest: changed object size failure rejects the whole new snapshot
+ok 10 - changed object size failure rejects the whole new snapshot
+  ---
+  duration_ms: 62.4904
+  type: 'test'
+  ...
+# Subtest: changed object bytes failure rejects the whole new snapshot
+ok 11 - changed object bytes failure rejects the whole new snapshot
+  ---
+  duration_ms: 61.3582
+  type: 'test'
+  ...
+# Subtest: invalid metadata cannot read another site or traverse a path
+ok 12 - invalid metadata cannot read another site or traverse a path
+  ---
+  duration_ms: 4.9525
+  type: 'test'
+  ...
+# Subtest: an unreadable old pack is irrelevant when no target file uses its bytes
+ok 13 - an unreadable old pack is irrelevant when no target file uses its bytes
+  ---
+  duration_ms: 25.7803
+  type: 'test'
+  ...
+# Subtest: failure settles in-flight reads before returning to the caller
+ok 14 - failure settles in-flight reads before returning to the caller
+  ---
+  duration_ms: 32.1094
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 973.2138
