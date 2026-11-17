@@ -1,0 +1,106 @@
+{
+  "at": "2026-11-17T08:59:39.670924+00:00",
+  "scope": "Finite local inspector samples without forced GC. Maxima of different counters are not necessarily simultaneous and do not prove remote memory-limit compliance. First profile fails auto-draft persistence; second passes after pinned MDI policy fix.",
+  "profiles": [
+    {
+      "at": "2026-11-17T08:49:54.334Z",
+      "label": "retirement-preserve",
+      "scope": "Local V8 inspector: numeric heap/backing-storage sampling without forced GC; inspector overhead and local GC differ from production",
+      "exitCode": 1,
+      "maxima": {
+        "usedSize": 38961432,
+        "totalSize": 96354304,
+        "embedderHeapUsedSize": 1031776,
+        "backingStorageSize": 104748885
+      },
+      "finalUsage": {
+        "usedSize": 29627476,
+        "totalSize": 96354304,
+        "embedderHeapUsedSize": 675488,
+        "backingStorageSize": 90668971
+      },
+      "samples": 231,
+      "retirements": [
+        {
+          "at": 1794905263384,
+          "phase": "playtt-runtime-retired/v1",
+          "requests": 98,
+          "heapBytes": 74973184
+        },
+        {
+          "at": 1794905360849,
+          "phase": "playtt-runtime-retired/v1",
+          "requests": 98,
+          "heapBytes": 74055680
+        }
+      ],
+      "generations": [
+        {
+          "at": 1794905127534,
+          "phase": "playtt-runtime-generation/v1",
+          "generation": 1
+        },
+        {
+          "at": 1794905264180,
+          "phase": "playtt-runtime-generation/v1",
+          "generation": 1
+        },
+        {
+          "at": 1794905361650,
+          "phase": "playtt-runtime-generation/v1",
+          "generation": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T08:57:46.672Z",
+      "label": "retirement-policy",
+      "scope": "Local V8 inspector: numeric heap/backing-storage sampling without forced GC; inspector overhead and local GC differ from production",
+      "exitCode": 0,
+      "maxima": {
+        "usedSize": 39092236,
+        "totalSize": 96927744,
+        "embedderHeapUsedSize": 1031776,
+        "backingStorageSize": 104840127
+      },
+      "finalUsage": {
+        "usedSize": 37586584,
+        "totalSize": 96927744,
+        "embedderHeapUsedSize": 238328,
+        "backingStorageSize": 51885560
+      },
+      "samples": 234,
+      "retirements": [
+        {
+          "at": 1794905727548,
+          "phase": "playtt-runtime-retired/v1",
+          "requests": 98,
+          "heapBytes": 74842112
+        },
+        {
+          "at": 1794905828906,
+          "phase": "playtt-runtime-retired/v1",
+          "requests": 98,
+          "heapBytes": 74121216
+        }
+      ],
+      "generations": [
+        {
+          "at": 1794905628993,
+          "phase": "playtt-runtime-generation/v1",
+          "generation": 1
+        },
+        {
+          "at": 1794905728445,
+          "phase": "playtt-runtime-generation/v1",
+          "generation": 1
+        },
+        {
+          "at": 1794905829696,
+          "phase": "playtt-runtime-generation/v1",
+          "generation": 1
+        }
+      ]
+    }
+  ]
+}
