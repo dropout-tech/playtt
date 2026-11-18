@@ -56,3 +56,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 全新依賴／核心資產的建置之後，已部署至另一個空DO及新R2桶，還原最新備份。首次重新部署發現MDI把草稿空白slug改為檔名，故新增 `empty-slug/`；修正版已完成私人副本跨部署、編號與清理驗收。更新後重建工具再次從固定archive組裝13段patch，59個來源檔完全一致，見 `docs/verification/cloudflare-empty-slug-reassembly.json`。這是最新來源比對，沒有再次重裝相同依賴；先前binary／JavaScript比對仍屬加此修正之前的建置證據。
 
 新設定及驗收腳本由 `independent-restore/` 一併交付。原始備份／secrets需另外安全交接；重建工具不帶入它們。詳細結果、已修正缺陷與限制見該目錄README；正式官網仍未切換後台。
+
+## 第14段：完整附件欄位保存
+
+原生瀏覽器驗收揭露舊媒體關聯缺漏，新增 `postmeta/` 修正。新版完整表、版本標記及工具由重建流程在獨立還原工具之後套用，60個來源檔與候選完全一致。TypeScript及private dry-run通過；原生上傳、兩次相同程式部署、完整備份欄位編號比對及自有附件清理通過。沒有重新安裝依賴或產生相同核心資產。原品牌附件歷史關聯與內嵌網址仍待處理，詳見 [附件保存](postmeta/README.md)。

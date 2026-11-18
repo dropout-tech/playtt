@@ -1,5 +1,17 @@
 # Let’s Play 驗收狀態
 
+## 附件保存缺陷與原生跨部署驗證（2026-11-19）
+
+繁中原生編輯器能開啟，但私人副本首頁七張圖片無法載入。完整備份另確認15個原附件遺失檔案路徑／圖片metadata；先前15個檔案SHA通過只證明檔案存在，不等於媒體庫關聯完整。本輪沒有修改正式官網、原品牌視覺或來源每日維護Worker，發布器仍paused。
+
+已修正MDI只保存部分欄位且不保留meta_id的缺陷，改以完整postmeta表與版本標記保存。實際PHP-WASM／MDI／PDO測試中，舊版10筆重載後剩4筆並重新分配編號；修正版10筆完整相同，17項檢查通過，TypeScript與dry-run通過。舊無標記備份相容；新格式不可交由舊程式繼續編輯。
+
+私人副本原生上傳附件128、修改繁中標題與替代文字，再以相同程式重新部署為 `643a81da-b010-4748-95e2-f22732d9e5e7`，原生讀回與圖片SHA一致。兩份完整備份的三筆欄位18／19／20完全相同。測試附件已清理，媒體／檔案404；清理備份 `edf7bf71-b84e-444e-a6d9-1cce10366841` 內27個既有Markdown及15個原圖片檔逐位元不變，原JSON欄位不變，自增高水位保留。副本version85、來源version174均一致、無fence、paused。
+
+有限觀測502事件：499ok、3canceled，取消均發生在修正前admin-ajax POST，原因未證實；無記錄到的例外、未完成trace或request-failure。最大觀測WASM76,873,728bytes，不代表整個isolate用量。觀測已停止。14段patch重新組裝，60個來源檔一致。
+
+**仍待完成：**原有15張品牌附件的歷史關聯尚未修復；舊內嵌網址規劃被媒體檢查擋下，未套用。下一步以已驗證素材修復關聯，再遷移內嵌網址、驗收瀏覽器圖片及原生編輯／重新載入。新的保存修正不能當作已恢復舊資料。詳細見 `experiments/cloudflare-wordpress/postmeta/README.md` 及 `docs/verification/cloudflare-postmeta-summary.json`。PR #4仍draft，目標active。以下較早紀錄保留其當時範圍。
+
 ## 最新備份獨立還原與空白代稱修正（2026-11-19）
 
 正式官網仍維持 Cloudflare Pages、Let’s Play 原品牌視覺與 LINE 入口，未切換後台。本輪以全新安裝依賴及重新產生的核心資產，另建私人 `playtt-wp-free-rebuild-audit`／`playtt-wordpress-rebuild-audit`，使用獨立 DO、無正式路由及 cron。296個已校驗物件複製完成，目標 pointer=null／version=0 時還原最新備份 `359644be-2af8-491c-b178-86c2a98f8f4e`。

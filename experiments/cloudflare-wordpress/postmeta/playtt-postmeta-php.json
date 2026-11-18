@@ -1,0 +1,45 @@
+{
+  "at": "2026-11-18T19:52:10.327Z",
+  "result": "pass",
+  "scope": "Pinned PHP-WASM, real MDI storage/write-engine/loader and PDO SQLite; narrow driver adapter, not full WordPress HTTP",
+  "reports": [
+    {
+      "patched": false,
+      "result": "pass",
+      "checks": [
+        "real write engine exported postmeta snapshot",
+        "baseline reproduces attachment path loss",
+        "baseline reproduces serialized attachment metadata loss",
+        "baseline reproduces metadata identity reassignment",
+        "baseline loses rows on cold hydration"
+      ],
+      "originalRows": 10,
+      "firstColdRows": 4
+    },
+    {
+      "patched": true,
+      "result": "pass",
+      "checks": [
+        "real write engine exported postmeta snapshot",
+        "cold hydration preserves every original row and ID",
+        "versioned full-table layout recognized",
+        "layout marker tracked in canonical changes",
+        "serialized attachment data stays byte-valid",
+        "stale Markdown frontmatter cannot overwrite or duplicate canonical metadata",
+        "warm full-table sync preserves update and deletion by meta_id",
+        "second cold hydration preserves duplicate-row deletion",
+        "changed Markdown keeps canonical metadata and IDs",
+        "warm delete-all is an authoritative empty table",
+        "cold empty table does not resurrect stale frontmatter",
+        "invalid layout fails before hydration",
+        "invalid layout fails before hydration",
+        "invalid layout fails before hydration",
+        "missing authoritative table is rejected",
+        "legacy Markdown remains readable without new marker",
+        "malformed table rolls back destructive warm replacement"
+      ],
+      "originalRows": 10,
+      "firstColdRows": 10
+    }
+  ]
+}

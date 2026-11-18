@@ -59,6 +59,7 @@ extras(exp/'memory-investigation');extras(exp/'publication-batching');extras(exp
 for directory,relative in [('snapshot-latency','snapshot-source-candidate.patch'),('request-body','request-body-candidate.patch'),('id-sequence','id-sequence-candidate.patch'),('maintenance','maintenance-candidate.patch'),('scheduled-maintenance','scheduled-maintenance-candidate.patch'),('empty-slug','empty-slug-candidate.patch')]:
  patch(directory+'/'+relative,runtime);extras(exp/directory)
 extras(exp/'independent-restore')
+patch('postmeta/postmeta-candidate.patch',runtime);extras(exp/'postmeta')
 differences=[];files=[]
 for source in ((live or runtime)/'src').iterdir():
  if not source.is_file() or source.suffix not in ['.ts','.mjs']:continue

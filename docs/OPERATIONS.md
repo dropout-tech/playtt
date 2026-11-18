@@ -1,5 +1,13 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 最新附件格式與私人副本（2026-11-19）
+
+目前最新私人副本版本為 `643a81da-b010-4748-95e2-f22732d9e5e7`，已包含完整postmeta表保存修正，發布器paused。清理後備份revision為 `edf7bf71-b84e-444e-a6d9-1cce10366841`，自有附件128已移除。來源每日維護Worker仍是53980fce，不可混用設定或把舊程式部署到新格式資料上。
+
+`_runtime/playtt-postmeta-layout.json` 的 `playtt/postmeta-table/v1` 表示metadata由完整JSON表提供；不得改寫或移除標記來強行繞過檢查。新格式備份須配合第14段修正或更新程式。修正前備份仍安全保留，但本輪沒有測試把新編輯倒回舊格式；若要退回，需另外處理其後內容，不可只回退程式。
+
+原有15個附件檔案仍完整，但歷史關聯與舊內嵌網址尚待修復，首頁瀏覽器圖片未通過驗收。處理順序為有界關聯修復、重新產生網址遷移計畫、備份、套用、瀏覽器原生編輯／重載。不要重跑已完成的附件128上傳／清理流程。工具、範圍與未完成項見 `experiments/cloudflare-wordpress/postmeta/README.md`。以下為先前各階段操作紀錄。
+
 ## 目前界線
 
 `wordpress/lets-play` 是可安裝的 WordPress 區塊主題。`cloudflare/public` 是匿名公開頁面的靜態匯出，不包含 WordPress 後台、PHP 或資料庫。免費隔離WordPress已通過原生視覺段落編輯、重部署保存、全空初始化與獨立R2/DO備份還原；正式後台與公開站發布整合仍待，不能把靜態發布視為全部完成。
