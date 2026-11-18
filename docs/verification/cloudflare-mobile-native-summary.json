@@ -1,0 +1,381 @@
+{
+  "at": "2026-11-18T22:38:04.412884+00:00",
+  "result": "bounded-mobile-width-flow-and-cleanup-pass",
+  "scope": "Private Chrome viewport emulation only. Production Pages, branding, backend choice, runtime code and paid plans unchanged.",
+  "workerVersion": "f6ac6526-2016-445d-b510-2b887369c7c2",
+  "nativeUi": {
+    "viewport375": {
+      "width": 375,
+      "height": 812,
+      "loginLanguageSwitch": "English to zh_TW through visible control; Chinese login/admin confirmed",
+      "flow": [
+        "login",
+        "mobile menu",
+        "pages search",
+        "owned homepage draft edit",
+        "save confirmation",
+        "return to list",
+        "reopen saved paragraph"
+      ],
+      "documentClientWidth": 375,
+      "documentScrollWidth": 375
+    },
+    "viewport768": {
+      "width": 768,
+      "height": 1024,
+      "scope": "Reopened editor layout; no second save",
+      "documentClientWidth": 768,
+      "documentScrollWidth": 768
+    },
+    "frontPreview375": {
+      "menuLinks": 5,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "lineMessageSent": false,
+      "clientWidth": 360,
+      "scrollWidth": 360,
+      "loadedRenderedBrandImageElements": 9,
+      "scope": "Images loaded after scroll; screenshots cover top/menu/course/coach/locations. Not a full footer or all-route visual acceptance."
+    },
+    "plannedEdit": "手機編輯驗收：從孩子到大人，一起讓桌球走進生活。",
+    "ownedId": 169,
+    "reopenedParagraphConfirmed": true,
+    "restVerification": {
+      "at": "2026-11-18T22:32:16.070Z",
+      "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+      "result": "pass",
+      "scope": "Mobile-width native UI save independently read through authenticated REST; planned paragraph plus audited block-boundary newlines, four trailing class spaces, six default h2 attributes and one ampersand escape; original homepage is byte-identical",
+      "id": 169,
+      "contentHash": "16de957361876c6ed196638752c52146f77a354d6350e9b8b69414e66de1d242",
+      "plannedRawHash": "7e7ebb634e4aac1926d30bec2d6bdd27329e3862f9e5863d5f0be910b89af114",
+      "actualRawHash": "62a3efdac4f2d7e330e12f89a25b124c0273e8ff763301ecf2f0fcb71bc7dc6a",
+      "auditedSerializationChanges": true,
+      "sourceHomeHash": "5e800ffb86faf8e2a367b8e92959e0a7afc53b32bcb7c91cb401e9f088b9922d",
+      "publisher": "paused",
+      "checks": [
+        {
+          "path": "/__playtt-publishing",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2706
+        },
+        {
+          "path": "/?phase=operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 5377
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2018
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 5683
+        },
+        {
+          "path": "/wp-admin/",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 7217
+        },
+        {
+          "path": "/wp-json/wp/v2/pages/169?context=edit",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 8074
+        },
+        {
+          "path": "/wp-json/wp/v2/pages/24?context=edit",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 7958
+        }
+      ]
+    }
+  },
+  "final": {
+    "at": "2026-11-18T22:35:52.627Z",
+    "result": "pass",
+    "scope": "Complete backup after mobile-width native edit/save/reopen and owned cleanup; all original content, historical revisions, media and metadata retained; owned draft/revisions absent",
+    "ownedId": 169,
+    "cleanupComplete": true,
+    "unchangedCanonicalFiles": 37,
+    "originalMarkdown": 27,
+    "uploads": 15,
+    "postmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "404",
+      "wp_postmeta": "67",
+      "wp_posts": "170",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 232,
+        "revision": "fbcb867b-df28-422c-a4e9-6ee2a3b77e34",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 174,
+        "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-18T22:35:29.021Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "fbcb867b-df28-422c-a4e9-6ee2a3b77e34",
+      "objects": 297,
+      "decodedBytes": 4432476,
+      "archiveBytes": 2293851,
+      "archiveSha256": "5cc851f708b4a3401594003f3e0ff343447b979a088186da0345b571da06c386"
+    }
+  },
+  "observation": {
+    "at": "2026-11-18T22:36:43.551Z",
+    "scope": "Finite sanitized observation during mobile-width native UI acceptance; events are not unique HTTP requests",
+    "events": 391,
+    "outcomes": {
+      "ok": 378,
+      "canceled": 13
+    },
+    "versions": [
+      "f6ac6526-2016-445d-b510-2b887369c7c2"
+    ],
+    "exceptions": 0,
+    "requestFailures": 0,
+    "incompleteTraces": 0,
+    "canceledCategories": {
+      "admin-ajax": 11,
+      "front-page": 2
+    },
+    "canceled": [
+      {
+        "at": "2026-11-18T22:27:56.319Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 0,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:27:57.559Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 1,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:28:08.359Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 0,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:30:08.464Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 0,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:30:07.903Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 1,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:31:31.897Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 0,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:31:34.071Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 1,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:32:11.258Z",
+        "request": {
+          "category": "front-page",
+          "method": "GET"
+        },
+        "traceCount": 0,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:32:09.358Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 0,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:32:11.144Z",
+        "request": {
+          "category": "front-page",
+          "method": "GET"
+        },
+        "traceCount": 1,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:32:09.730Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 0,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:32:43.662Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 0,
+        "incompleteTraces": 0
+      },
+      {
+        "at": "2026-11-18T22:32:43.023Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traceCount": 1,
+        "incompleteTraces": 0
+      }
+    ],
+    "maxWasmHeapBytes": 76349440,
+    "maxSampledFileBytes": 31694107,
+    "saveWindowRestPost": [
+      {
+        "at": "2026-11-18T22:30:35.676Z",
+        "outcome": "ok",
+        "traces": [
+          {
+            "completed": true,
+            "totalMs": 7025
+          }
+        ]
+      },
+      {
+        "at": "2026-11-18T22:30:36.684Z",
+        "outcome": "ok",
+        "traces": []
+      }
+    ],
+    "limits": [
+      "Canceled outcomes remain unexplained; temporal overlap with navigation does not prove its cause.",
+      "A browser navigation reported a 10-second control timeout; fresh UI inspection still showed the editor, and one retry reached preview. This is not evidence of a WordPress memory failure.",
+      "The save-window server trace is not click-to-confirm latency; the UI was still saving at an observation 9831 ms after the click.",
+      "Sampled WASM heap and file buffers are not whole-isolate memory. No sustained free-tier or real mobile-device acceptance is claimed."
+    ]
+  },
+  "cleanup": {
+    "browserTestTabClosed": true,
+    "viewportReset": true,
+    "observerStopped": true,
+    "matchingOrphanTailProcesses": 0
+  },
+  "screenshots": [
+    {
+      "path": "docs/verification/mobile-native/login-375.jpg",
+      "sha256": "4d0ed79b48c4cdedd82f0bdd433d5b2c1c1fea9525abf7313bcda4522ec21a41"
+    },
+    {
+      "path": "docs/verification/mobile-native/editor-saved-375.jpg",
+      "sha256": "cadc1683b96df8aca55059ab305d1ab30abce7be0b0dcde596fa186ea24942d9"
+    },
+    {
+      "path": "docs/verification/mobile-native/editor-reopened-375.jpg",
+      "sha256": "eaa392770c1dc813fd3977fc6eb50610ffec65e2c81e830c49724d1dd45e1698"
+    },
+    {
+      "path": "docs/verification/mobile-native/editor-reopened-768.jpg",
+      "sha256": "721bf1b20d6366642ef6506ed6c76ef34794bedf271047faf37f7219d3d1aa7e"
+    },
+    {
+      "path": "docs/verification/mobile-native/preview-top-375.jpg",
+      "sha256": "0f99c83e91421ea0e4076168eca7f277b17d0052176baf94dbb8ce3ce423dbbc"
+    },
+    {
+      "path": "docs/verification/mobile-native/preview-menu-375.jpg",
+      "sha256": "c47db4951866f60cd7f19982dab2f7cb43da66d6a084d5ad76399e5fe1f94f30"
+    },
+    {
+      "path": "docs/verification/mobile-native/preview-course-375.jpg",
+      "sha256": "fe066255657377960b5e6a6ab20a23c790d50deeb46cb232f6cfa8b04163520f"
+    },
+    {
+      "path": "docs/verification/mobile-native/preview-coaches-375.jpg",
+      "sha256": "02898fb541a18d9a74ee8baac0c54bf8389fc342fbd063668e0877835b1cec38"
+    },
+    {
+      "path": "docs/verification/mobile-native/preview-locations-375.jpg",
+      "sha256": "f2109b38096c639ab49594205df833a0ff55f3ee7cc53bd65448174669986741"
+    }
+  ],
+  "limits": [
+    "Viewport emulation is not a real touchscreen, mobile OS, virtual keyboard or IME test.",
+    "Save latency remains unresolved; still saving at 9831 ms observation; one server save trace 7025 ms is not end-to-end UI latency.",
+    "Thirteen canceled events remain unexplained; no recorded exception/request-failure/incomplete trace does not establish reliability.",
+    "Login defaults to English before explicit language choice; front admin toolbar and menu accessibility labels remain English.",
+    "Dashboard external-news RSS errors are expected under blocked external HTTP; no external-network allowance was added.",
+    "No new empty-environment restore, production cutover, paid plan or sustained free-tier acceptance."
+  ],
+  "goalStatus": "active",
+  "prDraft": true
+}
