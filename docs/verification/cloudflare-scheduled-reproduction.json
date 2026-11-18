@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-18T18:09:54.440302+00:00",
+  "result": "pass",
+  "scope": "Patch after maintenance candidate; exact normalized source and private-audit daily configuration. Remote daily execution still pending.",
+  "files": [
+    {
+      "path": "src/worker-playtt-do.ts",
+      "normalizedSha256": "58ff3452013c0baf9cf3d7eae8d18ffb42735d27df7651db80e03091e244db8c"
+    },
+    {
+      "path": "src/playtt-maintenance-schedule.ts",
+      "normalizedSha256": "414dcccbdf7ba01b2212a4692c92db747f2777c71097884d202eaddbd8d4fd13"
+    },
+    {
+      "path": "wrangler.playtt-retirement-restore-audit.jsonc",
+      "normalizedSha256": "1dfe4aa82e3f41610c7f01d4c169903c53f53bb5e729c52ab65b4b72f83c54f8"
+    }
+  ]
+}

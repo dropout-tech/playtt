@@ -1,0 +1,173 @@
+{
+  "at": "2026-11-18T17:59:35.598Z",
+  "result": "pass",
+  "label": "local",
+  "scope": "Cold reconstruction of concurrent edit/cleanup outcomes, monotonic ID, stale-ID rejection and identity-checked cleanup",
+  "rounds": [
+    {
+      "kind": "independent-draft-edit-and-cleanup",
+      "editVersion": 347,
+      "maintenanceVersion": 346,
+      "editedId": 250,
+      "deletedIds": [
+        251
+      ]
+    },
+    {
+      "kind": "same-expired-auto-draft",
+      "dispatchOrder": "edit-dispatched-first",
+      "id": 253,
+      "outcome": "promotion-committed-first-and-retained",
+      "editStatus": 200,
+      "editVersion": 349,
+      "maintenanceVersion": 350,
+      "deletedIds": []
+    },
+    {
+      "kind": "same-expired-auto-draft",
+      "dispatchOrder": "cleanup-dispatched-first",
+      "id": 255,
+      "outcome": "promotion-committed-first-and-retained",
+      "editStatus": 200,
+      "editVersion": 352,
+      "maintenanceVersion": 353,
+      "deletedIds": []
+    }
+  ],
+  "newId": 257,
+  "highestPreviouslyOwned": 255,
+  "retainedRecordsMatch": true,
+  "removedRecords404": true,
+  "staleIdWrite404": true,
+  "originalPublishedPagesUnchanged": true,
+  "ownedDataRemoved": true,
+  "publisherPaused": true,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 98
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2646
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 1369
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 938
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/250?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 641
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/251?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 616
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/253?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 627
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/255?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 623
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 1235
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/251",
+      "method": "POST",
+      "status": 404,
+      "wallMs": 757
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/257?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 596
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/250?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 612
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/250?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 1299
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/253?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 615
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/253?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 1301
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/255?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 627
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/255?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 1297
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/257?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 612
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/257?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 1272
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=publish&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1242
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 14
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+✔ absent schedule is disabled without touching any binding or secret (1.2888ms)
+✔ only a single fixed daily schedule is accepted (0.8326ms)
+✔ obsolete cron triggers are ignored before dispatch (0.1623ms)
+✔ invalid event or ambiguous site configuration cannot dispatch (0.984ms)
+✔ one private dispatch uses fixed action and site-scoped credentials (39.4448ms)
+✔ locks and write failures fail the invocation without automatic replay (3.173ms)
+✔ success requires validated maintenance data and a commit receipt (3.266ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 435.7425

@@ -1,0 +1,103 @@
+{
+  "at": "2026-11-18T18:05:46.536Z",
+  "result": "pass",
+  "scope": "Real local scheduled handler to execution DO; obsolete cron ignored, fence fails without commit, one owned expired auto-draft cleaned, empty rerun",
+  "ignored": {
+    "outcome": "ok",
+    "noRetry": false
+  },
+  "fenced": {
+    "outcome": "exception",
+    "noRetry": false
+  },
+  "success": {
+    "outcome": "ok",
+    "noRetry": false
+  },
+  "empty": {
+    "outcome": "ok",
+    "noRetry": false
+  },
+  "id": 258,
+  "publisherPaused": true,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 98
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 773
+    },
+    {
+      "path": "/cdn-cgi/local/scheduled?format=json&cron=1%200%20*%20*%20*",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 9
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 724
+    },
+    {
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 21
+    },
+    {
+      "path": "/cdn-cgi/local/scheduled?format=json&cron=0%200%20*%20*%20*",
+      "method": "GET",
+      "status": 500,
+      "wallMs": 41
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 768
+    },
+    {
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 17
+    },
+    {
+      "path": "/cdn-cgi/local/scheduled?format=json&cron=0%200%20*%20*%20*",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3311
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 700
+    },
+    {
+      "path": "/?phase=operator-auto-draft-maintenance",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 737
+    },
+    {
+      "path": "/cdn-cgi/local/scheduled?format=json&cron=0%200%20*%20*%20*",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 726
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 23
+    }
+  ]
+}
