@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-18T21:40:54.653Z",
+  "result": "pass",
+  "label": "baseline",
+  "scope": "One warmup followed by six sequential private login-page reads, without CPU capture; whole-response client wall time, not CPU or general backend performance.",
+  "reads": [
+    {
+      "index": 0,
+      "wallMs": 3398.8,
+      "status": 200,
+      "warmup": true
+    },
+    {
+      "index": 1,
+      "wallMs": 2959.213,
+      "status": 200,
+      "warmup": false
+    },
+    {
+      "index": 2,
+      "wallMs": 2423.463,
+      "status": 200,
+      "warmup": false
+    },
+    {
+      "index": 3,
+      "wallMs": 3040.889,
+      "status": 200,
+      "warmup": false
+    },
+    {
+      "index": 4,
+      "wallMs": 2241.649,
+      "status": 200,
+      "warmup": false
+    },
+    {
+      "index": 5,
+      "wallMs": 2388.691,
+      "status": 200,
+      "warmup": false
+    },
+    {
+      "index": 6,
+      "wallMs": 2384.34,
+      "status": 200,
+      "warmup": false
+    }
+  ],
+  "medianMs": 2406.077,
+  "minMs": 2241.649,
+  "maxMs": 3040.889,
+  "canonicalUnchanged": true,
+  "version": 153,
+  "revision": "4b8438b1-e89d-4d01-90d3-96d2026d6cf6",
+  "publisher": "paused"
+}

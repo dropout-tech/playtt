@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-18T21:34:20.349Z",
+  "result": "unavailable",
+  "scope": "One bounded 5-second CPU capture for the sole private execution actor with three read-only login-page requests; no deployment or canonical changes.",
+  "worker": "playtt-wp-free-rebuild-audit",
+  "version": "b90bf162-72f3-4c7b-a3a9-e61c46c8a773",
+  "captured": false,
+  "captureStatus": 404,
+  "errorCodes": [
+    10393
+  ],
+  "canonicalUnchanged": true,
+  "canonicalVersion": 153,
+  "revision": "4b8438b1-e89d-4d01-90d3-96d2026d6cf6",
+  "publisher": "paused",
+  "apiChecks": [
+    {
+      "operation": "lookup",
+      "status": 200
+    },
+    {
+      "operation": "lookup",
+      "status": 200
+    },
+    {
+      "operation": "lookup",
+      "status": 200
+    },
+    {
+      "operation": "capture",
+      "status": 404
+    }
+  ],
+  "requests": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 912
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2232
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 10073
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2599
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2214
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2253
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3005
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 226
+    }
+  ]
+}

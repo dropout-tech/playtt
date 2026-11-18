@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-18T21:54:37.870722+00:00",
+  "result": "pass",
+  "scope": "Fresh fixed archive assembly, source reference comparison and checked-in/live/rebuilt latest tools/test normalized byte comparison. Does not repeat dependency installation, core asset generation or remote acceptance.",
+  "archiveSha256": "af0cf70a31bb32ec1259a78cd7cf2e9c60a306b91a711026c69aab9e8e6627e7",
+  "patches": 17,
+  "sourceFiles": 62,
+  "sourceDifferences": [],
+  "tools": 9,
+  "testFiles": 1,
+  "mjsSyntaxChecks": 8,
+  "pythonAstCheck": "pass",
+  "extraFiles": [
+    {
+      "path": "scripts/playtt-latency-opcache-local.mjs",
+      "normalizedSha256": "42615daf5f866f069156540dfd3d9b5a5479d3998fa14ce9ef5088cb815a4ab7"
+    },
+    {
+      "path": "scripts/playtt-latency-profile-remote.mjs",
+      "normalizedSha256": "55a2fa2c898b062e0086d5351bca6360213e1e53ef325dae9788c8704b99b8e9"
+    },
+    {
+      "path": "scripts/playtt-latency-read-remote.mjs",
+      "normalizedSha256": "9342e389f1d32be47bbc7a9480bde08d8f5930c5e7588c826f703c187a7be46b"
+    },
+    {
+      "path": "scripts/playtt-memory-diagnostics-php.mjs",
+      "normalizedSha256": "8fd8f9ab590a809710d4e5dc97e0337b576f7fe28fe39c056448219b20caef37"
+    },
+    {
+      "path": "scripts/playtt-memory-sampling-final-check.mjs",
+      "normalizedSha256": "b16d887ca7d39f2806a744fe873ad007d9acae5c3a814bf9b17eb4c1f9ab118c"
+    },
+    {
+      "path": "scripts/playtt-memory-sampling-native.mjs",
+      "normalizedSha256": "aaad5834c99a4b57faa5205f604b7620a23558735d881efefcef602ff9be3070"
+    },
+    {
+      "path": "scripts/playtt-rebuild-ui-backup.mjs",
+      "normalizedSha256": "fa0170ab14939b1f9f0d68e509d11bd372837773a06f0f68d0f84a84cf983fd4"
+    },
+    {
+      "path": "scripts/playtt-tail-rebuild-sanitized.mjs",
+      "normalizedSha256": "a96f9885310b602103e9cca76454968ae0e245243c9f81d8ed2659caec154445"
+    },
+    {
+      "path": "scripts/playtt-latency-pprof.py",
+      "normalizedSha256": "1d10464cdf04bd6af49680c71529cf199df8f088ad26615e4ac8b4b23b21dd4a"
+    },
+    {
+      "path": "tests/playtt-memory-diagnostics.test.ts",
+      "normalizedSha256": "f089a72fadd22b79e9e0f52e7808f07ddf59bf2550769d85859f77c484ed0a62"
+    }
+  ]
+}

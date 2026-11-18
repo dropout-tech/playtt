@@ -1,0 +1,108 @@
+{
+  "at": "2026-11-18T21:46:36.360Z",
+  "result": "pass",
+  "scope": "After diagnostic sampling change: native draft create/update, exact trailing-space/LF readback in a fresh login, original homepage unchanged and owned cleanup; no browser UI claim.",
+  "id": 144,
+  "contentHash": "b814bdfc8b2e57ef02d620cb7c2ed2a9520b2cf5c3c5fe250339e35b52422bfe",
+  "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+  "cleanupComplete": true,
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 796
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3065
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2040
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7256
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4793
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2757
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 6850
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/144",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 8247
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1982
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7712
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4812
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/144?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2806
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2525
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/144?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 7139
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/144?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 1597
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 371
+    }
+  ]
+}

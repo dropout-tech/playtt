@@ -1,6 +1,6 @@
 # 從固定上游重建目前候選
 
-`rebuild-candidate.py` 使用 Python 標準函式庫與 Git，把已採用的16段修正及額外來源檔組裝到全新資料夾。它不連網、不安裝依賴、不部署、不帶入網站資料或憑證，且拒絕覆寫既有目錄。第13段修復空白slug，第14段保存完整附件欄位，第15段增加請求body失敗的固定類別診斷，第16段保存新內容完整位元組；`media-repair/` 與 `history-origin/` 另交付有界資料修復與原生驗收工具。下方較早的patch／檔案數屬其當時建置。
+`rebuild-candidate.py` 使用 Python 標準函式庫與 Git，把已採用的17段修正及額外來源檔組裝到全新資料夾。它不連網、不安裝依賴、不部署、不帶入網站資料或憑證，且拒絕覆寫既有目錄。第13段修復空白slug，第14段保存完整附件欄位，第15段增加請求body失敗的固定類別診斷，第16段保存新內容完整位元組，第17段減少診斷全檔掃描；`media-repair/` 與 `history-origin/` 另交付有界資料修復與原生驗收工具。下方較早的patch／檔案數屬其當時建置。
 
 ## 組裝
 
@@ -74,3 +74,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 `history-origin/` 加入歷史修訂搬移及原生還原驗證工具；18筆修訂的28處網址已處理。測試揭露MDI的rtrim會移除末尾字元，因此 `content-bytes/` 新增第16段patch及內容格式policy。新寫入帶長度及SHA，兩種讀取路徑只去掉額外的格式LF，舊資料讀法保持不變。235項PHP／MDI檢查、TypeScript、dry-run、遠端原生還原、新登入、相同程式重新部署及清理／最後備份核對通過。
 
 最終16段patch／61來源及8工具重新組裝一致，沒有重裝依賴或重生核心資產。新格式備份須使用相容程式，不能只回退程式。原始失敗與驗證器修正均保留；目前限制與完整證據見 [內容保存](content-bytes/README.md) 及 [歷史修訂](history-origin/README.md)。
+
+## 第17段：私人診斷取樣（2026-11-19）
+
+62個來源檔與現候選逐位元一致（UTF-8/LF正規化）；另比對9個交付工具與1份測試。完整來源組裝及額外檔對照見 `diagnostic-sampling/reassembly-verification.json`。這次組裝不重做依賴安裝或資產產生；較早的獨立乾淨安裝證據仍另存。runtime新增取樣helper；Python pprof分析器另顯式複製至scripts，不由mjs篩選漏掉。只採用診斷取樣修正，沒有採用OPCache設定。

@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-18T21:49:07.775664+00:00",
+  "events": 123,
+  "outcomes": {
+    "ok": 123
+  },
+  "exceptions": 0,
+  "requestFailures": 0,
+  "incompleteTraces": 0,
+  "memoryRows": 45,
+  "sampling": {
+    "before-request:True": 1,
+    "after-request:False": 20,
+    "before-request:False": 19,
+    "after-persist:True": 5
+  },
+  "maxObservedWasmHeapBytes": 73859072,
+  "maxObservedFileBufferBytes": 31652392,
+  "unknownFileBuffers": 0,
+  "observerStopped": true,
+  "scopedOrphanTailProcesses": 0,
+  "limits": "Finite window; event counts are not HTTP request counts. File buffers and WASM heap are not whole-isolate memory. Warm records intentionally omit unmeasured file totals."
+}
