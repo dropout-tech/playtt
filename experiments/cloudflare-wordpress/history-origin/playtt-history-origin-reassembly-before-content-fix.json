@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-18T21:10:23.600917+00:00",
+  "result": "pass",
+  "patches": 15,
+  "sourceFiles": 60,
+  "extraFiles": [
+    {
+      "path": "scripts/playtt-history-native-restore.mjs",
+      "sha256": "d9be0c0d0bf72416c8d592097d51fd7dbb08648c0167eb865797f04362fb0dba"
+    },
+    {
+      "path": "scripts/playtt-history-origin-final-check.mjs",
+      "sha256": "af1d7a8a78f3974d5f5167e4812fe5dc04aa7d4e04d2a39da0897fda857fb523"
+    },
+    {
+      "path": "scripts/playtt-history-origin-prepare.mjs",
+      "sha256": "b2db39785cdf80fab849e8f5810c61b6471eab2ecb268faa4f60605ef0949022"
+    },
+    {
+      "path": "scripts/playtt-history-origin-remote.mjs",
+      "sha256": "573240665421193697cf91991345aa7bdbaa5f14495f6e19e9f109a556a4faa1"
+    },
+    {
+      "path": "scripts/playtt-rebuild-ui-backup.mjs",
+      "sha256": "701aa8f25609fbb54596f5072ef0b20853aa6bbdbce078cb8e5718d858dc00d5"
+    }
+  ],
+  "differences": [],
+  "scope": "Same runtime source; five scoped data migration and acceptance tools reassembled and syntax checked. No dependency/core rebuild or deployment."
+}

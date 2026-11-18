@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-18T21:23:09.351992+00:00",
+  "result": "resolved-test-assumptions",
+  "templateRevisionSchema": "The first verifier expected numeric id; pinned core returns template slug id and numeric wp_id. Corrected read-only verifier, no adoption replay.",
+  "tableEncoding": "Final candidate JSON used two spaces; native PHP emitted four. All 68 rows and every field compare equal; SHA of exact four-space re-encoding equals final object. No other normalization.",
+  "initialExpectedTableSha256": "ec63f8b208477e760f78395f291bd8a44b6835a70e83154706950abd1d1af6af",
+  "finalTableSha256": "1e4656239fd065cc8085ae08521e9ff6bacb1d5ed15d1d50ab8aa757bd2ebb5c"
+}

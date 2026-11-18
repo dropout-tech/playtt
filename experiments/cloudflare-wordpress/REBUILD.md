@@ -1,6 +1,6 @@
 # 從固定上游重建目前候選
 
-`rebuild-candidate.py` 使用 Python 標準函式庫與 Git，把已採用的15段修正及額外來源檔組裝到全新資料夾。它不連網、不安裝依賴、不部署、不帶入網站資料或憑證，且拒絕覆寫既有目錄。第13段修復空白slug，第14段保存完整附件欄位，第15段增加請求body失敗的固定類別診斷；`media-repair/` 另交付有界資料修復與原生編輯驗收工具。下方較早的patch／檔案數屬其當時建置。
+`rebuild-candidate.py` 使用 Python 標準函式庫與 Git，把已採用的16段修正及額外來源檔組裝到全新資料夾。它不連網、不安裝依賴、不部署、不帶入網站資料或憑證，且拒絕覆寫既有目錄。第13段修復空白slug，第14段保存完整附件欄位，第15段增加請求body失敗的固定類別診斷，第16段保存新內容完整位元組；`media-repair/` 與 `history-origin/` 另交付有界資料修復與原生驗收工具。下方較早的patch／檔案數屬其當時建置。
 
 ## 組裝
 
@@ -68,3 +68,9 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ## 第15段：請求中斷原因診斷
 
 `request-diagnostics/` 在上述來源之後套用，記錄body失敗前的狀態與封閉原因，不保留錯誤全文或請求內容。私人rebuild設定明確啟用 `enable_request_signal`，相容日期不變。受控完整heartbeat中斷已重現aborted-before-read，正常原生儲存／清理及完整備份驗證通過；不推論早期未充分觀測事件的確切原因。15段patch／60來源、4工具、1測試及私人設定重新組裝一致，TypeScript及dry-run通過。詳細證據與尚未完成範圍見 [請求診斷](request-diagnostics/README.md)。
+
+## 第16段：內容位元組保存
+
+`history-origin/` 加入歷史修訂搬移及原生還原驗證工具；18筆修訂的28處網址已處理。測試揭露MDI的rtrim會移除末尾字元，因此 `content-bytes/` 新增第16段patch及內容格式policy。新寫入帶長度及SHA，兩種讀取路徑只去掉額外的格式LF，舊資料讀法保持不變。235項PHP／MDI檢查、TypeScript、dry-run、遠端原生還原、新登入、相同程式重新部署及清理／最後備份核對通過。
+
+最終16段patch／61來源及8工具重新組裝一致，沒有重裝依賴或重生核心資產。新格式備份須使用相容程式，不能只回退程式。原始失敗與驗證器修正均保留；目前限制與完整證據見 [內容保存](content-bytes/README.md) 及 [歷史修訂](history-origin/README.md)。

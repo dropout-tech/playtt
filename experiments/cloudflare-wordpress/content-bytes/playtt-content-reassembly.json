@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-18T21:24:09.575380+00:00",
+  "result": "pass",
+  "patches": 16,
+  "sourceFiles": 61,
+  "extraFiles": [
+    {
+      "path": "scripts/playtt-content-php-check.mjs",
+      "sha256": "545ee65ce4070b54f130417f159ce45471b306b46e1cd107c091cf78b45f0972"
+    },
+    {
+      "path": "scripts/playtt-content-remote.mjs",
+      "sha256": "2ee6a5c7fa2ca004ed89b74879819871ca2d920dc086cfba0877e7e72ccd12ac"
+    },
+    {
+      "path": "scripts/playtt-history-native-restore.mjs",
+      "sha256": "d9be0c0d0bf72416c8d592097d51fd7dbb08648c0167eb865797f04362fb0dba"
+    },
+    {
+      "path": "scripts/playtt-history-origin-final-check.mjs",
+      "sha256": "f96952cde4a7fdb2639742afd11919e75924419a86ae169ba4a9699fd633eba9"
+    },
+    {
+      "path": "scripts/playtt-history-origin-prepare.mjs",
+      "sha256": "b2db39785cdf80fab849e8f5810c61b6471eab2ecb268faa4f60605ef0949022"
+    },
+    {
+      "path": "scripts/playtt-history-origin-remote.mjs",
+      "sha256": "573240665421193697cf91991345aa7bdbaa5f14495f6e19e9f109a556a4faa1"
+    },
+    {
+      "path": "scripts/playtt-history-whitespace-check.mjs",
+      "sha256": "eccbf388c4338a7060bdd1a27deef21576ad59653119b6285b98cbbbc598d933"
+    },
+    {
+      "path": "scripts/playtt-rebuild-ui-backup.mjs",
+      "sha256": "102ec7963dda6a5cc8b8671f94b8ebd35b0590fc4b727455c7aea48190114768"
+    }
+  ],
+  "differences": [],
+  "scope": "Final pinned source reassembly and eight scoped tools; dependencies/core assets not reinstalled or regenerated."
+}

@@ -62,6 +62,8 @@ extras(exp/'independent-restore')
 patch('postmeta/postmeta-candidate.patch',runtime);extras(exp/'postmeta')
 extras(exp/'media-repair')
 patch('request-diagnostics/request-diagnostics-candidate.patch',runtime);extras(exp/'request-diagnostics')
+extras(exp/'history-origin')
+patch('content-bytes/content-bytes-candidate.patch',runtime);extras(exp/'content-bytes')
 differences=[];files=[]
 for source in ((live or runtime)/'src').iterdir():
  if not source.is_file() or source.suffix not in ['.ts','.mjs']:continue

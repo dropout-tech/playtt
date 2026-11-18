@@ -1,0 +1,18 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -5,6 +5,7 @@
+ import { patchPlayttAutoDraftPersistence } from './playtt-auto-draft-policy.js';
+ import { patchPlayttIdSequences } from './playtt-id-sequences.js';
+ import { patchPlayttEmptySlugPersistence } from './playtt-slug-policy.js';
++import { patchPlayttContentPersistence } from './playtt-content-policy.js';
+ import { patchPlayttPostmetaPersistence } from './playtt-postmeta-policy.js';
+ import { readPlayttMaintenanceAction, playttAutoDraftMaintenanceCode, validatePlayttMaintenanceResult, type PlayttMaintenanceAction } from './playtt-maintenance.js';
+ import { readPlayttSnapshotSources, type PlayttSnapshotRuntimeReader } from './playtt-snapshot-source.js';
+@@ -2479,6 +2480,7 @@
+           patchPlayttAutoDraftPersistence(php)
+           patchPlayttIdSequences(php)
+           patchPlayttEmptySlugPersistence(php)
++          patchPlayttContentPersistence(php)
+           patchPlayttPostmetaPersistence(php)
+           patchCanonicalRuntimePoliciesAtInit(php)
+           patchCanonicalThemeJsonCustomCss(php)

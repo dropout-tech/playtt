@@ -1,0 +1,185 @@
+{
+  "at": "2026-11-18T21:15:37.827Z",
+  "result": "pass",
+  "scope": "Actual pinned PHP-WASM/MDI byte-exact full and lazy reads, unchanged unmarked legacy semantics, and corruption rejection for marked new writes; no remote mutation.",
+  "checks": 235,
+  "roundtrips": [
+    {
+      "profile": "native",
+      "case": "plain",
+      "bytes": 4,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "one-newline",
+      "bytes": 5,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "two-newlines",
+      "bytes": 6,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "trailing-space-tab",
+      "bytes": 6,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "leading-blank",
+      "bytes": 5,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "whitespace-only",
+      "bytes": 3,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "empty",
+      "bytes": 0,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "crlf",
+      "bytes": 6,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "unicode",
+      "bytes": 40,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "leading-trailing",
+      "bytes": 8,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "native",
+      "case": "nul",
+      "bytes": 5,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "plain",
+      "bytes": 4,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "one-newline",
+      "bytes": 5,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "two-newlines",
+      "bytes": 6,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "trailing-space-tab",
+      "bytes": 6,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "leading-blank",
+      "bytes": 5,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "whitespace-only",
+      "bytes": 3,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "empty",
+      "bytes": 0,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "crlf",
+      "bytes": 6,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "unicode",
+      "bytes": 40,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "leading-trailing",
+      "bytes": 8,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    },
+    {
+      "profile": "okf",
+      "case": "nul",
+      "bytes": 5,
+      "fullExact": true,
+      "lazyExact": true,
+      "legacyUnchanged": true
+    }
+  ],
+  "corruptionCases": 5
+}

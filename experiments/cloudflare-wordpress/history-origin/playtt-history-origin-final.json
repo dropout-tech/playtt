@@ -1,0 +1,70 @@
+{
+  "at": "2026-11-18T21:22:35.708Z",
+  "result": "pass",
+  "scope": "Complete backup after 18 historical revision URL migrations and native owned revision restore; current content/media/postmeta retained; every original history field matches the candidate; owned draft/revisions absent",
+  "ownedId": 140,
+  "restoredRevisionId": 141,
+  "cleanupComplete": true,
+  "historicalRevisionsChanged": 18,
+  "oldOriginReferencesRemoved": 28,
+  "canonicalPostsRows": 68,
+  "allCandidatePostsFieldsExact": true,
+  "postsSerializationChange": "Two-space candidate to native four-space JSON only; exact re-encoding SHA verified",
+  "unchangedCanonicalFiles": 36,
+  "originalMarkdown": 27,
+  "uploads": 15,
+  "postmetaRows": 48,
+  "sequenceHighWater": {
+    "wp_comments": "1",
+    "wp_options": "353",
+    "wp_postmeta": "66",
+    "wp_posts": "143",
+    "wp_term_taxonomy": "4",
+    "wp_terms": "4",
+    "wp_usermeta": "21",
+    "wp_users": "1"
+  },
+  "states": [
+    {
+      "target": "rebuild",
+      "version": 153,
+      "revision": "4b8438b1-e89d-4d01-90d3-96d2026d6cf6",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    },
+    {
+      "target": "daily-source",
+      "version": 174,
+      "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    }
+  ],
+  "gateChecks": [
+    {
+      "path": "/wp-admin/",
+      "status": 404
+    },
+    {
+      "path": "/wp-json/wp/v2/media",
+      "status": 404
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/logo.webp",
+      "status": 404
+    }
+  ],
+  "backup": {
+    "at": "2026-11-18T21:21:36.263Z",
+    "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+    "result": "pass",
+    "bucket": "playtt-wordpress-rebuild-audit",
+    "revision": "4b8438b1-e89d-4d01-90d3-96d2026d6cf6",
+    "objects": 297,
+    "decodedBytes": 4429857,
+    "archiveBytes": 2293239,
+    "archiveSha256": "1e2a2f14a867fcde0ff2eeb86c8e58e135a1b79e1851d855a0a7d2028fcf7d8c"
+  }
+}

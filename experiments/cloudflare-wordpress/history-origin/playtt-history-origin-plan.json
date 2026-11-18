@@ -1,0 +1,159 @@
+{
+  "at": "2026-11-18T21:04:22.562Z",
+  "result": "pass",
+  "scope": "Local complete-backup transformation; only revision post_content exact-origin references change. No remote mutation.",
+  "baseRevision": "4e46e92b-788c-4ede-a2d0-7695153ea4e2",
+  "candidateRevision": "b2184d10-2c66-4036-aebe-a7ca86cc0f49",
+  "rows": 68,
+  "revisions": 18,
+  "references": 28,
+  "changedPaths": [
+    "_tables/posts.json"
+  ],
+  "changes": [
+    {
+      "id": 35,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e",
+      "afterHash": "fc3df99b61973336ffa8dab828a5f556b1c4996e9f307b27b4193e77a13bee6c"
+    },
+    {
+      "id": 36,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e",
+      "afterHash": "fc3df99b61973336ffa8dab828a5f556b1c4996e9f307b27b4193e77a13bee6c"
+    },
+    {
+      "id": 50,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "74032d6fa7573c24d9a5fed437ca008d23c3c0ad54f8495e8f4b24580549bd6c",
+      "afterHash": "19e1a75ec3718c988d89084a3de22534d6573b9dddaedc7bd3c5084ee28ffb24"
+    },
+    {
+      "id": 51,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "74032d6fa7573c24d9a5fed437ca008d23c3c0ad54f8495e8f4b24580549bd6c",
+      "afterHash": "19e1a75ec3718c988d89084a3de22534d6573b9dddaedc7bd3c5084ee28ffb24"
+    },
+    {
+      "id": 52,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e",
+      "afterHash": "fc3df99b61973336ffa8dab828a5f556b1c4996e9f307b27b4193e77a13bee6c"
+    },
+    {
+      "id": 53,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e",
+      "afterHash": "fc3df99b61973336ffa8dab828a5f556b1c4996e9f307b27b4193e77a13bee6c"
+    },
+    {
+      "id": 63,
+      "parent": 61,
+      "references": 5,
+      "beforeHash": "1cd116142061e049ef8147dd72ec05ffc01a85c9217608deb212a2f98bb0d99d",
+      "afterHash": "020496e3fe6656a09e62a940f2915532466c33067011f8a84a8fa5cb6b28fa14"
+    },
+    {
+      "id": 64,
+      "parent": 62,
+      "references": 2,
+      "beforeHash": "5e2d243c201e05f78ef1b477dbdc7f94b57226a1b3fc3fc3acfcaa2f025210dc",
+      "afterHash": "90e86a9952455a0f3f0978255a8e6ce6194930d54e7071d35d57d26f6d36942c"
+    },
+    {
+      "id": 65,
+      "parent": 62,
+      "references": 2,
+      "beforeHash": "5e2d243c201e05f78ef1b477dbdc7f94b57226a1b3fc3fc3acfcaa2f025210dc",
+      "afterHash": "90e86a9952455a0f3f0978255a8e6ce6194930d54e7071d35d57d26f6d36942c"
+    },
+    {
+      "id": 66,
+      "parent": 61,
+      "references": 5,
+      "beforeHash": "88fcfdee439d510c7577beac6615548b0d5083af8fe3c60c2c500209187c420a",
+      "afterHash": "4edb23d773fcdd9f66dd70edf3d6333e37b4735956753f1e3d90bcced4801390"
+    },
+    {
+      "id": 79,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "504c0b7b62a185dbb79e360678d2a2cdb560c394f91609bb09de61497ce326ab",
+      "afterHash": "119143cf04a7ccd7ddf25eeeeb4a4d36c54ce5736e7b7e32d2682af6f856bc06"
+    },
+    {
+      "id": 80,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "504c0b7b62a185dbb79e360678d2a2cdb560c394f91609bb09de61497ce326ab",
+      "afterHash": "119143cf04a7ccd7ddf25eeeeb4a4d36c54ce5736e7b7e32d2682af6f856bc06"
+    },
+    {
+      "id": 83,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e",
+      "afterHash": "fc3df99b61973336ffa8dab828a5f556b1c4996e9f307b27b4193e77a13bee6c"
+    },
+    {
+      "id": 84,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e",
+      "afterHash": "fc3df99b61973336ffa8dab828a5f556b1c4996e9f307b27b4193e77a13bee6c"
+    },
+    {
+      "id": 100,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "55d7dc14c9b0489c28e4567f58390f076ac56062588001401906212c46cb4a24",
+      "afterHash": "324b863019ba872b01634eb75cba94f8132cfd5fac1abcc881d82ef87bf3a97e"
+    },
+    {
+      "id": 101,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "55d7dc14c9b0489c28e4567f58390f076ac56062588001401906212c46cb4a24",
+      "afterHash": "324b863019ba872b01634eb75cba94f8132cfd5fac1abcc881d82ef87bf3a97e"
+    },
+    {
+      "id": 104,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e",
+      "afterHash": "fc3df99b61973336ffa8dab828a5f556b1c4996e9f307b27b4193e77a13bee6c"
+    },
+    {
+      "id": 105,
+      "parent": 34,
+      "references": 1,
+      "beforeHash": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e",
+      "afterHash": "fc3df99b61973336ffa8dab828a5f556b1c4996e9f307b27b4193e77a13bee6c"
+    }
+  ],
+  "allOtherFieldsAndFilesUnchanged": true,
+  "uploadObjects": [
+    {
+      "key": "sites/default/markdown/objects/ec63f8b208477e760f78395f291bd8a44b6835a70e83154706950abd1d1af6af",
+      "size": 299538,
+      "sha256": "ec63f8b208477e760f78395f291bd8a44b6835a70e83154706950abd1d1af6af"
+    },
+    {
+      "key": "sites/default/restore-packs/335fac20008928db5dfee0f3d0d3dce6c1bea7b66c8c8a96016a8de59131f949.zip",
+      "size": 2292618,
+      "sha256": "335fac20008928db5dfee0f3d0d3dce6c1bea7b66c8c8a96016a8de59131f949"
+    },
+    {
+      "key": "sites/default/markdown/revisions/b2184d10-2c66-4036-aebe-a7ca86cc0f49.json",
+      "size": 72949,
+      "sha256": "b6c02717b916d7ad6e8dfd9b844bdaec919cda2dffda5baecda94a8335d638f2"
+    }
+  ]
+}
