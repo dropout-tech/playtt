@@ -1,0 +1,454 @@
+{
+  "at": "2026-11-18T22:02:40.343550+00:00",
+  "scope": "One private actor CPU sample during two owned native updates; not per-request or I/O accounting. Sanitized function names and bundle basenames only.",
+  "profileSha256": "4123fe4344dff859ab7a82d3b2cbc9bf4a75e1701109a447b380d95f07c75a86",
+  "transportGzip": false,
+  "samples": 3427,
+  "functions": 3321,
+  "locations": 3321,
+  "sampleTypes": [
+    {
+      "type": "cpu",
+      "unit": "nanoseconds",
+      "total": 3427000000
+    }
+  ],
+  "durationNs": 25000134000,
+  "cpuUnit": "nanoseconds",
+  "topSelf": [
+    {
+      "function": "(garbage collector)",
+      "value": 377000000,
+      "percent": 11.001
+    },
+    {
+      "function": "(idle)",
+      "value": 342000000,
+      "percent": 9.98
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 144000000,
+      "percent": 4.202
+    },
+    {
+      "function": "wasm-function[2479]",
+      "value": 141000000,
+      "percent": 4.114
+    },
+    {
+      "function": "wasm-function[2191]",
+      "value": 126000000,
+      "percent": 3.677
+    },
+    {
+      "function": "wasm-function[11434]",
+      "value": 108000000,
+      "percent": 3.151
+    },
+    {
+      "function": "wasm-function[5060]",
+      "value": 99000000,
+      "percent": 2.889
+    },
+    {
+      "function": "(program)",
+      "value": 97000000,
+      "percent": 2.83
+    },
+    {
+      "function": "m",
+      "value": 35000000,
+      "percent": 1.021
+    },
+    {
+      "function": "wasm-function[2479]",
+      "value": 35000000,
+      "percent": 1.021
+    },
+    {
+      "function": "transform",
+      "value": 28000000,
+      "percent": 0.817
+    },
+    {
+      "function": "wasm-function[5060]",
+      "value": 23000000,
+      "percent": 0.671
+    },
+    {
+      "function": "wasm-function[10988]",
+      "value": 23000000,
+      "percent": 0.671
+    },
+    {
+      "function": "u",
+      "value": 20000000,
+      "percent": 0.584
+    },
+    {
+      "function": "CompressionStream",
+      "value": 20000000,
+      "percent": 0.584
+    },
+    {
+      "function": "TransformStream",
+      "value": 20000000,
+      "percent": 0.584
+    },
+    {
+      "function": "isDir",
+      "value": 19000000,
+      "percent": 0.554
+    },
+    {
+      "function": "wasm-function[10745]",
+      "value": 18000000,
+      "percent": 0.525
+    },
+    {
+      "function": "wasm-function[11434]",
+      "value": 13000000,
+      "percent": 0.379
+    },
+    {
+      "function": "pipeThrough",
+      "value": 11000000,
+      "percent": 0.321
+    },
+    {
+      "function": "wasm-function[498]",
+      "value": 11000000,
+      "percent": 0.321
+    },
+    {
+      "function": "wasm-function[879]",
+      "value": 11000000,
+      "percent": 0.321
+    },
+    {
+      "function": "wasm-function[947]",
+      "value": 11000000,
+      "percent": 0.321
+    },
+    {
+      "function": "wasm-function[135]",
+      "value": 11000000,
+      "percent": 0.321
+    },
+    {
+      "function": "wasm-function[135]",
+      "value": 11000000,
+      "percent": 0.321
+    }
+  ],
+  "topCumulative": [
+    {
+      "function": "(root)",
+      "value": 3427000000,
+      "percent": 100.0
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 2042000000,
+      "percent": 59.586
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 2042000000,
+      "percent": 59.586
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 2042000000,
+      "percent": 59.586
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 2038000000,
+      "percent": 59.469
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 2038000000,
+      "percent": 59.469
+    },
+    {
+      "function": "js-to-wasm::i",
+      "value": 2038000000,
+      "percent": 59.469
+    },
+    {
+      "function": "wasm-function[10327]",
+      "value": 2038000000,
+      "percent": 59.469
+    },
+    {
+      "function": "wasm-to-js",
+      "value": 2038000000,
+      "percent": 59.469
+    },
+    {
+      "function": "invoke_ii",
+      "value": 1799000000,
+      "percent": 52.495
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 1799000000,
+      "percent": 52.495
+    },
+    {
+      "function": "js-to-wasm:i:i",
+      "value": 1799000000,
+      "percent": 52.495
+    },
+    {
+      "function": "wasm-function[14609]",
+      "value": 1799000000,
+      "percent": 52.495
+    },
+    {
+      "function": "wasm-function[11681]",
+      "value": 1798000000,
+      "percent": 52.466
+    },
+    {
+      "function": "wasm-to-js",
+      "value": 1798000000,
+      "percent": 52.466
+    },
+    {
+      "function": "invoke_iiiii",
+      "value": 1797000000,
+      "percent": 52.437
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 1797000000,
+      "percent": 52.437
+    },
+    {
+      "function": "js-to-wasm:iiiii:i",
+      "value": 1797000000,
+      "percent": 52.437
+    },
+    {
+      "function": "wasm-function[14608]",
+      "value": 1797000000,
+      "percent": 52.437
+    },
+    {
+      "function": "wasm-function[11451]",
+      "value": 1797000000,
+      "percent": 52.437
+    },
+    {
+      "function": "wasm-function[4883]",
+      "value": 1795000000,
+      "percent": 52.378
+    },
+    {
+      "function": "wasm-function[11434]",
+      "value": 1765000000,
+      "percent": 51.503
+    },
+    {
+      "function": "wasm-function[11013]",
+      "value": 622000000,
+      "percent": 18.15
+    },
+    {
+      "function": "wasm-function[3787]",
+      "value": 622000000,
+      "percent": 18.15
+    },
+    {
+      "function": "wasm-function[12496]",
+      "value": 614000000,
+      "percent": 17.917
+    }
+  ],
+  "groupedSelf": [
+    {
+      "function": "(garbage collector)",
+      "file": "[redacted]",
+      "value": 377000000,
+      "percent": 11.001
+    },
+    {
+      "function": "(idle)",
+      "file": "[redacted]",
+      "value": 342000000,
+      "percent": 9.98
+    },
+    {
+      "function": "wasm-function[2479]",
+      "file": "045e21b6",
+      "value": 181000000,
+      "percent": 5.282
+    },
+    {
+      "function": "[name-redacted]",
+      "file": "[redacted]",
+      "value": 145000000,
+      "percent": 4.231
+    },
+    {
+      "function": "[name-redacted]",
+      "file": "worker-playtt-do.js",
+      "value": 136000000,
+      "percent": 3.968
+    },
+    {
+      "function": "wasm-function[2191]",
+      "file": "045e21b6",
+      "value": 134000000,
+      "percent": 3.91
+    },
+    {
+      "function": "wasm-function[5060]",
+      "file": "045e21b6",
+      "value": 127000000,
+      "percent": 3.706
+    },
+    {
+      "function": "wasm-function[11434]",
+      "file": "045e21b6",
+      "value": 123000000,
+      "percent": 3.589
+    },
+    {
+      "function": "(program)",
+      "file": "[redacted]",
+      "value": 97000000,
+      "percent": 2.83
+    },
+    {
+      "function": "wasm-function[135]",
+      "file": "045e21b6",
+      "value": 80000000,
+      "percent": 2.334
+    },
+    {
+      "function": "wasm-function[134]",
+      "file": "045e21b6",
+      "value": 79000000,
+      "percent": 2.305
+    },
+    {
+      "function": "wasm-function[498]",
+      "file": "045e21b6",
+      "value": 49000000,
+      "percent": 1.43
+    },
+    {
+      "function": "wasm-function[11476]",
+      "file": "045e21b6",
+      "value": 45000000,
+      "percent": 1.313
+    },
+    {
+      "function": "wasm-function[171]",
+      "file": "045e21b6",
+      "value": 40000000,
+      "percent": 1.167
+    },
+    {
+      "function": "transform",
+      "file": "worker-playtt-do.js",
+      "value": 39000000,
+      "percent": 1.138
+    },
+    {
+      "function": "lookupPath",
+      "file": "worker-playtt-do.js",
+      "value": 38000000,
+      "percent": 1.109
+    },
+    {
+      "function": "m",
+      "file": "worker-playtt-do.js",
+      "value": 37000000,
+      "percent": 1.08
+    },
+    {
+      "function": "wasm-function[279]",
+      "file": "045e21b6",
+      "value": 31000000,
+      "percent": 0.905
+    },
+    {
+      "function": "wasm-function[855]",
+      "file": "045e21b6",
+      "value": 28000000,
+      "percent": 0.817
+    },
+    {
+      "function": "wasm-function[10988]",
+      "file": "045e21b6",
+      "value": 26000000,
+      "percent": 0.759
+    },
+    {
+      "function": "wasm-function[316]",
+      "file": "045e21b6",
+      "value": 23000000,
+      "percent": 0.671
+    },
+    {
+      "function": "wasm-function[879]",
+      "file": "045e21b6",
+      "value": 22000000,
+      "percent": 0.642
+    },
+    {
+      "function": "wasm-function[10745]",
+      "file": "045e21b6",
+      "value": 21000000,
+      "percent": 0.613
+    },
+    {
+      "function": "u",
+      "file": "worker-playtt-do.js",
+      "value": 20000000,
+      "percent": 0.584
+    },
+    {
+      "function": "CompressionStream",
+      "file": "[redacted]",
+      "value": 20000000,
+      "percent": 0.584
+    },
+    {
+      "function": "TransformStream",
+      "file": "[redacted]",
+      "value": 20000000,
+      "percent": 0.584
+    },
+    {
+      "function": "wasm-function[1116]",
+      "file": "045e21b6",
+      "value": 20000000,
+      "percent": 0.584
+    },
+    {
+      "function": "wasm-to-js",
+      "file": "[redacted]",
+      "value": 19000000,
+      "percent": 0.554
+    },
+    {
+      "function": "isDir",
+      "file": "worker-playtt-do.js",
+      "value": 19000000,
+      "percent": 0.554
+    },
+    {
+      "function": "wasm-function[330]",
+      "file": "045e21b6",
+      "value": 19000000,
+      "percent": 0.554
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "at": "2026-11-18T22:00:01.595Z",
+  "result": "baseline-complete",
+  "scope": "Private owned draft only. Two native updates during one 25-second CPU capture; three subsequent sequential updates without capture. Fixture intentionally retained for same-page candidate comparison; publisher remains paused.",
+  "worker": "playtt-wp-free-rebuild-audit",
+  "version": "04c50a77-d4ca-4af0-93ab-0cc3ff1963e9",
+  "id": 146,
+  "profile": {
+    "status": 404,
+    "captured": false,
+    "bytes": 179,
+    "sha256": "a789f382f9fb21894180922b9f6681646afc26aa44b4137b7fac144bf32dc53c",
+    "errorCodes": [
+      10393
+    ],
+    "writes": [
+      {
+        "index": 1,
+        "wallMs": 6656.761
+      },
+      {
+        "index": 2,
+        "wallMs": 6731.009
+      }
+    ]
+  },
+  "baseline": {
+    "writes": [
+      {
+        "index": 3,
+        "wallMs": 6866.247
+      },
+      {
+        "index": 4,
+        "wallMs": 8111.889
+      },
+      {
+        "index": 5,
+        "wallMs": 6372.308
+      }
+    ],
+    "medianMs": 6866.247,
+    "minMs": 6372.308,
+    "maxMs": 8111.889,
+    "wholeResponseClientWallTime": true
+  },
+  "homeUnchanged": true,
+  "canonicalVersion": 165,
+  "revision": "ed518db6-4b62-4f36-a56e-a40df34de006",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1539
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2099
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 7698
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7606
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3182
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2740
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 7059
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6656
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6730
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1909
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6865
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 8111
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6371
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2314
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 172
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2680
+    }
+  ]
+}

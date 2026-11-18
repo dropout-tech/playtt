@@ -78,3 +78,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ## 第17段：私人診斷取樣（2026-11-19）
 
 62個來源檔與現候選逐位元一致（UTF-8/LF正規化）；另比對9個交付工具與1份測試。完整來源組裝及額外檔對照見 `diagnostic-sampling/reassembly-verification.json`。這次組裝不重做依賴安裝或資產產生；較早的獨立乾淨安裝證據仍另存。runtime新增取樣helper；Python pprof分析器另顯式複製至scripts，不由mjs篩選漏掉。只採用診斷取樣修正，沒有採用OPCache設定。
+
+## 未採用的保存延遲候選（2026-11-19）
+
+`write-latency/` 的並行保存只保留為實驗證據，未加入組裝序列；目前仍是17段patch／62來源。不要將 `not-adopted-canonical-writes.patch` 當成下一段採用修正，也不要自動複製 `.candidate.ts`。詳細比較、原版恢復與備份結果見該目錄README。

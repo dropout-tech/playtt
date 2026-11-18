@@ -1,0 +1,94 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -7,6 +7,7 @@
+ import { patchPlayttEmptySlugPersistence } from './playtt-slug-policy.js';
+ import { patchPlayttContentPersistence } from './playtt-content-policy.js';
+ import { playttRuntimeMemoryEvidence } from './playtt-memory-diagnostics.js';
++import { persistPlayttCanonicalFiles } from './playtt-canonical-writes.js';
+ import { patchPlayttPostmetaPersistence } from './playtt-postmeta-policy.js';
+ import { readPlayttMaintenanceAction, playttAutoDraftMaintenanceCode, validatePlayttMaintenanceResult, type PlayttMaintenanceAction } from './playtt-maintenance.js';
+ import { readPlayttSnapshotSources, type PlayttSnapshotRuntimeReader } from './playtt-snapshot-source.js';
+@@ -1788,29 +1789,24 @@
+   const wpContentManifestFiles = trace ? await trace.measure("persistence.wp-content.write", () => persistRuntimeObjects(bucket, runtime.php, "/wordpress/wp-content", wpContent.files, currentManifest.wpContent ?? [], siteStorageKeys(site).wpContentObjectPrefix, retained)) : await persistRuntimeObjects(bucket, runtime.php, "/wordpress/wp-content", wpContent.files, currentManifest.wpContent ?? [], siteStorageKeys(site).wpContentObjectPrefix, retained)
+   logMutationPhase(diagnosticsStartedAt, "wp-content-persist", retained, { files: wpContentManifestFiles.length })
+ 
+-  const previousFiles = new Map(currentManifest.files.map((file) => [file.path, file]))
+-  const manifestFiles = new Map<string, MarkdownManifestFile>()
+   let markdownBytes = 0
++  let files: MarkdownManifestFile[]
+   if (trace) trace.start("persistence.markdown.write", { files: changedPaths.length })
+   try {
+-    for (const path of changedPaths) {
+-      if (!isCanonicalRelativePath(path)) throw new Error(`Invalid canonical runtime path: ${path}`)
+-      const absolute = `${MARKDOWN_ROOT}/${path}`
+-      if (runtime.php.isDir(absolute)) throw new Error(`Canonical runtime file is missing: ${path}`)
+-      const bytes = runtime.php.readFileAsBuffer(absolute)
+-      markdownBytes += bytes.byteLength
+-      if (bytes.byteLength > MAX_MARKDOWN_FILE_BYTES || markdownBytes > MAX_MARKDOWN_TOTAL_BYTES) throw new Error('Canonical Markdown inventory exceeds its byte budget.')
+-      retained.retain(bytes.byteLength)
+-      try {
+-        const sha256 = await sha256Hex(bytes)
+-        const objectKey = `${siteStorageKeys(site).markdownObjectPrefix}/${sha256}`
+-        const existing = previousFiles.get(path)
+-        if (existing?.sha256 !== sha256 || existing.size !== bytes.byteLength) await bucket.put(objectKey, bytes)
+-        manifestFiles.set(path, { path, objectKey, sha256, size: bytes.byteLength })
+-      } finally {
+-        retained.release(bytes.byteLength)
+-      }
+-    }
++    const persisted = await persistPlayttCanonicalFiles({
++      paths: changedPaths, current: currentManifest.files,
++      objectPrefix: siteStorageKeys(site).markdownObjectPrefix,
++      readFile: (path) => {
++        if (!isCanonicalRelativePath(path)) throw new Error(`Invalid canonical runtime path: ${path}`)
++        const absolute = `${MARKDOWN_ROOT}/${path}`
++        if (runtime.php.isDir(absolute)) throw new Error(`Canonical runtime file is missing: ${path}`)
++        return runtime.php.readFileAsBuffer(absolute)
++      },
++      put: (key, bytes) => bucket.put(key, bytes), retained,
++      maxFileBytes: MAX_MARKDOWN_FILE_BYTES, maxTotalBytes: MAX_MARKDOWN_TOTAL_BYTES,
++    })
++    files = persisted.files
++    markdownBytes = persisted.bytes
+     if (trace) trace.end({ bytes: markdownBytes })
+   } catch (error) {
+     if (trace) trace.end({ bytes: markdownBytes, failed: true })
+@@ -1818,7 +1814,6 @@
+   }
+   logMutationPhase(diagnosticsStartedAt, "markdown-persist", retained, { files: changedPaths.length })
+ 
+-  const files = [...manifestFiles.values()].sort((left, right) => left.path.localeCompare(right.path))
+   const unchanged = JSON.stringify(currentManifest.files) === JSON.stringify(files)
+     && JSON.stringify(currentManifest.uploads ?? []) === JSON.stringify(uploadManifestFiles)
+     && JSON.stringify(currentManifest.wpContent ?? []) === JSON.stringify(wpContentManifestFiles)
+--- a/src/mutation-memory.ts
++++ b/src/mutation-memory.ts
+@@ -1,3 +1,5 @@
++import { PLAYTT_CANONICAL_WRITE_BUFFER_BYTES } from './playtt-canonical-writes.js'
++
+ export const MUTATION_DIAGNOSTIC_SCHEMA = "wp-codebox/cloudflare-mutation-phase/v1"
+ 
+ export class MutationRetainedBytes {
+@@ -30,8 +32,9 @@
+   return {
+     // The previous request retained the response, all three collections, and a hash copy of the active file.
+     wholeTreePeakBytes: shape.responseBytes + shape.markdownBytes + shape.uploadBytes + shape.wpContentBytes + shape.largestChangedFileBytes,
+-    // Persistence owns one copied file; response conversion may briefly own both PHP and Fetch bodies.
+-    incrementalPeakBytes: Math.max(shape.responseBytes + shape.largestChangedFileBytes, 2 * shape.responseBytes),
++    // Canonical persistence may hold its bounded write queue plus the next
++    // copied file; response conversion briefly owns both PHP and Fetch bodies.
++    incrementalPeakBytes: Math.max(shape.responseBytes + shape.largestChangedFileBytes + PLAYTT_CANONICAL_WRITE_BUFFER_BYTES, 2 * shape.responseBytes),
+   }
+ }
+ 
+--- a/tests/cloudflare-runtime.test.ts
++++ b/tests/cloudflare-runtime.test.ts
+@@ -326,7 +326,7 @@
+ 
+   assert.equal(MUTATION_DIAGNOSTIC_SCHEMA, "wp-codebox/cloudflare-mutation-phase/v1")
+   assert.equal(evidence.wholeTreePeakBytes, 146 * MiB + 256 * 1024)
+-  assert.equal(evidence.incrementalPeakBytes, 16 * MiB + 256 * 1024)
++  assert.equal(evidence.incrementalPeakBytes, 17 * MiB + 256 * 1024)
+   assert.equal(mutationRetentionContract({ ...shape, responseBytes: 32 * MiB }).incrementalPeakBytes, 64 * MiB)
+ })
+ 
