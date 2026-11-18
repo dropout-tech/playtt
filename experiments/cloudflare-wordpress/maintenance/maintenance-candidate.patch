@@ -1,0 +1,253 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -4,6 +4,7 @@
+ import { trackPlayttRuntimeLifetime, playttRuntimeRetirement } from './playtt-runtime-lifetime.js';
+ import { patchPlayttAutoDraftPersistence } from './playtt-auto-draft-policy.js';
+ import { patchPlayttIdSequences } from './playtt-id-sequences.js';
++import { readPlayttMaintenanceAction, playttAutoDraftMaintenanceCode, validatePlayttMaintenanceResult, type PlayttMaintenanceAction } from './playtt-maintenance.js';
+ import { readPlayttSnapshotSources, type PlayttSnapshotRuntimeReader } from './playtt-snapshot-source.js';
+ import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+@@ -360,6 +361,16 @@
+         return Response.json({ schema: "wp-codebox/runtime-dispatch-result/v1", outcome, ...(delaySeconds === undefined ? {} : { delaySeconds }) })
+       }
+       if (route.kind === "operator-publish") return publishCanonicalWordPressPages(request, env, coordinator, site)
++      if (route.kind === "operator-auto-draft-maintenance") {
++        const headers = { 'Cache-Control': 'no-store' }
++        if (request.method !== 'POST') return new Response('Maintenance requires POST.', { status: 405, headers })
++        if (!await isAuthorizedOperator(request, env, site)) return new Response('Maintenance authorization failed.', { status: 401, headers })
++        let action: PlayttMaintenanceAction
++        try { action = await readPlayttMaintenanceAction(request) }
++        catch { return new Response('Maintenance input is invalid.', { status: 400, headers }) }
++        try { return await runCoordinatedWordPressRequest(request, env, coordinator, site, 'maintenance', undefined, undefined, undefined, undefined, action) }
++        catch (error) { if (error instanceof RevisionConflict) return coordinatorConflictResponse(error); throw error }
++      }
+       if (route.kind === "probe") {
+         const trace = new CloudflarePhaseTrace()
+         try {
+@@ -813,7 +824,7 @@
+   return difference === 0
+ }
+ 
+-async function isAuthorizedOperator(request: Request, env: RuntimeEnv, site: SiteContext): Promise<boolean> {
++export async function isAuthorizedOperator(request: Request, env: RuntimeEnv, site: SiteContext): Promise<boolean> {
+   const authorization = request.headers.get("authorization")
+   if (!env.WORDPRESS_OPERATOR_TOKEN || !authorization) return false
+   const token = await deriveSiteCredential(env.WORDPRESS_OPERATOR_TOKEN, site.id, "operator-token")
+@@ -1253,7 +1264,7 @@
+ }
+ 
+ function lifecycleProtectedRoute(kind: string): boolean {
+-  return ["wordpress", "r2-mutate", "operator-reset", "operator-restore", "operator-adopt", "operator-fence", "operator-static-artifact-import", "operator-publish"].includes(kind)
++  return ["wordpress", "r2-mutate", "operator-reset", "operator-restore", "operator-adopt", "operator-fence", "operator-static-artifact-import", "operator-publish", "operator-auto-draft-maintenance"].includes(kind)
+ }
+ 
+ async function assertActiveAllocation(env: RuntimeEnv, site: SiteContext): Promise<void> {
+@@ -1301,7 +1312,7 @@
+     || typeof snapshot.body !== "string") throw new Error("Published page artifact is invalid.")
+ }
+ 
+-async function runCoordinatedWordPressRequest(request: Request, env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext, route: "wordpress" | "health" | "r2-mutate" | "static-artifact-import", staticArtifactImport?: StaticArtifactImport, onCommitted?: (committed: { pointer: MarkdownPointer; version: number }) => Promise<void>, onPreparedCommit?: (prepared: { pointer: MarkdownPointer; version: number; ssiResult: unknown; publicationJobKey: string | null }) => Promise<void>, heartbeat?: (stage: string, progress: number) => Promise<void>): Promise<Response> {
++async function runCoordinatedWordPressRequest(request: Request, env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext, route: "wordpress" | "health" | "r2-mutate" | "static-artifact-import" | "maintenance", staticArtifactImport?: StaticArtifactImport, onCommitted?: (committed: { pointer: MarkdownPointer; version: number }) => Promise<void>, onPreparedCommit?: (prepared: { pointer: MarkdownPointer; version: number; ssiResult: unknown; publicationJobKey: string | null }) => Promise<void>, heartbeat?: (stage: string, progress: number) => Promise<void>, maintenanceAction?: PlayttMaintenanceAction): Promise<Response> {
+   const trace = new CloudflarePhaseTrace()
+   const mutatesCanonicalState = isMutation(request, route)
+   const operation: TraceOperation = route === "health" ? "diagnostic" : mutatesCanonicalState ? "mutation" : "read"
+@@ -1337,6 +1348,12 @@
+     // the warm PHP runtime. Receive bytes before touching either resource.
+     if (route === 'wordpress') preparedRequest = await trace.measure('request.translate', () => toPHPRequest(request))
+     lease = await trace.measure("lease.acquire", () => acquireLease(coordinator, request.url))
++    if (!lease.pointer && route === 'maintenance') {
++      await releaseLease(coordinator, request.url, lease)
++      finalized = true
++      finish(true)
++      return new Response('Maintenance requires initialized state.', { status: 409, headers: { 'Cache-Control': 'no-store' } })
++    }
+     if (!lease.pointer) {
+       runtimeDisposition = "cold"
+       const bootstrapped = await bootstrapCanonicalRuntime(env, coordinator, site, request.url, lease, trace)
+@@ -1406,6 +1423,17 @@
+       canonicalChanges = await trace.measure("canonical.changes.collect", async () => readCanonicalChanges(runtime!.php))
+       publicationChanges = await trace.measure("publication.changes.collect", async () => readPublicationChanges(runtime!.php))
+       console.log(JSON.stringify({ schema: "wp-codebox/cloudflare-static-artifact-persistence/v1", canonicalChanges, publicationChanges }))
++    } else if (route === 'maintenance') {
++      if (!maintenanceAction) throw new Error('Maintenance action is unavailable.')
++      runtime.php.writeFile(MARKDOWN_CHANGES_PATH, new TextEncoder().encode(JSON.stringify({ created: [], changed: [], deleted: [] })))
++      initializePublicationChanges(runtime.php)
++      const executed = await trace.measure('maintenance.execution', () => runtime!.php.run({ code: playttAutoDraftMaintenanceCode(maintenanceAction!) }))
++      if (executed.exitCode !== 0) throw new Error('WordPress maintenance failed.')
++      const result: unknown = JSON.parse(executed.text)
++      validatePlayttMaintenanceResult(result, maintenanceAction)
++      response = Response.json(result, { headers: { 'Cache-Control': 'no-store' } })
++      canonicalChanges = readCanonicalChanges(runtime.php)
++      publicationChanges = readPublicationChanges(runtime.php)
+     } else if (route === "r2-mutate") {
+       initializePublicationChanges(runtime.php)
+       const mutation = await trace.measure("synthetic.execution", () => runSyntheticMutation(runtime!))
+@@ -1607,7 +1635,7 @@
+   return new Response(head ? null : response.body, { status: response.status, statusText: response.statusText, headers })
+ }
+ 
+-function isMutation(request: Request, route: "wordpress" | "health" | "r2-mutate" | "static-artifact-import"): boolean {
++function isMutation(request: Request, route: "wordpress" | "health" | "r2-mutate" | "static-artifact-import" | "maintenance"): boolean {
+   if (route === "r2-mutate" || route === "static-artifact-import" || !["GET", "HEAD", "OPTIONS"].includes(request.method)) return true
+   if (route !== "wordpress" || request.method !== "GET") return false
+   const url = new URL(request.url)
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -1,11 +1,12 @@
+ import { DurableObjectRevisionCoordinator, WordPressStateCoordinator } from './state-coordinator.js';
+-import { createCloudflareRuntime, drainPlayttPublication, retirePlayttIdleRuntimes, serveWordPressStaticAsset, serveWordPressUpload, serveWordPressWpContent, type RuntimeEnv } from './worker.js';
++import { createCloudflareRuntime, drainPlayttPublication, isAuthorizedOperator, retirePlayttIdleRuntimes, serveWordPressStaticAsset, serveWordPressUpload, serveWordPressWpContent, type RuntimeEnv } from './worker.js';
+ import { servePublicPublication } from './public-reader.js';
+ import { PlayttPublicationAlarm } from './playtt-publication-alarm.js';
+ import { enablePlayttPhaseDiagnostics } from './phase-trace.js';
+ import { protectPlayttCms } from './playtt-cms-access.js';
+ import { playttProbeAccess } from './playtt-probe-access.js';
+ import { parseSiteContexts, resolveSiteContextFromRequest } from './site-context.js';
++import { preparePlayttMaintenanceRequest } from './playtt-maintenance.js';
+ 
+ interface PlayttEnv extends RuntimeEnv {
+   WORDPRESS_STATE: DurableObjectNamespace;
+@@ -65,7 +66,10 @@
+         || (url.pathname.startsWith('/wp-admin/') && !!url.searchParams.get('action'));
+       // Prearm recovery before a mutation: a crash after coordinator commit
+       // cannot strand its already-persisted R2 outbox entry.
+-      if (enabled && mutation) await this.publisher.wake();
++      // Maintenance validates operator credentials/body before any publication
++      // work. A committed maintenance result may still enqueue native effects.
++      const maintenance = url.searchParams.get('phase') === 'operator-auto-draft-maintenance';
++      if (enabled && mutation && !maintenance) await this.publisher.wake();
+       const result = await runtime.fetch(request, this.env);
+       if (enabled && result.headers.has('x-wp-codebox-publication-job')) await this.publisher.wake();
+       await retirePlayttIdleRuntimes();
+@@ -103,6 +107,14 @@
+     let site;
+     try { site = resolveSiteContextFromRequest(request, parseSiteContexts(env.WORDPRESS_SITE_CONTEXTS)); }
+     catch { return new Response('Unknown site hostname.', { status: 421 }); }
++    // Consume the small operator input in the receiving Worker. Passing the
++    // incoming network stream to a DO that can reject before reading it leaves
++    // its lifetime coupled to an already returned response in local workerd.
++    if (new URL(request.url).searchParams.get('phase') === 'operator-auto-draft-maintenance') {
++      const prepared = await preparePlayttMaintenanceRequest(request, () => isAuthorizedOperator(request, env, site));
++      if (prepared instanceof Response) return prepared;
++      request = prepared;
++    }
+     // Immutable verified core assets need neither PHP nor serialized mutation work.
+     // Keep these R2 range/cache reads outside the DO to avoid queuing 100+ editor assets.
+     let asset = await serveWordPressStaticAsset(request, env.WORDPRESS_STATE_BUCKET);
+--- a/src/request-routing.ts
++++ b/src/request-routing.ts
+@@ -11,6 +11,7 @@
+   | { kind: "operator-static-artifact-operation"; operationId: string }
+   | { kind: "operator-runtime-dispatch" }
+   | { kind: "operator-publish" }
++  | { kind: "operator-auto-draft-maintenance" }
+   | { kind: "probe"; phase: string }
+ 
+ export function routeWorkerRequest(request: Request): WorkerRequestRoute {
+@@ -33,5 +34,6 @@
+   }
+   if (phase === "operator-runtime-dispatch") return { kind: "operator-runtime-dispatch" }
+   if (phase === "operator-publish") return { kind: "operator-publish" }
++  if (phase === "operator-auto-draft-maintenance") return { kind: "operator-auto-draft-maintenance" }
+   return { kind: "probe", phase }
+ }
+--- a/src/php-wasm-universal.d.ts
++++ b/src/php-wasm-universal.d.ts
+@@ -16,7 +16,7 @@
+ 
+   export class PHP {
+     constructor(runtimeId: number)
+-    run(request: { code: string }): Promise<{ bytes: Uint8Array; text: string }>
++    run(request: { code: string }): Promise<{ bytes: Uint8Array; text: string; exitCode: number }>
+     addEventListener(eventType: 'request.end', listener: () => void): void
+     isDir(path: string): boolean
+     listFiles(path: string): string[]
+--- /dev/null
++++ b/src/playtt-maintenance.ts
+@@ -0,0 +1,85 @@
++export type PlayttMaintenanceAction = 'preview' | 'run';
++export const PLAYTT_AUTO_DRAFT_BATCH = 20;
++
++export async function preparePlayttMaintenanceRequest(request: Request, authorized: () => Promise<boolean>): Promise<Request | Response> {
++  const headers = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' };
++  if (request.method !== 'POST') return new Response('Maintenance requires POST.', { status: 405, headers });
++  if (!await authorized()) return new Response('Maintenance authorization failed.', { status: 401, headers });
++  let action: PlayttMaintenanceAction;
++  try { action = await readPlayttMaintenanceAction(request); }
++  catch { return new Response('Maintenance input is invalid.', { status: 400, headers }); }
++  const forwardedHeaders = new Headers(request.headers);
++  forwardedHeaders.delete('content-length');
++  return new Request(request, { headers: forwardedHeaders, body: JSON.stringify({ action }) });
++}
++
++export async function readPlayttMaintenanceAction(request: Request): Promise<PlayttMaintenanceAction> {
++  if (request.method !== 'POST') throw new Error('Maintenance requires POST.');
++  if (request.headers.get('content-type')?.split(';')[0].trim() !== 'application/json') throw new Error('Maintenance requires JSON.');
++  const reader = request.body?.getReader();
++  if (!reader) throw new Error('Maintenance input is invalid.');
++  const chunks: Uint8Array[] = []; let size = 0;
++  try {
++    while (true) {
++      const {done,value} = await reader.read(); if (done) break;
++      size += value.byteLength;
++      if (size > 256) { await reader.cancel(); throw new Error('Maintenance input is oversized.'); }
++      chunks.push(value);
++    }
++  } finally { reader.releaseLock(); }
++  const bytes = new Uint8Array(size); let offset = 0;
++  for (const chunk of chunks) { bytes.set(chunk,offset); offset += chunk.length; }
++  const input = JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));
++  if (!input || typeof input !== 'object' || Array.isArray(input) || Object.keys(input).length !== 1 || !['preview','run'].includes(input.action)) throw new Error('Maintenance input is invalid.');
++  return input.action;
++}
++
++export function playttAutoDraftMaintenanceCode(action: PlayttMaintenanceAction): string {
++  if (!['preview','run'].includes(action)) throw new Error('Maintenance action is invalid.');
++  return `<?php
++require '/wordpress/wp-load.php';
++global $wpdb;
++$apply = ${action === 'run' ? 'true' : 'false'};
++// Use the pinned core function's exact eligibility rule. Never accept IDs,
++// dates, ages or a general cron hook from the caller.
++$eligibility = "post_status = 'auto-draft' AND DATE_SUB( NOW(), INTERVAL 7 DAY ) > post_date";
++$native_query = "SELECT ID FROM $wpdb->posts WHERE " . $eligibility;
++$count_query = "SELECT COUNT(*) FROM $wpdb->posts WHERE " . $eligibility;
++$eligible_before = (int) $wpdb->get_var($count_query);
++if ($wpdb->last_error) throw new RuntimeException('Auto-draft inventory failed.');
++$selected = array_map('intval', $wpdb->get_col($native_query . ' ORDER BY ID ASC LIMIT ${PLAYTT_AUTO_DRAFT_BATCH}'));
++if ($wpdb->last_error || count($selected) > ${PLAYTT_AUTO_DRAFT_BATCH} || count(array_filter($selected, static fn($id) => $id <= 0))) throw new RuntimeException('Auto-draft selection failed.');
++$deleted = array();
++if ($apply && $selected) {
++    $intercepted = 0;
++    // Core still rechecks status/date and performs its normal deletion hooks.
++    // Restrict its one selection to this bounded, internally selected batch.
++    $bound = static function($query) use ($native_query, $selected, &$intercepted) {
++        if ($query !== $native_query) return $query;
++        $intercepted++;
++        return $query . ' AND ID IN (' . implode(',', $selected) . ')';
++    };
++    add_filter('query', $bound, PHP_INT_MAX);
++    try { wp_delete_auto_drafts(); }
++    finally { remove_filter('query', $bound, PHP_INT_MAX); }
++    if ($intercepted !== 1) throw new RuntimeException('Pinned auto-draft cleanup query changed.');
++    foreach ($selected as $id) if (null === get_post($id)) $deleted[] = $id;
++}
++$remaining = (int) $wpdb->get_var($count_query);
++if ($wpdb->last_error) throw new RuntimeException('Auto-draft readback failed.');
++$wpdb->flush_canonical_writes();
++echo json_encode(array('schema'=>'playtt/auto-draft-maintenance/v1','action'=>${JSON.stringify(action)},'batchLimit'=>${PLAYTT_AUTO_DRAFT_BATCH},'eligibleBefore'=>$eligible_before,'selectedIds'=>$selected,'deletedIds'=>$deleted,'remainingEligible'=>$remaining,'skippedIds'=>$apply ? array_values(array_diff($selected,$deleted)) : array()), JSON_THROW_ON_ERROR);`;
++}
++
++export function validatePlayttMaintenanceResult(value: unknown, action: PlayttMaintenanceAction): void {
++  const r = value as Record<string,unknown>;
++  if (!r || r.schema !== 'playtt/auto-draft-maintenance/v1' || r.action !== action || r.batchLimit !== PLAYTT_AUTO_DRAFT_BATCH) throw new Error('Maintenance result is invalid.');
++  for (const field of ['eligibleBefore','remainingEligible']) if (!Number.isSafeInteger(r[field]) || (r[field] as number) < 0) throw new Error('Maintenance count is invalid.');
++  for (const field of ['selectedIds','deletedIds','skippedIds']) {
++    const ids = r[field];
++    if (!Array.isArray(ids) || ids.length > PLAYTT_AUTO_DRAFT_BATCH || new Set(ids).size !== ids.length || ids.some(id=>!Number.isSafeInteger(id)||id<=0)) throw new Error('Maintenance IDs are invalid.');
++  }
++  const selected = r.selectedIds as number[], deleted = r.deletedIds as number[], skipped = r.skippedIds as number[];
++  if (selected.length > (r.eligibleBefore as number) || [...deleted,...skipped].some(id=>!selected.includes(id)) || deleted.some(id=>skipped.includes(id))) throw new Error('Maintenance result does not match its batch.');
++  if (action === 'preview' ? deleted.length || skipped.length || r.eligibleBefore !== r.remainingEligible : deleted.length + skipped.length !== selected.length) throw new Error('Maintenance action result is inconsistent.');
++}

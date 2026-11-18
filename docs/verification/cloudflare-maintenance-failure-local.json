@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-18T17:36:32.361Z",
+  "result": "pass",
+  "scope": "Local emulator injected canonical manifest put failure; does not model every storage or network failure",
+  "status": 500,
+  "injectedFailureObserved": true,
+  "canonicalPointerUnchanged": true,
+  "publisherPaused": true,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 98
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 775
+    },
+    {
+      "path": "/?phase=operator-auto-draft-maintenance",
+      "method": "POST",
+      "status": 500,
+      "wallMs": 4385
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 738
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 14
+    }
+  ]
+}

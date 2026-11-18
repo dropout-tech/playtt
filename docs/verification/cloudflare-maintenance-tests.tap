@@ -1,0 +1,16 @@
+✔ outer worker rejects before DO dispatch and forwards a consumed, bounded input (32.5577ms)
+✔ only fixed preview/run actions are accepted (3.6228ms)
+✔ wrong method, content type, malformed JSON and invalid UTF8 are rejected (2.6384ms)
+✔ oversized streamed body is canceled before buffering unbounded data (1.5117ms)
+✔ incomplete stream cannot become a maintenance action (0.9504ms)
+✔ deletion results must stay within selected unique bounded IDs (0.5676ms)
+✔ preview cannot claim any deletion or changed eligibility count (0.2614ms)
+✔ maintenance routing is explicit and never a normal WordPress request (0.459ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 465.0668

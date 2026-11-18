@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-18T17:38:50.563391+00:00",
+  "result": "pass",
+  "scope": "Maintenance patch applied after id-sequence candidate; exact LF-normalized source hashes; no remote deployment claim",
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "baselineNormalizedSha256": "8fa898dd364081f6b9c4a9261ca7f1c5f05247238f6ee96bb42df95e80a921cf",
+      "normalizedSha256": "9cd564e8bbb8c7184a12151929527d4ee96dc4c60281510456f228532180aa46"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "baselineNormalizedSha256": "deb7b6f12721d34b680c568d5876eb093542df1381d5e53f2acf3f9a72c43dfb",
+      "normalizedSha256": "af6195edcc15996751f53aa8c244b44bef20832ba563b70e0659399fe54b8cf8"
+    },
+    {
+      "path": "src/request-routing.ts",
+      "baselineNormalizedSha256": "5b8b3ba7d5c7b13d54eeb2d4f64c969f8e3ac8071437b257bf7f788ff94233c8",
+      "normalizedSha256": "c8900c81cdc78caa94a8541ec41580c60d9491f7c6070de526a6ad22f3e63950"
+    },
+    {
+      "path": "src/php-wasm-universal.d.ts",
+      "baselineNormalizedSha256": "8d5acc70f4a5375eb384375f925d86d569964ae4395746c9108625e7320c84f1",
+      "normalizedSha256": "2d8f8d1830f7928cd8632828c1b30a3e6b0ff0b32dcbe2a29ae8665d981f3626"
+    },
+    {
+      "path": "src/playtt-maintenance.ts",
+      "baselineNormalizedSha256": null,
+      "normalizedSha256": "acbc25a29273fa522dad36c768780b1776b274035c1f8daad8be21c29481963d"
+    }
+  ]
+}

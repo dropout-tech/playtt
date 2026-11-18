@@ -1,5 +1,11 @@
 # PLAYTT 執行進度
 
+## 自動草稿維護本機驗證（2026-11-19 01:37）
+
+有界手動維護入口只接受 preview/run，沿用原生七天 auto-draft 規則、每次最多20筆及既有 DO/R2 提交；未部署遠端，未啟用 cron，正式官網保持現況。8項邊界測試、TypeScript與完整 WordPress 清理／保留／重啟驗證通過：刪除226後新草稿為227，舊ID寫入404。21份自有auto-draft的兩次同時清理分別處理20、1筆，沒有重複；備份fence回409且指標不變。故意讓本機manifest寫入失敗後，指標仍舊，冷啟動可完整讀回249，正常重試才刪除。各輪自有資料已清理、原已發布頁面雜湊不變、發布器paused。
+
+初版串流轉送500的證據保留，接收端改成驗證／收完小輸入再轉送。preview不刪除，但可能一併提交既有待保存GET狀態，不是唯讀API。這輪是本機證據，遠端維護、清理後備份、混合編輯併發與排程仍待；詳見 `experiments/cloudflare-wordpress/maintenance/README.md`。PR #4維持draft，目標active，沒有付費或後台切換。
+
 ## 自動草稿維運盤點（2026-11-19 01:17）
 
 序列修正已提交3a31a62並推送PR #4，維持draft。已校驗備份的27個Markdown與61列JSON文章盤點出一份auto-draft 93，2026-11-17建立，尚未滿七天；沒有遠端刪除。WordPress已有清理hook，但audit入口未接scheduled、設定無cron trigger，且自動WP-Cron停用。下一步先在本機測原生七天清理與序列保存，再處理DO內有界維護入口。具體證據及尚待驗收項見`experiments/cloudflare-wordpress/id-sequence/AUTO-DRAFT-LIFECYCLE.md`；不可把盤點當成清理完成。
