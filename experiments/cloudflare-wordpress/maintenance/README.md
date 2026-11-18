@@ -1,6 +1,6 @@
 # 有界自動草稿維護候選
 
-2026-11-19：本機完整 WordPress 驗證通過，尚未部署這份維護入口到遠端。正式 playtt.tw 保留 Pages 與原品牌視覺，私人發布器維持 paused；沒有啟用 cron 或付費。
+2026-11-19 01:51：本機與私人 audit 維護驗證通過，最新私人版本 `34b6db29-d13d-4263-911b-5767bdf23b72`。正式 playtt.tw 保留 Pages 與原品牌視覺，私人發布器維持 paused；沒有啟用 cron 或付費。
 
 ## 行為
 
@@ -32,6 +32,16 @@
 
 各資料指標在 artifacts 的 `*-owned-private.json`。清理前必須逐筆核對，遠端不能用本機腳本。並行清理的通過不等於編輯與清理混合併發已驗收。
 
+## 私人遠端驗證與備份
+
+`playtt-maintenance-remote-preflight.mjs --remote`先核對paused、無fence、無正式route/cron及現行指標與既有完整備份一致。部署正常入口後執行`playtt-maintenance-remote.mjs --remote --mode=prepare`；只有初始過期集合為零才建立四份自有資料。遠端拒絕/保留/清理通過，重新部署完全相同來源，再`--mode=verify`核對重建、舊ID404及身份核對後清理。
+
+清理115，重建後新ID116；原頁面雜湊相同，發布器paused。遠端沒有注入故障或21筆批次；那些證據是本機測試。固定遠端腳本只允許私人audit網址及restore-v1，憑證由本機秘密檔讀入，不可改成正式網域。early拒絕回應可能在外層返回，只有非400/401/405回應要求partition標頭；有效維護回應仍核對分區。
+
+使用既有`scripts/playtt-snapshot-audit-backup.mjs --remote`取得一致性備份，再`playtt-maintenance-backup-check.mjs --offline`完整解碼／雜湊與序列核對。最新revision `0f007ee5-099a-4ba1-955c-7940bbc4e5fb`、296索引、壓縮SHA256 `5a3b599ce5a05c90be14d10d9a4c05e7280d22f9d0e4cbe1dc1c76410272227a`，wp_posts高水位116。離線Markdown/JSON盤點確認原有auto-draft93保留；沒有新建第三個環境完整還原本次備份。
+
+有限Worker觀測239事件皆ok，無例外或未完成trace；最大WASM配置73,990,144bytes。不是獨立請求數、isolate總記憶體或長期穩定性保證。另一次R2下載在Wrangler介面回503「Loopback unavailable」，當次備份未完成；確認fence已釋放後重試成功，故不能把Worker的ok觀測當成整個備份流程從未失敗。來源層級尚不確定。備份、序列、盤點、下載失敗及觀測摘要皆在`docs/verification/cloudflare-maintenance-*`。
+
 ## 尚待
 
-私人 audit Worker 的有界遠端驗證、清理後備份／序列核對，以及操作交付。排程尚未實作／啟用，仍須另驗證免費限制與故障恢復。正式後台切換依使用者決定維持暫緩，整體目標 active。
+混合編輯與清理的併發驗證，以及操作交付。排程尚未實作／啟用，仍須另驗證免費限制與故障恢復。正式後台切換依使用者決定維持暫緩，整體目標 active。

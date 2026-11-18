@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-18T17:48:42.035Z",
+  "scope": "First post-maintenance R2 manifest download via Wrangler",
+  "status": 503,
+  "reason": "Loopback unavailable",
+  "backupDidNotComplete": true,
+  "failedAttemptPreserved": true,
+  "fenceReleaseVerified": true,
+  "subsequentCompleteBackupRevision": "0f007ee5-099a-4ba1-955c-7940bbc4e5fb",
+  "inference": "This response does not identify whether Cloudflare or an intermediary caused the failure."
+}

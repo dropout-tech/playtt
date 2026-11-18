@@ -6,6 +6,8 @@
 
 ## 自動發布候選操作界線
 
+目前私人audit版本`34b6db29-d13d-4263-911b-5767bdf23b72`已含有界手動維護，遠端保留／清理、重部署、序列與清理後備份通過；發布器paused，沒有cron。詳見maintenance/README.md；下方本機與序列段落為先前紀錄。
+
 自動草稿有界維護入口已通過本機保留／清理／重啟、20筆上限、並行清理及manifest失敗復原；尚未部署遠端或啟用cron。操作規則、preview的提交行為及本機故障重現見 `experiments/cloudflare-wordpress/maintenance/README.md`。不得用故障入口部署到Cloudflare，亦不得把普通draft納入清理。
 
 最新私人audit為568bf784-6bbb-4f53-a13b-07e0f38e657a，自增序列已納入R2快照，本機／遠端普通草稿及原生auto-draft刪除後重建不重用，舊ID寫入404。舊無序列備份及刻意回滾的歷史限制見id-sequence/README.md；不可回退至不保存序列的程式後繼續編輯。後台仍是私人研究候選，正式站保持Pages；舊auto-draft清理、操作交付及整體驗收仍待。斷線與原生連續編輯界線見request-body/README.md。

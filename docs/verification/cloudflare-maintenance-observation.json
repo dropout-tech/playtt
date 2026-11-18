@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-18T17:51:21.072584+00:00",
+  "scope": "Finite sanitized private audit observation during maintenance preparation, identical redeployment, cold verification and backup. Event envelopes are not unique request counts or long-term reliability evidence.",
+  "deployments": [
+    "8f3f2017-f95f-493b-a955-19975313cf26",
+    "34b6db29-d13d-4263-911b-5767bdf23b72"
+  ],
+  "observedVersions": [
+    "34b6db29-d13d-4263-911b-5767bdf23b72",
+    "8f3f2017-f95f-493b-a955-19975313cf26"
+  ],
+  "firstAt": "2026-11-18T17:42:00.580Z",
+  "lastAt": "2026-11-18T17:51:14.897Z",
+  "events": 239,
+  "outcomes": {
+    "ok": 239
+  },
+  "exceptions": 0,
+  "incompleteTraces": 0,
+  "requestFailures": 0,
+  "maxObservedWasmBytes": 73990144
+}
