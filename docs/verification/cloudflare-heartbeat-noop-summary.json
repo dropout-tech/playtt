@@ -1,0 +1,230 @@
+{
+  "at": "2026-11-18T22:53:40.301955+00:00",
+  "result": "adopted-private-no-change-finalization",
+  "scope": "Private runtime only; production Pages, original branding, backend cutover and paid plans unchanged.",
+  "workerVersion": "e33e2afb-7d40-4a36-b06e-674eac707f44",
+  "change": "After full canonical/media/theme reconciliation, a native HTTP mutation with the identical complete pointer and no publication job releases its lease without creating a new coordinator version/receipt or rewriting the R2 pointer. Changed state, publication jobs, imports and maintenance retain commit semantics.",
+  "baseline": [
+    {
+      "kind": "empty-warmup",
+      "wallMs": 2590.676,
+      "runtime": "warm",
+      "versionDelta": 1,
+      "canonicalChanged": false,
+      "leaseReleaseUnchanged": false
+    },
+    {
+      "kind": "empty",
+      "wallMs": 9521.173,
+      "runtime": "cold",
+      "versionDelta": 1,
+      "canonicalChanged": true,
+      "leaseReleaseUnchanged": false
+    },
+    {
+      "kind": "post-lock",
+      "wallMs": 6003.769,
+      "runtime": "warm",
+      "versionDelta": 1,
+      "canonicalChanged": true,
+      "leaseReleaseUnchanged": false
+    },
+    {
+      "kind": "empty",
+      "wallMs": 3226.403,
+      "runtime": "warm",
+      "versionDelta": 1,
+      "canonicalChanged": false,
+      "leaseReleaseUnchanged": false
+    },
+    {
+      "kind": "post-lock",
+      "wallMs": 5319.707,
+      "runtime": "warm",
+      "versionDelta": 1,
+      "canonicalChanged": true,
+      "leaseReleaseUnchanged": false
+    },
+    {
+      "kind": "empty",
+      "wallMs": 9770.252,
+      "runtime": "cold",
+      "versionDelta": 1,
+      "canonicalChanged": true,
+      "leaseReleaseUnchanged": false
+    },
+    {
+      "kind": "post-lock",
+      "wallMs": 5623.972,
+      "runtime": "warm",
+      "versionDelta": 1,
+      "canonicalChanged": true,
+      "leaseReleaseUnchanged": false
+    }
+  ],
+  "candidate": [
+    {
+      "kind": "empty-warmup",
+      "wallMs": 2335.993,
+      "runtime": "warm",
+      "versionDelta": 0,
+      "canonicalChanged": false,
+      "leaseReleaseUnchanged": true
+    },
+    {
+      "kind": "empty",
+      "wallMs": 2073.197,
+      "runtime": "warm",
+      "versionDelta": 0,
+      "canonicalChanged": false,
+      "leaseReleaseUnchanged": true
+    },
+    {
+      "kind": "post-lock",
+      "wallMs": 9537.708,
+      "runtime": "cold",
+      "versionDelta": 1,
+      "canonicalChanged": true,
+      "leaseReleaseUnchanged": false
+    },
+    {
+      "kind": "empty",
+      "wallMs": 2076.806,
+      "runtime": "warm",
+      "versionDelta": 0,
+      "canonicalChanged": false,
+      "leaseReleaseUnchanged": true
+    },
+    {
+      "kind": "post-lock",
+      "wallMs": 6159.37,
+      "runtime": "warm",
+      "versionDelta": 1,
+      "canonicalChanged": true,
+      "leaseReleaseUnchanged": false
+    },
+    {
+      "kind": "empty",
+      "wallMs": 2069.514,
+      "runtime": "warm",
+      "versionDelta": 0,
+      "canonicalChanged": false,
+      "leaseReleaseUnchanged": true
+    }
+  ],
+  "correctness": {
+    "unchangedHeartbeats": 4,
+    "unchangedVersionDelta": 0,
+    "persistedPostLockRefreshes": 2,
+    "lockVersionDelta": 1,
+    "contentUpdateVersionDelta": 1,
+    "freshLoginExactTrailingWhitespaceReadback": true,
+    "homepageUnchanged": true
+  },
+  "localValidation": {
+    "relatedPhaseAndSnapshotTests": 18,
+    "failed": 0,
+    "typescript": "pass",
+    "dryRun": "pass",
+    "note": "These existing local cases do not by themselves exercise the new branch; native remote version/pointer and exact content checks do."
+  },
+  "final": {
+    "at": "2026-11-18T22:51:56.929Z",
+    "result": "pass",
+    "scope": "Complete backup after bounded native heartbeat/no-change commit verification and owned cleanup; all original content, historical revisions, media and metadata retained; owned draft/revisions absent",
+    "ownedId": 171,
+    "cleanupComplete": true,
+    "unchangedCanonicalFiles": 37,
+    "originalMarkdown": 27,
+    "uploads": 15,
+    "postmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "426",
+      "wp_postmeta": "68",
+      "wp_posts": "172",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 251,
+        "revision": "6f899847-85b0-415c-b253-f7a1cb1dccf7",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 174,
+        "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-18T22:51:35.212Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "6f899847-85b0-415c-b253-f7a1cb1dccf7",
+      "objects": 297,
+      "decodedBytes": 4433441,
+      "archiveBytes": 2294085,
+      "archiveSha256": "3e261fd34ec1371ad8064ac70bbe77197f496e25498666baf1668bda79f47a4d"
+    }
+  },
+  "observation": {
+    "events": 382,
+    "outcomes": {
+      "ok": 382
+    },
+    "versions": {
+      "f6ac6526-2016-445d-b510-2b887369c7c2": 180,
+      "e33e2afb-7d40-4a36-b06e-674eac707f44": 202
+    },
+    "exceptions": 0,
+    "requestFailures": 0,
+    "incompleteTraces": 0,
+    "noopReleases": 4,
+    "maxWasmHeapBytes": 74448896,
+    "maxSampledFileBytes": 31655695,
+    "scope": "Finite CLI native requests only, no browser; event counts are not unique HTTP requests; memory counters are not whole isolate; prior UI cancellations remain unexplained",
+    "observerStopped": true,
+    "matchingOrphanTails": 0
+  },
+  "limits": [
+    "The baseline has only one non-warmup warm empty request; cold/warm mixtures differ. Do not claim a whole-backend speedup or statistical benchmark.",
+    "Native lock persistence remains roughly 5–6 seconds warm and about 9.5 seconds cold in these small samples. Content update took 11.2 seconds including full response; latency remains open.",
+    "Cold empty heartbeat can legitimately produce canonical changes; no heartbeat is classified as read-only by verb/action.",
+    "No browser/mobile UI run this cycle; earlier 13 canceled UI events remain unexplained.",
+    "No new empty-environment restore, real-device touchscreen/IME, practical handoff or sustained free-tier acceptance.",
+    "WASM heap and sampled file buffers are not whole-isolate memory."
+  ],
+  "goalStatus": "active",
+  "prDraft": true,
+  "assembly": {
+    "patches": 18,
+    "sourceFiles": 62,
+    "extraScripts": 5,
+    "differences": 0
+  }
+}

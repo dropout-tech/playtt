@@ -1,0 +1,67 @@
+{
+  "at": "2026-11-18T22:42:09.034Z",
+  "mode": "--prepare",
+  "result": "pass",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 647
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2288
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2075
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 5864
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2562
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2095
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 5623
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 185
+    }
+  ],
+  "ownedId": 171,
+  "canonicalBefore": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "fbcb867b-df28-422c-a4e9-6ee2a3b77e34",
+      "manifestKey": "sites/default/markdown/revisions/fbcb867b-df28-422c-a4e9-6ee2a3b77e34.json",
+      "persistedAt": "2026-11-18T22:34:53.666Z"
+    },
+    "version": 232
+  },
+  "scope": "Created one owned draft for authenticated native heartbeat measurements; original homepage unchanged"
+}

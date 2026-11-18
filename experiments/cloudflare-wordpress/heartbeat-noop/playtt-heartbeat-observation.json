@@ -1,0 +1,19 @@
+{
+  "events": 382,
+  "outcomes": {
+    "ok": 382
+  },
+  "versions": {
+    "f6ac6526-2016-445d-b510-2b887369c7c2": 180,
+    "e33e2afb-7d40-4a36-b06e-674eac707f44": 202
+  },
+  "exceptions": 0,
+  "requestFailures": 0,
+  "incompleteTraces": 0,
+  "noopReleases": 4,
+  "maxWasmHeapBytes": 74448896,
+  "maxSampledFileBytes": 31655695,
+  "scope": "Finite CLI native requests only, no browser; event counts are not unique HTTP requests; memory counters are not whole isolate; prior UI cancellations remain unexplained",
+  "observerStopped": true,
+  "matchingOrphanTails": 0
+}
