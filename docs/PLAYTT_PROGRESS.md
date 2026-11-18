@@ -1,5 +1,9 @@
 # PLAYTT 執行進度
 
+## 自動草稿維運盤點（2026-11-19 01:17）
+
+序列修正已提交3a31a62並推送PR #4，維持draft。已校驗備份的27個Markdown與61列JSON文章盤點出一份auto-draft 93，2026-11-17建立，尚未滿七天；沒有遠端刪除。WordPress已有清理hook，但audit入口未接scheduled、設定無cron trigger，且自動WP-Cron停用。下一步先在本機測原生七天清理與序列保存，再處理DO內有界維護入口。具體證據及尚待驗收項見`experiments/cloudflare-wordpress/id-sequence/AUTO-DRAFT-LIFECYCLE.md`；不可把盤點當成清理完成。
+
 ## 自增編號保存修正（2026-11-19 01:11）
 
 正式官網保留目前Pages與原品牌視覺，後台仍不切換。序列修正僅部署獨立私人audit Worker，最新版本`568bf784-6bbb-4f53-a13b-07e0f38e657a`；原來源Worker不變、發布器paused，未新增付費。
