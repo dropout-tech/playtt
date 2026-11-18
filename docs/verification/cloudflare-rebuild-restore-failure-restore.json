@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-18T19:00:18.516Z",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "result": "fail",
+  "error": "TypeError: fetch failed",
+  "checks": []
+}

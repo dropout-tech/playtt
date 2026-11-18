@@ -1,6 +1,6 @@
 # 從固定上游重建目前候選
 
-`rebuild-candidate.py` 使用 Python 標準函式庫與 Git，把已採用的12段修正及額外來源檔組裝到全新資料夾。它不連網、不安裝依賴、不部署、不帶入網站資料或憑證，且拒絕覆寫既有目錄。
+`rebuild-candidate.py` 使用 Python 標準函式庫與 Git，把已採用的13段修正及額外來源檔組裝到全新資料夾。它不連網、不安裝依賴、不部署、不帶入網站資料或憑證，且拒絕覆寫既有目錄。第13段為獨立還原發現的空白slug保存修正；下方12段／57檔證據是該修正之前的歷史建置。
 
 ## 組裝
 
@@ -50,3 +50,9 @@ node node_modules/wrangler/bin/wrangler.js deploy --dry-run --config wrangler.pl
 新依賴下 TypeScript 及 private-audit dry-run 通過，打包20775.66 KiB／gzip7586.28 KiB。五個WASM／ZIP／SQLite模組與前輪完全一致；JavaScript只在已知的共享依賴根路徑名稱不同，僅替換該完整前綴後其餘內容完全一致，未忽略其他差異。證據在 `docs/verification/cloudflare-clean-install.json`。
 
 Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保留在紀錄。本輪驗證的是來源、依賴及部署打包重建；沒有因此再次部署遠端、初始化新的WordPress資料，或重新做一輪空環境備份還原。正式官網仍維持目前版本。
+
+## 最新獨立部署及第13段修正
+
+全新依賴／核心資產的建置之後，已部署至另一個空DO及新R2桶，還原最新備份。首次重新部署發現MDI把草稿空白slug改為檔名，故新增 `empty-slug/`；修正版已完成私人副本跨部署、編號與清理驗收。更新後重建工具再次從固定archive組裝13段patch，59個來源檔完全一致，見 `docs/verification/cloudflare-empty-slug-reassembly.json`。這是最新來源比對，沒有再次重裝相同依賴；先前binary／JavaScript比對仍屬加此修正之前的建置證據。
+
+新設定及驗收腳本由 `independent-restore/` 一併交付。原始備份／secrets需另外安全交接；重建工具不帶入它們。詳細結果、已修正缺陷與限制見該目錄README；正式官網仍未切換後台。

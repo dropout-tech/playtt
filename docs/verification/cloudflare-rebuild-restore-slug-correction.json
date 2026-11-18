@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-18T19:13:41.710Z",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "result": "pass",
+  "scope": "Local evidence correction only: original baseline retained; exact backed-up private draft has explicit empty slug, previously synthesized as its ID by the defective loader. All other baseline data is byte-identical semantically.",
+  "correctedField": "privatePost.slug",
+  "backupPath": "post/6.md",
+  "baselineBefore": "50f1cca266db1eb4695abd0db5cfd242315fe9dbc33bebeda37f43fc716049c5",
+  "baselineAfter": "50485de9eb1e1be643e74dda41923c9e7056b89b5798523d9ed34b314d013b6c",
+  "publishedContentUnchanged": true,
+  "remoteStateChanged": false
+}

@@ -1,0 +1,339 @@
+{
+  "at": "2026-11-18T19:02:11.020Z",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "result": "pass",
+  "scope": "Independent latest-candidate backup restore: semantic source equality, all uploaded media hashes, six pages, theme, zh_TW admin and anonymous draft rejection; embedded content origins intentionally unchanged",
+  "contentHash": "50f1cca266db1eb4695abd0db5cfd242315fe9dbc33bebeda37f43fc716049c5",
+  "pageCount": 7,
+  "templateParts": 2,
+  "navigation": 2,
+  "mediaVerified": 15,
+  "media": [
+    {
+      "path": "2026/11/brand-desktop.webp",
+      "sha256": "411915acde994cdb34911a756486c7572ad5c58bea3444aba0c7ba4f980b2869"
+    },
+    {
+      "path": "2026/11/brand-mobile.webp",
+      "sha256": "ddfebb71a7fd7fccc9eef6edf1c1fc2b354c3f5f5a661625acbe09c1a7be22cd"
+    },
+    {
+      "path": "2026/11/camp.webp",
+      "sha256": "b218afe6593593e91c76c2a617632cf768e383ec5adc3860d65e5306fb467450"
+    },
+    {
+      "path": "2026/11/children.webp",
+      "sha256": "d3432294ff271d178928ac287604b3bb3e2124b697927db66cdb9161e285414a"
+    },
+    {
+      "path": "2026/11/coach-amber.webp",
+      "sha256": "81b5a0e3d5d5cd27487722df090c1dde633b602cd1a8a855dc7e4eae24ef7034"
+    },
+    {
+      "path": "2026/11/coach-huang.webp",
+      "sha256": "1d3cac98c5527bd0ba3773e945bc87d84ce9ad7f2434bf28b050c47f4b232226"
+    },
+    {
+      "path": "2026/11/coach-kuo.webp",
+      "sha256": "c1bd888a29305dc4122c113c56c42b139e8624b6bf944c3d855756763b4cf8f1"
+    },
+    {
+      "path": "2026/11/coach-lin.webp",
+      "sha256": "834a75a6a16fd865b23e671ae1695295ccf7fbd77adb6bb758983e419d174ad1"
+    },
+    {
+      "path": "2026/11/coach-tsai.webp",
+      "sha256": "02b4c579f5d7e4184cea75bbad1745d2fc1823b74d8b2b610be3c4d3bf2731b5"
+    },
+    {
+      "path": "2026/11/coach-wang.webp",
+      "sha256": "5a3a46c0442ca1ca762406cf95dc2174dd5ec7ea60e3613e8b4a7e9d6e892b6a"
+    },
+    {
+      "path": "2026/11/coach-wen.webp",
+      "sha256": "aafa485ddbe688d850e935d63ce6480ad4dab6c91f927f73ddd52874c1c267d4"
+    },
+    {
+      "path": "2026/11/coach-yang.webp",
+      "sha256": "e6bd16dbd55b81f3071b401bfc1265d70231ee4a45fffa1c731a20cbb256f8ff"
+    },
+    {
+      "path": "2026/11/individual.webp",
+      "sha256": "a91ad866da4535ce1eebdce6e15c841ec6c15c7a7895d6862910c8bd5229e73e"
+    },
+    {
+      "path": "2026/11/logo.webp",
+      "sha256": "dbbad2dd9e3e41d1981f6316f8d63a32d7db172f55a3c2b10e846b4a19777c9a"
+    },
+    {
+      "path": "2026/11/playtt-do-probe.png",
+      "sha256": "431ced6916a2a21a156e38701afe55bbd7f88969fbbfc56d7fe099d47f265460"
+    }
+  ],
+  "pages": [
+    "/",
+    "/about/",
+    "/class/",
+    "/coaches/",
+    "/locations/",
+    "/partner/"
+  ],
+  "anonymousDraftPageStatus": 404,
+  "anonymousDraftEditStatus": 401,
+  "publisher": "paused",
+  "checks": [
+    {
+      "target": "audit",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 670
+    },
+    {
+      "target": "audit",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 5185
+    },
+    {
+      "target": "audit",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6508
+    },
+    {
+      "target": "audit",
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2088
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2559
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1362
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/navigation?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1288
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1302
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1324
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1271
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/posts/6?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1174
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1199
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/brand-mobile.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1532
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/camp.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 844
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/children.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 960
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/coach-amber.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 960
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/coach-huang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 929
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/coach-kuo.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 928
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/coach-lin.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 814
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/coach-tsai.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 920
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/coach-wang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 821
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/coach-wen.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 900
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/coach-yang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 948
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/individual.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 869
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/logo.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 826
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/uploads/2026/11/playtt-do-probe.png",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 942
+    },
+    {
+      "target": "audit",
+      "path": "/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2383
+    },
+    {
+      "target": "audit",
+      "path": "/about/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2987
+    },
+    {
+      "target": "audit",
+      "path": "/class/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2353
+    },
+    {
+      "target": "audit",
+      "path": "/coaches/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3113
+    },
+    {
+      "target": "audit",
+      "path": "/locations/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2245
+    },
+    {
+      "target": "audit",
+      "path": "/partner/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2268
+    },
+    {
+      "target": "audit",
+      "path": "/wp-content/themes/lets-play/style.css",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1057
+    },
+    {
+      "target": "audit",
+      "path": "/?p=6",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 2340
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/posts/6?context=edit",
+      "method": "GET",
+      "status": 401,
+      "wallMs": 1167
+    },
+    {
+      "target": "audit",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1347
+    }
+  ]
+}

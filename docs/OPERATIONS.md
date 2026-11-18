@@ -4,6 +4,12 @@
 
 `wordpress/lets-play` 是可安裝的 WordPress 區塊主題。`cloudflare/public` 是匿名公開頁面的靜態匯出，不包含 WordPress 後台、PHP 或資料庫。免費隔離WordPress已通過原生視覺段落編輯、重部署保存、全空初始化與獨立R2/DO備份還原；正式後台與公開站發布整合仍待，不能把靜態發布視為全部完成。
 
+## 私人環境版本與交接
+
+最新還原副本 `playtt-wp-free-rebuild-audit` 使用新桶 `playtt-wordpress-rebuild-audit` 與自己的DO，版本 `1ca938eb-4984-440b-b6f0-a500d9c20f7d`。它已包含空白slug保存修正，無cron／正式路由，發布器paused。最新備份的全空還原、15個媒體SHA及修正後跨部署保存已通過；來源每日維護Worker維持較早版本53980fce，未套用本輪修正。兩個設定檔不可混用。
+
+完整程序、停止點、原失敗與修正後比對見 `experiments/cloudflare-wordpress/independent-restore/README.md`。不需要重新清空目標來重跑；每輪測試必須核對備份與自有資料狀態。原始備份、登入資料及完整私有比較檔都只保存在本機。新副本資料中的嵌入網址尚未改寫，不能當作已完成網域遷移或瀏覽器畫面驗收。
+
 ## 私人後台目前狀態
 
 目前私人 audit 版本 `53980fce-97d4-47b9-bc56-6c3b065027cc` 已部署每日有界維護，排程為台灣每日02:35。混合編輯／清理與重新部署驗證通過；第一個真正每日事件及清理後備份已驗收。發布器 paused，正式官網與原來源 Worker 不變。最新結果見 `experiments/cloudflare-wordpress/scheduled-maintenance/README.md`，維護指令與停用方式見該目錄 `OPERATIONS.md`。

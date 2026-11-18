@@ -1,0 +1,191 @@
+{
+  "at": "2026-11-18T19:03:11.248Z",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "result": "pass",
+  "scope": "Latest backup restored into independent empty state; high-water restored before creating a new draft, old IDs reject edits. Owned draft awaits identical redeployment.",
+  "backupHighWater": 125,
+  "newId": 126,
+  "staleIds": [
+    124,
+    125
+  ],
+  "publisherPaused": true,
+  "checks": [
+    {
+      "target": "audit",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 823
+    },
+    {
+      "target": "audit",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1182
+    },
+    {
+      "target": "audit",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6151
+    },
+    {
+      "target": "audit",
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2092
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2086
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1283
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/navigation?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1244
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1192
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1284
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1178
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/posts/6?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1269
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages/124?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 1258
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages/125?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 1255
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 5702
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages/124",
+      "method": "POST",
+      "status": 404,
+      "wallMs": 2406
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages/125",
+      "method": "POST",
+      "status": 404,
+      "wallMs": 2104
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages/126?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1278
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2701
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1231
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/navigation?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1298
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1219
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1207
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1147
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/posts/6?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1228
+    },
+    {
+      "target": "audit",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 263
+    }
+  ]
+}
