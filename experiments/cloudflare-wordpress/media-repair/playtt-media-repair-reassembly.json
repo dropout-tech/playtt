@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-18T20:36:46.664817+00:00",
+  "result": "pass",
+  "scope": "Clean pinned archive with 14 unchanged source patches and updated media-repair tools; dependencies and core assets not rebuilt again",
+  "sourceFiles": 60,
+  "patches": 14,
+  "scriptSyntax": "six passed",
+  "extraScripts": [
+    {
+      "path": "scripts/playtt-media-repair-final-check.mjs",
+      "sha256": "b4bd4eb8a7c83cea4c1d727eeac6c0e52c621b0df681346067ece5e731793440"
+    },
+    {
+      "path": "scripts/playtt-media-repair-prepare.mjs",
+      "sha256": "01bf5d22953f8b61c8c07891759fa515ece35c0e655ce29221bfd77f0c8e77ce"
+    },
+    {
+      "path": "scripts/playtt-media-repair-remote.mjs",
+      "sha256": "be1a4d159e473d11d764a1ebb03f7f02868f8c461af9d2e54221d15223567611"
+    },
+    {
+      "path": "scripts/playtt-native-ui-fixture.mjs",
+      "sha256": "3ba76e091dd16090f273699d89270653c994a5300fc6738369fa83cbc1de47cb"
+    },
+    {
+      "path": "scripts/playtt-private-client.mjs",
+      "sha256": "9861e5ba3b238468ec44e28fb04d918521505af9cacfa8fa34d90a75dc2f2e26"
+    },
+    {
+      "path": "scripts/playtt-rebuild-ui-backup.mjs",
+      "sha256": "fbef9188541177d101a6d6546b948e512426e8fd239ad17bc324f5280f90081a"
+    }
+  ],
+  "differences": []
+}

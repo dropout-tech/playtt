@@ -60,6 +60,7 @@ for directory,relative in [('snapshot-latency','snapshot-source-candidate.patch'
  patch(directory+'/'+relative,runtime);extras(exp/directory)
 extras(exp/'independent-restore')
 patch('postmeta/postmeta-candidate.patch',runtime);extras(exp/'postmeta')
+extras(exp/'media-repair')
 differences=[];files=[]
 for source in ((live or runtime)/'src').iterdir():
  if not source.is_file() or source.suffix not in ['.ts','.mjs']:continue

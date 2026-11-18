@@ -1,0 +1,158 @@
+{
+  "at": "2026-11-18T20:37:42.386Z",
+  "result": "pass-with-open-acceptance",
+  "scope": "Native UI cleanup full-backup comparison and read-only live state checks; historical revision migration remains open",
+  "ownedId": 136,
+  "cleanupComplete": true,
+  "originalMarkdownFiles": 27,
+  "uploads": 15,
+  "brandAssets": 14,
+  "legacyProbeAssets": 1,
+  "preservedPostmetaRows": 48,
+  "finalPostmetaRows": 48,
+  "sequenceHighWater": {
+    "wp_comments": "1",
+    "wp_options": "318",
+    "wp_postmeta": "65",
+    "wp_posts": "137",
+    "wp_term_taxonomy": "4",
+    "wp_terms": "4",
+    "wp_usermeta": "21",
+    "wp_users": "1"
+  },
+  "historicalRevisionsWithOldOrigin": [
+    {
+      "id": 35,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 36,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 50,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 51,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 52,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 53,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 63,
+      "parent": 61,
+      "references": 5
+    },
+    {
+      "id": 64,
+      "parent": 62,
+      "references": 2
+    },
+    {
+      "id": 65,
+      "parent": 62,
+      "references": 2
+    },
+    {
+      "id": 66,
+      "parent": 61,
+      "references": 5
+    },
+    {
+      "id": 79,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 80,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 83,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 84,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 100,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 101,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 104,
+      "parent": 34,
+      "references": 1
+    },
+    {
+      "id": 105,
+      "parent": 34,
+      "references": 1
+    }
+  ],
+  "states": [
+    {
+      "target": "rebuild",
+      "version": 133,
+      "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    },
+    {
+      "target": "daily-source",
+      "version": 174,
+      "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    }
+  ],
+  "gateChecks": [
+    {
+      "path": "/wp-admin/",
+      "status": 404
+    },
+    {
+      "path": "/wp-json/wp/v2/media",
+      "status": 404
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/logo.webp",
+      "status": 404
+    }
+  ],
+  "backup": {
+    "at": "2026-11-18T20:36:45.192Z",
+    "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+    "result": "pass",
+    "bucket": "playtt-wordpress-rebuild-audit",
+    "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+    "objects": 297,
+    "decodedBytes": 4427815,
+    "archiveBytes": 2292804,
+    "archiveSha256": "3ad8e97c397868c8a7e53720f7eb41f763d0fa0d7c8f93edeb72a24840cc1812"
+  }
+}

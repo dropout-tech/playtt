@@ -1,0 +1,1534 @@
+{
+  "at": "2026-11-18T20:40:28.702035+00:00",
+  "result": "pass-with-open-acceptance",
+  "scope": "Private original-attachment repair, active-content origin migration and native desktop editor save/reopen; production remains unchanged",
+  "worker": "playtt-wp-free-rebuild-audit",
+  "workerVersion": "643a81da-b010-4748-95e2-f22732d9e5e7",
+  "runtimeCodeChanged": false,
+  "publisher": "paused",
+  "mediaRepair": {
+    "attachments": 15,
+    "brandAssets": 14,
+    "legacyProbeAssets": 1,
+    "addedRows": 44,
+    "originalRowsPreserved": 4,
+    "nativeCore": "WordPress 7.1.4 / PHP 8.3.36",
+    "plan": {
+      "at": "2026-11-18T20:12:22.162Z",
+      "result": "pass",
+      "scope": "Local hash-verified repair candidate; native WordPress 7.1.4 regenerated metadata from exact original bytes in a disposable SQLite/PHP-WASM runtime. No remote mutation.",
+      "baseRevision": "edf7bf71-b84e-444e-a6d9-1cce10366841",
+      "candidateRevision": "e12466c4-4831-49b4-ba05-51b7dc7fd636",
+      "attachments": [
+        {
+          "id": 7,
+          "slug": "playtt-do-probe",
+          "mime": "image/png",
+          "path": "2026/11/playtt-do-probe.png",
+          "brand": false,
+          "size": 68,
+          "sha256": "431ced6916a2a21a156e38701afe55bbd7f88969fbbfc56d7fe099d47f265460",
+          "markdownPath": "attachment/playtt-do-probe.md",
+          "markdownSha256": "cebc1e3eb5725ca6ee6a669a270d988783442184bf9f435f1fa62fd45365c9be",
+          "width": 1,
+          "height": 1
+        },
+        {
+          "id": 10,
+          "slug": "brand-desktop",
+          "mime": "image/webp",
+          "path": "2026/11/brand-desktop.webp",
+          "brand": true,
+          "size": 65256,
+          "sha256": "411915acde994cdb34911a756486c7572ad5c58bea3444aba0c7ba4f980b2869",
+          "markdownPath": "attachment/brand-desktop.md",
+          "markdownSha256": "3f6a61f865b810d0de7ae8220744925ce48f72dbf648732d9c30a8b0c45d2fc4",
+          "width": 1920,
+          "height": 1072
+        },
+        {
+          "id": 11,
+          "slug": "brand-mobile",
+          "mime": "image/webp",
+          "path": "2026/11/brand-mobile.webp",
+          "brand": true,
+          "size": 41984,
+          "sha256": "ddfebb71a7fd7fccc9eef6edf1c1fc2b354c3f5f5a661625acbe09c1a7be22cd",
+          "markdownPath": "attachment/brand-mobile.md",
+          "markdownSha256": "c1009874124fd4db6cb204074fd4adeeee8c74271b1b9adcb0ddf9f11ac1f76b",
+          "width": 828,
+          "height": 1479
+        },
+        {
+          "id": 12,
+          "slug": "camp",
+          "mime": "image/webp",
+          "path": "2026/11/camp.webp",
+          "brand": true,
+          "size": 92538,
+          "sha256": "b218afe6593593e91c76c2a617632cf768e383ec5adc3860d65e5306fb467450",
+          "markdownPath": "attachment/camp.md",
+          "markdownSha256": "7c10bda80067b259eb0702637673c7793c8e86b4b204a2605cea339aeb261b72",
+          "width": 1100,
+          "height": 937
+        },
+        {
+          "id": 13,
+          "slug": "children",
+          "mime": "image/webp",
+          "path": "2026/11/children.webp",
+          "brand": true,
+          "size": 74158,
+          "sha256": "d3432294ff271d178928ac287604b3bb3e2124b697927db66cdb9161e285414a",
+          "markdownPath": "attachment/children.md",
+          "markdownSha256": "99af28b14c1f1fae461318b86c55ca32eba03c3f65566f8cf80039296f1d3e71",
+          "width": 1100,
+          "height": 937
+        },
+        {
+          "id": 14,
+          "slug": "coach-amber",
+          "mime": "image/webp",
+          "path": "2026/11/coach-amber.webp",
+          "brand": true,
+          "size": 20624,
+          "sha256": "81b5a0e3d5d5cd27487722df090c1dde633b602cd1a8a855dc7e4eae24ef7034",
+          "markdownPath": "attachment/coach-amber.md",
+          "markdownSha256": "cfa7fbb3460de7c93f2976cedddb06f48dbf41b8fec64db0208cdf27bdb05327",
+          "width": 640,
+          "height": 758
+        },
+        {
+          "id": 15,
+          "slug": "coach-huang",
+          "mime": "image/webp",
+          "path": "2026/11/coach-huang.webp",
+          "brand": true,
+          "size": 36554,
+          "sha256": "1d3cac98c5527bd0ba3773e945bc87d84ce9ad7f2434bf28b050c47f4b232226",
+          "markdownPath": "attachment/coach-huang.md",
+          "markdownSha256": "10badea0d660041ab72686299589e24f96f45c9218f50bf0b1ce119697853443",
+          "width": 640,
+          "height": 853
+        },
+        {
+          "id": 16,
+          "slug": "coach-kuo",
+          "mime": "image/webp",
+          "path": "2026/11/coach-kuo.webp",
+          "brand": true,
+          "size": 28312,
+          "sha256": "c1bd888a29305dc4122c113c56c42b139e8624b6bf944c3d855756763b4cf8f1",
+          "markdownPath": "attachment/coach-kuo.md",
+          "markdownSha256": "bd0dd2848a49abd3f7669e076e54ff3ffd11a21359fc90653fdd41be9f46a746",
+          "width": 640,
+          "height": 619
+        },
+        {
+          "id": 17,
+          "slug": "coach-lin",
+          "mime": "image/webp",
+          "path": "2026/11/coach-lin.webp",
+          "brand": true,
+          "size": 29132,
+          "sha256": "834a75a6a16fd865b23e671ae1695295ccf7fbd77adb6bb758983e419d174ad1",
+          "markdownPath": "attachment/coach-lin.md",
+          "markdownSha256": "6452b745aa5ba2af7a301e846a52d7c0991228fe7650d574042cf9909f2d9e5f",
+          "width": 640,
+          "height": 619
+        },
+        {
+          "id": 18,
+          "slug": "coach-tsai",
+          "mime": "image/webp",
+          "path": "2026/11/coach-tsai.webp",
+          "brand": true,
+          "size": 59322,
+          "sha256": "02b4c579f5d7e4184cea75bbad1745d2fc1823b74d8b2b610be3c4d3bf2731b5",
+          "markdownPath": "attachment/coach-tsai.md",
+          "markdownSha256": "753e5f64ac6e730b794d27c8f0c167f3597345522115280efe576e48c11805a7",
+          "width": 559,
+          "height": 1024
+        },
+        {
+          "id": 19,
+          "slug": "coach-wang",
+          "mime": "image/webp",
+          "path": "2026/11/coach-wang.webp",
+          "brand": true,
+          "size": 40832,
+          "sha256": "5a3a46c0442ca1ca762406cf95dc2174dd5ec7ea60e3613e8b4a7e9d6e892b6a",
+          "markdownPath": "attachment/coach-wang.md",
+          "markdownSha256": "cbac31152b194fc4ef744a0ace93cce6537435de96dcfbb5a66f085565ceef9d",
+          "width": 640,
+          "height": 853
+        },
+        {
+          "id": 20,
+          "slug": "coach-wen",
+          "mime": "image/webp",
+          "path": "2026/11/coach-wen.webp",
+          "brand": true,
+          "size": 31188,
+          "sha256": "aafa485ddbe688d850e935d63ce6480ad4dab6c91f927f73ddd52874c1c267d4",
+          "markdownPath": "attachment/coach-wen.md",
+          "markdownSha256": "5c083ce255acddaf7f99345e93855b70d81fa92e0aee95ad29572928deb61988",
+          "width": 640,
+          "height": 619
+        },
+        {
+          "id": 21,
+          "slug": "coach-yang",
+          "mime": "image/webp",
+          "path": "2026/11/coach-yang.webp",
+          "brand": true,
+          "size": 41464,
+          "sha256": "e6bd16dbd55b81f3071b401bfc1265d70231ee4a45fffa1c731a20cbb256f8ff",
+          "markdownPath": "attachment/coach-yang.md",
+          "markdownSha256": "e86c4a4b13800dfb708310b63861569ab7cce0b86688b9b1eeaf0a38dfa42658",
+          "width": 640,
+          "height": 853
+        },
+        {
+          "id": 22,
+          "slug": "individual",
+          "mime": "image/webp",
+          "path": "2026/11/individual.webp",
+          "brand": true,
+          "size": 89448,
+          "sha256": "a91ad866da4535ce1eebdce6e15c841ec6c15c7a7895d6862910c8bd5229e73e",
+          "markdownPath": "attachment/individual.md",
+          "markdownSha256": "043cfa17a963b7e1e88960296dc4b082b75f12edc9ac4d4eac4926245beb00e1",
+          "width": 1100,
+          "height": 935
+        },
+        {
+          "id": 23,
+          "slug": "logo",
+          "mime": "image/webp",
+          "path": "2026/11/logo.webp",
+          "brand": true,
+          "size": 2678,
+          "sha256": "dbbad2dd9e3e41d1981f6316f8d63a32d7db172f55a3c2b10e846b4a19777c9a",
+          "markdownPath": "attachment/logo.md",
+          "markdownSha256": "3c488fc6ef309d062edbce09f9588486bfeca4ceccf358b8b810ade386f15634",
+          "width": 453,
+          "height": 74
+        }
+      ],
+      "brandAssets": 14,
+      "legacyProbeAssets": 1,
+      "addedRows": 44,
+      "unchangedRows": 4,
+      "postmetaHighWaterBefore": "20",
+      "postmetaHighWaterAfter": "64",
+      "changedPaths": [
+        "_tables/postmeta.json",
+        "_runtime/playtt-auto-increment.json"
+      ],
+      "uploadObjects": [
+        {
+          "key": "sites/default/markdown/objects/afcd4fca2206e86df0ed26b371ee767931150acbbbb665fcc8c71b4420651108",
+          "size": 196,
+          "sha256": "afcd4fca2206e86df0ed26b371ee767931150acbbbb665fcc8c71b4420651108"
+        },
+        {
+          "key": "sites/default/markdown/objects/6feefd2ce3928459cea06a249a871846ef53e6aaea23f8c4caf92cf6e8d3b0c2",
+          "size": 13545,
+          "sha256": "6feefd2ce3928459cea06a249a871846ef53e6aaea23f8c4caf92cf6e8d3b0c2"
+        },
+        {
+          "key": "sites/default/restore-packs/3411a08eed78b03dd0991bf6d9e8725ccc0896a227bf36b7f98badc711d73e82.zip",
+          "size": 2286792,
+          "sha256": "3411a08eed78b03dd0991bf6d9e8725ccc0896a227bf36b7f98badc711d73e82"
+        },
+        {
+          "key": "sites/default/markdown/revisions/e12466c4-4831-49b4-ba05-51b7dc7fd636.json",
+          "size": 72949,
+          "sha256": "0c81e63647b6bf0b8984fab49e73fceaf6a259f2ee395288b937f4454ec0e003"
+        }
+      ],
+      "allOtherCanonicalFilesUnchanged": true,
+      "allUploadsUnchanged": true
+    },
+    "verification": {
+      "at": "2026-11-18T20:16:55.637Z",
+      "result": "pass",
+      "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "scope": "Native authenticated WordPress media API: all 15 original attachment IDs, titles, slugs, GUIDs unchanged; file paths, image metadata and current-origin URLs repaired; all 15 image SHA checks pass",
+      "attachments": 15,
+      "brandAssets": 14,
+      "legacyProbeAssets": 1,
+      "version": 87,
+      "revision": "1cbca5b4-ee39-402a-beba-41a5e0c1bec3",
+      "publisher": "paused",
+      "checks": [
+        {
+          "path": "/__playtt-publishing",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 512
+        },
+        {
+          "path": "/?phase=operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2371
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 8478
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 7777
+        },
+        {
+          "path": "/wp-admin/",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 4178
+        },
+        {
+          "path": "/wp-json/wp/v2/media?context=edit&per_page=100",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 3204
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/playtt-do-probe.png",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 869
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 1167
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/brand-mobile.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 801
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/camp.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 737
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/children.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 711
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/coach-amber.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 741
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/coach-huang.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 693
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/coach-kuo.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 750
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/coach-lin.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 724
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/coach-tsai.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 745
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/coach-wang.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 711
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/coach-wen.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 775
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/coach-yang.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 800
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/individual.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 700
+        },
+        {
+          "path": "/wp-content/uploads/2026/11/logo.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 743
+        },
+        {
+          "path": "/__playtt-publishing",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 267
+        },
+        {
+          "path": "/?phase=operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2471
+        }
+      ]
+    }
+  },
+  "originMigration": {
+    "editableEntities": 34,
+    "fieldsChanged": 5,
+    "references": 30,
+    "guidChanged": false,
+    "verification": {
+      "at": "2026-11-18T20:35:53.760Z",
+      "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+      "previousOrigin": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev",
+      "result": "pass",
+      "scope": "Fresh authenticated active-content readback after origin migration; excludes historical revisions and preserves GUIDs",
+      "stateHash": "7403bbe5e84a5c03cad186c700ce8dceec6e4abaa31f26f501072aa740113473",
+      "version": 133,
+      "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+      "publisher": "paused",
+      "checks": [
+        {
+          "path": "/__playtt-publishing",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 507
+        },
+        {
+          "path": "/?phase=operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2583
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 3332
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 7035
+        },
+        {
+          "path": "/wp-admin/",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 4653
+        },
+        {
+          "path": "/wp-json/wp/v2/pages?context=edit&per_page=100&status=publish,draft,pending,private,future",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 4855
+        },
+        {
+          "path": "/wp-json/wp/v2/posts?context=edit&per_page=100&status=publish,draft,pending,private,future",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2577
+        },
+        {
+          "path": "/wp-json/wp/v2/navigation?context=edit&per_page=100&status=publish,draft,pending,private,future",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2469
+        },
+        {
+          "path": "/wp-json/wp/v2/templates?context=edit&per_page=100",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2483
+        },
+        {
+          "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2289
+        },
+        {
+          "path": "/wp-json/wp/v2/media?context=edit&per_page=100",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 3289
+        },
+        {
+          "path": "/wp-json/wp/v2/themes?context=edit",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2606
+        },
+        {
+          "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2479
+        },
+        {
+          "path": "/wp-json/wp/v2/settings",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2186
+        },
+        {
+          "path": "/__playtt-publishing",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 168
+        },
+        {
+          "path": "/?phase=operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 3268
+        }
+      ]
+    }
+  },
+  "nativeEditor": {
+    "browserSaveReopen": true,
+    "loadedImages": 7,
+    "originalHomeUnchanged": true,
+    "verification": {
+      "at": "2026-11-18T20:33:41.401Z",
+      "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+      "result": "pass",
+      "scope": "Native UI save independently read through authenticated REST; planned paragraph plus audited block-boundary newlines, four trailing class spaces, six default h2 attributes and one ampersand escape; original homepage is byte-identical",
+      "id": 136,
+      "contentHash": "0018c7dcea3c138e17ec1349d8791e8c85c46371cbdf611e177053b0dab67bd0",
+      "plannedRawHash": "16e5b45eb5602a16ecb2ee9f77fccf0b927969a27cd325e409b785bc0f7964f5",
+      "actualRawHash": "ac9c06d95115ef0da969a9d30ab4c184bb42c8a552a513712621272e7ff656a2",
+      "auditedSerializationChanges": true,
+      "sourceHomeHash": "5e800ffb86faf8e2a367b8e92959e0a7afc53b32bcb7c91cb401e9f088b9922d",
+      "publisher": "paused",
+      "checks": [
+        {
+          "path": "/__playtt-publishing",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 577
+        },
+        {
+          "path": "/?phase=operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2921
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 6930
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 8272
+        },
+        {
+          "path": "/wp-admin/",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 5173
+        },
+        {
+          "path": "/wp-json/wp/v2/pages/136?context=edit",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 3298
+        },
+        {
+          "path": "/wp-json/wp/v2/pages/24?context=edit",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 4343
+        }
+      ]
+    },
+    "cleanup": {
+      "at": "2026-11-18T20:34:40.930Z",
+      "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+      "result": "pass",
+      "scope": "Removed only the identity/content-checked native-editor test draft; original homepage remained byte-identical in REST content",
+      "id": 136,
+      "publisher": "paused",
+      "checks": [
+        {
+          "path": "/__playtt-publishing",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 488
+        },
+        {
+          "path": "/?phase=operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2794
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 3641
+        },
+        {
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 10284
+        },
+        {
+          "path": "/wp-admin/",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 4396
+        },
+        {
+          "path": "/wp-json/wp/v2/pages/136?context=edit",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2886
+        },
+        {
+          "path": "/wp-json/wp/v2/pages/24?context=edit",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2763
+        },
+        {
+          "path": "/wp-json/wp/v2/pages/136?force=true",
+          "method": "DELETE",
+          "status": 200,
+          "wallMs": 7308
+        },
+        {
+          "path": "/wp-json/wp/v2/pages/136?context=edit",
+          "method": "GET",
+          "status": 404,
+          "wallMs": 2665
+        }
+      ]
+    },
+    "formatAudit": {
+      "initialExactRawComparison": "failed as expected from native serialization, raw logs retained locally",
+      "boundaryOnlyComparison": "failed: 11 specific serialization differences remained",
+      "allowedAfterAudit": {
+        "classTrailingSpaces": 4,
+        "defaultH2Attributes": 6,
+        "ampersandEscape": 1,
+        "blockBoundaryNewlines": true
+      },
+      "allOtherMarkupAndTextIdentical": true
+    }
+  },
+  "frontPage": {
+    "desktopImagesLoadedAfterScroll": 9,
+    "initialOffscreenLazyImagesPending": true,
+    "mobileRecheck": false
+  },
+  "final": {
+    "at": "2026-11-18T20:37:42.386Z",
+    "result": "pass-with-open-acceptance",
+    "scope": "Native UI cleanup full-backup comparison and read-only live state checks; historical revision migration remains open",
+    "ownedId": 136,
+    "cleanupComplete": true,
+    "originalMarkdownFiles": 27,
+    "uploads": 15,
+    "brandAssets": 14,
+    "legacyProbeAssets": 1,
+    "preservedPostmetaRows": 48,
+    "finalPostmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "318",
+      "wp_postmeta": "65",
+      "wp_posts": "137",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "historicalRevisionsWithOldOrigin": [
+      {
+        "id": 35,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 36,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 50,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 51,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 52,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 53,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 63,
+        "parent": 61,
+        "references": 5
+      },
+      {
+        "id": 64,
+        "parent": 62,
+        "references": 2
+      },
+      {
+        "id": 65,
+        "parent": 62,
+        "references": 2
+      },
+      {
+        "id": 66,
+        "parent": 61,
+        "references": 5
+      },
+      {
+        "id": 79,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 80,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 83,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 84,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 100,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 101,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 104,
+        "parent": 34,
+        "references": 1
+      },
+      {
+        "id": 105,
+        "parent": 34,
+        "references": 1
+      }
+    ],
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 133,
+        "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 174,
+        "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-18T20:36:45.192Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+      "objects": 297,
+      "decodedBytes": 4427815,
+      "archiveBytes": 2292804,
+      "archiveSha256": "3ad8e97c397868c8a7e53720f7eb41f763d0fa0d7c8f93edeb72a24840cc1812"
+    }
+  },
+  "observation": {
+    "at": "2026-11-18T20:38:06.052217+00:00",
+    "events": 754,
+    "outcomes": {
+      "ok": 742,
+      "canceled": 12
+    },
+    "exceptions": 0,
+    "incompleteTraces": 1,
+    "maxObservedWasmHeapBytes": 80084992,
+    "nonOkEvents": [
+      {
+        "at": "2026-11-18T20:16:15.573Z",
+        "outcome": "canceled",
+        "entrypoint": null,
+        "request": {
+          "category": "operator",
+          "method": "GET"
+        },
+        "traces": []
+      },
+      {
+        "at": "2026-11-18T20:26:13.483Z",
+        "outcome": "canceled",
+        "entrypoint": null,
+        "request": {
+          "category": "post-editor",
+          "method": "GET"
+        },
+        "traces": []
+      },
+      {
+        "at": "2026-11-18T20:26:13.479Z",
+        "outcome": "canceled",
+        "entrypoint": "PlayttWordPressExecution",
+        "request": {
+          "category": "post-editor",
+          "method": "GET"
+        },
+        "traces": [
+          {
+            "operation": "mutation",
+            "runtime": "warm",
+            "completed": true,
+            "totalMs": 10371,
+            "phases": [
+              {
+                "name": "request.translate",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "lease.acquire",
+                "durationMs": 62,
+                "aggregateGap": false
+              },
+              {
+                "name": "published.page-cache.lookup",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.reuse",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.current.read",
+                "durationMs": 233,
+                "aggregateGap": false
+              },
+              {
+                "name": "request.php",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.manifest.current.read",
+                "durationMs": 5263,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.markdown.write",
+                "durationMs": 1497,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.manifest.write",
+                "durationMs": 2447,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.enqueue",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "coordinator.commit",
+                "durationMs": 869,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.promote",
+                "durationMs": 0,
+                "aggregateGap": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "at": "2026-11-18T20:26:56.820Z",
+        "outcome": "canceled",
+        "entrypoint": null,
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": []
+      },
+      {
+        "at": "2026-11-18T20:26:58.006Z",
+        "outcome": "canceled",
+        "entrypoint": "PlayttWordPressExecution",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": [
+          {
+            "operation": "mutation",
+            "runtime": "warm",
+            "completed": true,
+            "totalMs": 8947,
+            "phases": [
+              {
+                "name": "request.translate",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "lease.acquire",
+                "durationMs": 71,
+                "aggregateGap": false
+              },
+              {
+                "name": "published.page-cache.lookup",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.reuse",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.current.read",
+                "durationMs": 297,
+                "aggregateGap": false
+              },
+              {
+                "name": "request.php",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.manifest.current.read",
+                "durationMs": 4552,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.markdown.write",
+                "durationMs": 874,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.manifest.write",
+                "durationMs": 2340,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.enqueue",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "coordinator.commit",
+                "durationMs": 813,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.promote",
+                "durationMs": 0,
+                "aggregateGap": false
+              }
+            ]
+          },
+          {
+            "operation": "mutation",
+            "runtime": "cold",
+            "completed": true,
+            "totalMs": 11321,
+            "phases": [
+              {
+                "name": "request.translate",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "lease.acquire",
+                "durationMs": 82,
+                "aggregateGap": false
+              },
+              {
+                "name": "published.page-cache.lookup",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.manifest.read",
+                "durationMs": 367,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.restore-pack.fetch",
+                "durationMs": 507,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.restore-pack.verify-decode",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.archive.sqlite.fetch-verify",
+                "durationMs": 796,
+                "aggregateGap": false
+              },
+              {
+                "name": "php.runtime.create",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.archive.wordpress.fetch-verify-extract",
+                "durationMs": 596,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.archive.mdi.extract",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.hydration.markdown",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.hydration.wp-content",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.hydration.uploads",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "playground.opaque",
+                "durationMs": 0,
+                "aggregateGap": true
+              },
+              {
+                "name": "playground.version.read",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.current.read",
+                "durationMs": 831,
+                "aggregateGap": false
+              },
+              {
+                "name": "request.php",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.manifest.current.read",
+                "durationMs": 3008,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.markdown.write",
+                "durationMs": 1694,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.manifest.write",
+                "durationMs": 2583,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.enqueue",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "coordinator.commit",
+                "durationMs": 857,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.promote",
+                "durationMs": 0,
+                "aggregateGap": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "at": "2026-11-18T20:28:14.688Z",
+        "outcome": "canceled",
+        "entrypoint": null,
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": []
+      },
+      {
+        "at": "2026-11-18T20:28:17.267Z",
+        "outcome": "canceled",
+        "entrypoint": "PlayttWordPressExecution",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": [
+          {
+            "operation": "mutation",
+            "runtime": "warm",
+            "completed": true,
+            "totalMs": 10452,
+            "phases": [
+              {
+                "name": "request.translate",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "lease.acquire",
+                "durationMs": 66,
+                "aggregateGap": false
+              },
+              {
+                "name": "published.page-cache.lookup",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.reuse",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.current.read",
+                "durationMs": 221,
+                "aggregateGap": false
+              },
+              {
+                "name": "request.php",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.manifest.current.read",
+                "durationMs": 5210,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.markdown.write",
+                "durationMs": 765,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.manifest.write",
+                "durationMs": 2664,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.enqueue",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "coordinator.commit",
+                "durationMs": 1526,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.promote",
+                "durationMs": 0,
+                "aggregateGap": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "at": "2026-11-18T20:28:25.091Z",
+        "outcome": "canceled",
+        "entrypoint": null,
+        "request": {
+          "category": "rest-other",
+          "method": "GET"
+        },
+        "traces": []
+      },
+      {
+        "at": "2026-11-18T20:29:50.276Z",
+        "outcome": "canceled",
+        "entrypoint": null,
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": []
+      },
+      {
+        "at": "2026-11-18T20:29:53.324Z",
+        "outcome": "canceled",
+        "entrypoint": "PlayttWordPressExecution",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": [
+          {
+            "operation": "read",
+            "runtime": "warm",
+            "completed": true,
+            "totalMs": 3642,
+            "phases": [
+              {
+                "name": "request.translate",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "lease.acquire",
+                "durationMs": 72,
+                "aggregateGap": false
+              },
+              {
+                "name": "published.page-cache.lookup",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.reuse",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "request.php",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "lease.release",
+                "durationMs": 3570,
+                "aggregateGap": false
+              },
+              {
+                "name": "page-cache.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "at": "2026-11-18T20:31:45.074Z",
+        "outcome": "canceled",
+        "entrypoint": null,
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": []
+      },
+      {
+        "at": "2026-11-18T20:31:45.760Z",
+        "outcome": "canceled",
+        "entrypoint": null,
+        "request": {
+          "category": "other",
+          "method": "GET"
+        },
+        "traces": []
+      }
+    ],
+    "observerStopped": true,
+    "orphanProcessCheck": "none",
+    "limits": "Finite event observation; wrapper and execution events can represent the same HTTP request. WASM heap is not total isolate memory. Two post-editor GET canceled events have the same timestamp near a browser navigation timeout; causation remains unproved. One admin-ajax POST request-body-unavailable failed before PHP and must be investigated. Other cancellations remain unexplained.",
+    "requestFailures": [
+      {
+        "at": "2026-11-18T20:29:56.883Z",
+        "category": "request-body-unavailable",
+        "endpoint": "admin-ajax",
+        "method": "POST",
+        "operation": "mutation",
+        "runtime": "not-used",
+        "phase": "request.translate",
+        "signalAborted": false,
+        "bodyUsed": true,
+        "cleanupFailed": false
+      }
+    ],
+    "incompleteTraceEvents": [
+      {
+        "at": "2026-11-18T20:29:56.883Z",
+        "outcome": "ok",
+        "request": {
+          "category": "other",
+          "method": "GET"
+        },
+        "traces": [
+          {
+            "operation": "mutation",
+            "runtime": "not-used",
+            "completed": false,
+            "totalMs": 0,
+            "phases": [
+              {
+                "name": "request.translate",
+                "durationMs": 0,
+                "aggregateGap": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reassembly": {
+    "at": "2026-11-18T20:36:46.664817+00:00",
+    "result": "pass",
+    "scope": "Clean pinned archive with 14 unchanged source patches and updated media-repair tools; dependencies and core assets not rebuilt again",
+    "sourceFiles": 60,
+    "patches": 14,
+    "scriptSyntax": "six passed",
+    "extraScripts": [
+      {
+        "path": "scripts/playtt-media-repair-final-check.mjs",
+        "sha256": "b4bd4eb8a7c83cea4c1d727eeac6c0e52c621b0df681346067ece5e731793440"
+      },
+      {
+        "path": "scripts/playtt-media-repair-prepare.mjs",
+        "sha256": "01bf5d22953f8b61c8c07891759fa515ece35c0e655ce29221bfd77f0c8e77ce"
+      },
+      {
+        "path": "scripts/playtt-media-repair-remote.mjs",
+        "sha256": "be1a4d159e473d11d764a1ebb03f7f02868f8c461af9d2e54221d15223567611"
+      },
+      {
+        "path": "scripts/playtt-native-ui-fixture.mjs",
+        "sha256": "3ba76e091dd16090f273699d89270653c994a5300fc6738369fa83cbc1de47cb"
+      },
+      {
+        "path": "scripts/playtt-private-client.mjs",
+        "sha256": "9861e5ba3b238468ec44e28fb04d918521505af9cacfa8fa34d90a75dc2f2e26"
+      },
+      {
+        "path": "scripts/playtt-rebuild-ui-backup.mjs",
+        "sha256": "fbef9188541177d101a6d6546b948e512426e8fd239ad17bc324f5280f90081a"
+      }
+    ],
+    "differences": []
+  },
+  "remaining": [
+    "Diagnose one request-body-unavailable and canceled events observed during real browser use; assess interactive latency.",
+    "Handle 18 historical revisions containing 28 old-origin content URLs before treating revision restoration as accepted.",
+    "Other native workflows, mobile and practical handoff acceptance; sustained free-tier usage.",
+    "No production backend cutover; only independent rebuild Worker has latest fixes."
+  ],
+  "goalStatus": "active"
+}

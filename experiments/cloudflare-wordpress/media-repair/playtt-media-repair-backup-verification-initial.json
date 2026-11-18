@@ -1,0 +1,7 @@
+{
+  "at": "2026-11-18T20:18:46.903689+00:00",
+  "result": "initial-expectation-corrected",
+  "scope": "Initial exact comparison of all sequence bytes failed after authenticated readback. Diagnosis: only wp_options high-water advanced 290 to 293; postmeta table bytes and its high-water64 are unchanged. Login also changed usermeta sessions. No content or attachment mutation found.",
+  "optionHighWaterBefore": "290",
+  "optionHighWaterAfter": "293"
+}
