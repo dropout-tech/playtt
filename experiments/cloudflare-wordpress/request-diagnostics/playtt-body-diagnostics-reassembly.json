@@ -1,0 +1,34 @@
+{
+  "at": "2026-11-18T20:57:19.555894+00:00",
+  "result": "pass",
+  "patches": 15,
+  "sourceFiles": 60,
+  "extraFiles": [
+    {
+      "path": "scripts/playtt-body-diagnostics-remote.mjs",
+      "sha256": "ef3af027ad5f6b4aa320e30af780a0cad7d5bd53abbbea82d5f8920432c3016b"
+    },
+    {
+      "path": "scripts/playtt-body-diagnostics-final-check.mjs",
+      "sha256": "92a4c1b30c3fe97c8f65ec37fb5a5ed332559830c6737903af8b1d1db2c29e07"
+    },
+    {
+      "path": "scripts/playtt-tail-rebuild-sanitized.mjs",
+      "sha256": "68a56282fe1c711c7428c259a2d496c893817df5590a5077f4ae5db91b1e0474"
+    },
+    {
+      "path": "scripts/playtt-rebuild-ui-backup.mjs",
+      "sha256": "9f32ca8d0dac89978b5e3c44eb6009e41e0f790a68eb22e4f65076090d1aff2e"
+    },
+    {
+      "path": "tests/playtt-body-diagnostics.test.ts",
+      "sha256": "6943790fd58a4e43b5b2cad8fc0b8dc374fd685b9228b4af647998bbff37182a"
+    },
+    {
+      "path": "wrangler.playtt-rebuild-audit.jsonc",
+      "sha256": "12442b91c03e342a6ed0c24e9d86699ec8d5a203583975c8ae0019eefff04ced"
+    }
+  ],
+  "differences": [],
+  "scope": "Pinned source assembly only; dependencies/core artifacts not reinstalled or regenerated"
+}

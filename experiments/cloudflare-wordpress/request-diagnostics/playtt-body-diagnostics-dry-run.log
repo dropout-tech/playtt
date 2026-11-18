@@ -1,0 +1,203 @@
+
+ ⛅️ wrangler 4.127.1
+────────────────────
+▲ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    src/playtt-php-loader.mjs:781:25:
+      781 │           ASM_CONSTS[start] = eval(func);
+          ╵                               ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+▲ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    src/playtt-php-loader.mjs:803:27:
+      803 │           moduleExports[name] = eval(func);
+          ╵                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+▲ [WARNING] Duplicate key "F_GETFL" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4744:7:
+      4744 │               F_GETFL: Number('3'),
+           ╵               ~~~~~~~
+
+  The original key "F_GETFL" is here:
+
+    src/playtt-php-loader.mjs:4731:7:
+      4731 │               F_GETFL: Number('3'),
+           ╵               ~~~~~~~
+
+
+▲ [WARNING] Duplicate key "O_ACCMODE" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4745:7:
+      4745 │               O_ACCMODE: Number('2097155'),
+           ╵               ~~~~~~~~~
+
+  The original key "O_ACCMODE" is here:
+
+    src/playtt-php-loader.mjs:4732:7:
+      4732 │               O_ACCMODE: Number('2097155'),
+           ╵               ~~~~~~~~~
+
+
+▲ [WARNING] Duplicate key "O_RDONLY" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4746:7:
+      4746 │               O_RDONLY: Number('0'),
+           ╵               ~~~~~~~~
+
+  The original key "O_RDONLY" is here:
+
+    src/playtt-php-loader.mjs:4733:7:
+      4733 │               O_RDONLY: Number('0'),
+           ╵               ~~~~~~~~
+
+
+▲ [WARNING] Duplicate key "O_WRONLY" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4747:7:
+      4747 │               O_WRONLY: Number('1'),
+           ╵               ~~~~~~~~
+
+  The original key "O_WRONLY" is here:
+
+    src/playtt-php-loader.mjs:4734:7:
+      4734 │               O_WRONLY: Number('1'),
+           ╵               ~~~~~~~~
+
+
+▲ [WARNING] Duplicate key "O_APPEND" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4748:7:
+      4748 │               O_APPEND: Number('1024'),
+           ╵               ~~~~~~~~
+
+  The original key "O_APPEND" is here:
+
+    src/playtt-php-loader.mjs:4735:7:
+      4735 │               O_APPEND: Number('1024'),
+           ╵               ~~~~~~~~
+
+
+▲ [WARNING] Duplicate key "O_NONBLOCK" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4749:7:
+      4749 │               O_NONBLOCK: Number('2048'),
+           ╵               ~~~~~~~~~~
+
+  The original key "O_NONBLOCK" is here:
+
+    src/playtt-php-loader.mjs:4736:7:
+      4736 │               O_NONBLOCK: Number('2048'),
+           ╵               ~~~~~~~~~~
+
+
+▲ [WARNING] Duplicate key "F_SETFL" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4750:7:
+      4750 │               F_SETFL: Number('4'),
+           ╵               ~~~~~~~
+
+  The original key "F_SETFL" is here:
+
+    src/playtt-php-loader.mjs:4737:7:
+      4737 │               F_SETFL: Number('4'),
+           ╵               ~~~~~~~
+
+
+▲ [WARNING] Duplicate key "F_GETLK" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4751:7:
+      4751 │               F_GETLK: Number('12'),
+           ╵               ~~~~~~~
+
+  The original key "F_GETLK" is here:
+
+    src/playtt-php-loader.mjs:4738:7:
+      4738 │               F_GETLK: Number('12'),
+           ╵               ~~~~~~~
+
+
+▲ [WARNING] Duplicate key "F_SETLK" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4752:7:
+      4752 │               F_SETLK: Number('13'),
+           ╵               ~~~~~~~
+
+  The original key "F_SETLK" is here:
+
+    src/playtt-php-loader.mjs:4739:7:
+      4739 │               F_SETLK: Number('13'),
+           ╵               ~~~~~~~
+
+
+▲ [WARNING] Duplicate key "F_SETLKW" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4753:7:
+      4753 │               F_SETLKW: Number('14'),
+           ╵               ~~~~~~~~
+
+  The original key "F_SETLKW" is here:
+
+    src/playtt-php-loader.mjs:4740:7:
+      4740 │               F_SETLKW: Number('14'),
+           ╵               ~~~~~~~~
+
+
+▲ [WARNING] Duplicate key "SEEK_SET" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4754:7:
+      4754 │               SEEK_SET: Number('0'),
+           ╵               ~~~~~~~~
+
+  The original key "SEEK_SET" is here:
+
+    src/playtt-php-loader.mjs:4741:7:
+      4741 │               SEEK_SET: Number('0'),
+           ╵               ~~~~~~~~
+
+
+▲ [WARNING] Duplicate key "SEEK_CUR" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4755:7:
+      4755 │               SEEK_CUR: Number('1'),
+           ╵               ~~~~~~~~
+
+  The original key "SEEK_CUR" is here:
+
+    src/playtt-php-loader.mjs:4742:7:
+      4742 │               SEEK_CUR: Number('1'),
+           ╵               ~~~~~~~~
+
+
+▲ [WARNING] Duplicate key "SEEK_END" in object literal [duplicate-object-key]
+
+    src/playtt-php-loader.mjs:4756:7:
+      4756 │               SEEK_END: Number('2'),
+           ╵               ~~~~~~~~
+
+  The original key "SEEK_END" is here:
+
+    src/playtt-php-loader.mjs:4743:7:
+      4743 │               SEEK_END: Number('2'),
+           ╵               ~~~~~~~~
+
+
+Total Upload: 20783.57 KiB / gzip: 7588.13 KiB
+Your Worker has access to the following bindings:
+Binding                                                                         Resource
+env.WORDPRESS_STATE (WordPressStateCoordinator)                                 Durable Object
+env.PLAYTT_EXECUTION (PlayttWordPressExecution)                                 Durable Object
+env.WORDPRESS_STATE_BUCKET (playtt-wordpress-rebuild-audit)                     R2 Bucket
+env.PLAYTT_PROBE_GATE ("true")                                                  Environment Variable
+env.WORDPRESS_SITE_CONTEXTS ("[{"id":"default","hostname":"playtt-w...")        Environment Variable
+env.PLAYTT_STATE_PARTITION ("restore-v1")                                       Environment Variable
+env.PLAYTT_AUTO_PUBLISH ("true")                                                Environment Variable
+env.PLAYTT_MEMORY_DIAGNOSTICS ("true")                                          Environment Variable
+
+--dry-run: exiting now.

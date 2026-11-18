@@ -1,0 +1,418 @@
+{
+  "at": "2026-11-18T20:57:19.580395+00:00",
+  "result": "pass-with-open-acceptance",
+  "scope": "Instrumented private request-body diagnostics, two controlled disconnect cases and a normal authenticated native write cycle. Historical cause is not retroactively established. Production unchanged.",
+  "worker": "playtt-wp-free-rebuild-audit",
+  "workerVersion": "42b9023d-9df6-4b30-88b2-b76149440617",
+  "previousWorkerVersion": "643a81da-b010-4748-95e2-f22732d9e5e7",
+  "compatibilityDateUnchanged": "2026-07-18",
+  "addedCompatibilityFlag": "enable_request_signal",
+  "localTests": {
+    "pass": 11,
+    "fail": 0
+  },
+  "typeScript": "pass",
+  "dryRun": "pass",
+  "controlledIncomplete": {
+    "at": "2026-11-18T20:48:29.794Z",
+    "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+    "mode": "--disconnect",
+    "result": "pass",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2108
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2482
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 7075
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2211
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3675
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2737
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 200
+      }
+    ],
+    "scope": "One intentionally incomplete unauthenticated heartbeat; client disconnect and canonical stability verified; execution-layer reason requires separate tail evidence",
+    "transport": {
+      "startedAt": "2026-11-18T20:48:43.701Z",
+      "declaredBytes": 2048,
+      "sentBytes": 21,
+      "abortAfterMs": 5000,
+      "disconnected": true,
+      "endedAt": "2026-11-18T20:48:48.719Z"
+    },
+    "version": 133,
+    "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+    "canonicalUnchanged": true,
+    "publisher": "paused"
+  },
+  "controlledComplete": {
+    "at": "2026-11-18T20:49:47.749Z",
+    "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+    "mode": "--queued-disconnect",
+    "result": "pass",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1054
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2314
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2139
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2443
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2752
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2084
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2268
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 210
+      }
+    ],
+    "scope": "One complete unauthenticated heartbeat canceled while overlapping a normal read; canonical stability verified; execution-layer reason and queue order require separate evidence",
+    "transport": {
+      "startedAt": "2026-11-18T20:49:56.045Z",
+      "declaredBytes": 21,
+      "sentBytes": 21,
+      "abortAfterMs": 700,
+      "completeBodySent": true,
+      "overlappingRead": true,
+      "disconnected": true,
+      "endedAt": "2026-11-18T20:49:56.765Z"
+    },
+    "version": 133,
+    "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+    "canonicalUnchanged": true,
+    "publisher": "paused"
+  },
+  "normalNativeCycle": {
+    "at": "2026-11-18T20:52:32.219Z",
+    "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+    "mode": "--normal-cycle",
+    "result": "pass",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 654
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2376
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2224
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 6765
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3890
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3308
+      },
+      {
+        "path": "/wp-json/wp/v2/pages",
+        "method": "POST",
+        "status": 201,
+        "wallMs": 7342
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/138",
+        "method": "POST",
+        "status": 200,
+        "wallMs": 8304
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 257
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2181
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 7602
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3962
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/138?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3016
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3022
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/138?force=true",
+        "method": "DELETE",
+        "status": 200,
+        "wallMs": 6997
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/138?context=edit",
+        "method": "GET",
+        "status": 404,
+        "wallMs": 3109
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 194
+      }
+    ],
+    "scope": "After controlled disconnect: native authenticated create/update, fresh-session readback and identity-checked cleanup of an owned draft; original homepage content unchanged",
+    "id": 138,
+    "contentHash": "1172474a98bccbf08b5ef24be6fac4d849a4d65b38921c996bfddb6ecf195263",
+    "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+    "cleanupComplete": true,
+    "publisher": "paused"
+  },
+  "final": {
+    "at": "2026-11-18T20:55:28.581Z",
+    "result": "pass",
+    "scope": "Complete backup after diagnostic deployment, controlled disconnects and normal native REST cycle; original content/media/postmeta retained; owned draft and revisions absent",
+    "ownedId": 138,
+    "cleanupComplete": true,
+    "unchangedCanonicalFiles": 37,
+    "originalMarkdown": 27,
+    "uploads": 15,
+    "postmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "326",
+      "wp_postmeta": "65",
+      "wp_posts": "139",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 138,
+        "revision": "4e46e92b-788c-4ede-a2d0-7695153ea4e2",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 174,
+        "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-18T20:54:37.364Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "4e46e92b-788c-4ede-a2d0-7695153ea4e2",
+      "objects": 297,
+      "decodedBytes": 4428201,
+      "archiveBytes": 2292899,
+      "archiveSha256": "a51b3d53f52166aa8a2137f7364ad9c888807a9c8eb4ab65a3509d4929d96200"
+    }
+  },
+  "observation": {
+    "at": "2026-11-18T20:56:02.212081+00:00",
+    "result": "pass-with-bounded-conclusion",
+    "events": 143,
+    "outcomes": {
+      "ok": 141,
+      "canceled": 2
+    },
+    "exceptions": 0,
+    "incompleteTraces": 1,
+    "requestFailures": [
+      {
+        "at": "2026-11-18T20:49:59.267Z",
+        "version": "42b9023d-9df6-4b30-88b2-b76149440617",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "category": "request-body-unavailable",
+        "endpoint": "admin-ajax",
+        "method": "POST",
+        "operation": "mutation",
+        "runtime": "not-used",
+        "phase": "request.translate",
+        "signalAborted": true,
+        "bodyUsed": true,
+        "cleanupFailed": false,
+        "bodyRead": {
+          "reason": "aborted",
+          "usedBefore": false,
+          "lockedBefore": false,
+          "abortedBefore": true,
+          "abortedAfter": true
+        }
+      }
+    ],
+    "controlledWindowRuntimes": {
+      "warm": 3,
+      "not-used": 1
+    },
+    "controlledFailureOnlyBeforePhpAndLease": true,
+    "noNewFailureInNormalCycle": true,
+    "maxObservedWasmHeapBytes": 73924608,
+    "observerStopped": true,
+    "orphanProcessCheck": "none",
+    "limits": "One controlled complete-body disconnect reproduced an aborted read before PHP; this does not retrospectively prove the cause of earlier uninstrumented failures. One incomplete transport did not yield an execution failure log. Event counts are not HTTP request counts; WASM heap is not whole-isolate memory."
+  },
+  "reassembly": {
+    "at": "2026-11-18T20:57:19.555894+00:00",
+    "result": "pass",
+    "patches": 15,
+    "sourceFiles": 60,
+    "extraFiles": [
+      {
+        "path": "scripts/playtt-body-diagnostics-remote.mjs",
+        "sha256": "ef3af027ad5f6b4aa320e30af780a0cad7d5bd53abbbea82d5f8920432c3016b"
+      },
+      {
+        "path": "scripts/playtt-body-diagnostics-final-check.mjs",
+        "sha256": "92a4c1b30c3fe97c8f65ec37fb5a5ed332559830c6737903af8b1d1db2c29e07"
+      },
+      {
+        "path": "scripts/playtt-tail-rebuild-sanitized.mjs",
+        "sha256": "68a56282fe1c711c7428c259a2d496c893817df5590a5077f4ae5db91b1e0474"
+      },
+      {
+        "path": "scripts/playtt-rebuild-ui-backup.mjs",
+        "sha256": "9f32ca8d0dac89978b5e3c44eb6009e41e0f790a68eb22e4f65076090d1aff2e"
+      },
+      {
+        "path": "tests/playtt-body-diagnostics.test.ts",
+        "sha256": "6943790fd58a4e43b5b2cad8fc0b8dc374fd685b9228b4af647998bbff37182a"
+      },
+      {
+        "path": "wrangler.playtt-rebuild-audit.jsonc",
+        "sha256": "12442b91c03e342a6ed0c24e9d86699ec8d5a203583975c8ae0019eefff04ced"
+      }
+    ],
+    "differences": [],
+    "scope": "Pinned source assembly only; dependencies/core artifacts not reinstalled or regenerated"
+  },
+  "remaining": [
+    "18 historical revisions still contain 28 old-origin content references.",
+    "Interactive latency, mobile/restored-backend workflows, practical handoff and sustained free-tier usage.",
+    "Prior uninstrumented cancellations and body-read failures cannot be assigned a definitive cause from this controlled reproduction.",
+    "Formal Pages remains unchanged; no backend cutover or paid upgrade."
+  ],
+  "goalStatus": "active"
+}

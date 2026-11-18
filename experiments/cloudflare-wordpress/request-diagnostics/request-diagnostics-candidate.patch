@@ -1,0 +1,70 @@
+--- a/src/request-translation.ts
++++ b/src/request-translation.ts
+@@ -1,7 +1,34 @@
+ import type { PHPRequest, PHPResponseData } from "@php-wasm/universal"
+ 
++export interface RequestBodyReadEvidence {
++  reason: 'already-used' | 'locked' | 'aborted' | 'disconnected' | 'context-mismatch' | 'type' | 'other'
++  usedBefore: boolean
++  lockedBefore: boolean
++  abortedBefore: boolean
++  abortedAfter: boolean
++}
++
+ export class RequestBodyReadError extends Error {
+-  constructor() { super('Request body could not be read.'); this.name = 'RequestBodyReadError' }
++  constructor(readonly evidence?: Readonly<RequestBodyReadEvidence>) {
++    super('Request body could not be read.')
++    this.name = 'RequestBodyReadError'
++    if (evidence) Object.freeze(evidence)
++  }
++}
++
++// Keep only fixed categories. The original exception can contain private URLs,
++// headers or payloads and must never become an Error.cause or a log field.
++function bodyReadReason(error: unknown, before: Omit<RequestBodyReadEvidence, 'reason'>): RequestBodyReadEvidence['reason'] {
++  if (before.usedBefore) return 'already-used'
++  if (before.lockedBefore) return 'locked'
++  if (before.abortedBefore || before.abortedAfter) return 'aborted'
++  try {
++    if (!(error instanceof Error)) return 'other'
++    if (error.name === 'AbortError') return 'aborted'
++    if (/client disconnected|network connection lost|connection (?:was )?(?:closed|reset)|stream (?:was )?cancelled/i.test(error.message)) return 'disconnected'
++    if (/I\/O.*(?:different|another).*request|I\/O.*(?:different|another).*context|request.*context.*(?:ended|canceled)/i.test(error.message)) return 'context-mismatch'
++    return error instanceof TypeError ? 'type' : 'other'
++  } catch { return 'other' }
+ }
+ 
+ export async function toPHPRequest(request: Request): Promise<PHPRequest> {
+@@ -10,8 +37,12 @@
+   request.headers.forEach((value, name) => { headers[name] = value })
+   let body: Uint8Array | undefined
+   if (request.method !== 'GET' && request.method !== 'HEAD') {
++    const before = { usedBefore: request.bodyUsed, lockedBefore: request.body?.locked === true, abortedBefore: request.signal.aborted }
+     try { body = new Uint8Array(await request.arrayBuffer()) }
+-    catch { throw new RequestBodyReadError() }
++    catch (error) {
++      const state = { ...before, abortedAfter: request.signal.aborted }
++      throw new RequestBodyReadError({ ...state, reason: bodyReadReason(error, state) })
++    }
+   }
+ 
+   return {
+--- a/src/phase-trace.ts
++++ b/src/phase-trace.ts
+@@ -1,3 +1,5 @@
++import { RequestBodyReadError } from './request-translation.js'
++
+ export const CLOUDFLARE_PHASE_TRACE_SCHEMA = "wp-codebox/cloudflare-runtime-phase-trace/v1"
+ 
+ export type TraceOperation = "read" | "mutation" | "diagnostic"
+@@ -60,7 +62,8 @@
+   const method = ['GET','HEAD','POST','PUT','PATCH','DELETE','OPTIONS'].includes(request.method) ? request.method : 'OTHER'
+   console.log(JSON.stringify({ schema: 'playtt-request-failure/v1', category: playttFailureCategory(error), endpoint, method,
+     operation: summary.operation, runtime: summary.runtime, phase: [...summary.phases].reverse().find(p => p.evidence?.failed)?.name || 'outside-phase',
+-    signalAborted: request.signal.aborted, bodyUsed: request.bodyUsed, cleanupFailed }))
++    signalAborted: request.signal.aborted, bodyUsed: request.bodyUsed, cleanupFailed,
++    ...(error instanceof RequestBodyReadError && error.evidence ? { bodyRead: error.evidence } : {}) }))
+ }
+ 
+ // I/O-bounded wall intervals, not CPU timings: remote clocks advance on I/O.
