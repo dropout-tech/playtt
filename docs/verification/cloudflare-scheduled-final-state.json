@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-18T18:38:21.061Z",
+  "action": "status",
+  "worker": "playtt-wp-free-restore-audit",
+  "publisher": "paused",
+  "coherent": true,
+  "fenceActive": false,
+  "revision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "version": 173,
+  "configuredCron": "35 18 * * *",
+  "cronSource": "Local deployment configuration; not proof of a remote invocation"
+}

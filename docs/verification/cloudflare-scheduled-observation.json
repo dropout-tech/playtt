@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-18T18:38:35.868694+00:00",
+  "scope": "Finite sanitized observation covering part of mixed preparation, deployment, cold verification, one genuine daily event and backup; event envelopes are not unique request counts or long-term reliability evidence.",
+  "firstAt": "2026-11-18T18:05:39.818Z",
+  "lastAt": "2026-11-18T18:38:18.967Z",
+  "observedVersions": [
+    "34b6db29-d13d-4263-911b-5767bdf23b72",
+    "53980fce-97d4-47b9-bc56-6c3b065027cc"
+  ],
+  "events": 234,
+  "outcomes": {
+    "ok": 233,
+    "canceled": 1
+  },
+  "exceptions": 0,
+  "incompleteTraces": 0,
+  "requestFailures": 0,
+  "maxObservedWasmBytes": 74842112,
+  "scheduledEvents": [
+    {
+      "at": "2026-11-18T18:35:03.070Z",
+      "outcome": "ok",
+      "version": "53980fce-97d4-47b9-bc56-6c3b065027cc",
+      "entrypoint": "default",
+      "traces": [],
+      "phaseEnds": [],
+      "snapshotPhases": [],
+      "memory": [],
+      "exceptions": [],
+      "scheduledEvent": {
+        "cron": "35 18 * * *",
+        "scheduledTime": 1795026902168
+      },
+      "maintenanceSchedules": [
+        {
+          "outcome": "completed",
+          "cron": "35 18 * * *",
+          "scheduledTime": 1795026902168,
+          "eligibleBefore": 1,
+          "deleted": 1,
+          "remainingEligible": 0,
+          "skipped": 0,
+          "revision": "a58c8d6c-2bc1-4eb5-80a2-24b5a4d62427",
+          "version": 167
+        }
+      ]
+    }
+  ],
+  "nonOkEvents": [
+    {
+      "at": "2026-11-18T18:13:28.101Z",
+      "outcome": "canceled",
+      "version": "53980fce-97d4-47b9-bc56-6c3b065027cc",
+      "traces": [],
+      "phaseEnds": [],
+      "snapshotPhases": [],
+      "memory": [],
+      "exceptions": []
+    }
+  ],
+  "collectorContinuity": "The original tool handle and collector process were absent on continuation; a new collector was confirmed running before the daily event. This is not an uninterrupted trace.",
+  "canceledEventLimitation": "One canceled envelope at 18:13:28 UTC has no exception, trace or request-failure details. Its cause is not established; subsequent fixture preparation, actual scheduled event and authenticated cleanup verification passed."
+}

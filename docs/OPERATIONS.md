@@ -4,19 +4,17 @@
 
 `wordpress/lets-play` 是可安裝的 WordPress 區塊主題。`cloudflare/public` 是匿名公開頁面的靜態匯出，不包含 WordPress 後台、PHP 或資料庫。免費隔離WordPress已通過原生視覺段落編輯、重部署保存、全空初始化與獨立R2/DO備份還原；正式後台與公開站發布整合仍待，不能把靜態發布視為全部完成。
 
-## 自動發布候選操作界線
+## 私人後台目前狀態
 
-目前私人audit版本`34b6db29-d13d-4263-911b-5767bdf23b72`已含有界手動維護，遠端保留／清理、重部署、序列與清理後備份通過；發布器paused，沒有cron。詳見maintenance/README.md；下方本機與序列段落為先前紀錄。
+目前私人 audit 版本 `53980fce-97d4-47b9-bc56-6c3b065027cc` 已部署每日有界維護，排程為台灣每日02:35。混合編輯／清理與重新部署驗證通過；第一個真正每日事件及清理後備份已驗收。發布器 paused，正式官網與原來源 Worker 不變。最新結果見 `experiments/cloudflare-wordpress/scheduled-maintenance/README.md`，維護指令與停用方式見該目錄 `OPERATIONS.md`。
 
-自動草稿有界維護入口已通過本機保留／清理／重啟、20筆上限、並行清理及manifest失敗復原；尚未部署遠端或啟用cron。操作規則、preview的提交行為及本機故障重現見 `experiments/cloudflare-wordpress/maintenance/README.md`。不得用故障入口部署到Cloudflare，亦不得把普通draft納入清理。
+自增序列已隨 R2 快照保存，普通草稿與原生 auto-draft 刪除後重建不重用 ID，舊 ID 寫入404。手動維護只清超過七天的 auto-draft、每批最多20筆，普通草稿保留；本機已測備份鎖與 manifest 寫入失敗復原。preview 不刪除，但可能提交先前尚未保存的 GET 狀態。舊無序列備份及歷史回滾限制見 id-sequence/README.md；不可回退至不保存序列的程式後繼續編輯。
 
-最新私人audit為568bf784-6bbb-4f53-a13b-07e0f38e657a，自增序列已納入R2快照，本機／遠端普通草稿及原生auto-draft刪除後重建不重用，舊ID寫入404。舊無序列備份及刻意回滾的歷史限制見id-sequence/README.md；不可回退至不保存序列的程式後繼續編輯。後台仍是私人研究候選，正式站保持Pages；舊auto-draft清理、操作交付及整體驗收仍待。斷線與原生連續編輯界線見request-body/README.md。
+先前快照候選五次寫入中位約11.7秒，屬有限樣本。冷啟動仍可能等待，原生連續操作與中斷證據見 request-body/README.md。最新完整備份位置由本機 `work/playtt-snapshot-audit-backup-location.json` 追蹤；備份含帳號資料，不可提交 Git。每次新備份的完整性校驗與較早獨立空環境還原是不同驗收，不可混稱。
 
-目前audit版本包含經雜湊校驗的快照來源重用。先前五次寫入中位約11.7秒，屬有限樣本；冷啟動仍可能等待，曾有一次瀏覽器工具10秒導覽逾時。最新私人備份位置由本機`work/playtt-snapshot-audit-backup-location.json`追蹤，含帳號資料，不可提交Git。序列修正後的新備份有296個索引項目，包含八個表的自增序列；本輪已校驗備份與重新部署保存，沒有另建第三個空白遠端環境還原這份新備份。
+來源 Worker 的較早候選曾通過410次混合讀取、原生 auto-draft 跨重建及七筆發布；其295索引備份曾在獨立 R2/DO 還原並比對15個媒體雜湊。私人[公開讀取預覽](https://playtt-publication-preview.muzhi-garden-platform.workers.dev)有 noindex，並非正式後台發布連線。
 
-原來源Worker仍為a33083f3，該版本先前通過410次混合讀取、原生auto-draft跨重建保存、匿名拒絕與七筆發布。先前295索引備份曾在獨立Worker/R2/DO還原，15個媒體雜湊相符；這是較早備份的驗證。執行器在已保存請求之間釋放，上游400次保護保留。私人發布器維持paused；[公開讀取預覽](https://playtt-publication-preview.muzhi-garden-platform.workers.dev)有noindex，並非正式後台發布連線。
-
-維運端點的 pause／resume／retry 需要 operator 身分，密鑰不放前端。連續六次無進展會停止並保留原公開版本；先修復根因，再手動重試。重現與測試來源見 `experiments/cloudflare-wordpress/automatic-publication/README.md`。本機故障測試只操作 emulator，不可直接改成遠端物件刪除。
+發布 pause／resume／retry 需要 operator 身分。六次無進展後停止並保留原公開版本，修復根因後才手動重試；本機故障演練不應改成遠端刪除。詳見 automatic-publication/README.md。2026-11-19已重新從 Cloudflare 帳號畫面確認 Workers Free/$0、R2 當期$0.00；帳號用量有延遲且含其他專案，不能當成未來費用保證。
 
 ## 安裝與編輯
 
@@ -97,7 +95,7 @@ Gandi 保留註冊及郵件服務。切換前完整區域檔有 14 筆服務記�
 
 本機 Playground 關閉後，備份整個 `.runtime/.../wordpress`，包含 SQLite、uploads、主題和設定；測試已驗證複製到獨立目錄後還原內容與媒體。此資料包含登入資訊，不能提交到公開 Git 或放入 `cloudflare/public`。
 
-先前候選的R2完整版本／協調器備份與另一分區還原已實測；最新版另保存295個索引項目的校驗備份，SHA256為85594bc9bd0c478390a892415a9edb3715a2cb8526b262dc0f6bf40c4aa98268。前版曾在386次讀取後記憶體重置；最新a33083f3已通過410次讀取及發布回歸，且這份備份已在私人playtt-wp-free-restore-audit的獨立R2/DO還原通過，頁面、導覽、樣式與15個媒體檔一致。原資料內嵌網址保持原字串；長期營運與改網域的內容網址遷移仍待驗。詳見experiments/cloudflare-wordpress/runtime-retirement/RESTORE-AUDIT.md。使用者已選擇繼續研究全Cloudflare免費後台，正式站暫不切換。生產備份與還原須依最終架構再驗收。
+先前候選的R2完整版本／協調器備份與另一分區還原已實測；以下為歷史295個索引項目的校驗備份，SHA256為85594bc9bd0c478390a892415a9edb3715a2cb8526b262dc0f6bf40c4aa98268。前版曾在386次讀取後記憶體重置；最新a33083f3已通過410次讀取及發布回歸，且這份備份已在私人playtt-wp-free-restore-audit的獨立R2/DO還原通過，頁面、導覽、樣式與15個媒體檔一致。原資料內嵌網址保持原字串；長期營運與改網域的內容網址遷移仍待驗。詳見experiments/cloudflare-wordpress/runtime-retirement/RESTORE-AUDIT.md。使用者已選擇繼續研究全Cloudflare免費後台，正式站暫不切換。生產備份與還原須依最終架構再驗收。
 
 ## Zeabur 清除順序
 

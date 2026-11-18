@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-18T18:22:44.790579+00:00",
+  "source": "Read-only Cloudflare authenticated Chrome account UI; Workers plans and R2 overview",
+  "account": "info@dropout.tw",
+  "workers": {
+    "plan": "Free",
+    "price": "$0",
+    "badge": "Current plan"
+  },
+  "r2": {
+    "period": "October 25 - November 25",
+    "classA": "3.76k",
+    "classB": "48.78k",
+    "accountTotalStorage": "1 GB",
+    "billableUsage": "$0.00",
+    "message": "No billable usage incurred yet",
+    "playttBuckets": {
+      "playtt-wordpress-probe": {
+        "objects": "417",
+        "storage": "217.63 MB"
+      },
+      "playtt-wordpress-restore-probe": {
+        "objects": "1.02k",
+        "storage": "410.45 MB"
+      },
+      "playtt-wordpress-retirement-audit": {
+        "objects": "464",
+        "storage": "219.53 MB"
+      }
+    }
+  },
+  "limitations": "Displayed rounded and delayed account totals include unrelated resources. Read-only observation, not a future cost guarantee or a spending cap. No plan, billing, permission or resource changes in the browser."
+}

@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-18T18:38:15.477Z",
+  "result": "pass",
+  "scope": "Fully decoded and hash-checked private audit backup after real daily scheduled cleanup; sequence preserved. Not another independent empty-environment restoration.",
+  "revision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "objects": 296,
+  "archiveBytes": 2285530,
+  "archiveSha256": "fa6974d69b826982573ba9320e529d157faf3e849544d1fffd5bffda19e8cad6",
+  "metadataPath": "_runtime/playtt-auto-increment.json",
+  "metadataBytes": 196,
+  "metadataSha256": "de6c4affb68209b1b40629c7aef9cd07599219d62b674a8de780a618fe13a399",
+  "tableCount": 8,
+  "wpPostsHighWater": "125",
+  "removedId": 124,
+  "createdAfterDaily": 125
+}

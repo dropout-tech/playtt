@@ -1,0 +1,99 @@
+{
+  "at": "2026-11-18T18:36:34.574Z",
+  "result": "pass",
+  "scope": "Genuine Cloudflare daily event plus authenticated WordPress readback; no manual maintenance run in this test",
+  "cron": "35 18 * * *",
+  "expectedMinute": 1795026900000,
+  "controllerOffsetMs": 2168,
+  "scheduled": {
+    "outcome": "completed",
+    "cron": "35 18 * * *",
+    "scheduledTime": 1795026902168,
+    "eligibleBefore": 1,
+    "deleted": 1,
+    "remainingEligible": 0,
+    "skipped": 0,
+    "revision": "a58c8d6c-2bc1-4eb5-80a2-24b5a4d62427",
+    "version": 167
+  },
+  "removedId": 124,
+  "newId": 125,
+  "staleIdWrite404": true,
+  "ownedDataRemoved": true,
+  "originalPublishedPagesUnchanged": true,
+  "publisherPaused": true,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 697
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2563
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 8076
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3565
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/124?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 1702
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 7622
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/124",
+      "method": "POST",
+      "status": 404,
+      "wallMs": 3342
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/125?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1800
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/125?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 5954
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=publish&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 9324
+    },
+    {
+      "path": "/?phase=operator-auto-draft-maintenance",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6543
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 200
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-18T18:38:15.785840+00:00",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "scope": "Read-only offline verified backup inventory across Markdown and JSON post storage; static source/config inspection, not a live scheduler execution test",
+  "markdownPostFiles": 27,
+  "jsonPostRows": 61,
+  "autoDrafts": [
+    {
+      "id": 93,
+      "type": "post",
+      "date": "2026-11-17 09:02:27",
+      "dateGmt": "0000-00-00 00:00:00",
+      "modified": "2026-11-17 09:02:27",
+      "storage": "markdown",
+      "bodyBytes": 2
+    }
+  ],
+  "autoDraftCleanupHookPresent": true,
+  "auditConfigCronTriggers": [
+    "35 18 * * *"
+  ],
+  "wrapperScheduledMethodPresent": true,
+  "upstreamRuntimeScheduledMethodPresent": true,
+  "wordpressAutomaticCronDisabled": true,
+  "remoteChanged": false,
+  "deletions": 0
+}

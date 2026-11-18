@@ -6,7 +6,23 @@
 
 上游：Automattic/wp-codebox，commit `9764022156a61ba7d2b4d8a2196b01ccb33b82b5`，`packages/runtime-cloudflare` 0.12.27；WordPress 7.0.2、PHP-WASM 8.5.8、Wrangler 4.127.1。主題另以 WordPress 7.1.4 / PHP 8.3 驗證，兩者證據分開保存。
 
-## 最新進度：2026-11-17 12:02
+## 目前研究入口（2026-11-19）
+
+正式官網維持 Pages 與原品牌視覺；使用者已選擇繼續研究免費後台，暫不切換正式後台。私人 audit 最新程式為每日有界維護候選，發布器 paused。最新驗收與限制見 [scheduled-maintenance](scheduled-maintenance/README.md)，日常操作見 [維護操作手冊](scheduled-maintenance/OPERATIONS.md)，完整事件歷史見 `docs/ACCEPTANCE.md`。
+
+已新增[固定上游重建工具](REBUILD.md)：12段patch、57個來源一致，固定依賴下編譯與打包通過。這輪沒有重新安裝依賴或初始化全空後台，界線見重建說明。以下為候選演進索引，各目錄README保留當時基準及證據。
+
+1. [安全更新](security-update/README.md)：固定 WordPress／PHP／依賴，取代根目錄舊 upstream patch。
+2. [自動發布](automatic-publication/README.md)及其 localization：私人 CMS 與只讀預覽，正式站未串接。
+3. [追蹤分配器](memory-investigation/README.md)：採用 tracked-allocator，未採用舊 diagnostic 候選。
+4. [發布合併](publication-batching/README.md)、[初始化副本及 runtime rotation](memory-lifetime/README.md)、[請求間釋放](runtime-retirement/README.md)。
+5. [快照來源重用](snapshot-latency/README.md)：採用 snapshot-source，未採用 pack-source 候選。
+6. [請求輸入](request-body/README.md)、[ID 序列保存](id-sequence/README.md)。
+7. [有界手動維護](maintenance/README.md)、[每日維護](scheduled-maintenance/README.md)。
+
+下方及各舊目錄的部署版本／「尚待」文字是當時紀錄，應以最新驗收為準。不可部署本機故障注入設定，亦不可公開私人秘密檔、原始備份或 heap snapshots。
+
+## 歷史進度：2026-11-17 12:02
 
 Chrome已完成原生視覺段落編輯、Save200、Page updated及重新載入；重新部署切回原分區後仍保留。短效測試入口到期會404，需在另一分頁重新驗證資格，保留編輯頁後再儲存；這不是WordPress權限繞過。內建瀏覽器的blob畫布未渲染，Chrome可用。核心靜態資產透過原有R2/雜湊驗證在DO佇列外讀取；六個代表資產並行3.17秒、bytes/SHA256與匿名404通過，並非全編輯器載入時間。
 
