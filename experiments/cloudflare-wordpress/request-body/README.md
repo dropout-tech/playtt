@@ -27,7 +27,7 @@
 
 `playtt-native-continuity.mjs --remote --mode=capture|reads|verify|cleanup --round=1|2|3` 只接受本輪原生UI草稿的固定獨有標題及三份已知段落。capture保存本機身份基準，reads進行120次有限REST讀取並定期檢查同草稿及autosaves，verify核對指定版本，cleanup僅刪除ID／標題／內容皆相符的本次草稿。每步核對原七個已發布頁面雜湊及paused，不把REST讀取本身當成原生自動儲存證明；需另有UI及tail證據。
 
-本輪仍不代表長期營運驗收；歷史遠端中止根因、舊auto-draft清理、刪除後ID重用與舊編輯分頁的風險、操作交付仍需釐清。未將有限通過等同免費WordPress已可正式切換。
+本輪仍不代表長期營運驗收；歷史遠端中止根因、舊auto-draft清理、舊編輯分頁操作與交付仍需釐清；後續ID重用修正見id-sequence目錄。未將有限通過等同免費WordPress已可正式切換。
 
 ## 連續原生編輯結果
 
@@ -35,4 +35,4 @@
 
 完整觀測區間有955事件封裝，954ok、1canceled，無exceptions、無未完成phase、無request-failure類別；捕捉三次釋放，每次98個PHP request.end，最大觀測WASM 78,905,344bytes，非isolate總記憶體。事件區間也包含受控斷線；不宣稱每筆取消的原因已知。原七頁雜湊不變，測試草稿清理完成，publisher paused。
 
-另一本機測試確認冷啟動重用已刪除ID，詳見../id-sequence/README.md。這是新發現的保存缺陷，尚未修正，整體WordPress後台仍不可視為驗收完成。
+另一本機測試確認冷啟動重用已刪除ID，詳見../id-sequence/README.md。這是當時新發現的保存缺陷；後續修正與本機／遠端回歸詳見id-sequence/README.md。整體WordPress後台仍不可視為驗收完成。

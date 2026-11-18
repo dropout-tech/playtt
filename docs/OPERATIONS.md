@@ -6,11 +6,11 @@
 
 ## 自動發布候選操作界線
 
-最新私人audit為f7cc0a9b，原生自動儲存、120次讀取跨重建與重載通過；但另在本機確認已刪除ID於冷啟動後重用，舊ID寫入可改到新草稿，尚未修正。暫不交付為正式編輯後台；依id-sequence/README.md處理自增編號保存。斷線觀測與連續編輯的界線見request-body/README.md。
+最新私人audit為568bf784-6bbb-4f53-a13b-07e0f38e657a，自增序列已納入R2快照，本機／遠端普通草稿及原生auto-draft刪除後重建不重用，舊ID寫入404。舊無序列備份及刻意回滾的歷史限制見id-sequence/README.md；不可回退至不保存序列的程式後繼續編輯。後台仍是私人研究候選，正式站保持Pages；舊auto-draft清理、操作交付及整體驗收仍待。斷線與原生連續編輯界線見request-body/README.md。
 
-獨立 audit Worker 已更新為1c5f289a，加入經雜湊校驗的快照來源重用，五次寫入中位約11.7秒。原生草稿兩次儲存、重新部署讀回與新快照備份校驗通過，仍有一次10秒導覽逾時後重試成功；尚非長期操作驗收。原來源Worker仍是下述a33083f3。新私人備份位置由本機work/playtt-snapshot-audit-backup-location.json追蹤，含帳號資料，不可提交Git。重現見experiments/cloudflare-wordpress/snapshot-latency/README.md。
+目前audit版本包含經雜湊校驗的快照來源重用。先前五次寫入中位約11.7秒，屬有限樣本；冷啟動仍可能等待，曾有一次瀏覽器工具10秒導覽逾時。最新私人備份位置由本機`work/playtt-snapshot-audit-backup-location.json`追蹤，含帳號資料，不可提交Git。序列修正後的新備份有296個索引項目，包含八個表的自增序列；本輪已校驗備份與重新部署保存，沒有另建第三個空白遠端環境還原這份新備份。
 
-私人還原區最新a33083f3已通過410次混合讀取、原生auto-draft跨重建保存及匿名拒絕，後續七筆發布批次亦通過。執行器在已保存請求之間釋放，下一請求可能有冷啟動等待；上游400次保護保留。最新295索引備份已在獨立Worker/R2/DO還原並讀回通過，15個媒體雜湊相符。新環境首次登入提交約33.8秒；長期原生編輯、延遲與舊auto-draft清理仍待。私人發布器paused，noindex預覽位於 https://playtt-publication-preview.muzhi-garden-platform.workers.dev 。正式playtt.tw依使用者決策保持Pages，暫不切換後台。
+原來源Worker仍為a33083f3，該版本先前通過410次混合讀取、原生auto-draft跨重建保存、匿名拒絕與七筆發布。先前295索引備份曾在獨立Worker/R2/DO還原，15個媒體雜湊相符；這是較早備份的驗證。執行器在已保存請求之間釋放，上游400次保護保留。私人發布器維持paused；[公開讀取預覽](https://playtt-publication-preview.muzhi-garden-platform.workers.dev)有noindex，並非正式後台發布連線。
 
 維運端點的 pause／resume／retry 需要 operator 身分，密鑰不放前端。連續六次無進展會停止並保留原公開版本；先修復根因，再手動重試。重現與測試來源見 `experiments/cloudflare-wordpress/automatic-publication/README.md`。本機故障測試只操作 emulator，不可直接改成遠端物件刪除。
 
