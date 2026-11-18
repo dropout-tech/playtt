@@ -10,7 +10,7 @@
 
 正式官網維持 Pages 與原品牌視覺；使用者已選擇繼續研究免費後台，暫不切換正式後台。私人 audit 最新程式為每日有界維護候選，發布器 paused。最新驗收與限制見 [scheduled-maintenance](scheduled-maintenance/README.md)，日常操作見 [維護操作手冊](scheduled-maintenance/OPERATIONS.md)，完整事件歷史見 `docs/ACCEPTANCE.md`。
 
-已新增[固定上游重建工具](REBUILD.md)：12段patch、57個來源一致，固定依賴下編譯與打包通過。這輪沒有重新安裝依賴或初始化全空後台，界線見重建說明。以下為候選演進索引，各目錄README保留當時基準及證據。
+已新增[固定上游重建工具](REBUILD.md)：12段patch、57個來源一致，固定依賴下編譯與打包通過。後續全新依賴安裝與官方核心資產重建也通過；沒有因此重新初始化WordPress資料，界線見重建說明。以下為候選演進索引，各目錄README保留當時基準及證據。
 
 1. [安全更新](security-update/README.md)：固定 WordPress／PHP／依賴，取代根目錄舊 upstream patch。
 2. [自動發布](automatic-publication/README.md)及其 localization：私人 CMS 與只讀預覽，正式站未串接。

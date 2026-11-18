@@ -41,10 +41,12 @@ Wrangler 使用本專案登入設定的 `XDG_CONFIG_HOME`。只做打包時：
 node node_modules/wrangler/bin/wrangler.js deploy --dry-run --config wrangler.playtt-retirement-restore-audit.jsonc
 ```
 
-## 這輪實際驗證範圍
+## 實際驗證範圍（2026-11-19）
 
-從重新下載的上游 archive 組裝成功：12段 patch、57個 TypeScript 來源與目前候選相同，私人 audit 設定也須與對應 reproduction hash 一致。另一份組裝輸出略過舊 shrinkwrap，所得來源仍一致。
+從重新下載的固定上游 archive 組裝成功：12段 patch、57個 TypeScript 來源與目前候選相同，私人 audit 設定及鎖定檔一致。最初使用既有依賴的編譯／打包證據保留在 `docs/verification/cloudflare-clean-rebuild.json`。
 
-TypeScript 與私人 audit 的 Wrangler dry-run 已通過，打包20776.57 KiB／gzip7586.49 KiB。這兩項使用既有固定依賴與三份已產生的官方核心 artifact manifest，重新產生本機 PHP loader；沒有重新跑 npm ci 或重新下載核心資產。因此這輪證明來源組裝與固定依賴下編譯／打包，不聲稱全新機器從零安裝、全空後台初始化或遠端部署完成。
+後續已在另一個全新輸出目錄完成 Node24.18.0／npm11.16.0 的 npm ci，17秒安裝116個套件；沒有共用 node_modules，vendored core 也解析到該重建目錄內。依序套用明確列出的準備腳本，再從官方來源重新產生 WordPress7.1.4／SQLite資產。三份manifest及實際ZIP／blob與原候選逐位元一致，沒有複製舊產物充當重建。
 
-Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告；沒有隱藏它們，也沒有因重建而修改 loader 的執行語意。對照證據見 `docs/verification/cloudflare-clean-rebuild.json`。
+新依賴下 TypeScript 及 private-audit dry-run 通過，打包20775.66 KiB／gzip7586.28 KiB。五個WASM／ZIP／SQLite模組與前輪完全一致；JavaScript只在已知的共享依賴根路徑名稱不同，僅替換該完整前綴後其餘內容完全一致，未忽略其他差異。證據在 `docs/verification/cloudflare-clean-install.json`。
+
+Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保留在紀錄。本輪驗證的是來源、依賴及部署打包重建；沒有因此再次部署遠端、初始化新的WordPress資料，或重新做一輪空環境備份還原。正式官網仍維持目前版本。
