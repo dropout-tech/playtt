@@ -1,5 +1,7 @@
 # 免費配額與快照保留分析
 
+最新：已加入 [遠端備份保護登錄](../backup-pins/README.md)。保留分析現在必須提供新匯出的 registry；先於 runtime 執行 `node scripts/playtt-backup-pins-export.mjs --remote`。歷史盤點結果保留如下，不能當成即時可刪除清單。
+
 最新：本文件記錄較早的唯讀盤點；後續已在私人 rebuild 啟用容量預留與拒寫，見 [容量保護](../storage-capacity/README.md)。清理仍未啟用，下列舊版物件候選必須重新盤點，不能直接執行。`read-inventory.py --list-only` 只產生總量所需物件表、不讀 metadata roots，不可作保留分析。
 
 2026-11-20：完成帳號用量核對、私人桶完整物件盤點與離線保留分析。**尚未啟用清理、寫入容量限制或新排程**，沒有部署程式、刪除物件、升級方案或切換正式後台。私人 Worker 仍為 `ef56ff0b-92b8-4969-9463-80f7dfaee1c9`；正式 Pages 與原品牌視覺保持現況。
@@ -44,7 +46,7 @@ R2 指標有延遲：GraphQL 的 rebuild 桶樣本時間為 02:10 UTC，顯示 9
 ```powershell
 python experiments/cloudflare-wordpress/capacity/read-usage.py --config ../playtt-wrangler-config/.wrangler/config/default.toml --output docs/verification/cloudflare-capacity-usage.json --start 2026-10-25T00:00:00Z
 python experiments/cloudflare-wordpress/capacity/read-inventory.py --config ../playtt-wrangler-config/.wrangler/config/default.toml --output ../playtt-capacity-private-inventory.json
-python experiments/cloudflare-wordpress/capacity/plan_retention.py --inventory ../playtt-capacity-private-inventory.json --backup-root ../../outputs/backups/cloudflare-wordpress-rebuild-ui --summary docs/verification/cloudflare-capacity-retention.json --private-plan ../playtt-capacity-private-plan.json
+python experiments/cloudflare-wordpress/capacity/plan_retention.py --inventory ../playtt-capacity-private-inventory.json --backup-root ../../outputs/backups/cloudflare-wordpress-rebuild-ui --summary docs/verification/cloudflare-capacity-retention.json --private-plan ../playtt-capacity-private-plan.json --registry ../playtt-delivery-rebuild/packages/runtime-cloudflare/artifacts/playtt-backup-pins-export-private.json
 python -m unittest discover -s experiments/cloudflare-wordpress/capacity -p 'test_*.py' -v
 ```
 

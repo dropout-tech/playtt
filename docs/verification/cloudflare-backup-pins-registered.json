@@ -1,0 +1,305 @@
+{
+  "at": "2026-11-20T03:44:07.853Z",
+  "result": "pass",
+  "archives": 22,
+  "uniquePins": 21,
+  "generation": 21,
+  "duplicateRegistrationIdempotent": true,
+  "wrongFenceStatus": 409,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1165
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 792
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 160
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 290
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 742
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 253
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 617
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 478
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 843
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 271
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1102
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 289
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 817
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 275
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1083
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 268
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 774
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 282
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1031
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 251
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1066
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 245
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 747
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 229
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 937
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 279
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 937
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 255
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 784
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 259
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 773
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 240
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 943
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 251
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 854
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 247
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 805
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 244
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 962
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 245
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 748
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 244
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1547
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 242
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 875
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 169
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 168
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 409,
+      "wallMs": 166
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 577
+    }
+  ]
+}

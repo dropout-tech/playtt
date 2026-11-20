@@ -69,6 +69,7 @@ patch('heartbeat-noop/heartbeat-noop-candidate.patch',runtime);extras(exp/'heart
 extras(exp/'noop-ui')
 patch('manifest-cache/manifest-cache-candidate.patch',runtime);extras(exp/'manifest-cache')
 patch('storage-capacity/storage-capacity-candidate.patch',runtime);extras(exp/'storage-capacity')
+patch('backup-pins/backup-pins-candidate.patch',runtime);extras(exp/'backup-pins')
 (runtime/'scripts/playtt-latency-pprof.py').write_bytes((exp/'diagnostic-sampling/playtt-latency-pprof.py').read_text(encoding='utf-8-sig').encode('utf-8'))
 differences=[];files=[]
 for source in ((live or runtime)/'src').iterdir():

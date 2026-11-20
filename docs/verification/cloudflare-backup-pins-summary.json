@@ -1,0 +1,208 @@
+{
+  "at": "2026-11-20T03:52:12.054200+00:00",
+  "result": "pass",
+  "scope": "Private append-only backup pins and backup workflow; no production change, paid upgrade, content mutation, snapshot deletion or new independent restore",
+  "workerVersion": "8536d0cf-cfbf-4133-9764-ae4bbfdd2c45",
+  "firstWorkerVersion": "bf777748-ca53-4218-9497-75bb8a3eddf8",
+  "canonicalVersion": 309,
+  "canonicalRevision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+  "goalStatus": "active",
+  "pins": {
+    "registeredVersions": 21,
+    "generation": 21,
+    "existingArchivesFullyDecoded": 22,
+    "newArchiveWorkflowVerified": 1,
+    "knownCompletedArchives": 23,
+    "allKnownReceiptsAndHashesRechecked": true,
+    "knownScope": "Matching completed verification.json reports under this project outputs/backups; no claim about unknown external copies",
+    "registryCompactBytes": 10958,
+    "registryExportSha256": "97905be61072f0ffe8393f08db0a581ef40ef9267613ab61df2ce9c7db90be53"
+  },
+  "local": {
+    "pinTests": 10,
+    "capacityTests": 11,
+    "coordinatorTests": 3,
+    "retentionTests": 10,
+    "passed": 34,
+    "failed": 0,
+    "typescript": "pass",
+    "dryRun": "pass",
+    "fullUpstreamSuiteClaimed": false
+  },
+  "delivery": {
+    "patches": 21,
+    "sourceFiles": 65,
+    "sourceDifferences": 0,
+    "extraFilesCompared": [
+      "scripts/playtt-backup-pin-client.mjs",
+      "scripts/playtt-backup-pins-audit.mjs",
+      "scripts/playtt-backup-pins-export.mjs",
+      "scripts/playtt-backup-pins-final.mjs",
+      "tests/playtt-backup-pins.test.ts",
+      "src/playtt-backup-pins.ts",
+      "scripts/playtt-rebuild-ui-backup.mjs"
+    ],
+    "extraDifferences": 0,
+    "freshDependencyInstallThisCycle": false
+  },
+  "registrySurvivedRedeployment": true,
+  "newBackupPinIdempotent": true,
+  "canonicalAndCapacityLedgerUnchanged": true,
+  "final": {
+    "at": "2026-11-20T03:47:18.240Z",
+    "result": "pass",
+    "scope": "Append-only backup registry; no PHP/content mutation or independent restore",
+    "pins": 21,
+    "generation": 21,
+    "newBackupPinIdempotent": true,
+    "manifestAndArchiveByteIdentical": true,
+    "canonicalUnchanged": true,
+    "capacityLedgerUnchanged": true,
+    "fenceActive": false,
+    "publisher": "paused",
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 309,
+        "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb"
+      },
+      {
+        "target": "daily-source",
+        "version": 175,
+        "revision": "d419f38a-3c0a-4a3b-b1ef-7d6df4f0ebcd"
+      }
+    ],
+    "accessChecks": [
+      {
+        "method": "GET",
+        "authenticated": false,
+        "status": 401
+      },
+      {
+        "method": "DELETE",
+        "authenticated": true,
+        "status": 405
+      },
+      {
+        "method": "POST",
+        "authenticated": true,
+        "status": 413
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/__playtt-backup-pins",
+        "status": 404
+      },
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-20T03:46:12.504Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified and immutable retention pin acknowledged; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+      "objects": 297,
+      "decodedBytes": 4427214,
+      "archiveBytes": 2292624,
+      "archiveSha256": "54bde7a44ea53b1ccd36bbe964afc0ddeb3045c6ba62a90682bbcf7b3b1eb61e",
+      "pinRegistered": true,
+      "pinGeneration": 21
+    }
+  },
+  "retention": {
+    "schema": "playtt/retention-proposal/v1",
+    "at": "2026-11-20T03:45:11.609432+00:00",
+    "mode": "offline-proposal-only",
+    "safeToApply": false,
+    "bucket": "playtt-wordpress-rebuild-audit",
+    "inventoryAt": "2026-11-20T03:45:11.609432+00:00",
+    "objects": 1110,
+    "bytes": 640239740,
+    "revisions": 222,
+    "packBytes": 509212610,
+    "retainedRevisions": 72,
+    "verifiedBackupPins": 21,
+    "proposedRetiredRevisions": 150,
+    "durableBackupPins": 21,
+    "registryGeneration": 21,
+    "proposedObjects": 300,
+    "proposedBytes": 355062939,
+    "currentRevision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+    "currentPackBytes": 2292624,
+    "byUtcDay": {
+      "2026-11-20": {
+        "revisions": 49,
+        "packBytes": 112403483
+      },
+      "2026-11-19": {
+        "revisions": 4,
+        "packBytes": 9182386
+      },
+      "2026-11-18": {
+        "revisions": 169,
+        "packBytes": 387626741
+      }
+    },
+    "policy": {
+      "allRecentHours": 24,
+      "latestCount": 20,
+      "dailyDaysUTC": 7
+    },
+    "requiredBeforeAnyDeletion": [
+      "Review retention policy and exact retirement list",
+      "Confirm complete backup pin registry",
+      "Stop new mutation/publication work and drain in-flight operations under a renewable fence",
+      "Re-list metadata and re-check all coordinator, operation, publication and backup roots",
+      "Verify retained pack contents and perform an independent restore",
+      "Reverify fail-closed write admission together with the cleanup/reconciliation protocol; deletion alone is not a cost cap"
+    ],
+    "limitations": [
+      "This offline planner performs no cloud mutation/deletion or runtime change",
+      "No content/ZIP reads from R2 by this planner; object sizes are metadata checks, not content integrity",
+      "Inventory is not atomic and no in-flight operation graph was captured",
+      "Proposed storage savings are not billing savings or a free-tier guarantee"
+    ],
+    "verifiedLocalArchives": 23,
+    "privateInventorySha256": "16858e84446316da9103b34178b3da2d8eca8a1844bbb0842b04898915a4b30b",
+    "privateRegistrySha256": "97905be61072f0ffe8393f08db0a581ef40ef9267613ab61df2ce9c7db90be53"
+  },
+  "observation": {
+    "events": 155,
+    "first": "2026-11-20T03:42:45.357Z",
+    "last": "2026-11-20T03:47:14.391Z",
+    "outcomes": {
+      "ok": 155
+    },
+    "versions": {
+      "3bd8c3de-8206-4bf2-82c9-f3be936affaf": 12,
+      "bf777748-ca53-4218-9497-75bb8a3eddf8": 81,
+      "8536d0cf-cfbf-4133-9764-ae4bbfdd2c45": 62
+    },
+    "exceptions": 0,
+    "requestFailures": 0,
+    "incompleteTraces": 0,
+    "observerStopped": true,
+    "matchingOrphanTails": 0,
+    "scope": "Finite registry/control experiment, not native editor or PHP cold-boot evidence. Events are not unique requests. Expected API rejection statuses remain in HTTP reports. Later read-only export is separate."
+  },
+  "limitations": [
+    "Registry has no remove/update API; no automatic GC or capacity reconciliation",
+    "Current private registration caps: 8 MiB ZIP, 256 KiB manifest, 128 pins and 64 KiB serialized registry",
+    "Registry is DO state, outside WordPress restore pack; export and archive receipts need separate recovery",
+    "The existing fence does not prove delayed expired-lease writes or out-of-band clients are drained",
+    "Retained-pack validation, independent restored target and complete in-flight roots are required before concrete cleanup",
+    "Native UI errors, cancellation attribution, memory/latency, real-device input, handoff and sustained free-tier use remain open"
+  ]
+}

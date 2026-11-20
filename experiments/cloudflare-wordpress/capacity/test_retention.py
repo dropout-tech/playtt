@@ -3,9 +3,23 @@ import datetime as dt
 import unittest
 import uuid
 
-from plan_retention import BUCKET, ROOT, MANIFESTS, PACKS, plan
+from plan_retention import BUCKET, ROOT, MANIFESTS, PACKS, plan as plan_with_registry
 
 NOW = dt.datetime(2026, 11, 20, tzinfo=dt.timezone.utc)
+
+
+def registry_for(inventory, revisions):
+    pins = []
+    for revision in revisions:
+        m = inventory["records"][MANIFESTS + revision + ".json"]
+        pins.append({k: m[k] for k in ("revision", "manifestKey", "persistedAt")})
+        pins[-1].update(manifestSha256="a"*64, packKey=m["restorePack"]["objectKey"], packSha256=m["restorePack"]["sha256"],
+                        packBytes=m["restorePack"]["size"], registeredAt=NOW.isoformat())
+    return {"schema": "playtt/backup-pins/v1", "generation": len(pins), "pins": pins}
+
+
+def plan(inventory, pins, now, registry=None):
+    return plan_with_registry(inventory, pins, now, registry if registry is not None else registry_for(inventory, []))
 
 
 def fixture():
@@ -46,7 +60,7 @@ class RetentionTests(unittest.TestCase):
             inv["objects"].append({"key": key, "size": 10})
             inv["records"][key] = body
         inv["objects"].append({"key": ROOT + "pages/" + revs[4] + "/home.json", "size": 10})
-        summary, private = plan(inv, [revs[1]], NOW)
+        summary, private = plan(inv, [revs[1]], NOW, registry_for(inv, [revs[1]]))
         self.assertEqual(summary["proposedRetiredRevisions"], 5)
         self.assertTrue(all(rev in private["retained"] for rev in revs[:5]))
 
@@ -101,6 +115,26 @@ class RetentionTests(unittest.TestCase):
         inv, _ = fixture()
         inv["objects"].append({"key": ROOT + "publications/jobs/hidden.json", "size": 10})
         with self.assertRaises(ValueError): plan(inv, [], NOW)
+
+    def test_registered_backup_remains_protected_without_a_local_copy(self):
+        inv, revs = fixture()
+        summary, private = plan(inv, [], NOW, registry_for(inv, [revs[0]]))
+        self.assertEqual(summary["durableBackupPins"], 1)
+        self.assertIn("durable-backup-pin", private["retained"][revs[0]])
+        self.assertEqual(summary["proposedRetiredRevisions"], 9)
+
+    def test_absent_or_mismatched_registry_cannot_produce_a_plan(self):
+        inv, revs = fixture()
+        with self.assertRaises(ValueError): plan_with_registry(inv, [], NOW)
+        with self.assertRaises(ValueError): plan(inv, [revs[0]], NOW)
+        for kind in ["generation", "duplicate", "pack", "pointer", "future"]:
+            registry = registry_for(inv, [revs[0]])
+            if kind == "generation": registry["generation"] = 2
+            if kind == "duplicate": registry["pins"].append(copy.deepcopy(registry["pins"][0])); registry["generation"] = 2
+            if kind == "pack": registry["pins"][0]["packBytes"] += 1
+            if kind == "pointer": registry["pins"][0]["persistedAt"] = NOW.isoformat()
+            if kind == "future": registry["pins"][0]["registeredAt"] = (NOW+dt.timedelta(days=1)).isoformat()
+            with self.subTest(kind=kind), self.assertRaises(ValueError): plan(inv, [], NOW, registry)
 
 
 if __name__ == "__main__":

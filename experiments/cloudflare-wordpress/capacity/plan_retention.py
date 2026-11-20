@@ -30,7 +30,7 @@ def timestamp(value):
     return date.astimezone(dt.timezone.utc)
 
 
-def plan(inventory, pins, now):
+def plan(inventory, pins, now, registry=None):
     require(inventory.get("schema") == "playtt/private-capacity-inventory/v1", "Unknown inventory schema")
     require(inventory.get("bucket") == BUCKET and inventory.get("completeListing") is True, "Incomplete or wrong-bucket inventory")
     objects = {}
@@ -68,6 +68,22 @@ def plan(inventory, pins, now):
     require(all(current[k] == manifests[current["revision"]][k] for k in ("revision", "manifestKey", "persistedAt")), "Current pointer mismatch")
     for revision in pins:
         protect(revision, "verified-local-backup")
+    require(isinstance(registry, dict) and registry.get("schema") == "playtt/backup-pins/v1", "A verified durable backup pin registry is required")
+    registered = registry.get("pins")
+    require(isinstance(registered, list) and len(registered) <= 128 and type(registry.get("generation")) is int
+            and registry["generation"] == len(registered), "Invalid backup pin registry generation")
+    registered_revisions = set()
+    for pin in registered:
+        rev = pin["revision"]
+        require(rev not in registered_revisions, "Duplicate registered backup revision")
+        protect(rev, "durable-backup-pin")
+        manifest = manifests[rev]
+        require(all(pin.get(k) == manifest[k] for k in ("revision", "manifestKey", "persistedAt")), "Registered backup pointer mismatch")
+        require(pin.get("packKey") == manifest["restorePack"]["objectKey"] and pin.get("packSha256") == manifest["restorePack"]["sha256"]
+                and pin.get("packBytes") == manifest["restorePack"]["size"] and re.fullmatch(r"[a-f0-9]{64}", pin.get("manifestSha256", "")), "Registered backup pack mismatch")
+        require(timestamp(pin["registeredAt"]) <= now, "Future backup pin registration")
+        registered_revisions.add(rev)
+    require(set(pins) <= registered_revisions, "Local verified backup is absent from durable protection")
     for key, value in records.items():
         if key.startswith(MANIFESTS) or key == ROOT + "markdown/current.json":
             continue
@@ -111,6 +127,7 @@ def plan(inventory, pins, now):
                "bucket": BUCKET, "inventoryAt": inventory["at"], "objects": len(objects), "bytes": sum(o["size"] for o in objects.values()),
                "revisions": len(manifests), "packBytes": sum(objects[k]["size"] for k in referenced_packs),
                "retainedRevisions": len(keep), "verifiedBackupPins": len(set(pins)), "proposedRetiredRevisions": len(retired),
+               "durableBackupPins": len(registered_revisions), "registryGeneration": registry["generation"],
                "proposedObjects": len(candidate_keys), "proposedBytes": sum(objects[k]["size"] for k in candidate_keys),
                "currentRevision": current["revision"], "currentPackBytes": manifests[current["revision"]]["restorePack"]["size"], "byUtcDay": by_day,
                "policy": {"allRecentHours": 24, "latestCount": 20, "dailyDaysUTC": 7},
@@ -118,8 +135,8 @@ def plan(inventory, pins, now):
                    "Stop new mutation/publication work and drain in-flight operations under a renewable fence",
                    "Re-list metadata and re-check all coordinator, operation, publication and backup roots",
                    "Verify retained pack contents and perform an independent restore",
-                   "Implement fail-closed write-budget admission; deletion alone is not a cost cap"],
-               "limitations": ["No cloud mutation/deletion or runtime change", "No content/ZIP reads from R2; object sizes are metadata checks, not content integrity",
+                   "Reverify fail-closed write admission together with the cleanup/reconciliation protocol; deletion alone is not a cost cap"],
+               "limitations": ["This offline planner performs no cloud mutation/deletion or runtime change", "No content/ZIP reads from R2 by this planner; object sizes are metadata checks, not content integrity",
                    "Inventory is not atomic and no in-flight operation graph was captured", "Proposed storage savings are not billing savings or a free-tier guarantee"]}
     return summary, {"retained": {r: sorted(reasons) for r, reasons in keep.items()}, "proposedKeys": sorted(candidate_keys)}
 
@@ -130,6 +147,7 @@ def main():
     parser.add_argument("--backup-root", type=pathlib.Path, required=True)
     parser.add_argument("--summary", type=pathlib.Path, required=True)
     parser.add_argument("--private-plan", type=pathlib.Path, required=True)
+    parser.add_argument("--registry", type=pathlib.Path, required=True, help="Authenticated current /__playtt-backup-pins response; private, do not commit")
     args = parser.parse_args()
     inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
     pins = set()
@@ -147,9 +165,11 @@ def main():
         pins.add(manifest["revision"])
         verified_archives += 1
     require(bool(pins), "No verified local backup pins found")
-    summary, private = plan(inventory, pins, timestamp(inventory["at"]))
+    registry = json.loads(args.registry.read_text(encoding="utf-8"))
+    summary, private = plan(inventory, pins, timestamp(inventory["at"]), registry)
     summary["verifiedLocalArchives"] = verified_archives
     summary["privateInventorySha256"] = hashlib.sha256(args.inventory.read_bytes()).hexdigest()
+    summary["privateRegistrySha256"] = hashlib.sha256(args.registry.read_bytes()).hexdigest()
     args.summary.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     args.private_plan.write_text(json.dumps(private, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False))
