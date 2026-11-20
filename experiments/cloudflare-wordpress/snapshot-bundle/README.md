@@ -1,5 +1,7 @@
 # Snapshot backup, local recovery and dependency protection — optional candidate
 
+Current status (2026-11-21): this candidate was enabled and tested only on a new isolated private target in [window-provider](../window-provider/README.md). It remains outside default assembly and production. The local-only statements below describe the earlier stage.
+
 The metadata-overlay writer changes the snapshot dependency graph. A backup or retention tool that assumes one manifest always contains one complete ZIP cannot safely handle that format. This extension supports complete snapshots and overlays while retaining original identities, full-base dependencies and every content-addressed object needed for subsequent writes.
 
 This is **local research, not an adopted or deployed runtime**. Apply it only after the optional metadata-overlay candidate. Neither optional candidate is in the default rebuild, and no Wrangler configuration enables the writer. Production Pages and the original visual design remain unchanged.

@@ -1,5 +1,7 @@
 # Bounded metadata overlay — local candidate, disabled
 
+Current status (2026-11-21): this candidate was enabled and tested only on a new isolated private target in [window-provider](../window-provider/README.md). It remains outside default assembly and production. The local-only statements below describe the earlier stage.
+
 Native edit-lock refreshes previously rewrote a complete 2.3 MB WordPress ZIP even when only `_edit_lock` and a counter changed. This candidate preserves those bytes through the existing canonical commit protocol while reusing one exact full base archive. It is **not adopted, enabled or deployed**, and the standard `rebuild-candidate.py` deliberately excludes it. Production Pages and the original visual design remain unchanged.
 
 ## Format and behavior

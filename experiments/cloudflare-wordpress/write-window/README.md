@@ -1,5 +1,7 @@
 # Bounded private write window — optional, local candidate
 
+Current status (2026-11-21): this candidate was enabled and tested only on a new isolated private target in [window-provider](../window-provider/README.md). It remains outside default assembly and production. The local-only statements below describe the earlier stage.
+
 An interrupted browser session previously kept generating snapshots until an operator acquired the write seal. This candidate makes the private backend check a persisted deadline, byte allowance and operation allowance before admitting new work. It is not adopted or deployed. Production Pages and the original brand visuals remain unchanged. The existing nearly-full private target must remain sealed.
 
 Apply this optional patch after `metadata-overlay` and `snapshot-bundle`. The default assembler excludes all three candidates. No existing Wrangler config enables `PLAYTT_R2_WRITE_WINDOW` or `PLAYTT_METADATA_OVERLAY`.

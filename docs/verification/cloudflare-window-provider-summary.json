@@ -1,0 +1,296 @@
+{
+  "at": "2026-11-20T18:13:44.181816+00:00",
+  "result": "isolated-free-provider-http-expiry-and-backup-pass-not-production-accepted",
+  "productionChanged": false,
+  "productionBackendSwitched": false,
+  "paidPlanChange": false,
+  "defaultAssemblerIncludesCandidates": false,
+  "adopted": false,
+  "newIsolatedRuntimeDeployed": true,
+  "target": {
+    "worker": "playtt-wp-free-window-audit",
+    "bucket": "playtt-wordpress-window-audit",
+    "workerVersion": "053fa18f-80b6-4f25-8404-5bb7b9c56525",
+    "canonicalVersion": 7,
+    "revision": "9beba823-a06b-43cb-90c9-9c9eda7b24e7",
+    "pins": 4,
+    "publisher": "paused",
+    "fenceActive": false,
+    "writeSealed": true,
+    "pending": 0,
+    "windowClosed": true,
+    "remainingPayloadBytes": 41663661,
+    "payloadBoundBytes": 108336339,
+    "payloadLimitBytes": 150000000,
+    "ownedDraftRetained": 193
+  },
+  "accountAtPreflight": {
+    "at": "2026-11-20T17:56:55.493026+00:00",
+    "source": "Authenticated Cloudflare dashboard, read-only visible UI",
+    "account": "info@dropout.tw",
+    "workersPlan": "Free",
+    "workersPrice": "$0",
+    "workersRequestsToday": 2682,
+    "workersDailyLimit": 100000,
+    "r2BillingPeriod": "October 25 - November 25",
+    "r2ClassAApprox": 5960,
+    "r2ClassBApprox": 52870,
+    "r2CurrentStorageGBApprox": 2.03,
+    "r2CurrentPeriodBillableUSD": 0,
+    "doBillingPeriod": "October 25 - November 25",
+    "doDurationGBSecondsApprox": 1910,
+    "doRequestsApprox": 16550,
+    "doSqlStorageKBApprox": 401.41,
+    "doSqlRowsReadApprox": 14580,
+    "doSqlRowsWrittenApprox": 10880,
+    "limitations": [
+      "Rounded visible analytics; may lag and is not a final invoice",
+      "Shared account usage can change; these are timestamped readings only"
+    ],
+    "paidPlanChange": false
+  },
+  "import": {
+    "selectedSourceVersion": 62,
+    "objects": 298,
+    "payloadBytes": 100637598,
+    "allObjectsDownloadedAndHashVerified": true,
+    "allHistoricalPinsImported": false,
+    "firstUploadFailure": "HTTP 401 after 282 verified objects; same-scope token validity checked; exact 16 outstanding objects resumed using GET before PUT and hash verification. Cause not established."
+  },
+  "expiry": {
+    "seconds": 30,
+    "maxBytes": 1048576,
+    "maxOperations": 8,
+    "lateAdminRestRestoreDenied": true,
+    "canonicalVersionUnchanged": 1,
+    "chargedBytesUnchanged": 183,
+    "wrongOwnerCloseDenied": true
+  },
+  "native": {
+    "scope": "One sequential real authenticated WordPress HTTP attempt on new private target; no browser or concurrency acceptance",
+    "seconds": 120,
+    "maxBytes": 20971520,
+    "maxOperations": 128,
+    "usedBytes": 7698558,
+    "usedOperations": 26,
+    "traditionalChineseDashboard": true,
+    "nativeEditorHtmlLoaded": true,
+    "exactWhitespaceSavedReadBack": true,
+    "homepageUnchanged": true,
+    "heartbeat": [
+      {
+        "index": 0,
+        "versionBefore": 4,
+        "versionAfter": 5,
+        "chargedBytes": 88478,
+        "operations": 3,
+        "lockRefreshed": true,
+        "pointer": {
+          "revision": "0df606d7-bbea-4d42-afd4-7cacf0232cc8",
+          "manifestKey": "sites/default/markdown/revisions/0df606d7-bbea-4d42-afd4-7cacf0232cc8.json",
+          "persistedAt": "2026-11-20T18:04:20.726Z"
+        }
+      },
+      {
+        "index": 1,
+        "versionBefore": 5,
+        "versionAfter": 6,
+        "chargedBytes": 88478,
+        "operations": 3,
+        "lockRefreshed": true,
+        "pointer": {
+          "revision": "ef40f2b5-d72b-45c1-baf2-46591a583fb7",
+          "manifestKey": "sites/default/markdown/revisions/ef40f2b5-d72b-45c1-baf2-46591a583fb7.json",
+          "persistedAt": "2026-11-20T18:04:30.913Z"
+        }
+      }
+    ],
+    "saveWallMs": 7257,
+    "nativeBrowserUiAccepted": false
+  },
+  "backup": {
+    "at": "2026-11-20T18:09:04.481Z",
+    "result": "pass",
+    "snapshots": [
+      {
+        "label": "heartbeat-0",
+        "anchor": {
+          "revision": "0df606d7-bbea-4d42-afd4-7cacf0232cc8",
+          "manifestKey": "sites/default/markdown/revisions/0df606d7-bbea-4d42-afd4-7cacf0232cc8.json",
+          "persistedAt": "2026-11-20T18:04:20.726Z",
+          "manifestSha256": "0a977ea8eb0fd55f7f160ea2f639e32f09362d0f696dff8544a0f5aeab949e45",
+          "packKey": "sites/default/restore-packs/33fe9465496bb0663ad1932f4bda38706eee19532f5ca68858769af89b81eabc.zip",
+          "packSha256": "33fe9465496bb0663ad1932f4bda38706eee19532f5ca68858769af89b81eabc",
+          "packBytes": 2294504
+        },
+        "format": "metadata-overlay",
+        "baseRevision": "94b24b77-573a-4ded-9c7e-3b51fc22c3e7",
+        "files": 297,
+        "objects": 299,
+        "payloadBytes": 6887033,
+        "remoteGets": 5,
+        "downloadedBytes": 2456487,
+        "independentCopyVerified": true,
+        "remotePinGeneration": 2
+      },
+      {
+        "label": "heartbeat-1",
+        "anchor": {
+          "revision": "ef40f2b5-d72b-45c1-baf2-46591a583fb7",
+          "manifestKey": "sites/default/markdown/revisions/ef40f2b5-d72b-45c1-baf2-46591a583fb7.json",
+          "persistedAt": "2026-11-20T18:04:30.913Z",
+          "manifestSha256": "fbe80c5c0d65b84a9a424ae1435a91c025528a59d275b34cb10dffb0bebd6b58",
+          "packKey": "sites/default/restore-packs/33fe9465496bb0663ad1932f4bda38706eee19532f5ca68858769af89b81eabc.zip",
+          "packSha256": "33fe9465496bb0663ad1932f4bda38706eee19532f5ca68858769af89b81eabc",
+          "packBytes": 2294504
+        },
+        "format": "metadata-overlay",
+        "baseRevision": "94b24b77-573a-4ded-9c7e-3b51fc22c3e7",
+        "files": 297,
+        "objects": 299,
+        "payloadBytes": 6887033,
+        "remoteGets": 5,
+        "downloadedBytes": 2456487,
+        "independentCopyVerified": true,
+        "remotePinGeneration": 3
+      },
+      {
+        "label": "final",
+        "anchor": {
+          "revision": "9beba823-a06b-43cb-90c9-9c9eda7b24e7",
+          "manifestKey": "sites/default/markdown/revisions/9beba823-a06b-43cb-90c9-9c9eda7b24e7.json",
+          "persistedAt": "2026-11-20T18:04:41.169Z",
+          "manifestSha256": "8a1a2c042ca81b174cfc99a6ebec1afeb40690689ec081517595da4e41df6a84",
+          "packKey": "sites/default/restore-packs/48a65f21f3917a478d085fb2a9397195548859dae63999aa870f526a41fcdb20.zip",
+          "packSha256": "48a65f21f3917a478d085fb2a9397195548859dae63999aa870f526a41fcdb20",
+          "packBytes": 2294699
+        },
+        "format": "full-pack",
+        "baseRevision": "9beba823-a06b-43cb-90c9-9c9eda7b24e7",
+        "files": 297,
+        "objects": 296,
+        "payloadBytes": 6799940,
+        "remoteGets": 2,
+        "downloadedBytes": 2368191,
+        "independentCopyVerified": true,
+        "remotePinGeneration": 4
+      }
+    ],
+    "sourceVersion": 7,
+    "remoteR2Mutations": 0,
+    "remoteRestoreAttempted": false,
+    "finalPins": 4,
+    "canonicalUnchanged": true,
+    "capacityLedgerUnchanged": true,
+    "fenceReleased": true
+  },
+  "telemetry": {
+    "events": 144,
+    "nonOkOutcomes": 0,
+    "exceptions": 0,
+    "requestFailures": 0,
+    "traces": 9,
+    "incompleteTraces": 0,
+    "sampledWasmHeapMaximumBytes": 73924608,
+    "wholeIsolateMemoryMeasured": false,
+    "tailEnded": true,
+    "faultInjectionPerformed": false
+  },
+  "validation": {
+    "relatedTests": 51,
+    "windowCapacityExecutionTests": 39,
+    "bundleTests": 12,
+    "typescript": "pass",
+    "wranglerDryRun": "pass",
+    "gzipKiB": 7603.4,
+    "providerDeploymentAccepted": true,
+    "existingLoaderWarnings": [
+      "direct-eval",
+      "duplicate-constants"
+    ],
+    "reassembly": {
+      "at": "2026-11-20T18:11:50.318325+00:00",
+      "result": "pass",
+      "scope": "Fresh pinned upstream + adopted patches + four explicit optional candidates; assembly does not deploy",
+      "adoptedPatches": 25,
+      "optionalPatches": 4,
+      "sourceFilesCompared": 70,
+      "extraHelpersCompared": 25,
+      "prerequisitesChecked": 28,
+      "defaultRebuildIncludesCandidates": false,
+      "flagEnabledConfig": [
+        "wrangler.playtt-window-audit.jsonc"
+      ],
+      "unchangedPriorConfigs": 18,
+      "reapplyRefusedBeforeMutation": true,
+      "differences": [],
+      "candidateFiles": [
+        {
+          "path": "src/playtt-storage-capacity.ts",
+          "beforeSha256": "3cd71197bff0bd5b9940680daf8c799e9d2b7968318a73b61aa72b32d72bda2e",
+          "afterSha256": "889b9b2061826e24a8ec8190ac57aed58c8137ff5cd8edcd66115126b9210625"
+        },
+        {
+          "path": "scripts/playtt-snapshot-download.mjs",
+          "beforeSha256": "4d433e12d6ec3ff0bf7a130b73022b247814efc12f5a00ec9160acd863efbd82",
+          "afterSha256": "2d3aca82e6e26f97d8634bd98f12cf38712a447cc51e3fccf4f3d0f81e435d8e"
+        },
+        {
+          "path": "wrangler.playtt-window-audit.jsonc",
+          "source": "wrangler.playtt-window-audit.jsonc",
+          "afterSha256": "6e83a60f58312c15f391b740ef24bfae3773b51ea08d0a66c0b437d4be95d61f"
+        },
+        {
+          "path": "scripts/playtt-window-provider.mjs",
+          "source": "playtt-window-provider.mjs",
+          "afterSha256": "44b7811419b89c66bdd1fd8a9a809160b2b02d2bd8e17de6fa140b965e29ed8e"
+        },
+        {
+          "path": "scripts/playtt-window-native.mjs",
+          "source": "playtt-window-native.mjs",
+          "afterSha256": "fe8a11f1705145fd769fcdeedcef3042d2e3dc2b63e79bc40bb0009c1ac0fb20"
+        },
+        {
+          "path": "scripts/playtt-tail-window-sanitized.mjs",
+          "source": "playtt-tail-window-sanitized.mjs",
+          "afterSha256": "8de835d5246803e41b91e0c6da246ac6f1528356fa4b0f66cff11037bf469c0d"
+        },
+        {
+          "path": "scripts/playtt-window-backup.mjs",
+          "source": "playtt-window-backup.mjs",
+          "afterSha256": "0673911f94b501e8340ab9cdb302165f2617ff395f55bd21d69f90621fdf9371"
+        }
+      ],
+      "excludedGeneratedSource": [
+        "src/playtt-php-loader.mjs: generated from pinned dependency; same exclusion as default assembler"
+      ]
+    }
+  },
+  "oldPrivateTarget": {
+    "canonicalVersion": 62,
+    "pins": 25,
+    "pending": 0,
+    "writeSealed": true,
+    "remainingBytes": 2141868,
+    "publisher": "paused",
+    "readOnlyRecheckedThisStage": true,
+    "writtenThisStage": false,
+    "ownedDraftRetained": 192
+  },
+  "historicalObjectsDeleted": 0,
+  "existingCapacityIncreased": false,
+  "ledgerRefundReset": false,
+  "sourceWorkerRedeployed": false,
+  "backupIsCleanDelivery": false,
+  "goalStatus": "active",
+  "prDraft": true,
+  "acceptanceStillOpen": [
+    "Real native browser editing/reload and competing editor heartbeat",
+    "Provider overlay restore followed by PHP cold reconstruction and exact content checks",
+    "Whole-isolate memory and latency across representative traffic",
+    "Mixed-version operational rollback; old validator rejects tracking v2",
+    "Physical devices/IME, sustained free usage and operational handoff",
+    "Unknown-write reconciliation and bounded safe history retention"
+  ],
+  "next": "Keep both private targets sealed and production unchanged. Use the new target with a new explicitly owned bounded window for provider overlay restore/cold PHP verification, then native browser editing/reload and error recovery. Do not replay one-shot fixture scripts or delete retained drafts blindly."
+}

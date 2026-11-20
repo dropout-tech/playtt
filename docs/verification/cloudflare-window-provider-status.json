@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-20T18:09:56.649Z",
+  "worker": "playtt-wp-free-window-audit",
+  "bucket": "playtt-wordpress-window-audit",
+  "result": "pass",
+  "state": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "9beba823-a06b-43cb-90c9-9c9eda7b24e7",
+      "manifestKey": "sites/default/markdown/revisions/9beba823-a06b-43cb-90c9-9c9eda7b24e7.json",
+      "persistedAt": "2026-11-20T18:04:41.169Z"
+    },
+    "version": 7
+  },
+  "coherent": true,
+  "fenceActive": false,
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-window-audit",
+    "baselineBytes": 100637598,
+    "baselineObjects": 298,
+    "chargedBytes": 7698741,
+    "chargedPuts": 27,
+    "initializedAt": "2026-11-20T18:00:31.856Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T18:00:32.111Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T18:04:48.982Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "dda384a6-c809-415b-b6f8-eec19349a141",
+        "openedAt": 1795197829546,
+        "expiresAt": 1795197949546,
+        "maxBytes": 20971520,
+        "usedBytes": 7698558,
+        "remainingBytes": 13272962,
+        "maxOperations": 128,
+        "operations": 26,
+        "closed": true,
+        "expired": true,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 41663661,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "pins": 4,
+  "publisher": "paused",
+  "deployments": [
+    {
+      "id": "33e011ad-045c-47b7-9d72-bd9fcee3694c",
+      "createdOn": "2026-11-20T17:57:09.787707Z",
+      "versions": [
+        {
+          "version_id": "053fa18f-80b6-4f25-8404-5bb7b9c56525",
+          "percentage": 100
+        }
+      ]
+    },
+    {
+      "id": "3332bcf9-986b-4712-bcf1-5dec9a29676e",
+      "createdOn": "2026-11-20T17:56:34.114886Z",
+      "versions": [
+        {
+          "version_id": "d789c562-7c66-4c1b-9ee2-9feceadfbacf",
+          "percentage": 100
+        }
+      ]
+    }
+  ]
+}

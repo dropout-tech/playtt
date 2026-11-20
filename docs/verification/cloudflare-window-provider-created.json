@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-20T17:56:13.843Z",
+  "worker": "playtt-wp-free-window-audit",
+  "bucket": "playtt-wordpress-window-audit",
+  "result": "pass",
+  "bucketCreated": true,
+  "storageClass": "Standard"
+}

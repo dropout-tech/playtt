@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-20T18:11:50.318325+00:00",
+  "result": "pass",
+  "scope": "Fresh pinned upstream + adopted patches + four explicit optional candidates; assembly does not deploy",
+  "adoptedPatches": 25,
+  "optionalPatches": 4,
+  "sourceFilesCompared": 70,
+  "extraHelpersCompared": 25,
+  "prerequisitesChecked": 28,
+  "defaultRebuildIncludesCandidates": false,
+  "flagEnabledConfig": [
+    "wrangler.playtt-window-audit.jsonc"
+  ],
+  "unchangedPriorConfigs": 18,
+  "reapplyRefusedBeforeMutation": true,
+  "differences": [],
+  "candidateFiles": [
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "beforeSha256": "3cd71197bff0bd5b9940680daf8c799e9d2b7968318a73b61aa72b32d72bda2e",
+      "afterSha256": "889b9b2061826e24a8ec8190ac57aed58c8137ff5cd8edcd66115126b9210625"
+    },
+    {
+      "path": "scripts/playtt-snapshot-download.mjs",
+      "beforeSha256": "4d433e12d6ec3ff0bf7a130b73022b247814efc12f5a00ec9160acd863efbd82",
+      "afterSha256": "2d3aca82e6e26f97d8634bd98f12cf38712a447cc51e3fccf4f3d0f81e435d8e"
+    },
+    {
+      "path": "wrangler.playtt-window-audit.jsonc",
+      "source": "wrangler.playtt-window-audit.jsonc",
+      "afterSha256": "6e83a60f58312c15f391b740ef24bfae3773b51ea08d0a66c0b437d4be95d61f"
+    },
+    {
+      "path": "scripts/playtt-window-provider.mjs",
+      "source": "playtt-window-provider.mjs",
+      "afterSha256": "44b7811419b89c66bdd1fd8a9a809160b2b02d2bd8e17de6fa140b965e29ed8e"
+    },
+    {
+      "path": "scripts/playtt-window-native.mjs",
+      "source": "playtt-window-native.mjs",
+      "afterSha256": "fe8a11f1705145fd769fcdeedcef3042d2e3dc2b63e79bc40bb0009c1ac0fb20"
+    },
+    {
+      "path": "scripts/playtt-tail-window-sanitized.mjs",
+      "source": "playtt-tail-window-sanitized.mjs",
+      "afterSha256": "8de835d5246803e41b91e0c6da246ac6f1528356fa4b0f66cff11037bf469c0d"
+    },
+    {
+      "path": "scripts/playtt-window-backup.mjs",
+      "source": "playtt-window-backup.mjs",
+      "afterSha256": "0673911f94b501e8340ab9cdb302165f2617ff395f55bd21d69f90621fdf9371"
+    }
+  ],
+  "excludedGeneratedSource": [
+    "src/playtt-php-loader.mjs: generated from pinned dependency; same exclusion as default assembler"
+  ]
+}
