@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-20T04:10:40.295Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "scope": "All three complete core objects downloaded from the independent target and checked against pinned local asset hashes",
+  "objects": [
+    {
+      "size": 5975792,
+      "sha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af"
+    },
+    {
+      "size": 87597490,
+      "sha256": "f790aeb43ad3af90e31691cc99b5a3572ae8044eb1a24bb00db747904da7a7e0"
+    },
+    {
+      "size": 267173,
+      "sha256": "f3bf0ac0bd80d374456c3742c3e2f987d060e8e35f4fe99925de2404ce05cbfb"
+    }
+  ]
+}

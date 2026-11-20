@@ -1,0 +1,35 @@
+{
+  "scope": "Preserved verifier/operator-tool failures; no failed WordPress mutation is inferred",
+  "nativeComparisons": [
+    {
+      "failure": "Empty global styles [] versus REST {}",
+      "correction": "Pinned WordPress REST global-styles controller lines 345/349 emit stdClass for empty styles/settings. Normalize only that semantic REST comparison; final archived bytes remain exact.",
+      "fixtureCreated": false
+    },
+    {
+      "failure": "Verifier assumed lin.ee URL",
+      "correction": "Verified backup and restored HTML use line.me; derive exact link from verified backup rather than guess the domain.",
+      "fixtureCreated": false
+    }
+  ],
+  "backup": [
+    {
+      "failure": "First scoped Wrangler download exited 1",
+      "state": "Fence released; only state.json, empty objects directory and zero-byte manifest existed. No pin or complete archive.",
+      "correction": "CLI now supplies explicit existing project XDG_CONFIG_HOME; first failure retained. Original CLI suppressed stderr, so exact provider error was not captured."
+    },
+    {
+      "failure": "First resume expected manifest absent; actual file was zero bytes",
+      "state": "Guard refused before a new fence or mutation. Node process additionally terminated with UV_HANDLE_CLOSING assertion. No matching residual process.",
+      "correction": "Resume requires released prior fence, identical canonical state, empty objects and absent-or-zero manifest. Zero-byte file preserved separately. Second resume completed."
+    }
+  ],
+  "dependencyLock": {
+    "directDevDependency": "yaml@2.9.1",
+    "alreadyPresentTransitiveVersion": true,
+    "offlineLockCommand": "npm 11.6.2 --package-lock-only --ignore-scripts --offline --no-audit --no-fund",
+    "result": "exit 0 with engine warnings (declared npm >=11.16.0); unrelated peer/libc metadata churn reverted",
+    "finalChange": "only root direct yaml dependency; no dependency version/integrity changes",
+    "freshInstall": false
+  }
+}

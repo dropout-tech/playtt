@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-20T04:22:32.468Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "stage": "before-download",
+  "version": 10,
+  "previousFenceReleased": true,
+  "scope": "Prior attempt has only state.json and an empty objects directory; no download or pin is replayed"
+}

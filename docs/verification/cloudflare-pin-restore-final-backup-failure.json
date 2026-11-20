@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-20T04:20:55.908Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "fail",
+  "errorName": "Error",
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 691
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 235
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1431
+    }
+  ]
+}

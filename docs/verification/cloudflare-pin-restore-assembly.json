@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-20T04:25:15.693522+00:00",
+  "result": "pass",
+  "patches": 22,
+  "sourceFiles": 65,
+  "sourceDifferences": [],
+  "extraFiles": [
+    "package-lock.json",
+    "package.json",
+    "scripts/playtt-pin-restore-bootstrap.mjs",
+    "scripts/playtt-pin-restore-cloud-preflight.py",
+    "scripts/playtt-pin-restore-final-backup.mjs",
+    "scripts/playtt-pin-restore-lib.mjs",
+    "scripts/playtt-pin-restore-native.mjs",
+    "tests/playtt-storage-capacity.test.ts",
+    "scripts/playtt-tail-pin-restore-sanitized.mjs",
+    "wrangler.playtt-pin-restore-audit.jsonc"
+  ],
+  "extraDifferences": [],
+  "freshDependencyInstall": false,
+  "scope": "Fresh pinned source assembly only; existing dependency and core artifact reuse"
+}

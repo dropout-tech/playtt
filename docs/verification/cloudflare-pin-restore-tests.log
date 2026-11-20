@@ -1,0 +1,34 @@
+✔ D1 coordinator partitions state, leases, fences, and commit receipts by site ID (6.6815ms)
+✔ D1 adoption accepts monotonic forward state and requires an active fence token (5.1266ms)
+✔ Durable Object coordinator writes the matching site pointer and preserves default compatibility (34.6392ms)
+✔ verified immutable pin survives restart; exact retry after lost acknowledgement is idempotent (22.619ms)
+✔ remote manifest and complete archive hashes are checked before protection is recorded (5.8511ms)
+✔ invalid namespace, time, identity and oversized input cannot trigger R2 reads (2.2004ms)
+✔ expired or lost fence before or during I/O cannot register a pin (3.4645ms)
+✔ corrupt registry is never silently replaced with an empty list (0.8668ms)
+✔ declared object size is enforced while streaming, not after an unlimited buffer (0.9789ms)
+✔ a matching manifest hash cannot bind a different pack or revision (3.0712ms)
+✔ coordinator serializes registration and fence release; wrong-token writes and other sites are rejected (48.4732ms)
+✔ concurrent pins under the same fence retain both entries without advancing canonical state (4.0175ms)
+✔ input normalization retains only immutable identity fields (0.479ms)
+✔ uninitialized or corrupt ledger rejects writes before touching R2 (50.9291ms)
+✔ concurrent writers share a durable bound and UTF-8 bytes, not characters (6.9887ms)
+✔ ambiguous R2 failure, overwritten bytes, conditional miss and delete never refund (2.4338ms)
+✔ lost reservation response leaves charge but never starts the R2 write (2.3715ms)
+✔ unknown streams, multipart and cross-site paths cannot bypass allocation (1.3881ms)
+✔ initialization paginates even short pages and never overwrites an existing ledger (1.4342ms)
+✔ failed or looping inventory never enables writes; malformed configuration fails closed (1.8163ms)
+✔ coordinator capacity refusal preserves current pointer, version and receipt; subsequent release works (5.6601ms)
+✔ disabled deployments keep their original bucket and repeated wrapping cannot double-charge (1.1341ms)
+✔ mixed deployment limits use the smaller value; old clients cannot omit their bound (1.7756ms)
+✔ legacy, wrong-byte and overly permissive reservation replies never reach R2 (0.8017ms)
+✔ independent restore scope initializes its own ledger and rejects a ledger copied from another bucket (1.6914ms)
+✔ initialization cannot erase a corrupt null ledger (0.5232ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 512.8353
