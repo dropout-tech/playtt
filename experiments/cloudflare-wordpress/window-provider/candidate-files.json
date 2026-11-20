@@ -178,6 +178,16 @@
       "path": "scripts/playtt-window-ui-backup.mjs",
       "source": "playtt-window-ui-backup.mjs",
       "afterSha256": "e72d71454ad1fd776184884fada0b36a7ed1eeb0cde49592fc8505e9d6aab955"
+    },
+    {
+      "path": "scripts/playtt-window-retry-control.mjs",
+      "source": "playtt-window-retry-control.mjs",
+      "afterSha256": "570dd41c44ce5eddcf48e1f3bafc1ffbdb39c4e1d80ce28bdb1fc35099927570"
+    },
+    {
+      "path": "scripts/playtt-window-retry-backup.mjs",
+      "source": "playtt-window-retry-backup.mjs",
+      "afterSha256": "326d733a24b24e19a7b8743e35b75ce030c096f374b4613525084c13d1f3377d"
     }
   ]
 }

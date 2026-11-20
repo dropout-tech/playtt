@@ -1,5 +1,20 @@
 # Isolated Cloudflare Free provider validation
 
+## Follow-up: native admission failure and manual retry (2026-11-21)
+
+Current state supersedes the historical stages below: canonical39 / b1423cbd, seven pins, pending0, window closed, write-sealed, fence released, publisher paused; 24,747,783 payload bytes remain. Worker remains 053fa18f. Runtime source/configuration, production visuals and backend routing were not changed.
+
+`playtt-window-retry-control.mjs prepare` independently verifies the version26 backup, then `arm --remote` requires that exact sealed baseline and pin6. The completed one-shot guard must not be replayed against version39. `fail` holds a 120-second canonical fence; `verify-failed` checks exact pointer and capacity stability; `resume` releases only the owned fence. These are operator controls, with no direct WordPress content calls. One actual Chrome save displayed the refusal while retaining the new paragraph; the stable button allowed manual retry. Success notification, reload, and independent backup confirm persistence. Eight failed provider traces occurred inside the deliberately fenced interval before PHP. The 300-second / 16 MiB / 128-operation window used 6,027,238 bytes / 45 operations, closed before expiry, and was sealed after the tab closed.
+
+`playtt-window-retry-backup.mjs --remote` requires the browser and denial proofs, compares every unrelated file/old row/media/theme, and allows only owned draft193, new revision196, lock/session and counters. It independently verifies the full dependency graph and preserves six old pins while adding pin7. This is not a cleaned handoff backup. No force-clear, ledger reset, deletion, history prune or automatic retry was performed.
+
+The iframe warning matches upstream [Gutenberg #76082](https://github.com/WordPress/gutenberg/issues/76082). [#77340](https://github.com/WordPress/gutenberg/pull/77340) excludes a misclassified stylesheet; [#86049](https://github.com/WordPress/gutenberg/pull/86049) supplies missing aspect-ratio variables before that exclusion. Preserve the pinned styles until both effects can be tested together; changing theme enqueue hooks or suppressing warnings alone is not justified. Full canvas computed-variable verification remains open.
+
+Telemetry: 333 events (326 ok / 7 canceled), 19 completed traces and 8 intentional pre-PHP refusals, no observed platform exceptions. One browser viewport-transition error and two known style warnings remain. The initial navigation timed out; cancellation causality is not completely established. Memory samples cover WASM, not the whole isolate. This proves one desktop admission-refusal/retry flow, not network interruption, uncertain commit, concurrent editors, physical devices or sustained free operation.
+
+Two helpers pass syntax and fresh reconstruction: 70 source files / 32 helpers, with 19 configurations and all runtime source unchanged. No new runtime test-suite, TypeScript, dry-run or deployment is claimed. See [current report](../../../docs/verification/cloudflare-window-retry-summary.json). Next, validate competing-editor locks with separate owned users and sessions while preserving this sealed baseline.
+
+
 ## Follow-up: cold provider recovery and native browser save (2026-11-21)
 
 Latest state is canonical26 / f56f11b1, six pins, pending0, window closed, write-sealed, fence released, publisher paused; 30,775,021 payload bytes remain. Worker version remains 053fa18f. Production and runtime source/configuration were not changed or redeployed. The initial provider results below are historical stage evidence.
