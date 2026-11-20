@@ -1,0 +1,227 @@
+{
+  "at": "2026-11-20T03:32:07.418679+00:00",
+  "result": "pass-with-preserved-initial-recovery-assertion",
+  "scope": "Private rebuild payload guard only; production unchanged; no paid upgrade or snapshot deletion",
+  "workerVersion": "3bd8c3de-8206-4bf2-82c9-f3be936affaf",
+  "canonicalVersion": 309,
+  "canonicalRevision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+  "goalStatus": "active",
+  "publisher": "paused",
+  "fenceActive": false,
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-rebuild-audit",
+    "baselineBytes": 625679206,
+    "baselineObjects": 1086,
+    "chargedBytes": 14867698,
+    "chargedPuts": 31,
+    "initializedAt": "2026-11-20T03:16:36.742Z",
+    "reservationSchema": "playtt/r2-capacity-reservation/v1",
+    "initialized": true,
+    "limitBytes": 1000000000,
+    "remainingBytes": 359453096,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "postInventory": {
+    "at": "2026-11-20T03:26:26.545199+00:00",
+    "objects": 1110,
+    "payloadBytes": 640239740,
+    "completeListing": true,
+    "atomicSnapshot": false,
+    "metadataIncluded": false,
+    "privateInventorySha256": "5f801a15988ddcd4da64a0a47d89c54486ea512db16f80c70de65da77ced38a9",
+    "conservativePayloadBound": 640546904,
+    "boundMinusActualBytes": 307164
+  },
+  "local": {
+    "passed": 36,
+    "failed": 0,
+    "capacityTests": 11,
+    "coordinatorTests": 3,
+    "manifestCacheTests": 7,
+    "snapshotIntegrityTests": 15,
+    "typescript": "pass",
+    "initialDryRun": "pass",
+    "finalRealDeployment": "pass",
+    "wholeUpstreamSuiteClaimed": false
+  },
+  "delivery": {
+    "patches": 20,
+    "sourceFiles": 64,
+    "sourceDifferences": 0,
+    "extraFilesCompared": [
+      "scripts/playtt-capacity-control.mjs",
+      "scripts/playtt-capacity-final-check.mjs",
+      "scripts/playtt-capacity-native-audit.mjs",
+      "scripts/playtt-capacity-recover.mjs",
+      "scripts/playtt-rebuild-ui-backup.mjs",
+      "tests/playtt-storage-capacity.test.ts",
+      "src/playtt-storage-capacity.ts",
+      "wrangler.playtt-rebuild-audit.jsonc"
+    ],
+    "extraDifferences": 0,
+    "freshDependencyInstallThisCycle": false
+  },
+  "nativeDenial": {
+    "status": 507,
+    "pointerAndVersionUnchanged": true,
+    "exactOldContent": true,
+    "chargedBytesUnchanged": true,
+    "chargedPutsUnchanged": true
+  },
+  "initialRecoveryAttempt": {
+    "result": "fail",
+    "errorName": "AssertionError",
+    "scope": "First post-restore status assertion before another mutation; actual/expected not captured"
+  },
+  "transitionEvidence": [
+    {
+      "at": "2026-11-20T03:20:05.453Z",
+      "version": "45e14d25-01de-45e0-9d90-5ed79424bb6f",
+      "entrypoint": "PlayttStorageBudget"
+    },
+    {
+      "at": "2026-11-20T03:20:05.013Z",
+      "version": "4f6c9fe6-7103-4147-a02a-376d068debc8",
+      "entrypoint": "default"
+    },
+    {
+      "at": "2026-11-20T03:20:23.867Z",
+      "version": "4f6c9fe6-7103-4147-a02a-376d068debc8",
+      "entrypoint": "PlayttStorageBudget"
+    }
+  ],
+  "finalProtocol": {
+    "schema": "playtt/r2-capacity-reservation/v1",
+    "crossVersionCases": "local tests",
+    "remoteForcedDenialOnFinalProtocol": false,
+    "verifiedBeforeFenceRelease": true
+  },
+  "recovery": {
+    "status": 200,
+    "versionDelta": 1,
+    "exactContent": true
+  },
+  "coldExactReadback": true,
+  "ledgerSurvivedRedeployment": true,
+  "ownedId": 181,
+  "cleanupComplete": true,
+  "finalComparison": {
+    "at": "2026-11-20T03:26:00.680Z",
+    "result": "pass",
+    "scope": "Complete backup after private storage capacity denial, recovery, cold readback and owned cleanup; all original content, historical revisions, media and metadata retained; owned draft/revisions absent",
+    "ownedId": 181,
+    "cleanupComplete": true,
+    "unchangedCanonicalFiles": 37,
+    "originalMarkdown": 27,
+    "uploads": 15,
+    "postmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "512",
+      "wp_postmeta": "70",
+      "wp_posts": "182",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 309,
+        "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 175,
+        "revision": "d419f38a-3c0a-4a3b-b1ef-7d6df4f0ebcd",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-20T03:25:51.294Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+      "objects": 297,
+      "decodedBytes": 4427214,
+      "archiveBytes": 2292624,
+      "archiveSha256": "54bde7a44ea53b1ccd36bbe964afc0ddeb3045c6ba62a90682bbcf7b3b1eb61e"
+    }
+  },
+  "observation": {
+    "events": 211,
+    "first": "2026-11-20T03:17:23.907Z",
+    "last": "2026-11-20T03:26:00.682Z",
+    "outcomes": {
+      "ok": 211
+    },
+    "versions": {
+      "0b41edeb-8e08-49b0-9b2f-4ae708aecc80": 41,
+      "45e14d25-01de-45e0-9d90-5ed79424bb6f": 20,
+      "4f6c9fe6-7103-4147-a02a-376d068debc8": 66,
+      "3bd8c3de-8206-4bf2-82c9-f3be936affaf": 84
+    },
+    "exceptions": 0,
+    "requestFailures": 1,
+    "incompleteTraces": 1,
+    "expectedDenialFailure": {
+      "category": "other",
+      "endpoint": "rest",
+      "method": "POST",
+      "operation": "mutation",
+      "runtime": "cold",
+      "phase": "persistence.markdown.write",
+      "signalAborted": false,
+      "bodyUsed": true,
+      "cleanupFailed": false
+    },
+    "finalVersionColdTraces": [
+      {
+        "at": "2026-11-20T03:24:40.415Z",
+        "version": "3bd8c3de-8206-4bf2-82c9-f3be936affaf",
+        "request": {
+          "category": "wp-login",
+          "method": "GET"
+        },
+        "operation": "read",
+        "runtime": "cold",
+        "completed": true,
+        "totalMs": 6095
+      }
+    ],
+    "maxSampledWasmHeapBytes": 71827456,
+    "maxSampledFileBytes": 31649276,
+    "observerStopped": true,
+    "matchingOrphanTails": 0,
+    "scope": "Finite native HTTP experiment; events are not unique requests; sampled heap/files are not whole-isolate memory."
+  },
+  "limits": [
+    "Payload bound excludes metadata, R2 operation counts, DO usage, other projects and out-of-band writes",
+    "No ledger reset/refund/reconciliation or automatic retention yet",
+    "Unknown-length streams and multipart are rejected",
+    "No browser/UI failure-display test or independent empty restore this cycle",
+    "Native workflow, cancellation attribution, latency, real-device input, handoff and sustained free-tier use remain open"
+  ]
+}

@@ -22,6 +22,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=pathlib.Path, required=True)
     parser.add_argument("--output", type=pathlib.Path, required=True)
+    parser.add_argument("--list-only", action="store_true", help="Skip JSON roots; suitable for capacity totals, not retention planning")
     args = parser.parse_args()
     token = tomllib.loads(args.config.read_text(encoding="utf-8"))["oauth_token"]
     base = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}/r2/buckets/{BUCKET}/objects"
@@ -69,10 +70,11 @@ def main():
             metadata_keys.append(key)
     def read_metadata(key):
         return key, read("/" + urllib.parse.quote(key, safe=""))
-    with ThreadPoolExecutor(max_workers=4) as pool:
-        records = dict(pool.map(read_metadata, metadata_keys))
+    if not args.list_only:
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            records = dict(pool.map(read_metadata, metadata_keys))
     result = {"schema": "playtt/private-capacity-inventory/v1", "at": dt.datetime.now(dt.timezone.utc).isoformat(),
-              "bucket": BUCKET, "completeListing": True, "atomicSnapshot": False,
+              "bucket": BUCKET, "completeListing": True, "atomicSnapshot": False, "metadataIncluded": not args.list_only,
               "objects": objects, "records": records}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
