@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-20T04:57:22.644845+00:00",
+  "schema": "playtt/retained-pack-download/v1",
+  "result": "downloaded",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "inputs": {
+    "inventory": "7cec764bf99b0dd8d014e0ae5dbc4a54ad1296b8b38ebb69b8af54775493a96e",
+    "plan": "8b3d637446587835c13b6cecf8abefa195157763887a2a1a172d8a13d1c6906c",
+    "plan_summary": "fc6d5b5a1d3c47dd8e9b0744ec62913b48adfdf1fa38ae61b99494a7fdaf915e",
+    "registry": "97905be61072f0ffe8393f08db0a581ef40ef9267613ab61df2ce9c7db90be53"
+  },
+  "scope": "Authenticated remote bytes and compressed hashes only; full ZIP decode is a separate required step",
+  "expectedRevisions": 72,
+  "uniquePacks": 72,
+  "failures": [],
+  "requests": {
+    "gets": 144,
+    "bytes": 170385283,
+    "cacheHits": 0
+  },
+  "safeToApply": false
+}

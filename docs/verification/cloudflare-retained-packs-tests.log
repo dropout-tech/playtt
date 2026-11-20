@@ -1,0 +1,16 @@
+✔ full verification checks compressed and decoded bytes, Unicode content, media, tables and a durable pin (110.9277ms)
+✔ compressed corruption fails even when the listed object size is unchanged (8.3391ms)
+✔ a valid whole ZIP hash does not excuse a mismatched content index (19.6934ms)
+✔ an incomplete ZIP with recomputed outer digest still fails full decode (21.473ms)
+✔ duplicate or traversal paths and cross-site object keys are rejected before restoration (19.1767ms)
+✔ an altered protected manifest is rejected despite equivalent parsed JSON and valid ZIP (5.4834ms)
+✔ archive integrity does not hide an older missing attachment relationship or claim PHP restore acceptance (47.3322ms)
+✔ coverage binds every retained revision and the complete immutable input fingerprint (2.5468ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 737.1338

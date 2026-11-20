@@ -170,8 +170,10 @@ def main():
     summary["verifiedLocalArchives"] = verified_archives
     summary["privateInventorySha256"] = hashlib.sha256(args.inventory.read_bytes()).hexdigest()
     summary["privateRegistrySha256"] = hashlib.sha256(args.registry.read_bytes()).hexdigest()
+    private_bytes = (json.dumps(private, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    summary["privatePlanSha256"] = hashlib.sha256(private_bytes).hexdigest()
+    args.private_plan.write_bytes(private_bytes)
     args.summary.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    args.private_plan.write_text(json.dumps(private, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False))
 
 

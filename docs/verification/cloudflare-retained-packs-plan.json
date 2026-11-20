@@ -1,0 +1,58 @@
+{
+  "schema": "playtt/retention-proposal/v1",
+  "at": "2026-11-20T04:54:31.651803+00:00",
+  "mode": "offline-proposal-only",
+  "safeToApply": false,
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "inventoryAt": "2026-11-20T04:54:31.651803+00:00",
+  "objects": 1110,
+  "bytes": 640239740,
+  "revisions": 222,
+  "packBytes": 509212610,
+  "retainedRevisions": 72,
+  "verifiedBackupPins": 21,
+  "proposedRetiredRevisions": 150,
+  "durableBackupPins": 21,
+  "registryGeneration": 21,
+  "proposedObjects": 300,
+  "proposedBytes": 355062939,
+  "currentRevision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+  "currentPackBytes": 2292624,
+  "byUtcDay": {
+    "2026-11-20": {
+      "revisions": 49,
+      "packBytes": 112403483
+    },
+    "2026-11-19": {
+      "revisions": 4,
+      "packBytes": 9182386
+    },
+    "2026-11-18": {
+      "revisions": 169,
+      "packBytes": 387626741
+    }
+  },
+  "policy": {
+    "allRecentHours": 24,
+    "latestCount": 20,
+    "dailyDaysUTC": 7
+  },
+  "requiredBeforeAnyDeletion": [
+    "Review retention policy and exact retirement list",
+    "Confirm complete backup pin registry",
+    "Stop new mutation/publication work and drain in-flight operations under a renewable fence",
+    "Re-list metadata and re-check all coordinator, operation, publication and backup roots",
+    "Verify retained pack contents and perform an independent restore",
+    "Reverify fail-closed write admission together with the cleanup/reconciliation protocol; deletion alone is not a cost cap"
+  ],
+  "limitations": [
+    "This offline planner performs no cloud mutation/deletion or runtime change",
+    "No content/ZIP reads from R2 by this planner; object sizes are metadata checks, not content integrity",
+    "Inventory is not atomic and no in-flight operation graph was captured",
+    "Proposed storage savings are not billing savings or a free-tier guarantee"
+  ],
+  "verifiedLocalArchives": 23,
+  "privateInventorySha256": "7cec764bf99b0dd8d014e0ae5dbc4a54ad1296b8b38ebb69b8af54775493a96e",
+  "privateRegistrySha256": "97905be61072f0ffe8393f08db0a581ef40ef9267613ab61df2ce9c7db90be53",
+  "privatePlanSha256": "8b3d637446587835c13b6cecf8abefa195157763887a2a1a172d8a13d1c6906c"
+}
