@@ -66,6 +66,7 @@ extras(exp/'history-origin')
 patch('content-bytes/content-bytes-candidate.patch',runtime);extras(exp/'content-bytes')
 patch('diagnostic-sampling/diagnostic-sampling-candidate.patch',runtime);extras(exp/'diagnostic-sampling')
 patch('heartbeat-noop/heartbeat-noop-candidate.patch',runtime);extras(exp/'heartbeat-noop')
+extras(exp/'noop-ui')
 (runtime/'scripts/playtt-latency-pprof.py').write_bytes((exp/'diagnostic-sampling/playtt-latency-pprof.py').read_text(encoding='utf-8-sig').encode('utf-8'))
 differences=[];files=[]
 for source in ((live or runtime)/'src').iterdir():
