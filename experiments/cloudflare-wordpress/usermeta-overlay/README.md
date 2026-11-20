@@ -1,5 +1,10 @@
 # User session and editor preference snapshots — optional v2
 
+
+## Current successor (2026-11-21)
+
+The [session provider stage](../session-provider/README.md) and required [logout persistence fix](../logout-persistence/README.md) now have bounded private provider evidence: native login/preferences, cold recovery and persisted logout rejection. Production remains Pages. The old target stays sealed; the new target is canonical15/pin5/sealed. Historical local-only and pre-fix claims below describe those earlier stages.
+
 WordPress sign-ins and editor preferences were forcing a full approximately 2.3 MB restore ZIP on the private Free target. In the stopped two-editor exercise, five usermeta/counter-only commits wrote 11,477,138 bytes of full packs. This optional source candidate preserves those changes in bounded overlays. It is not deployed or enabled in any configuration; production Pages and the original visual remain unchanged.
 
 ## Format and scope

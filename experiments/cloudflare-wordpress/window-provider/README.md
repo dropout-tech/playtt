@@ -1,5 +1,10 @@
 # Isolated Cloudflare Free provider validation
 
+
+## Current successor (2026-11-21)
+
+The [session provider stage](../session-provider/README.md) and required [logout persistence fix](../logout-persistence/README.md) now have bounded private provider evidence: native login/preferences, cold recovery and persisted logout rejection. Production remains Pages. The old target stays sealed; the new target is canonical15/pin5/sealed. Historical local-only and pre-fix claims below describe those earlier stages.
+
 ## Latest local successor (2026-11-21)
 
 The separately versioned [usermeta-overlay candidate](../usermeta-overlay/README.md) now passes 70 related tests, exact native PHP session/preferences cold recovery, independent backup reconstruction, TypeScript and local dry-run. It is not deployed or enabled. The unchanged private target is still canonical57 / eight pins / sealed; only 3,821,814 bytes remain. See the successor for measured local scope and provider work still required. The records below describe their respective earlier stages.

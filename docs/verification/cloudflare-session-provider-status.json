@@ -1,0 +1,123 @@
+{
+  "at": "2026-11-20T20:46:59.926Z",
+  "worker": "playtt-wp-free-session-audit",
+  "bucket": "playtt-wordpress-session-audit",
+  "result": "pass",
+  "state": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+      "manifestKey": "sites/default/markdown/revisions/506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97.json",
+      "persistedAt": "2026-11-20T20:35:57.286Z"
+    },
+    "version": 15
+  },
+  "coherent": true,
+  "fenceActive": false,
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 100738428,
+    "baselineObjects": 303,
+    "chargedBytes": 1015676,
+    "chargedPuts": 40,
+    "initializedAt": "2026-11-20T20:06:31.237Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T20:06:31.656Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T20:36:15.742Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "6dbecd7e-ecb9-4e14-a204-c4e73fb4b680",
+        "openedAt": 1795206870516,
+        "expiresAt": 1795207170516,
+        "maxBytes": 8388608,
+        "usedBytes": 460017,
+        "remainingBytes": 7928591,
+        "maxOperations": 128,
+        "operations": 17,
+        "closed": true,
+        "expired": true,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 48245896,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "pins": 5,
+  "publisher": "paused",
+  "deployments": [
+    {
+      "id": "5640cc5b-63b9-48b0-87a3-a57f14c732e9",
+      "createdOn": "2026-11-20T20:45:58.279319Z",
+      "versions": [
+        {
+          "version_id": "c914a8a0-1ef3-49a9-b66c-4b937f4d6e74",
+          "percentage": 100
+        }
+      ]
+    },
+    {
+      "id": "d19504bf-7be4-4652-871b-595ecaeae338",
+      "createdOn": "2026-11-20T20:33:38.432739Z",
+      "versions": [
+        {
+          "version_id": "8f4b111b-a4f6-4e35-9f64-6d01cb273116",
+          "percentage": 100
+        }
+      ]
+    },
+    {
+      "id": "3b6f2502-b499-48ad-8662-513c0c7ee6f0",
+      "createdOn": "2026-11-20T20:04:06.228744Z",
+      "versions": [
+        {
+          "version_id": "a4b4e1f6-a3e1-46c7-8591-e9f46480f2fe",
+          "percentage": 100
+        }
+      ]
+    },
+    {
+      "id": "09d7ea67-8947-4c1f-b121-d424a3431e10",
+      "createdOn": "2026-11-20T19:56:28.757225Z",
+      "versions": [
+        {
+          "version_id": "e6bdff14-4ed6-4159-9b1b-bf6c87a48b25",
+          "percentage": 100
+        }
+      ]
+    },
+    {
+      "id": "bf270158-5629-4fb8-86a3-3f7b36c131b8",
+      "createdOn": "2026-11-20T19:56:07.944701Z",
+      "versions": [
+        {
+          "version_id": "1ddc8926-ff73-4eb3-8248-bf6d26120f76",
+          "percentage": 100
+        }
+      ]
+    },
+    {
+      "id": "681f55f3-dc8d-418a-8c21-bef632e6f8f9",
+      "createdOn": "2026-11-20T19:56:07.375901Z",
+      "versions": [
+        {
+          "version_id": "59ca9771-3144-4274-85df-7a6e4b92eec3",
+          "percentage": 100
+        }
+      ]
+    }
+  ]
+}

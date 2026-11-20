@@ -1,0 +1,30 @@
+--- a/src/playtt-storage-capacity.ts
++++ b/src/playtt-storage-capacity.ts
+@@ -11,7 +11,7 @@
+   PLAYTT_R2_WRITE_WINDOW?: string;
+ }
+ 
+-const SCOPES = new Set(['playtt-wordpress-rebuild-audit', 'playtt-wordpress-pin-restore-audit', 'playtt-wordpress-window-audit']);
++const SCOPES = new Set(['playtt-wordpress-rebuild-audit', 'playtt-wordpress-pin-restore-audit', 'playtt-wordpress-window-audit', 'playtt-wordpress-session-audit']);
+ const KEY = 'playtt-r2-capacity-ledger-v1';
+ const SCHEMA = 'playtt/r2-capacity-ledger/v1';
+ const RESERVATION_SCHEMA = 'playtt/r2-capacity-reservation/v1';
+--- a/scripts/playtt-snapshot-download.mjs
++++ b/scripts/playtt-snapshot-download.mjs
+@@ -1,13 +1,14 @@
+ import assert from 'node:assert/strict';
+ 
+ export function createCloudflareSnapshotSource({bucketName,token,fetchImpl=fetch}){
+- assert.ok(['playtt-wordpress-rebuild-audit','playtt-wordpress-pin-restore-audit','playtt-wordpress-window-audit'].includes(bucketName));
++ assert.ok(['playtt-wordpress-rebuild-audit','playtt-wordpress-pin-restore-audit','playtt-wordpress-window-audit','playtt-wordpress-session-audit'].includes(bucketName));
++ const maxRequests=bucketName==='playtt-wordpress-session-audit'?6:5;
+  assert.ok(typeof token==='string'&&token.length>0&&token.length<=8192);
+  const base=`https://api.cloudflare.com/client/v4/accounts/3baadbd4abd9fd63c7f7e51664b26f67/r2/buckets/${bucketName}/objects/`;
+  const stats={requests:0,downloadedBytes:0};
+  const bucket={async get(key){
+   assert.ok(typeof key==='string'&&key.startsWith('sites/default/')&&!key.includes('..')&&!key.includes('\\'));
+-  assert.ok(stats.requests<5,'Snapshot exceeded its bounded dependency request count');stats.requests++;
++  assert.ok(stats.requests<maxRequests,'Snapshot exceeded its bounded dependency request count');stats.requests++;
+   const r=await fetchImpl(base+encodeURIComponent(key),{method:'GET',headers:{authorization:'Bearer '+token},signal:AbortSignal.timeout(45000),redirect:'error'});
+   if(r.status===404){await r.body?.cancel();return null;}
+   if(r.status!==200){await r.body?.cancel();throw new Error('Snapshot GET failed: HTTP '+r.status);}

@@ -1,0 +1,949 @@
+{
+  "at": "2026-11-20T20:34:29.880Z",
+  "result": "pass",
+  "scope": "Native WordPress session/preference restore plus persisted logout invalidation verified after a second cold recovery. Includes invalid logout nonce rejection. Not browser UI or competing-editor acceptance.",
+  "checks": [
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:34:25.335Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2750
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:34:28.088Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 754
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:34:28.844Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 860
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:34:29.705Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 165
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:34:29.890Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 255
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:34:30.147Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 264
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:34:30.413Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 254
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:34:30.669Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 225
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:34:30.896Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1690
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:34:32.589Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 200
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:34:32.790Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3470
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:34:36.261Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1607
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:34:37.870Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 294
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:34:38.168Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1699
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:34:39.868Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 157
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:34:40.026Z",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 5815
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:34:45.845Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1901
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:34:47.749Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 182
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:34:47.936Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1612
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:34:49.549Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 154
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:34:49.705Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 982
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:34:50.712Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1619
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:34:52.332Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 157
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:34:52.492Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1659
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:34:54.152Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 165
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:34:54.318Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4963
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:34:59.282Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2205
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:35:01.490Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 157
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:35:01.649Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 838
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:35:02.490Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1662
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:35:04.153Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 159
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:35:04.315Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 5208
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:35:09.524Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1833
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:35:11.359Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 165
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:35:11.526Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1746
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:35:13.272Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 176
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:35:13.449Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 819
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:35:14.269Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1689
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:35:15.960Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 174
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:35:16.137Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 257
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:35:16.399Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1711
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:35:18.113Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 165
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:35:18.279Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 189
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:35:26.085Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1640
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:35:27.726Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 194
+    },
+    {
+      "stage": "forward-adopt-v2",
+      "startedAt": "2026-11-20T20:35:27.930Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1529
+    },
+    {
+      "stage": "forward-adopt-v2",
+      "startedAt": "2026-11-20T20:35:29.460Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 397
+    },
+    {
+      "stage": "forward-adopt-v2",
+      "startedAt": "2026-11-20T20:35:29.859Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 224
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:35:30.087Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1692
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:35:31.780Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 178
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:35:31.959Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3649
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:35:35.612Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1703
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:35:37.319Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 170
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:35:37.490Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 852
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:35:38.344Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1616
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:35:39.961Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 167
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:35:40.128Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 5849
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:35:45.978Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1807
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:35:47.788Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 173
+    },
+    {
+      "stage": "invalid-logout-nonce",
+      "startedAt": "2026-11-20T20:35:47.963Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2002
+    },
+    {
+      "stage": "invalid-logout-nonce",
+      "startedAt": "2026-11-20T20:35:49.966Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 185
+    },
+    {
+      "stage": "invalid-logout-nonce",
+      "startedAt": "2026-11-20T20:35:50.152Z",
+      "method": "GET",
+      "status": 403,
+      "wallMs": 953
+    },
+    {
+      "stage": "invalid-logout-nonce",
+      "startedAt": "2026-11-20T20:35:51.106Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1019
+    },
+    {
+      "stage": "invalid-logout-nonce",
+      "startedAt": "2026-11-20T20:35:52.126Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2027
+    },
+    {
+      "stage": "invalid-logout-nonce",
+      "startedAt": "2026-11-20T20:35:54.156Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 171
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:35:54.331Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1584
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:35:55.916Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 163
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:35:56.080Z",
+      "method": "GET",
+      "status": 302,
+      "wallMs": 4835
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:36:00.916Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2011
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:36:02.930Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 153
+    },
+    {
+      "stage": "cold-after-logout",
+      "startedAt": "2026-11-20T20:36:03.084Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 214
+    },
+    {
+      "stage": "cold-after-logout",
+      "startedAt": "2026-11-20T20:36:03.299Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1647
+    },
+    {
+      "stage": "cold-after-logout",
+      "startedAt": "2026-11-20T20:36:04.948Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 359
+    },
+    {
+      "stage": "cold-after-logout",
+      "startedAt": "2026-11-20T20:36:05.308Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 233
+    },
+    {
+      "stage": "cold-old-cookie-rejected",
+      "startedAt": "2026-11-20T20:36:05.544Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1669
+    },
+    {
+      "stage": "cold-old-cookie-rejected",
+      "startedAt": "2026-11-20T20:36:07.214Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 156
+    },
+    {
+      "stage": "cold-old-cookie-rejected",
+      "startedAt": "2026-11-20T20:36:07.371Z",
+      "method": "GET",
+      "status": 403,
+      "wallMs": 3469
+    },
+    {
+      "stage": "cold-old-cookie-rejected",
+      "startedAt": "2026-11-20T20:36:10.842Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1809
+    },
+    {
+      "stage": "cold-old-cookie-rejected",
+      "startedAt": "2026-11-20T20:36:12.652Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 165
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:36:12.822Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 193
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:36:13.020Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 170
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:36:13.192Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1958
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:36:15.153Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 208
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:36:15.366Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 273
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:15.655Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1861
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:17.519Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 165
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:17.686Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 170
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:24.851Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1704
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:26.556Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 207
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:26.764Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 219
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:26.994Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 221
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:27.216Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1678
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:28.895Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 254
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:36:29.151Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 209
+    }
+  ],
+  "steps": [
+    {
+      "label": "cold-login-form",
+      "versionBefore": 8,
+      "versionAfter": 8,
+      "pointer": {
+        "revision": "eb89def1-1ed1-4791-9bb8-a67bd2f434db",
+        "manifestKey": "sites/default/markdown/revisions/eb89def1-1ed1-4791-9bb8-a67bd2f434db.json",
+        "persistedAt": "2026-11-20T20:28:46.938Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "editor2-login",
+      "versionBefore": 8,
+      "versionAfter": 9,
+      "pointer": {
+        "revision": "62b74258-5818-4268-ad6c-7c1371a00399",
+        "manifestKey": "sites/default/markdown/revisions/62b74258-5818-4268-ad6c-7c1371a00399.json",
+        "persistedAt": "2026-11-20T20:34:41.972Z"
+      },
+      "chargedBytes": 96614,
+      "operations": 4
+    },
+    {
+      "label": "profile",
+      "versionBefore": 9,
+      "versionAfter": 9,
+      "pointer": {
+        "revision": "62b74258-5818-4268-ad6c-7c1371a00399",
+        "manifestKey": "sites/default/markdown/revisions/62b74258-5818-4268-ad6c-7c1371a00399.json",
+        "persistedAt": "2026-11-20T20:34:41.972Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "native-rest-nonce",
+      "versionBefore": 9,
+      "versionAfter": 10,
+      "pointer": {
+        "revision": "5c1b0b9c-8519-4890-9fe5-c64ba6ef3915",
+        "manifestKey": "sites/default/markdown/revisions/5c1b0b9c-8519-4890-9fe5-c64ba6ef3915.json",
+        "persistedAt": "2026-11-20T20:34:55.480Z"
+      },
+      "chargedBytes": 74120,
+      "operations": 3
+    },
+    {
+      "label": "save-preferences",
+      "versionBefore": 10,
+      "versionAfter": 11,
+      "pointer": {
+        "revision": "bfa9e55e-e5aa-436c-a911-81b91490e81d",
+        "manifestKey": "sites/default/markdown/revisions/bfa9e55e-e5aa-436c-a911-81b91490e81d.json",
+        "persistedAt": "2026-11-20T20:35:05.612Z"
+      },
+      "chargedBytes": 96444,
+      "operations": 3
+    },
+    {
+      "label": "read-preferences",
+      "versionBefore": 11,
+      "versionAfter": 11,
+      "pointer": {
+        "revision": "bfa9e55e-e5aa-436c-a911-81b91490e81d",
+        "manifestKey": "sites/default/markdown/revisions/bfa9e55e-e5aa-436c-a911-81b91490e81d.json",
+        "persistedAt": "2026-11-20T20:35:05.612Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "cold-session-preferences",
+      "versionBefore": 12,
+      "versionAfter": 12,
+      "pointer": {
+        "revision": "bfa9e55e-e5aa-436c-a911-81b91490e81d",
+        "manifestKey": "sites/default/markdown/revisions/bfa9e55e-e5aa-436c-a911-81b91490e81d.json",
+        "persistedAt": "2026-11-20T20:35:05.612Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "restore-preferences",
+      "versionBefore": 12,
+      "versionAfter": 13,
+      "pointer": {
+        "revision": "1e23fea1-7a94-430f-ac82-c2152bc0f888",
+        "manifestKey": "sites/default/markdown/revisions/1e23fea1-7a94-430f-ac82-c2152bc0f888.json",
+        "persistedAt": "2026-11-20T20:35:42.068Z"
+      },
+      "chargedBytes": 96614,
+      "operations": 4
+    },
+    {
+      "label": "invalid-logout-nonce",
+      "versionBefore": 13,
+      "versionAfter": 13,
+      "pointer": {
+        "revision": "1e23fea1-7a94-430f-ac82-c2152bc0f888",
+        "manifestKey": "sites/default/markdown/revisions/1e23fea1-7a94-430f-ac82-c2152bc0f888.json",
+        "persistedAt": "2026-11-20T20:35:42.068Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "native-logout",
+      "versionBefore": 13,
+      "versionAfter": 14,
+      "pointer": {
+        "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+        "manifestKey": "sites/default/markdown/revisions/506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97.json",
+        "persistedAt": "2026-11-20T20:35:57.286Z"
+      },
+      "chargedBytes": 96225,
+      "operations": 3
+    },
+    {
+      "label": "cold-old-cookie-rejected",
+      "versionBefore": 15,
+      "versionAfter": 15,
+      "pointer": {
+        "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+        "manifestKey": "sites/default/markdown/revisions/506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97.json",
+        "persistedAt": "2026-11-20T20:35:57.286Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "preferences",
+      "version": 11,
+      "anchor": {
+        "revision": "bfa9e55e-e5aa-436c-a911-81b91490e81d",
+        "manifestKey": "sites/default/markdown/revisions/bfa9e55e-e5aa-436c-a911-81b91490e81d.json",
+        "persistedAt": "2026-11-20T20:35:05.612Z",
+        "manifestSha256": "2e9fd121bfb65647f2494873bf825ec15370e864605da668edc934106ed3dabd",
+        "packKey": "sites/default/restore-packs/ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b.zip",
+        "packSha256": "ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b",
+        "packBytes": 2295898
+      },
+      "format": "playtt/canonical-metadata-overlay/v2",
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "unchangedFiles": 296,
+      "files": 298,
+      "objects": 301,
+      "originalDraftAndAccountsExact": true,
+      "otherUsersUnchanged": true,
+      "mediaAndThemeExact": true,
+      "independentCopyVerified": true,
+      "remoteGets": 6,
+      "downloadedBytes": 2480965,
+      "pins": 4
+    },
+    {
+      "label": "final",
+      "version": 15,
+      "anchor": {
+        "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+        "manifestKey": "sites/default/markdown/revisions/506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97.json",
+        "persistedAt": "2026-11-20T20:35:57.286Z",
+        "manifestSha256": "c0ca569605a471508146e2a0b1291ee50a4128f8574edfc5ae15836bc6be61ff",
+        "packKey": "sites/default/restore-packs/ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b.zip",
+        "packSha256": "ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b",
+        "packBytes": 2295898
+      },
+      "format": "playtt/canonical-metadata-overlay/v2",
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "unchangedFiles": 296,
+      "files": 298,
+      "objects": 301,
+      "originalDraftAndAccountsExact": true,
+      "otherUsersUnchanged": true,
+      "mediaAndThemeExact": true,
+      "independentCopyVerified": true,
+      "remoteGets": 6,
+      "downloadedBytes": 2480746,
+      "pins": 5
+    }
+  ],
+  "profile": {
+    "traditionalChinese": true,
+    "hasInlineRestNonce": true,
+    "hasAnyInlineNonce": true,
+    "hasNativeLogout": true
+  },
+  "forwardAdoption": {
+    "fromVersion": 11,
+    "toVersion": 12,
+    "pointer": {
+      "revision": "bfa9e55e-e5aa-436c-a911-81b91490e81d",
+      "manifestKey": "sites/default/markdown/revisions/bfa9e55e-e5aa-436c-a911-81b91490e81d.json",
+      "persistedAt": "2026-11-20T20:35:05.612Z"
+    }
+  },
+  "coldSessionValidated": true,
+  "coldPhaseRequiresSeparateTail": true,
+  "originalDraftExact": true,
+  "invalidLogoutNonceRejected": true,
+  "logoutCommitted": true,
+  "logoutColdAdoption": {
+    "fromVersion": 14,
+    "toVersion": 15,
+    "pointer": {
+      "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+      "manifestKey": "sites/default/markdown/revisions/506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97.json",
+      "persistedAt": "2026-11-20T20:35:57.286Z"
+    }
+  },
+  "revokedCookieStatus": 403,
+  "revokedCookieCode": "rest_cookie_invalid_nonce",
+  "preferencesRestored": true,
+  "nativeLogoutRevokedSavedCookie": true,
+  "coldLogoutRevocationValidated": true,
+  "persistedTokenRemoved": true,
+  "preferencesBytesRestored": true,
+  "finalBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 100738428,
+    "baselineObjects": 303,
+    "chargedBytes": 1015676,
+    "chargedPuts": 40,
+    "initializedAt": "2026-11-20T20:06:31.237Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T20:06:31.656Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T20:36:15.742Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "6dbecd7e-ecb9-4e14-a204-c4e73fb4b680",
+        "openedAt": 1795206870516,
+        "expiresAt": 1795207170516,
+        "maxBytes": 8388608,
+        "usedBytes": 460017,
+        "remainingBytes": 7928591,
+        "maxOperations": 128,
+        "operations": 17,
+        "closed": true,
+        "expired": false,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 48245896,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+      "manifestKey": "sites/default/markdown/revisions/506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97.json",
+      "persistedAt": "2026-11-20T20:35:57.286Z"
+    },
+    "version": 15
+  },
+  "finalPins": 5,
+  "publisher": "paused",
+  "windowClosed": true,
+  "writeSealed": true,
+  "fenceReleased": true
+}

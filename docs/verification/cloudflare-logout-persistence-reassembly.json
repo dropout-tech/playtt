@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-20T20:46:33.531745+00:00",
+  "result": "pass",
+  "adoptedPatches": 25,
+  "optionalPatches": 7,
+  "sourceFilesCompared": 73,
+  "helpersCompared": 53,
+  "existingConfigsUnchanged": 20,
+  "newIsolatedConfig": [
+    "wrangler.playtt-session-audit.jsonc"
+  ],
+  "reapplyRefusedBeforeMutation": true,
+  "differences": [],
+  "defaultAssemblerIncludesCandidates": false,
+  "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler",
+  "assemblyDeploysNothing": true
+}
