@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>PLAYTT iframe rendering fixture</title>
+<style>body{font:16px system-ui;margin:20px;background:#f5f7fa;color:#16253c}h1{font-size:24px}section{margin:15px 0;background:white;padding:12px;border:1px solid #aaa}iframe{display:block;border:2px solid #3564a0;width:95%;height:110px;background:#f9efc2}pre{white-space:pre-wrap;font-size:14px}</style>
+<h1>PLAYTT 最小 iframe 顯示測試</h1><p>合成內容；不讀取網站帳號、儲存空間或工作階段。</p>
+<main id="cases"></main>
+<script>
+for(const kind of ['ordinary','srcdoc','blob']){
+  const section=document.createElement('section'),title=document.createElement('h2'),status=document.createElement('pre'),frame=document.createElement('iframe');
+  title.textContent=kind;status.textContent='waiting';frame.name='test-'+kind;
+  section.append(title,status,frame);document.querySelector('#cases').append(section);
+  const report={kind,loadEvents:0,parentAppend:false};
+  const inspect=()=>{try{report.readyState=frame.contentDocument?.readyState;report.text=frame.contentDocument?.body?.innerText||null;}catch(error){report.error=error.name;}status.textContent=JSON.stringify(report);};
+  frame.addEventListener('load',()=>{report.loadEvents++;try{const p=frame.contentDocument.createElement('p');p.textContent='parent portal content 父頁面插入';frame.contentDocument.body.append(p);report.parentAppend=true;}catch(error){report.error=error.name;}inspect();});
+  const content='<!doctype html><meta charset="utf-8"><body><h2>'+kind+' frame content 框架文字</h2></body>';
+  if(kind==='ordinary')frame.src='/frame.html';
+  else if(kind==='srcdoc')frame.srcdoc=content;
+  else frame.src=URL.createObjectURL(new Blob([content],{type:'text/html'}));
+  setTimeout(inspect,2000);setTimeout(inspect,6000);
+}
+</script></html>

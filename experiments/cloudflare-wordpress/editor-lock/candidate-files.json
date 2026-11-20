@@ -68,6 +68,36 @@
       "path": "scripts/playtt-editor-lock-pin.mjs",
       "source": "playtt-editor-lock-pin.mjs",
       "afterSha256": "674bd8c477eb41f31c354e559ca27fc362c2e5438032f9ddf683bce336aad6ee"
+    },
+    {
+      "path": "scripts/playtt-canvas-ui-control.mjs",
+      "source": "playtt-canvas-ui-control.mjs",
+      "afterSha256": "cd527dc66517002d3ae5fa5812961c84cdd3280c43b98531df7d5005c237e78a"
+    },
+    {
+      "path": "scripts/playtt-tail-canvas.mjs",
+      "source": "playtt-tail-canvas.mjs",
+      "afterSha256": "36c9cb8f0eed5ca2026f54d7af47fa4d99ddeb4851735267a69b4b7dacbaccf2"
+    },
+    {
+      "path": "scripts/playtt-canvas-backup.mjs",
+      "source": "playtt-canvas-backup.mjs",
+      "afterSha256": "88c94c4abf6e0140a85ba5da52bb877f01b56c59bd2800f18ea32c0ade2f33d8"
+    },
+    {
+      "path": "scripts/playtt-canvas-pin.mjs",
+      "source": "playtt-canvas-pin.mjs",
+      "afterSha256": "996998dd280b491b76e8f48a8a1fec183ced17ee2792b143e2056f4d32d2bfcd"
+    },
+    {
+      "path": "scripts/playtt-canvas-fixture.mjs",
+      "source": "playtt-canvas-fixture.mjs",
+      "afterSha256": "6b24b60afef071c87309c957a66a44cb08a9f831d2551df40dd5b2981fc4d665"
+    },
+    {
+      "path": "scripts/playtt-canvas-fixture.html",
+      "source": "playtt-canvas-fixture.html",
+      "afterSha256": "cee954bfd13e7f2086b923acc1d0ce6ff26c0fbb47a6c671b61b26d9143e8beb"
     }
   ],
   "patchSha256": "4caeea305a38dfcafa795aa1101b82391c545eb329e9055ce60f99c6490c0c06"

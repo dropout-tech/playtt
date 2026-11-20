@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-20T22:27:45.472Z",
+  "syntheticFixture": true,
+  "wordpressPresent": false,
+  "cloudflarePresent": false,
+  "pageUsesMutationObserver": false,
+  "iab": {
+    "ordinary": true,
+    "srcdoc": true,
+    "blob": false,
+    "blobLoadEvents": 0,
+    "blobParentAppend": false,
+    "logs": [
+      {
+        "level": "error",
+        "message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+        "timestamp": "2026-11-20T22:25:33.154Z"
+      },
+      {
+        "level": "error",
+        "message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+        "timestamp": "2026-11-20T22:25:33.167Z"
+      }
+    ]
+  },
+  "chrome": {
+    "ordinary": true,
+    "srcdoc": true,
+    "blob": true,
+    "blobLoadEvents": 1,
+    "blobParentAppend": true,
+    "logs": []
+  },
+  "inference": "Blank native canvas is consistent with this in-app browser environment failing blob iframe navigation. This isolates an environment-specific rendering limitation; it does not prove the implementation detail of that limitation or validate every browser/device.",
+  "source": "work/playtt-canvas-fixture/index.html",
+  "ownedTabsClosed": true
+}

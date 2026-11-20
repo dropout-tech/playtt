@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-20T22:34:31.608102+00:00",
+  "result": "pass",
+  "adoptedPatches": 25,
+  "optionalPatches": 8,
+  "sourceFilesCompared": 74,
+  "helpersCompared": 72,
+  "existingConfigsUnchanged": 19,
+  "privateConfigAddedFlagOnly": true,
+  "newIsolatedConfig": [
+    "wrangler.playtt-session-audit.jsonc"
+  ],
+  "reapplyRefusedBeforeMutation": true,
+  "differences": [],
+  "defaultAssemblerIncludesCandidates": false,
+  "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler",
+  "assemblyDeploysNothing": true,
+  "staticManifestExplicitlyCopiedFromHashVerifiedRuntime": true,
+  "staticBlobRegeneratedThisRun": false,
+  "coreRegenerationStillRequiredForFreshDeployment": true,
+  "runtimeSourcesUnchangedFromPrecedingAssembly": 74,
+  "candidateConfigsUnchangedFromPrecedingDeployment": 20,
+  "baselineAssembly": "playtt-editor-lock-final-assembly",
+  "newRuntimeDeployment": false,
+  "runtimeOnlyConfigurationsExcluded": [
+    "wrangler.playtt-capacity-deny.jsonc"
+  ]
+}

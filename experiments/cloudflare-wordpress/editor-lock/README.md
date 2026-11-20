@@ -1,5 +1,24 @@
 # Native editor lock hydration backport
 
+
+## Subsequent canvas diagnosis (2026-11-21)
+
+The current state is **canonical118 / eight pins / sealed**, remaining **10,232,130 bytes**. Deployment remains2353ff34. A view-only comparison displayed all four draft193 paragraphs in Chrome, while the in-app canvas stayed gray. A synthetic localhost fixture, without WordPress/Cloudflare, isolated the following behavior:
+
+| Frame source | Chrome | In-app browser |
+| --- | --- | --- |
+| ordinary same-origin URL | loaded, content visible | loaded, content visible |
+| srcdoc | loaded, content visible | loaded, content visible |
+| blob URL | one load, parent content inserted | zero loads, empty |
+
+The in-app fixture logged two MutationObserver errors although its source never uses that API; the error origin was not identified. This supports an environment-specific blob-frame limitation, not a change to WordPress or its theme. Native visual validation can continue in Chrome while retaining the in-app limitation. The restricted DOM evaluation API does not expose iframe cross-document properties; missing properties were not used as runtime-origin evidence.
+
+Run the delivered `scripts/playtt-canvas-fixture.mjs` locally, then open `http://127.0.0.1:9446/` in each browser. It binds only loopback, serves two fixed routes, and stops after600seconds; `stop` on an open stdin or SIGINT also closes it. The copied HTML matches the exercised fixture. The actual session's stdin was closed, so only its command-identified process was stopped and the original command handle was checked terminal. No cloud route was added.
+
+The300second/6MiB window used4,721,431bytes/76operations. A complete independent backup has298files/300objects,295unchanged. Native editor navigation cleaned stale owned autosave198 and metadata73, matching pinned core cleanup; all page content, other revisions, accounts/sessions/preferences/media/theme are exact. The previous seven pins retain the prior data and pin8 protects current state. This is not manual history pruning. Telemetry has394events/42completed traces, no observed platform exception or request failure, two unattributed cancellations.
+
+The six diagnostic/helper files add no runtime/config changes or deployment. Latest reconstruction compares74sources/72helpers, with all20configs unchanged from the preceding deployment. `playtt-canvas-ui-control.mjs status --remote` is the current read-only status command. Its arm/backup/pin operations already completed; do not replay them. See [diagnosis](../../../docs/verification/cloudflare-canvas-summary.json), [fixture](../../../docs/verification/cloudflare-canvas-fixture.json), and [backup](../../../docs/verification/cloudflare-canvas-backup-result.json). Earlier94/pin7 statements below are historical.
+
 The pinned WordPress 7.1.4 editor initially rendered without hydrated lock state. Its empty React effect dependency list kept that initial state in the heartbeat listeners. A second editor briefly offered Take over, then incorrectly reported lost ownership and repeatedly autosaved. This candidate backports the dependency correction in official [Gutenberg #79997](https://github.com/WordPress/gutenberg/pull/79997), associated with [#79976](https://github.com/WordPress/gutenberg/issues/79976).
 
 Only the exact pinned `editor.min.js` is transformed. Original size/SHA256, a unique replacement site, and final SHA256 must all match. The thirteen added bytes are the compiled dependency names `[t,i,d,c,u,r,o]`. An unexpected or already patched artifact refuses. Original R2 bytes and canonical data are not rewritten. The static handler serves the verified result with its new size/ETag and a separate edge-cache variant. On private post editor HTML, streaming HTMLRewriter versions only the exact same-origin script/preload URL, preserving other query arguments and CSP and updating any existing SRI. This also bypasses an existing browser immutable cache.

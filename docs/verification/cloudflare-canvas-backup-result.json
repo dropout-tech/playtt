@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-20T22:33:01.613Z",
+  "result": "pass",
+  "canonicalVersion": 118,
+  "anchor": {
+    "revision": "207cc3ef-5e65-463d-857c-b8e4c2ad3e89",
+    "manifestKey": "sites/default/markdown/revisions/207cc3ef-5e65-463d-857c-b8e4c2ad3e89.json",
+    "persistedAt": "2026-11-20T22:23:16.608Z",
+    "manifestSha256": "e862cbbb65b6564c21ec6e0daf4e61601aaace69c44805d58f66749b2036ffaa",
+    "packKey": "sites/default/restore-packs/60b14e20c1eccc4696b5825010d538b65acac3dedb1f7aca2663ae9666177ead.zip",
+    "packSha256": "60b14e20c1eccc4696b5825010d538b65acac3dedb1f7aca2663ae9666177ead",
+    "packBytes": 2295511
+  },
+  "files": 298,
+  "objects": 300,
+  "unchangedFiles": 295,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json"
+  ],
+  "allPageContentsExact": true,
+  "staleOwnedAutosaveRemoved": "198",
+  "onlyRemovedMetadata": "73:198:footnotes",
+  "otherRevisionsExact": true,
+  "sessionsPreferencesAccountsExact": true,
+  "mediaAndThemeExact": true,
+  "newContentTyped": false,
+  "independentCopyVerified": true,
+  "coreCleanupEvidence": {
+    "path": "wordpress/wp-admin/edit-form-blocks.php",
+    "sha256": "4158fa2c08518f8d2288a3a7228196ff62230e93fb2d76d3c5f234b11c7b3be6",
+    "lines": "303-310",
+    "rule": "Native editor deletes a selected autosave whose modified GMT is not newer than the post; observed exact owned row and child metadata match this rule."
+  },
+  "finalPins": 8,
+  "canonicalAndAccountingUnchanged": true,
+  "fenceReleased": true
+}
