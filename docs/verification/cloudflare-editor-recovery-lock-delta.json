@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-20T15:49:00.887Z",
+  "result": "pass",
+  "scope": "Two adjacent committed snapshots differ in one native edit-lock timestamp and monotonic counters; manifest and changed loose-object hashes checked, latest complete pack independently decoded",
+  "versions": [
+    61,
+    62
+  ],
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json"
+  ],
+  "changedRows": 1,
+  "field": "meta_value",
+  "key": "_edit_lock",
+  "postId": 192,
+  "secondsBetweenLockValues": 120,
+  "sameLockOwner": true,
+  "sequenceChanges": [
+    {
+      "table": "wp_options",
+      "before": "581",
+      "after": "583"
+    }
+  ],
+  "restorePackBytes": [
+    2293894,
+    2293896
+  ],
+  "restorePackKeysDiffer": true,
+  "contentMediaThemeUnchanged": true
+}

@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-20T15:44:13.652Z",
+  "result": "observed",
+  "preparedVersion": 24,
+  "currentVersion": 62,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/usermeta.json"
+  ],
+  "removedFiles": [],
+  "postmeta": {
+    "added": [
+      {
+        "id": "71",
+        "metaKey": "_edit_lock"
+      }
+    ],
+    "removed": [],
+    "changed": []
+  },
+  "usermeta": {
+    "added": [],
+    "removed": [],
+    "changed": [
+      {
+        "id": "16",
+        "metaKey": "session_tokens",
+        "fields": [
+          "meta_value"
+        ]
+      }
+    ]
+  },
+  "posts": {
+    "added": [],
+    "removed": [],
+    "changed": []
+  },
+  "uploadsIdentical": true,
+  "themeIdentical": true,
+  "scope": "Complete decoded prepared draft snapshot versus frozen post-idle snapshot; values retained privately, only field names and IDs reported"
+}
