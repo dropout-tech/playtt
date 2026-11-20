@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-20T21:50:27.767Z",
+  "result": "pass",
+  "origin": "https://playtt-wp-free-session-audit.muzhi-garden-platform.workers.dev",
+  "checks": [
+    {
+      "method": "GET",
+      "versioned": false,
+      "bytes": 1574744,
+      "etag": "\"ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e\"",
+      "contentEncoding": null,
+      "sha256": "ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e"
+    },
+    {
+      "method": "GET",
+      "versioned": true,
+      "bytes": 1574744,
+      "etag": "\"ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e\"",
+      "contentEncoding": null,
+      "sha256": "ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e"
+    }
+  ],
+  "headVerified": true,
+  "anonymousStatus": 404,
+  "canonicalVersion": 43,
+  "pins": 6,
+  "sealed": true,
+  "windowClosed": true,
+  "stateAndBudgetUnchanged": true,
+  "remainingBytes": 27281232,
+  "phpInvoked": false,
+  "productionChanged": false
+}

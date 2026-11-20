@@ -1,0 +1,101 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -1,4 +1,5 @@
+ import { isWordPressLogoutMutation } from './playtt-request-mutation.js';
++import { PLAYTT_EDITOR_LOCK_PATH, PLAYTT_EDITOR_LOCK_PATCH_SHA, patchPlayttEditorLock } from './playtt-editor-lock.js';
+ import { createMetadataOverlay, isMetadataOverlay, readMetadataOverlay, validateMetadataOverlay, type PlayttMetadataOverlay } from './playtt-maintenance-overlay.js'
+ import { PlayttCapacityError, playttCapacityResponse } from './playtt-storage-capacity.js'
+ import { wordPressContentType } from './asset-content-type.js';
+@@ -3083,7 +3084,7 @@
+ 
+ 
+ 
+-export async function serveWordPressStaticAsset(request: Request, bucket: R2Bucket): Promise<Response | null> {
++export async function serveWordPressStaticAsset(request: Request, bucket: R2Bucket, editorLockBackport = false): Promise<Response | null> {
+   if (request.method !== "GET" && request.method !== "HEAD") return null
+   const archivePath = wordpressStaticArchivePath(new URL(request.url).pathname)
+   if (!archivePath) return null
+@@ -3091,9 +3092,13 @@
+   // Mutable custom-theme assets are served by Playground from canonical wp-content.
+   if (!file) return null
+ 
++  const patchEditor = editorLockBackport && archivePath === 'wordpress' + PLAYTT_EDITOR_LOCK_PATH
++
+   const cache = typeof caches === "undefined" ? undefined : (caches as CacheStorage & { default?: Cache }).default
+   const cacheUrl = new URL(request.url)
+   cacheUrl.searchParams.set("__wp_codebox_static_artifact", wordpressStaticArtifact.blob.sha256)
++  if (patchEditor) cacheUrl.searchParams.set('__playtt_editor_lock', PLAYTT_EDITOR_LOCK_PATCH_SHA)
++  else cacheUrl.searchParams.delete('__playtt_editor_lock')
+   const cacheRequest = new Request(cacheUrl, request)
+   if (request.method === "GET" && cache) {
+     try {
+@@ -3106,14 +3111,18 @@
+ 
+   const object = file.size ? await bucket.get(wordpressStaticArtifact.key, { range: { offset: file.offset, length: file.size } }) : undefined
+   if (file.size && !object) return new Response("WordPress static artifact is unavailable.", { status: 503 })
+-  const bytes = object ? new Uint8Array(await object.arrayBuffer()) : new Uint8Array()
++  let bytes = object ? new Uint8Array(await object.arrayBuffer()) : new Uint8Array()
+   if (bytes.byteLength !== file.size || await sha256Hex(bytes) !== file.sha256) return new Response("WordPress static artifact integrity check failed.", { status: 502 })
++  if (patchEditor) {
++    try { bytes = await patchPlayttEditorLock(bytes) }
++    catch { return new Response('WordPress editor lock backport integrity check failed.', { status: 502, headers: { 'cache-control': 'no-store' } }) }
++  }
+   const response = new Response(request.method === "HEAD" ? null : bytes, {
+     headers: {
+       "cache-control": "public, max-age=31536000, immutable",
+-      "content-length": String(file.size),
++      "content-length": String(bytes.byteLength),
+       "content-type": wordpressStaticContentType(archivePath),
+-      "etag": `"${file.sha256}"`,
++      "etag": `"${patchEditor ? PLAYTT_EDITOR_LOCK_PATCH_SHA : file.sha256}"`,
+       "x-wp-codebox-static": "r2-range",
+     },
+   })
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -1,4 +1,5 @@
+ import { isWordPressLogoutMutation } from './playtt-request-mutation.js';
++import { PLAYTT_EDITOR_LOCK_FLAG, versionPlayttEditorAssets } from './playtt-editor-lock.js';
+ import { withPlayttStorageCapacity, playttCapacityStub, playttCapacityLimit, playttWriteWindowAdmission, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js';
+ import { isWriteToken } from './playtt-write-drain.js';
+ import { backupPinInput } from './playtt-backup-pins.js';
+@@ -23,6 +24,7 @@
+   PLAYTT_STATE_PARTITION?: string;
+   PLAYTT_AUTO_PUBLISH?: string;
+   PLAYTT_MAINTENANCE_CRON?: string;
++  PLAYTT_CORE_EDITOR_LOCK?: string;
+ }
+ 
+ export { WordPressStateCoordinator };
+@@ -218,7 +220,8 @@
+     }
+     // Immutable verified core assets need neither PHP nor serialized mutation work.
+     // Keep these R2 range/cache reads outside the DO to avoid queuing 100+ editor assets.
+-    let asset = await serveWordPressStaticAsset(request, env.WORDPRESS_STATE_BUCKET);
++    const editorLockBackport = env.PLAYTT_CORE_EDITOR_LOCK === PLAYTT_EDITOR_LOCK_FLAG;
++    let asset = await serveWordPressStaticAsset(request, env.WORDPRESS_STATE_BUCKET, editorLockBackport);
+     if (env.PLAYTT_AUTO_PUBLISH === 'true' && new URL(request.url).pathname.startsWith('/__playtt-published/')) {
+       const url = new URL(request.url);
+       url.pathname = url.pathname.slice('/__playtt-published'.length);
+@@ -234,7 +237,8 @@
+         || await serveWordPressUpload(request, env.WORDPRESS_STATE_BUCKET, coordinator, site);
+     }
+     const response = asset || await env.PLAYTT_EXECUTION.getByName(partitionName(env, 'playtt-cms-v1')).fetch(request);
+-    const result = new Response(response.body, response);
++    const versioned = versionPlayttEditorAssets(request, response, editorLockBackport);
++    const result = new Response(versioned.body, versioned);
+     result.headers.set('X-Robots-Tag', 'noindex, nofollow');
+     result.headers.set('X-Content-Type-Options', 'nosniff');
+     result.headers.set('Referrer-Policy', 'same-origin');
+--- a/wrangler.playtt-session-audit.jsonc
++++ b/wrangler.playtt-session-audit.jsonc
+@@ -74,7 +74,8 @@
+     "PLAYTT_R2_CAPACITY_LIMIT_BYTES": "150000000",
+     "PLAYTT_R2_WRITE_TRACKING": "v1",
+     "PLAYTT_R2_WRITE_WINDOW": "v1",
+-    "PLAYTT_METADATA_OVERLAY": "v2"
++    "PLAYTT_METADATA_OVERLAY": "v2",
++    "PLAYTT_CORE_EDITOR_LOCK": "gutenberg-79997-v1"
+   },
+   "triggers": {
+     "crons": []
