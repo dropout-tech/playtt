@@ -98,6 +98,11 @@
       "path": "scripts/playtt-canvas-fixture.html",
       "source": "playtt-canvas-fixture.html",
       "afterSha256": "cee954bfd13e7f2086b923acc1d0ce6ff26c0fbb47a6c671b61b26d9143e8beb"
+    },
+    {
+      "path": "scripts/playtt-response-loss-local.mjs",
+      "source": "playtt-response-loss-local.mjs",
+      "afterSha256": "e13aeabfca080ac631fd1d3aa0b85d8c1c92ae9f31127f1eb9a3d18df03ca2fa"
     }
   ],
   "patchSha256": "4caeea305a38dfcafa795aa1101b82391c545eb329e9055ce60f99c6490c0c06"

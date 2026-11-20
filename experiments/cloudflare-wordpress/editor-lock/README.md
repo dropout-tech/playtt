@@ -1,3 +1,11 @@
+## 最新：本機成功回應本文遺失與冷重試（2026-11-21）
+
+`playtt-response-loss-local.mjs`只供本機驗證，**不可部署**：它打包現有真實執行器，使用無驗證的loopback測試匯入入口，複製私人canonical118備份至新暫存R2／DO。後端成功提交後故意令回應本文失效，停止並重建workerd，再以原生REST讀回／重試；實際200空本文引發JSON錯誤，內容保留，沒有重複頁面或修訂。每次重試仍寫約2.3MB完整包。詳見`docs/verification/cloudflare-response-loss-summary.json`；不代表瀏覽器或Cloudflare驗收。
+
+需先依REBUILD.md準備固定資產及8階段候選，並在私人工作區提供已核驗的`artifacts/playtt-canvas-backup-owned-private.json`、其independent備份、`artifacts/playtt-canvas-ui-owned-private.json`、既有`../../../playtt-cms-secrets.json`。這些檔案不得放Git或偽造信任錨點。從runtime目錄執行 `node --import tsx scripts/playtt-response-loss-local.mjs --local`。只監聽127.0.0.1:9447、禁止Worker外連、自動dispose；既有程序占用端口時應先查明，不停掉不明程序。每次建立新本機副本，不寫雲端、不讀OAuth、不重新部署。報告含本機HTTP時間與限制；備份含私人資料，留在私有暫存目錄。
+
+這次只有新增驗證工具，74來源及20設定未改；重組有73輔助檔。雲端仍118／8pins／封存、餘10,232,130bytes。以下原生編輯鎖與畫布診斷為先前驗證。
+
 # Native editor lock hydration backport
 
 
