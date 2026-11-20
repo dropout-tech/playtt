@@ -1,5 +1,22 @@
 # Isolated Cloudflare Free provider validation
 
+## Follow-up: cold provider recovery and native browser save (2026-11-21)
+
+Latest state is canonical26 / f56f11b1, six pins, pending0, window closed, write-sealed, fence released, publisher paused; 30,775,021 payload bytes remain. Worker version remains 053fa18f. Production and runtime source/configuration were not changed or redeployed. The initial provider results below are historical stage evidence.
+
+`playtt-window-restore.mjs` verifies independent pinned bundles, adopts snapshots with increasing coordinator versions under a fence, then performs real cold PHP/login/readback. Release the owned R2 seal while retaining the canonical fence before adoption: admission intentionally rejects a held seal. Ordinary WordPress responses omit server-timing; cold proof is correlated with the sanitized provider trace instead. One completed 180-second / 16 MiB window used 4,775,239 bytes and restored both draft versions exactly. `playtt-window-restore-backup.mjs` independently preserves the resulting full snapshot and verifies only session/counter changes before adding pin5.
+
+Two explicit recovery flags preserve the observed stopped attempts, not arbitrary retries: `--after-seal-denial` requires unchanged version7 and zero charged operations; `--after-timing-assertion` requires the known sealed overlay version8 and a successful cold login GET. All one-shot guards must be inspected; completed scripts cannot be replayed against today's version26.
+
+`playtt-window-ui-control.mjs arm|status|close --remote` bounds an actual Browser-tool workflow. Arm is one-shot and tied to the verified version12 backup; current state no longer meets it. The completed 300-second / 16 MiB / 128-operation window used 6,113,401 bytes / 47 operations. Chrome's native block editor saved an added Chinese paragraph and displayed it after reload. The tab closed successfully; the window was explicitly closed and sealed. The 315-second sanitized tail ended.
+
+`playtt-window-ui-backup.mjs` verifies the current full/overlay graph, independently reopens it, compares every unrelated file, existing revision/metadata ID, media and theme, and permits only the owned draft/revision, native lock/session and sequence changes. Draft193 remains private and revision195 is retained. Its post_date legitimately followed the pinned wp_update_post zero-GMT draft rule; only that owned date plus modification timestamps are excepted. `--resume-local` requires the recorded stopped comparison and immutable local graph, rechecks live sealed state and registry, and appends the same pin without redownloading objects. The completed backup contains 297 logical files / 298 unique objects, preserving five old pins and adding pin6.
+
+Two iframe style warnings remain. UI telemetry contains 270 ok and six canceled platform events; all 18 observed phase traces completed, but cancellation cause is not proven merely by proximity to reload/close. The maximum sampled WASM heap is not whole-isolate memory. This is one desktop save/reload, not failed-save/retry, concurrent-editor, physical-device, long-term-free or production handoff acceptance.
+
+Five new helpers pass syntax and clean reconstruction: 70 source files / 30 helpers, with all 70 source files and 19 configs identical to the previous deployed-source assembly. No new runtime test-suite, TypeScript, dry-run or provider deployment claim is made this stage. See [combined report](../../../docs/verification/cloudflare-window-restore-ui-summary.json) and [reloaded editor](../../../docs/verification/window-native-editor-reloaded.jpg). Private archives/owner guards remain outside Git. Continue with a new reviewed bounded window; do not delete historical snapshots or reset accounting.
+
+
 This optional stage enables metadata overlays and bounded write admission only on `playtt-wp-free-window-audit`, using its own `playtt-wordpress-window-audit` Standard R2 bucket and three local SQLite Durable Object bindings. The old private target remains sealed. Production Pages and the original visual design are unchanged; no paid plan or backend cutover was performed. Default assembly still excludes all four optional stages.
 
 ## Evidence and limits

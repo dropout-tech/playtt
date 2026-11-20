@@ -153,6 +153,31 @@
       "path": "scripts/playtt-window-backup.mjs",
       "source": "playtt-window-backup.mjs",
       "afterSha256": "0673911f94b501e8340ab9cdb302165f2617ff395f55bd21d69f90621fdf9371"
+    },
+    {
+      "path": "scripts/playtt-window-restore.mjs",
+      "source": "playtt-window-restore.mjs",
+      "afterSha256": "8aa1849f8702994b33f7cbb7046dec564a84ae2ed0ececd603a9cf7048b0863f"
+    },
+    {
+      "path": "scripts/playtt-window-restore-backup.mjs",
+      "source": "playtt-window-restore-backup.mjs",
+      "afterSha256": "9b7ed2040caa36e1636c211dbb0d4d134f8d2d5fc38207bf4bfa5bf6696ac901"
+    },
+    {
+      "path": "scripts/playtt-window-ui-control.mjs",
+      "source": "playtt-window-ui-control.mjs",
+      "afterSha256": "c712bf0a049f7fd887dafef60d9b70b4aa697dcfc434d1922b1f1bc3c54cd097"
+    },
+    {
+      "path": "scripts/playtt-tail-window-ui-sanitized.mjs",
+      "source": "playtt-tail-window-ui-sanitized.mjs",
+      "afterSha256": "bc484535ad2dfee04aaa2164f953a67bf155a9aa243a87de0a9774ae9e64c79c"
+    },
+    {
+      "path": "scripts/playtt-window-ui-backup.mjs",
+      "source": "playtt-window-ui-backup.mjs",
+      "afterSha256": "e72d71454ad1fd776184884fada0b36a7ed1eeb0cde49592fc8505e9d6aab955"
     }
   ]
 }

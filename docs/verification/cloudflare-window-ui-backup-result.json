@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-20T18:39:30.033Z",
+  "result": "pass",
+  "canonicalVersion": 26,
+  "remoteR2Mutations": 0,
+  "sourceRevision": "5c575aeb-871c-4b84-818f-593fa480dfab",
+  "changedMarkdownFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "anchor": {
+    "revision": "f56f11b1-4553-434d-940c-02255fd5c816",
+    "manifestKey": "sites/default/markdown/revisions/f56f11b1-4553-434d-940c-02255fd5c816.json",
+    "persistedAt": "2026-11-20T18:34:16.232Z",
+    "manifestSha256": "c553ad6d2d583770cf4f82a685b97b16cb1b290137a1c6ed30d7de6ac019d1cd",
+    "packKey": "sites/default/restore-packs/78e5cc9ab23f45ee591c7735a9c00e0de1003a01c4b69e772c8ac6e8f3264d76.zip",
+    "packSha256": "78e5cc9ab23f45ee591c7735a9c00e0de1003a01c4b69e772c8ac6e8f3264d76",
+    "packBytes": 2294877
+  },
+  "format": "metadata-overlay",
+  "baseRevision": "35b1a0ba-bd8f-4e17-aca0-8259bad736cb",
+  "files": 297,
+  "objects": 298,
+  "payloadBytes": 6889711,
+  "remoteGetsThisRun": 0,
+  "downloadedBytesThisRun": 0,
+  "resumedVerifiedLocalGraph": true,
+  "independentCopyVerified": true,
+  "unchangedMarkdownFiles": 165,
+  "ownedDraft": 193,
+  "ownedDraftStillPrivate": true,
+  "originalParagraphPreserved": true,
+  "browserParagraphExact": true,
+  "ownedDraftDateUpdatedByNativeSave": true,
+  "addedRevisionIds": [
+    195
+  ],
+  "addedUserKeys": [],
+  "postmetaRows": 50,
+  "postTableRows": 70,
+  "mediaAndThemeIdentical": true,
+  "finalPins": 6,
+  "canonicalUnchanged": true,
+  "capacityLedgerUnchanged": true,
+  "fenceReleased": true
+}

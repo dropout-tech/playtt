@@ -1,0 +1,27 @@
+// Bound a manual Browser-tool workflow; no WordPress content calls here.
+import assert from 'node:assert/strict';
+import {readFile,writeFile,access} from 'node:fs/promises';
+import {randomUUID} from 'node:crypto';
+const mode=process.argv[2];assert.ok(['arm','status','close'].includes(mode)&&process.argv.includes('--remote'));
+const prefix='artifacts/playtt-window-ui-',origin='https://playtt-wp-free-window-audit.muzhi-garden-platform.workers.dev';
+const load=async p=>JSON.parse(await readFile(p,'utf8')),save=(p,v)=>writeFile(p,JSON.stringify(v,null,2)+'\n');
+const secrets=await load('../../../playtt-cms-secrets.json');
+async function json(path,body){assert.ok(path.startsWith('/')&&!path.startsWith('//'));const r=await fetch(origin+path,{method:body?'POST':'GET',headers:{authorization:'Bearer '+secrets.WORDPRESS_OPERATOR_TOKEN,'X-Playtt-Probe':secrets.WORDPRESS_OPERATOR_TOKEN,'content-type':'application/json'},body:body?JSON.stringify(body):undefined,redirect:'error',signal:AbortSignal.timeout(45000)});assert.equal(r.status,200,path+': HTTP '+r.status);return r.json();}
+const op=(phase,body)=>json('/?phase=operator-'+phase,body),capacity=body=>json('/__playtt-capacity',body);
+async function snapshot(){const state=await op('fence-status'),budget=await capacity(),pins=await json('/__playtt-backup-pins'),publisher=await json('/__playtt-publishing');assert.equal(state.coherent,true);assert.equal(publisher.state,'paused');return {state:state.state,fenceActive:state.fence.active,budget,pins:pins.generation,publisher:publisher.state};}
+if(mode==='arm'){
+ try{await access(prefix+'owned-private.json');throw Error('Existing UI attempt: inspect rather than replay');}catch(e){if(e.code!=='ENOENT')throw e;}
+ const restored=await load('artifacts/playtt-window-restore-cold-result.json'),previous=await load('artifacts/playtt-window-restore-cold-owned-private.json'),backup=await load('artifacts/playtt-window-restore-backup-result.json'),native=await load('artifacts/playtt-window-native-owned-private.json');
+ assert.equal(restored.result,'pass');assert.equal(previous.phase,'passed-sealed');assert.equal(backup.result,'pass');assert.equal(backup.canonicalVersion,12);assert.equal(backup.finalPins,5);
+ const before=await snapshot();assert.deepEqual(before.state,restored.finalState);assert.equal(before.fenceActive,false);assert.equal(before.budget.writeTracking.pending,0);assert.equal(before.budget.writeTracking.sealed,true);assert.equal(before.budget.writeTracking.window.closed,true);assert.equal(before.pins,5);assert.ok(before.budget.remainingBytes>16*1024*1024);
+ const marker='playtt-ui-'+randomUUID(),owner={origin,phase:'preparing',windowToken:randomUUID(),previousWindowToken:previous.windowToken,drainToken:previous.drainToken,fenceReleased:true,sealReleased:false,expectedBefore:native.expected,id:native.id,homeHash:native.homeHash,marker,testText:'瀏覽器保存驗證：繁體中文、標點與重新載入。 '+marker};await save(prefix+'owned-private.json',owner);
+ const fence=await op('fence-acquire',{ttlSeconds:600});owner.fenceToken=fence.token;owner.fenceReleased=false;await save(prefix+'owned-private.json',owner);
+ const armed=await capacity({action:'arm-write-window',fenceToken:fence.token,drainToken:owner.drainToken,windowToken:owner.windowToken,previousWindowToken:owner.previousWindowToken,durationSeconds:300,maxBytes:16*1024*1024,maxOperations:128});owner.expiresAt=armed.writeTracking.window.expiresAt;owner.phase='armed';await save(prefix+'owned-private.json',owner);
+ await capacity({action:'release-write-drain',fenceToken:fence.token,drainToken:owner.drainToken});owner.sealReleased=true;await save(prefix+'owned-private.json',owner);await op('fence-release',{token:fence.token});owner.fenceReleased=true;await save(prefix+'owned-private.json',owner);
+ const report={at:new Date().toISOString(),result:'armed',ownedDraft:native.id,seconds:300,maxBytes:16*1024*1024,maxOperations:128,expiresAt:owner.expiresAt,before};await save(prefix+'arm.json',report);console.log(JSON.stringify({result:'armed',expiresAt:owner.expiresAt,ownedDraft:owner.id}));
+}else if(mode==='close'){
+ const owner=await load(prefix+'owned-private.json');await capacity({action:'close-write-window',windowToken:owner.windowToken});owner.windowClosed=true;await save(prefix+'owned-private.json',owner);
+ const b=await capacity();assert.equal(b.writeTracking.pending,0,'Unknown writes retained; do not force clear');const s=await op('fence-status');let fence;if(s.fence.active){assert.equal(owner.fenceReleased,false);fence={token:owner.fenceToken};}else fence=await op('fence-acquire',{ttlSeconds:600});owner.fenceToken=fence.token;owner.fenceReleased=false;await save(prefix+'owned-private.json',owner);
+ const sealed=await capacity({action:'acquire-write-drain',fenceToken:fence.token,drainToken:owner.drainToken});assert.equal(sealed.writeTracking.sealed,true);assert.equal(sealed.writeTracking.pending,0);owner.sealReleased=false;owner.phase='closed-sealed';await save(prefix+'owned-private.json',owner);await op('fence-release',{token:fence.token});owner.fenceReleased=true;await save(prefix+'owned-private.json',owner);
+ const report={at:new Date().toISOString(),result:'sealed',...await snapshot()};await save(prefix+'closed.json',report);console.log(JSON.stringify(report));
+}else{const report={at:new Date().toISOString(),...await snapshot()};await save(prefix+'status.json',report);console.log(JSON.stringify(report));}

@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-20T18:31:49.746Z",
+  "result": "armed",
+  "ownedDraft": 193,
+  "seconds": 300,
+  "maxBytes": 16777216,
+  "maxOperations": 128,
+  "expiresAt": 1795199809231,
+  "before": {
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "5c575aeb-871c-4b84-818f-593fa480dfab",
+        "manifestKey": "sites/default/markdown/revisions/5c575aeb-871c-4b84-818f-593fa480dfab.json",
+        "persistedAt": "2026-11-20T18:27:16.012Z"
+      },
+      "version": 12
+    },
+    "fenceActive": false,
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-window-audit",
+      "baselineBytes": 100637598,
+      "baselineObjects": 298,
+      "chargedBytes": 12473980,
+      "chargedPuts": 37,
+      "initializedAt": "2026-11-20T18:00:31.856Z",
+      "writeTracking": {
+        "schema": "playtt/r2-write-tracking/v2",
+        "initializedAt": "2026-11-20T18:00:32.111Z",
+        "pending": 0,
+        "sealed": true,
+        "acquiredAt": "2026-11-20T18:27:26.978Z",
+        "maximumPending": 128,
+        "automaticExpiry": false,
+        "window": {
+          "schema": "playtt/r2-write-window/v1",
+          "id": "5fe4eda8-c691-4848-9f95-46a6b4b1e2e0",
+          "openedAt": 1795199204240,
+          "expiresAt": 1795199384240,
+          "maxBytes": 16777216,
+          "usedBytes": 4775239,
+          "remainingBytes": 12001977,
+          "maxOperations": 96,
+          "operations": 10,
+          "closed": true,
+          "expired": true,
+          "admitsNewOperations": false,
+          "pendingOperationsExpire": false,
+          "automaticReopen": false
+        }
+      },
+      "reservationSchema": "playtt/r2-window-reservation/v1",
+      "initialized": true,
+      "limitBytes": 150000000,
+      "trackingConfigured": true,
+      "windowConfigured": true,
+      "remainingBytes": 36888422,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "pins": 5,
+    "publisher": "paused"
+  }
+}
