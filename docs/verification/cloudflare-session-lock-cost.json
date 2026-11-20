@@ -1,0 +1,423 @@
+{
+  "at": "2026-11-20T21:12:19.338Z",
+  "result": "pass",
+  "scope": "Read-only authenticated manifest comparison of committed versions15-43; no remote mutation or snapshot decoding for historical intermediates",
+  "canonicalUnchanged": true,
+  "capacityUnchanged": true,
+  "pins": 5,
+  "remoteManifestGets": 29,
+  "downloadedBytes": 2138293,
+  "baselineAndLatestAnchorsVerified": true,
+  "commits": 28,
+  "fullSnapshots": 7,
+  "overlays": 21,
+  "committedFullPackBytes": 16066574,
+  "windowChargedBytes": 20964664,
+  "usermetaOnlyFullSnapshots": 0,
+  "usermetaOnlyPackBytes": 0,
+  "usermetaOnlyChangedLogicalBytes": 0,
+  "changes": [
+    {
+      "version": 16,
+      "persistedAt": "2026-11-20T20:55:35.818Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 18914,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "3a143e249a70003c3d26b635e9b91ae599c7184d97d8ec5b2b2d368c13fa17f0"
+    },
+    {
+      "version": 17,
+      "persistedAt": "2026-11-20T20:55:41.938Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 15093,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "c269c6561db747b37faa75bd8e2f9cfec1cd742caf17174aea4522a7de80323b"
+    },
+    {
+      "version": 18,
+      "persistedAt": "2026-11-20T20:55:59.531Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "0156e46c8ee5cacd05c0f781ab9351c86fb9581d39974d28a077cfa754533f72"
+    },
+    {
+      "version": 19,
+      "persistedAt": "2026-11-20T20:56:09.550Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "1e6621d132c85387f3e8fd3f822d37129ab37899565026a2b362b07914149c43"
+    },
+    {
+      "version": 20,
+      "persistedAt": "2026-11-20T20:56:17.805Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/usermeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 19020,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "62fe532d63ead0355626d9b3e16e369bba3c8b1876bef37bdd29c1f31fee47c5"
+    },
+    {
+      "version": 21,
+      "persistedAt": "2026-11-20T20:56:22.470Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "feb61388466407cbc8ea2cb6966a5f2e9468e30ae9baf09ceaa0452150b401b2"
+    },
+    {
+      "version": 22,
+      "persistedAt": "2026-11-20T20:56:29.461Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "4306d8f53d73905edfc02e40d4a540ef6246026cd075dc59bf0ca919c33655ca"
+    },
+    {
+      "version": 23,
+      "persistedAt": "2026-11-20T20:56:39.560Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "1204d56a78e89be310304b85295aeb2e9500367b1dda637c69c6b0df8d611c33"
+    },
+    {
+      "version": 24,
+      "persistedAt": "2026-11-20T20:56:45.227Z",
+      "kind": "full",
+      "changed": [
+        "_tables/posts.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295225,
+      "changedLogicalBytes": 311151,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "8df1a798846dfc1ac4f41e0fc03ee56b194e2d38f30aee68ad1594c3906aefc8"
+    },
+    {
+      "version": 25,
+      "persistedAt": "2026-11-20T20:56:49.705Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "ca64351e384018b5594dba04e28ee238add7f5f4949cade7033a9727d8d8c798"
+    },
+    {
+      "version": 26,
+      "persistedAt": "2026-11-20T20:56:56.600Z",
+      "kind": "full",
+      "changed": [
+        "_tables/posts.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295225,
+      "changedLogicalBytes": 311151,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "f438125e4cd3672cb4d969677b7f12e768ec96793706b17949a92302638d8e46"
+    },
+    {
+      "version": 27,
+      "persistedAt": "2026-11-20T20:57:00.180Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "005bbe75efac82fb421d2af0e4d9c14545d191ae84e1f69df9ad988870cbfc10"
+    },
+    {
+      "version": 28,
+      "persistedAt": "2026-11-20T20:57:05.278Z",
+      "kind": "full",
+      "changed": [
+        "_tables/posts.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295225,
+      "changedLogicalBytes": 311151,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "b289c81d57b5c86f2a551a41776029cd9d6c4186350262cf8d66ae42db39a60e"
+    },
+    {
+      "version": 29,
+      "persistedAt": "2026-11-20T20:57:09.690Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "c1804324f6db5b70249a037cbe5d71ddb7ea64956512a5b0318f505b0476e08b"
+    },
+    {
+      "version": 30,
+      "persistedAt": "2026-11-20T20:57:15.099Z",
+      "kind": "full",
+      "changed": [
+        "_tables/posts.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295223,
+      "changedLogicalBytes": 311151,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "4e5206ec69e2b776b9f1a195cf7968dd74ab1a3f5b547ea463f99c41a7cd51a7"
+    },
+    {
+      "version": 31,
+      "persistedAt": "2026-11-20T20:57:19.684Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "aa7f5992db9e4f0171b940780aff030e7f1468737d09c211a0d0e977df4421a1"
+    },
+    {
+      "version": 32,
+      "persistedAt": "2026-11-20T20:57:25.767Z",
+      "kind": "full",
+      "changed": [
+        "_tables/posts.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295225,
+      "changedLogicalBytes": 311151,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "6abdfe28ae7c3be8905c942bf94e62ad916ba89ea56b3d0fef25308ffbc72308"
+    },
+    {
+      "version": 33,
+      "persistedAt": "2026-11-20T20:57:29.895Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "a8313635542a97a197101a411f247a8d7e5316457138923586803c30298e326a"
+    },
+    {
+      "version": 34,
+      "persistedAt": "2026-11-20T20:57:35.542Z",
+      "kind": "full",
+      "changed": [
+        "_tables/posts.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295226,
+      "changedLogicalBytes": 311151,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "790e6fab3da0da7965402a8efb519a04f3ddab682e0e0637172ea3c34e21e9ed"
+    },
+    {
+      "version": 35,
+      "persistedAt": "2026-11-20T20:57:39.574Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "3eadbf48813933b6949f4f5f5b5446eb3d9d529a7e41b3268c6ca54e88011d74"
+    },
+    {
+      "version": 36,
+      "persistedAt": "2026-11-20T20:57:45.968Z",
+      "kind": "full",
+      "changed": [
+        "_tables/posts.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295225,
+      "changedLogicalBytes": 311151,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "3286fc44c25bc5a0f8ef180b8a2341e8b1d16e5c7743a5c6b98dbc235bf1c73b"
+    },
+    {
+      "version": 37,
+      "persistedAt": "2026-11-20T20:57:49.966Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "59d6d459d99e2d9384943954c17b332aa314fb38621d98104bdfdbb02bea3efa"
+    },
+    {
+      "version": 38,
+      "persistedAt": "2026-11-20T20:57:56.903Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 196,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "fea66182ac6b8029bf27776f51e362f3e30317a8465b073e170955d4e8cab6c5"
+    },
+    {
+      "version": 39,
+      "persistedAt": "2026-11-20T20:58:02.226Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "3a4e80375962aa53aab111a075c1b0fe01559402c3b317468783b044d1123691"
+    },
+    {
+      "version": 40,
+      "persistedAt": "2026-11-20T20:58:11.831Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 196,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "5cc92bb7c1a94472a7c36025b4fabf1a46f611de543749dac4c4bc77e783437a"
+    },
+    {
+      "version": 41,
+      "persistedAt": "2026-11-20T20:58:17.516Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "d90d6e6614bf19b7bbfb87a9892fa4c774ecfab25f1566b92b51442dd8f002a1"
+    },
+    {
+      "version": 42,
+      "persistedAt": "2026-11-20T20:58:28.675Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 15093,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "896c544aef22f8287b4fc05b476509c1e3ef0aaffe5c736aa243e1e6f01568ae"
+    },
+    {
+      "version": 43,
+      "persistedAt": "2026-11-20T20:58:34.365Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "fd8efb7eacb9bf50d479856aca77cdf4d7cd4632882c82d6352fcf5e681d3ba6"
+    }
+  ],
+  "next": "Investigate repeated unchanged-content autosave timestamps and the native post-lock heartbeat effect. Preserve all current history and accounting.",
+  "limitations": [
+    "The sum of committed pack sizes is not the complete charge ledger: loose objects, manifests, mirror writes and unsuccessful attempts also count.",
+    "Manifest differences identify changed files, not usermeta keys; do not infer every usermeta-only commit is a login.",
+    "Estimated avoidable pack bytes are not measured savings until an implementation and complete restoration test pass."
+  ],
+  "safeToApply": false
+}

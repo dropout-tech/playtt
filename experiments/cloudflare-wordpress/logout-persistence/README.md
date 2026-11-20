@@ -1,5 +1,12 @@
 # Persist native logout before returning its redirect
 
+
+## Latest observation (2026-11-21)
+
+The following logout regression remains valid historical evidence. A subsequent native two-browser test did **not** complete takeover: editor2 briefly showed Take over, then changed to lost-lock without a successful click. No text was typed. The native Gutenberg empty-dependency lock effect matches upstream issue #79976 and merged PR #79997; a backport is still pending. Seven full packs only changed autosave198 dates; no usermeta-only full packs occurred. See [current evidence](../../../docs/verification/cloudflare-session-lock-summary.json).
+
+The private session target is now canonical43 / six pins, sealed, pending0, publisher paused, with 27,281,232 bytes remaining. The complete independent backup preserves original content/accounts/media/theme. All six added lock observation helpers are bounded or one-shot; `playtt-session-lock-control.mjs status --remote` is the current read-only status command. Old `playtt-session-final-status.mjs` deliberately expects historical15/pin5 and will reject the new state. The cost audit was completed before pin6 and also cannot be replayed against current state. Never remove these guards to repeat a completed mutation. The new helpers do not change deployed source or configuration. Latest reconstruction compares 73 source files and 59 helpers with all 20 configs unchanged.
+
 WordPress's nonce-checked `GET /wp-login.php?action=logout` deletes its session token. The candidate previously classified this URL as a read, so logout rejected the cookie in the current PHP runtime but did not commit the deletion. A cold restoration could recover the old session.
 
 This optional seventh stage recognizes that native logout URL as a mutation in both the canonical runtime and Durable Object publication prearm. It leaves WordPress responsible for authentication and nonce validation. The classification also covers HEAD/OPTIONS if those methods reach PHP; only GET was provider-tested. Duplicate `action` values are checked conservatively: any logout value admits persistence, avoiding JavaScript first-value versus PHP last-value parsing differences. No unrelated login or content URL receives this new behavior.
