@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-20T04:44:51.653Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "scope": "Tracked-write target after seal denial/redeployment/recovery and owned cleanup; every archive entry decoded and verified, new backup pin acknowledged",
+  "revision": "8a06b16e-fe6c-428f-9785-3caf79d056a6",
+  "objects": 297,
+  "decodedBytes": 4428372,
+  "archiveBytes": 2292918,
+  "archiveSha256": "61e24cb340793ae8e50bd66e05942a46f1d0bc7ddeda3f9c0ddc7ebee189d24a",
+  "pinRegistered": true,
+  "pinGeneration": 23
+}

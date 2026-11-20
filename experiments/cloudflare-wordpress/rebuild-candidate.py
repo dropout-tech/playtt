@@ -71,6 +71,7 @@ patch('manifest-cache/manifest-cache-candidate.patch',runtime);extras(exp/'manif
 patch('storage-capacity/storage-capacity-candidate.patch',runtime);extras(exp/'storage-capacity')
 patch('backup-pins/backup-pins-candidate.patch',runtime);extras(exp/'backup-pins')
 patch('pin-restore/pin-restore-candidate.patch',runtime);extras(exp/'pin-restore')
+patch('write-drain/write-drain-candidate.patch',runtime);extras(exp/'write-drain')
 (runtime/'scripts/playtt-pin-restore-cloud-preflight.py').write_bytes((exp/'pin-restore/playtt-pin-restore-cloud-preflight.py').read_text(encoding='utf-8-sig').encode('utf-8'))
 (runtime/'scripts/playtt-latency-pprof.py').write_bytes((exp/'diagnostic-sampling/playtt-latency-pprof.py').read_text(encoding='utf-8-sig').encode('utf-8'))
 differences=[];files=[]
