@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-20T17:11:11.373269+00:00",
+  "result": "pass",
+  "scope": "Fresh pinned upstream plus 25 adopted patches and two explicitly optional local patches; no dependencies installed, cloud operation or deployment",
+  "adoptedPatches": 25,
+  "optionalPatches": 2,
+  "sourceFilesCompared": 68,
+  "extraHelpersCompared": 16,
+  "prerequisitesChecked": 8,
+  "defaultRebuildIncludesCandidates": false,
+  "featureFlagEnabled": false,
+  "reapplyRefusedBeforeMutation": true,
+  "differences": [],
+  "candidateFiles": [
+    {
+      "path": "scripts/playtt-reference-coverage.mjs",
+      "beforeSha256": "7485db006e305957c2f15a485098d02505b5133c63d88f2e433bc41a85bab583",
+      "afterSha256": "60c90ceb10e33797717420ecd7638aebbc5a912f4b22fac59cc21e016738a56e"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "source": "playtt-snapshot-bundle.mjs",
+      "afterSha256": "114be10a57829e378809b1fec53b43227792c1bb754558406353581a0b86c4ba"
+    },
+    {
+      "path": "scripts/playtt-export-snapshot-bundle.mjs",
+      "source": "playtt-export-snapshot-bundle.mjs",
+      "afterSha256": "df419b042a93f425a8eafead3e097a1830739f3cc099463cf18120c23694433d"
+    },
+    {
+      "path": "scripts/playtt-snapshot-download.mjs",
+      "source": "playtt-snapshot-download.mjs",
+      "afterSha256": "4d433e12d6ec3ff0bf7a130b73022b247814efc12f5a00ec9160acd863efbd82"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle-php.mjs",
+      "source": "playtt-snapshot-bundle-php.mjs",
+      "afterSha256": "c301e74d5a6bcd5bf58fb997bcbe07686669d83f8abc317a020e919576f21543"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle-recorded.mjs",
+      "source": "playtt-snapshot-bundle-recorded.mjs",
+      "afterSha256": "897a96aa2b94378f2fdc344f8a6a74d8d63b10db3121f48c16ca1b63ce217e99"
+    },
+    {
+      "path": "scripts/playtt-read-snapshot-inventory.py",
+      "source": "playtt-read-snapshot-inventory.py",
+      "afterSha256": "ac2161f4e8a93757c1f6249a63259b33b9eee27018f85dca7768098c02dc9ae4"
+    },
+    {
+      "path": "scripts/playtt-plan-snapshot-retention.py",
+      "source": "playtt-plan-snapshot-retention.py",
+      "afterSha256": "a4ab38c065c7424fd543e4892548004dc5e486534fc64596a21c420731b646f0"
+    },
+    {
+      "path": "scripts/playtt-snapshot-retention-recorded.py",
+      "source": "playtt-snapshot-retention-recorded.py",
+      "afterSha256": "235ecb3c8cd8f484145840d6e0a5fc8928e33071d5e4f59eb964f134f45d2919"
+    },
+    {
+      "path": "tests/playtt-snapshot-bundle.test.ts",
+      "source": "playtt-snapshot-bundle.test.ts",
+      "afterSha256": "def73cf69d91dc6ebff9b1b3d781f7a0d8f0e4c7f35e61f8f77d845aac54cf9d"
+    },
+    {
+      "path": "tests/playtt-snapshot-inventory.test.py",
+      "source": "playtt-snapshot-inventory.test.py",
+      "afterSha256": "566368fdd333c0b4f7a89f0953d3cbe40fdb934b78232021022d3b47f8f29414"
+    },
+    {
+      "path": "tests/playtt-snapshot-retention.test.py",
+      "source": "playtt-snapshot-retention.test.py",
+      "afterSha256": "0beef38b5b3323b6eb89bcea6197db831a2a9f4df6d5831a25d1a28bb90026ef"
+    }
+  ]
+}
