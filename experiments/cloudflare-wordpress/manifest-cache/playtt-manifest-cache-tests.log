@@ -1,0 +1,30 @@
+✔ same complete identity reuses metadata without retaining mutable caller objects (2.9584ms)
+✔ site, revision, manifest key and timestamp each prevent an incorrect hit (0.3767ms)
+✔ a prepared new version cannot be read under the old uncommitted pointer (0.3203ms)
+✔ replacement retains one entry and does not silently reuse history after rollback (0.2889ms)
+✔ oversized UTF-8 metadata falls back to storage and discards the old entry (0.4172ms)
+✔ a mismatched or cross-site manifest cannot replace a valid entry (0.391ms)
+✔ separate runtime instances share neither cached metadata nor prepared versions (0.2347ms)
+✔ changed, added and deleted content produces exactly the complete archive from a full independent read (116.2455ms)
+✔ unchanged runtime bytes are fully verified even when loose replicas are unavailable (2.7958ms)
+✔ callers without a runtime reader independently read every object with bounded concurrency (78.8033ms)
+✔ same path in another domain does not reuse unrelated runtime bytes (15.5528ms)
+✔ untrusted runtime missing failure rejects reuse (1.1343ms)
+✔ untrusted runtime size failure rejects reuse (0.4741ms)
+✔ untrusted runtime bytes failure rejects reuse (1.1886ms)
+✔ a new hash must come from R2, not an uncommitted runtime buffer (29.4682ms)
+✔ changed R2 object missing failure rejects the entire snapshot (2.9588ms)
+✔ changed R2 object size failure rejects the entire snapshot (2.189ms)
+✔ changed R2 object bytes failure rejects the entire snapshot (7.5753ms)
+✔ invalid metadata cannot read another site, duplicate or traverse paths (1.0588ms)
+✔ a runtime reader needs the previous committed inventory (0.383ms)
+✔ an empty new inventory preserves only the requested tombstones (0.3571ms)
+✔ failure settles every in-flight read before returning (13.8215ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 616.0648

@@ -1,0 +1,398 @@
+{
+  "at": "2026-11-20T02:40:53.450Z",
+  "mode": "--candidate",
+  "result": "pass",
+  "samples": [
+    {
+      "at": "2026-11-20T02:41:25.072Z",
+      "index": 0,
+      "kind": "empty-warmup",
+      "wallMs": 2212.542800000003,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 291,
+      "afterVersion": 291
+    },
+    {
+      "at": "2026-11-20T02:41:32.469Z",
+      "index": 1,
+      "kind": "empty",
+      "wallMs": 2361.426999999996,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 291,
+      "afterVersion": 291
+    },
+    {
+      "at": "2026-11-20T02:41:39.843Z",
+      "index": 2,
+      "kind": "post-lock",
+      "wallMs": 9812.627400000005,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 291,
+      "afterVersion": 292
+    },
+    {
+      "at": "2026-11-20T02:41:53.596Z",
+      "index": 3,
+      "kind": "content",
+      "wallMs": 6361.736099999995,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 292,
+      "afterVersion": 293
+    },
+    {
+      "at": "2026-11-20T02:42:04.108Z",
+      "index": 4,
+      "kind": "empty",
+      "wallMs": 2658.843200000003,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 293,
+      "afterVersion": 293
+    },
+    {
+      "at": "2026-11-20T02:42:12.059Z",
+      "index": 5,
+      "kind": "post-lock",
+      "wallMs": 5555.588000000003,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 293,
+      "afterVersion": 294
+    },
+    {
+      "at": "2026-11-20T02:42:22.003Z",
+      "index": 6,
+      "kind": "content",
+      "wallMs": 6635.573199999999,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 294,
+      "afterVersion": 295
+    },
+    {
+      "at": "2026-11-20T02:42:32.506Z",
+      "index": 7,
+      "kind": "empty",
+      "wallMs": 1839.698900000003,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 295,
+      "afterVersion": 295
+    },
+    {
+      "at": "2026-11-20T02:42:38.497Z",
+      "index": 8,
+      "kind": "post-lock",
+      "wallMs": 5373.6456000000035,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 295,
+      "afterVersion": 296
+    },
+    {
+      "at": "2026-11-20T02:42:48.748Z",
+      "index": 9,
+      "kind": "content",
+      "wallMs": 9889.233399999997,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 296,
+      "afterVersion": 297
+    }
+  ],
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1434
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2367
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 5516
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6912
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2773
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1466
+    },
+    {
+      "path": "/wp-admin/post.php?post=174&action=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 8491
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2414
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2212
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2803
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2374
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2360
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2641
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2370
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 9811
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2158
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1779
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6356
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2231
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1913
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2658
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3189
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2098
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 5555
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2601
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1786
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6634
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2107
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1757
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1839
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2393
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1753
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 5372
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3182
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1692
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 9888
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3024
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2569
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 5308
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2503
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1493
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1855
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 166
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2146
+    }
+  ],
+  "ownedId": 174,
+  "homepageUnchanged": true,
+  "contentHash": "3199b37d311f91541c28fbc54e1e73c77bebfe90f3f18989c8452ddf16d47d4f",
+  "cleanupComplete": false,
+  "scope": "Bounded sequential native requests; exact content readback through a fresh login; runtime cache availability must be classified from separate platform traces",
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "c1ffc303-ad29-4201-b2d9-01e04fa8b371",
+      "manifestKey": "sites/default/markdown/revisions/c1ffc303-ad29-4201-b2d9-01e04fa8b371.json",
+      "persistedAt": "2026-11-20T02:43:05.812Z"
+    },
+    "version": 298
+  }
+}

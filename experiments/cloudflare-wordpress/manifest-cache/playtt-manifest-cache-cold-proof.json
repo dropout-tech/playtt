@@ -1,0 +1,106 @@
+{
+  "result": "pass",
+  "at": "2026-11-20T02:44:54.345Z",
+  "version": "ef56ff0b-92b8-4969-9463-80f7dfaee1c9",
+  "runtime": "cold",
+  "exactOwnedContent": "3199b37d311f91541c28fbc54e1e73c77bebfe90f3f18989c8452ddf16d47d4f",
+  "originalHomepageUnchanged": true,
+  "coldTrace": {
+    "operation": "read",
+    "runtime": "cold",
+    "completed": true,
+    "totalMs": 5689,
+    "phases": [
+      {
+        "name": "request.translate",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "lease.acquire",
+        "durationMs": 122,
+        "aggregateGap": false
+      },
+      {
+        "name": "published.page-cache.lookup",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "canonical.manifest.read",
+        "durationMs": 255,
+        "aggregateGap": false
+      },
+      {
+        "name": "canonical.restore-pack.fetch",
+        "durationMs": 310,
+        "aggregateGap": false
+      },
+      {
+        "name": "canonical.restore-pack.verify-decode",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "runtime.archive.sqlite.fetch-verify",
+        "durationMs": 2384,
+        "aggregateGap": false
+      },
+      {
+        "name": "php.runtime.create",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "runtime.archive.wordpress.fetch-verify-extract",
+        "durationMs": 406,
+        "aggregateGap": false
+      },
+      {
+        "name": "runtime.archive.mdi.extract",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "canonical.hydration.markdown",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "canonical.hydration.wp-content",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "canonical.hydration.uploads",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "playground.opaque",
+        "durationMs": 0,
+        "aggregateGap": true
+      },
+      {
+        "name": "playground.version.read",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "request.php",
+        "durationMs": 0,
+        "aggregateGap": false
+      },
+      {
+        "name": "lease.release",
+        "durationMs": 2212,
+        "aggregateGap": false
+      },
+      {
+        "name": "page-cache.write",
+        "durationMs": 0,
+        "aggregateGap": false
+      }
+    ]
+  }
+}
