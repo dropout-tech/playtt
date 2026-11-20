@@ -1,5 +1,9 @@
 # Isolated Cloudflare Free provider validation
 
+## Latest local successor (2026-11-21)
+
+The separately versioned [usermeta-overlay candidate](../usermeta-overlay/README.md) now passes 70 related tests, exact native PHP session/preferences cold recovery, independent backup reconstruction, TypeScript and local dry-run. It is not deployed or enabled. The unchanged private target is still canonical57 / eight pins / sealed; only 3,821,814 bytes remain. See the successor for measured local scope and provider work still required. The records below describe their respective earlier stages.
+
 ## Follow-up: two-user exclusion observed; takeover incomplete (2026-11-21)
 
 Current state: canonical57 / 34a7df5f, eight pins, pending0, window closed, write-sealed, fence released, publisher paused. Only 3,821,814 payload bytes remain. Worker remains 053fa18f; runtime source/configuration and production are unchanged. Do not reopen a previous one-shot window, reset/refund/delete history or automatically raise the cap.

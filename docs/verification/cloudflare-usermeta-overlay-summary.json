@@ -1,0 +1,213 @@
+{
+  "at": "2026-11-20T19:47:08.937736+00:00",
+  "result": "local-v2-session-preference-overlay-verified-not-deployed",
+  "goalStatus": "active",
+  "previousTurnClassification": "progress",
+  "sourceCandidate": "experiments/cloudflare-wordpress/usermeta-overlay",
+  "schema": "playtt/canonical-metadata-overlay/v2",
+  "v1SemanticsUnchanged": true,
+  "productionChanged": false,
+  "productionBackendSwitched": false,
+  "remoteRuntimeDeployed": false,
+  "configurationChanged": false,
+  "remoteObjectsWritten": 0,
+  "remoteStatus": {
+    "at": "2026-11-20T19:44:52.085Z",
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "34a7df5f-087f-4d50-925d-05a748c1d66e",
+        "manifestKey": "sites/default/markdown/revisions/34a7df5f-087f-4d50-925d-05a748c1d66e.json",
+        "persistedAt": "2026-11-20T19:15:33.467Z"
+      },
+      "version": 57
+    },
+    "fenceActive": false,
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-window-audit",
+      "baselineBytes": 100637598,
+      "baselineObjects": 298,
+      "chargedBytes": 45540588,
+      "chargedPuts": 210,
+      "initializedAt": "2026-11-20T18:00:31.856Z",
+      "writeTracking": {
+        "schema": "playtt/r2-write-tracking/v2",
+        "initializedAt": "2026-11-20T18:00:32.111Z",
+        "pending": 0,
+        "sealed": true,
+        "acquiredAt": "2026-11-20T19:16:02.365Z",
+        "maximumPending": 128,
+        "automaticExpiry": false,
+        "window": {
+          "schema": "playtt/r2-write-window/v1",
+          "id": "4a6b9b88-1f12-4e91-a9b0-58df4ad328dc",
+          "openedAt": 1795201951489,
+          "expiresAt": 1795202551489,
+          "maxBytes": 20971520,
+          "usedBytes": 20925969,
+          "remainingBytes": 45551,
+          "maxOperations": 256,
+          "operations": 81,
+          "closed": true,
+          "expired": true,
+          "admitsNewOperations": false,
+          "pendingOperationsExpire": false,
+          "automaticReopen": false
+        }
+      },
+      "reservationSchema": "playtt/r2-window-reservation/v1",
+      "initialized": true,
+      "limitBytes": 150000000,
+      "trackingConfigured": true,
+      "windowConfigured": true,
+      "remainingBytes": 3821814,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "pins": 8,
+    "publisher": "paused"
+  },
+  "nativePhp": {
+    "at": "2026-11-20T19:39:45.498Z",
+    "result": "pass",
+    "scope": "Offline canonical57 with exact pinned core WP_Session_Tokens/WP_User_Meta_Session_Tokens, real MDI writer/loader and PDO SQLite in two fresh PHP instances. SQL metadata/filter adapter is narrow; not full WordPress HTTP/login/browser acceptance.",
+    "baselineVersion": 57,
+    "baselineRevision": "34a7df5f-087f-4d50-925d-05a748c1d66e",
+    "fullBaseRevision": "5ad54029-4fe8-4f98-88e0-bd7a48536034",
+    "coreClasses": [
+      {
+        "name": "class-wp-session-tokens.php",
+        "sha256": "0708de7171949675139eda1e476935763f65e8a3a0cf40fc534dfffa00fb04cb"
+      },
+      {
+        "name": "class-wp-user-meta-session-tokens.php",
+        "sha256": "bd32717507322f0e15234d546c4938c8e2d092d7166d4055f8ec6815ed09daa8"
+      }
+    ],
+    "writerChecks": 40,
+    "coldChecks": 17,
+    "userMetadataRows": 38,
+    "accounts": 2,
+    "sequenceTables": 8,
+    "filesCompared": 298,
+    "unchangedFiles": 297,
+    "changedFiles": [
+      {
+        "path": "_tables/usermeta.json",
+        "size": 21836
+      }
+    ],
+    "coreSessionValidatedAfterColdRestore": true,
+    "coreWrongUserAndExpiryAndLogoutChecks": true,
+    "chinesePreferencesExact": true,
+    "oldV1ReaderRejected": true,
+    "independentBundleVerified": true,
+    "materializedFullPackVerified": true,
+    "materializedFullPackBytes": 2296037,
+    "overlayWriteBytes": 95760,
+    "fullWriteBytes": 2391769,
+    "avoidedWriteBytes": 2296009,
+    "estimatedObjectPayloadReductionPercent": 95.99626887044693,
+    "costScope": "One local replay estimate: changed loose objects, new manifest, pointer and optional full pack. Excludes operation cost, reads and retries; not measured provider savings.",
+    "remoteObjectsWritten": 0,
+    "featureFlagEnabled": false
+  },
+  "tests": {
+    "at": "2026-11-20T19:41:27.485063+00:00",
+    "result": "pass",
+    "command": [
+      "--import",
+      "tsx",
+      "--test",
+      "--test-reporter=tap",
+      "tests/playtt-usermeta-overlay.test.ts",
+      "tests/playtt-metadata-overlay.test.ts",
+      "tests/playtt-backup-pins.test.ts",
+      "tests/playtt-snapshot-bundle.test.ts",
+      "tests/playtt-reference-coverage.test.ts",
+      "tests/playtt-snapshot-source.test.ts",
+      "tests/playtt-runtime-manifest-cache.test.ts"
+    ],
+    "exitCode": 0,
+    "remoteMutation": false,
+    "tests": 70,
+    "passed": 70,
+    "failed": 0
+  },
+  "typecheck": {
+    "at": "2026-11-20T19:41:27.161997+00:00",
+    "result": "pass",
+    "command": [
+      "node_modules/typescript/bin/tsc",
+      "-p",
+      "tsconfig.json",
+      "--noEmit"
+    ],
+    "exitCode": 0,
+    "remoteMutation": false
+  },
+  "dryRun": {
+    "at": "2026-11-20T19:41:28.348997+00:00",
+    "result": "pass",
+    "command": [
+      "node_modules/wrangler/bin/wrangler.js",
+      "deploy",
+      "--dry-run",
+      "--config",
+      "wrangler.playtt-window-audit.jsonc",
+      "--var",
+      "PLAYTT_METADATA_OVERLAY:v2",
+      "--outdir",
+      "artifacts/usermeta-dry-run"
+    ],
+    "exitCode": 0,
+    "remoteMutation": false,
+    "uploadSummary": [
+      "Total Upload: 20868.76 KiB / gzip: 7604.79 KiB"
+    ],
+    "warnings": [
+      "[WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]",
+      "[WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]",
+      "[WARNING] Duplicate key \"F_GETFL\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"O_ACCMODE\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"O_RDONLY\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"O_WRONLY\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"O_APPEND\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"O_NONBLOCK\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"F_SETFL\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"F_GETLK\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"F_SETLK\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"F_SETLKW\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"SEEK_SET\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"SEEK_CUR\" in object literal [duplicate-object-key]",
+      "[WARNING] Duplicate key \"SEEK_END\" in object literal [duplicate-object-key]"
+    ],
+    "featureFlagOnlyInLocalDryRunArgument": true
+  },
+  "assembly": {
+    "at": "2026-11-20T19:44:24.885817+00:00",
+    "result": "pass",
+    "adoptedPatches": 25,
+    "optionalPatches": 5,
+    "sourceFilesCompared": 72,
+    "helpersCompared": 38,
+    "v1ModuleUnchanged": true,
+    "v1ModuleSha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43",
+    "existingConfigsUnchanged": 19,
+    "v2FlagsEnabled": false,
+    "reapplyRefusedBeforeMutation": true,
+    "differences": [],
+    "deployed": false,
+    "defaultAssemblerIncludesCandidates": false,
+    "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler"
+  },
+  "limits": [
+    "Local PHP replay uses a narrow SQL metadata/filter adapter, not full HTTP or browser sign-in.",
+    "Object savings are estimated for one native replay; no provider cost/latency/memory improvement has yet been measured.",
+    "Old v1-only readers correctly reject v2, but remote mixed-version recovery is not accepted.",
+    "Current cloud state remains on the prior runtime; latest v2 candidate and private synthetic session bundle exist only locally.",
+    "No account-wide billing verification or paid change was performed."
+  ],
+  "next": "Prepare a bounded private provider run for the v2 candidate, with adequate verified headroom before any write window. Current target remains sealed with only 3,821,814 payload bytes: a content save plus autosave can need multiple full packs. Do not reset/refund/delete history or automatically raise its cap. Verify provider login/session/preferences, actual object costs, cold recovery, pins/backup and resource usage; then complete real competing-editor takeover/lost-lock/save/reload with retained editor2. Production remains unchanged."
+}
