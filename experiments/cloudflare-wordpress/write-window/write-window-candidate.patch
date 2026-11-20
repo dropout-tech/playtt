@@ -1,0 +1,371 @@
+--- a/src/playtt-storage-capacity.ts
++++ b/src/playtt-storage-capacity.ts
+@@ -1,4 +1,5 @@
+ import { WRITE_PROOF_SCHEMA, WRITE_SETTLED_SCHEMA, PlayttWriteDrainError, isWriteToken, newWriteTracking, validateWriteTracking, openTrackedWrite, settleTrackedWrite, acquireWriteDrain, releaseWriteDrain, writeTrackingStatus, type WriteKind, type WriteTracking } from './playtt-write-drain.js';
++import { WINDOW_TRACKING_SCHEMA, WINDOW_PROOF_SCHEMA, WINDOW_ADMISSION_SCHEMA, MAX_WINDOW_MS, PlayttWriteWindowError, armWriteWindow, closeWriteWindow, requireWindowAdmission, writeWindowStatus, type WindowArmInput } from './playtt-write-window.js';
+ // Private research deployment only. This bounds R2 payload allocation attempts,
+ // not shared-account billing, metadata, reads, or writes through other clients.
+ export interface PlayttCapacityEnv {
+@@ -7,6 +8,7 @@
+   PLAYTT_R2_CAPACITY_SCOPE?: string;
+   PLAYTT_R2_CAPACITY_LIMIT_BYTES?: string;
+   PLAYTT_R2_WRITE_TRACKING?: string;
++  PLAYTT_R2_WRITE_WINDOW?: string;
+ }
+
+ const SCOPES = new Set(['playtt-wordpress-rebuild-audit', 'playtt-wordpress-pin-restore-audit']);
+@@ -25,18 +27,20 @@
+ }
+
+ export class PlayttCapacityError extends Error {
+-  constructor(public readonly status: 503 | 507 = 507) {
++  constructor(public readonly status: 503 | 507 = 507, public readonly reason: 'capacity' | 'window' = 'capacity') {
+     super(status === 507 ? 'Playtt storage capacity limit reached.' : 'Playtt storage capacity verification is unavailable.');
+   }
+ }
+
+ export function playttCapacityResponse(error: PlayttCapacityError): Response {
++  if (error.reason === 'window') return Response.json({ code: 'playtt_write_window_closed', message: '目前已暫停儲存，請保留編輯內容並聯絡管理員。', data: { status: 503 } }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+   return Response.json({ code: error.status === 507 ? 'playtt_storage_capacity' : 'playtt_storage_capacity_unavailable',
+     message: error.status === 507 ? '儲存空間已達設定上限，這次變更未完成保存。請保留編輯內容並聯絡管理員。' : '目前無法確認儲存空間，這次變更未完成保存。請保留編輯內容並稍後重試。',
+     data: { status: error.status } }, { status: error.status, headers: { 'Cache-Control': 'no-store' } });
+ }
+
+ export function playttCapacityLimit(env: PlayttCapacityEnv): number | null {
++  if (env.PLAYTT_R2_WRITE_WINDOW !== undefined && (env.PLAYTT_R2_WRITE_WINDOW !== 'v1' || env.PLAYTT_R2_WRITE_TRACKING !== 'v1')) throw new PlayttCapacityError(503);
+   if (env.PLAYTT_R2_WRITE_TRACKING !== undefined && env.PLAYTT_R2_WRITE_TRACKING !== 'v1') throw new PlayttCapacityError(503);
+   if (env.PLAYTT_R2_WRITE_TRACKING && env.PLAYTT_R2_CAPACITY_SCOPE === undefined) throw new PlayttCapacityError(503);
+   if (env.PLAYTT_R2_CAPACITY_SCOPE === undefined && env.PLAYTT_R2_CAPACITY_LIMIT_BYTES === undefined) return null;
+@@ -52,6 +56,23 @@
+   return env.PLAYTT_STORAGE_BUDGET!.getByName('playtt-r2-capacity-v1');
+ }
+
++function validWindowProof(proof: { windowId?: string; openedAt?: number; expiresAt?: number }): boolean {
++  return isWriteToken(proof.windowId) && Number.isSafeInteger(proof.openedAt) && proof.openedAt! > 0
++    && Number.isSafeInteger(proof.expiresAt) && proof.expiresAt! > proof.openedAt!
++    && proof.expiresAt! - proof.openedAt! <= MAX_WINDOW_MS;
++}
++export async function playttWriteWindowAdmission(env: PlayttCapacityEnv): Promise<void> {
++  playttCapacityLimit(env);
++  if (env.PLAYTT_R2_WRITE_WINDOW !== 'v1') return;
++  try {
++    const response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/window/admission');
++    if (!response.ok) { await response.body?.cancel(); throw new PlayttCapacityError(503, 'window'); }
++    const proof = await response.json<{ schema?: string; allowed?: boolean; windowId?: string; openedAt?: number; expiresAt?: number }>();
++    if (proof.schema !== WINDOW_ADMISSION_SCHEMA || proof.allowed !== true || !validWindowProof(proof)) throw new PlayttCapacityError(503);
++    if (Date.now() < proof.openedAt! || Date.now() >= proof.expiresAt!) throw new PlayttCapacityError(503, 'window');
++  } catch (error) { throw error instanceof PlayttCapacityError ? error : new PlayttCapacityError(503); }
++}
++
+ function bytesOf(value: unknown): number {
+   if (value === null) return 0;
+   if (typeof value === 'string') return new TextEncoder().encode(value).byteLength;
+@@ -68,22 +89,27 @@
+   if (callerLimit === null || guarded.has(env.WORDPRESS_STATE_BUCKET)) return env;
+   const bucket = env.WORDPRESS_STATE_BUCKET;
+   const tracking = env.PLAYTT_R2_WRITE_TRACKING === 'v1';
+-  const reserve = async (bytes: number, kind: WriteKind = 'put'): Promise<string | undefined> => {
++  const windowRequired = env.PLAYTT_R2_WRITE_WINDOW === 'v1';
++  const reserve = async (bytes: number, kind: WriteKind = 'put'): Promise<{ ticket?: string; openedAt?: number; expiresAt?: number }> => {
+     try {
+     const response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/reserve', {
+-      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ bytes, limitBytes: callerLimit, ...(tracking ? { schema: WRITE_PROOF_SCHEMA, kind } : kind === 'delete' ? { schema: RESERVATION_SCHEMA, kind } : {}) }),
+-    });
+-    if (!response.ok) throw new PlayttCapacityError(response.status === 507 ? 507 : 503);
+-    const proof = await response.json<{ schema?: string; reserved?: boolean; bytes?: number; limitBytes?: number; ticket?: string; kind?: string }>();
+-    if (proof.schema !== (tracking ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA) || proof.reserved !== true || proof.bytes !== bytes
++      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ bytes, limitBytes: callerLimit, ...(tracking ? { schema: windowRequired ? WINDOW_PROOF_SCHEMA : WRITE_PROOF_SCHEMA, kind } : kind === 'delete' ? { schema: RESERVATION_SCHEMA, kind } : {}) }),
++    });
++    if (!response.ok) {
++      const code = await response.json<{ code?: string }>().then(value => value.code).catch(() => undefined);
++      throw new PlayttCapacityError(response.status === 507 ? 507 : 503, code === 'playtt_write_window' ? 'window' : 'capacity');
++    }
++    const proof = await response.json<{ schema?: string; reserved?: boolean; bytes?: number; limitBytes?: number; ticket?: string; kind?: string; windowId?: string; openedAt?: number; expiresAt?: number }>();
++    if (proof.schema !== (windowRequired ? WINDOW_PROOF_SCHEMA : tracking ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA) || proof.reserved !== true || proof.bytes !== bytes
+         || !Number.isSafeInteger(proof.limitBytes) || proof.limitBytes! < 1 || proof.limitBytes! > callerLimit) throw new PlayttCapacityError(503);
+     if ((tracking && !isWriteToken(proof.ticket)) || ((tracking || kind === 'delete') && proof.kind !== kind)) throw new PlayttCapacityError(503);
+-    return proof.ticket;
++    if (windowRequired && !validWindowProof(proof)) throw new PlayttCapacityError(503);
++    return { ticket: proof.ticket, ...(windowRequired ? { openedAt: proof.openedAt, expiresAt: proof.expiresAt } : {}) };
+     } catch (error) {
+       throw error instanceof PlayttCapacityError ? error : new PlayttCapacityError(503);
+     }
+   };
+-  const settled = async (ticket: string | undefined): Promise<void> => {
++  const settled = async (ticket: string | undefined, notAttempted = false): Promise<void> => {
+     if (!tracking) return;
+     // Only this ticket's idempotent acknowledgement is retried. Reservation and
+     // R2 mutation are never replayed, and an ambiguous R2 rejection never calls
+@@ -97,36 +123,45 @@
+         if (!response.ok) { await response.body?.cancel(); throw new PlayttCapacityError(503); }
+         const proof = await response.json<{ schema?: string; settled?: boolean; ticket?: string }>();
+         if (proof.schema !== WRITE_SETTLED_SCHEMA || proof.settled !== true || proof.ticket !== ticket) throw new PlayttCapacityError(503);
+-        if (attempt > 1) console.info(JSON.stringify({ schema: 'playtt/r2-write-ack-recovered/v1', knownR2Completion: true, attempts: attempt }));
++        if (attempt > 1) console.info(JSON.stringify({ schema: 'playtt/r2-write-ack-recovered/v1', knownR2Completion: !notAttempted, ...(notAttempted ? { notAttempted: true } : {}), attempts: attempt }));
+         return;
+       } catch {
+         if (attempt < attempts) await new Promise<void>(resolve => setTimeout(resolve, attempt * 100));
+       }
+     }
+-    // Preserve confirmed R2 success even when all acknowledgements fail. An
++    // Preserve confirmed R2 success (or the known no-dispatch rejection) even
++    // when all acknowledgements fail. An
+     // unresolved durable ticket still blocks maintenance; there is no refund,
+     // force-clear or inference of a failed R2 operation from an elapsed timer.
+-    console.warn(JSON.stringify({ schema: 'playtt/r2-write-ack-failure/v1', knownR2Completion: true, attempts }));
++    console.warn(JSON.stringify({ schema: 'playtt/r2-write-ack-failure/v1', knownR2Completion: !notAttempted, ...(notAttempted ? { notAttempted: true } : {}), attempts }));
+   };
+   const wrapped = {
+     head: bucket.head.bind(bucket), get: bucket.get.bind(bucket), list: bucket.list.bind(bucket),
+     delete: (async (keys: string | string[]) => {
+       const selected = typeof keys === 'string' ? [keys] : keys;
+       if (!Array.isArray(selected) || selected.length > 1000 || selected.some(key => typeof key !== 'string' || (!key.startsWith('sites/default/') && !key.startsWith('runtime/')))) throw new PlayttCapacityError(503);
+-      const ticket = await reserve(0, 'delete');
++      const proof = await reserve(0, 'delete');
++      if (proof.expiresAt !== undefined && (Date.now() < proof.openedAt! || Date.now() >= proof.expiresAt)) {
++        // Valid reservation, but this caller has not dispatched R2. This local
++        // evidence, not an elapsed timer, permits acknowledging the unused ticket.
++        await settled(proof.ticket, true); throw new PlayttCapacityError(503, 'window');
++      }
+       await bucket.delete(keys);
+-      await settled(ticket);
++      await settled(proof.ticket);
+     }) as R2Bucket['delete'],
+     put: (async (key: string, value: Parameters<R2Bucket['put']>[1], options?: R2PutOptions) => {
+       if (!key.startsWith('sites/default/') && !key.startsWith('runtime/')) throw new PlayttCapacityError(503);
+       const bytes = bytesOf(value);
+-      const ticket = await reserve(bytes); // Durable charge and open ticket precede every attempted R2 write.
++      const proof = await reserve(bytes); // Durable charge and open ticket precede every attempted R2 write.
+       if (bytesOf(value) !== bytes) throw new PlayttCapacityError(503);
++      if (proof.expiresAt !== undefined && (Date.now() < proof.openedAt! || Date.now() >= proof.expiresAt)) {
++        await settled(proof.ticket, true); throw new PlayttCapacityError(503, 'window');
++      }
+       // Conditional misses, failures, aborts and overwrites keep their charge.
+       // No automatic refund can make uncertain writes disappear from the bound.
+       const result = await bucket.put(key, value, options);
+       // No finally acknowledgement: an R2 rejection may have an unknown outcome.
+-      await settled(ticket);
++      await settled(proof.ticket);
+       return result;
+     }) as R2Bucket['put'],
+     createMultipartUpload: async () => { throw new PlayttCapacityError(503); },
+@@ -141,14 +176,16 @@
+       || ![value.baselineBytes, value.baselineObjects, value.chargedBytes, value.chargedPuts].every(v => Number.isSafeInteger(v) && v >= 0)
+       || !Number.isSafeInteger(value.baselineBytes + value.chargedBytes)) throw new PlayttCapacityError(503);
+   if (value.writeTracking !== undefined) validateWriteTracking(value.writeTracking);
++  if (value.writeTracking?.window) writeWindowStatus(value.writeTracking.window, value.chargedBytes, Date.now());
+ }
+
+ export class PlayttStorageBudget implements DurableObject {
+   private tail: Promise<void> = Promise.resolve();
+-  constructor(private state: DurableObjectState, private env: PlayttCapacityEnv) {}
++  constructor(private state: DurableObjectState, private env: PlayttCapacityEnv, private now: () => number = () => Date.now()) {}
+
+   fetch(request: Request): Promise<Response> {
+     const result = this.tail.then(() => this.handle(request)).catch(error => {
++      if (error instanceof PlayttWriteWindowError) return Response.json({ code: 'playtt_write_window', message: error.message }, { status: error.status });
+       if (error instanceof PlayttWriteDrainError) return Response.json({ code: 'playtt_write_drain', message: error.message }, { status: error.status });
+       if (error instanceof PlayttCapacityError) return playttCapacityResponse(error);
+       return playttCapacityResponse(new PlayttCapacityError(503));
+@@ -163,6 +200,16 @@
+     const scope = this.env.PLAYTT_R2_CAPACITY_SCOPE!;
+     const path = new URL(request.url).pathname;
+     if (path === '/status' && request.method === 'GET') return this.status(limit);
++    if (path === '/window/admission' && request.method === 'GET') {
++      const ledger = await this.state.storage.get<Ledger>(KEY);
++      if (!ledger) throw new PlayttCapacityError(503);
++      validateLedger(ledger, scope);
++      if (ledger.writeTracking?.drain) throw new PlayttWriteWindowError(503, 'R2 mutations are sealed for maintenance.');
++      requireWindowAdmission(ledger.writeTracking?.window, ledger.chargedBytes, this.now());
++      const window = ledger.writeTracking!.window!;
++      return Response.json({ schema: WINDOW_ADMISSION_SCHEMA, allowed: true, windowId: window.id, openedAt: window.openedAt, expiresAt: window.expiresAt });
++    }
++    if (path.startsWith('/window/') && request.method === 'POST') return this.windowAction(path, request, scope, limit);
+     if (path === '/initialize' && request.method === 'POST') {
+       const previous = await this.state.storage.get<Ledger>(KEY);
+       if (previous !== undefined) { validateLedger(previous, scope); return this.status(limit); }
+@@ -195,22 +242,52 @@
+         || input.limitBytes < 1 || input.limitBytes > 2_000_000_000) throw new PlayttCapacityError(503);
+     const effectiveLimit = Math.min(limit, input.limitBytes);
+     let ticket: string | undefined;
++    let windowProof: { windowId: string; openedAt: number; expiresAt: number } | undefined;
+     await this.state.storage.transaction(async transaction => {
+       const ledger = await transaction.get<Ledger>(KEY);
+       if (!ledger) throw new PlayttCapacityError(503);
+       validateLedger(ledger, scope);
+       const trackingRequired = this.env.PLAYTT_R2_WRITE_TRACKING === 'v1' || ledger.writeTracking !== undefined;
++      const windowRequired = this.env.PLAYTT_R2_WRITE_WINDOW === 'v1' || ledger.writeTracking?.schema === WINDOW_TRACKING_SCHEMA;
++      if (windowRequired) {
++        if (input.schema !== WINDOW_PROOF_SCHEMA) throw new PlayttWriteWindowError(503, 'A window-aware caller is required.');
++        requireWindowAdmission(ledger.writeTracking?.window, ledger.chargedBytes, this.now(), input.bytes);
++        const window = ledger.writeTracking!.window!;
++        windowProof = { windowId: window.id, openedAt: window.openedAt, expiresAt: window.expiresAt };
++      }
+       if (trackingRequired) {
+-        if (!ledger.writeTracking || input.schema !== WRITE_PROOF_SCHEMA || !['put', 'delete'].includes(input.kind ?? '')
++        if (!ledger.writeTracking || input.schema !== (windowRequired ? WINDOW_PROOF_SCHEMA : WRITE_PROOF_SCHEMA) || !['put', 'delete'].includes(input.kind ?? '')
+           || (input.kind === 'delete' && input.bytes !== 0)) throw new PlayttCapacityError(503);
+         ticket = openTrackedWrite(ledger.writeTracking, input.kind!, input.bytes);
++        if (windowRequired) ledger.writeTracking.window!.operations++;
+       } else if ((input.schema !== undefined || input.kind !== undefined) && !(input.schema === RESERVATION_SCHEMA && input.kind === 'delete' && input.bytes === 0)) throw new PlayttCapacityError(503);
+       if (input.bytes > effectiveLimit - ledger.baselineBytes - ledger.chargedBytes) throw new PlayttCapacityError(507);
+       const next = { ...ledger, chargedBytes: ledger.chargedBytes + input.bytes, chargedPuts: ledger.chargedPuts + (input.kind === 'delete' ? 0 : 1) };
+       validateLedger(next, scope);
+       await transaction.put(KEY, next);
+     });
+-    return Response.json({ schema: ticket ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA, reserved: true, bytes: input.bytes, limitBytes: effectiveLimit, ...(input.kind ? { kind: input.kind } : {}), ...(ticket ? { ticket } : {}) });
++    return Response.json({ schema: windowProof ? WINDOW_PROOF_SCHEMA : ticket ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA, reserved: true, bytes: input.bytes, limitBytes: effectiveLimit, ...(input.kind ? { kind: input.kind } : {}), ...(ticket ? { ticket } : {}), ...windowProof });
++  }
++
++  private async windowAction(path: string, request: Request, scope: string, limit: number): Promise<Response> {
++    const raw = await request.text(); if (raw.length > 1024) throw new PlayttCapacityError(503);
++    const input = JSON.parse(raw) as WindowArmInput & { drainToken?: string };
++    await this.state.storage.transaction(async transaction => {
++      const ledger = await transaction.get<Ledger>(KEY); if (!ledger) throw new PlayttCapacityError(503);
++      validateLedger(ledger, scope);
++      const tracking = ledger.writeTracking; if (!tracking) throw new PlayttCapacityError(503);
++      if (path === '/window/arm') {
++        if (this.env.PLAYTT_R2_WRITE_WINDOW !== 'v1' || !tracking.drain || tracking.drain.token !== input.drainToken || tracking.pending.length)
++          throw new PlayttWriteWindowError(409, 'Owned write seal and zero pending operations are required.');
++        tracking.window = armWriteWindow(tracking.window, input, ledger.chargedBytes, Math.max(0, limit - ledger.baselineBytes - ledger.chargedBytes), this.now());
++        tracking.schema = WINDOW_TRACKING_SCHEMA;
++      } else if (path === '/window/close') {
++        if (!tracking.window) throw new PlayttWriteWindowError(503, 'Write window is unavailable.');
++        closeWriteWindow(tracking.window, input.token, this.now());
++      } else throw new PlayttWriteWindowError(503, 'Unknown write window action.');
++      validateLedger(ledger, scope); await transaction.put(KEY, ledger);
++    });
++    return this.status(limit);
+   }
+
+   private async trackingAction(path: string, request: Request, scope: string, limit: number): Promise<Response> {
+@@ -242,10 +319,10 @@
+
+   private async status(limit: number): Promise<Response> {
+     const ledger = await this.state.storage.get<Ledger>(KEY);
+-    if (!ledger) return Response.json({ schema: SCHEMA, reservationSchema: RESERVATION_SCHEMA, initialized: false, limitBytes: limit, trackingConfigured: this.env.PLAYTT_R2_WRITE_TRACKING === 'v1' });
++    if (!ledger) return Response.json({ schema: SCHEMA, reservationSchema: RESERVATION_SCHEMA, initialized: false, limitBytes: limit, trackingConfigured: this.env.PLAYTT_R2_WRITE_TRACKING === 'v1', windowConfigured: this.env.PLAYTT_R2_WRITE_WINDOW === 'v1' });
+     validateLedger(ledger, this.env.PLAYTT_R2_CAPACITY_SCOPE!);
+     const { writeTracking, ...publicLedger } = ledger;
+-    return Response.json({ ...publicLedger, ...(writeTracking ? { writeTracking: writeTrackingStatus(writeTracking) } : {}), reservationSchema: writeTracking ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA, initialized: true, limitBytes: limit, trackingConfigured: this.env.PLAYTT_R2_WRITE_TRACKING === 'v1',
++    return Response.json({ ...publicLedger, ...(writeTracking ? { writeTracking: { ...writeTrackingStatus(writeTracking), ...(writeTracking.window ? { window: writeWindowStatus(writeTracking.window, ledger.chargedBytes, this.now()) } : {}) } } : {}), reservationSchema: writeTracking?.window ? WINDOW_PROOF_SCHEMA : writeTracking ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA, initialized: true, limitBytes: limit, trackingConfigured: this.env.PLAYTT_R2_WRITE_TRACKING === 'v1', windowConfigured: this.env.PLAYTT_R2_WRITE_WINDOW === 'v1',
+       remainingBytes: Math.max(0, limit - ledger.baselineBytes - ledger.chargedBytes),
+       accounting: 'payload baseline plus all attempted put bytes; no automatic refunds' });
+   }
+--- a/src/playtt-write-drain.ts
++++ b/src/playtt-write-drain.ts
+@@ -1,5 +1,6 @@
+ // A lease timeout does not prove that a previously sent R2 operation settled.
+ // These durable tickets never expire. Unknown outcomes keep maintenance closed.
++import { WINDOW_TRACKING_SCHEMA, validateWriteWindow, type WriteWindow } from './playtt-write-window.js';
+ export const WRITE_TRACKING_SCHEMA = 'playtt/r2-write-tracking/v1';
+ export const WRITE_PROOF_SCHEMA = 'playtt/r2-write-reservation/v1';
+ export const WRITE_SETTLED_SCHEMA = 'playtt/r2-write-settled/v1';
+@@ -7,10 +8,11 @@
+ export type WriteKind = 'put' | 'delete';
+ interface PendingWrite { id: string; kind: WriteKind; bytes: number; startedAt: string }
+ export interface WriteTracking {
+-  schema: typeof WRITE_TRACKING_SCHEMA;
++  schema: typeof WRITE_TRACKING_SCHEMA | typeof WINDOW_TRACKING_SCHEMA;
+   initializedAt: string;
+   pending: PendingWrite[];
+   drain?: { token: string; acquiredAt: string };
++  window?: WriteWindow;
+ }
+
+ export class PlayttWriteDrainError extends Error {
+@@ -21,8 +23,10 @@
+ }
+ export function validateWriteTracking(value: WriteTracking): void {
+   const fail = () => { throw new PlayttWriteDrainError(503, 'Write tracking is unavailable.'); };
+-  if (!value || value.schema !== WRITE_TRACKING_SCHEMA || !Number.isFinite(Date.parse(value.initializedAt))
++  if (!value || ![WRITE_TRACKING_SCHEMA, WINDOW_TRACKING_SCHEMA].includes(value.schema) || !Number.isFinite(Date.parse(value.initializedAt))
+     || !Array.isArray(value.pending) || value.pending.length > MAX_PENDING_WRITES) fail();
++  if (value.schema === WINDOW_TRACKING_SCHEMA) { if (!value.window) fail(); validateWriteWindow(value.window!); }
++  else if (value.window !== undefined) fail();
+   const ids = new Set<string>();
+   for (const item of value.pending) {
+     if (!item || !isWriteToken(item.id) || ids.has(item.id) || !['put', 'delete'].includes(item.kind)
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -1,4 +1,4 @@
+-import { withPlayttStorageCapacity, playttCapacityStub, playttCapacityLimit, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js';
++import { withPlayttStorageCapacity, playttCapacityStub, playttCapacityLimit, playttWriteWindowAdmission, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js';
+ import { isWriteToken } from './playtt-write-drain.js';
+ import { backupPinInput } from './playtt-backup-pins.js';
+ export { PlayttStorageBudget } from './playtt-storage-capacity.js';
+@@ -12,6 +12,7 @@
+ import { parseSiteContexts, resolveSiteContextFromRequest } from './site-context.js';
+ import { preparePlayttMaintenanceRequest } from './playtt-maintenance.js';
+ import { runPlayttScheduledMaintenance } from './playtt-maintenance-schedule.js';
++import { routeWorkerRequest } from './request-routing.js';
+
+ interface PlayttEnv extends RuntimeEnv, PlayttCapacityEnv {
+   WORDPRESS_STATE: DurableObjectNamespace;
+@@ -63,12 +64,17 @@
+           try { if (body.length > 512) throw new Error(); action = body ? JSON.parse(body).action : 'retry'; }
+           catch { return new Response('Invalid publication action', { status: 400 }); }
+           if (action === 'pause') await this.publisher.pause();
+-          else if (action === 'resume' || action === 'retry') await this.publisher.wake(true);
++          else if (action === 'resume' || action === 'retry') { await playttWriteWindowAdmission(this.env); await this.publisher.wake(true); }
+           else return new Response('Invalid publication action', { status: 400 });
+         }
+         else if (request.method !== 'GET') return new Response('Method not allowed', { status: 405 });
+         return Response.json(await this.publisher.status(), { headers: { 'Cache-Control': 'no-store' } });
+       }
++      // Recheck inside the serial queue: work queued before the deadline cannot
++      // begin PHP later. Fence controls remain reachable; runtime authenticates
++      // these exact operator routes before any mutation or PHP boot.
++      const fenceControl = routeWorkerRequest(request).kind === 'operator-fence';
++      if (!fenceControl) await playttWriteWindowAdmission(this.env);
+       const mutation = !['GET','HEAD','OPTIONS'].includes(request.method)
+         || (url.pathname.startsWith('/wp-admin/') && !!url.searchParams.get('action'));
+       // Prearm recovery before a mutation: a crash after coordinator commit
+@@ -76,7 +82,7 @@
+       // Maintenance validates operator credentials/body before any publication
+       // work. A committed maintenance result may still enqueue native effects.
+       const maintenance = url.searchParams.get('phase') === 'operator-auto-draft-maintenance';
+-      if (enabled && mutation && !maintenance) await this.publisher.wake();
++      if (enabled && mutation && !maintenance && !fenceControl) await this.publisher.wake();
+       const result = await runtime.fetch(request, this.env);
+       if (enabled && result.headers.has('x-wp-codebox-publication-job')) await this.publisher.wake();
+       await retirePlayttIdleRuntimes();
+@@ -91,6 +97,8 @@
+
+   alarm(): Promise<void> {
+     const action = this.tail.then(async () => {
++      try { await playttWriteWindowAdmission(this.env); }
++      catch (error) { if (error instanceof PlayttCapacityError && error.reason === 'window') return; throw error; }
+       if (this.env.PLAYTT_AUTO_PUBLISH === 'true') await this.publisher.tick();
+       await retirePlayttIdleRuntimes();
+     });
+@@ -168,18 +176,24 @@
+         else if (request.method === 'POST') {
+           const raw = await request.text();
+           if (raw.length > 1024) return new Response('Invalid capacity action', { status: 400 });
+-          let input: { action?: string; fenceToken?: string; drainToken?: string; legacyWritersDrained?: boolean };
++          let input: { action?: string; fenceToken?: string; drainToken?: string; legacyWritersDrained?: boolean; windowToken?: string; previousWindowToken?: string | null; durationSeconds?: number; maxBytes?: number; maxOperations?: number };
+           try { input = JSON.parse(raw); } catch { return new Response('Invalid capacity action', { status: 400 }); }
+-          if (!['initialize', 'initialize-write-tracking', 'acquire-write-drain', 'release-write-drain'].includes(input.action || '') || typeof input.fenceToken !== 'string') return new Response('Invalid capacity action', { status: 400 });
++          if (!['initialize', 'initialize-write-tracking', 'acquire-write-drain', 'release-write-drain','arm-write-window','close-write-window'].includes(input.action || '')
++            || (input.action !== 'close-write-window' && typeof input.fenceToken !== 'string')) return new Response('Invalid capacity action', { status: 400 });
+           const coordinator = new DurableObjectRevisionCoordinator(env.WORDPRESS_STATE.getByName(partitionName(env, site.id)), site.id);
+-          await coordinator.renewFence(input.fenceToken, 600_000);
+-          const actions: Record<string, string> = { initialize: '/initialize', 'initialize-write-tracking': '/tracking/initialize', 'acquire-write-drain': '/tracking/acquire', 'release-write-drain': '/tracking/release' };
++          // Closing only revokes admission and leaves in-flight tickets intact;
++          // it must remain possible while a native request owns the lease.
++          if (input.action !== 'close-write-window') await coordinator.renewFence(input.fenceToken!, 600_000);
++          const actions: Record<string, string> = { initialize: '/initialize', 'initialize-write-tracking': '/tracking/initialize', 'acquire-write-drain': '/tracking/acquire', 'release-write-drain': '/tracking/release', 'arm-write-window':'/window/arm', 'close-write-window':'/window/close' };
+           // Migration is an explicit operator assertion, not an inference from
+           // lease expiry: legacy writers have no durable tickets to inspect.
+           if (input.action === 'initialize-write-tracking' && input.legacyWritersDrained !== true) return new Response('Confirm legacy writers have drained before enabling tracking', { status: 400 });
+           if (input.action!.endsWith('write-drain') && !isWriteToken(input.drainToken)) return new Response('Invalid write drain token', { status: 400 });
++          if (input.action!.endsWith('write-window') && !isWriteToken(input.windowToken)) return new Response('Invalid write window token', { status: 400 });
++          const payload = input.action === 'arm-write-window' ? { token: input.windowToken, previousToken: input.previousWindowToken, drainToken: input.drainToken, durationSeconds: input.durationSeconds, maxBytes: input.maxBytes, maxOperations: input.maxOperations }
++            : { token: input.action === 'close-write-window' ? input.windowToken : input.drainToken };
+           response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid' + actions[input.action!], {
+-            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: input.drainToken }),
++            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
+           });
+         } else return new Response('Method not allowed', { status: 405 });
+         const result = new Response(response.body, response);
