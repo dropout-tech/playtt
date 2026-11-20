@@ -1,0 +1,10 @@
+{
+  "result": "expected-baseline-failures",
+  "scope": "Ten new acknowledgement-recovery expectations run against the previously deployed implementation before modification; not a claim that the earlier general suite failed",
+  "tests": 10,
+  "passed": 2,
+  "failed": 8,
+  "baselineCommit": "3c163aea662a2882ffd6739797b94d1176859667",
+  "candidateNewTestsPassed": 10,
+  "fullCandidateRelevantTestsPassed": 42
+}

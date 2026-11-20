@@ -1,0 +1,150 @@
+{
+  "at": "2026-11-20T05:38:27.394Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "state": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "9aabfdc2-0aac-479c-9c18-fd492058b084",
+      "manifestKey": "sites/default/markdown/revisions/9aabfdc2-0aac-479c-9c18-fd492058b084.json",
+      "persistedAt": "2026-11-20T05:38:17.077Z"
+    },
+    "version": 19
+  },
+  "ownedId": 189,
+  "pending": 0,
+  "exactContentAndTrailingWhitespace": true,
+  "originalFrontPageUnchanged": true,
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-pin-restore-audit",
+    "baselineBytes": 149591427,
+    "baselineObjects": 396,
+    "chargedBytes": 45137837,
+    "chargedPuts": 99,
+    "initializedAt": "2026-11-20T04:10:42.674Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v1",
+      "initializedAt": "2026-11-20T04:41:44.739Z",
+      "pending": 0,
+      "sealed": false,
+      "maximumPending": 128,
+      "automaticExpiry": false
+    },
+    "reservationSchema": "playtt/r2-write-reservation/v1",
+    "initialized": true,
+    "limitBytes": 300000000,
+    "trackingConfigured": true,
+    "remainingBytes": 105270736,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "scope": "Real native HTTP draft save and precise readback on candidate; no remote injected loss",
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2612
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 182
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 475
+    },
+    {
+      "target": "restore",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3414
+    },
+    {
+      "target": "restore",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6566
+    },
+    {
+      "target": "restore",
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1533
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/settings",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 743
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1281
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 6257
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/189",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6435
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/189?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1059
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 978
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1900
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 188
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 158
+    }
+  ]
+}

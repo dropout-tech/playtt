@@ -1,0 +1,44 @@
+diff --git a/src/playtt-storage-capacity.ts b/src/playtt-storage-capacity.ts
+--- a/src/playtt-storage-capacity.ts
++++ b/src/playtt-storage-capacity.ts
+@@ -85,19 +85,28 @@
+   };
+   const settled = async (ticket: string | undefined): Promise<void> => {
+     if (!tracking) return;
+-    try {
+-      const response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/tracking/settle', {
+-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ticket }),
+-      });
+-      if (!response.ok) throw new PlayttCapacityError(503);
+-      const proof = await response.json<{ schema?: string; settled?: boolean; ticket?: string }>();
+-      if (proof.schema !== WRITE_SETTLED_SCHEMA || proof.settled !== true || proof.ticket !== ticket) throw new PlayttCapacityError(503);
+-    } catch {
+-      // R2 already confirmed the mutation. Do not turn a confirmed pointer put
+-      // into a synthetic failure before the coordinator commits its DO record.
+-      // A missing acknowledgement leaves the durable ticket open, blocking GC.
+-      console.warn(JSON.stringify({ schema: 'playtt/r2-write-ack-failure/v1', knownR2Completion: true }));
++    // Only this ticket's idempotent acknowledgement is retried. Reservation and
++    // R2 mutation are never replayed, and an ambiguous R2 rejection never calls
++    // this function. Healthy writes still make exactly one settlement call.
++    const attempts = 3;
++    for (let attempt = 1; attempt <= attempts; attempt++) {
++      try {
++        const response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/tracking/settle', {
++          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ticket }),
++        });
++        if (!response.ok) { await response.body?.cancel(); throw new PlayttCapacityError(503); }
++        const proof = await response.json<{ schema?: string; settled?: boolean; ticket?: string }>();
++        if (proof.schema !== WRITE_SETTLED_SCHEMA || proof.settled !== true || proof.ticket !== ticket) throw new PlayttCapacityError(503);
++        if (attempt > 1) console.info(JSON.stringify({ schema: 'playtt/r2-write-ack-recovered/v1', knownR2Completion: true, attempts: attempt }));
++        return;
++      } catch {
++        if (attempt < attempts) await new Promise<void>(resolve => setTimeout(resolve, attempt * 100));
++      }
+     }
++    // Preserve confirmed R2 success even when all acknowledgements fail. An
++    // unresolved durable ticket still blocks maintenance; there is no refund,
++    // force-clear or inference of a failed R2 operation from an elapsed timer.
++    console.warn(JSON.stringify({ schema: 'playtt/r2-write-ack-failure/v1', knownR2Completion: true, attempts }));
+   };
+   const wrapped = {
+     head: bucket.head.bind(bucket), get: bucket.get.bind(bucket), list: bucket.list.bind(bucket),

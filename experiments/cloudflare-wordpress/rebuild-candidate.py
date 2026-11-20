@@ -74,6 +74,7 @@ patch('pin-restore/pin-restore-candidate.patch',runtime);extras(exp/'pin-restore
 patch('write-drain/write-drain-candidate.patch',runtime);extras(exp/'write-drain')
 extras(exp/'retained-packs')
 patch('reference-roots/reference-roots-candidate.patch',runtime);extras(exp/'reference-roots')
+patch('write-ack-retry/write-ack-retry-candidate.patch',runtime);extras(exp/'write-ack-retry')
 (runtime/'scripts/playtt-pin-restore-cloud-preflight.py').write_bytes((exp/'pin-restore/playtt-pin-restore-cloud-preflight.py').read_text(encoding='utf-8-sig').encode('utf-8'))
 (runtime/'scripts/playtt-latency-pprof.py').write_bytes((exp/'diagnostic-sampling/playtt-latency-pprof.py').read_text(encoding='utf-8-sig').encode('utf-8'))
 differences=[];files=[]
