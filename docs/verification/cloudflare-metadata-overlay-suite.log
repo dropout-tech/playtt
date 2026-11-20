@@ -1,0 +1,103 @@
+✔ D1 coordinator partitions state, leases, fences, and commit receipts by site ID (7.152ms)
+✔ D1 adoption accepts monotonic forward state and requires an active fence token (6.4083ms)
+✔ Durable Object coordinator writes the matching site pointer and preserves default compatibility (49.9606ms)
+✔ verified immutable pin survives restart; exact retry after lost acknowledgement is idempotent (28.2051ms)
+✔ remote manifest and complete archive hashes are checked before protection is recorded (9.6775ms)
+✔ invalid namespace, time, identity and oversized input cannot trigger R2 reads (0.8859ms)
+✔ expired or lost fence before or during I/O cannot register a pin (3.2793ms)
+✔ corrupt registry is never silently replaced with an empty list (0.8496ms)
+✔ declared object size is enforced while streaming, not after an unlimited buffer (0.9878ms)
+✔ a matching manifest hash cannot bind a different pack or revision (5.2038ms)
+✔ coordinator serializes registration and fence release; wrong-token writes and other sites are rejected (105.9571ms)
+✔ concurrent pins under the same fence retain both entries without advancing canonical state (4.7597ms)
+✔ input normalization retains only immutable identity fields (0.4536ms)
+✔ native lock and exact high-water bytes restore with unchanged content, media and theme (280.658ms)
+✔ repeated maintenance keeps one full base with no chain or growing descriptor (449.4049ms)
+✔ native lock owner takeover, row deletion and re-addition preserve original identities (78.0785ms)
+✔ content, attachment metadata, assets, tombstones and missing layout never use the maintenance path (29.3063ms)
+✔ sequence precision is retained; counter rollback, missing keys and ID reuse are rejected from fast path (62.7137ms)
+✔ incorrect hashes, unavailable dependencies and changed base bytes fail closed (75.6976ms)
+✔ a valid-hash overlay cannot smuggle attachment changes or reset the stored counters (66.9061ms)
+✔ cross-site bases, self references, chained overlays and extra descriptor fields are rejected (8.005ms)
+✔ bounded read cancels a stream that exceeds its declaration (0.8609ms)
+✔ remote pin verifies complete overlay dependencies and preserves exact retry semantics (56.8671ms)
+✔ content edits after an overlay fall back to a full archive with the latest locks and counters (39.3824ms)
+✔ the existing coordinator serializes overlay commits and exposes a durable receipt after a lost response (34.4191ms)
+✔ portable local backup requires the anchored base and exact replacement files (83.0944ms)
+✔ changed, added and deleted content produces exactly the complete archive from a full independent read (331.3487ms)
+✔ unchanged runtime bytes are fully verified even when loose replicas are unavailable (9.5403ms)
+✔ callers without a runtime reader independently read every object with bounded concurrency (65.0401ms)
+✔ same path in another domain does not reuse unrelated runtime bytes (20.0412ms)
+✔ untrusted runtime missing failure rejects reuse (1.2403ms)
+✔ untrusted runtime size failure rejects reuse (0.5691ms)
+✔ untrusted runtime bytes failure rejects reuse (1.4675ms)
+✔ a new hash must come from R2, not an uncommitted runtime buffer (11.8017ms)
+✔ changed R2 object missing failure rejects the entire snapshot (2.4962ms)
+✔ changed R2 object size failure rejects the entire snapshot (2.2394ms)
+✔ changed R2 object bytes failure rejects the entire snapshot (2.2594ms)
+✔ invalid metadata cannot read another site, duplicate or traverse paths (0.9537ms)
+✔ a runtime reader needs the previous committed inventory (0.2941ms)
+✔ an empty new inventory preserves only the requested tombstones (0.2744ms)
+✔ failure settles every in-flight read before returning (6.7183ms)
+✔ uninitialized or corrupt ledger rejects writes before touching R2 (85.5311ms)
+✔ concurrent writers share a durable bound and UTF-8 bytes, not characters (30.0452ms)
+✔ ambiguous R2 failure, overwritten bytes, conditional miss and delete never refund (3.6068ms)
+✔ lost reservation response leaves charge but never starts the R2 write (2.3126ms)
+✔ unknown streams, multipart and cross-site paths cannot bypass allocation (2.1625ms)
+✔ initialization paginates even short pages and never overwrites an existing ledger (2.9355ms)
+✔ failed or looping inventory never enables writes; malformed configuration fails closed (5.3808ms)
+✔ coordinator capacity refusal preserves current pointer, version and receipt; subsequent release works (17.0904ms)
+✔ disabled deployments keep their original bucket and repeated wrapping cannot double-charge (1.5387ms)
+✔ mixed deployment limits use the smaller value; old clients cannot omit their bound (9.2901ms)
+✔ legacy, wrong-byte and overly permissive reservation replies never reach R2 (1.0902ms)
+✔ independent restore scope initializes its own ledger and rejects a ledger copied from another bucket (3.1435ms)
+✔ initialization cannot erase a corrupt null ledger (0.5273ms)
+✔ healthy confirmation takes one call and never reserves or writes twice (44.3376ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":3}
+✔ one or two lost settlement requests recover the exact ticket without repeating the R2 mutation (438.9831ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ lost responses and malformed acknowledgement bodies retry idempotently after the server already settled (216.7444ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ transient503 and a restarted budget recover while a wrong-ticket proof is never accepted (324.2261ms)
+✔ retry exhaustion preserves confirmed success and leaves unknown acknowledgement state closed to maintenance (310.3252ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ permanently wrong-ticket proofs cannot settle another pending ticket (325.1159ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ confirmed deletes and conditional misses retry only acknowledgement, preserving conservative charges (217.0454ms)
+✔ ambiguous R2 put/delete and lost reservation response are never acknowledged or replayed (4.341ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ recovering an acknowledgement cannot clear an unrelated ambiguous R2 write (103.775ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ confirmed current.json and coordinator commit stay coherent after retries recover or exhaust (419.8431ms)
+✔ legacy capacity reservation and expired canonical lease do not prove R2 writes drained (53.9178ms)
+✔ pending put survives a budget restart; seal waits for actual R2 completion (11.685ms)
+✔ a delayed delete is tracked without charging bytes or put count; a seal blocks deletion (5.0932ms)
+✔ failed R2 response retains its ticket even if the provider applied the write (2.9271ms)
+✔ lost reservation reply leaves an unsettled ticket and sends no R2 request (4.1441ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ lost settlement reply preserves confirmed R2 success and an already closed ticket does not obstruct the seal (325.4716ms)
+✔ tracking must be initialized and cannot be disabled by dropping the environment flag (2.3496ms)
+✔ persistent seals do not expire; exact acquisition retries and owner release are safe (3.4109ms)
+✔ settlement is ticket-specific and idempotent; an unrelated UUID cannot clear another operation (2.2973ms)
+✔ pending operations are bounded and never expire merely because their timestamps are old (107.9203ms)
+✔ reservation capacity failure rolls back both charge and tentative ticket (2.6137ms)
+✔ an early parallel-write failure cannot hide a still-running sibling from a drain (1.8896ms)
+✔ corrupt tracking cannot be reinitialized or bypassed with legacy requests (1.4612ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ lost settlement request cannot strand an already written canonical pointer outside its DO commit (314.7321ms)
+✔ a confirmed conditional put miss settles its ticket while retaining the conservative charge (1.9483ms)
+✔ tracked callers reject old, missing-ticket and wrong-operation proofs before R2 (2.2585ms)
+ℹ tests 80
+ℹ suites 0
+ℹ pass 80
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3253.5902
