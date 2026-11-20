@@ -1,4 +1,4 @@
-"""Read only the private rebuild bucket; private object metadata stays local.
+"""Read only one explicitly allowed private playtt bucket; metadata stays local.
 
 Fetches JSON metadata roots/manifests only, never WordPress content or ZIPs.
 No mutation API or deletion path exists in this tool. A listing is not an
@@ -23,9 +23,11 @@ def main():
     parser.add_argument("--config", type=pathlib.Path, required=True)
     parser.add_argument("--output", type=pathlib.Path, required=True)
     parser.add_argument("--list-only", action="store_true", help="Skip JSON roots; suitable for capacity totals, not retention planning")
+    parser.add_argument("--bucket", choices=[BUCKET, "playtt-wordpress-pin-restore-audit"], default=BUCKET)
+    parser.add_argument("--all-publication-metadata", action="store_true", help="Include progress, claims and receipts for reference analysis; not the older retention-planner profile")
     args = parser.parse_args()
     token = tomllib.loads(args.config.read_text(encoding="utf-8"))["oauth_token"]
-    base = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}/r2/buckets/{BUCKET}/objects"
+    base = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}/r2/buckets/{args.bucket}/objects"
 
     def read(suffix):
         req = urllib.request.Request(base + suffix, headers={"Authorization": "Bearer " + token}, method="GET")
@@ -60,6 +62,8 @@ def main():
         raise ValueError("Inventory exceeded 100 pages")
     records = {}
     prefixes = (ROOT + "markdown/revisions/", ROOT + "publications/revisions/", ROOT + "publications/jobs/")
+    if args.all_publication_metadata:
+        prefixes += tuple(ROOT + "publications/" + part + "/" for part in ["job-progress", "job-claims", "job-receipts"])
     current = (ROOT + "markdown/current.json", ROOT + "publications/current.json")
     metadata_keys = []
     for obj in objects:
@@ -74,7 +78,8 @@ def main():
         with ThreadPoolExecutor(max_workers=4) as pool:
             records = dict(pool.map(read_metadata, metadata_keys))
     result = {"schema": "playtt/private-capacity-inventory/v1", "at": dt.datetime.now(dt.timezone.utc).isoformat(),
-              "bucket": BUCKET, "completeListing": True, "atomicSnapshot": False, "metadataIncluded": not args.list_only,
+              "bucket": args.bucket, "completeListing": True, "atomicSnapshot": False, "metadataIncluded": not args.list_only,
+              "metadataProfile": "references-v1" if args.all_publication_metadata else "retention-v1",
               "objects": objects, "records": records}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -85,7 +90,7 @@ def main():
         group = groups.setdefault(category, {"objects": 0, "bytes": 0})
         group["objects"] += 1
         group["bytes"] += obj["size"]
-    print(json.dumps({"at": result["at"], "bucket": BUCKET, "objects": len(objects), "metadataRecords": len(records), "groups": groups}))
+    print(json.dumps({"at": result["at"], "bucket": args.bucket, "objects": len(objects), "metadataRecords": len(records), "groups": groups}))
 
 
 if __name__ == "__main__":
