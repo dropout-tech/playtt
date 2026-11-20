@@ -103,6 +103,31 @@
       "path": "scripts/playtt-response-loss-local.mjs",
       "source": "playtt-response-loss-local.mjs",
       "afterSha256": "e13aeabfca080ac631fd1d3aa0b85d8c1c92ae9f31127f1eb9a3d18df03ca2fa"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui.mjs",
+      "source": "playtt-response-loss-ui.mjs",
+      "afterSha256": "1245650755308cda122ecb20ec41d4ce59bcad0789c0a8d92ed1aa15ec2122d4"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui-control.mjs",
+      "source": "playtt-response-loss-ui-control.mjs",
+      "afterSha256": "c7e96faaef20233fd80afc222490fa0b54a6d8114db8d9167b8cd2fd852ef10c"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui-retry.mjs",
+      "source": "playtt-response-loss-ui-retry.mjs",
+      "afterSha256": "89b9d3bb5b0418d1cd868d53f93450101a129167d11e2c17e15b8b6b0616ef58"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui-retry-control.mjs",
+      "source": "playtt-response-loss-ui-retry-control.mjs",
+      "afterSha256": "d986cb2a2481074a1d6b9d353fb1bc183958f52aab4b1d3e235f7c13b1542678"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui-audit.mjs",
+      "source": "playtt-response-loss-ui-audit.mjs",
+      "afterSha256": "f1646754b75c29591722b65d97757a2dfe01468c15eb40be8402134974878309"
     }
   ],
   "patchSha256": "4caeea305a38dfcafa795aa1101b82391c545eb329e9055ce60f99c6490c0c06"

@@ -1,3 +1,11 @@
+## 最新：本機 Chrome 原生回應遺失／重試／冷重載（2026-11-21）
+
+新增5個**不可部署**的local-only工具：兩個獨立attempt的server／control，以及離線audit。它們只供Browser技能操作真實編輯器，並未將故障注入加入runtime。`playtt-response-loss-ui.mjs`及`playtt-response-loss-ui-retry.mjs`都監聽127.0.0.1:9448、限900秒、禁止Worker外連；必須先確認第一個server terminal，再啟動第二個，不能同時使用。每個attempt的既有owner檔會使新啟動拒絕，避免覆寫證據；不要刪guard來重播。
+
+依下方local HTTP工具準備相同已驗證備份／私人owner／資產／憑證，從runtime目錄執行 `node --import tsx scripts/playtt-response-loss-ui.mjs --local`。Chrome原生登入後開自有草稿193，使用實際可見控制項輸入owner檔的expectedContent。儲存前執行 `node scripts/playtt-response-loss-ui-control.mjs before --local`；原生保存故障出現後用`fault`捕捉精確提交。`status`只讀已觀察receipt。如果畫面已禁用儲存，記錄矛盾並finish，不用DOM注入強迫重試。第二個attempt使用帶`-retry`的server/control檔；在仍可用的原生儲存按鈕按一次重試，確認成功後執行`retry`，關閉分頁再執行`restart`，新分頁以同session冷讀、核對原生程式碼欄全文，最後關閉分頁並`finish`。control逾時須查同一server/command，不能重送。
+
+Browser操作／畫面證據獨立保存，不能用API結果假填UI通過旗標。`playtt-response-loss-ui-audit.mjs`離線核對兩輪私人快照及實際browser報告，限定自有修訂201、edit-lock72、命令偏好21、單調計數與草稿日期；其他檔／rows與所有既有修訂一致。稽核通過證據見`docs/verification/cloudflare-response-ui-audit.json`。第二輪重試／冷重載通過；第一輪「已儲存」與舊JSON錯誤並存仍待修。未做provider故障或Free限制驗收；74來源／20設定不變，組裝78輔助檔。以下local HTTP與歷史內容保留。
+
 ## 最新：本機成功回應本文遺失與冷重試（2026-11-21）
 
 `playtt-response-loss-local.mjs`只供本機驗證，**不可部署**：它打包現有真實執行器，使用無驗證的loopback測試匯入入口，複製私人canonical118備份至新暫存R2／DO。後端成功提交後故意令回應本文失效，停止並重建workerd，再以原生REST讀回／重試；實際200空本文引發JSON錯誤，內容保留，沒有重複頁面或修訂。每次重試仍寫約2.3MB完整包。詳見`docs/verification/cloudflare-response-loss-summary.json`；不代表瀏覽器或Cloudflare驗收。
