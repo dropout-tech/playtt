@@ -1,0 +1,292 @@
+{
+  "at": "2026-11-20T19:21:40.079Z",
+  "result": "pass",
+  "scope": "Read-only authenticated manifest comparison of committed versions39-57; no remote mutation or snapshot decoding for historical intermediates",
+  "canonicalUnchanged": true,
+  "capacityUnchanged": true,
+  "pins": 8,
+  "remoteManifestGets": 19,
+  "downloadedBytes": 1399535,
+  "baselineAndLatestAnchorsVerified": true,
+  "commits": 18,
+  "fullSnapshots": 8,
+  "overlays": 10,
+  "committedFullPackBytes": 18364040,
+  "windowChargedBytes": 20925969,
+  "usermetaOnlyFullSnapshots": 5,
+  "usermetaOnlyPackBytes": 11477138,
+  "usermetaOnlyChangedLogicalBytes": 104742,
+  "changes": [
+    {
+      "version": 40,
+      "persistedAt": "2026-11-20T19:12:42.304Z",
+      "kind": "full",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73493,
+      "packBytes": 2294854,
+      "changedLogicalBytes": 18874,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "74e40d0d8c066db537d4cc280e58be30951ecf87c157ec545a61e41d6fa9a931"
+    },
+    {
+      "version": 41,
+      "persistedAt": "2026-11-20T19:12:54.024Z",
+      "kind": "full",
+      "changed": [
+        "_options/user_count.json",
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json",
+        "_tables/users.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73493,
+      "packBytes": 2295200,
+      "changedLogicalBytes": 21798,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "e151d05cd73b5220cbf02b9e8423ab72b710426e422243a13f5a3755247e9b04"
+    },
+    {
+      "version": 42,
+      "persistedAt": "2026-11-20T19:13:31.152Z",
+      "kind": "full",
+      "changed": [
+        "_tables/usermeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73493,
+      "packBytes": 2295249,
+      "changedLogicalBytes": 20827,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "58134baaa730b46f53292efd7172a708cea85f3aafb209152bcc1a8f0a81d709"
+    },
+    {
+      "version": 43,
+      "persistedAt": "2026-11-20T19:13:37.644Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73521,
+      "packBytes": 0,
+      "changedLogicalBytes": 196,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "1c0bf38968e056092d9c3923323943356c05449b7d7cf15adb2630b9c8496ddc"
+    },
+    {
+      "version": 44,
+      "persistedAt": "2026-11-20T19:13:44.549Z",
+      "kind": "full",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73493,
+      "packBytes": 2295307,
+      "changedLogicalBytes": 21457,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "f09324d6c576af90b27dd5c36387df8e00eef1a10ca3ed4a1c3ce1ace6ea85e3"
+    },
+    {
+      "version": 45,
+      "persistedAt": "2026-11-20T19:13:54.786Z",
+      "kind": "full",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json",
+        "post/197.md"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295801,
+      "changedLogicalBytes": 22260,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "38f86dc0ca6a6723d2f5d300a47295648b7205eafa7a795b46384540d38ad6fc"
+    },
+    {
+      "version": 46,
+      "persistedAt": "2026-11-20T19:13:59.410Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14775,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "4d1d1025c719c2abd8b3b53dc3c5bf9cfd37c7717850ec855a93b856dcdc3e31"
+    },
+    {
+      "version": 47,
+      "persistedAt": "2026-11-20T19:14:15.693Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14775,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "d5eac08ef1410b0c95cc49dd565ae7fc24d0a14afe0e31aa2037ba9d2364f962"
+    },
+    {
+      "version": 48,
+      "persistedAt": "2026-11-20T19:14:21.868Z",
+      "kind": "full",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295830,
+      "changedLogicalBytes": 21862,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "3d477f20d86e71198ba05ee26f4b3a8e15dc494621428e7f53ff1e3bba23887d"
+    },
+    {
+      "version": 49,
+      "persistedAt": "2026-11-20T19:14:27.545Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14775,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "ef45ea714804ee4690c898bf29da8e81de7f060ddd0f2da45be26ad3c1df6086"
+    },
+    {
+      "version": 50,
+      "persistedAt": "2026-11-20T19:14:34.449Z",
+      "kind": "full",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json",
+        "_tables/posts.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295901,
+      "changedLogicalBytes": 326244,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "db14bf7bb9ac0d288ac75804a84ef181ed786ce8b42647b49d7e3b3b2b4b4b1e"
+    },
+    {
+      "version": 51,
+      "persistedAt": "2026-11-20T19:14:39.148Z",
+      "kind": "full",
+      "changed": [
+        "_tables/usermeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73713,
+      "packBytes": 2295898,
+      "changedLogicalBytes": 21722,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "353f0e3f87c2aa0faf3120fb7f7d77fea4e707b7c29647354293ff8532fd2c77"
+    },
+    {
+      "version": 52,
+      "persistedAt": "2026-11-20T19:14:44.222Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "05261439e88452b41bafbee9f94e92ccd7f248ba8cb9eb148f7f71f8febc67e1"
+    },
+    {
+      "version": 53,
+      "persistedAt": "2026-11-20T19:14:54.182Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 196,
+      "onlyUsermetaAndCounter": true,
+      "manifestSha256": "c7d054fb50801131e597095635c04520fb440d2361be421ac84d27917caafadc"
+    },
+    {
+      "version": 54,
+      "persistedAt": "2026-11-20T19:14:59.412Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "96c34057e0069a47893ac2bf0ba72dead2a46a8e30d886a8cd33766de0ba2c89"
+    },
+    {
+      "version": 55,
+      "persistedAt": "2026-11-20T19:15:13.999Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 15093,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "4353dfab9ab38cf2fa22945524b92be7d69898254c67bc5ea44b21ad8172d69a"
+    },
+    {
+      "version": 56,
+      "persistedAt": "2026-11-20T19:15:19.461Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 14897,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "f4f955bc1a59857671e793665d7a9483b8a2ec01520429c27677c4bfa2191bfd"
+    },
+    {
+      "version": 57,
+      "persistedAt": "2026-11-20T19:15:33.467Z",
+      "kind": "metadata-overlay",
+      "changed": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json"
+      ],
+      "removed": [],
+      "manifestBytes": 73741,
+      "packBytes": 0,
+      "changedLogicalBytes": 15093,
+      "onlyUsermetaAndCounter": false,
+      "manifestSha256": "b57d9f7efb135fb26d53894c2c13d2d18555fbaf901c0ea3c7542c2a1a26484f"
+    }
+  ],
+  "next": "Prototype a separately versioned, bounded usermeta/session/preference overlay without weakening the existing v1 validator. Verify exact restoration and mixed-version rejection offline before any further remote attempt. Preserve all current history and accounting.",
+  "limitations": [
+    "The sum of committed pack sizes is not the complete charge ledger: loose objects, manifests, mirror writes and unsuccessful attempts also count.",
+    "Manifest differences identify changed files, not usermeta keys; do not infer every usermeta-only commit is a login.",
+    "Estimated avoidable pack bytes are not measured savings until an implementation and complete restoration test pass."
+  ],
+  "safeToApply": false
+}

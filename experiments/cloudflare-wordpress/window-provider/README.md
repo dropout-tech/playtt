@@ -1,5 +1,22 @@
 # Isolated Cloudflare Free provider validation
 
+## Follow-up: two-user exclusion observed; takeover incomplete (2026-11-21)
+
+Current state: canonical57 / 34a7df5f, eight pins, pending0, window closed, write-sealed, fence released, publisher paused. Only 3,821,814 payload bytes remain. Worker remains 053fa18f; runtime source/configuration and production are unchanged. Do not reopen a previous one-shot window, reset/refund/delete history or automatically raise the cap.
+
+`playtt-window-lock-control.mjs prepare|arm|setup-user|status|close` bounds a real two-browser workflow. Arm is fixed to the verified version39/pin7 baseline and is already completed. Setup created owned editor2 with a synthetic .invalid address through core REST, without requesting a notification. Browser sign-ins used ordinary visible forms in independent Chrome/admin1 and in-app/editor2 sessions. The second editor saw a native modal naming admin as lock holder. It offered Exit, not a successfully exercised takeover; background autosave also paused. No new text was typed. Do not claim concurrent-editor acceptance.
+
+The 600-second / 20 MiB / 256-operation window used 20,925,969 bytes / 81 operations and closed before expiry. This is an application-defined test budget, not a Cloudflare Free quota failure. `playtt-window-lock-cost.mjs --remote` reads only the 19 committed manifests for versions39–57, verifies the endpoint anchors and unchanged sealed state/ledger, and downloads at most 19 × 256 KiB. Eighteen commits comprise eight full snapshots and ten overlays. Five usermeta/counter-only commits wrote 11,477,138 bytes of full packs for 104,742 bytes of changed logical files. The proposed smaller usermeta format has not been implemented or measured.
+
+`playtt-window-lock-backup.mjs --remote --inspection-only` explicitly requires incomplete UI evidence, no entered text and unchanged original draft193. The first comparison rejected a new file. Inspection identified native empty quick draft197 owned by editor2 and same-content autosave198 for parent193. The resumed comparison allows only these exact identities and a single empty footnotes row, validates the editor role and count, and verifies all previous users/records/media/theme. It reuses the already independent graph before adding pin8; no replay, cleanup or object redownload. The resulting backup is 298 logical files / 300 dependency objects. Test user2 and fixtures remain intentionally retained.
+
+Telemetry records 488 events (480 ok / eight canceled), 38 completed and eight incomplete traces, six generic persistence failures and two explicitly aborted request bodies. No platform exceptions were observed. The generic failures are consistent with a budget too small for another full pack; do not attribute every cancellation to that cause. All test tabs and bounded processes ended.
+
+Four new helpers pass syntax and fresh reconstruction: 70 source files / 36 helpers, with all runtime source and 19 configurations unchanged. No new runtime-suite, TypeScript, dry-run or deployment claim. See [current report](../../../docs/verification/cloudflare-window-lock-summary.json) and [cost audit](../../../docs/verification/cloudflare-window-lock-cost.json).
+
+Next prototype a separately versioned bounded usermeta/session/preference overlay. Preserve v1 validation and exact canonical bytes; test independent restoration and old-version rejection offline before another cloud attempt. Reuse editor2 when repeating real lock takeover/save. Current remaining capacity cannot support replaying the 20 MiB setup flow.
+
+
 ## Follow-up: native admission failure and manual retry (2026-11-21)
 
 Current state supersedes the historical stages below: canonical39 / b1423cbd, seven pins, pending0, window closed, write-sealed, fence released, publisher paused; 24,747,783 payload bytes remain. Worker remains 053fa18f. Runtime source/configuration, production visuals and backend routing were not changed.

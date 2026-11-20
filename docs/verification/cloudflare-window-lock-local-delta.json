@@ -1,0 +1,125 @@
+{
+  "at": "2026-11-20T19:17:32.955Z",
+  "changes": [
+    {
+      "path": "_options/user_count.json",
+      "added": false,
+      "oldBytes": 105,
+      "newBytes": 105
+    },
+    {
+      "path": "_runtime/playtt-auto-increment.json",
+      "added": false,
+      "oldBytes": 196,
+      "newBytes": 196
+    },
+    {
+      "path": "_tables/postmeta.json",
+      "added": false,
+      "oldBytes": 14775,
+      "newBytes": 14897
+    },
+    {
+      "path": "_tables/posts.json",
+      "added": false,
+      "oldBytes": 309748,
+      "newBytes": 311151
+    },
+    {
+      "path": "_tables/usermeta.json",
+      "added": false,
+      "oldBytes": 19643,
+      "newBytes": 21722
+    },
+    {
+      "path": "_tables/users.json",
+      "added": false,
+      "oldBytes": 435,
+      "newBytes": 972
+    },
+    {
+      "path": "post/197.md",
+      "added": true,
+      "newBytes": 651
+    }
+  ],
+  "removed": [],
+  "newUserMetaKeys": [
+    {
+      "user": "2",
+      "key": "nickname"
+    },
+    {
+      "user": "2",
+      "key": "first_name"
+    },
+    {
+      "user": "2",
+      "key": "last_name"
+    },
+    {
+      "user": "2",
+      "key": "description"
+    },
+    {
+      "user": "2",
+      "key": "rich_editing"
+    },
+    {
+      "user": "2",
+      "key": "syntax_highlighting"
+    },
+    {
+      "user": "2",
+      "key": "infinite_scrolling"
+    },
+    {
+      "user": "2",
+      "key": "comment_shortcuts"
+    },
+    {
+      "user": "2",
+      "key": "admin_color"
+    },
+    {
+      "user": "2",
+      "key": "use_ssl"
+    },
+    {
+      "user": "2",
+      "key": "show_admin_bar_front"
+    },
+    {
+      "user": "2",
+      "key": "locale"
+    },
+    {
+      "user": "2",
+      "key": "wp_capabilities"
+    },
+    {
+      "user": "2",
+      "key": "wp_user_level"
+    },
+    {
+      "user": "2",
+      "key": "session_tokens"
+    },
+    {
+      "user": "2",
+      "key": "wp_dashboard_quick_press_last_post_id"
+    },
+    {
+      "user": "2",
+      "key": "wp_persisted_preferences"
+    }
+  ],
+  "changedExistingUserMeta": [
+    {
+      "user": "1",
+      "key": "session_tokens"
+    }
+  ],
+  "oldPostRows": 71,
+  "newPostRows": 72
+}

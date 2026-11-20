@@ -188,6 +188,26 @@
       "path": "scripts/playtt-window-retry-backup.mjs",
       "source": "playtt-window-retry-backup.mjs",
       "afterSha256": "326d733a24b24e19a7b8743e35b75ce030c096f374b4613525084c13d1f3377d"
+    },
+    {
+      "path": "scripts/playtt-window-lock-control.mjs",
+      "source": "playtt-window-lock-control.mjs",
+      "afterSha256": "63b179c9b6fe84f495fa3c20aa18599e024f04c902140223ccbbc38daec21694"
+    },
+    {
+      "path": "scripts/playtt-window-lock-backup.mjs",
+      "source": "playtt-window-lock-backup.mjs",
+      "afterSha256": "b2a750b96977edbdf741a4540108f001d711a40d729d726a8b23f4d2230133fc"
+    },
+    {
+      "path": "scripts/playtt-window-lock-cost.mjs",
+      "source": "playtt-window-lock-cost.mjs",
+      "afterSha256": "1b8412859ad59f9562136c6109f4bd2f7fbb526bb550ffe643435734f67b0bb6"
+    },
+    {
+      "path": "scripts/playtt-tail-window-lock-sanitized.mjs",
+      "source": "playtt-tail-window-lock-sanitized.mjs",
+      "afterSha256": "0a26fec147f98d0995a43f5394d28fc56b58378573e552adeca96c8d385bb283"
     }
   ]
 }

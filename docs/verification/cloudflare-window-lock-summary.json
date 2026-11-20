@@ -1,0 +1,577 @@
+{
+  "at": "2026-11-20T19:27:25.784116+00:00",
+  "result": "two-browser-lock-exclusion-observed-takeover-incomplete-write-window-budget",
+  "goalStatus": "active",
+  "previousTurnClassification": "progress",
+  "prDraft": true,
+  "productionChanged": false,
+  "productionBackendSwitched": false,
+  "runtimeSourceChanged": false,
+  "runtimeRedeployed": false,
+  "paidPlanChange": false,
+  "browser": {
+    "at": "2026-11-20T19:15:53.796Z",
+    "result": "incomplete",
+    "ownedId": 193,
+    "ownedUserId": 2,
+    "secondUserBlocked": true,
+    "takeoverObserved": false,
+    "firstUserLostLock": false,
+    "secondUserSavedAndReloaded": false,
+    "newContentTyped": false,
+    "tabClosed": true,
+    "closedAt": "2026-11-20T19:15:54.297Z",
+    "scope": "Two independent native browser sessions: Chrome admin1 and in-app editor2. Lock exclusion observed; takeover and second-editor save were not completed.",
+    "nativeBlockedHeading": "已有其他人接管了這篇內容的編輯工作。",
+    "reportedLockOwner": "admin",
+    "savePauseMessage": "目前已暫停儲存，請保留編輯內容並聯絡管理員。",
+    "exitNavigationCompleted": false,
+    "console": {
+      "admin": {
+        "errors": 1,
+        "warnings": 1
+      },
+      "editor": {
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    "screenshots": [
+      "window-lock-editor-b-blocked.jpg",
+      "window-lock-editor-b-exit-failed.jpg"
+    ],
+    "limitations": [
+      "The core modal also says changes were saved while an autosave error is visible behind it; no new text was typed in this attempt. Do not infer general data-loss protection from that wording.",
+      "The pause error was visible by the blocked-state screenshot; clicking Exit is not proven to be its cause."
+    ]
+  },
+  "setup": {
+    "at": "2026-11-20T19:12:58.852Z",
+    "result": "pass",
+    "ownedUserId": 2,
+    "role": "editor",
+    "syntheticAddress": true,
+    "notificationHookInvoked": false,
+    "existingUsers": 1,
+    "checks": [
+      {
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3877
+      },
+      {
+        "method": "POST",
+        "status": 302,
+        "wallMs": 6097
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1547
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1696
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1151
+      },
+      {
+        "method": "POST",
+        "status": 201,
+        "wallMs": 7373
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "wallMs": 945
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "wallMs": 905
+      }
+    ]
+  },
+  "window": {
+    "seconds": 600,
+    "maxBytes": 20971520,
+    "maxOperations": 256,
+    "usedBytes": 20925969,
+    "operations": 81,
+    "closedBeforeDeadline": true,
+    "unusedBytesAtClose": 45551
+  },
+  "budgetFinding": "The application-owned 20 MiB test allowance was nearly exhausted while full snapshot writes needed about 2.3 MB each. This is not evidence that the Cloudflare Free service limit was reached. Six generic persistence failures are consistent with the insufficient allowance; two separate request-body failures explicitly report aborts before translation.",
+  "costAudit": {
+    "at": "2026-11-20T19:21:40.079Z",
+    "result": "pass",
+    "scope": "Read-only authenticated manifest comparison of committed versions39-57; no remote mutation or snapshot decoding for historical intermediates",
+    "canonicalUnchanged": true,
+    "capacityUnchanged": true,
+    "pins": 8,
+    "remoteManifestGets": 19,
+    "downloadedBytes": 1399535,
+    "baselineAndLatestAnchorsVerified": true,
+    "commits": 18,
+    "fullSnapshots": 8,
+    "overlays": 10,
+    "committedFullPackBytes": 18364040,
+    "windowChargedBytes": 20925969,
+    "usermetaOnlyFullSnapshots": 5,
+    "usermetaOnlyPackBytes": 11477138,
+    "usermetaOnlyChangedLogicalBytes": 104742,
+    "changes": [
+      {
+        "version": 40,
+        "persistedAt": "2026-11-20T19:12:42.304Z",
+        "kind": "full",
+        "changed": [
+          "_runtime/playtt-auto-increment.json",
+          "_tables/usermeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73493,
+        "packBytes": 2294854,
+        "changedLogicalBytes": 18874,
+        "onlyUsermetaAndCounter": true,
+        "manifestSha256": "74e40d0d8c066db537d4cc280e58be30951ecf87c157ec545a61e41d6fa9a931"
+      },
+      {
+        "version": 41,
+        "persistedAt": "2026-11-20T19:12:54.024Z",
+        "kind": "full",
+        "changed": [
+          "_options/user_count.json",
+          "_runtime/playtt-auto-increment.json",
+          "_tables/usermeta.json",
+          "_tables/users.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73493,
+        "packBytes": 2295200,
+        "changedLogicalBytes": 21798,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "e151d05cd73b5220cbf02b9e8423ab72b710426e422243a13f5a3755247e9b04"
+      },
+      {
+        "version": 42,
+        "persistedAt": "2026-11-20T19:13:31.152Z",
+        "kind": "full",
+        "changed": [
+          "_tables/usermeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73493,
+        "packBytes": 2295249,
+        "changedLogicalBytes": 20827,
+        "onlyUsermetaAndCounter": true,
+        "manifestSha256": "58134baaa730b46f53292efd7172a708cea85f3aafb209152bcc1a8f0a81d709"
+      },
+      {
+        "version": 43,
+        "persistedAt": "2026-11-20T19:13:37.644Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_runtime/playtt-auto-increment.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73521,
+        "packBytes": 0,
+        "changedLogicalBytes": 196,
+        "onlyUsermetaAndCounter": true,
+        "manifestSha256": "1c0bf38968e056092d9c3923323943356c05449b7d7cf15adb2630b9c8496ddc"
+      },
+      {
+        "version": 44,
+        "persistedAt": "2026-11-20T19:13:44.549Z",
+        "kind": "full",
+        "changed": [
+          "_runtime/playtt-auto-increment.json",
+          "_tables/usermeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73493,
+        "packBytes": 2295307,
+        "changedLogicalBytes": 21457,
+        "onlyUsermetaAndCounter": true,
+        "manifestSha256": "f09324d6c576af90b27dd5c36387df8e00eef1a10ca3ed4a1c3ce1ace6ea85e3"
+      },
+      {
+        "version": 45,
+        "persistedAt": "2026-11-20T19:13:54.786Z",
+        "kind": "full",
+        "changed": [
+          "_runtime/playtt-auto-increment.json",
+          "_tables/usermeta.json",
+          "post/197.md"
+        ],
+        "removed": [],
+        "manifestBytes": 73713,
+        "packBytes": 2295801,
+        "changedLogicalBytes": 22260,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "38f86dc0ca6a6723d2f5d300a47295648b7205eafa7a795b46384540d38ad6fc"
+      },
+      {
+        "version": 46,
+        "persistedAt": "2026-11-20T19:13:59.410Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_tables/postmeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 14775,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "4d1d1025c719c2abd8b3b53dc3c5bf9cfd37c7717850ec855a93b856dcdc3e31"
+      },
+      {
+        "version": 47,
+        "persistedAt": "2026-11-20T19:14:15.693Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_tables/postmeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 14775,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "d5eac08ef1410b0c95cc49dd565ae7fc24d0a14afe0e31aa2037ba9d2364f962"
+      },
+      {
+        "version": 48,
+        "persistedAt": "2026-11-20T19:14:21.868Z",
+        "kind": "full",
+        "changed": [
+          "_runtime/playtt-auto-increment.json",
+          "_tables/usermeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73713,
+        "packBytes": 2295830,
+        "changedLogicalBytes": 21862,
+        "onlyUsermetaAndCounter": true,
+        "manifestSha256": "3d477f20d86e71198ba05ee26f4b3a8e15dc494621428e7f53ff1e3bba23887d"
+      },
+      {
+        "version": 49,
+        "persistedAt": "2026-11-20T19:14:27.545Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_tables/postmeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 14775,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "ef45ea714804ee4690c898bf29da8e81de7f060ddd0f2da45be26ad3c1df6086"
+      },
+      {
+        "version": 50,
+        "persistedAt": "2026-11-20T19:14:34.449Z",
+        "kind": "full",
+        "changed": [
+          "_runtime/playtt-auto-increment.json",
+          "_tables/postmeta.json",
+          "_tables/posts.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73713,
+        "packBytes": 2295901,
+        "changedLogicalBytes": 326244,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "db14bf7bb9ac0d288ac75804a84ef181ed786ce8b42647b49d7e3b3b2b4b4b1e"
+      },
+      {
+        "version": 51,
+        "persistedAt": "2026-11-20T19:14:39.148Z",
+        "kind": "full",
+        "changed": [
+          "_tables/usermeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73713,
+        "packBytes": 2295898,
+        "changedLogicalBytes": 21722,
+        "onlyUsermetaAndCounter": true,
+        "manifestSha256": "353f0e3f87c2aa0faf3120fb7f7d77fea4e707b7c29647354293ff8532fd2c77"
+      },
+      {
+        "version": 52,
+        "persistedAt": "2026-11-20T19:14:44.222Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_tables/postmeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 14897,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "05261439e88452b41bafbee9f94e92ccd7f248ba8cb9eb148f7f71f8febc67e1"
+      },
+      {
+        "version": 53,
+        "persistedAt": "2026-11-20T19:14:54.182Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_runtime/playtt-auto-increment.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 196,
+        "onlyUsermetaAndCounter": true,
+        "manifestSha256": "c7d054fb50801131e597095635c04520fb440d2361be421ac84d27917caafadc"
+      },
+      {
+        "version": 54,
+        "persistedAt": "2026-11-20T19:14:59.412Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_tables/postmeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 14897,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "96c34057e0069a47893ac2bf0ba72dead2a46a8e30d886a8cd33766de0ba2c89"
+      },
+      {
+        "version": 55,
+        "persistedAt": "2026-11-20T19:15:13.999Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_runtime/playtt-auto-increment.json",
+          "_tables/postmeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 15093,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "4353dfab9ab38cf2fa22945524b92be7d69898254c67bc5ea44b21ad8172d69a"
+      },
+      {
+        "version": 56,
+        "persistedAt": "2026-11-20T19:15:19.461Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_tables/postmeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 14897,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "f4f955bc1a59857671e793665d7a9483b8a2ec01520429c27677c4bfa2191bfd"
+      },
+      {
+        "version": 57,
+        "persistedAt": "2026-11-20T19:15:33.467Z",
+        "kind": "metadata-overlay",
+        "changed": [
+          "_runtime/playtt-auto-increment.json",
+          "_tables/postmeta.json"
+        ],
+        "removed": [],
+        "manifestBytes": 73741,
+        "packBytes": 0,
+        "changedLogicalBytes": 15093,
+        "onlyUsermetaAndCounter": false,
+        "manifestSha256": "b57d9f7efb135fb26d53894c2c13d2d18555fbaf901c0ea3c7542c2a1a26484f"
+      }
+    ],
+    "next": "Prototype a separately versioned, bounded usermeta/session/preference overlay without weakening the existing v1 validator. Verify exact restoration and mixed-version rejection offline before any further remote attempt. Preserve all current history and accounting.",
+    "limitations": [
+      "The sum of committed pack sizes is not the complete charge ledger: loose objects, manifests, mirror writes and unsuccessful attempts also count.",
+      "Manifest differences identify changed files, not usermeta keys; do not infer every usermeta-only commit is a login.",
+      "Estimated avoidable pack bytes are not measured savings until an implementation and complete restoration test pass."
+    ],
+    "safeToApply": false
+  },
+  "inspectionBackup": {
+    "at": "2026-11-20T19:18:58.756Z",
+    "result": "pass",
+    "canonicalVersion": 57,
+    "remoteR2Mutations": 0,
+    "sourceRevision": "b1423cbd-d870-49c8-9594-09eebac7ad1a",
+    "changedMarkdownFiles": [
+      "_options/user_count.json",
+      "_runtime/playtt-auto-increment.json",
+      "_tables/postmeta.json",
+      "_tables/posts.json",
+      "_tables/usermeta.json",
+      "_tables/users.json",
+      "post/197.md"
+    ],
+    "anchor": {
+      "revision": "34a7df5f-087f-4d50-925d-05a748c1d66e",
+      "manifestKey": "sites/default/markdown/revisions/34a7df5f-087f-4d50-925d-05a748c1d66e.json",
+      "persistedAt": "2026-11-20T19:15:33.467Z",
+      "manifestSha256": "b57d9f7efb135fb26d53894c2c13d2d18555fbaf901c0ea3c7542c2a1a26484f",
+      "packKey": "sites/default/restore-packs/ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b.zip",
+      "packSha256": "ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b",
+      "packBytes": 2295898
+    },
+    "format": "metadata-overlay",
+    "baseRevision": "5ad54029-4fe8-4f98-88e0-bd7a48536034",
+    "files": 298,
+    "objects": 300,
+    "payloadBytes": 6897973,
+    "remoteGetsThisRun": 0,
+    "downloadedBytesThisRun": 0,
+    "resumedVerifiedLocalGraph": true,
+    "independentCopyVerified": true,
+    "unchangedMarkdownFiles": 164,
+    "ownedDraft": 193,
+    "ownedQuickDraft": 197,
+    "ownedAutosave": 198,
+    "ownedUserId": 2,
+    "ownedUserRole": "editor",
+    "existingAccountsUnchanged": true,
+    "ownedDraftStillPrivate": true,
+    "originalParagraphPreserved": true,
+    "browserParagraphExact": false,
+    "ownedDraftContentAndMetadataUnchanged": true,
+    "ownedDraftDateUpdatedByNativeSave": false,
+    "nativeLockAcceptanceComplete": false,
+    "addedRevisionIds": [
+      198
+    ],
+    "addedUserKeys": [
+      "nickname",
+      "first_name",
+      "last_name",
+      "description",
+      "rich_editing",
+      "syntax_highlighting",
+      "infinite_scrolling",
+      "comment_shortcuts",
+      "admin_color",
+      "use_ssl",
+      "show_admin_bar_front",
+      "locale",
+      "wp_capabilities",
+      "wp_user_level",
+      "session_tokens",
+      "wp_dashboard_quick_press_last_post_id",
+      "wp_persisted_preferences"
+    ],
+    "postmetaRows": 51,
+    "postTableRows": 72,
+    "mediaAndThemeIdentical": true,
+    "finalPins": 8,
+    "canonicalUnchanged": true,
+    "capacityLedgerUnchanged": true,
+    "fenceReleased": true
+  },
+  "backupInitialStop": "The initial comparison correctly rejected a new file and autosave. Local graph inspection identified empty quick draft197 created by the new editor dashboard and same-content autosave198 for parent193. The resumed verifier permits only these exact IDs, author2, empty/same content and exact footnotes row; original draft193 and every prior record remain exact. No UI replay or additional object download was needed.",
+  "telemetry": {
+    "events": 488,
+    "outcomes": {
+      "ok": 480,
+      "canceled": 8
+    },
+    "traces": 46,
+    "completedTraces": 38,
+    "incompleteTraces": 8,
+    "requestFailureCategories": {
+      "other": 6,
+      "request-body-unavailable": 2
+    },
+    "requestFailurePhases": {
+      "persistence.manifest.write": 4,
+      "persistence.markdown.write": 2,
+      "request.translate": 2
+    },
+    "bodyFailures": [
+      {
+        "reason": "aborted",
+        "usedBefore": false,
+        "lockedBefore": false,
+        "abortedBefore": true,
+        "abortedAfter": true
+      },
+      {
+        "reason": "aborted",
+        "usedBefore": false,
+        "lockedBefore": false,
+        "abortedBefore": true,
+        "abortedAfter": true
+      }
+    ],
+    "exceptions": 0,
+    "maxSampledWasmHeapBytes": 76283904,
+    "tailEnded": true,
+    "ownedNodeProcesses": 0
+  },
+  "finalTarget": {
+    "worker": "playtt-wp-free-window-audit",
+    "workerVersion": "053fa18f-80b6-4f25-8404-5bb7b9c56525",
+    "canonicalVersion": 57,
+    "revision": "34a7df5f-087f-4d50-925d-05a748c1d66e",
+    "pins": 8,
+    "pending": 0,
+    "writeSealed": true,
+    "windowClosed": true,
+    "fenceActive": false,
+    "publisher": "paused",
+    "payloadBoundBytes": 146178186,
+    "payloadLimitBytes": 150000000,
+    "remainingBytes": 3821814,
+    "ownedDraftRetained": 193,
+    "ownedEditorUserRetained": 2,
+    "ownedQuickDraftRetained": 197,
+    "ownedAutosaveRetained": 198,
+    "olderRevisionsRetained": [
+      195,
+      196
+    ],
+    "importedDraftRetained": 192
+  },
+  "validation": {
+    "at": "2026-11-20T19:24:48.712936+00:00",
+    "result": "pass",
+    "adoptedPatches": 25,
+    "optionalPatches": 4,
+    "sourceFilesCompared": 70,
+    "extraHelpersCompared": 36,
+    "addedHelpersSyntax": "pass",
+    "runtimeChanges": false,
+    "runtimeRedeployed": false,
+    "priorProviderSourceHashesUnchanged": true,
+    "existingConfigsUnchanged": 19,
+    "defaultAssemblerIncludesCandidates": false,
+    "reapplyRefusedBeforeMutation": true,
+    "differences": [],
+    "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler",
+    "scope": "Exact reconstruction and new helper syntax; no repeated claim of the earlier 51-test suite or new TypeScript/dry-run/deployment"
+  },
+  "limits": [
+    "No takeover control was successfully exercised; the native modal offered Exit. Do not mark multiplayer editing accepted.",
+    "Complete backup inspection succeeded, but the latest snapshot has not been remotely restored/cold-booted.",
+    "Manifest-only historical comparisons identify changed files, not individual usermeta fields or per-version restore correctness.",
+    "11,477,138 bytes of usermeta-only pack writes identify a candidate optimization; they are not measured savings.",
+    "The maximum observed WASM heap is not whole-isolate memory.",
+    "No new billing dashboard or invoice verification was performed."
+  ],
+  "acceptanceStillOpen": [
+    "Reduce full-snapshot writes for usermeta/session/preference-only changes; prove restoration before deployment",
+    "Complete native competing-editor takeover, lost-lock notification, second-editor save and reload",
+    "Network interruption and post-commit acknowledgement loss",
+    "Core warning pair and complete canvas preset verification",
+    "Viewport transitions, cancellation attribution and clearer lock/error messaging",
+    "Whole-isolate memory, representative latency, safe history retention, unknown-write reconciliation",
+    "Mixed-version rollback, physical devices/IME, long-term free usage and final handoff"
+  ],
+  "next": "Prototype a separately versioned, bounded usermeta/session/preference overlay without weakening the existing v1 validator. Verify exact restoration and mixed-version rejection offline before any further remote attempt. Preserve all current history and accounting. Current target has only 3,821,814 payload bytes remaining: keep it sealed, do not reset/refund/delete or automatically raise its cap. Reuse the owned user2 after the optimization is proved; avoid repeated account creation. Then repeat the real two-browser takeover/save flow."
+}
