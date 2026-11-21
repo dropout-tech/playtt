@@ -72,6 +72,26 @@
       "path": "scripts/playtt-readback-negative-audit.mjs",
       "source": "playtt-readback-negative-audit.mjs",
       "afterSha256": "7893a45c3be348eac65b13df5f9f221c28cd1862ae8c4080186752ee04ddf9dc"
+    },
+    {
+      "path": "scripts/playtt-readback-provider.mjs",
+      "source": "playtt-readback-provider.mjs",
+      "afterSha256": "afe377f11884ca36065024f9275ca6d86e535e3ce20c9eadb04295edc8f21149"
+    },
+    {
+      "path": "scripts/playtt-readback-provider-backup.mjs",
+      "source": "playtt-readback-provider-backup.mjs",
+      "afterSha256": "53f3841697adde42db8723c495e7f239a4120fbec07211a18d8764d14351020c"
+    },
+    {
+      "path": "scripts/playtt-readback-provider-pin.mjs",
+      "source": "playtt-readback-provider-pin.mjs",
+      "afterSha256": "2061518eb5fa4ce63e34e0073d57370a6b42f477293443386d00a5f02e7c620e"
+    },
+    {
+      "path": "scripts/playtt-readback-provider-inspect.mjs",
+      "source": "playtt-readback-provider-inspect.mjs",
+      "afterSha256": "171db2a23fd21b26ee1b51782484018b7bffd0e5c3ae90b8b747080bb55738bb"
     }
   ],
   "patchSha256": "c1e59184a28c6cdb803d19ccc70efa5c1037bf839a710a57131973d55429b638"

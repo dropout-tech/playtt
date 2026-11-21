@@ -1,0 +1,36 @@
+// Offline aggregation of the completed provider exercise, exact backup audit,
+// sanitized bounded tail and actual version bindings. No service calls.
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const load=async p=>JSON.parse((await readFile(p,'utf8')).replace(/^\uFEFF/,''));
+const hash=b=>createHash('sha256').update(b).digest('hex');
+const prefix='artifacts/playtt-readback-provider-';
+const run=await load(prefix+'result.json'),owner=await load(prefix+'owned-private.json'),backup=await load(prefix+'backup-result.json'),status=await load(prefix+'status.json');
+assert.equal(run.result,'pass');assert.equal(run.contained,true);assert.equal(run.reconciled,true);assert.equal(run.coldReadContentExact,true);assert.equal(run.nativeLogoutCompleted,true);assert.equal(run.nativeEditorPolicyExact,true);
+assert.equal(owner.phase,'closed-sealed');assert.equal(owner.fenceReleased,true);assert.equal(owner.sealReleased,false);
+assert.deepEqual(run.transportAttempts.map(x=>x.method),['POST','GET']);assert.equal(run.transportCalls.length,2);
+const [write,read]=run.transportCalls;assert.equal(write.status,200);assert.equal(write.bodySuppressedLocally,true);assert.equal(read.status,200);assert.equal(read.marker,'canonical-v1');assert.equal(read.version,write.version);assert.equal(read.revision,write.revision);assert.equal(read.contentSha256,hash(owner.expectedContent));assert.equal(read.id,193);assert.ok(read.wallMs<10000);
+assert.equal(run.nativeRequests,8);assert.ok(run.chargedBytes<=run.limits.maxBytes);assert.equal(run.chargedBytes,2960342);assert.equal(run.chargedPuts,18);
+assert.equal(backup.result,'pass');assert.equal(backup.canonicalVersion,122);assert.equal(backup.finalPins,9);assert.equal(backup.ownedDraftContentExact,true);assert.equal(backup.sessionsPreferencesAccountsExact,true);assert.equal(backup.mediaAndThemeExact,true);assert.equal(backup.independentCopyVerified,true);assert.equal(backup.fenceReleased,true);
+assert.deepEqual(status.state,run.after.state);assert.equal(status.state.pointer.revision,backup.anchor.revision);assert.equal(status.pins,9);assert.equal(status.budget.remainingBytes,7271788);assert.equal(status.budget.chargedBytes,run.after.budget.chargedBytes);assert.equal(status.budget.writeTracking.pending,0);assert.equal(status.budget.writeTracking.sealed,true);assert.equal(status.budget.writeTracking.window.closed,true);assert.equal(status.fenceActive,false);assert.equal(status.publisher,'paused');
+const version=await load(prefix+'disabled-version-private.json');assert.equal(version.id,'1075e061-1180-4248-9cc0-01aed39ee191');
+const bindings=version.resources.bindings;assert.ok(Array.isArray(bindings)&&bindings.length>10);assert.equal(bindings.some(x=>x.name==='PLAYTT_EDITOR_READBACK'),false);assert.equal(bindings.find(x=>x.name==='WORDPRESS_STATE_BUCKET').bucket_name,'playtt-wordpress-session-audit');
+const events=(await readFile('artifacts/playtt-session-provider-readback-provider-observation.jsonl','utf8')).trim().split('\n').map(x=>JSON.parse(x));
+assert.ok(events.length>0);assert.ok(events.every(x=>x.outcome==='ok'));
+assert.equal(events.flatMap(x=>x.exceptions).length,0);assert.equal(events.flatMap(x=>x.requestFailures||[]).length,0);
+const traces=events.flatMap(x=>x.traces),readbacks=traces.filter(x=>x.phases.some(p=>p.name==='readback.cold-dispose'));assert.equal(readbacks.length,1);assert.ok(traces.every(x=>x.completed));const trace=readbacks[0];assert.equal(trace.runtime,'cold');
+const stages=trace.phases.map(x=>x.name);for(const name of ['canonical.manifest.read','canonical.restore-pack.fetch','request.php','readback.dispose','lease.release'])assert.ok(stages.includes(name));assert.equal(stages.some(x=>/commit|retirement.persist|canonical.persist|canonical.changes.collect/.test(x)),false);
+const index=traces.indexOf(trace),cold=traces.slice(index+1).find(x=>x.operation==='read');assert.ok(cold);assert.equal(cold.runtime,'cold');assert.ok(cold.phases.some(x=>x.name==='canonical.restore-pack.fetch'));assert.equal(cold.phases.some(x=>x.name.startsWith('readback.')),false);
+const packs=events.flatMap(x=>x.snapshotPhases).filter(x=>x.stage==='encode-and-upload');assert.equal(packs.length,1);assert.equal(packs[0].bytes,backup.anchor.packBytes);
+const tailLog=await readFile(prefix+'tail-private.log','utf8');assert.ok(tailLog.trim().endsWith('{"tailEnded":null}'));
+const deployed=await readFile(prefix+'deploy-private.log','utf8'),disabled=await readFile(prefix+'disabled-deploy-private.log','utf8');assert.ok(deployed.includes('Current Version ID: b4e9f561-9606-42dd-94af-3384fde3ef44'));assert.ok(disabled.includes('Current Version ID: '+version.id));
+const summary={at:new Date().toISOString(),result:'pass',scope:run.scope,sourceHashes:run.sourceHashes,packageHashes:run.packageHashes,
+ deployments:{temporaryEnabledVersion:'b4e9f561-9606-42dd-94af-3384fde3ef44',finalDisabledVersion:version.id,actualVersionBindingsOmitReadback:true,checkedInConfigChanges:0,productionChanged:false},
+ native:{requests:run.nativeRequests,policyInEditorHtmlExact:true,writeAttempts:1,readbackAttempts:1,writeVersion:write.version,readbackVersion:read.version,canonicalRevision:read.revision,rawContentExact:true,sameSessionColdReadExact:true,nativeLogoutCompleted:true,writeWallMs:write.wallMs,readbackWallMs:read.wallMs,totalClientWorkflowMs:run.clientWorkflowMs},
+ telemetry:{durationLimitSeconds:330,events:events.length,okEvents:events.length,traces:traces.length,completedTraces:traces.length,exceptions:0,requestFailures:0,readbackCold:true,readbackTraceMs:trace.totalMs,readbackCommitPhase:false,nextOrdinaryReadCold:true,nextOrdinaryReadTraceMs:cold.totalMs,fullPacks:1,fullPackBytes:packs[0].bytes,maximumSampledWasmHeapBytes:Math.max(0,...events.flatMap(x=>x.memory).map(x=>x.heapBytes||0)),wholeIsolateMemoryMeasured:false,tailEndedByBound:true},
+ writeAccounting:{limitBytes:run.limits.maxBytes,actualBytes:run.chargedBytes,actualPuts:run.chargedPuts,remainingBytes:status.budget.remainingBytes,appendedDraftUtf8Bytes:Buffer.byteLength(owner.expectedContent)-Buffer.byteLength(owner.expectedBefore.content),includesLoginSaveLogoutAndMetadata:true,notAccountSpendingCap:true},
+ backup:{version:122,revision:backup.anchor.revision,files:backup.files,objects:backup.objects,pins:9,unrelatedRowsFilesMediaThemeExact:true,oldRevisionsPreserved:true,addedOwnedRevision:'201',sessionAndPreferenceRowsExactAfterLogout:true,independentImportVerified:true},
+ containment:{closed:true,sealed:true,pending:0,fenceActive:false,publisher:'paused',stateUnchangedAfterFlagDisabled:true},
+ limitations:['Client-side body suppression in pinned api-fetch running in a Node VM; native browser UI and real server/network disconnect not exercised in this provider run.','Eight native HTTP requests and one save do not establish broad or long-term reliability.','Sampled WASM heap does not measure whole-isolate memory; zero-duration trace phases do not mean zero CPU work.','Full-pack write amplification, native save latency, real devices/IME, concurrency and sustainable free retention remain open.']};
+await writeFile(prefix+'inspection.json',JSON.stringify(summary,null,2)+'\n');console.log(JSON.stringify(summary));

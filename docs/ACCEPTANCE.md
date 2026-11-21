@@ -1,5 +1,15 @@
 # Let’s Play 驗收狀態
 
+## 私人 Cloudflare 保存讀回通過；旗標已停用並完成第9份備份（2026-11-21）
+
+在既有私人session-audit暫時以CLI旗標啟用已通過本機測試的候選，部署b4e9f561；Cloudflare介面當時仍Workers Free、R2當期$0、2.32GB。以真實原生HTTP登入editor2、取得繁中編輯頁並逐字驗證內嵌middleware，再讓固定7.1.4 api-fetch在Node VM執行一次PUT（核心轉POST），客戶端收到且確認真實提交後才隱去成功本文。隨後一次GET讀回同canonical121／a4d93d57及完整正文，沒有重送寫入。這不是雲端瀏覽器UI或真實伺服器斷線測試。
+
+保存客戶端6073ms、讀回3937ms、兩步合計10022ms；讀回的10秒期限只涵蓋後者。雲端讀回trace2981ms、冷載入且無commit；隨後同session的一般讀取亦冷啟動（trace2354ms），全文一致。原生登出後canonical122／6883819c。180秒／4MiB／64操作上限提前關窗封存，實用2,960,342bytes／18puts，8次原生請求；剩7,271,788bytes。330秒診斷143事件均ok、7/7trace完成、無觀察到exception或request failure；最高取樣WASM heap73,400,320bytes不是whole-isolate量測。
+
+新增203bytes的測試段落仍產生一份2,295,783bytes完整包，保存延遲與完整包放大仍待改善。完整下載、獨立匯入及精確比較通過：298檔／300物件，只改自有193正文／日期、預期修訂201、鎖72與單調計數；其他修訂、帳號、session／偏好、媒體及主題完全相同。保留原8份歷史並新增pin9。備份／pin過程未改canonical或R2計量。
+
+封存後以原設定重部署1075e061；實際版本bindings確認沒有PLAYTT_EDITOR_READBACK，20份設定檔始終未改，來源與bcbc9d9相同。正式Pages與原視覺維持、publisher paused、fence解除、pending0、PR #4 draft、目標active。測試、部署、備份、pin及限時診斷程序均已結束。接續優先降低內容小改的完整包寫入成本與保存延遲，再擴充雲端原生UI、記憶體、實機／IME及長期免費驗收。新增4個操作／核對工具；詳見 `docs/verification/cloudflare-readback-provider-summary.json`、`cloudflare-readback-provider-backup.json`及runbook。以下為歷史紀錄。
+
 ## 未提交儲存與多分頁保護：兩個原生負向情境通過（2026-11-21）
 
 使用最終8612eae候選的相同來源，在全新本機副本操作原生Chrome編輯器。未提交情境在呼叫WordPress寫入前故意回傳空本文：一次讀回得到舊內容，原錯誤與可用的儲存按鈕保留，原生textarea仍逐字相同；手動重試一次成功，完整程序重啟後同session內容一致。版本121→128→128→129→134，故障與讀回快照完全相同；重試才新增唯一預期修訂201。
