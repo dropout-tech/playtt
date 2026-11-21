@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 最新本機候選：content-overlay，雲端未啟用（2026-11-21）
+
+`PLAYTT_CONTENT_OVERLAY=content-v1`僅在本機Miniflare與dry-run參數測試，20份組裝設定未改。來源增加相容讀取器，但目前雲端1075e061仍是舊來源，canonical122／9pins／餘7,271,788bytes。任何後續私人測試須從最新readback-provider owner／備份122接續，不重跑已完成的118一次性工具；目前仍closed、sealed、pending0、publisher paused。
+
+新格式保留完整清單並直接引用完整base；既有v1/v2讀取器不支援。先用相容程式停用寫入旗標並保存成完整快照、核對備份與冷啟動，再考慮降版；單純關旗標或部署舊程式不等於資料已轉回。離線materialization只建立新的本機完整bundle，不變更雲端pointer。既有retention proposal對此格式會拒絕，不可跳過檢查、刪base或清除pin。runbook：`experiments/cloudflare-wordpress/content-overlay/README.md`；本機工具只能對新副本執行，不能部署fault wrapper。
+
 ## 私人 Cloudflare 保存讀回通過；旗標已停用並完成第9份備份（2026-11-21）
 
 在既有私人session-audit暫時以CLI旗標啟用已通過本機測試的候選，部署b4e9f561；Cloudflare介面當時仍Workers Free、R2當期$0、2.32GB。以真實原生HTTP登入editor2、取得繁中編輯頁並逐字驗證內嵌middleware，再讓固定7.1.4 api-fetch在Node VM執行一次PUT（核心轉POST），客戶端收到且確認真實提交後才隱去成功本文。隨後一次GET讀回同canonical121／a4d93d57及完整正文，沒有重送寫入。這不是雲端瀏覽器UI或真實伺服器斷線測試。

@@ -1,0 +1,89 @@
+{
+  "at": "2026-11-21T02:12:22.181891+00:00",
+  "result": "pass",
+  "scope": "Optional bounded content-overlay writer; local native WordPress HTTP and storage recovery, no deployment",
+  "schema": "playtt/canonical-content-overlay/v1",
+  "featureFlag": "PLAYTT_CONTENT_OVERLAY=content-v1",
+  "defaultEnabled": false,
+  "changedRuntimeSources": [
+    "src/worker.ts",
+    "src/playtt-maintenance-overlay.ts",
+    "src/playtt-content-overlay.ts"
+  ],
+  "sourceHashes": {
+    "src/worker.ts": "39e17a22d150e4ddb27b602c675df9ac4c015829b3b979a898097d313990d6bd",
+    "src/playtt-maintenance-overlay.ts": "be0104515c3853cd4010d13f5059231859842b0c38f618732c8d6026f7f9f06e",
+    "scripts/playtt-snapshot-bundle.mjs": "4262655fb0aef100b0401302622b81f9502896833bf7e3a8ab16737f3210e2aa",
+    "scripts/playtt-backup-pin-client.mjs": "e6bd721d08f6bef0e156f6a3416c57ea4a2e6bd28a1bd5c22c53440425048e84",
+    "src/playtt-content-overlay.ts": "367b2f462edf85f1ec0b8666538f90d896f3328a4e94ab8dc3f9475b28f188fc",
+    "tests/playtt-content-overlay.test.ts": "766725c8e1d1b9fba8218ccc29ab5dc643ebf043ace7341d21e9edbffa36fefb",
+    "scripts/playtt-content-overlay-local.mjs": "8fc0d07b86c4e10740cb572b9f088e6e77892ed25a0fe75ca45560ddbd44a564",
+    "scripts/playtt-content-overlay-status.mjs": "cf1bf7d9770e9034cbe671fd5f852a94102c990155afa785ce7e46c8b9e3a531"
+  },
+  "bounds": {
+    "manifestBytes": 262144,
+    "fullBaseCompressedAndDecodedBytes": 8388608,
+    "cumulativeReplacementBytes": 1048576,
+    "cumulativeChangedOrDeletedFilesIncludingTombstones": 64,
+    "maximumOverlayLayers": 1
+  },
+  "tests": {
+    "uniquePassed": 105,
+    "newContentCases": 10,
+    "unchangedV1V2Regressions": 21,
+    "backupBundleSnapshotReadbackWindowRegressions": 74,
+    "typecheck": "pass",
+    "dryRun": "20892.11 KiB / gzip: 7609.38 KiB",
+    "oldReadersFailClosed": true,
+    "legacyRetentionProposalRejectsNewFormat": true
+  },
+  "native": {
+    "baseline": 122,
+    "login": 123,
+    "save": 124,
+    "retry": 125,
+    "writerDisabledFull": 126,
+    "coldOverlayAndFullReadExact": true,
+    "oneNewRevision": "202",
+    "retryCreatedNoAdditionalRevision": true,
+    "nativeHttpRequests": 10,
+    "completeTraces": 10,
+    "traces": 10,
+    "newFullPacksWhileEnabled": 0,
+    "independentImportAndFullMaterializationExact": true,
+    "processesDisposed": true,
+    "externalRequests": 0
+  },
+  "payloadComparison": {
+    "overlay": 390905,
+    "fullPack": 2685575,
+    "reductionPercent": 85.44,
+    "scope": "One native save: changed object bytes + exact manifest bytes + optional full ZIP. Excludes pointer/coordinator writes, object deduplication and provider billing; not a provider latency comparison."
+  },
+  "productionChanged": false,
+  "cloudWrites": 0,
+  "privateDeployment": false,
+  "remoteStatus": {
+    "at": "2026-11-21T02:09:40.601Z",
+    "result": "pass",
+    "scope": "Read-only private operator state; no deployment, PHP requests or cloud writes",
+    "canonicalVersion": 122,
+    "revision": "6883819c-8ca2-4e26-b899-433c83aa4eea",
+    "pins": 9,
+    "chargedBytes": 41989784,
+    "remainingBytes": 7271788,
+    "pending": 0,
+    "sealed": true,
+    "closed": true,
+    "fenceActive": false,
+    "publisher": "paused",
+    "requests": 4
+  },
+  "limitations": [
+    "Native browser/IME and provider limits/performance not tested for this format.",
+    "Old-source rollback requires a materialized full snapshot first; disabling the writer alone does not convert an existing pointer.",
+    "Legacy retention proposal rejects this format; no history deletion or accounting reset.",
+    "Full base archive availability is verified by cold restore and pin/backup; warm saves recheck its manifest and all replacement objects, without downloading the full ZIP again.",
+    "Bounded overlays reduce amplification but do not establish sustainable free history or whole-isolate memory safety."
+  ]
+}

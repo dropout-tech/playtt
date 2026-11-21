@@ -1,0 +1,133 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -248,6 +248,7 @@
+ export interface RuntimeEnv {
+   WORDPRESS_STATE_BUCKET: R2Bucket
+   PLAYTT_METADATA_OVERLAY?: string
++  PLAYTT_CONTENT_OVERLAY?: string
+   PLAYTT_EDITOR_READBACK?: string
+   WORDPRESS_SITE_CONTEXTS?: string
+   WORDPRESS_PREVIEW_DOMAIN?: string
+@@ -1476,7 +1477,7 @@
+       if (!canonicalChanges || !publicationChanges) throw new Error("Canonical mutation completed without its persistence evidence.")
+       logMutationPhase(diagnosticsStartedAt, "php-request", retained, { canonicalCreated: canonicalChanges.created.length, canonicalChanged: canonicalChanges.changed.length, canonicalDeleted: canonicalChanges.deleted.length })
+       if (route === "static-artifact-import") await heartbeat?.("persisting-canonical", 70)
+-      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_METADATA_OVERLAY === 'v2' ? 'v2' : env.PLAYTT_METADATA_OVERLAY === 'v1' ? 'v1' : false)
++      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_CONTENT_OVERLAY === 'content-v1' ? 'content-v1' : env.PLAYTT_METADATA_OVERLAY === 'v2' ? 'v2' : env.PLAYTT_METADATA_OVERLAY === 'v1' ? 'v1' : false)
+       logPlayttRuntimeMemory("after-persist", runtime!, env)
+       if (route === "static-artifact-import") await heartbeat?.("canonical-prepared", 80)
+       if (!response) {
+@@ -1820,7 +1821,7 @@
+   return deriveWordPressAuthConstants(env.WORDPRESS_AUTH_SECRET ?? "", site.id)
+ }
+ 
+-async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay: false | 'v1' | 'v2' = false): Promise<MarkdownPointer> {
++async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' = false): Promise<MarkdownPointer> {
+   validateMarkdownChanges(changes)
+   const root = siteStorageKeys(site).root
+   const manifestCache = runtime.manifestCache ??= new PlayttRuntimeManifestCache<MarkdownManifest>()
+@@ -2158,7 +2159,7 @@
+   validateUploadMetadata(files.map((file) => ({ path: file.path, size: file.bytes.byteLength })))
+ }
+ 
+-async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay: false | 'v1' | 'v2' = false): Promise<MarkdownPointer> {
++async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' = false): Promise<MarkdownPointer> {
+   const revision = crypto.randomUUID()
+   const manifestKey = `${siteStorageKeys(site).markdownRevisionPrefix}/${revision}.json`
+   const persistedAt = new Date().toISOString()
+--- a/src/playtt-maintenance-overlay.ts
++++ b/src/playtt-maintenance-overlay.ts
+@@ -1,22 +1,27 @@
+-// Readers understand both formats; writer selection is explicit. The legacy
+-// module is unchanged, so a v1-only reader still rejects every v2 descriptor.
++// Writer selection is explicit. Original v1/v2 modules remain unchanged;
++// old readers reject the separate content format instead of misreading it.
+ import * as v1 from './playtt-metadata-overlay.js';
+ import * as v2 from './playtt-usermeta-overlay.js';
++import * as content from './playtt-content-overlay.js';
+ import type { RestorePackBucket } from './canonical-restore-pack.js';
+ import type { PlayttSnapshotManifest } from './playtt-snapshot-source.js';
+ export { readOverlayBytes, MAX_OVERLAY_MANIFEST, MAX_OVERLAY_PACK } from './playtt-metadata-overlay.js';
+-export type PlayttMetadataOverlay = v1.PlayttMetadataOverlay | v2.PlayttUsermetaOverlay;
+-export type OverlayManifest = v2.OverlayManifest;
+-export const isMetadataOverlay = (value:unknown):value is PlayttMetadataOverlay => v1.isMetadataOverlay(value)||v2.isUsermetaOverlay(value);
++export type PlayttMetadataOverlay = v1.PlayttMetadataOverlay | v2.PlayttUsermetaOverlay | content.PlayttContentOverlay;
++export type OverlayManifest = content.OverlayManifest;
++export const isMetadataOverlay = (value:unknown):value is PlayttMetadataOverlay => v1.isMetadataOverlay(value)||v2.isUsermetaOverlay(value)||content.isContentOverlay(value);
+ export function validateMetadataOverlay(manifest:OverlayManifest,root:string):void{
+-  if(v2.isUsermetaOverlay(manifest.restorePack))v2.validateUsermetaOverlay(manifest,root);
++  if(content.isContentOverlay(manifest.restorePack))content.validateContentOverlay(manifest,root);
++  else if(v2.isUsermetaOverlay(manifest.restorePack))v2.validateUsermetaOverlay(manifest as v2.OverlayManifest,root);
+   else v1.validateMetadataOverlay(manifest as v1.OverlayManifest,root);
+ }
+ export function readMetadataOverlay(bucket:RestorePackBucket,root:string,manifest:OverlayManifest){
+-  return v2.isUsermetaOverlay(manifest.restorePack)?v2.readUsermetaOverlay(bucket,root,manifest):v1.readMetadataOverlay(bucket,root,manifest as v1.OverlayManifest);
++  if(content.isContentOverlay(manifest.restorePack))return content.readContentOverlay(bucket,root,manifest);
++  return v2.isUsermetaOverlay(manifest.restorePack)?v2.readUsermetaOverlay(bucket,root,manifest as v2.OverlayManifest):v1.readMetadataOverlay(bucket,root,manifest as v1.OverlayManifest);
+ }
+-export function createMetadataOverlay(bucket:RestorePackBucket,root:string,next:PlayttSnapshotManifest,previous:OverlayManifest,version:'v1'|'v2'='v1'){
+-  if(version==='v2')return v2.createUsermetaOverlay(bucket,root,next,previous);
++export function createMetadataOverlay(bucket:RestorePackBucket,root:string,next:PlayttSnapshotManifest,previous:OverlayManifest,version:'v1'|'v2'|'content-v1'='v1'){
++  if(version==='content-v1')return content.createContentOverlay(bucket,root,next,previous);
++  if(content.isContentOverlay(previous.restorePack))return Promise.resolve(null);
++  if(version==='v2')return v2.createUsermetaOverlay(bucket,root,next,previous as v2.OverlayManifest);
+   // A compatible reader with the writer disabled/downgraded may materialize a
+   // full snapshot. It must never pass a v2 descriptor through the v1 validator.
+   if(v2.isUsermetaOverlay(previous.restorePack))return Promise.resolve(null);
+--- a/scripts/playtt-snapshot-bundle.mjs
++++ b/scripts/playtt-snapshot-bundle.mjs
+@@ -8,6 +8,7 @@
+ import {createCanonicalRestorePack,decodeCanonicalRestorePack,validateCanonicalRestorePackMetadata} from '../src/canonical-restore-pack.ts';
+ import {isMetadataOverlay,readMetadataOverlay,readOverlayBytes,MAX_OVERLAY_MANIFEST,MAX_OVERLAY_PACK} from '../src/playtt-maintenance-overlay.ts';
+ import {validatePlayttSnapshotSources} from '../src/playtt-snapshot-source.ts';
++import {isContentOverlay,readContentBytes} from '../src/playtt-content-overlay.ts';
+ 
+ const ROOT='sites/default',SCHEMA='playtt/snapshot-bundle/v1';
+ const MAX_OBJECTS=20004,MAX_BYTES=32*1024*1024,MAX_INDEX=8*1024*1024;
+@@ -48,7 +49,7 @@
+   const recording={async get(key){
+    if(cached.has(key)){const b=cached.get(key);return {size:b.length,arrayBuffer:async()=>Uint8Array.from(b).buffer};}
+    const limit=key===manifest.restorePack.base.manifestKey?MAX_OVERLAY_MANIFEST:MAX_OVERLAY_PACK;
+-   const b=await readOverlayBytes(bucket,key,limit);cached.set(key,b);return {size:b.length,arrayBuffer:async()=>Uint8Array.from(b).buffer};
++   const b=await (isContentOverlay(manifest.restorePack)?readContentBytes:readOverlayBytes)(bucket,key,limit);cached.set(key,b);return {size:b.length,arrayBuffer:async()=>Uint8Array.from(b).buffer};
+   }};
+   const restored=await readMetadataOverlay(recording,ROOT,manifest);
+   ({base,baseBytes,contents}=restored);pack=cached.get(base.restorePack.objectKey);assert.ok(pack);
+@@ -66,7 +67,7 @@
+  addObject(objects,base.restorePack.objectKey,pack);addContents(objects,base,baseContents);addContents(objects,manifest,contents);
+  const ordered=[...objects.values()].sort((a,b)=>a.key.localeCompare(b.key));
+  const payloadBytes=ordered.reduce((n,x)=>n+x.size,0);assert.ok(payloadBytes<=MAX_BYTES);
+- return {anchor,manifest,base,contents,objects:ordered,payloadBytes,format:isMetadataOverlay(manifest.restorePack)?'metadata-overlay':'full-pack'};
++ return {anchor,manifest,base,contents,objects:ordered,payloadBytes,format:isContentOverlay(manifest.restorePack)?'content-overlay':isMetadataOverlay(manifest.restorePack)?'metadata-overlay':'full-pack'};
+ }
+ 
+ async function boundedFile(path,limit){
+--- a/scripts/playtt-backup-pin-client.mjs
++++ b/scripts/playtt-backup-pin-client.mjs
+@@ -4,14 +4,15 @@
+ import { decodeCanonicalRestorePack } from '../src/canonical-restore-pack.ts';
+ import { backupPinInput } from '../src/playtt-backup-pins.ts';
+ import { isMetadataOverlay, readMetadataOverlay } from '../src/playtt-maintenance-overlay.ts';
++import { isContentOverlay } from '../src/playtt-content-overlay.ts';
+ 
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+-const boundedFile=async(file,limit)=>{const info=await stat(file);assert.ok(info.isFile()&&info.size>0&&info.size<=limit);const bytes=await readFile(file);assert.equal(bytes.length,info.size);return bytes;};
++const boundedFile=async(file,limit)=>{const info=await stat(file);assert.ok(info.isFile()&&info.size>=0&&info.size<=limit);const bytes=await readFile(file);assert.equal(bytes.length,info.size);return bytes;};
+ export async function verifiedBackupPin(directory) {
+   const bytes = await boundedFile(directory + '/manifest.json',256*1024), manifest = JSON.parse(bytes.toString('utf8'));
+   if(isMetadataOverlay(manifest.restorePack)) {
+     const baseBytes=await boundedFile(directory+'/base-manifest.json',256*1024),base=JSON.parse(baseBytes.toString('utf8'));
+-    const objects=new Map(manifest.files.map(f=>[f.objectKey,f.sha256]));
++    const objects=new Map([...manifest.files,...(manifest.uploads||[]),...(manifest.wpContent||[])].map(f=>[f.objectKey,f.sha256]));
+     const bucket={async get(key){
+       let file;
+       if(key===manifest.restorePack.base.manifestKey)file=directory+'/base-manifest.json';
+@@ -22,7 +23,7 @@
+     const verified=await readMetadataOverlay(bucket,'sites/default',manifest),pack=verified.base.restorePack;
+     const pin=backupPinInput({revision:manifest.revision,manifestKey:manifest.manifestKey,persistedAt:manifest.persistedAt,
+       manifestSha256:hash(bytes),packKey:pack.objectKey,packSha256:pack.sha256,packBytes:pack.size});
+-    return {pin,objects:verified.changed.length+3,reconstructedFiles:verified.contents.markdown.length+verified.contents.uploads.length+verified.contents.wpContent.length,format:'metadata-overlay-with-base',dependenciesVerified:true};
++    return {pin,objects:verified.changed.length+3,reconstructedFiles:verified.contents.markdown.length+verified.contents.uploads.length+verified.contents.wpContent.length,format:isContentOverlay(manifest.restorePack)?'content-overlay-with-base':'metadata-overlay-with-base',dependenciesVerified:true};
+   }
+   const pack = await readFile(directory + '/restore.zip');
+   const pin = backupPinInput({ revision: manifest.revision, manifestKey: manifest.manifestKey, persistedAt: manifest.persistedAt,

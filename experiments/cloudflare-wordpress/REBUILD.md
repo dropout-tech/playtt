@@ -90,3 +90,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 第9階段後續增加5個原生負向測試工具（未提交儲存與多分頁暫存保護），完整重建比對仍75來源，輔助／前置檔增至87份。20設定及可部署來源與8612eae相同；本輪不重生核心資產、不部署。見 `docs/verification/cloudflare-readback-negative-reassembly.json`。
 
 第9階段再增加4個有界provider HTTP／備份／pin／離線核對工具，75來源與20設定未改，輔助／前置檔共91份。私人測試以CLI暫時啟用旗標後已重部署停用；實際版本、狀態與重建證據見 `docs/verification/cloudflare-readback-provider-*.json`，不把測試部署當正式後台切換。
+
+## 第10個選用階段：有界內容差異快照（2026-11-21）
+
+完成前九個選用階段後，可另套用 `content-overlay/apply-local-candidate.py`。它修改worker、共用格式分派、bundle與pin client，新增格式、測試及兩個有界工具；驗證所有來源雜湊後才寫入。預設重建仍不包含此候選，20份設定不變且新旗標關閉。新讀取器支援完整包／v1／v2／content-v1，舊讀取器拒絕content-v1；降版需先materialize完整包。詳見 [content-overlay](content-overlay/README.md)；新重建證據見 `cloudflare-content-overlay-reassembly.json`。沒有部署或重新產生核心二進位資產。

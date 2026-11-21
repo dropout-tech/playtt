@@ -1,5 +1,9 @@
 # Let’s Play 驗收狀態
 
+## 2026-11-21 補充：有界內容差異快照（僅本機）
+
+A04／A06／A07取得局部進展：原生HTTP保存、回應遺失後冷讀、同內容重試、獨立備份匯入，以及停用新寫入器後完整快照／冷啟動均通過。105項檢查、10/10本機trace完成；單次應用payload390,905對2,685,575bytes。這不是雲端費用、瀏覽器、實機或長期免費驗收。新格式／旗標未部署；舊讀取器及retention工具拒絕，需先完整materialize才可降版。雲端仍122／9pins且計量未增。A04、A06、A07與A20仍不可據此整項結案；詳見 `cloudflare-content-overlay-*` 證據與 `experiments/cloudflare-wordpress/content-overlay/README.md`。
+
 ## 私人 Cloudflare 保存讀回通過；旗標已停用並完成第9份備份（2026-11-21）
 
 在既有私人session-audit暫時以CLI旗標啟用已通過本機測試的候選，部署b4e9f561；Cloudflare介面當時仍Workers Free、R2當期$0、2.32GB。以真實原生HTTP登入editor2、取得繁中編輯頁並逐字驗證內嵌middleware，再讓固定7.1.4 api-fetch在Node VM執行一次PUT（核心轉POST），客戶端收到且確認真實提交後才隱去成功本文。隨後一次GET讀回同canonical121／a4d93d57及完整正文，沒有重送寫入。這不是雲端瀏覽器UI或真實伺服器斷線測試。
