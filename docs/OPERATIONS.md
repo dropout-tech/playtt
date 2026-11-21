@@ -1,5 +1,14 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 候選原生儲存、完整重啟與資料核對（2026-11-22）
+
+單行路徑候選已由原生Gutenberg修改繁中段落並儲存：1869bytes精確、草稿狀態；dispose整個workerd、確認連接埠關閉後，以同一持久資料與寫窗重啟。state／正文／預算精確，新instance已確認；原生冷重開仍有修改內容、已儲存及11筆修訂。原生登出後原session全保留、新session移除。
+
+封存後核對因WordPress正常浮動草稿日期更新觸發過嚴assertion；已對照固定核心5356–5371行，唯讀匯出後離線精確驗證。LOCAL191、304物件／298檔獨立import與full materialization一致，500,144bytes／30puts、closed／sealed／pending0、程序結束。只有指定草稿、revision209、edit_lock及序列更新，其餘資料精確。
+
+227個完成請求沒有HTTP錯誤，但登入階段捕捉8筆「Network connection lost.」，無stack，原因與先前未分類例外關係仍未證明。中央runtime／正式官網／雲端未變，Cloudflare請求與部署0；未宣稱provider記憶體／持續免費／實體IME驗收。下一步定位例外及獨立還原讀回；目標active、PR4 draft。詳見experiments/cloudflare-wordpress/path-save/README.md。
+
+
 ## 路徑處理單行候選與原生配對量測（2026-11-22）
 
 從JS分配樣本定位FS.lookupPath每段重做正規化；候選只改成已處理片段的字串串接，不快取節點、不改檔案權限或PHP/WASM。固定PHP的1,876案例逐項與原版一致，涵蓋symlink／mount／cwd／改名刪除及PHP繁中讀寫。完整來源兩次dry-run輸出只差1條statement、5二進位模組相同。

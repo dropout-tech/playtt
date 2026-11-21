@@ -1,3 +1,5 @@
+接續：[候選原生繁中儲存與完整重啟核對](./path-save/README.md)。本機正文保存通過；connection-loss例外原因仍開放，未採用／部署。
+
 接續：[路徑處理單行候選與完整來源原生配對量測](./path-join/README.md)；本機改善證據，未採用／部署，原例外仍未解。
 
 接續：[原生編輯器保留記憶體與PHP buffer歸屬核對](./retained-native/README.md)；仍保留一個未分類例外，雲端181未變。

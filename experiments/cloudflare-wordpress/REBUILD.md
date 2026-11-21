@@ -1,3 +1,5 @@
+最新本機診斷：[path-save](path-save/README.md)，在path-join候選組裝後增加5個工具，完成原生儲存／完整重啟與封存後獨立核對。原生runner已修正浮動草稿日期驗證，保留原失敗證據；已完成owner不可重播。中央runtime與舊回復建置不變。
+
 最新本機選用候選：[path-join](path-join/README.md)。先產生原固定PHP loader，再在獨立目錄執行`python path-join/apply-loader-candidate.py --runtime <runtime> --apply`；核對完整SHA，只改1條statement。此候選尚未部署或採用到中央runtime，完整保存／重啟驗證仍待；舊回復建置保持原generator。
 
 # 從固定上游重建目前候選

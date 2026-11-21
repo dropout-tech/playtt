@@ -1,0 +1,29 @@
+{
+  "schema": "playtt/path-save-controller-evidence/v1",
+  "source": "Successful controller replies observed in this execution; transcribed after the final verifier rejected floating draft date. Not a separately captured raw server log.",
+  "saved": {
+    "saved": true,
+    "version": 187,
+    "receiptVersion": 186
+  },
+  "restart": {
+    "fullWorkerdDisposed": true,
+    "bothPortsClosed": true,
+    "newInstance": true,
+    "stateExact": true,
+    "allDataExact": true,
+    "budgetExact": true,
+    "sameWindow": true,
+    "noReseedOrRearm": true,
+    "version": 188,
+    "chargedBytes": 350033
+  },
+  "cold": {
+    "coldContentExact": true,
+    "version": 189
+  },
+  "finish": {
+    "sealed": true,
+    "pending": 0
+  }
+}
