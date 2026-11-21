@@ -1,5 +1,14 @@
 # PLAYTT 執行進度
 
+## 獨立原生還原通過，路徑優化納入研究建置（2026-11-22）
+
+從前輪LOCAL191 materialized full pack建立全新空環境，原生登入、十段繁中草稿、11筆修訂及209差異畫面可用；原生登出後全部原session／正文／修訂／媒體／主題精確。最終LOCAL198、301物件／298檔，198,548bytes／21puts、closed／sealed／pending0／程序結束，只變edit_lock與options序列802→812。
+
+另以同一bundle的固定只讀core JS，在未執行PHP／未載入網站資料下，主動取消在途請求重現「Network connection lost.」；前後完整下載SHA精確。這證明可由客戶端取消觸發，不能倒補先前8筆的原因。自然跳轉原生流程exception0，但保留1筆未捕捉路由的REST403，沒有隱藏或放寬權限。
+
+中央研究generator及產物正式採用已驗證的單行路徑優化，完整SHA等於前輪測試候選；check不改檔、未知產物拒絕、歷史generator／12個凍結模組可回復。82來源與20設定不變，雲端／正式Pages不部署。接續記憶體峰值與繁中初始化收斂；provider／長期免費／實體IME及完整驗收仍開放，目標active、PR4 draft。詳見experiments/cloudflare-wordpress/materialized-native/README.md。
+
+
 ## 候選原生儲存、完整重啟與資料核對（2026-11-22）
 
 單行路徑候選已由原生Gutenberg修改繁中段落並儲存：1869bytes精確、草稿狀態；dispose整個workerd、確認連接埠關閉後，以同一持久資料與寫窗重啟。state／正文／預算精確，新instance已確認；原生冷重開仍有修改內容、已儲存及11筆修訂。原生登出後原session全保留、新session移除。

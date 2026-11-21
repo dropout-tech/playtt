@@ -1,3 +1,5 @@
+接續：[獨立原生還原、取消請求定位與中央研究generator採用](../materialized-native/README.md)；雲端未部署，歷史產物保持不變。
+
 接續：[候選原生繁中儲存與完整重啟核對](../path-save/README.md)。本機正文保存通過；connection-loss例外原因仍開放，未採用／部署。
 
 # 檔案路徑重複正規化：本機候選與原生配對量測

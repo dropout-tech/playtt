@@ -1,0 +1,144 @@
+{
+  "schema": "playtt/materialized-native-and-disconnect-audit/v1",
+  "at": "2026-11-21T19:07:17.002Z",
+  "result": "independent-materialized-native-restore-pass; controlled-client-cancellation-reproduced",
+  "localOnly": true,
+  "cloudRequests": 0,
+  "sourceLocalVersion": 191,
+  "finalLocalVersion": 198,
+  "sourceFullPack": true,
+  "emptyNewRuntimeSeededFromIndependentMaterialization": true,
+  "sourceSnapshotContentsExact": true,
+  "contentBytes": 1869,
+  "contentSha256": "5b2c57c148764bc377da85de0f85cabcc85a86587bc169356fa6be996ca79d2a",
+  "browser": {
+    "schema": "playtt/materialized-native-browser/v1",
+    "at": "2026-11-21T19:00:33.161Z",
+    "gateNaturalLoginForm": true,
+    "gateRepeatedNavigationLoginForm": true,
+    "dashboard": true,
+    "canvas": {
+      "present": true,
+      "paragraphs": 10,
+      "expectedChinese": true,
+      "saved": true,
+      "revisions11": true,
+      "draft": true
+    },
+    "revisionView": {
+      "opened": true,
+      "latest209": true,
+      "newTextInsertionVisible": true,
+      "restoreClicked": false
+    },
+    "loggedOut": true,
+    "contentEdited": false,
+    "physicalDeviceOrImeTested": false
+  },
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json"
+  ],
+  "optionSequence": {
+    "before": "802",
+    "after": "812"
+  },
+  "allOtherFilesExact": true,
+  "postsAndRevisionsExact": true,
+  "allOriginalSessionsExactNewSessionRemoved": true,
+  "mediaAndThemeExact": true,
+  "independentObjects": 301,
+  "independentFiles": 298,
+  "chargedBytes": 198548,
+  "chargedPuts": 21,
+  "closed": true,
+  "sealed": true,
+  "pending": 0,
+  "localProcessesDisposed": true,
+  "nativeObservation": {
+    "events": 753,
+    "requests": 218,
+    "statusCounts": {
+      "200": 203,
+      "302": 12,
+      "303": 2,
+      "403": 1
+    },
+    "exceptions": 0,
+    "abortSignals": 0,
+    "wrapperThrows": 0,
+    "httpErrors": [
+      {
+        "at": 1795287593904,
+        "label": "post-first",
+        "kind": "request",
+        "category": "rest",
+        "method": "GET",
+        "status": 403,
+        "wallMs": 556
+      }
+    ],
+    "rest403RouteUncaptured": true,
+    "phases": {
+      "bootstrap": {
+        "requests": 9,
+        "assets": 0
+      },
+      "gate-natural": {
+        "requests": 28,
+        "assets": 23
+      },
+      "gate-repeat": {
+        "requests": 8,
+        "assets": 0
+      },
+      "login": {
+        "requests": 99,
+        "assets": 91
+      },
+      "post-first": {
+        "requests": 63,
+        "assets": 51
+      },
+      "logout": {
+        "requests": 6,
+        "assets": 0
+      },
+      "closing": {
+        "requests": 5,
+        "assets": 0
+      }
+    }
+  },
+  "staticDisconnect": {
+    "asset": {
+      "path": "/wp-includes/js/dist/components.js",
+      "bytes": 3821298,
+      "sha256": "60d45be44743433355e3fd6d8d027747b937e67555f44012cb5761b01f9e274e"
+    },
+    "completedControlBeforeAndAfterExact": true,
+    "afterHeadersCancellationExceptions": 0,
+    "beforeHeadersCancellation": {
+      "headersNotYetObserved": true,
+      "clientError": "ECONNRESET",
+      "exceptionText": "Uncaught Error: Network connection lost.",
+      "exceptions": 1,
+      "stackAvailable": false
+    },
+    "requestAbortSignals": 0,
+    "wrapperThrows": 0,
+    "phpInvoked": false,
+    "wordPressDataSeeded": false,
+    "r2Unchanged": true,
+    "localProcessesDisposed": true
+  },
+  "limitations": [
+    "One REST GET403 during the editor/revision phase remains route-unattributed; canvas and new revision rendered. Do not assume it is the previously classified global-styles permission response.",
+    "Natural redirect loaded23 asset requests; repeated redirect had0 assets due cache, so those phases are not a cache-matched causal comparison.",
+    "Controlled before-headers cancellation reproduces the same workerd message without PHP; previous8 browser events still lack cancellation/request correlation.",
+    "Request.signal abort listeners did not fire even for the controlled disconnect; absence of that event is not proof of no client cancellation.",
+    "Earlier unclassified exception remains unclassified. No application error is hidden or suppressed.",
+    "Native materialized restore tested login/read/revision view/logout; did not edit/publish or click revision restore in this fixture.",
+    "No provider memory/CPU, sustained-Free or physical-device/IME acceptance."
+  ]
+}

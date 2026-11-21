@@ -1,3 +1,5 @@
+接續：[獨立原生還原、取消請求定位與中央研究generator採用](../materialized-native/README.md)；雲端未部署，歷史產物保持不變。
+
 # 路徑候選：原生繁中儲存與完整重啟
 
 2026-11-22（台北）。固定候選bundle SHA `824e974b27bf37302cc6607a840985f56b89fedc19e899e3e6140d8ac66cb2fa`，沿用[上一輪完整來源建置](../path-join/README.md)。這輪補上候選的真實Gutenberg編輯與儲存、完整workerd程序重啟、原生登出及備份核對。中央runtime與雲端仍未採用此候選，正式Pages／原視覺維持現況。

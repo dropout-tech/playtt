@@ -1,0 +1,33 @@
+{
+  "schema": "playtt/loader-research-adoption/v1",
+  "at": "2026-11-21T19:10:10.709786+00:00",
+  "result": "pass",
+  "centralResearchGeneratorAdopted": true,
+  "centralGeneratedLoaderAdopted": true,
+  "generatorBeforeSha256": "4abbc5d814bff5d21ab3da450ed59e251060da527ece8272ab7404d67d61a493",
+  "generatorAfterSha256": "1932f63ff7d7b9196d6f7d60ecdfbc2874b8a6ee476f734e3c9a1d2afc74437a",
+  "baselineGeneratedSha256": "9eee1c4bf010ff84741d82c5143689e76c2d06cd0c877dc919c6ecd202b9b666",
+  "adoptedGeneratedSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+  "exactPreviouslyNativeTestedOutput": true,
+  "cases": [
+    {
+      "generator": "historical",
+      "outputSha256": "9eee1c4bf010ff84741d82c5143689e76c2d06cd0c877dc919c6ecd202b9b666",
+      "freshGeneratedOutputExact": true
+    },
+    {
+      "generator": "adopted",
+      "outputSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+      "freshGeneratedOutputExact": true,
+      "checkOnlyNoWrite": true,
+      "unknownOutputRefusedWithoutMutation": true
+    }
+  ],
+  "minimalGeneratorFixture": "Actual pinned package.json and php_8_3.js copied locally; not a complete dependency/runtime installation",
+  "typescriptSourcesUnchanged": 82,
+  "frozenCandidateAndFallbackModulesUnchanged": 12,
+  "historicalGeneratorPreserved": true,
+  "cloudRequests": 0,
+  "deployed": false,
+  "productionChanged": false
+}
