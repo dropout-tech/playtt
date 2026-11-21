@@ -1,3 +1,5 @@
+接續：[相同原生命令流程重現403並核對全域樣式權限](./rest-route/README.md)；本機證據，雲端181未變。
+
 最新：[181備份的繁中原生編輯器本機量測](./editor-profile/README.md)；雲端181不變，本機191不可替代。
 
 最新：[舊版套件已在私人Cloudflare完成原生回復及冷讀](./old-provider-native/README.md)；雲端181／pin16／餘62,344。

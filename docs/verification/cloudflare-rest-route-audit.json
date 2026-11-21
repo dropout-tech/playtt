@@ -1,0 +1,95 @@
+{
+  "schema": "playtt/native-rest-route-audit/v1",
+  "at": "2026-11-21T17:32:47.085Z",
+  "result": "pass",
+  "localOnly": true,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "sourceCommit": "97a92c8a32cd58931d57fa5f17434b943976331e",
+  "baseline": 181,
+  "finalLocalVersion": 190,
+  "roles": {
+    "userId": 2,
+    "role": "editor",
+    "editPages": true,
+    "editOthersPages": true,
+    "editThemeOptions": false,
+    "administratorEditThemeOptions": true,
+    "rolesChanged": false
+  },
+  "reproducedError": {
+    "at": 1795282049980,
+    "label": "commands",
+    "category": "rest",
+    "method": "GET",
+    "status": 403,
+    "wallMs": 570,
+    "route": "/wp-json/wp/v2/global-styles/:id",
+    "context": "edit",
+    "errorCode": "rest_forbidden_context",
+    "errorRead": "parsed"
+  },
+  "historicalAttribution": "Same native command-palette workflow reproduces the single REST403. Earlier event lacked route/code; attribution of that earlier individual event remains an inference.",
+  "requestCount": 224,
+  "statusCounts": {
+    "200": 213,
+    "302": 9,
+    "303": 1,
+    "403": 1
+  },
+  "capturedExceptions": 0,
+  "browser": {
+    "at": "2026-11-21T17:29:12.629Z",
+    "commandPaletteOpened": true,
+    "courseSearchReturnedEditablePage": true,
+    "courseEditorCanvas": true,
+    "courseTitleVisible": true,
+    "draftEditorCanvas": true,
+    "draftParagraphs": 10,
+    "draftSavedIndicator": true,
+    "loggedOut": true,
+    "contentEdited": false
+  },
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/usermeta.json",
+    "_tables/postmeta.json",
+    "page/class.md"
+  ],
+  "classContentExact": true,
+  "classEncodingMarkerVerified": true,
+  "postsAndRevisionsExact": true,
+  "allOtherContentsMediaThemeExact": true,
+  "allOriginalSessionsExact": true,
+  "newSessionRemoved": true,
+  "preferenceChange": "Only recent command page-26 and its timestamp; all other user metadata exact.",
+  "postmetaChange": "Existing lock193 and new lock26/meta77; all previous other metadata exact.",
+  "sequenceChanges": {
+    "wp_options": {
+      "before": 784,
+      "after": 794
+    },
+    "wp_postmeta": {
+      "before": 76,
+      "after": 77
+    }
+  },
+  "backup": {
+    "objects": 305,
+    "files": 298,
+    "independentImportExact": true
+  },
+  "window": {
+    "bytes": 465316,
+    "operations": 27,
+    "closed": true,
+    "sealed": true,
+    "pending": 0
+  },
+  "localProcessesDisposed": true,
+  "limitations": [
+    "No permission expansion or request suppression applied.",
+    "Native command search and two editor canvases verified locally; no content save or IME test in this run.",
+    "No provider state/billing refresh, whole-isolate memory, CPU or long-term Free acceptance."
+  ]
+}

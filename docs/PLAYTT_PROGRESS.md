@@ -1,5 +1,14 @@
 # PLAYTT 執行進度
 
+## 原生命令選單REST403已定位（2026-11-22）
+
+同雲端181備份／97a92c8固定程式的新本機副本：編輯者開命令選單後global-styles/:id?context=edit回403／rest_forbidden_context。實際editor角色無edit_theme_options，三個固定核心檔案及官方權限判斷吻合；不放寬權限或隱藏回應。課程搜尋與真實課程畫布、draft193十段及登出均通過。上一輪缺路由的403只能據此推論，未倒補原證據。
+
+LOCAL190、465,316bytes／27ops，closed／sealed／pending0／程序結束；305物件／298檔獨立備份精確，全部原session保留、新session移除。正文／修訂／媒體／主題未變；列明正常編輯鎖、命令偏好、兩項序列和class.md完整性標記變更。224請求含1個已分類403，捕捉exception0，無內容保存／IME驗收。
+
+Cloudflare請求／部署0，82來源／20設定未改。正式Pages／原視覺不變，雲端仍是最後16:52:39.597Z讀值181／pin16／餘62,344。接續受控PHP／保留記憶體與唯讀用量分析；全目標active、PR4 draft。詳見experiments/cloudflare-wordpress/rest-route/README.md。
+
+
 ## 原生繁中編輯器本機記憶體／延遲量測（2026-11-22）
 
 以雲端181獨立備份與固定97a92c8模組，完成真實Gutenberg兩次載入、管理員網站編輯器及兩帳號登出。原10段／10修訂可見；PHP heap最高72.5MiB，編輯器HTML1345／1339ms、網站編輯器1153ms。這些是本機單次樣本，不是整體isolate、雲端CPU或畫布就緒效能驗收；保留1筆未定位REST403。
