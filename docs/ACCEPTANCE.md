@@ -1,5 +1,13 @@
 # Let’s Play 驗收狀態
 
+## 私人Cloudflare復原177→178完成並封存（2026-11-22）
+
+實際provider HTTP採用通過：432,931bytes／7puts，含獨立備份與封存70,992ms；原14pins保留，新增目標第15pin。API獨立下載8相依物件／2,802,244bytes，再匯入303物件／298檔，原內容／媒體／主題完全相同。觀測164事件皆outcome ok、無exception，保留160個200／4個404；未測PHP編輯與provider故障注入。
+
+最後16:22:24.269Z核對coordinator178／commit receipt／R2 current.json精確一致，餘650,908、closed／sealed／pending0、fence解除、publisher paused。最後私人Worker版本8c615f36-9771-4798-834e-df40df63fdf9，臨時recovery及其他optional writer旗標都關；相容reader保留。Workers Free/$0與R2本期$0.00已在登入管理頁確認，帳單可能延遲、DO詳細用量未刷新。
+
+本輪82來源／20設定不改、沿用95測試，新增3工具＋source-plan與provider證據；最初OAuth401已正常refresh，失敗log保留，未新增權限。僅兩次私人部署，正式Pages與視覺不變，無加總額度／付費／退款／刪歷史pin。新起點是178／pin15／餘650,908，勿重跑177採用。下一步準備真正舊source相容部署及受限原生流程；效能／初始化／長期免費／實機完整驗收仍開放。詳見experiments/cloudflare-wordpress/recovery-provider/README.md；完整目標active、PR4 draft。以下保留歷史。
+
 ## 完整HTTP復原採用已在實際本機Worker驗證（2026-11-22）
 
 新增operator有界讀取與pointer CAS：核對owned fence、協調器目標版本、來源／目標receipt及pins，再以精確來源與ETag條件更新；第三方值不覆寫。client持久記錄固定operationId與plan binding，保存完成後才送HTTP，foreign receipt不能結清；unknown仍保留pending。功能預設關閉、20設定不變。

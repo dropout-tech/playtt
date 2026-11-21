@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-21T16:24:33.810531+00:00",
+  "result": "pass",
+  "basis": "Previous recovery-adoption assembly plus provider tools; no upstream rebuild",
+  "sources": 82,
+  "sourceCommit": "97a92c8a32cd58931d57fa5f17434b943976331e",
+  "sourcesUnchanged": true,
+  "configsUnchanged": 20,
+  "newFiles": 4,
+  "prerequisites": 88,
+  "helpers": 383,
+  "helpersMatchingRuntime": 382,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "privateWorkerDeployments": 2,
+  "productionChanged": false,
+  "testsFromUnchangedSource": 95,
+  "finalVersion": "8c615f36-9771-4798-834e-df40df63fdf9",
+  "canonicalVersion": 178,
+  "pinCount": 15,
+  "remainingBytes": 650908
+}

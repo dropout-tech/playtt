@@ -1,5 +1,7 @@
 # 復原 pointer 條件更新與完整 HTTP 採用
 
+最新[私人provider驗證](../recovery-provider/README.md)已實際完成177→178、獨立備份與封存，432,931bytes／7puts，原14pins保留並新增第15；最後相容reader仍在、復原端點已關。以下保留本機證據。
+
 協調器已採用新版時，R2 current.json 仍可能停在舊版。本候選新增有界讀取與條件式 pointer 更新，將既有採用程序接到實際 HTTP 端點；用真實 177 備份在獨立本機副本完成 177→178 復原。**尚未部署 Cloudflare，正式 Pages／原視覺維持現況。**
 
 ## Server 行為
