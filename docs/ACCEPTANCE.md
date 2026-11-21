@@ -1,5 +1,14 @@
 # Let’s Play 驗收狀態
 
+## 原生繁中編輯器本機記憶體／延遲量測（2026-11-22）
+
+以雲端181獨立備份與固定97a92c8模組，完成真實Gutenberg兩次載入、管理員網站編輯器及兩帳號登出。原10段／10修訂可見；PHP heap最高72.5MiB，編輯器HTML1345／1339ms、網站編輯器1153ms。這些是本機單次樣本，不是整體isolate、雲端CPU或畫布就緒效能驗收；保留1筆未定位REST403。
+
+本機191／304物件／298檔獨立備份精確，496,779bytes／30ops、closed／sealed／pending0／程序結束。內容／修訂／媒體／主題不變；只變edit_lock、過期管理員session及options序列。29筆移除session全部已過期，未過期原session精確保留、兩次新登入移除。原過嚴session相等檢查失敗及後續唯讀稽核紀錄全部保留。
+
+Cloudflare請求0、82來源／20設定未改，正式Pages／視覺不變。雲端最後讀值仍是16:52:39.597Z的181／pin16／餘62,344，不可拿本機191替代；不得新開完整雲端寫入或加額度。下一步定位403及受控PHP／保留記憶體分析，整體Free／實機／IME仍未驗收。詳見experiments/cloudflare-wordpress/editor-profile/README.md；目標active、PR4 draft。
+
+
 ## 私人雲端舊碼回復／原生冷讀已通過（2026-11-22）
 
 以固定67dd308模組實際部署私人Worker：登入179／保存180／再次部署與cold REST讀回180／原生登出181；588,564bytes／13puts，原15pins保留、新增第16pin，API獨立備份303物件／298檔精確。原session及內容／媒體／主題一致；比本機多49bytes已核對為revision208的雲端GUID較長。

@@ -1,3 +1,5 @@
+最新：[181備份的繁中原生編輯器本機量測](../editor-profile/README.md)；雲端181不變，本機191不可替代。
+
 # 真正舊碼已在私人Cloudflare完成原生流程並回到相容reader
 
 2026-11-22（台北），在既有playtt-wp-free-session-audit部署舊source67dd308的固定套件，完成登入、繁中保存、重新部署冷讀、原生登出與獨立備份。**這是實際provider證據；正式Pages／原視覺及後台入口維持現況，完整目標仍active。**

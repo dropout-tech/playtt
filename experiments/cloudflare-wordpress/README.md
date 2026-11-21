@@ -1,3 +1,5 @@
+最新：[181備份的繁中原生編輯器本機量測](./editor-profile/README.md)；雲端181不變，本機191不可替代。
+
 最新：[舊版套件已在私人Cloudflare完成原生回復及冷讀](./old-provider-native/README.md)；雲端181／pin16／餘62,344。
 
 最新：[真正舊版部署套件已建置及本機驗證](./old-provider-artifact/README.md)；未部署舊碼，雲端仍178。

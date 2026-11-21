@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-21T17:21:28.894967+00:00",
+  "result": "pass",
+  "basis": "Prior assembled fixed source plus5 local diagnostic tools; no upstream rebuild",
+  "sources": 82,
+  "configs": 20,
+  "prerequisites": 86,
+  "newTools": 5,
+  "existingFilesUnchanged": true,
+  "refusedReapplyBeforeMutation": true,
+  "privateWorkerDeployments": 0,
+  "productionChanged": false,
+  "finalAssemblyVerified": true,
+  "postRunToolFix": "Status now uses authoritative window.remainingBytes; measured report unchanged."
+}

@@ -1,0 +1,918 @@
+{
+  "schema": "playtt/local-native-editor-profile-final/v1",
+  "at": "2026-11-21T17:16:19.490Z",
+  "result": "verified-with-native-expired-session-cleanup",
+  "originalAttemptResult": "failed overly strict all-session byte-equality check after successful browser flow",
+  "originalFailureRetained": true,
+  "sourceCommit": "97a92c8a32cd58931d57fa5f17434b943976331e",
+  "sourceCount": 82,
+  "productionBundleUnchanged": true,
+  "bundleSha256": "95caf86b252b184cf9219654b1323af035529b73099bb05e3b39b8a470bf9324",
+  "cloudRequests": 0,
+  "productionUnchanged": true,
+  "localOnly": true,
+  "baselineVersion": 181,
+  "finalVersion": 191,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/usermeta.json"
+  ],
+  "userChanges": [
+    {
+      "userId": 1,
+      "key": "session_tokens"
+    }
+  ],
+  "postChanges": [
+    {
+      "postId": 193,
+      "key": "_edit_lock"
+    }
+  ],
+  "sessionAudit": [
+    {
+      "userId": 1,
+      "before": 60,
+      "after": 31,
+      "removedExpired": 29,
+      "removedExpiryMax": 1795277294,
+      "cutoff": 1795281022,
+      "retainedExact": true,
+      "added": 0
+    },
+    {
+      "userId": 2,
+      "before": 5,
+      "after": 5,
+      "removedExpired": 0,
+      "removedExpiryMax": null,
+      "cutoff": 1795281022,
+      "retainedExact": true,
+      "added": 0
+    }
+  ],
+  "postsAndRevisionsExact": true,
+  "mediaThemeExact": true,
+  "independentBackupExact": true,
+  "backupObjects": 304,
+  "browser": {
+    "at": "2026-11-21T17:13:44.071Z",
+    "coldEditorCanvas": true,
+    "coldParagraphs": 10,
+    "warmEditorCanvas": true,
+    "warmParagraphs": 10,
+    "siteEditorCanvas": true,
+    "siteDesignNavigation": true,
+    "adminLogin": true,
+    "editorLoggedOut": true,
+    "adminLoggedOut": true,
+    "contentEdited": false
+  },
+  "samples": 1531,
+  "events": 1439,
+  "sampleErrors": [],
+  "peak": {
+    "usedSize": 36482336,
+    "totalSize": 48619520,
+    "embedderHeapUsedSize": 2579296,
+    "backingStorageSize": 68038455,
+    "phpHeapBytes": 76021760
+  },
+  "ranges": [
+    {
+      "label": "bootstrap",
+      "samples": 159,
+      "firstAt": 1795281022410,
+      "lastAt": 1795281039845,
+      "usedPeak": 8765536,
+      "backingPeak": 1782667,
+      "phpHeapPeak": 0,
+      "requests": [
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 11
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 6
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 22
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 4
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 4
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 5
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 4
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 2
+        }
+      ]
+    },
+    {
+      "label": "gate",
+      "samples": 143,
+      "firstAt": 1795281039893,
+      "lastAt": 1795281058697,
+      "usedPeak": 19163920,
+      "backingPeak": 67304412,
+      "phpHeapPeak": 67108864,
+      "requests": [
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 1
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 303,
+          "wallMs": 6
+        },
+        {
+          "category": "login",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2817
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 642
+        }
+      ]
+    },
+    {
+      "label": "login",
+      "samples": 469,
+      "firstAt": 1795281058729,
+      "lastAt": 1795281186611,
+      "usedPeak": 33530284,
+      "backingPeak": 68038455,
+      "phpHeapPeak": 76021760,
+      "requests": [
+        {
+          "category": "login",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 1022,
+          "version": 182
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 926
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 8
+        },
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 880,
+          "version": 183
+        },
+        {
+          "category": "ajax",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 837,
+          "version": 184
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 7
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 611
+        },
+        {
+          "category": "rest",
+          "method": "other",
+          "status": 200,
+          "wallMs": 606
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 596
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 602
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 607
+        },
+        {
+          "category": "rest",
+          "method": "other",
+          "status": 200,
+          "wallMs": 586
+        },
+        {
+          "category": "rest",
+          "method": "other",
+          "status": 200,
+          "wallMs": 588
+        },
+        {
+          "category": "rest",
+          "method": "other",
+          "status": 200,
+          "wallMs": 585
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 673
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 658
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 403,
+          "wallMs": 591
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 847
+        },
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 774,
+          "version": 184
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 575
+        },
+        {
+          "category": "login",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 877,
+          "version": 190
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 852
+        },
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 806,
+          "version": 190
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 584
+        }
+      ]
+    },
+    {
+      "label": "post-cold",
+      "samples": 150,
+      "firstAt": 1795281101457,
+      "lastAt": 1795281121424,
+      "usedPeak": 33414284,
+      "backingPeak": 44013661,
+      "phpHeapPeak": 76021760,
+      "requests": [
+        {
+          "category": "post-editor",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 1345,
+          "version": 185
+        },
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 789,
+          "version": 185
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 626
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 593
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 1
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 819
+        }
+      ]
+    },
+    {
+      "label": "post-warm",
+      "samples": 198,
+      "firstAt": 1795281121473,
+      "lastAt": 1795281148221,
+      "usedPeak": 36482336,
+      "backingPeak": 46807132,
+      "phpHeapPeak": 76021760,
+      "requests": [
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 901,
+          "version": 186
+        },
+        {
+          "category": "post-editor",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 1339,
+          "version": 187
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 642
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 610
+        },
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 844,
+          "version": 188
+        },
+        {
+          "category": "profile",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 744
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 595
+        }
+      ]
+    },
+    {
+      "label": "logout",
+      "samples": 205,
+      "firstAt": 1795281148222,
+      "lastAt": 1795281225280,
+      "usedPeak": 33255660,
+      "backingPeak": 44921273,
+      "phpHeapPeak": 76021760,
+      "requests": [
+        {
+          "category": "profile",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 763
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 602
+        },
+        {
+          "category": "login",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 786,
+          "version": 189
+        },
+        {
+          "category": "login",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 601
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 580
+        },
+        {
+          "category": "login",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 779,
+          "version": 191
+        },
+        {
+          "category": "login",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 603
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 588
+        }
+      ]
+    },
+    {
+      "label": "site-editor",
+      "samples": 204,
+      "firstAt": 1795281186628,
+      "lastAt": 1795281214549,
+      "usedPeak": 19618092,
+      "backingPeak": 38665785,
+      "phpHeapPeak": 76021760,
+      "requests": [
+        {
+          "category": "site-editor",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 1153
+        },
+        {
+          "category": "site-editor",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 653
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 577
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 834
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 594
+        },
+        {
+          "category": "rest",
+          "method": "other",
+          "status": 200,
+          "wallMs": 589
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 611
+        },
+        {
+          "category": "profile",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 773
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 606
+        }
+      ]
+    },
+    {
+      "label": "closing",
+      "samples": 3,
+      "firstAt": 1795281225343,
+      "lastAt": 1795281225411,
+      "usedPeak": 19922200,
+      "backingPeak": 34979863,
+      "phpHeapPeak": 0,
+      "requests": [
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 2
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 1
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 2
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 4
+        },
+        {
+          "category": "other",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 2
+        }
+      ]
+    }
+  ],
+  "phaseTotals": [
+    {
+      "name": "request.php",
+      "milliseconds": 35336
+    },
+    {
+      "name": "persistence.wp-content.inventory",
+      "milliseconds": 1166
+    },
+    {
+      "name": "canonical.metadata-overlay.restore",
+      "milliseconds": 808
+    },
+    {
+      "name": "runtime.archive.wordpress.fetch-verify-extract",
+      "milliseconds": 670
+    },
+    {
+      "name": "persistence.manifest.write",
+      "milliseconds": 523
+    },
+    {
+      "name": "persistence.markdown.write",
+      "milliseconds": 188
+    },
+    {
+      "name": "persistence.upload.inventory",
+      "milliseconds": 142
+    },
+    {
+      "name": "lease.acquire",
+      "milliseconds": 120
+    },
+    {
+      "name": "coordinator.commit",
+      "milliseconds": 113
+    },
+    {
+      "name": "runtime.archive.mdi.extract",
+      "milliseconds": 102
+    },
+    {
+      "name": "lease.release",
+      "milliseconds": 80
+    },
+    {
+      "name": "php.runtime.create",
+      "milliseconds": 48
+    },
+    {
+      "name": "publication.current.read",
+      "milliseconds": 32
+    },
+    {
+      "name": "request.translate",
+      "milliseconds": 22
+    },
+    {
+      "name": "canonical.manifest.read",
+      "milliseconds": 10
+    },
+    {
+      "name": "canonical.hydration.markdown",
+      "milliseconds": 9
+    },
+    {
+      "name": "runtime.archive.sqlite.fetch-verify",
+      "milliseconds": 6
+    },
+    {
+      "name": "canonical.hydration.wp-content",
+      "milliseconds": 6
+    },
+    {
+      "name": "page-cache.write",
+      "milliseconds": 6
+    },
+    {
+      "name": "lease.release.unchanged",
+      "milliseconds": 6
+    },
+    {
+      "name": "playground.version.read",
+      "milliseconds": 4
+    },
+    {
+      "name": "canonical.changes.collect",
+      "milliseconds": 4
+    },
+    {
+      "name": "persistence.wp-content.write",
+      "milliseconds": 4
+    },
+    {
+      "name": "published.page-cache.lookup",
+      "milliseconds": 3
+    },
+    {
+      "name": "canonical.hydration.uploads",
+      "milliseconds": 2
+    },
+    {
+      "name": "runtime.cache.reuse",
+      "milliseconds": 2
+    },
+    {
+      "name": "publication.changes.collect",
+      "milliseconds": 2
+    },
+    {
+      "name": "publication.enqueue",
+      "milliseconds": 2
+    },
+    {
+      "name": "canonical.manifest.current.reuse",
+      "milliseconds": 1
+    },
+    {
+      "name": "runtime.cache.promote",
+      "milliseconds": 1
+    },
+    {
+      "name": "persistence.upload.write",
+      "milliseconds": 0
+    }
+  ],
+  "cpuSummary": {
+    "sampledMicroseconds": 203078247,
+    "functions": [
+      {
+        "functionName": "(idle)",
+        "microseconds": 106140612
+      },
+      {
+        "functionName": "fetch",
+        "microseconds": 22999730
+      },
+      {
+        "functionName": "sign",
+        "microseconds": 8630238
+      },
+      {
+        "functionName": "URL",
+        "microseconds": 6731396
+      },
+      {
+        "functionName": "wasm-function[2479]",
+        "microseconds": 6574227
+      },
+      {
+        "functionName": "withPlayttStorageCapacity",
+        "microseconds": 5378168
+      },
+      {
+        "functionName": "wasm-function[5060]",
+        "microseconds": 4315820
+      },
+      {
+        "functionName": "json",
+        "microseconds": 4242232
+      },
+      {
+        "functionName": "(anonymous)",
+        "microseconds": 3275835
+      },
+      {
+        "functionName": "(program)",
+        "microseconds": 3000231
+      },
+      {
+        "functionName": "getByName",
+        "microseconds": 1547307
+      },
+      {
+        "functionName": "wasm-function[11476]",
+        "microseconds": 1268606
+      },
+      {
+        "functionName": "wasm-function[11434]",
+        "microseconds": 1244053
+      },
+      {
+        "functionName": "wasm-function[135]",
+        "microseconds": 1045476
+      },
+      {
+        "functionName": "wasm-function[134]",
+        "microseconds": 970088
+      },
+      {
+        "functionName": "wasm-function[171]",
+        "microseconds": 861558
+      },
+      {
+        "functionName": "Response",
+        "microseconds": 804169
+      },
+      {
+        "functionName": "wasm-function[855]",
+        "microseconds": 781989
+      },
+      {
+        "functionName": "digest",
+        "microseconds": 725090
+      },
+      {
+        "functionName": "wasm-function[2191]",
+        "microseconds": 655688
+      },
+      {
+        "functionName": "wasm-function[498]",
+        "microseconds": 614718
+      },
+      {
+        "functionName": "validateWriteTracking",
+        "microseconds": 592489
+      },
+      {
+        "functionName": "wasm-function[316]",
+        "microseconds": 534958
+      },
+      {
+        "functionName": "wasm-function[5814]",
+        "microseconds": 522771
+      },
+      {
+        "functionName": "wasm-function[1116]",
+        "microseconds": 481525
+      },
+      {
+        "functionName": "wasm-function[1348]",
+        "microseconds": 403458
+      },
+      {
+        "functionName": "wasm-function[330]",
+        "microseconds": 394394
+      },
+      {
+        "functionName": "wasm-function[1350]",
+        "microseconds": 390040
+      },
+      {
+        "functionName": "wasm-function[1258]",
+        "microseconds": 363726
+      },
+      {
+        "functionName": "wasm-function[279]",
+        "microseconds": 334339
+      },
+      {
+        "functionName": "wasm-function[1644]",
+        "microseconds": 304316
+      },
+      {
+        "functionName": "wasm-function[10988]",
+        "microseconds": 300841
+      },
+      {
+        "functionName": "wasm-function[8907]",
+        "microseconds": 287170
+      },
+      {
+        "functionName": "toPHPRequest",
+        "microseconds": 276601
+      },
+      {
+        "functionName": "wasm-function[879]",
+        "microseconds": 275589
+      }
+    ],
+    "rawProfilePrivate": true
+  },
+  "outboundAttempts": 0,
+  "localProcessesDisposed": true,
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 1881041,
+    "maxOperations": 96
+  },
+  "localFlags": [
+    "content-gzip-v1",
+    "gzip-v1",
+    "native-30s-v1",
+    "memory-diagnostics"
+  ],
+  "limitations": [
+    "Local sample with inspector overhead; not provider peak or billed CPU.",
+    "First post-editor visit followed a login, dashboard and page list; it is not a cold Worker boot.",
+    "CDP heap/backing and PHP Wasm heap have different accounting; do not sum independent peaks or infer total Worker memory.",
+    "Native expired admin sessions were pruned; unexpired sessions retained exactly.",
+    "Original fixture validator failed; sealed fixture was audited without reopening its window.",
+    "No content edits, installation, IME, phone or long-term usage acceptance in this run."
+  ],
+  "localCapacity": {
+    "chargedBytes": 496779,
+    "remainingBytes": 48418053,
+    "sealed": true,
+    "pending": 0,
+    "window": {
+      "maxBytes": 1881041,
+      "usedBytes": 496779,
+      "remainingBytes": 1384262,
+      "maxOperations": 96,
+      "operations": 30,
+      "closed": true
+    }
+  }
+}
