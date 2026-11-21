@@ -1,5 +1,13 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 舊來源本機回退／再升版通過，保留工具差異（2026-11-21）
+
+舊67dd308直接讀壓縮清單時登入與operator皆500；相容reader下以fence採用完整快照，沿用177拒409、前進178通過且298檔精確。舊來源單次保存180、完全重啟讀回及登出181，再升b5eec65原生讀回／登出183。新增繁中第十段及修訂208精確，原207／其他內容／媒體／主題及原5個session保留；本次session移除。最終299物件／298檔獨立備份精確。
+
+工具曾漏認單引號登出連結，第一份180保留新session、未重送保存。第二份HTTP工具重送過期cookie造成兩筆本機偏好39／40，已定位與保留，不宣稱全部usermeta精確。新版接續改用到期cookie處理；原生流程只有wp_options序列789→797，其餘181檔案精確。早期工具／平台預檢失敗全部保留；2個既有logout parser測試通過。
+
+完整回退ZIP2,296,404bytes，集合推算含新增原始物件與pointer共2,729,308bytes／8puts，超過最後雲端餘1,083,839。這不是遠端inventory／實際計帳；0Cloudflare請求，未部署／加額度／付費／清歷史。雲端177／pin14／af985705仍是14:24:49Z舊讀值，未刷新。本機183不可當雲端起點；相容reader保留。81來源／20設定不變，正式Pages與視覺不變、PR4 draft、完整目標active。下一步離線研究較小的plain content-v1相容回退，尚未實作。詳見experiments/cloudflare-wordpress/old-source-rollback/README.md。以下是歷史。
+
 ## 私人免費 Cloudflare 完整保存／跨部署／登出與獨立還原通過（2026-11-21）
 
 在既有audit Worker完成兩次autosave、單次保存檢查點175、重新部署後九段原文精確讀回176、原生登出177。353,048ms用797,202bytes／48puts，餘1,083,839；closed／sealed／pending0、fence解除、publisher paused。獨立304物件／298檔備份與轉完整格式再讀逐檔一致；修訂207及其他頁面／媒體／主題精確，原5個session完整保留、本次session移除；保留13pins並新增第14個。

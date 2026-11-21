@@ -1,0 +1,715 @@
+{
+  "schema": "playtt/old-source-local-rollback/v1",
+  "at": "2026-11-21T14:57:44.564Z",
+  "result": "local-rollback-workflow-pass-with-retained-client-artifacts",
+  "oldSourceCommit": "67dd308",
+  "newSourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "oldSourcesVerified": 77,
+  "newSourcesVerified": 81,
+  "buildEvidence": {
+    "new": {
+      "bundleSha256": "e622003340a335ba691d42463606c70563ed78dc4a300c0df197d4856ef85c8e",
+      "oldSourceOverrides": [],
+      "inputCount": 90
+    },
+    "old": {
+      "bundleSha256": "2ecb28eb3e0188ffbd12921c821ec60f9d1231ce830d2a2fae0044072a0902d9",
+      "oldSourceOverrides": [
+        "src/administrator-secret-bindings.ts",
+        "src/allocation-lifecycle.ts",
+        "src/asset-content-type.ts",
+        "src/canonical-restore-pack.ts",
+        "src/d1-operation-repository.ts",
+        "src/health-envelope.ts",
+        "src/lease-retry.ts",
+        "src/mutation-memory.ts",
+        "src/operator-coordinator.ts",
+        "src/phase-trace.ts",
+        "src/playtt-auto-draft-policy.ts",
+        "src/playtt-backup-pins.ts",
+        "src/playtt-cms-access.ts",
+        "src/playtt-content-overlay.ts",
+        "src/playtt-content-policy.ts",
+        "src/playtt-core-memory.ts",
+        "src/playtt-editor-lock.ts",
+        "src/playtt-editor-readback.ts",
+        "src/playtt-id-sequences.ts",
+        "src/playtt-maintenance-overlay.ts",
+        "src/playtt-maintenance-schedule.ts",
+        "src/playtt-maintenance.ts",
+        "src/playtt-markdown-persistence.ts",
+        "src/playtt-memory-diagnostics.ts",
+        "src/playtt-metadata-overlay.ts",
+        "src/playtt-php-compat.ts",
+        "src/playtt-postmeta-policy.ts",
+        "src/playtt-probe-access.ts",
+        "src/playtt-publication-alarm.ts",
+        "src/playtt-publication-batch.ts",
+        "src/playtt-reference-roots.ts",
+        "src/playtt-request-mutation.ts",
+        "src/playtt-runtime-factory.ts",
+        "src/playtt-runtime-lifetime.ts",
+        "src/playtt-runtime-manifest-cache.ts",
+        "src/playtt-slug-policy.ts",
+        "src/playtt-snapshot-source.ts",
+        "src/playtt-storage-capacity.ts",
+        "src/playtt-usermeta-overlay.ts",
+        "src/playtt-write-drain.ts",
+        "src/playtt-write-window.ts",
+        "src/principal-credential-repository.ts",
+        "src/provisioning-api.ts",
+        "src/public-reader.ts",
+        "src/publication-contract.json",
+        "src/published-reader.ts",
+        "src/queue-batch.ts",
+        "src/queue-dispatch.ts",
+        "src/request-routing.ts",
+        "src/request-translation.ts",
+        "src/revision-coordinator.ts",
+        "src/runtime-archive-artifact.ts",
+        "src/site-context.ts",
+        "src/state-coordinator.ts",
+        "src/static-artifact-import.ts",
+        "src/upload-persistence.ts",
+        "src/wordpress-auth.ts",
+        "src/wordpress-runtime-artifact.ts",
+        "src/wordpress-runtime-corpus.ts",
+        "src/wordpress-static-artifact.ts",
+        "src/wordpress-static-reader.ts",
+        "src/worker-playtt-do.ts",
+        "src/worker.ts",
+        "src/wp-content-persistence.ts"
+      ],
+      "inputCount": 86
+    }
+  },
+  "localOnly": true,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "adoption": {
+    "evidenceAttempt": "first-copy-before-native-harness-failures",
+    "fromVersion": 177,
+    "toVersion": 178,
+    "anchor": {
+      "revision": "99909118-ef3b-4953-95d1-83aba75b51a6",
+      "manifestKey": "sites/default/markdown/revisions/99909118-ef3b-4953-95d1-83aba75b51a6.json",
+      "persistedAt": "2026-11-21T14:22:50.248Z",
+      "manifestSha256": "c1a909b46adc389959e7ad40785764c097b0bdd69bb5a235a7362d3d69211364",
+      "packKey": "sites/default/restore-packs/7b25fc21aa926eb396f0e5a287755e86ebd98e0920be403c72e21cef7bc9ae1e.zip",
+      "packSha256": "7b25fc21aa926eb396f0e5a287755e86ebd98e0920be403c72e21cef7bc9ae1e",
+      "packBytes": 2296404
+    },
+    "realOperatorRoute": true,
+    "fenceOwned": true,
+    "staleSameVersionRejected409": true,
+    "all298FilesExactBeforePhp": true,
+    "oldLoginOnEnvelopeStatus": 500,
+    "oldOperatorOnEnvelopeStatus": 500,
+    "oldRejectionDidNotChangeState": true
+  },
+  "recoveryUpload": {
+    "measurement": "Derived object-set cost relative to base-only local reproduction; cloud historical inventory not measured",
+    "additionalObjects": 7,
+    "pointerInclusivePuts": 8,
+    "pointerInclusiveBytes": 2729308,
+    "fullPackBytes": 2296404,
+    "lastCloudRemainingBytes": 1083839,
+    "lastCloudReadAt": "2026-11-21T14:24:49.947Z",
+    "fitsLastCloudRemainder": false,
+    "actualProviderUploadTested": false
+  },
+  "native": {
+    "localSeedVersion": 178,
+    "beforeSaveVersion": 179,
+    "savedVersion": 180,
+    "coldVersion": 180,
+    "finalOldVersion": 181,
+    "finalNewVersion": 183,
+    "exactPriorNineParagraphs": true,
+    "tenthParagraphSavedAndColdRead": true,
+    "addedRevision": "208",
+    "originalRevision207Exact": true,
+    "otherRevisionsAndPagesExact": true,
+    "allOriginalUsermetaRowsExact": true,
+    "allOriginalSessionMetadataExact": true,
+    "newRunSessionRemoved": true,
+    "additionalUserPreferenceRows": [
+      {
+        "id": "39",
+        "key": "wp_user-settings",
+        "value": "deleted"
+      },
+      {
+        "id": "40",
+        "key": "wp_user-settings-time",
+        "value": "1795272759"
+      }
+    ],
+    "allUsermetaByteExact": false,
+    "anonymousEditStatus": 401,
+    "assets": [
+      {
+        "group": "uploads",
+        "path": "2026/11/brand-desktop.webp",
+        "size": 65256,
+        "sha256": "411915acde994cdb34911a756486c7572ad5c58bea3444aba0c7ba4f980b2869",
+        "status": 200
+      },
+      {
+        "group": "wpContent",
+        "path": "themes/lets-play/style.css",
+        "size": 12216,
+        "sha256": "fb6ec0590ad69fa9e9f7a7e9f577a788dc45d8a3c83f6d1569e0db5ec3ab7a42",
+        "status": 200
+      }
+    ],
+    "monotonicSequences": true,
+    "newRuntimeNativeReadExact": true,
+    "newRuntimeLogoutRestores181ContentAndMetadataExceptMonotonicSequence": true,
+    "sequenceChanges": [
+      {
+        "table": "wp_options",
+        "before": "789",
+        "after": "797"
+      }
+    ]
+  },
+  "backup": {
+    "old181Anchor": {
+      "revision": "dbdfd472-762e-4427-80c0-af3e9f12510f",
+      "manifestKey": "sites/default/markdown/revisions/dbdfd472-762e-4427-80c0-af3e9f12510f.json",
+      "persistedAt": "2026-11-21T14:52:45.717Z",
+      "manifestSha256": "0eeef626c14fe22ab834d4d8e25a5006a8765421296e18277b349e5b04b309db",
+      "packKey": "sites/default/restore-packs/cacf9861af17f7cff520ba18040b3d3b41991498e579efad5e85036f8aff452d.zip",
+      "packSha256": "cacf9861af17f7cff520ba18040b3d3b41991498e579efad5e85036f8aff452d",
+      "packBytes": 2296593
+    },
+    "new183Anchor": {
+      "revision": "39934c5c-9a40-4edc-bb60-82f50b4a0c3b",
+      "manifestKey": "sites/default/markdown/revisions/39934c5c-9a40-4edc-bb60-82f50b4a0c3b.json",
+      "persistedAt": "2026-11-21T14:56:30.717Z",
+      "manifestSha256": "6ae5c3ffe6a5318773a9a0ea27299b0b54de58316e0e20d7f0b74e6d43401dd0",
+      "packKey": "sites/default/restore-packs/cacf9861af17f7cff520ba18040b3d3b41991498e579efad5e85036f8aff452d.zip",
+      "packSha256": "cacf9861af17f7cff520ba18040b3d3b41991498e579efad5e85036f8aff452d",
+      "packBytes": 2296593
+    },
+    "objects": 299,
+    "files": 298,
+    "detachedImportExact": true
+  },
+  "retainedAttempts": {
+    "firstCopy": {
+      "finalVersion": 180,
+      "oneNativeSaveAndColdReadSucceeded": true,
+      "logoutNotAttempted": true,
+      "oneNewSessionRemains": true,
+      "reason": "Double-quote-only logout href parser missed native single quotes",
+      "stateAndIndependentBackupPreserved": true,
+      "checks": [
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-adopt",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 73
+        },
+        {
+          "variant": "new",
+          "path": "/__playtt-publishing",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 8
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 775
+        },
+        {
+          "variant": "old",
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 500,
+          "wallMs": 123
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 500,
+          "wallMs": 23
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 850
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-acquire",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 20
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-adopt",
+          "method": "POST",
+          "status": 409,
+          "wallMs": 10
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 773
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-adopt",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 9
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 733
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-release",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 5
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 783
+        },
+        {
+          "variant": "old",
+          "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 53
+        },
+        {
+          "variant": "old",
+          "path": "/wp-content/languages/admin-network-zh_TW.l10n.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 1594
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 783
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 784
+        },
+        {
+          "variant": "old",
+          "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 36
+        },
+        {
+          "variant": "old",
+          "path": "/wp-content/themes/lets-play/style.css",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 13
+        },
+        {
+          "variant": "old",
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2491
+        },
+        {
+          "variant": "old",
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 891,
+          "canonicalVersion": 179
+        },
+        {
+          "variant": "old",
+          "path": "/wp-admin/profile.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 800
+        },
+        {
+          "variant": "old",
+          "path": "/wp-json/wp/v2/pages/193",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 633
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 741
+        },
+        {
+          "variant": "old",
+          "path": "/wp-json/wp/v2/pages/193",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 1258,
+          "canonicalVersion": 180
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 688
+        },
+        {
+          "variant": "old",
+          "path": "/wp-json/wp/v2/pages/193",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2651
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 700
+        },
+        {
+          "variant": "old",
+          "path": "/wp-admin/profile.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 848
+        }
+      ]
+    },
+    "secondCopy": {
+      "endedNativeFlowAt": 181,
+      "oneSaveAndColdReadAndLogoutSucceeded": true,
+      "assertionStoppedAfterLogout": true,
+      "reason": "Naive cookie map re-sent expired wp-settings cookie as deleted; native core stored two new preference rows",
+      "stateAndIndependentBackupPreserved": true,
+      "checks": [
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 787
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-adopt",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 45
+        },
+        {
+          "variant": "new",
+          "path": "/__playtt-publishing",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 13
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 800
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 791
+        },
+        {
+          "variant": "old",
+          "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 30
+        },
+        {
+          "variant": "old",
+          "path": "/wp-content/themes/lets-play/style.css",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 14
+        },
+        {
+          "variant": "old",
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2525
+        },
+        {
+          "variant": "old",
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 894,
+          "canonicalVersion": 179
+        },
+        {
+          "variant": "old",
+          "path": "/wp-admin/profile.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 814
+        },
+        {
+          "variant": "old",
+          "path": "/wp-json/wp/v2/pages/193",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 640
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 750
+        },
+        {
+          "variant": "old",
+          "path": "/wp-json/wp/v2/pages/193",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 1271,
+          "canonicalVersion": 180
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 702
+        },
+        {
+          "variant": "old",
+          "path": "/wp-json/wp/v2/pages/193",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2674
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 722
+        },
+        {
+          "variant": "old",
+          "path": "/wp-admin/profile.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 853
+        },
+        {
+          "variant": "old",
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 1253,
+          "canonicalVersion": 181
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 699
+        }
+      ]
+    },
+    "continuation": {
+      "startsAt": 181,
+      "savesReplayed": 0,
+      "usesExpiryAwareCookieDeletion": true,
+      "checks": [
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 793
+        },
+        {
+          "variant": "old",
+          "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 30
+        },
+        {
+          "variant": "old",
+          "path": "/wp-content/themes/lets-play/style.css",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 14
+        },
+        {
+          "variant": "old",
+          "path": "/wp-json/wp/v2/pages/193",
+          "method": "GET",
+          "status": 401,
+          "wallMs": 2461
+        },
+        {
+          "variant": "old",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 729
+        },
+        {
+          "variant": "old",
+          "path": "/__playtt-publishing",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 6
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 764
+        },
+        {
+          "variant": "new",
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2451
+        },
+        {
+          "variant": "new",
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "wallMs": 894,
+          "canonicalVersion": 182
+        },
+        {
+          "variant": "new",
+          "path": "/wp-admin/profile.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 816
+        },
+        {
+          "variant": "new",
+          "path": "/wp-json/wp/v2/pages/193",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 622
+        },
+        {
+          "variant": "new",
+          "path": "/wp-login.php",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 711,
+          "canonicalVersion": 183
+        },
+        {
+          "variant": "new",
+          "path": "/",
+          "phase": "operator-fence-status",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 732
+        }
+      ],
+      "exactAllFilesAssertionFailedOnlyForMonotonicSequence": true
+    },
+    "finalReadChecks": [
+      {
+        "variant": "new",
+        "path": "/",
+        "phase": "operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 851
+      }
+    ]
+  },
+  "outboundAttempts": 0,
+  "localProcessesDisposed": true,
+  "capacityWindowTested": false,
+  "providerOldSourceRollbackTested": false,
+  "browserUiTested": false,
+  "limitations": [
+    "Local native HTTP with pinned existing dependencies/core; not fresh npm/core build or provider/browser/device/IME acceptance.",
+    "Two preference rows introduced by the naive HTTP cookie harness remain in local181/183; full usermeta equality is not claimed.",
+    "Earlier failed local180 retains one test session; its stopped state and independent backup are preserved.",
+    "Full ZIP alone exceeds last measured private allowance; no cloud upload/adoption/deploy, cap increase, refund or history deletion.",
+    "New runtime login/logout advances the option sequence; all other 181 files are byte exact, no counter is reset.",
+    "A plain-content-v1 downgrade may need fewer bytes but is unimplemented and unvalidated."
+  ],
+  "goalStatus": "active"
+}

@@ -1,5 +1,7 @@
 # 私人 Cloudflare：壓縮清單完整原生流程
 
+最新[舊來源本機回退驗證](../old-source-rollback/README.md)已完成原生保存／重啟／登出及再升版，保留工具偏好差異與容量限制；正式站不變。以下是前階段歷史。
+
 2026-11-21，在 info@dropout.tw 的既有 `playtt-wp-free-session-audit`／`playtt-wordpress-session-audit` 完成一次原生繁中登入、模式切換、兩次自動儲存、單次手動保存、重新部署後九段正文重讀與原生登出。正式 Pages 與現有視覺維持現況，沒有切換後台或啟用付費方案。這是私人驗證進展，完整目標仍 active。
 
 ## 實際結果

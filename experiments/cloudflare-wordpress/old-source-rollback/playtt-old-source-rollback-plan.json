@@ -1,0 +1,813 @@
+{
+  "at": "2026-11-21T14:39:40.701860+00:00",
+  "oldSourceCommit": "67dd308",
+  "basis": "Pinned25-patch assembly manifest followed by12 committed optional-stage hashes, independently matching second prior assembly; no new upstream rebuild",
+  "sources": [
+    {
+      "path": "src/administrator-secret-bindings.ts",
+      "sha256": "a5d3604e7f305a98f9608860e8f54b811b5d455cb1d5602bd5a2dbc1e5e36f85"
+    },
+    {
+      "path": "src/allocation-lifecycle.ts",
+      "sha256": "0699a483b417830f28b87b8a2d4bbb91fd3187a8a4901bd7e751b3ae6e3a775b"
+    },
+    {
+      "path": "src/asset-content-type.ts",
+      "sha256": "188d3425cb04cc1a7aaa1e6fe27df9ff8b18d1f10f2ae413189a90334f60eaee"
+    },
+    {
+      "path": "src/canonical-restore-pack.ts",
+      "sha256": "e14138243ebb1d650a62897a23234e35a0dc94af70b758cd4305a4594c4d9f0f"
+    },
+    {
+      "path": "src/d1-operation-repository.ts",
+      "sha256": "d2bd96a4991bb1a39a4d90766741aa7de57a33e87ef334a8f8f66d54d459ff1a"
+    },
+    {
+      "path": "src/d1-revision-coordinator.ts",
+      "sha256": "796cb02187a97834c26d08a42d0df7a4d9555afe3ddccddf732677a966ff1e74"
+    },
+    {
+      "path": "src/health-envelope.ts",
+      "sha256": "a8507032c5fd0d29cd4ffb46c2ec5c818652fff80724fec10724a855a11a1aaa"
+    },
+    {
+      "path": "src/lease-retry.ts",
+      "sha256": "6c3a29eab611e38af64a7f6d92bff64d3eba6f1824048d827a95582c7eac01c3"
+    },
+    {
+      "path": "src/mutation-memory.ts",
+      "sha256": "00b96c62fc4e5d5a161aaf5f41b20874f6665086b9fb84634d9a00902bc7b650"
+    },
+    {
+      "path": "src/operator-coordinator.ts",
+      "sha256": "18aad9ab3105b0db6fca295f5822616c5bd9cb17423e228e2874f6c149c99c74"
+    },
+    {
+      "path": "src/phase-trace.ts",
+      "sha256": "a01f474daa71f2f37b9e4aa806f10210239f05c25b365ab015da6857a16ce52e"
+    },
+    {
+      "path": "src/php-wasm-universal.d.ts",
+      "sha256": "2d8f8d1830f7928cd8632828c1b30a3e6b0ff0b32dcbe2a29ae8665d981f3626"
+    },
+    {
+      "path": "src/playtt-auto-draft-policy.ts",
+      "sha256": "ec56aa749ca029ceb17f245bd45a4b4476f2e6811055e7b223e931d9fb05a88f"
+    },
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "sha256": "b43b08af7bb17afdb499bf6297944526804b1cbb8677834ca3c8b901c351939c"
+    },
+    {
+      "path": "src/playtt-cms-access.ts",
+      "sha256": "9b1b30629ba2a25753baec164d706981148029a1d61fc2fe701ade14c927af24"
+    },
+    {
+      "path": "src/playtt-content-overlay.ts",
+      "sha256": "7bf63e94d077d66bf46c4341add07e548ae1b12cc027541a6ca663f84c5281c3"
+    },
+    {
+      "path": "src/playtt-content-policy.ts",
+      "sha256": "b11ca43b067824bd631215aa0cdcb20842396595589d09de00e13c398f2bb78e"
+    },
+    {
+      "path": "src/playtt-core-memory.ts",
+      "sha256": "6ea4d0c2ec872074479eeb3cb6a563391747ddde8415bbf059b2ab6755be5837"
+    },
+    {
+      "path": "src/playtt-editor-lock.ts",
+      "sha256": "c61e547c55400355fa19088869215480e8dd4f6b07c01f7ae086f08b4adacb82"
+    },
+    {
+      "path": "src/playtt-editor-readback.ts",
+      "sha256": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+    },
+    {
+      "path": "src/playtt-free-probe.ts",
+      "sha256": "d7895ce30b3fabfa057af5c587d6f54d5162c860477f38d97f47e275428f70ed"
+    },
+    {
+      "path": "src/playtt-id-sequences.ts",
+      "sha256": "cdc8d1187a75b9bef21dfed0a366e53e1f4985a9c5ba2ad8e4101162ef7da17d"
+    },
+    {
+      "path": "src/playtt-maintenance-fault-worker.ts",
+      "sha256": "bba64bda64d916186ffbd252724fd8db1cc366734127d71ca2c66d4b6f6d495c"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "sha256": "be0104515c3853cd4010d13f5059231859842b0c38f618732c8d6026f7f9f06e"
+    },
+    {
+      "path": "src/playtt-maintenance-schedule.ts",
+      "sha256": "414dcccbdf7ba01b2212a4692c92db747f2777c71097884d202eaddbd8d4fd13"
+    },
+    {
+      "path": "src/playtt-maintenance.ts",
+      "sha256": "acbc25a29273fa522dad36c768780b1776b274035c1f8daad8be21c29481963d"
+    },
+    {
+      "path": "src/playtt-markdown-persistence.ts",
+      "sha256": "8443497aae4646884d88caa2e73d8f131e5eb47b8af0681cecdf3894032781eb"
+    },
+    {
+      "path": "src/playtt-memory-diagnostics.ts",
+      "sha256": "1f3ca896da39e97b554851d93dfe853c7c315297c9153ed5ec089007a9a77743"
+    },
+    {
+      "path": "src/playtt-metadata-overlay.ts",
+      "sha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43"
+    },
+    {
+      "path": "src/playtt-php-compat.ts",
+      "sha256": "79d9ef561b2af05e88b3d0190c21810c337d7f3980e42790f98c8a2b7a5f6f2f"
+    },
+    {
+      "path": "src/playtt-postmeta-policy.ts",
+      "sha256": "60f092c2ade945fa06ed2e79a9bf535e3e6f335f15f571682fbb9c442558d4eb"
+    },
+    {
+      "path": "src/playtt-probe-access.ts",
+      "sha256": "480cac3d6d1c55771530266ea18d54c583be50f4a0e8af9fcf816ace7575bf9a"
+    },
+    {
+      "path": "src/playtt-probe-zip.d.ts",
+      "sha256": "e6e35466cb1481d74dca1d6807484700d9509fd7fa071ac7de8c573612131e8a"
+    },
+    {
+      "path": "src/playtt-publication-alarm.ts",
+      "sha256": "ac2a0e71d6163f323f97941e25abc12a931977e2f0f276453cbe0f47c24c41e3"
+    },
+    {
+      "path": "src/playtt-publication-batch.ts",
+      "sha256": "5faab27d9979f55be69f6ed2a1247ee603f884a716dcd6b0eda77d727a8d8ad7"
+    },
+    {
+      "path": "src/playtt-reference-roots.ts",
+      "sha256": "86811f5a6b305f63332c6e0df0cddda0fd6ba366acfa0026d060d47045629884"
+    },
+    {
+      "path": "src/playtt-request-mutation.ts",
+      "sha256": "40f46f166f9112ab377795867b4a1d3865b03f3c9ad416ad4387b2025cc23c6a"
+    },
+    {
+      "path": "src/playtt-runtime-factory.ts",
+      "sha256": "44f8c3d51855713cf57f4e96c924f7cec9ccff50f19de9ff0bea6602856fb9bc"
+    },
+    {
+      "path": "src/playtt-runtime-lifetime.ts",
+      "sha256": "c115f47307fca8d5106f81ee55d80ffd5b74dd85a5683100c44bcfe2c8db6b5d"
+    },
+    {
+      "path": "src/playtt-runtime-manifest-cache.ts",
+      "sha256": "b74352e8de70bef32c33e4e813c51e54154b5140055337786404e32e45577b88"
+    },
+    {
+      "path": "src/playtt-slug-policy.ts",
+      "sha256": "17c37e757754933d07e6505e5f56aaaee2a73dfb9ed23907bc9103300b647c56"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "sha256": "9e7fd70863c5e6512834b191aec53b2ff2b200480b00c7cf0061d2684b8cf05a"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "sha256": "3ddc0834f7397dfe18149aad2e441b8528a5f9717eea338e1208508a793d6245"
+    },
+    {
+      "path": "src/playtt-usermeta-overlay.ts",
+      "sha256": "caafbbd624cbda0bbdef5fd593dbfe83932085001749a3b4c86ea66bc9d1b1a0"
+    },
+    {
+      "path": "src/playtt-write-drain.ts",
+      "sha256": "d1f5dc04cce1f61e4f17a94c33221acb068444197d41f782e482f91f15ace1f7"
+    },
+    {
+      "path": "src/playtt-write-window.ts",
+      "sha256": "2df90a0f7f323049acfd0375eba49bf1cee3a11dafcd5b9a76772a28ca1d7c54"
+    },
+    {
+      "path": "src/principal-credential-repository.ts",
+      "sha256": "af97382e3c162e442b0f74d28931396537ca7190d84c99c8f58b61b3da4069df"
+    },
+    {
+      "path": "src/provisioning-api.ts",
+      "sha256": "c8c90c00da499f39ae80d0134cd955f631036b40ab5a2ed88199abc0a3e627a4"
+    },
+    {
+      "path": "src/public-reader-worker.ts",
+      "sha256": "091c7df04f80f4e30e09a24116a8509048d6a1fcfd35f9e826825794baf8bdb3"
+    },
+    {
+      "path": "src/public-reader.ts",
+      "sha256": "6e69ad56947de9cd429429dba8caafd2abbf5439cbb83c9221228eb6ad4b5281"
+    },
+    {
+      "path": "src/publication-contract.json",
+      "sha256": "d3a5b178e20ded840ea9dc6f767bfeab5d33bf2ffa11cacfc5a077e20b6d92aa"
+    },
+    {
+      "path": "src/published-reader.ts",
+      "sha256": "515e7789957edd2a72ae1f1ed7401654da7f51b309fc3518df122bc4ef63365a"
+    },
+    {
+      "path": "src/queue-batch.ts",
+      "sha256": "3087619c156ae9113c905cc35215ae25fb90b4a221c8af376566b6e1603edda5"
+    },
+    {
+      "path": "src/queue-dispatch.ts",
+      "sha256": "061f910cd4b6186d7141818393baab789da822904e10656265e5196fbddabae6"
+    },
+    {
+      "path": "src/request-routing.ts",
+      "sha256": "c8900c81cdc78caa94a8541ec41580c60d9491f7c6070de526a6ad22f3e63950"
+    },
+    {
+      "path": "src/request-translation.ts",
+      "sha256": "fdbd6cc653b29ca5c931a7411e59bc893d902f65fd78c856660a4e963e8356b1"
+    },
+    {
+      "path": "src/revision-coordinator.ts",
+      "sha256": "ea31dcd605deb22aa0e3bffbc887b5479393a18bd22d889550be9fb609f70983"
+    },
+    {
+      "path": "src/runtime-archive-artifact.ts",
+      "sha256": "bedd0287e6781994b254354edab7937d80c229ea19ceac076cda72dfc12376e6"
+    },
+    {
+      "path": "src/site-context.ts",
+      "sha256": "25a29013cb36065cb92a3ec46e1a53131e0044016c8b2295ab00b097aa63781d"
+    },
+    {
+      "path": "src/sqlite.d.ts",
+      "sha256": "110b36b9036cd61a8d47b344080a2850b139d1c999fc6ff9049cfccbdf8b0c50"
+    },
+    {
+      "path": "src/state-coordinator.ts",
+      "sha256": "1b95e3569fd8eeb079605bf9f9f64246399d7d70a0418f8059da2d712772c31b"
+    },
+    {
+      "path": "src/static-artifact-import.ts",
+      "sha256": "ecb29ee989cdc3b458e0db8f38a949769c50c0d46fa9faedeffbe01178ad8e75"
+    },
+    {
+      "path": "src/upload-persistence.ts",
+      "sha256": "498667fd6f1e01ff6dafa9cd91278f764821d5dea624afdac6a48787e89e9dd8"
+    },
+    {
+      "path": "src/wasm.d.ts",
+      "sha256": "109f8567627a0fbe70fa74d871f8f2849d19b6105c935f7b58e38a5ea2b10f38"
+    },
+    {
+      "path": "src/wordpress-auth.ts",
+      "sha256": "957a0d6a6425f3d7153ce25ced8368528d84b8d93c36f545d828111d1f939261"
+    },
+    {
+      "path": "src/wordpress-runtime-artifact.ts",
+      "sha256": "2a3345501b3c258d5087639d00fd5720a8539dda0953cf1fef025f0933e16efc"
+    },
+    {
+      "path": "src/wordpress-runtime-corpus.ts",
+      "sha256": "e6562fa8face9c55cc1587fe458882cdf22fb55a0f0dd9560f4aa6c7273a9a03"
+    },
+    {
+      "path": "src/wordpress-static-artifact.ts",
+      "sha256": "cb9ece2558d1247c8199275593fc215a3fb0e674b5016c9f65873b71c5f7652e"
+    },
+    {
+      "path": "src/wordpress-static-reader.ts",
+      "sha256": "dc06e1934eacd33b3e7266fcdd57d5857dcddc99586de23f403d17bc6ec841ae"
+    },
+    {
+      "path": "src/worker-control.ts",
+      "sha256": "0332835dcdc65bc79d501086558a894d0397f7399cf91c9558386dce1f4d6b96"
+    },
+    {
+      "path": "src/worker-d1.ts",
+      "sha256": "cff8ec480546eecb99b871bccc9a31986acf759e760709934e996829ba0db0fa"
+    },
+    {
+      "path": "src/worker-do.ts",
+      "sha256": "31e42b7d33df3f9b75a329a07bcf9ab239471d7a60547f9ab74ec18eab446e64"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "sha256": "ad31e78d03643c0e00ccafff47b9cd27e049086e38d69fc04ecac6df288e6f4d"
+    },
+    {
+      "path": "src/worker-playtt-public.ts",
+      "sha256": "2386ebd04376f864037835cc071b8737dceffd78d443b594075046b8aba38ec0"
+    },
+    {
+      "path": "src/worker.ts",
+      "sha256": "d3463f03bb9bf03c29ed40733a51476bb0540def2c2f28eb12560779b86f1b26"
+    },
+    {
+      "path": "src/wp-content-persistence.ts",
+      "sha256": "0f67fe2b2e198b9665c0d9d1858d7557ab552d877b5165b89c47c9e719546a5d"
+    },
+    {
+      "path": "src/zip.d.ts",
+      "sha256": "7daa8d79b91cfa9905bbc3a1a0795746d6f359dd19c5de6de0e15a56393c9bf0"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/markdown-database-integration-canonical-seed.json",
+      "sha256": "cca1574450d754f00b0b807472a3684c01a0c3ad3104c45b30cc21a10fb92eed",
+      "bytes": 25599,
+      "matchesPriorSourceAssembly": true
+    },
+    {
+      "path": "assets/markdown-database-integration-canonical-seed.zip",
+      "sha256": "60231408fa51e56dd288c2e39c5158df25417d227c0ed4603e70ef22aa7bbf20",
+      "bytes": 55902,
+      "matchesPriorSourceAssembly": true
+    },
+    {
+      "path": "assets/markdown-database-integration-runtime.zip",
+      "sha256": "eeb01238babfea9dff7c56111974584c86e0aec8616cb0ae0f09296a222b92c0",
+      "bytes": 93269,
+      "matchesPriorSourceAssembly": true
+    },
+    {
+      "path": "assets/markdown-primary-bootstrap-index.sqlite",
+      "sha256": "af46f25f1a40152c06ff2c545bf027a50a6ba82e1d08445b3998e9fa674467b4",
+      "bytes": 344064,
+      "matchesPriorSourceAssembly": true
+    },
+    {
+      "path": "assets/sqlite-database-integration-artifact.json",
+      "sha256": "86c293969fdcf3bdcb02a178e3da4e646793381e0c4105e34e196ec20d54d575",
+      "bytes": 565,
+      "matchesPriorSourceAssembly": true
+    },
+    {
+      "path": "assets/website-importer-artifact.json",
+      "sha256": "e8785f221b1aeeca69b4f176ba8ddc450b1f58889e7161838a4a3e6f10e69e47",
+      "bytes": 1249,
+      "matchesPriorSourceAssembly": true
+    },
+    {
+      "path": "assets/wordpress-install-seed.sqlite",
+      "sha256": "7212b89f1c01f98a23b89e9a2dd2b214306a85c10adb0355b9c7a6005b4fe822",
+      "bytes": 376832,
+      "matchesPriorSourceAssembly": true
+    },
+    {
+      "path": "assets/wordpress-runtime-artifact.json",
+      "sha256": "f8f503ad122e4a9dbfabc1e44915799385bb6c831161394026f42ae7aedb7c65",
+      "bytes": 412167,
+      "matchesPriorSourceAssembly": false
+    },
+    {
+      "path": "assets/wordpress-static-artifact.json",
+      "sha256": "39fc2a00539d7a561ef7cc3483f723e510a24a84a6a1029bd0f88b5a3da218d2",
+      "bytes": 426044,
+      "matchesPriorSourceAssembly": true
+    }
+  ],
+  "vendor": [
+    {
+      "path": "vendor/wp-codebox-core/adversarial-campaign.d.ts",
+      "sha256": "e7c16dd2060ca957d631ff3f6b87a70bb74a2eef6a59f0b707f434878a5f83a7"
+    },
+    {
+      "path": "vendor/wp-codebox-core/adversarial-campaign.d.ts.map",
+      "sha256": "427f2fef7936efde072e3a5f03aa104f6160ac0d2003e9cf3b5005d7c7962a16"
+    },
+    {
+      "path": "vendor/wp-codebox-core/adversarial-campaign.js",
+      "sha256": "d1407a6a36459d19f0e4e3cd926d770a1d50eefa9546e6008daa7910e44ab309"
+    },
+    {
+      "path": "vendor/wp-codebox-core/adversarial-campaign.js.map",
+      "sha256": "bb32a7e4dc571aa0d022278d29a2ba287e1d04f9a5d9be3886d93fe7fd33d123"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-layout.d.ts",
+      "sha256": "f4cdb4ec03f8fe775fed2a9de6b3ea28e980bbc7c4ca43141b8b78328d2f35dc"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-layout.d.ts.map",
+      "sha256": "245446b817c28107453ebfd89cc3d1d6e6bf10535cb3e869ddfb9422719560ec"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-layout.js",
+      "sha256": "8b1a1b28dd60627cb4c36273f5157e48bcdc01e1f1cf28a84481e1d1e1222f67"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-layout.js.map",
+      "sha256": "b2320f1013ac9ce02c23e433e050cc1d81541e22fb5e4e152a74517bceef0e20"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-manifest.d.ts",
+      "sha256": "dabaf23b46fb6162f4ad2937b4c82a67894824bed9827b659592f935322fa77d"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-manifest.d.ts.map",
+      "sha256": "2f755008e34cafda2cd0e6208f90bec02e0fbf9ff5ef002a9291b97c6a29d76c"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-manifest.js",
+      "sha256": "f275c0df88ad57071c9f885050d34fabaeb2233187fecc6e302c57b2e5d1012b"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-manifest.js.map",
+      "sha256": "ef4636b3d241b76f4c52e4f9b935b333b3ee83cf78b1d652a396c46cafd41897"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-paths.d.ts",
+      "sha256": "447c5554abc3f368eb148f756188aeb90661203122c2876a0258063b4f995a6d"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-paths.d.ts.map",
+      "sha256": "32de46c0c7131cb7181d7d2b7845a1c6238c9a6590c5c7ab0c0eef7dbb70c1be"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-paths.js",
+      "sha256": "c61a083391f490c78886b9eaacb863e3dc5ed69bd84a443bd52332682794147b"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-paths.js.map",
+      "sha256": "af95ce60f839aec45fac6598beda775f04f9d0756914a19f042c738396a6675a"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-references.d.ts",
+      "sha256": "aa823d5a9c5287721374858e64282db0a3aa1b3370018f8847c9ec5411a751de"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-references.d.ts.map",
+      "sha256": "32b6a8e034a504d1d09fd9da7ccbd4521792e659fdf70693f8ee24eecd55f82d"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-references.js",
+      "sha256": "120ed31044769573075b90f37d536428646427f8934aaa223de7ade6d6dcad52"
+    },
+    {
+      "path": "vendor/wp-codebox-core/artifact-references.js.map",
+      "sha256": "553b36631cb1b527dbea4ba0e6f59ae8aa857b3eae8a6025e55d9ae0b5c291f5"
+    },
+    {
+      "path": "vendor/wp-codebox-core/browser-interaction.d.ts",
+      "sha256": "738896c6cb041d328f8d38f26dc1a8b0c412cf5fec8859044e2b4b17946ff981"
+    },
+    {
+      "path": "vendor/wp-codebox-core/browser-interaction.d.ts.map",
+      "sha256": "ebf1fa9421be48fa264eeb8594338830596d0bf4b149d09115de1bbf58e09ab2"
+    },
+    {
+      "path": "vendor/wp-codebox-core/browser-interaction.js",
+      "sha256": "b829a967955d1bf7912c0a09a6ee3cdc268093bb02b582aeb7fed0e36270aea2"
+    },
+    {
+      "path": "vendor/wp-codebox-core/browser-interaction.js.map",
+      "sha256": "43314263802a130dad8fe1c33db22edabd4324d42684dabc42ae4200c7b3eb4b"
+    },
+    {
+      "path": "vendor/wp-codebox-core/file-tree-policy.d.ts",
+      "sha256": "24dd8d31323535e89ee1135bdc25965f710927cb86790953f2c1d14acd4340cb"
+    },
+    {
+      "path": "vendor/wp-codebox-core/file-tree-policy.d.ts.map",
+      "sha256": "44dec1a9283830900d714433f6267818d4b8ee34686089474c4e3c0c3e35f7c8"
+    },
+    {
+      "path": "vendor/wp-codebox-core/file-tree-policy.js",
+      "sha256": "715b3d5cb069a58517fee73c783a22cb1d7a085c01278455498a39b1d572b20f"
+    },
+    {
+      "path": "vendor/wp-codebox-core/file-tree-policy.js.map",
+      "sha256": "f705d865c7f7ef577e7a7ef20b04ac075ab77aadb5d8a4db46b3546fdc6e540a"
+    },
+    {
+      "path": "vendor/wp-codebox-core/fuzz-coverage-plan-contracts.d.ts",
+      "sha256": "f53a23ea31beddb4d5868b536a89dc0e4ce120035d3c75dfa88d52127c0c0d01"
+    },
+    {
+      "path": "vendor/wp-codebox-core/fuzz-coverage-plan-contracts.d.ts.map",
+      "sha256": "15ba189693674065d86352168dd2bc83979c554d92a10888e11f88179cee7d64"
+    },
+    {
+      "path": "vendor/wp-codebox-core/fuzz-coverage-plan-contracts.js",
+      "sha256": "9d8b37582cd0a8b0a30c4812b7c0801727daed7bcdb1c0a9e26708236c3c1ffe"
+    },
+    {
+      "path": "vendor/wp-codebox-core/fuzz-coverage-plan-contracts.js.map",
+      "sha256": "217e3575651cac196dbabd62d033cbf515cca5263e390144c77aaabcb85b2df9"
+    },
+    {
+      "path": "vendor/wp-codebox-core/fuzz-suite-contracts.d.ts",
+      "sha256": "2bbf34fdcc4376d4be7819dc5e47845179eb0db95007efd5cf9662a32ccc27ad"
+    },
+    {
+      "path": "vendor/wp-codebox-core/fuzz-suite-contracts.d.ts.map",
+      "sha256": "0e0e2633395e1ccac5b178336ae32cb89adb49619ef6792dc81e97f4edbbe33a"
+    },
+    {
+      "path": "vendor/wp-codebox-core/fuzz-suite-contracts.js",
+      "sha256": "9cd0eb944dd644c14d9da6b02d2e2cc1bbe812ecd4528ca7e685b112a3908d72"
+    },
+    {
+      "path": "vendor/wp-codebox-core/fuzz-suite-contracts.js.map",
+      "sha256": "73c3ec934b0a6a8a66760ab85dd9e8c838fdc44aab14a39bda7c875b484be877"
+    },
+    {
+      "path": "vendor/wp-codebox-core/host-tool-registry.d.ts",
+      "sha256": "83b0fe89986e2841212c34da253e4df7e0516e4608e4e7cd04d37737d706d931"
+    },
+    {
+      "path": "vendor/wp-codebox-core/host-tool-registry.d.ts.map",
+      "sha256": "b68264bad938d04d655eff5344bd574c62aa8ed5c3cdab33981f50268f0155d8"
+    },
+    {
+      "path": "vendor/wp-codebox-core/host-tool-registry.js",
+      "sha256": "8ee8c5c85fa49fbd02167e9a585c652e23ae15215c8c66abba2481560ece23c6"
+    },
+    {
+      "path": "vendor/wp-codebox-core/host-tool-registry.js.map",
+      "sha256": "87ac5e2dec3bf4278aab15412728cb50a7549a64632ac74f9310b61c2472d1db"
+    },
+    {
+      "path": "vendor/wp-codebox-core/object-utils.d.ts",
+      "sha256": "e72b10aee8c26532e591d3469afb62dc11e1467f56e39abb0df322bcb1c9df64"
+    },
+    {
+      "path": "vendor/wp-codebox-core/object-utils.d.ts.map",
+      "sha256": "5a3d845f6fea3e275c4fe8409554f7f517fd66aa92a1e91ed951e38c484fa61c"
+    },
+    {
+      "path": "vendor/wp-codebox-core/object-utils.js",
+      "sha256": "4315ec4e44f1a7ef142fba1d5f347099eac2975f3db7d8ff564145f4852d64ef"
+    },
+    {
+      "path": "vendor/wp-codebox-core/object-utils.js.map",
+      "sha256": "140f727e04998b4ad83ceab629c55ffda2b0b5a09f30a6fbc3c1c09acaf3057e"
+    },
+    {
+      "path": "vendor/wp-codebox-core/package.json",
+      "sha256": "8f7473e7c5c0659c44a85b8fa85adcdb34987856280edfc1a07c3a948647f140"
+    },
+    {
+      "path": "vendor/wp-codebox-core/performance-observation.d.ts",
+      "sha256": "1d7757ffa49430230d768cd925cabaf38c686ddb309a786e53d2531c1e9705a4"
+    },
+    {
+      "path": "vendor/wp-codebox-core/performance-observation.d.ts.map",
+      "sha256": "0e5653e1aa0ab0e3c05179c3bdc9dd58e23c036f21f2ff75e7cdf47e4cbbc45b"
+    },
+    {
+      "path": "vendor/wp-codebox-core/performance-observation.js",
+      "sha256": "5b42daf28db993d0d64aee7bb027e0753f58153e7dc9f54580ff992ed6407215"
+    },
+    {
+      "path": "vendor/wp-codebox-core/performance-observation.js.map",
+      "sha256": "58cd002cd131680be72518a558fafef73c13879683ae437810b7a400f83463e5"
+    },
+    {
+      "path": "vendor/wp-codebox-core/redaction.d.ts",
+      "sha256": "a8b15a08f7e43b484a9fef4207903a802cc44eb4a29af2cf2fba3e8cbadc96cf"
+    },
+    {
+      "path": "vendor/wp-codebox-core/redaction.d.ts.map",
+      "sha256": "220cb550b9ab1e0aa304ff76fb71af8412f2023c1ef357271b79a1ef6a196b84"
+    },
+    {
+      "path": "vendor/wp-codebox-core/redaction.js",
+      "sha256": "55d29aaac92f54bdf0b2912939a7f7f8ef535f54153f73e4393ae6a38e28ba42"
+    },
+    {
+      "path": "vendor/wp-codebox-core/redaction.js.map",
+      "sha256": "d1b6181b0bb6fe8f62c4f2175128bc5c6c152a72c0080e33e5fbf1e0544fa683"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-action-adapter.d.ts",
+      "sha256": "f1df3cd55e1caff0e17ec81ce162f4d69cab533d1fe5a4df6f261c7f97817523"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-action-adapter.d.ts.map",
+      "sha256": "4bd2f1a3c5f0696b467c2c682a1d28fc88fc390ed07487ef682192812733dd0a"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-action-adapter.js",
+      "sha256": "3c879ccd967e125c21e2dc30849747fd1635dca63d836fd4320a1892a53a6d98"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-action-adapter.js.map",
+      "sha256": "ef645c5267b2f558785ccd5c6c1a34716fd02abb1c7cb17ce07b668a88c9d279"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-archive-component.d.ts",
+      "sha256": "4b8e31841f706626a768585247200d6ce66d4613083865dae0c4df63258df918"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-archive-component.d.ts.map",
+      "sha256": "7264ac4b687871b26d72ad21892ec4b812bba32322a8928bddbde45f72a42770"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-archive-component.js",
+      "sha256": "bc8417d5bd2f4d9e627c8a941f0220b6b6204085bd34a734fe495bb2a069bd1c"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-archive-component.js.map",
+      "sha256": "cea9df67e9882439ee659e235db922432e791e548ae3d30dcd38ba4810db1f4c"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-boundary-contracts.d.ts",
+      "sha256": "81f38ebf475da58fa2ba0cb1b86d9c5565375c5da58642738fb342e1b98e1312"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-boundary-contracts.d.ts.map",
+      "sha256": "b5f41c48105b7ea42a7da5121dbc1883a5033345d56b438b9047ad5ca858cdc9"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-boundary-contracts.js",
+      "sha256": "15638ade865b6dfa2921106928c08378996caac6e4a068f6a328c8c271a20c72"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-boundary-contracts.js.map",
+      "sha256": "7b3197b9628db019b38e9be1c7228419616fe8292a66e65642dd0be82c2f1ec7"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-command-result.d.ts",
+      "sha256": "084c62bc3041ac6c7f90ff4613669877e9cd4d7b35f35daa356b2e0f120947a3"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-command-result.d.ts.map",
+      "sha256": "2bfd22f22e456dafdaed64d792f2580c5f7b6dbcbd9ea56ae137ef59247c3299"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-command-result.js",
+      "sha256": "008f9d205ff588f5382f1c8252bc7976f3d0c7ba8dba6caa7ab58f738fa04556"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-command-result.js.map",
+      "sha256": "544e7cf2c627346b9d0638c8de406a460fc8648f10ae3d3445416639baffac8b"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-contracts.d.ts",
+      "sha256": "3d6550bddd38303f85056344afdfb18f5c8857312c5966d03c1be0c87e05f3d4"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-contracts.d.ts.map",
+      "sha256": "b06ac0429c154aa168071566d052dc8cf2b46a8b76d08e4358e8cb7806eeabd5"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-contracts.js",
+      "sha256": "69c05efab7efc9b36620160b2d9ecf397aa1eb8724ef297827f2b14c453c239f"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-contracts.js.map",
+      "sha256": "87f8f86ae7866c66c288000bc3076f4e9e6d6480274016fb6cd1dc2399775520"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-episode-contracts.d.ts",
+      "sha256": "664c504615eddf1b7fb1423b74238182cac51bd3f7af38c5db4a015491897e0f"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-episode-contracts.d.ts.map",
+      "sha256": "34abd372c4b816cf527d1416915bbc931f0a21390564b49d23512e57a990bf6d"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-episode-contracts.js",
+      "sha256": "e2861265a1a98b155810272793b4d3b175b89d6b071568c0cd52e8d0fef08738"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-episode-contracts.js.map",
+      "sha256": "ebe1fb36a558e3d68ae2f5d48945b3abceb96864076a183a0ee09b3b1556130f"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-episode.d.ts",
+      "sha256": "2138bb6f8bc124c394b42363a22aee15d44fcd68c45ac39b6bf6194f37a0f7ab"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-episode.d.ts.map",
+      "sha256": "e97a69f80a4393377737a795579422079cba337d1136fedcd577df6f918c3a03"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-episode.js",
+      "sha256": "154252b28eee433b5e47f21a346ca2ca20e697f43af1fbbd5dca0780a047ef50"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-episode.js.map",
+      "sha256": "b59138f472d5177a781a2d24e73830b7db9d5a48b2cbeda61baa9fa247a4e65e"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-neutral-contracts.d.ts",
+      "sha256": "36f3d67803457d2319990f111f1d0183ea350fbfe6dc5b20ecb2eedfd1e32246"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-neutral-contracts.d.ts.map",
+      "sha256": "9174f60e4476280a82c56cfb69ddd66b7e7efcdb3477eb99aa0f1b9cc5e57c83"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-neutral-contracts.js",
+      "sha256": "6a059f5b3c6f48998d9feebf36c998981b2978818f0a0eff43abb1ad321a81e5"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-neutral-contracts.js.map",
+      "sha256": "81b9875308d15928d7bdc1e06af6ca4183c36622ad57d9d8143e02a83ca1baa2"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-package-profile.d.ts",
+      "sha256": "3a7d7106b4d8cca792bd52cdae6c8b02b8b693bccea8412bc4d83d8694070f99"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-package-profile.d.ts.map",
+      "sha256": "3e7e9e50cede95bcf42089425a6a67c416b463264e7c9d75e75c2f8c147a19ed"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-package-profile.js",
+      "sha256": "2519d236558d91d562a17f92baeb1c3c848556e1e749ad5ba207b78b9ba5bd41"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-package-profile.js.map",
+      "sha256": "54f275d27965c23bb2bae2446436c15eae570f5ec0fd032b294a59ab2e1c52fe"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-policy.d.ts",
+      "sha256": "1a6bf35a9ceab1eac5d3766e0666122d252511d771edffa8a9419dccaff9d9c0"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-policy.d.ts.map",
+      "sha256": "2e4ea43afe3b7abe6e32810831c8abd5f5cb9cb83334d0e522eda0778965e46b"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-policy.js",
+      "sha256": "5bc171cb78015fb33a791763039cfdabca558eb48cca87f23100dd3f4fff6238"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-policy.js.map",
+      "sha256": "19215b22707b2e29040d8bd0a8c0819a375a4f726e19427c6ce7441075a20269"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-reference.d.ts",
+      "sha256": "f70b4bec13c6fa5a2ee5ccb8cb4cfe4568df959dc51d81027b243593681c35a3"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-reference.d.ts.map",
+      "sha256": "8111ced3246ced8ad180eacabcb402c71b7b0789e8840c4c0271377c78d5e6bc"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-reference.js",
+      "sha256": "1bf600f2c2459e8ebfc64fa8191a8bf487d46e43402e3831fca56c94c69faccc"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-reference.js.map",
+      "sha256": "916fc51e54c09f8351b33c4a8714415c00221655c5c3b1ee597672ee7fbe9217"
+    },
+    {
+      "path": "vendor/wp-codebox-core/transport-faults.d.ts",
+      "sha256": "a076df4c6a910c1df0b5436f4fc2b8936ae8c25c4ad87d558c22fb75bf88a5c8"
+    },
+    {
+      "path": "vendor/wp-codebox-core/transport-faults.d.ts.map",
+      "sha256": "c34bb0aae381815a2a997562b0d2cd2c61cfde0b2cc676e53d5a13f0ba57f0c7"
+    },
+    {
+      "path": "vendor/wp-codebox-core/transport-faults.js",
+      "sha256": "48413be77b9e33de2ca61c5f7d471163649d022af03fa3d1d35572333c6b06ca"
+    },
+    {
+      "path": "vendor/wp-codebox-core/transport-faults.js.map",
+      "sha256": "c8bf476a6cd47091077c3e7da264a6c03f798eb72f3e5a05b631b9101fcd84f0"
+    },
+    {
+      "path": "vendor/wp-codebox-core/wordpress-crud-contracts.d.ts",
+      "sha256": "48ec8a1e1ed0ade8ec9017572aadf0322a32a9ca399494e92ab9d9f4b2047a14"
+    },
+    {
+      "path": "vendor/wp-codebox-core/wordpress-crud-contracts.d.ts.map",
+      "sha256": "e5e923fa0a1c06aff9a3772bf888ea4c1b344347b385dcc2d36ec7280b9d59d2"
+    },
+    {
+      "path": "vendor/wp-codebox-core/wordpress-crud-contracts.js",
+      "sha256": "abc51cb8fb22043ccb5f428a2374120030a0fe98614efd11f14b2eb4ea95dd94"
+    },
+    {
+      "path": "vendor/wp-codebox-core/wordpress-crud-contracts.js.map",
+      "sha256": "0ec803ea6ff7f7f4f40dd2109f34c4e9fd7ef01ae752d667d419954b3a18596b"
+    },
+    {
+      "path": "vendor/wp-codebox-core/wordpress-db-contracts.d.ts",
+      "sha256": "f5ae7812a53e7a8a526d3228331d80266c675879d8b8e995aad5f06c89f03f2e"
+    },
+    {
+      "path": "vendor/wp-codebox-core/wordpress-db-contracts.d.ts.map",
+      "sha256": "0892ddf180e2fbdf52a1288646fcdeee94f64b0913d45a9b13568ae2c19db637"
+    },
+    {
+      "path": "vendor/wp-codebox-core/wordpress-db-contracts.js",
+      "sha256": "a0ecb572c9e3fefbf174a18367beee80ecb0ccd42716d80644dab38b1f47d86c"
+    },
+    {
+      "path": "vendor/wp-codebox-core/wordpress-db-contracts.js.map",
+      "sha256": "39125e1834276e6d1b368d83f080a963612f355ce5f1078621ca88bbf90d62ed"
+    }
+  ],
+  "packageLockSha256": "ec9aeae64c3868d43b3a3bc66781b1249ef83ff50421fecc9968638e54e689eb",
+  "generatedPhpLoaderSha256": "9eee1c4bf010ff84741d82c5143689e76c2d06cd0c877dc919c6ecd202b9b666",
+  "newSourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "networkCalls": 0
+}

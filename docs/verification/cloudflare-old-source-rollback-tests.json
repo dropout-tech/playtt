@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-21T14:59:30.541726+00:00",
+  "result": "pass",
+  "nativeLogoutParserExistingTests": 2,
+  "command": "node --import tsx --test tests/playtt-native-profile.test.ts",
+  "covers": [
+    "Single/double quoted escaped native logout URLs retain nonce",
+    "Absent/incomplete/cross-origin links reject"
+  ],
+  "evidence": "Observed tool output:2 tests,2 pass,0 fail; no separate raw log saved",
+  "sourceIntegrationTests": "Prior108+tsc unchanged-source evidence, not rerun",
+  "cookieHarnessFix": "Expiry/Max-Age deletion used in actual new native login/read/logout continuation. Not a full RFC cookie jar or new unit-tested public client."
+}
