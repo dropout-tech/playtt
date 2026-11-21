@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-21T12:13:34.934604+00:00",
+  "result": "pass",
+  "basis": "Prior verified integration assembly plus4 local diagnostic tools; no new upstream rebuild",
+  "sources": 80,
+  "sourcesUnchanged": true,
+  "configsUnchanged": 20,
+  "newLocalTools": 4,
+  "prerequisites": 8,
+  "allPriorAssemblyFilesUnchanged": true,
+  "refusedReapplyBeforeMutation": true,
+  "priorScheduledHelperDiscrepancyRetained": true,
+  "priorDiscrepancyEvidence": "cloudflare-compressed-runtime-rebuild.json",
+  "cloudRequests": 0
+}

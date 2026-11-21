@@ -1,5 +1,7 @@
 # 壓縮快照接入：本機原生 HTTP 通過，未部署
 
+最新[完整瀏覽器容量結果](../compressed-budget/README.md)：保存及冷重開成功，登出容量不足；完整流程尚未通過。以下保留上一階段證據。
+
 這個可選階段接續 compressed-content 原型，將新格式接進 Worker 的一般冷讀、保存、完整 fallback、備份圖、pin 與下載工具。只有精確旗標 `PLAYTT_CONTENT_OVERLAY=content-gzip-v1` 才啟用寫入；20 份既有設定完全不變。正式 Pages、目前視覺、雲端私人 Worker 均未變更，PR #4 維持 draft。
 
 Markdown 先做完整有界清單與 hash，不先寫 raw 再多寫 gzip。新快照直接引用同一份完整 base；每次保存核對實際已保存的前一份 manifest，累積差異超限就轉完整快照。圖片及主題 raw 物件仍照原流程寫入。壓縮包必須先成功保存，再保存 manifest，最後才由既有 coordinator 提交 pointer；失敗不回傳新 pointer、不記住未完成 manifest，不退還任何已嘗試用量。

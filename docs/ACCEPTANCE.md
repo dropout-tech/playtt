@@ -1,5 +1,13 @@
 # Let’s Play 驗收狀態
 
+## 壓縮後原生保存與重開通過，登出容量不足（2026-11-21）
+
+新的本機 Chrome 副本使用實際 gate／budget，600秒／1,881,041bytes／96操作不變。兩次 autosave、一次手動保存176及完整重啟後九段內容讀回通過；離開編輯器 AJAX 與登出各503，完整流程未通過。458,824ms用1,858,811bytes／56puts，餘22,230，closed／sealed／pending0；沒有重送、加額度、退款或清歷史。
+
+本機161→179，正文／修訂207精確，原生冷啟動移除autosave206與footnotes76；其他資料與原有5個session精確，本次新session仍留在停止的本機副本。304物件／298檔完整備份、獨立開啟與轉舊完整格式再核對精確。程序與自有分頁關閉，runtime外連0。這次包含agent操作延遲，不能推論所有更快使用者流程必敗。
+
+18份完整清單佔charged bytes約71.7%，成為下一個寫入來源。74,029bytes清單離線gzip可到17,266bytes，但尚未實作相容格式；接下來驗證有界清單編碼與所有reader／cache／backup／pin／rollback，再測完整流程。78項整合測試屬前輪，這輪來源未改、沒有重跑。未做provider或正式切換，雲端161／pin13／餘1,881,041仍是06:28:14Z舊讀值。詳見experiments/cloudflare-wordpress/compressed-budget/README.md；完整目標active。以下是歷史。
+
 ## 壓縮快照已接入本機候選，原生 HTTP 與還原通過（2026-11-21）
 
 Reader／writer、metadata-only Markdown、完整 fallback、備份圖／pins／下載器已接入；精確旗標 content-gzip-v1 預設關閉，20 設定不變。78 項測試（19 新整合）與 TypeScript 通過。gzip／manifest 失敗不回傳新 pointer；無變更不寫入，原始媒體／主題副本保留，retention 仍拒絕新格式。
