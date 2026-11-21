@@ -1,5 +1,7 @@
 # Cloudflare WordPress 候選測試
 
+最新[採用程序與故障模型](legacy-adoption/README.md)完成17測試與4個實際備份模型；未知R2寫入會停止，遠端完成／ticket介面仍待，尚非雲端採用。以下保留前輪證據。
+
 最新[較小的plain content-v1回退](legacy-content/README.md)已完成離線轉換及舊版受限原生保存／重啟／登出；尚非雲端採用。以下保留前輪完整回退與限制。
 
 最新[舊來源本機回退驗證](old-source-rollback/README.md)已完成原生保存／重啟／登出及再升版，保留工具偏好差異與容量限制；正式站不變。以下是前階段歷史。

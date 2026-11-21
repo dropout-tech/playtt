@@ -1,5 +1,13 @@
 # Let’s Play 驗收狀態
 
+## 採用程序與故障模型完成，未知R2寫入仍須權威完成證據（2026-11-21）
+
+新增固定plan／hash、fence／window／budget檢查、原pin保留、目標依賴重驗、不可變物件不覆寫及條件式pointer程序。分別核對協調器、提交receipt、R2 current.json；既有coherent狀態不比對R2 pointer。回應遺失先讀回，協調器已178但R2仍177可只續pointer，不重送採用或倒退版本。
+
+17合成測試通過，並以實際177備份做4個記憶體模型；使用實際coordinator／pin／budget類別，底層非workerd/provider。三個完成模型各432,931bytes／7puts、pending0／closed／sealed，兩個原fixture pin保留、新增第三個。第四個R2已寫196bytes但結果不明，保留charged196／pending1、原177不變；關窗成功但不能封存，不因物件存在或actor重建就清pending。這是停止保護通過，未知寫入復原未完成。
+
+尚缺真正遠端有界上傳／操作receipt與安全結清自有ticket入口。下一步先實作本機端點與中斷驗證；不把模型當雲端採用完成。81來源／20設定不變，0Cloudflare請求／部署，正式Pages／視覺不變、PR4 draft、完整目標active。最後雲端177／pin14／餘1,083,839仍是14:24:49Z舊讀值。本機模型178不可當遠端起點。詳見experiments/cloudflare-wordpress/legacy-adoption/README.md；以下歷史。
+
 ## 較小的舊版相容回退與受限原生流程通過（2026-11-21）
 
 新增離線compressed→plain content-v1轉換，沿用完整base、產生新identity、保留298檔原始內容；5項測試及303物件獨立匯入通過。轉換集合推算432,931bytes／7puts，較完整回退2,729,308小，未操作雲端。
