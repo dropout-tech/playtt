@@ -1,5 +1,7 @@
 # 從固定上游重建目前候選
 
+最新選用組裝：先按 [content-io](content-io/README.md) 完成前11階段與最新helpers，再按 [markdown-write](markdown-write/README.md) 套第12階段。新目錄逐字比較77來源／119輔助檔、20設定不變，重複套用先拒絕；預設assembler仍不自動加入選用候選。此輪無部署，官方核心資產沿用先前雜湊驗證檔，fresh deployment仍須既有核心產生步驟。證據 `docs/verification/cloudflare-markdown-write-reassembly.json`。
+
 `rebuild-candidate.py` 使用 Python 標準函式庫與 Git，把已採用的17段修正及額外來源檔組裝到全新資料夾。它不連網、不安裝依賴、不部署、不帶入網站資料或憑證，且拒絕覆寫既有目錄。第13段修復空白slug，第14段保存完整附件欄位，第15段增加請求body失敗的固定類別診斷，第16段保存新內容完整位元組，第17段減少診斷全檔掃描；`media-repair/` 與 `history-origin/` 另交付有界資料修復與原生驗收工具。下方較早的patch／檔案數屬其當時建置。
 
 ## 組裝

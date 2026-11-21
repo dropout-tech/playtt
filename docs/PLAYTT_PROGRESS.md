@@ -1,5 +1,13 @@
 # PLAYTT 執行進度
 
+## Markdown 有界寫入與本機原生瀏覽器通過，尚未部署（2026-11-21）
+
+第12選用候選 `markdown-write/` 先用PHP檢查完整大小清單，再最多4檔、1MiB小檔案窗口並行寫入；大檔單獨處理，保留單檔16MiB／總64MiB及原始bytes／hash，出錯等已開始工作結束。格式、提交與20設定不變。125個不同相關檢查於各次執行通過、TypeScript／dry-run通過；兩個過短等待測試修正後通過。額外廣泛suite有3個既有／環境失敗（兩個舊source regex、缺PHP CLI），沒有宣稱全綠。
+
+備份130的真實本機WordPress保存132、回應遺失後重啟精確讀回、重試133無額外修訂、獨立備份／完整包轉換及回退134再冷啟動通過。Chrome原生繁中後台再以新副本編輯、按一次儲存、完整重啟，八段正文及區塊碼逐字一致；只新增預期204，其他內容／媒體／主題一致。UI登入、偏好與heartbeat另有寫入，結束149只屬本機；雲端仍130。HTTP10/10、UI32/32trace完成，檔案副本峰值約364KB；UI含response的追蹤峰值1207098bytes，均不是whole-isolate記憶體。所有程序結束、外連0。
+
+05:41:13Z四個只讀查詢核對雲端130／pin11、closed/sealed、pending0、fence解除、publisher paused、剩5935730bytes。未部署、未付費；既有1c55f0fa／bbe6a4d來源仍在線。重建25+12階段、77來源／119輔助檔一致，20設定不變。下一步原生瀏覽器provider驗證須把observer存活與窗口期限一起管理，不重跑舊一次性工具補紀錄；完整記憶體、並行、混合版本還原、實機IME與長期免費仍待。正式Pages及原視覺維持、PR4 draft、完整目標active。詳見 `cloudflare-markdown-write-*`；以下為歷史紀錄。
+
 ## 物件並行讀取的私人雲端驗證通過；pin11，重新封存（2026-11-21）
 
 候選暫時部署bf3d6b4e，8次原生HTTP完成登入、保存129、一次遺失回應讀回、一般冷讀及登出130。保存4677ms／讀回3118ms／合計7801ms，前次6031／3784／9822ms；兩次段落略異、內容累積與網路變動，不宣稱穩定改善或因果比例。主診斷149事件、7/7trace完成，0觀察到exception／request failure；保存trace4865ms，其中Markdown2356ms、manifest1659ms；讀回冷1538ms，後續一般冷讀3861ms（較前次慢）。取樣WASM73,400,320bytes不是whole-isolate記憶體。

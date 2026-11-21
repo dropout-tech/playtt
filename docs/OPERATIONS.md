@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 本機候選新增 Markdown 有界寫入，雲端仍130／pin11（2026-11-21）
+
+第12階段 `experiments/cloudflare-wordpress/markdown-write/` 已完成本機HTTP恢復與Chrome原生編輯／保存／重啟驗證，尚未部署。77來源／119輔助檔可重建，20設定不變；既有雲端版本仍1c55f0fa／來源bbe6a4d。05:41:13Z只讀確認130／pin11、剩5935730bytes、pending0、closed/sealed、fence解除、publisher paused。不要把本機134或UI149當雲端版本。
+
+下一次provider必須使用新候選來源guard與新owner，接下方content-io-provider-cold owner及verified備份130；不要改舊工具guard來重跑。原生瀏覽器有登入、heartbeat、偏好等額外寫入，窗口規劃須全部計入，保持既有額度與pins。observer與原生操作須共同協調並確認剩餘期限；只見ready檔不代表仍在觀察。全新候選先在私人環境驗證並完整備份／封存，正式Pages與原視覺維持。以下為歷史狀態。
+
 ## 最新私人狀態：並行相容讀取器，130／pin11（2026-11-21）
 
 最終Worker版本1c55f0fa-5b78-4f39-917d-9a0b03e7d1ab含bbe6a4d並行讀取器，content/readback實際bindings停用。canonical130／566e44a3-c953-423e-adde-2b0124ece358、11pins、剩5,935,730bytes，pending0、closed/sealed、fence解除、publisher paused。最後1byte窗口0bytes／0操作，所有程序結束。正式Pages不變。
