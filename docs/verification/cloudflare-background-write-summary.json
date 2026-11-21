@@ -1,0 +1,102 @@
+{
+  "schema": "playtt/local-background-write-final/v1",
+  "at": "2026-11-21T08:04:59.957Z",
+  "result": "local-pass-provider-not-tested",
+  "runtimeSourceCommit": "67dd30840e093cc83097af4273938cbf46b15351",
+  "runtimeSourceSha256": "d3463f03bb9bf03c29ed40733a51476bb0540def2c2f28eb12560779b86f1b26",
+  "policySha256": "002d726d508761d90cdd9aa002eda435b30458d6f6101836af3176764fd5799d",
+  "baseline": {
+    "versionBefore": 161,
+    "versionAfter": 171,
+    "commits": 10,
+    "lockHeartbeatCommits": 5,
+    "lockTableBytes": 14775,
+    "manifestBytes": 73740,
+    "steadyHeartbeatIntervalsMs": [
+      10009,
+      9999,
+      10020,
+      9987
+    ],
+    "counterOnlyCommits": [
+      163,
+      164
+    ],
+    "counterOnlyBytes": 196,
+    "counterTable": "wp_options"
+  },
+  "candidate": {
+    "localOnly": true,
+    "minimalIntervalSeconds": 30,
+    "nativeSettingsSerializedAsString": true,
+    "nativeSuspensionUnchanged": true,
+    "steadyLockHeartbeatIntervalsMs": [
+      30010,
+      30003,
+      30027,
+      30005,
+      30001
+    ],
+    "intervalGrouping": "Separate uninterrupted ownership periods; excludes initialization ticks, full restart and overlapping no-change heartbeats from the other browser.",
+    "versionBefore": 161,
+    "savedVersion": 168,
+    "finalVersion": 187,
+    "commits": 26,
+    "manualSaveClicks": 1,
+    "fullProcessRestarts": 1,
+    "coldContentExact": true,
+    "coldParagraphs": 9,
+    "secondUserBlocked": true,
+    "nativeTakeoverNotice": true,
+    "revisionId": 206,
+    "takeoverAutosaveId": 207,
+    "autosaveContentExact": true,
+    "allOldRevisionsExact": true,
+    "allUnrelatedCanonicalFilesExact": true,
+    "mediaAndThemeExact": true,
+    "postmetaOnlyExpectedChanges": true,
+    "monotonicSequences": true,
+    "sessions": [
+      {
+        "userId": 1,
+        "before": 60,
+        "expiredRemoved": 28,
+        "after": 32,
+        "unexpiredPreservedExact": true,
+        "runSessionRemoved": true
+      },
+      {
+        "userId": 2,
+        "before": 5,
+        "expiredRemoved": 0,
+        "after": 5,
+        "unexpiredPreservedExact": true,
+        "runSessionRemoved": true
+      }
+    ]
+  },
+  "failedAttempt": {
+    "name": "heartbeat-rate-ui",
+    "reason": "Test compared localized string \"30\" with number 30; the setting was present. Stopped before editing; local process interrupted and former listener confirmed closed.",
+    "providerRequests": 0
+  },
+  "limitations": [
+    "Local native Chrome and in-app browser only; no provider deployment or cloud write/read this turn.",
+    "30-second floor delays background lock/nonce signaling relative to 10 seconds. It does not change native lock expiry, callbacks or manual save paths.",
+    "Interval samples are not a controlled whole-workflow storage, latency, CPU or memory benchmark. Two login flows and durations differ.",
+    "Historical provider one-object events were not individually decoded; local file identities cannot be assigned to every past provider event.",
+    "Two counter-only commits were identified, but their exact SQL source remains untraced. No counters were suppressed.",
+    "Autosave after native takeover is preserved, not deduplicated. Long-term Free capacity and whole-isolate memory remain open."
+  ],
+  "cloud": {
+    "requestsThisTurn": 0,
+    "productionChanged": false,
+    "paidChange": false,
+    "lastVerifiedVersion": 161,
+    "lastVerifiedPins": 13,
+    "lastVerifiedRemainingBytes": 1881041,
+    "lastVerifiedAt": "2026-11-21T06:28:14.277Z",
+    "stateNotRefreshedThisTurn": true
+  },
+  "goalStatus": "active"
+}

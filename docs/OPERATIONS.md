@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 本機背景寫入診斷（2026-11-21）
+
+background-write/ 為本機工具包，先依 REBUILD 組裝到 markdown-write，再用 install-local-tools.py 加入九個工具。來源與 20 份設定不變；範例政策只注入本機 bundle，不可視為已部署選項。現存診斷 owner 都已結束，切勿刪 guard 重跑。
+
+本輪未查詢或修改 Cloudflare。下一個雲端窗口仍須接 markdown-provider-cold-ui owner 與 verified markdown-provider-cold-backup（161／pin13）；剩餘 1881041 bytes 是前輪 06:28:14Z 讀值，不能提高 cap、退款或刪除歷史。正式 Pages／視覺與 draft PR 維持現況。30 秒政策的 runtime 旗標整合、背景／斷線邊界及 provider 驗證仍待；詳見 experiments/cloudflare-wordpress/background-write/README.md。
+
 ## 最新私人狀態：161／pin13，全部封存（2026-11-21）
 
 最終Worker為9f5aa2c1-3348-4e5f-ae61-776a1b3cd51a，來源67dd308有界讀寫，實際content/readback旗標皆移除。06:28:14Z只讀確認canonical161／3021e7bd-a125-439d-9027-11005ea71316、13pins、剩1881041bytes、closed/sealed、pending0、fence解除、publisher paused。所有觀察／測試程序與自有瀏覽器分頁結束。正式Pages／原視覺維持。

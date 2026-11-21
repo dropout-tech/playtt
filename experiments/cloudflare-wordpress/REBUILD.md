@@ -110,3 +110,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ### content-io 的 provider 工具補充（2026-11-21）
 
 第11選用階段另增6個有界provider／備份／pin／診斷／離線核對工具；沒有再改runtime來源，仍bbe6a4d。25+11重建比對76來源／112輔助或前置檔、20設定未變，重複套用先拒絕不寫入。先前115來源檢查沿用，不因僅新增工具重跑。實際私人部署、130／pin11、觀察排程缺口見 `cloudflare-content-io-provider-*`；最新owner改接content-io-provider-cold，舊126窗口不可重跑。
+
+## 選用本機背景寫入診斷
+
+完成 markdown-write 後，可執行 background-write/install-local-tools.py --runtime <runtime-cloudflare> --apply。此工具只新增九個診斷檔，不是 runtime patch 階段，不修改來源或 20 份設定；詳見 [說明](background-write/README.md)。私人備份與 owner 不隨 Git 交付。

@@ -1,5 +1,15 @@
 # PLAYTT 執行進度
 
+## 本機定位背景快照，30 秒原生心跳候選通過（2026-11-21）
+
+使用已驗證備份 161，只在本機登入、開草稿與停留，確認五次連續心跳各僅改 postmeta 72 的編輯鎖，每次 14775 bytes 資料表加 73740 bytes manifest；間隔約 10 秒。另兩次只增加 wp_options ID 計數，尚未追到 SQL 來源，未略過保存。本機結果不能反推所有歷史 provider 單物件事件。
+
+只在本機 bundle 注入原生 heartbeat_settings minimalInterval 30 秒；五個穩定間隔為 30001–30027 ms。Chrome 原生編輯新增第九段、保存一次到 168；完整重啟後全文／區塊碼精確。另一個瀏覽器的 admin 被原生鎖阻擋，接管後舊編輯者收到保護對話框，兩者登出後本機 187。修訂 206、接管 autosave 207 與 footnotes 76 皆正確，其他內容／媒體／主題一致。admin 的 28 個過期 session 由核心清除，32 個有效 session 與使用者 2 的 5 個原有 session 精確保留；本次登入 session 已移除。
+
+第一次候選測試把核心輸出的字串「30」錯判為未生效，編輯前中止並確認本機埠關閉；後續 scope helper 確認設定並完成驗證。這是測試型別假設錯誤，證據保留。背景鎖定／nonce 通知較原 10 秒慢，未改到期規則或保存路徑；兩流程時長與操作不同，不宣稱整體容量或速度固定改善比例。
+
+本輪零 Cloudflare 請求，77 runtime 來源與 20 設定不變，正式 Pages／目前視覺不變。雲端 161／pin13／餘 1881041 bytes 為前輪 06:28:14Z 讀值，未刷新。新增 background-write 本機工具包與完整比對證據，來源檢查不重複跑；首次部署整合、背景／斷線邊界、whole-isolate 記憶體、長期免費與實機仍待。完整目標 active，PR4 draft。詳見 experiments/cloudflare-wordpress/background-write/README.md 與 docs/verification/cloudflare-background-write-summary.json。
+
 ## 私人原生編輯保存與接續重開通過；首次窗口容量不足，pin13（2026-11-21）
 
 67dd308來源暫部署fdc7f590，Chrome繁中原生編輯器新增一段、按一次儲存並顯示成功。原生autosave204及正式修訂205正文皆精確，但首次重開遇到窗口容量保護；420秒／3MiB／96操作實用3109160bytes／82puts，僅餘36568bytes。不是操作次數用完，也不能將一次手動保存當成整個瀏覽器只有一次寫入。已關窗封存，獨立完整備份154／pin12通過。

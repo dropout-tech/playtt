@@ -1,5 +1,7 @@
 # Cloudflare WordPress 候選測試
 
+新增 [背景寫入本機診斷](background-write/README.md)：已定位編輯鎖與 ID 計數的快照來源；30 秒原生心跳候選通過保存、完整重啟及雙帳號接管，未部署。本輪無 Cloudflare 請求，完整目標及正式站現況不變。
+
 ## 最新進展（2026-11-21）：私人原生瀏覽器與容量限制
 
 [markdown-write](markdown-write/README.md) 已部署到既有私人Worker驗證。原生保存成功；首次重開因3MiB窗口不足被拒，獨立備份確認正文完整。新窗口只接續重開八段精確文字和登出，完成161／pin13並封存；總計4054689bytes／106puts。背景快照放大仍待改善，不能宣稱正式後台或長期免費完成。最終9f5aa2c1實際旗標停用，77來源／131輔助檔可重建、20設定不變；正式Pages及原視覺維持、PR4 draft。詳細失敗與範圍見 `cloudflare-markdown-provider-*`。

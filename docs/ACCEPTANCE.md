@@ -1,5 +1,11 @@
 # Let’s Play 驗收狀態
 
+## 本機背景寫入診斷（2026-11-21）
+
+本機診斷候選通過：30 秒原生心跳、Chrome 保存一次、完整 workerd 重啟後九段全文與區塊碼精確，第二個瀏覽器被鎖阻擋並可原生接管，原編輯者收到保護對話框。完整快照比對保留舊內容、修訂、媒體、主題及有效 sessions；接管 autosave 207 精確保存。第一次設定檢查因字串／數字誤判中止，已保留紀錄。
+
+這不是 provider 或長期驗收。心跳穩定間隔約 10 秒改為 30 秒，通知速度有取捨；來源仍 67dd308，正式站未改，本輪無 Cloudflare 請求。雲端 161／pin13／餘 1881041 bytes 為前輪讀值。完整 A01–A20 仍未完成，詳見 experiments/cloudflare-wordpress/background-write/README.md 及 docs/verification/cloudflare-background-write-summary.json。
+
 ## 2026-11-21 補充：私人原生瀏覽器、容量失敗與接續驗證
 
 A04／A06／A07增加實際Cloudflare Chrome繁中編輯、單次手動保存、獨立備份154、另一有界窗口重開八段精確文字與原生登出、備份161及pin13證據。第一個3MiB窗口實用3109160bytes後重開被拒；2個manifest持久化請求失敗。接續1.5MiB窗口實用945529bytes完成重開登出，不重送內容。原生autosave及正式修訂均核對，過期autosave由核心規則刪除，正式修訂205保留。最後13pins／closed/sealed／pending0、publisher paused；正式Pages不變。這不是長期免費、whole-isolate記憶體、實機IME或最終停用旗標後原生請求驗收。背景快照成本尚高，A04/A06/A07/A20仍不整項結案。見 `cloudflare-markdown-provider-*`，總結明列首次容量失敗。
