@@ -1,5 +1,15 @@
 # PLAYTT 執行進度
 
+## 草稿回應遺失後的持久讀回：本機通過，雲端未啟用（2026-11-21）
+
+新增第9個選用候選 `editor-readback/`。限定既有草稿頁面的content及可選id/title/excerpt/draft狀態；成功回應遺失後只做一次有界、帶驗證的GET。只有從已保存快照冷載入且每個欄位逐字吻合，才交回原生成功流程；不重送寫入、不直接清除錯誤。未知欄位／權限拒絕／取消／逾時／不同內容均保留原錯誤。暫存若曾被其他PHP操作使用而尚未提交，回傳409並保留它，避免丟掉原生GET剛建立的auto-draft。
+
+最終Chrome候選只按一次保存；提交後故意令本文失效，隨後原生顯示「草稿已儲存」，無舊錯誤。版本122→125→125→134；提交與讀回的canonical檔完全相同，讀回trace無commit。完整程序重啟後同session開啟，五段繁中與原生textarea逐字一致。只新增預期修訂201，沒有額外頁面／修訂；其他帳號／session／媒體／主題與既有修訂保留。最終33/33本機trace完成、1份2,294,484bytes完整包，冷讀回2241ms；不是provider延遲、費用或記憶體驗收。測試分頁與程序全部結束。
+
+首版因普通GET缺少canonical headers而保守拒絕；第二版冷讀回通過；加入未提交暫存保護後另起新副本再次通過。25項檢查、TypeScript、dry-run及75來源／82輔助檔重建通過，20個設定完全未改，沒有啟用或部署本候選。00:26:55Z雲端只讀核對仍118／8pins、封存關窗、publisher paused、餘10,232,130bytes。正式Pages與原視覺維持、PR #4 draft、目標active。
+
+固定核心顯示成功autosave不建立成功notice，可能導致錯誤留存；先前事件的具體背景請求仍未歸因。這個實驗只處理支援範圍內的保存回應遺失，不能宣稱所有錯誤恢復完成。下一步驗證多頁並行時的保守拒絕、未提交／不一致讀回及有界provider行為，再處理完整包成本與長期免費、實機／IME驗收。詳見 `experiments/cloudflare-wordpress/editor-readback/README.md`、`docs/verification/cloudflare-readback-summary.json`、`cloudflare-readback-audit.json`。以下為歷史紀錄。
+
 ## 本機原生錯誤、重試及冷啟動通過；提示矛盾待修（2026-11-21）
 
 Chrome操作真實WordPress7.1.4編輯器，以canonical118的兩份獨立本機R2／SQLite DO副本驗證。自有草稿193新增第五段繁中，成功提交後由本機包裝器令回應本文失效。原生畫面顯示「更新時發生錯誤。無效的JSON回應」，五段內容仍在。第一輪稍後按鈕顯示「已儲存」且disabled，但錯誤通知仍留著；沒有觀察到相同內容的明確page-save重試receipt，背景原生寫入仍繼續，狀態變化的真正原因未定。此提示矛盾保留為待修，不能宣稱完整錯誤恢復已驗收。

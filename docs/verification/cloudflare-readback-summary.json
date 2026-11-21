@@ -1,0 +1,105 @@
+{
+  "at": "2026-11-21T00:33:47.090103+00:00",
+  "result": "local-native-durable-readback-pass-provider-disabled",
+  "runtimeSourceChanged": [
+    "src/worker.ts",
+    "src/playtt-editor-readback.ts"
+  ],
+  "configChanges": 0,
+  "newDeployment": false,
+  "remoteMutations": 0,
+  "flag": "PLAYTT_EDITOR_READBACK=draft-readback-v1",
+  "enabledInDeployedConfigs": false,
+  "finalAttempt": {
+    "name": "playtt-readback-guard-ui",
+    "versions": [
+      {
+        "label": "before",
+        "version": 122
+      },
+      {
+        "label": "fault",
+        "version": 125
+      },
+      {
+        "label": "readback",
+        "version": 125
+      },
+      {
+        "label": "final",
+        "version": 134
+      }
+    ],
+    "readback": {
+      "count": 1,
+      "writeReplayObserved": false,
+      "version": 125,
+      "contentExact": true,
+      "coldRuntime": true,
+      "noCommitPhase": true,
+      "durationMs": 2241
+    },
+    "telemetry": {
+      "traces": 33,
+      "completedTraces": 33,
+      "fullPacks": 1,
+      "fullPackBytes": 2294484,
+      "requestFailures": 0
+    },
+    "nativeSuccessNotice": true,
+    "manualRetry": false,
+    "coldNativeTextareaExact": true,
+    "noExtraPageOrRevision": true,
+    "canonicalFaultAndReadbackFilesIdentical": true
+  },
+  "earlierAttempts": [
+    {
+      "name": "playtt-readback-ui",
+      "result": "correctly refused recovery without canonical read headers; no write replay",
+      "disposed": true
+    },
+    {
+      "name": "playtt-readback-cold-ui",
+      "result": "native success and cold reload passed before unsettled-cache guard; repeated on final candidate",
+      "disposed": true
+    }
+  ],
+  "verification": {
+    "focusedAndRegressionTests": 25,
+    "typeScript": "pass",
+    "dryRun": "pass",
+    "uploadKiB": 20882.03,
+    "gzipKiB": 7608.11,
+    "knownWarnings": "Generated PHP loader direct-eval and duplicate keys; native global-styles warnings remain",
+    "reassemblySources": 75,
+    "reassemblyHelpers": 82,
+    "optionalStages": 9,
+    "all20ConfigsUnchanged": true,
+    "postBrowserScalarLifetimeReview": "Guard retains a boolean instead of the cached PHP promise across disposal; 11 focused checks, TypeScript, dry-run and source reconstruction rerun; native UI not replayed for that nonbehavioral refactor"
+  },
+  "sourceResearch": {
+    "artifact": "Pinned WordPress 7.1.4 static corpus; bytes checked against manifest",
+    "apiFetchSha256": "292e098ddb81b081258f2395633f81c3d3e228cb88dca819279f5ff51eb1f1ed",
+    "coreDataSha256": "02867fb22447abfeec04c1c5a5517b09d67b0c7a9a2c74f2d3d67d167b1a3d7f",
+    "editorSha256": "79b846a489d39955f03d4cbeffa8544947fb538d08fce888e85aa015f6cefe99",
+    "finding": "Saved-state and save notices update separately; successful autosave skips success notice. A possible stale-error path, not an attribution of the previous browser event."
+  },
+  "cloud": {
+    "observedAt": "2026-11-21T00:26:55.122Z",
+    "version": 118,
+    "revision": "207cc3ef-5e65-463d-857c-b8e4c2ad3e89",
+    "pins": 8,
+    "remainingBytes": 10232130,
+    "sealed": true,
+    "publisher": "paused",
+    "deployment": "2353ff34-5a75-4d0b-bf50-25b247cf35e8"
+  },
+  "limits": [
+    "Exact existing draft page content/title/excerpt/id/draft status only; metadata, date, media, creates, autosaves and publish are unsupported",
+    "Unsettled warm PHP view returns 409 without disposal; deterministic actual-function tests pass, multi-tab native acceptance still open",
+    "Readback proves desired fields at one durable snapshot, not transaction attribution or plugin side effects",
+    "Provider fault/memory/latency/free operation not measured by local Miniflare",
+    "Same-content full packs, physical devices/IME, retention and clean delivery remain open",
+    "Official site and original visual unchanged; PR remains draft"
+  ]
+}
