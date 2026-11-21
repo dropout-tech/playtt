@@ -1,0 +1,145 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -1,3 +1,4 @@
++import { PLAYTT_EDITOR_HEARTBEAT_FLAG, PLAYTT_EDITOR_HEARTBEAT_POLICY } from './playtt-editor-heartbeat.js';
+ import { PLAYTT_EDITOR_READBACK_FLAG, PLAYTT_EDITOR_READBACK_POLICY, isPlayttDraftReadbackRequest } from './playtt-editor-readback.js';
+ import { isWordPressLogoutMutation } from './playtt-request-mutation.js';
+ import { PLAYTT_EDITOR_LOCK_PATH, PLAYTT_EDITOR_LOCK_PATCH_SHA, patchPlayttEditorLock } from './playtt-editor-lock.js';
+@@ -251,6 +252,7 @@
+   PLAYTT_METADATA_OVERLAY?: string
+   PLAYTT_CONTENT_OVERLAY?: string
+   PLAYTT_EDITOR_READBACK?: string
++  PLAYTT_EDITOR_HEARTBEAT?: string
+   WORDPRESS_SITE_CONTEXTS?: string
+   WORDPRESS_PREVIEW_DOMAIN?: string
+   WORDPRESS_PREVIEW_HOST_SECRET?: string
+@@ -523,6 +525,7 @@
+   php: PHP
+   requestHandler: PHPRequestHandler
+   wordpressVersion: string
++  editorHeartbeat: boolean
+   pointer: MarkdownPointer
+   manifestCache?: PlayttRuntimeManifestCache<MarkdownManifest>
+ }
+@@ -1718,6 +1721,7 @@
+ }
+ 
+ async function getRuntime(env: RuntimeEnv, pointer: MarkdownPointer, site: SiteContext, includeWebsiteImporter = false, trace?: CloudflarePhaseTrace): Promise<Runtime> {
++  const editorHeartbeat = env.PLAYTT_EDITOR_HEARTBEAT === PLAYTT_EDITOR_HEARTBEAT_FLAG
+   let cachedRuntime = cachedRuntimes.get(site.id)
+   if (cachedRuntime && (!samePointer(cachedRuntime.basePointer, pointer) || includeWebsiteImporter)) {
+     if (trace) await trace.measure("runtime.invalidate.dispose", () => discardCachedRuntime(site.id))
+@@ -1725,7 +1729,7 @@
+     cachedRuntime = undefined
+   }
+   if (!cachedRuntime) {
+-    const promise = (async () => bootRuntime(env.WORDPRESS_STATE_BUCKET, pointer, site.origin, await canonicalWordPressAuthConstants(env, site), includeWebsiteImporter, site, trace, env.PLAYTT_EDITOR_READBACK === PLAYTT_EDITOR_READBACK_FLAG))()
++    const promise = (async () => bootRuntime(env.WORDPRESS_STATE_BUCKET, pointer, site.origin, await canonicalWordPressAuthConstants(env, site), includeWebsiteImporter, site, trace, env.PLAYTT_EDITOR_READBACK === PLAYTT_EDITOR_READBACK_FLAG, editorHeartbeat))()
+     cachedRuntime = { basePointer: { ...pointer }, promise, state: "pending" }
+     cachedRuntimes.set(site.id, cachedRuntime)
+     promise.then(() => {
+@@ -1737,7 +1741,15 @@
+   }
+   // Every PHP consumer may create native transient inventory until its commit.
+   cachedRuntime.readbackClean = false
+-  return cachedRuntime.promise
++  const runtime = await cachedRuntime.promise
++  if (runtime.editorHeartbeat !== editorHeartbeat) {
++    // This generated adapter is runtime-owned and loaded afresh by each PHP
++    // request. Change only its policy; disposing a warm runtime here could lose
++    // an uncommitted native auto-draft whose ID was already returned to the UI.
++    materializeCanonicalChangeAdapter(runtime.php, env.PLAYTT_EDITOR_READBACK === PLAYTT_EDITOR_READBACK_FLAG, editorHeartbeat)
++    runtime.editorHeartbeat = editorHeartbeat
++  }
++  return runtime
+ }
+ 
+ function cacheRuntime(pointer: MarkdownPointer, runtime: Runtime, site: SiteContext, readbackClean = false): void {
+@@ -1785,9 +1797,9 @@
+   await dispose.call(requestHandler)
+ }
+ 
+-async function bootRuntime(bucket: R2Bucket, pointer: MarkdownPointer, origin: string, authConstants: Record<WordPressAuthConstant, string>, includeWebsiteImporter = false, site: SiteContext = DEFAULT_SITE_CONTEXT, trace?: CloudflarePhaseTrace, editorReadback = false): Promise<Runtime> {
++async function bootRuntime(bucket: R2Bucket, pointer: MarkdownPointer, origin: string, authConstants: Record<WordPressAuthConstant, string>, includeWebsiteImporter = false, site: SiteContext = DEFAULT_SITE_CONTEXT, trace?: CloudflarePhaseTrace, editorReadback = false, editorHeartbeat = false): Promise<Runtime> {
+   const revision = await readCanonicalRevision(bucket, pointer, site, trace)
+-  const booted = await bootWordPressRuntime("do-not-attempt-installing", true, true, undefined, revision.markdown, new Uint8Array(markdownPrimaryBootstrapIndex), origin, authConstants, bucket, true, revision.uploads, revision.wpContent, revision.wpContentDeleted, includeWebsiteImporter, trace, editorReadback)
++  const booted = await bootWordPressRuntime("do-not-attempt-installing", true, true, undefined, revision.markdown, new Uint8Array(markdownPrimaryBootstrapIndex), origin, authConstants, bucket, true, revision.uploads, revision.wpContent, revision.wpContentDeleted, includeWebsiteImporter, trace, editorReadback, editorHeartbeat)
+   const manifestCache = new PlayttRuntimeManifestCache<MarkdownManifest>()
+   manifestCache.remember(siteStorageKeys(site).root, pointer, revision.manifest)
+   return { ...booted, pointer, manifestCache }
+@@ -1796,7 +1808,7 @@
+ async function bootstrapCanonicalRuntime(env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext, requestUrl: string, lease: Lease, trace?: CloudflarePhaseTrace): Promise<Runtime> {
+   const origin = site.origin
+   const seed = trace ? await trace.measure("canonical.bootstrap.seed", packagedCanonicalMarkdownSeed) : await packagedCanonicalMarkdownSeed()
+-  const runtime = await bootWordPressRuntime("do-not-attempt-installing", true, true, undefined, seed, new Uint8Array(markdownPrimaryBootstrapIndex), origin, await canonicalWordPressAuthConstants(env, site), env.WORDPRESS_STATE_BUCKET, true, undefined, undefined, [], false, trace, env.PLAYTT_EDITOR_READBACK === PLAYTT_EDITOR_READBACK_FLAG)
++  const runtime = await bootWordPressRuntime("do-not-attempt-installing", true, true, undefined, seed, new Uint8Array(markdownPrimaryBootstrapIndex), origin, await canonicalWordPressAuthConstants(env, site), env.WORDPRESS_STATE_BUCKET, true, undefined, undefined, [], false, trace, env.PLAYTT_EDITOR_READBACK === PLAYTT_EDITOR_READBACK_FLAG, env.PLAYTT_EDITOR_HEARTBEAT === PLAYTT_EDITOR_HEARTBEAT_FLAG)
+   try {
+     const passwordFile = "/tmp/wordpress-admin-password"
+     let adminPassword: string
+@@ -2484,7 +2496,8 @@
+   includeWebsiteImporter = false,
+   trace?: CloudflarePhaseTrace,
+   editorReadback = false,
+-): Promise<{ php: PHP; requestHandler: PHPRequestHandler; wordpressVersion: string }> {
++  editorHeartbeat = false,
++): Promise<{ php: PHP; requestHandler: PHPRequestHandler; wordpressVersion: string; editorHeartbeat: boolean }> {
+   if (includeSqlite && !runtimeBucket) throw new Error("SQLite integration artifact requires WORDPRESS_STATE_BUCKET.")
+   validateWpContentDeletedPaths(wpContentDeleted, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   const sqliteIntegrationPluginZip = includeSqlite ? trace ? await trace.measure("runtime.archive.sqlite.fetch-verify", () => readSqliteIntegrationArtifact(runtimeBucket!)) : await readSqliteIntegrationArtifact(runtimeBucket!) : undefined
+@@ -2524,7 +2537,7 @@
+           if (trace) await trace.measure("runtime.archive.mdi.extract", () => materializeMarkdownDatabaseIntegration(php))
+           else await materializeMarkdownDatabaseIntegration(php)
+           installPlayttStorageOpaqueIds(php)
+-          materializeCanonicalChangeAdapter(php, editorReadback)
++          materializeCanonicalChangeAdapter(php, editorReadback, editorHeartbeat)
+           if (trace) await trace.measure("canonical.hydration.markdown", async () => materializeRuntimeFiles(php, MARKDOWN_ROOT, markdownFiles), { files: markdownFiles.length, bytes: sumRuntimeFileBytes(markdownFiles) })
+           else materializeRuntimeFiles(php, MARKDOWN_ROOT, markdownFiles)
+           if (markdownIndexSeed) php.writeFile(MARKDOWN_RESOLVED_INDEX_PATH, markdownIndexSeed)
+@@ -2562,7 +2575,7 @@
+   const compacted = compactPlayttCoreFiles(php)
+   console.log(JSON.stringify({ schema: 'playtt-core-compaction/v1', ...compacted }))
+   trackPlayttRuntimeLifetime(php)
+-  return { php, requestHandler, wordpressVersion }
++  return { php, requestHandler, wordpressVersion, editorHeartbeat }
+ }
+ 
+ function initialMarkdownFiles(siteUrl = PROBE_SITE_URL): RuntimeFile[] {
+@@ -2845,11 +2858,12 @@
+ require_once ${JSON.stringify(bootstrap)};`))
+ }
+ 
+-function materializeCanonicalChangeAdapter(php: PHP, editorReadback = false): void {
++function materializeCanonicalChangeAdapter(php: PHP, editorReadback = false, editorHeartbeat = false): void {
+   const path = "/wordpress/wp-content/mu-plugins/wp-codebox-cloudflare-canonical-changes.php"
+   const source = `<?php
+ ${PLAYTT_STARTER_MEDIA_POLICY}
+ ${editorReadback ? PLAYTT_EDITOR_READBACK_POLICY : ''}
++${editorHeartbeat ? PLAYTT_EDITOR_HEARTBEAT_POLICY : ''}
+ add_action( 'markdown_database_integration_flushed', static function ( $changes ) {
+ 	$json = json_encode( $changes, JSON_UNESCAPED_SLASHES );
+ 	if ( false === $json || false === file_put_contents( '${MARKDOWN_CHANGES_PATH}', $json, LOCK_EX ) ) {
+--- a/tests/playtt-editor-readback.test.mjs
++++ b/tests/playtt-editor-readback.test.mjs
+@@ -125,7 +125,20 @@
+ test('actual warm-runtime lookup invalidates its clean marker for every PHP consumer',async()=>{
+   const source=await readFile('src/worker.ts','utf8');const start=source.indexOf('async function getRuntime('),end=source.indexOf('\nfunction cacheRuntime',start);
+   const {code}=await transform(source.slice(start,end),{loader:'ts',target:'es2022'});
+-  const pointer={revision:'saved'},runtime={native:true},cached={basePointer:pointer,promise:Promise.resolve(runtime),state:'ready',readbackClean:true};
+-  const map=new Map([['default',cached]]),get=vm.runInNewContext(code+';getRuntime',{cachedRuntimes:map,samePointer:()=>true});
++  const pointer={revision:'saved'},runtime={native:true,editorHeartbeat:false},cached={basePointer:pointer,promise:Promise.resolve(runtime),state:'ready',readbackClean:true};
++  const map=new Map([['default',cached]]),get=vm.runInNewContext(code+';getRuntime',{cachedRuntimes:map,samePointer:()=>true,PLAYTT_EDITOR_HEARTBEAT_FLAG:'native-30s-v1'});
+   assert.equal(await get({},pointer,{id:'default'}),runtime);assert.equal(cached.readbackClean,false);
+ });
++
++test('heartbeat option changes preserve unsettled native inventory and update only its generated adapter',async()=>{
++  const source=await readFile('src/worker.ts','utf8'),start=source.indexOf('async function getRuntime('),end=source.indexOf('\nfunction cacheRuntime',start);
++  const {code}=await transform(source.slice(start,end),{loader:'ts',target:'es2022'});
++  const pointer={revision:'saved'},php={uncommittedAutoDraft:206},runtime={php,editorHeartbeat:false};
++  const cached={basePointer:pointer,promise:Promise.resolve(runtime),state:'ready',readbackClean:false},calls=[];
++  const get=vm.runInNewContext(code+';getRuntime',{cachedRuntimes:new Map([['default',cached]]),samePointer:()=>true,PLAYTT_EDITOR_HEARTBEAT_FLAG:'native-30s-v1',PLAYTT_EDITOR_READBACK_FLAG:'draft-readback-v1',materializeCanonicalChangeAdapter:(...args)=>calls.push(args),discardCachedRuntime:()=>{throw Error('Must not discard native inventory');}});
++  const enabled={PLAYTT_EDITOR_HEARTBEAT:'native-30s-v1'};
++  assert.equal(await get(enabled,pointer,{id:'default'}),runtime);assert.equal(runtime.editorHeartbeat,true);assert.deepEqual(calls,[[php,false,true]]);
++  assert.equal(await get(enabled,pointer,{id:'default'}),runtime);assert.equal(calls.length,1);
++  assert.equal(await get({},pointer,{id:'default'}),runtime);assert.equal(runtime.editorHeartbeat,false);assert.deepEqual(calls[1],[php,false,false]);
++  assert.equal(await get({PLAYTT_EDITOR_HEARTBEAT:'unknown'},pointer,{id:'default'}),runtime);assert.equal(calls.length,2);assert.equal(php.uncommittedAutoDraft,206);assert.equal(cached.readbackClean,false);
++});

@@ -1,5 +1,9 @@
 # Let’s Play 驗收狀態
 
+## 心跳政策整合（2026-11-21）
+
+本機心跳 runtime 選項整合通過：28 項 JS 回歸／核心檢查、24 個 PHP fixture、真實 WordPress 新／既有編輯頁與旗標切換保留新草稿、獨立啟用冷啟動、TypeScript／dry-run及完整重建。20 份設定仍未啟用，尚未部署；本輪未重做原生瀏覽器與 provider 驗收。connectNow 可立即送請求，所以不能由 30 秒推論容量上限；whole-isolate 記憶體、長期免費、實機及完整 A01–A20 仍待。詳見 experiments/cloudflare-wordpress/editor-heartbeat/README.md。
+
 ## 本機背景寫入診斷（2026-11-21）
 
 本機診斷候選通過：30 秒原生心跳、Chrome 保存一次、完整 workerd 重啟後九段全文與區塊碼精確，第二個瀏覽器被鎖阻擋並可原生接管，原編輯者收到保護對話框。完整快照比對保留舊內容、修訂、媒體、主題及有效 sessions；接管 autosave 207 精確保存。第一次設定檢查因字串／數字誤判中止，已保留紀錄。

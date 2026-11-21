@@ -1,5 +1,9 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 心跳政策整合（2026-11-21）
+
+新增 editor-heartbeat 選用階段，接在 markdown-write 後。若需要 background-write 本機診斷，須先安裝其工具再套 editor-heartbeat，因前者鎖定舊 worker prerequisite。旗標 PLAYTT_EDITOR_HEARTBEAT 僅精確值 native-30s-v1 啟用，其餘關閉；本輪 20 份設定均未加入。不要將 30 秒當寫入額度保證，connectNow 保留立即連線能力。未部署、零雲端請求；未來 provider 工作仍接既有 161／pin13 owner，禁止提高 cap、退款或刪歷史。詳見 experiments/cloudflare-wordpress/editor-heartbeat/README.md。
+
 ## 本機背景寫入診斷（2026-11-21）
 
 background-write/ 為本機工具包，先依 REBUILD 組裝到 markdown-write，再用 install-local-tools.py 加入九個工具。來源與 20 份設定不變；範例政策只注入本機 bundle，不可視為已部署選項。現存診斷 owner 都已結束，切勿刪 guard 重跑。

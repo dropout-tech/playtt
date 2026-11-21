@@ -1,5 +1,17 @@
 # PLAYTT 執行進度
 
+## 原生心跳政策接入 runtime，本機整合通過（2026-11-21）
+
+新增預設關閉的 PLAYTT_EDITOR_HEARTBEAT=native-30s-v1，政策內容與前輪原生 UI 候選完全相同；只在 post.php／post-new.php 設定至少 30 秒並保留較高既有值。冷啟動與初始建站路徑均傳遞設定。暖啟動切換只重寫 runtime 自有的政策檔，不丟棄 PHP，避免遺失已回傳 ID、但尚未提交的新草稿。
+
+完整 pinned Heartbeat 核心的 9 項測試，加讀回／快取 19 項，共 28 項通過；24 個真實 PHP hook fixture 情境通過。原生 WordPress HTTP 通過預設停用、未知旗標停用、既有／新編輯頁啟用、個人頁不受影響、同 PHP 切換設定、新草稿 206 保留與既有正文精確、登出；另一個獨立冷啟動從第一個請求即啟用也通過。不是本輪瀏覽器／provider 驗收。
+
+保留測試失敗紀錄：首輪工具誤讀區塊編輯器 ID 格式；次輪到達精確讀回後未辨識單引號與實體編碼的登出連結；修正後第三個本機副本通過。既有 getRuntime 測試補齊新增依賴並新增防丟稿回歸測試。所有程序結束，外連 0。
+
+核心 connectNow 仍能立即連線及排下一次立即請求；因此 30 秒不是硬性限流或容量保證。背景分頁仍採核心 120 秒排程，模擬測試不等於真實 OS 暫停／斷線驗收。原有寫入窗口不可移除。
+
+TypeScript、dry-run、25 個已採用階段加 13 個選用階段重新組裝通過，78 來源／142 輔助檔一致、20 份交付設定不變且無新旗標。初次封裝把額外未交付的 local config 也算入 20 份而中止；修正為精確比較交付清單後，在新目錄完成重建。未部署、零 Cloudflare 請求；前輪雲端 161／pin13／餘1881041 bytes 是 06:28:14Z 讀值，未刷新。正式 Pages／視覺不變、PR4 draft、完整 A01–A20 active。詳見 experiments/cloudflare-wordpress/editor-heartbeat/README.md 與 docs/verification/cloudflare-editor-heartbeat-summary.json。
+
 ## 本機定位背景快照，30 秒原生心跳候選通過（2026-11-21）
 
 使用已驗證備份 161，只在本機登入、開草稿與停留，確認五次連續心跳各僅改 postmeta 72 的編輯鎖，每次 14775 bytes 資料表加 73740 bytes manifest；間隔約 10 秒。另兩次只增加 wp_options ID 計數，尚未追到 SQL 來源，未略過保存。本機結果不能反推所有歷史 provider 單物件事件。

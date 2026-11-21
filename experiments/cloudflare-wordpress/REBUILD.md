@@ -114,3 +114,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ## 選用本機背景寫入診斷
 
 完成 markdown-write 後，可執行 background-write/install-local-tools.py --runtime <runtime-cloudflare> --apply。此工具只新增九個診斷檔，不是 runtime patch 階段，不修改來源或 20 份設定；詳見 [說明](background-write/README.md)。私人備份與 owner 不隨 Git 交付。
+
+## 選用第 13 階段：原生編輯器心跳
+
+先完成 markdown-write；若需要 background-write 的九個診斷工具，先安裝再套本階段。執行 editor-heartbeat/apply-local-candidate.py --runtime <runtime-cloudflare> --apply。驗證結果為 78 個來源、142 個輔助檔、20 份設定不變，沒有自動啟用旗標或部署。詳見 [說明](editor-heartbeat/README.md)。

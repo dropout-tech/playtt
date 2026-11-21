@@ -1,0 +1,35 @@
+// Runs the complete, hash-verified pinned core; only DOM/jQuery/clock/transport
+// are simulated. Browser throttling and real network failures remain separate.
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import {readFile,open} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import vm from 'node:vm';
+const manifest=JSON.parse(await readFile('assets/wordpress-static-artifact.json','utf8'));
+const entry=manifest.files.find(f=>f.path==='wordpress/wp-includes/js/heartbeat.js');
+assert.equal(entry.sha256,'ba7e1f3a28b3ecc38a76b07bb7f32f3118f9a3d23353b520e705d4dd2f4621ad');
+const h=await open('artifacts/cloudflare-wordpress-static-corpus.bin','r'),bytes=Buffer.alloc(entry.size);
+try{assert.equal((await h.read(bytes,0,entry.size,entry.offset)).bytesRead,entry.size);}finally{await h.close();}
+assert.equal(createHash('sha256').update(bytes).digest('hex'),entry.sha256);
+function setup(options={minimalInterval:'30',interval:'10',suspension:'disable'},hidden=false){
+ let now=1800000000000,next=1;const started=now,timers=new Map(),events=[],requests=[],handlers=new Map();
+ const doc={hidden,visibilityState:hidden?'hidden':'visible'},win={pagenow:'page',ajaxurl:'/wp-admin/admin-ajax.php',heartbeatSettings:{nonce:'synthetic',...options},wpApiSettings:{nonce:'old-rest'},wp:{hooks:{doAction:(name,...args)=>events.push({name,args})}}};
+ const emit=(target,name,args=[])=>{for(const [full,fns]of handlers.get(target)||[])if(full.split('.')[0]===name)for(const fn of [...fns])fn({type:name,originalEvent:args[0]},...args);};
+ const jq=target=>{if(typeof target==='function'){target();return;}return {on(names,fn){const own=handlers.get(target)||new Map();handlers.set(target,own);for(const n of names.split(' '))own.set(n,[...(own.get(n)||[]),fn]);return this;},off(namespace){for(const key of handlers.get(target)?.keys()||[])if(key.endsWith(namespace))handlers.get(target).delete(key);return this;},trigger(name,args=[]){events.push({name,args});emit(target,name,args);return this;},each(){return this;}};};
+ jq.extend=(...args)=>Object.assign(...args);jq.ajax=options=>{const callbacks=[];const request={options,at:now-started,readyState:1,status:0,always(fn){callbacks.push(['always',fn]);return this;},done(fn){callbacks.push(['done',fn]);return this;},fail(fn){callbacks.push(['fail',fn]);return this;},settle(kind,response={server_time:1},status=200){assert.equal(this.readyState,1);this.readyState=4;this.status=status;for(const [type,fn]of callbacks){if(type==='always')fn();else if(type==='done'&&kind==='success')fn(response,'success',this);else if(type==='fail'&&kind!=='success')fn(this,kind,'synthetic transport failure');}},abort(){this.settle('abort',null,0);}};requests.push(request);return request;};
+ const timer=(fn,ms,repeat)=>{const id=next++;timers.set(id,{fn,at:now+ms,repeat:repeat?ms:0});return id;};
+ Object.assign(win,{setTimeout:(f,n)=>timer(f,n,false),clearTimeout:id=>timers.delete(id),setInterval:(f,n)=>timer(f,n,true),clearInterval:id=>timers.delete(id)});
+ class ClockDate extends Date{constructor(...args){super(...(args.length?args:[now]));}static now(){return now;}}
+ vm.runInNewContext(bytes.toString('utf8'),{jQuery:jq,window:win,document:doc,wp:win.wp,Date:ClockDate,console});
+ const advance=ms=>{const end=now+ms;let count=0;for(;;){const chosen=[...timers].filter(([,t])=>t.at<=end).sort((a,b)=>a[1].at-b[1].at||a[0]-b[0])[0];if(!chosen)break;assert.ok(++count<1000,'Timer loop exceeded bound');const[id,t]=chosen;now=t.at;if(t.repeat)t.at+=t.repeat;else timers.delete(id);t.fn();}now=end;};
+ return {api:win.wp.heartbeat,requests,events,win,doc,advance,visibility(value){doc.hidden=value;doc.visibilityState=value?'hidden':'visible';emit(doc,'visibilitychange');},pagehide(){emit(win,'pagehide');},pageshow(){emit(win,'pageshow',[{persisted:true}]);}};
+}
+test('localized floor clamps ordinary initial and later fast intervals',()=>{const s=setup();assert.equal(s.api.interval(),30);assert.equal(s.api.interval('fast'),30);s.advance(29999);assert.equal(s.requests.length,0);s.advance(1);assert.equal(s.requests.length,1);s.requests[0].settle('success');s.advance(30000);assert.deepEqual(s.requests.map(r=>r.at),[30000,60000]);});
+test('unchanged disabled configuration retains native fast interval',()=>{const s=setup({interval:'10',suspension:'disable'});s.advance(10000);assert.equal(s.requests.length,1);assert.equal(s.api.interval('fast'),5);});
+test('a higher valid floor remains effective',()=>{const s=setup({minimalInterval:'90',interval:'10',suspension:'disable'});s.api.interval('fast');s.advance(89999);assert.equal(s.requests.length,0);s.advance(1);assert.equal(s.requests[0].at,90000);});
+test('hidden tab retains native 120-second cadence, focus resumes at floor',()=>{const s=setup(undefined,true);s.advance(119999);assert.equal(s.requests.length,0);s.advance(1);assert.equal(s.requests.length,1);assert.equal(s.requests[0].options.data.has_focus,false);s.requests[0].settle('success');s.visibility(false);s.advance(30000);assert.deepEqual(s.requests.map(r=>r.at),[120000,150000]);});
+test('native nonce refresh and heartbeat callbacks still deliver lock payloads',()=>{const s=setup();s.api.enqueue('wp-refresh-post-lock',{post_id:193});s.advance(30000);assert.equal(s.requests[0].options.data.data['wp-refresh-post-lock'].post_id,193);s.requests[0].settle('success',{server_time:1,heartbeat_nonce:'new-heartbeat',rest_nonce:'new-rest','wp-refresh-post-lock':{new_lock:'1800000030:2'}});assert.equal(s.win.heartbeatSettings.nonce,'new-heartbeat');assert.equal(s.win.wpApiSettings.nonce,'new-rest');assert.ok(s.events.some(e=>e.name==='heartbeat.tick'&&e.args[0]['wp-refresh-post-lock'].new_lock==='1800000030:2'));});
+test('server-requested fast interval cannot reduce regular cadence below floor',()=>{const s=setup();s.advance(30000);s.requests[0].settle('success',{server_time:1,heartbeat_interval:'fast'});s.advance(29999);assert.equal(s.requests.length,1);s.advance(1);assert.equal(s.requests.length,2);});
+test('transport timeout reports loss then native retry restores connection',()=>{const s=setup();s.advance(30000);s.requests[0].settle('success');s.advance(30000);s.requests[1].settle('timeout',null,0);assert.equal(s.api.hasConnectionError(),true);s.advance(30000);s.requests[2].settle('success');assert.equal(s.api.hasConnectionError(),false);assert.ok(s.events.some(e=>e.name==='heartbeat.connection-lost'));assert.ok(s.events.some(e=>e.name==='heartbeat.connection-restored'));});
+test('connectNow remains immediate and is not a strict spending rate limit',()=>{const s=setup();s.api.connectNow();assert.equal(s.requests[0].at,0);s.api.connectNow();assert.equal(s.requests.length,1);s.requests[0].settle('success');assert.equal(s.requests.length,2);assert.equal(s.requests[1].at,0);});
+test('pagehide aborts and suspends, bfcache restore resumes native scheduling',()=>{const s=setup();s.advance(30000);s.visibility(true);s.pagehide();assert.equal(s.requests[0].readyState,4);s.advance(150000);assert.equal(s.requests.length,1);s.pageshow();assert.equal(s.requests.length,2);});
