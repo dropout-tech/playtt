@@ -1,5 +1,7 @@
 # Cloudflare WordPress 候選測試
 
+最新[清單壓縮整合候選](manifest-envelope/README.md)已通過本機原生HTTP保存、冷讀及還原，完整browser容量仍待重測。以下為前階段歷史。
+
 最新[完整瀏覽器容量結果](compressed-budget/README.md)：保存及冷重開成功，登出容量不足；完整流程尚未通過。以下保留上一階段證據。
 
 目前進度請見[壓縮快照整合候選](compressed-runtime/README.md)：本機原生 HTTP／備份還原已通過，完整瀏覽器容量與 provider 驗收仍待完成。以下保留原型階段的歷史要求與證據。

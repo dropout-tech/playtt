@@ -1,5 +1,13 @@
 # PLAYTT 執行進度
 
+## 完整清單壓縮已接入，本機WordPress保存與還原通過（2026-11-21）
+
+新增有界gzip-base64清單格式，保存端、兩個冷reader、圖片／主題、前版cache核對及備份／pins已接入。封套旗標預設關閉，20設定不變；完整base保留plain，信任錨使用實體清單SHA。108項相關檢查（25新格式）及TypeScript通過。
+
+新本機原生HTTP流程162→166：保存163後刻意遺失回應，完整重啟讀回精確，重試164沒有額外修訂；獨立備份、轉完整格式、停用封套後plain保存165與停用content writer後full保存166均冷讀通過，其他原始資料／媒體／主題一致。清單74,029→23,511bytes，內容gzip24,868，兩物件合計48,379bytes；不含pointer／coordinator，不代表整段容量。程序已關閉、外連0。
+
+上一輪完整browser流程登出容量失敗仍有效。下一步以新owner／相容工具跑完整Chrome／gate／budget，確認登出與封存餘額；尚未做新版整段流程、provider CPU／記憶體／長期Free或實際舊source回退。正式官網與視覺不變，未部署／付費／加額度／清歷史。雲端161／pin13／餘1,881,041仍是06:28:14Z舊讀值，未刷新。PR4 draft、完整目標active。詳見experiments/cloudflare-wordpress/manifest-envelope/README.md。以下保留歷史。
+
 ## 壓縮後原生保存與重開通過，登出容量不足（2026-11-21）
 
 新的本機 Chrome 副本使用實際 gate／budget，600秒／1,881,041bytes／96操作不變。兩次 autosave、一次手動保存176及完整重啟後九段內容讀回通過；離開編輯器 AJAX 與登出各503，完整流程未通過。458,824ms用1,858,811bytes／56puts，餘22,230，closed／sealed／pending0；沒有重送、加額度、退款或清歷史。

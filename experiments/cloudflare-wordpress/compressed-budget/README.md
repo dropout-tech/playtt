@@ -1,5 +1,7 @@
 # 壓縮後原生流程：保存與重開成功，登出容量不足
 
+最新[清單壓縮整合候選](../manifest-envelope/README.md)已通過本機原生HTTP保存、冷讀及還原，完整browser容量仍待重測。以下為前階段歷史。
+
 使用 5505c7e 的實際 runtime，從獨立驗證的私人備份 161 啟動新本機副本。Chrome 經原生私人入口與繁中登入，切換程式碼／視覺模式，等待兩次 autosave，按一次手動保存，再完全重啟 workerd、重新開啟九段內容並嘗試登出。啟用原本 outer Worker、SQLite coordinator、容量帳本、寫入追蹤與限時窗口；publisher paused。沒有再注入儲存或 PHP 政策。
 
 **手動保存及冷重開通過，但完整流程仍未通過：離開編輯器的 AJAX 和登出各收到一次 503。** 窗口沿用 600 秒／1,881,041 bytes／96 操作；實際用 458,824ms、1,858,811 bytes／56 puts，餘 22,230 bytes，closed／sealed／pending0。未提高上限、退款、刪歷史或 pins。這段時間包含 agent 操作延遲，並非最快使用者流程下限，也不能推論所有更快流程必然失敗。

@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-21T13:07:45.803489+00:00",
+  "result": "pass-with-recorded-prior-helper-difference",
+  "basis": "Prior verified compressed-budget assembly plus exact manifest-envelope patch; no new upstream rebuild",
+  "sources": 81,
+  "sourcesMatchingTestedRuntime": 81,
+  "helpers": 338,
+  "helpersMatchingTestedRuntime": 337,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "priorDifferenceEvidence": "cloudflare-compressed-runtime-rebuild.json",
+  "configsUnchanged": 20,
+  "changedFiles": 6,
+  "newFiles": 3,
+  "prerequisites": 10,
+  "refusedReapplyBeforeMutation": true,
+  "writerEnabled": false,
+  "cloudRequests": 0
+}
