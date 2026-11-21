@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-21T16:37:30.552769+00:00",
+  "result": "pass",
+  "basis": "Prior recovery-provider assembly plus one local artifact script; no upstream rebuild",
+  "runtimeSources": 82,
+  "configs": 20,
+  "runtimeAndConfigsUnchanged": true,
+  "newRuntimeTools": 1,
+  "prerequisites": 86,
+  "helpers": 384,
+  "helpersMatching": 383,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "providerDeploymentsThisStage": 0,
+  "cloudCanonicalUnchanged": 178,
+  "cloudVersionUnchanged": "8c615f36-9771-4798-834e-df40df63fdf9",
+  "localNativeFinal": 181,
+  "productionChanged": false
+}

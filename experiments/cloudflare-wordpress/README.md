@@ -1,3 +1,5 @@
+最新：[真正舊版部署套件已建置及本機驗證](./old-provider-artifact/README.md)；未部署舊碼，雲端仍178。
+
 # Cloudflare WordPress 候選測試
 
 最新[私人provider驗證](recovery-provider/README.md)已實際完成177→178、獨立備份與封存，432,931bytes／7puts，原14pins保留並新增第15；最後相容reader仍在、復原端點已關。以下保留本機證據。

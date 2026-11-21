@@ -1,3 +1,5 @@
+最新：[真正舊版部署套件已建置及本機驗證](../old-provider-artifact/README.md)；未部署舊碼，雲端仍178。
+
 # 私人 Cloudflare 完整復原採用：177 → 178
 
 2026-11-22（台北），已在既有私人 `playtt-wp-free-session-audit` 完成實際 HTTP 復原採用、獨立備份及封存；正式 Pages／原站視覺維持現況。這輪不是模型，也沒有測試 native PHP 編輯流程或部署舊碼。完整目標仍 active，PR4 draft。

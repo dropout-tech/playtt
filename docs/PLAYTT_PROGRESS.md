@@ -1,5 +1,12 @@
 # PLAYTT 執行進度
 
+## 真正舊版部署套件已建置及本機驗證（2026-11-22）
+
+舊source67dd308的77來源／109vendor／9資產核對後，以真實production entry完成Wrangler dry-run；新輸出沒有localhost gate。對這份輸出再驗原生登入179、保存180、完整程序重啟讀回180、登出181，588,515bytes／13puts，原內容／session與獨立303物件備份一致。全為本機、外連0，closed／sealed／pending0及程序結束；未部署舊碼。
+
+雲端維持前述178／pin15／餘650,908及8c615f36相容reader，不能拿本機181替代。來源82／設定20未改，新增建置／本機驗證工具，PR4 draft。下一步刷新現況後準備受限provider原生流程；效能／初始化／實機／長期免費尚未驗收。詳見experiments/cloudflare-wordpress/old-provider-artifact/README.md；以下保留歷史。
+
+
 ## 私人Cloudflare復原177→178完成並封存（2026-11-22）
 
 實際provider HTTP採用通過：432,931bytes／7puts，含獨立備份與封存70,992ms；原14pins保留，新增目標第15pin。API獨立下載8相依物件／2,802,244bytes，再匯入303物件／298檔，原內容／媒體／主題完全相同。觀測164事件皆outcome ok、無exception，保留160個200／4個404；未測PHP編輯與provider故障注入。
