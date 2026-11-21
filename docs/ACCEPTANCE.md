@@ -1,5 +1,14 @@
 # Let’s Play 驗收狀態
 
+## 本機記憶體限制及量測校正（2026-11-22）
+
+固定workerd來源與4組最小實驗確認本機允許160MiB，old-space128參數不等同Cloudflare整體限制；CDP backing欄位計入一般ArrayBuffer，卻漏掉受控WASM配置。沒有強制GC、沒有WordPress或provider請求，所有程序結束。首次Inspector timeout與交付版清理失敗路徑尚未注入驗證均保留說明。
+
+依此離線重算3份既有原生觀測，最大可觀測組成合計158,375,959／160,263,121／156,250,858bytes，並非provider精確尖峰。獨立還原首個已分類asset前已見153,273,865bytes；下一步優先量測冷啟動解壓及compaction前後。舊117MiB快照已包含PHP，不能再加；39.5%累計JS分配下降未解決記憶體驗收。
+
+只新增3工具及分析證據，82來源／20設定／已採用研究loader未變，正式Pages及原視覺不變。雲端最後仍181／pin16／餘62,344，未刷新；0部署、無付費。功能保存／還原證據保留，免費可行性／provider資源／實機及完整驗收仍開放，目標active、PR4 draft。詳見experiments/cloudflare-wordpress/local-memory-limits/README.md。
+
+
 ## 獨立原生還原通過，路徑優化納入研究建置（2026-11-22）
 
 從前輪LOCAL191 materialized full pack建立全新空環境，原生登入、十段繁中草稿、11筆修訂及209差異畫面可用；原生登出後全部原session／正文／修訂／媒體／主題精確。最終LOCAL198、301物件／298檔，198,548bytes／21puts、closed／sealed／pending0／程序結束，只變edit_lock與options序列802→812。

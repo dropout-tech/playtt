@@ -1,3 +1,5 @@
+最新本機診斷：[local-memory-limits](local-memory-limits/README.md)，在materialized-native組裝上加3工具；不改runtime／loader或部署。本機workerd沒有模擬Cloudflare的128MB總限制，功能重建成功不等於記憶體驗收。
+
 最新研究版重建：[materialized-native](materialized-native/README.md)。在path-save組裝後加6工具，再以guarded apply-research-loader.py採用新generator，產生完整SHA38231012…的已驗證candidate。中央research已採用；歷史fallback必須繼續使用memory-investigation的原generator與固定artifact。沒有新Cloudflare部署。
 
 最新本機診斷：[path-save](path-save/README.md)，在path-join候選組裝後增加5個工具，完成原生儲存／完整重啟與封存後獨立核對。原生runner已修正浮動草稿日期驗證，保留原失敗證據；已完成owner不可重播。中央runtime與舊回復建置不變。

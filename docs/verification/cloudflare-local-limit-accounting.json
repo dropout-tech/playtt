@@ -1,0 +1,442 @@
+{
+  "schema": "playtt/local-calibrated-memory-accounting/v1",
+  "result": "pass",
+  "calibrationSha256": "f013f6d107979d9983c1b34cde4b96050b24504c75f8fbbf72ec4b74bb1d52a0",
+  "versions": {
+    "workerd": "1.20260828.1",
+    "miniflare": "5.20260828.0-alpha",
+    "wrangler": "4.127.1"
+  },
+  "sourceHashesNormalizedLf": {
+    "src/playtt-memory-diagnostics.ts": "1f3ca896da39e97b554851d93dfe853c7c315297c9153ed5ec089007a9a77743",
+    "src/playtt-core-memory.ts": "6ea4d0c2ec872074479eeb3cb6a563391747ddde8415bbf059b2ab6755be5837",
+    "src/wordpress-runtime-artifact.ts": "2a3345501b3c258d5087639d00fd5720a8539dda0953cf1fef025f0933e16efc",
+    "src/worker.ts": "e730b3ad9172b767b35de8031b38fa7d4d758cd035187e4562fe45e29c930439"
+  },
+  "formula": "Runtime.getHeapUsage.usedSize + backingStorageSize + last preceding HEAPU8.byteLength in the same runtime generation",
+  "diagnosticReferenceBytes": 134217728,
+  "providerDocumentedLabel": "128MB per isolate including JavaScript and WebAssembly",
+  "wasmBackingAbsentInControlledCalibration": true,
+  "embedderHeapNotAdded": true,
+  "heapSnapshotsNotUsed": true,
+  "newWordpressRequests": 0,
+  "cloudRequests": 0,
+  "runtimeModified": false,
+  "profiles": [
+    {
+      "fixture": "playtt-path-join-baseline-native",
+      "inputSha256": "f320e9d1f59107082cbe060083f02a2e9d96c6443e8a34f8a8d7f6658c636e78",
+      "inputSchema": "playtt/local-exception-allocation/v1",
+      "sampleCount": 940,
+      "matchedSampleCount": 845,
+      "unmatchedBeforeKnownWasm": 95,
+      "generations": 1,
+      "retirements": 0,
+      "maximumObserved": {
+        "at": 1795284936640,
+        "label": "login",
+        "generation": 1,
+        "usedSize": 24039124,
+        "backingStorageSize": 67227971,
+        "lastKnownWasmBytes": 67108864,
+        "phpObservedAt": 1795284936586,
+        "wasmObservationAgeMs": 54,
+        "observedComponentSumBytes": 158375959
+      },
+      "samplesAboveDiagnostic128MiB": 177,
+      "byObserverLabel": [
+        {
+          "label": "login",
+          "matchedSamples": 214,
+          "maximumObserved": {
+            "at": 1795284936640,
+            "label": "login",
+            "generation": 1,
+            "usedSize": 24039124,
+            "backingStorageSize": 67227971,
+            "lastKnownWasmBytes": 67108864,
+            "phpObservedAt": 1795284936586,
+            "wasmObservationAgeMs": 54,
+            "observedComponentSumBytes": 158375959
+          }
+        },
+        {
+          "label": "post-first",
+          "matchedSamples": 114,
+          "maximumObserved": {
+            "at": 1795284971011,
+            "label": "post-first",
+            "generation": 1,
+            "usedSize": 22582904,
+            "backingStorageSize": 39000947,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795284970196,
+            "wasmObservationAgeMs": 815,
+            "observedComponentSumBytes": 135901675
+          }
+        },
+        {
+          "label": "allocation-start",
+          "matchedSamples": 214,
+          "maximumObserved": {
+            "at": 1795285000003,
+            "label": "allocation-start",
+            "generation": 1,
+            "usedSize": 25636896,
+            "backingStorageSize": 38644960,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795284999990,
+            "wasmObservationAgeMs": 13,
+            "observedComponentSumBytes": 138599680
+          }
+        },
+        {
+          "label": "allocation-stop",
+          "matchedSamples": 176,
+          "maximumObserved": {
+            "at": 1795285008317,
+            "label": "allocation-stop",
+            "generation": 1,
+            "usedSize": 15116936,
+            "backingStorageSize": 37249683,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795285002471,
+            "wasmObservationAgeMs": 5846,
+            "observedComponentSumBytes": 126684443
+          }
+        },
+        {
+          "label": "logout",
+          "matchedSamples": 124,
+          "maximumObserved": {
+            "at": 1795285033797,
+            "label": "logout",
+            "generation": 1,
+            "usedSize": 17719396,
+            "backingStorageSize": 34531760,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795285033785,
+            "wasmObservationAgeMs": 12,
+            "observedComponentSumBytes": 126568980
+          }
+        },
+        {
+          "label": "closing",
+          "matchedSamples": 3,
+          "maximumObserved": {
+            "at": 1795285044397,
+            "label": "closing",
+            "generation": 1,
+            "usedSize": 17097940,
+            "backingStorageSize": 33871342,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795285035028,
+            "wasmObservationAgeMs": 9369,
+            "observedComponentSumBytes": 125287106
+          }
+        }
+      ],
+      "allocationWindow": {
+        "startedAt": 1795284979759,
+        "finishedAt": 1795285008316,
+        "matchedSamples": 214,
+        "completedRequests": 8,
+        "maximumObserved": {
+          "at": 1795285000003,
+          "label": "allocation-start",
+          "generation": 1,
+          "usedSize": 25636896,
+          "backingStorageSize": 38644960,
+          "lastKnownWasmBytes": 74317824,
+          "phpObservedAt": 1795284999990,
+          "wasmObservationAgeMs": 13,
+          "observedComponentSumBytes": 138599680
+        },
+        "comparativePeakImprovementClaimed": false
+      },
+      "beforeAssets": null
+    },
+    {
+      "fixture": "playtt-path-join-candidate-native",
+      "inputSha256": "139669af096f1290a9e3920b3f1405fd5d5ea684ba490e90426f31f07b58181c",
+      "inputSchema": "playtt/local-exception-allocation/v1",
+      "sampleCount": 976,
+      "matchedSampleCount": 902,
+      "unmatchedBeforeKnownWasm": 74,
+      "generations": 1,
+      "retirements": 0,
+      "maximumObserved": {
+        "at": 1795285118605,
+        "label": "login",
+        "generation": 1,
+        "usedSize": 21443640,
+        "backingStorageSize": 66860953,
+        "lastKnownWasmBytes": 71958528,
+        "phpObservedAt": 1795285118593,
+        "wasmObservationAgeMs": 12,
+        "observedComponentSumBytes": 160263121
+      },
+      "samplesAboveDiagnostic128MiB": 224,
+      "byObserverLabel": [
+        {
+          "label": "login",
+          "matchedSamples": 284,
+          "maximumObserved": {
+            "at": 1795285118605,
+            "label": "login",
+            "generation": 1,
+            "usedSize": 21443640,
+            "backingStorageSize": 66860953,
+            "lastKnownWasmBytes": 71958528,
+            "phpObservedAt": 1795285118593,
+            "wasmObservationAgeMs": 12,
+            "observedComponentSumBytes": 160263121
+          }
+        },
+        {
+          "label": "post-first",
+          "matchedSamples": 226,
+          "maximumObserved": {
+            "at": 1795285156680,
+            "label": "post-first",
+            "generation": 1,
+            "usedSize": 16811780,
+            "backingStorageSize": 35307845,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795285156674,
+            "wasmObservationAgeMs": 6,
+            "observedComponentSumBytes": 126437449
+          }
+        },
+        {
+          "label": "allocation-start",
+          "matchedSamples": 158,
+          "maximumObserved": {
+            "at": 1795285176937,
+            "label": "allocation-start",
+            "generation": 1,
+            "usedSize": 22147812,
+            "backingStorageSize": 38884802,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795285176925,
+            "wasmObservationAgeMs": 12,
+            "observedComponentSumBytes": 135350438
+          }
+        },
+        {
+          "label": "allocation-stop",
+          "matchedSamples": 84,
+          "maximumObserved": {
+            "at": 1795285185669,
+            "label": "allocation-stop",
+            "generation": 1,
+            "usedSize": 14999584,
+            "backingStorageSize": 36891745,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795285179245,
+            "wasmObservationAgeMs": 6424,
+            "observedComponentSumBytes": 126209153
+          }
+        },
+        {
+          "label": "logout",
+          "matchedSamples": 148,
+          "maximumObserved": {
+            "at": 1795285204383,
+            "label": "logout",
+            "generation": 1,
+            "usedSize": 17891756,
+            "backingStorageSize": 34348075,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795285204380,
+            "wasmObservationAgeMs": 3,
+            "observedComponentSumBytes": 126557655
+          }
+        },
+        {
+          "label": "closing",
+          "matchedSamples": 2,
+          "maximumObserved": {
+            "at": 1795285214170,
+            "label": "closing",
+            "generation": 1,
+            "usedSize": 18097924,
+            "backingStorageSize": 34348985,
+            "lastKnownWasmBytes": 74317824,
+            "phpObservedAt": 1795285204380,
+            "wasmObservationAgeMs": 9790,
+            "observedComponentSumBytes": 126764733
+          }
+        }
+      ],
+      "allocationWindow": {
+        "startedAt": 1795285163255,
+        "finishedAt": 1795285185668,
+        "matchedSamples": 158,
+        "completedRequests": 8,
+        "maximumObserved": {
+          "at": 1795285176937,
+          "label": "allocation-start",
+          "generation": 1,
+          "usedSize": 22147812,
+          "backingStorageSize": 38884802,
+          "lastKnownWasmBytes": 74317824,
+          "phpObservedAt": 1795285176925,
+          "wasmObservationAgeMs": 12,
+          "observedComponentSumBytes": 135350438
+        },
+        "comparativePeakImprovementClaimed": false
+      },
+      "beforeAssets": null
+    },
+    {
+      "fixture": "playtt-materialized-native",
+      "inputSha256": "229005960d147a3a3a21ba4fc3e288b88d0b62b7146719adbb4029c16ed5f9ad",
+      "inputSchema": "playtt/local-exception-allocation/v1",
+      "sampleCount": 1248,
+      "matchedSampleCount": 1141,
+      "unmatchedBeforeKnownWasm": 107,
+      "generations": 1,
+      "retirements": 0,
+      "maximumObserved": {
+        "at": 1795287493947,
+        "label": "gate-natural",
+        "generation": 1,
+        "usedSize": 21797180,
+        "backingStorageSize": 67344814,
+        "lastKnownWasmBytes": 67108864,
+        "phpObservedAt": 1795287493837,
+        "wasmObservationAgeMs": 110,
+        "observedComponentSumBytes": 156250858
+      },
+      "samplesAboveDiagnostic128MiB": 266,
+      "byObserverLabel": [
+        {
+          "label": "gate-natural",
+          "matchedSamples": 382,
+          "maximumObserved": {
+            "at": 1795287493947,
+            "label": "gate-natural",
+            "generation": 1,
+            "usedSize": 21797180,
+            "backingStorageSize": 67344814,
+            "lastKnownWasmBytes": 67108864,
+            "phpObservedAt": 1795287493837,
+            "wasmObservationAgeMs": 110,
+            "observedComponentSumBytes": 156250858
+          }
+        },
+        {
+          "label": "gate-repeat",
+          "matchedSamples": 173,
+          "maximumObserved": {
+            "at": 1795287539857,
+            "label": "gate-repeat",
+            "generation": 1,
+            "usedSize": 30665392,
+            "backingStorageSize": 44289264,
+            "lastKnownWasmBytes": 69271552,
+            "phpObservedAt": 1795287538492,
+            "wasmObservationAgeMs": 1365,
+            "observedComponentSumBytes": 144226208
+          }
+        },
+        {
+          "label": "login",
+          "matchedSamples": 118,
+          "maximumObserved": {
+            "at": 1795287561304,
+            "label": "login",
+            "generation": 1,
+            "usedSize": 32815664,
+            "backingStorageSize": 47721200,
+            "lastKnownWasmBytes": 70320128,
+            "phpObservedAt": 1795287559846,
+            "wasmObservationAgeMs": 1458,
+            "observedComponentSumBytes": 150856992
+          }
+        },
+        {
+          "label": "post-first",
+          "matchedSamples": 304,
+          "maximumObserved": {
+            "at": 1795287578479,
+            "label": "post-first",
+            "generation": 1,
+            "usedSize": 23671552,
+            "backingStorageSize": 38870010,
+            "lastKnownWasmBytes": 75104256,
+            "phpObservedAt": 1795287578477,
+            "wasmObservationAgeMs": 2,
+            "observedComponentSumBytes": 137645818
+          }
+        },
+        {
+          "label": "logout",
+          "matchedSamples": 161,
+          "maximumObserved": {
+            "at": 1795287617734,
+            "label": "logout",
+            "generation": 1,
+            "usedSize": 23270204,
+            "backingStorageSize": 35404738,
+            "lastKnownWasmBytes": 75104256,
+            "phpObservedAt": 1795287617731,
+            "wasmObservationAgeMs": 3,
+            "observedComponentSumBytes": 133779198
+          }
+        },
+        {
+          "label": "closing",
+          "matchedSamples": 3,
+          "maximumObserved": {
+            "at": 1795287634387,
+            "label": "closing",
+            "generation": 1,
+            "usedSize": 23474052,
+            "backingStorageSize": 35405648,
+            "lastKnownWasmBytes": 75104256,
+            "phpObservedAt": 1795287617731,
+            "wasmObservationAgeMs": 16656,
+            "observedComponentSumBytes": 133983956
+          }
+        }
+      ],
+      "allocationWindow": null,
+      "beforeAssets": {
+        "firstObservedClassifiedAssetStartAt": 1795287492868,
+        "sample": {
+          "at": 1795287492815,
+          "label": "gate-natural",
+          "generation": 1,
+          "usedSize": 17538096,
+          "backingStorageSize": 68626905,
+          "lastKnownWasmBytes": 67108864,
+          "phpObservedAt": 1795287492810,
+          "wasmObservationAgeMs": 5,
+          "observedComponentSumBytes": 153273865
+        },
+        "hostTimestampLeadMs": 53,
+        "interpretation": "Large backing usage was already observed before the first classified asset start. This narrows attribution to include cold boot; host receipt order is not an exact server trace."
+      }
+    }
+  ],
+  "coldBootCompaction": {
+    "logSha256": "4dfd6b65719eb0d1d4476742023116bc8644fc18f58cadebcaa1d66d3e4850ee",
+    "files": 489,
+    "beforeBytes": 31102303,
+    "afterBytes": 22527346,
+    "releasedCapacityBytes": 8574957,
+    "source": "src/playtt-core-memory.ts:21 copies shortened buffers; worker.ts:2599 calls it after boot",
+    "interpretation": "Capacity reduction is verified. Old buffers become eligible for GC; this does not prove immediate release or attribute the observed transient backing peak to compaction."
+  },
+  "nextDiscriminator": "Instrument bounded cold boot before/after extraction and compaction without browser assets. Compare exact content and buffer ownership before proposing a loader/materializer change; do not force GC and claim provider acceptance.",
+  "limitations": [
+    "Calibration applies to these installed versions and controlled cases. Prior traces use the unchanged installed toolchain; this is offline reinterpretation, not a new provider measurement.",
+    "Samples and console events carry host receipt timestamps. The latest PHP heap observation may be old; growth between observations and unsampled startup are not captured. This is an observed component sum, not an exact simultaneous peak, lower bound guarantee, RSS or billable memory.",
+    "Runtime.getHeapUsage is distinct from earlier HeapProfiler snapshots, whose totals already include PHP backing. Never add PHP again to those snapshots.",
+    "Inspector, local worker/DO placement, cache conditions and GC affect results; cloud isolation and enforcement may differ. Exceeding the diagnostic reference does not prove a cloud request would fail.",
+    "Different whole-flow samples and one fixed-order allocation pair cannot establish a stable peak-memory improvement. Lower cumulative JS allocation does not resolve the memory acceptance gap.",
+    "The pre-asset sample and allocating source paths narrow investigation but do not uniquely identify a responsible allocation. Original unclassified exceptions and REST403 remain open."
+  ]
+}
