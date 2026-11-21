@@ -1,3 +1,5 @@
+接續：[原生編輯器保留記憶體與PHP buffer歸屬核對](./retained-native/README.md)；仍保留一個未分類例外，雲端181未變。
+
 接續：[相同原生命令流程重現403並核對全域樣式權限](./rest-route/README.md)；本機證據，雲端181未變。
 
 最新：[181備份的繁中原生編輯器本機量測](./editor-profile/README.md)；雲端181不變，本機191不可替代。

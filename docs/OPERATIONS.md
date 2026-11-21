@@ -1,5 +1,14 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 原生編輯器保留記憶體已核對（2026-11-22）
+
+同雲端181／97a92c8固定模組，本機同程序原生draft193三次畫布皆十段及已儲存；首／第三次快照self_size為116.92／117.03MiB，backing增量0、self增113,668bytes。實際物件關係證明70.875MiB PHP buffer已計入快照，不可重複相加；CDP backing單值亦不可當整體用量。快照可能GC，不是provider尖峰、128MiB或長期免費驗收。
+
+LOCAL189、399,692bytes／24puts，closed／sealed／pending0／程序結束，獨立304物件／298檔精確。只變既有edit_lock及options序列，其餘內容／修訂／原session／媒體／主題精確、新session移除。209請求皆低於400，但保留1個未分類workerd例外；工具未捕捉細節，不能宣稱零例外，亦未做保存／IME。
+
+82來源／20設定不變、Cloudflare請求／部署0；正式Pages／原視覺不變。雲端仍是最後16:52:39.597Z讀值181／pin16／餘62,344。下一步補足私人例外觀測並分析PHP期間分配；完整目標active、PR4 draft。詳見experiments/cloudflare-wordpress/retained-native/README.md。
+
+
 ## 原生命令選單REST403已定位（2026-11-22）
 
 同雲端181備份／97a92c8固定程式的新本機副本：編輯者開命令選單後global-styles/:id?context=edit回403／rest_forbidden_context。實際editor角色無edit_theme_options，三個固定核心檔案及官方權限判斷吻合；不放寬權限或隱藏回應。課程搜尋與真實課程畫布、draft193十段及登出均通過。上一輪缺路由的403只能據此推論，未倒補原證據。
