@@ -1,5 +1,9 @@
 # Cloudflare WordPress 候選測試
 
+## 壓縮格式原型（2026-11-21）
+
+[compressed-content](compressed-content/README.md)通過24項檢查、真實資料獨立還原與本機workerd相容性。尚未接入WordPress保存、一般冷讀與備份／pins，不可部署或宣稱完整流程已通過。
+
 ## 有界瀏覽器流程容量證據（2026-11-21）
 
 [完整本機流程](heartbeat-budget/README.md) 在兩次autosave後手動儲存遇到容量保護，完整儲存／重開／登出未通過；原頁面保留，autosave含精確新內容。30秒心跳仍不足以容納最後確認的provider剩餘量，下一步研究有界無損儲存。沒有雲端請求或部署。

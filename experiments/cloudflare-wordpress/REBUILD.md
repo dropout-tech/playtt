@@ -122,3 +122,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ## 選用本機容量診斷工具
 
 完成editor-heartbeat與先前background-write工具後，執行heartbeat-budget/install-local-tools.py --runtime <runtime-cloudflare> --apply。新增3個工具，不改runtime或設定，也不部署。完整流程容量失敗的適用範圍見[說明](heartbeat-budget/README.md)。
+
+## 選用未接線的壓縮格式原型
+
+完成既有候選與診斷工具後執行compressed-content/install-local-prototype.py --runtime <runtime-cloudflare> --apply。只新增一個模組、一份測試與兩個本機工具；不改現有來源、設定或啟用旗標。詳見[原型與限制](compressed-content/README.md)。

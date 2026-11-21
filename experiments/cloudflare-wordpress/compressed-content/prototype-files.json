@@ -1,0 +1,56 @@
+{
+  "schema": "playtt/compressed-content-prototype-files/v1",
+  "scope": "Unwired local compressed snapshot prototype; no runtime activation or deployment",
+  "prerequisites": [
+    {
+      "path": "src/canonical-restore-pack.ts",
+      "sha256": "e14138243ebb1d650a62897a23234e35a0dc94af70b758cd4305a4594c4d9f0f"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "sha256": "9e7fd70863c5e6512834b191aec53b2ff2b200480b00c7cf0061d2684b8cf05a"
+    },
+    {
+      "path": "src/playtt-content-overlay.ts",
+      "sha256": "7bf63e94d077d66bf46c4341add07e548ae1b12cc027541a6ca663f84c5281c3"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "sha256": "be0104515c3853cd4010d13f5059231859842b0c38f618732c8d6026f7f9f06e"
+    },
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "sha256": "b43b08af7bb17afdb499bf6297944526804b1cbb8677834ca3c8b901c351939c"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "4262655fb0aef100b0401302622b81f9502896833bf7e3a8ab16737f3210e2aa"
+    },
+    {
+      "path": "src/worker.ts",
+      "sha256": "0c4d77291f3c766446d820d3c92a698e09517f31dbf2c92eadd539ab8697e3ed"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/playtt-compressed-content.ts",
+      "source": "playtt-compressed-content.ts",
+      "sha256": "bee5813df04a53dafd5288e7484b5259973822bbea5360d56061648317827cf8"
+    },
+    {
+      "path": "tests/playtt-compressed-content.test.ts",
+      "source": "playtt-compressed-content.test.ts",
+      "sha256": "81dbd398251eabb0e86b0f6a519bf3676eefc4d41ac68f3667f91878bc8a875b"
+    },
+    {
+      "path": "scripts/playtt-compressed-content-prototype.mjs",
+      "source": "playtt-compressed-content-prototype.mjs",
+      "sha256": "5f6944813c81ad4d68be2b8bb296c605adcfcde39d0a9472088302fad0fc75cf"
+    },
+    {
+      "path": "scripts/playtt-compressed-content-local.mjs",
+      "source": "playtt-compressed-content-local.mjs",
+      "sha256": "b75608a4f991d2850f9c558d57aefdca4f277244579421df54b77d548b6aef1c"
+    }
+  ]
+}

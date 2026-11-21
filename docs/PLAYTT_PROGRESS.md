@@ -1,5 +1,13 @@
 # PLAYTT 執行進度
 
+## 壓縮快照原型與獨立還原通過，尚未接入（2026-11-21）
+
+新增未接線的compressed-content模組；原有78來源、20設定不變。明確新schema與獨立gzip物件，保留原始清單／時間／鎖／session／修訂／ID；有界1MiB／64項差異、8MiB完整base與final，解壓超過精確長度即拒絕。24項測試與TypeScript通過；先複製再hash回歸防止呼叫端重用buffer影響已核對資料。
+
+真實停止後175資料的5檔差異359,284bytes→26,225bytes，manifest另74,029bytes。四依賴物件獨立副本逐項還原298檔，並轉現有完整包、獨立匯入精確；原頁不變、autosave206精確。最終本機workerd冷讀／重新壓縮／重讀通過且壓縮包SHA與獨立備份相同；2MiB超量輸出被360,087bytes上限拒絕。沒有WordPress原生編輯流程使用此格式，也不是全流程節省、CPU或whole-isolate驗收。
+
+下一步整合reader／writer、完整fallback、raw資產副本、備份／pins與回退，再量測完整原生流程。舊讀取器及pin拒絕新schema，不能直接啟用。0雲端請求、未部署／未付費，正式Pages與視覺不變；雲端161／pin13／餘1,881,041bytes仍是06:28:14Z舊讀值。PR4 draft、完整目標active。詳見experiments/cloudflare-wordpress/compressed-content/README.md及INTEGRATION.md。以下為歷史。
+
 ## 完整本機瀏覽器流程遇到容量保護（2026-11-21）
 
 實際d754dacd心跳選項搭配外層私人gate、真實容量計帳與1,881,041bytes窗口，原生繁中登入、偏好切換與兩次autosave成功，但單次手動儲存503，稍後autosave也503；未重送，未完成重開或登出。253秒後封存，本機161→175、1,860,844bytes／49puts、餘20,197bytes、pending0。五個心跳間隔約30秒，仍不足以在最後確認的provider剩餘量內完成此流程。
