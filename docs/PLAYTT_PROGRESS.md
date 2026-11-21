@@ -1,5 +1,14 @@
 # PLAYTT 執行進度
 
+## 冷啟動記憶體候選已有實測（2026-11-22）
+
+用獨立LOCAL191備份只請求登入頁，七點量測定位ZIP雜湊的約6MB副本，以及縮檔先複製18.2MB再減少8.6MB容量的行為。隔離候選改為預配置檔案後串流解壓及直接對view算SHA；真正PHP8.3.36核對2,154核心檔案及8邊界檔的SHA／大小／mode完全一致，4個digest view案例也通過。
+
+完整冷啟動原版／候選七點最大可觀測合計152,670,619→126,015,978bytes（約145.6→120.2MiB）。兩副本皆登入GET200、301物件與全部網站內容精確、charged0、LOCAL191、closed／sealed／pending0／程序結束。這是有診斷停頓的本機單一配對，不是連續雲端尖峰、穩定加速或編輯器驗收。
+
+候選只在診斷bundle與交付patch，中央82來源／20設定／loader未改，0 provider請求／部署，正式Pages及原視覺不變。保留2次Inspector診斷500及工具檢查失敗；沒有放寬權限。接續完整來源建置，再驗原生繁中編輯／保存／重啟後評估採用。雲端最後181／pin16／餘62,344未刷新；完整目標active、PR4 draft。詳見experiments/cloudflare-wordpress/cold-boot-preallocation/README.md。
+
+
 ## 本機記憶體限制及量測校正（2026-11-22）
 
 固定workerd來源與4組最小實驗確認本機允許160MiB，old-space128參數不等同Cloudflare整體限制；CDP backing欄位計入一般ArrayBuffer，卻漏掉受控WASM配置。沒有強制GC、沒有WordPress或provider請求，所有程序結束。首次Inspector timeout與交付版清理失敗路徑尚未注入驗證均保留說明。

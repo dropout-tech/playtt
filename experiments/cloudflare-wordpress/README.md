@@ -1,3 +1,5 @@
+接續：[冷啟動配置定位與預配置解壓候選](./cold-boot-preallocation/README.md)。候選尚未套用中央runtime或部署雲端。
+
 接續：[本機記憶體限制、WASM觀測校正及冷啟動線索](./local-memory-limits/README.md)。功能證據保留，未驗收provider記憶體。
 
 接續：[獨立原生還原、取消請求定位與中央研究generator採用](./materialized-native/README.md)；雲端未部署，歷史產物保持不變。

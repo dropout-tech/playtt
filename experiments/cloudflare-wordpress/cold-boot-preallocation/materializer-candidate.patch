@@ -1,0 +1,41 @@
+--- a/src/wordpress-runtime-artifact.ts
++++ b/src/wordpress-runtime-artifact.ts
+@@ -104,4 +104,31 @@
+         }
+-        if (!$zip->extractTo('/', array_keys($expected))) {
+-            throw new RuntimeException('WordPress runtime artifact ZIP extraction failed.');
++        foreach ($expected as $name => $size) {
++            $destination = '/' . $name;
++            $directory = dirname($destination);
++            if (!is_dir($directory) && !mkdir($directory, 0777, true) && !is_dir($directory)) {
++                throw new RuntimeException('WordPress runtime artifact directory creation failed.');
++            }
++            $input = $zip->getStream($name);
++            if (!is_resource($input)) {
++                throw new RuntimeException('WordPress runtime artifact entry stream failed.');
++            }
++            try {
++                $output = fopen($destination, 'wb');
++                if (!is_resource($output)) {
++                    throw new RuntimeException('WordPress runtime artifact destination open failed.');
++                }
++                try {
++                    if (!ftruncate($output, $size) || ftell($output) !== 0) {
++                        throw new RuntimeException('WordPress runtime artifact preallocation failed.');
++                    }
++                    $copied = stream_copy_to_stream($input, $output, $size + 1);
++                    if ($copied !== $size || !fflush($output) || fstat($output)['size'] !== $size) {
++                        throw new RuntimeException('WordPress runtime artifact extracted size mismatch.');
++                    }
++                } finally {
++                    fclose($output);
++                }
++            } finally {
++                fclose($input);
++            }
+         }
+@@ -133,3 +160,3 @@
+ async function sha256Hex(bytes: Uint8Array): Promise<string> {
+-  const digest = await crypto.subtle.digest("SHA-256", Uint8Array.from(bytes).buffer)
++  const digest = await crypto.subtle.digest("SHA-256", bytes as Uint8Array<ArrayBuffer>)
+   return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("")

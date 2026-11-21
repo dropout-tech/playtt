@@ -1,3 +1,5 @@
+接續：[冷啟動配置定位與預配置解壓候選](../cold-boot-preallocation/README.md)。候選尚未套用中央runtime或部署雲端。
+
 # 本機記憶體限制與觀測欄位校正
 
 2026-11-22（台北）。本機原生保存／重啟／獨立還原的功能證據仍有效，但不能據此驗收Cloudflare的記憶體限制。本輪固定來源與4組最小實驗證明：**目前本機workerd允許160MiB配置；`Runtime.getHeapUsage.backingStorageSize`會計入一般ArrayBuffer，卻不計入這組WASM記憶體。** 這是量測邊界的發現，沒有修改或部署WordPress runtime。
