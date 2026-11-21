@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-20T04:02:55.963931+00:00",
+  "result": "pass",
+  "scope": "Read-only exact destination resource lookup before creation",
+  "resources": [
+    {
+      "kind": "bucket",
+      "name": "playtt-wordpress-pin-restore-audit",
+      "status": 404,
+      "absent": true
+    },
+    {
+      "kind": "worker",
+      "name": "playtt-wp-free-pin-restore-audit",
+      "status": 404,
+      "absent": true
+    }
+  ]
+}

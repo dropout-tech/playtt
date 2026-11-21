@@ -1,0 +1,16 @@
+// Offline exact-diff review. No listeners, cloud calls or writes to WordPress.
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {join} from 'node:path';
+import {openSnapshotBundle} from './playtt-snapshot-bundle.mjs';
+const load=async p=>JSON.parse(await readFile(p,'utf8')),prefix='artifacts/playtt-editor-profile-v2-',owner=await load(prefix+'finalized-private.json'),cloud=await load('artifacts/playtt-old-provider-owned-private.json'),report=await load(prefix+'summary.json'),profile=await load(join(owner.directory,'profile.json'));
+const a=(await openSnapshotBundle(cloud.directory+'/independent',cloud.anchor)).graph,b=(await openSnapshotBundle(owner.directory+'/independent',owner.anchor)).graph;
+const bytes=(g,p)=>Buffer.from(g.contents.markdown.find(x=>x.path===p).bytes),json=(g,p)=>JSON.parse(bytes(g,p));
+const tableChanges=[];
+for(const [path,id]of [['_tables/usermeta.json','umeta_id'],['_tables/postmeta.json','meta_id']]){const old=json(a,path),now=json(b,path);assert.deepEqual(old.map(x=>x[id]),now.map(x=>x[id]));for(const row of old){const r=now.find(x=>x[id]===row[id]);if(JSON.stringify(row)===JSON.stringify(r))continue;assert.deepEqual({...r,meta_value:row.meta_value},row);assert.ok(path==='_tables/usermeta.json'?row.user_id==='1'&&row.meta_key==='session_tokens':row.post_id==='193'&&row.meta_key==='_edit_lock');tableChanges.push({path,id:Number(row[id]),key:row.meta_key});}}
+const countersBefore=json(a,'_runtime/playtt-auto-increment.json'),countersAfter=json(b,'_runtime/playtt-auto-increment.json');
+assert.deepEqual(json(a,'_tables/posts.json'),json(b,'_tables/posts.json'));const allowed=new Set(['_runtime/playtt-auto-increment.json','_tables/postmeta.json','_tables/usermeta.json']);assert.deepEqual(a.contents.markdown.map(x=>x.path).sort(),b.contents.markdown.map(x=>x.path).sort());for(const file of a.contents.markdown)if(!allowed.has(file.path))assert.ok(bytes(a,file.path).equals(bytes(b,file.path)),'Unexpected content difference');
+const requestEvents=profile.events.filter(x=>x.kind==='request'),statuses=Object.fromEntries([...new Set(requestEvents.map(x=>x.status))].map(status=>[status,requestEvents.filter(x=>x.status===status).length])),errors=requestEvents.filter(x=>x.status>=400);
+assert.equal(errors.length,1);assert.equal(errors[0].status,403);assert.equal(errors[0].category,'rest');
+const audit={schema:'playtt/editor-profile-offline-audit/v1',at:new Date().toISOString(),result:'pass',localOnly:true,cloudRequests:0,files:a.contents.markdown.length+a.contents.uploads.length+a.contents.wpContent.length,finalObjects:b.objects.length,tableChanges,countersBefore,countersAfter,allOtherMarkdownExact:true,postsExact:true,tableRowSetsExact:true,sessions:report.sessionAudit,allRequests:{count:requestEvents.length,statuses,nonSuccess:errors},phpSamples:profile.events.filter(x=>x.kind==='php-memory').length,phpFilePeakBytes:Math.max(...profile.events.filter(x=>x.kind==='php-memory').map(x=>x.fileBytes||0)),limitations:['REST403 route and response code were not captured; do not classify it as expected or suppress it.','PHP file storage and Wasm/CDP statistics are different views; no measured whole-isolate peak.']};
+await writeFile('artifacts/playtt-editor-profile-audit.json',JSON.stringify(audit,null,2)+'\n');console.log(JSON.stringify(audit));

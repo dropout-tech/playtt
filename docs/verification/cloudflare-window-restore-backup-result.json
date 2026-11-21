@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-20T18:28:12.845Z",
+  "result": "pass",
+  "canonicalVersion": 12,
+  "remoteR2Mutations": 0,
+  "sourceRevision": "9beba823-a06b-43cb-90c9-9c9eda7b24e7",
+  "changedMarkdownFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/usermeta.json"
+  ],
+  "anchor": {
+    "revision": "5c575aeb-871c-4b84-818f-593fa480dfab",
+    "manifestKey": "sites/default/markdown/revisions/5c575aeb-871c-4b84-818f-593fa480dfab.json",
+    "persistedAt": "2026-11-20T18:27:16.012Z",
+    "manifestSha256": "924f19b39db9fb9236839d31fe964b6684647207a2590d40826c1db674fca48a",
+    "packKey": "sites/default/restore-packs/d715e9ca7d68b6f68479ae3c3e3dde2528e82c231a30f8c577fc0046945e86e8.zip",
+    "packSha256": "d715e9ca7d68b6f68479ae3c3e3dde2528e82c231a30f8c577fc0046945e86e8",
+    "packBytes": 2294610
+  },
+  "format": "full-pack",
+  "files": 297,
+  "objects": 296,
+  "payloadBytes": 6799465,
+  "remoteGets": 2,
+  "downloadedBytes": 2368102,
+  "independentCopyVerified": true,
+  "unchangedMarkdownFiles": 168,
+  "changedSessionRows": 1,
+  "sequenceTables": 8,
+  "postmetaRows": 50,
+  "postTableRows": 69,
+  "mediaAndThemeIdentical": true,
+  "finalPins": 5,
+  "canonicalUnchanged": true,
+  "capacityLedgerUnchanged": true,
+  "fenceReleased": true
+}

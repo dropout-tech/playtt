@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-20T05:00:42.371Z",
+  "result": "pass",
+  "mode": "after",
+  "scope": "Read-only source coordinator, immutable backup registry and payload ledger comparison; not an atomic snapshot or a drain proof",
+  "version": 309,
+  "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+  "registryGeneration": 21,
+  "registrySha256": "3b1f57e0ce5a6a30210c6d133e6a8ed00e63758f97eb6dad1a5243e69ff6a0a2",
+  "fenceActive": false,
+  "publisher": "paused",
+  "chargedBytes": 14867698,
+  "chargedPuts": 31,
+  "checks": [
+    {
+      "target": "source",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3085
+    },
+    {
+      "target": "source",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 203
+    },
+    {
+      "target": "source",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 192
+    },
+    {
+      "target": "source",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 249
+    }
+  ]
+}

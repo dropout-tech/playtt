@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-18T21:06:46.831Z",
+  "result": "fail",
+  "errorName": "AssertionError",
+  "message": "Scoped history operation failed; private plan and current remote state must be inspected before retry.",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1403
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2439
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6577
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7847
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3524
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts/lets-play//footer/revisions?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2586
+    }
+  ]
+}

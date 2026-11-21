@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-20T16:26:04.848Z",
+  "result": "pass",
+  "scope": "Offline pinned PHP-WASM; exact core wp_set_post_lock/wp_check_post_lock; real MDI writer/loader and PDO SQLite across two fresh PHP instances. Narrow SQL/user adapter; not full WordPress HTTP, nonce, heartbeat or browser acceptance.",
+  "coreFunctionsSha256": "dba1749bc747030cf2488f2f07987ac27d716e2cb9431610ea2388e9f8819cad",
+  "baseRevision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+  "writerChecks": 56,
+  "coldChecks": 12,
+  "metadataRows": 49,
+  "sequenceTables": 8,
+  "nativeMetadataEligible": true,
+  "changedFiles": [
+    "_tables/postmeta.json"
+  ],
+  "remoteObjectsWritten": 0,
+  "featureFlagEnabled": false
+}

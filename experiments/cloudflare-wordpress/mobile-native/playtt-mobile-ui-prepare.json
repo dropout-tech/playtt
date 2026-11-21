@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-18T22:25:57.990Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "result": "pass",
+  "scope": "Created owned draft containing the migrated homepage blocks for native visual-editor acceptance; original homepage unchanged",
+  "id": 169,
+  "editUrl": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev/wp-admin/post.php?post=169&action=edit",
+  "beforeText": "從孩子到大人，一起讓桌球走進生活。",
+  "afterText": "手機編輯驗收：從孩子到大人，一起讓桌球走進生活。",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 713
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3058
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1612
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6281
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3059
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2114
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 7386
+    }
+  ]
+}

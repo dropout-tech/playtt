@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-17T08:38:19.161Z",
+  "result": "pass",
+  "scope": "Pinned PHP web WASM request.end counts actual completed requests once; retirement becomes due at 96 without changing upstream rotation",
+  "samples": [
+    {
+      "requests": 1,
+      "heapBytes": 67108864,
+      "due": false
+    },
+    {
+      "requests": 95,
+      "heapBytes": 67108864,
+      "due": false
+    },
+    {
+      "requests": 96,
+      "heapBytes": 67108864,
+      "due": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-17T10:13:16.391090+00:00",
+  "result": "pass",
+  "scope": "Patch applies to deployed retirement candidate; reconstructed LF-normalized files equal current local source",
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "normalizedSha256": "f105b49ed88c0d7a929802d572080f328ec27211cec9bb03b557195a5e74888d"
+    },
+    {
+      "path": "src/phase-trace.ts",
+      "normalizedSha256": "581f0b21d1247647da272bb329caf5d723fde734897091ca7bfc6ce86c910bda"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "normalizedSha256": "769b3cec9c78790bf7d7c33f5f94e0d777f11fdb3e9e2993161472d76ce91b57"
+    }
+  ]
+}

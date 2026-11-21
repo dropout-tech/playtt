@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-21T18:52:16.387233+00:00",
+  "result": "pass",
+  "basis": "Prior path-join assembly plus5 local diagnostic tools, no fresh upstream/dependency install",
+  "prerequisites": 97,
+  "newTools": 5,
+  "priorFilesUnchanged": true,
+  "runtimeGeneratedLoaderUnchanged": true,
+  "centralSourcesChanged": 0,
+  "configs": 20,
+  "sanitizedEvents": 327,
+  "privateWorkerDeployments": 0,
+  "productionChanged": false
+}

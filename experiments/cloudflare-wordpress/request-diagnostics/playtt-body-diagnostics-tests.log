@@ -1,0 +1,19 @@
+✔ a network stream interrupted while reading differs from an already-used body (28.7728ms)
+✔ a second read is diagnosed as used before the failed read starts (2.2075ms)
+✔ an unread locked stream is distinct from a consumed stream (1.9102ms)
+✔ abort before and during read are separately recorded without its reason (1.5528ms)
+✔ context ownership, type errors and unknown errors remain bounded categories (3.5221ms)
+✔ phase failure output has only closed diagnostic fields, never request or cause contents (2.8071ms)
+✔ translation preserves multipart and JSON bytes without decoding or normalizing (29.8615ms)
+✔ truncated stream reports a content-free typed failure and never returns partial bytes (2.0248ms)
+✔ GET/HEAD omit body and empty POST retains zero-length byte payload (0.6936ms)
+✔ failure categories never echo private exception data (1.4729ms)
+✔ request failure uses fixed endpoint categories and failed leaf without private request data (28.3929ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1177.9457

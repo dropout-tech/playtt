@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-20T04:01:43.782Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "scope": "Offline complete union of all registered backup objects and pinned core assets; no target resources yet created",
+  "archivesDecoded": 23,
+  "protectedVersions": 21,
+  "uniqueObjects": 396,
+  "payloadBytes": 149591427,
+  "latestRevision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+  "sourceRegistrySha256": "97905be61072f0ffe8393f08db0a581ef40ef9267613ab61df2ce9c7db90be53",
+  "privatePlanSha256": "910429fff75e92c3fd368fd9bab6b54d4f2f58ce066158ee1e41b5eca32d2294",
+  "originalMarkdown": 27,
+  "originalHistoryRows": 61
+}

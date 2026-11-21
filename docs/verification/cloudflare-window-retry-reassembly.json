@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-20T19:01:51.821058+00:00",
+  "result": "pass",
+  "adoptedPatches": 25,
+  "optionalPatches": 4,
+  "sourceFilesCompared": 70,
+  "extraHelpersCompared": 32,
+  "addedHelpersSyntax": "pass",
+  "runtimeChanges": false,
+  "runtimeRedeployed": false,
+  "priorProviderSourceHashesUnchanged": true,
+  "existingConfigsUnchanged": 19,
+  "defaultAssemblerIncludesCandidates": false,
+  "reapplyRefusedBeforeMutation": true,
+  "differences": [],
+  "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler",
+  "scope": "Exact reconstruction and new helper syntax; no repeated claim of the earlier 51-test suite or new TypeScript/dry-run/deployment"
+}

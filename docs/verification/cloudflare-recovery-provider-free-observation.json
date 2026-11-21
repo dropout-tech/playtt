@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-21T16:18:09.787691+00:00",
+  "source": "Signed-in Cloudflare dashboard visible UI, info@dropout.tw",
+  "workers": {
+    "url": "https://dash.cloudflare.com/3baadbd4abd9fd63c7f7e51664b26f67/workers/plans",
+    "currentPlan": "Free",
+    "price": "$0",
+    "requestsObservedToday": 1337,
+    "dailyRequestLimit": 100000,
+    "requestCountObservedBeforeProviderPreflight": true
+  },
+  "r2": {
+    "url": "https://dash.cloudflare.com/3baadbd4abd9fd63c7f7e51664b26f67/r2/overview",
+    "period": "October 25 - November 25",
+    "billableUsage": "$0.00",
+    "status": "No billable usage incurred yet",
+    "classA": "7.27k",
+    "classB": "60.06k",
+    "storage": "2.33 GB"
+  },
+  "planChanged": false,
+  "billingMayLag": true,
+  "durableObjectDetailedUsageNotRefreshed": true
+}

@@ -1,0 +1,69 @@
+{
+  "at": "2026-11-20T15:39:56.338Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "state": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+      "manifestKey": "sites/default/markdown/revisions/0baa062c-294a-415a-9d2d-7f4cab89a59a.json",
+      "persistedAt": "2026-11-20T06:03:57.136Z"
+    },
+    "version": 62
+  },
+  "pending": 0,
+  "sealed": true,
+  "canonicalFenceReleased": true,
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3946
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 166
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 586
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 622
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1600
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 567
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 594
+    }
+  ]
+}

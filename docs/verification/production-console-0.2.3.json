@@ -1,0 +1,103 @@
+{
+  "at": "2026-11-16T17:51:08.695Z",
+  "theme": "0.2.3",
+  "scope": "Six-page browser navigation smoke checks; recorded network/console events, not an exhaustive assistive-technology audit",
+  "pages": [
+    {
+      "url": "https://playtt.tw/",
+      "h1": [
+        "起來，玩一下！"
+      ],
+      "mixedContent": [],
+      "ready": "complete",
+      "title": "Let’s Play 桌球聯盟 – 從喜歡開始，一起玩桌球。",
+      "truncated": false,
+      "exceptions": [],
+      "consoleErrors": [],
+      "browserErrors": [],
+      "failedRequests": [],
+      "badStatuses": [],
+      "responsesObserved": 14
+    },
+    {
+      "url": "https://playtt.tw/about/",
+      "h1": [
+        "一起玩，玩出更多可能。"
+      ],
+      "mixedContent": [],
+      "ready": "complete",
+      "title": "關於我們 – Let’s Play 桌球聯盟",
+      "truncated": false,
+      "exceptions": [],
+      "consoleErrors": [],
+      "browserErrors": [],
+      "failedRequests": [],
+      "badStatuses": [],
+      "responsesObserved": 9
+    },
+    {
+      "url": "https://playtt.tw/class/",
+      "h1": [
+        "你的第一拍，從這裡開始。"
+      ],
+      "mixedContent": [],
+      "ready": "complete",
+      "title": "課程資訊與收費 – Let’s Play 桌球聯盟",
+      "truncated": false,
+      "exceptions": [],
+      "consoleErrors": [],
+      "browserErrors": [],
+      "failedRequests": [],
+      "badStatuses": [],
+      "responsesObserved": 10
+    },
+    {
+      "url": "https://playtt.tw/coaches/",
+      "h1": [
+        "一起練習，一起進步。"
+      ],
+      "mixedContent": [],
+      "ready": "complete",
+      "title": "教練團隊 – Let’s Play 桌球聯盟",
+      "truncated": false,
+      "exceptions": [],
+      "consoleErrors": [],
+      "browserErrors": [],
+      "failedRequests": [],
+      "badStatuses": [],
+      "responsesObserved": 12
+    },
+    {
+      "url": "https://playtt.tw/locations/",
+      "h1": [
+        "找到你的上場地點。"
+      ],
+      "mixedContent": [],
+      "ready": "complete",
+      "title": "據點資訊 – Let’s Play 桌球聯盟",
+      "truncated": false,
+      "exceptions": [],
+      "consoleErrors": [],
+      "browserErrors": [],
+      "failedRequests": [],
+      "badStatuses": [],
+      "responsesObserved": 13
+    },
+    {
+      "url": "https://playtt.tw/partner/",
+      "h1": [
+        "讓更多人，一起玩桌球。"
+      ],
+      "mixedContent": [],
+      "ready": "complete",
+      "title": "合作與招募 – Let’s Play 桌球聯盟",
+      "truncated": false,
+      "exceptions": [],
+      "consoleErrors": [],
+      "browserErrors": [],
+      "failedRequests": [],
+      "badStatuses": [],
+      "responsesObserved": 10
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "verifiedOn": "2026-11-17 (Asia/Taipei)",
+  "project": { "name": "LetsPlayWebsite", "id": "6926869de253c26501bdc21a" },
+  "service": { "name": "playtt", "id": "69268af7e253c26501bdc2e1" },
+  "environmentId": "6926869d9ded7fb3e124e339",
+  "before": {
+    "serviceCount": 1,
+    "runningServices": 0,
+    "volumes": 0,
+    "source": "dropout-tech/playtt master",
+    "domainBindings": ["playtt.tw", "www.playtt.tw"],
+    "domainStatusAfterCutover": "INVALID_DNS"
+  },
+  "action": "User completed the permanent project deletion and reported Zeabur 已刪除. A fresh authenticated project-list page no longer contains LetsPlayWebsite.",
+  "backup": {
+    "localFile": "outputs/backups/letsplay-zeabur-template.yaml",
+    "sha256": "4f29859f83322921ce80b2f4d2b11399ea9d72090005e929deda6174e87d0ac9",
+    "note": "Template saved directly from the project export dialog. Contents remain local and are not committed. Git bundle and DNS backups were preserved separately."
+  },
+  "postDeleteWebsite": { "url": "https://playtt.tw/", "result": "pass", "publicFiles": 46, "resolver": "system-public-dns", "missingStatus": 404, "legacyHomeRedirect": 301 },
+  "scope": "Only this project. Other projects and their shared account-level integrations were left intact."
+}

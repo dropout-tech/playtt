@@ -1,0 +1,7 @@
+{"decoded":12,"failed":0,"total":72}
+{"decoded":24,"failed":0,"total":72}
+{"decoded":36,"failed":0,"total":72}
+{"decoded":48,"failed":0,"total":72}
+{"decoded":60,"failed":0,"total":72}
+{"decoded":72,"failed":0,"total":72}
+{"result":"pass","verifiedRevisions":72,"uniquePacks":72,"failed":0}

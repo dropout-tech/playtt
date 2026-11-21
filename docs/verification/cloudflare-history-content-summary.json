@@ -1,0 +1,709 @@
+{
+  "at": "2026-11-18T21:23:09.351992+00:00",
+  "result": "pass-with-open-acceptance",
+  "scope": "Private historical-origin migration plus exact-content native revision restore, new-login and identical-code redeploy; production unchanged.",
+  "worker": "playtt-wp-free-rebuild-audit",
+  "workerVersion": "b90bf162-72f3-4c7b-a3a9-e61c46c8a773",
+  "firstContentVersion": "b9c17feb-0a90-4f14-aab6-66fbaeadabda",
+  "previousWorkerVersion": "42b9023d-9df6-4b30-88b2-b76149440617",
+  "history": {
+    "at": "2026-11-18T21:08:45.552Z",
+    "result": "pass",
+    "scope": "Authenticated native template-part/navigation revision endpoints; every revision under the three parents matches candidate content/title/numeric revision ID. Template GUIDs are not exposed by this API and remain verified in full backups.",
+    "verifiedRevisions": 23,
+    "migratedRevisions": 18,
+    "references": 28,
+    "version": 142,
+    "revision": "45fb3da1-119e-47cd-8f92-e899e3413ba3",
+    "publisher": "paused",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 530
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3641
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2120
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 8450
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 4086
+      },
+      {
+        "path": "/wp-json/wp/v2/template-parts/lets-play//footer/revisions?context=edit&per_page=100",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3156
+      },
+      {
+        "path": "/wp-json/wp/v2/navigation/61/revisions?context=edit&per_page=100",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2453
+      },
+      {
+        "path": "/wp-json/wp/v2/template-parts/lets-play//header/revisions?context=edit&per_page=100",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2404
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 264
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2490
+      }
+    ]
+  },
+  "initialNativeFailure": {
+    "at": "2026-11-18T21:10:28.445Z",
+    "result": "fail",
+    "phase": "native-restored",
+    "id": 140,
+    "revisionId": 141,
+    "errorName": "AssertionError",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 739
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1956
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 8061
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 4166
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3207
+      },
+      {
+        "path": "/wp-json/wp/v2/pages",
+        "method": "POST",
+        "status": 201,
+        "wallMs": 7423
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140",
+        "method": "POST",
+        "status": 200,
+        "wallMs": 7412
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140",
+        "method": "POST",
+        "status": 200,
+        "wallMs": 7556
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140/revisions?context=edit&per_page=100",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2693
+      },
+      {
+        "path": "/wp-admin/revision.php?revision=141",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2742
+      },
+      {
+        "path": "/wp-admin/revision.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 10282
+      }
+    ]
+  },
+  "reproduction": {
+    "at": "2026-11-18T21:13:04.804Z",
+    "result": "reproduced",
+    "scope": "Actual pinned PHP-WASM/MDI baseline: write_post retains bytes in Markdown, both full parse and lazy content read rtrim trailing whitespace. No code fix or remote mutation.",
+    "cases": [
+      {
+        "case": "plain",
+        "inputBytes": 4,
+        "fullBytes": 4,
+        "lazyBytes": 4,
+        "equal": true,
+        "trailingBytesLost": 0,
+        "exportBytesPreserved": true
+      },
+      {
+        "case": "one-newline",
+        "inputBytes": 5,
+        "fullBytes": 4,
+        "lazyBytes": 4,
+        "equal": false,
+        "trailingBytesLost": 1,
+        "exportBytesPreserved": true
+      },
+      {
+        "case": "two-newlines",
+        "inputBytes": 6,
+        "fullBytes": 4,
+        "lazyBytes": 4,
+        "equal": false,
+        "trailingBytesLost": 2,
+        "exportBytesPreserved": true
+      },
+      {
+        "case": "trailing-space-tab",
+        "inputBytes": 6,
+        "fullBytes": 4,
+        "lazyBytes": 4,
+        "equal": false,
+        "trailingBytesLost": 2,
+        "exportBytesPreserved": true
+      },
+      {
+        "case": "leading-blank",
+        "inputBytes": 5,
+        "fullBytes": 5,
+        "lazyBytes": 5,
+        "equal": true,
+        "trailingBytesLost": 0,
+        "exportBytesPreserved": true
+      },
+      {
+        "case": "whitespace-only",
+        "inputBytes": 3,
+        "fullBytes": 0,
+        "lazyBytes": 0,
+        "equal": false,
+        "trailingBytesLost": 3,
+        "exportBytesPreserved": true
+      },
+      {
+        "case": "empty",
+        "inputBytes": 0,
+        "fullBytes": 0,
+        "lazyBytes": 0,
+        "equal": true,
+        "trailingBytesLost": 0,
+        "exportBytesPreserved": true
+      }
+    ]
+  },
+  "localFixedChecks": {
+    "at": "2026-11-18T21:15:37.827Z",
+    "result": "pass",
+    "scope": "Actual pinned PHP-WASM/MDI byte-exact full and lazy reads, unchanged unmarked legacy semantics, and corruption rejection for marked new writes; no remote mutation.",
+    "checks": 235,
+    "roundtrips": [
+      {
+        "profile": "native",
+        "case": "plain",
+        "bytes": 4,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "one-newline",
+        "bytes": 5,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "two-newlines",
+        "bytes": 6,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "trailing-space-tab",
+        "bytes": 6,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "leading-blank",
+        "bytes": 5,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "whitespace-only",
+        "bytes": 3,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "empty",
+        "bytes": 0,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "crlf",
+        "bytes": 6,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "unicode",
+        "bytes": 40,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "leading-trailing",
+        "bytes": 8,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "native",
+        "case": "nul",
+        "bytes": 5,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "plain",
+        "bytes": 4,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "one-newline",
+        "bytes": 5,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "two-newlines",
+        "bytes": 6,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "trailing-space-tab",
+        "bytes": 6,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "leading-blank",
+        "bytes": 5,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "whitespace-only",
+        "bytes": 3,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "empty",
+        "bytes": 0,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "crlf",
+        "bytes": 6,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "unicode",
+        "bytes": 40,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "leading-trailing",
+        "bytes": 8,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      },
+      {
+        "profile": "okf",
+        "case": "nul",
+        "bytes": 5,
+        "fullExact": true,
+        "lazyExact": true,
+        "legacyUnchanged": true
+      }
+    ],
+    "corruptionCases": 5
+  },
+  "typeScript": "pass",
+  "dryRun": "pass",
+  "nativeRestore": {
+    "at": "2026-11-18T21:18:20.357Z",
+    "result": "pass",
+    "scope": "Replayed native restore action on the existing owned revision after a byte-preserving reader/writer fix; fresh-session content exact including final LF; originals unchanged. No browser UI claim.",
+    "id": 140,
+    "revisionId": 141,
+    "targetHash": "22e2db746bf4fe2d65d226798f15d387cf79952ae50708c02d35c3c2d74648fc",
+    "targetBytes": 2401,
+    "preFixLostBytes": 1,
+    "preFixBackupRetainedBytes": true,
+    "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+    "cleanupComplete": false,
+    "publisher": "paused",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1815
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 7117
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 7372
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2994
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2957
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2787
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140/revisions/141?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2526
+      },
+      {
+        "path": "/wp-admin/revision.php?revision=141",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2650
+      },
+      {
+        "path": "/wp-admin/revision.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 6941
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2166
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 6549
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3822
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2462
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2657
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 300
+      }
+    ]
+  },
+  "redeployAndCleanup": {
+    "at": "2026-11-18T21:21:15.682Z",
+    "result": "pass",
+    "scope": "Fresh native login/readback after identical-code redeploy; marked full backup preserves exact bytes; identity-checked owned page cleanup. Complete original-table comparison follows separately.",
+    "id": 140,
+    "revisionId": 141,
+    "targetHash": "22e2db746bf4fe2d65d226798f15d387cf79952ae50708c02d35c3c2d74648fc",
+    "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+    "cleanupComplete": true,
+    "publisher": "paused",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1505
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 8207
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 7573
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3815
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2837
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3541
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140?force=true",
+        "method": "DELETE",
+        "status": 200,
+        "wallMs": 8996
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/140?context=edit",
+        "method": "GET",
+        "status": 404,
+        "wallMs": 8152
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 193
+      }
+    ]
+  },
+  "final": {
+    "at": "2026-11-18T21:22:35.708Z",
+    "result": "pass",
+    "scope": "Complete backup after 18 historical revision URL migrations and native owned revision restore; current content/media/postmeta retained; every original history field matches the candidate; owned draft/revisions absent",
+    "ownedId": 140,
+    "restoredRevisionId": 141,
+    "cleanupComplete": true,
+    "historicalRevisionsChanged": 18,
+    "oldOriginReferencesRemoved": 28,
+    "canonicalPostsRows": 68,
+    "allCandidatePostsFieldsExact": true,
+    "postsSerializationChange": "Two-space candidate to native four-space JSON only; exact re-encoding SHA verified",
+    "unchangedCanonicalFiles": 36,
+    "originalMarkdown": 27,
+    "uploads": 15,
+    "postmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "353",
+      "wp_postmeta": "66",
+      "wp_posts": "143",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 153,
+        "revision": "4b8438b1-e89d-4d01-90d3-96d2026d6cf6",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 174,
+        "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-18T21:21:36.263Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "4b8438b1-e89d-4d01-90d3-96d2026d6cf6",
+      "objects": 297,
+      "decodedBytes": 4429857,
+      "archiveBytes": 2293239,
+      "archiveSha256": "1e2a2f14a867fcde0ff2eeb86c8e58e135a1b79e1851d855a0a7d2028fcf7d8c"
+    }
+  },
+  "formatPolicy": "New writes add __playtt_content v1 byte count and SHA; unmarked legacy reads retain existing rtrim semantics; use this code or compatible newer code for marked backups.",
+  "remaining": [
+    "Interactive latency and additional native/browser/mobile workflows.",
+    "Practical handoff and sustained free-tier usage.",
+    "No new empty-environment restore of the marked content format in this round.",
+    "Historical uninstrumented cancellation causes remain unproved.",
+    "Production Pages unchanged; no backend cutover or paid upgrade."
+  ],
+  "goalStatus": "active",
+  "reassembly": {
+    "at": "2026-11-18T21:24:09.575380+00:00",
+    "result": "pass",
+    "patches": 16,
+    "sourceFiles": 61,
+    "extraFiles": [
+      {
+        "path": "scripts/playtt-content-php-check.mjs",
+        "sha256": "545ee65ce4070b54f130417f159ce45471b306b46e1cd107c091cf78b45f0972"
+      },
+      {
+        "path": "scripts/playtt-content-remote.mjs",
+        "sha256": "2ee6a5c7fa2ca004ed89b74879819871ca2d920dc086cfba0877e7e72ccd12ac"
+      },
+      {
+        "path": "scripts/playtt-history-native-restore.mjs",
+        "sha256": "d9be0c0d0bf72416c8d592097d51fd7dbb08648c0167eb865797f04362fb0dba"
+      },
+      {
+        "path": "scripts/playtt-history-origin-final-check.mjs",
+        "sha256": "f96952cde4a7fdb2639742afd11919e75924419a86ae169ba4a9699fd633eba9"
+      },
+      {
+        "path": "scripts/playtt-history-origin-prepare.mjs",
+        "sha256": "b2db39785cdf80fab849e8f5810c61b6471eab2ecb268faa4f60605ef0949022"
+      },
+      {
+        "path": "scripts/playtt-history-origin-remote.mjs",
+        "sha256": "573240665421193697cf91991345aa7bdbaa5f14495f6e19e9f109a556a4faa1"
+      },
+      {
+        "path": "scripts/playtt-history-whitespace-check.mjs",
+        "sha256": "eccbf388c4338a7060bdd1a27deef21576ad59653119b6285b98cbbbc598d933"
+      },
+      {
+        "path": "scripts/playtt-rebuild-ui-backup.mjs",
+        "sha256": "102ec7963dda6a5cc8b8671f94b8ebd35b0590fc4b727455c7aea48190114768"
+      }
+    ],
+    "differences": [],
+    "scope": "Final pinned source reassembly and eight scoped tools; dependencies/core assets not reinstalled or regenerated."
+  }
+}

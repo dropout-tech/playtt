@@ -1,0 +1,66 @@
+{
+  "at": "2026-11-17T07:28:02.614076+00:00",
+  "result": "failed",
+  "scope": "Finite private remote publication batch observation: memory resets despite reduced WASM heap",
+  "deployment": "0400c6ab-5cc4-4e6b-bf75-7d44553f0577",
+  "events": 197,
+  "outcomes": {
+    "ok": 193,
+    "exception": 4
+  },
+  "maxHeapBytes": 72220672,
+  "maxFileBytes": 35719477,
+  "failures": [
+    {
+      "at": "2026-11-17T07:20:28.840Z",
+      "entrypoint": "PlayttWordPressExecution",
+      "executionModel": "durableObject",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ],
+      "lastHeapBytes": 72220672
+    },
+    {
+      "at": "2026-11-17T07:20:28.888Z",
+      "entrypoint": null,
+      "executionModel": "stateless",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ],
+      "lastHeapBytes": null
+    },
+    {
+      "at": "2026-11-17T07:20:56.808Z",
+      "entrypoint": "PlayttWordPressExecution",
+      "executionModel": "durableObject",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ],
+      "lastHeapBytes": 68157440
+    },
+    {
+      "at": "2026-11-17T07:20:56.840Z",
+      "entrypoint": null,
+      "executionModel": "stateless",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ],
+      "lastHeapBytes": null
+    }
+  ],
+  "firstEvent": "2026-11-17T07:18:42.641Z",
+  "lastEvent": "2026-11-17T07:26:17.196Z",
+  "productionChanged": false
+}

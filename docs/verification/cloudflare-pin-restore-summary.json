@@ -1,0 +1,257 @@
+{
+  "at": "2026-11-20T04:25:15.695517+00:00",
+  "result": "pass",
+  "scope": "Independent private data/state recovery, protected pin re-registration, native HTTP edit/redeployment/readback/cleanup and final full backup. No production/backend cutover or fresh dependency install.",
+  "worker": "playtt-wp-free-pin-restore-audit",
+  "workerVersion": "4c78457f-79a5-4ac6-88f7-9d1ea33f1348",
+  "sourceWorkerVersionUnchanged": "8536d0cf-cfbf-4133-9764-ae4bbfdd2c45",
+  "bootstrap": {
+    "at": "2026-11-20T04:01:43.782Z",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "result": "pass",
+    "scope": "Offline complete union of all registered backup objects and pinned core assets; no target resources yet created",
+    "archivesDecoded": 23,
+    "protectedVersions": 21,
+    "uniqueObjects": 396,
+    "payloadBytes": 149591427,
+    "latestRevision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+    "sourceRegistrySha256": "97905be61072f0ffe8393f08db0a581ef40ef9267613ab61df2ce9c7db90be53",
+    "privatePlanSha256": "910429fff75e92c3fd368fd9bab6b54d4f2f58ce066158ee1e41b5eca32d2294",
+    "originalMarkdown": 27,
+    "originalHistoryRows": 61
+  },
+  "native": {
+    "at": "2026-11-20T04:17:02.365Z",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "result": "pass",
+    "scope": "Authenticated native content/history reads, theme/language, direct media hashes and six HTTP page responses; embedded original content URLs intentionally unchanged; no browser acceptance",
+    "markdownRecords": 27,
+    "templateParts": 2,
+    "navigation": 2,
+    "nativeRevisions": 21,
+    "archivedHistoryRows": 61,
+    "mediaVerified": 15,
+    "pages": [
+      {
+        "slug": "home",
+        "status": 200,
+        "lineLinkMatchesBackup": true
+      },
+      {
+        "slug": "about",
+        "status": 200,
+        "lineLinkMatchesBackup": true
+      },
+      {
+        "slug": "class",
+        "status": 200,
+        "lineLinkMatchesBackup": true
+      },
+      {
+        "slug": "coaches",
+        "status": 200,
+        "lineLinkMatchesBackup": true
+      },
+      {
+        "slug": "locations",
+        "status": 200,
+        "lineLinkMatchesBackup": true
+      },
+      {
+        "slug": "partner",
+        "status": 200,
+        "lineLinkMatchesBackup": true
+      }
+    ],
+    "anonymousDraftPageStatus": 404,
+    "anonymousDraftEditStatus": 401
+  },
+  "cold": {
+    "at": "2026-11-20T04:20:25.688Z",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "result": "pass",
+    "scope": "Fresh-login original native data and owned exact content after redeployment, monotonic IDs and identity-guarded cleanup; source unchanged",
+    "markdownRecords": 27,
+    "templateParts": 2,
+    "navigation": 2,
+    "nativeRevisions": 21,
+    "archivedHistoryRows": 61,
+    "firstId": 183,
+    "nextId": 185,
+    "cleanupComplete": true,
+    "exactTrailingWhitespace": true,
+    "pinsRetained": 21,
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "a5973edf-b478-4a18-b1a0-d26a91c27011",
+        "manifestKey": "sites/default/markdown/revisions/a5973edf-b478-4a18-b1a0-d26a91c27011.json",
+        "persistedAt": "2026-11-20T04:20:13.467Z"
+      },
+      "version": 10
+    },
+    "sourceVersion": 309
+  },
+  "backup": {
+    "at": "2026-11-20T04:22:41.025Z",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "result": "pass",
+    "scope": "Independent restored target after native edit/redeployment/cleanup; every archive entry decoded and verified, new backup pin acknowledged",
+    "revision": "a5973edf-b478-4a18-b1a0-d26a91c27011",
+    "objects": 297,
+    "decodedBytes": 4427986,
+    "archiveBytes": 2292819,
+    "archiveSha256": "fe598664e7dc2e17c888bf26f0f024d90a76cb5a75f5d619ac17023f7c7cae87",
+    "pinRegistered": true,
+    "pinGeneration": 22
+  },
+  "comparison": {
+    "at": "2026-11-20T04:22:41.053Z",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "result": "pass",
+    "unchangedCanonicalFiles": 166,
+    "originalMarkdown": 27,
+    "originalHistoryRows": 61,
+    "postmetaRows": 48,
+    "uploads": 15,
+    "cleanupComplete": true,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "535",
+      "wp_postmeta": "70",
+      "wp_posts": "185",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "differences": [],
+    "scope": "Only login session metadata and monotonic ID counters are allowed to change; all original content/table/media/theme bytes compared"
+  },
+  "state": {
+    "at": "2026-11-20T04:22:47.088Z",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "result": "pass",
+    "targetState": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "a5973edf-b478-4a18-b1a0-d26a91c27011",
+        "manifestKey": "sites/default/markdown/revisions/a5973edf-b478-4a18-b1a0-d26a91c27011.json",
+        "persistedAt": "2026-11-20T04:20:13.467Z"
+      },
+      "version": 10
+    },
+    "sourceState": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+        "manifestKey": "sites/default/markdown/revisions/c0ba467c-c422-41e8-861c-64926c69e1fb.json",
+        "persistedAt": "2026-11-20T03:25:06.853Z"
+      },
+      "version": 309
+    },
+    "fenceActive": false,
+    "publisher": "paused",
+    "pins": 22,
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-pin-restore-audit",
+      "baselineBytes": 149591427,
+      "baselineObjects": 396,
+      "chargedBytes": 22546616,
+      "chargedPuts": 52,
+      "initializedAt": "2026-11-20T04:10:42.674Z",
+      "reservationSchema": "playtt/r2-capacity-reservation/v1",
+      "initialized": true,
+      "limitBytes": 300000000,
+      "remainingBytes": 127861957,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/__playtt-backup-pins",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ]
+  },
+  "local": {
+    "capacity": 13,
+    "pins": 10,
+    "coordinator": 3,
+    "passed": 26,
+    "failed": 0,
+    "typescript": "pass",
+    "dryRun": "pass",
+    "fullUpstreamSuiteClaimed": false
+  },
+  "assembly": {
+    "at": "2026-11-20T04:25:15.693522+00:00",
+    "result": "pass",
+    "patches": 22,
+    "sourceFiles": 65,
+    "sourceDifferences": [],
+    "extraFiles": [
+      "package-lock.json",
+      "package.json",
+      "scripts/playtt-pin-restore-bootstrap.mjs",
+      "scripts/playtt-pin-restore-cloud-preflight.py",
+      "scripts/playtt-pin-restore-final-backup.mjs",
+      "scripts/playtt-pin-restore-lib.mjs",
+      "scripts/playtt-pin-restore-native.mjs",
+      "tests/playtt-storage-capacity.test.ts",
+      "scripts/playtt-tail-pin-restore-sanitized.mjs",
+      "wrangler.playtt-pin-restore-audit.jsonc"
+    ],
+    "extraDifferences": [],
+    "freshDependencyInstall": false,
+    "scope": "Fresh pinned source assembly only; existing dependency and core artifact reuse"
+  },
+  "observation": {
+    "events": 848,
+    "first": "2026-11-20T04:05:22.920Z",
+    "last": "2026-11-20T04:22:47.085Z",
+    "outcomes": {
+      "ok": 848
+    },
+    "versions": {
+      "0ed92431-0482-4a10-9df4-6b5580f0295f": 634,
+      "4c78457f-79a5-4ac6-88f7-9d1ea33f1348": 214
+    },
+    "exceptions": 0,
+    "requestFailures": 0,
+    "traces": 136,
+    "incompleteTraces": 0,
+    "observedHeapMax": 74842112,
+    "memorySamples": 282,
+    "observerStopped": true,
+    "matchingOrphanTails": 0,
+    "scope": "Finite native HTTP and recovery observation; events are not unique requests. WASM samples are not whole-isolate memory. No browser/device/long-term acceptance."
+  },
+  "corrections": "cloudflare-pin-restore-verifier-corrections.json",
+  "sourceChanged": false,
+  "productionChanged": false,
+  "paidPlanAdded": false,
+  "goalStatus": "active",
+  "prDraft": true,
+  "remaining": [
+    "Actual in-flight/expired-lease drain and complete roots before any deletion",
+    "Validate retained unpinned packs; no retention deletion or capacity refund",
+    "Native editor errors/cancellation attribution and practical UI handoff",
+    "Cold-start/save/lock latency, real-device/IME and sustained free-tier use"
+  ]
+}

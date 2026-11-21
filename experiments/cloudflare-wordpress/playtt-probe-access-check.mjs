@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import { randomBytes } from 'node:crypto';
+import { writeFile } from 'node:fs/promises';
+import { playttProbeAccess } from '../src/playtt-probe-access.ts';
+const secret=randomBytes(32).toString('hex'),origin='https://playtt-probe.example';
+const access=(path='/',options={},s=secret)=>playttProbeAccess(new Request(origin+path,options),s);
+assert.equal((await access()).status,404);
+assert.equal((await access('/',{},'')).status,503);
+assert.equal((await access('/__playtt-probe-access',{method:'POST',headers:{origin:'https://other.example','content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({access:secret})})).status,403);
+assert.equal((await access('/__playtt-probe-access',{method:'POST',headers:{origin,'content-type':'application/x-www-form-urlencoded'},body:'access=invalid'})).status,403);
+const response=await access('/__playtt-probe-access',{method:'POST',headers:{origin,'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({access:secret})});
+assert.equal(response.status,303);const setCookie=response.headers.get('set-cookie');assert.ok(!setCookie.includes(secret));assert.ok(/Secure; HttpOnly; SameSite=Strict; Max-Age=1800/.test(setCookie));
+const cookie=setCookie.split(';')[0];const valid=await access('/wp-admin/',{headers:{cookie:cookie+'; wordpress=test'}});assert.ok(valid instanceof Request);assert.equal(valid.headers.get('cookie'),'wordpress=test');
+assert.equal((await access('/',{headers:{cookie:cookie.slice(0,-1)+(cookie.endsWith('0')?'1':'0')}})).status,404);
+assert.equal((await playttProbeAccess(new Request('https://other.example/',{headers:{cookie}}),secret)).status,404);
+const direct=await access('/',{headers:{'X-Playtt-Probe':secret}});assert.ok(direct instanceof Request);assert.equal(direct.headers.get('X-Playtt-Probe'),null);
+const report={at:new Date().toISOString(),result:'pass',checks:['anonymous denied','missing secret denied','cross-origin form denied','wrong token denied','signed cookie contains no operator secret','secure HttpOnly SameSite Strict 30-minute cookie','WordPress cookie preserved','tampering denied','different host denied','probe header removed before WordPress']};
+await writeFile('artifacts/playtt-probe-access-check.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

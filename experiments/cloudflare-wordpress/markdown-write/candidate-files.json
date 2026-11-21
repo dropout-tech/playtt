@@ -1,0 +1,146 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": false,
+  "existingConfigsChanged": false,
+  "prerequisites": [
+    {
+      "path": "src/playtt-content-overlay.ts",
+      "sha256": "7bf63e94d077d66bf46c4341add07e548ae1b12cc027541a6ca663f84c5281c3"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "sha256": "be0104515c3853cd4010d13f5059231859842b0c38f618732c8d6026f7f9f06e"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "sha256": "9e7fd70863c5e6512834b191aec53b2ff2b200480b00c7cf0061d2684b8cf05a"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "4262655fb0aef100b0401302622b81f9502896833bf7e3a8ab16737f3210e2aa"
+    },
+    {
+      "path": "assets/wordpress-static-artifact.json",
+      "sha256": "39fc2a00539d7a561ef7cc3483f723e510a24a84a6a1029bd0f88b5a3da218d2"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "beforeSha256": "39e17a22d150e4ddb27b602c675df9ac4c015829b3b979a898097d313990d6bd",
+      "afterSha256": "d3463f03bb9bf03c29ed40733a51476bb0540def2c2f28eb12560779b86f1b26"
+    },
+    {
+      "path": "src/mutation-memory.ts",
+      "beforeSha256": "13ea7535415a82818fb902769a531fe871676bb3971f3227e3a8046858b38aaa",
+      "afterSha256": "00b96c62fc4e5d5a161aaf5f41b20874f6665086b9fb84634d9a00902bc7b650"
+    },
+    {
+      "path": "tests/cloudflare-runtime.test.ts",
+      "beforeSha256": "304e69a02188106430e5d7fa583a0bf8449da4737eed649852f293225303a6bc",
+      "afterSha256": "124379429df9353e43565a540ed64bfeba7876671de06c11366e005d85806a04"
+    },
+    {
+      "path": "tests/playtt-content-io.test.ts",
+      "beforeSha256": "8ad1d1319f90c653b102147cdce98e0e594c7367f97b8fd9bdaf0eea64fc2571",
+      "afterSha256": "42a7552f7abdce1a23e19aa48865c637b5c8cb4f1b41a3f09e129861444d4553"
+    },
+    {
+      "path": "src/playtt-markdown-persistence.ts",
+      "source": "playtt-markdown-persistence.ts",
+      "afterSha256": "8443497aae4646884d88caa2e73d8f131e5eb47b8af0681cecdf3894032781eb"
+    },
+    {
+      "path": "tests/playtt-markdown-persistence.test.ts",
+      "source": "playtt-markdown-persistence.test.ts",
+      "afterSha256": "dcd5ae6e8c6d827bed098f6f5c257e65d57067a045d2d603665fd5fabbd73042"
+    },
+    {
+      "path": "scripts/playtt-markdown-write-local.mjs",
+      "source": "playtt-markdown-write-local.mjs",
+      "afterSha256": "876c9ef36f015d337a8e5bf05f5d3fec82cc5f730f5270479826708c905e5644"
+    },
+    {
+      "path": "scripts/playtt-markdown-write-ui.mjs",
+      "source": "playtt-markdown-write-ui.mjs",
+      "afterSha256": "30188c9de0ab80f2044e59a3220aeb0da092b4efb361c6a840950756fbb51852"
+    },
+    {
+      "path": "scripts/playtt-markdown-write-ui-control.mjs",
+      "source": "playtt-markdown-write-ui-control.mjs",
+      "afterSha256": "8efc8c2834e61580a32f79e60e33053090eb97fe3f3b7a61c867c674936aae0a"
+    },
+    {
+      "path": "scripts/playtt-markdown-write-ui-audit.mjs",
+      "source": "playtt-markdown-write-ui-audit.mjs",
+      "afterSha256": "0eb54e080a7e22b54f204808b4bd8e35d12c79e73fb71cdf7a200618a8995088"
+    },
+    {
+      "path": "scripts/playtt-markdown-write-status.mjs",
+      "source": "playtt-markdown-write-status.mjs",
+      "afterSha256": "841dd655dc792d4f0e3a7b418af108cd218a8d0f49506442ecb633000b278450"
+    },
+    {
+      "path": "scripts/playtt-provider-observer.mjs",
+      "source": "playtt-provider-observer.mjs",
+      "afterSha256": "42c5bce9b319618658d58ada09bb8d6a80f88286cafe36c6dd57c3c216625c1a"
+    },
+    {
+      "path": "tests/playtt-provider-observer.test.mjs",
+      "source": "playtt-provider-observer.test.mjs",
+      "afterSha256": "dc5605223da90e564fde91130e234a4607a8d5878d3dc41f6551f1560c7ccdf3"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-ui.mjs",
+      "source": "playtt-markdown-provider-ui.mjs",
+      "afterSha256": "fb2aa1b9a5b03f7679198265384fec54af8b30adee48ea70026104f106acf9a7"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-ui-control.mjs",
+      "source": "playtt-markdown-provider-ui-control.mjs",
+      "afterSha256": "a15f442a78d4b34310bbf3fe72baa01b9f74d968707cafaa0971cd95140ae851"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-cold-ui.mjs",
+      "source": "playtt-markdown-provider-cold-ui.mjs",
+      "afterSha256": "6e201c59ceb19093671b21f2c9acb37ceeb219bb400b6271d6aea34f7fcfc457"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-cold-ui-control.mjs",
+      "source": "playtt-markdown-provider-cold-ui-control.mjs",
+      "afterSha256": "f6e2139ea8444b0a846be64c88ee7a097cefacf98ff6889850ca2eb45be09921"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-backup.mjs",
+      "source": "playtt-markdown-provider-backup.mjs",
+      "afterSha256": "1e517a37ea28797cf4548394fb75380abd65e085d07cb2ed53790572307057a2"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-pin.mjs",
+      "source": "playtt-markdown-provider-pin.mjs",
+      "afterSha256": "a7d28eaebae6755106ef81eeacfcabb09dda598fa3e3900fdce2c2ede93386f0"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-cold-backup.mjs",
+      "source": "playtt-markdown-provider-cold-backup.mjs",
+      "afterSha256": "f4977051a14071bec40f4134f66368033152208586032cbbc9d348ada7b8bf12"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-cold-pin.mjs",
+      "source": "playtt-markdown-provider-cold-pin.mjs",
+      "afterSha256": "2bcc9ec7a839ead5380511045054a14e7a5eb986e7958f3346d280cfbc532670"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-final-status.mjs",
+      "source": "playtt-markdown-provider-final-status.mjs",
+      "afterSha256": "f55d0ed35726ed856eb04ca6dd93a59c95ea3b7d80ae84657a02a290f574f076"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-inspect.mjs",
+      "source": "playtt-markdown-provider-inspect.mjs",
+      "afterSha256": "3ed982c8e05bc3901dd6459259273d2afe8cc2db2c4c0576745efba90fe349b0"
+    }
+  ],
+  "patchSha256": "4b5a75767c0a59e73a3e77ea22aba7d98d7d3075a38b1dc9809b83fc90f3e1fe"
+}

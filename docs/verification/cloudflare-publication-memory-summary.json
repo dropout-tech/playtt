@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-17T05:46:08.868Z",
+  "scope": "Observed remote global-styles and full publication acceptance on version 8bb81124; bounded observation, not load capacity proof",
+  "events": 316,
+  "durableObjectEvents": 248,
+  "exceptions": [],
+  "maxCpuMs": 1832,
+  "maxWallMs": 13811,
+  "version": "8bb81124-7ee8-4bfa-8631-c57e2a5cea0a"
+}

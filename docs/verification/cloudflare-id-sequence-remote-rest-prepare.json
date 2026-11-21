@@ -1,0 +1,72 @@
+{
+  "at": "2026-11-17T11:21:01.859Z",
+  "mode": "prepare",
+  "label": "remote-rest",
+  "result": "prepared",
+  "scope": "Owned private drafts only; restart local server or redeploy identical private audit code before check",
+  "retainedId": 106,
+  "removedHighestId": 107,
+  "removedStatus": "draft",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1173
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 8017
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7721
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3718
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4898
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 9110
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 8440
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/107?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2016
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/107?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 6294
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 180
+    }
+  ]
+}

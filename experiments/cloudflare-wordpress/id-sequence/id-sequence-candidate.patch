@@ -1,0 +1,125 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -3,6 +3,7 @@
+ import { createPlayttRuntimeFactory } from './playtt-runtime-factory.js';
+ import { trackPlayttRuntimeLifetime, playttRuntimeRetirement } from './playtt-runtime-lifetime.js';
+ import { patchPlayttAutoDraftPersistence } from './playtt-auto-draft-policy.js';
++import { patchPlayttIdSequences } from './playtt-id-sequences.js';
+ import { readPlayttSnapshotSources, type PlayttSnapshotRuntimeReader } from './playtt-snapshot-source.js';
+ import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+@@ -2446,6 +2447,7 @@
+         if (uploadFiles?.length) trace ? await trace.measure("canonical.hydration.uploads", async () => materializeRuntimeFiles(php, UPLOADS_ROOT, uploadFiles), { files: uploadFiles.length, bytes: sumRuntimeFileBytes(uploadFiles) }) : materializeRuntimeFiles(php, UPLOADS_ROOT, uploadFiles)
+         if (shouldPatchCanonicalRuntimePoliciesAtInit) {
+           patchPlayttAutoDraftPersistence(php)
++          patchPlayttIdSequences(php)
+           patchCanonicalRuntimePoliciesAtInit(php)
+           patchCanonicalThemeJsonCustomCss(php)
+         }
+--- /dev/null
++++ b/src/playtt-id-sequences.ts
+@@ -0,0 +1,104 @@
++import type { PHP } from '@php-wasm/universal';
++
++export const PLAYTT_ID_SEQUENCES_PHP = String.raw`<?php
++// Canonical state, not the disposable SQLite cache. Decimal strings preserve
++// SQLite's signed 64-bit sequence without JSON/JavaScript precision loss.
++function playtt_sequence_value($value): string {
++    if (is_int($value)) $value = (string) $value;
++    if (!is_string($value) || !preg_match('/^(0|[1-9][0-9]{0,18})$/D', $value)
++        || strlen($value) > strlen((string) PHP_INT_MAX)
++        || (strlen($value) === strlen((string) PHP_INT_MAX) && strcmp($value, (string) PHP_INT_MAX) > 0)) {
++        throw new RuntimeException('Canonical auto-increment value is invalid.');
++    }
++    return $value;
++}
++function playtt_sequence_name($name): string {
++    if (!is_string($name) || !preg_match('/^[A-Za-z_][A-Za-z0-9_$-]{0,127}$/D', $name)) {
++        throw new RuntimeException('Canonical auto-increment table is invalid.');
++    }
++    return $name;
++}
++function playtt_sequence_file(string $root): string { return $root . '/_runtime/playtt-auto-increment.json'; }
++function playtt_read_sequences(string $root): array {
++    $path = playtt_sequence_file($root);
++    if (!file_exists($path)) return array(); // Legacy input: start with known current rows only.
++    if (!is_file($path) || filesize($path) > 131072) throw new RuntimeException('Canonical auto-increment metadata is oversized.');
++    $raw = file_get_contents($path);
++    if (false === $raw) throw new RuntimeException('Canonical auto-increment metadata is unreadable.');
++    $data = json_decode($raw, false, 8, JSON_THROW_ON_ERROR);
++    if (!$data instanceof stdClass || count(get_object_vars($data)) !== 2
++        || ($data->schema ?? null) !== 'playtt/auto-increment/v1' || !(($data->sequences ?? null) instanceof stdClass)) {
++        throw new RuntimeException('Canonical auto-increment metadata is invalid.');
++    }
++    $rows = get_object_vars($data->sequences);
++    if (count($rows) > 512) throw new RuntimeException('Canonical auto-increment inventory is oversized.');
++    foreach ($rows as $name => $value) $rows[playtt_sequence_name($name)] = playtt_sequence_value($value);
++    return $rows;
++}
++function playtt_live_sequences(PDO $pdo): array {
++    $exists = $pdo->query("SELECT 1 FROM sqlite_master WHERE type='table' AND name='sqlite_sequence'")->fetchColumn();
++    if (false === $exists) return array();
++    $rows = array();
++    foreach ($pdo->query('SELECT name, seq FROM sqlite_sequence')->fetchAll(PDO::FETCH_ASSOC) as $row) {
++        $name = playtt_sequence_name($row['name']);
++        if (array_key_exists($name, $rows)) throw new RuntimeException('SQLite auto-increment inventory has duplicate tables.');
++        $rows[$name] = playtt_sequence_value($row['seq']);
++        if (count($rows) > 512) throw new RuntimeException('SQLite auto-increment inventory is oversized.');
++    }
++    return $rows;
++}
++function playtt_restore_sequences(PDO $pdo, string $root): void {
++    $saved = playtt_read_sequences($root);
++    if (!$saved) return;
++    $current = playtt_live_sequences($pdo);
++    $tables = $pdo->query("SELECT name FROM sqlite_master WHERE type='table' AND sql LIKE '%AUTOINCREMENT%'")->fetchAll(PDO::FETCH_COLUMN);
++    $existing = array_fill_keys($tables, true);
++    foreach ($saved as $name => $value) {
++        if (!isset($existing[$name])) continue; // Retain absent-table history in metadata.
++        if (array_key_exists($name, $current)) {
++            if ((int)$current[$name] >= (int)$value) continue;
++            $statement = $pdo->prepare('UPDATE sqlite_sequence SET seq = ? WHERE name = ?');
++        } else $statement = $pdo->prepare('INSERT INTO sqlite_sequence (seq, name) VALUES (?, ?)');
++        $statement->bindValue(1, (int)$value, PDO::PARAM_INT);
++        $statement->bindValue(2, $name, PDO::PARAM_STR);
++        if (!$statement->execute()) throw new RuntimeException('SQLite auto-increment restoration failed.');
++    }
++}
++function playtt_save_sequences(PDO $pdo, string $root): void {
++    $saved = playtt_read_sequences($root);
++    foreach (playtt_live_sequences($pdo) as $name => $value) {
++        if (!isset($saved[$name]) || (int)$saved[$name] < (int)$value) $saved[$name] = $value;
++    }
++    if (count($saved) > 512) throw new RuntimeException('Canonical auto-increment inventory is oversized.');
++    ksort($saved, SORT_STRING);
++    $json = json_encode(array('schema'=>'playtt/auto-increment/v1','sequences'=>(object)$saved), JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR);
++    if (strlen($json) > 131072) throw new RuntimeException('Canonical auto-increment metadata is oversized.');
++    $path = playtt_sequence_file($root);
++    if (is_file($path) && file_get_contents($path) === $json) return;
++    $directory = dirname($path);
++    if (!is_dir($directory) && !@mkdir($directory, 0755, true) && !is_dir($directory)) throw new RuntimeException('Canonical auto-increment directory is unavailable.');
++    $temp = $path . '.tmp.playtt-sequence';
++    if (@file_put_contents($temp, $json, LOCK_EX) !== strlen($json) || !@rename($temp, $path)) {
++        if (is_file($temp)) @unlink($temp);
++        throw new RuntimeException('Canonical auto-increment persistence failed.');
++    }
++}
++`;
++
++export function patchPlayttIdSequences(php: PHP): void {
++  const root='/wordpress/wp-content/plugins/markdown-database-integration/inc/';
++  const patches=[
++    // Normal WordPress uses this wpdb drop-in, separately from the explicit
++    // storage-runtime bootstrap used by imports and synthetic mutations.
++    {file:'class-wp-markdown-db.php',needle:"\t\tif ( 'sync_incremental' === $action ) {\n\t\t\t$this->loader->sync_incremental();\n\t\t\treturn;\n\t\t}\n\n\t\t$this->loader->load_all();",replacement:"\t\tif ( 'sync_incremental' === $action ) {\n\t\t\t$this->loader->sync_incremental();\n\t\t} else {\n\t\t\t$this->loader->load_all();\n\t\t}\n\t\trequire_once __DIR__ . '/playtt-id-sequences.php';\n\t\t$playtt_state_root = defined('MARKDOWN_DB_STATE_DIR') ? MARKDOWN_DB_STATE_DIR : (defined('MARKDOWN_DB_CONTENT_DIR') ? MARKDOWN_DB_CONTENT_DIR : WP_CONTENT_DIR . '/markdown');\n\t\tplaytt_restore_sequences($this->dbh->get_connection()->get_pdo(), $playtt_state_root);",count:1},
++    {file:'class-wp-markdown-primary-storage-runtime.php',needle:'\t\t$runtime->identity = $runtime->canonical_identity();',replacement:"\t\trequire_once __DIR__ . '/playtt-id-sequences.php';\n\t\tplaytt_restore_sequences($runtime->driver->get_connection()->get_pdo(), $runtime->state_root);\n\t\t$runtime->identity = $runtime->canonical_identity();",count:2},
++    {file:'class-wp-markdown-write-engine.php',needle:'\tpublic function flush_dirty( bool $throw_on_error = false ): array {',replacement:"\tpublic function flush_dirty( bool $throw_on_error = false ): array {\n\t\trequire_once __DIR__ . '/playtt-id-sequences.php';\n\t\tplaytt_save_sequences($this->driver->get_connection()->get_pdo(), $this->state_dir);",count:1},
++  ];
++  const prepared=patches.map(patch=>{
++    const path=root+patch.file,source=new TextDecoder().decode(php.readFileAsBuffer(path));
++    if(source.split(patch.needle).length-1!==patch.count)throw new Error('Pinned MDI sequence patch count mismatch: '+patch.file);
++    return {path,source:source.split(patch.needle).join(patch.replacement)};
++  });
++  php.writeFile(root+'playtt-id-sequences.php',new TextEncoder().encode(PLAYTT_ID_SEQUENCES_PHP));
++  for(const file of prepared)php.writeFile(file.path,new TextEncoder().encode(file.source));
++}

@@ -1,0 +1,71 @@
+{
+  "schema": "playtt/local-diagnostic-tools/v1",
+  "runtimeSourcesChanged": false,
+  "configsChanged": false,
+  "deployed": false,
+  "prerequisites": [
+    {
+      "path": "src/worker.ts",
+      "sha256": "d3463f03bb9bf03c29ed40733a51476bb0540def2c2f28eb12560779b86f1b26"
+    },
+    {
+      "path": "src/playtt-content-policy.ts",
+      "sha256": "b11ca43b067824bd631215aa0cdcb20842396595589d09de00e13c398f2bb78e"
+    },
+    {
+      "path": "src/playtt-editor-lock.ts",
+      "sha256": "c61e547c55400355fa19088869215480e8dd4f6b07c01f7ae086f08b4adacb82"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "4262655fb0aef100b0401302622b81f9502896833bf7e3a8ab16737f3210e2aa"
+    }
+  ],
+  "files": [
+    {
+      "path": "scripts/playtt-background-write-ui.mjs",
+      "source": "playtt-background-write-ui.mjs",
+      "sha256": "997a61ca8edbc2b2cee6dc03d527d221df975a81ba5fe87887501d3275650a74"
+    },
+    {
+      "path": "scripts/playtt-background-write-ui-control.mjs",
+      "source": "playtt-background-write-ui-control.mjs",
+      "sha256": "9dd5afc5665d15e848fb28bc31333d469c0f54c57217cf920b9b71960cc0d13f"
+    },
+    {
+      "path": "scripts/playtt-background-write-inspect.mjs",
+      "source": "playtt-background-write-inspect.mjs",
+      "sha256": "bdc530930450088d8d676c3577553fc995c88f8bc7a1526d5252db1562ee4c8a"
+    },
+    {
+      "path": "scripts/playtt-background-write-final.mjs",
+      "source": "playtt-background-write-final.mjs",
+      "sha256": "106613cb29f6532ea9ca3e15cb2bc548a01fd7ecddb1a08f459231ba9ecad0d2"
+    },
+    {
+      "path": "scripts/playtt-editor-heartbeat-policy.php",
+      "source": "playtt-editor-heartbeat-policy.php",
+      "sha256": "002d726d508761d90cdd9aa002eda435b30458d6f6101836af3176764fd5799d"
+    },
+    {
+      "path": "scripts/playtt-heartbeat-rate-ui.mjs",
+      "source": "playtt-heartbeat-rate-ui.mjs",
+      "sha256": "f68724aef2c147977402c13b532ac1bf21056575db40f5f188992cbb3a07b4bc"
+    },
+    {
+      "path": "scripts/playtt-heartbeat-rate-ui-control.mjs",
+      "source": "playtt-heartbeat-rate-ui-control.mjs",
+      "sha256": "ab0021bfa949ef8cc23fc705f1b89393a0a744a8661c0083e64f203581d194cc"
+    },
+    {
+      "path": "scripts/playtt-heartbeat-scope-ui.mjs",
+      "source": "playtt-heartbeat-scope-ui.mjs",
+      "sha256": "5c6c3d7cab785f13e92a83e765de53b7ba6badb2f3b26220ce9f9f444a7ce87c"
+    },
+    {
+      "path": "scripts/playtt-heartbeat-scope-ui-control.mjs",
+      "source": "playtt-heartbeat-scope-ui-control.mjs",
+      "sha256": "bdb1655ed718934d15c917520f8d41f1756183bf5cf3395397d04871691f4c8a"
+    }
+  ]
+}

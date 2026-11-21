@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-18T18:13:51.629Z",
+  "result": "prepared",
+  "scope": "One owned expired native auto-draft awaits a real daily Cloudflare event; no manual run invoked",
+  "id": 124,
+  "cron": "35 18 * * *",
+  "expectedScheduledTime": 1795026900000,
+  "expectedUtc": "2026-11-18T18:35:00.000Z",
+  "beforeVersion": 166,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1101
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3591
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 9661
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3766
+    },
+    {
+      "path": "/?phase=operator-auto-draft-maintenance",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 4007
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=publish&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4969
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=auto-draft&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2508
+    },
+    {
+      "path": "/wp-admin/post-new.php?post_type=page",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 5464
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=auto-draft&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3591
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/124",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 9152
+    },
+    {
+      "path": "/?phase=operator-auto-draft-maintenance",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 3354
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 194
+    }
+  ]
+}

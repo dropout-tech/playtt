@@ -1,0 +1,23 @@
+{
+  "scope": "Observed private audit native UI, capture, backup, redeploy, readback and owned cleanup interval; envelopes are not unique requests; browser navigation timeout/cancellations retained.",
+  "firstAt": "2026-11-17T10:22:12.354Z",
+  "lastAt": "2026-11-17T10:30:15.869Z",
+  "observedEvents": 273,
+  "versions": [
+    "1c5f289a-2262-4493-a7f2-b6d84b9fac19",
+    "1d97a7ff-cb44-4c12-b0b7-126cf5fe985b"
+  ],
+  "outcomes": {
+    "ok": 269,
+    "canceled": 4
+  },
+  "exceptions": [],
+  "retirements": [],
+  "maxObservedWasmBytes": 76808192,
+  "incompletePhases": [
+    {
+      "at": "2026-11-17T10:24:35.501Z",
+      "operation": "mutation"
+    }
+  ]
+}

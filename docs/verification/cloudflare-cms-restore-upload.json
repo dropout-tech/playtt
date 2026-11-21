@@ -1,0 +1,7 @@
+{
+  "at": "2026-11-17T03:55:16.582Z",
+  "result": "pass",
+  "scope": "Verified local backup objects copied only into separate private R2 restore bucket",
+  "bucket": "playtt-wordpress-restore-probe",
+  "objects": 210
+}

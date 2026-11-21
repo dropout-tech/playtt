@@ -1,0 +1,170 @@
+{
+  "at": "2026-11-17T09:54:14.688457+00:00",
+  "label": "baseline",
+  "result": "pass",
+  "scope": "Finite private audit request-header wall time and observed I/O-bounded remote phase intervals; clocks advance on I/O, so phase attribution is not CPU time. Tail envelopes are not unique requests.",
+  "timingDocumentation": "https://developers.cloudflare.com/workers/runtime-apis/performance/",
+  "versions": [
+    "19c92e3e-678e-4196-8d83-0a4ed6370c58"
+  ],
+  "observedEvents": 52,
+  "outcomes": {
+    "ok": 52
+  },
+  "exceptions": [],
+  "writeWallTime": {
+    "samples": 5,
+    "minMs": 18555,
+    "medianMs": 18937,
+    "maxMs": 20021
+  },
+  "writes": [
+    {
+      "at": "2026-11-17T09:47:59.842Z",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 20021
+    },
+    {
+      "at": "2026-11-17T09:48:27.652Z",
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 18595
+    },
+    {
+      "at": "2026-11-17T09:48:46.248Z",
+      "path": "/wp-json/wp/v2/pages/106",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 19892
+    },
+    {
+      "at": "2026-11-17T09:49:08.195Z",
+      "path": "/wp-json/wp/v2/pages/106",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 18555
+    },
+    {
+      "at": "2026-11-17T09:49:31.594Z",
+      "path": "/wp-json/wp/v2/pages/106?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 18937
+    }
+  ],
+  "mutationPhaseIntervals": {
+    "lease.acquire": {
+      "samples": 5,
+      "minMs": 39,
+      "medianMs": 55,
+      "maxMs": 61
+    },
+    "published.page-cache.lookup": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "runtime.cache.reuse": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "publication.current.read": {
+      "samples": 5,
+      "minMs": 280,
+      "medianMs": 360,
+      "maxMs": 405
+    },
+    "request.php": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "canonical.changes.collect": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "publication.changes.collect": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "canonical.manifest.current.read": {
+      "samples": 5,
+      "minMs": 935,
+      "medianMs": 1447,
+      "maxMs": 1974
+    },
+    "persistence.upload.inventory": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "persistence.upload.write": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "persistence.wp-content.inventory": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "persistence.wp-content.write": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "persistence.markdown.write": {
+      "samples": 5,
+      "minMs": 1323,
+      "medianMs": 1508,
+      "maxMs": 2560
+    },
+    "persistence.manifest.write": {
+      "samples": 5,
+      "minMs": 13576,
+      "medianMs": 13830,
+      "maxMs": 15638
+    },
+    "publication.enqueue": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    },
+    "coordinator.commit": {
+      "samples": 5,
+      "minMs": 780,
+      "medianMs": 949,
+      "maxMs": 1841
+    },
+    "runtime.cache.promote": {
+      "samples": 5,
+      "minMs": 0,
+      "medianMs": 0,
+      "maxMs": 0
+    }
+  },
+  "snapshotIntervals": {},
+  "maxObservedHeapBytes": 73793536,
+  "cleanup": {
+    "publishedPageHash": "a6f6163dbd1a918e42298c9a57af027059aaa689a43dcfa4214fab2f01ecc3a7",
+    "createdAndEdited": true,
+    "ownedDraftRemoved": true,
+    "originalPagesUnchanged": true
+  }
+}

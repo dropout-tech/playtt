@@ -1,0 +1,162 @@
+{
+  "schema": "playtt/local-editor-heartbeat-policy/v1",
+  "at": "2026-11-21T08:47:01.621Z",
+  "result": "pass",
+  "baselineVersion": 161,
+  "phpFixtureCases": 24,
+  "disabledDefault": true,
+  "unknownFlagDisabled": true,
+  "existingEditorEnabled": true,
+  "newEditorEnabled": true,
+  "unrelatedProfileUnchanged": true,
+  "samePhpInstanceAcrossFlagChanges": true,
+  "uncommittedNativeAutoDraftPreserved": true,
+  "ownedLocalAutoDraft": 206,
+  "existingDraftContentExact": true,
+  "nativeLogout": true,
+  "coreCallbacksNotReplaced": true,
+  "checks": [
+    {
+      "path": "/__local-php-fixture",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 167
+    },
+    {
+      "path": "/__local-adopt",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 18
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2493
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 913
+    },
+    {
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1400
+    },
+    {
+      "path": "/__local-cache",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 17
+    },
+    {
+      "path": "/__local-mode",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1324
+    },
+    {
+      "path": "/__local-cache",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 10
+    },
+    {
+      "path": "/wp-admin/profile.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 719
+    },
+    {
+      "path": "/wp-admin/post-new.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1076
+    },
+    {
+      "path": "/__local-cache",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 9
+    },
+    {
+      "path": "/__local-mode",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1281
+    },
+    {
+      "path": "/__local-cache",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2
+    },
+    {
+      "path": "/__local-mode",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 14
+    },
+    {
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1246
+    },
+    {
+      "path": "/__local-mode",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1
+    },
+    {
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1232
+    },
+    {
+      "path": "/__local-cache",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 18
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 615
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/206",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 587
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 302,
+      "wallMs": 704
+    }
+  ],
+  "outboundAttempts": 0,
+  "remoteRequests": 0,
+  "localProcessesDisposed": true,
+  "scope": "Direct local runtime entry with real PHP/WordPress/SQLite DO/R2; does not test outer provider gate/budget or browser throttling."
+}

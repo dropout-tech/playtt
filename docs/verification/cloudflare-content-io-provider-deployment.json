@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-21T04:14:03.603259+00:00",
+  "result": "pass",
+  "priorVersion": "eb809ce8-c6e9-4dce-9a5d-d0fceb54896c",
+  "temporaryEnabledVersion": "bf3d6b4e-4070-4b9e-8e35-20ee9d94c733",
+  "finalVersion": "1c55f0fa-5b78-4f39-917d-9a0b03e7d1ab",
+  "actualBindingsOmitContentAndReadback": true,
+  "worker": "playtt-wp-free-session-audit",
+  "bucket": "playtt-wordpress-session-audit",
+  "compatibleBoundedReaderRetained": true,
+  "sourceCommit": "bbe6a4db1473aa1ee8ebb0d896f9c094ea0a6c73",
+  "configsChanged": 0,
+  "paidChange": false,
+  "productionChanged": false
+}

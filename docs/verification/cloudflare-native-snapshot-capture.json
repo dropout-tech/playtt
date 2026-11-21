@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-17T10:25:37.025Z",
+  "mode": "capture",
+  "result": "pass",
+  "scope": "Exact readback of UI-authored private draft, unchanged published pages and anonymous refusal; audit Worker only",
+  "evidence": {
+    "id": 109,
+    "status": "draft",
+    "titleHash": "06bb322bea3e8424e83771dfe0427e7639705025b8707b68d477b689e0a1a6d2",
+    "contentHash": "3b7bf26a0e0e2ecffd804164828066d808a6df891484ff02fcb2bae0bad2f3a8",
+    "publishedPagesUnchanged": true,
+    "wordpressAnonymousPageStatus": 404,
+    "wordpressAnonymousEditStatus": 401
+  },
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "status": 200,
+      "wallMs": 474
+    },
+    {
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 2066
+    },
+    {
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 10148
+    },
+    {
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 2307
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=draft&per_page=100&search=PLAYTT_NATIVE_SNAPSHOT_20261117_1025",
+      "status": 200,
+      "wallMs": 1795
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "status": 200,
+      "wallMs": 3385
+    },
+    {
+      "path": "/__playtt-publishing",
+      "status": 200,
+      "wallMs": 517
+    }
+  ]
+}

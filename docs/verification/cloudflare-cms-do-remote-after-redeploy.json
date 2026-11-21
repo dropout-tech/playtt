@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-16T18:40:26.443Z",
+  "origin": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev",
+  "mode": "after-restart",
+  "scope": "Remote isolated DO/R2 CMS probe",
+  "result": "pass",
+  "assertions": [
+    "WordPress login",
+    "authenticated post read",
+    "published post visible",
+    "media SHA256 exact",
+    "anonymous draft denied",
+    "anonymous admin redirected"
+  ],
+  "state": {
+    "post": {
+      "id": 5,
+      "title": "PLAYTT DO 保存測試 1794854225408",
+      "link": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev/2026/11/16/playtt-do-%e4%bf%9d%e5%ad%98%e6%b8%ac%e8%a9%a6-1794854225408/"
+    },
+    "draftId": 6,
+    "media": {
+      "id": 7,
+      "url": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev/wp-content/uploads/2026/11/playtt-do-probe.png",
+      "sha256": "431ced6916a2a21a156e38701afe55bbd7f88969fbbfc56d7fe099d47f265460"
+    }
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 5979
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 14165
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 7594
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/posts/5",
+      "status": 200,
+      "wallMs": 6513
+    }
+  ]
+}

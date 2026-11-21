@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-20T17:56:55.493026+00:00",
+  "source": "Authenticated Cloudflare dashboard, read-only visible UI",
+  "account": "info@dropout.tw",
+  "workersPlan": "Free",
+  "workersPrice": "$0",
+  "workersRequestsToday": 2682,
+  "workersDailyLimit": 100000,
+  "r2BillingPeriod": "October 25 - November 25",
+  "r2ClassAApprox": 5960,
+  "r2ClassBApprox": 52870,
+  "r2CurrentStorageGBApprox": 2.03,
+  "r2CurrentPeriodBillableUSD": 0,
+  "doBillingPeriod": "October 25 - November 25",
+  "doDurationGBSecondsApprox": 1910,
+  "doRequestsApprox": 16550,
+  "doSqlStorageKBApprox": 401.41,
+  "doSqlRowsReadApprox": 14580,
+  "doSqlRowsWrittenApprox": 10880,
+  "limitations": [
+    "Rounded visible analytics; may lag and is not a final invoice",
+    "Shared account usage can change; these are timestamped readings only"
+  ],
+  "paidPlanChange": false
+}

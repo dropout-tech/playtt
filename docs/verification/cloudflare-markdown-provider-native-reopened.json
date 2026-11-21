@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-21T06:18:51.651Z",
+  "result": "pass",
+  "scope": "New bounded window, same native session, no content edit or Save click; exact visible text, not code-editor markup.",
+  "id": 193,
+  "sameSession": true,
+  "paragraphs": 8,
+  "allVisibleParagraphTextExact": true,
+  "savedIndicator": true,
+  "contentSaveClicked": false,
+  "codeEditorChanged": false,
+  "nativeLogoutConfirmed": true,
+  "finishedAt": "2026-11-21T06:19:14.463Z"
+}

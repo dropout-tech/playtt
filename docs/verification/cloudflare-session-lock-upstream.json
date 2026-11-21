@@ -1,0 +1,37 @@
+{
+  "issue": "https://github.com/WordPress/gutenberg/issues/79976",
+  "fix": "https://github.com/WordPress/gutenberg/pull/79997",
+  "merged": true,
+  "mergedAt": "2026-07-14T21:52:50Z",
+  "mergeCommit": "3060be1c039be3538ae50b30f58149071d2f37ef",
+  "head": "c382c61efd3b03935c5bfabafff5062c57bfa8d7",
+  "rootCause": "Empty React effect dependencies retain initial lock state; heartbeat keeps refreshing an unowned lock.",
+  "officialDependencies": [
+    "hookName",
+    "isLocked",
+    "activePostLock",
+    "postId",
+    "postLockUtils",
+    "autosave",
+    "updatePostLock"
+  ],
+  "localMinifiedDependencies": [
+    "t",
+    "i",
+    "d",
+    "c",
+    "u",
+    "r",
+    "o"
+  ],
+  "candidateApplied": false,
+  "at": "2026-11-20T21:13:47Z",
+  "artifact": {
+    "path": "wordpress/wp-includes/js/dist/editor.min.js",
+    "offset": 54395281,
+    "size": 1574731,
+    "sha256": "638befed63bb6937fe54b6f1ec79174c4ec20bef7b5de6ab0948acc9aad2130c"
+  },
+  "localObservation": "Exact pinned PostLockedModal effect has empty dependencies and invokes autosave on every lock_error. Browser initially exposed Take over, then changed to lost-lock without a successful click.",
+  "inference": "The official stale-closure explanation matches both local source and observed behavior. Backport and cloud UI regression remain unperformed."
+}

@@ -1,0 +1,16 @@
+✔ Cloudflare phase traces use bounded, non-overlapping leaves and independent dimensions (2.8137ms)
+✔ Cloudflare composite phases report only their unmeasured gap (1.3153ms)
+✔ Cloudflare diagnostic Server-Timing serializes only completed leaf phases (26.4785ms)
+✔ translation preserves multipart and JSON bytes without decoding or normalizing (29.4479ms)
+✔ truncated stream reports a content-free typed failure and never returns partial bytes (1.6867ms)
+✔ GET/HEAD omit body and empty POST retains zero-length byte payload (0.6934ms)
+✔ failure categories never echo private exception data (1.5335ms)
+✔ request failure uses fixed endpoint categories and failed leaf without private request data (27.9513ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 410.2698

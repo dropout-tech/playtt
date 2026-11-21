@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-20T04:11:21.032Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "protectedVersions": 21,
+  "generation": 21,
+  "sourceRegistrySha256": "97905be61072f0ffe8393f08db0a581ef40ef9267613ab61df2ce9c7db90be53",
+  "scope": "Immutable backup identities restored; registration timestamps belong to the new target, old export retained as provenance"
+}

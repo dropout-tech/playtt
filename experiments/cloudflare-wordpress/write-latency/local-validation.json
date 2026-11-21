@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-18T22:18:50.066120+00:00",
+  "focused": {
+    "tests": 23,
+    "passed": 23,
+    "failed": 0,
+    "scope": "Eight bounded-writer cases plus fifteen snapshot-source/restore cases."
+  },
+  "typescript": "pass",
+  "candidateDryRun": "pass",
+  "broadCandidateBeforeIntegrationCase": {
+    "tests": 39,
+    "passed": 36,
+    "failed": 3
+  },
+  "sameBroadBaselineRestored": {
+    "tests": 32,
+    "passed": 29,
+    "failed": 3
+  },
+  "preexistingFailures": [
+    "Source-shape assertion is LF-specific while this Windows worker source has CRLF.",
+    "Source-shape assertion still expects previousRuntime.state; adopted lifetime fix uses previousRuntimeInfo.state.",
+    "Native php executable unavailable in this environment: spawn php ENOENT."
+  ],
+  "broadSuitePassed": false,
+  "note": "Candidate files restored after baseline test via finally. These three failures are retained, not waived as an overall handoff pass. Runtime source is now the accepted 17-patch version."
+}

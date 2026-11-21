@@ -1,0 +1,173 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -1,3 +1,4 @@
++import { readCanonicalManifestObject, serializeManifestEnvelope } from './playtt-manifest-envelope.js';
+ import { prepareCompressedContent, persistCompressedFallbackMarkdown } from './playtt-compressed-persistence.js';
+ import { isCompressedContent, validateCompressedContent } from './playtt-compressed-content.js';
+ import { PLAYTT_EDITOR_HEARTBEAT_FLAG, PLAYTT_EDITOR_HEARTBEAT_POLICY } from './playtt-editor-heartbeat.js';
+@@ -253,6 +254,7 @@
+   WORDPRESS_STATE_BUCKET: R2Bucket
+   PLAYTT_METADATA_OVERLAY?: string
+   PLAYTT_CONTENT_OVERLAY?: string
++  PLAYTT_MANIFEST_ENCODING?: string
+   PLAYTT_EDITOR_READBACK?: string
+   PLAYTT_EDITOR_HEARTBEAT?: string
+   WORDPRESS_SITE_CONTEXTS?: string
+@@ -1483,7 +1485,7 @@
+       if (!canonicalChanges || !publicationChanges) throw new Error("Canonical mutation completed without its persistence evidence.")
+       logMutationPhase(diagnosticsStartedAt, "php-request", retained, { canonicalCreated: canonicalChanges.created.length, canonicalChanged: canonicalChanges.changed.length, canonicalDeleted: canonicalChanges.deleted.length })
+       if (route === "static-artifact-import") await heartbeat?.("persisting-canonical", 70)
+-      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_CONTENT_OVERLAY === 'content-gzip-v1' ? 'content-gzip-v1' : env.PLAYTT_CONTENT_OVERLAY === 'content-v1' ? 'content-v1' : env.PLAYTT_METADATA_OVERLAY === 'v2' ? 'v2' : env.PLAYTT_METADATA_OVERLAY === 'v1' ? 'v1' : false)
++      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_CONTENT_OVERLAY === 'content-gzip-v1' ? 'content-gzip-v1' : env.PLAYTT_CONTENT_OVERLAY === 'content-v1' ? 'content-v1' : env.PLAYTT_METADATA_OVERLAY === 'v2' ? 'v2' : env.PLAYTT_METADATA_OVERLAY === 'v1' ? 'v1' : false, env.PLAYTT_MANIFEST_ENCODING === 'gzip-v1')
+       logPlayttRuntimeMemory("after-persist", runtime!, env)
+       if (route === "static-artifact-import") await heartbeat?.("canonical-prepared", 80)
+       if (!response) {
+@@ -1836,7 +1838,7 @@
+   return deriveWordPressAuthConstants(env.WORDPRESS_AUTH_SECRET ?? "", site.id)
+ }
+ 
+-async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' | 'content-gzip-v1' = false): Promise<MarkdownPointer> {
++async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' | 'content-gzip-v1' = false, encodeManifest = false): Promise<MarkdownPointer> {
+   validateMarkdownChanges(changes)
+   const root = siteStorageKeys(site).root
+   const manifestCache = runtime.manifestCache ??= new PlayttRuntimeManifestCache<MarkdownManifest>()
+@@ -1890,7 +1892,7 @@
+   // This metadata is remembered only after the new pack and manifest are in
+   // R2. Until coordinator commit promotes runtime.pointer, it cannot be a hit.
+   const rememberPersisted = (manifest: MarkdownManifest) => { manifestCache.remember(root, manifest, manifest) }
+-  return trace ? trace.measure("persistence.manifest.write", () => persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted, allowMetadataOverlay), { files: files.length }) : persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted, allowMetadataOverlay)
++  return trace ? trace.measure("persistence.manifest.write", () => persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted, allowMetadataOverlay, encodeManifest), { files: files.length }) : persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted, allowMetadataOverlay, encodeManifest)
+ }
+ 
+ function readCanonicalChanges(php: PHP): MarkdownChanges {
+@@ -2027,7 +2029,7 @@
+   const readManifest = async () => {
+     const manifestObject = await bucket.get(pointer.manifestKey)
+     if (!manifestObject) throw new Error(`R2 Markdown manifest is missing: ${pointer.manifestKey}`)
+-    const manifest = await manifestObject.json<MarkdownManifest>()
++    const manifest = await readCanonicalManifestObject(manifestObject, siteStorageKeys(site).root) as MarkdownManifest
+     if (!samePointer(manifest, pointer) || !Array.isArray(manifest.files)) throw new Error("Canonical manifest identity is invalid.")
+     validateMarkdownManifestFiles(manifest.files, site)
+     validateUploadManifestFiles(manifest.uploads ?? [], site)
+@@ -2162,7 +2164,7 @@
+   validateUploadMetadata(files.map((file) => ({ path: file.path, size: file.bytes.byteLength })))
+ }
+ 
+-async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' | 'content-gzip-v1' = false): Promise<MarkdownPointer> {
++async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' | 'content-gzip-v1' = false, encodeManifest = false): Promise<MarkdownPointer> {
+   const revision = crypto.randomUUID()
+   const manifestKey = `${siteStorageKeys(site).markdownRevisionPrefix}/${revision}.json`
+   const persistedAt = new Date().toISOString()
+@@ -2176,8 +2178,9 @@
+     if (compressed) {
+       const manifest: MarkdownManifest = { ...pointer, files, uploads, wpContent, wpContentDeleted, restorePack: compressed.descriptor }
+       validateCompressedContent(manifest, siteStorageKeys(site).root)
++      const serialized = encodeManifest ? await serializeManifestEnvelope(manifest, siteStorageKeys(site).root) : JSON.stringify(manifest)
+       await putImmutableBytes(bucket, compressed.descriptor.delta.objectKey, compressed.bytes, 'application/gzip')
+-      await bucket.put(manifestKey, JSON.stringify(manifest), { httpMetadata: { contentType: 'application/json' } })
++      await bucket.put(manifestKey, serialized, { httpMetadata: { contentType: 'application/json' } })
+       onPersisted?.(manifest)
+       return pointer
+     }
+@@ -2224,7 +2227,7 @@
+   if (!isCanonicalRestorePointer(pointer, site)) return null
+   const object = await bucket.get(pointer.manifestKey)
+   if (!object) return null
+-  const manifest = await object.json<MarkdownManifest>()
++  const manifest = await readCanonicalManifestObject(object, siteStorageKeys(site).root) as MarkdownManifest
+   if (!samePointer(manifest, pointer) || !Array.isArray(manifest.files)) throw new Error("Canonical manifest identity is invalid.")
+   validateMarkdownManifestFiles(manifest.files, site)
+   validateUploadManifestFiles(manifest.uploads ?? [], site)
+--- a/src/public-reader.ts
++++ b/src/public-reader.ts
+@@ -1,3 +1,4 @@
++import { readCanonicalManifestObject } from './playtt-manifest-envelope.js';
+ import { PUBLIC_CONTENT_EXTENSION, wordPressContentType } from './asset-content-type.js';
+ import { canonicalPublicRoute, MAX_PUBLISHED_PAGE_BYTES, MAX_PUBLISHED_REVISION_BYTES, PUBLISHED_PAGE_SCHEMA, validateCompletePublishedRevision } from "./published-reader.js"
+ import { parseSiteContexts, previewDomain, resolvePreviewSiteContextFromRequest, resolveSiteContextFromRequest, siteStorageKeys, type SiteContext } from "./site-context.js"
+@@ -116,7 +117,7 @@
+     const manifestKey = `${siteStorageKeys(site).markdownRevisionPrefix}/${publication.canonicalRevision}.json`
+     const manifestObject = await bucket.get(manifestKey)
+     if (!manifestObject) return response("Public publication is incomplete.", 503)
+-    const manifest = await manifestObject.json<{ revision?: unknown; uploads?: PublicationAsset[]; wpContent?: PublicationAsset[] }>()
++    const manifest = await readCanonicalManifestObject(manifestObject, siteStorageKeys(site).root)
+     if (manifest.revision !== publication.canonicalRevision) return response("Public publication is incomplete.", 503)
+     const files = uploads === null ? manifest.wpContent ?? [] : manifest.uploads ?? []
+     if (uploads === null) validateWpContentManifestFiles(files, site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+--- a/src/playtt-compressed-persistence.ts
++++ b/src/playtt-compressed-persistence.ts
+@@ -1,3 +1,4 @@
++import {decodeCanonicalManifestBytes} from './playtt-manifest-envelope.js';
+ import {validateCanonicalRestorePackMetadata, type RestorePackBucket, type CanonicalRestorePackFile} from './canonical-restore-pack.js';
+ import {validatePlayttSnapshotSources, type PlayttSnapshotRuntimeReader} from './playtt-snapshot-source.js';
+ import {isMetadataOverlay, validateMetadataOverlay, type OverlayManifest} from './playtt-maintenance-overlay.js';
+@@ -18,7 +19,7 @@
+   validatePlayttSnapshotSources(root,next);validatePlayttSnapshotSources(root,previous);
+   if(!previous.restorePack||encode(previous).length>MAX_COMPRESSED_MANIFEST||total(next)>MAX_COMPRESSED_BASE)return null;
+   const stored=await readContentBytes(bucket,previous.manifestKey,MAX_COMPRESSED_MANIFEST);
+-  if(JSON.stringify(parse(stored))!==JSON.stringify(previous))throw new Error('Stored previous manifest differs from the committed runtime manifest.');
++  if(JSON.stringify(await decodeCanonicalManifestBytes(stored,root))!==JSON.stringify(previous))throw new Error('Stored previous manifest differs from the committed runtime manifest.');
+   let base=previous;
+   if(isMetadataOverlay(previous.restorePack)){
+     validateMetadataOverlay(previous,root);
+--- a/src/playtt-backup-pins.ts
++++ b/src/playtt-backup-pins.ts
+@@ -1,3 +1,4 @@
++import { decodeCanonicalManifestBytes } from './playtt-manifest-envelope.js';
+ import { isMetadataOverlay, readMetadataOverlay, type OverlayManifest } from './playtt-maintenance-overlay.js';
+ // Append-only protection for independently verified local backups. The caller
+ // must serialize this operation with its coordinator's renewable fence.
+@@ -105,7 +106,7 @@
+     const manifestBytes = await readBounded(this.bucket, input.manifestKey, 256 * 1024);
+     requirePin(await sha(manifestBytes) === input.manifestSha256, 'Backup manifest hash mismatch.');
+     let manifest: Record<string, any>;
+-    try { manifest = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(manifestBytes)); }
++    try { manifest = await decodeCanonicalManifestBytes(new Uint8Array(manifestBytes), 'sites/default'); }
+     catch { throw new PlayttBackupPinError(503, 'Backup manifest is invalid.'); }
+     requirePin(manifest && manifest.revision === input.revision && manifest.manifestKey === input.manifestKey
+       && manifest.persistedAt === input.persistedAt, 'Backup manifest identity mismatch.');
+--- a/scripts/playtt-snapshot-bundle.mjs
++++ b/scripts/playtt-snapshot-bundle.mjs
+@@ -1,6 +1,7 @@
+ // Offline-verifiable export/import. The injected source supports GET only.
+ // Import creates a new local directory; it never writes cloud state or a pointer.
+ import assert from 'node:assert/strict';
++import {decodeCanonicalManifestBytes,isManifestEnvelope} from '../src/playtt-manifest-envelope.ts';
+ import {readFile,writeFile,mkdir,lstat} from 'node:fs/promises';
+ import {createHash,randomUUID} from 'node:crypto';
+ import {resolve} from 'node:path';
+@@ -42,7 +43,7 @@
+ export async function readSnapshotGraph(bucket,expectedPin){
+  const anchor=backupPinInput(expectedPin),objects=new Map();
+  const raw=await readOverlayBytes(bucket,anchor.manifestKey,MAX_OVERLAY_MANIFEST,undefined,anchor.manifestSha256);
+- const manifest=parse(raw);sameIdentity(manifest,anchor);validatePlayttSnapshotSources(ROOT,manifest);
++ const manifest=await decodeCanonicalManifestBytes(raw,ROOT);sameIdentity(manifest,anchor);validatePlayttSnapshotSources(ROOT,manifest);
+  addObject(objects,anchor.manifestKey,raw);
+  let base=manifest,baseBytes=raw,contents,pack,baseContents;
+  if(isMetadataOverlay(manifest.restorePack)){
+@@ -69,7 +70,7 @@
+  addObject(objects,base.restorePack.objectKey,pack);addContents(objects,base,baseContents);addContents(objects,manifest,contents);
+  const ordered=[...objects.values()].sort((a,b)=>a.key.localeCompare(b.key));
+  const payloadBytes=ordered.reduce((n,x)=>n+x.size,0);assert.ok(payloadBytes<=MAX_BYTES);
+- return {anchor,manifest,base,contents,objects:ordered,payloadBytes,format:isCompressedContent(manifest.restorePack)?'compressed-content':isContentOverlay(manifest.restorePack)?'content-overlay':isMetadataOverlay(manifest.restorePack)?'metadata-overlay':'full-pack'};
++ return {anchor,manifest,base,contents,manifestEncoding:isManifestEnvelope(parse(raw))?'gzip-envelope':'plain-json',objects:ordered,payloadBytes,format:isCompressedContent(manifest.restorePack)?'compressed-content':isContentOverlay(manifest.restorePack)?'content-overlay':isMetadataOverlay(manifest.restorePack)?'metadata-overlay':'full-pack'};
+ }
+ 
+ async function boundedFile(path,limit){
+--- a/scripts/playtt-backup-pin-client.mjs
++++ b/scripts/playtt-backup-pin-client.mjs
+@@ -1,4 +1,5 @@
+ import assert from 'node:assert/strict';
++import {decodeCanonicalManifestBytes} from '../src/playtt-manifest-envelope.ts';
+ import { readFile, stat } from 'node:fs/promises';
+ import { createHash } from 'node:crypto';
+ import { decodeCanonicalRestorePack } from '../src/canonical-restore-pack.ts';
+@@ -10,7 +11,7 @@
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+ const boundedFile=async(file,limit)=>{const info=await stat(file);assert.ok(info.isFile()&&info.size>=0&&info.size<=limit);const bytes=await readFile(file);assert.equal(bytes.length,info.size);return bytes;};
+ export async function verifiedBackupPin(directory) {
+-  const bytes = await boundedFile(directory + '/manifest.json',256*1024), manifest = JSON.parse(bytes.toString('utf8'));
++  const bytes = await boundedFile(directory + '/manifest.json',256*1024), manifest = await decodeCanonicalManifestBytes(bytes,'sites/default');
+   if(isMetadataOverlay(manifest.restorePack)) {
+     const baseBytes=await boundedFile(directory+'/base-manifest.json',256*1024),base=JSON.parse(baseBytes.toString('utf8'));
+     const objects=new Map([...manifest.files,...(manifest.uploads||[]),...(manifest.wpContent||[])].map(f=>[f.objectKey,f.sha256]));

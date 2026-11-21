@@ -1,0 +1,134 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": true,
+  "existingConfigsChanged": true,
+  "changedConfigScope": "Only existing private session-audit, one opt-in flag; nineteen other configurations unchanged",
+  "prerequisites": [
+    {
+      "path": "src/playtt-request-mutation.ts",
+      "sha256": "40f46f166f9112ab377795867b4a1d3865b03f3c9ad416ad4387b2025cc23c6a"
+    },
+    {
+      "path": "src/playtt-usermeta-overlay.ts",
+      "sha256": "caafbbd624cbda0bbdef5fd593dbfe83932085001749a3b4c86ea66bc9d1b1a0"
+    },
+    {
+      "path": "assets/wordpress-static-artifact.json",
+      "sha256": "39fc2a00539d7a561ef7cc3483f723e510a24a84a6a1029bd0f88b5a3da218d2"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "beforeSha256": "95b0b358d85afee7cc24e888a40679a3a90cfcb98f1345a8e5f90fea9b15fe30",
+      "afterSha256": "da6d1cd1aaa3ce6f7746a3fe1fc72b3271440b0335d30e46f80449af40888359"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "beforeSha256": "b9690f22733672a17bfd1ff7d0ad221d40c91c8c1acf561185e49639d31c0211",
+      "afterSha256": "ad31e78d03643c0e00ccafff47b9cd27e049086e38d69fc04ecac6df288e6f4d"
+    },
+    {
+      "path": "wrangler.playtt-session-audit.jsonc",
+      "beforeSha256": "fe232b96a4f82ef5c4743dc266b7715e0279de3a1ab6a15203939897fbafd99f",
+      "afterSha256": "ce42a5bbd1f92c8775750c5d5c3a384249ec942d49f50058a05166b864c31dc2"
+    },
+    {
+      "path": "src/playtt-editor-lock.ts",
+      "source": "playtt-editor-lock.ts",
+      "afterSha256": "c61e547c55400355fa19088869215480e8dd4f6b07c01f7ae086f08b4adacb82"
+    },
+    {
+      "path": "tests/playtt-editor-lock.test.mjs",
+      "source": "playtt-editor-lock.test.mjs",
+      "afterSha256": "79d3ce7bd2db74ce65b734eb22c62af642d23b7be87776ebfa57de0705baa1d0"
+    },
+    {
+      "path": "scripts/playtt-editor-lock-asset.mjs",
+      "source": "playtt-editor-lock-asset.mjs",
+      "afterSha256": "8d930de2ec3a3ec033fb91ffedf6d98c32bc0677574349c675d784391c08c12c"
+    },
+    {
+      "path": "scripts/playtt-editor-lock-ui-control.mjs",
+      "source": "playtt-editor-lock-ui-control.mjs",
+      "afterSha256": "d030815e23dc2ebd6c3f24a3a792164df29fd79358e7c3931a243f321b1d715d"
+    },
+    {
+      "path": "scripts/playtt-editor-lock-backup.mjs",
+      "source": "playtt-editor-lock-backup.mjs",
+      "afterSha256": "563bd9b57457b277fc165fd79c44df2ca05dc1c7690b3f5e52f2e178dffd5385"
+    },
+    {
+      "path": "scripts/playtt-editor-lock-cost.mjs",
+      "source": "playtt-editor-lock-cost.mjs",
+      "afterSha256": "13749007a255213965273e74aab8655b6a5bb12c3718b47913327deb7fc82a81"
+    },
+    {
+      "path": "scripts/playtt-editor-lock-pin.mjs",
+      "source": "playtt-editor-lock-pin.mjs",
+      "afterSha256": "674bd8c477eb41f31c354e559ca27fc362c2e5438032f9ddf683bce336aad6ee"
+    },
+    {
+      "path": "scripts/playtt-canvas-ui-control.mjs",
+      "source": "playtt-canvas-ui-control.mjs",
+      "afterSha256": "cd527dc66517002d3ae5fa5812961c84cdd3280c43b98531df7d5005c237e78a"
+    },
+    {
+      "path": "scripts/playtt-tail-canvas.mjs",
+      "source": "playtt-tail-canvas.mjs",
+      "afterSha256": "36c9cb8f0eed5ca2026f54d7af47fa4d99ddeb4851735267a69b4b7dacbaccf2"
+    },
+    {
+      "path": "scripts/playtt-canvas-backup.mjs",
+      "source": "playtt-canvas-backup.mjs",
+      "afterSha256": "88c94c4abf6e0140a85ba5da52bb877f01b56c59bd2800f18ea32c0ade2f33d8"
+    },
+    {
+      "path": "scripts/playtt-canvas-pin.mjs",
+      "source": "playtt-canvas-pin.mjs",
+      "afterSha256": "996998dd280b491b76e8f48a8a1fec183ced17ee2792b143e2056f4d32d2bfcd"
+    },
+    {
+      "path": "scripts/playtt-canvas-fixture.mjs",
+      "source": "playtt-canvas-fixture.mjs",
+      "afterSha256": "6b24b60afef071c87309c957a66a44cb08a9f831d2551df40dd5b2981fc4d665"
+    },
+    {
+      "path": "scripts/playtt-canvas-fixture.html",
+      "source": "playtt-canvas-fixture.html",
+      "afterSha256": "cee954bfd13e7f2086b923acc1d0ce6ff26c0fbb47a6c671b61b26d9143e8beb"
+    },
+    {
+      "path": "scripts/playtt-response-loss-local.mjs",
+      "source": "playtt-response-loss-local.mjs",
+      "afterSha256": "e13aeabfca080ac631fd1d3aa0b85d8c1c92ae9f31127f1eb9a3d18df03ca2fa"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui.mjs",
+      "source": "playtt-response-loss-ui.mjs",
+      "afterSha256": "1245650755308cda122ecb20ec41d4ce59bcad0789c0a8d92ed1aa15ec2122d4"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui-control.mjs",
+      "source": "playtt-response-loss-ui-control.mjs",
+      "afterSha256": "c7e96faaef20233fd80afc222490fa0b54a6d8114db8d9167b8cd2fd852ef10c"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui-retry.mjs",
+      "source": "playtt-response-loss-ui-retry.mjs",
+      "afterSha256": "89b9d3bb5b0418d1cd868d53f93450101a129167d11e2c17e15b8b6b0616ef58"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui-retry-control.mjs",
+      "source": "playtt-response-loss-ui-retry-control.mjs",
+      "afterSha256": "d986cb2a2481074a1d6b9d353fb1bc183958f52aab4b1d3e235f7c13b1542678"
+    },
+    {
+      "path": "scripts/playtt-response-loss-ui-audit.mjs",
+      "source": "playtt-response-loss-ui-audit.mjs",
+      "afterSha256": "f1646754b75c29591722b65d97757a2dfe01468c15eb40be8402134974878309"
+    }
+  ],
+  "patchSha256": "4caeea305a38dfcafa795aa1101b82391c545eb329e9055ce60f99c6490c0c06"
+}

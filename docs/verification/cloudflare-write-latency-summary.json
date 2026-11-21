@@ -1,0 +1,265 @@
+{
+  "at": "2026-11-18T22:18:50.066120+00:00",
+  "result": "research-and-cleanup-complete",
+  "decision": "parallel-write-candidate-not-adopted",
+  "scope": "Private WordPress research only; production Pages, branding, daily-source code and backend choice unchanged; no paid plan.",
+  "finalWorkerVersion": "f6ac6526-2016-445d-b510-2b887369c7c2",
+  "candidateWorkerVersion": "b5398964-ce89-470f-91f7-fa154936a06d",
+  "acceptedCode": "c9ec130 / 17 patches / 62 TypeScript sources; exact normalized source comparison passed",
+  "initialThreeWrites": {
+    "serialMedianMs": 6866.247,
+    "candidateMedianMs": 6858.846,
+    "reductionPercent": 0.108
+  },
+  "fixedSixWrites": {
+    "concurrentMedianMs": 6887.3415,
+    "serialMedianMs": 7684.4505,
+    "differenceMs": 797.109,
+    "reductionPercent": 10.373,
+    "serialMedianDriftFromFirstRoundMs": 818.203,
+    "controls": "Same owned draft, logged-in and warm, whole-response client timing; no CPU capture during benchmarks and sanitized tail in both variants.",
+    "limits": "Small sequential nonrandomized samples, network/time variation, growing owned revision history and slightly different paragraph bytes. The observed difference does not establish a stable end-to-end gain."
+  },
+  "cpuProfile": {
+    "firstStatus": 404,
+    "firstErrorCode": 10393,
+    "warmedRetryStatus": 200,
+    "durationNs": 25000134000,
+    "samples": 3427,
+    "sampleValueTotalNs": 3427000000,
+    "idleIncludedNs": 342000000,
+    "rawProfileSha256": "4123fe4344dff859ab7a82d3b2cbc9bf4a75e1701109a447b380d95f07c75a86",
+    "limits": "Sample total includes idle; not per-request CPU or a precise CPU/I/O split. No raw profile in Git."
+  },
+  "candidateDesign": "At most three immutable writes and 1 MiB queued source bytes; larger files write alone. One copied next file can coexist with the queue. Failures drain all active writes before rejecting; full manifest/restore pack and coordinator ordering retained.",
+  "localValidation": {
+    "at": "2026-11-18T22:18:50.066120+00:00",
+    "focused": {
+      "tests": 23,
+      "passed": 23,
+      "failed": 0,
+      "scope": "Eight bounded-writer cases plus fifteen snapshot-source/restore cases."
+    },
+    "typescript": "pass",
+    "candidateDryRun": "pass",
+    "broadCandidateBeforeIntegrationCase": {
+      "tests": 39,
+      "passed": 36,
+      "failed": 3
+    },
+    "sameBroadBaselineRestored": {
+      "tests": 32,
+      "passed": 29,
+      "failed": 3
+    },
+    "preexistingFailures": [
+      "Source-shape assertion is LF-specific while this Windows worker source has CRLF.",
+      "Source-shape assertion still expects previousRuntime.state; adopted lifetime fix uses previousRuntimeInfo.state.",
+      "Native php executable unavailable in this environment: spawn php ENOENT."
+    ],
+    "broadSuitePassed": false,
+    "note": "Candidate files restored after baseline test via finally. These three failures are retained, not waived as an overall handoff pass. Runtime source is now the accepted 17-patch version."
+  },
+  "cleanup": {
+    "at": "2026-11-18T22:15:38.562Z",
+    "result": "pass",
+    "scope": "Fresh-login exact content read after fixed comparisons, original homepage unchanged, identity-checked owned draft removal. Complete backup independently verifies no owned revisions remain.",
+    "id": 146,
+    "revisionIds": [
+      168,
+      167,
+      166,
+      165,
+      164,
+      163,
+      162,
+      161,
+      160,
+      159,
+      158,
+      157,
+      156,
+      155,
+      154,
+      153,
+      152,
+      151,
+      150,
+      149,
+      148,
+      147
+    ],
+    "contentHash": "a682dfe310ab915425f688ed17d6e2ffda8c8e2557cabc8094f5ec9eef374aef",
+    "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+    "cleanupComplete": true,
+    "canonicalVersion": 189,
+    "revision": "ebcc8669-0433-45ad-9a8f-3a0f83d91da8",
+    "publisher": "paused",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 762
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2314
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1721
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 6201
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3330
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/146?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2604
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/146/revisions?per_page=100",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1815
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 4119
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/146?force=true",
+        "method": "DELETE",
+        "status": 200,
+        "wallMs": 8865
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/146?context=edit",
+        "method": "GET",
+        "status": 404,
+        "wallMs": 1738
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 210
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3718
+      }
+    ]
+  },
+  "integrity": {
+    "at": "2026-11-18T22:16:17.342Z",
+    "result": "pass",
+    "scope": "Complete backup after bounded write-latency comparisons and owned cleanup; all original content, historical revisions, media and metadata retained; owned draft/revisions absent",
+    "ownedId": 146,
+    "cleanupComplete": true,
+    "unchangedCanonicalFiles": 37,
+    "originalMarkdown": 27,
+    "uploads": 15,
+    "postmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "385",
+      "wp_postmeta": "66",
+      "wp_posts": "168",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 189,
+        "revision": "ebcc8669-0433-45ad-9a8f-3a0f83d91da8",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 174,
+        "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-18T22:16:07.112Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "ebcc8669-0433-45ad-9a8f-3a0f83d91da8",
+      "objects": 297,
+      "decodedBytes": 4431594,
+      "archiveBytes": 2293662,
+      "archiveSha256": "e0b46d7cef617a574320a4ecb1cd2a76a503fd6a166a30563b17fa4201a1b277"
+    }
+  },
+  "observation": {
+    "at": "2026-11-18T22:16:45.552478+00:00",
+    "events": 355,
+    "outcomes": {
+      "ok": 355
+    },
+    "exceptions": 0,
+    "requestFailures": 0,
+    "incompleteTraces": 0,
+    "memoryRows": 155,
+    "maxObservedWasmHeapBytes": 73924608,
+    "maxObservedFileBufferBytes": 31675339,
+    "observerStopped": true,
+    "limits": "Finite observation across serial and experimental versions. Event counts are not request counts; WASM/file-buffer totals are not whole-isolate memory. No lifetime reliability claim.",
+    "scopedOrphanTailProcesses": 0
+  },
+  "remaining": [
+    "Native editing still takes multiple seconds; mobile/browser workflows and practical handoff remain incomplete.",
+    "Sustained free-tier usage and long-term reliability are not established.",
+    "No browser/mobile or separate empty-environment restore in this round.",
+    "Earlier uninstrumented cancellation causes remain unproved."
+  ],
+  "goalStatus": "active",
+  "pr": {
+    "number": 4,
+    "draft": true,
+    "merged": false
+  }
+}

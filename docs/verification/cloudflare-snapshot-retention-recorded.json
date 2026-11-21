@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-20T17:03:58.893506+00:00",
+  "result": "pass",
+  "scope": "Offline integration using the verified local overlay object store; simulated local coordinator/registry, not a live deletion proposal or remote restore",
+  "summary": {
+    "schema": "playtt/retention-proposal/v1",
+    "at": "2026-11-20T17:03:58.893506+00:00",
+    "mode": "offline-proposal-only",
+    "safeToApply": false,
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "inventoryAt": "2026-11-20T17:03:58.893506+00:00",
+    "objects": 299,
+    "bytes": 6882964,
+    "revisions": 2,
+    "packBytes": 2293896,
+    "retainedRevisions": 2,
+    "declaredLocalProtectionPoints": 0,
+    "proposedRetiredRevisions": 0,
+    "overlayRevisions": 1,
+    "retainedOverlayBases": 1,
+    "coordinatorReceiptsProtected": 1,
+    "leaseBaseIncluded": false,
+    "localBackupIntegrityVerified": false,
+    "durableBackupPins": 1,
+    "registryGeneration": 1,
+    "proposedObjects": 0,
+    "proposedBytes": 0,
+    "currentRevision": "e4db6b6c-3efd-4e31-a628-a2780b468784",
+    "currentPackBytes": 2293896,
+    "byUtcDay": {
+      "2026-11-20": {
+        "revisions": 2,
+        "packBytes": 2293896
+      }
+    },
+    "policy": {
+      "allRecentHours": 24,
+      "latestCount": 20,
+      "dailyDaysUTC": 7
+    },
+    "requiredBeforeAnyDeletion": [
+      "Review retention policy and exact retirement list",
+      "Confirm complete backup pin registry",
+      "Stop new mutation/publication work and drain in-flight operations under a renewable fence",
+      "Re-list metadata and re-check all coordinator, operation, publication and backup roots",
+      "Verify retained pack contents and perform an independent restore",
+      "Reverify fail-closed write admission together with the cleanup/reconciliation protocol; deletion alone is not a cost cap"
+    ],
+    "limitations": [
+      "This offline planner performs no cloud mutation/deletion or runtime change",
+      "No ZIP/content or local backup decoding by this planner; overlay raw hashes verify metadata identity, not content semantics",
+      "Inventory is not atomic; complete coordinator roots are required, but in-flight R2 operation and external-writer graphs are not captured",
+      "Proposed storage savings are not billing savings or a free-tier guarantee"
+    ]
+  },
+  "completeLocalDependencyGraphPreserved": true,
+  "actualCloudInventoryUsed": false,
+  "cloudflareRequests": 0,
+  "cloudflareMutations": 0,
+  "remotePinsRegistered": 0
+}

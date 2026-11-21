@@ -1,0 +1,144 @@
+{
+  "at": "2026-11-20T05:45:59.308159+00:00",
+  "result": "pass",
+  "scope": "Bounded same-ticket acknowledgement recovery after confirmed R2 completion; local injected faults and private healthy native save/redeployment/readback/cleanup plus full backup",
+  "worker": "playtt-wp-free-pin-restore-audit",
+  "firstWorkerVersion": "673d1217-4a10-4a41-9a35-955c19da5f38",
+  "workerVersion": "dc9704f3-cbcf-4f11-af8e-3cf37e8bc6d5",
+  "sourceWorkerVersion": "8536d0cf-cfbf-4133-9764-ae4bbfdd2c45",
+  "targetVersion": 22,
+  "sourceVersion": 309,
+  "ownedId": 189,
+  "cleanupComplete": true,
+  "baselineNewTests": {
+    "passed": 2,
+    "failed": 8
+  },
+  "tests": {
+    "acknowledgement": 10,
+    "writeDrain": 16,
+    "capacity": 13,
+    "coordinator": 3,
+    "totalPassed": 42
+  },
+  "build": {
+    "typeScript": "pass",
+    "dryRun": "pass",
+    "deployments": 2,
+    "patches": 25,
+    "sourceFilesCompared": 67,
+    "extraFilesCompared": 4,
+    "newDependencyInstall": false
+  },
+  "protocol": {
+    "maximumAttempts": 3,
+    "retryDelayMs": [
+      100,
+      200
+    ],
+    "healthySettlementCalls": 1,
+    "reservationRetried": false,
+    "r2MutationRetried": false,
+    "unknownR2ResultSettled": false,
+    "refund": false,
+    "independentFetchDeadline": false
+  },
+  "native": {
+    "exactTraditionalChineseAndTrailingWhitespace": true,
+    "redeployedFreshLoginReadback": true,
+    "originalFrontPageUnchanged": true,
+    "contentSaveMs": [
+      6435,
+      6628
+    ],
+    "performanceImprovementClaimed": false,
+    "browserUiTested": false,
+    "remoteFaultInjected": false
+  },
+  "backup": {
+    "at": "2026-11-20T05:40:52.275Z",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "result": "pass",
+    "scope": "Confirmed-write acknowledgement retry target after native save/redeployment/readback and owned cleanup; every archive entry decoded and verified, new backup pin acknowledged",
+    "revision": "b2a27e47-33bd-4b4e-a2be-0e4fb46bf4bc",
+    "objects": 297,
+    "decodedBytes": 4428758,
+    "archiveBytes": 2293012,
+    "archiveSha256": "75cdf9478ff3ebfc37462b769d3a223b8a273e3f86c4567870d0295998ca5d1b",
+    "pinRegistered": true,
+    "pinGeneration": 24
+  },
+  "comparison": {
+    "at": "2026-11-20T05:40:52.294Z",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "result": "pass",
+    "unchangedCanonicalFiles": 166,
+    "originalMarkdown": 27,
+    "originalHistoryRows": 61,
+    "postmetaRows": 48,
+    "uploads": 15,
+    "cleanupComplete": true,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "567",
+      "wp_postmeta": "70",
+      "wp_posts": "191",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "differences": [],
+    "scope": "Only login session metadata and monotonic ID counters are allowed to change; all original content/table/media/theme bytes compared"
+  },
+  "observation": {
+    "events": 184,
+    "outcomes": {
+      "ok": 184
+    },
+    "versions": {
+      "673d1217-4a10-4a41-9a35-955c19da5f38": 77,
+      "dc9704f3-cbcf-4f11-af8e-3cf37e8bc6d5": 107
+    },
+    "exceptions": 0,
+    "requestFailures": 0,
+    "incompleteTraces": 0,
+    "acknowledgementFailures": 0,
+    "acknowledgementRecoveries": 0,
+    "maxSampledWasmHeapBytes": 71827456,
+    "observerStopped": true,
+    "firstAt": "2026-11-20T05:37:52.211Z",
+    "lastAt": "2026-11-20T05:40:58.601Z",
+    "scope": "Finite sanitized platform observation of normal native save/redeploy/readback/cleanup and backup; events are not unique requests, no remote failure injection"
+  },
+  "matchingOrphanTails": 0,
+  "budget": {
+    "baselineBytes": 149591427,
+    "chargedBytes": 52873490,
+    "chargedPuts": 114,
+    "payloadBoundBytes": 202464917,
+    "limitBytes": 300000000,
+    "thisCycleChargedBytes": 15164196,
+    "thisCycleChargedPuts": 31
+  },
+  "final": {
+    "pins": 24,
+    "pending": 0,
+    "sealed": false,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "cloudSnapshotsDeleted": 0,
+  "safeToApply": false,
+  "goalStatus": "active",
+  "prDraft": true,
+  "limitations": [
+    "Local fault tests prove bounded caller recovery, not remote provider fault handling or a guarantee of recovery after process interruption.",
+    "Exhausted/lost acknowledgements and ambiguous R2 results retain unresolved state; no independent reconciliation or force-clear added.",
+    "Same-ticket retries cannot refund charges, repeat R2 mutations or settle an unrelated operation. A warning can occur after the server already settled.",
+    "Attempt count and added delay are bounded; an individual fetch still has no separate application deadline.",
+    "Source-wide reference/writer boundaries, receipt retirement and sustainable snapshot cleanup remain open; old source proposal unsafe to apply.",
+    "Native editor error recovery/UI, cancellation causes, latency/memory, physical-device/IME, handoff and sustained free-tier operation remain open.",
+    "Payload guard is not a shared-account billing cap; no new paid product enabled and no future zero-cost guarantee inferred."
+  ]
+}

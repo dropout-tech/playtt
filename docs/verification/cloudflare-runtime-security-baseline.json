@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-17",
+  "candidate": {
+    "wordpress": "7.1.4",
+    "php": "8.3.36",
+    "playground": "3.1.64",
+    "upstreamCommit": "9764022156a61ba7d2b4d8a2196b01ccb33b82b5"
+  },
+  "sources": [
+    "https://wordpress.org/news/2026/10/wordpress-7-1-4/",
+    "https://wordpress.org/download/releases/",
+    "https://www.php.net/releases/8_3_36.php"
+  ],
+  "scope": "Version update and functional acceptance; not a complete independent security audit",
+  "coreArtifactsBytes": 93840455,
+  "nativeRevisionRestored": true,
+  "nativeTemplatePartSavedAndReloaded": true,
+  "primaryUpgradeDeployment": "d2e01d10-2ae0-44d5-a518-b6a699f00deb",
+  "restorePartitionUpgradeDeployment": "5e78566f-9f78-404f-9ac4-6ac1f708017a",
+  "productionCmsCutover": false,
+  "verifiedRedeployment": "fc24347f-fd34-41fc-a598-647bc5e0eef6",
+  "editorAfterRedeploy": "pass"
+}

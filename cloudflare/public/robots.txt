@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://playtt.tw/sitemap.xml

@@ -1,0 +1,51 @@
+- text:          
+- navigation "工具列":
+  - menu:
+    - menuitem "關於 WordPress":
+      - generic: 關於 WordPress
+    - menuitem "Let’s Play 桌球聯盟"
+    - menuitem "Ctrl+K 開啟命令選擇區" [active]:
+      - text: Ctrl+K
+      - generic: 開啟命令選擇區
+    - menuitem "0 則待審閱留言":
+      - generic: "0"
+      - generic: 0 則待審閱留言
+    - menuitem "新增項目":
+      - generic: 新增項目
+    - menuitem "檢視頁面"
+  - menu:
+    - menuitem "你好，admin"
+- main:
+  - heading "編輯頁面" [level=1]
+  - region "編輯器頂端列":
+    - link "檢視頁面":
+      - /url: edit.php?post_type=page
+    - toolbar "內容工具":
+      - button "區塊插入器" [disabled]:
+      - button "復原" [disabled]:
+      - button "取消復原" [disabled]:
+      - button "內容總覽" [disabled]:
+    - button "多分頁草稿 playtt-readback-multitab-guard-ui-87154dac-ee9f-4141-b163-537d90ff584a · 頁面":
+      - heading "多分頁草稿 playtt-readback-multitab-guard-ui-87154dac-ee9f-4141-b163-537d90ff584a · 頁面" [level=1]:
+        - generic: 多分頁草稿 playtt-readback-multitab-guard-ui-87154dac-ee9f-4141-b163-537d90ff584a
+        - generic: · 頁面
+    - button "已儲存" [disabled]:
+      - text: 已儲存
+    - button "檢視":
+    - button "設定":
+    - button "發佈"
+    - button "設定":
+  - region "編輯器內容":
+    - heading "編輯程式碼" [level=2]
+    - button "結束程式碼編輯器"
+    - generic: 新增標題
+    - textbox "新增標題": 多分頁草稿 playtt-readback-multitab-guard-ui-87154dac-ee9f-4141-b163-537d90ff584a
+    - generic: 輸入文字或 HTML 程式碼
+    - textbox "輸入文字或 HTML 程式碼":
+      - /placeholder: 以任意文字或 HTML 程式碼開始撰寫內容
+      - text: <!-- wp:paragraph --> <p>第二分頁的未提交內容與草稿識別必須保留。 playtt-readback-multitab-guard-ui-87154dac-ee9f-4141-b163-537d90ff584a</p> <!-- /wp:paragraph -->
+  - region "編輯器設定"
+  - region "編輯器發佈":
+    - button "開啟 [發佈] 面板"
+- paragraph: 通知
+- generic: 程式碼編輯器已選取

@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-16T18:06:42.966Z",
+  "bucket": "playtt-wordpress-probe",
+  "scope": "Three immutable core artifacts only; optional importer excluded",
+  "files": [
+    {
+      "key": "runtime/wordpress/279477d490700affba70acc43055045878083358096249314fae4e163dc37502.zip",
+      "size": 5798703,
+      "sha256": "279477d490700affba70acc43055045878083358096249314fae4e163dc37502"
+    },
+    {
+      "key": "runtime/wordpress-static/865d49b5c5e87df2b5bd19bc4d2a093dece6345a48c75df69ab6b6879108f760.bin",
+      "size": 63646828,
+      "sha256": "865d49b5c5e87df2b5bd19bc4d2a093dece6345a48c75df69ab6b6879108f760"
+    },
+    {
+      "key": "runtime/archives/sqlite-database-integration/f3bf0ac0bd80d374456c3742c3e2f987d060e8e35f4fe99925de2404ce05cbfb.zip",
+      "size": 267173,
+      "sha256": "f3bf0ac0bd80d374456c3742c3e2f987d060e8e35f4fe99925de2404ce05cbfb"
+    }
+  ]
+}

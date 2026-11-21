@@ -1,0 +1,121 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -16,7 +16,7 @@
+ import { leaseRetryDelayMs } from "./lease-retry.js"
+ import { logMutationPhase, MutationRetainedBytes } from "./mutation-memory.js"
+ import { installPlayttOpaqueIds, installPlayttStorageOpaqueIds, PLAYTT_STARTER_MEDIA_POLICY } from './playtt-php-compat.js'
+-import { attachServerTiming, CloudflarePhaseTrace, logPhaseTrace, logPlayttSnapshotPhase, type PageCacheDisposition, type RuntimeDisposition, type TraceOperation } from "./phase-trace.js"
++import { attachServerTiming, CloudflarePhaseTrace, logPhaseTrace, logPlayttSnapshotPhase, logPlayttRequestFailure, type PageCacheDisposition, type RuntimeDisposition, type TraceOperation } from "./phase-trace.js"
+ import { selectOperatorCoordinator } from "./operator-coordinator.js"
+ import { canonicalPublicRoute, MAX_PUBLISHED_PAGE_BYTES, MAX_PUBLISHED_REVISION_BYTES, MAX_PUBLISHED_ROUTES, normalizePublishedRoutes, PUBLISHED_PAGE_SCHEMA, PUBLISHED_REVISION_SCHEMA, publishedPageObjectKey, publishedRevisionObjectKey, validatePublishedRevision, type PublishedRevision } from "./published-reader.js"
+ import { RevisionConflict, type MarkdownPointer, type MutationFence, type RevisionCoordinator, type RevisionLease } from "./revision-coordinator.js"
+@@ -27,7 +27,7 @@
+ import { dispatchQueueBatch, type ParsedQueueDelivery, type QueueDelivery } from "./queue-batch.js"
+ import { administratorPasswordForSite, resumeProvisioningAllocation, routeProvisioningApi } from "./provisioning-api.js"
+ import { allocationIdentity, CloudflareAllocationLifecycle } from "./allocation-lifecycle.js"
+-import { toFetchResponse, toPHPRequest } from "./request-translation.js"
++import { RequestBodyReadError, toFetchResponse, toPHPRequest } from "./request-translation.js"
+ import { DEFAULT_SITE_CONTEXT, parseSiteContexts, previewDomain, resolvePreviewSiteContextFromRequest, resolveSiteContextFromRequest, siteStorageKeys, type SiteContext } from "./site-context.js"
+ import { validateUploadManifestFiles, validateUploadMetadata } from "./upload-persistence.js"
+ import { deriveSiteCredential, deriveWordPressAuthConstants, type WordPressAuthConstant } from "./wordpress-auth.js"
+@@ -1314,6 +1314,7 @@
+   }
+   let lease: Lease | undefined
+   let runtime: Runtime | undefined
++  let preparedRequest: Awaited<ReturnType<typeof toPHPRequest>> | undefined
+   let finalized = false
+   try {
+     if (route === "r2-mutate" && request.method !== "POST") {
+@@ -1331,6 +1332,9 @@
+         }
+       }
+     }
++    // A truncated upload/heartbeat must not acquire a canonical lease or discard
++    // the warm PHP runtime. Receive bytes before touching either resource.
++    if (route === 'wordpress') preparedRequest = await trace.measure('request.translate', () => toPHPRequest(request))
+     lease = await trace.measure("lease.acquire", () => acquireLease(coordinator, request.url))
+     if (!lease.pointer) {
+       runtimeDisposition = "cold"
+@@ -1414,7 +1418,8 @@
+         runtime.php.writeFile(MARKDOWN_CHANGES_PATH, new TextEncoder().encode(JSON.stringify({ created: [], changed: [], deleted: [] })))
+         initializePublicationChanges(runtime.php)
+       }
+-      phpResponse = await trace.measure("request.php", async () => runtime!.requestHandler.request(await toPHPRequest(request)))
++      if (!preparedRequest) throw new Error('WordPress request was not prepared.')
++      phpResponse = await trace.measure("request.php", () => runtime!.requestHandler.request(preparedRequest!))
+       logPlayttRuntimeMemory("after-request", runtime!, env)
+       responseBodyBytes = phpResponse.bytes.byteLength
+       if (mutatesCanonicalState) retained.retain(responseBodyBytes)
+@@ -1496,7 +1501,9 @@
+     if (runtime) {
+       try { await trace.measure("runtime.dispose", () => discardRuntime(runtime!, site)) } catch { cleanupFailed = true }
+     }
+-    finish(false, { cleanupFailed })
++    const failedSummary = finish(false, { cleanupFailed })
++    logPlayttRequestFailure(error, request, failedSummary, cleanupFailed)
++    if (error instanceof RequestBodyReadError) return new Response('Request body could not be read.', { status: 400, headers: { 'Cache-Control': 'no-store' } })
+     throw error
+   }
+ }
+--- a/src/phase-trace.ts
++++ b/src/phase-trace.ts
+@@ -32,6 +32,35 @@
+ // Isolated probe only: emit bounded phase names, never request data or secrets.
+ export function enablePlayttPhaseDiagnostics(): void {
+   playttPhaseDiagnostics = true
++}
++
++// Never serialize error names/messages, request paths, query values or headers.
++// These fixed categories distinguish failures while keeping private content out.
++export function playttFailureCategory(error: unknown): string {
++  try {
++    if (!(error instanceof Error)) return 'unknown'
++    const name = error.name, message = error.message
++    if (name === 'RequestBodyReadError') return 'request-body-unavailable'
++    if (name === 'AbortError' || /client disconnected|request (?:was )?aborted|stream (?:was )?cancelled/i.test(message)) return 'client-disconnected'
++    if (/out of memory|memory limit|could not allocate memory/i.test(message)) return 'memory'
++    if (name === 'PHPExecutionFailureError') return 'php-execution'
++    if (name === 'RevisionConflict') return 'coordinator-conflict'
++    if (/integrity|hash|checksum/i.test(message)) return 'integrity'
++    if (error instanceof TypeError) return 'type'
++    if (error instanceof RangeError) return 'range'
++    return 'other'
++  } catch { return 'unknown' }
++}
++
++export function logPlayttRequestFailure(error: unknown, request: Request, summary: PhaseTraceSummary, cleanupFailed: boolean): void {
++  if (!playttPhaseDiagnostics) return
++  const path = new URL(request.url).pathname
++  const endpoint = path === '/wp-admin/admin-ajax.php' ? 'admin-ajax' : path === '/wp-login.php' ? 'login'
++    : path.startsWith('/wp-json/') ? 'rest' : path.startsWith('/wp-admin/') ? 'admin' : 'page'
++  const method = ['GET','HEAD','POST','PUT','PATCH','DELETE','OPTIONS'].includes(request.method) ? request.method : 'OTHER'
++  console.log(JSON.stringify({ schema: 'playtt-request-failure/v1', category: playttFailureCategory(error), endpoint, method,
++    operation: summary.operation, runtime: summary.runtime, phase: [...summary.phases].reverse().find(p => p.evidence?.failed)?.name || 'outside-phase',
++    signalAborted: request.signal.aborted, bodyUsed: request.bodyUsed, cleanupFailed }))
+ }
+ 
+ // I/O-bounded wall intervals, not CPU timings: remote clocks advance on I/O.
+--- a/src/request-translation.ts
++++ b/src/request-translation.ts
+@@ -1,12 +1,18 @@
+ import type { PHPRequest, PHPResponseData } from "@php-wasm/universal"
++
++export class RequestBodyReadError extends Error {
++  constructor() { super('Request body could not be read.'); this.name = 'RequestBodyReadError' }
++}
+ 
+ export async function toPHPRequest(request: Request): Promise<PHPRequest> {
+   const url = new URL(request.url)
+   const headers: Record<string, string> = {}
+   request.headers.forEach((value, name) => { headers[name] = value })
+-  const body = request.method === "GET" || request.method === "HEAD"
+-    ? undefined
+-    : new Uint8Array(await request.arrayBuffer())
++  let body: Uint8Array | undefined
++  if (request.method !== 'GET' && request.method !== 'HEAD') {
++    try { body = new Uint8Array(await request.arrayBuffer()) }
++    catch { throw new RequestBodyReadError() }
++  }
+ 
+   return {
+     method: request.method as PHPRequest["method"],

@@ -1,0 +1,78 @@
+{
+  "schema": "playtt/local-editor-heartbeat-policy/v1",
+  "at": "2026-11-21T08:33:41.650Z",
+  "result": "fail",
+  "errorName": "AssertionError",
+  "errorMessage": "Native auto-draft ID missing",
+  "checks": [
+    {
+      "path": "/__local-php-fixture",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 175
+    },
+    {
+      "path": "/__local-adopt",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 199
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2638
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 1106
+    },
+    {
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1411
+    },
+    {
+      "path": "/__local-cache",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3
+    },
+    {
+      "path": "/__local-mode",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 20
+    },
+    {
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1300
+    },
+    {
+      "path": "/__local-cache",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 18
+    },
+    {
+      "path": "/wp-admin/profile.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 717
+    },
+    {
+      "path": "/wp-admin/post-new.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1122
+    }
+  ],
+  "outboundAttempts": 0,
+  "remoteRequests": 0,
+  "localProcessesDisposed": true
+}

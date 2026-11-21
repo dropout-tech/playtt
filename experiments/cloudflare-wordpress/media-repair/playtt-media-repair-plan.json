@@ -1,0 +1,238 @@
+{
+  "at": "2026-11-18T20:12:22.162Z",
+  "result": "pass",
+  "scope": "Local hash-verified repair candidate; native WordPress 7.1.4 regenerated metadata from exact original bytes in a disposable SQLite/PHP-WASM runtime. No remote mutation.",
+  "baseRevision": "edf7bf71-b84e-444e-a6d9-1cce10366841",
+  "candidateRevision": "e12466c4-4831-49b4-ba05-51b7dc7fd636",
+  "attachments": [
+    {
+      "id": 7,
+      "slug": "playtt-do-probe",
+      "mime": "image/png",
+      "path": "2026/11/playtt-do-probe.png",
+      "brand": false,
+      "size": 68,
+      "sha256": "431ced6916a2a21a156e38701afe55bbd7f88969fbbfc56d7fe099d47f265460",
+      "markdownPath": "attachment/playtt-do-probe.md",
+      "markdownSha256": "cebc1e3eb5725ca6ee6a669a270d988783442184bf9f435f1fa62fd45365c9be",
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": 10,
+      "slug": "brand-desktop",
+      "mime": "image/webp",
+      "path": "2026/11/brand-desktop.webp",
+      "brand": true,
+      "size": 65256,
+      "sha256": "411915acde994cdb34911a756486c7572ad5c58bea3444aba0c7ba4f980b2869",
+      "markdownPath": "attachment/brand-desktop.md",
+      "markdownSha256": "3f6a61f865b810d0de7ae8220744925ce48f72dbf648732d9c30a8b0c45d2fc4",
+      "width": 1920,
+      "height": 1072
+    },
+    {
+      "id": 11,
+      "slug": "brand-mobile",
+      "mime": "image/webp",
+      "path": "2026/11/brand-mobile.webp",
+      "brand": true,
+      "size": 41984,
+      "sha256": "ddfebb71a7fd7fccc9eef6edf1c1fc2b354c3f5f5a661625acbe09c1a7be22cd",
+      "markdownPath": "attachment/brand-mobile.md",
+      "markdownSha256": "c1009874124fd4db6cb204074fd4adeeee8c74271b1b9adcb0ddf9f11ac1f76b",
+      "width": 828,
+      "height": 1479
+    },
+    {
+      "id": 12,
+      "slug": "camp",
+      "mime": "image/webp",
+      "path": "2026/11/camp.webp",
+      "brand": true,
+      "size": 92538,
+      "sha256": "b218afe6593593e91c76c2a617632cf768e383ec5adc3860d65e5306fb467450",
+      "markdownPath": "attachment/camp.md",
+      "markdownSha256": "7c10bda80067b259eb0702637673c7793c8e86b4b204a2605cea339aeb261b72",
+      "width": 1100,
+      "height": 937
+    },
+    {
+      "id": 13,
+      "slug": "children",
+      "mime": "image/webp",
+      "path": "2026/11/children.webp",
+      "brand": true,
+      "size": 74158,
+      "sha256": "d3432294ff271d178928ac287604b3bb3e2124b697927db66cdb9161e285414a",
+      "markdownPath": "attachment/children.md",
+      "markdownSha256": "99af28b14c1f1fae461318b86c55ca32eba03c3f65566f8cf80039296f1d3e71",
+      "width": 1100,
+      "height": 937
+    },
+    {
+      "id": 14,
+      "slug": "coach-amber",
+      "mime": "image/webp",
+      "path": "2026/11/coach-amber.webp",
+      "brand": true,
+      "size": 20624,
+      "sha256": "81b5a0e3d5d5cd27487722df090c1dde633b602cd1a8a855dc7e4eae24ef7034",
+      "markdownPath": "attachment/coach-amber.md",
+      "markdownSha256": "cfa7fbb3460de7c93f2976cedddb06f48dbf41b8fec64db0208cdf27bdb05327",
+      "width": 640,
+      "height": 758
+    },
+    {
+      "id": 15,
+      "slug": "coach-huang",
+      "mime": "image/webp",
+      "path": "2026/11/coach-huang.webp",
+      "brand": true,
+      "size": 36554,
+      "sha256": "1d3cac98c5527bd0ba3773e945bc87d84ce9ad7f2434bf28b050c47f4b232226",
+      "markdownPath": "attachment/coach-huang.md",
+      "markdownSha256": "10badea0d660041ab72686299589e24f96f45c9218f50bf0b1ce119697853443",
+      "width": 640,
+      "height": 853
+    },
+    {
+      "id": 16,
+      "slug": "coach-kuo",
+      "mime": "image/webp",
+      "path": "2026/11/coach-kuo.webp",
+      "brand": true,
+      "size": 28312,
+      "sha256": "c1bd888a29305dc4122c113c56c42b139e8624b6bf944c3d855756763b4cf8f1",
+      "markdownPath": "attachment/coach-kuo.md",
+      "markdownSha256": "bd0dd2848a49abd3f7669e076e54ff3ffd11a21359fc90653fdd41be9f46a746",
+      "width": 640,
+      "height": 619
+    },
+    {
+      "id": 17,
+      "slug": "coach-lin",
+      "mime": "image/webp",
+      "path": "2026/11/coach-lin.webp",
+      "brand": true,
+      "size": 29132,
+      "sha256": "834a75a6a16fd865b23e671ae1695295ccf7fbd77adb6bb758983e419d174ad1",
+      "markdownPath": "attachment/coach-lin.md",
+      "markdownSha256": "6452b745aa5ba2af7a301e846a52d7c0991228fe7650d574042cf9909f2d9e5f",
+      "width": 640,
+      "height": 619
+    },
+    {
+      "id": 18,
+      "slug": "coach-tsai",
+      "mime": "image/webp",
+      "path": "2026/11/coach-tsai.webp",
+      "brand": true,
+      "size": 59322,
+      "sha256": "02b4c579f5d7e4184cea75bbad1745d2fc1823b74d8b2b610be3c4d3bf2731b5",
+      "markdownPath": "attachment/coach-tsai.md",
+      "markdownSha256": "753e5f64ac6e730b794d27c8f0c167f3597345522115280efe576e48c11805a7",
+      "width": 559,
+      "height": 1024
+    },
+    {
+      "id": 19,
+      "slug": "coach-wang",
+      "mime": "image/webp",
+      "path": "2026/11/coach-wang.webp",
+      "brand": true,
+      "size": 40832,
+      "sha256": "5a3a46c0442ca1ca762406cf95dc2174dd5ec7ea60e3613e8b4a7e9d6e892b6a",
+      "markdownPath": "attachment/coach-wang.md",
+      "markdownSha256": "cbac31152b194fc4ef744a0ace93cce6537435de96dcfbb5a66f085565ceef9d",
+      "width": 640,
+      "height": 853
+    },
+    {
+      "id": 20,
+      "slug": "coach-wen",
+      "mime": "image/webp",
+      "path": "2026/11/coach-wen.webp",
+      "brand": true,
+      "size": 31188,
+      "sha256": "aafa485ddbe688d850e935d63ce6480ad4dab6c91f927f73ddd52874c1c267d4",
+      "markdownPath": "attachment/coach-wen.md",
+      "markdownSha256": "5c083ce255acddaf7f99345e93855b70d81fa92e0aee95ad29572928deb61988",
+      "width": 640,
+      "height": 619
+    },
+    {
+      "id": 21,
+      "slug": "coach-yang",
+      "mime": "image/webp",
+      "path": "2026/11/coach-yang.webp",
+      "brand": true,
+      "size": 41464,
+      "sha256": "e6bd16dbd55b81f3071b401bfc1265d70231ee4a45fffa1c731a20cbb256f8ff",
+      "markdownPath": "attachment/coach-yang.md",
+      "markdownSha256": "e86c4a4b13800dfb708310b63861569ab7cce0b86688b9b1eeaf0a38dfa42658",
+      "width": 640,
+      "height": 853
+    },
+    {
+      "id": 22,
+      "slug": "individual",
+      "mime": "image/webp",
+      "path": "2026/11/individual.webp",
+      "brand": true,
+      "size": 89448,
+      "sha256": "a91ad866da4535ce1eebdce6e15c841ec6c15c7a7895d6862910c8bd5229e73e",
+      "markdownPath": "attachment/individual.md",
+      "markdownSha256": "043cfa17a963b7e1e88960296dc4b082b75f12edc9ac4d4eac4926245beb00e1",
+      "width": 1100,
+      "height": 935
+    },
+    {
+      "id": 23,
+      "slug": "logo",
+      "mime": "image/webp",
+      "path": "2026/11/logo.webp",
+      "brand": true,
+      "size": 2678,
+      "sha256": "dbbad2dd9e3e41d1981f6316f8d63a32d7db172f55a3c2b10e846b4a19777c9a",
+      "markdownPath": "attachment/logo.md",
+      "markdownSha256": "3c488fc6ef309d062edbce09f9588486bfeca4ceccf358b8b810ade386f15634",
+      "width": 453,
+      "height": 74
+    }
+  ],
+  "brandAssets": 14,
+  "legacyProbeAssets": 1,
+  "addedRows": 44,
+  "unchangedRows": 4,
+  "postmetaHighWaterBefore": "20",
+  "postmetaHighWaterAfter": "64",
+  "changedPaths": [
+    "_tables/postmeta.json",
+    "_runtime/playtt-auto-increment.json"
+  ],
+  "uploadObjects": [
+    {
+      "key": "sites/default/markdown/objects/afcd4fca2206e86df0ed26b371ee767931150acbbbb665fcc8c71b4420651108",
+      "size": 196,
+      "sha256": "afcd4fca2206e86df0ed26b371ee767931150acbbbb665fcc8c71b4420651108"
+    },
+    {
+      "key": "sites/default/markdown/objects/6feefd2ce3928459cea06a249a871846ef53e6aaea23f8c4caf92cf6e8d3b0c2",
+      "size": 13545,
+      "sha256": "6feefd2ce3928459cea06a249a871846ef53e6aaea23f8c4caf92cf6e8d3b0c2"
+    },
+    {
+      "key": "sites/default/restore-packs/3411a08eed78b03dd0991bf6d9e8725ccc0896a227bf36b7f98badc711d73e82.zip",
+      "size": 2286792,
+      "sha256": "3411a08eed78b03dd0991bf6d9e8725ccc0896a227bf36b7f98badc711d73e82"
+    },
+    {
+      "key": "sites/default/markdown/revisions/e12466c4-4831-49b4-ba05-51b7dc7fd636.json",
+      "size": 72949,
+      "sha256": "0c81e63647b6bf0b8984fab49e73fceaf6a259f2ee395288b937f4454ec0e003"
+    }
+  ],
+  "allOtherCanonicalFilesUnchanged": true,
+  "allUploadsUnchanged": true
+}

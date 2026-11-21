@@ -1,0 +1,68 @@
+{
+  "schema": "playtt/local-editor-heartbeat-policy/v1",
+  "at": "2026-11-21T08:51:24.445Z",
+  "result": "pass",
+  "scenario": "cold-enabled",
+  "baselineVersion": 161,
+  "coldFlagEnabled": true,
+  "firstRuntimePolicyEnabled": true,
+  "nativeEditorFloor30": true,
+  "nativeSuspensionUnchanged": true,
+  "unrelatedProfileUnchanged": true,
+  "originalContentExact": true,
+  "nativeLogoutRedirect": true,
+  "checks": [
+    {
+      "path": "/__local-adopt",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 25
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2530
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 888
+    },
+    {
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1393
+    },
+    {
+      "path": "/__local-cache",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 18
+    },
+    {
+      "path": "/wp-admin/profile.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 759
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 605
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 302,
+      "wallMs": 688
+    }
+  ],
+  "outboundAttempts": 0,
+  "remoteRequests": 0,
+  "localProcessesDisposed": true,
+  "scope": "Fresh direct local runtime, real PHP/WordPress with flag enabled before its first request; no browser or provider acceptance."
+}

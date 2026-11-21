@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "home",
+    "pattern": "home",
+    "title": "Let’s Play 桌球聯盟",
+    "excerpt": "從喜歡開始，一起玩桌球。兒童與成人桌球課程、專業教練、場地租借與合作招募。"
+  },
+  {
+    "slug": "about",
+    "pattern": "about",
+    "title": "關於我們",
+    "excerpt": "認識 Let’s Play 桌球聯盟的品牌故事與教學理念。"
+  },
+  {
+    "slug": "class",
+    "pattern": "class",
+    "title": "課程資訊與收費",
+    "excerpt": "探索兒童與成人團體班、一對一教學、菁英培訓與場地租借，透過 LINE 預約。"
+  },
+  {
+    "slug": "coaches",
+    "pattern": "coaches",
+    "title": "教練團隊",
+    "excerpt": "認識 Let’s Play 教練的經歷與教學特色，找到適合自己的學習方式。"
+  },
+  {
+    "slug": "locations",
+    "pattern": "locations",
+    "title": "據點資訊",
+    "excerpt": "Let’s Play 蘆洲與林口據點、聯絡資訊及課程洽詢。"
+  },
+  {
+    "slug": "partner",
+    "pattern": "partner",
+    "title": "合作與招募",
+    "excerpt": "學校、企業、運動場館與教練夥伴，和 Let’s Play 一起推廣桌球。"
+  }
+]

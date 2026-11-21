@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-20T18:59:09.641Z",
+  "result": "pass",
+  "ownedId": 193,
+  "saveFailureObserved": true,
+  "unsavedTextRetained": true,
+  "retrySavedAndReloaded": true,
+  "retryClickedAt": "2026-11-20T18:58:10.158Z",
+  "reloadAt": "2026-11-20T18:58:36.657Z",
+  "tabClosed": true,
+  "closedAt": "2026-11-20T18:59:09.655Z",
+  "scope": "One desktop native-editor save rejected by a coordinator fence, followed by manual retry and reload; no network-disconnect, post-commit-ack-loss, concurrency or physical-device proof",
+  "nativeError": "更新時發生錯誤。 Canonical WordPress mutations are fenced for coordinator cutover.",
+  "stableFailedSaveButton": "儲存草稿",
+  "nativeSuccess": "草稿已儲存。",
+  "initialTransientSavedLabel": true,
+  "transientLabelInterpretation": "An immediate AX snapshot briefly showed disabled 已儲存 beside the error; the subsequent stable error state restored 儲存草稿. Acceptance requires the stable notification plus reload and independent persistence comparison.",
+  "consoleErrors": [
+    {
+      "at": "2026-11-20T18:56:52.119Z",
+      "message": "InvalidStateError: Transition was aborted because of invalid state. Viewport size changed"
+    }
+  ],
+  "consoleWarnings": 2,
+  "screenshots": [
+    "window-retry-editor-failed.jpg",
+    "window-retry-editor-retry-saved.jpg",
+    "window-retry-editor-retry-reloaded.jpg"
+  ]
+}

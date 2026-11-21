@@ -1,0 +1,89 @@
+{
+  "at": "2026-11-21T01:39:11.040Z",
+  "result": "pass",
+  "scope": "Real provider native HTTP and pinned api-fetch middleware in Node VM; client-side body suppression, not a browser UI or server-disconnect test",
+  "sourceHashes": {
+    "src/worker.ts": "80cfe44766223bc9ca17e3868343da01f5b1cf7fce707d55d1175302907c221e",
+    "src/playtt-editor-readback.ts": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+  },
+  "packageHashes": {
+    "api-fetch": "292e098ddb81b081258f2395633f81c3d3e228cb88dca819279f5ff51eb1f1ed",
+    "url": "a659342e4360e85db7bce9e95f5d5b008199f905b3bd6ed0905bbfb4fc8bbbb8"
+  },
+  "deployments": {
+    "temporaryEnabledVersion": "b4e9f561-9606-42dd-94af-3384fde3ef44",
+    "finalDisabledVersion": "1075e061-1180-4248-9cc0-01aed39ee191",
+    "actualVersionBindingsOmitReadback": true,
+    "checkedInConfigChanges": 0,
+    "productionChanged": false
+  },
+  "native": {
+    "requests": 8,
+    "policyInEditorHtmlExact": true,
+    "writeAttempts": 1,
+    "readbackAttempts": 1,
+    "writeVersion": 121,
+    "readbackVersion": 121,
+    "canonicalRevision": "a4d93d57-81c4-41da-ae89-96dee822d86b",
+    "rawContentExact": true,
+    "sameSessionColdReadExact": true,
+    "nativeLogoutCompleted": true,
+    "writeWallMs": 6073,
+    "readbackWallMs": 3937,
+    "totalClientWorkflowMs": 10022
+  },
+  "telemetry": {
+    "durationLimitSeconds": 330,
+    "events": 143,
+    "okEvents": 143,
+    "traces": 7,
+    "completedTraces": 7,
+    "exceptions": 0,
+    "requestFailures": 0,
+    "readbackCold": true,
+    "readbackTraceMs": 2981,
+    "readbackCommitPhase": false,
+    "nextOrdinaryReadCold": true,
+    "nextOrdinaryReadTraceMs": 2354,
+    "fullPacks": 1,
+    "fullPackBytes": 2295783,
+    "maximumSampledWasmHeapBytes": 73400320,
+    "wholeIsolateMemoryMeasured": false,
+    "tailEndedByBound": true
+  },
+  "writeAccounting": {
+    "limitBytes": 4194304,
+    "actualBytes": 2960342,
+    "actualPuts": 18,
+    "remainingBytes": 7271788,
+    "appendedDraftUtf8Bytes": 203,
+    "includesLoginSaveLogoutAndMetadata": true,
+    "notAccountSpendingCap": true
+  },
+  "backup": {
+    "version": 122,
+    "revision": "6883819c-8ca2-4e26-b899-433c83aa4eea",
+    "files": 298,
+    "objects": 300,
+    "pins": 9,
+    "unrelatedRowsFilesMediaThemeExact": true,
+    "oldRevisionsPreserved": true,
+    "addedOwnedRevision": "201",
+    "sessionAndPreferenceRowsExactAfterLogout": true,
+    "independentImportVerified": true
+  },
+  "containment": {
+    "closed": true,
+    "sealed": true,
+    "pending": 0,
+    "fenceActive": false,
+    "publisher": "paused",
+    "stateUnchangedAfterFlagDisabled": true
+  },
+  "limitations": [
+    "Client-side body suppression in pinned api-fetch running in a Node VM; native browser UI and real server/network disconnect not exercised in this provider run.",
+    "Eight native HTTP requests and one save do not establish broad or long-term reliability.",
+    "Sampled WASM heap does not measure whole-isolate memory; zero-duration trace phases do not mean zero CPU work.",
+    "Full-pack write amplification, native save latency, real devices/IME, concurrency and sustainable free retention remain open."
+  ]
+}

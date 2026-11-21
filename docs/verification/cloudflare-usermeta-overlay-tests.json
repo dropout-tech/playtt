@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-20T19:41:27.485063+00:00",
+  "result": "pass",
+  "command": [
+    "--import",
+    "tsx",
+    "--test",
+    "--test-reporter=tap",
+    "tests/playtt-usermeta-overlay.test.ts",
+    "tests/playtt-metadata-overlay.test.ts",
+    "tests/playtt-backup-pins.test.ts",
+    "tests/playtt-snapshot-bundle.test.ts",
+    "tests/playtt-reference-coverage.test.ts",
+    "tests/playtt-snapshot-source.test.ts",
+    "tests/playtt-runtime-manifest-cache.test.ts"
+  ],
+  "exitCode": 0,
+  "remoteMutation": false,
+  "tests": 70,
+  "passed": 70,
+  "failed": 0
+}

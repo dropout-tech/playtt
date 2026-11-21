@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-20T05:36:18.191Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "state": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "8a06b16e-fe6c-428f-9785-3caf79d056a6",
+      "manifestKey": "sites/default/markdown/revisions/8a06b16e-fe6c-428f-9785-3caf79d056a6.json",
+      "persistedAt": "2026-11-20T04:43:58.408Z"
+    },
+    "version": 16
+  },
+  "pins": 23,
+  "pending": 0,
+  "publisher": "paused",
+  "sourceVersion": 309,
+  "payloadBoundBytes": 187300721,
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2897
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 163
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 447
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 175
+    }
+  ]
+}

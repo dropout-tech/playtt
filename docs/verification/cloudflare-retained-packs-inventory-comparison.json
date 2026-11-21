@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-20T05:02:21.776161+00:00",
+  "result": "pass",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "beforeAt": "2026-11-20T04:54:31.651803+00:00",
+  "afterAt": "2026-11-20T05:01:03.412186+00:00",
+  "objects": 1110,
+  "payloadBytes": 640239740,
+  "fieldsCompared": [
+    "key",
+    "size",
+    "etag",
+    "last_modified",
+    "storage_class"
+  ],
+  "objectMetadataUnchanged": true,
+  "atomicSnapshot": false,
+  "safeToApply": false,
+  "postListingFirstAttempt": {
+    "result": "fail",
+    "httpStatus": 500,
+    "terminal": true,
+    "action": "Same read-only list retried once; archive download and decode were not restarted"
+  },
+  "scope": "Two complete listings match; source coordinator/registry/ledger have separate before/after reports. This is not a full in-flight root or drain proof."
+}

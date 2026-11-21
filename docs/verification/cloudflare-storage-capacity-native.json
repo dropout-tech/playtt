@@ -1,0 +1,128 @@
+{
+  "at": "2026-11-20T03:17:23.404Z",
+  "result": "fail",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 511
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1830
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 7725
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6761
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2855
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2336
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 6699
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2259
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 183
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1071
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/181",
+      "method": "POST",
+      "status": 507,
+      "wallMs": 7674
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2683
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/181?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6554
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 169
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 895
+    }
+  ],
+  "ownedId": 181,
+  "before": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "06a6b87a-b05d-4dc3-91fa-18a789fe6803",
+      "manifestKey": "sites/default/markdown/revisions/06a6b87a-b05d-4dc3-91fa-18a789fe6803.json",
+      "persistedAt": "2026-11-20T03:17:48.173Z"
+    },
+    "version": 305
+  },
+  "budgetBefore": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-rebuild-audit",
+    "baselineBytes": 625679206,
+    "baselineObjects": 1086,
+    "chargedBytes": 4751070,
+    "chargedPuts": 10,
+    "initializedAt": "2026-11-20T03:16:36.742Z",
+    "initialized": true,
+    "limitBytes": 1000000000,
+    "remainingBytes": 369569724,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "denial": {
+    "status": 507,
+    "pointerAndVersionUnchanged": true,
+    "exactOldContent": true,
+    "chargedBytesUnchanged": true,
+    "chargedPutsUnchanged": true
+  },
+  "errorName": "AssertionError"
+}

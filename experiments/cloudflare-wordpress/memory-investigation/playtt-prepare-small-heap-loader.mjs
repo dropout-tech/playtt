@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const sourcePath='node_modules/@php-wasm/web-8-3/asyncify/php_8_3.js';
+const pkg=JSON.parse(await readFile('node_modules/@php-wasm/web-8-3/package.json','utf8'));assert.equal(pkg.version,'3.1.64');
+const source=(await readFile(sourcePath,'utf8')).replaceAll('\r\n','\n');
+const grow='var overGrownHeapSize = oldSize * (1 + 0.2 / cutDown);';
+assert.equal(source.split(grow).length,2,'Review the pinned Emscripten loader before changing heap policy.');
+assert.ok(source.startsWith("import dependencyFilename from './8_3_36/php_8_3.wasm';"));
+const output=source.replace("from './8_3_36/php_8_3.wasm'","from '../node_modules/@php-wasm/web-8-3/asyncify/8_3_36/php_8_3.wasm'").replace(grow,'var overGrownHeapSize = oldSize + 1048576 / cutDown;');
+await writeFile('src/playtt-php-loader.mjs',output);
+console.log(JSON.stringify({package:pkg.version,sourceSha256:createHash('sha256').update(source).digest('hex'),outputSha256:createHash('sha256').update(output).digest('hex'),change:'One MiB linear WASM heap growth instead of 20 percent geometric reserve; PHP and WASM binary unchanged'}));

@@ -1,0 +1,90 @@
+{
+  "schema": "playtt/compressed-content-prototype-proof/v1",
+  "at": "2026-11-21T10:19:12.195Z",
+  "result": "offline-prototype-pass",
+  "source": {
+    "cloudBackupVersion": 161,
+    "localStoppedVersion": 175,
+    "sourceFilesUnchanged": true
+  },
+  "format": {
+    "schema": "playtt/canonical-compressed-content/v1",
+    "base": "one exact full snapshot; no overlay chain",
+    "changedFiles": [
+      {
+        "group": "markdown",
+        "path": "_runtime/playtt-auto-increment.json",
+        "bytes": 196
+      },
+      {
+        "group": "markdown",
+        "path": "_tables/postmeta.json",
+        "bytes": 14897
+      },
+      {
+        "group": "markdown",
+        "path": "_tables/posts.json",
+        "bytes": 322462
+      },
+      {
+        "group": "markdown",
+        "path": "_tables/usermeta.json",
+        "bytes": 19451
+      },
+      {
+        "group": "markdown",
+        "path": "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md",
+        "bytes": 2278
+      }
+    ],
+    "changedLogicalBytes": 359284,
+    "framedDecodedBytes": 360087,
+    "compressedBytes": 26225,
+    "manifestBytes": 74029,
+    "physicalDependencyObjects": 4,
+    "dependencyPayloadBytes": 2469750
+  },
+  "preservation": {
+    "allGroupsExact": true,
+    "canonicalFiles": 298,
+    "originalPageUnchanged": true,
+    "autosave206Exact": true,
+    "manualRevision207Absent": true,
+    "includesSessionsCountersLocksDates": true
+  },
+  "recovery": {
+    "independentFourObjectCopy": true,
+    "sourceRemovedBeforeRestore": true,
+    "legacyBundleReaderRejectsNewFormat": true,
+    "legacyServerPinRejectsWithoutChangingRegistry": true,
+    "fullMaterialization": true,
+    "independentExistingBundleImporter": true,
+    "fullObjects": 297,
+    "fullPackBytes": 2296468,
+    "fullBytesExact": true,
+    "adopted": false
+  },
+  "limits": {
+    "rawDeltaBytes": 1048576,
+    "deltaChanges": 64,
+    "manifestBytes": 262144,
+    "framedBytes": 1310720,
+    "compressedObjectBytes": 1376256,
+    "baseOrFinalDecodedBytes": 8388608
+  },
+  "implementation": {
+    "workerWired": false,
+    "productionBackupToolsUpdated": false,
+    "flagsAdded": false,
+    "cloudRequests": 0,
+    "deployed": false,
+    "productionChanged": false
+  },
+  "limitations": [
+    "New module is not wired into runtime persistence, normal cold reads, backup pins or existing snapshot bundle tools. Their current readers intentionally reject this format.",
+    "Four-object prototype bundle has an independent local copy; it is not a new production backup/pin integration.",
+    "Full materialization was verified locally; no canonical pointer was adopted or provider rollback performed.",
+    "Compression size is one cumulative snapshot, not complete attempted-write traffic, latency, CPU or whole-isolate memory."
+  ],
+  "goalStatus": "active"
+}

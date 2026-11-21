@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-16T11:10:53.899Z",
+  "edgeOverride": "104.21.38.177",
+  "result": "pass",
+  "results": [
+    {
+      "url": "https://www.playtt.tw/class/?utm_source=verify&message=a%3Fb",
+      "status": 301,
+      "location": "https://playtt.tw/class/?utm_source=verify&message=a%3Fb",
+      "cfRay": "a5b60d4128aeced7-SJC",
+      "pass": true
+    },
+    {
+      "url": "http://www.playtt.tw/class/?utm_source=verify",
+      "status": 301,
+      "location": "https://www.playtt.tw/class/?utm_source=verify",
+      "cfRay": "a5b60d42ed451568-SJC",
+      "pass": true
+    },
+    {
+      "url": "http://playtt.tw/class/?utm_source=verify",
+      "status": 301,
+      "location": "https://playtt.tw/class/?utm_source=verify",
+      "cfRay": "a5b60d44a8852d52-SJC",
+      "pass": true
+    }
+  ]
+}

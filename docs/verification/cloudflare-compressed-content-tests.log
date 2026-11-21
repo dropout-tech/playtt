@@ -1,0 +1,32 @@
+✔ exact raw bytes across text, dates, binary, zero-byte additions, deletions and tombstones (127.7745ms)
+✔ twenty snapshots share the exact full base, including an empty delta (313.4938ms)
+✔ existing readers reject the explicit format before treating it as a legacy archive (10.3085ms)
+✔ materialized contents decode through the unchanged full-pack reader (26.1177ms)
+✔ one MiB raw delta is accepted; an extra byte and65 cumulative entries fall back before encoding (48.7558ms)
+✔ deletions and tombstone changes count toward the cumulative limit (6.2794ms)
+✔ changed runtime bytes cannot bypass manifest hashes or sizes (12.522ms)
+✔ an asynchronously reused caller buffer cannot alter already copied source bytes (14.7126ms)
+✔ stored full-base identity and bytes are bound; linked bases are rejected (5.3905ms)
+✔ missing base rejects restore (4.5355ms)
+✔ missing fullPack rejects restore (4.7406ms)
+✔ missing delta rejects restore (9.2379ms)
+✔ invalid descriptor schema fails closed (4.3473ms)
+✔ invalid descriptor key fails closed (4.3697ms)
+✔ invalid descriptor size fails closed (4.699ms)
+✔ invalid descriptor decodedBytes fails closed (4.4064ms)
+✔ invalid descriptor fileCount fails closed (4.6795ms)
+✔ invalid descriptor unknown fails closed (4.9405ms)
+✔ invalid descriptor self fails closed (4.3065ms)
+✔ invalid descriptor crossSite fails closed (8.8223ms)
+✔ traversal, duplicate files and overlapping tombstones reject before reading (4.5634ms)
+✔ streaming rejects actual bytes beyond declared size and cancels upstream (0.9368ms)
+✔ valid compressed hash does not permit a decompression bomb beyond expected framing (86.0416ms)
+✔ valid hashes cannot hide truncated gzip, a different header, corrupt file bytes, or trailing members (24.8892ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1181.1283

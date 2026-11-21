@@ -1,0 +1,125 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -16,6 +16,7 @@
+ import { readPlayttMaintenanceAction, playttAutoDraftMaintenanceCode, validatePlayttMaintenanceResult, type PlayttMaintenanceAction } from './playtt-maintenance.js';
+ import { readPlayttSnapshotSources, type PlayttSnapshotRuntimeReader } from './playtt-snapshot-source.js';
+ import { PlayttRuntimeManifestCache } from './playtt-runtime-manifest-cache.js';
++import { markdownSizeCode, persistPlayttMarkdownObjects } from './playtt-markdown-persistence.js';
+ import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+ import { decodeZip } from "@php-wasm/stream-compression"
+@@ -1847,37 +1848,24 @@
+   const wpContentManifestFiles = trace ? await trace.measure("persistence.wp-content.write", () => persistRuntimeObjects(bucket, runtime.php, "/wordpress/wp-content", wpContent.files, currentManifest.wpContent ?? [], siteStorageKeys(site).wpContentObjectPrefix, retained)) : await persistRuntimeObjects(bucket, runtime.php, "/wordpress/wp-content", wpContent.files, currentManifest.wpContent ?? [], siteStorageKeys(site).wpContentObjectPrefix, retained)
+   logMutationPhase(diagnosticsStartedAt, "wp-content-persist", retained, { files: wpContentManifestFiles.length })
+ 
+-  const previousFiles = new Map(currentManifest.files.map((file) => [file.path, file]))
+-  const manifestFiles = new Map<string, MarkdownManifestFile>()
+-  let markdownBytes = 0
++  let markdown: Awaited<ReturnType<typeof persistPlayttMarkdownObjects>>
+   if (trace) trace.start("persistence.markdown.write", { files: changedPaths.length })
+   try {
+-    for (const path of changedPaths) {
+-      if (!isCanonicalRelativePath(path)) throw new Error(`Invalid canonical runtime path: ${path}`)
+-      const absolute = `${MARKDOWN_ROOT}/${path}`
+-      if (runtime.php.isDir(absolute)) throw new Error(`Canonical runtime file is missing: ${path}`)
+-      const bytes = runtime.php.readFileAsBuffer(absolute)
+-      markdownBytes += bytes.byteLength
+-      if (bytes.byteLength > MAX_MARKDOWN_FILE_BYTES || markdownBytes > MAX_MARKDOWN_TOTAL_BYTES) throw new Error('Canonical Markdown inventory exceeds its byte budget.')
+-      retained.retain(bytes.byteLength)
+-      try {
+-        const sha256 = await sha256Hex(bytes)
+-        const objectKey = `${siteStorageKeys(site).markdownObjectPrefix}/${sha256}`
+-        const existing = previousFiles.get(path)
+-        if (existing?.sha256 !== sha256 || existing.size !== bytes.byteLength) await bucket.put(objectKey, bytes)
+-        manifestFiles.set(path, { path, objectKey, sha256, size: bytes.byteLength })
+-      } finally {
+-        retained.release(bytes.byteLength)
+-      }
+-    }
+-    if (trace) trace.end({ bytes: markdownBytes })
++    markdown = await persistPlayttMarkdownObjects({
++      paths: changedPaths, previous: currentManifest.files, objectPrefix: siteStorageKeys(site).markdownObjectPrefix,
++      validPath: isCanonicalRelativePath, limits: { files: MAX_MARKDOWN_FILES, fileBytes: MAX_MARKDOWN_FILE_BYTES, totalBytes: MAX_MARKDOWN_TOTAL_BYTES }, retained,
++      readSizes: async () => JSON.parse((await runtime.php.run({ code: markdownSizeCode(MARKDOWN_ROOT, changedPaths) })).text.trim()),
++      readFile: path => runtime.php.readFileAsBuffer(`${MARKDOWN_ROOT}/${path}`),
++      put: (key, bytes) => bucket.put(key, bytes),
++    })
++    if (trace) trace.end({ bytes: markdown.bytes })
+   } catch (error) {
+-    if (trace) trace.end({ bytes: markdownBytes, failed: true })
++    if (trace) trace.end({ failed: true })
+     throw error
+   }
+-  logMutationPhase(diagnosticsStartedAt, "markdown-persist", retained, { files: changedPaths.length })
+-
+-  const files = [...manifestFiles.values()].sort((left, right) => left.path.localeCompare(right.path))
++  logMutationPhase(diagnosticsStartedAt, "markdown-persist", retained, { files: changedPaths.length, bytes: markdown.bytes, puts: markdown.puts, peakActive: markdown.peakActive, peakBytes: markdown.peakBytes })
++
++  const files = markdown.files
+   const unchanged = JSON.stringify(currentManifest.files) === JSON.stringify(files)
+     && JSON.stringify(currentManifest.uploads ?? []) === JSON.stringify(uploadManifestFiles)
+     && JSON.stringify(currentManifest.wpContent ?? []) === JSON.stringify(wpContentManifestFiles)
+--- a/src/mutation-memory.ts
++++ b/src/mutation-memory.ts
+@@ -1,4 +1,5 @@
+ export const MUTATION_DIAGNOSTIC_SCHEMA = "wp-codebox/cloudflare-mutation-phase/v1"
++export const PLAYTT_MARKDOWN_WRITE_BYTES = 1024 * 1024
+ 
+ export class MutationRetainedBytes {
+   current = 0
+@@ -30,8 +31,9 @@
+   return {
+     // The previous request retained the response, all three collections, and a hash copy of the active file.
+     wholeTreePeakBytes: shape.responseBytes + shape.markdownBytes + shape.uploadBytes + shape.wpContentBytes + shape.largestChangedFileBytes,
+-    // Persistence owns one copied file; response conversion may briefly own both PHP and Fetch bodies.
+-    incrementalPeakBytes: Math.max(shape.responseBytes + shape.largestChangedFileBytes, 2 * shape.responseBytes),
++    // Markdown owns one large file or a bounded batch of small files; other
++    // groups remain serial. This excludes hash/provider copies and WASM/FS.
++    incrementalPeakBytes: Math.max(shape.responseBytes + Math.max(shape.largestChangedFileBytes, Math.min(shape.markdownBytes, PLAYTT_MARKDOWN_WRITE_BYTES)), 2 * shape.responseBytes),
+   }
+ }
+ 
+--- a/tests/cloudflare-runtime.test.ts
++++ b/tests/cloudflare-runtime.test.ts
+@@ -313,7 +313,7 @@
+   assert.deepEqual(responseHeaders.getSetCookie?.() ?? [response.headers.get("set-cookie")], ["first=1; Path=/", "second=2; Path=/"])
+ })
+ 
+-test("Cloudflare mutation persistence bounds retained JS bytes to one changed file", () => {
++test("Cloudflare mutation persistence bounds retained JS bytes to a small Markdown batch or one large file", () => {
+   const MiB = 1024 * 1024
+   const shape = {
+     responseBytes: 256 * 1024,
+--- a/tests/playtt-content-io.test.ts
++++ b/tests/playtt-content-io.test.ts
+@@ -1,7 +1,7 @@
+ import assert from 'node:assert/strict';
+ import test from 'node:test';
+ import { createHash, randomUUID } from 'node:crypto';
+-import { setImmediate as turn } from 'node:timers/promises';
++import { setImmediate as turn, setTimeout as delay } from 'node:timers/promises';
+ import { createCanonicalRestorePack, type RestorePackContents } from '../src/canonical-restore-pack.js';
+ import { createContentOverlay, readContentOverlay, MAX_CONTENT_DELTA_BYTES, type OverlayManifest } from '../src/playtt-content-overlay.js';
+ 
+@@ -10,7 +10,7 @@
+ const sha = (b: Uint8Array) => createHash('sha256').update(b).digest('hex');
+ const enc = (s: string) => new TextEncoder().encode(s);
+ const deferred = () => { let resolve!: () => void; const promise = new Promise<void>(r => { resolve = r; }); return { promise, resolve }; };
+-const until = async (predicate: () => boolean) => { for (let i = 0; i < 500 && !predicate(); i++) await turn(); assert.ok(predicate(), 'Work did not reach the expected boundary'); };
++const until = async (predicate: () => boolean) => { const deadline = Date.now() + 5000; while (!predicate() && Date.now() < deadline) await delay(1); assert.ok(predicate(), 'Work did not reach the expected boundary'); };
+ 
+ async function fixture(count = 12, size?: number) {
+   const data = new Map<string, Uint8Array>();
+@@ -84,11 +84,11 @@
+ 
+   for (const fault of ['hash', 'get', 'body'] as const) test(`${phase}: ${fault} failure stops new work and drains started reads before rejection`, async () => {
+     const f = await fixture(), c = controlled(f); let settled = false;
++    if (fault === 'get') c.rejectGet(f.next.files[0].objectKey);
+     const pending = invoke(f, c.bucket).then(value => ({ value, error: undefined }), error => ({ error })).finally(() => { settled = true; });
+     await until(() => c.started.length === 4);
+     const failedKey = c.started[0];
+     if (fault === 'hash') c.corrupt(failedKey);
+-    if (fault === 'get') c.rejectGet(failedKey);
+     if (fault === 'body') c.rejectBody(failedKey);
+     c.gates.get(failedKey)!.resolve();
+     await until(() => c.finished.includes(failedKey));

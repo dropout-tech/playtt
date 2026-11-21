@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-20T20:05:58.750Z",
+  "worker": "playtt-wp-free-session-audit",
+  "bucket": "playtt-wordpress-session-audit",
+  "result": "pass",
+  "objects": 303,
+  "payloadBytes": 100738428,
+  "allRemoteObjectsDownloadedAndHashed": true,
+  "originalTargetWritten": false
+}

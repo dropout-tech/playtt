@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-16T18:11:05.897Z",
+  "origin": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev",
+  "mode": "create",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n500 !== 302\n",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 500,
+      "wallMs": 41387
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 500,
+      "wallMs": 89771
+    }
+  ]
+}

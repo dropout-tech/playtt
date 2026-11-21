@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# WordPress tooling and local preview data
+wordpress/node_modules/
+wordpress/.runtime/
+wordpress/dist/
+wordpress/.wrangler/
+wordpress/test-results/
+cloudflare/node_modules/
+cloudflare/.wrangler/
+cloudflare/test-results/

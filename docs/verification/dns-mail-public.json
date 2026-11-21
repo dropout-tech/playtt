@@ -1,0 +1,240 @@
+{
+  "checks": [
+    {
+      "query": {
+        "Type": "MX",
+        "Name": "playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "playtt.tw",
+          "Type": 15,
+          "NameExchange": "spool.mail.gandi.net",
+          "Preference": 10,
+          "NameHost": null,
+          "Strings": null,
+          "NameTarget": null,
+          "Priority": null,
+          "Weight": null,
+          "Port": null
+        },
+        {
+          "Name": "playtt.tw",
+          "Type": 15,
+          "NameExchange": "fb.mail.gandi.net",
+          "Preference": 50,
+          "NameHost": null,
+          "Strings": null,
+          "NameTarget": null,
+          "Priority": null,
+          "Weight": null,
+          "Port": null
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "TXT",
+        "Name": "playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "playtt.tw",
+          "Type": 16,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": null,
+          "Strings": [
+            "v=spf1 include:_mailcust.gandi.net ?all"
+          ],
+          "NameTarget": null,
+          "Priority": null,
+          "Weight": null,
+          "Port": null
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "CNAME",
+        "Name": "gm1._domainkey.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "gm1._domainkey.playtt.tw",
+          "Type": 5,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": "gm1.gandimail.net",
+          "Strings": null,
+          "NameTarget": null,
+          "Priority": null,
+          "Weight": null,
+          "Port": null
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "CNAME",
+        "Name": "gm2._domainkey.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "gm2._domainkey.playtt.tw",
+          "Type": 5,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": "gm2.gandimail.net",
+          "Strings": null,
+          "NameTarget": null,
+          "Priority": null,
+          "Weight": null,
+          "Port": null
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "CNAME",
+        "Name": "gm3._domainkey.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "gm3._domainkey.playtt.tw",
+          "Type": 5,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": "gm3.gandimail.net",
+          "Strings": null,
+          "NameTarget": null,
+          "Priority": null,
+          "Weight": null,
+          "Port": null
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "CNAME",
+        "Name": "webmail.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "webmail.playtt.tw",
+          "Type": 5,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": "webmail.gandi.net",
+          "Strings": null,
+          "NameTarget": null,
+          "Priority": null,
+          "Weight": null,
+          "Port": null
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "SRV",
+        "Name": "_imap._tcp.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "_imap._tcp.playtt.tw",
+          "Type": 33,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": null,
+          "Strings": null,
+          "NameTarget": ".",
+          "Priority": 0,
+          "Weight": 0,
+          "Port": 0
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "SRV",
+        "Name": "_imaps._tcp.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "_imaps._tcp.playtt.tw",
+          "Type": 33,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": null,
+          "Strings": null,
+          "NameTarget": "mail.gandi.net",
+          "Priority": 0,
+          "Weight": 1,
+          "Port": 993
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "SRV",
+        "Name": "_pop3._tcp.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "_pop3._tcp.playtt.tw",
+          "Type": 33,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": null,
+          "Strings": null,
+          "NameTarget": ".",
+          "Priority": 0,
+          "Weight": 0,
+          "Port": 0
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "SRV",
+        "Name": "_pop3s._tcp.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "_pop3s._tcp.playtt.tw",
+          "Type": 33,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": null,
+          "Strings": null,
+          "NameTarget": "mail.gandi.net",
+          "Priority": 10,
+          "Weight": 1,
+          "Port": 995
+        }
+      ]
+    },
+    {
+      "query": {
+        "Type": "SRV",
+        "Name": "_submission._tcp.playtt.tw"
+      },
+      "answers": [
+        {
+          "Name": "_submission._tcp.playtt.tw",
+          "Type": 33,
+          "NameExchange": null,
+          "Preference": null,
+          "NameHost": null,
+          "Strings": null,
+          "NameTarget": "mail.gandi.net",
+          "Priority": 0,
+          "Weight": 1,
+          "Port": 465
+        }
+      ]
+    }
+  ],
+  "resolver": "1.1.1.1",
+  "at": "2026-11-16T11:10:15.6990208Z"
+}

@@ -1,0 +1,61 @@
+--- a/src/playtt-storage-capacity.ts
++++ b/src/playtt-storage-capacity.ts
+@@ -2,0 +3 @@
++import { handleRecoveryOperation, recoveryEnabled, PlayttRecoveryError, type RecoveryEnv } from './playtt-recovery-uploads.js';
+@@ -5 +6 @@
+-export interface PlayttCapacityEnv {
++export interface PlayttCapacityEnv extends RecoveryEnv {
+@@ -187,0 +189 @@
++      if (error instanceof PlayttRecoveryError) return Response.json({ code: 'playtt_recovery_upload', message: error.message }, { status: error.status });
+@@ -201,0 +204,23 @@
++    if (path.startsWith('/recovery/')) {
++      if (!recoveryEnabled(this.env)) return new Response('Recovery uploads are disabled', { status: 404 });
++      return handleRecoveryOperation(request, {
++        storage: this.state.storage, bucket: this.env.WORDPRESS_STATE_BUCKET, now: this.now,
++        reserve: async (tx, bytes) => {
++          const ledger = await tx.get<Ledger>(KEY);
++          if (!ledger) throw new PlayttCapacityError(503);
++          validateLedger(ledger, scope);
++          if (!ledger.writeTracking || ledger.writeTracking.pending.length) throw new PlayttWriteDrainError(409, 'Existing pending operations require reconciliation.');
++          const proof = await this.reserveInTransaction(tx, { bytes, schema: WINDOW_PROOF_SCHEMA, kind: 'put' }, scope, limit);
++          if (!proof.ticket || !proof.windowProof) throw new PlayttCapacityError(503);
++          return { ticket: proof.ticket, expiresAt: proof.windowProof.expiresAt };
++        },
++        settle: async (tx, ticket) => {
++          const ledger = await tx.get<Ledger>(KEY);
++          if (!ledger) throw new PlayttCapacityError(503);
++          validateLedger(ledger, scope);
++          if (!ledger.writeTracking) throw new PlayttCapacityError(503);
++          settleTrackedWrite(ledger.writeTracking, ticket);
++          validateLedger(ledger, scope); await tx.put(KEY, ledger);
++        },
++      });
++    }
+@@ -244,3 +269,7 @@
+-    let ticket: string | undefined;
+-    let windowProof: { windowId: string; openedAt: number; expiresAt: number } | undefined;
+-    await this.state.storage.transaction(async transaction => {
++    const { ticket, windowProof } = await this.state.storage.transaction(transaction => this.reserveInTransaction(transaction, input, scope, effectiveLimit));
++    return Response.json({ schema: windowProof ? WINDOW_PROOF_SCHEMA : ticket ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA, reserved: true, bytes: input.bytes, limitBytes: effectiveLimit, ...(input.kind ? { kind: input.kind } : {}), ...(ticket ? { ticket } : {}), ...windowProof });
++  }
++
++  private async reserveInTransaction(transaction: DurableObjectTransaction, input: { bytes: number; schema?: string; kind?: WriteKind }, scope: string, effectiveLimit: number) {
++      let ticket: string | undefined;
++      let windowProof: { windowId: string; openedAt: number; expiresAt: number } | undefined;
+@@ -268,2 +297 @@
+-    });
+-    return Response.json({ schema: windowProof ? WINDOW_PROOF_SCHEMA : ticket ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA, reserved: true, bytes: input.bytes, limitBytes: effectiveLimit, ...(input.kind ? { kind: input.kind } : {}), ...(ticket ? { ticket } : {}), ...windowProof });
++      return { ticket, windowProof };
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -5,0 +6 @@
++import { RECOVERY_PREFIX, routeRecoveryRequest } from './playtt-recovery-uploads.js';
+@@ -136,0 +138,8 @@
++    if (new URL(request.url).pathname.startsWith(RECOVERY_PREFIX)) {
++      return routeRecoveryRequest(request, env, {
++        siteId: site.id,
++        authorized: () => isAuthorizedOperator(request, env, site),
++        renewFence: token => new DurableObjectRevisionCoordinator(env.WORDPRESS_STATE.getByName(partitionName(env, site.id)), site.id).renewFence(token, 600_000),
++        budget: () => playttCapacityStub(env),
++      });
++    }

@@ -1,0 +1,72 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": false,
+  "existingConfigsChanged": false,
+  "prerequisites": [
+    {
+      "path": "src/playtt-metadata-overlay.ts",
+      "sha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43"
+    },
+    {
+      "path": "src/canonical-restore-pack.ts",
+      "sha256": "e14138243ebb1d650a62897a23234e35a0dc94af70b758cd4305a4594c4d9f0f"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "sha256": "9e7fd70863c5e6512834b191aec53b2ff2b200480b00c7cf0061d2684b8cf05a"
+    },
+    {
+      "path": "tests/playtt-metadata-overlay.test.ts",
+      "sha256": "359f6bc8de4a1612a4a98fe623914b8d01a8524bb0d90e3eaa125e01a85001e2"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "beforeSha256": "52aa6556a2a5ab1613cc3b367de441e3d0b1a25baaa34d17b1411c3283e11fd2",
+      "afterSha256": "6a5009b2c7aecd7ca5e590d0d943268765e157d1f0bf62c8034f4b6792e1fade"
+    },
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "beforeSha256": "8ce6ad8d1a17ba715dc033031f9988a9fee9c97e38160c4470a1dbe5bdfa974b",
+      "afterSha256": "b43b08af7bb17afdb499bf6297944526804b1cbb8677834ca3c8b901c351939c"
+    },
+    {
+      "path": "scripts/playtt-backup-pin-client.mjs",
+      "beforeSha256": "b65161e3879837c04a6ae20fc61fd983380d7749aa01de8a71dcec2333999925",
+      "afterSha256": "5fc3eecff9cff0e1edae353eeb98b267611cc1681e82b2536c1689d7987a8653"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "beforeSha256": "114be10a57829e378809b1fec53b43227792c1bb754558406353581a0b86c4ba",
+      "afterSha256": "3f9b2dd54f5508c9c42efb82b0f70a52bcc65edab7706dc523767c3ebfdfafe0"
+    },
+    {
+      "path": "scripts/playtt-reference-coverage.mjs",
+      "beforeSha256": "60c90ceb10e33797717420ecd7638aebbc5a912f4b22fac59cc21e016738a56e",
+      "afterSha256": "d6c67550f5adac2e079537d73a73fa9f92b4978dbb47a56133920995b4a4741a"
+    },
+    {
+      "path": "src/playtt-usermeta-overlay.ts",
+      "source": "playtt-usermeta-overlay.ts",
+      "afterSha256": "caafbbd624cbda0bbdef5fd593dbfe83932085001749a3b4c86ea66bc9d1b1a0"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "source": "playtt-maintenance-overlay.ts",
+      "afterSha256": "71a12314e4c19ee25f2b0f44625bb113a984d8b5b0e4ee0425b14ea4d66379ca"
+    },
+    {
+      "path": "tests/playtt-usermeta-overlay.test.ts",
+      "source": "playtt-usermeta-overlay.test.ts",
+      "afterSha256": "6f313cbdf62f524423f7b120fda7a0c4979daaac970d4715b5eba6182f11a166"
+    },
+    {
+      "path": "scripts/playtt-usermeta-overlay-php-check.mjs",
+      "source": "playtt-usermeta-overlay-php-check.mjs",
+      "afterSha256": "2895260a13fb5d803a5602a975f3c930ea961a3ff124ed54fb0fac08d1502190"
+    }
+  ],
+  "patchSha256": "d4b28eaabc502b23ff078f1e838874e76a332dd4fb053f157ae7afe673d8ac96"
+}

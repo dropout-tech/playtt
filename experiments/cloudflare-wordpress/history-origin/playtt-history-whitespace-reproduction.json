@@ -1,0 +1,70 @@
+{
+  "at": "2026-11-18T21:13:04.804Z",
+  "result": "reproduced",
+  "scope": "Actual pinned PHP-WASM/MDI baseline: write_post retains bytes in Markdown, both full parse and lazy content read rtrim trailing whitespace. No code fix or remote mutation.",
+  "cases": [
+    {
+      "case": "plain",
+      "inputBytes": 4,
+      "fullBytes": 4,
+      "lazyBytes": 4,
+      "equal": true,
+      "trailingBytesLost": 0,
+      "exportBytesPreserved": true
+    },
+    {
+      "case": "one-newline",
+      "inputBytes": 5,
+      "fullBytes": 4,
+      "lazyBytes": 4,
+      "equal": false,
+      "trailingBytesLost": 1,
+      "exportBytesPreserved": true
+    },
+    {
+      "case": "two-newlines",
+      "inputBytes": 6,
+      "fullBytes": 4,
+      "lazyBytes": 4,
+      "equal": false,
+      "trailingBytesLost": 2,
+      "exportBytesPreserved": true
+    },
+    {
+      "case": "trailing-space-tab",
+      "inputBytes": 6,
+      "fullBytes": 4,
+      "lazyBytes": 4,
+      "equal": false,
+      "trailingBytesLost": 2,
+      "exportBytesPreserved": true
+    },
+    {
+      "case": "leading-blank",
+      "inputBytes": 5,
+      "fullBytes": 5,
+      "lazyBytes": 5,
+      "equal": true,
+      "trailingBytesLost": 0,
+      "exportBytesPreserved": true
+    },
+    {
+      "case": "whitespace-only",
+      "inputBytes": 3,
+      "fullBytes": 0,
+      "lazyBytes": 0,
+      "equal": false,
+      "trailingBytesLost": 3,
+      "exportBytesPreserved": true
+    },
+    {
+      "case": "empty",
+      "inputBytes": 0,
+      "fullBytes": 0,
+      "lazyBytes": 0,
+      "equal": true,
+      "trailingBytesLost": 0,
+      "exportBytesPreserved": true
+    }
+  ]
+}

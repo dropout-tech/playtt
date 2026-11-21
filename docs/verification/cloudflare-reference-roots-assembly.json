@@ -1,0 +1,423 @@
+{
+  "at": "2026-11-20T05:28:10.398841+00:00",
+  "scope": "Clean pinned upstream archive plus documented adopted patches and checked-in extra files; dependencies not yet installed or rebuilt",
+  "referenceChecked": true,
+  "legacyShrinkwrapOmitted": true,
+  "archiveSha256": "af0cf70a31bb32ec1259a78cd7cf2e9c60a306b91a711026c69aab9e8e6627e7",
+  "upstreamFiles": 197,
+  "steps": [
+    {
+      "patch": "security-update/upstream-playtt-secure.patch",
+      "sha256": "758c8684554a46da2e4b9144aebfc7e03b3e81eb67853e42748104cc580933a6",
+      "base": "."
+    },
+    {
+      "patch": "automatic-publication/after-security-update.patch",
+      "sha256": "0ba2cf913b247e2a93da10e20e3cbd83fac4becd65c036b69f9b6121a9340d20",
+      "base": "."
+    },
+    {
+      "patch": "memory-investigation/tracked-allocator-candidate.patch",
+      "sha256": "c127db00844f94a620f5df679a585e09b255704929938bf21fec1a81de464ff0",
+      "base": "."
+    },
+    {
+      "patch": "publication-batching/publication-batch-candidate.patch",
+      "sha256": "f279114ee957df66b0e41365310dfe3fb2a0ec8b6f980963e3bcd21e67f71765",
+      "base": "."
+    },
+    {
+      "patch": "memory-lifetime/memory-lifetime-candidate.patch",
+      "sha256": "9b1ab5fd61fcfb40e7ce9b601dc6d362b0c8a4357fcbe600fa4acf20fcd41c12",
+      "base": "."
+    },
+    {
+      "patch": "memory-lifetime/runtime-rotation-candidate.patch",
+      "sha256": "4a6fba32ed42ef7df07395ad9c55c6e7949f12efad4555e10a5bd0405e4c0afc",
+      "base": "."
+    },
+    {
+      "patch": "runtime-retirement/runtime-retirement-candidate.patch",
+      "sha256": "9cf48e77f27a11c8af42bc6f0a42ee54cfef4a5c7e715b5a52e061b46f99f85d",
+      "base": "."
+    },
+    {
+      "patch": "snapshot-latency/snapshot-source-candidate.patch",
+      "sha256": "d0fd15add9e009b06041330c42dffee47c6f1468a261cd2537632cee961cdb71",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "request-body/request-body-candidate.patch",
+      "sha256": "12b85c835b5b9f65446feecd5391cbf505105703232d26ab5952b57b05265360",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "id-sequence/id-sequence-candidate.patch",
+      "sha256": "6d7589a5a1bb610ce84d423971845e6f1714be699c8f1a4d86151c2cfdb6b966",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "maintenance/maintenance-candidate.patch",
+      "sha256": "498324460255a8a408b0be52a7f8ea915d35cd234be7b338a836929adf2883ad",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "scheduled-maintenance/scheduled-maintenance-candidate.patch",
+      "sha256": "73c147be966b8fc8681c5aea1c53593f717bb50486052c43c52efa0d717d17f3",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "empty-slug/empty-slug-candidate.patch",
+      "sha256": "003db08985c9001b47602acb3993ead9888fc9af148c326973b91cd87828d9ba",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "postmeta/postmeta-candidate.patch",
+      "sha256": "5e34a8f91fc7ed173539ee84488f7a09bba26c4dfe3cae38e6d0f20ff2b58977",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "request-diagnostics/request-diagnostics-candidate.patch",
+      "sha256": "4ff5cd0912a8dce33b9a28412942196689480a5c7f59a671aaf98186f54c9ac7",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "content-bytes/content-bytes-candidate.patch",
+      "sha256": "f8f245ffcf9067e7aee67f29e865d39b260961dad981664d14ef9d6fc0c93dc3",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "diagnostic-sampling/diagnostic-sampling-candidate.patch",
+      "sha256": "c54ede617afebf7dba8a3ce0f08efe66047a47be39fb1885b72cf3e20bdd88b8",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "heartbeat-noop/heartbeat-noop-candidate.patch",
+      "sha256": "0df63896e57f92ce9509b4f32dcb439af6379f6da0d3d2ea9f431573cdf157bd",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "manifest-cache/manifest-cache-candidate.patch",
+      "sha256": "b19d52a562f5e48df71fafa1c462896614dbe650e95c4757de5fe0d567158356",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "storage-capacity/storage-capacity-candidate.patch",
+      "sha256": "aac9306e6b05f985bd6b2792371b14a8b115e1cf844a97ee0d969b2c4cbd1060",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "backup-pins/backup-pins-candidate.patch",
+      "sha256": "feaee8d42b944ef0f17a25c3fc841560bf1571abc3ec4aef8992aa82d46bccf8",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "pin-restore/pin-restore-candidate.patch",
+      "sha256": "fcd5c3ea88fac99927fbe7999f50f4cbd7760ca2a2fc7adab1a2af28678ab2cf",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "write-drain/write-drain-candidate.patch",
+      "sha256": "8dcdae15b17de39cf98696754933b734227266e5b10a7af91f7234889ccfae88",
+      "base": "packages\\runtime-cloudflare"
+    },
+    {
+      "patch": "reference-roots/reference-roots-candidate.patch",
+      "sha256": "2ae6fe4e6639487f3d4d950a0b5c8f70b432732e99671c39c476207a87471e50",
+      "base": "packages\\runtime-cloudflare"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/administrator-secret-bindings.ts",
+      "normalizedSha256": "a5d3604e7f305a98f9608860e8f54b811b5d455cb1d5602bd5a2dbc1e5e36f85"
+    },
+    {
+      "path": "src/allocation-lifecycle.ts",
+      "normalizedSha256": "0699a483b417830f28b87b8a2d4bbb91fd3187a8a4901bd7e751b3ae6e3a775b"
+    },
+    {
+      "path": "src/asset-content-type.ts",
+      "normalizedSha256": "188d3425cb04cc1a7aaa1e6fe27df9ff8b18d1f10f2ae413189a90334f60eaee"
+    },
+    {
+      "path": "src/canonical-restore-pack.ts",
+      "normalizedSha256": "e14138243ebb1d650a62897a23234e35a0dc94af70b758cd4305a4594c4d9f0f"
+    },
+    {
+      "path": "src/d1-operation-repository.ts",
+      "normalizedSha256": "d2bd96a4991bb1a39a4d90766741aa7de57a33e87ef334a8f8f66d54d459ff1a"
+    },
+    {
+      "path": "src/d1-revision-coordinator.ts",
+      "normalizedSha256": "796cb02187a97834c26d08a42d0df7a4d9555afe3ddccddf732677a966ff1e74"
+    },
+    {
+      "path": "src/health-envelope.ts",
+      "normalizedSha256": "a8507032c5fd0d29cd4ffb46c2ec5c818652fff80724fec10724a855a11a1aaa"
+    },
+    {
+      "path": "src/lease-retry.ts",
+      "normalizedSha256": "6c3a29eab611e38af64a7f6d92bff64d3eba6f1824048d827a95582c7eac01c3"
+    },
+    {
+      "path": "src/mutation-memory.ts",
+      "normalizedSha256": "13ea7535415a82818fb902769a531fe871676bb3971f3227e3a8046858b38aaa"
+    },
+    {
+      "path": "src/operator-coordinator.ts",
+      "normalizedSha256": "18aad9ab3105b0db6fca295f5822616c5bd9cb17423e228e2874f6c149c99c74"
+    },
+    {
+      "path": "src/phase-trace.ts",
+      "normalizedSha256": "a01f474daa71f2f37b9e4aa806f10210239f05c25b365ab015da6857a16ce52e"
+    },
+    {
+      "path": "src/php-wasm-universal.d.ts",
+      "normalizedSha256": "2d8f8d1830f7928cd8632828c1b30a3e6b0ff0b32dcbe2a29ae8665d981f3626"
+    },
+    {
+      "path": "src/playtt-auto-draft-policy.ts",
+      "normalizedSha256": "ec56aa749ca029ceb17f245bd45a4b4476f2e6811055e7b223e931d9fb05a88f"
+    },
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "normalizedSha256": "57a8072eac5399d047b1caca4cabdfc5f96951536ec2cff9c47c0acce5074550"
+    },
+    {
+      "path": "src/playtt-cms-access.ts",
+      "normalizedSha256": "9b1b30629ba2a25753baec164d706981148029a1d61fc2fe701ade14c927af24"
+    },
+    {
+      "path": "src/playtt-content-policy.ts",
+      "normalizedSha256": "b11ca43b067824bd631215aa0cdcb20842396595589d09de00e13c398f2bb78e"
+    },
+    {
+      "path": "src/playtt-core-memory.ts",
+      "normalizedSha256": "6ea4d0c2ec872074479eeb3cb6a563391747ddde8415bbf059b2ab6755be5837"
+    },
+    {
+      "path": "src/playtt-free-probe.ts",
+      "normalizedSha256": "d7895ce30b3fabfa057af5c587d6f54d5162c860477f38d97f47e275428f70ed"
+    },
+    {
+      "path": "src/playtt-id-sequences.ts",
+      "normalizedSha256": "cdc8d1187a75b9bef21dfed0a366e53e1f4985a9c5ba2ad8e4101162ef7da17d"
+    },
+    {
+      "path": "src/playtt-maintenance-fault-worker.ts",
+      "normalizedSha256": "bba64bda64d916186ffbd252724fd8db1cc366734127d71ca2c66d4b6f6d495c"
+    },
+    {
+      "path": "src/playtt-maintenance-schedule.ts",
+      "normalizedSha256": "414dcccbdf7ba01b2212a4692c92db747f2777c71097884d202eaddbd8d4fd13"
+    },
+    {
+      "path": "src/playtt-maintenance.ts",
+      "normalizedSha256": "acbc25a29273fa522dad36c768780b1776b274035c1f8daad8be21c29481963d"
+    },
+    {
+      "path": "src/playtt-memory-diagnostics.ts",
+      "normalizedSha256": "1f3ca896da39e97b554851d93dfe853c7c315297c9153ed5ec089007a9a77743"
+    },
+    {
+      "path": "src/playtt-php-compat.ts",
+      "normalizedSha256": "79d9ef561b2af05e88b3d0190c21810c337d7f3980e42790f98c8a2b7a5f6f2f"
+    },
+    {
+      "path": "src/playtt-postmeta-policy.ts",
+      "normalizedSha256": "60f092c2ade945fa06ed2e79a9bf535e3e6f335f15f571682fbb9c442558d4eb"
+    },
+    {
+      "path": "src/playtt-probe-access.ts",
+      "normalizedSha256": "480cac3d6d1c55771530266ea18d54c583be50f4a0e8af9fcf816ace7575bf9a"
+    },
+    {
+      "path": "src/playtt-probe-zip.d.ts",
+      "normalizedSha256": "e6e35466cb1481d74dca1d6807484700d9509fd7fa071ac7de8c573612131e8a"
+    },
+    {
+      "path": "src/playtt-publication-alarm.ts",
+      "normalizedSha256": "ac2a0e71d6163f323f97941e25abc12a931977e2f0f276453cbe0f47c24c41e3"
+    },
+    {
+      "path": "src/playtt-publication-batch.ts",
+      "normalizedSha256": "5faab27d9979f55be69f6ed2a1247ee603f884a716dcd6b0eda77d727a8d8ad7"
+    },
+    {
+      "path": "src/playtt-reference-roots.ts",
+      "normalizedSha256": "86811f5a6b305f63332c6e0df0cddda0fd6ba366acfa0026d060d47045629884"
+    },
+    {
+      "path": "src/playtt-runtime-factory.ts",
+      "normalizedSha256": "44f8c3d51855713cf57f4e96c924f7cec9ccff50f19de9ff0bea6602856fb9bc"
+    },
+    {
+      "path": "src/playtt-runtime-lifetime.ts",
+      "normalizedSha256": "c115f47307fca8d5106f81ee55d80ffd5b74dd85a5683100c44bcfe2c8db6b5d"
+    },
+    {
+      "path": "src/playtt-runtime-manifest-cache.ts",
+      "normalizedSha256": "b74352e8de70bef32c33e4e813c51e54154b5140055337786404e32e45577b88"
+    },
+    {
+      "path": "src/playtt-slug-policy.ts",
+      "normalizedSha256": "17c37e757754933d07e6505e5f56aaaee2a73dfb9ed23907bc9103300b647c56"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "normalizedSha256": "769b3cec9c78790bf7d7c33f5f94e0d777f11fdb3e9e2993161472d76ce91b57"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "normalizedSha256": "86cdb0123520f7aa7775e787da154e31a471dc7485fde04823ee6789ae795dd9"
+    },
+    {
+      "path": "src/playtt-write-drain.ts",
+      "normalizedSha256": "973f5ce6cc749ad7e5bc377a16b0331179dff60ec4e9074c07844318e799f49f"
+    },
+    {
+      "path": "src/principal-credential-repository.ts",
+      "normalizedSha256": "af97382e3c162e442b0f74d28931396537ca7190d84c99c8f58b61b3da4069df"
+    },
+    {
+      "path": "src/provisioning-api.ts",
+      "normalizedSha256": "c8c90c00da499f39ae80d0134cd955f631036b40ab5a2ed88199abc0a3e627a4"
+    },
+    {
+      "path": "src/public-reader-worker.ts",
+      "normalizedSha256": "091c7df04f80f4e30e09a24116a8509048d6a1fcfd35f9e826825794baf8bdb3"
+    },
+    {
+      "path": "src/public-reader.ts",
+      "normalizedSha256": "6e69ad56947de9cd429429dba8caafd2abbf5439cbb83c9221228eb6ad4b5281"
+    },
+    {
+      "path": "src/published-reader.ts",
+      "normalizedSha256": "515e7789957edd2a72ae1f1ed7401654da7f51b309fc3518df122bc4ef63365a"
+    },
+    {
+      "path": "src/queue-batch.ts",
+      "normalizedSha256": "3087619c156ae9113c905cc35215ae25fb90b4a221c8af376566b6e1603edda5"
+    },
+    {
+      "path": "src/queue-dispatch.ts",
+      "normalizedSha256": "061f910cd4b6186d7141818393baab789da822904e10656265e5196fbddabae6"
+    },
+    {
+      "path": "src/request-routing.ts",
+      "normalizedSha256": "c8900c81cdc78caa94a8541ec41580c60d9491f7c6070de526a6ad22f3e63950"
+    },
+    {
+      "path": "src/request-translation.ts",
+      "normalizedSha256": "fdbd6cc653b29ca5c931a7411e59bc893d902f65fd78c856660a4e963e8356b1"
+    },
+    {
+      "path": "src/revision-coordinator.ts",
+      "normalizedSha256": "ea31dcd605deb22aa0e3bffbc887b5479393a18bd22d889550be9fb609f70983"
+    },
+    {
+      "path": "src/runtime-archive-artifact.ts",
+      "normalizedSha256": "bedd0287e6781994b254354edab7937d80c229ea19ceac076cda72dfc12376e6"
+    },
+    {
+      "path": "src/site-context.ts",
+      "normalizedSha256": "25a29013cb36065cb92a3ec46e1a53131e0044016c8b2295ab00b097aa63781d"
+    },
+    {
+      "path": "src/sqlite.d.ts",
+      "normalizedSha256": "110b36b9036cd61a8d47b344080a2850b139d1c999fc6ff9049cfccbdf8b0c50"
+    },
+    {
+      "path": "src/state-coordinator.ts",
+      "normalizedSha256": "1b95e3569fd8eeb079605bf9f9f64246399d7d70a0418f8059da2d712772c31b"
+    },
+    {
+      "path": "src/static-artifact-import.ts",
+      "normalizedSha256": "ecb29ee989cdc3b458e0db8f38a949769c50c0d46fa9faedeffbe01178ad8e75"
+    },
+    {
+      "path": "src/upload-persistence.ts",
+      "normalizedSha256": "498667fd6f1e01ff6dafa9cd91278f764821d5dea624afdac6a48787e89e9dd8"
+    },
+    {
+      "path": "src/wasm.d.ts",
+      "normalizedSha256": "109f8567627a0fbe70fa74d871f8f2849d19b6105c935f7b58e38a5ea2b10f38"
+    },
+    {
+      "path": "src/wordpress-auth.ts",
+      "normalizedSha256": "957a0d6a6425f3d7153ce25ced8368528d84b8d93c36f545d828111d1f939261"
+    },
+    {
+      "path": "src/wordpress-runtime-artifact.ts",
+      "normalizedSha256": "2a3345501b3c258d5087639d00fd5720a8539dda0953cf1fef025f0933e16efc"
+    },
+    {
+      "path": "src/wordpress-runtime-corpus.ts",
+      "normalizedSha256": "e6562fa8face9c55cc1587fe458882cdf22fb55a0f0dd9560f4aa6c7273a9a03"
+    },
+    {
+      "path": "src/wordpress-static-artifact.ts",
+      "normalizedSha256": "cb9ece2558d1247c8199275593fc215a3fb0e674b5016c9f65873b71c5f7652e"
+    },
+    {
+      "path": "src/wordpress-static-reader.ts",
+      "normalizedSha256": "dc06e1934eacd33b3e7266fcdd57d5857dcddc99586de23f403d17bc6ec841ae"
+    },
+    {
+      "path": "src/worker-control.ts",
+      "normalizedSha256": "0332835dcdc65bc79d501086558a894d0397f7399cf91c9558386dce1f4d6b96"
+    },
+    {
+      "path": "src/worker-d1.ts",
+      "normalizedSha256": "cff8ec480546eecb99b871bccc9a31986acf759e760709934e996829ba0db0fa"
+    },
+    {
+      "path": "src/worker-do.ts",
+      "normalizedSha256": "31e42b7d33df3f9b75a329a07bcf9ab239471d7a60547f9ab74ec18eab446e64"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "normalizedSha256": "cda3b501e2d89e403689c88322804990cd403a3dceb0f23a74bfb3855feafbc3"
+    },
+    {
+      "path": "src/worker-playtt-public.ts",
+      "normalizedSha256": "2386ebd04376f864037835cc071b8737dceffd78d443b594075046b8aba38ec0"
+    },
+    {
+      "path": "src/worker.ts",
+      "normalizedSha256": "584598e418f96a1c322aaab78da1f25a4d8e19db5f488fa2c32e9dc6d42287eb"
+    },
+    {
+      "path": "src/wp-content-persistence.ts",
+      "normalizedSha256": "0f67fe2b2e198b9665c0d9d1858d7557ab552d877b5165b89c47c9e719546a5d"
+    },
+    {
+      "path": "src/zip.d.ts",
+      "normalizedSha256": "7daa8d79b91cfa9905bbc3a1a0795746d6f359dd19c5de6de0e15a56393c9bf0"
+    }
+  ],
+  "differences": [],
+  "referenceAuditExtrasCompared": [
+    {
+      "path": "src/playtt-reference-roots.ts",
+      "normalizedSha256": "86811f5a6b305f63332c6e0df0cddda0fd6ba366acfa0026d060d47045629884"
+    },
+    {
+      "path": "tests/playtt-reference-roots.test.ts",
+      "normalizedSha256": "b25e0ddcb83bbea307e27eaaa472fa76fa7a598a48e6f7413ec618377248bdca"
+    },
+    {
+      "path": "tests/playtt-reference-coverage.test.ts",
+      "normalizedSha256": "cb599f87b1a8ac1de76547d56aadcaac76c1b66768687fa841a5db04aa357895"
+    },
+    {
+      "path": "scripts/playtt-reference-coverage.mjs",
+      "normalizedSha256": "7485db006e305957c2f15a485098d02505b5133c63d88f2e433bc41a85bab583"
+    },
+    {
+      "path": "scripts/playtt-reference-roots-audit.mjs",
+      "normalizedSha256": "2211666e569c5cc68eeb1c69f3a2ca542fa5868275a16e40c79920e7cc1f1952"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-21T08:12:22.328429+00:00",
+  "result": "pass",
+  "scope": "Previously verified 25+12 assembly plus nine local diagnostic files; no runtime patch added.",
+  "runtimeSourcesCompared": 77,
+  "runtimeSourceChanges": 0,
+  "configsCompared": 20,
+  "configChanges": 0,
+  "newLocalToolsCompared": 9,
+  "totalHelperInventory": 140,
+  "javascriptSyntaxChecks": 8,
+  "reapplyRefusedWithoutMutation": true,
+  "cloudRequests": 0,
+  "fullRebuildReplayed": false,
+  "priorRuntimeTestsReplayed": false
+}

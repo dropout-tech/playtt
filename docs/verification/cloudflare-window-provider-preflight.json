@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-20T17:55:31.573Z",
+  "worker": "playtt-wp-free-window-audit",
+  "bucket": "playtt-wordpress-window-audit",
+  "result": "pass",
+  "targetResourcesAbsent": true,
+  "oldTarget": {
+    "canonicalVersion": 62,
+    "revision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+    "pins": 25,
+    "pending": 0,
+    "sealed": true,
+    "remainingBytes": 2141868,
+    "publisher": "paused"
+  },
+  "accountR2CurrentPayload": 2029107603,
+  "accountR2CurrentMetadata": 73014,
+  "newTargetPayloadLimit": 150000000,
+  "analyticsNotInvoice": true
+}

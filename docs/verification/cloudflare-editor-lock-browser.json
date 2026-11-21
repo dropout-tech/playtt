@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-20T21:53:48.310Z",
+  "result": "native-takeover-save-reload-pass",
+  "initialTakeoverObserved": true,
+  "takeoverObservedAt": 1795211628310,
+  "newContentTyped": true,
+  "takeoverClickSucceeded": true,
+  "firstUserLostLock": true,
+  "secondUserSavedAndReloaded": true,
+  "adminTabClosed": true,
+  "editorTabClosed": true,
+  "takeoverStableSeconds": 44.453,
+  "takeoverStableAfter30Seconds": true,
+  "takeoverClickToolTimedOut": true,
+  "secondUserEditable": true,
+  "nativeCodeEditorUsed": true,
+  "nativeSaveConfirmed": true,
+  "reloadedDraftStatus": true,
+  "reloadToolTimedOutBeforeSuccessfulDom": true,
+  "visualCanvasAccepted": false,
+  "visualCanvasNote": "After leaving code mode, captured IAB canvas was gray; rendered block-content acceptance is not claimed. Reloaded native code-editor DOM contains all four paragraphs."
+}

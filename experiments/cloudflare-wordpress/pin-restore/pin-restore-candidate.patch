@@ -1,0 +1,93 @@
+--- a/src/playtt-storage-capacity.ts
++++ b/src/playtt-storage-capacity.ts
+@@ -7,7 +7,7 @@
+   PLAYTT_R2_CAPACITY_LIMIT_BYTES?: string;
+ }
+
+-const SCOPE = 'playtt-wordpress-rebuild-audit';
++const SCOPES = new Set(['playtt-wordpress-rebuild-audit', 'playtt-wordpress-pin-restore-audit']);
+ const KEY = 'playtt-r2-capacity-ledger-v1';
+ const SCHEMA = 'playtt/r2-capacity-ledger/v1';
+ const RESERVATION_SCHEMA = 'playtt/r2-capacity-reservation/v1';
+@@ -36,7 +36,7 @@
+ export function playttCapacityLimit(env: PlayttCapacityEnv): number | null {
+   if (env.PLAYTT_R2_CAPACITY_SCOPE === undefined && env.PLAYTT_R2_CAPACITY_LIMIT_BYTES === undefined) return null;
+   const raw = env.PLAYTT_R2_CAPACITY_LIMIT_BYTES;
+-  if (env.PLAYTT_R2_CAPACITY_SCOPE !== SCOPE || !env.PLAYTT_STORAGE_BUDGET || !raw || !/^[1-9][0-9]*$/.test(raw)) throw new PlayttCapacityError(503);
++  if (!SCOPES.has(env.PLAYTT_R2_CAPACITY_SCOPE ?? '') || !env.PLAYTT_STORAGE_BUDGET || !raw || !/^[1-9][0-9]*$/.test(raw)) throw new PlayttCapacityError(503);
+   const limit = Number(raw);
+   if (!Number.isSafeInteger(limit) || limit > 2_000_000_000) throw new PlayttCapacityError(503);
+   return limit;
+@@ -93,8 +93,8 @@
+   return { ...env, WORDPRESS_STATE_BUCKET: wrapped };
+ }
+
+-function validateLedger(value: Ledger): void {
+-  if (value.schema !== SCHEMA || value.scope !== SCOPE || !Number.isFinite(Date.parse(value.initializedAt))
++function validateLedger(value: Ledger, scope: string): void {
++  if (!value || value.schema !== SCHEMA || value.scope !== scope || !Number.isFinite(Date.parse(value.initializedAt))
+       || ![value.baselineBytes, value.baselineObjects, value.chargedBytes, value.chargedPuts].every(v => Number.isSafeInteger(v) && v >= 0)
+       || !Number.isSafeInteger(value.baselineBytes + value.chargedBytes)) throw new PlayttCapacityError(503);
+ }
+@@ -115,11 +115,12 @@
+   private async handle(request: Request): Promise<Response> {
+     const limit = playttCapacityLimit(this.env);
+     if (limit === null) throw new PlayttCapacityError(503);
++    const scope = this.env.PLAYTT_R2_CAPACITY_SCOPE!;
+     const path = new URL(request.url).pathname;
+     if (path === '/status' && request.method === 'GET') return this.status(limit);
+     if (path === '/initialize' && request.method === 'POST') {
+       const previous = await this.state.storage.get<Ledger>(KEY);
+-      if (previous) { validateLedger(previous); return this.status(limit); }
++      if (previous !== undefined) { validateLedger(previous, scope); return this.status(limit); }
+       let cursor: string | undefined, bytes = 0, count = 0;
+       const cursors = new Set<string>();
+       let complete = false;
+@@ -135,7 +136,7 @@
+         cursor = result.cursor; cursors.add(cursor);
+       }
+       if (!complete) throw new PlayttCapacityError(503);
+-      const ledger: Ledger = { schema: SCHEMA, scope: SCOPE, baselineBytes: bytes, baselineObjects: count,
++      const ledger: Ledger = { schema: SCHEMA, scope, baselineBytes: bytes, baselineObjects: count,
+         chargedBytes: 0, chargedPuts: 0, initializedAt: new Date().toISOString() };
+       await this.state.storage.put(KEY, ledger);
+       return this.status(limit);
+@@ -150,10 +151,10 @@
+     await this.state.storage.transaction(async transaction => {
+       const ledger = await transaction.get<Ledger>(KEY);
+       if (!ledger) throw new PlayttCapacityError(503);
+-      validateLedger(ledger);
++      validateLedger(ledger, scope);
+       if (input.bytes > effectiveLimit - ledger.baselineBytes - ledger.chargedBytes) throw new PlayttCapacityError(507);
+       const next = { ...ledger, chargedBytes: ledger.chargedBytes + input.bytes, chargedPuts: ledger.chargedPuts + 1 };
+-      validateLedger(next);
++      validateLedger(next, scope);
+       await transaction.put(KEY, next);
+     });
+     return Response.json({ schema: RESERVATION_SCHEMA, reserved: true, bytes: input.bytes, limitBytes: effectiveLimit });
+@@ -162,7 +163,7 @@
+   private async status(limit: number): Promise<Response> {
+     const ledger = await this.state.storage.get<Ledger>(KEY);
+     if (!ledger) return Response.json({ schema: SCHEMA, reservationSchema: RESERVATION_SCHEMA, initialized: false, limitBytes: limit });
+-    validateLedger(ledger);
++    validateLedger(ledger, this.env.PLAYTT_R2_CAPACITY_SCOPE!);
+     return Response.json({ ...ledger, reservationSchema: RESERVATION_SCHEMA, initialized: true, limitBytes: limit,
+       remainingBytes: Math.max(0, limit - ledger.baselineBytes - ledger.chargedBytes),
+       accounting: 'payload baseline plus all attempted put bytes; no automatic refunds' });
+--- a/src/state-coordinator.ts
++++ b/src/state-coordinator.ts
+@@ -1,4 +1,4 @@
+-import { withPlayttStorageCapacity, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js'
++import { withPlayttStorageCapacity, playttCapacityLimit, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js'
+ import { PlayttBackupPins, PlayttBackupPinError, type PlayttBackupPinInput } from './playtt-backup-pins.js'
+ import { mutationFenceExpiresAt, revisionLeaseExpiresAt, RevisionConflict, type MarkdownPointer, type MutationFence, type MutationFenceStatus, type RevisionCoordinator, type RevisionLease, type RevisionState } from "./revision-coordinator.js"
+
+@@ -137,7 +137,7 @@
+     const action = url.searchParams.get("__wp_codebox_coordinator")
+     const siteId = url.searchParams.get("siteId") ?? "default"
+     if (action === 'backup-pins' || action === 'backup-pin') {
+-      if (siteId !== 'default' || this.env.PLAYTT_R2_CAPACITY_SCOPE !== 'playtt-wordpress-rebuild-audit') return new Response('Backup pins are disabled.', { status: 404 })
++      if (siteId !== 'default' || playttCapacityLimit(this.env) === null) return new Response('Backup pins are disabled.', { status: 404 })
+       await this.record(siteId)
+       const pins = new PlayttBackupPins(this.state.storage, this.env.WORDPRESS_STATE_BUCKET)
+       if (request.method === 'GET' && action === 'backup-pins') return Response.json(await pins.list())

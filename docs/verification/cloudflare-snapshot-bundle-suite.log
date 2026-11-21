@@ -1,0 +1,120 @@
+✔ D1 coordinator partitions state, leases, fences, and commit receipts by site ID (7.4514ms)
+✔ D1 adoption accepts monotonic forward state and requires an active fence token (4.8176ms)
+✔ Durable Object coordinator writes the matching site pointer and preserves default compatibility (104.6494ms)
+✔ verified immutable pin survives restart; exact retry after lost acknowledgement is idempotent (64.245ms)
+✔ remote manifest and complete archive hashes are checked before protection is recorded (58.7867ms)
+✔ invalid namespace, time, identity and oversized input cannot trigger R2 reads (0.8516ms)
+✔ expired or lost fence before or during I/O cannot register a pin (17.9056ms)
+✔ corrupt registry is never silently replaced with an empty list (1.3607ms)
+✔ declared object size is enforced while streaming, not after an unlimited buffer (1.2288ms)
+✔ a matching manifest hash cannot bind a different pack or revision (5.3861ms)
+✔ coordinator serializes registration and fence release; wrong-token writes and other sites are rejected (53.6287ms)
+✔ concurrent pins under the same fence retain both entries without advancing canonical state (19.96ms)
+✔ input normalization retains only immutable identity fields (0.4625ms)
+✔ native lock and exact high-water bytes restore with unchanged content, media and theme (401.9596ms)
+✔ repeated maintenance keeps one full base with no chain or growing descriptor (710.4439ms)
+✔ native lock owner takeover, row deletion and re-addition preserve original identities (84.4338ms)
+✔ content, attachment metadata, assets, tombstones and missing layout never use the maintenance path (39.6332ms)
+✔ sequence precision is retained; counter rollback, missing keys and ID reuse are rejected from fast path (63.4647ms)
+✔ incorrect hashes, unavailable dependencies and changed base bytes fail closed (66.7284ms)
+✔ a valid-hash overlay cannot smuggle attachment changes or reset the stored counters (50.5957ms)
+✔ cross-site bases, self references, chained overlays and extra descriptor fields are rejected (7.6069ms)
+✔ bounded read cancels a stream that exceeds its declaration (1.9111ms)
+✔ remote pin verifies complete overlay dependencies and preserves exact retry semantics (62.577ms)
+✔ content edits after an overlay fall back to a full archive with the latest locks and counters (33.6268ms)
+✔ the existing coordinator serializes overlay commits and exposes a durable receipt after a lost response (55.2177ms)
+✔ portable local backup requires the anchored base and exact replacement files (85.6405ms)
+✔ an unpinned historical commit remains a conservative reference even when current and backup agree (41.8283ms)
+✔ missing historical manifest or ZIP is not hidden by intact current content (18.1907ms)
+✔ expired lease bases are checked and never discarded as proof of completed writes (1.3786ms)
+✔ incomplete inventory, publication/import objects and divergent current or protected pointers fail closed (4.5446ms)
+✔ referenced content objects require exact namespace and listed size (1.4859ms)
+✔ full exports and restores into an empty independent local object store (844.2238ms)
+✔ overlay exports and restores into an empty independent local object store (384.7687ms)
+✔ materialization creates a new complete identity readable by the old decoder without any overlay dependencies (369.4735ms)
+✔ a wrong external anchor is rejected before creating an output or trusting a self-consistent catalog (188.4059ms)
+✔ damaged copied loose content fails verification despite an intact ZIP and manifest (232.6718ms)
+✔ missing dependencies, unrelated catalog objects and unsafe filenames are rejected (443.766ms)
+✔ an interrupted or mismatched remote object never creates a verified bundle (22.3255ms)
+✔ import cannot overwrite an existing directory and an independent target never falls back to its source (349.6892ms)
+✔ reference coverage protects the unpinned full base and its old metadata even with only the overlay as a live root (47.7529ms)
+✔ overlay reference coverage rejects omitted dependencies, absent raw evidence, tampered catalogs and wrong pin identity (39.6878ms)
+✔ provider adapter exports an exact overlay with bounded GET-only requests and no redirect or credential output (126.6479ms)
+✔ provider failures, excessive responses and wrong project namespaces fail without exposing response secrets (2.3704ms)
+✔ changed, added and deleted content produces exactly the complete archive from a full independent read (345.3866ms)
+✔ unchanged runtime bytes are fully verified even when loose replicas are unavailable (1.3541ms)
+✔ callers without a runtime reader independently read every object with bounded concurrency (91.2506ms)
+✔ same path in another domain does not reuse unrelated runtime bytes (14.7316ms)
+✔ untrusted runtime missing failure rejects reuse (2.552ms)
+✔ untrusted runtime size failure rejects reuse (6.182ms)
+✔ untrusted runtime bytes failure rejects reuse (2.5852ms)
+✔ a new hash must come from R2, not an uncommitted runtime buffer (8.4065ms)
+✔ changed R2 object missing failure rejects the entire snapshot (1.5527ms)
+✔ changed R2 object size failure rejects the entire snapshot (3.2968ms)
+✔ changed R2 object bytes failure rejects the entire snapshot (19.0283ms)
+✔ invalid metadata cannot read another site, duplicate or traverse paths (11.6307ms)
+✔ a runtime reader needs the previous committed inventory (0.9263ms)
+✔ an empty new inventory preserves only the requested tombstones (0.8237ms)
+✔ failure settles every in-flight read before returning (11.5848ms)
+✔ uninitialized or corrupt ledger rejects writes before touching R2 (38.2751ms)
+✔ concurrent writers share a durable bound and UTF-8 bytes, not characters (10.2245ms)
+✔ ambiguous R2 failure, overwritten bytes, conditional miss and delete never refund (3.1696ms)
+✔ lost reservation response leaves charge but never starts the R2 write (1.1696ms)
+✔ unknown streams, multipart and cross-site paths cannot bypass allocation (2.3399ms)
+✔ initialization paginates even short pages and never overwrites an existing ledger (8.7072ms)
+✔ failed or looping inventory never enables writes; malformed configuration fails closed (25.4213ms)
+✔ coordinator capacity refusal preserves current pointer, version and receipt; subsequent release works (23.5181ms)
+✔ disabled deployments keep their original bucket and repeated wrapping cannot double-charge (1.2724ms)
+✔ mixed deployment limits use the smaller value; old clients cannot omit their bound (2.5314ms)
+✔ legacy, wrong-byte and overly permissive reservation replies never reach R2 (1.1106ms)
+✔ independent restore scope initializes its own ledger and rejects a ledger copied from another bucket (2.9772ms)
+✔ initialization cannot erase a corrupt null ledger (1.3612ms)
+✔ healthy confirmation takes one call and never reserves or writes twice (51.8378ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":3}
+✔ one or two lost settlement requests recover the exact ticket without repeating the R2 mutation (432.623ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ lost responses and malformed acknowledgement bodies retry idempotently after the server already settled (214.9542ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ transient503 and a restarted budget recover while a wrong-ticket proof is never accepted (323.7964ms)
+✔ retry exhaustion preserves confirmed success and leaves unknown acknowledgement state closed to maintenance (311.5695ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ permanently wrong-ticket proofs cannot settle another pending ticket (310.661ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ confirmed deletes and conditional misses retry only acknowledgement, preserving conservative charges (216.3093ms)
+✔ ambiguous R2 put/delete and lost reservation response are never acknowledged or replayed (4.828ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ recovering an acknowledgement cannot clear an unrelated ambiguous R2 write (104.0663ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ confirmed current.json and coordinator commit stay coherent after retries recover or exhaust (424.5085ms)
+✔ legacy capacity reservation and expired canonical lease do not prove R2 writes drained (47.6881ms)
+✔ pending put survives a budget restart; seal waits for actual R2 completion (7.274ms)
+✔ a delayed delete is tracked without charging bytes or put count; a seal blocks deletion (4.6149ms)
+✔ failed R2 response retains its ticket even if the provider applied the write (4.3756ms)
+✔ lost reservation reply leaves an unsettled ticket and sends no R2 request (3.0627ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ lost settlement reply preserves confirmed R2 success and an already closed ticket does not obstruct the seal (311.4521ms)
+✔ tracking must be initialized and cannot be disabled by dropping the environment flag (2.3576ms)
+✔ persistent seals do not expire; exact acquisition retries and owner release are safe (4.0861ms)
+✔ settlement is ticket-specific and idempotent; an unrelated UUID cannot clear another operation (5.3276ms)
+✔ pending operations are bounded and never expire merely because their timestamps are old (130.6708ms)
+✔ reservation capacity failure rolls back both charge and tentative ticket (2.6305ms)
+✔ an early parallel-write failure cannot hide a still-running sibling from a drain (3.0337ms)
+✔ corrupt tracking cannot be reinitialized or bypassed with legacy requests (1.5025ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ lost settlement request cannot strand an already written canonical pointer outside its DO commit (314.496ms)
+✔ a confirmed conditional put miss settles its ticket while retaining the conservative charge (2.1311ms)
+✔ tracked callers reject old, missing-ticket and wrong-operation proofs before R2 (2.3223ms)
+ℹ tests 97
+ℹ suites 0
+ℹ pass 97
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3785.0536

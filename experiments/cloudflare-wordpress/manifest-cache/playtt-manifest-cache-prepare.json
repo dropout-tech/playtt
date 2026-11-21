@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-20T02:35:55.562Z",
+  "mode": "--prepare",
+  "result": "pass",
+  "samples": [],
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1476
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2307
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6985
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6045
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3384
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2215
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 6248
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 229
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2663
+    }
+  ],
+  "ownedId": 174,
+  "canonicalBefore": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "6bfd0a41-07de-4e1a-9008-8f21c2231c25",
+      "manifestKey": "sites/default/markdown/revisions/6bfd0a41-07de-4e1a-9008-8f21c2231c25.json",
+      "persistedAt": "2026-11-20T02:24:54.551Z"
+    },
+    "version": 278
+  },
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "4053d598-7821-4b05-8a1f-12b8dacfd220",
+      "manifestKey": "sites/default/markdown/revisions/4053d598-7821-4b05-8a1f-12b8dacfd220.json",
+      "persistedAt": "2026-11-20T02:36:21.067Z"
+    },
+    "version": 280
+  }
+}

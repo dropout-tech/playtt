@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-17T10:55:09.132532+00:00",
+  "result": "pass",
+  "scope": "Observed Chrome native Traditional Chinese block editor; screenshot after same-draft reload",
+  "draftId": 106,
+  "actions": [
+    "Created unique owned title and paragraph version1; clicked Save draft",
+    "Entered version2 without clicking save; observed auto-saving then saved; API readback version2",
+    "After runtime rebuild edited version3 and clicked Save draft",
+    "Reloaded observed same editor URL; saw exact version3, Saved and two revisions"
+  ],
+  "screenshotSha256": "a32bba891f3159d88f1546c4ee2d2b769152942da568c8f0486acecb14106f12",
+  "screenshot": "outputs/preview/wordpress-native-continuity.png",
+  "automatedReadback": "cloudflare-native-continuity-reads-1.json",
+  "ownedCleanup": "cloudflare-native-continuity-cleanup-3.json"
+}

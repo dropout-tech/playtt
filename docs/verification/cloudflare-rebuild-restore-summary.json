@@ -1,0 +1,131 @@
+{
+  "at": "2026-11-18T19:19:03.695116+00:00",
+  "result": "pass-with-documented-corrected-defect",
+  "scope": "Independent empty DO/R2 restore from latest verified backup using freshly installed dependencies/core; original deployment exposed empty-slug defect, fixed candidate then passed redeployment and stale-ID checks. Production remains unchanged.",
+  "worker": "playtt-wp-free-rebuild-audit",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "finalWorkerVersion": "1ca938eb-4984-440b-b6f0-a500d9c20f7d",
+  "sourceWorkerVersionUnchanged": "53980fce-97d4-47b9-bc56-6c3b065027cc",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "archiveSha256": "fa6974d69b826982573ba9320e529d157faf3e849544d1fffd5bffda19e8cad6",
+  "objectsUploaded": 296,
+  "initialVersion": 0,
+  "restoredVersion": 1,
+  "semanticVerification": {
+    "publishedPages": 7,
+    "templateParts": 2,
+    "navigation": 2,
+    "mediaShaVerified": 15,
+    "theme": "0.2.3",
+    "locale": "zh_TW",
+    "sourceSemanticHashBeforeFix": "50f1cca266db1eb4695abd0db5cfd242315fe9dbc33bebeda37f43fc716049c5",
+    "semanticHashAfterKnownBackupSlugCorrection": "50485de9eb1e1be643e74dda41923c9e7056b89b5798523d9ed34b314d013b6c",
+    "correctedExistingField": "privatePost.slug",
+    "publishedContentUnchanged": true
+  },
+  "sequence": {
+    "backupHighWater": 125,
+    "firstCreatedId": 126,
+    "nextCreatedId": 127,
+    "ownedDataRemoved": true,
+    "originalContentUnchanged": false,
+    "publishedContentUnchanged": true,
+    "contentMatchesVerifiedBaseline": true,
+    "legacySlugCorrectionApplied": true,
+    "publisherPaused": true
+  },
+  "phpRegression": {
+    "unfixedChecks": 68,
+    "fixedChecks": 68,
+    "typescriptExitCode": 0
+  },
+  "reassembly": {
+    "patches": 13,
+    "sourceFiles": 59,
+    "differences": []
+  },
+  "observation": {
+    "envelopes": 486,
+    "outcomes": {
+      "ok": 484,
+      "canceled": 2
+    },
+    "versions": {
+      "ef2598ef-ab28-46e4-9081-c0c5a3b13ca5": 212,
+      "a4572241-970c-4b4e-b9df-d1c54659e96c": 62,
+      "ba9cc62f-5cc5-4e6e-8e14-5ac1ae8f7167": 93,
+      "1ca938eb-4984-440b-b6f0-a500d9c20f7d": 119
+    },
+    "from": "2026-11-18T18:54:48.310Z",
+    "to": "2026-11-18T19:17:30.723Z",
+    "exceptionEvents": [],
+    "incompleteTraces": [],
+    "requestFailures": [],
+    "nonOkEvents": [
+      {
+        "at": "2026-11-18T19:10:13.418Z",
+        "outcome": "canceled",
+        "version": "ba9cc62f-5cc5-4e6e-8e14-5ac1ae8f7167",
+        "traces": [],
+        "phaseEnds": [],
+        "snapshotPhases": [],
+        "memory": [],
+        "exceptions": []
+      },
+      {
+        "at": "2026-11-18T19:15:54.737Z",
+        "outcome": "canceled",
+        "version": "1ca938eb-4984-440b-b6f0-a500d9c20f7d",
+        "traces": [],
+        "phaseEnds": [],
+        "snapshotPhases": [],
+        "memory": [],
+        "exceptions": []
+      }
+    ],
+    "maximumObservedWasmHeapBytes": 73728000,
+    "observerStopped": true,
+    "stopMethod": "Intentional Ctrl-C; tool exit 1; scoped process check found no collector or Wrangler tail remaining",
+    "limits": "Finite observed envelopes, not unique requests, total isolate memory or a long-term reliability guarantee."
+  },
+  "retainedFailures": [
+    {
+      "step": "initial deployment",
+      "detail": "Code upload succeeded; workers.dev subdomain API returned 10007. Deployment list confirmed code existed; triggers deploy completed URL setup. Platform cause unestablished."
+    },
+    {
+      "step": "first restore request",
+      "detail": "Restricted local network returned fetch failed before any completed checks; authorized network retry rechecked empty state before restoration."
+    },
+    {
+      "step": "first identical redeployment",
+      "detail": "Owned draft 126 slug changed from empty string to filename; no fixture deleted before failure. Actual pinned PHP reproduction and fixed-candidate evidence retained."
+    }
+  ],
+  "finalStates": [
+    {
+      "target": "source",
+      "version": 174,
+      "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    },
+    {
+      "target": "audit",
+      "version": 17,
+      "revision": "6bbcb7b6-5daf-46f2-89a5-360520cc1cf2",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    }
+  ],
+  "newTargetCronEnabled": false,
+  "productionBackendSwitched": false,
+  "limits": [
+    "Embedded content origins remain unchanged; domain migration and browser visuals not covered by HTTP restoration.",
+    "Native editor experience, interrupted requests and sustained free-tier usage remain separate acceptance work.",
+    "Source daily Worker keeps its earlier code; only independent rebuild Worker has the empty-slug fix.",
+    "Legacy nonempty slugs already committed by defective software cannot have their original intent inferred."
+  ]
+}

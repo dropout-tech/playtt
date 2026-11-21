@@ -1,0 +1,78 @@
+{
+  "schema": "playtt/exception-allocation-data-audit/v1",
+  "at": "2026-11-21T18:10:18.575Z",
+  "result": "data-integrity-pass; earlier exception not reproduced or resolved",
+  "localOnly": true,
+  "baselineLocalCopyOfCloudVersion": 181,
+  "finalLocalVersion": 190,
+  "cloudRequests": 0,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json"
+  ],
+  "editLock": {
+    "postId": 193,
+    "metaId": 72,
+    "userId": 2
+  },
+  "optionSequence": {
+    "before": "784",
+    "after": "794"
+  },
+  "allOtherFilesExact": true,
+  "allOriginalSessionsExactNewSessionRemoved": true,
+  "independentObjects": 304,
+  "independentFiles": 298,
+  "chargedBytes": 449660,
+  "chargedPuts": 27,
+  "closed": true,
+  "sealed": true,
+  "pending": 0,
+  "localProcessesDisposed": true,
+  "samples": 1722,
+  "events": 312,
+  "requests": 215,
+  "statusCounts": {
+    "200": 203,
+    "302": 10,
+    "303": 1,
+    "404": 1
+  },
+  "capturedExceptions": [],
+  "httpErrors": [
+    {
+      "at": 1795284025361,
+      "label": "bootstrap",
+      "kind": "request",
+      "category": "other",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 1
+    }
+  ],
+  "exceptionLimitation": "No exception captured in this run. Prior retained-native exception lacked details and remains unclassified; non-reproduction is not a fix. New bounded detail capture was not exercised by a real exception this run.",
+  "browser": {
+    "at": "2026-11-21T18:03:33.016Z",
+    "visits": [
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      },
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      },
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      }
+    ],
+    "loggedOut": true,
+    "contentEdited": false
+  },
+  "contentSaveOrImeTested": false,
+  "productionChanged": false
+}

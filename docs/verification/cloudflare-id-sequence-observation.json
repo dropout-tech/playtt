@@ -1,0 +1,38 @@
+{
+  "scope": "Finite private audit REST and native GET auto-draft deletion/redeploy tests plus backup; event envelopes are not unique request counts. No browser stale-tab test in this run. Two separate observation intervals; no continuous coverage between them.",
+  "versions": [
+    "568bf784-6bbb-4f53-a13b-07e0f38e657a",
+    "612f3925-1452-46a3-9783-2806311b3fe1",
+    "7293ac7d-4c22-4b9d-84df-c8625d19b453"
+  ],
+  "deployments": [
+    "7293ac7d-4c22-4b9d-84df-c8625d19b453",
+    "612f3925-1452-46a3-9783-2806311b3fe1",
+    "568bf784-6bbb-4f53-a13b-07e0f38e657a"
+  ],
+  "firstAt": "2026-11-17T11:20:11.918Z",
+  "lastAt": "2026-11-18T17:10:56.602Z",
+  "observedEvents": 197,
+  "outcomes": {
+    "ok": 197
+  },
+  "exceptions": [],
+  "requestFailures": [],
+  "incompletePhases": [],
+  "retirements": [],
+  "maxObservedWasmBytes": 74776576,
+  "intervals": [
+    {
+      "file": "playtt-latency-id-sequence-observation.jsonl",
+      "firstAt": "2026-11-17T11:20:11.918Z",
+      "lastAt": "2026-11-17T11:24:40.858Z",
+      "observedEvents": 133
+    },
+    {
+      "file": "playtt-latency-id-sequence-resume-observation.jsonl",
+      "firstAt": "2026-11-18T17:09:01.457Z",
+      "lastAt": "2026-11-18T17:10:56.602Z",
+      "observedEvents": 64
+    }
+  ]
+}

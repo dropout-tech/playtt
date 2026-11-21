@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-20T04:10:42.734Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-pin-restore-audit",
+    "baselineBytes": 149591427,
+    "baselineObjects": 396,
+    "chargedBytes": 0,
+    "chargedPuts": 0,
+    "initializedAt": "2026-11-20T04:10:42.674Z",
+    "reservationSchema": "playtt/r2-capacity-reservation/v1",
+    "initialized": true,
+    "limitBytes": 300000000,
+    "remainingBytes": 150408573,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "scope": "Fresh target ledger initialized from actual complete listing after offline imports; source ledger not copied"
+}

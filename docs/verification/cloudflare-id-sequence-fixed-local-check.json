@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-17T11:16:00.309Z",
+  "mode": "check",
+  "result": "pass",
+  "scope": "Local owned drafts only; identity-checked REST write to former deleted ID demonstrates whether it targets a newly created draft. Not a browser stale-tab test.",
+  "evidence": {
+    "deletedBeforeRestart": 209,
+    "createdAfterRestart": 210,
+    "monotonic": true,
+    "staleIdWriteStatus": 404,
+    "staleIdChangedNewDraft": false,
+    "newDraftUnchanged": true,
+    "ownedDraftsRemoved": true,
+    "originalPagesUnchanged": true
+  }
+}

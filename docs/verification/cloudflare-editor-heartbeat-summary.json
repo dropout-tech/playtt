@@ -1,0 +1,64 @@
+{
+  "schema": "playtt/editor-heartbeat-integration/v1",
+  "at": "2026-11-21T09:13:05.393503+00:00",
+  "result": "local-pass-not-deployed",
+  "flag": "PLAYTT_EDITOR_HEARTBEAT=native-30s-v1",
+  "defaultEnabled": false,
+  "policyExactlyMatchesPriorNativeUiPrototype": true,
+  "runtimeSources": {
+    "src/worker.ts": "0c4d77291f3c766446d820d3c92a698e09517f31dbf2c92eadd539ab8697e3ed",
+    "src/playtt-editor-heartbeat.ts": "341ffbe6394d12c0bdadfdd8b53523dc0810f383a777551617a1acb1727f028b"
+  },
+  "changes": [
+    "Optional policy propagates through both canonical boot and bootstrap paths.",
+    "Warm flag changes rewrite only the generated canonical adapter, preserving the PHP instance and uncommitted native auto-draft inventory.",
+    "Native scheduler, callbacks, lock expiry, nonce refresh, autosave and manual-save paths remain unchanged."
+  ],
+  "validation": {
+    "coreJavascriptChecks": 9,
+    "readbackAndManifestCacheChecks": 19,
+    "javascriptChecksTotalDistinct": 28,
+    "realPhpHookFixtureCases": 24,
+    "nativeMainRequests": 23,
+    "nativeColdRequests": 8,
+    "nativeExistingAndNewEditor": true,
+    "unrelatedProfileUnchanged": true,
+    "defaultAndUnknownFlagDisabled": true,
+    "samePhpAcrossFlagChanges": true,
+    "uncommittedAutoDraftIdPreserved": 206,
+    "nativeContentReadbackExact": true,
+    "coldFlagEnabledBeforeFirstRequest": true,
+    "nativeLogout": true,
+    "typescript": "pass",
+    "wranglerDryRun": "pass",
+    "dryRunUploadKiB": 20897.23,
+    "dryRunGzipKiB": 7610.96,
+    "dryRunIsNotProviderMemoryAcceptance": true,
+    "existingBroadSuiteNotReplayed": "Prior29/32 with two baseline source regex failures and unavailable PHP CLI; no claim of all tests passing."
+  },
+  "testCorrections": [
+    "An existing getRuntime extraction test required the new flag constant and runtime policy field; corrected fixture plus new warm-transition regression passed.",
+    "First native helper expected a classic hidden post_ID field; pinned block editor uses initializeEditor. Failed local run retained and disposed.",
+    "Second native helper reached both exact REST reads but could not parse the single-quoted logout URL with &#038; entities. Corrected parser passed in third isolated run."
+  ],
+  "limits": [
+    "Simulated DOM/clock/transport runs the complete hash-verified pinned core; it does not measure actual browser throttling or real network loss.",
+    "Native connectNow can still send immediately and queue an immediate follow-up;30seconds is an ordinary scheduling floor, not a strict capacity or spending rate limit.",
+    "Background tabs retain native120second cadence; no claim that real OS suspension preserves a lock indefinitely.",
+    "Direct local runtime tests use real PHP/WordPress/SQLite DO/R2 but bypass the outer private Worker gate and budget.",
+    "The PHP policy matches the previous native UI prototype; this round tests runtime integration via HTTP, not a fresh native browser exercise.",
+    "No provider deployment, complete provider flow budget reservation, whole-isolate memory or long-termFree acceptance in this round."
+  ],
+  "cloud": {
+    "requestsThisRound": 0,
+    "deployed": false,
+    "productionChanged": false,
+    "paidChange": false,
+    "lastVerifiedAt": "2026-11-21T06:28:14.277Z",
+    "lastVerifiedVersion": 161,
+    "lastVerifiedPins": 13,
+    "lastVerifiedRemainingBytes": 1881041,
+    "currentReadingsRefreshed": false
+  },
+  "goalStatus": "active"
+}

@@ -1,0 +1,69 @@
+{
+  "at": "2026-11-18T19:17:29.879Z",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "result": "pass",
+  "scope": "Read-only source and restored-target consistency/pause checks plus target probe-gate rejection; owned fixtures already removed",
+  "states": [
+    {
+      "target": "source",
+      "version": 174,
+      "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    },
+    {
+      "target": "audit",
+      "version": 17,
+      "revision": "6bbcb7b6-5daf-46f2-89a5-360520cc1cf2",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    }
+  ],
+  "gateChecks": [
+    {
+      "path": "/wp-admin/",
+      "status": 404
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "status": 404
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/logo.webp",
+      "status": 404
+    }
+  ],
+  "checks": [
+    {
+      "target": "source",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4210
+    },
+    {
+      "target": "source",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 176
+    },
+    {
+      "target": "audit",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2862
+    },
+    {
+      "target": "audit",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 211
+    }
+  ]
+}

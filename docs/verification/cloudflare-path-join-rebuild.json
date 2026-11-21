@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-21T18:25:47.329874+00:00",
+  "result": "pass",
+  "basis": "Prior retained-native assembly plus11 local tools; copy fixed generated loader then apply one guarded statement; no fresh upstream/dependency install",
+  "sources": 82,
+  "generatedLoaderChanges": 1,
+  "configs": 20,
+  "prerequisites": 86,
+  "newTools": 11,
+  "priorFilesUnchanged": true,
+  "refusedLoaderReapplyBeforeMutation": true,
+  "runtimeGeneratedLoaderUnchanged": true,
+  "privateWorkerDeployments": 0,
+  "productionChanged": false
+}

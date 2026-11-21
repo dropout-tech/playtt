@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-20T03:16:36.808Z",
+  "result": "pass",
+  "status": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-rebuild-audit",
+    "baselineBytes": 625679206,
+    "baselineObjects": 1086,
+    "chargedBytes": 0,
+    "chargedPuts": 0,
+    "initializedAt": "2026-11-20T03:16:36.742Z",
+    "initialized": true,
+    "limitBytes": 1000000000,
+    "remainingBytes": 374320794,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "playtt/local-diagnostic-tools/v1",
+  "scope": "Local native compressed workflow capacity proof; source/config unchanged; no deployment",
+  "prerequisites": [
+    {
+      "path": "src/worker.ts",
+      "sha256": "609d5036f0e2b345ec318146ea1da54f317cb9635ed51b97ae6f4eae9024f9d2"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "sha256": "ad31e78d03643c0e00ccafff47b9cd27e049086e38d69fc04ecac6df288e6f4d"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "sha256": "3ddc0834f7397dfe18149aad2e441b8528a5f9717eea338e1208508a793d6245"
+    },
+    {
+      "path": "src/playtt-editor-heartbeat.ts",
+      "sha256": "341ffbe6394d12c0bdadfdd8b53523dc0810f383a777551617a1acb1727f028b"
+    },
+    {
+      "path": "src/playtt-compressed-content.ts",
+      "sha256": "e7cb72fae29723156dbb7eb878a6c6bc20989e34b2304bce0c338595acaf5620"
+    },
+    {
+      "path": "src/playtt-compressed-persistence.ts",
+      "sha256": "2a9be739f8da46037986596d25e182f0f6c7dd351ce4659387b5e05b6f86d52d"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "sha256": "a5e811a88fa3b3081ee108807bf6a68c8c9acadcec711e7adf859502632bb6e9"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "8689ca23fedd2a7749f9e5e21a81bab30cc97ae43f1dde1d074df2598248e8ea"
+    }
+  ],
+  "files": [
+    {
+      "path": "scripts/playtt-compressed-budget-ui.mjs",
+      "source": "playtt-compressed-budget-ui.mjs",
+      "sha256": "39f4cfe8a503b8d36b181d74aefa2940f85a5b3cf6a058470ee836b778d6fc8d"
+    },
+    {
+      "path": "scripts/playtt-compressed-budget-ui-control.mjs",
+      "source": "playtt-compressed-budget-ui-control.mjs",
+      "sha256": "17359acbfd52c141f5887c8a654d08baaf5248d27ac9c516bf74f304bcb0cb33"
+    },
+    {
+      "path": "scripts/playtt-compressed-budget-history.mjs",
+      "source": "playtt-compressed-budget-history.mjs",
+      "sha256": "feaa0ae2dec9fc3342efcb479520bf400cd5c3bb1c96d1d56f455d8a1b27a999"
+    },
+    {
+      "path": "scripts/playtt-compressed-budget-final.mjs",
+      "source": "playtt-compressed-budget-final.mjs",
+      "sha256": "46582a6e33e730cca34c007334dac5c487f76eba0bafa8ca73370a5d06998535"
+    }
+  ]
+}

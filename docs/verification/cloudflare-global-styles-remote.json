@@ -1,0 +1,194 @@
+{
+  "at": "2026-11-17T05:43:11.734Z",
+  "result": "pass",
+  "scope": "Global styles initialized during GET retain their theme relationship after save and cold publication; all six published pages use the saved color; original styles restored",
+  "id": "42",
+  "checks": [
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3795
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 8727
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1359
+    },
+    {
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 732
+    },
+    {
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 688
+    },
+    {
+      "path": "/wp-json/wp/v2/global-styles/42",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 9253
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3882
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3677
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3985
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4280
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4529
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 5013
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4074
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 172
+    },
+    {
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 638
+    },
+    {
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 612
+    },
+    {
+      "path": "/__playtt-published/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 898
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 665
+    },
+    {
+      "path": "/__playtt-published/class/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 913
+    },
+    {
+      "path": "/__playtt-published/coaches/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 611
+    },
+    {
+      "path": "/__playtt-published/locations/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 686
+    },
+    {
+      "path": "/__playtt-published/partner/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 729
+    },
+    {
+      "path": "/wp-json/wp/v2/global-styles/42",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 9360
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4433
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4459
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3703
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4204
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4058
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4352
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4458
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 151
+    }
+  ]
+}

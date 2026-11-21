@@ -1,0 +1,104 @@
+{
+  "at": "2026-11-18T17:10:27.118Z",
+  "mode": "check",
+  "label": "remote-native",
+  "result": "pass",
+  "scope": "Owned draft ID must advance after deletion and runtime restart; former ID write must be 404 and new draft unchanged. Controlled REST stale-ID test, not an old browser tab.",
+  "evidence": {
+    "deletedBeforeRestart": 110,
+    "removedStatus": "auto-draft",
+    "createdAfterRestart": 111,
+    "monotonic": true,
+    "staleIdWriteStatus": 404,
+    "newDraftUnchanged": true,
+    "ownedDraftsRemoved": true,
+    "originalPagesUnchanged": true,
+    "publisherPaused": true
+  },
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2028
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 12024
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 8467
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3587
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/109?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2131
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 7851
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/110",
+      "method": "POST",
+      "status": 404,
+      "wallMs": 3969
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/111?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2616
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/111?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3257
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/111?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 7757
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/109?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2290
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/109?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 6145
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3981
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 346
+    }
+  ]
+}

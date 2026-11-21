@@ -1,0 +1,181 @@
+{
+  "at": "2026-11-20T04:44:08.008Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "version": 16,
+  "ownedId": 186,
+  "cleanupComplete": true,
+  "sealSurvivedRedeploy": true,
+  "exactTrailingWhitespace": true,
+  "wrongDrainOwnerRejected": 409,
+  "state": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "8a06b16e-fe6c-428f-9785-3caf79d056a6",
+      "manifestKey": "sites/default/markdown/revisions/8a06b16e-fe6c-428f-9785-3caf79d056a6.json",
+      "persistedAt": "2026-11-20T04:43:58.408Z"
+    },
+    "version": 16
+  },
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-pin-restore-audit",
+    "baselineBytes": 149591427,
+    "baselineObjects": 396,
+    "chargedBytes": 37709294,
+    "chargedPuts": 83,
+    "initializedAt": "2026-11-20T04:10:42.674Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v1",
+      "initializedAt": "2026-11-20T04:41:44.739Z",
+      "pending": 0,
+      "sealed": false,
+      "maximumPending": 128,
+      "automaticExpiry": false
+    },
+    "reservationSchema": "playtt/r2-write-reservation/v1",
+    "initialized": true,
+    "limitBytes": 300000000,
+    "trackingConfigured": true,
+    "remainingBytes": 112699279,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "sourceVersion": 309,
+  "publisher": "paused",
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1631
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 498
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1525
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 258
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 409,
+      "wallMs": 353
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 446
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 291
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 211
+    },
+    {
+      "target": "restore",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2856
+    },
+    {
+      "target": "restore",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 5875
+    },
+    {
+      "target": "restore",
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1314
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/186?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 970
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/186",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6968
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/186?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 747
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/186?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 5416
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/186?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 792
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1792
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 165
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 188
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "result": "pass",
+  "scope": "Conservative coordinator-receipt/lease/current/pin/cache reference coverage for this private target with no publication or import objects; object presence/size, not new content hash or restore verification",
+  "safeToApply": false,
+  "manifests": 36,
+  "commitReceipts": 16,
+  "protectedPins": 23,
+  "referencedRevisions": 36,
+  "unpinnedCommitRevisions": 13,
+  "uniqueReferencedObjects": 451,
+  "leaseBaseIncluded": false,
+  "publicationAndImportObjects": 0,
+  "outsideReferenceSet": {
+    "runtime-artifact": {
+      "objects": 3,
+      "bytes": 93840455
+    },
+    "current-pointer": {
+      "objects": 1,
+      "bytes": 183
+    },
+    "cached-page": {
+      "objects": 7,
+      "bytes": 558813
+    }
+  },
+  "outsideReferenceSetDeletable": false,
+  "referenced": [
+    {
+      "revision": "0005ec4f-d7d0-46d9-b0ac-cbf3db965741",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "180feeac-b712-4047-95c8-8eb4b479aa06",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "1a990cab-192c-45f5-9483-3e474027e655",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "1cbca5b4-ee39-402a-beba-41a5e0c1bec3",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "20b2b711-9e08-41b5-ae70-463f3ad372fe",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "2fece588-251f-4c3f-89a6-18b6a6f1a487",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "3b384c8a-0b3e-4dc5-a6a5-4842a265b43d",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "3dabd0be-2d13-4c71-9611-8ec757de5b29",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "447bbe39-245a-4e23-8374-72ea11d374fd",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "4b8438b1-e89d-4d01-90d3-96d2026d6cf6",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "4e46e92b-788c-4ede-a2d0-7695153ea4e2",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "505ea5b0-84ab-4729-b004-21df36f3e9aa",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "59a43641-f26d-4b31-8c51-ff868ec0ad80",
+      "reasons": [
+        "cached-page",
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "6bfd0a41-07de-4e1a-9008-8f21c2231c25",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "6f899847-85b0-415c-b253-f7a1cb1dccf7",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "78a0d6bd-c4a3-4c7b-be37-66e03578671b",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "7abd32dd-cd7f-4f1a-8b46-999de4f8663e",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "825b7d5b-fe47-4746-8b12-b146a1a4bca4",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "85d2a6e5-f4cd-4abf-b0a2-8e03639edf9c",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "89f76ca2-aaf1-48d7-a8a3-e02a09244518",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "8a06b16e-fe6c-428f-9785-3caf79d056a6",
+      "reasons": [
+        "commit-receipt",
+        "coordinator-current",
+        "durable-backup-pin",
+        "r2-current"
+      ]
+    },
+    {
+      "revision": "98751c70-7fc3-4202-8222-13879468b3ec",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "9d30c362-1123-44ed-b6b2-e2055b78b83d",
+      "reasons": [
+        "cached-page",
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "a5973edf-b478-4a18-b1a0-d26a91c27011",
+      "reasons": [
+        "commit-receipt",
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "b8d976cc-9717-4212-b4f9-72230b5c3a8c",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+      "reasons": [
+        "commit-receipt",
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "c48150e9-0e75-4399-93e4-d94e7c908e2b",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "d1cb4c08-a4f6-4928-9d73-cc6f7b8e9f07",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "daa28055-5f5d-4f9b-967e-d3cb88d226f1",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "deae93bb-ba08-4c29-a333-53490ec1d6e4",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "eaca54fc-9663-4e46-bccc-40b3363a7e63",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "ebcc8669-0433-45ad-9a8f-3a0f83d91da8",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "edf7bf71-b84e-444e-a6d9-1cce10366841",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    },
+    {
+      "revision": "f7558607-926a-4c57-9f36-111a8e3c34ce",
+      "reasons": [
+        "commit-receipt"
+      ]
+    },
+    {
+      "revision": "fbcb867b-df28-422c-a4e9-6ee2a3b77e34",
+      "reasons": [
+        "durable-backup-pin"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-20T22:28:49.800Z",
+  "result": "independent-copy-verified-comparison-pending",
+  "canonicalVersion": 118,
+  "anchor": {
+    "revision": "207cc3ef-5e65-463d-857c-b8e4c2ad3e89",
+    "manifestKey": "sites/default/markdown/revisions/207cc3ef-5e65-463d-857c-b8e4c2ad3e89.json",
+    "persistedAt": "2026-11-20T22:23:16.608Z",
+    "manifestSha256": "e862cbbb65b6564c21ec6e0daf4e61601aaace69c44805d58f66749b2036ffaa",
+    "packKey": "sites/default/restore-packs/60b14e20c1eccc4696b5825010d538b65acac3dedb1f7aca2663ae9666177ead.zip",
+    "packSha256": "60b14e20c1eccc4696b5825010d538b65acac3dedb1f7aca2663ae9666177ead",
+    "packBytes": 2295511
+  },
+  "changed": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json"
+  ],
+  "removed": [],
+  "tables": {
+    "_tables/posts.json": {
+      "added": [],
+      "removed": [
+        "198"
+      ],
+      "changed": []
+    },
+    "_tables/postmeta.json": {
+      "added": [],
+      "removed": [
+        "73"
+      ],
+      "changed": [
+        {
+          "id": "72",
+          "postId": "193",
+          "metaKey": "_edit_lock",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/usermeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "_tables/users.json": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "files": 298,
+  "objects": 300,
+  "remoteGets": 5,
+  "downloadedBytes": 2457936,
+  "mediaAndThemeExact": true,
+  "canonicalAndAccountingUnchanged": true,
+  "remoteMutations": 0,
+  "pinAdded": false
+}

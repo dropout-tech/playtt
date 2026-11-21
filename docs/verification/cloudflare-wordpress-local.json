@@ -1,0 +1,53 @@
+{
+  "scope": "Local workerd / simulated R2 and SQLite Durable Object only. CPU limit is NOT remotely validated.",
+  "at": "2026-11-16T10:10:19.380Z",
+  "mode": "after-restart",
+  "result": "pass",
+  "assertions": [
+    "WordPress login",
+    "authenticated post read",
+    "published post visible",
+    "R2 media SHA256 exact",
+    "anonymous draft denied",
+    "anonymous admin redirected"
+  ],
+  "state": {
+    "post": {
+      "id": 5,
+      "title": "PLAYTT Worker 保存測試 1794823774164",
+      "link": "http://127.0.0.1:9426/2026/11/16/playtt-worker-%e4%bf%9d%e5%ad%98%e6%b8%ac%e8%a9%a6-1794823774164/"
+    },
+    "draftId": 6,
+    "media": {
+      "id": 7,
+      "url": "http://127.0.0.1:9426/wp-content/uploads/2026/11/playtt-probe.png",
+      "sha256": "431ced6916a2a21a156e38701afe55bbd7f88969fbbfc56d7fe099d47f265460"
+    }
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "route": "/wp-login.php",
+      "status": 200,
+      "wallMs": 2637
+    },
+    {
+      "method": "POST",
+      "route": "/wp-login.php",
+      "status": 302,
+      "wallMs": 1025
+    },
+    {
+      "method": "GET",
+      "route": "/wp-admin/",
+      "status": 200,
+      "wallMs": 614
+    },
+    {
+      "method": "GET",
+      "route": "/wp-json/wp/v2/posts/5",
+      "status": 200,
+      "wallMs": 192
+    }
+  ]
+}

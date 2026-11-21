@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-18T22:20:26.962212+00:00",
+  "result": "pass",
+  "scope": "Reconstruct only the rejected candidate in a separate scratch folder; does not alter accepted source or deployment.",
+  "initialDirectCheck": "Failed on mixed CRLF/LF files; no patch applied.",
+  "normalization": "Patch and three target files explicitly UTF-8/LF before git apply --check and apply, following the adopted assembler convention.",
+  "filesMatchedToExecutedCandidate": [
+    {
+      "path": "src/worker.ts",
+      "normalizedSha256": "d5007f8799b00b2fa3c62ea0bdb620dac90c5468e7eda92a88e0548d2ba63998"
+    },
+    {
+      "path": "src/mutation-memory.ts",
+      "normalizedSha256": "86e5f4c01a9c141f68469f732fd879aa8c6e3113673f5d5585489db789df9954"
+    },
+    {
+      "path": "tests/cloudflare-runtime.test.ts",
+      "normalizedSha256": "b8519ff8afa8106e7ee44207374f363db827baa0014b52ae8dd126882f6a1b72"
+    },
+    {
+      "path": "src/playtt-canonical-writes.ts",
+      "normalizedSha256": "6971cec99a964f03efcee7e9e808f1249cc055e30e0d427ffbf8639c83c6f21d"
+    },
+    {
+      "path": "tests/playtt-canonical-writes.test.ts",
+      "normalizedSha256": "88b7b1fcd73a26880a022e141d40b92ba30e16872ccd5545256a12784fe6762e"
+    }
+  ],
+  "includedInAssembler": false
+}

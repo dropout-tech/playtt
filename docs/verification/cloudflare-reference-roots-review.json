@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-20T05:28:54.318403+00:00",
+  "result": "pass",
+  "filesReviewed": 23,
+  "jsonFilesParsed": 6,
+  "pythonSyntax": "pass",
+  "javascriptSyntax": "pass",
+  "knownPrivateValueScan": "pass",
+  "knownPrivateValuesCompared": 14,
+  "matches": [],
+  "privatePayloadsIncluded": false,
+  "diffWhitespace": "pass",
+  "scope": "Exact intended audit files; known secret values loaded locally, never printed or committed. Not a general credential-security audit."
+}

@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-16T18:28:00Z",
+  "scope": "Isolated playtt-wp-free-cms-probe; production remains Cloudflare Pages",
+  "plan": "Workers Free, no upgrade",
+  "remoteCms": {
+    "result": "not accepted",
+    "httpStatus": 500,
+    "cloudflareError": "1101",
+    "tailError": "Durable Object exceeded its CPU time limit and was reset.",
+    "cfRay": "a5b879147849cf27-SJC",
+    "observedAt": "2026-11-16T18:14:01Z"
+  },
+  "phaseDiagnostic": {
+    "version": "27c6f715-e47d-4622-9565-3143e3264daf",
+    "cfRay": "a5b8841f785f6dd5-SJC",
+    "lastCompletedPhase": "canonical.bootstrap.password",
+    "activePhaseAtCpuReset": "canonical.bootstrap.url",
+    "note": "Phase clocks without intervening I/O can remain unchanged on Workers. Zero durations are not CPU measurements and do not identify the sole CPU consumer."
+  },
+  "cpuOverrideAttempt": {
+    "requestedCpuMs": 60000,
+    "apiErrorCode": 100328,
+    "message": "CPU limits are not supported for the Free plan.",
+    "result": "rejected; configuration removed; no paid upgrade",
+    "observedAt": "2026-11-16T18:27:48Z"
+  },
+  "memoryDiagnostic": {
+    "version": "1e3260ae-d473-4a49-8bea-a41e8abc3913",
+    "cfRay": "a5b892a47f2f80fd-SJC",
+    "tailError": "Durable Object's isolate exceeded its memory limit and was reset.",
+    "lastCompletedPhase": "coordinator.commit",
+    "activePhaseAtReset": "lease.reacquire",
+    "observedAt": "2026-11-16T18:32:22Z"
+  },
+  "subsequentOutcome": {
+    "change": "Disable PHP file-only opcode cache; remove temporary R2 diagnostic writes; preserve native WordPress password hashing",
+    "createPassedAt": "2026-11-16T18:37:50.170Z",
+    "redeployPassedAt": "2026-11-16T18:40:26.443Z",
+    "evidence": ["cloudflare-cms-do-remote-create.json", "cloudflare-cms-do-remote-after-redeploy.json"],
+    "scope": "Basic remote CMS and redeploy persistence passed; brand theme and full acceptance remain separate"
+  },
+  "remaining": [
+    "Remote brand theme and browser editing",
+    "Independent backup and restore",
+    "Fresh empty-site bootstrap with final configuration",
+    "Revisions, site editor and concurrent changes"
+  ],
+  "sources": [
+    "https://developers.cloudflare.com/durable-objects/platform/limits/",
+    "https://developers.cloudflare.com/workers/platform/limits/"
+  ]
+}

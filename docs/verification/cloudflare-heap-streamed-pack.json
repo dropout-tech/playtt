@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-17T07:49:34.254634+00:00",
+  "label": "streamed-pack",
+  "scope": "Sanitized V8 heap snapshot summary; raw heap and content strings remain private",
+  "snapshotSelfBytes": 132925692,
+  "selfBytesByType": {
+    "synthetic": 1512,
+    "native": 120010070,
+    "string": 6317542,
+    "object shape": 361668,
+    "code": 3274848,
+    "array": 1478336,
+    "number": 108480,
+    "symbol": 1392,
+    "object": 874864,
+    "closure": 486308,
+    "concatenated string": 9720,
+    "regexp": 936,
+    "bigint": 16
+  },
+  "arrayBufferBackingBytes": 117818759,
+  "bootArrays": {
+    "markdownFiles": {
+      "buffers": 164,
+      "bytes": 607738
+    },
+    "uploadFiles": {
+      "buffers": 15,
+      "bytes": 653558
+    },
+    "wpContentFiles": {
+      "buffers": 112,
+      "bytes": 3310319
+    }
+  },
+  "bootArraysRetainedBytes": 4571615
+}

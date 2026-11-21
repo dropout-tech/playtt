@@ -1,0 +1,98 @@
+{
+  "schema": "playtt/editor-profile-offline-audit/v1",
+  "at": "2026-11-21T17:18:47.384Z",
+  "result": "pass",
+  "localOnly": true,
+  "cloudRequests": 0,
+  "files": 298,
+  "finalObjects": 304,
+  "tableChanges": [
+    {
+      "path": "_tables/usermeta.json",
+      "id": 16,
+      "key": "session_tokens"
+    },
+    {
+      "path": "_tables/postmeta.json",
+      "id": 72,
+      "key": "_edit_lock"
+    }
+  ],
+  "countersBefore": {
+    "schema": "playtt/auto-increment/v1",
+    "sequences": {
+      "wp_comments": "1",
+      "wp_options": "784",
+      "wp_postmeta": "76",
+      "wp_posts": "208",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "38",
+      "wp_users": "2"
+    }
+  },
+  "countersAfter": {
+    "schema": "playtt/auto-increment/v1",
+    "sequences": {
+      "wp_comments": "1",
+      "wp_options": "794",
+      "wp_postmeta": "76",
+      "wp_posts": "208",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "38",
+      "wp_users": "2"
+    }
+  },
+  "allOtherMarkdownExact": true,
+  "postsExact": true,
+  "tableRowSetsExact": true,
+  "sessions": [
+    {
+      "userId": 1,
+      "before": 60,
+      "after": 31,
+      "removedExpired": 29,
+      "removedExpiryMax": 1795277294,
+      "cutoff": 1795281022,
+      "retainedExact": true,
+      "added": 0
+    },
+    {
+      "userId": 2,
+      "before": 5,
+      "after": 5,
+      "removedExpired": 0,
+      "removedExpiryMax": null,
+      "cutoff": 1795281022,
+      "retainedExact": true,
+      "added": 0
+    }
+  ],
+  "allRequests": {
+    "count": 244,
+    "statuses": {
+      "200": 225,
+      "302": 17,
+      "303": 1,
+      "403": 1
+    },
+    "nonSuccess": [
+      {
+        "at": 1795281084929,
+        "label": "login",
+        "kind": "request",
+        "category": "rest",
+        "method": "GET",
+        "status": 403,
+        "wallMs": 591
+      }
+    ]
+  },
+  "phpSamples": 117,
+  "phpFilePeakBytes": 31677463,
+  "limitations": [
+    "REST403 route and response code were not captured; do not classify it as expected or suppress it.",
+    "PHP file storage and Wasm/CDP statistics are different views; no measured whole-isolate peak."
+  ]
+}

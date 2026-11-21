@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-16T18:03:19.105Z",
+  "url": "https://playtt.tw/partner/",
+  "theme": "0.2.3",
+  "method": "Browser CDP Emulation.setEmulatedMedia prefers-reduced-motion=reduce, restored to default after read",
+  "observed": {
+    "reduced": true,
+    "scrollBehavior": "auto",
+    "buttonTransition": "0s",
+    "buttonAnimation": "none"
+  },
+  "result": "pass"
+}

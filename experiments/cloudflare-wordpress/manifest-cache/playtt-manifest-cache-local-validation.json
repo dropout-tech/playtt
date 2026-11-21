@@ -1,0 +1,12 @@
+{
+  "cacheTests": 7,
+  "snapshotTests": 15,
+  "passed": 22,
+  "failed": 0,
+  "typescript": "pass",
+  "dryRun": "pass",
+  "generatedLoaderWarnings": "Existing direct-eval and duplicate-object-key warnings retained; loader unchanged",
+  "manifestBytesAtStart": 72949,
+  "retainedSerializedBudget": 262144,
+  "scope": "Runtime-owned metadata cache, one entry; no payload bytes or request state cached"
+}

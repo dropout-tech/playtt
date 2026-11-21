@@ -1,0 +1,109 @@
+{
+  "at": "2026-11-18T20:22:48.933Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "previousOrigin": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev",
+  "result": "pass",
+  "scope": "Fresh authenticated active-content readback after origin migration; excludes historical revisions and preserves GUIDs",
+  "stateHash": "7403bbe5e84a5c03cad186c700ce8dceec6e4abaa31f26f501072aa740113473",
+  "version": 95,
+  "revision": "2fece588-251f-4c3f-89a6-18b6a6f1a487",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 651
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2498
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2373
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7055
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4638
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 5744
+    },
+    {
+      "path": "/wp-json/wp/v2/posts?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3379
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3019
+    },
+    {
+      "path": "/wp-json/wp/v2/templates?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2471
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2315
+    },
+    {
+      "path": "/wp-json/wp/v2/media?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2675
+    },
+    {
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2327
+    },
+    {
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2668
+    },
+    {
+      "path": "/wp-json/wp/v2/settings",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2301
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 221
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2871
+    }
+  ]
+}

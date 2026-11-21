@@ -1,0 +1,44 @@
+✔ D1 coordinator partitions state, leases, fences, and commit receipts by site ID (6.5841ms)
+✔ D1 adoption accepts monotonic forward state and requires an active fence token (4.6204ms)
+✔ Durable Object coordinator writes the matching site pointer and preserves default compatibility (32.7932ms)
+✔ same complete identity reuses metadata without retaining mutable caller objects (3.2696ms)
+✔ site, revision, manifest key and timestamp each prevent an incorrect hit (0.3904ms)
+✔ a prepared new version cannot be read under the old uncommitted pointer (0.312ms)
+✔ replacement retains one entry and does not silently reuse history after rollback (0.2884ms)
+✔ oversized UTF-8 metadata falls back to storage and discards the old entry (0.4322ms)
+✔ a mismatched or cross-site manifest cannot replace a valid entry (0.4ms)
+✔ separate runtime instances share neither cached metadata nor prepared versions (0.2431ms)
+✔ changed, added and deleted content produces exactly the complete archive from a full independent read (124.9961ms)
+✔ unchanged runtime bytes are fully verified even when loose replicas are unavailable (3.0255ms)
+✔ callers without a runtime reader independently read every object with bounded concurrency (76.6138ms)
+✔ same path in another domain does not reuse unrelated runtime bytes (15.1365ms)
+✔ untrusted runtime missing failure rejects reuse (1.1183ms)
+✔ untrusted runtime size failure rejects reuse (0.4823ms)
+✔ untrusted runtime bytes failure rejects reuse (1.1703ms)
+✔ a new hash must come from R2, not an uncommitted runtime buffer (27.3116ms)
+✔ changed R2 object missing failure rejects the entire snapshot (1.1165ms)
+✔ changed R2 object size failure rejects the entire snapshot (0.908ms)
+✔ changed R2 object bytes failure rejects the entire snapshot (13.6489ms)
+✔ invalid metadata cannot read another site, duplicate or traverse paths (0.9074ms)
+✔ a runtime reader needs the previous committed inventory (0.3158ms)
+✔ an empty new inventory preserves only the requested tombstones (0.2662ms)
+✔ failure settles every in-flight read before returning (14.4904ms)
+✔ uninitialized or corrupt ledger rejects writes before touching R2 (35.8417ms)
+✔ concurrent writers share a durable bound and UTF-8 bytes, not characters (5.3873ms)
+✔ ambiguous R2 failure, overwritten bytes, conditional miss and delete never refund (2.7878ms)
+✔ lost reservation response leaves charge but never starts the R2 write (1.2879ms)
+✔ unknown streams, multipart and cross-site paths cannot bypass allocation (1.7885ms)
+✔ initialization paginates even short pages and never overwrites an existing ledger (2.6479ms)
+✔ failed or looping inventory never enables writes; malformed configuration fails closed (2.3834ms)
+✔ coordinator capacity refusal preserves current pointer, version and receipt; subsequent release works (6.3715ms)
+✔ disabled deployments keep their original bucket and repeated wrapping cannot double-charge (1.1735ms)
+✔ mixed deployment limits use the smaller value; old clients cannot omit their bound (1.8901ms)
+✔ legacy, wrong-byte and overly permissive reservation replies never reach R2 (0.8348ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 678.8517

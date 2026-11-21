@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-20T04:05:30.101Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "scope": "New isolated destination DO has no canonical state, pins or capacity baseline; source untouched",
+  "version": 0,
+  "pointer": null,
+  "pins": 0,
+  "capacityInitialized": false,
+  "publisher": "paused",
+  "sourceVersion": 309
+}

@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-21T17:35:02.483384+00:00",
+  "result": "pass",
+  "basis": "Prior editor-profile assembly plus5 local diagnostics; no upstream rebuild",
+  "sources": 82,
+  "configs": 20,
+  "prerequisites": 86,
+  "newTools": 5,
+  "existingFilesUnchanged": true,
+  "refusedReapplyBeforeMutation": true,
+  "privateWorkerDeployments": 0,
+  "productionChanged": false
+}

@@ -1,0 +1,31 @@
+✔ complete sorted inventory includes unchanged files and omits deleted ones; only new hashes are written (38.8704ms)
+✔ small writes overlap at most three while retaining a bounded byte budget (106.7158ms)
+✔ a file larger than the queue byte budget writes alone and preserves exact bytes (51.5659ms)
+✔ same new content under different paths writes its immutable object once (10.2309ms)
+✔ a rejected write stops scheduling and drains every in-flight write before rejecting (32.1311ms)
+✔ read and byte-budget failures drain earlier writes and release all owned buffers (45.6776ms)
+✔ synchronous put failure is observed and no work outlives rejection (0.8485ms)
+✔ concurrent immutable writes feed an independently verified complete restore pack (76.7728ms)
+✔ changed, added and deleted content produces exactly the complete archive from a full independent read (116.6906ms)
+✔ unchanged runtime bytes are fully verified even when loose replicas are unavailable (1.1566ms)
+✔ callers without a runtime reader independently read every object with bounded concurrency (55.0833ms)
+✔ same path in another domain does not reuse unrelated runtime bytes (15.3439ms)
+✔ untrusted runtime missing failure rejects reuse (1.1788ms)
+✔ untrusted runtime size failure rejects reuse (0.483ms)
+✔ untrusted runtime bytes failure rejects reuse (1.1713ms)
+✔ a new hash must come from R2, not an uncommitted runtime buffer (28.4507ms)
+✔ changed R2 object missing failure rejects the entire snapshot (1.0707ms)
+✔ changed R2 object size failure rejects the entire snapshot (0.9669ms)
+✔ changed R2 object bytes failure rejects the entire snapshot (13.2742ms)
+✔ invalid metadata cannot read another site, duplicate or traverse paths (0.9001ms)
+✔ a runtime reader needs the previous committed inventory (0.2965ms)
+✔ an empty new inventory preserves only the requested tombstones (0.272ms)
+✔ failure settles every in-flight read before returning (15.0876ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 722.0273

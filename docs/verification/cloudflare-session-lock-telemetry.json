@@ -1,0 +1,17 @@
+{
+  "events": 613,
+  "outcomes": {
+    "ok": 611,
+    "canceled": 2
+  },
+  "traces": 60,
+  "completed": 45,
+  "exceptions": [],
+  "requestFailureCategories": {
+    "other": 14,
+    "request-body-unavailable": 1
+  },
+  "maxSampledWasmHeapBytes": 76611584,
+  "wholeIsolateMemoryMeasured": false,
+  "boundSeconds": 630
+}

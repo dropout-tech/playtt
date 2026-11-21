@@ -1,0 +1,16 @@
+{
+  "result": "pass",
+  "patches": 23,
+  "sourceFiles": 66,
+  "sourceDifferences": [],
+  "extraFiles": [
+    "scripts/playtt-tail-write-drain-sanitized.mjs",
+    "scripts/playtt-write-drain-audit.mjs",
+    "scripts/playtt-write-drain-final-backup.mjs",
+    "tests/playtt-write-drain.test.ts",
+    "src/playtt-write-drain.ts",
+    "wrangler.playtt-pin-restore-audit.jsonc"
+  ],
+  "extraDifferences": [],
+  "freshDependencyInstall": false
+}

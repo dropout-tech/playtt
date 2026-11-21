@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-21T15:12:30.446090+00:00",
+  "result": "pass",
+  "basis": "Prior verified old-source rollback assembly plus offline converter/local diagnostics; no upstream rebuild",
+  "sources": 81,
+  "sourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "sourcesUnchanged": true,
+  "configsUnchanged": 20,
+  "newFiles": 5,
+  "prerequisites": 84,
+  "allPriorAssemblyFilesUnchanged": true,
+  "helpers": 368,
+  "helpersMatchingRuntime": 367,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "cloudRequests": 0,
+  "productionChanged": false
+}

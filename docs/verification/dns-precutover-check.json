@@ -1,0 +1,121 @@
+{
+  "at": "2026-11-16T10:46:04.755Z",
+  "scope": "Pre-cutover comparison with complete saved Gandi zone; nameservers not changed",
+  "result": "pass",
+  "records": [
+    {
+      "name": "playtt.tw",
+      "type": "A",
+      "content": "43.212.223.240",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "Proxied"
+    },
+    {
+      "name": "playtt.tw",
+      "type": "MX",
+      "content": "10 spool.mail.gandi.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "playtt.tw",
+      "type": "MX",
+      "content": "50 fb.mail.gandi.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "playtt.tw",
+      "type": "TXT",
+      "content": "\"v=spf1 include:_mailcust.gandi.net ?all\"",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "_imap._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "0 0 0 .",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "_imaps._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "0 1 993 mail.gandi.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "_pop3._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "0 0 0 .",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "_pop3s._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "10 1 995 mail.gandi.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "_submission._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "0 1 465 mail.gandi.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "gm1._domainkey.playtt.tw",
+      "type": "CNAME",
+      "content": "gm1.gandimail.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "gm2._domainkey.playtt.tw",
+      "type": "CNAME",
+      "content": "gm2.gandimail.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "gm3._domainkey.playtt.tw",
+      "type": "CNAME",
+      "content": "gm3.gandimail.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "webmail.playtt.tw",
+      "type": "CNAME",
+      "content": "webmail.gandi.net",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "DNS only"
+    },
+    {
+      "name": "www.playtt.tw",
+      "type": "CNAME",
+      "content": "tpe1.cname.zeabur-dns.com",
+      "ttl": "Cloudflare Auto; original 10800",
+      "match": true,
+      "proxy": "Proxied"
+    }
+  ],
+  "dmarc": "Absent in original zone; no new mail policy added",
+  "dnssec": "Previously disabled in Gandi; action-time recheck awaits login"
+}

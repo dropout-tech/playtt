@@ -1,0 +1,106 @@
+{
+  "schema": "playtt/local-diagnostic-tools/v1",
+  "scope": "Local native envelope workflow and separate post-logout action attribution; no runtime/config change or deployment",
+  "prerequisites": [
+    {
+      "path": "src/worker.ts",
+      "sha256": "e730b3ad9172b767b35de8031b38fa7d4d758cd035187e4562fe45e29c930439"
+    },
+    {
+      "path": "src/playtt-editor-heartbeat.ts",
+      "sha256": "341ffbe6394d12c0bdadfdd8b53523dc0810f383a777551617a1acb1727f028b"
+    },
+    {
+      "path": "src/playtt-compressed-content.ts",
+      "sha256": "e7cb72fae29723156dbb7eb878a6c6bc20989e34b2304bce0c338595acaf5620"
+    },
+    {
+      "path": "src/playtt-compressed-persistence.ts",
+      "sha256": "8fc173296eece52c5cc5018b967ae6260511b2dd561ff7274fd79cb3b94864a9"
+    },
+    {
+      "path": "src/playtt-markdown-persistence.ts",
+      "sha256": "ea333f1111e4608a2dd6505f4dde68ed0b0647168a222494860d4cd5aeea69ff"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "sha256": "a5e811a88fa3b3081ee108807bf6a68c8c9acadcec711e7adf859502632bb6e9"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "e4695b61d524bdf61a5a3fdcb31dee2cc07e1d0afc356dd2b684f1eef97d57ba"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "sha256": "3ddc0834f7397dfe18149aad2e441b8528a5f9717eea338e1208508a793d6245"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "sha256": "ad31e78d03643c0e00ccafff47b9cd27e049086e38d69fc04ecac6df288e6f4d"
+    },
+    {
+      "path": "src/playtt-manifest-envelope.ts",
+      "sha256": "f8a7c6e175297f2e8422f1d4c2704fce094f49af0d3b8a48b09e68a472925795"
+    },
+    {
+      "path": "src/public-reader.ts",
+      "sha256": "26d75286301f325ecede93ce9382d4b5cbe631081502e88b5f2c5ed8f2652579"
+    },
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "sha256": "587861372f708ea05177107f983da902628f1bbdd3c8f00037e510a811c4f4f1"
+    }
+  ],
+  "files": [
+    {
+      "path": "scripts/playtt-manifest-budget-ui.mjs",
+      "source": "playtt-manifest-budget-ui.mjs",
+      "sha256": "b10eb47217638ad4ce7ce3640d05a0bc3d033bd279493ccc7d319c7136cc2285"
+    },
+    {
+      "path": "scripts/playtt-manifest-budget-ui-control.mjs",
+      "source": "playtt-manifest-budget-ui-control.mjs",
+      "sha256": "48ea7c9ecd06b0ee1c8b70d220c7d303a3131970d568d55e90a31df8b00c213e"
+    },
+    {
+      "path": "scripts/playtt-manifest-budget-history.mjs",
+      "source": "playtt-manifest-budget-history.mjs",
+      "sha256": "3e75fd45f73aefd6e239e6530d391ce0e08d634b7e051e05367c114875216080"
+    },
+    {
+      "path": "scripts/playtt-manifest-complete-ui.mjs",
+      "source": "playtt-manifest-complete-ui.mjs",
+      "sha256": "739c3c0782573e454c378bc6c7da8a5da9f6d1e31d046f1ea602a51854d867e7"
+    },
+    {
+      "path": "scripts/playtt-manifest-complete-ui-control.mjs",
+      "source": "playtt-manifest-complete-ui-control.mjs",
+      "sha256": "8b27b82143b87780e4e0314ef2d27de565f23ce26948e11d9fb78984ccfe0f7b"
+    },
+    {
+      "path": "scripts/playtt-manifest-complete-history.mjs",
+      "source": "playtt-manifest-complete-history.mjs",
+      "sha256": "3e75fd45f73aefd6e239e6530d391ce0e08d634b7e051e05367c114875216080"
+    },
+    {
+      "path": "scripts/playtt-manifest-complete-final.mjs",
+      "source": "playtt-manifest-complete-final.mjs",
+      "sha256": "743a5d046fd252a3910d0cf612e524ef981922a37feb50582a9122d093881d9a"
+    },
+    {
+      "path": "scripts/playtt-logout-action-ui.mjs",
+      "source": "playtt-logout-action-ui.mjs",
+      "sha256": "094e16be6258a91931bbbddf28e7afc328537724be811baf897f658983f29109"
+    },
+    {
+      "path": "scripts/playtt-logout-action-ui-control.mjs",
+      "source": "playtt-logout-action-ui-control.mjs",
+      "sha256": "dcb5155380114fcf76ded0f588d7f658af0b7a28d0b8ba3aca1051a4c559bf4c"
+    },
+    {
+      "path": "scripts/playtt-logout-action-final.mjs",
+      "source": "playtt-logout-action-final.mjs",
+      "sha256": "fe0407de03cfef75fffc349145eac04ee8b81a7224d933cf23cab8b71491c94d"
+    }
+  ]
+}

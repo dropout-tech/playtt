@@ -1,0 +1,310 @@
+{
+  "at": "2026-11-18T22:48:13.687Z",
+  "result": "pass",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1444
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2931
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 5787
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6461
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3406
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/171?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1608
+    },
+    {
+      "path": "/wp-admin/post.php?post=171&action=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 7817
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3264
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2336
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2831
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2028
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2073
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2246
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2901
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 9537
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2381
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1996
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2076
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2386
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2289
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6159
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3214
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2758
+    },
+    {
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 2069
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2661
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2001
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/171",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 11185
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2387
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2185
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6161
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3653
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/171?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1845
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3219
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 211
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2357
+    }
+  ],
+  "samples": [
+    {
+      "at": "2026-11-18T22:48:46.645Z",
+      "kind": "empty-warmup",
+      "wallMs": 2335.9928,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 245,
+      "afterVersion": 245,
+      "beforeRevision": "6590109e-dafa-44d2-b444-e2a96ebf05d4",
+      "afterRevision": "6590109e-dafa-44d2-b444-e2a96ebf05d4",
+      "lockRefreshed": false
+    },
+    {
+      "at": "2026-11-18T22:48:53.841Z",
+      "kind": "empty",
+      "wallMs": 2073.196600000003,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 245,
+      "afterVersion": 245,
+      "beforeRevision": "6590109e-dafa-44d2-b444-e2a96ebf05d4",
+      "afterRevision": "6590109e-dafa-44d2-b444-e2a96ebf05d4",
+      "lockRefreshed": false
+    },
+    {
+      "at": "2026-11-18T22:49:01.063Z",
+      "kind": "post-lock",
+      "wallMs": 9537.707800000004,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 245,
+      "afterVersion": 246,
+      "beforeRevision": "6590109e-dafa-44d2-b444-e2a96ebf05d4",
+      "afterRevision": "38e685b4-8388-49a6-8c48-fe40320ade30",
+      "lockRefreshed": true
+    },
+    {
+      "at": "2026-11-18T22:49:14.979Z",
+      "kind": "empty",
+      "wallMs": 2076.8057000000044,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 246,
+      "afterVersion": 246,
+      "beforeRevision": "38e685b4-8388-49a6-8c48-fe40320ade30",
+      "afterRevision": "38e685b4-8388-49a6-8c48-fe40320ade30",
+      "lockRefreshed": false
+    },
+    {
+      "at": "2026-11-18T22:49:21.733Z",
+      "kind": "post-lock",
+      "wallMs": 6159.3701,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 246,
+      "afterVersion": 247,
+      "beforeRevision": "38e685b4-8388-49a6-8c48-fe40320ade30",
+      "afterRevision": "fc2d61a3-17ac-4572-8beb-79342047afb6",
+      "lockRefreshed": true
+    },
+    {
+      "at": "2026-11-18T22:49:33.866Z",
+      "kind": "empty",
+      "wallMs": 2069.513899999991,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 247,
+      "afterVersion": 247,
+      "beforeRevision": "fc2d61a3-17ac-4572-8beb-79342047afb6",
+      "afterRevision": "fc2d61a3-17ac-4572-8beb-79342047afb6",
+      "lockRefreshed": false
+    }
+  ],
+  "ownedId": 171,
+  "scope": "Native no-change requests retain full inventory reconciliation but release without a commit; lock refreshes and content update still commit; exact trailing whitespace survives fresh login",
+  "contentHash": "7a06bc1d1eb6f2fb5a1e3d4a7589cf6c42a29a6e81bdc50a3701b160ffb08df6",
+  "homepageUnchanged": true,
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "79e5206d-124d-4b61-bd48-72b1e16eb351",
+      "manifestKey": "sites/default/markdown/revisions/79e5206d-124d-4b61-bd48-72b1e16eb351.json",
+      "persistedAt": "2026-11-18T22:49:58.827Z"
+    },
+    "version": 249
+  }
+}

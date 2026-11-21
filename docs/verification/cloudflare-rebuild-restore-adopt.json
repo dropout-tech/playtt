@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-18T19:00:55.533Z",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "result": "pass",
+  "scope": "Latest backup pointer restored into independent empty DO/R2; source was not reset",
+  "initialVersion": 0,
+  "restoredVersion": 1,
+  "checks": [
+    {
+      "target": "audit",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1574
+    },
+    {
+      "target": "audit",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 363
+    },
+    {
+      "target": "audit",
+      "path": "/?phase=operator-restore",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1273
+    },
+    {
+      "target": "audit",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2003
+    }
+  ]
+}

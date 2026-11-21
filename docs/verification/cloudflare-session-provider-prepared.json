@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-20T19:54:18.383Z",
+  "worker": "playtt-wp-free-session-audit",
+  "bucket": "playtt-wordpress-session-audit",
+  "result": "pass",
+  "objects": 303,
+  "payloadBytes": 100738428,
+  "remainingPayloadAllowance": 49261572,
+  "selectedSourceVersion": 57,
+  "selectedPin": {
+    "revision": "34a7df5f-087f-4d50-925d-05a748c1d66e",
+    "manifestKey": "sites/default/markdown/revisions/34a7df5f-087f-4d50-925d-05a748c1d66e.json",
+    "persistedAt": "2026-11-20T19:15:33.467Z",
+    "manifestSha256": "b57d9f7efb135fb26d53894c2c13d2d18555fbaf901c0ea3c7542c2a1a26484f",
+    "packKey": "sites/default/restore-packs/ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b.zip",
+    "packSha256": "ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b",
+    "packBytes": 2295898
+  },
+  "planSha256": "8dbf65d7fac0ab8a713d661fb8b6a1662a02662ff0b33e46cd635a9f18c6f352",
+  "allHistoricalPinsImported": false,
+  "remoteMutations": 0
+}

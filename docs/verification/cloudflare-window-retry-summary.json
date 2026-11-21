@@ -1,0 +1,246 @@
+{
+  "at": "2026-11-20T19:05:04.225291+00:00",
+  "result": "native-editor-admission-failure-manual-retry-and-independent-backup-pass",
+  "goalStatus": "active",
+  "prDraft": true,
+  "productionChanged": false,
+  "productionBackendSwitched": false,
+  "runtimeRedeployed": false,
+  "runtimeSourceChanged": false,
+  "paidPlanChange": false,
+  "browser": {
+    "at": "2026-11-20T18:59:09.641Z",
+    "result": "pass",
+    "ownedId": 193,
+    "saveFailureObserved": true,
+    "unsavedTextRetained": true,
+    "retrySavedAndReloaded": true,
+    "retryClickedAt": "2026-11-20T18:58:10.158Z",
+    "reloadAt": "2026-11-20T18:58:36.657Z",
+    "tabClosed": true,
+    "closedAt": "2026-11-20T18:59:09.655Z",
+    "scope": "One desktop native-editor save rejected by a coordinator fence, followed by manual retry and reload; no network-disconnect, post-commit-ack-loss, concurrency or physical-device proof",
+    "nativeError": "更新時發生錯誤。 Canonical WordPress mutations are fenced for coordinator cutover.",
+    "stableFailedSaveButton": "儲存草稿",
+    "nativeSuccess": "草稿已儲存。",
+    "initialTransientSavedLabel": true,
+    "transientLabelInterpretation": "An immediate AX snapshot briefly showed disabled 已儲存 beside the error; the subsequent stable error state restored 儲存草稿. Acceptance requires the stable notification plus reload and independent persistence comparison.",
+    "consoleErrors": [
+      {
+        "at": "2026-11-20T18:56:52.119Z",
+        "message": "InvalidStateError: Transition was aborted because of invalid state. Viewport size changed"
+      }
+    ],
+    "consoleWarnings": 2,
+    "screenshots": [
+      "window-retry-editor-failed.jpg",
+      "window-retry-editor-retry-saved.jpg",
+      "window-retry-editor-retry-reloaded.jpg"
+    ]
+  },
+  "fault": {
+    "at": "2026-11-20T18:58:03.096Z",
+    "result": "pass",
+    "canonicalUnchanged": true,
+    "capacityUnchanged": true,
+    "pending": 0,
+    "canonicalVersion": 32,
+    "heldSnapshotConfirmedAt": "2026-11-20T18:57:23.111Z",
+    "releasedAt": "2026-11-20T18:58:06.189Z",
+    "fenceSeconds": 120,
+    "kind": "coordinator lease admission refusal before PHP, not transport disconnection or uncertain commit"
+  },
+  "window": {
+    "seconds": 300,
+    "maxBytes": 16777216,
+    "maxOperations": 128,
+    "usedBytes": 6027238,
+    "operations": 45,
+    "closedBeforeDeadline": true
+  },
+  "backup": {
+    "at": "2026-11-20T18:59:33.848Z",
+    "result": "pass",
+    "canonicalVersion": 39,
+    "remoteR2Mutations": 0,
+    "sourceRevision": "f56f11b1-4553-434d-940c-02255fd5c816",
+    "changedMarkdownFiles": [
+      "_runtime/playtt-auto-increment.json",
+      "_tables/postmeta.json",
+      "_tables/posts.json",
+      "_tables/usermeta.json",
+      "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+    ],
+    "anchor": {
+      "revision": "b1423cbd-d870-49c8-9594-09eebac7ad1a",
+      "manifestKey": "sites/default/markdown/revisions/b1423cbd-d870-49c8-9594-09eebac7ad1a.json",
+      "persistedAt": "2026-11-20T18:59:07.831Z",
+      "manifestSha256": "60170f66d177edbf4df7019d44a5b9d0f8a4fb9d3cfb052ad43fcb486a09cb2c",
+      "packKey": "sites/default/restore-packs/3992e42abbd2777e5faabd199a9c587759fcf8549ceab6910c71c634679bdd99.zip",
+      "packSha256": "3992e42abbd2777e5faabd199a9c587759fcf8549ceab6910c71c634679bdd99",
+      "packBytes": 2295082
+    },
+    "format": "metadata-overlay",
+    "baseRevision": "1e3f6116-0a84-45e1-9606-681e87e3c711",
+    "files": 297,
+    "objects": 298,
+    "payloadBytes": 6891607,
+    "remoteGetsThisRun": 4,
+    "downloadedBytesThisRun": 2456871,
+    "resumedVerifiedLocalGraph": false,
+    "independentCopyVerified": true,
+    "unchangedMarkdownFiles": 165,
+    "ownedDraft": 193,
+    "ownedDraftStillPrivate": true,
+    "originalParagraphPreserved": true,
+    "browserParagraphExact": true,
+    "ownedDraftDateUpdatedByNativeSave": true,
+    "addedRevisionIds": [
+      196
+    ],
+    "addedUserKeys": [],
+    "postmetaRows": 50,
+    "postTableRows": 71,
+    "mediaAndThemeIdentical": true,
+    "finalPins": 7,
+    "canonicalUnchanged": true,
+    "capacityLedgerUnchanged": true,
+    "fenceReleased": true
+  },
+  "telemetry": {
+    "events": 333,
+    "outcomes": {
+      "ok": 326,
+      "canceled": 7
+    },
+    "traces": 27,
+    "completedTraces": 19,
+    "incompleteTraces": 8,
+    "requestFailures": 8,
+    "failuresInConfirmedFenceInterval": 7,
+    "earlyFailureTiming": "One refusal was timestamped 25 ms before the post-acquire snapshot timestamp; it occurred during the fail command. All eight were before PHP at lease.acquire, consistent with the deliberate fence.",
+    "allFailuresBeforePhpAtLeaseAcquire": true,
+    "failureRequestClasses": {
+      "admin-ajax POST": 5,
+      "rest-pages OPTIONS": 1,
+      "rest-pages POST": 2
+    },
+    "exceptions": 0,
+    "maxSampledWasmHeapBytes": 77594624,
+    "tailEnded": true,
+    "ownedNodeProcesses": 0,
+    "canceled": [
+      {
+        "at": "2026-11-20T18:55:50.965Z",
+        "request": {
+          "category": "post-editor",
+          "method": "GET"
+        },
+        "completedTraces": 0
+      },
+      {
+        "at": "2026-11-20T18:55:51.201Z",
+        "request": {
+          "category": "post-editor",
+          "method": "GET"
+        },
+        "completedTraces": 1
+      },
+      {
+        "at": "2026-11-20T18:58:40.257Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "completedTraces": 0
+      },
+      {
+        "at": "2026-11-20T18:59:06.711Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "completedTraces": 0
+      },
+      {
+        "at": "2026-11-20T18:59:10.048Z",
+        "request": {
+          "category": "other",
+          "method": "GET"
+        },
+        "completedTraces": 0
+      },
+      {
+        "at": "2026-11-20T18:59:06.734Z",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "completedTraces": 0
+      },
+      {
+        "at": "2026-11-20T18:59:09.981Z",
+        "request": {
+          "category": "other",
+          "method": "GET"
+        },
+        "completedTraces": 2
+      }
+    ]
+  },
+  "styleDiagnosis": "cloudflare-window-retry-style-diagnosis.json",
+  "finalTarget": {
+    "worker": "playtt-wp-free-window-audit",
+    "workerVersion": "053fa18f-80b6-4f25-8404-5bb7b9c56525",
+    "canonicalVersion": 39,
+    "revision": "b1423cbd-d870-49c8-9594-09eebac7ad1a",
+    "pins": 7,
+    "pending": 0,
+    "writeSealed": true,
+    "windowClosed": true,
+    "fenceActive": false,
+    "publisher": "paused",
+    "payloadBoundBytes": 125252217,
+    "payloadLimitBytes": 150000000,
+    "remainingBytes": 24747783,
+    "ownedDraftRetained": 193,
+    "ownedRevisionRetained": 196,
+    "olderOwnedRevisionRetained": 195,
+    "importedDraftRetained": 192
+  },
+  "validation": {
+    "at": "2026-11-20T19:01:51.821058+00:00",
+    "result": "pass",
+    "adoptedPatches": 25,
+    "optionalPatches": 4,
+    "sourceFilesCompared": 70,
+    "extraHelpersCompared": 32,
+    "addedHelpersSyntax": "pass",
+    "runtimeChanges": false,
+    "runtimeRedeployed": false,
+    "priorProviderSourceHashesUnchanged": true,
+    "existingConfigsUnchanged": 19,
+    "defaultAssemblerIncludesCandidates": false,
+    "reapplyRefusedBeforeMutation": true,
+    "differences": [],
+    "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler",
+    "scope": "Exact reconstruction and new helper syntax; no repeated claim of the earlier 51-test suite or new TypeScript/dry-run/deployment"
+  },
+  "limitations": {
+    "initialNavigation": "CDP Page.navigate timed out at 10 seconds; AX remained about:blank. Explicit login navigation then succeeded. Provider event includes a completed mutation despite canceled outcome; cause not fully established.",
+    "cancellation": "Seven canceled platform events coincide with initial navigation, reload or tab close; not all causal paths are proven.",
+    "console": "One InvalidStateError reported a viewport-size transition abort; two known iframe-style warnings remain.",
+    "memory": "Sampled WASM heap is not whole-isolate memory.",
+    "billing": "No billing setting changed; no new dashboard/invoice verification or future cost guarantee."
+  },
+  "acceptanceStillOpen": [
+    "Concurrent-editor locks and separate session behavior",
+    "Network interruption or lost acknowledgement after commit (this test rejected before PHP)",
+    "Plain-language Traditional Chinese maintenance/retry messages",
+    "Core iframe warning classified upstream; paired fix and complete canvas preset verification still pending",
+    "Initial navigation timeout and viewport-transition error; cancellation attribution",
+    "Whole-isolate memory, representative latency, sustainable history retention and unknown-write recovery",
+    "Mixed-version rollback, physical devices/IME, long-term free usage and editor handoff"
+  ],
+  "next": "Validate competing-editor locks with separate owned users and sessions. Then cover post-commit acknowledgement loss, safe history retention, and understandable retry messages. Preserve the current sealed version39/pin7 baseline; do not replay completed one-shot scripts. Keep the pinned styles until a paired upstream fix can be verified."
+}

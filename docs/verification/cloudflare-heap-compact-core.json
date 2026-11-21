@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-17T07:56:37.112497+00:00",
+  "label": "compact-core",
+  "scope": "Sanitized V8 heap snapshot summary; raw heap and content strings remain private",
+  "snapshotSelfBytes": 119824615,
+  "selfBytesByType": {
+    "synthetic": 1512,
+    "native": 106963189,
+    "string": 6310422,
+    "object shape": 361348,
+    "code": 3278448,
+    "array": 1477144,
+    "number": 108480,
+    "symbol": 1392,
+    "object": 825644,
+    "closure": 486404,
+    "concatenated string": 9680,
+    "regexp": 936,
+    "bigint": 16
+  },
+  "arrayBufferBackingBytes": 104772264,
+  "bootArrays": {},
+  "bootArraysRetainedBytes": 0
+}

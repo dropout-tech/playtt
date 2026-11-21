@@ -1,0 +1,289 @@
+{
+  "at": "2026-11-21T16:52:32.492329+00:00",
+  "result": "pass",
+  "events": 172,
+  "outcomes": {
+    "ok": 172
+  },
+  "statuses": {
+    "200": 166,
+    "302": 4,
+    "404": 2
+  },
+  "versions": {
+    "072fd18a-45e1-4f58-a39c-0cd517d573d5": 73,
+    "b8e0a87d-1b4f-438e-ac8a-d360ccbc5cc6": 79,
+    "aa595610-cc7c-44b9-89ec-f11f4939902f": 20
+  },
+  "exceptions": [],
+  "nativeHttp": [
+    {
+      "phase": "native-login",
+      "kind": "native",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4065
+    },
+    {
+      "phase": "native-login",
+      "kind": "native",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 3560,
+      "version": 179
+    },
+    {
+      "phase": "native-login",
+      "kind": "native",
+      "path": "/wp-admin/profile.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1014
+    },
+    {
+      "phase": "native-login",
+      "kind": "native",
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 841
+    },
+    {
+      "phase": "native-save",
+      "kind": "native",
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 3728,
+      "version": 180
+    },
+    {
+      "phase": "native-cold-read",
+      "kind": "native",
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3007
+    },
+    {
+      "phase": "native-logout",
+      "kind": "native",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 302,
+      "wallMs": 3544,
+      "version": 181
+    }
+  ],
+  "redeployedColdRestReadObserved": true,
+  "coldReadEvents": [
+    {
+      "at": "2026-11-21T16:51:20.316Z",
+      "outcome": "ok",
+      "version": "b8e0a87d-1b4f-438e-ac8a-d360ccbc5cc6",
+      "entrypoint": "PlayttWordPressExecution",
+      "traces": [
+        {
+          "operation": "read",
+          "runtime": "cold",
+          "completed": true,
+          "totalMs": 1511,
+          "phases": [
+            {
+              "name": "request.translate",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "lease.acquire",
+              "durationMs": 47,
+              "aggregateGap": false
+            },
+            {
+              "name": "published.page-cache.lookup",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "canonical.manifest.read",
+              "durationMs": 141,
+              "aggregateGap": false
+            },
+            {
+              "name": "canonical.metadata-overlay.restore",
+              "durationMs": 766,
+              "aggregateGap": false
+            },
+            {
+              "name": "runtime.archive.sqlite.fetch-verify",
+              "durationMs": 184,
+              "aggregateGap": false
+            },
+            {
+              "name": "php.runtime.create",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "runtime.archive.wordpress.fetch-verify-extract",
+              "durationMs": 223,
+              "aggregateGap": false
+            },
+            {
+              "name": "runtime.archive.mdi.extract",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "canonical.hydration.markdown",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "canonical.hydration.wp-content",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "canonical.hydration.uploads",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "playground.opaque",
+              "durationMs": 0,
+              "aggregateGap": true
+            },
+            {
+              "name": "playground.version.read",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "request.php",
+              "durationMs": 0,
+              "aggregateGap": false
+            },
+            {
+              "name": "lease.release",
+              "durationMs": 150,
+              "aggregateGap": false
+            },
+            {
+              "name": "page-cache.write",
+              "durationMs": 0,
+              "aggregateGap": false
+            }
+          ]
+        }
+      ],
+      "phaseEnds": [
+        {
+          "name": "request.translate",
+          "durationMs": 0
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 47
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0
+        },
+        {
+          "name": "canonical.manifest.read",
+          "durationMs": 141
+        },
+        {
+          "name": "canonical.metadata-overlay.restore",
+          "durationMs": 766
+        },
+        {
+          "name": "runtime.archive.sqlite.fetch-verify",
+          "durationMs": 184
+        },
+        {
+          "name": "php.runtime.create",
+          "durationMs": 0
+        },
+        {
+          "name": "runtime.archive.wordpress.fetch-verify-extract",
+          "durationMs": 223
+        },
+        {
+          "name": "runtime.archive.mdi.extract",
+          "durationMs": 0
+        },
+        {
+          "name": "canonical.hydration.markdown",
+          "durationMs": 0
+        },
+        {
+          "name": "canonical.hydration.wp-content",
+          "durationMs": 0
+        },
+        {
+          "name": "canonical.hydration.uploads",
+          "durationMs": 0
+        },
+        {
+          "name": "playground.version.read",
+          "durationMs": 0
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0
+        },
+        {
+          "name": "lease.release",
+          "durationMs": 150
+        },
+        {
+          "name": "page-cache.write",
+          "durationMs": 0
+        }
+      ],
+      "snapshotPhases": [],
+      "memory": [
+        {
+          "stage": "before-request",
+          "heapBytes": 67108864,
+          "fileBytes": 30638286,
+          "fileScanPerformed": true,
+          "files": 2560,
+          "unknownFileBuffers": 0
+        },
+        {
+          "stage": "after-request",
+          "heapBytes": 68157440,
+          "fileScanPerformed": false
+        }
+      ],
+      "mutation": [],
+      "exceptions": [],
+      "request": {
+        "category": "rest-pages",
+        "kind": "owned-page",
+        "method": "GET"
+      },
+      "status": 200
+    }
+  ],
+  "phpHeapBytes": {
+    "samples": 15,
+    "minimum": 67108864,
+    "maximum": 71565312
+  },
+  "wholeIsolateMemoryMeasured": false,
+  "providerCpuTimeMeasured": false,
+  "observerEnded": true,
+  "cloudFinalVersion": 181,
+  "cloudPins": 16,
+  "chargedBytes": 588564,
+  "chargedPuts": 13,
+  "remainingBytes": 62344,
+  "differenceFromLocalBytes": 49,
+  "productionChanged": false
+}

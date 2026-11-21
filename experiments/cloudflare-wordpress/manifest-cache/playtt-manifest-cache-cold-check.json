@@ -1,0 +1,101 @@
+{
+  "at": "2026-11-20T02:44:51.307Z",
+  "mode": "--cold-check",
+  "result": "pass",
+  "samples": [],
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1239
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2287
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6894
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7508
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4022
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2605
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1568
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6439
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3524
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1530
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2268
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 197
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2321
+    }
+  ],
+  "ownedId": 174,
+  "homepageUnchanged": true,
+  "contentHash": "3199b37d311f91541c28fbc54e1e73c77bebfe90f3f18989c8452ddf16d47d4f",
+  "cleanupComplete": false,
+  "scope": "Bounded sequential native requests; exact content readback through a fresh login; runtime cache availability must be classified from separate platform traces",
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "0908fcd5-bfcb-4e9d-a6b7-7fc4091b9a23",
+      "manifestKey": "sites/default/markdown/revisions/0908fcd5-bfcb-4e9d-a6b7-7fc4091b9a23.json",
+      "persistedAt": "2026-11-20T02:45:20.553Z"
+    },
+    "version": 300
+  }
+}

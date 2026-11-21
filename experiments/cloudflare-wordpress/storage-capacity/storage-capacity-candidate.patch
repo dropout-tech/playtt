@@ -1,0 +1,128 @@
+--- a/src/state-coordinator.ts
++++ b/src/state-coordinator.ts
+@@ -1,3 +1,4 @@
++import { withPlayttStorageCapacity, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js'
+ import { mutationFenceExpiresAt, revisionLeaseExpiresAt, RevisionConflict, type MarkdownPointer, type MutationFence, type MutationFenceStatus, type RevisionCoordinator, type RevisionLease, type RevisionState } from "./revision-coordinator.js"
+
+ interface StoredLease {
+@@ -16,7 +17,7 @@
+   fence?: MutationFence
+ }
+
+-interface CoordinatorEnv {
++interface CoordinatorEnv extends PlayttCapacityEnv {
+   WORDPRESS_STATE_BUCKET: R2Bucket
+   COORDINATOR_LEASE_MS?: number
+ }
+@@ -85,12 +86,13 @@
+     url.searchParams.set("siteId", this.siteId)
+     const response = await this.stub.fetch(new Request(url, body ? { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) } : undefined))
+     if (!response.ok) {
+-      let payload: { message?: string; retryAt?: number } = {}
++      let payload: { message?: string; retryAt?: number; code?: string } = {}
+       try {
+-        payload = await response.json<{ message?: string; retryAt?: number }>()
++        payload = await response.json<{ message?: string; retryAt?: number; code?: string }>()
+       } catch {
+         // The response status remains sufficient when an adapter cannot return JSON.
+       }
++      if ((response.status === 507 || response.status === 503) && payload.code?.startsWith('playtt_storage_capacity')) throw new PlayttCapacityError(response.status)
+       if (response.status === 409) throw new RevisionConflict(payload.message ?? "Durable Object coordination conflict.", payload.retryAt)
+       throw new Error(payload.message ?? `Durable Object coordination failed with ${response.status}.`)
+     }
+@@ -104,10 +106,11 @@
+   constructor(
+     private readonly state: DurableObjectState,
+     private readonly env: CoordinatorEnv,
+-  ) {}
++  ) { this.env = withPlayttStorageCapacity(env) }
+
+   fetch(request: Request): Promise<Response> {
+     const response = this.tail.then(() => this.handle(request)).catch((error: unknown) => {
++      if (error instanceof PlayttCapacityError) return playttCapacityResponse(error)
+       if (error instanceof RevisionConflict) {
+         const headers = new Headers()
+         if (error.retryAt) headers.set("retry-after", String(Math.max(1, Math.ceil((error.retryAt - Date.now()) / 1000))))
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -1,3 +1,4 @@
++import { PlayttCapacityError, playttCapacityResponse } from './playtt-storage-capacity.js'
+ import { wordPressContentType } from './asset-content-type.js';
+ import { compactPlayttCoreFiles } from './playtt-core-memory.js';
+ import { createPlayttRuntimeFactory } from './playtt-runtime-factory.js';
+@@ -1532,6 +1533,7 @@
+     }
+     const failedSummary = finish(false, { cleanupFailed })
+     logPlayttRequestFailure(error, request, failedSummary, cleanupFailed)
++    if (error instanceof PlayttCapacityError) return playttCapacityResponse(error)
+     if (error instanceof RequestBodyReadError) return new Response('Request body could not be read.', { status: 400, headers: { 'Cache-Control': 'no-store' } })
+     throw error
+   }
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -1,3 +1,5 @@
++import { withPlayttStorageCapacity, playttCapacityStub, playttCapacityLimit, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js';
++export { PlayttStorageBudget } from './playtt-storage-capacity.js';
+ import { DurableObjectRevisionCoordinator, WordPressStateCoordinator } from './state-coordinator.js';
+ import { createCloudflareRuntime, drainPlayttPublication, isAuthorizedOperator, retirePlayttIdleRuntimes, serveWordPressStaticAsset, serveWordPressUpload, serveWordPressWpContent, type RuntimeEnv } from './worker.js';
+ import { servePublicPublication } from './public-reader.js';
+@@ -9,7 +11,7 @@
+ import { preparePlayttMaintenanceRequest } from './playtt-maintenance.js';
+ import { runPlayttScheduledMaintenance } from './playtt-maintenance-schedule.js';
+
+-interface PlayttEnv extends RuntimeEnv {
++interface PlayttEnv extends RuntimeEnv, PlayttCapacityEnv {
+   WORDPRESS_STATE: DurableObjectNamespace;
+   PLAYTT_EXECUTION: DurableObjectNamespace;
+   PLAYTT_PROBE_GATE?: string;
+@@ -37,6 +39,7 @@
+   private tail: Promise<void> = Promise.resolve();
+   private publisher: PlayttPublicationAlarm;
+   constructor(state: DurableObjectState, private readonly env: PlayttEnv) {
++    this.env = withPlayttStorageCapacity(env);
+     enablePlayttPhaseDiagnostics();
+     this.publisher = new PlayttPublicationAlarm(state.storage, () => {
+       const sites = parseSiteContexts(this.env.WORDPRESS_SITE_CONTEXTS);
+@@ -76,6 +79,9 @@
+       if (enabled && result.headers.has('x-wp-codebox-publication-job')) await this.publisher.wake();
+       await retirePlayttIdleRuntimes();
+       return result;
++    }).catch(error => {
++      if (error instanceof PlayttCapacityError) return playttCapacityResponse(error);
++      throw error;
+     });
+     this.tail = response.then(() => undefined, () => undefined);
+     return response;
+@@ -114,6 +120,32 @@
+     let site;
+     try { site = resolveSiteContextFromRequest(request, parseSiteContexts(env.WORDPRESS_SITE_CONTEXTS)); }
+     catch { return new Response('Unknown site hostname.', { status: 421 }); }
++    if (new URL(request.url).pathname === '/__playtt-capacity') {
++      if (!await isAuthorizedOperator(request, env, site)) return new Response('Unauthorized', { status: 401 });
++      try {
++        if (playttCapacityLimit(env) === null) return new Response('Capacity guard is disabled', { status: 404 });
++        let response: Response;
++        if (request.method === 'GET') response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/status');
++        else if (request.method === 'POST') {
++          const raw = await request.text();
++          if (raw.length > 1024) return new Response('Invalid capacity action', { status: 400 });
++          let input: { action?: string; fenceToken?: string };
++          try { input = JSON.parse(raw); } catch { return new Response('Invalid capacity action', { status: 400 }); }
++          if (input.action !== 'initialize' || typeof input.fenceToken !== 'string') return new Response('Invalid capacity action', { status: 400 });
++          const coordinator = new DurableObjectRevisionCoordinator(env.WORDPRESS_STATE.getByName(partitionName(env, site.id)), site.id);
++          await coordinator.renewFence(input.fenceToken, 600_000);
++          response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/initialize', { method: 'POST' });
++        } else return new Response('Method not allowed', { status: 405 });
++        const result = new Response(response.body, response);
++        result.headers.set('Cache-Control', 'no-store'); result.headers.set('X-Robots-Tag', 'noindex, nofollow');
++        result.headers.set('X-Playtt-Probe-State', thisPartition(env));
++        return result;
++      } catch (error) {
++        if (error instanceof PlayttCapacityError) return playttCapacityResponse(error);
++        return new Response('Capacity operation unavailable', { status: 409, headers: { 'Cache-Control': 'no-store' } });
++      }
++    }
++    env = withPlayttStorageCapacity(env);
+     // Consume the small operator input in the receiving Worker. Passing the
+     // incoming network stream to a DO that can reject before reading it leaves
+     // its lifetime coupled to an already returned response in local workerd.

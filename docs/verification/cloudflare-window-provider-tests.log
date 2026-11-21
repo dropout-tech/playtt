@@ -1,0 +1,48 @@
+✔ uninitialized or corrupt ledger rejects writes before touching R2 (34.3172ms)
+✔ concurrent writers share a durable bound and UTF-8 bytes, not characters (6.0343ms)
+✔ ambiguous R2 failure, overwritten bytes, conditional miss and delete never refund (2.7924ms)
+✔ lost reservation response leaves charge but never starts the R2 write (1.02ms)
+✔ unknown streams, multipart and cross-site paths cannot bypass allocation (1.5032ms)
+✔ initialization paginates even short pages and never overwrites an existing ledger (1.5657ms)
+✔ failed or looping inventory never enables writes; malformed configuration fails closed (2.1491ms)
+✔ coordinator capacity refusal preserves current pointer, version and receipt; subsequent release works (5.599ms)
+✔ disabled deployments keep their original bucket and repeated wrapping cannot double-charge (1.2478ms)
+✔ mixed deployment limits use the smaller value; old clients cannot omit their bound (1.7641ms)
+✔ legacy, wrong-byte and overly permissive reservation replies never reach R2 (0.8157ms)
+✔ independent restore scope initializes its own ledger and rejects a ledger copied from another bucket (1.888ms)
+✔ initialization cannot erase a corrupt null ledger (0.5633ms)
+✔ a queued request rechecks admission after the preceding runtime call completes (34.5005ms)
+✔ closed windows block all PHP/probe requests and publication resume or retry (5.9991ms)
+✔ closed windows allow pause/status and pass fence controls to runtime without waking publisher (20.4916ms)
+✔ alarm after closure does not run publisher or schedule another alarm (0.8294ms)
+✔ configured but unarmed backend refuses PHP admission, put and delete without charge (41.9356ms)
+✔ arm requires the exact owned seal and stays sealed until separately released (8.9125ms)
+✔ exact arm retry never extends deadline, resets charge or reopens closed window (5.4747ms)
+✔ window has hard duration, byte, operation and overall capacity bounds (13.861ms)
+✔ at the exact deadline new admissions and mutations are denied without changing ledger (3.6492ms)
+✔ a clock before the stored opening time fails closed (1.9888ms)
+✔ byte allowance includes failed writes and cannot be bypassed with zero-byte deletion (3.3008ms)
+✔ operation allowance counts deletes and zero-byte puts; concurrent reservations are serialized (2.628ms)
+✔ global or window capacity denial rolls back operation ticket and allowance atomically (2.2866ms)
+✔ window v2 persists over restart and configuration removal; old caller cannot bypass it (2.8136ms)
+✔ expired window does not settle or erase an already dispatched R2 operation (4.9294ms)
+✔ ambiguous R2 failure stays pending across expiry, close and restart; rearming forbidden (3.1552ms)
+✔ expired valid put reservation is acknowledged only because R2 was never dispatched (8.7043ms)
+✔ expired valid delete reservation is acknowledged only because R2 was never dispatched (3.3841ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":false,"notAttempted":true,"attempts":3}
+✔ lost no-dispatch acknowledgement retains pending ticket without any R2 call or refund (310.9931ms)
+✔ lost reservation response never authorizes R2 or settlement (2.5389ms)
+✔ malformed or older reservation proofs fail closed and leave durable ticket untouched (11.5195ms)
+✔ admission refuses malformed, stale, future or lost proof; absent flag has no admission calls (10.5683ms)
+✔ new window requires previous identity and fresh owned seal; old owner cannot close it (5.8441ms)
+✔ status never exposes window owner, drain owner or pending ticket identities (2.2083ms)
+✔ corrupted v2 window or a window hidden under v1 cannot be used (1.4788ms)
+✔ the exact previously deployed v1 validator refuses v2 instead of silently ignoring the window (2.1055ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 838.4223

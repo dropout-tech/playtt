@@ -1,0 +1,186 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -3,6 +3,7 @@
+ import { createPlayttRuntimeFactory } from './playtt-runtime-factory.js';
+ import { trackPlayttRuntimeLifetime, playttRuntimeRetirement } from './playtt-runtime-lifetime.js';
+ import { patchPlayttAutoDraftPersistence } from './playtt-auto-draft-policy.js';
++import { readPlayttSnapshotSources } from './playtt-snapshot-source.js';
+ import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+ import { decodeZip } from "@php-wasm/stream-compression"
+@@ -15,7 +16,7 @@
+ import { leaseRetryDelayMs } from "./lease-retry.js"
+ import { logMutationPhase, MutationRetainedBytes } from "./mutation-memory.js"
+ import { installPlayttOpaqueIds, installPlayttStorageOpaqueIds, PLAYTT_STARTER_MEDIA_POLICY } from './playtt-php-compat.js'
+-import { attachServerTiming, CloudflarePhaseTrace, logPhaseTrace, type PageCacheDisposition, type RuntimeDisposition, type TraceOperation } from "./phase-trace.js"
++import { attachServerTiming, CloudflarePhaseTrace, logPhaseTrace, logPlayttSnapshotPhase, type PageCacheDisposition, type RuntimeDisposition, type TraceOperation } from "./phase-trace.js"
+ import { selectOperatorCoordinator } from "./operator-coordinator.js"
+ import { canonicalPublicRoute, MAX_PUBLISHED_PAGE_BYTES, MAX_PUBLISHED_REVISION_BYTES, MAX_PUBLISHED_ROUTES, normalizePublishedRoutes, PUBLISHED_PAGE_SCHEMA, PUBLISHED_REVISION_SCHEMA, publishedPageObjectKey, publishedRevisionObjectKey, validatePublishedRevision, type PublishedRevision } from "./published-reader.js"
+ import { RevisionConflict, type MarkdownPointer, type MutationFence, type RevisionCoordinator, type RevisionLease } from "./revision-coordinator.js"
+@@ -1799,7 +1800,7 @@
+     && JSON.stringify(currentManifest.wpContent ?? []) === JSON.stringify(wpContentManifestFiles)
+     && JSON.stringify(currentManifest.wpContentDeleted ?? []) === JSON.stringify(wpContent.deleted)
+   if (unchanged) return runtime.pointer
+-  return trace ? trace.measure("persistence.manifest.write", () => persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted), { files: files.length }) : persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted)
++  return trace ? trace.measure("persistence.manifest.write", () => persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest), { files: files.length }) : persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest)
+ }
+ 
+ function readCanonicalChanges(php: PHP): MarkdownChanges {
+@@ -2007,7 +2008,7 @@
+       await bucket.put(objectKey, file.bytes)
+       manifestFiles.set(path, { path, objectKey, sha256, size: file.bytes.byteLength })
+     }
+-    return persistMarkdownManifest(bucket, [...manifestFiles.values()].sort((left, right) => left.path.localeCompare(right.path)), site, uploadManifestFiles, wpContentManifestFiles, wpContentDeleted)
++    return persistMarkdownManifest(bucket, [...manifestFiles.values()].sort((left, right) => left.path.localeCompare(right.path)), site, uploadManifestFiles, wpContentManifestFiles, wpContentDeleted, currentManifest)
+   }
+   const currentFiles = new Map(currentManifest?.files.map((file) => [file.path, file]) ?? [])
+   const manifestFiles = await Promise.all(files.map(async (file): Promise<MarkdownManifestFile> => {
+@@ -2022,7 +2023,7 @@
+     if (JSON.stringify(currentManifest.files) === JSON.stringify(manifestFiles) && uploadsUnchanged && wpContentUnchanged && wpContentDeletedUnchanged) return current
+   }
+ 
+-  return persistMarkdownManifest(bucket, manifestFiles, site, uploadManifestFiles, wpContentManifestFiles, wpContentDeleted)
++  return persistMarkdownManifest(bucket, manifestFiles, site, uploadManifestFiles, wpContentManifestFiles, wpContentDeleted, currentManifest)
+ }
+ 
+ async function persistUploadObjects(bucket: R2Bucket, files: RuntimeFile[], current: MarkdownManifestFile[], site: SiteContext): Promise<MarkdownManifestFile[]> {
+@@ -2065,7 +2066,7 @@
+   validateUploadMetadata(files.map((file) => ({ path: file.path, size: file.bytes.byteLength })))
+ }
+ 
+-async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = []): Promise<MarkdownPointer> {
++async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null): Promise<MarkdownPointer> {
+   const revision = crypto.randomUUID()
+   const manifestKey = `${siteStorageKeys(site).markdownRevisionPrefix}/${revision}.json`
+   const persistedAt = new Date().toISOString()
+@@ -2074,18 +2075,21 @@
+   validateUploadManifestFiles(uploads, site)
+   validateWpContentManifestFiles(wpContent, site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   validateWpContentDeletedPaths(wpContentDeleted, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+-  // Canonical objects remain authoritative; independently re-read them before deriving the pack.
+-  const [markdown, restoredUploads, restoredWpContent] = await Promise.all([
+-    readManifestFiles(bucket, files, "Markdown"),
+-    readManifestFiles(bucket, uploads, "upload"),
+-    readManifestFiles(bucket, wpContent, "wp-content"),
+-  ])
+-  const pack = await createCanonicalRestorePack(siteStorageKeys(site).root, { markdown, uploads: restoredUploads, wpContent: restoredWpContent, wpContentDeleted })
++  // Reuse only verified bytes from the prior committed R2 pack; independently
++  // read every changed object. The new complete pack is stored before commit.
++  let snapshotPhaseAt = performance.now()
++  const snapshotFiles = files.length + uploads.length + wpContent.length
++  const snapshotBytes = sumManifestFileBytes(files) + sumManifestFileBytes(uploads) + sumManifestFileBytes(wpContent)
++  const sources = await readPlayttSnapshotSources(bucket, siteStorageKeys(site).root, { files, uploads, wpContent, wpContentDeleted }, previous)
++  snapshotPhaseAt = logPlayttSnapshotPhase('read-and-verify', snapshotPhaseAt, snapshotFiles, snapshotBytes, { reusedFiles: sources.reusedFiles, objectReads: sources.objectReads, basePackRead: sources.basePackRead })
++  const pack = await createCanonicalRestorePack(siteStorageKeys(site).root, sources.contents)
+   await putImmutableBytes(bucket, pack.metadata.objectKey, pack.bytes, "application/zip")
++  snapshotPhaseAt = logPlayttSnapshotPhase('encode-and-upload', snapshotPhaseAt, snapshotFiles, pack.bytes.byteLength)
+   const manifest: MarkdownManifest = { ...pointer, files, uploads, wpContent, wpContentDeleted, restorePack: pack.metadata }
+   await bucket.put(manifestKey, JSON.stringify(manifest), {
+     httpMetadata: { contentType: "application/json" },
+   })
++  logPlayttSnapshotPhase('manifest-upload', snapshotPhaseAt, snapshotFiles, pack.bytes.byteLength)
+   return pointer
+ }
+ 
+--- a/src/phase-trace.ts
++++ b/src/phase-trace.ts
+@@ -32,6 +32,13 @@
+ // Isolated probe only: emit bounded phase names, never request data or secrets.
+ export function enablePlayttPhaseDiagnostics(): void {
+   playttPhaseDiagnostics = true
++}
++
++// I/O-bounded wall intervals, not CPU timings: remote clocks advance on I/O.
++export function logPlayttSnapshotPhase(stage: 'read-and-verify' | 'encode-and-upload' | 'manifest-upload', startedAt: number, files: number, bytes: number, sources?: { reusedFiles: number; objectReads: number; basePackRead: boolean }): number {
++  const now = defaultNow()
++  if (playttPhaseDiagnostics) console.log(JSON.stringify({ schema: 'playtt-snapshot-phase/v1', stage, durationMs: boundedMs(now - startedAt), ...boundedEvidence({ files, bytes, ...sources }) }))
++  return now
+ }
+ 
+ function defaultNow(): number {
+--- /dev/null
++++ b/src/playtt-snapshot-source.ts
+@@ -0,0 +1,83 @@
++import { MAX_RESTORE_PACK_DECODED_BYTES, readCanonicalRestorePack, type CanonicalRestorePackFile, type CanonicalRestorePackMetadata, type RestorePackBucket, type RestorePackContents } from './canonical-restore-pack.js';
++
++export interface PlayttSnapshotManifest {
++  files: CanonicalRestorePackFile[];
++  uploads?: CanonicalRestorePackFile[];
++  wpContent?: CanonicalRestorePackFile[];
++  wpContentDeleted?: string[];
++  restorePack?: CanonicalRestorePackMetadata;
++}
++
++type Group = 'markdown' | 'uploads' | 'wpContent';
++const groups = ['markdown', 'uploads', 'wpContent'] as const;
++const prefixes = { markdown: 'markdown', uploads: 'uploads', wpContent: 'wp-content' } as const;
++const filesOf = (manifest: PlayttSnapshotManifest, group: Group) => group === 'markdown' ? manifest.files : manifest[group] || [];
++
++function validateSources(root: string, manifest: PlayttSnapshotManifest): void {
++  if (!/^sites\/[a-z0-9_-]{1,128}$/i.test(root)) throw new Error('Snapshot source root is invalid.');
++  let count = 0, bytes = 0;
++  for (const group of groups) {
++    const seen = new Set<string>();
++    for (const file of filesOf(manifest, group)) {
++      if (typeof file.path !== 'string' || !file.path || file.path.includes('\\') || file.path.includes('\0')
++        || file.path.split('/').some(part => !part || part === '.' || part === '..') || seen.has(file.path)
++        || !/^[a-f0-9]{64}$/.test(file.sha256) || !Number.isSafeInteger(file.size) || file.size < 0
++        || file.objectKey !== `${root}/${prefixes[group]}/objects/${file.sha256}`) throw new Error('Snapshot source metadata is invalid.');
++      seen.add(file.path); count++; bytes += file.size;
++    }
++  }
++  if (count > 10_000 || bytes > MAX_RESTORE_PACK_DECODED_BYTES) throw new Error('Snapshot source exceeds its bounded inventory.');
++}
++
++// Unchanged bytes come from the verified, committed R2 pack already used by
++// cold boot. New bytes must be independently read and verified from R2. This
++// does not recheck the availability of unchanged loose-object replicas.
++export async function readPlayttSnapshotSources(bucket: RestorePackBucket, root: string, next: PlayttSnapshotManifest, previous?: PlayttSnapshotManifest | null): Promise<{ contents: RestorePackContents; reusedFiles: number; objectReads: number; basePackRead: boolean }> {
++  validateSources(root, next);
++  if (previous) validateSources(root, previous);
++  const result: RestorePackContents = { markdown: [], uploads: [], wpContent: [], wpContentDeleted: [...(next.wpContentDeleted || [])] };
++  const tasks: Array<{ group: Group; index: number; file: CanonicalRestorePackFile; reuse: boolean }> = [];
++  let reusedFiles = 0;
++  for (const group of groups) {
++    const old = new Map(filesOf(previous || { files: [] }, group).map(file => [file.path, file]));
++    filesOf(next, group).forEach((file, index) => {
++      const before = old.get(file.path);
++      const reuse = !!previous?.restorePack && before?.sha256 === file.sha256 && before.size === file.size;
++      if (reuse) reusedFiles++;
++      tasks.push({ group, index, file, reuse });
++    });
++  }
++  if (reusedFiles) {
++    const contents = await readCanonicalRestorePack(bucket, previous!.restorePack!, root, {
++      markdown: previous!.files, uploads: previous!.uploads || [], wpContent: previous!.wpContent || [], wpContentDeleted: previous!.wpContentDeleted || [],
++    });
++    for (const group of groups) {
++      const verified = new Map(contents[group].map(file => [file.path, file]));
++      for (const task of tasks.filter(task => task.group === group && task.reuse)) {
++        const file = verified.get(task.file.path);
++        if (!file || file.bytes.byteLength !== task.file.size) throw new Error('Verified snapshot source is incomplete.');
++        result[group][task.index] = file;
++      }
++    }
++  }
++  const pending = tasks.filter(task => !task.reuse);
++  let cursor = 0, failed = false;
++  const run = async () => {
++    while (!failed && cursor < pending.length) {
++      const task = pending[cursor++];
++      try {
++        const object = await bucket.get(task.file.objectKey);
++        if (!object || object.size !== task.file.size) throw new Error('Changed snapshot source is missing or has an invalid size.');
++        const bytes = new Uint8Array(await object.arrayBuffer());
++        const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes));
++        const hash = Array.from(digest, byte => byte.toString(16).padStart(2, '0')).join('');
++        if (bytes.byteLength !== task.file.size || hash !== task.file.sha256) throw new Error('Changed snapshot source failed integrity validation.');
++        result[task.group][task.index] = { path: task.file.path, bytes };
++      } catch (error) { failed = true; throw error; }
++    }
++  };
++  const outcomes = await Promise.allSettled(Array.from({ length: Math.min(6, pending.length) }, run));
++  const rejected = outcomes.find((outcome): outcome is PromiseRejectedResult => outcome.status === 'rejected');
++  if (rejected) throw rejected.reason;
++  return { contents: result, reusedFiles, objectReads: pending.length, basePackRead: reusedFiles > 0 };
++}

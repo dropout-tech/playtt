@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-17T08:15:00Z",
+  "result": "pass",
+  "scope": "Private restore-v1 Chrome native zh_TW site editor, actual UI controls; formal Pages unchanged",
+  "savedOnVersion": "959ecd6b-e951-4b9a-b683-497c6bb21e10",
+  "reloadedOnVersion": "c972b58e-e6be-41e2-a8c8-ffd066c86db1",
+  "actions": [
+    "Log in through private probe gate and native WordPress login",
+    "Open native site editor in zh_TW; original brand artwork appears in editor canvas",
+    "Styles > Colors > Link: change theme blue to ink",
+    "Review one global style change and save; native UI reports site updated",
+    "Redeploy identical candidate and reload editor",
+    "Native color picker shows ink selected after reload",
+    "Reset Link style to theme default, review one change and save",
+    "Native UI shows saved; authenticated REST independently verifies exact original styles object restored",
+    "Drain private publication queue and verify six complete pages without test markers, then pause"
+  ],
+  "readbackEvidence": ["cloudflare-memory-lifetime-after-redeploy.json", "cloudflare-memory-lifetime-restored.json"],
+  "screenshotsKeptLocally": ["wordpress-lifetime-native-style-saved.png", "wordpress-lifetime-native-style-restored.png"],
+  "productionCmsCutover": false
+}

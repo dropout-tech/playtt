@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-21T06:20:23.961Z",
+  "result": "independent-copy-verified-comparison-pending",
+  "canonicalVersion": 161,
+  "anchor": {
+    "revision": "3021e7bd-a125-439d-9027-11005ea71316",
+    "manifestKey": "sites/default/markdown/revisions/3021e7bd-a125-439d-9027-11005ea71316.json",
+    "persistedAt": "2026-11-21T06:18:52.947Z",
+    "manifestSha256": "02c14658f9822a084ab1ade605ff9b995e615b73fa8ae79aea7f3e12ccbc218c",
+    "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "packBytes": 2295783
+  },
+  "changed": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json"
+  ],
+  "removed": [],
+  "tables": {
+    "_tables/posts.json": {
+      "added": [],
+      "removed": [
+        "204"
+      ],
+      "changed": []
+    },
+    "_tables/postmeta.json": {
+      "added": [],
+      "removed": [
+        "75"
+      ],
+      "changed": [
+        {
+          "id": "72",
+          "postId": "193",
+          "metaKey": "_edit_lock",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/usermeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "36",
+          "userId": "2",
+          "metaKey": "session_tokens",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/users.json": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "files": 298,
+  "objects": 303,
+  "remoteGets": 8,
+  "downloadedBytes": 2799511,
+  "mediaAndThemeExact": true,
+  "canonicalAndAccountingUnchanged": true,
+  "remoteMutations": 0,
+  "pinAdded": false,
+  "format": "content-overlay",
+  "baseUnchanged": true,
+  "fullMaterializationExact": true,
+  "materializedAnchor": {
+    "revision": "7bf202f0-2a60-487b-87dd-c94afbd6f095",
+    "manifestKey": "sites/default/markdown/revisions/7bf202f0-2a60-487b-87dd-c94afbd6f095.json",
+    "persistedAt": "2026-11-21T06:20:20.825Z",
+    "manifestSha256": "b1b6da16fe52e4e3e46ffa16c8d4dd6e5887d9a5fa4df015dafc976b591b7741",
+    "packKey": "sites/default/restore-packs/c4dc4adb67cd7c2d00360251002ec66df28f1bc01d56110cca2dd2cdda4cf30d.zip",
+    "packSha256": "c4dc4adb67cd7c2d00360251002ec66df28f1bc01d56110cca2dd2cdda4cf30d",
+    "packBytes": 2296235
+  }
+}

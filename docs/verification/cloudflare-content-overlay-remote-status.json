@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-21T02:09:40.601Z",
+  "result": "pass",
+  "scope": "Read-only private operator state; no deployment, PHP requests or cloud writes",
+  "canonicalVersion": 122,
+  "revision": "6883819c-8ca2-4e26-b899-433c83aa4eea",
+  "pins": 9,
+  "chargedBytes": 41989784,
+  "remainingBytes": 7271788,
+  "pending": 0,
+  "sealed": true,
+  "closed": true,
+  "fenceActive": false,
+  "publisher": "paused",
+  "requests": 4
+}

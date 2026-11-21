@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-18T20:15:09.532Z",
+  "result": "pass",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "scope": "Four bounded immutable objects uploaded to private R2 and downloaded for SHA verification; canonical pointer unchanged",
+  "objects": 4,
+  "candidateRevision": "e12466c4-4831-49b4-ba05-51b7dc7fd636",
+  "baseRevision": "edf7bf71-b84e-444e-a6d9-1cce10366841",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1526
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3404
+    }
+  ]
+}

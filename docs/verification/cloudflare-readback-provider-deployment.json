@@ -1,0 +1,38 @@
+{
+  "enabledVersion": "b4e9f561-9606-42dd-94af-3384fde3ef44",
+  "finalVersion": "1075e061-1180-4248-9cc0-01aed39ee191",
+  "finalMetadata": {
+    "created_on": "2026-11-21T01:32:04.818396Z",
+    "source": "wrangler"
+  },
+  "readbackFlagPresentInFinalVersion": false,
+  "bindingNames": [
+    "PLAYTT_AUTO_PUBLISH",
+    "PLAYTT_CORE_EDITOR_LOCK",
+    "PLAYTT_EXECUTION",
+    "PLAYTT_MEMORY_DIAGNOSTICS",
+    "PLAYTT_METADATA_OVERLAY",
+    "PLAYTT_PROBE_GATE",
+    "PLAYTT_R2_CAPACITY_LIMIT_BYTES",
+    "PLAYTT_R2_CAPACITY_SCOPE",
+    "PLAYTT_R2_WRITE_TRACKING",
+    "PLAYTT_R2_WRITE_WINDOW",
+    "PLAYTT_STATE_PARTITION",
+    "PLAYTT_STORAGE_BUDGET",
+    "WORDPRESS_ADMIN_CLAIM_SECRET",
+    "WORDPRESS_ADMIN_PASSWORD",
+    "WORDPRESS_AUTH_SECRET",
+    "WORDPRESS_OPERATOR_TOKEN",
+    "WORDPRESS_SITE_CONTEXTS",
+    "WORDPRESS_STATE",
+    "WORDPRESS_STATE_BUCKET"
+  ],
+  "sourceChangesThisRound": false,
+  "existingConfigsChanged": false,
+  "temporaryOverride": "--var PLAYTT_EDITOR_READBACK:draft-readback-v1",
+  "defaultConfigRedeployedAfterSeal": true,
+  "script": "playtt-wp-free-session-audit",
+  "bucket": "playtt-wordpress-session-audit",
+  "productionChanged": false,
+  "newResourcesCreated": false
+}

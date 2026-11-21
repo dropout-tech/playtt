@@ -1,0 +1,233 @@
+{
+  "at": "2026-11-20T18:23:56.237Z",
+  "result": "fail",
+  "scope": "Fenced monotonic adoption of pinned overlay and full snapshot, followed by real cold PHP/login/REST readback; no browser or process redeployment",
+  "checks": [
+    {
+      "stage": "preflight",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1870,
+      "timing": []
+    },
+    {
+      "stage": "preflight",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 250,
+      "timing": []
+    },
+    {
+      "stage": "preflight",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 207,
+      "timing": []
+    },
+    {
+      "stage": "preflight",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 206,
+      "timing": []
+    },
+    {
+      "stage": "arm",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 258,
+      "timing": []
+    },
+    {
+      "stage": "arm",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 242,
+      "timing": []
+    },
+    {
+      "stage": "adopt-overlay",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 267,
+      "timing": []
+    },
+    {
+      "stage": "adopt-overlay",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1376,
+      "timing": []
+    },
+    {
+      "stage": "adopt-overlay",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 393,
+      "timing": []
+    },
+    {
+      "stage": "adopt-overlay",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1824,
+      "timing": []
+    },
+    {
+      "stage": "adopt-overlay",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 248,
+      "timing": []
+    },
+    {
+      "stage": "overlay-cold-login-form",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4331,
+      "timing": []
+    },
+    {
+      "stage": "overlay-cold-login-form",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1883,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 206,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 170,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1828,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 212,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 265,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 204,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1740,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 172,
+      "timing": []
+    },
+    {
+      "stage": "close-and-seal",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 165,
+      "timing": []
+    }
+  ],
+  "transitions": [
+    {
+      "stage": "adopt-overlay",
+      "version": 8,
+      "pointer": {
+        "revision": "ef40f2b5-d72b-45c1-baf2-46591a583fb7",
+        "manifestKey": "sites/default/markdown/revisions/ef40f2b5-d72b-45c1-baf2-46591a583fb7.json",
+        "persistedAt": "2026-11-20T18:04:30.913Z"
+      }
+    }
+  ],
+  "resets": 0,
+  "deletes": 0,
+  "contentEdits": 0,
+  "failedStage": "overlay-cold-login-form",
+  "errorName": "AssertionError",
+  "finalBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-window-audit",
+    "baselineBytes": 100637598,
+    "baselineObjects": 298,
+    "chargedBytes": 7698741,
+    "chargedPuts": 27,
+    "initializedAt": "2026-11-20T18:00:31.856Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T18:00:32.111Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T18:24:09.861Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "2d6b70c7-8cf2-4e54-a44e-dac2464abfb9",
+        "openedAt": 1795199036837,
+        "expiresAt": 1795199216837,
+        "maxBytes": 16777216,
+        "usedBytes": 0,
+        "remainingBytes": 16777216,
+        "maxOperations": 96,
+        "operations": 0,
+        "closed": true,
+        "expired": false,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 41663661,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "ef40f2b5-d72b-45c1-baf2-46591a583fb7",
+      "manifestKey": "sites/default/markdown/revisions/ef40f2b5-d72b-45c1-baf2-46591a583fb7.json",
+      "persistedAt": "2026-11-20T18:04:30.913Z"
+    },
+    "version": 8
+  },
+  "publisher": "paused",
+  "pinsUnchanged": 4,
+  "windowClosed": true,
+  "writeSealed": true,
+  "fenceReleased": true
+}

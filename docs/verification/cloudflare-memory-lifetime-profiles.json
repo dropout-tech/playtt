@@ -1,0 +1,87 @@
+{
+  "scope": "Local inspector samples, no forced GC; baseline was warm and later candidates started fresh; these peaks are diagnostic, not controlled remote-limit measurements",
+  "measurements": [
+    {
+      "at": "2026-11-17T07:38:33.649Z",
+      "label": "all-object-baseline",
+      "scope": "Local V8 inspector: numeric heap/backing-storage sampling without forced GC; inspector overhead and local GC differ from production",
+      "exitCode": 0,
+      "maxima": {
+        "usedSize": 32810844,
+        "totalSize": 61190144,
+        "embedderHeapUsedSize": 1805536,
+        "backingStorageSize": 112157360
+      },
+      "finalUsage": {
+        "usedSize": 19749128,
+        "totalSize": 56373248,
+        "embedderHeapUsedSize": 781208,
+        "backingStorageSize": 58618315
+      },
+      "samples": 327
+    },
+    {
+      "at": "2026-11-17T07:42:38.178Z",
+      "label": "streamed-pack",
+      "scope": "Local V8 inspector: numeric heap/backing-storage sampling without forced GC; inspector overhead and local GC differ from production",
+      "exitCode": 0,
+      "maxima": {
+        "usedSize": 34186780,
+        "totalSize": 60141568,
+        "embedderHeapUsedSize": 2192416,
+        "backingStorageSize": 112353639
+      },
+      "finalUsage": {
+        "usedSize": 31499168,
+        "totalSize": 60125184,
+        "embedderHeapUsedSize": 1519728,
+        "backingStorageSize": 56859752
+      },
+      "samples": 322
+    },
+    {
+      "at": "2026-11-17T07:49:00.342Z",
+      "label": "detached-factory",
+      "scope": "Local V8 inspector: numeric heap/backing-storage sampling without forced GC; inspector overhead and local GC differ from production",
+      "exitCode": 0,
+      "maxima": {
+        "usedSize": 35058180,
+        "totalSize": 59879424,
+        "embedderHeapUsedSize": 1805536,
+        "backingStorageSize": 113272229
+      },
+      "finalUsage": {
+        "usedSize": 32419892,
+        "totalSize": 59879424,
+        "embedderHeapUsedSize": 1805536,
+        "backingStorageSize": 60649076
+      },
+      "samples": 321
+    },
+    {
+      "at": "2026-11-17T07:54:50.712Z",
+      "label": "compact-core",
+      "scope": "Local V8 inspector: numeric heap/backing-storage sampling without forced GC; inspector overhead and local GC differ from production",
+      "exitCode": 0,
+      "maxima": {
+        "usedSize": 35334076,
+        "totalSize": 60932096,
+        "embedderHeapUsedSize": 1927728,
+        "backingStorageSize": 107324666
+      },
+      "finalUsage": {
+        "usedSize": 32586688,
+        "totalSize": 60932096,
+        "embedderHeapUsedSize": 1805536,
+        "backingStorageSize": 52366132
+      },
+      "samples": 322
+    }
+  ],
+  "streamedPackAdopted": false,
+  "heapSnapshots": [
+    "cloudflare-heap-streamed-pack.json",
+    "cloudflare-heap-detached-factory.json",
+    "cloudflare-heap-compact-core.json"
+  ]
+}

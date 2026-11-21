@@ -1,0 +1,86 @@
+{
+  "at": "2026-11-21T18:25:39.194983+00:00",
+  "result": "pass",
+  "sources": 82,
+  "vendor": 109,
+  "assets": 9,
+  "loaderBefore": "9eee1c4bf010ff84741d82c5143689e76c2d06cd0c877dc919c6ecd202b9b666",
+  "loaderAfter": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+  "twoFullSourceDryRuns": true,
+  "sameBuildDirectoryAndInstalledDependencies": true,
+  "emittedStatementsChanged": 1,
+  "binaryModulesUnchanged": true,
+  "variants": {
+    "baseline": {
+      "modules": [
+        {
+          "name": "191a2ac391878abd230f5cb8d717e0c0d67f3f48-markdown-database-integration-canonical-seed.zip",
+          "sha256": "60231408fa51e56dd288c2e39c5158df25417d227c0ed4603e70ef22aa7bbf20",
+          "bytes": 55902
+        },
+        {
+          "name": "50ab73f4afbeda0dd102c72d74bf52238068bd45-markdown-primary-bootstrap-index.sqlite",
+          "sha256": "af46f25f1a40152c06ff2c545bf027a50a6ba82e1d08445b3998e9fa674467b4",
+          "bytes": 344064
+        },
+        {
+          "name": "552ab6f13ff5704a7de36503f1a281be72197401-wordpress-install-seed.sqlite",
+          "sha256": "7212b89f1c01f98a23b89e9a2dd2b214306a85c10adb0355b9c7a6005b4fe822",
+          "bytes": 376832
+        },
+        {
+          "name": "c6e7ecf28a6294348d58dc26fa71174ea6b420f7-markdown-database-integration-runtime.zip",
+          "sha256": "eeb01238babfea9dff7c56111974584c86e0aec8616cb0ae0f09296a222b92c0",
+          "bytes": 93269
+        },
+        {
+          "name": "f6f24a9faa5a01af56a4823104f0a7e0d38e4b1e-php_8_3.wasm",
+          "sha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+          "bytes": 18319469
+        },
+        {
+          "name": "worker-playtt-do.js",
+          "sha256": "24090611fc3fe34cd510034bf11d06587005ea81f31176cb0c5ed5fc17ca14d7",
+          "bytes": 2254509
+        }
+      ]
+    },
+    "candidate": {
+      "modules": [
+        {
+          "name": "191a2ac391878abd230f5cb8d717e0c0d67f3f48-markdown-database-integration-canonical-seed.zip",
+          "sha256": "60231408fa51e56dd288c2e39c5158df25417d227c0ed4603e70ef22aa7bbf20",
+          "bytes": 55902
+        },
+        {
+          "name": "50ab73f4afbeda0dd102c72d74bf52238068bd45-markdown-primary-bootstrap-index.sqlite",
+          "sha256": "af46f25f1a40152c06ff2c545bf027a50a6ba82e1d08445b3998e9fa674467b4",
+          "bytes": 344064
+        },
+        {
+          "name": "552ab6f13ff5704a7de36503f1a281be72197401-wordpress-install-seed.sqlite",
+          "sha256": "7212b89f1c01f98a23b89e9a2dd2b214306a85c10adb0355b9c7a6005b4fe822",
+          "bytes": 376832
+        },
+        {
+          "name": "c6e7ecf28a6294348d58dc26fa71174ea6b420f7-markdown-database-integration-runtime.zip",
+          "sha256": "eeb01238babfea9dff7c56111974584c86e0aec8616cb0ae0f09296a222b92c0",
+          "bytes": 93269
+        },
+        {
+          "name": "f6f24a9faa5a01af56a4823104f0a7e0d38e4b1e-php_8_3.wasm",
+          "sha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+          "bytes": 18319469
+        },
+        {
+          "name": "worker-playtt-do.js",
+          "sha256": "824e974b27bf37302cc6607a840985f56b89fedc19e899e3e6140d8ac66cb2fa",
+          "bytes": 2254544
+        }
+      ]
+    }
+  },
+  "runtimeGeneratedLoaderUnchanged": true,
+  "deployed": false,
+  "freshDependencyInstall": false
+}

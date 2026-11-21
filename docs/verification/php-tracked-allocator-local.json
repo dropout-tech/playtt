@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-17T06:46:49.363Z",
+  "result": "pass",
+  "scope": "Pinned PHP web WASM under Node; not remote acceptance",
+  "php": "8.3.36",
+  "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+  "iterations": 60,
+  "maxHeapBytes": 67108864,
+  "warmHeapBytes": 67108864,
+  "lastHeapBytes": 67108864,
+  "usageMin": 4579023,
+  "usageMax": 4579023,
+  "memoryLimitRejected": true,
+  "nextRequestRecovered": true
+}

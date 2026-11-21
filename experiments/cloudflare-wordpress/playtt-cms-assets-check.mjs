@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+const origin='https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev';
+const secrets=JSON.parse(await readFile('../../../playtt-cms-secrets.json','utf8'));
+const manifest=JSON.parse(await readFile('assets/wordpress-static-artifact.json','utf8'));
+const paths=['wp-includes/js/dist/block-editor.min.js','wp-includes/js/dist/editor.min.js','wp-includes/js/dist/blocks.min.js','wp-includes/js/dist/components.min.js','wp-includes/js/dist/block-library.min.js','wp-includes/css/dashicons.min.css'];
+const files=paths.map(path=>{const entry=manifest.files.find(x=>x.path==='wordpress/'+path);assert.ok(entry);return entry;});
+const started=Date.now();
+const checks=await Promise.all(files.map(async file=>{const begin=Date.now(),url=origin+'/'+file.path.replace('wordpress/','');const r=await fetch(url,{headers:{'X-Playtt-Probe':secrets.WORDPRESS_OPERATOR_TOKEN},signal:AbortSignal.timeout(45000)});assert.equal(r.status,200);assert.equal(r.headers.get('x-wp-codebox-static'),'r2-range');const bytes=Buffer.from(await r.arrayBuffer());assert.equal(bytes.length,file.size);assert.equal(createHash('sha256').update(bytes).digest('hex'),file.sha256);return{path:file.path,bytes:bytes.length,wallMs:Date.now()-begin,status:r.status};}));
+assert.equal((await fetch(origin+'/'+files[0].path.replace('wordpress/',''))).status,404);
+const report={at:new Date().toISOString(),scope:'Remote parallel immutable editor assets; exact manifest bytes/SHA256; unauthenticated access denied',result:'pass',totalWallMs:Date.now()-started,checks};await writeFile('artifacts/playtt-cms-assets-remote.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

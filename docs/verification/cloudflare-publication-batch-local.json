@@ -1,0 +1,584 @@
+{
+  "at": "2026-11-17T07:14:52.258Z",
+  "result": "pass",
+  "scope": "Local real WordPress: merge seven pending edits, preserve independent changes and withdrawal/republish order, expose no intermediate/partial revision, shared footer on six pages",
+  "queuedJobs": 7,
+  "drainMs": 22116,
+  "renderedJobKeys": [
+    "sites/default/publications/jobs/00000000000000000072-985f13c5-1c9d-452a-b5c4-58ed99aa9a53.json"
+  ],
+  "latestJob": "sites/default/publications/jobs/00000000000000000072-985f13c5-1c9d-452a-b5c4-58ed99aa9a53.json",
+  "previousVisibleDuringBuild": true,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/26",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/72",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts/lets-play%2F%2Ffooter",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/class/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/coaches/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/locations/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/partner/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/playtt-batch-1794899657142/",
+      "method": "GET",
+      "status": 404
+    }
+  ]
+}

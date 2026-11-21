@@ -1,0 +1,213 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": true,
+  "existingConfigsChanged": false,
+  "prerequisites": [
+    {
+      "path": "src/worker.ts",
+      "sha256": "52aa6556a2a5ab1613cc3b367de441e3d0b1a25baaa34d17b1411c3283e11fd2"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "sha256": "9e7fd70863c5e6512834b191aec53b2ff2b200480b00c7cf0061d2684b8cf05a"
+    },
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "sha256": "8ce6ad8d1a17ba715dc033031f9988a9fee9c97e38160c4470a1dbe5bdfa974b"
+    },
+    {
+      "path": "scripts/playtt-backup-pin-client.mjs",
+      "sha256": "b65161e3879837c04a6ae20fc61fd983380d7749aa01de8a71dcec2333999925"
+    },
+    {
+      "path": "src/playtt-metadata-overlay.ts",
+      "sha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43"
+    },
+    {
+      "path": "tests/playtt-metadata-overlay.test.ts",
+      "sha256": "359f6bc8de4a1612a4a98fe623914b8d01a8524bb0d90e3eaa125e01a85001e2"
+    },
+    {
+      "path": "scripts/playtt-metadata-overlay-recorded.mjs",
+      "sha256": "81535a18741aedef034c0d5771bcafd876e390ccd868f40f87f85ca6fa38f734"
+    },
+    {
+      "path": "scripts/playtt-metadata-overlay-php-check.mjs",
+      "sha256": "b38cc54abd90619d32efcfee541e0e99e02f4aaa75e0972fed2dbeec4c6f8aad"
+    },
+    {
+      "path": "scripts/playtt-reference-coverage.mjs",
+      "sha256": "60c90ceb10e33797717420ecd7638aebbc5a912f4b22fac59cc21e016738a56e"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "114be10a57829e378809b1fec53b43227792c1bb754558406353581a0b86c4ba"
+    },
+    {
+      "path": "scripts/playtt-export-snapshot-bundle.mjs",
+      "sha256": "df419b042a93f425a8eafead3e097a1830739f3cc099463cf18120c23694433d"
+    },
+    {
+      "path": "scripts/playtt-snapshot-download.mjs",
+      "sha256": "4d433e12d6ec3ff0bf7a130b73022b247814efc12f5a00ec9160acd863efbd82"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle-php.mjs",
+      "sha256": "c301e74d5a6bcd5bf58fb997bcbe07686669d83f8abc317a020e919576f21543"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle-recorded.mjs",
+      "sha256": "897a96aa2b94378f2fdc344f8a6a74d8d63b10db3121f48c16ca1b63ce217e99"
+    },
+    {
+      "path": "scripts/playtt-read-snapshot-inventory.py",
+      "sha256": "ac2161f4e8a93757c1f6249a63259b33b9eee27018f85dca7768098c02dc9ae4"
+    },
+    {
+      "path": "scripts/playtt-plan-snapshot-retention.py",
+      "sha256": "a4ab38c065c7424fd543e4892548004dc5e486534fc64596a21c420731b646f0"
+    },
+    {
+      "path": "scripts/playtt-snapshot-retention-recorded.py",
+      "sha256": "235ecb3c8cd8f484145840d6e0a5fc8928e33071d5e4f59eb964f134f45d2919"
+    },
+    {
+      "path": "tests/playtt-snapshot-bundle.test.ts",
+      "sha256": "def73cf69d91dc6ebff9b1b3d781f7a0d8f0e4c7f35e61f8f77d845aac54cf9d"
+    },
+    {
+      "path": "tests/playtt-snapshot-inventory.test.py",
+      "sha256": "566368fdd333c0b4f7a89f0953d3cbe40fdb934b78232021022d3b47f8f29414"
+    },
+    {
+      "path": "tests/playtt-snapshot-retention.test.py",
+      "sha256": "0beef38b5b3323b6eb89bcea6197db831a2a9f4df6d5831a25d1a28bb90026ef"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "sha256": "3cd71197bff0bd5b9940680daf8c799e9d2b7968318a73b61aa72b32d72bda2e"
+    },
+    {
+      "path": "src/playtt-write-drain.ts",
+      "sha256": "d1f5dc04cce1f61e4f17a94c33221acb068444197d41f782e482f91f15ace1f7"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "sha256": "9629a470d9de7690599638ea5828cd987b12bb5a5bc27896a05abcab6ae04ab3"
+    },
+    {
+      "path": "src/playtt-write-window.ts",
+      "sha256": "2df90a0f7f323049acfd0375eba49bf1cee3a11dafcd5b9a76772a28ca1d7c54"
+    },
+    {
+      "path": "tests/playtt-write-window.test.ts",
+      "sha256": "a03ff6bf3fc6fa28bfc5b45d665ee304f4fabdc7344b6a2e1134d3dc341bfa46"
+    },
+    {
+      "path": "tests/playtt-write-window-execution.test.mjs",
+      "sha256": "854dfde7505ca189093b704ea363bbae4dcfc237fef13ed8f8dad81cdb80028e"
+    },
+    {
+      "path": "tests/fixtures/playtt-write-drain-v1.ts",
+      "sha256": "973f5ce6cc749ad7e5bc377a16b0331179dff60ec4e9074c07844318e799f49f"
+    },
+    {
+      "path": "scripts/playtt-write-window-local.mjs",
+      "sha256": "bb7fd2143ffda86eb119f0558089f853e6e2b9d261c1972252be7421155ba4db"
+    }
+  ],
+  "patchSha256": "a6527a4baeec928dbb0b6ca4e092f5bd625006b97cc450c3ede351ab55281456",
+  "files": [
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "beforeSha256": "3cd71197bff0bd5b9940680daf8c799e9d2b7968318a73b61aa72b32d72bda2e",
+      "afterSha256": "889b9b2061826e24a8ec8190ac57aed58c8137ff5cd8edcd66115126b9210625"
+    },
+    {
+      "path": "scripts/playtt-snapshot-download.mjs",
+      "beforeSha256": "4d433e12d6ec3ff0bf7a130b73022b247814efc12f5a00ec9160acd863efbd82",
+      "afterSha256": "2d3aca82e6e26f97d8634bd98f12cf38712a447cc51e3fccf4f3d0f81e435d8e"
+    },
+    {
+      "path": "wrangler.playtt-window-audit.jsonc",
+      "source": "wrangler.playtt-window-audit.jsonc",
+      "afterSha256": "6e83a60f58312c15f391b740ef24bfae3773b51ea08d0a66c0b437d4be95d61f"
+    },
+    {
+      "path": "scripts/playtt-window-provider.mjs",
+      "source": "playtt-window-provider.mjs",
+      "afterSha256": "44b7811419b89c66bdd1fd8a9a809160b2b02d2bd8e17de6fa140b965e29ed8e"
+    },
+    {
+      "path": "scripts/playtt-window-native.mjs",
+      "source": "playtt-window-native.mjs",
+      "afterSha256": "fe8a11f1705145fd769fcdeedcef3042d2e3dc2b63e79bc40bb0009c1ac0fb20"
+    },
+    {
+      "path": "scripts/playtt-tail-window-sanitized.mjs",
+      "source": "playtt-tail-window-sanitized.mjs",
+      "afterSha256": "8de835d5246803e41b91e0c6da246ac6f1528356fa4b0f66cff11037bf469c0d"
+    },
+    {
+      "path": "scripts/playtt-window-backup.mjs",
+      "source": "playtt-window-backup.mjs",
+      "afterSha256": "0673911f94b501e8340ab9cdb302165f2617ff395f55bd21d69f90621fdf9371"
+    },
+    {
+      "path": "scripts/playtt-window-restore.mjs",
+      "source": "playtt-window-restore.mjs",
+      "afterSha256": "8aa1849f8702994b33f7cbb7046dec564a84ae2ed0ececd603a9cf7048b0863f"
+    },
+    {
+      "path": "scripts/playtt-window-restore-backup.mjs",
+      "source": "playtt-window-restore-backup.mjs",
+      "afterSha256": "9b7ed2040caa36e1636c211dbb0d4d134f8d2d5fc38207bf4bfa5bf6696ac901"
+    },
+    {
+      "path": "scripts/playtt-window-ui-control.mjs",
+      "source": "playtt-window-ui-control.mjs",
+      "afterSha256": "c712bf0a049f7fd887dafef60d9b70b4aa697dcfc434d1922b1f1bc3c54cd097"
+    },
+    {
+      "path": "scripts/playtt-tail-window-ui-sanitized.mjs",
+      "source": "playtt-tail-window-ui-sanitized.mjs",
+      "afterSha256": "bc484535ad2dfee04aaa2164f953a67bf155a9aa243a87de0a9774ae9e64c79c"
+    },
+    {
+      "path": "scripts/playtt-window-ui-backup.mjs",
+      "source": "playtt-window-ui-backup.mjs",
+      "afterSha256": "e72d71454ad1fd776184884fada0b36a7ed1eeb0cde49592fc8505e9d6aab955"
+    },
+    {
+      "path": "scripts/playtt-window-retry-control.mjs",
+      "source": "playtt-window-retry-control.mjs",
+      "afterSha256": "570dd41c44ce5eddcf48e1f3bafc1ffbdb39c4e1d80ce28bdb1fc35099927570"
+    },
+    {
+      "path": "scripts/playtt-window-retry-backup.mjs",
+      "source": "playtt-window-retry-backup.mjs",
+      "afterSha256": "326d733a24b24e19a7b8743e35b75ce030c096f374b4613525084c13d1f3377d"
+    },
+    {
+      "path": "scripts/playtt-window-lock-control.mjs",
+      "source": "playtt-window-lock-control.mjs",
+      "afterSha256": "63b179c9b6fe84f495fa3c20aa18599e024f04c902140223ccbbc38daec21694"
+    },
+    {
+      "path": "scripts/playtt-window-lock-backup.mjs",
+      "source": "playtt-window-lock-backup.mjs",
+      "afterSha256": "b2a750b96977edbdf741a4540108f001d711a40d729d726a8b23f4d2230133fc"
+    },
+    {
+      "path": "scripts/playtt-window-lock-cost.mjs",
+      "source": "playtt-window-lock-cost.mjs",
+      "afterSha256": "1b8412859ad59f9562136c6109f4bd2f7fbb526bb550ffe643435734f67b0bb6"
+    },
+    {
+      "path": "scripts/playtt-tail-window-lock-sanitized.mjs",
+      "source": "playtt-tail-window-lock-sanitized.mjs",
+      "afterSha256": "0a26fec147f98d0995a43f5394d28fc56b58378573e552adeca96c8d385bb283"
+    }
+  ]
+}

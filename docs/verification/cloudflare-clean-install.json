@@ -1,0 +1,85 @@
+{
+  "at": "2026-11-18T18:44:48.043154+00:00",
+  "result": "pass",
+  "scope": "Fresh pinned dependency installation and public core asset regeneration in an isolated clean-source rebuild, followed by TypeScript and deployment dry-run. No shared dependency directory, cloud deployment or new WordPress data initialization.",
+  "node": "24.18.0",
+  "npm": "11.16.0",
+  "npmCi": {
+    "packagesAdded": 116,
+    "reportedSeconds": 17,
+    "ignoreScripts": true,
+    "workspaces": false,
+    "lockSha256": "92d6205b7dda90f8f78f2f48da3e7dc8d9f2182103cfc26ecf69fde1a9b30f33",
+    "legacyShrinkwrapAbsent": true,
+    "dependenciesIsolated": true,
+    "vendoredCoreResolvesInsideRebuild": true
+  },
+  "explicitPreparation": [
+    "apply-development-patch.mjs: stream-compression@3.1.45",
+    "playtt-runtime-prepare.mjs: pinned PHP 8.3.36 compiled WASM import",
+    "playtt-prepare-small-heap-loader.mjs: same output hash as current candidate"
+  ],
+  "assets": [
+    {
+      "manifest": "wordpress-runtime-artifact",
+      "manifestMatches": true,
+      "artifact": "cloudflare-wordpress-runtime-corpus.zip",
+      "sha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+      "artifactMatches": true
+    },
+    {
+      "manifest": "wordpress-static-artifact",
+      "manifestMatches": true,
+      "artifact": "cloudflare-wordpress-static-corpus.bin",
+      "sha256": "f790aeb43ad3af90e31691cc99b5a3572ae8044eb1a24bb00db747904da7a7e0",
+      "artifactMatches": true
+    },
+    {
+      "manifest": "sqlite-database-integration-artifact",
+      "manifestMatches": true,
+      "artifact": "cloudflare-sqlite-database-integration.zip",
+      "sha256": "f3bf0ac0bd80d374456c3742c3e2f987d060e8e35f4fe99925de2404ce05cbfb",
+      "artifactMatches": true
+    }
+  ],
+  "typeScript": "pass",
+  "dryRun": {
+    "result": "pass",
+    "uploadKiB": 20775.66,
+    "gzipKiB": 7586.28,
+    "sourcePathNormalizedJavaScriptIdentical": true,
+    "normalization": "Only replace the exact prior shared dependency root prefix in generated module labels: ../../../wp-codebox-secure/packages/runtime-cloudflare/",
+    "rawJavaScriptSha256": "5d4a54b4d67996af6a8ce1389b9462b71018a51b903e689e89591db7b019405d",
+    "binaryModulesIdentical": [
+      {
+        "name": "191a2ac391878abd230f5cb8d717e0c0d67f3f48-markdown-database-integration-canonical-seed.zip",
+        "bytes": 55902,
+        "sha256": "60231408fa51e56dd288c2e39c5158df25417d227c0ed4603e70ef22aa7bbf20"
+      },
+      {
+        "name": "50ab73f4afbeda0dd102c72d74bf52238068bd45-markdown-primary-bootstrap-index.sqlite",
+        "bytes": 344064,
+        "sha256": "af46f25f1a40152c06ff2c545bf027a50a6ba82e1d08445b3998e9fa674467b4"
+      },
+      {
+        "name": "552ab6f13ff5704a7de36503f1a281be72197401-wordpress-install-seed.sqlite",
+        "bytes": 376832,
+        "sha256": "7212b89f1c01f98a23b89e9a2dd2b214306a85c10adb0355b9c7a6005b4fe822"
+      },
+      {
+        "name": "c6e7ecf28a6294348d58dc26fa71174ea6b420f7-markdown-database-integration-runtime.zip",
+        "bytes": 93269,
+        "sha256": "eeb01238babfea9dff7c56111974584c86e0aec8616cb0ae0f09296a222b92c0"
+      },
+      {
+        "name": "f6f24a9faa5a01af56a4823104f0a7e0d38e4b1e-php_8_3.wasm",
+        "bytes": 18319469,
+        "sha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854"
+      }
+    ],
+    "warnings": [
+      "Pinned PHP loader direct-eval",
+      "Pinned PHP loader duplicate-object-key"
+    ]
+  }
+}

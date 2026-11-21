@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-16T18:04:51.365Z",
+  "origin": "http://127.0.0.1:9428",
+  "mode": "after-restart",
+  "scope": "Local DO execution / simulated R2; not remote acceptance",
+  "result": "pass",
+  "assertions": [
+    "WordPress login",
+    "authenticated post read",
+    "published post visible",
+    "media SHA256 exact",
+    "anonymous draft denied",
+    "anonymous admin redirected"
+  ],
+  "state": {
+    "post": {
+      "id": 5,
+      "title": "PLAYTT DO 保存測試 1794852148433",
+      "link": "http://127.0.0.1:9428/2026/11/16/playtt-do-%e4%bf%9d%e5%ad%98%e6%b8%ac%e8%a9%a6-1794852148433/"
+    },
+    "draftId": 6,
+    "media": {
+      "id": 7,
+      "url": "http://127.0.0.1:9428/wp-content/uploads/2026/11/playtt-do-probe.png",
+      "sha256": "431ced6916a2a21a156e38701afe55bbd7f88969fbbfc56d7fe099d47f265460"
+    }
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 3939
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 1656
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 729
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/posts/5",
+      "status": 200,
+      "wallMs": 230
+    }
+  ]
+}

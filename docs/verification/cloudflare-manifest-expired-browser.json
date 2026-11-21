@@ -1,0 +1,19 @@
+{
+  "schema": "playtt/manifest-budget-browser/v1",
+  "at": "2026-11-21T13:39:44.634Z",
+  "result": "save-and-cold-read-pass-expired-before-logout",
+  "beforeExact": true,
+  "saveClicks": 1,
+  "savedUi": true,
+  "coldParagraphsExact": true,
+  "coldParagraphCount": 9,
+  "logoutSucceeded": false,
+  "logoutFailure503": false,
+  "logoutConnectionRefusedAfterLocalExpiry": true,
+  "ownedBrowserTabClosed": true,
+  "observationLimitations": [
+    "The attempt expired while selecting the native logout action; no completed logout is claimed.",
+    "An iframe DOM read and unsupported hover failed; cold paragraph equality was verified from the visible DOM snapshot."
+  ],
+  "cloudRequests": 0
+}

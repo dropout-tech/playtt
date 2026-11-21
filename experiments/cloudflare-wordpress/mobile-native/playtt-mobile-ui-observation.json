@@ -1,0 +1,163 @@
+{
+  "at": "2026-11-18T22:36:43.551Z",
+  "scope": "Finite sanitized observation during mobile-width native UI acceptance; events are not unique HTTP requests",
+  "events": 391,
+  "outcomes": {
+    "ok": 378,
+    "canceled": 13
+  },
+  "versions": [
+    "f6ac6526-2016-445d-b510-2b887369c7c2"
+  ],
+  "exceptions": 0,
+  "requestFailures": 0,
+  "incompleteTraces": 0,
+  "canceledCategories": {
+    "admin-ajax": 11,
+    "front-page": 2
+  },
+  "canceled": [
+    {
+      "at": "2026-11-18T22:27:56.319Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 0,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:27:57.559Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 1,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:28:08.359Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 0,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:30:08.464Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 0,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:30:07.903Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 1,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:31:31.897Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 0,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:31:34.071Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 1,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:32:11.258Z",
+      "request": {
+        "category": "front-page",
+        "method": "GET"
+      },
+      "traceCount": 0,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:32:09.358Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 0,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:32:11.144Z",
+      "request": {
+        "category": "front-page",
+        "method": "GET"
+      },
+      "traceCount": 1,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:32:09.730Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 0,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:32:43.662Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 0,
+      "incompleteTraces": 0
+    },
+    {
+      "at": "2026-11-18T22:32:43.023Z",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "traceCount": 1,
+      "incompleteTraces": 0
+    }
+  ],
+  "maxWasmHeapBytes": 76349440,
+  "maxSampledFileBytes": 31694107,
+  "saveWindowRestPost": [
+    {
+      "at": "2026-11-18T22:30:35.676Z",
+      "outcome": "ok",
+      "traces": [
+        {
+          "completed": true,
+          "totalMs": 7025
+        }
+      ]
+    },
+    {
+      "at": "2026-11-18T22:30:36.684Z",
+      "outcome": "ok",
+      "traces": []
+    }
+  ],
+  "limits": [
+    "Canceled outcomes remain unexplained; temporal overlap with navigation does not prove its cause.",
+    "A browser navigation reported a 10-second control timeout; fresh UI inspection still showed the editor, and one retry reached preview. This is not evidence of a WordPress memory failure.",
+    "The save-window server trace is not click-to-confirm latency; the UI was still saving at an observation 9831 ms after the click.",
+    "Sampled WASM heap and file buffers are not whole-isolate memory. No sustained free-tier or real mobile-device acceptance is claimed."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-20T05:23:20.930152+00:00",
+  "result": "pass",
+  "versions": {
+    "playtt-wp-free-pin-restore-audit": {
+      "version": "1b8f1869-8929-4c54-8ad9-5b5cf903b7e4",
+      "percentage": 100
+    },
+    "playtt-wp-free-rebuild-audit": {
+      "version": "8536d0cf-cfbf-4133-9764-ae4bbfdd2c45",
+      "percentage": 100
+    }
+  },
+  "targetBindingTypes": [
+    "durable_object_namespace",
+    "plain_text",
+    "r2_bucket",
+    "secret_text"
+  ],
+  "targetNonSecretBindings": [
+    {
+      "name": "PLAYTT_AUTO_PUBLISH",
+      "type": "plain_text"
+    },
+    {
+      "name": "PLAYTT_EXECUTION",
+      "type": "durable_object_namespace"
+    },
+    {
+      "name": "PLAYTT_MEMORY_DIAGNOSTICS",
+      "type": "plain_text"
+    },
+    {
+      "name": "PLAYTT_PROBE_GATE",
+      "type": "plain_text"
+    },
+    {
+      "name": "PLAYTT_R2_CAPACITY_LIMIT_BYTES",
+      "type": "plain_text"
+    },
+    {
+      "name": "PLAYTT_R2_CAPACITY_SCOPE",
+      "type": "plain_text"
+    },
+    {
+      "name": "PLAYTT_R2_WRITE_TRACKING",
+      "type": "plain_text"
+    },
+    {
+      "name": "PLAYTT_STATE_PARTITION",
+      "type": "plain_text"
+    },
+    {
+      "name": "PLAYTT_STORAGE_BUDGET",
+      "type": "durable_object_namespace"
+    },
+    {
+      "name": "WORDPRESS_SITE_CONTEXTS",
+      "type": "plain_text"
+    },
+    {
+      "name": "WORDPRESS_STATE",
+      "type": "durable_object_namespace"
+    },
+    {
+      "name": "WORDPRESS_STATE_BUCKET",
+      "type": "r2_bucket"
+    }
+  ],
+  "configuredVarsMatch": true,
+  "r2Buckets": [
+    "playtt-wordpress-pin-restore-audit"
+  ],
+  "d1QueueServiceWorkflowBindings": false,
+  "scope": "Cloudflare current deployment percentages and target deployed bindings; no claim about external API clients or inactive older versions"
+}

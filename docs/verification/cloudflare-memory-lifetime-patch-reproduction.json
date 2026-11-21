@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-17T08:22:07.448351+00:00",
+  "result": "pass",
+  "scope": "Sequential published patches reconstruct the deployed candidate source exactly after LF normalization",
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "normalizedSha256": "e28e948c0284a7903417bd9d2a690fa461cd90b97abe4079b3494a2387ffaff9"
+    },
+    {
+      "path": "src/playtt-core-memory.ts",
+      "normalizedSha256": "6ea4d0c2ec872074479eeb3cb6a563391747ddde8415bbf059b2ab6755be5837"
+    },
+    {
+      "path": "src/playtt-runtime-factory.ts",
+      "normalizedSha256": "44f8c3d51855713cf57f4e96c924f7cec9ccff50f19de9ff0bea6602856fb9bc"
+    }
+  ]
+}

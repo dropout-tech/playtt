@@ -1,0 +1,62 @@
+{
+  "checkedAt": "2026-11-20T19:01:41.843Z",
+  "issue": {
+    "url": "https://github.com/WordPress/gutenberg/issues/76082",
+    "state": "closed",
+    "closedAt": "2026-11-18T08:07:38Z"
+  },
+  "fix": {
+    "url": "https://github.com/WordPress/gutenberg/pull/77340",
+    "merged": true,
+    "mergeCommit": "d7e99c304d5f4f365c147c0b4b47115b9ea288b6",
+    "mergedAt": "2026-11-18T08:07:36Z"
+  },
+  "dependency": {
+    "url": "https://github.com/WordPress/gutenberg/pull/86049",
+    "mergedAt": "2026-11-17T10:09:17Z",
+    "summary": "The preceding aspect-ratio preset fix is needed before removing the compatibility stylesheet copy. Skipping the copy alone can leave aspect-ratio variables absent in the editor."
+  },
+  "diagnosis": "The observed warning matches Gutenberg's acknowledged false classification of the core-generated global custom-property stylesheet. The pinned core hook and its core/button dimension presets match that mechanism; the browser confirms the outer stylesheet contains both the button selector and the brand blue variable.",
+  "decision": "Keep the pinned runtime and existing style behavior. Do not move theme enqueue hooks or suppress console warnings as a substitute for the paired upstream fix. A later asset upgrade/backport must verify all preset variables in the canvas.",
+  "limitations": [
+    "No upstream code applied or runtime redeployed.",
+    "The supported browser DOM evaluation did not expose iframe contentDocument/contentWindow; computed canvas variable verification was not completed. This is a tool limitation, not evidence that the iframe lacks styles."
+  ],
+  "pinnedCore": {
+    "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+    "version": "7.1.4",
+    "hook": "enqueue_block_editor_assets",
+    "function": "wp_enqueue_global_styles_css_custom_properties",
+    "buttonDimensionPresets": [
+      {
+        "name": "25%",
+        "slug": "25",
+        "size": "25%"
+      },
+      {
+        "name": "50%",
+        "slug": "50",
+        "size": "50%"
+      },
+      {
+        "name": "75%",
+        "slug": "75",
+        "size": "75%"
+      },
+      {
+        "name": "100%",
+        "slug": "100",
+        "size": "100%"
+      }
+    ],
+    "hookFile": "wordpress/wp-includes/default-filters.php",
+    "themeFile": "wordpress/wp-includes/theme.json",
+    "functionFile": "wordpress/wp-includes/script-loader.php"
+  },
+  "browserEvidence": {
+    "outerStylePresent": true,
+    "outerHasButtonRule": true,
+    "outerHasBrandBlue": true,
+    "computedIframeVariablesVerified": false
+  }
+}

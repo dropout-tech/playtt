@@ -1,0 +1,309 @@
+{
+  "at": "2026-11-20T20:22:49.544Z",
+  "result": "fail",
+  "scope": "Native WordPress HTTP using retained editor2, exact preferences, fenced same-snapshot forward adoption, cold-session readback and logout revocation. Not browser UI or competing-editor acceptance.",
+  "checks": [
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:22:45.303Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3059
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:22:48.368Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 760
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:22:49.130Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 188
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:22:49.320Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 220
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:22:49.554Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 257
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:22:49.814Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 277
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:22:50.093Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 257
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:22:50.351Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 236
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:22:50.589Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1449
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:22:52.040Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 178
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:22:52.220Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4539
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:22:56.762Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 8010
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:23:04.773Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 187
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:23:04.961Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1552
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:23:06.514Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 154
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:23:06.668Z",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7703
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:23:14.374Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2310
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:23:16.686Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 576
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:23:17.264Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1695
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:23:18.960Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 287
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:23:19.248Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1378
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:20.654Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 202
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:20.858Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 196
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:21.056Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2025
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:23.081Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 261
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:23.346Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 398
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:23.745Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 313
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:24.063Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 166
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:24.231Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1597
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:25.829Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 183
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:23:26.013Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 194
+    }
+  ],
+  "steps": [
+    {
+      "label": "cold-login-form",
+      "versionBefore": 1,
+      "versionAfter": 1,
+      "pointer": {
+        "revision": "34a7df5f-087f-4d50-925d-05a748c1d66e",
+        "manifestKey": "sites/default/markdown/revisions/34a7df5f-087f-4d50-925d-05a748c1d66e.json",
+        "persistedAt": "2026-11-20T19:15:33.467Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "editor2-login",
+      "versionBefore": 1,
+      "versionAfter": 2,
+      "pointer": {
+        "revision": "f0bb6a66-be22-423f-94e5-d97fcb0a8486",
+        "manifestKey": "sites/default/markdown/revisions/f0bb6a66-be22-423f-94e5-d97fcb0a8486.json",
+        "persistedAt": "2026-11-20T20:23:08.804Z"
+      },
+      "chargedBytes": 96035,
+      "operations": 4
+    }
+  ],
+  "snapshots": [],
+  "failedStage": "profile",
+  "errorName": "AssertionError",
+  "finalBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 100738428,
+    "baselineObjects": 303,
+    "chargedBytes": 96218,
+    "chargedPuts": 5,
+    "initializedAt": "2026-11-20T20:06:31.237Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T20:06:31.656Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T20:23:23.849Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "e855ad25-1214-4c92-950b-be14dc830e77",
+        "openedAt": 1795206170196,
+        "expiresAt": 1795206470196,
+        "maxBytes": 8388608,
+        "usedBytes": 96035,
+        "remainingBytes": 8292573,
+        "maxOperations": 128,
+        "operations": 4,
+        "closed": true,
+        "expired": false,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 49165354,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "f0bb6a66-be22-423f-94e5-d97fcb0a8486",
+      "manifestKey": "sites/default/markdown/revisions/f0bb6a66-be22-423f-94e5-d97fcb0a8486.json",
+      "persistedAt": "2026-11-20T20:23:08.804Z"
+    },
+    "version": 2
+  },
+  "finalPins": 1,
+  "publisher": "paused",
+  "windowClosed": true,
+  "writeSealed": true,
+  "fenceReleased": true
+}

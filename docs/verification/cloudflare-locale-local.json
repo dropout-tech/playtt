@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-17T05:44:41.254Z",
+  "result": "pass",
+  "scope": "Official pinned zh_TW package installed through native WordPress plugin uploader and activated; admin HTML and current-user locale verified",
+  "remote": false,
+  "plugin": "playtt-zh-tw/playtt-zh-tw",
+  "packageSha256": "373d29b034fdf43b8dbd6297b58640471bb64fdc7861c0f2eebc2274f149c4e4",
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 891
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 1572
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 769
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/plugin-install.php",
+      "status": 200,
+      "wallMs": 668
+    },
+    {
+      "method": "POST",
+      "path": "/wp-admin/update.php",
+      "status": 200,
+      "wallMs": 2975
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/plugins.php",
+      "status": 302,
+      "wallMs": 2299
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 1526
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/users/me",
+      "status": 200,
+      "wallMs": 518
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/plugins",
+      "status": 200,
+      "wallMs": 540
+    }
+  ]
+}

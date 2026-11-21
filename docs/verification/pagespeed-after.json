@@ -1,0 +1,26 @@
+{
+  "scope": "PageSpeed Insights mobile lab results; theme 0.2.3; not field data or complete accessibility certification",
+  "commit": "55dc51845b52350f59436c2eacbece17f15edfbf",
+  "deployment": "32e92256-f71e-4ed6-afff-291b6cca3206",
+  "device": "Moto G Power",
+  "network": "Slow 4G",
+  "lighthouse": "13.6.0",
+  "browser": "HeadlessChromium 157.0.8103.38",
+  "home": {
+    "at": "2026-11-16T19:24:28+08:00",
+    "url": "https://playtt.tw/",
+    "report": "https://pagespeed.web.dev/analysis/https-playtt-tw/gndixtlbdh?form_factor=mobile",
+    "scores": { "performance": 94, "accessibility": 100, "bestPractices": 100, "seo": 100 },
+    "metrics": { "fcpMs": 1563, "lcpMs": 2956, "tbtMs": 0, "cls": 0, "speedIndexMs": 3023 }
+  },
+  "class": {
+    "at": "2026-11-16T19:25:19+08:00",
+    "url": "https://playtt.tw/class/",
+    "report": "https://pagespeed.web.dev/analysis/https-playtt-tw-class/mf9drv7gn5?form_factor=mobile",
+    "scores": { "performance": 99, "accessibility": 100, "bestPractices": 100, "seo": 100 },
+    "metrics": { "fcpMs": 1541, "lcpMs": 1541, "tbtMs": 0, "cls": 0, "speedIndexMs": 2383 }
+  },
+  "fix": "The native WordPress image render filter supplies actual image dimensions for existing imported pages without rewriting saved blocks. Layout shift dropped from 0.711 to 0.",
+  "remainingRecommendations": ["Serve responsive image sizes", "Consider longer cache lifetime only with safe asset versioning", "Reduce unused legacy JavaScript where appropriate"],
+  "caveat": "Scores vary between lab runs. No CrUX real-user dataset was available. Homepage LCP is still about 3 seconds under simulated slow 4G."
+}

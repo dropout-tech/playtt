@@ -1,0 +1,79 @@
+{
+  "at": "2026-11-21T03:35:19.114662+00:00",
+  "result": "pass",
+  "scope": "Local bounded object verification and restore; no new deployment",
+  "runtimeChanged": [
+    "src/playtt-content-overlay.ts"
+  ],
+  "sourceHashes": {
+    "src/playtt-content-overlay.ts": "7bf63e94d077d66bf46c4341add07e548ae1b12cc027541a6ca663f84c5281c3",
+    "tests/playtt-content-io.test.ts": "8ad1d1319f90c653b102147cdce98e0e594c7367f97b8fd9bdaf0eea64fc2571",
+    "scripts/playtt-content-io-local.mjs": "08611a852cf7bf37853edd943dca0df549f8d167f9e0af7c73152c470660cd79",
+    "scripts/playtt-content-io-benchmark.mjs": "46889b4573d174759ada22f92e79f0727d6115c088aca7a2187e0ba6eb15dccc",
+    "scripts/playtt-content-io-status.mjs": "171bc556af5e0eabf737edac093c9e43a26ee3e3fbd858c60e6095678ccd165d"
+  },
+  "formatAndFlagsUnchanged": true,
+  "concurrency": {
+    "maximumActiveReplacementReadsIncludingBodiesAndHashes": 4,
+    "cumulativeReplacementBytes": 1048576,
+    "cumulativeChangedEntries": 64,
+    "stopSchedulingAfterObservedFailure": true,
+    "drainAllStartedReadsBeforeReturn": true,
+    "writerRetainsNoCompletedBuffers": true,
+    "readerManifestOrderExact": true,
+    "wholeIsolateMemoryMeasured": false
+  },
+  "validation": {
+    "newIoTests": 10,
+    "contentFormatTests": 10,
+    "relatedRegressionTests": 95,
+    "uniquePassed": 115,
+    "typecheck": "pass",
+    "dryRun": "20892.99 KiB / gzip 7609.56 KiB",
+    "knownLoaderWarningsRemain": true,
+    "nativeRequests": 10,
+    "completedNativeTraces": 10,
+    "nativeBackupBaseline": 126,
+    "nativeLogin": 127,
+    "nativeSave": 128,
+    "nativeRetry": 129,
+    "nativeFullFallback": 130,
+    "newExpectedRevision": "203",
+    "retryAddedNoRevision": true,
+    "independentImportAndMaterializationExact": true,
+    "coldOverlayAndFullReadExact": true,
+    "allLocalProcessesDisposed": true,
+    "localExternalRequests": 0,
+    "benchmarkRuns": 24,
+    "benchmarkScope": "Fixed backup; identical bytes and counts. Injected delays are synthetic, not provider latency or billing."
+  },
+  "cloud": {
+    "at": "2026-11-21T03:30:27.535Z",
+    "result": "pass",
+    "scope": "Four GET-only existing-private-project status requests",
+    "canonicalVersion": 126,
+    "revision": "c7933a7c-c54e-4dc7-8a01-7888418761e8",
+    "pins": 10,
+    "coherent": true,
+    "fenceActive": false,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true,
+    "publisher": "paused",
+    "remainingBytes": 6604978,
+    "mutatingRequests": 0,
+    "productionRequests": 0
+  },
+  "privateDeployment": false,
+  "productionChanged": false,
+  "paidChanges": false,
+  "currentDeployedVersionLastVerifiedPriorTurn": "eb809ce8-c6e9-4dce-9a5d-d0fceb54896c",
+  "providerPerformanceMeasuredForCandidate": false,
+  "next": [
+    "Bounded private provider measurement from current126/pin10 owner, no cap increase or history deletion.",
+    "Inspect serial Markdown persistence without unbounded memory or detached writes.",
+    "Native browser, whole-isolate memory, mixed-version recovery, devices/IME and long-term Free acceptance remain open."
+  ],
+  "prDraft": true,
+  "goalStatus": "active"
+}

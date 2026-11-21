@@ -1,0 +1,15 @@
+test_absent_or_mismatched_registry_cannot_produce_a_plan (test_retention.RetentionTests.test_absent_or_mismatched_registry_cannot_produce_a_plan) ... ok
+test_incomplete_catalogs_wrong_bucket_and_duplicate_keys_fail_closed (test_retention.RetentionTests.test_incomplete_catalogs_wrong_bucket_and_duplicate_keys_fail_closed) ... ok
+test_missing_backup_pin_or_unclassified_pack_fails_closed (test_retention.RetentionTests.test_missing_backup_pin_or_unclassified_pack_fails_closed) ... ok
+test_missing_pack_wrong_size_cross_site_and_pointer_mismatch_fail_closed (test_retention.RetentionTests.test_missing_pack_wrong_size_cross_site_and_pointer_mismatch_fail_closed) ... ok
+test_old_current_backup_publication_job_and_cache_are_protected (test_retention.RetentionTests.test_old_current_backup_publication_job_and_cache_are_protected) ... ok
+test_omitted_job_record_cannot_hide_a_root (test_retention.RetentionTests.test_omitted_job_record_cannot_hide_a_root) ... ok
+test_proposal_is_never_executable_and_only_known_manifest_pack_keys (test_retention.RetentionTests.test_proposal_is_never_executable_and_only_known_manifest_pack_keys) ... ok
+test_recent_and_daily_points_survive_latest_count (test_retention.RetentionTests.test_recent_and_daily_points_survive_latest_count) ... ok
+test_registered_backup_remains_protected_without_a_local_copy (test_retention.RetentionTests.test_registered_backup_remains_protected_without_a_local_copy) ... ok
+test_shared_pack_is_kept_if_any_retained_manifest_needs_it (test_retention.RetentionTests.test_shared_pack_is_kept_if_any_retained_manifest_needs_it) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.011s
+
+OK

@@ -1,0 +1,21 @@
+{
+  "events": 798,
+  "outcomes": {
+    "ok": 798
+  },
+  "exceptions": 0,
+  "requestFailures": 9,
+  "incompleteTraces": 9,
+  "acknowledgementFailures": 0,
+  "snapshotEvents": 45,
+  "snapshotRequestCategories": {
+    "post-editor": 1,
+    "admin-ajax": 44
+  },
+  "maxSampledWasmHeapBytes": 75038720,
+  "firstAt": "2026-11-20T05:54:09.414Z",
+  "lastAt": "2026-11-20T15:39:53.823Z",
+  "observerStopped": true,
+  "matchingOrphanTails": 0,
+  "scope": "Interrupted browser session; finite captured events are not unique requests or continuous coverage. Background admin-ajax requests exhausted headroom before an operator seal was acquired."
+}

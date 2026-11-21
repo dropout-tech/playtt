@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-18T19:58:29.856Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "result": "pass",
+  "scope": "Fresh native WordPress session after independent deployment; attachment fields and image bytes unchanged; deployment evidence retained separately",
+  "id": 128,
+  "fileHash": "05c8d9c0d11d8ed170b65400af975a1a09268f09955d6f784c1df49c9dc4d762",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1378
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3459
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6563
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 8048
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3496
+    },
+    {
+      "path": "/wp-json/wp/v2/media/128?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1936
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/playtt-postmeta-cb214806-03f3-400a-95d7-e5fd3d9c6e1d.png",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 841
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 264
+    }
+  ]
+}

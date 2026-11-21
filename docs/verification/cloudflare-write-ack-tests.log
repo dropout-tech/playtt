@@ -1,0 +1,65 @@
+✔ D1 coordinator partitions state, leases, fences, and commit receipts by site ID (6.5481ms)
+✔ D1 adoption accepts monotonic forward state and requires an active fence token (4.6512ms)
+✔ Durable Object coordinator writes the matching site pointer and preserves default compatibility (32.0987ms)
+✔ uninitialized or corrupt ledger rejects writes before touching R2 (41.1859ms)
+✔ concurrent writers share a durable bound and UTF-8 bytes, not characters (9.4853ms)
+✔ ambiguous R2 failure, overwritten bytes, conditional miss and delete never refund (6.4493ms)
+✔ lost reservation response leaves charge but never starts the R2 write (1.3225ms)
+✔ unknown streams, multipart and cross-site paths cannot bypass allocation (1.7622ms)
+✔ initialization paginates even short pages and never overwrites an existing ledger (2.6146ms)
+✔ failed or looping inventory never enables writes; malformed configuration fails closed (3.584ms)
+✔ coordinator capacity refusal preserves current pointer, version and receipt; subsequent release works (6.7631ms)
+✔ disabled deployments keep their original bucket and repeated wrapping cannot double-charge (1.229ms)
+✔ mixed deployment limits use the smaller value; old clients cannot omit their bound (1.9965ms)
+✔ legacy, wrong-byte and overly permissive reservation replies never reach R2 (0.7938ms)
+✔ independent restore scope initializes its own ledger and rejects a ledger copied from another bucket (2.9418ms)
+✔ initialization cannot erase a corrupt null ledger (0.5716ms)
+✔ healthy confirmation takes one call and never reserves or writes twice (41.0083ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":3}
+✔ one or two lost settlement requests recover the exact ticket without repeating the R2 mutation (441.1158ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ lost responses and malformed acknowledgement bodies retry idempotently after the server already settled (219.9524ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ transient503 and a restarted budget recover while a wrong-ticket proof is never accepted (325.5084ms)
+✔ retry exhaustion preserves confirmed success and leaves unknown acknowledgement state closed to maintenance (310.1624ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ permanently wrong-ticket proofs cannot settle another pending ticket (309.288ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ confirmed deletes and conditional misses retry only acknowledgement, preserving conservative charges (229.5568ms)
+✔ ambiguous R2 put/delete and lost reservation response are never acknowledged or replayed (4.2591ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+✔ recovering an acknowledgement cannot clear an unrelated ambiguous R2 write (106.2535ms)
+{"schema":"playtt/r2-write-ack-recovered/v1","knownR2Completion":true,"attempts":2}
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ confirmed current.json and coordinator commit stay coherent after retries recover or exhaust (433.6416ms)
+✔ legacy capacity reservation and expired canonical lease do not prove R2 writes drained (50.4458ms)
+✔ pending put survives a budget restart; seal waits for actual R2 completion (7.3063ms)
+✔ a delayed delete is tracked without charging bytes or put count; a seal blocks deletion (6.134ms)
+✔ failed R2 response retains its ticket even if the provider applied the write (2.9502ms)
+✔ lost reservation reply leaves an unsettled ticket and sends no R2 request (3.538ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ lost settlement reply preserves confirmed R2 success and an already closed ticket does not obstruct the seal (333.6748ms)
+✔ tracking must be initialized and cannot be disabled by dropping the environment flag (2.0339ms)
+✔ persistent seals do not expire; exact acquisition retries and owner release are safe (3.1446ms)
+✔ settlement is ticket-specific and idempotent; an unrelated UUID cannot clear another operation (2.0936ms)
+✔ pending operations are bounded and never expire merely because their timestamps are old (93.1876ms)
+✔ reservation capacity failure rolls back both charge and tentative ticket (1.7252ms)
+✔ an early parallel-write failure cannot hide a still-running sibling from a drain (2.354ms)
+✔ corrupt tracking cannot be reinitialized or bypassed with legacy requests (1.2132ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true,"attempts":3}
+✔ lost settlement request cannot strand an already written canonical pointer outside its DO commit (312.996ms)
+✔ a confirmed conditional put miss settles its ticket while retaining the conservative charge (1.6737ms)
+✔ tracked callers reject old, missing-ticket and wrong-operation proofs before R2 (1.861ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2840.4843

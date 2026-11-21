@@ -1,0 +1,104 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": false,
+  "existingConfigsChanged": false,
+  "prerequisites": [
+    {
+      "path": "src/playtt-metadata-overlay.ts",
+      "sha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43"
+    },
+    {
+      "path": "src/playtt-usermeta-overlay.ts",
+      "sha256": "caafbbd624cbda0bbdef5fd593dbfe83932085001749a3b4c86ea66bc9d1b1a0"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "sha256": "71a12314e4c19ee25f2b0f44625bb113a984d8b5b0e4ee0425b14ea4d66379ca"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "sha256": "3ddc0834f7397dfe18149aad2e441b8528a5f9717eea338e1208508a793d6245"
+    },
+    {
+      "path": "scripts/playtt-snapshot-download.mjs",
+      "sha256": "3ad17ec3909cdea39640a1897870adf371e6c1b276bd53b8f1784502dc4b5a53"
+    },
+    {
+      "path": "scripts/playtt-session-native.mjs",
+      "sha256": "403d13608bb2846a22813156f977dd7ed828b9fe088fdee7db366487bc421473"
+    },
+    {
+      "path": "wrangler.playtt-session-audit.jsonc",
+      "sha256": "fe232b96a4f82ef5c4743dc266b7715e0279de3a1ab6a15203939897fbafd99f"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "beforeSha256": "6a5009b2c7aecd7ca5e590d0d943268765e157d1f0bf62c8034f4b6792e1fade",
+      "afterSha256": "95b0b358d85afee7cc24e888a40679a3a90cfcb98f1345a8e5f90fea9b15fe30"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "beforeSha256": "9629a470d9de7690599638ea5828cd987b12bb5a5bc27896a05abcab6ae04ab3",
+      "afterSha256": "b9690f22733672a17bfd1ff7d0ad221d40c91c8c1acf561185e49639d31c0211"
+    },
+    {
+      "path": "src/playtt-request-mutation.ts",
+      "source": "playtt-request-mutation.ts",
+      "afterSha256": "40f46f166f9112ab377795867b4a1d3865b03f3c9ad416ad4387b2025cc23c6a"
+    },
+    {
+      "path": "tests/playtt-request-mutation.test.ts",
+      "source": "playtt-request-mutation.test.ts",
+      "afterSha256": "11b2c3a3b74925a830839dd613d03515891a7b03d3facdd32de598b52586a5ba"
+    },
+    {
+      "path": "scripts/playtt-session-logout.mjs",
+      "source": "playtt-session-logout.mjs",
+      "afterSha256": "bbe334f09ec34e4ec0b9502c848a23f97e0cdec970162a523e8d83f2e1f57edf"
+    },
+    {
+      "path": "scripts/playtt-session-final-status.mjs",
+      "source": "playtt-session-final-status.mjs",
+      "afterSha256": "1b020d7ac671f367df5b5dc1fe8bfb63d9a0cf78d5cbca21c2d61f9af3e3f572"
+    },
+    {
+      "path": "scripts/playtt-session-audit.mjs",
+      "source": "playtt-session-audit.mjs",
+      "afterSha256": "766dd2204cd09b2506e9f64fb94720c6ac3f4253583a7e53c4ab1731e4694899"
+    },
+    {
+      "path": "scripts/playtt-session-lock-control.mjs",
+      "source": "playtt-session-lock-control.mjs",
+      "afterSha256": "77c0b51c059712175356ac2d10fc04b54bb92de27f4e9b7f3d9d84f20eb70414"
+    },
+    {
+      "path": "scripts/playtt-tail-session-lock.mjs",
+      "source": "playtt-tail-session-lock.mjs",
+      "afterSha256": "1ae796bdc39918e31f49026a01cb1a7c02e2bb562caa31ff3a5899482c776e42"
+    },
+    {
+      "path": "scripts/playtt-session-lock-backup.mjs",
+      "source": "playtt-session-lock-backup.mjs",
+      "afterSha256": "c6fb3f383bf684c8d4d78ba68e9b00c8a08aeecffbb636dcbf5f0488a892a323"
+    },
+    {
+      "path": "scripts/playtt-session-lock-cost.mjs",
+      "source": "playtt-session-lock-cost.mjs",
+      "afterSha256": "d0908464a67376e1c607ee7e4392d5ac20374e10e144f6d30eb50fd4b7baec63"
+    },
+    {
+      "path": "scripts/playtt-session-lock-pin.mjs",
+      "source": "playtt-session-lock-pin.mjs",
+      "afterSha256": "22b5f3a725ac0787d2acb3c53b7ee1269d35de28f714d4624ce4efce7da9f05b"
+    },
+    {
+      "path": "scripts/playtt-session-lock-autosaves.mjs",
+      "source": "playtt-session-lock-autosaves.mjs",
+      "afterSha256": "7f6c8dafcf35ac6118567871d4d047c362e6f95135cf4284b525cb15935e5e48"
+    }
+  ],
+  "patchSha256": "d1857843d672dc7e57a77bd093047b01ca155fca4b8ec72f12cd3a7b52b47336"
+}

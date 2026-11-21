@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-18T22:16:45.552478+00:00",
+  "events": 355,
+  "outcomes": {
+    "ok": 355
+  },
+  "exceptions": 0,
+  "requestFailures": 0,
+  "incompleteTraces": 0,
+  "memoryRows": 155,
+  "maxObservedWasmHeapBytes": 73924608,
+  "maxObservedFileBufferBytes": 31675339,
+  "observerStopped": true,
+  "limits": "Finite observation across serial and experimental versions. Event counts are not request counts; WASM/file-buffer totals are not whole-isolate memory. No lifetime reliability claim.",
+  "scopedOrphanTailProcesses": 0
+}

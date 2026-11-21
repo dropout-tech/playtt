@@ -1,0 +1,63 @@
+{
+  "name": "playtt-wp-free-restore-audit",
+  "account_id": "3baadbd4abd9fd63c7f7e51664b26f67",
+  "main": "src/worker-playtt-do.ts",
+  "compatibility_date": "2026-07-18",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "preview_urls": false,
+  "r2_buckets": [
+    {
+      "binding": "WORDPRESS_STATE_BUCKET",
+      "bucket_name": "playtt-wordpress-retirement-audit"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "WORDPRESS_STATE",
+        "class_name": "WordPressStateCoordinator"
+      },
+      {
+        "name": "PLAYTT_EXECUTION",
+        "class_name": "PlayttWordPressExecution"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "WordPressStateCoordinator",
+        "PlayttWordPressExecution"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "type": "CompiledWasm",
+      "globs": [
+        "**/*.wasm"
+      ],
+      "fallthrough": false
+    },
+    {
+      "type": "Data",
+      "globs": [
+        "**/*.sqlite",
+        "**/*-runtime.zip",
+        "**/*-canonical-seed.zip"
+      ],
+      "fallthrough": false
+    }
+  ],
+  "vars": {
+    "PLAYTT_PROBE_GATE": "true",
+    "WORDPRESS_SITE_CONTEXTS": "[{\"id\":\"default\",\"hostname\":\"playtt-wp-free-restore-audit.muzhi-garden-platform.workers.dev\",\"origin\":\"https://playtt-wp-free-restore-audit.muzhi-garden-platform.workers.dev\"}]",
+    "PLAYTT_STATE_PARTITION": "restore-v1",
+    "PLAYTT_AUTO_PUBLISH": "true",
+    "PLAYTT_MEMORY_DIAGNOSTICS": "true"
+  }
+}

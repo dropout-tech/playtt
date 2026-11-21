@@ -1,0 +1,108 @@
+{
+  "at": "2026-11-17T09:22:49.192135+00:00",
+  "scope": "Sanitized finite remote tail interval; paired Worker and DO envelopes are not unique requests. WASM heap and selected MEMFS file capacity are not total isolate memory.",
+  "from": "2026-11-17T09:02:12.311Z",
+  "to": "2026-11-17T09:22:31.951Z",
+  "versions": {
+    "a33083f3-7fb1-4fae-8ee8-f53d824427db": {
+      "events": 1280,
+      "outcomes": {
+        "ok": 1280
+      },
+      "exceptions": [],
+      "stages": {
+        "after-persist": {
+          "samples": 15,
+          "maxHeapBytes": 75104256,
+          "maxObservedFileBytes": 27261533
+        },
+        "after-request": {
+          "samples": 166,
+          "maxHeapBytes": 75956224,
+          "maxObservedFileBytes": 27270802
+        },
+        "before-request": {
+          "samples": 166,
+          "maxHeapBytes": 75956224,
+          "maxObservedFileBytes": 27270802
+        }
+      },
+      "generations": [
+        {
+          "at": "2026-11-17T09:02:12.486Z",
+          "values": [
+            1
+          ]
+        },
+        {
+          "at": "2026-11-17T09:04:15.011Z",
+          "values": [
+            1
+          ]
+        },
+        {
+          "at": "2026-11-17T09:06:00.471Z",
+          "values": [
+            1
+          ]
+        },
+        {
+          "at": "2026-11-17T09:07:42.887Z",
+          "values": [
+            1
+          ]
+        },
+        {
+          "at": "2026-11-17T09:09:21.738Z",
+          "values": [
+            1
+          ]
+        },
+        {
+          "at": "2026-11-17T09:20:27.849Z",
+          "values": [
+            1
+          ]
+        }
+      ],
+      "retirements": [
+        {
+          "at": "2026-11-17T09:04:03.172Z",
+          "values": [
+            {
+              "requests": 98,
+              "heapBytes": 74842112
+            }
+          ]
+        },
+        {
+          "at": "2026-11-17T09:05:57.418Z",
+          "values": [
+            {
+              "requests": 98,
+              "heapBytes": 74055680
+            }
+          ]
+        },
+        {
+          "at": "2026-11-17T09:09:20.915Z",
+          "values": [
+            {
+              "requests": 98,
+              "heapBytes": 74579968
+            }
+          ]
+        },
+        {
+          "at": "2026-11-17T09:14:42.968Z",
+          "values": [
+            {
+              "requests": 96,
+              "heapBytes": 75104256
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

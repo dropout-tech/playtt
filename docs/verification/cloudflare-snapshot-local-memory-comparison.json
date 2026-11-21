@@ -1,0 +1,43 @@
+{
+  "scope": "Local inspector numerical samples without forced GC. Counter maxima need not be simultaneous; not total remote isolate memory.",
+  "runs": [
+    {
+      "label": "snapshot-reuse",
+      "exitCode": 0,
+      "samples": 321,
+      "peakCountersNotSimultaneous": {
+        "usedSize": 68819776,
+        "totalSize": 115359744,
+        "embedderHeapUsedSize": 7866656,
+        "backingStorageSize": 105895776
+      },
+      "final": {
+        "at": 1794909801783,
+        "phase": "mutation:commit",
+        "usedSize": 39999840,
+        "totalSize": 104308736,
+        "embedderHeapUsedSize": 337696,
+        "backingStorageSize": 38119291
+      }
+    },
+    {
+      "label": "runtime-snapshot",
+      "exitCode": 0,
+      "samples": 320,
+      "peakCountersNotSimultaneous": {
+        "usedSize": 35021388,
+        "totalSize": 60166144,
+        "embedderHeapUsedSize": 2063456,
+        "backingStorageSize": 109087054
+      },
+      "final": {
+        "at": 1794910338494,
+        "phase": "mutation:commit",
+        "usedSize": 19157852,
+        "totalSize": 59543552,
+        "embedderHeapUsedSize": 741768,
+        "backingStorageSize": 46155405
+      }
+    }
+  ]
+}

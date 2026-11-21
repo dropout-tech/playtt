@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-18T22:35:52.627Z",
+  "result": "pass",
+  "scope": "Complete backup after mobile-width native edit/save/reopen and owned cleanup; all original content, historical revisions, media and metadata retained; owned draft/revisions absent",
+  "ownedId": 169,
+  "cleanupComplete": true,
+  "unchangedCanonicalFiles": 37,
+  "originalMarkdown": 27,
+  "uploads": 15,
+  "postmetaRows": 48,
+  "sequenceHighWater": {
+    "wp_comments": "1",
+    "wp_options": "404",
+    "wp_postmeta": "67",
+    "wp_posts": "170",
+    "wp_term_taxonomy": "4",
+    "wp_terms": "4",
+    "wp_usermeta": "21",
+    "wp_users": "1"
+  },
+  "states": [
+    {
+      "target": "rebuild",
+      "version": 232,
+      "revision": "fbcb867b-df28-422c-a4e9-6ee2a3b77e34",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    },
+    {
+      "target": "daily-source",
+      "version": 174,
+      "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    }
+  ],
+  "gateChecks": [
+    {
+      "path": "/wp-admin/",
+      "status": 404
+    },
+    {
+      "path": "/wp-json/wp/v2/media",
+      "status": 404
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/logo.webp",
+      "status": 404
+    }
+  ],
+  "backup": {
+    "at": "2026-11-18T22:35:29.021Z",
+    "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+    "result": "pass",
+    "bucket": "playtt-wordpress-rebuild-audit",
+    "revision": "fbcb867b-df28-422c-a4e9-6ee2a3b77e34",
+    "objects": 297,
+    "decodedBytes": 4432476,
+    "archiveBytes": 2293851,
+    "archiveSha256": "5cc851f708b4a3401594003f3e0ff343447b979a088186da0345b571da06c386"
+  }
+}

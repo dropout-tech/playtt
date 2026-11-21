@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-11-20T03:05:17.095385+00:00",
+  "source": "Read-only authenticated Cloudflare Chrome UI, observed 2026-11-20 approximately 02:57-03:00 UTC",
+  "account": "info@dropout.tw",
+  "workers": {
+    "plan": "Free",
+    "price": "$0",
+    "badge": "Current plan",
+    "requestsToday": 587,
+    "dailyLimit": 100000,
+    "day": "UTC 2026-11-20"
+  },
+  "r2": {
+    "period": "October 25 - November 25",
+    "classA": "5.21k",
+    "classB": "51.1k",
+    "accountTotalStorage": "1.61 GB",
+    "billableUsage": "$0.00",
+    "message": "No billable usage incurred yet"
+  },
+  "durableObjects": {
+    "period": "October 25 - November 25",
+    "duration": "1.79k GB-sec",
+    "requests": "14.32k",
+    "sqlStorage": "299.01 kB",
+    "kvStorage": "0 B",
+    "sqlRowsRead": "12.28k",
+    "sqlRowsWritten": "9.48k",
+    "note": "Period totals as displayed, not exact daily counters; historical error counts remain."
+  },
+  "changes": "None. No plan, resource, billing, permission, notification or lifecycle changes. Created observation tab closed.",
+  "limitations": [
+    "Rounded, delayed UI totals; account shared with other projects.",
+    "R2 zero current charge does not guarantee future zero charge.",
+    "Account R2 analytics lags direct private-bucket inventory."
+  ]
+}

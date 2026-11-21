@@ -1,0 +1,290 @@
+{
+  "at": "2026-11-21T00:28:57.547Z",
+  "result": "pass",
+  "scope": "Offline exact comparison of local native UI snapshots; no remote calls",
+  "experimentalReadbackRecoveredLocally": true,
+  "remoteFeatureEnabled": false,
+  "remoteProviderFaultTested": false,
+  "attempts": [
+    {
+      "attempt": "playtt-readback-guard-ui",
+      "marker": "playtt-readback-guard-ui-e95c644d-7187-48a5-b784-78ec8f269f7e",
+      "server": {
+        "localProcessesDisposed": true,
+        "outboundAttempts": 0,
+        "restarts": 1,
+        "stopReason": "finished",
+        "versions": [
+          {
+            "label": "before",
+            "version": 122
+          },
+          {
+            "label": "fault",
+            "version": 125
+          },
+          {
+            "label": "readback",
+            "version": 125
+          },
+          {
+            "label": "final",
+            "version": 134
+          }
+        ]
+      },
+      "browser": {
+        "events": [
+          {
+            "type": "single-native-save-click",
+            "at": "2026-11-21T00:24:31.462Z"
+          },
+          {
+            "type": "native-success-after-one-readback",
+            "at": "2026-11-21T00:24:54.558Z"
+          }
+        ],
+        "manualRetryClicked": false,
+        "savedNoticeObserved": true,
+        "errorNoticeAbsent": true,
+        "contentRetained": true,
+        "console": [
+          {
+            "level": "warn",
+            "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+            "timestamp": "2026-11-21T00:24:31.318Z",
+            "url": "http://127.0.0.1:9449/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+          }
+        ],
+        "firstTabClosed": true,
+        "coldSameSession": true,
+        "coldVisualContentRetained": true,
+        "coldContentBytesExact": true,
+        "coldTabClosed": true
+      },
+      "readbackEvidence": {
+        "count": 1,
+        "writeReplayObserved": false,
+        "version": 125,
+        "contentExact": true,
+        "coldRuntime": true,
+        "noCommitPhase": true,
+        "durationMs": 2241
+      },
+      "comparisons": [
+        {
+          "from": "before",
+          "to": "fault",
+          "fromVersion": 122,
+          "toVersion": 125,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/posts.json",
+            "_tables/usermeta.json",
+            "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+          ],
+          "tables": {
+            "posts": {
+              "added": [
+                {
+                  "id": "201",
+                  "parent": "193",
+                  "type": "revision",
+                  "ownedContent": true,
+                  "baselineContent": false
+                }
+              ],
+              "removed": [],
+              "changed": []
+            },
+            "postmeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "72",
+                  "postId": "193",
+                  "metaKey": "_edit_lock",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "usermeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "21",
+                  "userId": "1",
+                  "metaKey": "wp_persisted_preferences",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "users": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            }
+          },
+          "pageBodyExact": false,
+          "pageMetadataFields": [
+            "date",
+            "modified",
+            "modified_gmt"
+          ],
+          "revisionIdsBefore": [
+            "194",
+            "195",
+            "196",
+            "200"
+          ],
+          "revisionIdsAfter": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "mediaAndThemeExact": true,
+          "exactUnrelatedCanonicalRowsAndFiles": true,
+          "monotonicCounters": true
+        },
+        {
+          "from": "fault",
+          "to": "readback",
+          "fromVersion": 125,
+          "toVersion": 125,
+          "changed": [],
+          "tables": {
+            "posts": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            },
+            "postmeta": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            },
+            "usermeta": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            },
+            "users": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            }
+          },
+          "pageBodyExact": true,
+          "pageMetadataFields": [],
+          "revisionIdsBefore": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "revisionIdsAfter": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "mediaAndThemeExact": true,
+          "exactUnrelatedCanonicalRowsAndFiles": true,
+          "monotonicCounters": true
+        },
+        {
+          "from": "readback",
+          "to": "final",
+          "fromVersion": 125,
+          "toVersion": 134,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/usermeta.json"
+          ],
+          "tables": {
+            "posts": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            },
+            "postmeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "72",
+                  "postId": "193",
+                  "metaKey": "_edit_lock",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "usermeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "21",
+                  "userId": "1",
+                  "metaKey": "wp_persisted_preferences",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "users": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            }
+          },
+          "pageBodyExact": true,
+          "pageMetadataFields": [],
+          "revisionIdsBefore": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "revisionIdsAfter": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "mediaAndThemeExact": true,
+          "exactUnrelatedCanonicalRowsAndFiles": true,
+          "monotonicCounters": true
+        }
+      ],
+      "telemetry": {
+        "traces": 33,
+        "completedTraces": 33,
+        "fullPacks": 1,
+        "fullPackBytes": 2294484,
+        "requestFailures": 0
+      }
+    }
+  ]
+}

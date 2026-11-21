@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-21T00:26:55.122Z",
+  "state": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "207cc3ef-5e65-463d-857c-b8e4c2ad3e89",
+      "manifestKey": "sites/default/markdown/revisions/207cc3ef-5e65-463d-857c-b8e4c2ad3e89.json",
+      "persistedAt": "2026-11-20T22:23:16.608Z"
+    },
+    "version": 118
+  },
+  "fenceActive": false,
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 100738428,
+    "baselineObjects": 303,
+    "chargedBytes": 39029442,
+    "chargedPuts": 392,
+    "initializedAt": "2026-11-20T20:06:31.237Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T20:06:31.656Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T22:23:31.479Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "4dc1be5f-b2bc-45d0-8ef6-372ab8642e13",
+        "openedAt": 1795213164717,
+        "expiresAt": 1795213464717,
+        "maxBytes": 6291456,
+        "usedBytes": 4721431,
+        "remainingBytes": 1570025,
+        "maxOperations": 128,
+        "operations": 76,
+        "closed": true,
+        "expired": true,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 10232130,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "pins": 8,
+  "publisher": "paused"
+}

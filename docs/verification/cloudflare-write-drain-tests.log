@@ -1,0 +1,52 @@
+✔ D1 coordinator partitions state, leases, fences, and commit receipts by site ID (17.6342ms)
+✔ D1 adoption accepts monotonic forward state and requires an active fence token (5.9187ms)
+✔ Durable Object coordinator writes the matching site pointer and preserves default compatibility (33.3948ms)
+✔ verified immutable pin survives restart; exact retry after lost acknowledgement is idempotent (24.9238ms)
+✔ remote manifest and complete archive hashes are checked before protection is recorded (3.0128ms)
+✔ invalid namespace, time, identity and oversized input cannot trigger R2 reads (0.6837ms)
+✔ expired or lost fence before or during I/O cannot register a pin (2.7152ms)
+✔ corrupt registry is never silently replaced with an empty list (1.1894ms)
+✔ declared object size is enforced while streaming, not after an unlimited buffer (1.0774ms)
+✔ a matching manifest hash cannot bind a different pack or revision (1.8995ms)
+✔ coordinator serializes registration and fence release; wrong-token writes and other sites are rejected (65.9714ms)
+✔ concurrent pins under the same fence retain both entries without advancing canonical state (12.0938ms)
+✔ input normalization retains only immutable identity fields (0.4556ms)
+✔ uninitialized or corrupt ledger rejects writes before touching R2 (45.4726ms)
+✔ concurrent writers share a durable bound and UTF-8 bytes, not characters (5.4448ms)
+✔ ambiguous R2 failure, overwritten bytes, conditional miss and delete never refund (3.9416ms)
+✔ lost reservation response leaves charge but never starts the R2 write (1.0529ms)
+✔ unknown streams, multipart and cross-site paths cannot bypass allocation (1.4457ms)
+✔ initialization paginates even short pages and never overwrites an existing ledger (1.4326ms)
+✔ failed or looping inventory never enables writes; malformed configuration fails closed (2.032ms)
+✔ coordinator capacity refusal preserves current pointer, version and receipt; subsequent release works (5.8946ms)
+✔ disabled deployments keep their original bucket and repeated wrapping cannot double-charge (1.2945ms)
+✔ mixed deployment limits use the smaller value; old clients cannot omit their bound (1.9743ms)
+✔ legacy, wrong-byte and overly permissive reservation replies never reach R2 (0.8335ms)
+✔ independent restore scope initializes its own ledger and rejects a ledger copied from another bucket (2.0096ms)
+✔ initialization cannot erase a corrupt null ledger (0.5548ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true}
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true}
+✔ legacy capacity reservation and expired canonical lease do not prove R2 writes drained (46.6889ms)
+✔ pending put survives a budget restart; seal waits for actual R2 completion (8.2487ms)
+✔ a delayed delete is tracked without charging bytes or put count; a seal blocks deletion (5.562ms)
+✔ failed R2 response retains its ticket even if the provider applied the write (3.2655ms)
+✔ lost reservation reply leaves an unsettled ticket and sends no R2 request (2.7719ms)
+✔ lost settlement reply preserves confirmed R2 success and an already closed ticket does not obstruct the seal (2.9427ms)
+✔ tracking must be initialized and cannot be disabled by dropping the environment flag (2.5683ms)
+✔ persistent seals do not expire; exact acquisition retries and owner release are safe (3.6974ms)
+✔ settlement is ticket-specific and idempotent; an unrelated UUID cannot clear another operation (2.2734ms)
+✔ pending operations are bounded and never expire merely because their timestamps are old (94.2143ms)
+✔ reservation capacity failure rolls back both charge and tentative ticket (1.483ms)
+✔ an early parallel-write failure cannot hide a still-running sibling from a drain (2.0786ms)
+✔ corrupt tracking cannot be reinitialized or bypassed with legacy requests (1.2611ms)
+✔ lost settlement request cannot strand an already written canonical pointer outside its DO commit (2.6799ms)
+✔ a confirmed conditional put miss settles its ticket while retaining the conservative charge (2.1717ms)
+✔ tracked callers reject old, missing-ticket and wrong-operation proofs before R2 (1.8384ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 658.6686

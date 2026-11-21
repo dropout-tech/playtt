@@ -1,0 +1,13 @@
+✔ compressed source converts to old plain content format, with exact bytes, sessions, deletes and zero-byte additions (501.6063ms)
+✔ wrong external trust anchor rejects before creating output (104.2865ms)
+✔ damaged detached replacement rejects despite an intact compressed delta (176.5593ms)
+✔ existing output cannot be overwritten and damage cannot fall back to the compressed source (315.1979ms)
+✔ one MiB replacement remains within the unchanged legacy reader bound (359.8528ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1908.7062

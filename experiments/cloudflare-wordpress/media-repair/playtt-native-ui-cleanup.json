@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-18T20:34:40.930Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "result": "pass",
+  "scope": "Removed only the identity/content-checked native-editor test draft; original homepage remained byte-identical in REST content",
+  "id": 136,
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 488
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2794
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3641
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 10284
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4396
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/136?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2886
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2763
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/136?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 7308
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/136?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 2665
+    }
+  ]
+}

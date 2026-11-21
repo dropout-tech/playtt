@@ -1,0 +1,20 @@
+{
+  "name": "playtt-publication-local",
+  "account_id": "3baadbd4abd9fd63c7f7e51664b26f67",
+  "main": "src/worker-playtt-public.ts",
+  "compatibility_date": "2026-07-18",
+  "workers_dev": false,
+  "preview_urls": false,
+  "r2_buckets": [
+    {
+      "binding": "WORDPRESS_STATE_BUCKET",
+      "bucket_name": "playtt-wordpress-probe"
+    }
+  ],
+  "vars": {
+    "PLAYTT_PUBLIC_HOST": "127.0.0.1",
+    "PLAYTT_PUBLIC_ORIGIN": "http://127.0.0.1:9428",
+    "PLAYTT_CMS_ORIGIN": "http://127.0.0.1:9429",
+    "PLAYTT_PUBLIC_INDEXABLE": "false"
+  }
+}

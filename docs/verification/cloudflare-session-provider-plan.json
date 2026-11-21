@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-20T20:04:54.159Z",
+  "url": "https://dash.cloudflare.com/3baadbd4abd9fd63c7f7e51664b26f67/workers/plans",
+  "source": "Authenticated visible dashboard",
+  "excerpt": "- heading \"Free\" [level=2]\n- generic: $0\n- paragraph: For personal use and simple applications\n- button \"Current plan\" [disabled]:\n  - generic: Current plan\n",
+  "currentPlan": "Free",
+  "upgradeClicked": false
+}

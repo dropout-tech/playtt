@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-20T18:33:51.643Z",
+  "result": "pass",
+  "scope": "One desktop Chrome native block editor save and reload on owned draft193; no responsive/physical-device/concurrent-editor/error-retry acceptance",
+  "ownedId": 193,
+  "originalParagraphPresent": true,
+  "newParagraphSavedAndReloaded": true,
+  "nativeSavedNotificationObserved": true,
+  "tabClosed": true,
+  "consoleErrorsObserved": 0,
+  "consoleWarnings": 2,
+  "warningCategory": "global-styles-css-custom-properties-inline-css added to editor iframe incorrectly",
+  "screenshots": [
+    "window-native-editor-before.jpg",
+    "window-native-editor-saved.jpg",
+    "window-native-editor-reloaded.jpg"
+  ],
+  "independentPersistedContentVerified": true,
+  "stillDraft": true
+}
