@@ -1,5 +1,17 @@
 # PLAYTT 執行進度
 
+## 私人原生編輯保存與接續重開通過；首次窗口容量不足，pin13（2026-11-21）
+
+67dd308來源暫部署fdc7f590，Chrome繁中原生編輯器新增一段、按一次儲存並顯示成功。原生autosave204及正式修訂205正文皆精確，但首次重開遇到窗口容量保護；420秒／3MiB／96操作實用3109160bytes／82puts，僅餘36568bytes。不是操作次數用完，也不能將一次手動保存當成整個瀏覽器只有一次寫入。已關窗封存，獨立完整備份154／pin12通過。
+
+以新的180秒／1.5MiB／48操作窗口接續既有資料，只重開與登出，不重送保存。八段可見文字逐段一致，原生登出成功；實用945529bytes／24puts，結束161。再次完整下載、獨立匯入與完整包轉換逐字通過，298檔／303物件，pin13保留所有舊pins。原生核心按既有規則清掉已過期autosave204及footnotes75，正式修訂205和正文不變；本次session已移除、登入前5個session精確保留。pin檢查曾誤設「全部session應為空」，在本機即停、未送註冊；修正為登入前130精確比對後通過。
+
+診斷由同一控制程序與窗口協調，每個操作前challenge驗證真實程序仍存活與期限；4項工具測試通過。兩輪540事件，主流程35trace中33完成、2個manifest寫入失敗、2個canceled；接續11/11完成、1個canceled，皆無觀察到exception。不隱藏第一次容量失敗。檔案副本峰值366280bytes、追蹤含response峰值1239624bytes、WASM取樣76152832bytes，均非whole-isolate峰值。平台事件可能含多個請求trace，不能直接宣稱某個時間就是按鈕保存耗時或穩定加速。
+
+最終部署9f5aa2c1保留有界寫入相容來源，實際content/readback旗標皆移除；20設定不變。06:28:14Z只讀核對161／3021e7bd、13pins、closed/sealed、pending0、fence解除、publisher paused、剩1881041bytes；沒有提高150000000總額度、退款或清除歷史。最終部署後未再做原生內容請求，這項不冒充已驗證。所有程序／自有測試分頁結束，Workers方案刷新仍Free／$0／Current plan。
+
+新增12工具可重建77來源／131輔助檔；runtime來源未再改，125項來源測試沿用。下一步先在本機找出背景寫入放大原因：36次Markdown持久化中25次只寫一個物件，但目前沒有檔名診斷，不能推定是哪個檔案或任意跳過ID／鎖／session保存。不要重複消耗剩餘provider額度。下一窗口接 `playtt-markdown-provider-cold-ui-owned-private.json`，verified備份改接 `playtt-markdown-provider-cold-backup-owned-private.json`（161）。正式Pages及原視覺維持、PR4 draft、完整目標active；證據 `cloudflare-markdown-provider-*`。以下為歷史紀錄。
+
 ## Markdown 有界寫入與本機原生瀏覽器通過，尚未部署（2026-11-21）
 
 第12選用候選 `markdown-write/` 先用PHP檢查完整大小清單，再最多4檔、1MiB小檔案窗口並行寫入；大檔單獨處理，保留單檔16MiB／總64MiB及原始bytes／hash，出錯等已開始工作結束。格式、提交與20設定不變。125個不同相關檢查於各次執行通過、TypeScript／dry-run通過；兩個過短等待測試修正後通過。額外廣泛suite有3個既有／環境失敗（兩個舊source regex、缺PHP CLI），沒有宣稱全綠。

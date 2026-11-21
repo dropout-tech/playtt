@@ -1,0 +1,112 @@
+{
+  "at": "2026-11-21T06:09:53.770Z",
+  "result": "independent-copy-verified-comparison-pending",
+  "canonicalVersion": 154,
+  "anchor": {
+    "revision": "d320f731-4543-48fb-a01d-32c795bb9ab1",
+    "manifestKey": "sites/default/markdown/revisions/d320f731-4543-48fb-a01d-32c795bb9ab1.json",
+    "persistedAt": "2026-11-21T06:07:02.281Z",
+    "manifestSha256": "cc4a8f868b6e202ca94dcdc71916558e0517c7fabb93dfb320489cf5351cb67b",
+    "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "packBytes": 2295783
+  },
+  "changed": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "removed": [],
+  "tables": {
+    "_tables/posts.json": {
+      "added": [
+        {
+          "id": "204",
+          "parent": "193",
+          "postType": "revision",
+          "contentBytes": 1117
+        },
+        {
+          "id": "205",
+          "parent": "193",
+          "postType": "revision",
+          "contentBytes": 1117
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "_tables/postmeta.json": {
+      "added": [
+        {
+          "id": "75",
+          "postId": "204",
+          "metaKey": "footnotes"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "id": "72",
+          "postId": "193",
+          "metaKey": "_edit_lock",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/usermeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "36",
+          "userId": "2",
+          "metaKey": "session_tokens",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        },
+        {
+          "id": "38",
+          "userId": "2",
+          "metaKey": "wp_persisted_preferences",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/users.json": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "files": 298,
+  "objects": 303,
+  "remoteGets": 8,
+  "downloadedBytes": 2802378,
+  "mediaAndThemeExact": true,
+  "canonicalAndAccountingUnchanged": true,
+  "remoteMutations": 0,
+  "pinAdded": false,
+  "format": "content-overlay",
+  "baseUnchanged": true,
+  "fullMaterializationExact": true,
+  "materializedAnchor": {
+    "revision": "a8d257d0-59f2-4c17-ac52-e6fad1a0c4c8",
+    "manifestKey": "sites/default/markdown/revisions/a8d257d0-59f2-4c17-ac52-e6fad1a0c4c8.json",
+    "persistedAt": "2026-11-21T06:09:50.527Z",
+    "manifestSha256": "e3add2fee1ec9e1590ced39ca430a9e8b26c11fff10bf2cd428dbda1e90402fe",
+    "packKey": "sites/default/restore-packs/20736166461d17e113d70a2fe327dd16269fea92cbef1eec4faa7322f04ad53c.zip",
+    "packSha256": "20736166461d17e113d70a2fe327dd16269fea92cbef1eec4faa7322f04ad53c",
+    "packBytes": 2296364
+  }
+}

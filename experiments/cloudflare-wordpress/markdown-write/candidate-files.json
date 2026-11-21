@@ -80,6 +80,66 @@
       "path": "scripts/playtt-markdown-write-status.mjs",
       "source": "playtt-markdown-write-status.mjs",
       "afterSha256": "841dd655dc792d4f0e3a7b418af108cd218a8d0f49506442ecb633000b278450"
+    },
+    {
+      "path": "scripts/playtt-provider-observer.mjs",
+      "source": "playtt-provider-observer.mjs",
+      "afterSha256": "42c5bce9b319618658d58ada09bb8d6a80f88286cafe36c6dd57c3c216625c1a"
+    },
+    {
+      "path": "tests/playtt-provider-observer.test.mjs",
+      "source": "playtt-provider-observer.test.mjs",
+      "afterSha256": "dc5605223da90e564fde91130e234a4607a8d5878d3dc41f6551f1560c7ccdf3"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-ui.mjs",
+      "source": "playtt-markdown-provider-ui.mjs",
+      "afterSha256": "fb2aa1b9a5b03f7679198265384fec54af8b30adee48ea70026104f106acf9a7"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-ui-control.mjs",
+      "source": "playtt-markdown-provider-ui-control.mjs",
+      "afterSha256": "a15f442a78d4b34310bbf3fe72baa01b9f74d968707cafaa0971cd95140ae851"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-cold-ui.mjs",
+      "source": "playtt-markdown-provider-cold-ui.mjs",
+      "afterSha256": "6e201c59ceb19093671b21f2c9acb37ceeb219bb400b6271d6aea34f7fcfc457"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-cold-ui-control.mjs",
+      "source": "playtt-markdown-provider-cold-ui-control.mjs",
+      "afterSha256": "f6e2139ea8444b0a846be64c88ee7a097cefacf98ff6889850ca2eb45be09921"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-backup.mjs",
+      "source": "playtt-markdown-provider-backup.mjs",
+      "afterSha256": "1e517a37ea28797cf4548394fb75380abd65e085d07cb2ed53790572307057a2"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-pin.mjs",
+      "source": "playtt-markdown-provider-pin.mjs",
+      "afterSha256": "a7d28eaebae6755106ef81eeacfcabb09dda598fa3e3900fdce2c2ede93386f0"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-cold-backup.mjs",
+      "source": "playtt-markdown-provider-cold-backup.mjs",
+      "afterSha256": "f4977051a14071bec40f4134f66368033152208586032cbbc9d348ada7b8bf12"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-cold-pin.mjs",
+      "source": "playtt-markdown-provider-cold-pin.mjs",
+      "afterSha256": "2bcc9ec7a839ead5380511045054a14e7a5eb986e7958f3346d280cfbc532670"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-final-status.mjs",
+      "source": "playtt-markdown-provider-final-status.mjs",
+      "afterSha256": "f55d0ed35726ed856eb04ca6dd93a59c95ea3b7d80ae84657a02a290f574f076"
+    },
+    {
+      "path": "scripts/playtt-markdown-provider-inspect.mjs",
+      "source": "playtt-markdown-provider-inspect.mjs",
+      "afterSha256": "3ed982c8e05bc3901dd6459259273d2afe8cc2db2c4c0576745efba90fe349b0"
     }
   ],
   "patchSha256": "4b5a75767c0a59e73a3e77ea22aba7d98d7d3075a38b1dc9809b83fc90f3e1fe"

@@ -1,5 +1,9 @@
 # Let’s Play 驗收狀態
 
+## 2026-11-21 補充：私人原生瀏覽器、容量失敗與接續驗證
+
+A04／A06／A07增加實際Cloudflare Chrome繁中編輯、單次手動保存、獨立備份154、另一有界窗口重開八段精確文字與原生登出、備份161及pin13證據。第一個3MiB窗口實用3109160bytes後重開被拒；2個manifest持久化請求失敗。接續1.5MiB窗口實用945529bytes完成重開登出，不重送內容。原生autosave及正式修訂均核對，過期autosave由核心規則刪除，正式修訂205保留。最後13pins／closed/sealed／pending0、publisher paused；正式Pages不變。這不是長期免費、whole-isolate記憶體、實機IME或最終停用旗標後原生請求驗收。背景快照成本尚高，A04/A06/A07/A20仍不整項結案。見 `cloudflare-markdown-provider-*`，總結明列首次容量失敗。
+
 ## 2026-11-21 補充：有界寫入及本機原生瀏覽器
 
 A04／A06／A07新增本機證據：125個不同相關檢查、真實PHP大小預檢、WordPress保存／回應遺失／重啟／重試／獨立備份和完整包回退通過。Chrome繁中原生編輯器按一次儲存後完整重啟，八段正文及區塊碼精確；僅新增預期修訂204，其他內容、媒體與主題一致。HTTP10/10、UI32/32trace完成。新增有界寫入候選未部署，whole-isolate記憶體未量測；額外廣泛suite仍有兩個舊文字斷言及缺PHP CLI失敗。這不是免費Cloudflare、實體IME／手機或長期穩定性驗收。A04/A06/A07/A20仍不整項結案；正式Pages維持。證據 `cloudflare-markdown-write-*`。

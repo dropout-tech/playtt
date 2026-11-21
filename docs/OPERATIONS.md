@@ -1,5 +1,13 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 最新私人狀態：161／pin13，全部封存（2026-11-21）
+
+最終Worker為9f5aa2c1-3348-4e5f-ae61-776a1b3cd51a，來源67dd308有界讀寫，實際content/readback旗標皆移除。06:28:14Z只讀確認canonical161／3021e7bd-a125-439d-9027-11005ea71316、13pins、剩1881041bytes、closed/sealed、pending0、fence解除、publisher paused。所有觀察／測試程序與自有瀏覽器分頁結束。正式Pages／原視覺維持。
+
+下一窗口必須接 `artifacts/playtt-markdown-provider-cold-ui-owned-private.json`，完整備份接 `artifacts/playtt-markdown-provider-cold-backup-owned-private.json`（verified，161）。不要重用130或154owner，勿移除guards重跑。這輪兩個窗口合計4054689bytes／106puts，總額度150000000未改、歷史與13pins保留。第一窗口重開因容量不足被拒，第二窗口只接續重開登出；原生核心清掉過期autosave204／footnotes75，正式修訂205保留。本次session登出、登入前5個session精確保留。
+
+先在本機研究背景快照寫入，不再直接重複provider流程。新的observer工具由同一程序持有真實tail handle，challenge查詢每次檢查存活和deadline，並收尾關窗封存；4項工具測試通過。第一個256KiB headroom門檻不足以保證整個重開流程，接續工具增加1MiB及12操作預留，但這也不是全面成本預測。runtime與20設定未再改，77來源／131輔助檔一致。詳見 `experiments/cloudflare-wordpress/markdown-write/README.md`。以下為歷史狀態。
+
 ## 本機候選新增 Markdown 有界寫入，雲端仍130／pin11（2026-11-21）
 
 第12階段 `experiments/cloudflare-wordpress/markdown-write/` 已完成本機HTTP恢復與Chrome原生編輯／保存／重啟驗證，尚未部署。77來源／119輔助檔可重建，20設定不變；既有雲端版本仍1c55f0fa／來源bbe6a4d。05:41:13Z只讀確認130／pin11、剩5935730bytes、pending0、closed/sealed、fence解除、publisher paused。不要把本機134或UI149當雲端版本。

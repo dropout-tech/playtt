@@ -1,5 +1,9 @@
 # Cloudflare WordPress 候選測試
 
+## 最新進展（2026-11-21）：私人原生瀏覽器與容量限制
+
+[markdown-write](markdown-write/README.md) 已部署到既有私人Worker驗證。原生保存成功；首次重開因3MiB窗口不足被拒，獨立備份確認正文完整。新窗口只接續重開八段精確文字和登出，完成161／pin13並封存；總計4054689bytes／106puts。背景快照放大仍待改善，不能宣稱正式後台或長期免費完成。最終9f5aa2c1實際旗標停用，77來源／131輔助檔可重建、20設定不變；正式Pages及原視覺維持、PR4 draft。詳細失敗與範圍見 `cloudflare-markdown-provider-*`。
+
 ## 最新進展（2026-11-21）：有界寫入及本機原生編輯通過
 
 [markdown-write](markdown-write/README.md) 是第12選用階段：大小預檢、最多4檔／1MiB並行，大檔單獨處理。125個不同相關檢查、真實WordPress恢復／備份及Chrome繁中原生保存／完整重啟讀回通過；尚未部署或量測雲端改善，廣泛suite三個既有／環境失敗明列於證據。25+12階段可重建77來源／119輔助檔，20設定不變。雲端仍130／pin11封存、正式Pages及原視覺維持、PR4 draft；完整記憶體、provider UI、實機IME與長期免費仍待。

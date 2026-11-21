@@ -1,0 +1,264 @@
+{
+  "at": "2026-11-21T06:30:35.501Z",
+  "result": "save-and-resumed-native-read-pass-with-budget-exhaustion",
+  "scope": "Existing private Free Worker, native Chrome, one manual save; first reload rejected, distinct bounded continuation reopens exact text and logs out. Production unchanged.",
+  "sourceCommit": "67dd30840e093cc83097af4273938cbf46b15351",
+  "sourceHashes": {
+    "src/playtt-content-overlay.ts": "7bf63e94d077d66bf46c4341add07e548ae1b12cc027541a6ca663f84c5281c3",
+    "src/playtt-maintenance-overlay.ts": "be0104515c3853cd4010d13f5059231859842b0c38f618732c8d6026f7f9f06e",
+    "src/playtt-snapshot-source.ts": "9e7fd70863c5e6512834b191aec53b2ff2b200480b00c7cf0061d2684b8cf05a",
+    "src/worker.ts": "d3463f03bb9bf03c29ed40733a51476bb0540def2c2f28eb12560779b86f1b26",
+    "src/mutation-memory.ts": "00b96c62fc4e5d5a161aaf5f41b20874f6665086b9fb84634d9a00902bc7b650",
+    "src/playtt-markdown-persistence.ts": "8443497aae4646884d88caa2e73d8f131e5eb47b8af0681cecdf3894032781eb"
+  },
+  "deployments": {
+    "temporary": "fdc7f590-560c-4fa8-b68a-8fa71b0aed54",
+    "final": "9f5aa2c1-3348-4e5f-ae61-776a1b3cd51a",
+    "contentAndReadbackBindingsAbsent": true,
+    "configsChanged": 0,
+    "postFinalDeploymentNativeRequestTested": false,
+    "finalOperatorReadOnlyStateVerified": true
+  },
+  "native": {
+    "manualSaveClickedOnce": true,
+    "autosaveAlsoObserved": true,
+    "autosaveId": 204,
+    "manualRevisionId": 205,
+    "primarySaveNotice": true,
+    "firstReloadRejected": true,
+    "firstReloadCode": "playtt_write_window_closed",
+    "reopenedInNewWindow": true,
+    "visibleParagraphs": 8,
+    "allVisibleTextExact": true,
+    "backupMarkupExact": true,
+    "codeEditorMarkupReadAfterReload": false,
+    "noSaveReplay": true,
+    "nativeLogoutConfirmed": true,
+    "preLoginFiveSessionsPreservedExact": true,
+    "physicalImeTested": false,
+    "fullDeploymentRestartDuringBrowserFlow": false
+  },
+  "accounting": {
+    "firstWindow": {
+      "durationSeconds": 420,
+      "maxBytes": 3145728,
+      "maxOperations": 96,
+      "observerSeconds": 660,
+      "actualBytes": 3109160,
+      "actualPuts": 82,
+      "remainingWindowBytes": 36568,
+      "versionBefore": 130,
+      "versionAfter": 154
+    },
+    "continuation": {
+      "durationSeconds": 180,
+      "maxBytes": 1572864,
+      "maxOperations": 48,
+      "observerSeconds": 660,
+      "actualBytes": 945529,
+      "actualPuts": 24,
+      "versionBefore": 154,
+      "versionAfter": 161
+    },
+    "totalBytes": 4054689,
+    "totalPuts": 106,
+    "chargedBytes": 47380531,
+    "chargedPuts": 550,
+    "remainingBytes": 1881041,
+    "globalLimitUnchanged": 150000000,
+    "noRefundOrHistoryPruning": true,
+    "firstGuardWasNotAdequateWholeWorkflowReservation": true
+  },
+  "telemetry": [
+    {
+      "name": "ui",
+      "events": 396,
+      "outcomes": {
+        "ok": 394,
+        "canceled": 2
+      },
+      "traces": 35,
+      "completedTraces": 33,
+      "requestFailures": [
+        {
+          "category": "other",
+          "endpoint": "admin",
+          "method": "GET",
+          "operation": "mutation",
+          "runtime": "warm",
+          "phase": "persistence.manifest.write",
+          "signalAborted": false,
+          "bodyUsed": false,
+          "cleanupFailed": false
+        },
+        {
+          "category": "other",
+          "endpoint": "admin-ajax",
+          "method": "POST",
+          "operation": "mutation",
+          "runtime": "cold",
+          "phase": "persistence.manifest.write",
+          "signalAborted": true,
+          "bodyUsed": true,
+          "cleanupFailed": false
+        }
+      ],
+      "exceptions": 0,
+      "markdownWrites": 28,
+      "markdownAttemptedPutsHistogram": {
+        "0": 3,
+        "1": 20,
+        "2": 2,
+        "3": 3
+      },
+      "maxOwnedFileBytes": 366280,
+      "maxTrackedRetainedBytes": 1239624,
+      "maxSampledWasmBytes": 76152832,
+      "wholeIsolateMeasured": false,
+      "fullPackWritesObserved": 0,
+      "observerLiveGuards": [
+        {
+          "result": "live",
+          "action": "guard",
+          "at": "2026-11-21T06:02:47.650Z",
+          "observerRemainingMs": 640667,
+          "windowRemainingMs": 408675,
+          "canonicalVersion": 130,
+          "windowRemainingBytes": 3145728
+        },
+        {
+          "result": "live",
+          "action": "guard",
+          "at": "2026-11-21T06:06:08.205Z",
+          "observerRemainingMs": 440732,
+          "windowRemainingMs": 208740,
+          "canonicalVersion": 145,
+          "windowRemainingBytes": 1820291
+        },
+        {
+          "result": "live",
+          "action": "saved",
+          "at": "2026-11-21T06:06:43.474Z",
+          "observerRemainingMs": 405458,
+          "windowRemainingMs": 173466,
+          "canonicalVersion": 151,
+          "windowRemainingBytes": 652969
+        }
+      ],
+      "observerEnded": true,
+      "observedAfterNativeWork": true
+    },
+    {
+      "name": "cold-ui",
+      "events": 144,
+      "outcomes": {
+        "ok": 143,
+        "canceled": 1
+      },
+      "traces": 11,
+      "completedTraces": 11,
+      "requestFailures": [],
+      "exceptions": 0,
+      "markdownWrites": 8,
+      "markdownAttemptedPutsHistogram": {
+        "0": 1,
+        "1": 5,
+        "2": 1,
+        "3": 1
+      },
+      "maxOwnedFileBytes": 358654,
+      "maxTrackedRetainedBytes": 1239624,
+      "maxSampledWasmBytes": 75497472,
+      "wholeIsolateMeasured": false,
+      "fullPackWritesObserved": 0,
+      "observerLiveGuards": [
+        {
+          "result": "live",
+          "action": "guard",
+          "at": "2026-11-21T06:17:48.093Z",
+          "observerRemainingMs": 624996,
+          "windowRemainingMs": 152625,
+          "canonicalVersion": 154,
+          "windowRemainingBytes": 1572864
+        }
+      ],
+      "observerEnded": true,
+      "observedAfterNativeWork": true
+    }
+  ],
+  "backup": {
+    "first": {
+      "version": 154,
+      "pins": 12,
+      "files": 298,
+      "objects": 303,
+      "downloadedBytes": 2802378
+    },
+    "final": {
+      "version": 161,
+      "pins": 13,
+      "files": 298,
+      "objects": 303,
+      "downloadedBytes": 2799511,
+      "anchor": {
+        "revision": "3021e7bd-a125-439d-9027-11005ea71316",
+        "manifestKey": "sites/default/markdown/revisions/3021e7bd-a125-439d-9027-11005ea71316.json",
+        "persistedAt": "2026-11-21T06:18:52.947Z",
+        "manifestSha256": "02c14658f9822a084ab1ade605ff9b995e615b73fa8ae79aea7f3e12ccbc218c",
+        "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+        "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+        "packBytes": 2295783
+      }
+    },
+    "fullMaterializationExact": true,
+    "oldPinsRetained": true,
+    "nativeStaleAutosaveCleanup": {
+      "removedId": 204,
+      "removedFootnotesId": 75,
+      "explicitRevision205Retained": true,
+      "core": {
+        "path": "wordpress/wp-admin/edit-form-blocks.php",
+        "sha256": "4158fa2c08518f8d2288a3a7228196ff62230e93fb2d76d3c5f234b11c7b3be6",
+        "lines": "303-310",
+        "rule": "Native editor deletes a selected autosave whose modified GMT is not newer than the post; observed exact owned row and child metadata match this rule."
+      }
+    }
+  },
+  "tooling": {
+    "liveObserverTestsPassed": 4,
+    "existingRuntimeChecksNotRepeated": 125,
+    "pinValidationCorrection": "Initial cold-pin helper assumed no prior sessions and stopped locally before any provider request. Corrected to compare exactly with pre-login backup130: this run session removed, original five preserved."
+  },
+  "final": {
+    "at": "2026-11-21T06:28:14.277Z",
+    "result": "pass",
+    "scope": "Four GET-only existing-private-project status requests",
+    "canonicalVersion": 161,
+    "revision": "3021e7bd-a125-439d-9027-11005ea71316",
+    "pins": 13,
+    "coherent": true,
+    "fenceActive": false,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true,
+    "publisher": "paused",
+    "remainingBytes": 1881041,
+    "mutatingRequests": 0,
+    "productionRequests": 0
+  },
+  "limitations": [
+    "Native editing works in bounded tests, but browser heartbeat/preferences/autosave cause substantial immutable snapshot traffic; long-term Free acceptance is still open.",
+    "The first window exhausted byte headroom and two manifest persistence requests failed. The successful continuation does not erase this failure.",
+    "Provider envelopes may include multiple execution traces; phase timings are not a uniquely attributed manual-save latency or a controlled speed comparison.",
+    "Tracked copies and sampled WASM are not whole-isolate peak memory. Real IME/devices, concurrency, mixed-version restore and long-term acceptance remain open.",
+    "No native content request was performed after the final flag-disabled deployment; operator state, bindings and prior independent full restore are verified separately."
+  ],
+  "next": [
+    "Reproduce and reduce background snapshot/manifest write amplification locally while preserving raw content, native locks, sessions, autosave/revisions and monotonic IDs. Do not repeatedly spend the remaining provider allowance.",
+    "Next mutable window must chain from playtt-markdown-provider-cold-ui-owned-private.json and verified playtt-markdown-provider-cold-backup-owned-private.json (161/pin13).",
+    "Keep complete WordPress goal active, production Pages/current visual unchanged and PR4 draft."
+  ],
+  "productionChanged": false,
+  "paidChange": false,
+  "goalStatus": "active"
+}
