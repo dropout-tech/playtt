@@ -1,0 +1,158 @@
+{
+  "schema": "playtt/local-heartbeat-budget-proof/v1",
+  "at": "2026-11-21T09:48:13.507Z",
+  "result": "verified-capacity-failure",
+  "sourceCommit": "d754dacd8d2c48e22658752588886427f3078608",
+  "sourceUnchanged": true,
+  "runtimePolicyEnabled": true,
+  "policyInjected": false,
+  "localOnly": true,
+  "outerWorkerGateAndBudget": true,
+  "privateGateLogin": true,
+  "fixture": {
+    "miniflareStorageClassObserved": "",
+    "defaultedTo": "Standard",
+    "unknownValuesRejected": true,
+    "productionValidatorUnchanged": true,
+    "baselineObjects": 307,
+    "baselineBytes": 101079607,
+    "diagnosticObjectWritesExcluded": true
+  },
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 1881041,
+    "maxOperations": 96
+  },
+  "elapsedWindowMs": 253073,
+  "native": {
+    "at": "2026-11-21T09:41:30.594Z",
+    "beforeExact": true,
+    "saveClicks": 1,
+    "savedUi": false,
+    "saveFailureVisible": true,
+    "unsavedContentStillVisible": true,
+    "coldReloadAttempted": false,
+    "logoutAttempted": false,
+    "failure": "capacity protection during single manual save",
+    "manualSaveResponse503": true,
+    "autosavesSucceeded": 2,
+    "laterAutosaveResponse503": true,
+    "restarts": 0
+  },
+  "canonical": {
+    "versionBefore": 161,
+    "versionAfter": 175,
+    "originalPageUnchanged": true,
+    "autosaveId": 206,
+    "autosaveContentExact": true,
+    "failedManualRevision207Absent": true,
+    "priorPostsAndRevisionsExact": true,
+    "allUnrelatedCanonicalFilesExact": true,
+    "mediaAndThemeExact": true,
+    "postmetaOnlyExpectedChanges": true,
+    "preferenceOnlyModifiedTimestampChanged": true,
+    "monotonicSequences": true,
+    "priorSessionsPreserved": 5,
+    "newLocalSessionRetained": 1,
+    "logoutNotClaimed": true
+  },
+  "accounting": {
+    "chargedBytes": 1860844,
+    "chargedPuts": 49,
+    "remainingWindowBytes": 20197,
+    "pending": 0,
+    "sealed": true,
+    "closed": true,
+    "capIncreased": false,
+    "refundOrHistoryDeletion": false
+  },
+  "cadence": {
+    "nativeMinimalInterval": "30",
+    "intervalsMs": [
+      30013,
+      30014,
+      30005,
+      30011,
+      30013
+    ],
+    "strictRateLimit": false
+  },
+  "repeatedAutosave": {
+    "version": 173,
+    "changedFields": [
+      "post_date",
+      "post_date_gmt",
+      "post_modified",
+      "post_modified_gmt"
+    ],
+    "unchangedContent": true,
+    "tableBytes": 322462,
+    "manifestBytes": 73740,
+    "logicalTablePlusManifestBytes": 396202
+  },
+  "offlineCompression": {
+    "algorithm": "Node gzip level6",
+    "samples": [
+      {
+        "path": "_tables/posts.json",
+        "rawBytes": 322462,
+        "gzipBytes": 19405,
+        "rawSha256": "9d2f51d2401cd79cd8845772e5beb6cfe327a8d4a0c9f31ec717b6e08b9d9e71",
+        "roundTripExact": true
+      },
+      {
+        "path": "_tables/postmeta.json",
+        "rawBytes": 14897,
+        "gzipBytes": 1194,
+        "rawSha256": "c6fbb2d976360de73fb7c22813e7271db2fd08668e2c637c7d6ef8dfb77f412a",
+        "roundTripExact": true
+      },
+      {
+        "path": "_tables/usermeta.json",
+        "rawBytes": 19451,
+        "gzipBytes": 4254,
+        "rawSha256": "88e36dcf231dedd6b9c4bd2d5a0626770113096612dfebd4b8889a9f3e54929c",
+        "roundTripExact": true
+      },
+      {
+        "path": "_runtime/playtt-auto-increment.json",
+        "rawBytes": 196,
+        "gzipBytes": 139,
+        "rawSha256": "8809b6cf992b1d065e045f64357fc60162a88b76085747356fb28c2700e7c1c5",
+        "roundTripExact": true
+      }
+    ],
+    "roundTripOnly": true,
+    "runtimeImplemented": false,
+    "totalWorkflowSavingsMeasured": false,
+    "workerCpuOrMemoryMeasured": false
+  },
+  "localProcessesDisposed": true,
+  "ownedBrowserTabClosed": true,
+  "outboundAttempts": 0,
+  "initialHelperFailures": [
+    "Sandbox denied loopback before an owner was created",
+    "Capacity initialization rejected Miniflare empty storageClass; Standard-only validator retained, fixture corrected",
+    "Controller read a partially written reply; recovered that same command without replay, parser now retries incomplete JSON"
+  ],
+  "limitations": [
+    "This local workflow cannot fit in the last verified provider remaining allowance; do not repeat it remotely.",
+    "Manual save failed; an autosave preserves exact new text, but native recovery after cold reopen and logout were not tested.",
+    "Physical WordPress/PHP/SQLite/R2 work executes locally; provider CPU, memory and latency are not measured.",
+    "The local window mirrors the last provider remaining bytes, but its global ledger has a different baseline.",
+    "Compression results cover four offline files, not a compatible runtime format, complete attempted-write accounting or an end-to-end improvement."
+  ],
+  "next": "Prototype bounded lossless storage for repeated table writes, preserving exact timestamps, revisions, sessions, counters and rollback compatibility. Verify full native workflow locally before any provider spend.",
+  "cloud": {
+    "requestsThisTurn": 0,
+    "deployed": false,
+    "productionChanged": false,
+    "paidChange": false,
+    "lastVerifiedAt": "2026-11-21T06:28:14.277Z",
+    "lastVerifiedVersion": 161,
+    "lastVerifiedPins": 13,
+    "lastVerifiedRemainingBytes": 1881041,
+    "refreshed": false
+  },
+  "goalStatus": "active"
+}

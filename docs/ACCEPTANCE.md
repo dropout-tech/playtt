@@ -1,5 +1,13 @@
 # Let’s Play 驗收狀態
 
+## 完整本機瀏覽器流程遇到容量保護（2026-11-21）
+
+實際d754dacd心跳選項搭配外層私人gate、真實容量計帳與1,881,041bytes窗口，原生繁中登入、偏好切換與兩次autosave成功，但單次手動儲存503，稍後autosave也503；未重送，未完成重開或登出。253秒後封存，本機161→175、1,860,844bytes／49puts、餘20,197bytes、pending0。五個心跳間隔約30秒，仍不足以在最後確認的provider剩餘量內完成此流程。
+
+離線確認原頁面未覆蓋、autosave206完整保存新文字、失敗手動revision207不存在；其他內容／修訂／媒體／主題一致，原5個session完整保留，本次本機session仍在。第二次autosave僅改日期仍寫322,462bytes posts表加73,740bytes清單。四檔gzip樣本逐位元可逆，posts表縮為19,405bytes；這尚未實作為runtime格式，不能當完整流程節省或CPU／記憶體驗收。
+
+不安排同方案provider重跑。下一步研究有界無損儲存與相容讀回／備份／還原，保留原生時間、鎖、修訂及ID。所有程序與自有分頁結束；78來源、20設定未變，本輪0Cloudflare請求。最後雲端仍是06:28:14Z的161／pin13／餘1,881,041bytes，未刷新；正式Pages／視覺不變、PR4 draft、完整目標active。詳見 experiments/cloudflare-wordpress/heartbeat-budget/README.md 與 cloudflare-heartbeat-budget-summary.json。以下為歷史。
+
 ## 心跳政策整合（2026-11-21）
 
 本機心跳 runtime 選項整合通過：28 項 JS 回歸／核心檢查、24 個 PHP fixture、真實 WordPress 新／既有編輯頁與旗標切換保留新草稿、獨立啟用冷啟動、TypeScript／dry-run及完整重建。20 份設定仍未啟用，尚未部署；本輪未重做原生瀏覽器與 provider 驗收。connectNow 可立即送請求，所以不能由 30 秒推論容量上限；whole-isolate 記憶體、長期免費、實機及完整 A01–A20 仍待。詳見 experiments/cloudflare-wordpress/editor-heartbeat/README.md。

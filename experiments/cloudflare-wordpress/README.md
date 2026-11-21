@@ -1,5 +1,9 @@
 # Cloudflare WordPress 候選測試
 
+## 有界瀏覽器流程容量證據（2026-11-21）
+
+[完整本機流程](heartbeat-budget/README.md) 在兩次autosave後手動儲存遇到容量保護，完整儲存／重開／登出未通過；原頁面保留，autosave含精確新內容。30秒心跳仍不足以容納最後確認的provider剩餘量，下一步研究有界無損儲存。沒有雲端請求或部署。
+
 ## 心跳政策整合（2026-11-21）
 
 新增 [原生心跳 runtime 選項](editor-heartbeat/README.md)：預設停用，已通過本機原生 HTTP、核心排程與暖切換防丟稿測試，未部署。正式站與完整目標維持原範圍。

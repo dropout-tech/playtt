@@ -1,0 +1,718 @@
+{
+  "schema": "playtt/local-background-write-history/v1",
+  "at": "2026-11-21T09:43:47.030Z",
+  "baselineVersion": 161,
+  "requests": [
+    {
+      "at": "2026-11-21T09:39:51.054Z",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "version": 0,
+      "revision": null
+    },
+    {
+      "at": "2026-11-21T09:40:16.612Z",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "version": 162,
+      "revision": "59649682-6031-4f1f-8a9d-3c56f753e0f1"
+    },
+    {
+      "at": "2026-11-21T09:40:19.951Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "action": "other",
+      "status": 200,
+      "version": 163,
+      "revision": "be5bb295-21a2-4e19-9cda-603f920a3cbf"
+    },
+    {
+      "at": "2026-11-21T09:40:20.749Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "GET",
+      "status": 200,
+      "version": 164,
+      "revision": "92dbf190-8a74-4a0f-98fe-faff84de9438"
+    },
+    {
+      "at": "2026-11-21T09:40:37.522Z",
+      "path": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "version": 165,
+      "revision": "03c833a8-3e7e-442b-9b92-c2cf826f8600"
+    },
+    {
+      "at": "2026-11-21T09:40:40.842Z",
+      "path": "/wp-json/wp/v2/comments",
+      "method": "GET",
+      "status": 200,
+      "version": 0,
+      "revision": null
+    },
+    {
+      "at": "2026-11-21T09:41:07.941Z",
+      "path": "/wp-json/wp/v2/users/me",
+      "method": "POST",
+      "status": 200,
+      "version": 166,
+      "revision": "676318cc-545b-4e72-a24b-b6a7f197cefc"
+    },
+    {
+      "at": "2026-11-21T09:41:10.190Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "action": "heartbeat",
+      "status": 200,
+      "version": 167,
+      "revision": "46cc7e52-58b1-4ef8-9e87-ac8cc93d6fa9"
+    },
+    {
+      "at": "2026-11-21T09:41:31.161Z",
+      "path": "/wp-json/wp/v2/users/me",
+      "method": "POST",
+      "status": 200,
+      "version": 168,
+      "revision": "9fb390c1-aa79-496f-b0c6-69c26c90b4f3"
+    },
+    {
+      "at": "2026-11-21T09:41:40.203Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "action": "heartbeat",
+      "status": 200,
+      "version": 169,
+      "revision": "9d9feb64-85d6-45b5-a265-1155d3a0759f"
+    },
+    {
+      "at": "2026-11-21T09:41:40.986Z",
+      "path": "/wp-json/wp/v2/pages/193/autosaves",
+      "method": "POST",
+      "status": 200,
+      "version": 170,
+      "revision": "9a83652c-7b63-403c-950d-1afe622b7686"
+    },
+    {
+      "at": "2026-11-21T09:42:10.217Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "action": "heartbeat",
+      "status": 200,
+      "version": 171,
+      "revision": "a2693f94-adc9-4300-9f21-f7f0d30e2bb9"
+    },
+    {
+      "at": "2026-11-21T09:42:40.222Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "action": "heartbeat",
+      "status": 200,
+      "version": 172,
+      "revision": "43533427-e4d9-42ad-8f8c-0852117809f9"
+    },
+    {
+      "at": "2026-11-21T09:42:41.006Z",
+      "path": "/wp-json/wp/v2/pages/193/autosaves",
+      "method": "POST",
+      "status": 200,
+      "version": 173,
+      "revision": "db6692b1-7664-40b0-91b5-0c8fa4319c86"
+    },
+    {
+      "at": "2026-11-21T09:43:06.130Z",
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "POST",
+      "status": 503,
+      "version": 0,
+      "revision": null
+    },
+    {
+      "at": "2026-11-21T09:43:10.233Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "action": "heartbeat",
+      "status": 200,
+      "version": 174,
+      "revision": "30f4a3da-5301-46c4-bfeb-bb8bb30ef7c2"
+    },
+    {
+      "at": "2026-11-21T09:43:40.246Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "action": "heartbeat",
+      "status": 200,
+      "version": 175,
+      "revision": "5c02223b-366d-44ac-97b5-f62a6b9c6ac6"
+    },
+    {
+      "at": "2026-11-21T09:43:41.052Z",
+      "path": "/wp-json/wp/v2/pages/193/autosaves",
+      "method": "POST",
+      "status": 503,
+      "version": 0,
+      "revision": null
+    }
+  ],
+  "transitions": [
+    {
+      "version": 162,
+      "requests": [
+        {
+          "at": "2026-11-21T09:40:16.612Z",
+          "path": "/wp-login.php",
+          "method": "POST",
+          "status": 302,
+          "version": 162,
+          "revision": "59649682-6031-4f1f-8a9d-3c56f753e0f1"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_runtime/playtt-auto-increment.json",
+          "bytes": 196
+        },
+        {
+          "path": "_tables/usermeta.json",
+          "bytes": 19451
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/usermeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "36",
+              "metaKey": "session_tokens",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "sequences": {
+        "wp_options": {
+          "before": "755",
+          "after": "758"
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 19647
+    },
+    {
+      "version": 163,
+      "requests": [
+        {
+          "at": "2026-11-21T09:40:19.951Z",
+          "path": "/wp-admin/admin-ajax.php",
+          "method": "POST",
+          "action": "other",
+          "status": 200,
+          "version": 163,
+          "revision": "be5bb295-21a2-4e19-9cda-603f920a3cbf"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_runtime/playtt-auto-increment.json",
+          "bytes": 196
+        }
+      ],
+      "removed": [],
+      "tables": {},
+      "sequences": {
+        "wp_options": {
+          "before": "758",
+          "after": "763"
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 196
+    },
+    {
+      "version": 164,
+      "requests": [
+        {
+          "at": "2026-11-21T09:40:20.749Z",
+          "path": "/wp-admin/admin-ajax.php",
+          "method": "GET",
+          "status": 200,
+          "version": 164,
+          "revision": "92dbf190-8a74-4a0f-98fe-faff84de9438"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_runtime/playtt-auto-increment.json",
+          "bytes": 196
+        }
+      ],
+      "removed": [],
+      "tables": {},
+      "sequences": {
+        "wp_options": {
+          "before": "763",
+          "after": "765"
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 196
+    },
+    {
+      "version": 165,
+      "requests": [
+        {
+          "at": "2026-11-21T09:40:37.522Z",
+          "path": "/wp-admin/post.php",
+          "method": "GET",
+          "status": 200,
+          "version": 165,
+          "revision": "03c833a8-3e7e-442b-9b92-c2cf826f8600"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/postmeta.json",
+          "bytes": 14775
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/postmeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "72",
+              "metaKey": "_edit_lock",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 14775
+    },
+    {
+      "version": 166,
+      "requests": [
+        {
+          "at": "2026-11-21T09:41:07.941Z",
+          "path": "/wp-json/wp/v2/users/me",
+          "method": "POST",
+          "status": 200,
+          "version": 166,
+          "revision": "676318cc-545b-4e72-a24b-b6a7f197cefc"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/usermeta.json",
+          "bytes": 19449
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/usermeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "38",
+              "metaKey": "wp_persisted_preferences",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 19449
+    },
+    {
+      "version": 167,
+      "requests": [
+        {
+          "at": "2026-11-21T09:41:10.190Z",
+          "path": "/wp-admin/admin-ajax.php",
+          "method": "POST",
+          "action": "heartbeat",
+          "status": 200,
+          "version": 167,
+          "revision": "46cc7e52-58b1-4ef8-9e87-ac8cc93d6fa9"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/postmeta.json",
+          "bytes": 14775
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/postmeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "72",
+              "metaKey": "_edit_lock",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 14775
+    },
+    {
+      "version": 168,
+      "requests": [
+        {
+          "at": "2026-11-21T09:41:31.161Z",
+          "path": "/wp-json/wp/v2/users/me",
+          "method": "POST",
+          "status": 200,
+          "version": 168,
+          "revision": "9fb390c1-aa79-496f-b0c6-69c26c90b4f3"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/usermeta.json",
+          "bytes": 19451
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/usermeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "38",
+              "metaKey": "wp_persisted_preferences",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 19451
+    },
+    {
+      "version": 169,
+      "requests": [
+        {
+          "at": "2026-11-21T09:41:40.203Z",
+          "path": "/wp-admin/admin-ajax.php",
+          "method": "POST",
+          "action": "heartbeat",
+          "status": 200,
+          "version": 169,
+          "revision": "9d9feb64-85d6-45b5-a265-1155d3a0759f"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/postmeta.json",
+          "bytes": 14775
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/postmeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "72",
+              "metaKey": "_edit_lock",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 14775
+    },
+    {
+      "version": 170,
+      "requests": [
+        {
+          "at": "2026-11-21T09:41:40.986Z",
+          "path": "/wp-json/wp/v2/pages/193/autosaves",
+          "method": "POST",
+          "status": 200,
+          "version": 170,
+          "revision": "9a83652c-7b63-403c-950d-1afe622b7686"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_runtime/playtt-auto-increment.json",
+          "bytes": 196
+        },
+        {
+          "path": "_tables/postmeta.json",
+          "bytes": 14897
+        },
+        {
+          "path": "_tables/posts.json",
+          "bytes": 322462
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/postmeta.json": {
+          "added": [
+            {
+              "id": "76",
+              "metaKey": "footnotes"
+            }
+          ],
+          "removed": [],
+          "changed": []
+        },
+        "_tables/posts.json": {
+          "added": [
+            {
+              "id": "206",
+              "postType": "revision"
+            }
+          ],
+          "removed": [],
+          "changed": []
+        }
+      },
+      "sequences": {
+        "wp_postmeta": {
+          "before": "75",
+          "after": "76"
+        },
+        "wp_posts": {
+          "before": "205",
+          "after": "206"
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 337555
+    },
+    {
+      "version": 171,
+      "requests": [
+        {
+          "at": "2026-11-21T09:42:10.217Z",
+          "path": "/wp-admin/admin-ajax.php",
+          "method": "POST",
+          "action": "heartbeat",
+          "status": 200,
+          "version": 171,
+          "revision": "a2693f94-adc9-4300-9f21-f7f0d30e2bb9"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/postmeta.json",
+          "bytes": 14897
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/postmeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "72",
+              "metaKey": "_edit_lock",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 14897
+    },
+    {
+      "version": 172,
+      "requests": [
+        {
+          "at": "2026-11-21T09:42:40.222Z",
+          "path": "/wp-admin/admin-ajax.php",
+          "method": "POST",
+          "action": "heartbeat",
+          "status": 200,
+          "version": 172,
+          "revision": "43533427-e4d9-42ad-8f8c-0852117809f9"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/postmeta.json",
+          "bytes": 14897
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/postmeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "72",
+              "metaKey": "_edit_lock",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 14897
+    },
+    {
+      "version": 173,
+      "requests": [
+        {
+          "at": "2026-11-21T09:42:41.006Z",
+          "path": "/wp-json/wp/v2/pages/193/autosaves",
+          "method": "POST",
+          "status": 200,
+          "version": 173,
+          "revision": "db6692b1-7664-40b0-91b5-0c8fa4319c86"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/posts.json",
+          "bytes": 322462
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/posts.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "206",
+              "fields": [
+                "post_date",
+                "post_date_gmt",
+                "post_modified",
+                "post_modified_gmt"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 322462
+    },
+    {
+      "version": 174,
+      "requests": [
+        {
+          "at": "2026-11-21T09:43:10.233Z",
+          "path": "/wp-admin/admin-ajax.php",
+          "method": "POST",
+          "action": "heartbeat",
+          "status": 200,
+          "version": 174,
+          "revision": "30f4a3da-5301-46c4-bfeb-bb8bb30ef7c2"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_runtime/playtt-auto-increment.json",
+          "bytes": 196
+        },
+        {
+          "path": "_tables/postmeta.json",
+          "bytes": 14897
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/postmeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "72",
+              "metaKey": "_edit_lock",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "sequences": {
+        "wp_options": {
+          "before": "765",
+          "after": "767"
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 15093
+    },
+    {
+      "version": 175,
+      "requests": [
+        {
+          "at": "2026-11-21T09:43:40.246Z",
+          "path": "/wp-admin/admin-ajax.php",
+          "method": "POST",
+          "action": "heartbeat",
+          "status": 200,
+          "version": 175,
+          "revision": "5c02223b-366d-44ac-97b5-f62a6b9c6ac6"
+        }
+      ],
+      "changed": [
+        {
+          "path": "_tables/postmeta.json",
+          "bytes": 14897
+        }
+      ],
+      "removed": [],
+      "tables": {
+        "_tables/postmeta.json": {
+          "added": [],
+          "removed": [],
+          "changed": [
+            {
+              "id": "72",
+              "metaKey": "_edit_lock",
+              "fields": [
+                "meta_value"
+              ]
+            }
+          ]
+        }
+      },
+      "manifestBytes": 73740,
+      "changedLogicalBytes": 14897
+    }
+  ],
+  "mediaAndThemeExact": true,
+  "scope": "Local Miniflare replay only; request attribution lists every response sharing a canonical version."
+}

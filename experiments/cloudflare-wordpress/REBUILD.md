@@ -118,3 +118,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ## 選用第 13 階段：原生編輯器心跳
 
 先完成 markdown-write；若需要 background-write 的九個診斷工具，先安裝再套本階段。執行 editor-heartbeat/apply-local-candidate.py --runtime <runtime-cloudflare> --apply。驗證結果為 78 個來源、142 個輔助檔、20 份設定不變，沒有自動啟用旗標或部署。詳見 [說明](editor-heartbeat/README.md)。
+
+## 選用本機容量診斷工具
+
+完成editor-heartbeat與先前background-write工具後，執行heartbeat-budget/install-local-tools.py --runtime <runtime-cloudflare> --apply。新增3個工具，不改runtime或設定，也不部署。完整流程容量失敗的適用範圍見[說明](heartbeat-budget/README.md)。
