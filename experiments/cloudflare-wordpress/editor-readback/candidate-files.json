@@ -47,6 +47,31 @@
       "path": "scripts/playtt-readback-ui-audit.mjs",
       "source": "playtt-readback-ui-audit.mjs",
       "afterSha256": "8a2ba0f8d88fea3e8ac467cf23cb6da2789319c56ba3e709fe9c8db1575a7ff5"
+    },
+    {
+      "path": "scripts/playtt-readback-uncommitted-ui.mjs",
+      "source": "playtt-readback-uncommitted-ui.mjs",
+      "afterSha256": "2a97eac2b9045d89b80a5f217caffcea4001e74475f73c52ad801e513e44a688"
+    },
+    {
+      "path": "scripts/playtt-readback-uncommitted-ui-control.mjs",
+      "source": "playtt-readback-uncommitted-ui-control.mjs",
+      "afterSha256": "5d5d6093fa8c26b0ed8738ceffb440fe369083ecc67e4ce159a421cd60c9a67e"
+    },
+    {
+      "path": "scripts/playtt-readback-multitab-guard-ui.mjs",
+      "source": "playtt-readback-multitab-guard-ui.mjs",
+      "afterSha256": "91708948fc68c31e0e6b3d27e297ef76d88e284d39a762a66bd226830801ef02"
+    },
+    {
+      "path": "scripts/playtt-readback-multitab-guard-ui-control.mjs",
+      "source": "playtt-readback-multitab-guard-ui-control.mjs",
+      "afterSha256": "9ada958ca4f26e6abf1f769c6e60f8eac7f0e0fedd1e7da8a6ef07d8e256bccd"
+    },
+    {
+      "path": "scripts/playtt-readback-negative-audit.mjs",
+      "source": "playtt-readback-negative-audit.mjs",
+      "afterSha256": "7893a45c3be348eac65b13df5f9f221c28cd1862ae8c4080186752ee04ddf9dc"
     }
   ],
   "patchSha256": "c1e59184a28c6cdb803d19ccc70efa5c1037bf839a710a57131973d55429b638"
