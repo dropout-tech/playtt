@@ -1,0 +1,637 @@
+{
+  "schema": "playtt/transport-audit/v1",
+  "result": "isolated-cancellation-attribution-supported-in-local-controls; historical-browser-cause-and-provider-memory-open",
+  "platform": {
+    "schema": "playtt/transport-binary/v1",
+    "version": "workerd 2026-08-28",
+    "platform": "win32",
+    "architecture": "x64",
+    "node": "v24.18.0",
+    "binarySha256": "afe9fe8024bcac3a8f5e7209c350840251e65cb0140001e463cdb16065ba047c",
+    "bytes": 97783296,
+    "overridePresent": false
+  },
+  "miniflare": "5.20260828.0-alpha",
+  "workerd": "1.20260828.1",
+  "upstream": {
+    "repository": "cloudflare/workerd",
+    "tag": "v1.20260828.1",
+    "commit": "8ea63498c7aa107995f9b2ffee7789631707e09f",
+    "verifiedGitBlobs": 5,
+    "sourceEvidence": {
+      "genericDisconnectedMapping": {
+        "path": "src/workerd/jsg/util.c++",
+        "gitBlobSha": "a22b50a097e41f394d6456ad463fe3bd132379a8",
+        "sha256": "f89f5612d386dda3cb794523ebba3fffbe968eec9c204c57e27db63327d3c317",
+        "line": 330,
+        "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/jsg/util.c%2B%2B#L330"
+      },
+      "requestHandlerLogging": {
+        "path": "src/workerd/io/worker-entrypoint.c++",
+        "gitBlobSha": "f3ed3fb4d6ac227d320dce99fb1ac9741c7a9d0a",
+        "sha256": "5a26985f9d80021e9af91b0569c54b7d9c987bf5b6ca6d63d37da5c1fab28bf9",
+        "line": 495,
+        "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/io/worker-entrypoint.c%2B%2B#L495"
+      },
+      "abortSuppressedAfterLoggedException": {
+        "path": "src/workerd/io/worker-entrypoint.c++",
+        "gitBlobSha": "f3ed3fb4d6ac227d320dce99fb1ac9741c7a9d0a",
+        "sha256": "5a26985f9d80021e9af91b0569c54b7d9c987bf5b6ca6d63d37da5c1fab28bf9",
+        "line": 431,
+        "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/io/worker-entrypoint.c%2B%2B#L431"
+      },
+      "nativeToJsConversion": {
+        "path": "src/workerd/io/worker.c++",
+        "gitBlobSha": "7d191a986c8c7db37ded8f0e76ff20a310f6d972",
+        "sha256": "1fe3f7a4aa2a4edc98de94473e48e5893b8cb68b5992c0cdfb2fd29f8755021f",
+        "line": 2596,
+        "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/io/worker.c%2B%2B#L2596"
+      },
+      "inspectorLogging": {
+        "path": "src/workerd/io/io-context.c++",
+        "gitBlobSha": "2640139fe4c9e38c4fb4671b1f8d7f42e5380f07",
+        "sha256": "c21542fb510d9db902cff9d1a088bdb2a42608dae8f009b800fefadec1e5ffaa",
+        "line": 444,
+        "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/io/io-context.c%2B%2B#L444"
+      },
+      "responseLabel": {
+        "path": "src/workerd/util/uncaught-exception-source.h",
+        "gitBlobSha": "e6469ca01483ba20a4e667e4362c30d9180d5725",
+        "sha256": "eb3296ca255ca9f5e812ffd30b69ee9ac7fd50edf31fe06ffed7f6aa5b8752c2",
+        "line": 28,
+        "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/util/uncaught-exception-source.h#L28"
+      }
+    }
+  },
+  "miniflareEntry": {
+    "compatibilityDate": "2025-03-17",
+    "requestSignalFlag": false,
+    "forwardUsesServiceBinding": true,
+    "soleCauseHypothesisRejectedByDirectControls": true
+  },
+  "calibration": [
+    {
+      "name": "playtt-transport-control",
+      "cases": 24,
+      "normalControls": 16,
+      "cancelledRequests": 8,
+      "runtimeExceptions": 8,
+      "debuggerPauses": 0,
+      "diagnosticDebuggerEnabled": true,
+      "harnessSha256": "89d2a594ea4c46074b5cc9317bfad6bada0f6ec7eddfc348cde9abc26b32a824",
+      "workerSourceSha256": "daccfc1d7cee63022288a2c68da5d7687df2155b2072acab907fa9995623a105",
+      "pinned": [
+        {
+          "path": "node_modules/miniflare/package.json",
+          "bytes": 4185,
+          "sha256": "d43d063fc65818a57e5df8c5503bcfddaef5320099d2479097b16b6cb7a5a288"
+        },
+        {
+          "path": "node_modules/workerd/package.json",
+          "bytes": 676,
+          "sha256": "84a166529ea8d4de0bcdf2af781996846cd64e33367f357d88bbc3d514c06fe2"
+        },
+        {
+          "path": "node_modules/miniflare/dist/src/index.js",
+          "bytes": 4843426,
+          "sha256": "58ca83056cf67838add064edcbfd1d654ed204527b8eb01307ba208d7e59fa20"
+        },
+        {
+          "path": "node_modules/miniflare/dist/src/workers/core/entry.worker.js",
+          "bytes": 184933,
+          "sha256": "e2434da3c39be4758dd323045dbc0b79bb2c0b2a5ba2ed02c6b271b1b676410d"
+        }
+      ],
+      "cancellations": [
+        {
+          "id": 2,
+          "repeat": 0,
+          "transport": "proxy",
+          "route": "plain",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 815,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 5,
+          "repeat": 0,
+          "transport": "proxy",
+          "route": "actor",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 753,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 8,
+          "repeat": 0,
+          "transport": "direct",
+          "route": "plain",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 752,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 11,
+          "repeat": 0,
+          "transport": "direct",
+          "route": "actor",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 751,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 14,
+          "repeat": 1,
+          "transport": "direct",
+          "route": "plain",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 750,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 17,
+          "repeat": 1,
+          "transport": "direct",
+          "route": "actor",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 756,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 20,
+          "repeat": 1,
+          "transport": "proxy",
+          "route": "plain",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 756,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 23,
+          "repeat": 1,
+          "transport": "proxy",
+          "route": "actor",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 747,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        }
+      ],
+      "disposed": true,
+      "wordpressDataTouched": false
+    },
+    {
+      "name": "playtt-transport-stream-v2",
+      "cases": 36,
+      "normalControls": 24,
+      "cancelledRequests": 12,
+      "runtimeExceptions": 12,
+      "debuggerPauses": 0,
+      "diagnosticDebuggerEnabled": true,
+      "harnessSha256": "653559a1cdca27c4485c23e1b2b456381c552e300d42abcf16fc43abbaa8f179",
+      "workerSourceSha256": "f78178b55fdd760bda63c37d7195ec9f0f444177233028e4952c7334395683eb",
+      "pinned": [
+        {
+          "path": "node_modules/miniflare/package.json",
+          "bytes": 4185,
+          "sha256": "d43d063fc65818a57e5df8c5503bcfddaef5320099d2479097b16b6cb7a5a288"
+        },
+        {
+          "path": "node_modules/workerd/package.json",
+          "bytes": 676,
+          "sha256": "84a166529ea8d4de0bcdf2af781996846cd64e33367f357d88bbc3d514c06fe2"
+        },
+        {
+          "path": "node_modules/miniflare/dist/src/index.js",
+          "bytes": 4843426,
+          "sha256": "58ca83056cf67838add064edcbfd1d654ed204527b8eb01307ba208d7e59fa20"
+        },
+        {
+          "path": "node_modules/miniflare/dist/src/workers/core/entry.worker.js",
+          "bytes": 184933,
+          "sha256": "e2434da3c39be4758dd323045dbc0b79bb2c0b2a5ba2ed02c6b271b1b676410d"
+        }
+      ],
+      "cancellations": [
+        {
+          "id": 2,
+          "repeat": 0,
+          "transport": "proxy",
+          "route": "plain",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 817,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 5,
+          "repeat": 0,
+          "transport": "proxy",
+          "route": "actor",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 757,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 8,
+          "repeat": 0,
+          "transport": "proxy",
+          "route": "stream",
+          "cancelPhase": "mid-body",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 1517,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": true,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 11,
+          "repeat": 0,
+          "transport": "direct",
+          "route": "plain",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 751,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 14,
+          "repeat": 0,
+          "transport": "direct",
+          "route": "actor",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 759,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 17,
+          "repeat": 0,
+          "transport": "direct",
+          "route": "stream",
+          "cancelPhase": "mid-body",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 1508,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": true,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 20,
+          "repeat": 1,
+          "transport": "direct",
+          "route": "plain",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 752,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 23,
+          "repeat": 1,
+          "transport": "direct",
+          "route": "actor",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 751,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 26,
+          "repeat": 1,
+          "transport": "direct",
+          "route": "stream",
+          "cancelPhase": "mid-body",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 1522,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": true,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 29,
+          "repeat": 1,
+          "transport": "proxy",
+          "route": "plain",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 750,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 32,
+          "repeat": 1,
+          "transport": "proxy",
+          "route": "actor",
+          "cancelPhase": "before-headers",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 751,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": false,
+          "normalBeforeAndAfterExact": true
+        },
+        {
+          "id": 35,
+          "repeat": 1,
+          "transport": "proxy",
+          "route": "stream",
+          "cancelPhase": "mid-body",
+          "exceptions": 1,
+          "exceptionAfterCancelMs": 1514,
+          "requestAbortEvents": 0,
+          "bodyCancelEvents": 0,
+          "serverHeaderStatus": 200,
+          "clientReceivedHeaders": true,
+          "normalBeforeAndAfterExact": true
+        }
+      ],
+      "disposed": true,
+      "wordpressDataTouched": false
+    }
+  ],
+  "initialStreamingObservation": {
+    "retained": true,
+    "disposed": true,
+    "cases": 36,
+    "exceptionsBeforeStop": 11,
+    "lateCaseEvents": 3,
+    "perCaseAttributionAccepted": false,
+    "reason": "The 1100ms observation was shorter than two 750ms stream delays; errors crossed into later cases and the last stream was disposed before its terminal event. Final v2 waits2000ms and verifies non-overlap."
+  },
+  "wordpress": {
+    "at": "2026-11-21T23:46:13.498Z",
+    "sourceBundle": "fbc6506c323feed4199b8273ea9a595171092910eb1161289be6f1c6c28ef877",
+    "executedInputHashes": [
+      {
+        "name": "playtt-transport-wordpress.mjs",
+        "sha256": "afc894f85532664896e7c6cede5be423508d0a16721ae22fb0c356f6fadb98ee",
+        "bytes": 24737
+      },
+      {
+        "name": "playtt-request-lifecycle.mjs",
+        "sha256": "32514b7102520a6b5e08c678b071e83b88f26d15f2a502c65f1bb3ce08f4ce3d",
+        "bytes": 4693
+      },
+      {
+        "name": "playtt-request-lifecycle-native-observer.mjs",
+        "sha256": "67254a1fb6ae494649315d6522550c507b794440c1cfc5a37da8c175c4f850e4",
+        "bytes": 10076
+      },
+      {
+        "name": "playtt-ajax-classifier.mjs",
+        "sha256": "1714739ca54b16198b5a5723070ca97dd9caa25b131d3544413cc008bf62a09a",
+        "bytes": 1928
+      }
+    ],
+    "finalLocalVersion": 189,
+    "chargedBytes": 399675,
+    "chargedPuts": 24,
+    "limits": {
+      "durationSeconds": 600,
+      "maxBytes": 1881041,
+      "maxOperations": 96
+    },
+    "closed": true,
+    "sealed": true,
+    "pending": 0,
+    "disposed": true,
+    "cancelledRequestId": 14,
+    "onlyTargetRequestDuringObservation": true,
+    "explicitClientDestruction": true,
+    "clientReceivedResponse": false,
+    "outerAndExecutionStatus": 200,
+    "abortSignalObserved": false,
+    "exceptionCount": 1,
+    "exceptionAfterHeadersMs": 3,
+    "exceptionRequestIdAvailable": false,
+    "exceptionFrames": 0,
+    "nativeLogSource": "Uncaught (in response)",
+    "mappedSourceEnum": "REQUEST_HANDLER",
+    "normalControlsBeforeAndAfter": {
+      "status": 200,
+      "body": "1"
+    },
+    "logoutStatus": 302,
+    "httpErrors": 0,
+    "allContentRevisionsUsermetaSessionsMediaThemeExact": true,
+    "changedFiles": [
+      "_runtime/playtt-auto-increment.json",
+      "_tables/postmeta.json"
+    ],
+    "independentObjects": 304,
+    "independentFiles": 298,
+    "independentAndMaterializedExact": true,
+    "timeline": [
+      {
+        "offsetMs": 5,
+        "label": "post-first",
+        "kind": "lifecycle",
+        "id": 14,
+        "layer": "outer",
+        "category": "ajax",
+        "method": "POST",
+        "stage": "start",
+        "elapsedMs": 0,
+        "logout": false,
+        "aborted": false,
+        "clientCase": "cancel-inflight"
+      },
+      {
+        "offsetMs": 6,
+        "label": "post-first",
+        "kind": "lifecycle",
+        "id": 14,
+        "layer": "execution",
+        "category": "ajax",
+        "method": "POST",
+        "stage": "start",
+        "elapsedMs": 0,
+        "logout": false,
+        "aborted": false,
+        "clientCase": "cancel-inflight"
+      },
+      {
+        "offsetMs": 7,
+        "label": "post-first",
+        "kind": "lifecycle",
+        "id": 14,
+        "layer": "outer",
+        "category": "ajax",
+        "method": "POST",
+        "stage": "ajax-fields",
+        "elapsedMs": 2,
+        "formBytes": 443,
+        "logout": false,
+        "hasPostId": true,
+        "hasActiveLock": true,
+        "action": "wp-remove-post-lock",
+        "encoding": "multipart",
+        "clientCase": "cancel-inflight"
+      },
+      {
+        "offsetMs": 14,
+        "kind": "client",
+        "stage": "destroy"
+      },
+      {
+        "offsetMs": 761,
+        "label": "post-first",
+        "kind": "lifecycle",
+        "id": 14,
+        "layer": "execution",
+        "category": "ajax",
+        "method": "POST",
+        "stage": "headers",
+        "elapsedMs": 755,
+        "status": 200,
+        "logout": false,
+        "aborted": false,
+        "bodyPresent": true,
+        "clientCase": "cancel-inflight"
+      },
+      {
+        "offsetMs": 761,
+        "label": "post-first",
+        "kind": "lifecycle",
+        "id": 14,
+        "layer": "execution",
+        "category": "ajax",
+        "method": "POST",
+        "stage": "unwrapped",
+        "elapsedMs": 755,
+        "logout": false,
+        "clientCase": "cancel-inflight"
+      },
+      {
+        "offsetMs": 761,
+        "label": "post-first",
+        "kind": "lifecycle",
+        "id": 14,
+        "layer": "outer",
+        "category": "ajax",
+        "method": "POST",
+        "stage": "headers",
+        "elapsedMs": 756,
+        "status": 200,
+        "logout": false,
+        "aborted": false,
+        "bodyPresent": true,
+        "clientCase": "cancel-inflight"
+      },
+      {
+        "offsetMs": 761,
+        "label": "post-first",
+        "kind": "lifecycle",
+        "id": 14,
+        "layer": "outer",
+        "category": "ajax",
+        "method": "POST",
+        "stage": "unwrapped",
+        "elapsedMs": 756,
+        "logout": false,
+        "clientCase": "cancel-inflight"
+      },
+      {
+        "offsetMs": 764,
+        "label": "post-first",
+        "kind": "exception",
+        "index": 0,
+        "detailsCaptured": true,
+        "text": "Uncaught Error: Network connection lost."
+      },
+      {
+        "offsetMs": 1024,
+        "kind": "client",
+        "stage": "observation-settled"
+      }
+    ]
+  },
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "centralSourceChanged": false,
+  "providerMemoryAccepted": false,
+  "historicalCauseProven": false,
+  "limitations": [
+    "Controlled client destruction is linked to the isolated WordPress observation and normal controls remain healthy. The native exception itself still has no request ID or frame; no exact C++ throw instruction was captured.",
+    "Pinned source establishes generic DISCONNECTED mapping and the REQUEST_HANDLER logging boundary; it is not a native stack trace or proof that the historical browser exceptions followed this path.",
+    "All controls use the installed Windows x64 workerd, Miniflare and debugger; no cross-platform/provider generalization or free-plan admission follows.",
+    "Request-signal documentation describes the API intent. In these observed local controls no abort event occurred, including direct sockets; missing Miniflare entry flags alone do not explain it.",
+    "No runtime exception swallowing, request cancellation fix, CMS changes, deployment, memory/performance claim or paid resource was introduced."
+  ]
+}

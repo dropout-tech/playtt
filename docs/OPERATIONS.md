@@ -1,5 +1,12 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 取消請求傳輸邊界（2026-11-22）
+
+24及36案例本機校準確認proxy與direct、簡單回應與DO、標頭前與串流中取消均可重現相同文字，排除「只因Miniflare入口缺旗標」。固定workerd五個Git blob與實際binary已核對；詳細日誌分類為REQUEST_HANDLER，仍沒有確切C++ throw stack，不能回推歷史瀏覽器例外。
+
+真實WordPress取消ID14的觀測區間內只有該請求；兩層200／aborted=false後出現一筆斷線例外，前後正常unlock及登出通過。全部原內容、修訂、usermeta／session、媒體、主題與304物件298檔備份精確；LOCAL189／399,675bytes／24puts，closed／sealed／pending0、exit0。初次串流觀測不足的紀錄保留、未算逐案通過。正式站與中央來源不變、0雲端操作；下一步回到免費記憶體工作。詳見[實作與限制](../experiments/cloudflare-wordpress/transport-boundary/README.md)。
+
+
 ## 請求生命週期與取消控制（2026-11-22）
 
 本機兩輪原生繁中保存／完整重啟／登出與304物件298檔備份精確，皆無runtime例外；其中一輪的unlock400仍未證明原因。新增16項有界診斷檢查。兩輪明確取消實際WordPress釋放鎖請求後皆記錄同文字Network connection lost；客戶端已關閉，兩層仍200／aborted=false。例外本身無stack或request ID，歷史瀏覽器例外仍不能回推。

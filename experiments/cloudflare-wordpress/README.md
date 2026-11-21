@@ -1,3 +1,5 @@
+最新：[取消請求傳輸邊界](transport-boundary/README.md)取得本機隔離請求與固定版本來源證據；歷史原因與免費記憶體仍開放，正式站不變。
+
 最新：[請求生命週期與取消控制](request-lifecycle/README.md)取得本機取消與連線例外證據；歷史原因及免費記憶體仍開放，正式站不變。
 
 最新：[壓縮清單位元組轉換候選](manifest-bytes/README.md)完成控制及原生資料驗證；整體記憶體及反覆network-loss仍未解，正式站不變。
