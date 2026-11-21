@@ -1,0 +1,29 @@
+{
+  "schema": "playtt/local-envelope-expiry/v1",
+  "at": "2026-11-21T13:59:54.497225+00:00",
+  "result": "save-and-cold-read-pass-expired-before-logout",
+  "sourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 1881041,
+    "maxOperations": 96
+  },
+  "elapsedWindowMs": 595239,
+  "savedVersion": 176,
+  "coldVersion": 180,
+  "accounting": {
+    "bytes": 1096796,
+    "puts": 66,
+    "remainingBytes": 784245,
+    "sealed": true,
+    "closed": true,
+    "pending": 0
+  },
+  "outboundAttempts": 0,
+  "localProcessesDisposed": true,
+  "ownedBrowserTabClosed": true,
+  "logoutCompleted": false,
+  "independentFinalBackupCompleted": false,
+  "originalLocalStateAndCapturedSnapshotsRetained": true,
+  "scope": "This owner expired while agent was selecting logout; no cap raise/rearm/replay. A separate new local copy starts from verifiedbackup161 for the subsequent complete run. No cloud allowance was reset."
+}

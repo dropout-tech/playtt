@@ -1,5 +1,7 @@
 # Cloudflare WordPress 候選測試
 
+最新[完整本機流程與登出核對](manifest-workflow/README.md)：原生保存、冷重開、登出與完整還原完成，剩1,033,673bytes；登出後解鎖400另有獨立重現。以下是前階段歷史。
+
 最新[清單壓縮整合候選](manifest-envelope/README.md)已通過本機原生HTTP保存、冷讀及還原，完整browser容量仍待重測。以下為前階段歷史。
 
 最新[完整瀏覽器容量結果](compressed-budget/README.md)：保存及冷重開成功，登出容量不足；完整流程尚未通過。以下保留上一階段證據。

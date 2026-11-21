@@ -1,5 +1,7 @@
 # 完整清單壓縮接入：本機保存與還原通過
 
+最新[完整本機流程與登出核對](../manifest-workflow/README.md)：原生保存、冷重開、登出與完整還原完成，剩1,033,673bytes；登出後解鎖400另有獨立重現。以下是前階段歷史。
+
 上一輪完整原生流程能保存與重開，但離開編輯器及登出因容量不足收到503；18份完整清單佔charged bytes約71.7%。本階段以明確新格式 `playtt/canonical-manifest-envelope/v1` 壓縮完整JSON清單，保留所有原始路徑、大小、SHA、時間及內容資訊。
 
 只有 `PLAYTT_MANIFEST_ENCODING=gzip-v1` 配合 `PLAYTT_CONTENT_OVERLAY=content-gzip-v1` 才寫新格式；20份既有設定不變。讀取不依賴旗標，讓停用新寫入後仍能開啟舊快照。完整base保持原JSON，沒有新增base鏈。gzip或封套沒有節省時保留原JSON。

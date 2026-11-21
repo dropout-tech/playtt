@@ -1,5 +1,13 @@
 # Let’s Play 驗收狀態
 
+## 壓縮清單完整本機流程完成，登出後解鎖400已獨立重現（2026-11-21）
+
+b5eec65實際runtime／gate／budget的新Chrome副本，完成兩次autosave、單次保存175、完全重啟後九段精確重讀與原生登出178；原有5個session保留，本次session移除。含封存／備份307,281ms用847,368bytes／51puts，餘1,033,673，closed／sealed／pending0。其他內容／修訂／媒體／主題及304物件／298檔獨立備份、轉舊完整格式再讀均精確。17份清單399,591bytes，相同JSON共1,258,493bytes。
+
+完整流程登出後有一筆other AJAX400且沒有新版本；獨立短流程明確捕捉wp-remove-post-lock400在登出後到達，全部原usermeta/session精確恢復、正文不變，固定SHA的WordPress core也支持無匿名handler回400。原完整流程action仍是推論，兩筆400保留，不宣稱零HTTP錯誤。第一份本機副本因agent操作耗時先到期，餘784,245bytes，未完成登出；其expired／封存狀態及證據保留，後續使用全新副本，未重開舊窗口。
+
+10個本機工具及證據已交付，runtime來源／20設定不變，前輪108檢查與tsc未重跑。所有程序／自有分頁關閉、外連0。下一步刷新私人Cloudflare狀態並評估一次同限制完整provider驗證；本機不能證明provider記憶體／CPU／長期免費。正式官網與視覺不變，未部署／付費／加額度／清歷史；雲端161／pin13／餘1,881,041仍是06:28:14Z舊讀值。PR4 draft、完整目標active。詳見experiments/cloudflare-wordpress/manifest-workflow/README.md。以下保留歷史。
+
 ## 完整清單壓縮已接入，本機WordPress保存與還原通過（2026-11-21）
 
 新增有界gzip-base64清單格式，保存端、兩個冷reader、圖片／主題、前版cache核對及備份／pins已接入。封套旗標預設關閉，20設定不變；完整base保留plain，信任錨使用實體清單SHA。108項相關檢查（25新格式）及TypeScript通過。

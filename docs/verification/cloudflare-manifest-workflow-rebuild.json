@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-21T14:00:08.850076+00:00",
+  "result": "pass",
+  "basis": "Prior verified envelope assembly plus10 local tools; no new upstream rebuild",
+  "sources": 81,
+  "sourcesUnchanged": true,
+  "configsUnchanged": 20,
+  "newLocalTools": 10,
+  "prerequisites": 12,
+  "allPriorAssemblyFilesUnchanged": true,
+  "helpers": 348,
+  "helpersMatchingRuntime": 347,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "priorDiscrepancyEvidence": "cloudflare-compressed-runtime-rebuild.json",
+  "refusedReapplyBeforeMutation": true,
+  "cloudRequests": 0
+}
