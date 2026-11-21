@@ -1,3 +1,5 @@
+接續：[損壞ZIP／I/O測試與啟動失敗清理候選](boot-cleanup/README.md)通過本機同容器500→200重試；新合併候選尚待原生保存驗收，完整記憶體問題仍開放。
+
 接續：[完整來源建置與原生繁中保存／重啟驗收](preallocated-native/README.md)已通過；完整編輯記憶體仍待改善，中央候選及雲端未切換。
 
 最新本機研究：[cold-boot-preallocation](cold-boot-preallocation/README.md)，在local-memory-limits組裝上加6工具。候選TS／patch另交付，未採用中央runtime；下一輪須完整來源建置及原生編輯驗證。

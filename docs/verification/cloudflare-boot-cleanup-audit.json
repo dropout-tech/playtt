@@ -1,0 +1,117 @@
+{
+  "schema": "playtt/boot-cleanup-audit/v1",
+  "at": "2026-11-21T20:56:39.471Z",
+  "result": "pass",
+  "faultCases": 35,
+  "positiveCorpusControls": 2,
+  "malformedOrIoOrGuardRejections": 32,
+  "trustedArchiveCrcCase": {
+    "originalExtractToAcceptedMismatchedEntry": true,
+    "candidateStreamRejected": true,
+    "archiveDigestRecomputedForFixture": true,
+    "notProofAgainstManifestAndArchiveReplacement": true
+  },
+  "shortWrite": {
+    "copiedBytes": 7,
+    "preallocatedFileBytes": 65539,
+    "rejected": true
+  },
+  "actualPhpLifetimeCases": 6,
+  "upstreamRejectedBootKeepsAllocatedPhp": true,
+  "candidateDisposesAfterSetupOrValidationFailure": true,
+  "cleanupFailureRetainsBothErrors": true,
+  "successRemainsCallerOwned": true,
+  "helperSha256": "4893fc54a80d03181357ac947275eb6c3b136e472d75b82101a1bd335220f5c5",
+  "fullSourceBuild": {
+    "sources": 83,
+    "inputs": 206,
+    "bundleSha256": "cb9302a8b57c9bc3db16304cb3ad995b793eab543a759a4f7b9bfdb4800e0de5",
+    "typecheck": "pass",
+    "exactScopedCompiledChanges": true,
+    "fiveBinaryModulesUnchanged": true,
+    "centralSourceFilesUnchanged": 82
+  },
+  "workerd": {
+    "requests": 2,
+    "statuses": [
+      500,
+      200
+    ],
+    "sameReadContainer": true,
+    "constructorEventsObserved": 2,
+    "lifecycle": [
+      {
+        "stage": "created",
+        "id": 1,
+        "live": 1
+      },
+      {
+        "stage": "exited",
+        "id": 1,
+        "live": 0
+      },
+      {
+        "stage": "created",
+        "id": 2,
+        "live": 1
+      }
+    ],
+    "corruptedInMemoryReads": 1,
+    "intactRetryReads": 1,
+    "expectedHashFailureExceptionEvents": 4,
+    "otherExceptions": 0,
+    "loginFieldsPresent": true,
+    "canonicalVersion": 190,
+    "r2Objects": 301,
+    "allDataAndInventoryExact": true,
+    "chargedBytes": 0,
+    "chargedPuts": 0,
+    "closed": true,
+    "sealed": true,
+    "pending": 0,
+    "disposed": true,
+    "outbound": 0
+  },
+  "failuresRetained": [
+    {
+      "attempt": "playtt-preallocated-fault",
+      "failureRetained": true,
+      "processOrPhpDisposed": true
+    },
+    {
+      "attempt": "playtt-preallocated-fault-v2",
+      "failureRetained": true,
+      "processOrPhpDisposed": true
+    },
+    {
+      "attempt": "playtt-boot-cleanup",
+      "failureRetained": true,
+      "processOrPhpDisposed": true,
+      "phpExplicitExitProven": false,
+      "terminalNodeExit": 1,
+      "originalDisposedFlagReliable": false,
+      "note": "The liveness PHP request rotated the runtime and removed it from the test tracking set before the getter error; only terminal Node exit proves final release for this failed attempt."
+    },
+    {
+      "attempt": "playtt-boot-cleanup-v2",
+      "failureRetained": true,
+      "processOrPhpDisposed": true
+    },
+    {
+      "attempt": "playtt-boot-cleanup-local",
+      "failureRetained": true,
+      "processOrPhpDisposed": true
+    }
+  ],
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false,
+  "productionChanged": false,
+  "limitations": [
+    "This repairs cleanup after a public request handler has been returned; dependency failures during handler construction remain outside its ownership contract.",
+    "The workerd probe includes numeric lifecycle instrumentation and no browser editor flow; this combined candidate has not yet passed native save/restart.",
+    "Explicit disposal is proven, not immediate GC/RSS release or provider memory acceptance.",
+    "Earlier full-editor samples141-143MiB remain unresolved; no new memory improvement claim.",
+    "All-Cloudflare Free acceptance and the full site goal remain open."
+  ]
+}

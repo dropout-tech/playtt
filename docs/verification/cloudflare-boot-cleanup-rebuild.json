@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-21T21:03:23.839342+00:00",
+  "result": "pass",
+  "basis": "Incremental preallocated-native assembly plus8 local tools. Separate206-input source preparation matches actual full build. No fresh dependency install.",
+  "prerequisites": 124,
+  "newTools": 8,
+  "priorFilesUnchanged": 670,
+  "reapplyRefusedWithoutMutation": true,
+  "separateSourcePreparationInputsExact": 206,
+  "sourcePatchExact": true,
+  "candidateSourceInstalledCentrally": false,
+  "runtimeSourcesChanged": 0,
+  "configsChanged": 0,
+  "cloudRequests": 0,
+  "deployed": false,
+  "productionChanged": false
+}

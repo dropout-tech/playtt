@@ -1,0 +1,23 @@
+{
+  "schema": "playtt/boot-cleanup-build-proof/v1",
+  "at": "2026-11-21T20:52:03.784457+00:00",
+  "result": "pass",
+  "sourceCount": 83,
+  "sourceInputs": 206,
+  "loadedSourceCount": 71,
+  "candidateWorkerSha256": "fe584c3a1a2f722c5b28f789fbc15986467c36462b52fce377dac5b3b0b885f7",
+  "helperSha256": "4893fc54a80d03181357ac947275eb6c3b136e472d75b82101a1bd335220f5c5",
+  "materializerSha256": "fd63abb044984c9b8f43799f9682e4ea65d232fa858be90ce4cab70a986e424f",
+  "bundleSha256": "cb9302a8b57c9bc3db16304cb3ad995b793eab543a759a4f7b9bfdb4800e0de5",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "exactScopedCompiledChanges": true,
+  "unchangedBinaryModules": 5,
+  "diagnosticReversalExact": true,
+  "diagnosticBundleSha256": "535d45025ecf3fc97ac6c53778ddcc3e56f5447617978b941f85218e90d05ca8",
+  "diagnosticScope": "Only numeric handler creation/exit events after public handler construction; one additional awaited getPrimaryPhp; not for performance or production.",
+  "freshDependencyInstall": false,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

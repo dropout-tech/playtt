@@ -1,5 +1,14 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 啟動失敗清理候選與同容器重試（2026-11-22）
+
+預配置解壓補齊35個實際PHP損壞ZIP／I/O／guard案例。發現固定WordPress boot API取得handler後失敗未明確dispose，新增隔離helper與worker整合，6個生命週期案例通過。成功仍由caller持有，失敗dispose後保留原error，清理失敗保留兩個error；handler回傳前的dependency建構失敗不在此責任範圍。
+
+83來源／206輸入完整建置與型別檢查通過，無診斷程式bundle cb9302a8…，中央82來源未變。workerd觀測副本在同一個處理容器以損壞首次讀取500 → 舊PHP退出 → 完整讀取200恢復。LOCAL190／全部網站內容／301物件精確，charged0、closed／sealed／pending0、外連0、程序exit0。原失敗測試保留並修正證據解讀，沒有冒稱立即GC或provider記憶體下降。
+
+合併cleanup的候選尚待原生保存／重啟驗收，前輪完整編輯記憶體141–143MiB仍未解決。0雲端請求／部署，正式Pages／原視覺不變，全案目標保持active。詳見experiments/cloudflare-wordpress/boot-cleanup/README.md。
+
+
 ## 預配置候選已完成完整來源與原生保存驗收（2026-11-22）
 
 冷啟動候選已從82來源／109vendor／9assets重新建置，型別檢查及Wrangler dry-run exit0。實際bundle39ea2670…逐字只含兩處預期修改，五個二進位模組精確，未混入診斷barrier。初次tsconfig造成的額外輸出差異已隔離並保留；第二次匹配原設定建置通過。
