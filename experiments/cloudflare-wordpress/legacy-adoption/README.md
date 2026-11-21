@@ -1,5 +1,7 @@
 # 舊版回退採用程序與故障模型
 
+最新[復原端點](../recovery-uploads/README.md)已接入預設關閉的候選，85測試及5個實際本機workerd中斷／重啟情境通過；未知storage結果仍停止，pointer CAS／完整採用transport尚未完成。以下保留前輪證據。
+
 2026-11-21，繼續全Cloudflare免費後台研究；正式Pages與原視覺不變。新增的是採用程序與本機記憶體模型，**未提供可用的遠端採用／上傳介面**，未部署、未操作Cloudflare。完整目標active、PR4 draft。
 
 ## 問題與程序

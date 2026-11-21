@@ -1,0 +1,433 @@
+{
+  "schema": "playtt/recovery-uploads-local/v1",
+  "at": "2026-11-21T15:47:54.468Z",
+  "result": "pass",
+  "bundleSha256": "85577515c6ee081509f89e93772614524b82f1a5718a390871af7d0af518547f",
+  "actualOuterWorker": true,
+  "actualCoordinatorFence": true,
+  "actualSQLiteBudget": true,
+  "actualLocalR2": true,
+  "processRestarts": 5,
+  "cloudRequests": 0,
+  "providerTested": false,
+  "faults": "Local wrapper injects exceptions at explicit storage boundaries or replaces a completed success response with HTTP 502; not provider crash proof.",
+  "storageClassFixture": "Only Miniflare empty storageClass normalized to Standard for existing inventory check.",
+  "scenarios": [
+    {
+      "mode": "lost-success-response",
+      "initialStatus": 502,
+      "restartReceipt": "settled",
+      "reconciledStatus": 200,
+      "chargedBytes": 51,
+      "chargedPuts": 1,
+      "pending": 0,
+      "closed": true,
+      "sealStatus": 200,
+      "objectBytesExact": true,
+      "localOnly": true,
+      "unknownOutcomeRetained": false
+    },
+    {
+      "mode": "settled",
+      "initialStatus": 503,
+      "restartReceipt": "confirmed",
+      "reconciledStatus": 200,
+      "chargedBytes": 37,
+      "chargedPuts": 1,
+      "pending": 0,
+      "closed": true,
+      "sealStatus": 200,
+      "objectBytesExact": true,
+      "localOnly": true,
+      "unknownOutcomeRetained": false
+    },
+    {
+      "mode": "dispatching",
+      "initialStatus": 503,
+      "restartReceipt": "reserved",
+      "reconciledStatus": 200,
+      "chargedBytes": 41,
+      "chargedPuts": 1,
+      "pending": 0,
+      "closed": true,
+      "sealStatus": 200,
+      "objectBytesExact": null,
+      "localOnly": true,
+      "unknownOutcomeRetained": false
+    },
+    {
+      "mode": "confirmed",
+      "initialStatus": 503,
+      "restartReceipt": "dispatching",
+      "reconciledStatus": 409,
+      "chargedBytes": 39,
+      "chargedPuts": 1,
+      "pending": 1,
+      "closed": true,
+      "sealStatus": 409,
+      "objectBytesExact": true,
+      "localOnly": true,
+      "unknownOutcomeRetained": true
+    },
+    {
+      "mode": "raw-after",
+      "initialStatus": 409,
+      "restartReceipt": "unknown",
+      "reconciledStatus": 409,
+      "chargedBytes": 39,
+      "chargedPuts": 1,
+      "pending": 1,
+      "closed": true,
+      "sealStatus": 409,
+      "objectBytesExact": true,
+      "localOnly": true,
+      "unknownOutcomeRetained": true
+    }
+  ],
+  "checks": [
+    {
+      "path": "/__local-fence",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 401
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 404
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 502
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/status",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/reconcile",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__local-fence",
+      "status": 200
+    },
+    {
+      "path": "/__local-fence",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 401
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 404
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 503
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/status",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/reconcile",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__local-fence",
+      "status": 200
+    },
+    {
+      "path": "/__local-fence",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 401
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 404
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 503
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/status",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/reconcile",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__local-fence",
+      "status": 200
+    },
+    {
+      "path": "/__local-fence",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 401
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 404
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 503
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/status",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/reconcile",
+      "status": 409
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 409
+    },
+    {
+      "path": "/__local-fence",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 401
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 404
+    },
+    {
+      "path": "/__playtt-recovery/object",
+      "status": 409
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/status",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-recovery/reconcile",
+      "status": 409
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "status": 409
+    },
+    {
+      "path": "/__playtt-recovery/status",
+      "status": 404
+    }
+  ],
+  "outboundAttempts": 0,
+  "localProcessesDisposed": true,
+  "noPointerAdoption": true,
+  "receiptsDefaultDisabled": true
+}

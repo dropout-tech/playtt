@@ -1,5 +1,13 @@
 # PLAYTT 執行進度
 
+## 復原上傳端點已接入，本機 workerd 中斷／重啟通過（2026-11-21）
+
+新增預設關閉、僅限 private session-audit／restore-v1／default 的 operator 端點。固定 operationId 綁定 key／size／SHA；reservation 與 receipt 同交易保存，R2 確認後再以同交易結清自有 ticket。相同 ID 不重送；reserved／confirmed 才可接續，dispatching／unknown 保留 pending。只接受有界不可變物件，不更新 pointer；既有額度、窗口、封存與保守扣帳不變。
+
+17 新測試加既有共85項與 tsc 通過。實際 outer Worker＋coordinator＋SQLite Budget＋本機 R2 完成5情境／5次完整程序重啟：已結清後回應遺失、confirmed後結清失敗、未dispatch可接續；R2結果未知／完成紀錄未保存仍pending1，拒絕封存。兩個pending1僅是已停止本機副本，非雲端；所有程序結束、外連0。這是本機邊界例外注入，不是provider故障保證。
+
+2來源修改／1新增，現82來源；20設定不變，功能未開、未部署。正式Pages／原視覺不變、PR4 draft、完整目標active。最後雲端177／pin14／餘1,083,839仍是14:24:49Z舊讀值。尚缺pointer CAS端點及整段採用transport，下一步先本機整合；延遲／初始化／整體記憶體CPU／長期免費與實機驗收繼續。詳見experiments/cloudflare-wordpress/recovery-uploads/README.md；以下保留歷史。
+
 ## 採用程序與故障模型完成，未知R2寫入仍須權威完成證據（2026-11-21）
 
 新增固定plan／hash、fence／window／budget檢查、原pin保留、目標依賴重驗、不可變物件不覆寫及條件式pointer程序。分別核對協調器、提交receipt、R2 current.json；既有coherent狀態不比對R2 pointer。回應遺失先讀回，協調器已178但R2仍177可只續pointer，不重送採用或倒退版本。
