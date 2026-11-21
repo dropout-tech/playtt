@@ -1,5 +1,7 @@
 # 接入前必須完成的工作
 
+目前進度請見[壓縮快照整合候選](../compressed-runtime/README.md)：本機原生 HTTP／備份還原已通過，完整瀏覽器容量與 provider 驗收仍待完成。以下保留原型階段的歷史要求與證據。
+
 以下是尚未實作的整合要求，並非通過紀錄。
 
 1. **辨識與冷讀**：playtt-maintenance-overlay將新schema交給新reader，舊v1/v2/content-v1維持原判斷。worker的readCanonicalRevision、readMarkdownManifest及manifest cache須支援新descriptor。正常讀取與寫入旗標分開，旗標停用仍能讀既有資料。格式未知時拒絕。

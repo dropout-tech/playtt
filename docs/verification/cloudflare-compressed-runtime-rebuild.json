@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-21T11:14:34.736610+00:00",
+  "result": "pass-with-recorded-prior-helper-difference",
+  "basis": "Copy of prior verified prototype assembly plus exact integration patch; no new upstream rebuild",
+  "sources": 80,
+  "sourcesMatchingTestedRuntime": 80,
+  "helpers": 331,
+  "helpersMatchingTestedRuntime": 330,
+  "priorHelperDifferences": [
+    {
+      "path": "scripts/playtt-scheduled-remote.mjs",
+      "assemblySha256": "4e146f5cc0b2a4278f10d2b6b7383927815f8734df7825aee0ba625ad392d00e",
+      "workingRuntimeSha256": "c667e985937106d708c10aecb2b1660ebf94475ede5966217329487a01fb1f7d",
+      "unchangedFromPriorAssembly": true,
+      "usedInCurrentTests": false,
+      "scope": "Existing scheduled-event verifier dispatch-offset correction is present in the delivered assembly; runtime helper still has older exact-timestamp check. Neither helper is executed or modified by this integration."
+    }
+  ],
+  "configsUnchanged": 20,
+  "changedFiles": 8,
+  "newFiles": 3,
+  "prerequisites": 9,
+  "refusedReapplyBeforeMutation": true,
+  "workerEntrypointIntegrated": true,
+  "writerEnabled": false,
+  "cloudRequests": 0
+}

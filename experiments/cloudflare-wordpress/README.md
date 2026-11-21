@@ -1,5 +1,7 @@
 # Cloudflare WordPress 候選測試
 
+目前進度請見[壓縮快照整合候選](compressed-runtime/README.md)：本機原生 HTTP／備份還原已通過，完整瀏覽器容量與 provider 驗收仍待完成。以下保留原型階段的歷史要求與證據。
+
 ## 壓縮格式原型（2026-11-21）
 
 [compressed-content](compressed-content/README.md)通過24項檢查、真實資料獨立還原與本機workerd相容性。尚未接入WordPress保存、一般冷讀與備份／pins，不可部署或宣稱完整流程已通過。

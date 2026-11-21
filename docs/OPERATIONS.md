@@ -1,5 +1,13 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 壓縮快照已接入本機候選，原生 HTTP 與還原通過（2026-11-21）
+
+Reader／writer、metadata-only Markdown、完整 fallback、備份圖／pins／下載器已接入；精確旗標 content-gzip-v1 預設關閉，20 設定不變。78 項測試（19 新整合）與 TypeScript 通過。gzip／manifest 失敗不回傳新 pointer；無變更不寫入，原始媒體／主題副本保留，retention 仍拒絕新格式。
+
+新私人本機副本：登入 162、真實 WordPress REST 保存 163，成功回應刻意遺失後完整重啟讀回繁中；同內容重試 164 無額外修訂。獨立備份、完整舊格式 materialize、停用 writer 後 165 完整 fallback 與冷讀均通過；外連 0，程序關閉。單次 gzip 24,866＋manifest 74,029＝98,895 bytes，不含 pointer／coordinator，尚非整段瀏覽器／gate／budget 或長期免費驗收。
+
+下一步以新本機瀏覽器副本驗證完整登入、自動／手動保存、重啟、登出及封存，量測真實 gate／budget 總額。上一輪完整瀏覽器容量失敗仍是有效紀錄，不能以本輪單次縮小宣稱已解。未做 provider 部署、付費或正式切換；雲端 161／pin13／剩 1,881,041 bytes 仍是 06:28:14Z 舊讀值。PR #4 draft，完整目標 active。詳見 experiments/cloudflare-wordpress/compressed-runtime/README.md。以下是歷史紀錄。
+
 ## 壓縮快照原型與獨立還原通過，尚未接入（2026-11-21）
 
 新增未接線的compressed-content模組；原有78來源、20設定不變。明確新schema與獨立gzip物件，保留原始清單／時間／鎖／session／修訂／ID；有界1MiB／64項差異、8MiB完整base與final，解壓超過精確長度即拒絕。24項測試與TypeScript通過；先複製再hash回歸防止呼叫端重用buffer影響已核對資料。

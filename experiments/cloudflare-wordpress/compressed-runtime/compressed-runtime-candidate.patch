@@ -1,0 +1,296 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -1,3 +1,5 @@
++import { prepareCompressedContent, persistCompressedFallbackMarkdown } from './playtt-compressed-persistence.js';
++import { isCompressedContent, validateCompressedContent } from './playtt-compressed-content.js';
+ import { PLAYTT_EDITOR_HEARTBEAT_FLAG, PLAYTT_EDITOR_HEARTBEAT_POLICY } from './playtt-editor-heartbeat.js';
+ import { PLAYTT_EDITOR_READBACK_FLAG, PLAYTT_EDITOR_READBACK_POLICY, isPlayttDraftReadbackRequest } from './playtt-editor-readback.js';
+ import { isWordPressLogoutMutation } from './playtt-request-mutation.js';
+@@ -1481,7 +1483,7 @@
+       if (!canonicalChanges || !publicationChanges) throw new Error("Canonical mutation completed without its persistence evidence.")
+       logMutationPhase(diagnosticsStartedAt, "php-request", retained, { canonicalCreated: canonicalChanges.created.length, canonicalChanged: canonicalChanges.changed.length, canonicalDeleted: canonicalChanges.deleted.length })
+       if (route === "static-artifact-import") await heartbeat?.("persisting-canonical", 70)
+-      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_CONTENT_OVERLAY === 'content-v1' ? 'content-v1' : env.PLAYTT_METADATA_OVERLAY === 'v2' ? 'v2' : env.PLAYTT_METADATA_OVERLAY === 'v1' ? 'v1' : false)
++      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_CONTENT_OVERLAY === 'content-gzip-v1' ? 'content-gzip-v1' : env.PLAYTT_CONTENT_OVERLAY === 'content-v1' ? 'content-v1' : env.PLAYTT_METADATA_OVERLAY === 'v2' ? 'v2' : env.PLAYTT_METADATA_OVERLAY === 'v1' ? 'v1' : false)
+       logPlayttRuntimeMemory("after-persist", runtime!, env)
+       if (route === "static-artifact-import") await heartbeat?.("canonical-prepared", 80)
+       if (!response) {
+@@ -1834,7 +1836,7 @@
+   return deriveWordPressAuthConstants(env.WORDPRESS_AUTH_SECRET ?? "", site.id)
+ }
+ 
+-async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' = false): Promise<MarkdownPointer> {
++async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' | 'content-gzip-v1' = false): Promise<MarkdownPointer> {
+   validateMarkdownChanges(changes)
+   const root = siteStorageKeys(site).root
+   const manifestCache = runtime.manifestCache ??= new PlayttRuntimeManifestCache<MarkdownManifest>()
+@@ -1864,6 +1866,7 @@
+   if (trace) trace.start("persistence.markdown.write", { files: changedPaths.length })
+   try {
+     markdown = await persistPlayttMarkdownObjects({
++      metadataOnly: allowMetadataOverlay === 'content-gzip-v1',
+       paths: changedPaths, previous: currentManifest.files, objectPrefix: siteStorageKeys(site).markdownObjectPrefix,
+       validPath: isCanonicalRelativePath, limits: { files: MAX_MARKDOWN_FILES, fileBytes: MAX_MARKDOWN_FILE_BYTES, totalBytes: MAX_MARKDOWN_TOTAL_BYTES }, retained,
+       readSizes: async () => JSON.parse((await runtime.php.run({ code: markdownSizeCode(MARKDOWN_ROOT, changedPaths) })).text.trim()),
+@@ -2159,7 +2162,7 @@
+   validateUploadMetadata(files.map((file) => ({ path: file.path, size: file.bytes.byteLength })))
+ }
+ 
+-async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' = false): Promise<MarkdownPointer> {
++async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay: false | 'v1' | 'v2' | 'content-v1' | 'content-gzip-v1' = false): Promise<MarkdownPointer> {
+   const revision = crypto.randomUUID()
+   const manifestKey = `${siteStorageKeys(site).markdownRevisionPrefix}/${revision}.json`
+   const persistedAt = new Date().toISOString()
+@@ -2168,7 +2171,18 @@
+   validateUploadManifestFiles(uploads, site)
+   validateWpContentManifestFiles(wpContent, site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   validateWpContentDeletedPaths(wpContentDeleted, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+-  if (allowMetadataOverlay && previous) {
++  if (allowMetadataOverlay === 'content-gzip-v1' && previous && readCommittedFile) {
++    const compressed = await prepareCompressedContent(bucket, siteStorageKeys(site).root, { ...pointer, files, uploads, wpContent, wpContentDeleted }, previous, readCommittedFile)
++    if (compressed) {
++      const manifest: MarkdownManifest = { ...pointer, files, uploads, wpContent, wpContentDeleted, restorePack: compressed.descriptor }
++      validateCompressedContent(manifest, siteStorageKeys(site).root)
++      await putImmutableBytes(bucket, compressed.descriptor.delta.objectKey, compressed.bytes, 'application/gzip')
++      await bucket.put(manifestKey, JSON.stringify(manifest), { httpMetadata: { contentType: 'application/json' } })
++      onPersisted?.(manifest)
++      return pointer
++    }
++  }
++  if (allowMetadataOverlay && allowMetadataOverlay !== 'content-gzip-v1' && previous) {
+     const overlay = await createMetadataOverlay(bucket, siteStorageKeys(site).root, { files, uploads, wpContent, wpContentDeleted }, previous, allowMetadataOverlay)
+     if (overlay) {
+       const manifest: MarkdownManifest = { ...pointer, files, uploads, wpContent, wpContentDeleted, restorePack: overlay }
+@@ -2179,6 +2193,13 @@
+       onPersisted?.(manifest)
+       return pointer
+     }
++  }
++  // Deferred Markdown or a previous compressed snapshot may have no raw
++  // replicas. Materialize and verify them before entering the full-pack path.
++  if (allowMetadataOverlay === 'content-gzip-v1' || isCompressedContent(previous?.restorePack)) {
++    if (!readCommittedFile) throw new Error('Compressed fallback requires the leased runtime.')
++    await persistCompressedFallbackMarkdown(bucket, siteStorageKeys(site).root, files, readCommittedFile,
++      (key, bytes) => putImmutableBytes(bucket, key, bytes, 'application/octet-stream'))
+   }
+   // Rehash unchanged runtime bytes against the committed manifest, and read
+   // changed objects from R2. Persist a complete new pack before commit.
+--- a/src/playtt-maintenance-overlay.ts
++++ b/src/playtt-maintenance-overlay.ts
+@@ -3,23 +3,27 @@
+ import * as v1 from './playtt-metadata-overlay.js';
+ import * as v2 from './playtt-usermeta-overlay.js';
+ import * as content from './playtt-content-overlay.js';
++import * as compressed from './playtt-compressed-content.js';
+ import type { RestorePackBucket } from './canonical-restore-pack.js';
+ import type { PlayttSnapshotManifest } from './playtt-snapshot-source.js';
+ export { readOverlayBytes, MAX_OVERLAY_MANIFEST, MAX_OVERLAY_PACK } from './playtt-metadata-overlay.js';
+-export type PlayttMetadataOverlay = v1.PlayttMetadataOverlay | v2.PlayttUsermetaOverlay | content.PlayttContentOverlay;
+-export type OverlayManifest = content.OverlayManifest;
+-export const isMetadataOverlay = (value:unknown):value is PlayttMetadataOverlay => v1.isMetadataOverlay(value)||v2.isUsermetaOverlay(value)||content.isContentOverlay(value);
++export type PlayttMetadataOverlay = v1.PlayttMetadataOverlay | v2.PlayttUsermetaOverlay | content.PlayttContentOverlay | compressed.CompressedContent;
++export type OverlayManifest = Omit<content.OverlayManifest,'restorePack'> & {restorePack?: content.OverlayManifest['restorePack'] | compressed.CompressedContent};
++export const isMetadataOverlay = (value:unknown):value is PlayttMetadataOverlay => v1.isMetadataOverlay(value)||v2.isUsermetaOverlay(value)||content.isContentOverlay(value)||compressed.isCompressedContent(value);
+ export function validateMetadataOverlay(manifest:OverlayManifest,root:string):void{
+-  if(content.isContentOverlay(manifest.restorePack))content.validateContentOverlay(manifest,root);
++  if(compressed.isCompressedContent(manifest.restorePack))compressed.validateCompressedContent(manifest,root);
++  else if(content.isContentOverlay(manifest.restorePack))content.validateContentOverlay(manifest as content.OverlayManifest,root);
+   else if(v2.isUsermetaOverlay(manifest.restorePack))v2.validateUsermetaOverlay(manifest as v2.OverlayManifest,root);
+   else v1.validateMetadataOverlay(manifest as v1.OverlayManifest,root);
+ }
+-export function readMetadataOverlay(bucket:RestorePackBucket,root:string,manifest:OverlayManifest){
+-  if(content.isContentOverlay(manifest.restorePack))return content.readContentOverlay(bucket,root,manifest);
++export async function readMetadataOverlay(bucket:RestorePackBucket,root:string,manifest:OverlayManifest){
++  if(compressed.isCompressedContent(manifest.restorePack))return compressed.readCompressedContent(bucket,root,manifest);
++  if(content.isContentOverlay(manifest.restorePack))return content.readContentOverlay(bucket,root,manifest as content.OverlayManifest);
+   return v2.isUsermetaOverlay(manifest.restorePack)?v2.readUsermetaOverlay(bucket,root,manifest as v2.OverlayManifest):v1.readMetadataOverlay(bucket,root,manifest as v1.OverlayManifest);
+ }
+ export function createMetadataOverlay(bucket:RestorePackBucket,root:string,next:PlayttSnapshotManifest,previous:OverlayManifest,version:'v1'|'v2'|'content-v1'='v1'){
+-  if(version==='content-v1')return content.createContentOverlay(bucket,root,next,previous);
++  if(compressed.isCompressedContent(previous.restorePack))return Promise.resolve(null);
++  if(version==='content-v1')return content.createContentOverlay(bucket,root,next,previous as content.OverlayManifest);
+   if(content.isContentOverlay(previous.restorePack))return Promise.resolve(null);
+   if(version==='v2')return v2.createUsermetaOverlay(bucket,root,next,previous as v2.OverlayManifest);
+   // A compatible reader with the writer disabled/downgraded may materialize a
+--- a/src/playtt-markdown-persistence.ts
++++ b/src/playtt-markdown-persistence.ts
+@@ -4,6 +4,8 @@
+ interface File { path: string; objectKey: string; sha256: string; size: number }
+ interface Options {
+   paths: readonly string[];
++  // Hash the complete leased inventory; the compressed writer owns persistence.
++  metadataOnly?: boolean;
+   previous: readonly File[];
+   objectPrefix: string;
+   validPath: (path: string) => boolean;
+@@ -55,7 +57,7 @@
+         const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', body as Uint8Array<ArrayBuffer>));
+         const sha256 = Array.from(digest, b => b.toString(16).padStart(2, '0')).join('');
+         const objectKey = `${o.objectPrefix}/${sha256}`, old = previous.get(path);
+-        if (old?.sha256 !== sha256 || old.size !== size) { puts++; await o.put(objectKey, body); }
++        if (!o.metadataOnly && (old?.sha256 !== sha256 || old.size !== size)) { puts++; await o.put(objectKey, body); }
+         files[index] = { path, size, sha256, objectKey };
+       } finally { o.retained.release(body.byteLength); }
+     })().catch(error => { failure ??= { error }; }).finally(() => { reservedBytes -= size; active.delete(work); });
+--- a/src/playtt-compressed-content.ts
++++ b/src/playtt-compressed-content.ts
+@@ -1,4 +1,4 @@
+-// Prototype only: not imported by the Worker or any production reader/writer.
++// Bounded format; the optional writer must be selected explicitly.
+ // A separate descriptor prevents old readers from treating compressed bytes as
+ // existing raw objects. Canonical file paths, sizes and hashes stay byte-exact.
+ import {createCanonicalRestorePack, decodeCanonicalRestorePack, validateCanonicalRestorePackMetadata, type CanonicalRestorePackMetadata, type CanonicalRestorePackFile, type RestorePackBucket, type RestorePackContents} from './canonical-restore-pack.js';
+@@ -47,7 +47,7 @@
+     &&m.manifestKey===`${root}/markdown/revisions/${m.revision}.json`
+     &&typeof m.persistedAt==='string'&&/(?:Z|[+-]\d\d:\d\d)$/.test(m.persistedAt)&&Number.isFinite(Date.parse(m.persistedAt)));
+ }
+-function validateInventory(m: PlayttSnapshotManifest,root: string) {
++function validateInventory(m: PlayttSnapshotManifest,root: string,enforceBudget = true) {
+   need(m&&Array.isArray(m.files)&&(!m.uploads||Array.isArray(m.uploads))&&(!m.wpContent||Array.isArray(m.wpContent)));
+   validatePlayttSnapshotSources(root,m);
+   const deleted=m.wpContentDeleted||[],present=new Set((m.wpContent||[]).map(f=>f.path));
+@@ -56,7 +56,7 @@
+     const p=deleted[i];need(typeof p==='string'&&/^(plugins|themes|languages|mu-plugins)\//.test(p)&&!p.includes('\\')&&!p.includes('\0')
+       &&!p.split('/').some(s=>!s||s==='.'||s==='..')&&(i===0||deleted[i-1]<p)&&!present.has(p));
+   }
+-  need(groups.reduce((n,g)=>n+list(m,g).reduce((s,f)=>s+f.size,0),0)<=MAX_COMPRESSED_BASE,'Compressed content inventory exceeds budget.');
++  need(!enforceBudget||groups.reduce((n,g)=>n+list(m,g).reduce((s,f)=>s+f.size,0),0)<=MAX_COMPRESSED_BASE,'Compressed content inventory exceeds budget.');
+ }
+ function fullBase(m: CompressedManifest,root: string): asserts m is FullManifest {
+   validateInventory(m,root);identity(m,root);
+@@ -80,7 +80,7 @@
+ function frameHeader(tasks: Task[],deleted: string[]) {
+   const entries=tasks.map(({group,file})=>({group,path:file.path,size:file.size,sha256:file.sha256}));
+   const header=enc('PLAYTT-DELTA-V1\n'+JSON.stringify({entries,wpContentDeleted:deleted})+'\n');
+-  need(header.length<=MAX_COMPRESSED_MANIFEST,'Compressed frame header exceeds budget.');return header;
++  return header;
+ }
+ // Fixed-size destination; oversized output is rejected before copying it.
+ // Canceling the reader propagates to decompression and its input stream.
+@@ -118,11 +118,13 @@
+ // back and compared; changed leased-runtime bytes are hashed independently.
+ // This function does not write objects, change a pointer, or open a lease.
+ export async function createCompressedContent(bucket: RestorePackBucket,root: string,next: PlayttSnapshotManifest,base: CompressedManifest,readRuntime: PlayttSnapshotRuntimeReader): Promise<{descriptor: CompressedContent; bytes: Uint8Array}|null> {
+-  validateInventory(next,root);fullBase(base,root);
++  validateInventory(next,root,false);fullBase(base,root);
++  if(groups.reduce((n,g)=>n+list(next,g).reduce((s,f)=>s+f.size,0),0)>MAX_COMPRESSED_BASE)return null;
+   const delta=changes(base,next);if(!delta.eligible)return null;
+   const baseBytes=await readContentBytes(bucket,base.manifestKey,MAX_COMPRESSED_MANIFEST);
+   need(equal(parse(baseBytes),base),'Stored compressed base differs.');
+-  const header=frameHeader(delta.tasks,next.wpContentDeleted||[]),frame=new Uint8Array(header.length+delta.bytes);frame.set(header);
++  const header=frameHeader(delta.tasks,next.wpContentDeleted||[]);if(header.length>MAX_COMPRESSED_MANIFEST)return null;
++  const frame=new Uint8Array(header.length+delta.bytes);frame.set(header);
+   need(frame.length<=MAX_COMPRESSED_FRAME);let offset=header.length;
+   // Sequential reads bound owned input copies to one file plus the 1MiB frame.
+   for(const {group,file}of delta.tasks){const body=readRuntime(group,file.path);
+@@ -144,6 +146,7 @@
+   need(base.revision===descriptor.base.revision&&base.manifestKey===descriptor.base.manifestKey&&base.persistedAt===descriptor.base.persistedAt,'Compressed base identity differs.');
+   const delta=changes(base,m);need(delta.eligible,'Compressed delta exceeds cumulative budget.');
+   const header=frameHeader(delta.tasks,m.wpContentDeleted||[]),d=descriptor.delta;
++  need(header.length<=MAX_COMPRESSED_MANIFEST,'Compressed frame header exceeds budget.');
+   need(d.fileCount===delta.tasks.length&&d.decodedBytes===header.length+delta.bytes,'Compressed delta framing metadata differs.');
+   const bytes=await readContentBytes(bucket,d.objectKey,MAX_COMPRESSED_OBJECT,d.size,d.sha256);
+   const decoded=await readExactCompressedStream(new Blob([bytes as Uint8Array<ArrayBuffer>]).stream().pipeThrough(new DecompressionStream('gzip')),d.decodedBytes,MAX_COMPRESSED_FRAME);
+--- a/scripts/playtt-snapshot-bundle.mjs
++++ b/scripts/playtt-snapshot-bundle.mjs
+@@ -8,6 +8,7 @@
+ import {createCanonicalRestorePack,decodeCanonicalRestorePack,validateCanonicalRestorePackMetadata} from '../src/canonical-restore-pack.ts';
+ import {isMetadataOverlay,readMetadataOverlay,readOverlayBytes,MAX_OVERLAY_MANIFEST,MAX_OVERLAY_PACK} from '../src/playtt-maintenance-overlay.ts';
+ import {validatePlayttSnapshotSources} from '../src/playtt-snapshot-source.ts';
++import {isCompressedContent,MAX_COMPRESSED_OBJECT} from '../src/playtt-compressed-content.ts';
+ import {isContentOverlay,readContentBytes} from '../src/playtt-content-overlay.ts';
+ 
+ const ROOT='sites/default',SCHEMA='playtt/snapshot-bundle/v1';
+@@ -48,8 +49,8 @@
+   const cached=new Map();
+   const recording={async get(key){
+    if(cached.has(key)){const b=cached.get(key);return {size:b.length,arrayBuffer:async()=>Uint8Array.from(b).buffer};}
+-   const limit=key===manifest.restorePack.base.manifestKey?MAX_OVERLAY_MANIFEST:MAX_OVERLAY_PACK;
+-   const b=await (isContentOverlay(manifest.restorePack)?readContentBytes:readOverlayBytes)(bucket,key,limit);cached.set(key,b);return {size:b.length,arrayBuffer:async()=>Uint8Array.from(b).buffer};
++   const limit=key===manifest.restorePack.base.manifestKey?MAX_OVERLAY_MANIFEST:isCompressedContent(manifest.restorePack)&&key===manifest.restorePack.delta.objectKey?MAX_COMPRESSED_OBJECT:MAX_OVERLAY_PACK;
++   const b=await (isContentOverlay(manifest.restorePack)||isCompressedContent(manifest.restorePack)?readContentBytes:readOverlayBytes)(bucket,key,limit);cached.set(key,b);return {size:b.length,arrayBuffer:async()=>Uint8Array.from(b).buffer};
+   }};
+   const restored=await readMetadataOverlay(recording,ROOT,manifest);
+   ({base,baseBytes,contents}=restored);pack=cached.get(base.restorePack.objectKey);assert.ok(pack);
+@@ -57,6 +58,7 @@
+   // exporting this overlay does not orphan its full-base recovery metadata.
+   baseContents=await decodeCanonicalRestorePack(base.restorePack,ROOT,inventory(base),pack);
+   addObject(objects,base.manifestKey,baseBytes);
++  if(isCompressedContent(manifest.restorePack)){const delta=cached.get(manifest.restorePack.delta.objectKey);assert.ok(delta);addObject(objects,manifest.restorePack.delta.objectKey,delta);}
+  }else{
+   validateCanonicalRestorePackMetadata(manifest.restorePack,ROOT,inventory(manifest));
+   assert.ok(manifest.restorePack.size<=MAX_OVERLAY_PACK&&manifest.restorePack.decodedBytes<=MAX_OVERLAY_PACK,'Snapshot exceeds the private backup budget');
+@@ -67,7 +69,7 @@
+  addObject(objects,base.restorePack.objectKey,pack);addContents(objects,base,baseContents);addContents(objects,manifest,contents);
+  const ordered=[...objects.values()].sort((a,b)=>a.key.localeCompare(b.key));
+  const payloadBytes=ordered.reduce((n,x)=>n+x.size,0);assert.ok(payloadBytes<=MAX_BYTES);
+- return {anchor,manifest,base,contents,objects:ordered,payloadBytes,format:isContentOverlay(manifest.restorePack)?'content-overlay':isMetadataOverlay(manifest.restorePack)?'metadata-overlay':'full-pack'};
++ return {anchor,manifest,base,contents,objects:ordered,payloadBytes,format:isCompressedContent(manifest.restorePack)?'compressed-content':isContentOverlay(manifest.restorePack)?'content-overlay':isMetadataOverlay(manifest.restorePack)?'metadata-overlay':'full-pack'};
+ }
+ 
+ async function boundedFile(path,limit){
+--- a/scripts/playtt-backup-pin-client.mjs
++++ b/scripts/playtt-backup-pin-client.mjs
+@@ -4,6 +4,7 @@
+ import { decodeCanonicalRestorePack } from '../src/canonical-restore-pack.ts';
+ import { backupPinInput } from '../src/playtt-backup-pins.ts';
+ import { isMetadataOverlay, readMetadataOverlay } from '../src/playtt-maintenance-overlay.ts';
++import { isCompressedContent, MAX_COMPRESSED_OBJECT } from '../src/playtt-compressed-content.ts';
+ import { isContentOverlay } from '../src/playtt-content-overlay.ts';
+ 
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+@@ -17,13 +18,14 @@
+       let file;
+       if(key===manifest.restorePack.base.manifestKey)file=directory+'/base-manifest.json';
+       else if(key===base.restorePack?.objectKey)file=directory+'/restore.zip';
++      else if(isCompressedContent(manifest.restorePack)&&key===manifest.restorePack.delta.objectKey)file=directory+'/delta.gz';
+       else {const sha=objects.get(key);assert.match(sha||'',/^[a-f0-9]{64}$/);file=directory+'/objects/'+sha;}
+-      const content=await boundedFile(file,8*1024*1024);return {size:content.length,arrayBuffer:async()=>Uint8Array.from(content).buffer};
++      const content=await boundedFile(file,file===directory+'/delta.gz'?MAX_COMPRESSED_OBJECT:8*1024*1024);return {size:content.length,arrayBuffer:async()=>Uint8Array.from(content).buffer};
+     }};
+     const verified=await readMetadataOverlay(bucket,'sites/default',manifest),pack=verified.base.restorePack;
+     const pin=backupPinInput({revision:manifest.revision,manifestKey:manifest.manifestKey,persistedAt:manifest.persistedAt,
+       manifestSha256:hash(bytes),packKey:pack.objectKey,packSha256:pack.sha256,packBytes:pack.size});
+-    return {pin,objects:verified.changed.length+3,reconstructedFiles:verified.contents.markdown.length+verified.contents.uploads.length+verified.contents.wpContent.length,format:isContentOverlay(manifest.restorePack)?'content-overlay-with-base':'metadata-overlay-with-base',dependenciesVerified:true};
++    return {pin,objects:isCompressedContent(manifest.restorePack)?4:('changed' in verified?verified.changed.length:0)+3,reconstructedFiles:verified.contents.markdown.length+verified.contents.uploads.length+verified.contents.wpContent.length,format:isCompressedContent(manifest.restorePack)?'compressed-content-with-base':isContentOverlay(manifest.restorePack)?'content-overlay-with-base':'metadata-overlay-with-base',dependenciesVerified:true};
+   }
+   const pack = await readFile(directory + '/restore.zip');
+   const pin = backupPinInput({ revision: manifest.revision, manifestKey: manifest.manifestKey, persistedAt: manifest.persistedAt,
+--- a/scripts/playtt-content-snapshot-source.mjs
++++ b/scripts/playtt-content-snapshot-source.mjs
+@@ -1,5 +1,6 @@
+ // Explicit content-overlay download profile for the existing private bucket.
+-// One current manifest + one full-base manifest + one ZIP + <=64 replacements.
++// One current manifest + one full-base manifest + one ZIP + <=64 replacements,
++// or one bounded compressed delta. No wider account, bucket or write access.
+ // This changes neither the legacy downloader nor any cloud write allowance.
+ import assert from 'node:assert/strict';
+ export function createContentSnapshotSource({token,fetchImpl=fetch}){
+@@ -7,13 +8,14 @@
+  const base='https://api.cloudflare.com/client/v4/accounts/3baadbd4abd9fd63c7f7e51664b26f67/r2/buckets/playtt-wordpress-session-audit/objects/';
+  const stats={requests:0,downloadedBytes:0};
+  const bucket={async get(key){
+-  assert.ok(typeof key==='string'&&/^sites\/default\/(?:markdown\/revisions\/[a-f0-9-]{36}\.json|restore-packs\/[a-f0-9]{64}\.zip|(?:markdown|uploads|wp-content)\/objects\/[a-f0-9]{64})$/.test(key));
++  assert.ok(typeof key==='string'&&/^sites\/default\/(?:markdown\/revisions\/[a-f0-9-]{36}\.json|restore-packs\/[a-f0-9]{64}\.zip|delta-packs\/[a-f0-9]{64}\.gz|(?:markdown|uploads|wp-content)\/objects\/[a-f0-9]{64})$/.test(key));
+   assert.ok(stats.requests<67,'Content snapshot exceeded its bounded dependency count');stats.requests++;
+   const response=await fetchImpl(base+encodeURIComponent(key),{method:'GET',headers:{authorization:'Bearer '+token},signal:AbortSignal.timeout(45000),redirect:'error'});
+   if(response.status===404){await response.body?.cancel();return null;}
+   if(response.status!==200){await response.body?.cancel();throw Error('Content snapshot GET failed: HTTP '+response.status);}
+   assert.ok(response.body);const reader=response.body.getReader(),parts=[];let size=0;
+-  try{for(;;){const {done,value}=await reader.read();if(done)break;size+=value.length;stats.downloadedBytes+=value.length;assert.ok(size<=8*1024*1024&&stats.downloadedBytes<=10*1024*1024,'Content snapshot exceeded its byte budget');parts.push(value);}}
++  const objectLimit=key.includes('/delta-packs/')?1376256:8*1024*1024;
++  try{for(;;){const {done,value}=await reader.read();if(done)break;size+=value.length;stats.downloadedBytes+=value.length;assert.ok(size<=objectLimit&&stats.downloadedBytes<=10*1024*1024,'Content snapshot exceeded its byte budget');parts.push(value);}}
+   catch(error){await reader.cancel().catch(()=>{});throw error;}finally{reader.releaseLock();}
+   const bytes=new Uint8Array(size);let offset=0;for(const part of parts){bytes.set(part,offset);offset+=part.length;}
+   return {size,arrayBuffer:async()=>bytes.buffer};
+--- a/tests/playtt-compressed-content.test.ts
++++ b/tests/playtt-compressed-content.test.ts
+@@ -4,7 +4,7 @@
+ import {gzipSync,gunzipSync} from 'node:zlib';
+ import {createCanonicalRestorePack,decodeCanonicalRestorePack,validateCanonicalRestorePackMetadata,type RestorePackContents} from '../src/canonical-restore-pack.js';
+ import * as compressed from '../src/playtt-compressed-content.js';
+-import {readMetadataOverlay,isMetadataOverlay} from '../src/playtt-maintenance-overlay.js';
++import {readMetadataOverlay,isMetadataOverlay} from '../src/playtt-metadata-overlay.js';
+ const root='sites/default',groups=['markdown','uploads','wpContent'] as const,prefix={markdown:'markdown',uploads:'uploads',wpContent:'wp-content'};
+ const enc=(v:unknown)=>new TextEncoder().encode(typeof v==='string'?v:JSON.stringify(v));
+ const sha=(b:Uint8Array)=>createHash('sha256').update(b).digest('hex');

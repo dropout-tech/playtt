@@ -1,0 +1,102 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": false,
+  "existingConfigsChanged": false,
+  "prerequisites": [
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "sha256": "b43b08af7bb17afdb499bf6297944526804b1cbb8677834ca3c8b901c351939c"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "sha256": "9e7fd70863c5e6512834b191aec53b2ff2b200480b00c7cf0061d2684b8cf05a"
+    },
+    {
+      "path": "src/canonical-restore-pack.ts",
+      "sha256": "e14138243ebb1d650a62897a23234e35a0dc94af70b758cd4305a4594c4d9f0f"
+    },
+    {
+      "path": "src/playtt-metadata-overlay.ts",
+      "sha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43"
+    },
+    {
+      "path": "src/playtt-usermeta-overlay.ts",
+      "sha256": "caafbbd624cbda0bbdef5fd593dbfe83932085001749a3b4c86ea66bc9d1b1a0"
+    },
+    {
+      "path": "src/playtt-content-overlay.ts",
+      "sha256": "7bf63e94d077d66bf46c4341add07e548ae1b12cc027541a6ca663f84c5281c3"
+    },
+    {
+      "path": "src/playtt-runtime-manifest-cache.ts",
+      "sha256": "b74352e8de70bef32c33e4e813c51e54154b5140055337786404e32e45577b88"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "sha256": "3ddc0834f7397dfe18149aad2e441b8528a5f9717eea338e1208508a793d6245"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "sha256": "ad31e78d03643c0e00ccafff47b9cd27e049086e38d69fc04ecac6df288e6f4d"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "beforeSha256": "0c4d77291f3c766446d820d3c92a698e09517f31dbf2c92eadd539ab8697e3ed",
+      "afterSha256": "609d5036f0e2b345ec318146ea1da54f317cb9635ed51b97ae6f4eae9024f9d2"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "beforeSha256": "be0104515c3853cd4010d13f5059231859842b0c38f618732c8d6026f7f9f06e",
+      "afterSha256": "a5e811a88fa3b3081ee108807bf6a68c8c9acadcec711e7adf859502632bb6e9"
+    },
+    {
+      "path": "src/playtt-markdown-persistence.ts",
+      "beforeSha256": "8443497aae4646884d88caa2e73d8f131e5eb47b8af0681cecdf3894032781eb",
+      "afterSha256": "ea333f1111e4608a2dd6505f4dde68ed0b0647168a222494860d4cd5aeea69ff"
+    },
+    {
+      "path": "src/playtt-compressed-content.ts",
+      "beforeSha256": "bee5813df04a53dafd5288e7484b5259973822bbea5360d56061648317827cf8",
+      "afterSha256": "e7cb72fae29723156dbb7eb878a6c6bc20989e34b2304bce0c338595acaf5620"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "beforeSha256": "4262655fb0aef100b0401302622b81f9502896833bf7e3a8ab16737f3210e2aa",
+      "afterSha256": "8689ca23fedd2a7749f9e5e21a81bab30cc97ae43f1dde1d074df2598248e8ea"
+    },
+    {
+      "path": "scripts/playtt-backup-pin-client.mjs",
+      "beforeSha256": "e6bd721d08f6bef0e156f6a3416c57ea4a2e6bd28a1bd5c22c53440425048e84",
+      "afterSha256": "bd64f13d43b83cf41fbd3d9d5fc105070ecc60cccb598e63e5f4e7b5651fa2cb"
+    },
+    {
+      "path": "scripts/playtt-content-snapshot-source.mjs",
+      "beforeSha256": "a1150173c80e57da32a2c6199a17bae2a0f33e5b6dceeec94681620e483d2efb",
+      "afterSha256": "89140021a9649b43bea663a80aca0aef9a5ff12b25d0b23b470bc32054baf774"
+    },
+    {
+      "path": "tests/playtt-compressed-content.test.ts",
+      "beforeSha256": "81dbd398251eabb0e86b0f6a519bf3676eefc4d41ac68f3667f91878bc8a875b",
+      "afterSha256": "bc9bf3eb29c81152735d0ecaa1009d75d1de30259b16615506468a63edfa72b4"
+    },
+    {
+      "path": "src/playtt-compressed-persistence.ts",
+      "source": "playtt-compressed-persistence.ts",
+      "afterSha256": "2a9be739f8da46037986596d25e182f0f6c7dd351ce4659387b5e05b6f86d52d"
+    },
+    {
+      "path": "tests/playtt-compressed-integration.test.ts",
+      "source": "playtt-compressed-integration.test.ts",
+      "afterSha256": "8b15b7e01373e9c01931760f70f6ae7cba61c866e2f10285d79ef29811b88f2d"
+    },
+    {
+      "path": "scripts/playtt-compressed-write-local.mjs",
+      "source": "playtt-compressed-write-local.mjs",
+      "afterSha256": "539a65b46ac86d4597e899c5068e3c7db1fe5e3e51198a02b097a1d1f1e2a1b3"
+    }
+  ],
+  "patchSha256": "89c54c2e4d88317a4ff43252792ff9774cbbf43b8f98590ff2d26a0f991d5ce5"
+}
