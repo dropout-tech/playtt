@@ -1,5 +1,12 @@
 # Let’s Play 驗收狀態
 
+## 編輯器位元組修補候選（2026-11-22）
+
+原生配置 stack 定位到 editor.min.js 修補的完整字串副本。隔離候選改用位元組尋找／複製，保留輸入／輸出 SHA；9項測試、83來源完整建置及原生保存／重啟／登出／獨立備份均通過。六個控制副本中 baseline 函式各3,149,500累計 sampled bytes，candidate無達尺度配置；輸出完全相同，這不代表零配置或整體尖峰通過。
+
+兩個原生流程為LOCAL195／191，均closed／sealed／pending0、exit0，內容／revision209／原session／媒體／主題與備份精確；候選有1個已分類global-styles403，無未分類HTTP錯誤。整體觀測仍約144–153MiB，不能通過Cloudflare128MiB驗收。中央來源／正式Pages不變、0雲端請求或部署；接續保存路徑與清單重複配置。詳見[實作與證據](../experiments/cloudflare-wordpress/editor-byte/README.md)。
+
+
 ## Ajax權限控制與heap持有分析（2026-11-22）
 
 本機原生multipart釋放文章鎖已捕捉到200／1，隨後登出302；明確未登入控制同動作400／0，heartbeat200／wp-auth-check:false，固定核心來源支持該權限邊界。11個有界分類器案例通過，不輸出nonce／cookie／原body。舊400缺action／auth證據仍未倒推歸因。三個副本資料／原session／媒體／主題精確，只允許owned edit lock與wp_options序列差異，均closed／sealed／pending0、exit0。

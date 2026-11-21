@@ -1,0 +1,208 @@
+{
+  "schema": "playtt/editor-byte-allocation/v1",
+  "result": "pass",
+  "at": "2026-11-21T21:55:19.400Z",
+  "sourceHashes": {
+    "baseline": "c61e547c55400355fa19088869215480e8dd4f6b07c01f7ae086f08b4adacb82",
+    "candidate": "bd22569a66cc2aa22536d33cedaedc51ccfce94c282eadc3a1001f46b0034928"
+  },
+  "runs": [
+    {
+      "index": 0,
+      "variant": "baseline",
+      "profileBytes": 521,
+      "profileSha256": "6ee891aa9ca483887212d5e5b378d3517880948de7a229a675039f445c4f78e9",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 3,
+      "samples": 2,
+      "selfBytes": 3149500,
+      "patchSelfBytes": 3149500,
+      "sampleSizeSum": 3149500,
+      "before": {
+        "usedSize": 412596,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1574731
+      },
+      "after": {
+        "usedSize": 3575776,
+        "totalSize": 4202496,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 3149507
+      },
+      "wallMs": 22.277600000000007,
+      "outputBytes": 1574744,
+      "outputSha256": "ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e"
+    },
+    {
+      "index": 1,
+      "variant": "candidate",
+      "profileBytes": 153,
+      "profileSha256": "7caab9fd56a465a69e404c690c1cb75d44f2940541cb484cfedf1576bd7d2f55",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 1,
+      "samples": 0,
+      "selfBytes": 0,
+      "patchSelfBytes": 0,
+      "sampleSizeSum": 0,
+      "before": {
+        "usedSize": 413276,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1574731
+      },
+      "after": {
+        "usedSize": 431904,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 3149690
+      },
+      "wallMs": 23.134599999999864,
+      "outputBytes": 1574744,
+      "outputSha256": "ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e"
+    },
+    {
+      "index": 2,
+      "variant": "candidate",
+      "profileBytes": 153,
+      "profileSha256": "7caab9fd56a465a69e404c690c1cb75d44f2940541cb484cfedf1576bd7d2f55",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 1,
+      "samples": 0,
+      "selfBytes": 0,
+      "patchSelfBytes": 0,
+      "sampleSizeSum": 0,
+      "before": {
+        "usedSize": 413276,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1574731
+      },
+      "after": {
+        "usedSize": 431904,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 3149690
+      },
+      "wallMs": 22.207400000000007,
+      "outputBytes": 1574744,
+      "outputSha256": "ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e"
+    },
+    {
+      "index": 3,
+      "variant": "baseline",
+      "profileBytes": 697,
+      "profileSha256": "174506b5b035f9040bffa6560ed30ca22e4db6e82f939f482fcaf4159131d64d",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 4,
+      "samples": 3,
+      "selfBytes": 3182284,
+      "patchSelfBytes": 3149500,
+      "sampleSizeSum": 3182284,
+      "before": {
+        "usedSize": 412596,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1574731
+      },
+      "after": {
+        "usedSize": 3575776,
+        "totalSize": 4202496,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 3149507
+      },
+      "wallMs": 21.351000000000113,
+      "outputBytes": 1574744,
+      "outputSha256": "ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e"
+    },
+    {
+      "index": 4,
+      "variant": "baseline",
+      "profileBytes": 521,
+      "profileSha256": "5eff5e79a0e5fb1651d30692012e999a927a7383957d07fef145c44834b138f5",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 3,
+      "samples": 2,
+      "selfBytes": 3149500,
+      "patchSelfBytes": 3149500,
+      "sampleSizeSum": 3149500,
+      "before": {
+        "usedSize": 412596,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1574731
+      },
+      "after": {
+        "usedSize": 3575776,
+        "totalSize": 4202496,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 3149507
+      },
+      "wallMs": 21.348500000000058,
+      "outputBytes": 1574744,
+      "outputSha256": "ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e"
+    },
+    {
+      "index": 5,
+      "variant": "candidate",
+      "profileBytes": 744,
+      "profileSha256": "35e3ab510924b76c71126844ff47de51df18626f143a71f9069f38559633ed30",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 5,
+      "samples": 1,
+      "selfBytes": 33088,
+      "patchSelfBytes": 0,
+      "sampleSizeSum": 33088,
+      "before": {
+        "usedSize": 413276,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1574731
+      },
+      "after": {
+        "usedSize": 431904,
+        "totalSize": 1310720,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 3149690
+      },
+      "wallMs": 21.98859999999968,
+      "outputBytes": 1574744,
+      "outputSha256": "ec1e9dc9cdc33309b2b6843bd26a3bec6dffe5e7fc1db0f05f49024e56b9012e"
+    }
+  ],
+  "cloudRequests": 0,
+  "outboundAttempts": 0,
+  "productionChanged": false,
+  "centralSourceChanged": false,
+  "scope": "Six fresh local workerd instances; one asset patch each, with original bytes loaded before sampling. No PHP or website state.",
+  "limitations": [
+    "Cumulative sampled JS allocations including collected objects; not live peak, provider limit, RSS, billed CPU or end-to-end editor latency.",
+    "Input/output buffers and native digest allocations are not fully represented by function selfSize.",
+    "HeapUsage before/after are snapshots and may cross a GC boundary; do not infer peak from their difference.",
+    "Alternating order controls some warm-up effects but six local runs do not establish sustained behavior."
+  ]
+}
