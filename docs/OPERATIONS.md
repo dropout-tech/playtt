@@ -1,5 +1,14 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 私人雲端舊碼回復／原生冷讀已通過（2026-11-22）
+
+以固定67dd308模組實際部署私人Worker：登入179／保存180／再次部署與cold REST讀回180／原生登出181；588,564bytes／13puts，原15pins保留、新增第16pin，API獨立備份303物件／298檔精確。原session及內容／媒體／主題一致；比本機多49bytes已核對為revision208的雲端GUID較長。
+
+最後16:52:39.597Z讀回181、revision9e732918-4430-4381-8275-fee800f414cb、餘62,344、closed／sealed／pending0／fence釋放／publisher paused，Worker aa595610已回相容reader、額外旗標全關。172觀測事件outcome ok／無exception，保留2個404；PHP heap64–68.25MiB不是整體isolate或CPU。正式Pages／原視覺不變，未增加總額度或付費。
+
+剩餘額度低於已量測登出成本，不能重跑完整雲端寫入。接續最新181備份做本機繁中初始化／Gutenberg記憶體及延遲分析、唯讀用量觀測；長期Free／實機／IME等完整驗收仍開放。詳見experiments/cloudflare-wordpress/old-provider-native/README.md。目標active、PR4 draft；以下保留歷史。
+
+
 ## 真正舊版部署套件已建置及本機驗證（2026-11-22）
 
 舊source67dd308的77來源／109vendor／9資產核對後，以真實production entry完成Wrangler dry-run；新輸出沒有localhost gate。對這份輸出再驗原生登入179、保存180、完整程序重啟讀回180、登出181，588,515bytes／13puts，原內容／session與獨立303物件備份一致。全為本機、外連0，closed／sealed／pending0及程序結束；未部署舊碼。

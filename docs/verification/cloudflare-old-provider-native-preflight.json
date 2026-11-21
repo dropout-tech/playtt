@@ -1,0 +1,53 @@
+{
+  "schema": "playtt/old-provider-preflight/v1",
+  "at": "2026-11-21T16:43:02.997Z",
+  "result": "pass",
+  "version": "8c615f36-9771-4798-834e-df40df63fdf9",
+  "canonicalVersion": 178,
+  "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+  "pins": 15,
+  "allOriginalPinsExact": true,
+  "remainingBytes": 650908,
+  "pending": 0,
+  "sealed": true,
+  "windowClosed": true,
+  "fenceActive": false,
+  "publisher": "paused",
+  "bothPointersAndReceiptExact": true,
+  "remoteManifestAndIndependentBackupExact": true,
+  "optionalFlagsOff": true,
+  "checks": [
+    {
+      "kind": "provider",
+      "status": 200
+    },
+    {
+      "kind": "provider",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "provider",
+      "status": 200
+    }
+  ],
+  "objectGets": 1,
+  "downloadedBytes": 73740,
+  "remoteMutations": 0,
+  "productionChanged": false
+}

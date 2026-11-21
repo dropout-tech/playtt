@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-21T16:54:06.782Z",
+  "revision208FieldsDifferent": [
+    {
+      "field": "post_date",
+      "localBytes": 19,
+      "cloudBytes": 19
+    },
+    {
+      "field": "post_date_gmt",
+      "localBytes": 19,
+      "cloudBytes": 19
+    },
+    {
+      "field": "post_modified",
+      "localBytes": 19,
+      "cloudBytes": 19
+    },
+    {
+      "field": "post_modified_gmt",
+      "localBytes": 19,
+      "cloudBytes": 19
+    },
+    {
+      "field": "guid",
+      "localBytes": 28,
+      "cloudBytes": 77
+    }
+  ],
+  "onlyGuidChangesLength": true,
+  "guidByteDelta": 49,
+  "chargedByteDelta": 49,
+  "contentExact": true,
+  "expectedOrigins": true
+}

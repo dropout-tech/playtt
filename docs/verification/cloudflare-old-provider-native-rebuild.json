@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-21T16:56:34.313006+00:00",
+  "result": "pass",
+  "basis": "Prior old-provider-artifact assembly plus3 tools and fixed plan; no upstream rebuild",
+  "sources": 82,
+  "configs": 20,
+  "runtimeAndConfigUnchanged": true,
+  "newFiles": 4,
+  "prerequisites": 88,
+  "helpers": 387,
+  "helpersMatchingRuntime": 386,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "privateWorkerDeployments": 3,
+  "finalWorker": "aa595610-cc7c-44b9-89ec-f11f4939902f",
+  "cloudCanonical": 181,
+  "cloudPins": 16,
+  "remainingBytes": 62344,
+  "productionChanged": false
+}

@@ -1,3 +1,5 @@
+最新：[舊版套件已在私人Cloudflare完成原生回復及冷讀](./old-provider-native/README.md)；雲端181／pin16／餘62,344。
+
 最新：[真正舊版部署套件已建置及本機驗證](./old-provider-artifact/README.md)；未部署舊碼，雲端仍178。
 
 # Cloudflare WordPress 候選測試
