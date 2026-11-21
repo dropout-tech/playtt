@@ -102,3 +102,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ## 第11個選用階段：有界物件讀取（2026-11-21）
 
 前10階段完成後可套用 `content-io/apply-local-candidate.py`，全數來源先驗證並預備patch後才寫入5個變動／新增檔。僅一個runtime來源變更，格式／旗標不變，20設定未改。25+11完整重建逐字比對76來源／106輔助或前置檔通過，重複套用先拒絕、無部分寫入。未部署或重建核心資產；預設組裝不含此選用階段。證據 `cloudflare-content-io-reassembly.json`，runbook見 [content-io](content-io/README.md)。
+
+### content-io 的 provider 工具補充（2026-11-21）
+
+第11選用階段另增6個有界provider／備份／pin／診斷／離線核對工具；沒有再改runtime來源，仍bbe6a4d。25+11重建比對76來源／112輔助或前置檔、20設定未變，重複套用先拒絕不寫入。先前115來源檢查沿用，不因僅新增工具重跑。實際私人部署、130／pin11、觀察排程缺口見 `cloudflare-content-io-provider-*`；最新owner改接content-io-provider-cold，舊126窗口不可重跑。

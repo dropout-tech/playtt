@@ -1,0 +1,151 @@
+{
+  "at": "2026-11-21T03:56:06.520Z",
+  "result": "pass",
+  "scope": "Native login200 and zero-write containment after redeploy; observer had ended before native request, so neither outer request nor PHP cold trace was captured",
+  "limits": {
+    "durationSeconds": 90,
+    "maxBytes": 1,
+    "maxOperations": 1,
+    "nativeRequests": 1
+  },
+  "before": {
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "566e44a3-c953-423e-adde-2b0124ece358",
+        "manifestKey": "sites/default/markdown/revisions/566e44a3-c953-423e-adde-2b0124ece358.json",
+        "persistedAt": "2026-11-21T03:48:52.565Z"
+      },
+      "version": 130
+    },
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-session-audit",
+      "baselineBytes": 100738428,
+      "baselineObjects": 303,
+      "chargedBytes": 43325842,
+      "chargedPuts": 444,
+      "initializedAt": "2026-11-20T20:06:31.237Z",
+      "writeTracking": {
+        "schema": "playtt/r2-write-tracking/v2",
+        "initializedAt": "2026-11-20T20:06:31.656Z",
+        "pending": 0,
+        "sealed": true,
+        "acquiredAt": "2026-11-21T03:48:56.991Z",
+        "maximumPending": 128,
+        "automaticExpiry": false,
+        "window": {
+          "schema": "playtt/r2-write-window/v1",
+          "id": "6dd1bb19-2de0-4b04-8d08-7ae237f2b691",
+          "openedAt": 1795232905430,
+          "expiresAt": 1795233085430,
+          "maxBytes": 2097152,
+          "usedBytes": 669248,
+          "remainingBytes": 1427904,
+          "maxOperations": 64,
+          "operations": 17,
+          "closed": true,
+          "expired": true,
+          "admitsNewOperations": false,
+          "pendingOperationsExpire": false,
+          "automaticReopen": false
+        }
+      },
+      "reservationSchema": "playtt/r2-window-reservation/v1",
+      "initialized": true,
+      "limitBytes": 150000000,
+      "trackingConfigured": true,
+      "windowConfigured": true,
+      "remainingBytes": 5935730,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "pins": 11,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "httpStatus": 200,
+  "serverTiming": [],
+  "nativeLoginForm": true,
+  "wallMs": 3271,
+  "bodyBytes": 8555,
+  "after": {
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "566e44a3-c953-423e-adde-2b0124ece358",
+        "manifestKey": "sites/default/markdown/revisions/566e44a3-c953-423e-adde-2b0124ece358.json",
+        "persistedAt": "2026-11-21T03:48:52.565Z"
+      },
+      "version": 130
+    },
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-session-audit",
+      "baselineBytes": 100738428,
+      "baselineObjects": 303,
+      "chargedBytes": 43325842,
+      "chargedPuts": 444,
+      "initializedAt": "2026-11-20T20:06:31.237Z",
+      "writeTracking": {
+        "schema": "playtt/r2-write-tracking/v2",
+        "initializedAt": "2026-11-20T20:06:31.656Z",
+        "pending": 0,
+        "sealed": true,
+        "acquiredAt": "2026-11-21T03:56:13.252Z",
+        "maximumPending": 128,
+        "automaticExpiry": false,
+        "window": {
+          "schema": "playtt/r2-write-window/v1",
+          "id": "7435e074-0820-4d67-bb20-ea8ed93817a7",
+          "openedAt": 1795233367214,
+          "expiresAt": 1795233457214,
+          "maxBytes": 1,
+          "usedBytes": 0,
+          "remainingBytes": 1,
+          "maxOperations": 1,
+          "operations": 0,
+          "closed": true,
+          "expired": false,
+          "admitsNewOperations": false,
+          "pendingOperationsExpire": false,
+          "automaticReopen": false
+        }
+      },
+      "reservationSchema": "playtt/r2-window-reservation/v1",
+      "initialized": true,
+      "limitBytes": 150000000,
+      "trackingConfigured": true,
+      "windowConfigured": true,
+      "remainingBytes": 5935730,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "pins": 11,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "contained": true,
+  "stateAndAccountingUnchanged": true,
+  "finishedAt": "2026-11-21T03:56:14.794Z",
+  "observation": {
+    "login200": true,
+    "wallMs": 3271,
+    "bodyBytes": 8555,
+    "zeroWriteWindow": true,
+    "actualBytes": 0,
+    "actualOperations": 0,
+    "coherentStateUnchanged": true,
+    "events": 11,
+    "phpTraces": 0,
+    "nativeOuterEvents": 0,
+    "tailHadPreviouslyBecomeReady": true,
+    "observerEndedAt": "2026-11-21T03:55:52.688Z",
+    "nativeWindowStartedAt": "2026-11-21T03:56:06.520Z",
+    "observerEndedBeforeNativeWindow": true,
+    "coldHydrationDirectlyObserved": false,
+    "serverTimingCount": 0,
+    "timingHeaderScope": "worker.ts attaches Server-Timing only for health/probe routes; empty native-login timing does not diagnose failure",
+    "sourceRouteAudit": "Login is excluded from page/publication caching; wrapper dispatches it to PHP DO. Source route and HTTP200 are not a captured cold trace."
+  }
+}

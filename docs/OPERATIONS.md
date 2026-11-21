@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 最新私人狀態：並行相容讀取器，130／pin11（2026-11-21）
+
+最終Worker版本1c55f0fa-5b78-4f39-917d-9a0b03e7d1ab含bbe6a4d並行讀取器，content/readback實際bindings停用。canonical130／566e44a3-c953-423e-adde-2b0124ece358、11pins、剩5,935,730bytes，pending0、closed/sealed、fence解除、publisher paused。最後1byte窗口0bytes／0操作，所有程序結束。正式Pages不變。
+
+下一次窗口必須接 `artifacts/playtt-content-io-provider-cold-owned-private.json`，完整備份用 `playtt-content-io-provider-backup-owned-private.json`（verified）。前content-provider-cold／126owner已過期；新helper固定130來源／狀態，不得重跑舊一次性操作或移除guards。保留歷史／pins／額度。部署後登入200，但90秒observer先結束，冷路徑證據不足；下次觀察與操作須在同一程序協調並在原生呼叫前確認診斷未到期。已完成的窗口不要只為補trace而重跑。詳見 `experiments/cloudflare-wordpress/content-io/README.md`。以下為歷史。
+
 ## 最新本機候選：content-io；雲端仍126／pin10（2026-11-21）
 
 第11選用階段僅調整content-v1替換物件讀取為最多4個並行，出錯停止排新工作並等已開始工作結束；格式、writer旗標與20設定不變。115項檢查及備份126的真實本機WordPress重啟／備份／完整包回退通過，尚未部署。03:30:27Z只讀核對雲端126／pin10／餘6,604,978bytes，仍closed/sealed、pending0、publisher paused。現有eb809ce8仍含逐項讀取程式，勿把本機改進當已上線。

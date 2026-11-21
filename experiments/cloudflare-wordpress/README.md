@@ -1,5 +1,9 @@
 # Cloudflare WordPress 候選測試
 
+## 最新進展（2026-11-21）：並行讀取已在私人provider驗證
+
+[content-io](content-io/README.md) 的實際保存／精確冷讀回／完整備份通過，最終130／pin11、旗標停用、已封存；單次保存4.677秒但不宣稱穩定改善。部署後登入可讀／零寫入通過，該次observer先結束造成冷啟動診斷缺口，詳見runbook與 `cloudflare-content-io-provider-*`。源碼仍bbe6a4d、20設定未改，新增6工具可重建76來源／112輔助檔。正式Pages及原視覺維持、PR4 draft。下方保留各階段歷史。
+
 ## 最新進展（2026-11-21）：物件讀取並行的本機候選
 
 [content-io](content-io/README.md) 是第11個選用階段，僅把content-v1替換物件的驗證／還原改成最多4個同時讀取，保留1MiB／64項限制與錯誤時的完整等待。115項檢查及真實本機WordPress保存／重啟／完整包回退通過，尚未部署。人工延遲比較不能視為雲端效能；私人126／pin10仍封存，正式Pages與原視覺維持。25+11階段可重建76來源／106輔助檔、20設定不變。最新限制見 `docs/PLAYTT_PROGRESS.md`；下方保留原候選索引。

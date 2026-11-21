@@ -58,6 +58,36 @@
       "path": "scripts/playtt-content-io-status.mjs",
       "source": "playtt-content-io-status.mjs",
       "afterSha256": "171bc556af5e0eabf737edac093c9e43a26ee3e3fbd858c60e6095678ccd165d"
+    },
+    {
+      "path": "scripts/playtt-content-io-provider.mjs",
+      "source": "playtt-content-io-provider.mjs",
+      "afterSha256": "560191c3842ca73c83052595f09312a1e2df4592aaa8ee2c2d04012d1c449ea1"
+    },
+    {
+      "path": "scripts/playtt-content-io-provider-backup.mjs",
+      "source": "playtt-content-io-provider-backup.mjs",
+      "afterSha256": "4674194bcaa3803565d650c673cedb8c3b696e18121f543a9335ea77c693dca3"
+    },
+    {
+      "path": "scripts/playtt-content-io-provider-pin.mjs",
+      "source": "playtt-content-io-provider-pin.mjs",
+      "afterSha256": "56675f696cb928c777b442bc95aaf9f109fcbfd70ee8d507f9d9a10e747d072a"
+    },
+    {
+      "path": "scripts/playtt-content-io-observe.mjs",
+      "source": "playtt-content-io-observe.mjs",
+      "afterSha256": "38e314e86ba71a0718075cf36ee9c7f34eb6c126d7790ed089b282f7b33bdef2"
+    },
+    {
+      "path": "scripts/playtt-content-io-provider-cold.mjs",
+      "source": "playtt-content-io-provider-cold.mjs",
+      "afterSha256": "3e6681fa3bfe640047b789d50caefe4a3783b196432d410bbe42699640fe9c9f"
+    },
+    {
+      "path": "scripts/playtt-content-io-provider-inspect.mjs",
+      "source": "playtt-content-io-provider-inspect.mjs",
+      "afterSha256": "abd25206bf8e4bd93c5c6fafe8311599dbe2539de8132baef5cdbaa1c25ee900"
     }
   ],
   "patchSha256": "a4ed0fac46984d3a8fdcda1800dbdb33ea18d397bc894d810369ace1a08beb68"

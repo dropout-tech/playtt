@@ -1,5 +1,15 @@
 # PLAYTT 執行進度
 
+## 物件並行讀取的私人雲端驗證通過；pin11，重新封存（2026-11-21）
+
+候選暫時部署bf3d6b4e，8次原生HTTP完成登入、保存129、一次遺失回應讀回、一般冷讀及登出130。保存4677ms／讀回3118ms／合計7801ms，前次6031／3784／9822ms；兩次段落略異、內容累積與網路變動，不宣稱穩定改善或因果比例。主診斷149事件、7/7trace完成，0觀察到exception／request failure；保存trace4865ms，其中Markdown2356ms、manifest1659ms；讀回冷1538ms，後續一般冷讀3861ms（較前次慢）。取樣WASM73,400,320bytes不是whole-isolate記憶體。
+
+180秒／2MiB／64操作窗口使用669,248bytes／17puts，無完整ZIP寫入，已關窗封存。8GET／2,796,862bytes完整下載，298檔／303物件獨立匯入及完整包轉換逐字通過；僅自有193正文／日期、預期修訂203、鎖72、單調計數改變，其他修訂／帳號session偏好／媒體主題一致。新增pin11，保留前10份。
+
+最終部署1c55f0fa保留並行相容讀取器，實際content/readback旗標皆移除。另90秒／1byte／1操作窗口登入GET200／3271ms、實用0／0，已再封存。該診斷曾ready但03:55:52.688Z已結束，原生窗口03:56:06.520Z才開始，11事件沒有原生外層或PHP trace；這是診斷排程缺口，不能宣稱部署後冷啟動已直接量測。主流程兩次已驗證內容的冷讀有trace，首次登入PHP trace亦缺；一般native路徑本來不附Server-Timing。未重跑僅為補好看紀錄；之後將觀察與操作放同一程序並檢查剩餘期限。
+
+現在130／566e44a3、11pins、closed/sealed、pending0、fence解除、publisher paused、餘5,935,730bytes。最後窗口owner改接content-io-provider-cold，verified備份改接content-io-provider130；舊owner不可重用。所有程序結束。Runtime仍bbe6a4d、無新來源改動，115檢查沿用；補6工具後重建76來源／112輔助檔、20設定不變。下一步改善Markdown逐項寫入，再補原生UI、完整記憶體、並行／混合版本還原、實機IME與長期免費。正式Pages與原視覺維持、PR4 draft、目標active。證據 `cloudflare-content-io-provider-*`，總結明列pass-with-observation-gap。以下為歷史紀錄。
+
 ## 差異快照的物件讀取改為有界並行：本機通過，尚未部署（2026-11-21）
 
 第11個選用候選 `content-io/` 僅修改content-overlay來源：同時最多4個替換物件讀取，涵蓋body與雜湊；沿用1MiB／64項上限。觀察到錯誤即停止排新工作，等已開始的讀取結束才回傳錯誤。格式、ID、完整清單順序、舊v1/v2、worker提交與20設定未改。

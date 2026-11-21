@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-21T04:22:45.503512+00:00",
+  "result": "pass",
+  "filesReviewed": 23,
+  "jsonFilesParsed": 9,
+  "jsonlEventsParsed": 160,
+  "pythonSyntax": "pass",
+  "javascriptSyntax": "pass",
+  "knownPrivateValueScan": "pass",
+  "knownPrivateValuesCompared": 139,
+  "matches": [],
+  "privatePayloadsIncluded": false,
+  "diffWhitespace": "pass except unified-patch context lines; exact patch was applied and hash-verified",
+  "stagedFilesExact": true,
+  "runtimeFilesComparedToCandidateHashes": 92,
+  "newIsolatedRuntimeDeployment": false,
+  "screenshotsReviewed": 0,
+  "privateWorkerDeployments": 2,
+  "productionDeployment": false,
+  "filesIncludingReviewReport": 24,
+  "scope": "Exact intended files; known secret values loaded locally, never printed or committed. Not a general credential-security audit."
+}
