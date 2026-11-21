@@ -1,5 +1,12 @@
 # Let’s Play 驗收狀態
 
+## 壓縮清單位元組轉換候選（2026-11-22）
+
+保留所有清單格式、大小、SHA、解壓與 identity 驗證，改用預配置位元組陣列取代字串 iterator 中間配置。58 組比較、25 項既有整合回歸、83來源完整建置通過；六個 workerd 控制對同一真實清單各解碼20次，累積 sampled JS 配置由22–23MB降至9–10MB，不能推算整體尖峰。
+
+原生單次保存、完整重啟、新分頁讀回、登出與304物件／298檔獨立備份精確；LOCAL190、450,182bytes／27puts、closed/sealed/pending0、程序exit0。重啟後再次有一筆無frame的Network connection lost，原因未證明；本輪觀測約147.5／160.9MiB，免費記憶體驗收仍未通過，也未觀測到整體尖峰改善。中央及正式官網維持現況，0雲端請求／部署。詳見[實作與限制](../experiments/cloudflare-wordpress/manifest-bytes/README.md)。
+
+
 ## 系統檔案清單預先驗證候選（2026-11-22）
 
 最終候選以primitive string驗證、複製／凍結及私有WeakSet標記系統清單，省去逐檔重建；一般可變或偽造清單仍完整驗證。1,049一般比較／945prepared比較、六個workerd配置控制與83來源完整建置通過。受控驗證工作累計JS配置約減半，非整體尖峰改善比例。

@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-21T22:57:07.445249+00:00",
+  "result": "pass",
+  "prerequisites": 170,
+  "newTools": 13,
+  "priorFilesUnchanged": 716,
+  "totalFiles": 729,
+  "reapplyRefusedWithoutMutation": true,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false,
+  "undefinedFieldReadbackCorrection": "Successful outcomes omit the error key both in memory and serialized JSON; no expectation or original report changed.",
+  "finalAssembly": "manifest-bytes-assembly-v2"
+}

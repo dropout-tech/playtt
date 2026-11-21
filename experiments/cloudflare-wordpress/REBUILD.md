@@ -1,3 +1,5 @@
+最新：[壓縮清單位元組轉換候選](manifest-bytes/README.md)完成控制及原生資料驗證；整體記憶體及反覆network-loss仍未解，正式站不變。
+
 最新：[系統檔案清單預先驗證候選](owned-paths/README.md)已完成原生資料流程；一筆network-loss未歸因，記憶體驗收仍開放。
 
 最新：[編輯器位元組修補候選](editor-byte/README.md)完成配置控制與原生保存驗證；整體記憶體仍未通過，正式站不切換。

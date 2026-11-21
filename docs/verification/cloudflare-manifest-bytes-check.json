@@ -1,0 +1,301 @@
+{
+  "schema": "playtt/manifest-bytes-check/v1",
+  "result": "pass",
+  "sourceHashes": {
+    "baseline": "f8a7c6e175297f2e8422f1d4c2704fce094f49af0d3b8a48b09e68a472925795",
+    "candidate": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99"
+  },
+  "comparisons": 58,
+  "outcomes": [
+    {
+      "label": "valid-0-0",
+      "ok": true
+    },
+    {
+      "label": "valid-1-0",
+      "ok": true
+    },
+    {
+      "label": "valid-48-0",
+      "ok": true
+    },
+    {
+      "label": "valid-200-0",
+      "ok": true
+    },
+    {
+      "label": "valid-48-120000",
+      "ok": true
+    },
+    {
+      "label": "extra-key",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "codec",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "schema",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "revision",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "other-root",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "timestamp",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "identity-time",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "encoded-hash",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decoded-hash",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "hash-case",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decodedBytes-0",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decodedBytes--1",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decodedBytes-1.5",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decodedBytes-null",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decodedBytes-10",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decodedBytes-9007199254740992",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decodedBytes-262145",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "encodedBytes-0",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "encodedBytes--1",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "encodedBytes-1.5",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "encodedBytes-null",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "encodedBytes-10",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "encodedBytes-9007199254740992",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "encodedBytes-196609",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "bad-base64-29",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "bad-base64-30",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "bad-base64-31",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "bad-base64-32",
+      "ok": false,
+      "error": "InvalidCharacterError"
+    },
+    {
+      "label": "bad-base64-33",
+      "ok": false,
+      "error": "InvalidCharacterError"
+    },
+    {
+      "label": "bad-base64-34",
+      "ok": false,
+      "error": "InvalidCharacterError"
+    },
+    {
+      "label": "bad-base64-35",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "noncanonical-padding-1",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "noncanonical-padding-2",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "wire-over-limit",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "invalid-wire-utf8",
+      "ok": false,
+      "error": "TypeError"
+    },
+    {
+      "label": "wire-not-json",
+      "ok": false,
+      "error": "SyntaxError"
+    },
+    {
+      "label": "plain-invalid-41",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "plain-invalid-42",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "plain-invalid-43",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "plain-invalid-44",
+      "ok": false,
+      "error": "SyntaxError"
+    },
+    {
+      "label": "plain-invalid-45",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "legacy-plain",
+      "ok": true
+    },
+    {
+      "label": "decoded-utf8",
+      "ok": false,
+      "error": "TypeError"
+    },
+    {
+      "label": "decoded-json",
+      "ok": false,
+      "error": "SyntaxError"
+    },
+    {
+      "label": "decoded-nested",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decoded-legacy",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decoded-bad-path",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "compressed-bomb",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decoded-short",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "decoded-long",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "label": "truncated-gzip",
+      "ok": false,
+      "error": "TypeError"
+    },
+    {
+      "label": "crc-gzip",
+      "ok": false,
+      "error": "TypeError"
+    },
+    {
+      "label": "decoded-at-limit",
+      "ok": true
+    }
+  ],
+  "all256PayloadBytes": true,
+  "serializerByteIdentical": true,
+  "callerMutationChecks": 4,
+  "objectStreamAndLegacyCases": 8,
+  "productionSourceChanged": false,
+  "cloudRequests": 0,
+  "scope": "Standard atob/btoa and String builtins. The internal atob result is Latin-1; this does not redefine a general Unicode conversion API."
+}

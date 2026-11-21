@@ -1,0 +1,28 @@
+{
+  "schema": "playtt/manifest-bytes-allocation-check/v1",
+  "result": "pass",
+  "sourceHashes": {
+    "baseline": "f8a7c6e175297f2e8422f1d4c2704fce094f49af0d3b8a48b09e68a472925795",
+    "candidate": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99"
+  },
+  "profilesChecked": 6,
+  "wireBytes": 23503,
+  "wireSha256": "e62d88a2acebaad6d00d2fa9f3b3ea0314f6b5b14667fce613e4586a1cfff98b",
+  "independentBundleObjects": 304,
+  "logicalBytes": 74029,
+  "iterations": 20,
+  "baselineSelf": [
+    22328320,
+    22683016,
+    22813284
+  ],
+  "candidateSelf": [
+    9763788,
+    9836304,
+    9139100
+  ],
+  "initialSandboxFailurePreserved": true,
+  "completedDisposed": true,
+  "cloudRequests": 0,
+  "providerMemoryAcceptance": false
+}

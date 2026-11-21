@@ -1,0 +1,18 @@
+{
+  "schema": "playtt/manifest-bytes-build-proof/v1",
+  "at": "2026-11-21T22:48:47.672536+00:00",
+  "result": "pass",
+  "sourceCount": 83,
+  "sourceInputs": 206,
+  "loadedSourceCount": 71,
+  "candidateSha256": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99",
+  "baselineBundleSha256": "b30c55a65ce4a33aa6e6c7e7894bfa0643d64a59f748c3f3fa125bf5d1930af3",
+  "bundleSha256": "fbc6506c323feed4199b8273ea9a595171092910eb1161289be6f1c6c28ef877",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "exactScopedCompiledChanges": true,
+  "unchangedBinaryModules": 5,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

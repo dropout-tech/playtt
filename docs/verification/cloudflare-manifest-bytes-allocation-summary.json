@@ -1,0 +1,602 @@
+{
+  "schema": "playtt/manifest-bytes-allocation/v1",
+  "result": "pass",
+  "sourceHashes": {
+    "baseline": "f8a7c6e175297f2e8422f1d4c2704fce094f49af0d3b8a48b09e68a472925795",
+    "candidate": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99"
+  },
+  "wireSha256": "e62d88a2acebaad6d00d2fa9f3b3ea0314f6b5b14667fce613e4586a1cfff98b",
+  "wireBytes": 23503,
+  "logicalBytes": 74029,
+  "iterations": 20,
+  "payloadSha256": "d32019d5a57d15a39c02676c0cd29ce69f25adf5caed3c3cf0ad81514367bbc4",
+  "runs": [
+    {
+      "index": 0,
+      "variant": "baseline",
+      "profileBytes": 25990,
+      "profileSha256": "d37e7590e3cc5051d5cb833c8184c69954fb2ee64aa4269e487600d9a9f7eb6b",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 33,
+      "samples": 522,
+      "selfBytes": 22328320,
+      "sampleSizeSum": 21307752,
+      "stringIteratorSelfBytes": 6817840,
+      "topFunctions": [
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 6817840
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 6472524
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 5124096
+        },
+        {
+          "functionName": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 1311492
+        },
+        {
+          "functionName": "decodeCanonicalManifestBytes",
+          "attributedSelfBytes": 918176
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 557220
+        },
+        {
+          "functionName": "readExactCompressedStream",
+          "attributedSelfBytes": 524788
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 265560
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 107044
+        },
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 65568
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "sort",
+          "attributedSelfBytes": 32788
+        },
+        {
+          "functionName": "has",
+          "attributedSelfBytes": 32780
+        },
+        {
+          "functionName": "keys",
+          "attributedSelfBytes": 32780
+        }
+      ],
+      "before": {
+        "usedSize": 540936,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 23503
+      },
+      "after": {
+        "usedSize": 1764180,
+        "totalSize": 6291456,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 379384
+      },
+      "wallMs": 133.02779999999984,
+      "result": {
+        "iterations": 20,
+        "logicalBytes": 74029,
+        "logicalSha256": "b6ad5c3761d4ded03323678960c259452bcc2a8b84987cf2169c36bd189dd06f"
+      }
+    },
+    {
+      "index": 1,
+      "variant": "candidate",
+      "profileBytes": 13546,
+      "profileSha256": "021200bdeb7ae3cf15e5a6065bc4abb5c6f1901bd1f7d2c5d161665f23d521a9",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 30,
+      "samples": 228,
+      "selfBytes": 9763788,
+      "sampleSizeSum": 9400556,
+      "stringIteratorSelfBytes": 131120,
+      "topFunctions": [
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 5736760
+        },
+        {
+          "functionName": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 1279028
+        },
+        {
+          "functionName": "decodeCanonicalManifestBytes",
+          "attributedSelfBytes": 966440
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 786672
+        },
+        {
+          "functionName": "readExactCompressedStream",
+          "attributedSelfBytes": 327968
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 166580
+        },
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 131160
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 74044
+        },
+        {
+          "functionName": "validateCompressedContent",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "map",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 32800
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "validateInventory",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "reduce",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 540932,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 23503
+      },
+      "after": {
+        "usedSize": 2056768,
+        "totalSize": 6029312,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 661236
+      },
+      "wallMs": 60.87109999999984,
+      "result": {
+        "iterations": 20,
+        "logicalBytes": 74029,
+        "logicalSha256": "b6ad5c3761d4ded03323678960c259452bcc2a8b84987cf2169c36bd189dd06f"
+      }
+    },
+    {
+      "index": 2,
+      "variant": "candidate",
+      "profileBytes": 14036,
+      "profileSha256": "9c614a9364ed61bd200677aace741e7c66d7aeaf731016590d1db130ed0a05e2",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 32,
+      "samples": 233,
+      "selfBytes": 9836304,
+      "sampleSizeSum": 9471444,
+      "stringIteratorSelfBytes": 65560,
+      "topFunctions": [
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 5461468
+        },
+        {
+          "functionName": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 1574280
+        },
+        {
+          "functionName": "decodeCanonicalManifestBytes",
+          "attributedSelfBytes": 952700
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 622776
+        },
+        {
+          "functionName": "readExactCompressedStream",
+          "attributedSelfBytes": 492000
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 199020
+        },
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 131196
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 74044
+        },
+        {
+          "functionName": "validateCompressedContent",
+          "attributedSelfBytes": 65836
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 65560
+        },
+        {
+          "functionName": "(IDLE)",
+          "attributedSelfBytes": 33408
+        },
+        {
+          "functionName": "map",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "Set",
+          "attributedSelfBytes": 32784
+        }
+      ],
+      "before": {
+        "usedSize": 540932,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 23503
+      },
+      "after": {
+        "usedSize": 2056768,
+        "totalSize": 6029312,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 661236
+      },
+      "wallMs": 59.34490000000005,
+      "result": {
+        "iterations": 20,
+        "logicalBytes": 74029,
+        "logicalSha256": "b6ad5c3761d4ded03323678960c259452bcc2a8b84987cf2169c36bd189dd06f"
+      }
+    },
+    {
+      "index": 3,
+      "variant": "baseline",
+      "profileBytes": 26881,
+      "profileSha256": "92dc09742d751ba37e5f0eb673590e85eef73278494b17cb249c2098f843483e",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 37,
+      "samples": 529,
+      "selfBytes": 22683016,
+      "sampleSizeSum": 21717020,
+      "stringIteratorSelfBytes": 7014500,
+      "topFunctions": [
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 7014500
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 6427872
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 5997252
+        },
+        {
+          "functionName": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 1148076
+        },
+        {
+          "functionName": "decodeCanonicalManifestBytes",
+          "attributedSelfBytes": 903028
+        },
+        {
+          "functionName": "readExactCompressedStream",
+          "attributedSelfBytes": 360724
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 295008
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 200080
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 106828
+        },
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 65620
+        },
+        {
+          "functionName": "keys",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "map",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "has",
+          "attributedSelfBytes": 32796
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 540936,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 23503
+      },
+      "after": {
+        "usedSize": 2194624,
+        "totalSize": 6291456,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 379416
+      },
+      "wallMs": 96.03690000000006,
+      "result": {
+        "iterations": 20,
+        "logicalBytes": 74029,
+        "logicalSha256": "b6ad5c3761d4ded03323678960c259452bcc2a8b84987cf2169c36bd189dd06f"
+      }
+    },
+    {
+      "index": 4,
+      "variant": "baseline",
+      "profileBytes": 27202,
+      "profileSha256": "9235bc85b815ea086b7b7c0c51ed12d84f85f9d5212435e389a076d49c1c9a7a",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 41,
+      "samples": 524,
+      "selfBytes": 22813284,
+      "sampleSizeSum": 21753468,
+      "stringIteratorSelfBytes": 6588380,
+      "topFunctions": [
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 6588380
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 6509244
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 5675016
+        },
+        {
+          "functionName": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 1672860
+        },
+        {
+          "functionName": "decodeCanonicalManifestBytes",
+          "attributedSelfBytes": 816232
+        },
+        {
+          "functionName": "readExactCompressedStream",
+          "attributedSelfBytes": 393616
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 393328
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 231440
+        },
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 196724
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 74044
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 65664
+        },
+        {
+          "functionName": "Set",
+          "attributedSelfBytes": 32800
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 32800
+        },
+        {
+          "functionName": "validateInventory",
+          "attributedSelfBytes": 32788
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 32784
+        }
+      ],
+      "before": {
+        "usedSize": 540936,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 23503
+      },
+      "after": {
+        "usedSize": 2193364,
+        "totalSize": 6029312,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 379416
+      },
+      "wallMs": 95.00260000000026,
+      "result": {
+        "iterations": 20,
+        "logicalBytes": 74029,
+        "logicalSha256": "b6ad5c3761d4ded03323678960c259452bcc2a8b84987cf2169c36bd189dd06f"
+      }
+    },
+    {
+      "index": 5,
+      "variant": "candidate",
+      "profileBytes": 13120,
+      "profileSha256": "dc09fbadd989f9a85f9e3244c5e6e6bf6216eabdd94a2852034488b3722fb6a0",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 32,
+      "samples": 210,
+      "selfBytes": 9139100,
+      "sampleSizeSum": 8817092,
+      "stringIteratorSelfBytes": 98340,
+      "topFunctions": [
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 5313804
+        },
+        {
+          "functionName": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 1410336
+        },
+        {
+          "functionName": "decodeCanonicalManifestBytes",
+          "attributedSelfBytes": 729812
+        },
+        {
+          "functionName": "readExactCompressedStream",
+          "attributedSelfBytes": 426404
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 393332
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 232620
+        },
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 229504
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 98340
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 74044
+        },
+        {
+          "functionName": "map",
+          "attributedSelfBytes": 66120
+        },
+        {
+          "functionName": "test",
+          "attributedSelfBytes": 33600
+        },
+        {
+          "functionName": "sort",
+          "attributedSelfBytes": 32816
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 32800
+        },
+        {
+          "functionName": "validateCompressedContent",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 540932,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 23503
+      },
+      "after": {
+        "usedSize": 1004476,
+        "totalSize": 6029312,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1190400
+      },
+      "wallMs": 59.46389999999974,
+      "result": {
+        "iterations": 20,
+        "logicalBytes": 74029,
+        "logicalSha256": "b6ad5c3761d4ded03323678960c259452bcc2a8b84987cf2169c36bd189dd06f"
+      }
+    }
+  ],
+  "cloudRequests": 0,
+  "outboundAttempts": 0,
+  "centralSourceChanged": false,
+  "productionChanged": false,
+  "scope": "Six fresh local workerd instances decode the exact saved native manifest twenty times each; all validations and decompression included. No PHP or writes.",
+  "limitations": [
+    "Cumulative sampled JS allocations including collected objects; not live peak, billed CPU, RSS or provider admission.",
+    "Twenty repetitions amplify the target and are not native save call counts.",
+    "HeapUsage before/after can cross GC and is not a peak measurement.",
+    "The next function total includes all iterator calls, not only conversion."
+  ]
+}
