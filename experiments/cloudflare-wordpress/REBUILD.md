@@ -1,3 +1,5 @@
+最新：[請求生命週期與取消控制](request-lifecycle/README.md)取得本機取消與連線例外證據；歷史原因及免費記憶體仍開放，正式站不變。
+
 最新：[壓縮清單位元組轉換候選](manifest-bytes/README.md)完成控制及原生資料驗證；整體記憶體及反覆network-loss仍未解，正式站不變。
 
 最新：[系統檔案清單預先驗證候選](owned-paths/README.md)已完成原生資料流程；一筆network-loss未歸因，記憶體驗收仍開放。

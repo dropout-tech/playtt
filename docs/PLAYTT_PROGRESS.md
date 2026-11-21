@@ -1,5 +1,12 @@
 # PLAYTT 執行進度
 
+## 請求生命週期與取消控制（2026-11-22）
+
+本機兩輪原生繁中保存／完整重啟／登出與304物件298檔備份精確，皆無runtime例外；其中一輪的unlock400仍未證明原因。新增16項有界診斷檢查。兩輪明確取消實際WordPress釋放鎖請求後皆記錄同文字Network connection lost；客戶端已關閉，兩層仍200／aborted=false。例外本身無stack或request ID，歷史瀏覽器例外仍不能回推。
+
+最終取消控制修正本機cookie到期處理，原內容、修訂、全部usermeta／session、媒體、主題及獨立備份精確，LOCAL189／399,725bytes／24puts，closed／sealed／pending0、exit0。前一輪失敗資料與同state只讀復原保留，兩筆額外介面設定未改寫成通過。中央與正式官網不變、0雲端請求／部署；記憶體與完整免費後台驗收仍開放。詳見[實作與限制](../experiments/cloudflare-wordpress/request-lifecycle/README.md)。
+
+
 ## 壓縮清單位元組轉換候選（2026-11-22）
 
 保留所有清單格式、大小、SHA、解壓與 identity 驗證，改用預配置位元組陣列取代字串 iterator 中間配置。58 組比較、25 項既有整合回歸、83來源完整建置通過；六個 workerd 控制對同一真實清單各解碼20次，累積 sampled JS 配置由22–23MB降至9–10MB，不能推算整體尖峰。

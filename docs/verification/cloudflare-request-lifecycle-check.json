@@ -1,0 +1,26 @@
+{
+  "schema": "playtt/request-lifecycle-check/v1",
+  "result": "pass",
+  "sourceSha256": "32514b7102520a6b5e08c678b071e83b88f26d15f2a502c65f1bb3ce08f4ce3d",
+  "checks": [
+    "body-status-headers-exact",
+    "unrelated-response-identity",
+    "encoded-response-identity",
+    "null-body-identity",
+    "fetch-error-identity",
+    "body-error-identity",
+    "cancel-reason-propagated-once",
+    "request-abort-observed",
+    "abort-listener-cleanup",
+    "ajax-body-preserved-metadata-only",
+    "route-error-field-allowlists",
+    "event-cap",
+    "raw-errors-private-only",
+    "passive-response-identity-and-late-abort",
+    "classification-does-not-delay-forward",
+    "client-case-allowlist"
+  ],
+  "cases": 16,
+  "cloudRequests": 0,
+  "scope": "Diagnostic wrapper behavior in Node; not native workflow attribution or provider acceptance."
+}
