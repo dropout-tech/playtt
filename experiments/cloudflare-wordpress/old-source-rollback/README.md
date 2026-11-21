@@ -1,5 +1,7 @@
 # 舊來源實際回退：本機原生 WordPress 驗證
 
+最新[較小的plain content-v1回退](../legacy-content/README.md)已完成離線轉換及舊版受限原生保存／重啟／登出；尚非雲端採用。以下保留前輪完整回退與限制。
+
 2026-11-21，以已驗證的私人雲端177備份，實際執行舊來源67dd308的PHP／WordPress與SQLite DO。正式Pages／現有視覺維持現況，本輪沒有Cloudflare請求或部署。完整目標active，PR4維持draft。
 
 ## 結果與回退順序

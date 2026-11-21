@@ -1,0 +1,300 @@
+{
+  "schema": "playtt/legacy-content-native-local/v1",
+  "at": "2026-11-21T15:09:23.941Z",
+  "result": "pass",
+  "oldSource": "67dd308",
+  "oldBundleSha256": "2ecb28eb3e0188ffbd12921c821ec60f9d1231ce830d2a2fae0044072a0902d9",
+  "localOnly": true,
+  "cloudRequests": 0,
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 650908,
+    "maxOperations": 96
+  },
+  "derivedConversionBytes": 432931,
+  "nativeChargedBytes": 588515,
+  "derivedCombinedBytes": 1021446,
+  "combinedFitsLastCloudRemainder": true,
+  "combinedCostIsNotCloudMeasurement": true,
+  "initialBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 101082340,
+    "baselineObjects": 307,
+    "chargedBytes": 0,
+    "chargedPuts": 0,
+    "initializedAt": "2026-11-21T15:08:57.857Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-21T15:08:57.874Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-21T15:08:57.889Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "6b628679-2037-4dad-991a-0fc46bbf06c3",
+        "openedAt": 1795273737896,
+        "expiresAt": 1795274337896,
+        "maxBytes": 650908,
+        "usedBytes": 0,
+        "remainingBytes": 650908,
+        "maxOperations": 96,
+        "operations": 0,
+        "closed": false,
+        "expired": false,
+        "admitsNewOperations": true,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 48917660,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "finalBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 101082340,
+    "baselineObjects": 307,
+    "chargedBytes": 588515,
+    "chargedPuts": 13,
+    "initializedAt": "2026-11-21T15:08:57.857Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-21T15:08:57.874Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-21T15:09:16.611Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "6b628679-2037-4dad-991a-0fc46bbf06c3",
+        "openedAt": 1795273737896,
+        "expiresAt": 1795274337896,
+        "maxBytes": 650908,
+        "usedBytes": 588515,
+        "remainingBytes": 62393,
+        "maxOperations": 96,
+        "operations": 13,
+        "closed": true,
+        "expired": false,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 48329145,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "initialVersion": 178,
+  "savedVersion": 180,
+  "coldVersion": 180,
+  "finalVersion": 181,
+  "finalFormat": "content-overlay",
+  "ninePriorParagraphsExact": true,
+  "tenthParagraphSavedAndColdRead": true,
+  "revision208Exact": true,
+  "priorRevisionsExact": true,
+  "allOriginalUsermetaAndSessionsExact": true,
+  "newSessionRemoved": true,
+  "otherContentsAndMediaThemeExact": true,
+  "backup": {
+    "anchor": {
+      "revision": "ab48d63c-11b9-454c-91cc-bfc2ca5d685c",
+      "manifestKey": "sites/default/markdown/revisions/ab48d63c-11b9-454c-91cc-bfc2ca5d685c.json",
+      "persistedAt": "2026-11-21T15:09:16.478Z",
+      "manifestSha256": "457f2003511889edbcd4ffc9a9fd9a60a5e73cb2cb5f7a1500526806d24dae69",
+      "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+      "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+      "packBytes": 2295783
+    },
+    "objects": 303,
+    "files": 298,
+    "independentImportExact": true
+  },
+  "checks": [
+    {
+      "path": "/__local-bootstrap-adopt",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 30
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/",
+      "phase": "operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 24
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 30
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 11
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 7
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 7
+    },
+    {
+      "path": "/",
+      "phase": "operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/",
+      "phase": "operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 786
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2509
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 897,
+      "version": 179
+    },
+    {
+      "path": "/wp-admin/profile.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 827
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 636
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 892,
+      "version": 180
+    },
+    {
+      "path": "/",
+      "phase": "operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 745
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2749
+    },
+    {
+      "path": "/",
+      "phase": "operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 780
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 302,
+      "wallMs": 864,
+      "version": 181
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 22
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3
+    },
+    {
+      "path": "/",
+      "phase": "operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 26
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 15
+    },
+    {
+      "path": "/",
+      "phase": "operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 14
+    },
+    {
+      "path": "/",
+      "phase": "operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 747
+    }
+  ],
+  "outboundAttempts": 0,
+  "localProcessesDisposed": true,
+  "providerTested": false,
+  "browserTested": false,
+  "storageClassFixture": "Miniflare empty storageClass mapped to Standard only; actual guard/window source unchanged",
+  "limitations": [
+    "Conversion byte model excludes unknown cloud history inventory; native window applies only after local seed.",
+    "No provider upload/adoption/old deployment tested; cloud177 has not been refreshed.",
+    "Local HTTP duration does not measure browser/IME/Cloudflare CPU or long-term free usage."
+  ]
+}
