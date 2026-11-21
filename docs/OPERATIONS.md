@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 最新本機候選：content-io；雲端仍126／pin10（2026-11-21）
+
+第11選用階段僅調整content-v1替換物件讀取為最多4個並行，出錯停止排新工作並等已開始工作結束；格式、writer旗標與20設定不變。115項檢查及備份126的真實本機WordPress重啟／備份／完整包回退通過，尚未部署。03:30:27Z只讀核對雲端126／pin10／餘6,604,978bytes，仍closed/sealed、pending0、publisher paused。現有eb809ce8仍含逐項讀取程式，勿把本機改進當已上線。
+
+新候選工具與重建方法見 `experiments/cloudflare-wordpress/content-io/README.md`。本機故障包裝器只能使用新副本；provider舊工具固定來源雜湊／基準，不能移除guards重跑。下一次有界provider測試需新工具，接最新content-provider-cold owner及verified備份126；任何變更後必須保存完整備份並重新封存，保留既有pins／歷史與額度。正式Pages不變。下方均為各階段歷史狀態。
+
 ## 最新私人狀態：差異保存126／pin10，旗標已停用（2026-11-21）
 
 Worker `playtt-wp-free-session-audit` 最終版本eb809ce8-c6e9-4dce-9a5d-d0fceb54896c保留content-v1相容讀取器，實際bindings無PLAYTT_CONTENT_OVERLAY／PLAYTT_EDITOR_READBACK。canonical126／c7933a7c-c54e-4dc7-8a01-7888418761e8、10pins、pending0、closed/sealed、publisher paused、餘6,604,978bytes。不得直接回退到不支援新格式的舊程式；離線materialized完整副本已驗證，但未切換雲端pointer。

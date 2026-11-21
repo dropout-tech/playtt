@@ -98,3 +98,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ### content-overlay 的 provider 工具補充（2026-11-21）
 
 第10選用階段另加入8個下載、一次性驗證、備份／pin、部署後入口與診斷工具／測試；runtime來源仍為223db5e候選，76來源／102輔助檔可逐字重建，20設定未變，重複套用先拒絕後不寫入。`cloudflare-content-provider-reassembly.json`記錄新組裝，舊105項來源測試沿用，3項下載界線測試通過。實際私人部署已保留相容讀取器並停用實驗旗標；參閱更新後content-overlay runbook，不能把組裝成功視為正式後台驗收。
+
+## 第11個選用階段：有界物件讀取（2026-11-21）
+
+前10階段完成後可套用 `content-io/apply-local-candidate.py`，全數來源先驗證並預備patch後才寫入5個變動／新增檔。僅一個runtime來源變更，格式／旗標不變，20設定未改。25+11完整重建逐字比對76來源／106輔助或前置檔通過，重複套用先拒絕、無部分寫入。未部署或重建核心資產；預設組裝不含此選用階段。證據 `cloudflare-content-io-reassembly.json`，runbook見 [content-io](content-io/README.md)。

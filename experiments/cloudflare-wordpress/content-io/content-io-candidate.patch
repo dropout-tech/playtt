@@ -1,0 +1,51 @@
+--- a/src/playtt-content-overlay.ts
++++ b/src/playtt-content-overlay.ts
+@@ -94,6 +94,22 @@
+   changes += [...a].filter(p => !b.has(p)).length + [...b].filter(p => !a.has(p)).length;
+   return { replacements, changes, bytes, eligible: changes <= MAX_CONTENT_DELTA_FILES && bytes <= MAX_CONTENT_DELTA_BYTES && finalBytes <= MAX_OVERLAY_PACK };
+ }
++// The already validated cumulative delta is at most 1 MiB across all tasks.
++// Keep at most four reads (including stream consumption and hash verification)
++// active. On failure drain started work before returning to the lease owner;
++// no detached promise may continue reading after persistence/restore fails.
++async function visitReplacements(replacements: ReturnType<typeof delta>['replacements'], visit: (item: ReturnType<typeof delta>['replacements'][number]) => Promise<void>): Promise<void> {
++  let cursor = 0, failed = false;
++  const run = async () => {
++    while (!failed && cursor < replacements.length) {
++      const item = replacements[cursor++];
++      try { await visit(item); } catch (error) { failed = true; throw error; }
++    }
++  };
++  const outcomes = await Promise.allSettled(Array.from({ length: Math.min(4, replacements.length) }, run));
++  const rejected = outcomes.find((outcome): outcome is PromiseRejectedResult => outcome.status === 'rejected');
++  if (rejected) throw rejected.reason;
++}
+ async function baseFor(bucket: RestorePackBucket, root: string, manifest: OverlayManifest) {
+   validateContentOverlay(manifest, root); const descriptor = manifest.restorePack as PlayttContentOverlay;
+   const baseBytes = await readContentBytes(bucket, descriptor.base.manifestKey, MAX_OVERLAY_MANIFEST, descriptor.base.size, descriptor.base.sha256);
+@@ -121,17 +137,23 @@
+   // Verify every cumulative replacement; do not retain buffers across writes.
+   // The immutable full archive is checked on cold restore/pin, not redownloaded
+   // on every save. No overlay may reference a second overlay.
+-  for (const { file } of changes.replacements) await readContentBytes(bucket, file.objectKey, MAX_CONTENT_DELTA_BYTES, file.size, file.sha256);
++  await visitReplacements(changes.replacements, async ({ file }) => {
++    await readContentBytes(bucket, file.objectKey, MAX_CONTENT_DELTA_BYTES, file.size, file.sha256);
++  });
+   return { schema: CONTENT_OVERLAY_SCHEMA, base: { revision: base.revision, manifestKey: base.manifestKey, persistedAt: base.persistedAt, sha256: await overlayHash(baseBytes), size: baseBytes.length } };
+ }
+ export async function readContentOverlay(bucket: RestorePackBucket, root: string, manifest: OverlayManifest): Promise<{ contents: RestorePackContents; base: FullManifest; baseBytes: Uint8Array; changed: string[] }> {
+   const { base, baseBytes, changes } = await baseFor(bucket, root, manifest);
+   const pack = await readContentBytes(bucket, base.restorePack.objectKey, MAX_OVERLAY_PACK, base.restorePack.size, base.restorePack.sha256);
+   const contents = await decodeCanonicalRestorePack(base.restorePack, root, inventory(base), pack);
++  const replacements = new Map<string, Uint8Array>();
++  await visitReplacements(changes.replacements, async ({ group, file }) => {
++    replacements.set(`${group}/${file.path}`, await readContentBytes(bucket, file.objectKey, MAX_CONTENT_DELTA_BYTES, file.size, file.sha256));
++  });
+   for (const group of groups) {
+     const metadata = new Map(filesOf(base, group).map(f => [f.path, f])), decoded = new Map(contents[group].map(f => [f.path, f.bytes]));
+     const current: RestorePackContents[Group] = [];
+-    for (const file of filesOf(manifest, group)) current.push({ path: file.path, bytes: sameFile(metadata.get(file.path), file) ? decoded.get(file.path)! : await readContentBytes(bucket, file.objectKey, MAX_CONTENT_DELTA_BYTES, file.size, file.sha256) });
++    for (const file of filesOf(manifest, group)) current.push({ path: file.path, bytes: sameFile(metadata.get(file.path), file) ? decoded.get(file.path)! : replacements.get(`${group}/${file.path}`)! });
+     contents[group] = current;
+   }
+   contents.wpContentDeleted = [...(manifest.wpContentDeleted || [])];

@@ -1,5 +1,9 @@
 # Cloudflare WordPress 候選測試
 
+## 最新進展（2026-11-21）：物件讀取並行的本機候選
+
+[content-io](content-io/README.md) 是第11個選用階段，僅把content-v1替換物件的驗證／還原改成最多4個同時讀取，保留1MiB／64項限制與錯誤時的完整等待。115項檢查及真實本機WordPress保存／重啟／完整包回退通過，尚未部署。人工延遲比較不能視為雲端效能；私人126／pin10仍封存，正式Pages與原視覺維持。25+11階段可重建76來源／106輔助檔、20設定不變。最新限制見 `docs/PLAYTT_PROGRESS.md`；下方保留原候選索引。
+
 這是可重現的實驗，不是正式後台部署。不得將此資料夾內公開的本機測試密碼部署到網際網路。
 
 目前應使用 [security-update/README.md](security-update/README.md) 的WordPress7.1.4／PHP8.3.36候選與對應patch／鎖定檔；下方舊版本流程保留作歷史驗證與比較。舊釘選版本不作正式後台基準。
