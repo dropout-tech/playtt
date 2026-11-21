@@ -1,5 +1,13 @@
 # PLAYTT 執行進度
 
+## 私人 Cloudflare 差異保存通過，完成第 10 份備份（2026-11-21）
+
+既有 session-audit 暫時啟用候選 b1a01c38。8 次原生 HTTP 完成登入、編輯、一次保存／遺失回應讀回及登出：保存與讀回皆 canonical125，全文一致；後續同 session 一般讀取亦冷載入。登出後126。180秒／2MiB／64操作窗口實用666,810bytes／17puts，無新增完整ZIP，之後關窗封存。相較前次同類流程2,960,342bytes少77.48%，但段落略不同，不能當成費用或效能保證。保存6031ms對前次6073ms，延遲沒有明確改善；讀回3784ms。主診斷130事件、7/7trace完成，未觀察到exception或request failure；WASM heap取樣73,400,320bytes不是whole-isolate量測。
+
+完整下載8GET／2,794,424bytes，獨立匯入298檔／303物件及離線完整包轉換均逐字核對。只改自有193正文／日期、預期修訂202、鎖72及單調計數；舊修訂、帳號／session／偏好、媒體與主題一致。伺服器驗證後新增pin10，保留原9份。封存後部署相容讀取器eb809ce8，實際bindings確認內容／讀回旗標皆移除。最初封存登入GET回503是測試入口假設錯誤，PHP未啟動；另以90秒／1byte／1操作窗口補驗原生登入200，實際0bytes／0操作並再封存。後者只捕捉43個事件與外層請求，沒有PHP DO trace，故不宣稱已直接觀察部署後冷載入。
+
+最終126／c7933a7c、10pins、closed/sealed、pending0、fence解除、publisher paused，餘6,604,978bytes。新下載工具與3項測試通過，既有105項來源測試未因僅新增工具而重跑；76來源、20設定不變，重建102輔助檔。所有測試／診斷程序結束。正式Pages維持、未付費或調額／刪歷史，PR4 draft、目標active。下一步改善R2逐項驗證與保存延遲，並補原生UI、完整記憶體／並行、實機IME與長期免費驗收。下一次窗口須接 `playtt-content-provider-cold-owned-private.json`，備份接content-provider126；不可重用舊window owner。證據 `docs/verification/cloudflare-content-provider-summary.json`。以下為歷史紀錄。
+
 ## 小幅內容保存的有界差異快照：本機通過，未部署（2026-11-21）
 
 第10個選用候選 `content-overlay/` 增加獨立儲存格式：完整清單直接引用一份精確完整備份，只保存變動檔案，不串接多層差異。涵蓋內容、資料表、媒體、主題、新增／刪除與空檔；ID與原始位元組保留。累積替換最多1MiB／64個變動或刪除項，超出回到完整包；原v1/v2分類器完全未改，20份組裝設定皆未啟用新旗標。

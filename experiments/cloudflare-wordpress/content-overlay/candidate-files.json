@@ -69,6 +69,46 @@
       "path": "scripts/playtt-content-overlay-status.mjs",
       "source": "playtt-content-overlay-status.mjs",
       "afterSha256": "cf1bf7d9770e9034cbe671fd5f852a94102c990155afa785ce7e46c8b9e3a531"
+    },
+    {
+      "path": "scripts/playtt-content-snapshot-source.mjs",
+      "source": "playtt-content-snapshot-source.mjs",
+      "afterSha256": "a1150173c80e57da32a2c6199a17bae2a0f33e5b6dceeec94681620e483d2efb"
+    },
+    {
+      "path": "tests/playtt-content-snapshot-source.test.mjs",
+      "source": "playtt-content-snapshot-source.test.mjs",
+      "afterSha256": "b976316f2e3c91f4b09532d742f9627a576d32364a0e62c9454eebf4f4212b0c"
+    },
+    {
+      "path": "scripts/playtt-content-provider.mjs",
+      "source": "playtt-content-provider.mjs",
+      "afterSha256": "e6e3ca013a1e7b3697d2f6d08889e03eda6487bc115adeac78df94b977b5682c"
+    },
+    {
+      "path": "scripts/playtt-content-provider-backup.mjs",
+      "source": "playtt-content-provider-backup.mjs",
+      "afterSha256": "1921060b259e1f4b951aae8755120e6bc4233dd40e0d8074f52f46cbc85d8720"
+    },
+    {
+      "path": "scripts/playtt-content-provider-pin.mjs",
+      "source": "playtt-content-provider-pin.mjs",
+      "afterSha256": "216c08aac646ad55ee036d1dc5322160f8fcf3bb5a64e4abc7a16e0fbf20bfbf"
+    },
+    {
+      "path": "scripts/playtt-content-provider-cold.mjs",
+      "source": "playtt-content-provider-cold.mjs",
+      "afterSha256": "763623df3b28e951cf892640602148a6dbfae5fe0a4d5e4480fa0fe4e9dc71ab"
+    },
+    {
+      "path": "scripts/playtt-content-cold-observe.mjs",
+      "source": "playtt-content-cold-observe.mjs",
+      "afterSha256": "87f86afa6df0187a19ddfba65711fc76685358614b1323d90d4ca29794693346"
+    },
+    {
+      "path": "scripts/playtt-content-provider-inspect.mjs",
+      "source": "playtt-content-provider-inspect.mjs",
+      "afterSha256": "6d3adf295c3c8433c98dfcb1c0d63ba5dff42922300caab922d85712098bf00f"
     }
   ],
   "patchSha256": "bdab1e63b73a4825497788188bad27d384ca0c54794a985db2d19fefd9f9f93b"

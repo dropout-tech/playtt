@@ -1,0 +1,396 @@
+{
+  "at": "2026-11-21T02:37:46.555Z",
+  "result": "pass",
+  "scope": "Content-overlay format with real provider native HTTP and pinned api-fetch middleware in Node VM; client-side body suppression, not a browser UI or server-disconnect test",
+  "sourceHashes": {
+    "src/worker.ts": "39e17a22d150e4ddb27b602c675df9ac4c015829b3b979a898097d313990d6bd",
+    "src/playtt-content-overlay.ts": "367b2f462edf85f1ec0b8666538f90d896f3328a4e94ab8dc3f9475b28f188fc",
+    "src/playtt-maintenance-overlay.ts": "be0104515c3853cd4010d13f5059231859842b0c38f618732c8d6026f7f9f06e",
+    "src/playtt-editor-readback.ts": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+  },
+  "packageHashes": {
+    "api-fetch": "292e098ddb81b081258f2395633f81c3d3e228cb88dca819279f5ff51eb1f1ed",
+    "url": "a659342e4360e85db7bce9e95f5d5b008199f905b3bd6ed0905bbfb4fc8bbbb8"
+  },
+  "limits": {
+    "durationSeconds": 180,
+    "maxBytes": 2097152,
+    "maxOperations": 64,
+    "maxNativeRequests": 14
+  },
+  "before": {
+    "at": "2026-11-21T02:37:45.672Z",
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "6883819c-8ca2-4e26-b899-433c83aa4eea",
+        "manifestKey": "sites/default/markdown/revisions/6883819c-8ca2-4e26-b899-433c83aa4eea.json",
+        "persistedAt": "2026-11-21T01:30:07.085Z"
+      },
+      "version": 122
+    },
+    "fenceActive": false,
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-session-audit",
+      "baselineBytes": 100738428,
+      "baselineObjects": 303,
+      "chargedBytes": 41989784,
+      "chargedPuts": 410,
+      "initializedAt": "2026-11-20T20:06:31.237Z",
+      "writeTracking": {
+        "schema": "playtt/r2-write-tracking/v2",
+        "initializedAt": "2026-11-20T20:06:31.656Z",
+        "pending": 0,
+        "sealed": true,
+        "acquiredAt": "2026-11-21T01:30:13.019Z",
+        "maximumPending": 128,
+        "automaticExpiry": false,
+        "window": {
+          "schema": "playtt/r2-write-window/v1",
+          "id": "26b7ae21-ada1-4e73-9b7a-2ca3f6d18d37",
+          "openedAt": 1795224575640,
+          "expiresAt": 1795224755640,
+          "maxBytes": 4194304,
+          "usedBytes": 2960342,
+          "remainingBytes": 1233962,
+          "maxOperations": 64,
+          "operations": 18,
+          "closed": true,
+          "expired": true,
+          "admitsNewOperations": false,
+          "pendingOperationsExpire": false,
+          "automaticReopen": false
+        }
+      },
+      "reservationSchema": "playtt/r2-window-reservation/v1",
+      "initialized": true,
+      "limitBytes": 150000000,
+      "trackingConfigured": true,
+      "windowConfigured": true,
+      "remainingBytes": 7271788,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "pins": 9,
+    "publisher": "paused"
+  },
+  "checks": [
+    {
+      "stage": "preflight",
+      "kind": "operator",
+      "endpoint": "/",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 2720
+    },
+    {
+      "stage": "preflight",
+      "kind": "operator",
+      "endpoint": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 532
+    },
+    {
+      "stage": "preflight",
+      "kind": "operator",
+      "endpoint": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 175
+    },
+    {
+      "stage": "preflight",
+      "kind": "operator",
+      "endpoint": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 169
+    },
+    {
+      "stage": "arm",
+      "kind": "operator",
+      "endpoint": "/",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 222
+    },
+    {
+      "stage": "arm",
+      "kind": "operator",
+      "endpoint": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 263
+    },
+    {
+      "stage": "arm",
+      "kind": "operator",
+      "endpoint": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 249
+    },
+    {
+      "stage": "arm",
+      "kind": "operator",
+      "endpoint": "/",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 216
+    },
+    {
+      "stage": "login-form",
+      "kind": "native",
+      "endpoint": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 3477
+    },
+    {
+      "stage": "login",
+      "kind": "native",
+      "endpoint": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "headersWallMs": 5497
+    },
+    {
+      "stage": "native-editor-html",
+      "kind": "native",
+      "endpoint": "/wp-admin/post.php",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 5537
+    },
+    {
+      "stage": "baseline-page",
+      "kind": "native",
+      "endpoint": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 1292
+    },
+    {
+      "stage": "client-loss-and-readback",
+      "kind": "native",
+      "endpoint": "/wp-json/wp/v2/pages/193",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 6028
+    },
+    {
+      "stage": "client-loss-and-readback",
+      "kind": "native",
+      "endpoint": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 3780
+    },
+    {
+      "stage": "cold-same-session-read",
+      "kind": "native",
+      "endpoint": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 3537
+    },
+    {
+      "stage": "logout",
+      "kind": "native",
+      "endpoint": "/wp-login.php",
+      "method": "GET",
+      "status": 302,
+      "headersWallMs": 4506
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 239
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 167
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 2017
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 205
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 243
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/",
+      "method": "POST",
+      "status": 200,
+      "headersWallMs": 195
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 1839
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 179
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 171
+    },
+    {
+      "stage": "closing",
+      "kind": "operator",
+      "endpoint": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "headersWallMs": 172
+    }
+  ],
+  "transportCalls": [
+    {
+      "method": "POST",
+      "status": 200,
+      "wallMs": 6031,
+      "version": 125,
+      "revision": "85fd57c2-bfb7-40ea-ba3a-8cce5ea61382",
+      "marker": null,
+      "bodySuppressedLocally": true
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3784,
+      "version": 125,
+      "revision": "85fd57c2-bfb7-40ea-ba3a-8cce5ea61382",
+      "marker": "canonical-v1",
+      "id": 193,
+      "code": null,
+      "contentSha256": "7adf82a5e34b91bbc041a10ad0655ad98a7d74bcdcbadd63ab6fce7156bc7ad7"
+    }
+  ],
+  "transportAttempts": [
+    {
+      "method": "POST",
+      "at": "2026-11-21T02:38:03.545Z"
+    },
+    {
+      "method": "GET",
+      "at": "2026-11-21T02:38:09.579Z"
+    }
+  ],
+  "nativeEditorPolicyExact": true,
+  "committed": {
+    "version": 125,
+    "revision": "85fd57c2-bfb7-40ea-ba3a-8cce5ea61382",
+    "marker": null,
+    "id": 193,
+    "contentSha256": "7adf82a5e34b91bbc041a10ad0655ad98a7d74bcdcbadd63ab6fce7156bc7ad7",
+    "status": 200
+  },
+  "reconciled": true,
+  "clientWorkflowMs": 9822,
+  "coldReadContentExact": true,
+  "sameSession": true,
+  "nativeLogoutCompleted": true,
+  "after": {
+    "at": "2026-11-21T02:38:26.330Z",
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "c7933a7c-c54e-4dc7-8a01-7888418761e8",
+        "manifestKey": "sites/default/markdown/revisions/c7933a7c-c54e-4dc7-8a01-7888418761e8.json",
+        "persistedAt": "2026-11-21T02:38:18.610Z"
+      },
+      "version": 126
+    },
+    "fenceActive": false,
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-session-audit",
+      "baselineBytes": 100738428,
+      "baselineObjects": 303,
+      "chargedBytes": 42656594,
+      "chargedPuts": 427,
+      "initializedAt": "2026-11-20T20:06:31.237Z",
+      "writeTracking": {
+        "schema": "playtt/r2-write-tracking/v2",
+        "initializedAt": "2026-11-20T20:06:31.656Z",
+        "pending": 0,
+        "sealed": true,
+        "acquiredAt": "2026-11-21T02:38:24.449Z",
+        "maximumPending": 128,
+        "automaticExpiry": false,
+        "window": {
+          "schema": "playtt/r2-write-window/v1",
+          "id": "0041e7f4-0a4c-4f4f-8370-408f5b715611",
+          "openedAt": 1795228667204,
+          "expiresAt": 1795228847204,
+          "maxBytes": 2097152,
+          "usedBytes": 666810,
+          "remainingBytes": 1430342,
+          "maxOperations": 64,
+          "operations": 17,
+          "closed": true,
+          "expired": false,
+          "admitsNewOperations": false,
+          "pendingOperationsExpire": false,
+          "automaticReopen": false
+        }
+      },
+      "reservationSchema": "playtt/r2-window-reservation/v1",
+      "initialized": true,
+      "limitBytes": 150000000,
+      "trackingConfigured": true,
+      "windowConfigured": true,
+      "remainingBytes": 6604978,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "pins": 9,
+    "publisher": "paused"
+  },
+  "chargedBytes": 666810,
+  "chargedPuts": 17,
+  "contained": true,
+  "nativeRequests": 8,
+  "finishedAt": "2026-11-21T02:38:26.855Z"
+}

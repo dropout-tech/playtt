@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 最新私人狀態：差異保存126／pin10，旗標已停用（2026-11-21）
+
+Worker `playtt-wp-free-session-audit` 最終版本eb809ce8-c6e9-4dce-9a5d-d0fceb54896c保留content-v1相容讀取器，實際bindings無PLAYTT_CONTENT_OVERLAY／PLAYTT_EDITOR_READBACK。canonical126／c7933a7c-c54e-4dc7-8a01-7888418761e8、10pins、pending0、closed/sealed、publisher paused、餘6,604,978bytes。不得直接回退到不支援新格式的舊程式；離線materialized完整副本已驗證，但未切換雲端pointer。
+
+下一次寫入／關窗須接最新 `artifacts/playtt-content-provider-cold-owned-private.json`；其1byte窗口已關閉、0bytes／0操作。備份owner為 `playtt-content-provider-backup-owned-private.json`（verified），主完整包仍4916d283。先前content-provider或readback-provider窗口owner均不是目前窗口，不能用舊token重開。一次性exercise／backup／pin已完成，不重跑、不移除guards。封存會在PHP前擋所有原生入口，包含登入GET；不要據此誤判資料還原失敗。provider後續原生登入200但缺DO trace，僅宣稱可讀；未改任何正式Pages。
+
 ## 最新本機候選：content-overlay，雲端未啟用（2026-11-21）
 
 `PLAYTT_CONTENT_OVERLAY=content-v1`僅在本機Miniflare與dry-run參數測試，20份組裝設定未改。來源增加相容讀取器，但目前雲端1075e061仍是舊來源，canonical122／9pins／餘7,271,788bytes。任何後續私人測試須從最新readback-provider owner／備份122接續，不重跑已完成的118一次性工具；目前仍closed、sealed、pending0、publisher paused。

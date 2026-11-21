@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-21T02:46:04.664Z",
+  "result": "pass",
+  "canonicalVersion": 126,
+  "anchor": {
+    "revision": "c7933a7c-c54e-4dc7-8a01-7888418761e8",
+    "manifestKey": "sites/default/markdown/revisions/c7933a7c-c54e-4dc7-8a01-7888418761e8.json",
+    "persistedAt": "2026-11-21T02:38:18.610Z",
+    "manifestSha256": "3366eb4b5a39421d0bb7a9397adc6537261d939358d83a8c52a6c6bd34da9162",
+    "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "packBytes": 2295783
+  },
+  "files": 298,
+  "objects": 303,
+  "unchangedFiles": 294,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "ownedDraftContentExact": true,
+  "addedOwnedRevision": "202",
+  "otherRevisionsExact": true,
+  "sessionsPreferencesAccountsExact": true,
+  "mediaAndThemeExact": true,
+  "independentCopyVerified": true,
+  "nativeHttpSave": true,
+  "browserUiTested": false,
+  "format": "content-overlay",
+  "baseUnchanged": true,
+  "fullMaterializationExact": true,
+  "finalPins": 10,
+  "canonicalAndAccountingUnchanged": true,
+  "fenceReleased": true
+}

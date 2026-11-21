@@ -1,0 +1,106 @@
+{
+  "at": "2026-11-21T02:55:01.085Z",
+  "result": "pass",
+  "scope": "Bounded private provider content-overlay persistence, authenticated cold content read, complete backup and new-reader deployment; no production cutover",
+  "sourceHashes": {
+    "src/worker.ts": "39e17a22d150e4ddb27b602c675df9ac4c015829b3b979a898097d313990d6bd",
+    "src/playtt-content-overlay.ts": "367b2f462edf85f1ec0b8666538f90d896f3328a4e94ab8dc3f9475b28f188fc",
+    "src/playtt-maintenance-overlay.ts": "be0104515c3853cd4010d13f5059231859842b0c38f618732c8d6026f7f9f06e",
+    "src/playtt-editor-readback.ts": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+  },
+  "deployments": {
+    "temporaryEnabled": "b1a01c38-061e-4057-b824-3eb25e0f1346",
+    "finalCompatibleFlagsDisabled": "eb809ce8-c6e9-4dce-9a5d-d0fceb54896c",
+    "actualBindingsOmitContentAndReadback": true,
+    "configsChanged": 0,
+    "productionChanged": false
+  },
+  "native": {
+    "requests": 8,
+    "writeAttempts": 1,
+    "readbackAttempts": 1,
+    "writeVersion": 125,
+    "readbackVersion": 125,
+    "rawContentExact": true,
+    "sameSessionColdReadExact": true,
+    "nativeLogoutCompleted": true,
+    "writeWallMs": 6031,
+    "readbackWallMs": 3784,
+    "totalClientWorkflowMs": 9822
+  },
+  "telemetry": {
+    "primaryDurationLimitSeconds": 330,
+    "events": 130,
+    "completedTraces": 7,
+    "traces": 7,
+    "exceptions": 0,
+    "requestFailures": 0,
+    "readbackCold": true,
+    "readbackTraceMs": 2235,
+    "nextReadCold": true,
+    "nextReadTraceMs": 2821,
+    "fullPackWritesObserved": 0,
+    "maximumSampledWasmHeapBytes": 73400320,
+    "wholeIsolateMemoryMeasured": false,
+    "allObserversEnded": true
+  },
+  "accounting": {
+    "windowSeconds": 180,
+    "windowMaxBytes": 2097152,
+    "actualBytes": 666810,
+    "actualPuts": 17,
+    "remainingBytes": 6604978,
+    "appendedContentBytes": 202,
+    "priorComparableWorkflowBytes": 2960342,
+    "payloadDifferencePercent": 77.48,
+    "scope": "Eight-request workflow includes login/editor-lock/save/logout; prior workflow appended a slightly different paragraph. Not an account bill or controlled latency benchmark."
+  },
+  "backup": {
+    "version": 126,
+    "revision": "c7933a7c-c54e-4dc7-8a01-7888418761e8",
+    "files": 298,
+    "objects": 303,
+    "pins": 10,
+    "basePackBytes": 2295783,
+    "basePackUnchanged": true,
+    "remoteGetCount": 8,
+    "downloadedBytes": 2794424,
+    "addedRevision": "202",
+    "otherRowsFilesMediaThemeExact": true,
+    "independentImportExact": true,
+    "offlineFullMaterializationExact": true,
+    "oldPinsRetained": true
+  },
+  "afterRedeploy": {
+    "nativeLogin200": true,
+    "wallMs": 3686,
+    "windowSeconds": 90,
+    "maxBytes": 1,
+    "actualBytes": 0,
+    "actualOperations": 0,
+    "stateAccountingUnchanged": true,
+    "outerEventVersion": "eb809ce8-c6e9-4dce-9a5d-d0fceb54896c",
+    "events": 43,
+    "phpRuntimeTraces": 0,
+    "coldHydrationDirectlyObserved": false,
+    "initialSealedRequest503": true,
+    "initialFailureWasHarnessAdmissionAssumption": true
+  },
+  "final": {
+    "version": 126,
+    "pins": 10,
+    "sealed": true,
+    "closed": true,
+    "pending": 0,
+    "fenceActive": false,
+    "publisher": "paused",
+    "remainingBytes": 6604978
+  },
+  "limitations": [
+    "Native provider browser UI, real disconnections and devices/IME remain untested for this format.",
+    "Post-redeploy native login succeeded, but the second tail lacks its PHP DO trace; full cold hydration was not directly observed in that step. Authenticated cold content read was directly observed before redeploy.",
+    "Save wall time6031ms versus prior6073ms does not establish a latency improvement; metadata verification/persistence remains expensive.",
+    "Sampled WASM heap excludes whole-isolate memory. Zero-duration phase timers do not mean zero CPU work.",
+    "Legacy readers/retention reject content-v1; old-source rollback needs a verified full materialization. Long-term sustainable free history and mixed-version provider restore remain open."
+  ]
+}

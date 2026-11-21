@@ -1,5 +1,9 @@
 # Let’s Play 驗收狀態
 
+## 2026-11-21 補充：私人 provider 差異保存／備份
+
+A04／A06／A07增加雲端證據：保存與冷讀回125全文一致，登出126；298檔／303物件獨立備份、完整包轉換及伺服器pin10核對通過，未新增完整ZIP。流程666,810bytes／17puts，但保存仍約6秒。新讀取器已部署、旗標皆停用；封存拒絕的初次登入GET與後續1byte窗口的200／零寫入均保留紀錄，後者缺PHP DO trace，部署後冷路徑未直接驗證。主流程冷讀有trace。整體A04、A06、A07及A20仍未結案：原生瀏覽器、完整記憶體、實機／IME、長期免費與混合版本還原仍待。見 `cloudflare-content-provider-*`。
+
 ## 2026-11-21 補充：有界內容差異快照（僅本機）
 
 A04／A06／A07取得局部進展：原生HTTP保存、回應遺失後冷讀、同內容重試、獨立備份匯入，以及停用新寫入器後完整快照／冷啟動均通過。105項檢查、10/10本機trace完成；單次應用payload390,905對2,685,575bytes。這不是雲端費用、瀏覽器、實機或長期免費驗收。新格式／旗標未部署；舊讀取器及retention工具拒絕，需先完整materialize才可降版。雲端仍122／9pins且計量未增。A04、A06、A07與A20仍不可據此整項結案；詳見 `cloudflare-content-overlay-*` 證據與 `experiments/cloudflare-wordpress/content-overlay/README.md`。

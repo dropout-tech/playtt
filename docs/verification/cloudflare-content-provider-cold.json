@@ -1,0 +1,145 @@
+{
+  "at": "2026-11-21T02:48:24.177Z",
+  "result": "pass",
+  "scope": "Successful post-redeploy native login GET and zero-write containment; second observer lacks PHP DO trace, so cold hydration is not directly verified here",
+  "limits": {
+    "durationSeconds": 90,
+    "maxBytes": 1,
+    "maxOperations": 1,
+    "nativeRequests": 1
+  },
+  "before": {
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "c7933a7c-c54e-4dc7-8a01-7888418761e8",
+        "manifestKey": "sites/default/markdown/revisions/c7933a7c-c54e-4dc7-8a01-7888418761e8.json",
+        "persistedAt": "2026-11-21T02:38:18.610Z"
+      },
+      "version": 126
+    },
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-session-audit",
+      "baselineBytes": 100738428,
+      "baselineObjects": 303,
+      "chargedBytes": 42656594,
+      "chargedPuts": 427,
+      "initializedAt": "2026-11-20T20:06:31.237Z",
+      "writeTracking": {
+        "schema": "playtt/r2-write-tracking/v2",
+        "initializedAt": "2026-11-20T20:06:31.656Z",
+        "pending": 0,
+        "sealed": true,
+        "acquiredAt": "2026-11-21T02:38:24.449Z",
+        "maximumPending": 128,
+        "automaticExpiry": false,
+        "window": {
+          "schema": "playtt/r2-write-window/v1",
+          "id": "0041e7f4-0a4c-4f4f-8370-408f5b715611",
+          "openedAt": 1795228667204,
+          "expiresAt": 1795228847204,
+          "maxBytes": 2097152,
+          "usedBytes": 666810,
+          "remainingBytes": 1430342,
+          "maxOperations": 64,
+          "operations": 17,
+          "closed": true,
+          "expired": true,
+          "admitsNewOperations": false,
+          "pendingOperationsExpire": false,
+          "automaticReopen": false
+        }
+      },
+      "reservationSchema": "playtt/r2-window-reservation/v1",
+      "initialized": true,
+      "limitBytes": 150000000,
+      "trackingConfigured": true,
+      "windowConfigured": true,
+      "remainingBytes": 6604978,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "pins": 10,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "httpStatus": 200,
+  "nativeLoginForm": true,
+  "wallMs": 3686,
+  "bodyBytes": 8555,
+  "after": {
+    "state": {
+      "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+      "store": "durable-object",
+      "pointer": {
+        "revision": "c7933a7c-c54e-4dc7-8a01-7888418761e8",
+        "manifestKey": "sites/default/markdown/revisions/c7933a7c-c54e-4dc7-8a01-7888418761e8.json",
+        "persistedAt": "2026-11-21T02:38:18.610Z"
+      },
+      "version": 126
+    },
+    "budget": {
+      "schema": "playtt/r2-capacity-ledger/v1",
+      "scope": "playtt-wordpress-session-audit",
+      "baselineBytes": 100738428,
+      "baselineObjects": 303,
+      "chargedBytes": 42656594,
+      "chargedPuts": 427,
+      "initializedAt": "2026-11-20T20:06:31.237Z",
+      "writeTracking": {
+        "schema": "playtt/r2-write-tracking/v2",
+        "initializedAt": "2026-11-20T20:06:31.656Z",
+        "pending": 0,
+        "sealed": true,
+        "acquiredAt": "2026-11-21T02:48:31.695Z",
+        "maximumPending": 128,
+        "automaticExpiry": false,
+        "window": {
+          "schema": "playtt/r2-write-window/v1",
+          "id": "b7d911dd-99df-433d-bf07-014f24488c09",
+          "openedAt": 1795229304821,
+          "expiresAt": 1795229394821,
+          "maxBytes": 1,
+          "usedBytes": 0,
+          "remainingBytes": 1,
+          "maxOperations": 1,
+          "operations": 0,
+          "closed": true,
+          "expired": false,
+          "admitsNewOperations": false,
+          "pendingOperationsExpire": false,
+          "automaticReopen": false
+        }
+      },
+      "reservationSchema": "playtt/r2-window-reservation/v1",
+      "initialized": true,
+      "limitBytes": 150000000,
+      "trackingConfigured": true,
+      "windowConfigured": true,
+      "remainingBytes": 6604978,
+      "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+    },
+    "pins": 10,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "contained": true,
+  "stateAndAccountingUnchanged": true,
+  "finishedAt": "2026-11-21T02:48:33.716Z",
+  "coldHydrationDirectlyObserved": false,
+  "phpRuntimeTraces": 0,
+  "initialRejectedAttempt": {
+    "at": "2026-11-21T02:46:03.208262+00:00",
+    "result": "expected-seal-rejection",
+    "initialHarnessExpected": 200,
+    "actualHttp": 503,
+    "nativeRequests": 1,
+    "version": "eb809ce8-c6e9-4dce-9a5d-d0fceb54896c",
+    "runtimeTraces": 0,
+    "sourceGuard": "worker-playtt-do.ts admission before runtime; playtt-storage-capacity.ts rejects any PHP entry when write drain exists",
+    "coldHydrationTested": false,
+    "stateAccountingUnchangedConfirmedBySubsequentBackup": true,
+    "retryWithoutOpeningBoundedWindow": false
+  }
+}

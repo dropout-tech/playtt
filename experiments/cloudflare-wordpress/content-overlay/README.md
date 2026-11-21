@@ -1,6 +1,6 @@
-# Bounded content snapshots — optional, local-only candidate
+# Bounded content snapshots — optional private validation
 
-A native draft edit previously wrote a new complete archive even when only a few canonical files changed. This tenth optional stage reuses one exact full base and stores bounded file replacements through the existing lease, immutable-object and canonical-commit path. It is not adopted by the default assembler or deployed. The current production Pages visual and private publisher remain unchanged.
+A native draft edit previously wrote a new complete archive even when only a few canonical files changed. This tenth optional stage reuses one exact full base and stores bounded file replacements through the existing lease, immutable-object and canonical-commit path. It is not adopted by the default assembler. A bounded private provider run now passes; the compatible reader is deployed, and both temporary content/readback flags are disabled. Production Pages and its current visual remain unchanged; private publication stays paused.
 
 ## Format and limits
 
@@ -18,7 +18,7 @@ Old v1/v2 readers reject the new descriptor. Disabling the writer keeps the new 
 
 The legacy retention proposal explicitly rejects this new format. No cleanup, deletion, ledger reset, budget increase or pin removal is part of this candidate. Keep every referenced base/archive/object. Sustainable long-term retention remains open.
 
-## Local evidence, 2026-11-21
+## Local evidence before the provider run, 2026-11-21
 
 105 distinct relevant checks pass: 10 content-format cases, 21 existing v1/v2 cases and 74 snapshot, bundle, pin, readback and write-window regressions. They cover twenty flattened saves, exact reversion, assets/empty files/tombstones, corruption, streamed size bounds, limits, pin refusal, independent import, full materialization, disabled flags and the legacy retention refusal. TypeScript and Wrangler dry-run pass; bundle 20892.11 KiB / gzip 7609.38 KiB. Upstream generated-loader eval/duplicate-key warnings remain.
 
@@ -28,7 +28,7 @@ The same harness then disables only the local content writer, restarts and saves
 
 For the single save, changed objects317,165 + overlay manifest73,740 = **390,905 bytes**, versus changed objects317,165 + full manifest73,713 + archive2,294,697 = **2,685,575 bytes**. The application-payload reduction is **85.44%**. This excludes pointer/coordinator writes, deduplication and provider billing; it is not a cloud latency/cost estimate. Full-pack materialization after disabling the writer is a separate intentional write.
 
-A new read-only cloud check confirms canonical122, 9pins, closed/sealed, pending0, fence released, publisher paused and7,271,788bytes remaining. No remote writes or deployment occurred. Existing Worker1075e061 still runs the earlier source, with readback disabled.
+The preceding local phase ended at canonical122/pin9 with no cloud changes. The provider section below supersedes that cloud state.
 
 ## Reproduce
 
@@ -40,8 +40,24 @@ python experiments/cloudflare-wordpress/content-overlay/apply-local-candidate.py
 node --import tsx --test tests/playtt-content-overlay.test.ts
 ```
 
-The applier checks all eight changed/new file identities before mutation, refuses reapplication and never enables a flag. Fresh default assembly still excludes optional stages. Use the established dependency/core preparation; assembling source does not regenerate binaries.
+The applier checks all sixteen changed/new file identities before mutation, refuses reapplication and never enables a flag. Fresh default assembly still excludes optional stages. Use the established dependency/core preparation; assembling source does not regenerate binaries.
 
 `playtt-content-overlay-local.mjs --local` requires the existing private verified backup122 and owner files; it always creates a fresh local copy, binds only127.0.0.1:9451 and rejects remote mode. It contains a LOCAL ONLY fault wrapper which must never be deployed. `playtt-content-overlay-status.mjs --remote-read-only` is limited to four operator GETs on the existing project and asserts the current122/pin9 baseline. Neither helper bypasses changed-state guards.
 
-Evidence: `docs/verification/cloudflare-content-overlay-{summary,native,remote-status,reassembly,review}.json`. Next: bounded private provider validation with complete backup/restore proof, plus native UI, whole-isolate memory, concurrent editing, physical-device/IME and sustainable Free usage acceptance. The overall goal remains active; PR4 stays draft.
+Local evidence: `docs/verification/cloudflare-content-overlay-{summary,native,remote-status,reassembly,review}.json`.
+
+## Private provider run, 2026-11-21
+
+Temporary version `b1a01c38-061e-4057-b824-3eb25e0f1346` enabled content-v1 and draft readback only on the existing session-audit Worker. The account UI still showed Workers Free, R2 $0.00, 2.32 GB, 7.12k Class A / 58.78k Class B operations before testing; displays can lag. Eight native HTTP requests use retained editor2 and draft193. The client suppresses a verified committed save response, then one authenticated readback returns the exact canonical125 body. A subsequent same-session ordinary read is also cold and exact. Native logout reaches126.
+
+A 180-second / 2 MiB / 64-operation window consumed **666,810 bytes / 17 puts**, then closed and sealed. No full ZIP write was observed; the final manifest reuses the original 2,295,783-byte archive. The prior eight-request workflow used2,960,342bytes; the observed payload difference is77.48%, with a slightly different test paragraph. This is not a cloud bill or a controlled benchmark. Save6031ms versus prior6073ms shows no established latency improvement; readback3784ms. Captured diagnostics:130events,7/7completed traces, no observed exception/request failure, sampled WASM heap73,400,320bytes (not whole-isolate memory).
+
+Complete download uses8GETs /2,794,424bytes. Independent import verifies298files /303objects. Only owned193 content/date, expected revision202, lock72 and monotonic counters differ from122; prior revisions, accounts, session/preferences, assets and theme are exact. Offline full materialization is exact. Server-side pin verification passes and adds **pin10**, retaining all nine predecessors without changing canonical state or R2 accounting.
+
+Final deployed version **eb809ce8-c6e9-4dce-9a5d-d0fceb54896c** retains the compatible reader. Actual bindings omit both temporary flags; all20configs remain unchanged. An initial sealed login GET returned503 before PHP, exposing an incorrect harness admission assumption. A separate90-second /1-byte /1-operation window then admitted one native login GET:200 in3686ms, **0bytes /0operations**, canonical unchanged, then resealed. Its90-second observer captured43events and the final-version outer request but no PHP DO trace; report deployment readability, not directly observed post-redeploy cold hydration. Authenticated cold content reads were directly observed in the main run. Both observers and all commands terminated.
+
+Current state: **canonical126 /c7933a7c-c54e-4dc7-8a01-7888418761e8**,10pins, closed/sealed, pending0, fence released, publisher paused, **6,604,978bytes remaining**. No quota increase, history deletion, ledger reset, paid change or production cutover. The current owner chain is `artifacts/playtt-content-provider-cold-owned-private.json`; current complete backup is `playtt-content-provider-backup-owned-private.json`. Do not use the preceding window owner or replay completed helpers.
+
+The explicit `playtt-content-snapshot-source.mjs` download profile permits at most67GET dependencies (manifest + base manifest + ZIP +64replacements),8MiB per object and10MiB total, on this one bucket. Legacy profiles are unchanged. Three new tests verify fixed GET-only scope, count/stream/byte bounds and non-disclosing errors. Prior105source tests remain applicable; deployed runtime source is unchanged from223db5e. Fresh reconstruction matches76sources /102helpers, and refuses reapplication.
+
+Provider evidence: `docs/verification/cloudflare-content-provider-*`. Helpers are one-shot `playtt-content-provider.mjs` (check/exercise/status/contain), `-backup.mjs`, `-pin.mjs`, `-cold.mjs`, a bounded cold observer and offline `-inspect.mjs`. All original baseline/owner guards remain. Next inspect expensive serial object verification/persistence to reduce latency without weakening integrity or memory bounds, and continue native UI, concurrency, mixed-version restore, long-term Free retention and device/IME acceptance. The overall goal remains active; PR4 stays draft.
