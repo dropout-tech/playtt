@@ -1,0 +1,87 @@
+{
+  "schema": "playtt/ajax-classifier-check/v1",
+  "result": "pass",
+  "sourceSha256": "1714739ca54b16198b5a5723070ca97dd9caa25b131d3544413cc008bf62a09a",
+  "cases": 11,
+  "boundBytes": 8192,
+  "results": [
+    {
+      "name": "urlencoded-unlock",
+      "action": "wp-remove-post-lock",
+      "encoding": "urlencoded",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "multipart-unlock",
+      "action": "wp-remove-post-lock",
+      "encoding": "multipart",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "multipart-heartbeat",
+      "action": "heartbeat",
+      "encoding": "multipart",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "duplicate",
+      "action": "duplicate",
+      "encoding": "multipart",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "missing",
+      "action": "missing",
+      "encoding": "multipart",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "unsupported",
+      "action": "unsupported-content-type",
+      "encoding": "unsupported",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "urlencoded-oversize",
+      "action": "over-bound",
+      "encoding": "urlencoded",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "multipart-oversize",
+      "action": "over-bound",
+      "encoding": "multipart",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "file-action",
+      "action": "invalid-action-type",
+      "encoding": "multipart",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "malformed-multipart",
+      "action": "parse-failed",
+      "encoding": "multipart",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    },
+    {
+      "name": "unknown-action",
+      "action": "other",
+      "encoding": "urlencoded",
+      "originalBodyPreserved": true,
+      "noSensitiveValueReturned": true
+    }
+  ],
+  "cloudRequests": 0
+}

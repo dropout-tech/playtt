@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-21T21:39:46.366572+00:00",
+  "result": "pass",
+  "basis": "Incremental cleanup-native assembly plus9 local diagnostics using existing83-source build. No dependency reinstall.",
+  "prerequisites": 136,
+  "newTools": 9,
+  "priorFilesUnchanged": 682,
+  "reapplyRefusedWithoutMutation": true,
+  "candidateSourceInstalledCentrally": false,
+  "runtimeSourcesChanged": 0,
+  "configsChanged": 0,
+  "cloudRequests": 0,
+  "deployed": false,
+  "productionChanged": false,
+  "finalAssemblyIncludesWhitespaceOnlyInspectorCorrection": true
+}

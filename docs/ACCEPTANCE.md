@@ -1,5 +1,12 @@
 # Let’s Play 驗收狀態
 
+## Ajax權限控制與heap持有分析（2026-11-22）
+
+本機原生multipart釋放文章鎖已捕捉到200／1，隨後登出302；明確未登入控制同動作400／0，heartbeat200／wp-auth-check:false，固定核心來源支持該權限邊界。11個有界分類器案例通過，不輸出nonce／cookie／原body。舊400缺action／auth證據仍未倒推歸因。三個副本資料／原session／媒體／主題精確，只允許owned edit lock與wp_options序列差異，均closed／sealed／pending0、exit0。
+
+兩份私人workerd heap約25MB，各有一個74,907,648bytes WASM、約31.43MB檔案backing；啟動資料陣列持有為0。snapshot self約123MB已含PHP，不能再次加上，也不能把可能GC後的數字當provider峰值。前輪143.5／145.6MiB完整編輯觀測仍未解；下一步定位操作期間短暫配置。中央來源及正式站不變、0雲端請求／部署，全案active。詳見experiments/cloudflare-wordpress/ajax-retained/README.md。
+
+
 ## 合併清理候選：原生保存／重啟資料通過，Ajax400與記憶體仍開放（2026-11-22）
 
 真正cb9302a8…六模組完成繁中原生編輯與單次保存（1,875bytes）、整個workerd關閉重啟、新分頁重讀及原生登出。十段內容／revision209精確，原usermeta／session、媒體與主題保留，獨立304物件／298檔及full materialization精確。最終LOCAL190、charged450,169／27puts、closed／sealed／pending0、外連0、exit0；正式站及cloud181不變。
