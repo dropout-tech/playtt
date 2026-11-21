@@ -1,3 +1,5 @@
+接續：[完整來源建置與原生繁中保存／重啟驗收](./preallocated-native/README.md)已通過；完整編輯記憶體仍待改善，中央候選及雲端未切換。
+
 接續：[冷啟動配置定位與預配置解壓候選](./cold-boot-preallocation/README.md)。候選尚未套用中央runtime或部署雲端。
 
 接續：[本機記憶體限制、WASM觀測校正及冷啟動線索](./local-memory-limits/README.md)。功能證據保留，未驗收provider記憶體。

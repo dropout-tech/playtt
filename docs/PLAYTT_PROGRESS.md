@@ -1,5 +1,16 @@
 # PLAYTT 執行進度
 
+## 預配置候選已完成完整來源與原生保存驗收（2026-11-22）
+
+冷啟動候選已從82來源／109vendor／9assets重新建置，型別檢查及Wrangler dry-run exit0。實際bundle39ea2670…逐字只含兩處預期修改，五個二進位模組精確，未混入診斷barrier。初次tsconfig造成的額外輸出差異已隔離並保留；第二次匹配原設定建置通過。
+
+實際繁中原生編輯／單次儲存草稿／完整workerd關閉重啟／新分頁重讀／登出通過。十段內容及新增修訂精確，原session／usermeta、媒體與主題不變；獨立備份304物件／298檔及full materialization核對精確。最終LOCAL190、charged450,147／27puts、closed／sealed／pending0、程序exit0，cloud仍181。
+
+runtime例外0。捕捉一筆global-styles GET403／rest_forbidden_context，對應固定核心edit-context權限分支，未放寬權限或歸因以前的未知錯誤。完整原生流程的最大觀測組成合計約141.1／142.5MiB，仍不能證明Cloudflare128MiB可用；本機不強制此限額，數字也不是provider尖峰。中央候選未採用、0雲端請求／部署，正式Pages／原視覺不變。
+
+接續損壞ZIP／串流失敗保護與完整編輯流程記憶體定位。全案A01–A20、長期免費、providerCPU／記憶體、實體IME等保持未完成。詳見experiments/cloudflare-wordpress/preallocated-native/README.md。
+
+
 ## 冷啟動記憶體候選已有實測（2026-11-22）
 
 用獨立LOCAL191備份只請求登入頁，七點量測定位ZIP雜湊的約6MB副本，以及縮檔先複製18.2MB再減少8.6MB容量的行為。隔離候選改為預配置檔案後串流解壓及直接對view算SHA；真正PHP8.3.36核對2,154核心檔案及8邊界檔的SHA／大小／mode完全一致，4個digest view案例也通過。

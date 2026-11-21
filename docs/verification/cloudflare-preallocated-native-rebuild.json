@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-21T20:34:24.667080+00:00",
+  "result": "pass",
+  "basis": "Incremental cold-boot-preallocation assembly plus6 local build/native tools. Separate205-input candidate source preparation checked exact. No dependency reinstall or cloud deployment.",
+  "prerequisites": 118,
+  "newTools": 6,
+  "priorFilesUnchanged": 664,
+  "reapplyRefusedWithoutMutation": true,
+  "separateSourcePreparationInputsExact": 205,
+  "candidateSourceInstalledCentrally": false,
+  "runtimeSourcesChanged": 0,
+  "configsChanged": 0,
+  "cloudRequests": 0,
+  "deployed": false,
+  "productionChanged": false
+}
