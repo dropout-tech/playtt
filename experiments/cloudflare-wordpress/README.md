@@ -1,5 +1,7 @@
 # Cloudflare WordPress 候選測試
 
+最新[完整HTTP採用](recovery-adoption/README.md)已接上有界讀取與pointer CAS，95測試及5個實際177備份本機重啟情境通過；unknown仍停止，尚未部署provider。以下保留前輪證據。
+
 最新[復原端點](recovery-uploads/README.md)已接入預設關閉的候選，85測試及5個實際本機workerd中斷／重啟情境通過；未知storage結果仍停止，pointer CAS／完整採用transport尚未完成。以下保留前輪證據。
 
 最新[採用程序與故障模型](legacy-adoption/README.md)完成17測試與4個實際備份模型；未知R2寫入會停止，遠端完成／ticket介面仍待，尚非雲端採用。以下保留前輪證據。

@@ -1,5 +1,13 @@
 # Let’s Play 驗收狀態
 
+## 完整HTTP復原採用已在實際本機Worker驗證（2026-11-22）
+
+新增operator有界讀取與pointer CAS：核對owned fence、協調器目標版本、來源／目標receipt及pins，再以精確來源與ETag條件更新；第三方值不覆寫。client持久記錄固定operationId與plan binding，保存完成後才送HTTP，foreign receipt不能結清；unknown仍保留pending。功能預設關閉、20設定不變。
+
+95項（93回歸＋2client）與tsc通過。實際177備份在5個新本機HTTP副本／5次完整程序重啟，驗證正常、採用後未送pointer、pointer回應遺失、結清失敗及R2未知。各432,931bytes／7puts；前4個closed／sealed／pending0，最後1個雖DO與R2都178仍pending1、拒封存。303目標物件驗證、2原fixture pins保留並新增第3個；非live14pins/provider故障。所有程序結束、外連0。
+
+本輪2個runtime檔修改、總82來源；正式Pages／原視覺不變、未部署／退款／放寬雲端額度／刪pin。PR4 draft、完整目標active。下一步刷新私人Cloudflare狀態及Free餘量，再評估受限provider採用／回退驗證與後台效能測量。最後雲端177／pin14／餘1,083,839仍為11/21 14:24:49Z舊讀值，不能拿本機178代替。詳見experiments/cloudflare-wordpress/recovery-adoption/README.md；以下保留歷史。
+
 ## 復原上傳端點已接入，本機 workerd 中斷／重啟通過（2026-11-21）
 
 新增預設關閉、僅限 private session-audit／restore-v1／default 的 operator 端點。固定 operationId 綁定 key／size／SHA；reservation 與 receipt 同交易保存，R2 確認後再以同交易結清自有 ticket。相同 ID 不重送；reserved／confirmed 才可接續，dispatching／unknown 保留 pending。只接受有界不可變物件，不更新 pointer；既有額度、窗口、封存與保守扣帳不變。

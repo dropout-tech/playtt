@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-21T16:06:41.046026+00:00",
+  "result": "pass",
+  "basis": "Verified recovery-uploads assembly plus pointer CAS/read/HTTP transport; not fresh upstream rebuild",
+  "sources": 82,
+  "sourceFilesModified": 2,
+  "sourceFilesAdded": 0,
+  "configsUnchanged": 20,
+  "deliveredFiles": 7,
+  "prerequisites": 102,
+  "helpers": 380,
+  "helpersMatchingRuntime": 379,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "typeScript": "pass",
+  "regressionTests": 93,
+  "clientTests": 2,
+  "totalTests": 95,
+  "localHttpAdoptionScenarios": 5,
+  "fullProcessRestarts": 5
+}

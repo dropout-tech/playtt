@@ -1,0 +1,10 @@
+✔ client journal must finish saving before any upload HTTP request (2.9981ms)
+✔ client registry corruption and foreign operation receipts cannot authorize owned-ticket reconciliation (29.4827ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 469.2092

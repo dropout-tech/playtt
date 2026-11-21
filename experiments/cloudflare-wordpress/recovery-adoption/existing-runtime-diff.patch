@@ -1,0 +1,170 @@
+--- a/src/playtt-recovery-uploads.ts
++++ b/src/playtt-recovery-uploads.ts
+@@ -1,2 +1,2 @@
+-// Private immutable-object staging only. This never adopts a revision, changes
+-// current.json, deletes data, refunds charges, or infers completion from R2 reads.
++// Private recovery writes. Pointer changes require a server-verified forward
++// adoption and exact R2 precondition. Never infer settlement from object reads.
+@@ -29 +29,6 @@
+-interface Identity { operationId: string; key: string; sha256: string; size: number }
++export interface RecoveryPointer { revision: string; manifestKey: string; persistedAt: string }
++export interface RecoveryTransition {
++  source: RecoveryPointer; target: RecoveryPointer;
++  sourceVersion: number; targetVersion: number; expectedEtag: string;
++}
++interface Identity { operationId: string; key: string; sha256: string; size: number; transition?: RecoveryTransition }
+@@ -69,0 +75,55 @@
++export function recoveryPointer(value: unknown): RecoveryPointer {
++  const p = value as RecoveryPointer;
++  need(p && isWriteToken(p.revision) && p.manifestKey === 'sites/default/markdown/revisions/' + p.revision + '.json'
++    && typeof p.persistedAt === 'string' && p.persistedAt.length <= 40 && /(?:Z|[+-]\d\d:\d\d)$/.test(p.persistedAt)
++    && Number.isFinite(Date.parse(p.persistedAt)), 400, 'Invalid recovery pointer.');
++  return { revision: p.revision, manifestKey: p.manifestKey, persistedAt: p.persistedAt };
++}
++export function recoveryTransition(value: unknown): RecoveryTransition {
++  const t = value as RecoveryTransition;
++  need(t && Number.isSafeInteger(t.sourceVersion) && t.sourceVersion >= 1
++    && Number.isSafeInteger(t.targetVersion) && t.targetVersion === t.sourceVersion + 1
++    && typeof t.expectedEtag === 'string' && /^[a-zA-Z0-9_-]{1,128}$/.test(t.expectedEtag), 400, 'Invalid recovery transition.');
++  const source = recoveryPointer(t.source), target = recoveryPointer(t.target);
++  need(source.revision !== target.revision, 400, 'Recovery requires a new revision.');
++  return { source, target, sourceVersion: t.sourceVersion, targetVersion: t.targetVersion, expectedEtag: t.expectedEtag };
++}
++const POINTER_KEY = 'sites/default/markdown/current.json';
++const identical = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
++const hash = async (bytes: Uint8Array) => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes as Uint8Array<ArrayBuffer>)), b => b.toString(16).padStart(2, '0')).join('');
++// Reads are bounded separately from upload limits; complete backups may include
++// an 8 MiB immutable base. Only known default-site snapshot paths are exposed.
++export async function readRecoveryObject(bucket: R2Bucket, key: string, limit: number): Promise<{ bytes: Uint8Array; etag: string } | null> {
++  const raw = /^sites\/default\/(markdown|uploads|wp-content)\/objects\/[a-f0-9]{64}$/.test(key);
++  const manifest = /^sites\/default\/markdown\/revisions\/[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}\.json$/.test(key);
++  const pack = /^sites\/default\/restore-packs\/[a-f0-9]{64}\.zip$/.test(key);
++  need(raw || manifest || pack || key === POINTER_KEY, 400, 'Unknown recovery object path.');
++  need(Number.isSafeInteger(limit) && limit >= 0 && limit <= 8 * 1024 * 1024, 413, 'Invalid read bound.');
++  const bound = Math.min(limit, manifest ? 256 * 1024 : key === POINTER_KEY ? 1024 : 8 * 1024 * 1024);
++  const object = await bucket.get(key); if (!object) return null;
++  const reader = object.body.getReader(); let length = 0; const chunks: Uint8Array[] = [];
++  try {
++    need(Number.isSafeInteger(object.size) && object.size >= 0 && object.size <= bound, 413, 'Recovery object exceeds the read bound.');
++    while (true) {
++      const next = await reader.read(); if (next.done) break;
++      length += next.value.byteLength; need(length <= bound && length <= object.size, 413, 'Recovery object exceeded its declared size.'); chunks.push(next.value);
++    }
++    need(length === object.size, 409, 'Recovery object size changed.');
++  } catch (error) { await reader.cancel().catch(() => undefined); throw error; }
++  finally { reader.releaseLock(); }
++  const bytes = new Uint8Array(length); let offset = 0;
++  for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
++  return { bytes, etag: object.etag };
++}
++export async function verifyRecoveryTransition(t: RecoveryTransition, coordinator: {
++  state: () => Promise<{ version: number; pointer: unknown }>;
++  committed: (version: number) => Promise<unknown>;
++  backupPins: () => Promise<{ pins: unknown[] }>;
++}): Promise<RecoveryTransition> {
++  const state = await coordinator.state();
++  const sourceReceipt = await coordinator.committed(t.sourceVersion), targetReceipt = await coordinator.committed(t.targetVersion), registry = await coordinator.backupPins();
++  need(state.version === t.targetVersion && identical(recoveryPointer(state.pointer), t.target)
++    && identical(recoveryPointer(sourceReceipt), t.source) && identical(recoveryPointer(targetReceipt), t.target), 409, 'Coordinator adoption or commit receipts differ.');
++  need([t.source, t.target].every(p => registry.pins.some(pin => identical(recoveryPointer(pin), p))), 409, 'Both source and adopted target must be pinned.');
++  return t;
++}
+@@ -101,0 +162,3 @@
++  if (r.transition !== undefined) {
++    need(r.key === POINTER_KEY && r.size <= 1024 && identical(recoveryTransition(r.transition), r.transition), 503, 'Pointer receipt is invalid.');
++  } else need(r.key !== POINTER_KEY, 503, 'Pointer receipt requires its transition.');
+@@ -120 +183 @@
+-  need(['object', 'reconcile'].includes(action), 404, 'Unknown recovery action.');
++  need(['object', 'pointer', 'reconcile'].includes(action), 404, 'Unknown recovery action.');
+@@ -122 +185 @@
+-  const input = await readRecoveryJson(request, action === 'object' ? RECOVERY_MAX_BODY : 2048);
++  const input = await readRecoveryJson(request, action === 'object' ? RECOVERY_MAX_BODY : 4096);
+@@ -127,2 +190,8 @@
+-  if (action === 'object') {
+-    const { identity, bytes } = await uploadInput(input);
++  if (action === 'object' || action === 'pointer') {
++    let identity: Identity, bytes: Uint8Array;
++    if (action === 'pointer') {
++      const transition = recoveryTransition(input.transition);
++      need(identical(transition, input.pointerProof), 409, 'A server-verified adoption proof is required.');
++      bytes = new TextEncoder().encode(JSON.stringify(transition.target));
++      identity = { operationId: id, key: POINTER_KEY, sha256: await hash(bytes), size: bytes.length, transition };
++    } else ({ identity, bytes } = await uploadInput(input));
+@@ -130 +199,2 @@
+-      need(['key', 'sha256', 'size'].every(k => receipt![k as keyof Identity] === identity[k as keyof Identity]), 409, 'Operation identity is already bound to different bytes.');
++      need(['key', 'sha256', 'size'].every(k => receipt![k as keyof Identity] === identity[k as keyof Identity])
++        && identical(receipt.transition ?? null, identity.transition ?? null), 409, 'Operation identity is already bound to different bytes or conditions.');
+@@ -133,0 +204,6 @@
++    }
++    if (identity.transition) {
++      const current = await readRecoveryObject(host.bucket, POINTER_KEY, 1024);
++      need(current && current.etag === identity.transition.expectedEtag, 409, 'R2 pointer precondition differs.');
++      let actual: unknown; try { actual = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(current.bytes)); } catch { throw new PlayttRecoveryError(409, 'R2 pointer is invalid.'); }
++      need(identical(recoveryPointer(actual), identity.transition.source), 409, 'R2 pointer differs from the exact source.');
+@@ -155 +231 @@
+-      try { result = await host.bucket.put(identity.key, bytes, { onlyIf: { etagDoesNotMatch: '*' } }); }
++      try { result = await host.bucket.put(identity.key, bytes, { onlyIf: identity.transition ? { etagMatches: identity.transition.expectedEtag } : { etagDoesNotMatch: '*' } }); }
+@@ -185,0 +262,2 @@
++  verifyTransition?: (transition: RecoveryTransition) => Promise<RecoveryTransition>;
++  readObject?: (key: string, limit: number) => Promise<{ bytes: Uint8Array; etag: string } | null>;
+@@ -192,0 +271,7 @@
++    if (action === 'read' && request.method === 'GET') {
++      need(services.readObject, 404, 'Recovery reads are disabled.');
++      const rawLimit = url.searchParams.get('maxBytes'); need(rawLimit !== null && /^(0|[1-9][0-9]{0,7})$/.test(rawLimit), 400, 'Invalid read bound.');
++      const object = await services.readObject(url.searchParams.get('key') ?? '', Number(rawLimit));
++      if (!object) return new Response('Object not found', { status: 404, headers });
++      return new Response(Uint8Array.from(object.bytes).buffer, { headers: { ...headers, 'Content-Type': 'application/octet-stream', 'Content-Length': String(object.bytes.length), 'X-Playtt-Recovery-Etag': object.etag } });
++    }
+@@ -198 +283 @@
+-      need(['object', 'reconcile'].includes(action), 404, 'Unknown recovery action.');
++      need(['object', 'pointer', 'reconcile'].includes(action), 404, 'Unknown recovery action.');
+@@ -200 +285 @@
+-      const input = await readRecoveryJson(request, action === 'object' ? RECOVERY_MAX_BODY : 2048);
++      const input = await readRecoveryJson(request, action === 'object' ? RECOVERY_MAX_BODY : 4096);
+@@ -203 +288 @@
+-      const fenceProof = await services.renewFence(input.fenceToken);
++      let fenceProof = await services.renewFence(input.fenceToken);
+@@ -205 +290 @@
+-      const payload = action === 'object'
++      let payload: object = action === 'object'
+@@ -207,0 +293,7 @@
++      if (action === 'pointer') {
++        need(services.verifyTransition, 404, 'Recovery pointer updates are disabled.');
++        const transition = recoveryTransition(input.transition), pointerProof = await services.verifyTransition(transition);
++        fenceProof = await services.renewFence(input.fenceToken);
++        need(fenceProof.token === input.fenceToken, 409, 'Fence owner differs.');
++        payload = { operationId: id, transition, pointerProof, fenceProof };
++      }
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -6 +6 @@
+-import { RECOVERY_PREFIX, routeRecoveryRequest } from './playtt-recovery-uploads.js';
++import { RECOVERY_PREFIX, routeRecoveryRequest, readRecoveryObject, verifyRecoveryTransition } from './playtt-recovery-uploads.js';
+@@ -142,0 +143,2 @@
++        verifyTransition: transition => verifyRecoveryTransition(transition, new DurableObjectRevisionCoordinator(env.WORDPRESS_STATE.getByName(partitionName(env, site.id)), site.id)),
++        readObject: (key, limit) => readRecoveryObject(env.WORDPRESS_STATE_BUCKET, key, limit),
+--- a/tests/helpers/playtt-recovery-fixture.ts
++++ b/tests/helpers/playtt-recovery-fixture.ts
+@@ -4 +4 @@
+-import { routeRecoveryRequest } from '../../src/playtt-recovery-uploads.js';
++import { routeRecoveryRequest, readRecoveryObject, verifyRecoveryTransition } from '../../src/playtt-recovery-uploads.js';
+@@ -13,0 +14,2 @@
++  const pointerState: any = { state: null, receipts: new Map(), pins: [] };
++  let pointerRace = false;
+@@ -31,0 +34 @@
++    async get(key: string) { const bytes = data.get(key); return bytes ? { size: bytes.length, etag: createHash('sha256').update(bytes).digest('hex'), body: new Blob([bytes]).stream() } : null; },
+@@ -33,2 +36,5 @@
+-      assert.deepEqual(options.onlyIf, { etagDoesNotMatch: '*' }); puts++;
+-      if (data.has(key)) return null;
++      puts++;
++      if (key.endsWith('/current.json')) {
++        if (pointerRace) { pointerRace = false; data.set(key, new TextEncoder().encode(JSON.stringify({ ...pointerState.state.pointer, revision: crypto.randomUUID() }))); }
++        const current = data.get(key); if (!current || createHash('sha256').update(current).digest('hex') !== (options.onlyIf as R2Conditional)?.etagMatches) return null;
++      } else { assert.deepEqual(options.onlyIf, { etagDoesNotMatch: '*' }); if (data.has(key)) return null; }
+@@ -57,0 +64,2 @@
++    readObject: (key, limit) => readRecoveryObject(raw, key, limit),
++    verifyTransition: transition => verifyRecoveryTransition(transition, { state: async () => pointerState.state, committed: async v => pointerState.receipts.get(v), backupPins: async () => ({ pins: pointerState.pins }) }),
+@@ -63 +71,2 @@
+-  return { env, values, data, call, route, internal, restart, status, receipt, fenceToken, drain, window,
++  return { env, values, data, call, route, internal, restart, status, receipt, fenceToken, drain, window, pointerState,
++    racePointer: () => { pointerRace = true; },
