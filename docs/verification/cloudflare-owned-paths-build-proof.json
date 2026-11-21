@@ -1,0 +1,19 @@
+{
+  "schema": "playtt/owned-paths-build-proof/v1",
+  "at": "2026-11-21T22:25:51.536448+00:00",
+  "result": "pass",
+  "sourceCount": 83,
+  "sourceInputs": 206,
+  "loadedSourceCount": 71,
+  "candidateSha256": "b95446e9faeb1813fb25083421923f553fa45b83772733bce083f92b1c066198",
+  "candidateWorkerSha256": "d720192f15ca3a456de4732f0945c1bef83f3cda164da4b345ad9405558d02f6",
+  "baselineBundleSha256": "d3a78fa46ba73861129bd9596b18ef93e1e545476e6d3471ac2a8f345b783e1a",
+  "bundleSha256": "b30c55a65ce4a33aa6e6c7e7894bfa0643d64a59f748c3f3fa125bf5d1930af3",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "exactScopedCompiledChanges": true,
+  "unchangedBinaryModules": 5,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

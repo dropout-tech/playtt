@@ -1,0 +1,587 @@
+{
+  "schema": "playtt/owned-paths-allocation/v1",
+  "at": "2026-11-21T22:25:28.887Z",
+  "result": "pass",
+  "sourceHashes": {
+    "baseline": "0f67fe2b2e198b9665c0d9d1858d7557ab552d877b5165b89c47c9e719546a5d",
+    "candidate": "b95446e9faeb1813fb25083421923f553fa45b83772733bce083f92b1c066198"
+  },
+  "inventoryFiles": 413,
+  "pathsChecked": 414,
+  "ownedInputPaths": 2,
+  "iterations": 20,
+  "payloadSha256": "09e5117a8f36d404fb98dfb8b640eff8e59b39b05e1eb28f1e5823992d8063d0",
+  "runs": [
+    {
+      "index": 0,
+      "variant": "baseline",
+      "profileBytes": 42642,
+      "profileSha256": "bdb29a044979885da2c4f8d9423017074ad1c5ea876e8ddcdbc8a5eb6bf33ab8",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 54,
+      "samples": 857,
+      "selfBytes": 28131076,
+      "sampleSizeSum": 28130808,
+      "ownershipSelfBytes": 5870484,
+      "topFunctions": [
+        {
+          "functionName": "runtimeOwnedWpContentPaths",
+          "attributedSelfBytes": 5870484
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 4752824
+        },
+        {
+          "functionName": "isCanonicalWpContentPath",
+          "attributedSelfBytes": 4491812
+        },
+        {
+          "functionName": "siteStorageKeys",
+          "attributedSelfBytes": 3803360
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 3770940
+        },
+        {
+          "functionName": "Set",
+          "attributedSelfBytes": 2955248
+        },
+        {
+          "functionName": "validateWpContentManifestFiles",
+          "attributedSelfBytes": 1181268
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 518440
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 327780
+        },
+        {
+          "functionName": "validateWpContentMetadata",
+          "attributedSelfBytes": 295000
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "has",
+          "attributedSelfBytes": 32800
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "some",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "validateWpContentDeletedPaths",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 709144,
+        "totalSize": 1187840,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "after": {
+        "usedSize": 715460,
+        "totalSize": 3670016,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "wallMs": 92.255,
+      "result": {
+        "included": 8260,
+        "iterations": 20,
+        "files": 413
+      }
+    },
+    {
+      "index": 1,
+      "variant": "candidate",
+      "profileBytes": 21014,
+      "profileSha256": "87daf6a312279f3a25d39e146165ae95f20af7b610688315b3d176cdd1017ecc",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 30,
+      "samples": 412,
+      "selfBytes": 13535276,
+      "sampleSizeSum": 13531764,
+      "ownershipSelfBytes": 0,
+      "topFunctions": [
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 3441764
+        },
+        {
+          "functionName": "isCanonicalWpContentPath",
+          "attributedSelfBytes": 2786376
+        },
+        {
+          "functionName": "siteStorageKeys",
+          "attributedSelfBytes": 2590344
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 2099104
+        },
+        {
+          "functionName": "validateWpContentManifestFiles",
+          "attributedSelfBytes": 1541904
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 584020
+        },
+        {
+          "functionName": "validateWpContentMetadata",
+          "attributedSelfBytes": 229460
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 98340
+        },
+        {
+          "functionName": "has",
+          "attributedSelfBytes": 32844
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "some",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "validateWpContentDeletedPaths",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 718024,
+        "totalSize": 1449984,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "after": {
+        "usedSize": 1252128,
+        "totalSize": 3670016,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "wallMs": 61.993000000000166,
+      "result": {
+        "included": 8260,
+        "iterations": 20,
+        "files": 413
+      }
+    },
+    {
+      "index": 2,
+      "variant": "candidate",
+      "profileBytes": 20043,
+      "profileSha256": "f24b615d9c5be226edff38d8c59ee9756532c6b8db624c62cc313d86c50b929f",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 27,
+      "samples": 398,
+      "selfBytes": 13066004,
+      "sampleSizeSum": 13066184,
+      "ownershipSelfBytes": 0,
+      "topFunctions": [
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 2982948
+        },
+        {
+          "functionName": "siteStorageKeys",
+          "attributedSelfBytes": 2885384
+        },
+        {
+          "functionName": "isCanonicalWpContentPath",
+          "attributedSelfBytes": 2261888
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 2033452
+        },
+        {
+          "functionName": "validateWpContentManifestFiles",
+          "attributedSelfBytes": 1804268
+        },
+        {
+          "functionName": "validateWpContentMetadata",
+          "attributedSelfBytes": 295020
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 262220
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 244800
+        },
+        {
+          "functionName": "startsWith",
+          "attributedSelfBytes": 98452
+        },
+        {
+          "functionName": "has",
+          "attributedSelfBytes": 65612
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 65560
+        },
+        {
+          "functionName": "test",
+          "attributedSelfBytes": 33600
+        },
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 32800
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "some",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 718024,
+        "totalSize": 1449984,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "after": {
+        "usedSize": 1271824,
+        "totalSize": 3670016,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "wallMs": 60.465400000000045,
+      "result": {
+        "included": 8260,
+        "iterations": 20,
+        "files": 413
+      }
+    },
+    {
+      "index": 3,
+      "variant": "baseline",
+      "profileBytes": 41824,
+      "profileSha256": "902e2fcf224a63b17a06500e0f676aca3a095aaa934e95ffd1ed695f9101612a",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 53,
+      "samples": 840,
+      "selfBytes": 27576240,
+      "sampleSizeSum": 27575160,
+      "ownershipSelfBytes": 7083508,
+      "topFunctions": [
+        {
+          "functionName": "runtimeOwnedWpContentPaths",
+          "attributedSelfBytes": 7083508
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 4752852
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 4072000
+        },
+        {
+          "functionName": "isCanonicalWpContentPath",
+          "attributedSelfBytes": 3508028
+        },
+        {
+          "functionName": "Set",
+          "attributedSelfBytes": 3051528
+        },
+        {
+          "functionName": "siteStorageKeys",
+          "attributedSelfBytes": 2459072
+        },
+        {
+          "functionName": "validateWpContentManifestFiles",
+          "attributedSelfBytes": 1607508
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 393340
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 386160
+        },
+        {
+          "functionName": "validateWpContentMetadata",
+          "attributedSelfBytes": 196680
+        },
+        {
+          "functionName": "values",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 32780
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "some",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "validateWpContentDeletedPaths",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 709144,
+        "totalSize": 1187840,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "after": {
+        "usedSize": 715492,
+        "totalSize": 3932160,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "wallMs": 88.69129999999996,
+      "result": {
+        "included": 8260,
+        "iterations": 20,
+        "files": 413
+      }
+    },
+    {
+      "index": 4,
+      "variant": "baseline",
+      "profileBytes": 43164,
+      "profileSha256": "002a941c8f5e688b9bb8b853298a72e8d972b2687e2c9abf3aa0c6aa95b70f0d",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 46,
+      "samples": 898,
+      "selfBytes": 29483840,
+      "sampleSizeSum": 29485496,
+      "ownershipSelfBytes": 6788664,
+      "topFunctions": [
+        {
+          "functionName": "runtimeOwnedWpContentPaths",
+          "attributedSelfBytes": 6788664
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 4949536
+        },
+        {
+          "functionName": "isCanonicalWpContentPath",
+          "attributedSelfBytes": 4426008
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 4164272
+        },
+        {
+          "functionName": "siteStorageKeys",
+          "attributedSelfBytes": 3049168
+        },
+        {
+          "functionName": "Set",
+          "attributedSelfBytes": 2854760
+        },
+        {
+          "functionName": "validateWpContentManifestFiles",
+          "attributedSelfBytes": 1968476
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 522640
+        },
+        {
+          "functionName": "validateWpContentMetadata",
+          "attributedSelfBytes": 295020
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 262240
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 98340
+        },
+        {
+          "functionName": "has",
+          "attributedSelfBytes": 71884
+        },
+        {
+          "functionName": "startsWith",
+          "attributedSelfBytes": 32832
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "some",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 709144,
+        "totalSize": 1187840,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "after": {
+        "usedSize": 684060,
+        "totalSize": 3670016,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "wallMs": 88.5925000000002,
+      "result": {
+        "included": 8260,
+        "iterations": 20,
+        "files": 413
+      }
+    },
+    {
+      "index": 5,
+      "variant": "candidate",
+      "profileBytes": 20660,
+      "profileSha256": "9ce24e2ce3caae43195f1fab9e8178c0a284acae5577fb0eb506f0178299ac81",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "nodes": 30,
+      "samples": 402,
+      "selfBytes": 13216952,
+      "sampleSizeSum": 13223724,
+      "ownershipSelfBytes": 0,
+      "topFunctions": [
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 3114028
+        },
+        {
+          "functionName": "siteStorageKeys",
+          "attributedSelfBytes": 2590292
+        },
+        {
+          "functionName": "isCanonicalWpContentPath",
+          "attributedSelfBytes": 2327464
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 2203592
+        },
+        {
+          "functionName": "validateWpContentManifestFiles",
+          "attributedSelfBytes": 1836920
+        },
+        {
+          "functionName": "add",
+          "attributedSelfBytes": 521840
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 327800
+        },
+        {
+          "functionName": "validateWpContentMetadata",
+          "attributedSelfBytes": 229460
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 32780
+        },
+        {
+          "functionName": "startsWith",
+          "attributedSelfBytes": 32776
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "some",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "validateWpContentDeletedPaths",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "before": {
+        "usedSize": 718024,
+        "totalSize": 1449984,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "after": {
+        "usedSize": 1334948,
+        "totalSize": 3670016,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "wallMs": 60.72900000000027,
+      "result": {
+        "included": 8260,
+        "iterations": 20,
+        "files": 413
+      }
+    }
+  ],
+  "cloudRequests": 0,
+  "outboundAttempts": 0,
+  "centralSourceChanged": false,
+  "productionChanged": false,
+  "scope": "Six fresh local workerd controls. Twenty repetitions of identical validators and path decisions over pinned core inventories; no PHP or website state.",
+  "limitations": [
+    "Cumulative sampled JS allocations including collected objects; not live peak, billed CPU, RSS or provider admission.",
+    "Prepared snapshot created before sampling once, matching module startup; baseline list remains validated per call.",
+    "Twenty repetitions amplify the target for measurement and do not represent the number of native-save calls.",
+    "HeapUsage before/after can cross GC and is not a peak measurement."
+  ]
+}

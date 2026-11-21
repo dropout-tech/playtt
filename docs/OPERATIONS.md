@@ -1,5 +1,12 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 系統檔案清單預先驗證候選（2026-11-22）
+
+最終候選以primitive string驗證、複製／凍結及私有WeakSet標記系統清單，省去逐檔重建；一般可變或偽造清單仍完整驗證。1,049一般比較／945prepared比較、六個workerd配置控制與83來源完整建置通過。受控驗證工作累計JS配置約減半，非整體尖峰改善比例。
+
+最終原生保存／完整重啟／登出／304物件298檔獨立備份精確，LOCAL190、450,079bytes／27puts、closed/sealed/pending0。重啟後一筆無frame的Network connection lost仍未歸因，初次零例外稽核失敗保留；資料流程通過不代表整體穩定。觀測約144.4／144.8MiB仍未通過免費記憶體驗收。中央及正式站不變、0雲端請求／部署。詳見[實作與限制](../experiments/cloudflare-wordpress/owned-paths/README.md)。
+
+
 ## 編輯器位元組修補候選（2026-11-22）
 
 原生配置 stack 定位到 editor.min.js 修補的完整字串副本。隔離候選改用位元組尋找／複製，保留輸入／輸出 SHA；9項測試、83來源完整建置及原生保存／重啟／登出／獨立備份均通過。六個控制副本中 baseline 函式各3,149,500累計 sampled bytes，candidate無達尺度配置；輸出完全相同，這不代表零配置或整體尖峰通過。
