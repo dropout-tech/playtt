@@ -1,5 +1,14 @@
 # PLAYTT 執行進度
 
+## 路徑處理單行候選與原生配對量測（2026-11-22）
+
+從JS分配樣本定位FS.lookupPath每段重做正規化；候選只改成已處理片段的字串串接，不快取節點、不改檔案權限或PHP/WASM。固定PHP的1,876案例逐項與原版一致，涵蓋symlink／mount／cwd／改名刪除及PHP繁中讀寫。完整來源兩次dry-run輸出只差1條statement、5二進位模組相同。
+
+兩份新本機181備份各完成三次原生畫布與登出；採樣窗8請求順序／method／status／version精確相同。累計JS抽樣歸屬103,185,812→62,450,276bytes（約少39.5%），不是整體記憶體／雲端尖峰或穩定加速結論。配對副本各LOCAL190、304物件／298檔精確、closed／sealed／pending0／程序結束；只變edit_lock及options序列。原例外未重現，仍未分類。
+
+中央runtime／正式Pages／原視覺不變，0Cloudflare請求／部署；原型只在獨立候選。下一步驗證候選正文儲存與完整重啟重讀再評估採用。雲端最後仍181／pin16／餘62,344，不重開完整雲端寫入。全目標active、PR4 draft。詳見experiments/cloudflare-wordpress/path-join/README.md。
+
+
 ## 原生編輯器保留記憶體已核對（2026-11-22）
 
 同雲端181／97a92c8固定模組，本機同程序原生draft193三次畫布皆十段及已儲存；首／第三次快照self_size為116.92／117.03MiB，backing增量0、self增113,668bytes。實際物件關係證明70.875MiB PHP buffer已計入快照，不可重複相加；CDP backing單值亦不可當整體用量。快照可能GC，不是provider尖峰、128MiB或長期免費驗收。

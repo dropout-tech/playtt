@@ -1,3 +1,5 @@
+最新本機選用候選：[path-join](path-join/README.md)。先產生原固定PHP loader，再在獨立目錄執行`python path-join/apply-loader-candidate.py --runtime <runtime> --apply`；核對完整SHA，只改1條statement。此候選尚未部署或採用到中央runtime，完整保存／重啟驗證仍待；舊回復建置保持原generator。
+
 # 從固定上游重建目前候選
 
 2026-11-21最新：`markdown-write/` 同一來源新增12個provider／診斷工具與測試，第12階段仍只採同一份runtime patch；25+12階段重建77來源／131輔助檔、20設定不變，重複套用先拒絕。本輪來源仍67dd308，私人最終部署9f5aa2c1已停用暫時旗標。證據 `docs/verification/cloudflare-markdown-provider-reassembly.json`；下方原119輔助檔為前輪紀錄。

@@ -1,0 +1,340 @@
+{
+  "schema": "playtt/local-allocation-audit/v1",
+  "at": "2026-11-21T18:10:58.748347+00:00",
+  "result": "analyzed",
+  "scope": "Sampled JS allocations across two warm native editor reloads; includes objects collected during sampling, not simultaneous heap, PHP allocator, RSS, provider peak or billed CPU",
+  "profileBytes": 258759,
+  "profileSha256": "08601768cee086586c144e11ed2a3ff9702f0f366902a22679df6cb213e5850e",
+  "options": {
+    "samplingInterval": 32768,
+    "includeObjectsCollectedByMajorGC": true,
+    "includeObjectsCollectedByMinorGC": true
+  },
+  "elapsedMs": 21317,
+  "profileNodes": 830,
+  "samples": 3128,
+  "nodeAttributedSelfBytes": 106061820,
+  "sampleAttributedSizeSum": 105743304,
+  "metricCaveat": "Node selfSize and sample sizes are separate sampling outputs; do not add them, equate them to retained bytes, or infer exact allocation/peak from sampling.",
+  "topFunctions": [
+    {
+      "function": "split",
+      "attributedSelfBytes": 19373392
+    },
+    {
+      "function": "(anonymous)",
+      "attributedSelfBytes": 18236888
+    },
+    {
+      "function": "lookupPath",
+      "attributedSelfBytes": 17576852
+    },
+    {
+      "function": "join",
+      "attributedSelfBytes": 8175084
+    },
+    {
+      "function": "writeStat",
+      "attributedSelfBytes": 5178468
+    },
+    {
+      "function": "getattr",
+      "attributedSelfBytes": 5147692
+    },
+    {
+      "function": "next",
+      "attributedSelfBytes": 3835060
+    },
+    {
+      "function": "js_fd_read",
+      "attributedSelfBytes": 3116712
+    },
+    {
+      "function": "subarray",
+      "attributedSelfBytes": 2526392
+    },
+    {
+      "function": "validatePlayttSnapshotSources",
+      "attributedSelfBytes": 1804164
+    },
+    {
+      "function": "open",
+      "attributedSelfBytes": 1704772
+    },
+    {
+      "function": "filter",
+      "attributedSelfBytes": 1214464
+    },
+    {
+      "function": "from",
+      "attributedSelfBytes": 1196652
+    },
+    {
+      "function": "base64",
+      "attributedSelfBytes": 1077296
+    },
+    {
+      "function": "visit",
+      "attributedSelfBytes": 1016432
+    },
+    {
+      "function": "fstat",
+      "attributedSelfBytes": 885380
+    },
+    {
+      "function": "Asyncify.handleSleep",
+      "attributedSelfBytes": 759876
+    },
+    {
+      "function": "getTime",
+      "attributedSelfBytes": 753804
+    },
+    {
+      "function": "(V8 API)",
+      "attributedSelfBytes": 688592
+    },
+    {
+      "function": "entries",
+      "attributedSelfBytes": 591328
+    },
+    {
+      "function": "add",
+      "attributedSelfBytes": 544040
+    },
+    {
+      "function": "streamToBytes",
+      "attributedSelfBytes": 524612
+    },
+    {
+      "function": "prepareCompressedContent",
+      "attributedSelfBytes": 518308
+    },
+    {
+      "function": "remember",
+      "attributedSelfBytes": 484564
+    },
+    {
+      "function": "persistRuntime",
+      "attributedSelfBytes": 481956
+    }
+  ],
+  "pathFunctionsAttributedSelfBytes": 45125328,
+  "pathCallsites": [
+    {
+      "function": "lookupPath",
+      "attributedSelfBytes": 3542032,
+      "ancestors": [
+        "(anonymous)",
+        "invoke_ii",
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_stat64"
+      ]
+    },
+    {
+      "function": "lookupPath",
+      "attributedSelfBytes": 2721472,
+      "ancestors": [
+        "invoke_ii",
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_openat",
+        "open"
+      ]
+    },
+    {
+      "function": "lookupPath",
+      "attributedSelfBytes": 2328048,
+      "ancestors": [
+        "(anonymous)",
+        "invoke_ii",
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_lstat64"
+      ]
+    },
+    {
+      "function": "split",
+      "attributedSelfBytes": 2327352,
+      "ancestors": [
+        "invoke_ii",
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_stat64",
+        "lookupPath"
+      ]
+    },
+    {
+      "function": "lookupPath",
+      "attributedSelfBytes": 1672552,
+      "ancestors": [
+        "filter",
+        "(anonymous)",
+        "isDir",
+        "(anonymous)",
+        "isDir",
+        "(anonymous)",
+        "fileExists"
+      ]
+    },
+    {
+      "function": "lookupPath",
+      "attributedSelfBytes": 1540992,
+      "ancestors": [
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "invoke_iii",
+        "___syscall_openat",
+        "open"
+      ]
+    },
+    {
+      "function": "split",
+      "attributedSelfBytes": 1540640,
+      "ancestors": [
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_openat",
+        "open",
+        "lookupPath"
+      ]
+    },
+    {
+      "function": "split",
+      "attributedSelfBytes": 1475076,
+      "ancestors": [
+        "invoke_ii",
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_lstat64",
+        "lookupPath"
+      ]
+    },
+    {
+      "function": "split",
+      "attributedSelfBytes": 1442316,
+      "ancestors": [
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_stat64",
+        "lookupPath",
+        "(anonymous)"
+      ]
+    },
+    {
+      "function": "join",
+      "attributedSelfBytes": 1016696,
+      "ancestors": [
+        "invoke_ii",
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_stat64",
+        "lookupPath"
+      ]
+    },
+    {
+      "function": "join",
+      "attributedSelfBytes": 950912,
+      "ancestors": [
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_stat64",
+        "lookupPath",
+        "(anonymous)"
+      ]
+    },
+    {
+      "function": "split",
+      "attributedSelfBytes": 950628,
+      "ancestors": [
+        "collectWpContentFiles",
+        "filter",
+        "(anonymous)",
+        "isDir",
+        "(anonymous)",
+        "isDir",
+        "lookupPath"
+      ]
+    },
+    {
+      "function": "split",
+      "attributedSelfBytes": 917856,
+      "ancestors": [
+        "(anonymous)",
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_lstat64",
+        "lookupPath",
+        "(anonymous)"
+      ]
+    },
+    {
+      "function": "lookupPath",
+      "attributedSelfBytes": 885532,
+      "ancestors": [
+        "(anonymous)",
+        "collectWpContentFiles",
+        "filter",
+        "(anonymous)",
+        "isDir",
+        "(anonymous)",
+        "isDir"
+      ]
+    },
+    {
+      "function": "split",
+      "attributedSelfBytes": 786712,
+      "ancestors": [
+        "js-to-wasm:ii:i",
+        "invoke_iiiii",
+        "(anonymous)",
+        "___syscall_openat",
+        "open",
+        "lookupPath",
+        "(anonymous)"
+      ]
+    }
+  ],
+  "lookupPathSource": {
+    "bundleSha256": "95caf86b252b184cf9219654b1323af035529b73099bb05e3b39b8a470bf9324",
+    "line": 18432,
+    "declarationVerified": true
+  },
+  "requestsDuringSampling": 8,
+  "requestCategories": {
+    "ajax": 2,
+    "post-editor": 2,
+    "other": 2,
+    "rest": 2
+  },
+  "requestStatusCounts": {
+    "200": 6,
+    "302": 2
+  },
+  "capturedExceptionsThisRun": 0,
+  "priorExceptionResolved": false,
+  "cloudRequests": 0,
+  "runtimeSourceChanged": false,
+  "rawProfilePrivate": true
+}
