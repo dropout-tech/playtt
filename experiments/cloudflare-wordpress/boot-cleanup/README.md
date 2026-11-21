@@ -1,3 +1,5 @@
+接續：[合併候選的原生保存／完整重啟資料驗收](../cleanup-native/README.md)通過；一筆Ajax400未分類，完整記憶體問題仍開放，中央及雲端未切換。
+
 # WordPress 啟動失敗清理與重試
 
 2026-11-22（台北）。補齊預配置解壓的損壞 ZIP／I/O 保護測試後，發現固定版 WordPress boot API 在建立 handler 之後、初始化失敗時沒有明確 dispose。這次提供一個**隔離候選修正**：取得 handler 後擁有失敗清理責任；成功時仍交給既有 runtime cache 管理。中央來源與 Cloudflare 均未採用，正式 Pages／原站視覺維持現況。

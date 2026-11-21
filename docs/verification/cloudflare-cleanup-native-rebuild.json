@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-21T21:18:49.023523+00:00",
+  "result": "pass",
+  "basis": "Incremental boot-cleanup assembly plus4 native-flow tools using existing verified83-source build. No dependency reinstall.",
+  "prerequisites": 132,
+  "newTools": 4,
+  "priorFilesUnchanged": 678,
+  "reapplyRefusedWithoutMutation": true,
+  "candidateSourceInstalledCentrally": false,
+  "runtimeSourcesChanged": 0,
+  "configsChanged": 0,
+  "cloudRequests": 0,
+  "deployed": false,
+  "productionChanged": false
+}

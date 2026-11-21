@@ -1,5 +1,14 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 合併清理候選：原生保存／重啟資料通過，Ajax400與記憶體仍開放（2026-11-22）
+
+真正cb9302a8…六模組完成繁中原生編輯與單次保存（1,875bytes）、整個workerd關閉重啟、新分頁重讀及原生登出。十段內容／revision209精確，原usermeta／session、媒體與主題保留，獨立304物件／298檔及full materialization精確。最終LOCAL190、charged450,169／27puts、closed／sealed／pending0、外連0、exit0；正式站及cloud181不變。
+
+1,445samples／226requests、runtime例外0。global-styles403已分類；logout附近另有Ajax POST400，缺action／回應證據，原因與功能影響未證明，不能當成全部HTTP正常。離線audit保留首次失敗並縮明其證據範圍為資料流程。最大觀測組成約143.5／145.6MiB，仍未證明免費記憶體可行；本機不強制Cloudflare限制，非provider尖峰或配對效能結論。
+
+接續有界Ajax400診斷與完整編輯配置定位。中央來源未採用候選、0provider請求／部署、全案goal active。詳見experiments/cloudflare-wordpress/cleanup-native/README.md。
+
+
 ## 啟動失敗清理候選與同容器重試（2026-11-22）
 
 預配置解壓補齊35個實際PHP損壞ZIP／I/O／guard案例。發現固定WordPress boot API取得handler後失敗未明確dispose，新增隔離helper與worker整合，6個生命週期案例通過。成功仍由caller持有，失敗dispose後保留原error，清理失敗保留兩個error；handler回傳前的dependency建構失敗不在此責任範圍。
