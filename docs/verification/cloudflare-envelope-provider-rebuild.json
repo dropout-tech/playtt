@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-21T14:27:40.054365+00:00",
+  "result": "pass",
+  "basis": "Prior verified manifest-workflow assembly plus bounded provider tools; no upstream rebuild",
+  "sources": 81,
+  "sourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "sourcesUnchanged": true,
+  "configsUnchanged": 20,
+  "newFiles": 11,
+  "prerequisites": 85,
+  "allPriorAssemblyFilesUnchanged": true,
+  "helpers": 358,
+  "helpersMatchingRuntime": 357,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "assemblyCloudRequests": 0,
+  "privateDeploymentsThisStage": 3,
+  "productionChanged": false
+}

@@ -1,0 +1,10 @@
+✔ partial and stale replies do not replay a command or satisfy a fresh ID (913.607ms)
+✔ an existing command is rejected without overwriting its identity (91.2495ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1142.651

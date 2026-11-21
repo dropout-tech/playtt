@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-21T14:18:13.998Z",
+  "beforeExact": true,
+  "saveClicks": 1,
+  "editedAt": "2026-11-21T14:18:13.998Z",
+  "baselineParagraphs": 8,
+  "expectedParagraphs": 9,
+  "source": "native browser visible UI, exact textarea precheck",
+  "saveStartedAt": "2026-11-21T14:19:53.896Z",
+  "savedUi": true,
+  "coldReopenStartedAt": "2026-11-21T14:21:31.045Z",
+  "coldParagraphCount": 9,
+  "coldParagraphsExact": true,
+  "coldReopenVerifiedAt": "2026-11-21T14:21:49.931Z",
+  "logoutStartedAt": "2026-11-21T14:22:05.760Z",
+  "logoutSucceeded": true,
+  "logoutVerifiedAt": "2026-11-21T14:22:11.209Z",
+  "ownedBrowserTabClosed": true
+}

@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-21T14:21:23.914Z",
+  "result": "pass",
+  "mode": "cold",
+  "worker": "playtt-wp-free-session-audit",
+  "version": "71bcd451-db1b-442e-b944-f18b0af49109",
+  "canonicalVersion": 175,
+  "revision": "dd6f6792-b179-4495-8bda-cd713c2fbf54",
+  "pins": 13,
+  "publisher": "paused",
+  "sealed": true,
+  "pending": 0,
+  "windowClosed": false,
+  "fenceActive": true,
+  "remainingBytes": 1183524,
+  "optionalWritersEnabled": true,
+  "heartbeatEnabled": true,
+  "allExpectedBindingsExact": true,
+  "checks": [
+    {
+      "kind": "deployment",
+      "status": 200
+    },
+    {
+      "kind": "deployment",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    }
+  ],
+  "remoteMutations": 0,
+  "productionChanged": false
+}

@@ -1,5 +1,7 @@
 # 壓縮清單：本機完整原生流程與登出核對
 
+最新[私人Cloudflare完整流程](../envelope-provider/README.md)已完成保存、跨部署重讀、登出與獨立還原；原生錯誤／取消事件保留、正式站不變。以下是前階段歷史。
+
 以 b5eec65 的實際runtime，啟用既有可選content-gzip與manifest-envelope寫入，在新本機Chrome副本完成原生登入、程式碼／視覺模式切換、兩次autosave、一次手動保存、完整workerd重啟、九段內容逐段重讀與原生登出。實際gate、coordinator、容量帳本與600秒／1,881,041bytes／96操作限制保留；publisher paused。沒有更動runtime或20份設定。
 
 完整流程含封存與備份共307,281ms，使用847,368bytes／51puts，餘1,033,673bytes；最後closed／sealed／pending0。登入162，手動保存175，冷初始化177，登出178。本次session已移除、原有5個session逐一精確保留；其他頁面／既有修訂／媒體／主題精確。保存修訂207保留，冷初始化移除過時autosave206與footnotes76。偏好僅原生_modified變化，ID維持單調。

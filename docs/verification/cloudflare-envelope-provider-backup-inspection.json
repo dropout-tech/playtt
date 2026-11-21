@@ -1,0 +1,91 @@
+{
+  "at": "2026-11-21T14:22:53.344Z",
+  "result": "independent-copy-verified-comparison-pending",
+  "canonicalVersion": 177,
+  "anchor": {
+    "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+    "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+    "persistedAt": "2026-11-21T14:22:06.428Z",
+    "manifestSha256": "83772504c985e0dcfb5970a4641499182802a911c09b65daf436d0cc9aecf4d0",
+    "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "packBytes": 2295783
+  },
+  "changed": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "removed": [],
+  "tables": {
+    "_tables/posts.json": {
+      "added": [
+        {
+          "id": "207",
+          "parent": "193",
+          "postType": "revision",
+          "contentBytes": 1208
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "_tables/postmeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "72",
+          "postId": "193",
+          "metaKey": "_edit_lock",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/usermeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "38",
+          "userId": "2",
+          "metaKey": "wp_persisted_preferences",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/users.json": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "files": 298,
+  "objects": 304,
+  "remoteGets": 4,
+  "downloadedBytes": 2419124,
+  "mediaAndThemeExact": true,
+  "canonicalAndAccountingUnchanged": true,
+  "remoteMutations": 0,
+  "pinAdded": false,
+  "format": "compressed-content",
+  "baseUnchanged": true,
+  "fullMaterializationExact": true,
+  "materializedAnchor": {
+    "revision": "99909118-ef3b-4953-95d1-83aba75b51a6",
+    "manifestKey": "sites/default/markdown/revisions/99909118-ef3b-4953-95d1-83aba75b51a6.json",
+    "persistedAt": "2026-11-21T14:22:50.248Z",
+    "manifestSha256": "c1a909b46adc389959e7ad40785764c097b0bdd69bb5a235a7362d3d69211364",
+    "packKey": "sites/default/restore-packs/7b25fc21aa926eb396f0e5a287755e86ebd98e0920be403c72e21cef7bc9ae1e.zip",
+    "packSha256": "7b25fc21aa926eb396f0e5a287755e86ebd98e0920be403c72e21cef7bc9ae1e",
+    "packBytes": 2296404
+  }
+}

@@ -1,5 +1,13 @@
 # PLAYTT 執行進度
 
+## 私人免費 Cloudflare 完整保存／跨部署／登出與獨立還原通過（2026-11-21）
+
+在既有audit Worker完成兩次autosave、單次保存檢查點175、重新部署後九段原文精確讀回176、原生登出177。353,048ms用797,202bytes／48puts，餘1,083,839；closed／sealed／pending0、fence解除、publisher paused。獨立304物件／298檔備份與轉完整格式再讀逐檔一致；修訂207及其他頁面／媒體／主題精確，原5個session完整保留、本次session移除；保留13pins並新增第14個。
+
+登出後一筆PHP AJAX400、3個canceled事件及部署期間外層首頁404全部保留。未捕捉到記憶體／CPU exception，但不能宣稱零HTTP錯誤、整體isolate／CPU量測或長期免費完成。controller client曾讀到半寫入reply；檢查同command成功封存後繼續，未重送。client修正及2測試通過，另5項observer測試通過。
+
+三次部署只限私人Worker；最後af985705於14:24:49Z核對新writer／heartbeat旗標已關、資料177／pin14／餘1,083,839不變，保留新格式相容reader，不能直接回舊67dd308。Workers Free與R2當期$0已查閱；無付費／加額度／清歷史。正式Pages與現有視覺不變，PR4 draft、完整目標active。81來源／20設定未改，108+tsc是前輪證據。下一步離線定位登出後事件與驗證舊來源實際回退；詳見experiments/cloudflare-wordpress/envelope-provider/README.md。以下是歷史。
+
 ## 壓縮清單完整本機流程完成，登出後解鎖400已獨立重現（2026-11-21）
 
 b5eec65實際runtime／gate／budget的新Chrome副本，完成兩次autosave、單次保存175、完全重啟後九段精確重讀與原生登出178；原有5個session保留，本次session移除。含封存／備份307,281ms用847,368bytes／51puts，餘1,033,673，closed／sealed／pending0。其他內容／修訂／媒體／主題及304物件／298檔獨立備份、轉舊完整格式再讀均精確。17份清單399,591bytes，相同JSON共1,258,493bytes。
