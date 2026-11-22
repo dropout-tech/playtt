@@ -1,0 +1,12 @@
+{
+  "source": "playtt-core-integrated-editor-audit-initial-private.mjs",
+  "sourceSha256": "efbaefd9aabb05cf6682e1a631df3e335d8e993fb8e1c8164bef3a10cb41f23c",
+  "output": "playtt-core-sized-editor-audit.mjs",
+  "outputSha256": "5a465dc594c8429f483cacf6bfcbb06fb54206dc7524936abcf7f90f140270f1",
+  "changes": [
+    "Use original full native data/recovery/lifecycle audit with compression observations against exact14cada693 build and its owned run.",
+    "Verify corrected210input/73loaded metadata and single chunkSize compiled change.",
+    "Actual current HTTP observations contain only expected gate404; command-palette403 from previous run is explicitly unexercised, not declared fixed."
+  ],
+  "cloudRequests": 0
+}

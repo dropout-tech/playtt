@@ -1,0 +1,638 @@
+{
+  "schema": "playtt/core-sized-editor-audit/v1",
+  "at": "2026-11-22T02:46:51.732Z",
+  "result": "native-save-restart-logout-backups-pass; Free-memory-and-full-acceptance-open",
+  "bundleSha256": "14cada693be821b6d4eac703d85422f10a33a1a0dde540ba3c4e31c9a92141e7",
+  "sourceSha256": "385e86a870bc8757af0eae5dec5aa28623add5ed9113b0b344f15f66d621fcdb",
+  "exactExecutedTools": [
+    {
+      "name": "playtt-core-sized-editor.mjs",
+      "sha256": "c38169121de4724642d148ab6cc163a220ede5db533cd3d8d813b0f323b757f6"
+    },
+    {
+      "name": "playtt-core-sized-editor-observer.mjs",
+      "sha256": "9d279145d798e42492afbadc6a4b21d3c821b9164932d4a1c9c6b2aedbf9cbfa"
+    },
+    {
+      "name": "playtt-core-sized-editor-control.mjs",
+      "sha256": "2e71ce1a7b377cc8924f168739a6bba673757ced562c97e874e06a5acde7a800"
+    },
+    {
+      "name": "playtt-request-lifecycle.mjs",
+      "sha256": "32514b7102520a6b5e08c678b071e83b88f26d15f2a502c65f1bb3ce08f4ce3d"
+    },
+    {
+      "name": "playtt-ajax-classifier.mjs",
+      "sha256": "1714739ca54b16198b5a5723070ca97dd9caa25b131d3544413cc008bf62a09a"
+    }
+  ],
+  "centralRuntimeChanged": false,
+  "native": {
+    "baselineVersion": 181,
+    "finalLocalVersion": 191,
+    "contentBytes": 1875,
+    "contentSha256": "93f8e21c8def8c2d5a6ec9b54d91990b8ef41dadcd847ba4d274da51ba01f39b",
+    "receiptVersion": 186,
+    "originalRowsExact": true,
+    "addedRevision": 209,
+    "fullWorkerdRestart": {
+      "fullWorkerdDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "stateExact": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "sameWindow": true,
+      "noReseedOrRearm": true,
+      "version": 188,
+      "chargedBytes": 350067
+    },
+    "allOriginalUsermetaExact": true,
+    "originalSessionsRetainedNewSessionRemoved": true,
+    "mediaAndThemeExact": true,
+    "independentObjects": 304,
+    "independentFiles": 298,
+    "fullMaterializedExact": true,
+    "chargedBytes": 500211,
+    "chargedPuts": 30,
+    "sealed": true,
+    "closed": true,
+    "pending": 0,
+    "disposed": true,
+    "terminalExit": 0,
+    "runtimeExceptions": 0,
+    "expectedUnauthenticatedGate404": 1,
+    "otherHttpErrors": 0
+  },
+  "memory": {
+    "phases": [
+      {
+        "phase": "before-restart",
+        "samples": 130,
+        "matchedSamples": 107,
+        "maxObservedComponentSum": 206978446,
+        "maximumSample": {
+          "total": 206978446,
+          "at": 1795315491773,
+          "label": "allocation-render-start",
+          "generation": 1,
+          "jsBytes": 24559828,
+          "backingBytes": 108362938,
+          "phpBytes": 74055680,
+          "phpObservationAgeMs": 5
+        },
+        "maxObservedPhpHeapBytes": 74055680,
+        "exceptions": 0
+      },
+      {
+        "phase": "after-restart",
+        "samples": 51,
+        "matchedSamples": 42,
+        "maxObservedComponentSum": 184583136,
+        "maximumSample": {
+          "total": 184583136,
+          "at": 1795315603453,
+          "label": "closing",
+          "generation": 1,
+          "jsBytes": 25175128,
+          "backingBytes": 84631432,
+          "phpBytes": 74776576,
+          "phpObservationAgeMs": 6966
+        },
+        "maxObservedPhpHeapBytes": 74776576,
+        "exceptions": 0
+      }
+    ],
+    "windows": [
+      {
+        "name": "render",
+        "samples": 929,
+        "sampledSelfBytes": 31319032,
+        "lookupPathBytes": 2852036,
+        "splitBytes": 590140,
+        "filterBytes": 32784,
+        "requestCategories": {
+          "ajax": 1,
+          "post-editor": 1,
+          "asset": 51,
+          "other": 1,
+          "rest": 1
+        },
+        "elapsedMs": 23054,
+        "profileSha256": "1f27b522ab3618e2707b760544b7f34c2403802309fee7be87f38fef8a80665f",
+        "topSelfNodes": [
+          {
+            "selfBytes": 1147652,
+            "functionName": "getattr",
+            "compiledLine": 18134,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 886664,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "(anonymous)",
+              "read",
+              "read",
+              "shadow"
+            ]
+          },
+          {
+            "selfBytes": 820272,
+            "functionName": "js_fd_read",
+            "compiledLine": 24793,
+            "parents": [
+              "(anonymous)",
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 590248,
+            "functionName": "getattr",
+            "compiledLine": 18134,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_fstat64",
+              "fstat"
+            ]
+          },
+          {
+            "selfBytes": 491864,
+            "functionName": "streamToBytes",
+            "compiledLine": 6134,
+            "parents": [
+              "(root)",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 463908,
+            "functionName": "Asyncify.handleSleep",
+            "compiledLine": 25992,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 459144,
+            "functionName": "visit",
+            "compiledLine": 4208,
+            "parents": [
+              "visit",
+              "visit",
+              "visit",
+              "visit"
+            ]
+          },
+          {
+            "selfBytes": 458912,
+            "functionName": "lookupPath",
+            "compiledLine": 18863,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_lstat64"
+            ]
+          },
+          {
+            "selfBytes": 458892,
+            "functionName": "lookupPath",
+            "compiledLine": 18863,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_openat",
+              "open"
+            ]
+          },
+          {
+            "selfBytes": 429908,
+            "functionName": "fetch",
+            "compiledLine": 8,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 394048,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "js_fd_read",
+              "(anonymous)",
+              "read",
+              "shadow"
+            ]
+          },
+          {
+            "selfBytes": 393988,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "(anonymous)",
+              "read",
+              "read",
+              "shadow"
+            ]
+          }
+        ],
+        "attributedFunctionTotals": [
+          {
+            "functionName": "(anonymous)",
+            "selfBytes": 3115468
+          },
+          {
+            "functionName": "lookupPath",
+            "selfBytes": 2852036
+          },
+          {
+            "functionName": "getattr",
+            "selfBytes": 2721680
+          },
+          {
+            "functionName": "create",
+            "selfBytes": 1707500
+          },
+          {
+            "functionName": "subarray",
+            "selfBytes": 1574872
+          },
+          {
+            "functionName": "js_fd_read",
+            "selfBytes": 1345236
+          },
+          {
+            "functionName": "visit",
+            "selfBytes": 1180764
+          },
+          {
+            "functionName": "writeStat",
+            "selfBytes": 983288
+          },
+          {
+            "functionName": "Uint8Array",
+            "selfBytes": 820204
+          },
+          {
+            "functionName": "validatePlayttSnapshotSources",
+            "selfBytes": 721724
+          },
+          {
+            "functionName": "read",
+            "selfBytes": 721692
+          },
+          {
+            "functionName": "split",
+            "selfBytes": 590140
+          },
+          {
+            "functionName": "getPath",
+            "selfBytes": 557268
+          },
+          {
+            "functionName": "Asyncify.handleSleep",
+            "selfBytes": 530884
+          },
+          {
+            "functionName": "fetch",
+            "selfBytes": 528372
+          },
+          {
+            "functionName": "Uint32Array",
+            "selfBytes": 524840
+          },
+          {
+            "functionName": "streamToBytes",
+            "selfBytes": 491864
+          },
+          {
+            "functionName": "open",
+            "selfBytes": 459080
+          }
+        ]
+      },
+      {
+        "name": "save",
+        "samples": 743,
+        "sampledSelfBytes": 26024356,
+        "lookupPathBytes": 2917488,
+        "splitBytes": 852364,
+        "filterBytes": 0,
+        "requestCategories": {
+          "rest": 1,
+          "ajax": 1
+        },
+        "elapsedMs": 11813,
+        "profileSha256": "801b42c6722b143db2addd878a1176c8e1e73309fddd24d1fbca18a5d4a26441",
+        "topSelfNodes": [
+          {
+            "selfBytes": 1017496,
+            "functionName": "js_fd_read",
+            "compiledLine": 24793,
+            "parents": [
+              "(anonymous)",
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 721316,
+            "functionName": "getattr",
+            "compiledLine": 18134,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_fstat64",
+              "fstat"
+            ]
+          },
+          {
+            "selfBytes": 688364,
+            "functionName": "lookupPath",
+            "compiledLine": 18863,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 623944,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "(anonymous)",
+              "read",
+              "read",
+              "shadow"
+            ]
+          },
+          {
+            "selfBytes": 590228,
+            "functionName": "getattr",
+            "compiledLine": 18134,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_lstat64"
+            ]
+          },
+          {
+            "selfBytes": 590012,
+            "functionName": "lookupPath",
+            "compiledLine": 18863,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_openat",
+              "open"
+            ]
+          },
+          {
+            "selfBytes": 557400,
+            "functionName": "getattr",
+            "compiledLine": 18134,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 491628,
+            "functionName": "writeStat",
+            "compiledLine": 21250,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 442836,
+            "functionName": "(anonymous)",
+            "compiledLine": 2753,
+            "parents": [
+              "(root)",
+              "(anonymous)",
+              "createCompressedContent"
+            ]
+          },
+          {
+            "selfBytes": 410572,
+            "functionName": "(anonymous)",
+            "compiledLine": 2948,
+            "parents": [
+              "(root)",
+              "(anonymous)",
+              "persistMarkdownManifest",
+              "serializeManifestEnvelope"
+            ]
+          },
+          {
+            "selfBytes": 393308,
+            "functionName": "writeStat",
+            "compiledLine": 21250,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_fstat64"
+            ]
+          },
+          {
+            "selfBytes": 377724,
+            "functionName": "(anonymous)",
+            "compiledLine": 2948,
+            "parents": [
+              "(root)",
+              "(anonymous)",
+              "decodeCanonicalManifestBytes"
+            ]
+          }
+        ],
+        "attributedFunctionTotals": [
+          {
+            "functionName": "(anonymous)",
+            "selfBytes": 4196824
+          },
+          {
+            "functionName": "lookupPath",
+            "selfBytes": 2917488
+          },
+          {
+            "functionName": "getattr",
+            "selfBytes": 2164060
+          },
+          {
+            "functionName": "writeStat",
+            "selfBytes": 1573224
+          },
+          {
+            "functionName": "js_fd_read",
+            "selfBytes": 1378352
+          },
+          {
+            "functionName": "validatePlayttSnapshotSources",
+            "selfBytes": 1246620
+          },
+          {
+            "functionName": "next",
+            "selfBytes": 1081720
+          },
+          {
+            "functionName": "subarray",
+            "selfBytes": 984292
+          },
+          {
+            "functionName": "split",
+            "selfBytes": 852364
+          },
+          {
+            "functionName": "create",
+            "selfBytes": 623944
+          },
+          {
+            "functionName": "Uint8Array",
+            "selfBytes": 557692
+          },
+          {
+            "functionName": "add",
+            "selfBytes": 431620
+          },
+          {
+            "functionName": "getPath",
+            "selfBytes": 426140
+          },
+          {
+            "functionName": "Asyncify.handleSleep",
+            "selfBytes": 364128
+          },
+          {
+            "functionName": "includes",
+            "selfBytes": 360868
+          },
+          {
+            "functionName": "Uint32Array",
+            "selfBytes": 360856
+          },
+          {
+            "functionName": "remember",
+            "selfBytes": 344988
+          },
+          {
+            "functionName": "open",
+            "selfBytes": 327920
+          }
+        ]
+      }
+    ],
+    "providerAcceptance": false
+  },
+  "compression": [
+    {
+      "phase": "before-restart",
+      "installs": 1,
+      "inspectedFiles": 1858,
+      "compressedFiles": 1450,
+      "originalCompressedFileBytes": 22436858,
+      "compressedBytes": 5212074,
+      "retainedCapacityDifference": 17224784,
+      "coreCategoryBytes": 5302562,
+      "scans": 11,
+      "compressionPreservedAcrossAllScans": true,
+      "maximumObservedCacheBytes": 154228,
+      "cacheLimitBytes": 524288,
+      "compressionWallMs": 491
+    },
+    {
+      "phase": "after-restart",
+      "installs": 1,
+      "inspectedFiles": 1858,
+      "compressedFiles": 1450,
+      "originalCompressedFileBytes": 22436858,
+      "compressedBytes": 5212074,
+      "retainedCapacityDifference": 17224784,
+      "coreCategoryBytes": 5302562,
+      "scans": 5,
+      "compressionPreservedAcrossAllScans": true,
+      "maximumObservedCacheBytes": 154228,
+      "cacheLimitBytes": 524288,
+      "compressionWallMs": 498
+    }
+  ],
+  "lifecycle": [
+    {
+      "phase": "before-restart",
+      "events": 708,
+      "unlocks": [
+        {
+          "id": 199,
+          "outerStatus": 200,
+          "executionStatus": 200,
+          "aborted": false
+        }
+      ],
+      "logoutHeaders": [],
+      "exceptions": 0,
+      "diagnosticTruncation": false
+    },
+    {
+      "phase": "after-restart",
+      "events": 98,
+      "unlocks": [
+        {
+          "id": 7,
+          "outerStatus": 200,
+          "executionStatus": 200,
+          "aborted": false
+        }
+      ],
+      "logoutHeaders": [
+        {
+          "layer": "execution",
+          "status": 302,
+          "aborted": false
+        },
+        {
+          "layer": "outer",
+          "status": 302,
+          "aborted": false
+        }
+      ],
+      "exceptions": 0,
+      "diagnosticTruncation": false
+    }
+  ],
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "limitations": [
+    "The command palette and prior denied global-style GET were not exercised in this run. Absence of403 does not establish a permission or command-palette fix.",
+    "Compression keeps1450 post-boot files compressed through scans/read/save/restart; structural backing is not whole-backend peak acceptance.",
+    "Compression startup wall time is not billed CPU. Browser request sequence and timing differ across candidates, so observations are not controlled before/after comparisons.",
+    "No provider deployment, resource-limit enforcement, billed CPU or sustained Free acceptance.",
+    "Observed component sums are asynchronous JS usedSize+backingStorageSize+latest PHP within one generation, not provider peak/RSS/admission.",
+    "Render/save allocation windows include surrounding requests and lifecycle/control diagnostics; do not compare total profiles across browser timings or infer whole-backend speedup.",
+    "Root V8 API allocation has no parent attribution. Call-frame totals only identify local allocation candidates, not retained size or a proven cause of the memory peak.",
+    "Zero exceptions in this run does not identify or fix historical native Network connection lost.",
+    "Native DOM fill/save/readback is not physical IME/mobile acceptance. First Chinese initialization and A01-A20 remain open."
+  ]
+}

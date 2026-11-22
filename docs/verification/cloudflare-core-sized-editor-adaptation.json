@@ -1,0 +1,30 @@
+{
+  "schema": "playtt/core-sized-editor-adaptation/v1",
+  "generated": [
+    {
+      "name": "playtt-core-sized-editor.mjs",
+      "source": "playtt-core-integrated-editor.mjs",
+      "sourceSha256": "afa5266f66084af24cd99ab4489f538a91a2a5941cf42d0bc7405126819ee85b",
+      "sha256": "c38169121de4724642d148ab6cc163a220ede5db533cd3d8d813b0f323b757f6"
+    },
+    {
+      "name": "playtt-core-sized-editor-observer.mjs",
+      "source": "playtt-core-integrated-editor-observer.mjs",
+      "sourceSha256": "71e038aeee42ed93a61d918f0ac7e9ddb90e76466e4491e3ed7bfa455683bed1",
+      "sha256": "9d279145d798e42492afbadc6a4b21d3c821b9164932d4a1c9c6b2aedbf9cbfa"
+    },
+    {
+      "name": "playtt-core-sized-editor-control.mjs",
+      "source": "playtt-core-integrated-editor-control.mjs",
+      "sourceSha256": "b54de3d9c89b163432988985650fe6be558883e0082584dee2c37a46dc8298a7",
+      "sha256": "2e71ce1a7b377cc8924f168739a6bba673757ced562c97e874e06a5acde7a800"
+    }
+  ],
+  "changes": [
+    "Use exact14cada693 full sized-decoder candidate with distinct owned ports9558/9559 and artifacts.",
+    "Preserve existing bounded fixture, write window, native data/restart/session/backup assertions and numeric compression/lifecycle/allocation observer.",
+    "Correct inherited source-count metadata to actual210 build inputs and73 loaded sources.",
+    "Archive executed inputs before startup. No central mutation or cloud operation."
+  ],
+  "cloudRequests": 0
+}

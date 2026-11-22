@@ -1,5 +1,12 @@
 # Let’s Play 驗收狀態
 
+## 解壓區塊候選的完整原生流程（2026-11-22）
+
+精確14cada693完成繁中原生保存、完整workerd重啟、新分頁相同內容／11筆修訂、登出及304物件／298檔獨立備份。最終LOCAL191／500,211bytes／30puts，closed／sealed／pending0／exit0；原資料、session、媒體與主題精確，runtime exception為0。
+
+1,450個核心檔案在16次完整掃描中保持壓縮，但記憶體組件合計觀測仍206,978,446／184,583,136bytes（約197.4／176.0MiB），免費條件尚未驗收，候選未採用。下一步量出實際decode／cache miss工作集合；命令選單403本輪未重測，未放寬權限。正式站與原視覺不變，0雲端操作，目標active。詳見[完整證據與限制](../experiments/cloudflare-wordpress/core-sized-editor/README.md)。
+
+
 ## 解壓區塊大小候選（2026-11-22）
 
 只調整解壓chunkSize，精確maxOutputLength及512KiB快取限制不變。兩種設定各16組workerd邊界、1,449個核心檔及22組真正PHP語意比較通過；六個全新workerd、18個相同corpus窗口中，平均JS＋backing觀測最大值下降16.83%，累計sampled JS下降9.36%。這些控制不是完整後台尖峰或provider驗收。
