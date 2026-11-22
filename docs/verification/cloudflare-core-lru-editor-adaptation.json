@@ -1,0 +1,31 @@
+{
+  "generated": [
+    {
+      "name": "playtt-core-lru-editor.mjs",
+      "source": "playtt-core-sized-editor.mjs",
+      "sourceSha256": "c38169121de4724642d148ab6cc163a220ede5db533cd3d8d813b0f323b757f6",
+      "sha256": "002a13732beb6fd66953aee1939dc354eeb60d0a035ef54f6dee01bcd7e13fe3"
+    },
+    {
+      "name": "playtt-core-lru-editor-observer.mjs",
+      "source": "playtt-core-sized-editor-observer.mjs",
+      "sourceSha256": "9d279145d798e42492afbadc6a4b21d3c821b9164932d4a1c9c6b2aedbf9cbfa",
+      "sha256": "0f4629be1d269540bee98fb2fa655a297d00b7d26f27868f3607ad6bb52c7b4e"
+    },
+    {
+      "name": "playtt-core-lru-editor-control.mjs",
+      "source": "playtt-core-sized-editor-control.mjs",
+      "sourceSha256": "2e71ce1a7b377cc8924f168739a6bba673757ced562c97e874e06a5acde7a800",
+      "sha256": "39bb7bc44ae3fa5cd48bf9b7efad4becada1b9a6715dd4a087a2d34be218a1c3"
+    }
+  ],
+  "bundleSha256": "a600faf90967a07bfeac1f1ef849d0688b453c4e3046828a70a5754378bae8b1",
+  "ports": [
+    9566,
+    9567
+  ],
+  "nativeDataWindowAndRecoveryAssertionsUnchanged": true,
+  "sourceInputs": 211,
+  "loadedSources": 74,
+  "cloudRequests": 0
+}

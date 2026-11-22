@@ -1,5 +1,12 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 固定12MiB核心快取：控制與原生資料通過（2026-11-22）
+
+實際核心讀取順序的12個獨立workerd控制顯示：12MiB LRU大幅減少重複解壓與配置，512KiB LRU改善有限；這不是整體後台改善率。唯一backing計帳合約、23組真正PHP比較與211輸入／74載入來源完整建置a600faf9通過。
+
+新候選完成繁中原生保存、完整workerd重啟、新分頁11筆修訂、登出及304物件／298檔獨立備份核對。最終LOCAL191／500,231bytes／30puts，closed／sealed／pending0／exit0，本輪runtime exceptions與HTTP errors均0；不代表前輪網路例外已修復。原生非同步記憶體組件合計仍177,831,430／155,996,857bytes（約169.6／148.8MiB），免費條件未驗收。下一步釐清保存／冷啟動時其他backing與序列化暫存生命週期。中央runtime、正式站與原視覺不變，0雲端操作，全案active。詳見[證據與限制](../experiments/cloudflare-wordpress/core-lru/README.md)。
+
+
 ## 核心讀取工作集合追蹤（2026-11-22）
 
 隔離71e610a9完整繁中保存／重啟／登出／304物件與298檔備份的資料核對通過，LOCAL191／500,108bytes／30puts、closed／sealed／pending0、exit0。另記錄兩次登出附近的Network connection lost，原因未明，不能標為零例外通過。

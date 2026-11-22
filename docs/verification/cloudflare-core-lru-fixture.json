@@ -1,0 +1,46 @@
+{
+  "schema": "playtt/core-lru-fixture/v1",
+  "result": "prepared",
+  "sourceBundleSha256": "71e610a9f86da6eafd338d35afc95690014aabd87bb6079f5d848f05f22a2bdc",
+  "sourceInputCount": 210,
+  "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+  "patchApiSha256": "573bfdea657c84e6d34a3ec1a9f30ad41c6565cc7949bd30405ce8f71faea5bb",
+  "workerSourceSha256": "e939339bf8c9d04d3f56bdc90c96aba7f93fbf1dd3f35c6f0e63b98f57ce65d1",
+  "compatSourceSha256": "79d9ef561b2af05e88b3d0190c21810c337d7f3980e42790f98c8a2b7a5f6f2f",
+  "playgroundSourceSha256": "ddd81085e7a246d678f7f669737a9452a9b24bff0bff575f59cd128e0d20d371",
+  "configCopyFunctionSha256": "5ca7c7cfab32c84079819d7e724a4a8c24242729da734ce58a1b9a6040b9396c",
+  "records": 1450,
+  "recordSha256": "9fdf07894f755037cb0a500dc19871142d49dc918d968adf6713424d5d6faed0",
+  "payloadBytes": 5212074,
+  "payloadSha256": "6ca0af91fdde21fe3aa94450bda78f578b070e2d993efcaf8951bf61a5d4191e",
+  "sequenceSha256": "508e509444054c1157c584b3e269c07cc698cef4f34ab8b91da40f4766bebb14",
+  "traceMetadataMatchesAllFiles": true,
+  "phases": [
+    {
+      "phase": "before-restart",
+      "traceSha256": "fa2b915eedca7cb2d9cb10295ad33f31ed5363a5caf35fd1fef084ad3424d0c7",
+      "expectedCalls": 10779,
+      "expectedStreamBytes": 238529907,
+      "expectedStreamSha256": "176c547954af38b939176c1d7a4e33879a4383b754e2037a46da5a654a03b937",
+      "observedSingleHits": 22,
+      "observedSingleMisses": 10757,
+      "observedDecodedBytes": 238505641
+    },
+    {
+      "phase": "after-restart",
+      "traceSha256": "ca75a4a8b13af7fa5a9341eaed07e117f002ff848220dca43048bb54a47deed0",
+      "expectedCalls": 6124,
+      "expectedStreamBytes": 135527941,
+      "expectedStreamSha256": "f8cc9240e358fda19a1211c9bd7fa8067be319a355f9e2abf0145d04dc5bdb18",
+      "observedSingleHits": 14,
+      "observedSingleMisses": 6110,
+      "observedDecodedBytes": 135512499
+    }
+  ],
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "limitations": [
+    "Post-boot bytes are reconstructed from the exact pinned archive and source transformations; every traced path/raw length/compressed length matches. The original read trace did not retain per-file content hashes, so matching metadata alone is not a direct hash comparison to the old live heap.",
+    "This fixture does not reproduce PHP execution, browser request gaps, native storage writes or whole-isolate provider admission."
+  ]
+}
