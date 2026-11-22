@@ -1,5 +1,12 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 原生 Base64 候選的完整流程（2026-11-22）
+
+精確 0f9d3340e 建置已完成繁中原生編輯保存 1,875 bytes、完整 workerd 重啟、新分頁相同內容與 11 筆修訂、登出及 304 物件／298 檔獨立備份。原資料、完整 usermeta／session、媒體與主題精確；最終 LOCAL191、500,245 bytes／30 puts、closed／sealed／pending0、exit0。
+
+本次 runtime 例外 0，兩次釋放鎖及登出均符合預期；但組件合計觀測仍約 144.1／146.6 MiB，免費記憶體未通過。不能把獨立控制的累計配置下降當成尖峰改善，也未證明歷史連線問題原因。中央及正式站不變，0 雲端操作，目標 active。詳見[完整結果與限制](../experiments/cloudflare-wordpress/base64-editor/README.md)。
+
+
 ## 可選原生 Base64 編碼候選（2026-11-22）
 
 固定 workerd 提供原生 Uint8Array encoder；候選只加入檢查及呼叫，完整保留 fallback。兩個 runtime、三個版本，每版 279 組位元組及 18 組清單案例精確。六組本機控制中，100 次編碼及 10 次完整序列化／解碼的平均累計配置分別少 96.66%／44.07%；這不是整體尖峰或免費驗收。
