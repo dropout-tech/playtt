@@ -1,5 +1,12 @@
 # PLAYTT 執行進度
 
+## 核心讀取工作集合追蹤（2026-11-22）
+
+隔離71e610a9完整繁中保存／重啟／登出／304物件與298檔備份的資料核對通過，LOCAL191／500,108bytes／30puts、closed／sealed／pending0、exit0。另記錄兩次登出附近的Network connection lost，原因未明，不能標為零例外通過。
+
+兩份未截斷紀錄共16,903次入口、36次命中，累計解壓374,018,140bytes；每程序實際使用約12–13MB核心原文。相同順序的離線LRU模擬顯示512KiB到8MiB只少解壓約1%，12MiB才明顯減少重複工作，但增加保留量，尚未實測。下一步用實際順序做原單檔／同容量LRU／固定12MiB的workerd比較；不能套用模擬比例宣稱免費達標。首次追蹤器context錯誤已封存、關閉並保留失敗，沒有重播owner。正式站／原視覺與中央runtime不變，0雲端操作，全案active。詳見[證據與限制](../experiments/cloudflare-wordpress/core-read-trace/README.md)。
+
+
 ## 解壓區塊候選的完整原生流程（2026-11-22）
 
 精確14cada693完成繁中原生保存、完整workerd重啟、新分頁相同內容／11筆修訂、登出及304物件／298檔獨立備份。最終LOCAL191／500,211bytes／30puts，closed／sealed／pending0／exit0；原資料、session、媒體與主題精確，runtime exception為0。

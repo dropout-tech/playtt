@@ -1,0 +1,20 @@
+{
+  "schema": "playtt/core-read-trace-failed-close/v1",
+  "reason": "Collector Runtime.evaluate lacked explicit contextId; native flow was stopped after login/dashboard/logout. No save/restart acceptance.",
+  "localOnly": true,
+  "contextSelectionVerified": true,
+  "traceCalls": 5611,
+  "traceMisses": 5597,
+  "traceRuns": 5604,
+  "traceTruncated": false,
+  "version": 185,
+  "sealed": true,
+  "closed": true,
+  "pending": 0,
+  "chargedBytes": 199837,
+  "windowUnchanged": true,
+  "cloudRequests": 0,
+  "processStillNeedsDisposal": false,
+  "subsequentControlledAbortVerified": true,
+  "terminalExit": 1
+}

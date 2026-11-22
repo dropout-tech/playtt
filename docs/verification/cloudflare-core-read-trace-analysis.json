@@ -1,0 +1,446 @@
+{
+  "schema": "playtt/core-read-trace-analysis/v1",
+  "result": "complete-untruncated-working-set-traces",
+  "phases": [
+    {
+      "phase": "before-restart",
+      "traceSha256": "fa2b915eedca7cb2d9cb10295ad33f31ed5363a5caf35fd1fef084ad3424d0c7",
+      "traceBytes": 382113,
+      "registeredFiles": 1450,
+      "usedFiles": 575,
+      "usedLogicalBytes": 12843176,
+      "calls": 10779,
+      "hits": 22,
+      "misses": 10757,
+      "hitRate": 0.002041005659152055,
+      "decodedBytes": 238505641,
+      "encodedBytes": 54809879,
+      "orderedRuns": 10768,
+      "typedArrayBytes": 458752,
+      "truncated": false,
+      "histogramAndSequenceExact": true,
+      "currentSingleCacheReplayExact": true,
+      "backingCapacityStable": true,
+      "reasons": {
+        "read": 10779,
+        "mmap": 0,
+        "materialize": 0
+      },
+      "boundaries": [
+        {
+          "label": "dashboard",
+          "calls": 2030,
+          "hits": 6,
+          "misses": 2024,
+          "decodedBytes": 44708020
+        },
+        {
+          "label": "allocation-render-start",
+          "calls": 5156,
+          "hits": 10,
+          "misses": 5146,
+          "decodedBytes": 113978902
+        },
+        {
+          "label": "allocation-render-stop",
+          "calls": 6691,
+          "hits": 14,
+          "misses": 6677,
+          "decodedBytes": 147832826
+        },
+        {
+          "label": "allocation-save-start",
+          "calls": 7184,
+          "hits": 16,
+          "misses": 7168,
+          "decodedBytes": 158706622
+        },
+        {
+          "label": "allocation-save-stop",
+          "calls": 8203,
+          "hits": 18,
+          "misses": 8185,
+          "decodedBytes": 181419485
+        }
+      ],
+      "simulations": [
+        {
+          "limitBytes": 524288,
+          "hits": 61,
+          "misses": 10718,
+          "decodedBytes": 236134729,
+          "avoidedDecodedBytes": 2370912,
+          "maxRetainedBackingBytes": 524281,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 1048576,
+          "hits": 65,
+          "misses": 10714,
+          "decodedBytes": 236130317,
+          "avoidedDecodedBytes": 2375324,
+          "maxRetainedBackingBytes": 1048566,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 2097152,
+          "hits": 71,
+          "misses": 10708,
+          "decodedBytes": 236123699,
+          "avoidedDecodedBytes": 2381942,
+          "maxRetainedBackingBytes": 2097135,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 4194304,
+          "hits": 71,
+          "misses": 10708,
+          "decodedBytes": 236123699,
+          "avoidedDecodedBytes": 2381942,
+          "maxRetainedBackingBytes": 4194303,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 8388608,
+          "hits": 71,
+          "misses": 10708,
+          "decodedBytes": 236123699,
+          "avoidedDecodedBytes": 2381942,
+          "maxRetainedBackingBytes": 8388608,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 12582912,
+          "hits": 10203,
+          "misses": 576,
+          "decodedBytes": 12915404,
+          "avoidedDecodedBytes": 225590237,
+          "maxRetainedBackingBytes": 12579944,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 16777216,
+          "hits": 10204,
+          "misses": 575,
+          "decodedBytes": 12843176,
+          "avoidedDecodedBytes": 225662465,
+          "maxRetainedBackingBytes": 12843751,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        }
+      ],
+      "topDecodedFiles": [
+        {
+          "path": "/wordpress/wp-includes/formatting.php",
+          "length": 357678,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 7511238,
+          "backingBytes": 357679
+        },
+        {
+          "path": "/wordpress/wp-includes/blocks/blocks-json.php",
+          "length": 210661,
+          "misses": 32,
+          "hits": 0,
+          "decodedBytes": 6741152,
+          "backingBytes": 210662
+        },
+        {
+          "path": "/wordpress/wp-includes/post.php",
+          "length": 305589,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 6417369,
+          "backingBytes": 305590
+        },
+        {
+          "path": "/wordpress/wp-includes/functions.php",
+          "length": 295503,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 6205563,
+          "backingBytes": 295504
+        },
+        {
+          "path": "/wordpress/wp-includes/media.php",
+          "length": 236804,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 4972884,
+          "backingBytes": 236805
+        },
+        {
+          "path": "/wordpress/wp-includes/class-wp-theme-json.php",
+          "length": 222193,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 4666053,
+          "backingBytes": 222194
+        },
+        {
+          "path": "/wordpress/wp-includes/html-api/class-wp-html-processor.php",
+          "length": 213919,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 4492299,
+          "backingBytes": 213920
+        },
+        {
+          "path": "/wordpress/wp-includes/deprecated.php",
+          "length": 193977,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 4073517,
+          "backingBytes": 193978
+        },
+        {
+          "path": "/wordpress/wp-includes/general-template.php",
+          "length": 184198,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 3868158,
+          "backingBytes": 184199
+        },
+        {
+          "path": "/wordpress/wp-includes/user.php",
+          "length": 180301,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 3786321,
+          "backingBytes": 180302
+        },
+        {
+          "path": "/wordpress/wp-includes/html-api/class-wp-html-tag-processor.php",
+          "length": 178828,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 3755388,
+          "backingBytes": 178829
+        },
+        {
+          "path": "/wordpress/wp-includes/taxonomy.php",
+          "length": 178307,
+          "misses": 21,
+          "hits": 0,
+          "decodedBytes": 3744447,
+          "backingBytes": 178308
+        }
+      ]
+    },
+    {
+      "phase": "after-restart",
+      "traceSha256": "ca75a4a8b13af7fa5a9341eaed07e117f002ff848220dca43048bb54a47deed0",
+      "traceBytes": 334082,
+      "registeredFiles": 1450,
+      "usedFiles": 550,
+      "usedLogicalBytes": 12370409,
+      "calls": 6124,
+      "hits": 14,
+      "misses": 6110,
+      "hitRate": 0.0022860875244937948,
+      "decodedBytes": 135512499,
+      "encodedBytes": 31105080,
+      "orderedRuns": 6117,
+      "typedArrayBytes": 458752,
+      "truncated": false,
+      "histogramAndSequenceExact": true,
+      "currentSingleCacheReplayExact": true,
+      "backingCapacityStable": true,
+      "reasons": {
+        "read": 6124,
+        "mmap": 0,
+        "materialize": 0
+      },
+      "boundaries": [
+        {
+          "label": "logout",
+          "calls": 3617,
+          "hits": 6,
+          "misses": 3611,
+          "decodedBytes": 80041126
+        },
+        {
+          "label": "closing",
+          "calls": 6124,
+          "hits": 14,
+          "misses": 6110,
+          "decodedBytes": 135512499
+        }
+      ],
+      "simulations": [
+        {
+          "limitBytes": 524288,
+          "hits": 37,
+          "misses": 6087,
+          "decodedBytes": 133997467,
+          "avoidedDecodedBytes": 1515032,
+          "maxRetainedBackingBytes": 524281,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 1048576,
+          "hits": 39,
+          "misses": 6085,
+          "decodedBytes": 133995261,
+          "avoidedDecodedBytes": 1517238,
+          "maxRetainedBackingBytes": 1048566,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 2097152,
+          "hits": 42,
+          "misses": 6082,
+          "decodedBytes": 133991952,
+          "avoidedDecodedBytes": 1520547,
+          "maxRetainedBackingBytes": 2097128,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 4194304,
+          "hits": 42,
+          "misses": 6082,
+          "decodedBytes": 133991952,
+          "avoidedDecodedBytes": 1520547,
+          "maxRetainedBackingBytes": 4194303,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 8388608,
+          "hits": 42,
+          "misses": 6082,
+          "decodedBytes": 133991952,
+          "avoidedDecodedBytes": 1520547,
+          "maxRetainedBackingBytes": 8388607,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 12582912,
+          "hits": 5574,
+          "misses": 550,
+          "decodedBytes": 12370409,
+          "avoidedDecodedBytes": 123142090,
+          "maxRetainedBackingBytes": 12370959,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        },
+        {
+          "limitBytes": 16777216,
+          "hits": 5574,
+          "misses": 550,
+          "decodedBytes": 12370409,
+          "avoidedDecodedBytes": 123142090,
+          "maxRetainedBackingBytes": 12370959,
+          "semantics": "LRU by observed per-file backing capacity; oversized files bypass without clearing other entries; materialization evicts its entry"
+        }
+      ],
+      "topDecodedFiles": [
+        {
+          "path": "/wordpress/wp-includes/formatting.php",
+          "length": 357678,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 4292136,
+          "backingBytes": 357679
+        },
+        {
+          "path": "/wordpress/wp-includes/blocks/blocks-json.php",
+          "length": 210661,
+          "misses": 19,
+          "hits": 0,
+          "decodedBytes": 4002559,
+          "backingBytes": 210662
+        },
+        {
+          "path": "/wordpress/wp-includes/post.php",
+          "length": 305589,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 3667068,
+          "backingBytes": 305590
+        },
+        {
+          "path": "/wordpress/wp-includes/functions.php",
+          "length": 295503,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 3546036,
+          "backingBytes": 295504
+        },
+        {
+          "path": "/wordpress/wp-includes/media.php",
+          "length": 236804,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 2841648,
+          "backingBytes": 236805
+        },
+        {
+          "path": "/wordpress/wp-includes/class-wp-theme-json.php",
+          "length": 222193,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 2666316,
+          "backingBytes": 222194
+        },
+        {
+          "path": "/wordpress/wp-includes/html-api/class-wp-html-processor.php",
+          "length": 213919,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 2567028,
+          "backingBytes": 213920
+        },
+        {
+          "path": "/wordpress/wp-includes/deprecated.php",
+          "length": 193977,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 2327724,
+          "backingBytes": 193978
+        },
+        {
+          "path": "/wordpress/wp-includes/general-template.php",
+          "length": 184198,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 2210376,
+          "backingBytes": 184199
+        },
+        {
+          "path": "/wordpress/wp-includes/user.php",
+          "length": 180301,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 2163612,
+          "backingBytes": 180302
+        },
+        {
+          "path": "/wordpress/wp-includes/html-api/class-wp-html-tag-processor.php",
+          "length": 178828,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 2145936,
+          "backingBytes": 178829
+        },
+        {
+          "path": "/wordpress/wp-includes/taxonomy.php",
+          "length": 178307,
+          "misses": 12,
+          "hits": 0,
+          "decodedBytes": 2139684,
+          "backingBytes": 178308
+        }
+      ]
+    }
+  ],
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "providerAcceptance": false,
+  "limitations": [
+    "Counts cover decoded compressed core accesses only, not every filesystem read or PHP allocation.",
+    "Cumulative decoded bytes are allocation workload, not simultaneous live or retained memory.",
+    "Inspector extraction adds allocations at explicit boundaries/end; telemetry and browser timings affect measurements.",
+    "LRU is an offline counterfactual using the same recorded order. It does not execute an LRU implementation or prove performance, PHP semantics or memory admission.",
+    "Observed backing capacity may share buffers across files; summed hypothetical capacities are conservative accounting, not unique backing measurement.",
+    "No cloud run, first Chinese initialization, physical IME/mobile or long-term Free acceptance."
+  ]
+}
