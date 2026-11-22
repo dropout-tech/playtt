@@ -1,0 +1,24 @@
+// Isolated full source build, two call sites plus the reader's accurate declaration.
+import assert from 'node:assert/strict';
+import {readFile,writeFile,mkdir,access,readdir} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+import {sources,sha,previous} from './playtt-boot-zip-common.mjs';
+assert.ok(process.argv.includes('--local')&&!process.argv.includes('--remote'));
+const target=resolve('../../../playtt-boot-zip-build'),load=async p=>JSON.parse(await readFile(p,'utf8'));
+const prior=await load(join(previous,'build-inputs.json')),files=new Map();assert.equal(prior.files.length,208);
+for(const f of prior.files){assert.ok(!f.path.includes('..'));const b=await readFile(join(previous,f.path));assert.equal(sha(b),f.sha256);files.set(f.path,b);}
+const input=await sources();assert.equal(sha(files.get('src/worker.ts')),input.originalSha256);files.set('src/worker.ts',Buffer.from(input.candidate));files.set('src/playtt-buffered-zip.d.mts',Buffer.from(input.declaration));
+const inputs={schema:'playtt/boot-zip-build-inputs/v1',sourceCount:84,tsSourceCount:83,additionalDeclarationCount:1,files:[...files].map(([path,b])=>({path,sha256:sha(b)})),changedInputs:['src/worker.ts','src/playtt-buffered-zip.d.mts'],originalSha256:input.originalSha256,candidateSha256:input.candidateSha256,moduleSha256:input.moduleSha256,centralRuntimeChanged:false,cloudRequests:0};
+if(!process.argv.includes('--check')){
+ await access(target).then(()=>{throw Error('Target already exists');},e=>{if(e.code!=='ENOENT')throw e;});for(const [name,b]of files){const p=join(target,name);await mkdir(resolve(p,'..'),{recursive:true});await writeFile(p,b,{flag:'wx'});}await writeFile(join(target,'build-inputs.json'),JSON.stringify(inputs,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({prepared:true,inputs:files.size,candidateSha256:input.candidateSha256}));
+}else{
+ assert.deepEqual(await load(join(target,'build-inputs.json')),inputs);for(const f of inputs.files)assert.equal(sha(await readFile(join(target,f.path))),f.sha256,f.path);assert.equal((await readFile(join(target,'typecheck-private.log'))).length,0);assert.ok((await readFile(join(target,'dry-run-private.log'),'utf8')).includes('--dry-run: exiting now.'));
+ const old=await load('artifacts/playtt-buffered-zip-build-private.json'),modules=[];for(const name of await readdir(join(target,'dry-run'))){if(!/\.(js|wasm|sqlite|zip)$/.test(name))continue;const path=join(target,'dry-run',name),b=await readFile(path);modules.push({path,bytes:b.length,sha256:sha(b)});}assert.equal(modules.length,6);assert.deepEqual(modules.filter(m=>!m.path.endsWith('.js')).map(m=>m.sha256).sort(),old.productionModules.filter(m=>!m.path.endsWith('.js')).map(m=>m.sha256).sort());
+ const entry=modules.find(m=>m.path.endsWith('.js')),before=await readFile(old.entry,'utf8'),after=await readFile(entry.path,'utf8');assert.equal(sha(before),old.productionBundleSha256);
+ const replacements=[['y(new Blob([canonicalMarkdownSeed]).stream())','decodeZipFromBytes(new Uint8Array(canonicalMarkdownSeed))'],['y(new Blob([markdownDatabaseIntegrationRuntime]).stream())','decodeZipFromBytes(new Uint8Array(markdownDatabaseIntegrationRuntime))']];
+ let expected=before;for(const [from,to]of replacements){assert.equal(expected.split(from).length,2);expected=expected.replace(from,to);}assert.equal(after,expected,'Compiled changes must be exactly the two calls');
+ const meta=await load(join(target,'dry-run/bundle-meta.json')),expectedSources=new Map(inputs.files.map(f=>[f.path,f.sha256]));let loaded=0;for(const name of Object.keys(meta.inputs)){if(name.startsWith('src/')){assert.equal(sha(await readFile(join(target,name))),expectedSources.get(name));loaded++;}else assert.ok(!resolve(target,name).startsWith(resolve('src')));}
+ const central=await load('artifacts/playtt-recovery-provider-source-plan.json');for(const f of central.sources)assert.equal(sha((await readFile(f.path,'utf8')).replaceAll('\r\n','\n')),f.sha256);
+ const plan={schema:'playtt/boot-zip-build/v1',productionModules:modules,productionBundleSha256:entry.sha256,entry:entry.path},proof={schema:'playtt/boot-zip-build-proof/v1',result:'pass',sourceCount:84,tsSourceCount:83,additionalDeclarationCount:1,sourceInputs:208,loadedSourceCount:loaded,originalSha256:input.originalSha256,candidateSha256:input.candidateSha256,moduleSha256:input.moduleSha256,baselineBundleSha256:old.productionBundleSha256,bundleSha256:entry.sha256,typecheck:'pass',wranglerDryRun:'pass',exactScopedSourceChanges:true,exactTwoCompiledCallChanges:true,unchangedBinaryModules:5,centralRuntimeChanged:false,cloudRequests:0,deployed:false};
+ for(const [name,obj]of [['private',plan],['proof',proof]]){const p='artifacts/playtt-boot-zip-build-'+name+'.json';try{assert.deepEqual(await load(p),obj);}catch(e){if(e.code!=='ENOENT')throw e;await writeFile(p,JSON.stringify(obj,null,2)+'\n',{flag:'wx'});}}console.log(JSON.stringify(proof));
+}

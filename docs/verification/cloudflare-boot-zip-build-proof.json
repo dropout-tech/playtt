@@ -1,0 +1,22 @@
+{
+  "schema": "playtt/boot-zip-build-proof/v1",
+  "result": "pass",
+  "sourceCount": 84,
+  "tsSourceCount": 83,
+  "additionalDeclarationCount": 1,
+  "sourceInputs": 208,
+  "loadedSourceCount": 72,
+  "originalSha256": "d720192f15ca3a456de4732f0945c1bef83f3cda164da4b345ad9405558d02f6",
+  "candidateSha256": "7ea9f96252eeb847da0f579aa45016717d8e79f6c4da5d2907b7534091511251",
+  "moduleSha256": "d0131db93fc46c0d97b9984922f26dfc4133e92774049ddfe426abbd63ae49c9",
+  "baselineBundleSha256": "dbb723cf7cd709de306646440b2a6a39297b7b178feee8a74c0a1ce4b25d74ee",
+  "bundleSha256": "abc3045e3e01dd1b8454be9ffd709519bf016a5b6b16f8f3d6efdaab65d4befb",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "exactScopedSourceChanges": true,
+  "exactTwoCompiledCallChanges": true,
+  "unchangedBinaryModules": 5,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}
