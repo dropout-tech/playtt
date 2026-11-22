@@ -1,0 +1,131 @@
+{
+  "schema": "playtt/lazy-core-proof/v1",
+  "at": "2026-11-22T04:59:37.070Z",
+  "result": "trusted-corpus-and-lazy-MEMFS-prototype-pass; full-boot-and-provider-open",
+  "sources": [
+    {
+      "name": "playtt-lazy-core-module.mjs",
+      "sha256": "f10f48c787d69570a5201710a2b3f1394791d423c808ec475c214921a85a3c58"
+    },
+    {
+      "name": "playtt-lazy-core-zip.mjs",
+      "sha256": "3c46271460dbfc14b34a8c8c6de4ca8515fb03cd25d6453046ed17cade74a446"
+    },
+    {
+      "name": "playtt-lazy-core-proof.mjs",
+      "sha256": "27674b42616e1814623ba74430b081894ff6e5b61c7404659ed48c67ee1e7f6e"
+    }
+  ],
+  "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+  "allArchiveEntriesDecodedAndVerified": true,
+  "archiveFiles": 2154,
+  "archiveBytes": 5975792,
+  "decodedBytes": 23714640,
+  "malformedCases": [
+    {
+      "name": "archive-hash",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "traversal-manifest",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "duplicate-manifest",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "negative-size",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "expanded-budget",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "split-disk",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "central-bounds",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "unsupported-method",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "encrypted-flags",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "local-crc-disagreement",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "local-offset",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "manifest-file-size",
+      "stage": "before-filesystem"
+    },
+    {
+      "name": "payload-content-integrity",
+      "stage": "entry-decode"
+    }
+  ],
+  "structuralRejectionsBeforeFilesystemMutation": 12,
+  "payloadIntegrityRejectedAtDecode": true,
+  "installed": {
+    "materializedFiles": 2154,
+    "materializedBytes": 23714640,
+    "archiveCompressedInstalls": 1449,
+    "archiveOrdinaryInstalls": 705,
+    "archiveCompressedBytes": 5210374,
+    "archiveLogicalBytes": 22432492,
+    "firstDecodeChecks": 0,
+    "materializations": 0,
+    "postBootCompressions": 0
+  },
+  "all2154MemfsFilesSizeAndHashExact": true,
+  "sourceArchiveOverwriteAfterInstallSafe": true,
+  "zeroAndEofReadsDoNotDecode": true,
+  "postBootRecompressionBeforeMutations": 0,
+  "finalStats": {
+    "inspectedFiles": 1857,
+    "compressedFiles": 1449,
+    "originalBytes": 22432492,
+    "compressedBytes": 5210374,
+    "retainedCapacitySavings": 17222118,
+    "skippedOpenFiles": 0,
+    "decodedCacheLimit": 12582912
+  },
+  "cache": {
+    "bytes": 12564230,
+    "limit": 12582912
+  },
+  "activity": {
+    "archiveCompressedInstalls": 1449,
+    "archiveOrdinaryInstalls": 705,
+    "archiveCompressedBytes": 5210374,
+    "archiveLogicalBytes": 22432492,
+    "firstDecodeChecks": 1449,
+    "materializations": 2,
+    "postBootCompressions": 0
+  },
+  "writeRestoresOrdinaryNode": true,
+  "truncateZeroRestoresOrdinaryNode": true,
+  "realPhpVersionInclude": true,
+  "loaderSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+  "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "providerMemoryAccepted": false,
+  "limitations": [
+    "Actual pinned PHP/MEMFS under Node, not complete WordPress boot, workerd, browser or provider acceptance.",
+    "Archive SHA binds all compressed bytes before filesystem creation. Entry CRC/SHA and output size are checked when decoded; unused compressed files are not eagerly decoded.",
+    "Encoded core entries own exact copies, independent of the original ZIP. LRU ownership and limits remain unchanged.",
+    "Boot hooks, mutable policies, core compaction and finalization still need full integration; no runtime adoption or deployment."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "playtt/lazy-core-corpus-compare/v1",
+  "result": "pass",
+  "sourceSha256": "31fa0b56e8ad56cbc3bb21344d6b8a1511a564edad8353af46224c7cbb46246d",
+  "originalMaterializerSha256": "ec0bfdd1aba5284a02bffc234d72072e95cf01ad25bc9afc8142ced9a988dd53",
+  "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+  "files": 2154,
+  "directories": 371,
+  "allHashesModesSizesOwnershipAndDirectoryListingsExact": true,
+  "baselineSha256": "1337f025b3244bc89fee52cb9287c8b009885b0e767d0cc35dc4bf3eef998176",
+  "candidateSha256": "1337f025b3244bc89fee52cb9287c8b009885b0e767d0cc35dc4bf3eef998176",
+  "allPhpInstancesExited": true,
+  "cloudRequests": 0,
+  "providerAcceptance": false,
+  "limitations": [
+    "Creation/modification/access timestamps differ by execution time and are excluded; fresh Date semantics are covered by the existing PHP differential suite.",
+    "This compares corpus materialization under the pinned PHP runtime; provider memory, CPU and sustained usage require separate validation."
+  ]
+}

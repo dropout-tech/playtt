@@ -1,0 +1,7 @@
+{
+  "schema": "playtt/lazy-core-audit-adaptation/v1",
+  "sourceSha256": "0336b424e3f5cdf0b5716020894fd1d7ed5936bd9d2596fa6d81ff1a5a09c4e4",
+  "auditSha256": "7a879f0ddcedab14823dd7c8575aa6121d0c2ef13ff2c8d7299dd3b17e07db06",
+  "dataRecoveryAssertionsPreserved": true,
+  "cloudRequests": 0
+}

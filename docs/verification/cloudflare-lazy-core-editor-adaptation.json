@@ -1,0 +1,22 @@
+{
+  "schema": "playtt/lazy-core-editor-adaptation/v1",
+  "generated": [
+    {
+      "name": "playtt-lazy-core-editor.mjs",
+      "sha256": "2750e5d96ce8086d5e39ea19433ce4092a8549d8b331840eab8c347b5b297733",
+      "sourceSha256": "254989fc161e1008b2cd21d8a37378a5b473758be6ee5b9c48af900a5626c9fc"
+    },
+    {
+      "name": "playtt-lazy-core-editor-control.mjs",
+      "sha256": "545d7dfcdb7ca94efa5c94c47a7c3b864c24962cd6a3506df1fa6af01d39df01",
+      "sourceSha256": "59500657495e8aea27d4dcfc5a8853f071bb9f4b92329741c4a4993589eae5b2"
+    },
+    {
+      "name": "playtt-lazy-core-editor-observer.mjs",
+      "sha256": "c8435c2e50ab5e8cf3f566a0fffa637f87752077bf29b7196af90debc6cead35",
+      "sourceSha256": "1dec48c28746cc8265e3652cb8bc8f95d8b422be664e57129646b8529d0028fe"
+    }
+  ],
+  "nativeSamplingBeforeIntegrityChecks": true,
+  "cloudRequests": 0
+}

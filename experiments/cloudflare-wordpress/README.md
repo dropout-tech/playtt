@@ -1,3 +1,5 @@
+最新：[可信 ZIP 壓縮核心直接載入](lazy-core/README.md)通過完整 corpus、檔案屬性、PHP 與原生還原；免費 provider 驗收仍開放，正式官網不變。
+
 最新：[直接核心讀取](core-direct/README.md)移除每次讀取的臨時包裝物件，25 項 PHP 比對及原生恢復通過；冷啟動與免費限制仍開放，正式官網不變。
 
 最新：[原生與完整備份量測分離](byte-volume/README.md)找到混入保存 profile 的 ZIP 解壓來源，原生保存與恢復通過；免費限制與完整驗收仍開放，正式官網不變。
