@@ -1,0 +1,34 @@
+{
+  "schema": "playtt/base64-native-regression/v1",
+  "at": "2026-11-22T01:22:55.318Z",
+  "result": "pass",
+  "candidateSha256": "ba0e87ca6848224b0a14aad15d605587d2f2ff9bfddea78c9db22d1e7f296150",
+  "inputs": [
+    {
+      "path": "tests/playtt-manifest-envelope.test.ts",
+      "sha256": "52405a7bc7a6aea298d912264a18e923a82280f05ab58112c42114f0dfdc7573"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "f53351aea2e8c62af46dc41a5429f753433ccce0ecacec9113a822d27a186306"
+    },
+    {
+      "path": "scripts/playtt-backup-pin-client.mjs",
+      "sha256": "daea8b9df62cef066c4532d14b51bcda8b2dee5363461dc9a99edb8a30ca2ed5"
+    },
+    {
+      "path": "scripts/playtt-content-snapshot-source.mjs",
+      "sha256": "89140021a9649b43bea663a80aca0aef9a5ff12b25d0b23b470bc32054baf774"
+    }
+  ],
+  "compiledTestSha256": "525a135275f1e89f05df72eb4131cef18361638c8bddcf592799bcb56de76234",
+  "stdoutSha256": "9ab3a7f8350ecdeb011ab3e63f05a7e8650b8c22a0ae474752e791e7d3aeeaa7",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit": 0,
+  "tests": 25,
+  "failures": 0,
+  "nodeNative": "undefined",
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "scope": "25 unchanged envelope/persistence/corruption/backup/pin/public-reader tests against isolated full source, using Node fallback. Native fast path separately validated in actual workerd."
+}

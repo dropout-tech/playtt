@@ -1,0 +1,113 @@
+{
+  "schema": "playtt/base64-native-audit/v1",
+  "at": "2026-11-22T01:22:55.318Z",
+  "result": "local-semantics-allocation-build-and-regression-pass; native-workflow-and-Free-acceptance-open",
+  "sourceSha256": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99",
+  "candidateSha256": "ba0e87ca6848224b0a14aad15d605587d2f2ff9bfddea78c9db22d1e7f296150",
+  "bundleSha256": "0f9d3340e3e66f7cc6242bf31cc26d4d76ad9c78dfa7f87a17adca214206b025",
+  "feature": {
+    "workerdVersion": "1.20260828.1",
+    "compatibilityDate": "2026-07-18",
+    "compatibilityFlags": [
+      "nodejs_compat",
+      "enable_request_signal"
+    ],
+    "nativeAvailable": true
+  },
+  "semantic": {
+    "runtimes": 2,
+    "variants": 3,
+    "directCasesPerVariant": 279,
+    "envelopeCasesPerVariant": 18,
+    "successes": 11,
+    "rejections": 7,
+    "independentBufferEncodingExact": true,
+    "wireAndLogicalBytesExactAcrossVariantsAndRuntimes": true,
+    "inputOutputAndSnapshotOwnershipExact": true,
+    "actualNativeBackupManifestBytes": 74029,
+    "actualNativeBackupManifestSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416"
+  },
+  "allocation": {
+    "instances": 6,
+    "windowsPerInstance": 2,
+    "windows": {
+      "encode": {
+        "iterations": 100,
+        "groups": {
+          "baseline": {
+            "sampledMeanBytes": 71369012,
+            "wallMeanMs": 87.56793333333333,
+            "sampledRange": [
+              69672580,
+              72552256
+            ]
+          },
+          "candidate": {
+            "sampledMeanBytes": 2384048,
+            "wallMeanMs": 5.964366666666592,
+            "sampledRange": [
+              2142720,
+              2544144
+            ]
+          }
+        },
+        "sampledMeanReductionPercent": 96.65954742374744,
+        "wallMeanReductionPercent": 93.18886898476543
+      },
+      "roundtrip": {
+        "iterations": 10,
+        "groups": {
+          "baseline": {
+            "sampledMeanBytes": 16957406.666666668,
+            "wallMeanMs": 73.51176666666663,
+            "sampledRange": [
+              16444196,
+              17219608
+            ]
+          },
+          "candidate": {
+            "sampledMeanBytes": 9484212,
+            "wallMeanMs": 64.6749333333333,
+            "sampledRange": [
+              9383768,
+              9637852
+            ]
+          }
+        },
+        "sampledMeanReductionPercent": 44.07038654888661,
+        "wallMeanReductionPercent": 12.020978047505327
+      }
+    }
+  },
+  "build": {
+    "inputs": 208,
+    "tsSources": 83,
+    "declarations": 1,
+    "loadedSources": 72,
+    "exactEncoderOnlyCompiledChange": true,
+    "unchangedBinaryModules": 5,
+    "typecheck": "pass",
+    "wranglerDryRun": "pass"
+  },
+  "regression": {
+    "tests": 25,
+    "failures": 0,
+    "exit": 0,
+    "nodeFallback": true,
+    "originalTestsUnchanged": true
+  },
+  "allOwnersTerminal": true,
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "productionChanged": false,
+  "nativeWorkflowAccepted": false,
+  "providerMemoryAccepted": false,
+  "limitations": [
+    "The private encoder receives standard Uint8Arrays from gzip; no generic exotic-array API claim.",
+    "Workerd tests cover actual native and forced fallback paths. The25 original integration tests run Node fallback.",
+    "Six fresh local instances, encode then roundtrip per instance; roundtrip follows encode activity, no forced GC.100 encodes/10 roundtrips amplify work rather than model request frequency.",
+    "Cumulative sampled allocations include collected objects and result hashing; they are not retained or peak memory, RSS, billed CPU or provider admission.",
+    "The previous abc3045e build passed native edit/save/restart/backup with144.3/142.9MiB observed asynchronous component sums. Those values are not measurements of this new0f9d3340e candidate.",
+    "This candidate has not completed a native editor flow. First Chinese initialization, provider memory/CPU, sustained Free use, physical IME/mobile and A01-A20 remain open."
+  ]
+}

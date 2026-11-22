@@ -1,5 +1,12 @@
 # Let’s Play 驗收狀態
 
+## 可選原生 Base64 編碼候選（2026-11-22）
+
+固定 workerd 提供原生 Uint8Array encoder；候選只加入檢查及呼叫，完整保留 fallback。兩個 runtime、三個版本，每版 279 組位元組及 18 組清單案例精確。六組本機控制中，100 次編碼及 10 次完整序列化／解碼的平均累計配置分別少 96.66%／44.07%；這不是整體尖峰或免費驗收。
+
+208 輸入完整建置通過，只差 encoder 快速路徑，五個二進位模組不變；25 項未修改的既有保存／損毀拒絕／備份回歸全部通過（Node fallback，原生另在 workerd 驗證）。新建置 0f9d3340e 尚待完整原生編輯流程；前版約 144.3／142.9 MiB 觀測不可套用。中央與正式站不變，0 雲端操作，目標 active。詳見[實作及限制](../experiments/cloudflare-wordpress/base64-native/README.md)。
+
+
 ## 啟動ZIP候選的原生保存／重啟驗證（2026-11-22）
 
 精確abc3045e完整建置完成繁中原生編輯保存1,875bytes、完整workerd關閉重啟、新分頁相同內容及11筆修訂、登出與304物件／298檔獨立備份。最終LOCAL191、500,252bytes／30puts、closed／sealed／pending0、exit0；全部原資料／usermeta／session、媒體與主題精確。

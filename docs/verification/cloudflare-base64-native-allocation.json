@@ -1,0 +1,952 @@
+{
+  "schema": "playtt/base64-native-allocation/v1",
+  "at": "2026-11-22T01:20:38.317Z",
+  "result": "pass",
+  "sourceSha256": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99",
+  "candidateSha256": "ba0e87ca6848224b0a14aad15d605587d2f2ff9bfddea78c9db22d1e7f296150",
+  "manifestBytes": 74029,
+  "manifestSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416",
+  "payloadBytes": 17269,
+  "payloadSha256": "ede588f3929c6d00eccbc5ff6352f88549103f670a57a4a696ef7ba2e67bf095",
+  "fixtureSha256": "7e97b6780badc14304fa77a028c23c4eb2f6d6068f0feca55e93d6d19883d5b7",
+  "runs": [
+    {
+      "index": 0,
+      "variant": "baseline",
+      "bundleSha256": "fd4d30e900dadc60d1b4aa68b5b013258f8c0caa565857f9a97cbfbf5f209484",
+      "windows": [
+        {
+          "name": "encode",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 976404,
+            "totalSize": 1835008,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 839856,
+            "totalSize": 6029312,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 265297
+          },
+          "wallMs": 89.69859999999994,
+          "profileSha256": "af8c69678dee9c42848ea0d7955baf9fa1a65d146fc298e943e4549b3707d8f9",
+          "samples": 1704,
+          "nodes": 7,
+          "selfBytes": 71882200,
+          "topFunctions": [
+            {
+              "functionName": "base64",
+              "selfBytes": 35661996
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 35072460
+            },
+            {
+              "functionName": "fromCharCode",
+              "selfBytes": 1082136
+            },
+            {
+              "functionName": "subarray",
+              "selfBytes": 32832
+            },
+            {
+              "functionName": "(V8 API)",
+              "selfBytes": 32776
+            },
+            {
+              "functionName": "(root)",
+              "selfBytes": 0
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 0
+            }
+          ],
+          "result": {
+            "iterations": 100,
+            "inputBytes": 17269,
+            "outputBytes": 23028,
+            "outputSha256": "31a29c4f8f1dd0a5edd70fd20860a03027fae92b5e244649f55199f7408b8e6c",
+            "nativeAvailable": true
+          }
+        },
+        {
+          "name": "roundtrip",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 628668,
+            "totalSize": 6029312,
+            "embedderHeapUsedSize": 888,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 4371680,
+            "totalSize": 9699328,
+            "embedderHeapUsedSize": 127656,
+            "backingStorageSize": 1549038
+          },
+          "wallMs": 76.0417000000001,
+          "profileSha256": "f115b7be8bf200d3a358066dc3b2bbbece6cf2a1b380bdd075c083d9163dd1d9",
+          "samples": 396,
+          "nodes": 57,
+          "selfBytes": 17208416,
+          "topFunctions": [
+            {
+              "functionName": "(anonymous)",
+              "selfBytes": 4866228
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 4162820
+            },
+            {
+              "functionName": "base64",
+              "selfBytes": 3767936
+            },
+            {
+              "functionName": "validatePlayttSnapshotSources",
+              "selfBytes": 1377376
+            },
+            {
+              "functionName": "serializeManifestEnvelope",
+              "selfBytes": 1042652
+            },
+            {
+              "functionName": "decodeCanonicalManifestBytes",
+              "selfBytes": 601308
+            },
+            {
+              "functionName": "split",
+              "selfBytes": 393356
+            },
+            {
+              "functionName": "add",
+              "selfBytes": 200480
+            },
+            {
+              "functionName": "fromCharCode",
+              "selfBytes": 163960
+            },
+            {
+              "functionName": "readExactCompressedStream",
+              "selfBytes": 131180
+            },
+            {
+              "functionName": "gzip",
+              "selfBytes": 98348
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 74044
+            },
+            {
+              "functionName": "(JS)",
+              "selfBytes": 65568
+            },
+            {
+              "functionName": "test",
+              "selfBytes": 33536
+            },
+            {
+              "functionName": "subarray",
+              "selfBytes": 32832
+            }
+          ],
+          "result": {
+            "iterations": 10,
+            "wireBytes": 23503,
+            "wireSha256": "375cf344a643de9cdd99b631e02dfdccad99a698dfd027b75f00c08b1bf3b898",
+            "logicalSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416",
+            "nativeAvailable": true
+          }
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "variant": "candidate",
+      "bundleSha256": "fb505de7ff6bfef3db1eff0914887c8a2b79399f4fa8dd489637c21b92b37210",
+      "windows": [
+        {
+          "name": "encode",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 976444,
+            "totalSize": 1835008,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 1041560,
+            "totalSize": 3670016,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 265297
+          },
+          "wallMs": 6.218399999999974,
+          "profileSha256": "6ae69c53386541602a11a6e13f098df1822d1e48ff2fe39bc3498b19193f6884",
+          "samples": 47,
+          "nodes": 3,
+          "selfBytes": 2142720,
+          "topFunctions": [
+            {
+              "functionName": "base64",
+              "selfBytes": 2142720
+            },
+            {
+              "functionName": "(root)",
+              "selfBytes": 0
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 0
+            }
+          ],
+          "result": {
+            "iterations": 100,
+            "inputBytes": 17269,
+            "outputBytes": 23028,
+            "outputSha256": "31a29c4f8f1dd0a5edd70fd20860a03027fae92b5e244649f55199f7408b8e6c",
+            "nativeAvailable": true
+          }
+        },
+        {
+          "name": "roundtrip",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 629080,
+            "totalSize": 3670016,
+            "embedderHeapUsedSize": 888,
+            "backingStorageSize": 265297
+          },
+          "after": {
+            "usedSize": 1975948,
+            "totalSize": 5767168,
+            "embedderHeapUsedSize": 127656,
+            "backingStorageSize": 956187
+          },
+          "wallMs": 65.54729999999995,
+          "profileSha256": "ec7d9daee8169658a0a9ab65928c0bdb1c73e8693cd24023ab3199cea193c08a",
+          "samples": 212,
+          "nodes": 43,
+          "selfBytes": 9637852,
+          "topFunctions": [
+            {
+              "functionName": "(anonymous)",
+              "selfBytes": 4811920
+            },
+            {
+              "functionName": "validatePlayttSnapshotSources",
+              "selfBytes": 1443200
+            },
+            {
+              "functionName": "serializeManifestEnvelope",
+              "selfBytes": 1096676
+            },
+            {
+              "functionName": "split",
+              "selfBytes": 721148
+            },
+            {
+              "functionName": "decodeCanonicalManifestBytes",
+              "selfBytes": 345648
+            },
+            {
+              "functionName": "base64",
+              "selfBytes": 322560
+            },
+            {
+              "functionName": "gzip",
+              "selfBytes": 295232
+            },
+            {
+              "functionName": "add",
+              "selfBytes": 133860
+            },
+            {
+              "functionName": "readExactCompressedStream",
+              "selfBytes": 131240
+            },
+            {
+              "functionName": "(V8 API)",
+              "selfBytes": 98400
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 74044
+            },
+            {
+              "functionName": "(JS)",
+              "selfBytes": 65568
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 65560
+            },
+            {
+              "functionName": "has",
+              "selfBytes": 32796
+            },
+            {
+              "functionName": "(root)",
+              "selfBytes": 0
+            }
+          ],
+          "result": {
+            "iterations": 10,
+            "wireBytes": 23503,
+            "wireSha256": "375cf344a643de9cdd99b631e02dfdccad99a698dfd027b75f00c08b1bf3b898",
+            "logicalSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416",
+            "nativeAvailable": true
+          }
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "variant": "candidate",
+      "bundleSha256": "fb505de7ff6bfef3db1eff0914887c8a2b79399f4fa8dd489637c21b92b37210",
+      "windows": [
+        {
+          "name": "encode",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 977124,
+            "totalSize": 1835008,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 1042240,
+            "totalSize": 3932160,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 265297
+          },
+          "wallMs": 5.837999999999965,
+          "profileSha256": "ffb762b000f96f410535377881fbaef0b63bc07848bd38114d8af12860a2b789",
+          "samples": 56,
+          "nodes": 8,
+          "selfBytes": 2544144,
+          "topFunctions": [
+            {
+              "functionName": "base64",
+              "selfBytes": 2511360
+            },
+            {
+              "functionName": "(root)",
+              "selfBytes": 0
+            },
+            {
+              "functionName": "(anonymous)",
+              "selfBytes": 0
+            },
+            {
+              "functionName": "from",
+              "selfBytes": 0
+            },
+            {
+              "functionName": "toString",
+              "selfBytes": "function toString() { [native code] }32784"
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 0
+            }
+          ],
+          "result": {
+            "iterations": 100,
+            "inputBytes": 17269,
+            "outputBytes": 23028,
+            "outputSha256": "31a29c4f8f1dd0a5edd70fd20860a03027fae92b5e244649f55199f7408b8e6c",
+            "nativeAvailable": true
+          }
+        },
+        {
+          "name": "roundtrip",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 629768,
+            "totalSize": 3932160,
+            "embedderHeapUsedSize": 888,
+            "backingStorageSize": 265297
+          },
+          "after": {
+            "usedSize": 2125356,
+            "totalSize": 6029312,
+            "embedderHeapUsedSize": 127656,
+            "backingStorageSize": 1121514
+          },
+          "wallMs": 64.20969999999988,
+          "profileSha256": "b0cc926770cff5628050c5738573930dc09d597e910d5c32a17c862aecd97de0",
+          "samples": 208,
+          "nodes": 47,
+          "selfBytes": 9383768,
+          "topFunctions": [
+            {
+              "functionName": "(anonymous)",
+              "selfBytes": 4731496
+            },
+            {
+              "functionName": "validatePlayttSnapshotSources",
+              "selfBytes": 1508692
+            },
+            {
+              "functionName": "serializeManifestEnvelope",
+              "selfBytes": 1055420
+            },
+            {
+              "functionName": "decodeCanonicalManifestBytes",
+              "selfBytes": 547656
+            },
+            {
+              "functionName": "split",
+              "selfBytes": 426128
+            },
+            {
+              "functionName": "add",
+              "selfBytes": 200140
+            },
+            {
+              "functionName": "readExactCompressedStream",
+              "selfBytes": 196784
+            },
+            {
+              "functionName": "base64",
+              "selfBytes": 184320
+            },
+            {
+              "functionName": "(V8 API)",
+              "selfBytes": 131184
+            },
+            {
+              "functionName": "gzip",
+              "selfBytes": 98440
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 98340
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 74044
+            },
+            {
+              "functionName": "(JS)",
+              "selfBytes": 32784
+            },
+            {
+              "functionName": "identity2",
+              "selfBytes": 32784
+            },
+            {
+              "functionName": "validateCompressedContent",
+              "selfBytes": 32772
+            }
+          ],
+          "result": {
+            "iterations": 10,
+            "wireBytes": 23503,
+            "wireSha256": "375cf344a643de9cdd99b631e02dfdccad99a698dfd027b75f00c08b1bf3b898",
+            "logicalSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416",
+            "nativeAvailable": true
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "variant": "baseline",
+      "bundleSha256": "fd4d30e900dadc60d1b4aa68b5b013258f8c0caa565857f9a97cbfbf5f209484",
+      "windows": [
+        {
+          "name": "encode",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 976404,
+            "totalSize": 1835008,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 839856,
+            "totalSize": 6029312,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 265297
+          },
+          "wallMs": 86.62940000000026,
+          "profileSha256": "f12017ccf9d265f294c1e7ae6555ea94fa59c6b7700e16768cbf63afbb1183a4",
+          "samples": 1718,
+          "nodes": 6,
+          "selfBytes": 72552256,
+          "topFunctions": [
+            {
+              "functionName": "base64",
+              "selfBytes": 36002628
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 35039680
+            },
+            {
+              "functionName": "fromCharCode",
+              "selfBytes": 1477164
+            },
+            {
+              "functionName": "values",
+              "selfBytes": 32784
+            },
+            {
+              "functionName": "(root)",
+              "selfBytes": 0
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 0
+            }
+          ],
+          "result": {
+            "iterations": 100,
+            "inputBytes": 17269,
+            "outputBytes": 23028,
+            "outputSha256": "31a29c4f8f1dd0a5edd70fd20860a03027fae92b5e244649f55199f7408b8e6c",
+            "nativeAvailable": true
+          }
+        },
+        {
+          "name": "roundtrip",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 628544,
+            "totalSize": 5505024,
+            "embedderHeapUsedSize": 888,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 4371660,
+            "totalSize": 9699328,
+            "embedderHeapUsedSize": 127656,
+            "backingStorageSize": 1549038
+          },
+          "wallMs": 72.20299999999997,
+          "profileSha256": "fb5faf231e376427ce41599d8f459c6e038b72605657b424bd26f1040c90998a",
+          "samples": 373,
+          "nodes": 52,
+          "selfBytes": 16444196,
+          "topFunctions": [
+            {
+              "functionName": "(anonymous)",
+              "selfBytes": 5122008
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 3441700
+            },
+            {
+              "functionName": "base64",
+              "selfBytes": 3400456
+            },
+            {
+              "functionName": "validatePlayttSnapshotSources",
+              "selfBytes": 1476012
+            },
+            {
+              "functionName": "serializeManifestEnvelope",
+              "selfBytes": 995620
+            },
+            {
+              "functionName": "split",
+              "selfBytes": 590024
+            },
+            {
+              "functionName": "decodeCanonicalManifestBytes",
+              "selfBytes": 422768
+            },
+            {
+              "functionName": "readExactCompressedStream",
+              "selfBytes": 229552
+            },
+            {
+              "functionName": "add",
+              "selfBytes": 200080
+            },
+            {
+              "functionName": "fromCharCode",
+              "selfBytes": 131168
+            },
+            {
+              "functionName": "gzip",
+              "selfBytes": 98396
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 74044
+            },
+            {
+              "functionName": "(V8 API)",
+              "selfBytes": 65568
+            },
+            {
+              "functionName": "map",
+              "selfBytes": 32832
+            },
+            {
+              "functionName": "sort",
+              "selfBytes": 32816
+            }
+          ],
+          "result": {
+            "iterations": 10,
+            "wireBytes": 23503,
+            "wireSha256": "375cf344a643de9cdd99b631e02dfdccad99a698dfd027b75f00c08b1bf3b898",
+            "logicalSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416",
+            "nativeAvailable": true
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "variant": "baseline",
+      "bundleSha256": "fd4d30e900dadc60d1b4aa68b5b013258f8c0caa565857f9a97cbfbf5f209484",
+      "windows": [
+        {
+          "name": "encode",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 976404,
+            "totalSize": 1835008,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 839856,
+            "totalSize": 6029312,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 265297
+          },
+          "wallMs": 86.3757999999998,
+          "profileSha256": "31aefd67f618810a44a3fff61c04a5fa836e271115a2d6a32ccf79b3ba85ecae",
+          "samples": 1644,
+          "nodes": 5,
+          "selfBytes": 69672580,
+          "topFunctions": [
+            {
+              "functionName": "base64",
+              "selfBytes": 35614076
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 32581340
+            },
+            {
+              "functionName": "fromCharCode",
+              "selfBytes": 1477164
+            },
+            {
+              "functionName": "(root)",
+              "selfBytes": 0
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 0
+            }
+          ],
+          "result": {
+            "iterations": 100,
+            "inputBytes": 17269,
+            "outputBytes": 23028,
+            "outputSha256": "31a29c4f8f1dd0a5edd70fd20860a03027fae92b5e244649f55199f7408b8e6c",
+            "nativeAvailable": true
+          }
+        },
+        {
+          "name": "roundtrip",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 628648,
+            "totalSize": 6029312,
+            "embedderHeapUsedSize": 888,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 4371660,
+            "totalSize": 9699328,
+            "embedderHeapUsedSize": 127656,
+            "backingStorageSize": 1549038
+          },
+          "wallMs": 72.29059999999981,
+          "profileSha256": "89793b5014d9e5d4add192d0e6a421566f00aaa14b4300699f9eaa6910060d05",
+          "samples": 401,
+          "nodes": 54,
+          "selfBytes": 17219608,
+          "topFunctions": [
+            {
+              "functionName": "(anonymous)",
+              "selfBytes": 5146352
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 3900580
+            },
+            {
+              "functionName": "base64",
+              "selfBytes": 3382988
+            },
+            {
+              "functionName": "validatePlayttSnapshotSources",
+              "selfBytes": 1705432
+            },
+            {
+              "functionName": "serializeManifestEnvelope",
+              "selfBytes": 881536
+            },
+            {
+              "functionName": "split",
+              "selfBytes": 819440
+            },
+            {
+              "functionName": "decodeCanonicalManifestBytes",
+              "selfBytes": 305308
+            },
+            {
+              "functionName": "fromCharCode",
+              "selfBytes": 213148
+            },
+            {
+              "functionName": "readExactCompressedStream",
+              "selfBytes": 196832
+            },
+            {
+              "functionName": "(V8 API)",
+              "selfBytes": 196740
+            },
+            {
+              "functionName": "add",
+              "selfBytes": 134080
+            },
+            {
+              "functionName": "gzip",
+              "selfBytes": 131176
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 74044
+            },
+            {
+              "functionName": "test",
+              "selfBytes": 33536
+            },
+            {
+              "functionName": "Uint8Array",
+              "selfBytes": 32832
+            }
+          ],
+          "result": {
+            "iterations": 10,
+            "wireBytes": 23503,
+            "wireSha256": "375cf344a643de9cdd99b631e02dfdccad99a698dfd027b75f00c08b1bf3b898",
+            "logicalSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416",
+            "nativeAvailable": true
+          }
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "variant": "candidate",
+      "bundleSha256": "fb505de7ff6bfef3db1eff0914887c8a2b79399f4fa8dd489637c21b92b37210",
+      "windows": [
+        {
+          "name": "encode",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 976444,
+            "totalSize": 1835008,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 242237
+          },
+          "after": {
+            "usedSize": 1041560,
+            "totalSize": 3670016,
+            "embedderHeapUsedSize": 386904,
+            "backingStorageSize": 265297
+          },
+          "wallMs": 5.836699999999837,
+          "profileSha256": "de2006aa6c87974b3c2f56d788d3d6d33269d2af12148f5554c676571c024ee9",
+          "samples": 54,
+          "nodes": 3,
+          "selfBytes": 2465280,
+          "topFunctions": [
+            {
+              "functionName": "base64",
+              "selfBytes": 2465280
+            },
+            {
+              "functionName": "(root)",
+              "selfBytes": 0
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 0
+            }
+          ],
+          "result": {
+            "iterations": 100,
+            "inputBytes": 17269,
+            "outputBytes": 23028,
+            "outputSha256": "31a29c4f8f1dd0a5edd70fd20860a03027fae92b5e244649f55199f7408b8e6c",
+            "nativeAvailable": true
+          }
+        },
+        {
+          "name": "roundtrip",
+          "sampling": {
+            "samplingInterval": 32768,
+            "includeObjectsCollectedByMajorGC": true,
+            "includeObjectsCollectedByMinorGC": true
+          },
+          "before": {
+            "usedSize": 629040,
+            "totalSize": 3670016,
+            "embedderHeapUsedSize": 888,
+            "backingStorageSize": 265297
+          },
+          "after": {
+            "usedSize": 2124636,
+            "totalSize": 5767168,
+            "embedderHeapUsedSize": 127656,
+            "backingStorageSize": 1121514
+          },
+          "wallMs": 64.26780000000008,
+          "profileSha256": "c37351797d5de28694eb591b67c4f147157f3eb9f467d871592a210829f8ce11",
+          "samples": 210,
+          "nodes": 44,
+          "selfBytes": 9431016,
+          "topFunctions": [
+            {
+              "functionName": "(anonymous)",
+              "selfBytes": 4727076
+            },
+            {
+              "functionName": "validatePlayttSnapshotSources",
+              "selfBytes": 1475776
+            },
+            {
+              "functionName": "serializeManifestEnvelope",
+              "selfBytes": 948588
+            },
+            {
+              "functionName": "split",
+              "selfBytes": 524460
+            },
+            {
+              "functionName": "decodeCanonicalManifestBytes",
+              "selfBytes": 516720
+            },
+            {
+              "functionName": "base64",
+              "selfBytes": 276480
+            },
+            {
+              "functionName": "readExactCompressedStream",
+              "selfBytes": 262424
+            },
+            {
+              "functionName": "add",
+              "selfBytes": 133420
+            },
+            {
+              "functionName": "gzip",
+              "selfBytes": 131192
+            },
+            {
+              "functionName": "next",
+              "selfBytes": 131120
+            },
+            {
+              "functionName": "fetch",
+              "selfBytes": 107000
+            },
+            {
+              "functionName": "(V8 API)",
+              "selfBytes": 98368
+            },
+            {
+              "functionName": "Uint8Array",
+              "selfBytes": 32832
+            },
+            {
+              "functionName": "has",
+              "selfBytes": 32776
+            },
+            {
+              "functionName": "(root)",
+              "selfBytes": 0
+            }
+          ],
+          "result": {
+            "iterations": 10,
+            "wireBytes": 23503,
+            "wireSha256": "375cf344a643de9cdd99b631e02dfdccad99a698dfd027b75f00c08b1bf3b898",
+            "logicalSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416",
+            "nativeAvailable": true
+          }
+        }
+      ]
+    }
+  ],
+  "outbound": 0,
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "limitations": [
+    "Six fresh workerd instances, with encode then roundtrip windows per instance. Roundtrip follows encode activity; no forced GC.",
+    "100 encodes and10 full serialization/decode loops amplify target work; not actual WordPress per-request counts.",
+    "Cumulative sampled JS includes collected objects and final result hashing; not live peak, RSS, provider admission or billed CPU."
+  ]
+}
