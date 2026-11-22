@@ -1,0 +1,46 @@
+{
+  "schema": "playtt/path-scan-semantic/v1",
+  "at": "2026-11-22T00:04:30.205Z",
+  "result": "pass",
+  "baselineSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+  "candidateSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+  "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+  "scope": "Primitive path scan; real pinned PHP/WASM exact path/node/errno/option-mutation/node-lookup-count comparisons. No WordPress/provider acceptance.",
+  "observations": [
+    {
+      "label": "baseline",
+      "cases": 3893,
+      "priorCases": 1876,
+      "lookupNodeCalls": 11179,
+      "resultSha256": "aa0935c0eaaabe945ac0e14bba7d51a1cb7a4ee7e9104a7bff00a8245107051a",
+      "native": [
+        "繁中測試",
+        true,
+        "/spec/a",
+        "/spec/a/b/changed.txt"
+      ]
+    },
+    {
+      "label": "candidate",
+      "cases": 3893,
+      "priorCases": 1876,
+      "lookupNodeCalls": 11179,
+      "resultSha256": "aa0935c0eaaabe945ac0e14bba7d51a1cb7a4ee7e9104a7bff00a8245107051a",
+      "native": [
+        "繁中測試",
+        true,
+        "/spec/a",
+        "/spec/a/b/changed.txt"
+      ]
+    }
+  ],
+  "actualPhpReadWriteRenameUnlink": true,
+  "allOutputsAndNodeLookupCountsExact": true,
+  "nonPrimitiveFallbackCovered": true,
+  "centralLoaderChanged": false,
+  "cloudRequests": 0,
+  "disposed": [
+    "baseline",
+    "candidate"
+  ]
+}

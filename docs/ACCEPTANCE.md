@@ -1,5 +1,12 @@
 # Let’s Play 驗收狀態
 
+## PHP 路徑掃描候選（2026-11-22）
+
+將 lookupPath 的 split/filter 暫存陣列改成 indexOf 掃描。兩版各3,893個真實PHP案例、11,179次節點查找精確；六個全新workerd控制平均累計JS配置少12.77%，量測時間增加6.04%，不是整體尖峰或billed CPU。206輸入完整建置的差異只在lookupPath，五個二進位模組不變。
+
+原生繁中保存1,875bytes、revision209、完整重啟與新分頁讀回、登出及304物件298檔備份精確。LOCAL191／500,288bytes／30puts、closed／sealed／pending0、exit0；0 runtime例外，初始gate404及一個global-styles權限403已分類。觀測組件合計約145.7／137.8MiB，仍未通過免費記憶體驗收；原生取樣涵蓋周邊請求，未宣稱整體效能改善。候選未採用，中央及正式官網不變，0雲端操作。詳見[實作與限制](../experiments/cloudflare-wordpress/path-scan/README.md)。
+
+
 ## 取消請求傳輸邊界（2026-11-22）
 
 24及36案例本機校準確認proxy與direct、簡單回應與DO、標頭前與串流中取消均可重現相同文字，排除「只因Miniflare入口缺旗標」。固定workerd五個Git blob與實際binary已核對；詳細日誌分類為REQUEST_HANDLER，仍沒有確切C++ throw stack，不能回推歷史瀏覽器例外。

@@ -1,0 +1,18 @@
+{
+  "schema": "playtt/path-scan-build-proof/v1",
+  "result": "pass",
+  "inputs": 206,
+  "sourceCount": 83,
+  "loadedSourceCount": 71,
+  "baselineSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+  "candidateSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+  "baselineBundleSha256": "fbc6506c323feed4199b8273ea9a595171092910eb1161289be6f1c6c28ef877",
+  "bundleSha256": "efe592948f9141231be34db0258f7275f779832b9bba44676e85d56c89735f96",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "exactScopedCompiledChanges": true,
+  "unchangedBinaryModules": 5,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

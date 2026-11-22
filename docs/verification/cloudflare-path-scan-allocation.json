@@ -1,0 +1,570 @@
+{
+  "schema": "playtt/path-scan-allocation/v1",
+  "result": "pass",
+  "baselineSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+  "candidateSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+  "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+  "fixtureSha256": "b19a28fe859b41c95d78aecbedaea9b61cf3162c7add4336d0ed9459ce1d1127",
+  "runs": [
+    {
+      "index": 0,
+      "variant": "baseline",
+      "sourceSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+      "bundleSha256": "85823b9aa717dc147fee8bb5f6b2f1eb087fb28306be52a403280821fc0dbff2",
+      "profileSha256": "f1306fb2340096dd0b3173594da7477cc2b53536c61e44a5795166a766a04f1f",
+      "nodes": 18,
+      "samples": 499,
+      "selfBytes": 16394496,
+      "sampleSizeSum": 16399152,
+      "lookupPathSelfBytes": 8883972,
+      "splitSelfBytes": 1934184,
+      "filterSelfBytes": 2197544,
+      "topFunctions": [
+        {
+          "functionName": "lookupPath",
+          "attributedSelfBytes": 8883972
+        },
+        {
+          "functionName": "filter",
+          "attributedSelfBytes": 2197544
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 1934184
+        },
+        {
+          "functionName": "exec",
+          "attributedSelfBytes": 1541352
+        },
+        {
+          "functionName": "slice",
+          "attributedSelfBytes": 622804
+        },
+        {
+          "functionName": "dirname",
+          "attributedSelfBytes": 360580
+        },
+        {
+          "functionName": "lookupNode",
+          "attributedSelfBytes": 296560
+        },
+        {
+          "functionName": "lookup",
+          "attributedSelfBytes": 131152
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 98340
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 98340
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 98340
+        },
+        {
+          "functionName": "(IDLE)",
+          "attributedSelfBytes": 65760
+        },
+        {
+          "functionName": "splitPath",
+          "attributedSelfBytes": 65568
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 7221880,
+        "totalSize": 11554816,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 751145
+      },
+      "after": {
+        "usedSize": 7231244,
+        "totalSize": 12865536,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 749750
+      },
+      "wallMs": 84.97789999999986,
+      "result": {
+        "count": 30000,
+        "checksum": 771993500,
+        "errors": 1500
+      }
+    },
+    {
+      "index": 1,
+      "variant": "candidate",
+      "sourceSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+      "bundleSha256": "ecc5092b1af2360e675da27e2ea6dc3cc6c3bdf73c35ffa83ce39c005169e54a",
+      "profileSha256": "22ba5656a104ebb7017671eac1dd7d5eb8af53461326a426d764955d2efba600",
+      "nodes": 17,
+      "samples": 409,
+      "selfBytes": 13440800,
+      "sampleSizeSum": 13442880,
+      "lookupPathSelfBytes": 10850236,
+      "splitSelfBytes": 0,
+      "filterSelfBytes": 0,
+      "topFunctions": [
+        {
+          "functionName": "lookupPath",
+          "attributedSelfBytes": 10850236
+        },
+        {
+          "functionName": "exec",
+          "attributedSelfBytes": 1508512
+        },
+        {
+          "functionName": "slice",
+          "attributedSelfBytes": 491676
+        },
+        {
+          "functionName": "dirname",
+          "attributedSelfBytes": 163908
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 98340
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 98340
+        },
+        {
+          "functionName": "(IDLE)",
+          "attributedSelfBytes": 65828
+        },
+        {
+          "functionName": "lookupNode",
+          "attributedSelfBytes": 65612
+        },
+        {
+          "functionName": "values",
+          "attributedSelfBytes": 65568
+        },
+        {
+          "functionName": "lookup",
+          "attributedSelfBytes": 32780
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "splitPath",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 7225004,
+        "totalSize": 11816960,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 751145
+      },
+      "after": {
+        "usedSize": 7200092,
+        "totalSize": 12865536,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 749750
+      },
+      "wallMs": 90.03900000000021,
+      "result": {
+        "count": 30000,
+        "checksum": 771993500,
+        "errors": 1500
+      }
+    },
+    {
+      "index": 2,
+      "variant": "candidate",
+      "sourceSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+      "bundleSha256": "ecc5092b1af2360e675da27e2ea6dc3cc6c3bdf73c35ffa83ce39c005169e54a",
+      "profileSha256": "e40a733bd2184ccecd41a205fd614919d3f4cea56ac2ea0a31b2f6afaed9a916",
+      "nodes": 17,
+      "samples": 437,
+      "selfBytes": 14358884,
+      "sampleSizeSum": 14361164,
+      "lookupPathSelfBytes": 11669828,
+      "splitSelfBytes": 0,
+      "filterSelfBytes": 0,
+      "topFunctions": [
+        {
+          "functionName": "lookupPath",
+          "attributedSelfBytes": 11669828
+        },
+        {
+          "functionName": "exec",
+          "attributedSelfBytes": 1279236
+        },
+        {
+          "functionName": "slice",
+          "attributedSelfBytes": 557240
+        },
+        {
+          "functionName": "dirname",
+          "attributedSelfBytes": 262228
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 163904
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 163900
+        },
+        {
+          "functionName": "lookup",
+          "attributedSelfBytes": 98372
+        },
+        {
+          "functionName": "(IDLE)",
+          "attributedSelfBytes": 65828
+        },
+        {
+          "functionName": "values",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "splitPath",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "lookupNode",
+          "attributedSelfBytes": 32780
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 7204136,
+        "totalSize": 11554816,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 751145
+      },
+      "after": {
+        "usedSize": 7200092,
+        "totalSize": 12865536,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 749750
+      },
+      "wallMs": 89.5269000000003,
+      "result": {
+        "count": 30000,
+        "checksum": 771993500,
+        "errors": 1500
+      }
+    },
+    {
+      "index": 3,
+      "variant": "baseline",
+      "sourceSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+      "bundleSha256": "85823b9aa717dc147fee8bb5f6b2f1eb087fb28306be52a403280821fc0dbff2",
+      "profileSha256": "0e5c0a8592cb1786a5acd9d56772b0791c47c4d616c30a60bb08cbfa5bce4eef",
+      "nodes": 19,
+      "samples": 485,
+      "selfBytes": 15937712,
+      "sampleSizeSum": 15941864,
+      "lookupPathSelfBytes": 8359448,
+      "splitSelfBytes": 1770204,
+      "filterSelfBytes": 2329484,
+      "topFunctions": [
+        {
+          "functionName": "lookupPath",
+          "attributedSelfBytes": 8359448
+        },
+        {
+          "functionName": "filter",
+          "attributedSelfBytes": 2329484
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 1770204
+        },
+        {
+          "functionName": "exec",
+          "attributedSelfBytes": 1575616
+        },
+        {
+          "functionName": "slice",
+          "attributedSelfBytes": 524452
+        },
+        {
+          "functionName": "dirname",
+          "attributedSelfBytes": 393336
+        },
+        {
+          "functionName": "lookupNode",
+          "attributedSelfBytes": 327948
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 196704
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 163900
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "(IDLE)",
+          "attributedSelfBytes": 65760
+        },
+        {
+          "functionName": "lookup",
+          "attributedSelfBytes": 65564
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 34176
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "splitPath",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 7221868,
+        "totalSize": 11554816,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 751145
+      },
+      "after": {
+        "usedSize": 7231212,
+        "totalSize": 12865536,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 749750
+      },
+      "wallMs": 84.6884,
+      "result": {
+        "count": 30000,
+        "checksum": 771993500,
+        "errors": 1500
+      }
+    },
+    {
+      "index": 4,
+      "variant": "baseline",
+      "sourceSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+      "bundleSha256": "85823b9aa717dc147fee8bb5f6b2f1eb087fb28306be52a403280821fc0dbff2",
+      "profileSha256": "10bf97e559b974b7c2bcb39ddf110bd5bf41ef39b2d452a34c85d9b980adc0bc",
+      "nodes": 18,
+      "samples": 480,
+      "selfBytes": 15771280,
+      "sampleSizeSum": 15775744,
+      "lookupPathSelfBytes": 8556112,
+      "splitSelfBytes": 1508216,
+      "filterSelfBytes": 2328880,
+      "topFunctions": [
+        {
+          "functionName": "lookupPath",
+          "attributedSelfBytes": 8556112
+        },
+        {
+          "functionName": "filter",
+          "attributedSelfBytes": 2328880
+        },
+        {
+          "functionName": "split",
+          "attributedSelfBytes": 1508216
+        },
+        {
+          "functionName": "exec",
+          "attributedSelfBytes": 1476548
+        },
+        {
+          "functionName": "slice",
+          "attributedSelfBytes": 622788
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 360592
+        },
+        {
+          "functionName": "lookupNode",
+          "attributedSelfBytes": 262328
+        },
+        {
+          "functionName": "dirname",
+          "attributedSelfBytes": 229472
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "(IDLE)",
+          "attributedSelfBytes": 65760
+        },
+        {
+          "functionName": "lookup",
+          "attributedSelfBytes": 65560
+        },
+        {
+          "functionName": "splitPath",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 7222908,
+        "totalSize": 11554816,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 751145
+      },
+      "after": {
+        "usedSize": 7240224,
+        "totalSize": 13127680,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 749750
+      },
+      "wallMs": 84.69140000000061,
+      "result": {
+        "count": 30000,
+        "checksum": 771993500,
+        "errors": 1500
+      }
+    },
+    {
+      "index": 5,
+      "variant": "candidate",
+      "sourceSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+      "bundleSha256": "ecc5092b1af2360e675da27e2ea6dc3cc6c3bdf73c35ffa83ce39c005169e54a",
+      "profileSha256": "0a061f9bc019c90f7d2c67c073a224ad8e54c811096bb82f105f8081640e5bb3",
+      "nodes": 17,
+      "samples": 431,
+      "selfBytes": 14161732,
+      "sampleSizeSum": 14164108,
+      "lookupPathSelfBytes": 11538396,
+      "splitSelfBytes": 0,
+      "filterSelfBytes": 0,
+      "topFunctions": [
+        {
+          "functionName": "lookupPath",
+          "attributedSelfBytes": 11538396
+        },
+        {
+          "functionName": "exec",
+          "attributedSelfBytes": 1606888
+        },
+        {
+          "functionName": "slice",
+          "attributedSelfBytes": 458920
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 196660
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "(IDLE)",
+          "attributedSelfBytes": 65828
+        },
+        {
+          "functionName": "dirname",
+          "attributedSelfBytes": 65564
+        },
+        {
+          "functionName": "lookupNode",
+          "attributedSelfBytes": 32788
+        },
+        {
+          "functionName": "values",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "lookup",
+          "attributedSelfBytes": 32784
+        },
+        {
+          "functionName": "(root)",
+          "attributedSelfBytes": 0
+        },
+        {
+          "functionName": "splitPath",
+          "attributedSelfBytes": 0
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 7226220,
+        "totalSize": 11554816,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 751145
+      },
+      "after": {
+        "usedSize": 7200092,
+        "totalSize": 12865536,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 749750
+      },
+      "wallMs": 90.15269999999964,
+      "result": {
+        "count": 30000,
+        "checksum": 771993500,
+        "errors": 1500
+      }
+    }
+  ],
+  "cloudRequests": 0,
+  "outboundAttempts": 0,
+  "centralLoaderChanged": false,
+  "productionChanged": false,
+  "scope": "Six fresh local workerd instances run 30000 mixed actual PHP MEMFS path lookups each. PHP boot/file read verified before sampling. Not a native WordPress workload.",
+  "limitations": [
+    "Cumulative sampled JS allocation including collected objects, not live peak, RSS, billed CPU or provider admission.",
+    "Repeated target fixture amplifies allocation and does not represent native WordPress path frequencies.",
+    "Before/after heap usage can cross GC; wall time includes profiling and local host load."
+  ]
+}
