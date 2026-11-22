@@ -1,0 +1,27 @@
+{
+  "schema": "playtt/core-integrated-build-proof/v1",
+  "result": "pass",
+  "inputs": 210,
+  "changedInputs": [
+    "src/worker.ts",
+    "src/playtt-memory-diagnostics.ts"
+  ],
+  "addedInputs": [
+    "src/playtt-compressed-core-module.mjs",
+    "src/playtt-compressed-core-module.d.mts"
+  ],
+  "unchangedPriorInputs": 206,
+  "loadedSources": 73,
+  "prototypeSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+  "baselineBundleSha256": "0f9d3340e3e66f7cc6242bf31cc26d4d76ad9c78dfa7f87a17adca214206b025",
+  "bundleSha256": "ed725b8e4a79b26af5b3f22351dd5e2bc850ce9bfbf440ec0f9fff8a7a9b864a",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "unchangedBinaryModules": 5,
+  "compressionAfterBootPatchesAndCompaction": true,
+  "diagnosticPeekBeforeContents": true,
+  "decodedCacheReportedSeparately": true,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

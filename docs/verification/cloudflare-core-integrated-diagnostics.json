@@ -1,0 +1,74 @@
+{
+  "schema": "playtt/core-integrated-diagnostics/v1",
+  "at": "2026-11-22T02:13:16.008Z",
+  "result": "pass",
+  "bundleSha256": "ed725b8e4a79b26af5b3f22351dd5e2bc850ce9bfbf440ec0f9fff8a7a9b864a",
+  "prototypeSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+  "compiledApiSha256": "b61035a7690d3417204b0e910341265e7899a8cd02104f4d9ebd5e3e93941a30",
+  "cases": [
+    "unchanged-ordinary-alias-cycle-unknown-behavior",
+    "real-PHP-uncompressed-baseline",
+    "compressed-scan-counts",
+    "repeated-scan-does-not-materialize",
+    "first-runtime-sample",
+    "all-corpus-bytes",
+    "unsampled-no-stale-file-counts",
+    "after-persist-keeps-compression-and-cache",
+    "materialization-updates-accounting"
+  ],
+  "corpusFiles": 2154,
+  "inventorySha256": "d0e3c7e502622a7dcae60bb917de2807f7be67915fbe9536c4f85a19651bcdbd",
+  "before": {
+    "fileBytes": 23863844,
+    "files": 2158,
+    "heapAliasedFileBytes": 0,
+    "unknownFileBuffers": 0,
+    "compressedCoreFiles": 0,
+    "compressedCoreBytes": 0,
+    "compressedCoreLogicalBytes": 0,
+    "categories": {
+      "runtime": 149204,
+      "wordpress-core": 22522980,
+      "plugins-and-theme": 1191660
+    }
+  },
+  "after": {
+    "fileBytes": 6641726,
+    "files": 2158,
+    "heapAliasedFileBytes": 0,
+    "unknownFileBuffers": 0,
+    "compressedCoreFiles": 1449,
+    "compressedCoreBytes": 5210374,
+    "compressedCoreLogicalBytes": 22432492,
+    "categories": {
+      "runtime": 149204,
+      "wordpress-core": 5300862,
+      "plugins-and-theme": 1191660
+    }
+  },
+  "promoted": {
+    "fileBytes": 6646161,
+    "files": 2158,
+    "heapAliasedFileBytes": 0,
+    "unknownFileBuffers": 0,
+    "compressedCoreFiles": 1448,
+    "compressedCoreBytes": 5207402,
+    "compressedCoreLogicalBytes": 22425085,
+    "categories": {
+      "runtime": 149204,
+      "wordpress-core": 5305297,
+      "plugins-and-theme": 1191660
+    }
+  },
+  "cacheAfterRead": {
+    "bytes": 65536,
+    "limit": 524288
+  },
+  "allBytesExact": true,
+  "scanDoesNotMaterialize": true,
+  "cacheSeparate": true,
+  "fullNativeWorkflowAccepted": false,
+  "providerMemoryAccepted": false,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0
+}

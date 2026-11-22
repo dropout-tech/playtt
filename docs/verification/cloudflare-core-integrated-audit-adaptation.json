@@ -1,0 +1,14 @@
+{
+  "source": "playtt-base64-editor-audit.mjs",
+  "sourceSha256": "56b7ff823872341f850258d2cb042eccf9929de7968d6365da0dd8fb78c2fc3d",
+  "output": "playtt-core-integrated-editor-audit.mjs",
+  "outputSha256": "ea4c79e232a1a404e0c0199d8c8bf008e47bc412f466f2e735dbf83baaa1da10",
+  "changes": [
+    "Point existing native recovery/lifecycle audit at integrated compression build and owned run.",
+    "Keep original data and accounting assertions; add compressed-file/cache persistence across actual scans.",
+    "Report maximum sample components and age of latest PHP observation, not simultaneous provider peaks.",
+    "Initial read-only audit found two HTTP errors instead of prior run one: preserve that audit and explicitly verify/report the single observed global-style403 against pinned controller source and editor role. No native run or data was modified/replayed."
+  ],
+  "cloudRequests": 0,
+  "initialOutputSha256": "efbaefd9aabb05cf6682e1a631df3e335d8e993fb8e1c8164bef3a10cb41f23c"
+}

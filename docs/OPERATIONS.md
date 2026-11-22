@@ -1,5 +1,12 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 核心壓縮完整候選：資料通過、記憶體仍未達標（2026-11-22）
+
+隔離ed725b8e4建置完成210項輸入核對、TypeScript／dry-run與9組真實PHP診斷檢查。繁中原生保存、完整workerd重啟、新分頁11筆修訂、登出與304物件／298檔獨立備份精確；最終LOCAL192／550,306bytes／33puts，closed／sealed／pending0／exit0。
+
+1,450個核心檔案在17次診斷掃描中維持壓縮，核心容量5,302,562bytes；但完整流程組件合計觀測仍達263,085,325／216,396,722bytes（約250.9／206.4MiB），免費驗收未過，候選未採用。另保留命令選單出現後一筆global-style403權限拒絕，未放寬權限。下一步隔離解壓暫存與快取來源；正式站及原視覺不變，0雲端操作，目標active。詳見[完整證據與限制](../experiments/cloudflare-wordpress/core-integrated/README.md)。
+
+
 ## 核心檔案壓縮保存原型（2026-11-22）
 
 真正 PHP／MEMFS 的22組原版與候選比較通過；完整2,154檔 SHA／長度精確，1,857個核心檔案的 node backing 由22,522,980降至5,300,862bytes，讀回及PHP require後維持壓縮。297個wp-content檔及metadata不變；另列最多512KiB解壓cache。這只是檔案持有容量，尚未量到整個後台尖峰或接入完整建置。
