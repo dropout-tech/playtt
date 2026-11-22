@@ -1,5 +1,12 @@
 # Let’s Play 驗收狀態
 
+## 核心讀取臨時物件已移除，冷啟動仍待改善（2026-11-22）
+
+壓縮核心 read 改用相同 pinned MEMFS 複製規則，省去每次兩個 shadow 物件。實際 PHP 的基準／前版／候選 25 項比對相同，1,024 次暖機讀取由 2,048 個 Object.create 降至 0。214 輸入／213 不變／76 載入來源完整建置 c68abf7e 通過，只有 adapter read 改變；快取、解壓限制、權限與保存格式不變。原生 render/save 的該配置採樣路徑亦不再出現，但不是整體效能改善的受控比較。
+
+繁中保存、完整重啟、新分頁 11 筆修訂、登出與 304 物件／298 檔還原精確。最終 LOCAL191／500,265 bytes／30 puts，closed／sealed／pending0／exit0，HTTP／runtime exceptions／外連 0。首次完整檢查前最大非同步組件合計仍有 144,639,256 bytes，位於登入初期；不能宣稱免費記憶體限制通過。下一步檢查直接載入可信 ZIP 壓縮核心是否能避免先展開後壓縮的冷啟動暫存。中央、雲端 Worker、正式 Pages 與原視覺不變，不合併或切換後台，全案 active。詳見[直接核心讀取證據與限制](../experiments/cloudflare-wordpress/core-direct/README.md)。
+
+
 ## 原生量測與完整備份檢查已分離（2026-11-22）
 
 42 個固定數字計數器找到第二次 ZIP 解壓來自測試工具的 fence-status 完整檢查，原生保存完成時仍只有冷啟動的 1 次。新工具禁止在 allocation sampling 中做完整檢查，並在原生採樣後照常驗證資料。同一 bundle 的載入／保存窗口 ZIP 增量與 operator-status 皆 0；未變更媒體與主題內容讀取皆 0。214 輸入／76 載入來源、六組合約通過；中央及正式站不變。

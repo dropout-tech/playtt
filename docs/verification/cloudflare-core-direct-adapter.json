@@ -1,0 +1,18 @@
+{
+  "schema": "playtt/core-direct-adapter/v1",
+  "sourceSha256": "51ada8f92a11d39d146f169aa532d29d211d431ef9d95436263ca62b95433958",
+  "candidateSha256": "a453e26322320b83e46bfa95cbdcf92b66fae758402ee59a81e3a40a6790097c",
+  "cacheSha256": "9c3044fdaf897ebca5ca661756596a2c75a6cae477641bd3eddc179f52a73982",
+  "loaderSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+  "changed": "compressed read only; direct equivalent of pinned MEMFS copy body",
+  "unchanged": [
+    "LRU bounds and cache accounting",
+    "decode limits",
+    "mmap shadow/delegation",
+    "write/msync/materialization",
+    "node metadata and direct contents behavior",
+    "ordinary node read delegation"
+  ],
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "playtt/core-direct-audit-adaptation/v1",
+  "sourceSha256": "4fa1bcd4183d2a459ba133cfa147453d58928fbc75e0c9b2cc9e9929da86d3f7",
+  "auditSha256": "0336b424e3f5cdf0b5716020894fd1d7ed5936bd9d2596fa6d81ff1a5a09c4e4",
+  "dataRecoveryAssertionsPreserved": true,
+  "cloudRequests": 0
+}

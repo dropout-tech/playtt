@@ -1,0 +1,104 @@
+{
+  "schema": "playtt/core-direct-effect/v1",
+  "result": "equivalent-read-semantics; transient-wrapper-construction-removed",
+  "moduleSha256": "a453e26322320b83e46bfa95cbdcf92b66fae758402ee59a81e3a40a6790097c",
+  "phpCases": 25,
+  "threeVariantsExact": true,
+  "control": [
+    {
+      "variant": "baseline",
+      "readCalls": 1024,
+      "shadowObjectCreateCalls": 0,
+      "bytes": 4194304
+    },
+    {
+      "variant": "prior",
+      "readCalls": 1024,
+      "shadowObjectCreateCalls": 2048,
+      "bytes": 4194304
+    },
+    {
+      "variant": "candidate",
+      "readCalls": 1024,
+      "shadowObjectCreateCalls": 0,
+      "bytes": 4194304
+    }
+  ],
+  "profiles": [
+    {
+      "variant": "prior",
+      "window": "render",
+      "bundleSha256": "922ab37887c40d579bd2d383cdc4453a9f50f78c2501703b76a648d21f01ccc0",
+      "profileSha256": "f37097c345c1dea42226b224b4792472d8619a1f88cdacaff8f69904f1ebee3a",
+      "adapterCompiledLines": {
+        "first": 3961,
+        "last": 4083
+      },
+      "sampledWrapperBytes": 1182096,
+      "matches": [
+        {
+          "sampledSelfBytes": 262760,
+          "parentCompiledLine": 4016
+        },
+        {
+          "sampledSelfBytes": 426800,
+          "parentCompiledLine": 4016
+        },
+        {
+          "sampledSelfBytes": 492536,
+          "parentCompiledLine": 4016
+        }
+      ]
+    },
+    {
+      "variant": "prior",
+      "window": "save",
+      "bundleSha256": "922ab37887c40d579bd2d383cdc4453a9f50f78c2501703b76a648d21f01ccc0",
+      "profileSha256": "d039f6ba76fddf1b3950af6511becb9e03381958b43ea431c68b2fe7bcdf689f",
+      "adapterCompiledLines": {
+        "first": 3961,
+        "last": 4083
+      },
+      "sampledWrapperBytes": 886324,
+      "matches": [
+        {
+          "sampledSelfBytes": 886324,
+          "parentCompiledLine": 4016
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "window": "render",
+      "bundleSha256": "c68abf7e8c0eb3a08ed02f6d7eb156e372078a6cce6808a915a4a8e742a8dc1f",
+      "profileSha256": "7ea2790f4aff2c2304ea6b3c5058a94067ccdb69f4d8736a6c1c474ab4ca02e2",
+      "adapterCompiledLines": {
+        "first": 3961,
+        "last": 4087
+      },
+      "sampledWrapperBytes": 0,
+      "matches": []
+    },
+    {
+      "variant": "candidate",
+      "window": "save",
+      "bundleSha256": "c68abf7e8c0eb3a08ed02f6d7eb156e372078a6cce6808a915a4a8e742a8dc1f",
+      "profileSha256": "4031f43733443e79ade1c1ed86ca1dc7b4566ed49310adb2a6f45e68623fec9c",
+      "adapterCompiledLines": {
+        "first": 3961,
+        "last": 4087
+      },
+      "sampledWrapperBytes": 0,
+      "matches": []
+    }
+  ],
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "providerMemoryAccepted": false,
+  "limitations": [
+    "Object.create counts cover the bounded synchronous warm-read control. They are not whole-workflow allocations.",
+    "Native sampling no longer reports Object.create immediately below the compressed adapter read frame. This is structural evidence, not an exact allocation total or peak-memory reduction.",
+    "Browser timings and sampling differ, so total profiles and memory maxima are not controlled performance comparisons.",
+    "Cold login still has a native-only observed component sum above128MiB. Provider memory, CPU and sustained Free acceptance remain open."
+  ]
+}
