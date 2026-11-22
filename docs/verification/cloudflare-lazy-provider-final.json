@@ -1,0 +1,59 @@
+{
+  "schema": "playtt/lazy-provider-final/v1",
+  "at": "2026-11-22T05:26:03.416Z",
+  "result": "pass",
+  "version": "8e03e9a0-b660-4a45-8384-08f01318d031",
+  "canonicalVersion": 181,
+  "revision": "9e732918-4430-4381-8275-fee800f414cb",
+  "allExpectedBindingsExact": true,
+  "recoveryCapabilityDisabled": true,
+  "optionalWritersDisabled": true,
+  "pins": 16,
+  "all16PinsExact": true,
+  "chargedBytes": 0,
+  "chargedPuts": 0,
+  "originalCodeRestored": true,
+  "bothPointersAndCommitReceiptExact": true,
+  "remainingBytes": 62344,
+  "pending": 0,
+  "sealed": true,
+  "windowClosed": true,
+  "fenceActive": false,
+  "publisher": "paused",
+  "checks": [
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "provider",
+      "status": 200
+    },
+    {
+      "kind": "provider",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "provider",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 404
+    }
+  ],
+  "remoteMutations": 0,
+  "productionChanged": false
+}

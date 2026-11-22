@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-22T05:29:36.822590+00:00",
+  "result": "pass",
+  "prerequisites": 325,
+  "newTools": 9,
+  "priorFilesUnchanged": 871,
+  "totalFiles": 880,
+  "reapplyRefusedWithoutMutation": true,
+  "centralRuntimeChanged": false,
+  "assemblyCloudRequests": 0
+}

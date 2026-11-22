@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-22T05:22:38.990907+00:00",
+  "source": "Authenticated Cloudflare visible UI, expected account",
+  "workers": {
+    "plan": "Free",
+    "priceUsd": 0,
+    "currentPlan": true
+  },
+  "r2": {
+    "period": "October 25 - November 25",
+    "billableUsageUsd": 0,
+    "classA": "7.3k",
+    "classB": "60.52k",
+    "storage": "2.33 GB"
+  },
+  "billingMayLag": true,
+  "detailedDoUsageRefreshed": false,
+  "planChanged": false,
+  "subscriptionApi403": true
+}

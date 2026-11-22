@@ -1,0 +1,44 @@
+{
+  "schema": "playtt/lazy-cold-local/v1",
+  "at": "2026-11-22T05:20:11.460Z",
+  "result": "pass",
+  "bundleSha256": "19f8bc17966c12b82518961dc550a95672a0c859b2017577bb82fc04c44b0b0d",
+  "flagsMatchCurrentPrivate": true,
+  "limits": {
+    "durationSeconds": 120,
+    "maxBytes": 1,
+    "maxOperations": 1
+  },
+  "native": {
+    "status": 200,
+    "wallMs": 2210,
+    "bodyBytes": 7330,
+    "loginForm": true
+  },
+  "canonicalVersion": 181,
+  "allCanonicalContentExact": true,
+  "chargedBytes": 0,
+  "chargedPuts": 0,
+  "sealed": true,
+  "closed": true,
+  "pending": 0,
+  "outboundAttempts": 0,
+  "observerRuns": [
+    {
+      "label": "closing",
+      "samples": 7,
+      "events": 88,
+      "exceptions": 0,
+      "privateExceptions": 0,
+      "lifecycleEvents": 66,
+      "privateLifecycleErrors": 0,
+      "allocationActive": false,
+      "completedAllocations": [],
+      "busy": false,
+      "stopped": true
+    }
+  ],
+  "cloudRequests": 0,
+  "providerAcceptance": false,
+  "localProcessesDisposed": true
+}

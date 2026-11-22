@@ -1,5 +1,12 @@
 # PLAYTT 執行進度
 
+## 私人 Cloudflare 單次登入成功，已回復原程式（2026-11-22）
+
+固定19f8bc17候選在120秒／1byte／1operation窗口完成登入表單GET200／3,234ms，0bytes／0puts。live observer捕捉外層請求，10事件皆ok、exceptions0；沒有PHP trace／memory sample，不能宣稱冷載入內部或整體免費後台已驗收。已定位工具收到外層事件便停止，下一步先修正觀測生命週期。
+
+兩次私人部署前後都逐檔核對6模組與全部bindings／namespace；目前回復原相容reader，版本8e03e9a0。canonical181、16pins及兩個pointer／receipt精確，remaining62,344bytes、closed／sealed／pending0、fence inactive、publisher paused。Free方案與R2本期$0.00由登入畫面核對，帳務可能延遲。正式Pages與原視覺不變、PR4 draft、不切換後台，全案active。詳見[私人登入實測與限制](../experiments/cloudflare-wordpress/lazy-provider/README.md)。
+
+
 ## 可信 ZIP 核心可直接壓縮載入，原生恢復通過（2026-11-22）
 
 新隔離候選直接安裝1,449個壓縮核心檔案，省去先整批展開再重壓；首次讀取核對長度／CRC／SHA，改寫恢復一般 MEMFS。整包 SHA／路徑／大小／ZIP 邊界先驗證。2,154檔案與371目錄的新舊 extractor 雜湊／mode／owner／結構完全相同；25項PHP行為、12項安裝前拒絕與1項解碼時完整性拒絕通過。215輸入／77載入來源完整建置19f8bc17通過，中央不變。
