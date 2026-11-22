@@ -1,0 +1,24 @@
+{
+  "schema": "playtt/core-sized-upstream/v1",
+  "repository": "cloudflare/workerd",
+  "commit": "8ea63498c7aa107995f9b2ffee7789631707e09f",
+  "files": [
+    {
+      "path": "src/node/internal/internal_zlib.ts",
+      "blobSha": "375261a45e6a9b6f806b4415cb36034c2edbbbfd",
+      "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/node/internal/internal_zlib.ts#L75",
+      "finding": "info:true selects the synchronous stream engine."
+    },
+    {
+      "path": "src/node/internal/internal_zlib_base.ts",
+      "blobSha": "bfcd48e67457bf75aa7b07a631ed3e5b1245a129",
+      "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/node/internal/internal_zlib_base.ts#L249",
+      "finding": "The synchronous loop collects output chunks, allocates another on exhaustion, checks exact maxOutputLength, closes the native handle, and concatenates multiple chunks. Constructor allocates the configured chunkSize at line445."
+    }
+  ],
+  "candidate": "Set chunkSize to known logical length plus one; keep maxOutputLength equal to the logical length and retain final exact-length check. Avoid fully exhausting the first chunk on valid input.",
+  "unchangedOutputLimit": true,
+  "streamCloseDeferredByJs": false,
+  "wholeBackendCauseProven": false,
+  "cloudProjectRequests": 0
+}

@@ -1,0 +1,295 @@
+{
+  "schema": "playtt/core-sized-audit/v1",
+  "at": "2026-11-22T02:33:32.487Z",
+  "result": "codec-PHP-controls-and-full-build-pass; native-workflow-and-Free-acceptance-open",
+  "sourceSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+  "candidateSha256": "385e86a870bc8757af0eae5dec5aa28623add5ed9113b0b344f15f66d621fcdb",
+  "bundleSha256": "14cada693be821b6d4eac703d85422f10a33a1a0dde540ba3c4e31c9a92141e7",
+  "upstream": {
+    "schema": "playtt/core-sized-upstream/v1",
+    "repository": "cloudflare/workerd",
+    "commit": "8ea63498c7aa107995f9b2ffee7789631707e09f",
+    "files": [
+      {
+        "path": "src/node/internal/internal_zlib.ts",
+        "blobSha": "375261a45e6a9b6f806b4415cb36034c2edbbbfd",
+        "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/node/internal/internal_zlib.ts#L75",
+        "finding": "info:true selects the synchronous stream engine."
+      },
+      {
+        "path": "src/node/internal/internal_zlib_base.ts",
+        "blobSha": "bfcd48e67457bf75aa7b07a631ed3e5b1245a129",
+        "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/node/internal/internal_zlib_base.ts#L249",
+        "finding": "The synchronous loop collects output chunks, allocates another on exhaustion, checks exact maxOutputLength, closes the native handle, and concatenates multiple chunks. Constructor allocates the configured chunkSize at line445."
+      }
+    ],
+    "candidate": "Set chunkSize to known logical length plus one; keep maxOutputLength equal to the logical length and retain final exact-length check. Avoid fully exhausting the first chunk on valid input.",
+    "unchangedOutputLimit": true,
+    "streamCloseDeferredByJs": false,
+    "wholeBackendCauseProven": false,
+    "cloudProjectRequests": 0
+  },
+  "semantic": {
+    "workerdVersion": "1.20260828.1",
+    "variants": 2,
+    "boundaryCasesPerVariant": 16,
+    "corpusFilesPerVariant": 1449,
+    "rawBytesPerPass": 22432492,
+    "payloadBytes": 5210374,
+    "corpusSha256": "0b4f22f409a1eda4da7d9a9b909e503ca37671c74cf24c50085d46fb4c435743",
+    "payloadSha256": "0503a9905241de4c98be4fe8954cfa08077ef5d3f08c131b87dfbe21cfe845a3",
+    "allBytesExact": true,
+    "maxOutputLengthUnchanged": true,
+    "oversizeRejected": true,
+    "phpCases": 22,
+    "phpObservationsExact": true
+  },
+  "allocation": {
+    "instances": 6,
+    "windows": 18,
+    "groups": {
+      "default": {
+        "windows": 9,
+        "meanSampledJsBytes": 2578505.3333333335,
+        "meanObservedJsBackingMaximum": 37665557.222222224,
+        "meanWallMs": 278.08911111111115,
+        "minObservedJsBackingMaximum": 33582120,
+        "maxObservedJsBackingMaximum": 39642118
+      },
+      "sized": {
+        "windows": 9,
+        "meanSampledJsBytes": 2337233.3333333335,
+        "meanObservedJsBackingMaximum": 31328066.555555556,
+        "meanWallMs": 247.16287777777785,
+        "minObservedJsBackingMaximum": 31279161,
+        "maxObservedJsBackingMaximum": 31417915
+      }
+    },
+    "changes": {
+      "sampledJsReductionPercent": 9.357048708838555,
+      "meanObservedMaximumReductionPercent": 16.82569204877613,
+      "wallTimeReductionPercent": 11.120979606057514
+    },
+    "rows": [
+      {
+        "instance": 0,
+        "mode": "default",
+        "pass": 0,
+        "sampledJsBytes": 2559092,
+        "observedJsBackingMaximum": 33923697,
+        "wallMs": 277.85270000000014,
+        "observations": 4,
+        "profileSha256": "1b764f5913df0ef1247fc4b466738962a796f78049fd760ca67d2b92d76fbb29"
+      },
+      {
+        "instance": 0,
+        "mode": "default",
+        "pass": 1,
+        "sampledJsBytes": 2365312,
+        "observedJsBackingMaximum": 39632994,
+        "wallMs": 275.24440000000004,
+        "observations": 4,
+        "profileSha256": "d683a9e4eab31fb294b921023403e46d91a5b36030b2b78d3b9c75c7482fbfb6"
+      },
+      {
+        "instance": 0,
+        "mode": "default",
+        "pass": 2,
+        "sampledJsBytes": 2820556,
+        "observedJsBackingMaximum": 39558865,
+        "wallMs": 280.8216,
+        "observations": 4,
+        "profileSha256": "603ad27b656855f705d1419868c1396bb8ff33ed2aaf0375f84b5d24e2833e68"
+      },
+      {
+        "instance": 1,
+        "mode": "sized",
+        "pass": 0,
+        "sampledJsBytes": 2624632,
+        "observedJsBackingMaximum": 31395855,
+        "wallMs": 248.23610000000008,
+        "observations": 4,
+        "profileSha256": "1c3c67ab108315570b0d458ad8b84876f1406f6af63ff82a5f1cf9c73bf9cc51"
+      },
+      {
+        "instance": 1,
+        "mode": "sized",
+        "pass": 1,
+        "sampledJsBytes": 2328472,
+        "observedJsBackingMaximum": 31279161,
+        "wallMs": 243.92160000000013,
+        "observations": 4,
+        "profileSha256": "d4b969a82a8c87d012ba0200ceec53aefcd0406e46031fd44dac703380986852"
+      },
+      {
+        "instance": 1,
+        "mode": "sized",
+        "pass": 2,
+        "sampledJsBytes": 2430632,
+        "observedJsBackingMaximum": 31281309,
+        "wallMs": 249.43820000000005,
+        "observations": 4,
+        "profileSha256": "84f0461b397b8ccec0abc73d7ec63e2549a9668b3f523f9b579f3cb409d96d7f"
+      },
+      {
+        "instance": 2,
+        "mode": "sized",
+        "pass": 0,
+        "sampledJsBytes": 2103096,
+        "observedJsBackingMaximum": 31409843,
+        "wallMs": 247.70060000000012,
+        "observations": 4,
+        "profileSha256": "5b7dab4bff8cbd86d2119421c12b98303c14151fe99713c31fc98ad9e0573fab"
+      },
+      {
+        "instance": 2,
+        "mode": "sized",
+        "pass": 1,
+        "sampledJsBytes": 2295948,
+        "observedJsBackingMaximum": 31300381,
+        "wallMs": 243.8501000000001,
+        "observations": 4,
+        "profileSha256": "31a614fac0c71bceed2f25eaf1d8aade287fb797dad265fe4e0746c23e0370be"
+      },
+      {
+        "instance": 2,
+        "mode": "sized",
+        "pass": 2,
+        "sampledJsBytes": 2131916,
+        "observedJsBackingMaximum": 31295461,
+        "wallMs": 250.98689999999988,
+        "observations": 4,
+        "profileSha256": "1b491b1a8460b53ae9def843adacfcf9b2f2efe25d3a6639b140098c37d22071"
+      },
+      {
+        "instance": 3,
+        "mode": "default",
+        "pass": 0,
+        "sampledJsBytes": 2890204,
+        "observedJsBackingMaximum": 33890177,
+        "wallMs": 278.6671000000001,
+        "observations": 4,
+        "profileSha256": "c5ffde8bcce10acd1a166e0e59024ad006bcb4149a0e6b57f6a11ae7d2ff3745"
+      },
+      {
+        "instance": 3,
+        "mode": "default",
+        "pass": 1,
+        "sampledJsBytes": 2689332,
+        "observedJsBackingMaximum": 39642118,
+        "wallMs": 274.1336000000001,
+        "observations": 4,
+        "profileSha256": "a2b9a92a92c46e566828f71752ff80ff9857927249445cc292044767cc426701"
+      },
+      {
+        "instance": 3,
+        "mode": "default",
+        "pass": 2,
+        "sampledJsBytes": 2230756,
+        "observedJsBackingMaximum": 39558689,
+        "wallMs": 281.6889999999994,
+        "observations": 4,
+        "profileSha256": "583926253ceb30f27baeeb59d7a2c27a6b6c4c46de3a5a2bf86d23718106acac"
+      },
+      {
+        "instance": 4,
+        "mode": "default",
+        "pass": 0,
+        "sampledJsBytes": 2494848,
+        "observedJsBackingMaximum": 33582120,
+        "wallMs": 273.7024000000001,
+        "observations": 4,
+        "profileSha256": "dbf9db53f16a7502e7f210d4b292d133ca6a3cd18ef03cbd6b7aa27b9e4e0fc5"
+      },
+      {
+        "instance": 4,
+        "mode": "default",
+        "pass": 1,
+        "sampledJsBytes": 2237672,
+        "observedJsBackingMaximum": 39626226,
+        "wallMs": 277.8108000000002,
+        "observations": 4,
+        "profileSha256": "5f6a03e92109ca2d0c926c25ec0042048d29ce7897efa48fd4d87c94202e3f9f"
+      },
+      {
+        "instance": 4,
+        "mode": "default",
+        "pass": 2,
+        "sampledJsBytes": 2918776,
+        "observedJsBackingMaximum": 39575129,
+        "wallMs": 282.8804,
+        "observations": 4,
+        "profileSha256": "83be4c1f5efe82a60be00e4b5893aa70dd3f3d00fef65c164648fad72a3e1602"
+      },
+      {
+        "instance": 5,
+        "mode": "sized",
+        "pass": 0,
+        "sampledJsBytes": 2430352,
+        "observedJsBackingMaximum": 31417915,
+        "wallMs": 247.65149999999994,
+        "observations": 4,
+        "profileSha256": "4cbb00b8dd9479710da0cd2e8fd3c53756b0ae5b695a706064ee6cf278881479"
+      },
+      {
+        "instance": 5,
+        "mode": "sized",
+        "pass": 1,
+        "sampledJsBytes": 2230272,
+        "observedJsBackingMaximum": 31286617,
+        "wallMs": 242.78899999999976,
+        "observations": 4,
+        "profileSha256": "c4970b04c9601d458cc795ca37e3908e429b9cc6582eb472c2a702e56a2b296d"
+      },
+      {
+        "instance": 5,
+        "mode": "sized",
+        "pass": 2,
+        "sampledJsBytes": 2459780,
+        "observedJsBackingMaximum": 31286057,
+        "wallMs": 249.89190000000053,
+        "observations": 4,
+        "profileSha256": "81ecf1b493c0a07286721a15f783c332d7332bdaa31d0d3c53cde99b8ef019bf"
+      }
+    ]
+  },
+  "build": {
+    "schema": "playtt/core-sized-build-proof/v1",
+    "result": "pass",
+    "sourceInputs": 210,
+    "changedInputs": [
+      "src/playtt-compressed-core-module.mjs"
+    ],
+    "unchangedPriorInputs": 209,
+    "loadedSources": 73,
+    "sourceSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+    "candidateSha256": "385e86a870bc8757af0eae5dec5aa28623add5ed9113b0b344f15f66d621fcdb",
+    "baselineBundleSha256": "ed725b8e4a79b26af5b3f22351dd5e2bc850ce9bfbf440ec0f9fff8a7a9b864a",
+    "bundleSha256": "14cada693be821b6d4eac703d85422f10a33a1a0dde540ba3c4e31c9a92141e7",
+    "typecheck": "pass",
+    "wranglerDryRun": "pass",
+    "exactCompiledChunkSizeOnlyChange": true,
+    "unchangedBinaryModules": 5,
+    "maxOutputLengthUnchanged": true,
+    "cacheLimitUnchanged": true,
+    "centralRuntimeChanged": false,
+    "cloudRequests": 0,
+    "deployed": false
+  },
+  "allOwnersTerminalAndDisposed": true,
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "productionChanged": false,
+  "nativeWorkflowAccepted": false,
+  "providerMemoryAccepted": false,
+  "limitations": [
+    "Identical full-core corpus and same script in six fresh runtimes; three consecutive synchronous passes per instance, no forced GC.",
+    "Each pass decodes all1449 compressed corpus files, not an observed WordPress read sequence or frequency. Last output view is retained as a single-file cache; cache hits are not tested.",
+    "SHA aggregation and inspector sampling add shared overhead. Cumulative JS includes collected objects; observed JS+backing samples are not exact peak, retained heap, RSS, PHP/WASM, provider CPU or admission.",
+    "Input loading precedes observations; its garbage/GC timing may affect samples. Do not equate control results to full-backend performance.",
+    "Sizing the output chunk reduces allocations in this fixed control, but does not identify the cause of the previous263085325/216396722 full-backend observations.",
+    "The same exact output cap and final length checks remain. The allocation chunk has one extra byte to avoid exhaustion at valid length; this is not an output-limit increase.",
+    "New full14cada693 build has not run native editor/restart/recovery. Previous ed725b8e4 data acceptance and high memory observations do not apply as measurements of this candidate.",
+    "First Chinese initialization, sustained Free, provider memory/CPU, physical IME/mobile, global-style command-palette usability and original A01-A20 remain open."
+  ]
+}

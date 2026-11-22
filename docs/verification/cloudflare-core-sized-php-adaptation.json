@@ -1,0 +1,11 @@
+{
+  "source": "playtt-compressed-core-proof.mjs",
+  "sourceSha256": "8bfdfc2556d4885d4c3cfe7b504601a96c819f64ddc9261d02c3cfb37233436e",
+  "output": "playtt-core-sized-php-proof.mjs",
+  "outputSha256": "135863288567f8e96eb6d4c2fc845f6c4fd6fdbeaa6595cc5394ecd2b0a58fb1",
+  "moduleSha256": "385e86a870bc8757af0eae5dec5aa28623add5ed9113b0b344f15f66d621fcdb",
+  "changes": [
+    "Only module import/source identity and owned proof prefix change. All22 original PHP/MEMFS comparisons retained."
+  ],
+  "cloudRequests": 0
+}

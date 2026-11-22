@@ -1,5 +1,12 @@
 # PLAYTT 執行進度
 
+## 解壓區塊大小候選（2026-11-22）
+
+只調整解壓chunkSize，精確maxOutputLength及512KiB快取限制不變。兩種設定各16組workerd邊界、1,449個核心檔及22組真正PHP語意比較通過；六個全新workerd、18個相同corpus窗口中，平均JS＋backing觀測最大值下降16.83%，累計sampled JS下降9.36%。這些控制不是完整後台尖峰或provider驗收。
+
+完整210輸入建置14cada693通過，編譯產物只多一個chunkSize選項，5個二進位模組不變。新候選仍待完整原生保存／重啟／備份與記憶體檢查；前輪高記憶體數字不能當作新候選測量。中央／正式站及原視覺不變，0雲端操作，目標active。詳見[證據與限制](../experiments/cloudflare-wordpress/core-sized/README.md)。
+
+
 ## 核心壓縮完整候選：資料通過、記憶體仍未達標（2026-11-22）
 
 隔離ed725b8e4建置完成210項輸入核對、TypeScript／dry-run與9組真實PHP診斷檢查。繁中原生保存、完整workerd重啟、新分頁11筆修訂、登出與304物件／298檔獨立備份精確；最終LOCAL192／550,306bytes／33puts，closed／sealed／pending0／exit0。

@@ -1,3 +1,5 @@
+最新：[解壓區塊大小候選](core-sized/README.md)完成固定workerd控制、PHP比較與完整建置；待新候選原生流程及免費驗收，正式站不變。
+
 最新：[核心壓縮完整候選](core-integrated/README.md)通過原生保存／重啟／備份，但記憶體組件觀測仍過高；候選未採用、未部署，正式官網維持現況。
 
 最新：[核心檔案壓縮原型](compressed-core/README.md)通過22組PHP行為、完整2,154檔與16組workerd codec邊界；尚待完整後台整合／尖峰及免費驗收，正式站不變。
