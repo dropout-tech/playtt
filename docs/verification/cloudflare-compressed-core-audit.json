@@ -1,0 +1,110 @@
+{
+  "schema": "playtt/compressed-core-audit/v1",
+  "at": "2026-11-22T01:59:00.149Z",
+  "result": "local-core-filesystem-and-codec-prototype-pass; integration-and-Free-acceptance-open",
+  "moduleSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+  "peakEvidence": "artifacts/playtt-peak-retention-audit.json",
+  "semantic": {
+    "cases": 22,
+    "actualPhpWasm": true,
+    "loaderSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+    "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+    "observationsExact": true,
+    "typedArrayAndSliceBehaviorPreserved": true
+  },
+  "workerdCodec": {
+    "cases": 16,
+    "minimumBytes": 512,
+    "maximumBytes": 8388608,
+    "oneShotExactLimitRejected": 4,
+    "infoStreamExactLengthAndOversizeRejection": true,
+    "workerdVersion": "1.20260828.1",
+    "compatibilityDate": "2026-07-18",
+    "compatibilityFlags": [
+      "nodejs_compat",
+      "enable_request_signal"
+    ]
+  },
+  "corpus": {
+    "files": 2154,
+    "coreFiles": 1857,
+    "excludedWpContentFiles": 297,
+    "compressedFiles": 1449,
+    "originalCoreBackingBytes": 22522980,
+    "ordinaryBytes": 90488,
+    "compressedBytes": 5210374,
+    "afterCoreBackingBytes": 5300862,
+    "backingCapacityDifference": 17222118,
+    "decodedCacheLimit": 524288,
+    "decodedCacheAfterRead": 65536,
+    "allFilesShaAndLengthExact": true,
+    "metadataAndExcludedIdentityUnchanged": true,
+    "phpVersionReadExact": true,
+    "remainsCompressedAfterEveryFileRead": true
+  },
+  "failedFeatureAttempts": [
+    {
+      "attempt": "feature",
+      "terminal": true,
+      "disposed": true,
+      "phase": "unattributed HTTP500; response not captured",
+      "error": "HTTP500",
+      "failureSha256": "9141401a1edb2d5a0ff6a61cbe45cd3ee334524439419a8b184e3910c66945ab"
+    },
+    {
+      "attempt": "feature-v2",
+      "terminal": true,
+      "disposed": true,
+      "phase": "inflate",
+      "error": "Memory limit exceeded",
+      "failureSha256": "9a2e976e7b3917d2f63dd098edaeaa3cc02820a611d42793b98dcb6d7de9cf1d"
+    },
+    {
+      "attempt": "boundaries",
+      "terminal": true,
+      "disposed": true,
+      "phase": "decode-plus-one",
+      "error": "Memory limit exceeded",
+      "failureSha256": "dde28a8f14a8e059c6dba5677755f318d34f69b18c4b6f052ff7f7b9c7a66554"
+    }
+  ],
+  "priorProofsPreserved": [
+    {
+      "sourceSha256": "00b166468a84ee8716fc07c245ddb2f425193bd69aac4cd6f70fe6a77123fea4",
+      "terminal": true,
+      "phpExited": true
+    },
+    {
+      "sourceSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+      "terminal": true,
+      "phpExited": true
+    },
+    {
+      "sourceSha256": "8ceebfc8d022bea2d55624cf4c3694e20961de8df596c8ce94eeaad98142b0f9",
+      "terminal": true,
+      "phpExited": true
+    },
+    {
+      "sourceSha256": "d89f6c5524fe862d224c86f2672e96d4772696aa42d1f4cb5805f362203f3227",
+      "terminal": true,
+      "phpExited": true
+    }
+  ],
+  "previousCorpusPreserved": true,
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "productionChanged": false,
+  "fullCandidateBuilt": false,
+  "fullWordpressWorkflowAccepted": false,
+  "providerMemoryAccepted": false,
+  "limitations": [
+    "Real PHP and complete pinned archive under Node. Core has not received full WordPress boot patches.",
+    "Counts are live node-owned backing capacities plus separately reported decoded cache; they omit JS metadata, PHP/WASM, native codec allocations and unreachable garbage. They are not retained-heap snapshots, peaks/RSS or provider acceptance.",
+    "Single Node compression time is not workerd/native-editor performance.",
+    "Diagnostic file scans must inspect compressed metadata without forcing direct contents access before any full integration.",
+    "No full source integration/build, complete editor/restart/persistence or provider validation of this compression adapter yet.",
+    "Three failed feature attempts are retained. Only the actual info:true boundary matrix validates the selected codec path; Node proof alone does not establish workerd compatibility.",
+    "Prototype is installed only in Node PHP fixtures. Full WordPress boot patches, memory diagnostics integration, original saved-data/restart/backup behavior and whole workerd memory/CPU remain required.",
+    "Old native0f9d3340e data acceptance and144.1/146.6MiB observations are for the previous uncompressed-core build."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "playtt/compressed-core-corpus/v1",
+  "at": "2026-11-22T01:59:00.149Z",
+  "result": "pass",
+  "moduleSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+  "proofModuleSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+  "materializerSha256": "fd63abb044984c9b8f43799f9682e4ea65d232fa858be90ce4cab70a986e424f",
+  "compiledMaterializerSha256": "887a398ca612dc09c393fd9fd7e8cfd09bbe0436204075b85e25626bf4b437ac",
+  "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+  "inventorySha256": "d0e3c7e502622a7dcae60bb917de2807f7be67915fbe9536c4f85a19651bcdbd",
+  "corpusFiles": 2154,
+  "coreFiles": 1857,
+  "excludedWpContentFiles": 297,
+  "allBytesMatchManifest": true,
+  "allCoreMetadataUnchanged": true,
+  "excludedNodeAndBufferIdentityUnchanged": true,
+  "phpVersionReadExact": true,
+  "coreRemainsCompressedAfterEveryFileRead": true,
+  "before": {
+    "ordinaryBackingBytes": 22522980,
+    "compressedBackingBytes": 0,
+    "compressedFiles": 0,
+    "coreBackingBytes": 22522980,
+    "decodedCacheBytes": 0
+  },
+  "after": {
+    "ordinaryBackingBytes": 90488,
+    "compressedBackingBytes": 5210374,
+    "compressedFiles": 1449,
+    "coreBackingBytes": 5300862,
+    "decodedCacheBytes": 0
+  },
+  "afterRead": {
+    "ordinaryBackingBytes": 90488,
+    "compressedBackingBytes": 5210374,
+    "compressedFiles": 1449,
+    "coreBackingBytes": 5300862,
+    "decodedCacheBytes": 65536
+  },
+  "afterPhp": {
+    "ordinaryBackingBytes": 90488,
+    "compressedBackingBytes": 5210374,
+    "compressedFiles": 1449,
+    "coreBackingBytes": 5300862,
+    "decodedCacheBytes": 65536
+  },
+  "stats": {
+    "inspectedFiles": 1857,
+    "compressedFiles": 1449,
+    "originalBytes": 22432492,
+    "compressedBytes": 5210374,
+    "retainedCapacitySavings": 17222118,
+    "skippedOpenFiles": 0,
+    "decodedCacheLimit": 524288
+  },
+  "compressWallMs": 573.7908,
+  "nodeVersion": "v24.18.0",
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "limitations": [
+    "Real PHP and complete pinned archive under Node. Core has not received full WordPress boot patches.",
+    "Counts are live node-owned backing capacities plus separately reported decoded cache; they omit JS metadata, PHP/WASM, native codec allocations and unreachable garbage. They are not retained-heap snapshots, peaks/RSS or provider acceptance.",
+    "Single Node compression time is not workerd/native-editor performance.",
+    "Diagnostic file scans must inspect compressed metadata without forcing direct contents access before any full integration.",
+    "No full source integration/build, complete editor/restart/persistence or provider validation of this compression adapter yet."
+  ]
+}

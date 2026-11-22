@@ -1,0 +1,14 @@
+{
+  "schema": "playtt/compressed-core-upstream-source/v1",
+  "checkedDate": "2026-11-22",
+  "pinnedCommit": "8ea63498c7aa107995f9b2ffee7789631707e09f",
+  "sources": [
+    {"path":"src/workerd/api/node/zlib-util.c++","blobSha":"a5d7dc60d42a6f1e10f55a7abba1f53252fc48be","readLines":[75,145],"url":"https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/api/node/zlib-util.c%2B%2B#L86","finding":"addChunk reserves size plus a full chunk before grow checks against maxCapacity; a remaining partial chunk can therefore be rejected even when logical output fits."},
+    {"path":"src/node/internal/internal_zlib.ts","blobSha":"375261a45e6a9b6f806b4415cb36034c2edbbbfd","readLines":[1,557],"url":"https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/node/internal/internal_zlib.ts#L75","finding":"zlibSyncImpl sends ordinary calls to native zlibSync; info:true calls processChunk with the synchronous engine instead."}
+  ],
+  "relatedPatch": {"url":"https://github.com/cloudflare/workerd/pull/8642","finding":"The inspected patch caps addChunk reserve to maxCapacity and adds exact and near-limit decompression tests after output buffer growth. No upstream patch or runtime update is installed here."},
+  "earlierIssue": {"url":"https://github.com/cloudflare/workerd/issues/6286","finding":"The previously reported exact-limit workaround of one extra byte does not cover the growth-boundary failure reproduced in the current pinned runtime."},
+  "officialLimits":"https://developers.cloudflare.com/workers/platform/limits/",
+  "officialZlib":"https://developers.cloudflare.com/workers/runtime-apis/nodejs/zlib/",
+  "providerRequests":0
+}

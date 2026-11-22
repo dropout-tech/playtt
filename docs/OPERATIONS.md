@@ -1,5 +1,12 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 核心檔案壓縮保存原型（2026-11-22）
+
+真正 PHP／MEMFS 的22組原版與候選比較通過；完整2,154檔 SHA／長度精確，1,857個核心檔案的 node backing 由22,522,980降至5,300,862bytes，讀回及PHP require後維持壓縮。297個wp-content檔及metadata不變；另列最多512KiB解壓cache。這只是檔案持有容量，尚未量到整個後台尖峰或接入完整建置。
+
+固定workerd同步解壓的容量增長邊界確有失敗，保留3個已停止失敗owner。選用info:true的同步stream engine後，16組512bytes至8MiB與超長拒絕全通過，精確輸出上限不變。下一步需整合boot後壓縮與避免診斷掃描觸發解壓，再跑完整原生流程。正式／中央／雲端不變，目標active。詳見[原型、來源與限制](../experiments/cloudflare-wordpress/compressed-core/README.md)。
+
+
 ## 原生 Base64 候選的完整流程（2026-11-22）
 
 精確 0f9d3340e 建置已完成繁中原生編輯保存 1,875 bytes、完整 workerd 重啟、新分頁相同內容與 11 筆修訂、登出及 304 物件／298 檔獨立備份。原資料、完整 usermeta／session、媒體與主題精確；最終 LOCAL191、500,245 bytes／30 puts、closed／sealed／pending0、exit0。
