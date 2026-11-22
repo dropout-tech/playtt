@@ -1,5 +1,12 @@
 # Let’s Play 驗收狀態
 
+## 還原包 ZIP 標頭讀取候選（2026-11-22）
+
+保留固定原ZIP parser、解壓／CRC與完整性驗證，以私有游標讀取已載入bytes的標頭。39組比較與59項既有回歸通過；六個新workerd各解碼同一298檔真實base兩次，平均累計JS配置少51.49%、本機量測時間少50.00%，不是整體尖峰或billed CPU。208輸入完整建置及五個二進位模組核對通過。
+
+原生繁中保存、revision209、完整重啟、新分頁讀回、登出與304物件298檔備份精確。LOCAL193／600,328bytes／36puts、closed／sealed／pending0、exit0、0 HTTP錯誤；重啟前一筆無frame的Network connection lost仍未歸因。觀測約146.4／136.8MiB，免費記憶體與runtime驗收仍開放。候選未採用或部署，中央及正式官網不變、0雲端操作。詳見[實作與限制](../experiments/cloudflare-wordpress/buffered-zip/README.md)。
+
+
 ## PHP 路徑掃描候選（2026-11-22）
 
 將 lookupPath 的 split/filter 暫存陣列改成 indexOf 掃描。兩版各3,893個真實PHP案例、11,179次節點查找精確；六個全新workerd控制平均累計JS配置少12.77%，量測時間增加6.04%，不是整體尖峰或billed CPU。206輸入完整建置的差異只在lookupPath，五個二進位模組不變。

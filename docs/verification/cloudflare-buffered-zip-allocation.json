@@ -1,0 +1,604 @@
+{
+  "schema": "playtt/buffered-zip-allocation/v1",
+  "result": "pass",
+  "at": "2026-11-22T00:28:20.102Z",
+  "upstreamSha256": "4d495f20e873d23fee4f012fbff2d30e3700b1f46637ef0346a13d377626fd81",
+  "moduleSha256": "d0131db93fc46c0d97b9984922f26dfc4133e92774049ddfe426abbd63ae49c9",
+  "candidateSha256": "cc0d32926ec33b942d3b13700067a958780e9dd62fdc7449426acec9d0dd9d9b",
+  "packBytes": 2295783,
+  "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+  "fixtureSha256": "3d078ca07b467e0c9878b82bfca85b5fdb7543e5555e88ee9654888fa7cddbf8",
+  "runs": [
+    {
+      "index": 0,
+      "variant": "baseline",
+      "bundleSha256": "13b544df0d9f13f8744ed2f7ea07727d962f6a64ce6dedc0094712117fb0a914",
+      "profileSha256": "3e254da6e07385b5fd0a83e8c36aa3b70db8a54f3eb68295cd8cece192ad839f",
+      "nodes": 112,
+      "samples": 2301,
+      "selfBytes": 75464068,
+      "sampleSizeSum": 75459240,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 27544576
+        },
+        {
+          "functionName": "u",
+          "attributedSelfBytes": 9608640
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 7019896
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 6230328
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 4656488
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 3933940
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 3802488
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 3246124
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 2263536
+        },
+        {
+          "functionName": "decodeCanonicalRestorePack",
+          "attributedSelfBytes": 1213272
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 786680
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 688736
+        },
+        {
+          "functionName": "x",
+          "attributedSelfBytes": 655744
+        },
+        {
+          "functionName": "F",
+          "attributedSelfBytes": 590312
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 558316
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 635856,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 2295783
+      },
+      "after": {
+        "usedSize": 12840404,
+        "totalSize": 19922944,
+        "embedderHeapUsedSize": 1547616,
+        "backingStorageSize": 11275811
+      },
+      "wallMs": 1484.1163,
+      "result": {
+        "iterations": 2,
+        "files": 298,
+        "decodedBytes": 4439736,
+        "entriesSha256": "298aa7a1d368ed6e237dd7f9f190ebf77b683f49faa166cb653052e374434c42",
+        "tombstonesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "index": 1,
+      "variant": "candidate",
+      "bundleSha256": "b5b53cd3b0aeb3f95c96e90bdd1759b09c6b1dcef9ab4df2b26792ec68550dbf",
+      "profileSha256": "f1d1a547fd2f86bc57e0715635e27679ab5dafe2bce2f621d0f32130abd68e6e",
+      "nodes": 79,
+      "samples": 1167,
+      "selfBytes": 38276536,
+      "sampleSizeSum": 38274236,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 19281916
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 4328680
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 1868472
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 1837284
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 1672096
+        },
+        {
+          "functionName": "decodeCanonicalRestorePack",
+          "attributedSelfBytes": 1509480
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 1213908
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 753900
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 655964
+        },
+        {
+          "functionName": "F",
+          "attributedSelfBytes": 655888
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 524612
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 460052
+        },
+        {
+          "functionName": "N",
+          "attributedSelfBytes": 459088
+        },
+        {
+          "functionName": "x",
+          "attributedSelfBytes": 393460
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 360700
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 636600,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 2295783
+      },
+      "after": {
+        "usedSize": 4350016,
+        "totalSize": 12058624,
+        "embedderHeapUsedSize": 268976,
+        "backingStorageSize": 15231524
+      },
+      "wallMs": 743.8547000000003,
+      "result": {
+        "iterations": 2,
+        "files": 298,
+        "decodedBytes": 4439736,
+        "entriesSha256": "298aa7a1d368ed6e237dd7f9f190ebf77b683f49faa166cb653052e374434c42",
+        "tombstonesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "index": 2,
+      "variant": "candidate",
+      "bundleSha256": "b5b53cd3b0aeb3f95c96e90bdd1759b09c6b1dcef9ab4df2b26792ec68550dbf",
+      "profileSha256": "b29ea5699f642b6b8474e80dfa8136057462f8714ff59ec70d5c11509b9c0cc8",
+      "nodes": 75,
+      "samples": 1092,
+      "selfBytes": 35820928,
+      "sampleSizeSum": 35817552,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 16297668
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 4361612
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 2327376
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 1967016
+        },
+        {
+          "functionName": "decodeCanonicalRestorePack",
+          "attributedSelfBytes": 1442848
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 1213736
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 1148340
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 917800
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 721376
+        },
+        {
+          "functionName": "F",
+          "attributedSelfBytes": 590296
+        },
+        {
+          "functionName": "N",
+          "attributedSelfBytes": 557476
+        },
+        {
+          "functionName": "x",
+          "attributedSelfBytes": 557472
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 524740
+        },
+        {
+          "functionName": "T",
+          "attributedSelfBytes": 426364
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 394320
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 636600,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 2295783
+      },
+      "after": {
+        "usedSize": 5195568,
+        "totalSize": 11796480,
+        "embedderHeapUsedSize": 421488,
+        "backingStorageSize": 18515884
+      },
+      "wallMs": 742.6527999999998,
+      "result": {
+        "iterations": 2,
+        "files": 298,
+        "decodedBytes": 4439736,
+        "entriesSha256": "298aa7a1d368ed6e237dd7f9f190ebf77b683f49faa166cb653052e374434c42",
+        "tombstonesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "index": 3,
+      "variant": "baseline",
+      "bundleSha256": "13b544df0d9f13f8744ed2f7ea07727d962f6a64ce6dedc0094712117fb0a914",
+      "profileSha256": "eee90117258daec59845ee81c95418dcb3cb6e254a576141267dc7a45d70d2fb",
+      "nodes": 103,
+      "samples": 2260,
+      "selfBytes": 74112228,
+      "sampleSizeSum": 74104552,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 27282824
+        },
+        {
+          "functionName": "u",
+          "attributedSelfBytes": 10952852
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 7117408
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 5607552
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 4394284
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 3802780
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 3180404
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 3114096
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 1640424
+        },
+        {
+          "functionName": "decodeCanonicalRestorePack",
+          "attributedSelfBytes": 1180620
+        },
+        {
+          "functionName": "N",
+          "attributedSelfBytes": 819840
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 721120
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 558632
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 524684
+        },
+        {
+          "functionName": "x",
+          "attributedSelfBytes": 491780
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 635856,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 2295783
+      },
+      "after": {
+        "usedSize": 8822448,
+        "totalSize": 22020096,
+        "embedderHeapUsedSize": 1676576,
+        "backingStorageSize": 11575689
+      },
+      "wallMs": 1490.9481999999998,
+      "result": {
+        "iterations": 2,
+        "files": 298,
+        "decodedBytes": 4439736,
+        "entriesSha256": "298aa7a1d368ed6e237dd7f9f190ebf77b683f49faa166cb653052e374434c42",
+        "tombstonesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "index": 4,
+      "variant": "baseline",
+      "bundleSha256": "13b544df0d9f13f8744ed2f7ea07727d962f6a64ce6dedc0094712117fb0a914",
+      "profileSha256": "1c3d6f2376d18151cb8f38699dc7fb5024958ef6757e2043cdceff192a5100fe",
+      "nodes": 109,
+      "samples": 2236,
+      "selfBytes": 73331008,
+      "sampleSizeSum": 73326020,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 24921472
+        },
+        {
+          "functionName": "u",
+          "attributedSelfBytes": 9509956
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 7774412
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 5968076
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 4524012
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 4263256
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 3705304
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 3146880
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 1837036
+        },
+        {
+          "functionName": "decodeCanonicalRestorePack",
+          "attributedSelfBytes": 1442888
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 819440
+        },
+        {
+          "functionName": "sha256Hex",
+          "attributedSelfBytes": 688708
+        },
+        {
+          "functionName": "F",
+          "attributedSelfBytes": 655800
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 557492
+        },
+        {
+          "functionName": "T",
+          "attributedSelfBytes": 426520
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 635856,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 2295783
+      },
+      "after": {
+        "usedSize": 13158144,
+        "totalSize": 21495808,
+        "embedderHeapUsedSize": 1805536,
+        "backingStorageSize": 15253834
+      },
+      "wallMs": 1450.7355000000007,
+      "result": {
+        "iterations": 2,
+        "files": 298,
+        "decodedBytes": 4439736,
+        "entriesSha256": "298aa7a1d368ed6e237dd7f9f190ebf77b683f49faa166cb653052e374434c42",
+        "tombstonesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    {
+      "index": 5,
+      "variant": "candidate",
+      "bundleSha256": "b5b53cd3b0aeb3f95c96e90bdd1759b09c6b1dcef9ab4df2b26792ec68550dbf",
+      "profileSha256": "467daab24bebecd71f02daba4a9e6ecf52c1cbbf9b4e99892345108d3f50c1c3",
+      "nodes": 77,
+      "samples": 1038,
+      "selfBytes": 34045224,
+      "sampleSizeSum": 34043392,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 15969688
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 4361588
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 1770120
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 1639112
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 1345172
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 1148200
+        },
+        {
+          "functionName": "decodeCanonicalRestorePack",
+          "attributedSelfBytes": 1147840
+        },
+        {
+          "functionName": "x",
+          "attributedSelfBytes": 819724
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 819460
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 525648
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 524792
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 524784
+        },
+        {
+          "functionName": "subarray",
+          "attributedSelfBytes": 426436
+        },
+        {
+          "functionName": "sha256Hex",
+          "attributedSelfBytes": 426240
+        },
+        {
+          "functionName": "N",
+          "attributedSelfBytes": 327900
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 636600,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 2295783
+      },
+      "after": {
+        "usedSize": 4769496,
+        "totalSize": 11796480,
+        "embedderHeapUsedSize": 405688,
+        "backingStorageSize": 16359091
+      },
+      "wallMs": 726.3334000000013,
+      "result": {
+        "iterations": 2,
+        "files": 298,
+        "decodedBytes": 4439736,
+        "entriesSha256": "298aa7a1d368ed6e237dd7f9f190ebf77b683f49faa166cb653052e374434c42",
+        "tombstonesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    }
+  ],
+  "cloudRequests": 0,
+  "outboundAttempts": 0,
+  "centralRuntimeChanged": false,
+  "productionChanged": false,
+  "scope": "Six fresh workerd instances each decode and verify the same actual 298-file base twice; per-file hash aggregation included. No PHP, WordPress mutation or cloud request.",
+  "limitations": [
+    "Cumulative sampled allocations include collected objects; not peak memory, RSS, billed CPU or provider admission.",
+    "Two decodes amplify the target and are not a native request count. Before/after heap values cross GC."
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schema": "playtt/buffered-zip-audit/v1",
+  "result": "local-decoder-and-native-data-pass; memory-and-runtime-acceptance-open",
+  "at": "2026-11-22T00:35:33.804Z",
+  "upstreamSha256": "4d495f20e873d23fee4f012fbff2d30e3700b1f46637ef0346a13d377626fd81",
+  "canonicalSha256": "e14138243ebb1d650a62897a23234e35a0dc94af70b758cd4305a4594c4d9f0f",
+  "moduleSha256": "d0131db93fc46c0d97b9984922f26dfc4133e92774049ddfe426abbd63ae49c9",
+  "candidateSha256": "cc0d32926ec33b942d3b13700067a958780e9dd62fdc7449426acec9d0dd9d9b",
+  "bundleSha256": "dbb723cf7cd709de306646440b2a6a39297b7b178feee8a74c0a1ce4b25d74ee",
+  "semantic": {
+    "cases": 39,
+    "valid": 16,
+    "rejected": 23,
+    "outputsAndErrorsExact": true,
+    "actualPack": {
+      "packBytes": 2295783,
+      "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+      "fileCount": 298,
+      "decodedBytes": 4439736
+    }
+  },
+  "regressions": {
+    "uniqueExistingTestsPassed": 59,
+    "inputs": [
+      {
+        "path": "tests/cloudflare-runtime.test.ts",
+        "sha256": "124379429df9353e43565a540ed64bfeba7876671de06c11366e005d85806a04"
+      },
+      {
+        "path": "tests/playtt-compressed-content.test.ts",
+        "sha256": "bc9bf3eb29c81152735d0ecaa1009d75d1de30259b16615506468a63edfa72b4"
+      },
+      {
+        "path": "tests/playtt-compressed-integration.test.ts",
+        "sha256": "8b15b7e01373e9c01931760f70f6ae7cba61c866e2f10285d79ef29811b88f2d"
+      },
+      {
+        "path": "tests/playtt-snapshot-source.test.ts",
+        "sha256": "d629391cb7b5508879b1be80c8137011c280bbd5e98834248bf6882a1a7cdc07"
+      },
+      {
+        "path": "scripts/playtt-snapshot-bundle.mjs",
+        "sha256": "e4695b61d524bdf61a5a3fdcb31dee2cc07e1d0afc356dd2b684f1eef97d57ba"
+      },
+      {
+        "path": "scripts/playtt-backup-pin-client.mjs",
+        "sha256": "7e177a7a68c1f4cf81ccbd7e4691ccce43053c19dfb02bc93e9987ed4234fc40"
+      },
+      {
+        "path": "scripts/playtt-content-snapshot-source.mjs",
+        "sha256": "89140021a9649b43bea663a80aca0aef9a5ff12b25d0b23b470bc32054baf774"
+      },
+      {
+        "path": "scripts/playtt-plan-snapshot-retention.py",
+        "sha256": "a4ab38c065c7424fd543e4892548004dc5e486534fc64596a21c420731b646f0"
+      }
+    ],
+    "logs": [
+      {
+        "name": "canonical-regression-private.log",
+        "pass": 1,
+        "fail": 0,
+        "sha256": "c47749b1652c359891927252894e598a36c49d8eb6f67a826be7f980a7d73c7b",
+        "missingFixtureDependency": null
+      },
+      {
+        "name": "persistence-regression-private.log",
+        "pass": 39,
+        "fail": 1,
+        "sha256": "96b6947efc2d38c071b4f8a2a170d3617944956248bee9e6d9a9bd7f77bd92f2",
+        "missingFixtureDependency": "playtt-snapshot-bundle.mjs"
+      },
+      {
+        "name": "integration-retry-private.log",
+        "pass": 0,
+        "fail": 1,
+        "sha256": "c9028d4747b947a157b368f35090f13ea96f7b532e2e311ef0b088930ed31bc6",
+        "missingFixtureDependency": "playtt-backup-pin-client.mjs"
+      },
+      {
+        "name": "integration-retry-v2-private.log",
+        "pass": 0,
+        "fail": 1,
+        "sha256": "58d4096f145a35539f1b8a13e0571ba8b5eb64091dc3bed7897b240e0d72b123",
+        "missingFixtureDependency": "playtt-content-snapshot-source.mjs"
+      },
+      {
+        "name": "integration-retry-v3-private.log",
+        "pass": 18,
+        "fail": 1,
+        "sha256": "93292831dc7b1cf60bd676317547aaaddcef012ed73f8f51cfb65389c57c08e7",
+        "missingFixtureDependency": "playtt-plan-snapshot-retention.py"
+      },
+      {
+        "name": "retention-regression-private.log",
+        "pass": 1,
+        "fail": 0,
+        "sha256": "cdcd44657775f3f15b6e7cb3483f0194eb3c6bc4a3962badaa091b18e09791d6",
+        "missingFixtureDependency": null
+      }
+    ],
+    "missingFixtureDependenciesRestored": true
+  },
+  "allocation": {
+    "runs": 6,
+    "decodesEach": 2,
+    "groups": {
+      "baseline": {
+        "sampledMeanBytes": 74302434.66666667,
+        "wallMeanMs": 1475.2666666666667,
+        "sampledBytesRange": [
+          73331008,
+          75464068
+        ]
+      },
+      "candidate": {
+        "sampledMeanBytes": 36047562.666666664,
+        "wallMeanMs": 737.6136333333338,
+        "sampledBytesRange": [
+          34045224,
+          38276536
+        ]
+      }
+    },
+    "sampledMeanReductionPercent": 51.485354647688,
+    "wallMeanReductionPercent": 50.00133535180077
+  },
+  "native": {
+    "finalLocalVersion": 193,
+    "contentBytes": 1875,
+    "contentSha256": "93f8e21c8def8c2d5a6ec9b54d91990b8ef41dadcd847ba4d274da51ba01f39b",
+    "originalRowsExact": true,
+    "addedRevision": 209,
+    "fullWorkerdRestart": {
+      "fullWorkerdDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "stateExact": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "sameWindow": true,
+      "noReseedOrRearm": true,
+      "version": 189,
+      "chargedBytes": 400087
+    },
+    "allOriginalUsermetaExact": true,
+    "mediaAndThemeExact": true,
+    "independentObjects": 304,
+    "independentFiles": 298,
+    "fullMaterializedExact": true,
+    "chargedBytes": 600328,
+    "chargedPuts": 36,
+    "sealed": true,
+    "closed": true,
+    "pending": 0,
+    "disposed": true,
+    "runtimeExceptions": 1,
+    "exceptionPhase": "before-restart",
+    "exceptionText": "Uncaught Error: Network connection lost.",
+    "capturedFrames": 0,
+    "exceptionCauseProven": false,
+    "httpErrors": 0
+  },
+  "memory": {
+    "phases": [
+      {
+        "phase": "before-restart",
+        "samples": 1014,
+        "matchedSamples": 795,
+        "maxObservedComponentSum": 153560065,
+        "maxObservedPhpHeapBytes": 74907648,
+        "exceptions": 1
+      },
+      {
+        "phase": "after-restart",
+        "samples": 522,
+        "matchedSamples": 423,
+        "maxObservedComponentSum": 143421564,
+        "maxObservedPhpHeapBytes": 73400320,
+        "exceptions": 0
+      }
+    ],
+    "windows": [
+      {
+        "name": "render",
+        "samples": 541,
+        "sampledSelfBytes": 18618396,
+        "lookupPathBytes": 2393028,
+        "splitBytes": 393388,
+        "filterBytes": 0,
+        "requestCategories": {
+          "post-editor": 1,
+          "asset": 51,
+          "other": 1,
+          "rest": 1
+        },
+        "elapsedMs": 26791,
+        "profileSha256": "b8b2e2ab9941cbd5c3ff0cab826920e7df298bf2d7a4a231bd7859d43be84a07"
+      },
+      {
+        "name": "save",
+        "samples": 367,
+        "sampledSelfBytes": 12922484,
+        "lookupPathBytes": 1376936,
+        "splitBytes": 524520,
+        "filterBytes": 0,
+        "requestCategories": {
+          "rest": 1
+        },
+        "elapsedMs": 13321,
+        "profileSha256": "1d2b4769926303bb73a8b57374c0d4c549a61759a351109235e1f980b1933c2c"
+      }
+    ],
+    "providerAcceptance": false
+  },
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "centralRuntimeChanged": false,
+  "limitations": [
+    "Sampled JS allocations include collected objects; local wall time includes sampling and is not billed CPU or provider memory.",
+    "The native windows contain surrounding requests and differ from earlier browser timings; no before/after whole-workflow performance claim.",
+    "Component sums combine JS usedSize, backingStorageSize and last observed PHP heap within a generation; asynchronous samples and observer overhead remain. Not provider peak, RSS or admission.",
+    "One native-browser network-loss exception has no captured frames or request ID. Nearby Ajax200 timing is not causal attribution; data verification is not runtime stability acceptance.",
+    "Native DOM editing is not physical IME/mobile acceptance. First Chinese initialization and sustained Cloudflare Free usage remain open.",
+    "Existing GPL-2.0-or-later ZIP parser, decompression/CRC path and malformed-input behavior are retained; this is not a ZIP security rewrite."
+  ]
+}
