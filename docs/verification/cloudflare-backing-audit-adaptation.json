@@ -1,0 +1,15 @@
+{
+  "schema": "playtt/backing-audit-adaptation/v1",
+  "sourceSha256": "7ac4ee4ba4a589de3728cd9f48b948647fa5aa3496b591c6c498074588ec85f2",
+  "auditSha256": "c2818714130d69bdd5107df9fb8e94b3e76684392f04a66164e847964ccb68e9",
+  "dataRecoveryAssertionsPreserved": true,
+  "added": "numeric backing capacity and delayed Inspector matching",
+  "classifiedHttpErrors": [
+    "pre-login mistyped local route404",
+    "global-styles/42 GET403/rest_forbidden_context"
+  ],
+  "cloudRequests": 0,
+  "firstAuditSha256": "50a57f38bc7b50bf720bc41eeab16f449b91861a3e28aa2fce44b83fe9f99132",
+  "firstAuditFailure": "No scan-triggered samples; periodic request busy during scan event delivery",
+  "pairing": "Next existing periodic sample within1000ms, explicitly marked and measured; no owner rerun"
+}

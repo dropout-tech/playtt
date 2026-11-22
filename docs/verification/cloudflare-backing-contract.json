@@ -1,0 +1,16 @@
+{
+  "schema": "playtt/backing-contract/v1",
+  "result": "pass",
+  "cases": [
+    "shared-capacity-deduplicated-across-views-and-categories-with-heap-excluded",
+    "compressed-accessor-never-read-encoded-bytes-reported-separately",
+    "directory-cycle-links-unknown-and-js-arrays",
+    "invalid-used-length-not-assumed",
+    "unique-buffer-bound-fails-completeness-without-retaining-inputs",
+    "node-bound-fails-completeness",
+    "returned-tree-has-no-buffer-node-map-or-set"
+  ],
+  "sourceSha256": "8e792e054d903c44000bc3c15a75026a8a62661c3e3c8d81227aba10dcb7f517",
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0
+}

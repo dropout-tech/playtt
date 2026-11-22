@@ -1,5 +1,12 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 檔案backing容量已盤點，其他暫存仍待歸因（2026-11-22）
+
+唯讀診斷的13次完整掃描排除普通檔案隱藏capacity／共享buffer：一般檔案最高8,992,512bytes，含核心壓縮檔及解壓快取的結構合計最高26,774,768bytes。七組邊界測試、213輸入／75載入來源建置0ba3efad通過；只有診斷程式改變。11筆延遲4–25ms的週期配對仍有約2.04–34.04MB未歸因backing，不能當成存活物件、洩漏或某個序列化函式的證據。追加取樣因busy未執行，首次audit失敗保留，僅修正offline配對。
+
+繁中原生保存、完整重啟、新分頁11筆修訂、登出與304物件／298檔獨立還原精確。最終LOCAL191／500,118bytes／30puts，closed／sealed／pending0／exit0，runtime exceptions0；保留誤入本機不存在入口404及命令選單global-styles403分類。最大非同步組件合計145,118,601／158,988,274bytes，免費條件未驗收且非前後受控改善。下一步追查readFileAsBuffer、R2 body、雜湊與壓縮期間的暫存副本。中央、正式Pages及原視覺不變，0雲端操作，全案active。詳見[診斷結果與限制](../experiments/cloudflare-wordpress/backing/README.md)。
+
+
 ## 固定12MiB核心快取：控制與原生資料通過（2026-11-22）
 
 實際核心讀取順序的12個獨立workerd控制顯示：12MiB LRU大幅減少重複解壓與配置，512KiB LRU改善有限；這不是整體後台改善率。唯一backing計帳合約、23組真正PHP比較與211輸入／74載入來源完整建置a600faf9通過。

@@ -1,0 +1,2055 @@
+{
+  "schema": "playtt/backing-editor-audit/v1",
+  "at": "2026-11-22T03:58:25.848Z",
+  "result": "native-save-restart-logout-backups-pass; Free-memory-and-full-acceptance-open",
+  "bundleSha256": "0ba3efadc2345c2c9bd87113a7c978e9cf98cca7ee0a03ec9d7999ef339bf796",
+  "moduleSha256": "8e792e054d903c44000bc3c15a75026a8a62661c3e3c8d81227aba10dcb7f517",
+  "exactExecutedTools": [
+    {
+      "name": "playtt-backing-editor.mjs",
+      "sha256": "fec2f81911e09ce475ee0ed6bf6db57e7d7802773dafed6876d5b7caac52e4a4"
+    },
+    {
+      "name": "playtt-backing-editor-observer.mjs",
+      "sha256": "e64a2fdee3f9391e0a66cc6946c17abdd8febdb811b684073d1096ae9b6677d3"
+    },
+    {
+      "name": "playtt-backing-editor-control.mjs",
+      "sha256": "ca7db1d2a31fc015499788df28ae935b1984c91e5468d5cdb04b1b8e9e6325d8"
+    },
+    {
+      "name": "playtt-request-lifecycle.mjs",
+      "sha256": "32514b7102520a6b5e08c678b071e83b88f26d15f2a502c65f1bb3ce08f4ce3d"
+    },
+    {
+      "name": "playtt-ajax-classifier.mjs",
+      "sha256": "1714739ca54b16198b5a5723070ca97dd9caa25b131d3544413cc008bf62a09a"
+    }
+  ],
+  "centralRuntimeChanged": false,
+  "native": {
+    "baselineVersion": 181,
+    "finalLocalVersion": 191,
+    "contentBytes": 1875,
+    "contentSha256": "93f8e21c8def8c2d5a6ec9b54d91990b8ef41dadcd847ba4d274da51ba01f39b",
+    "receiptVersion": 187,
+    "originalRowsExact": true,
+    "addedRevision": 209,
+    "fullWorkerdRestart": {
+      "fullWorkerdDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "stateExact": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "sameWindow": true,
+      "noReseedOrRearm": true,
+      "version": 188,
+      "chargedBytes": 349973
+    },
+    "allOriginalUsermetaExact": true,
+    "originalSessionsRetainedNewSessionRemoved": true,
+    "mediaAndThemeExact": true,
+    "independentObjects": 304,
+    "independentFiles": 298,
+    "fullMaterializedExact": true,
+    "chargedBytes": 500118,
+    "chargedPuts": 30,
+    "sealed": true,
+    "closed": true,
+    "pending": 0,
+    "disposed": true,
+    "terminalExit": 0,
+    "runtimeExceptions": 0,
+    "mistypedLocalEntry404": 1,
+    "classifiedGlobalStyles403": 1,
+    "otherHttpErrors": 0
+  },
+  "memory": {
+    "phases": [
+      {
+        "phase": "before-restart",
+        "samples": 166,
+        "matchedSamples": 120,
+        "maxObservedComponentSum": 145118601,
+        "maximumSample": {
+          "total": 145118601,
+          "at": 1795319833183,
+          "label": "allocation-save-stop",
+          "generation": 1,
+          "jsBytes": 23310380,
+          "backingBytes": 46441821,
+          "phpBytes": 75366400,
+          "phpObservationAgeMs": 11068
+        },
+        "maxObservedPhpHeapBytes": 75366400,
+        "exceptions": 0
+      },
+      {
+        "phase": "after-restart",
+        "samples": 60,
+        "matchedSamples": 49,
+        "maxObservedComponentSum": 158988274,
+        "maximumSample": {
+          "total": 158988274,
+          "at": 1795319850542,
+          "label": "bootstrap",
+          "generation": 1,
+          "jsBytes": 25292916,
+          "backingBytes": 60295038,
+          "phpBytes": 73400320,
+          "phpObservationAgeMs": 455
+        },
+        "maxObservedPhpHeapBytes": 73400320,
+        "exceptions": 0
+      }
+    ],
+    "windows": [
+      {
+        "name": "render",
+        "samples": 662,
+        "sampledSelfBytes": 22563496,
+        "lookupPathBytes": 2819016,
+        "splitBytes": 426152,
+        "filterBytes": 98892,
+        "requestCategories": {
+          "post-editor": 1,
+          "asset": 51,
+          "other": 1,
+          "rest": 1
+        },
+        "elapsedMs": 27206,
+        "profileSha256": "dc30fa473106ed216e9a51726862cd1b78db048a3c976efa9226bb70e1c1c21d",
+        "topSelfNodes": [
+          {
+            "selfBytes": 1149456,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "js_fd_read",
+              "(anonymous)",
+              "read",
+              "read"
+            ]
+          },
+          {
+            "selfBytes": 630008,
+            "functionName": "fetch",
+            "compiledLine": 8,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 559056,
+            "functionName": "(V8 API)",
+            "compiledLine": null,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 557452,
+            "functionName": "streamToBytes",
+            "compiledLine": 6246,
+            "parents": [
+              "(root)",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 524648,
+            "functionName": "getattr",
+            "compiledLine": 18246,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_fstat64",
+              "fstat"
+            ]
+          },
+          {
+            "selfBytes": 491672,
+            "functionName": "lookupPath",
+            "compiledLine": 18975,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_lstat64"
+            ]
+          },
+          {
+            "selfBytes": 459368,
+            "functionName": "read",
+            "compiledLine": 18338,
+            "parents": [
+              "js_fd_read",
+              "(anonymous)",
+              "read",
+              "read"
+            ]
+          },
+          {
+            "selfBytes": 459028,
+            "functionName": "getattr",
+            "compiledLine": 18246,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_lstat64"
+            ]
+          },
+          {
+            "selfBytes": 458900,
+            "functionName": "lookupPath",
+            "compiledLine": 18975,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 426120,
+            "functionName": "lookupPath",
+            "compiledLine": 18975,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_openat",
+              "open"
+            ]
+          },
+          {
+            "selfBytes": 393352,
+            "functionName": "lookupPath",
+            "compiledLine": 18975,
+            "parents": [
+              "(anonymous)",
+              "invoke_iii",
+              "___syscall_openat",
+              "open"
+            ]
+          },
+          {
+            "selfBytes": 365532,
+            "functionName": "(anonymous)",
+            "compiledLine": 23668,
+            "parents": [
+              "(anonymous)",
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)"
+            ]
+          }
+        ],
+        "attributedFunctionTotals": [
+          {
+            "functionName": "(anonymous)",
+            "selfBytes": 3064204
+          },
+          {
+            "functionName": "lookupPath",
+            "selfBytes": 2819016
+          },
+          {
+            "functionName": "create",
+            "selfBytes": 1182396
+          },
+          {
+            "functionName": "fetch",
+            "selfBytes": 795496
+          },
+          {
+            "functionName": "next",
+            "selfBytes": 655600
+          },
+          {
+            "functionName": "playttProbeAccess",
+            "selfBytes": 572088
+          },
+          {
+            "functionName": "(V8 API)",
+            "selfBytes": 559056
+          },
+          {
+            "functionName": "serveWordPressStaticAsset",
+            "selfBytes": 462452
+          },
+          {
+            "functionName": "split",
+            "selfBytes": 426152
+          },
+          {
+            "functionName": "join",
+            "selfBytes": 336296
+          },
+          {
+            "functionName": "remember",
+            "selfBytes": 172524
+          },
+          {
+            "functionName": "sign",
+            "selfBytes": 164024
+          },
+          {
+            "functionName": "collectWpContentFiles",
+            "selfBytes": 163952
+          },
+          {
+            "functionName": "serializeManifestEnvelope",
+            "selfBytes": 121084
+          },
+          {
+            "functionName": "filter",
+            "selfBytes": 98892
+          },
+          {
+            "functionName": "startsWith",
+            "selfBytes": 98368
+          },
+          {
+            "functionName": "(JS)",
+            "selfBytes": 65568
+          },
+          {
+            "functionName": "get text",
+            "selfBytes": 61224
+          }
+        ]
+      },
+      {
+        "name": "save",
+        "samples": 2011,
+        "sampledSelfBytes": 68981340,
+        "lookupPathBytes": 4294244,
+        "splitBytes": 1475152,
+        "filterBytes": 99024,
+        "requestCategories": {
+          "asset": 1,
+          "rest": 2,
+          "ajax": 2,
+          "other": 2,
+          "profile": 1
+        },
+        "elapsedMs": 19586,
+        "profileSha256": "86d1e3c4b5f7c2e752e2659c0223faaf3f7ffe83fe7edd82120c979eb080abda",
+        "topSelfNodes": [
+          {
+            "selfBytes": 10167552,
+            "functionName": "(V8 API)",
+            "compiledLine": null,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 2197116,
+            "functionName": "E2",
+            "compiledLine": 1799,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 1543500,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "(anonymous)",
+              "invoke_iii",
+              "js_fd_read",
+              "read"
+            ]
+          },
+          {
+            "selfBytes": 1245932,
+            "functionName": "getattr",
+            "compiledLine": 18246,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 1180156,
+            "functionName": "open",
+            "compiledLine": 19693,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_openat"
+            ]
+          },
+          {
+            "selfBytes": 1148500,
+            "functionName": "js_fd_read",
+            "compiledLine": 24905,
+            "parents": [
+              "(anonymous)",
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 1081712,
+            "functionName": "lookupPath",
+            "compiledLine": 18975,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 1049264,
+            "functionName": "getattr",
+            "compiledLine": 18246,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_lstat64"
+            ]
+          },
+          {
+            "selfBytes": 936360,
+            "functionName": "(anonymous)",
+            "compiledLine": 2948,
+            "parents": [
+              "(root)",
+              "(anonymous)",
+              "decodeCanonicalManifestBytes"
+            ]
+          },
+          {
+            "selfBytes": 860936,
+            "functionName": "(anonymous)",
+            "compiledLine": 23668,
+            "parents": [
+              "(anonymous)",
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 819696,
+            "functionName": "getattr",
+            "compiledLine": 18246,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_fstat64",
+              "fstat"
+            ]
+          },
+          {
+            "selfBytes": 786780,
+            "functionName": "open",
+            "compiledLine": 19693,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "invoke_iii",
+              "___syscall_openat"
+            ]
+          }
+        ],
+        "attributedFunctionTotals": [
+          {
+            "functionName": "(V8 API)",
+            "selfBytes": 10167552
+          },
+          {
+            "functionName": "(anonymous)",
+            "selfBytes": 8887952
+          },
+          {
+            "functionName": "getattr",
+            "selfBytes": 4754356
+          },
+          {
+            "functionName": "lookupPath",
+            "selfBytes": 4294244
+          },
+          {
+            "functionName": "writeStat",
+            "selfBytes": 3080864
+          },
+          {
+            "functionName": "create",
+            "selfBytes": 2758472
+          },
+          {
+            "functionName": "open",
+            "selfBytes": 2327516
+          },
+          {
+            "functionName": "Uint8Array",
+            "selfBytes": 1279384
+          },
+          {
+            "functionName": "read",
+            "selfBytes": 984140
+          },
+          {
+            "functionName": "getTime",
+            "selfBytes": 491616
+          },
+          {
+            "functionName": "floor",
+            "selfBytes": 360516
+          },
+          {
+            "functionName": "join",
+            "selfBytes": 328280
+          },
+          {
+            "functionName": "from",
+            "selfBytes": 229828
+          },
+          {
+            "functionName": "streamToBytes",
+            "selfBytes": 131128
+          },
+          {
+            "functionName": "___syscall_getdents64",
+            "selfBytes": 131104
+          },
+          {
+            "functionName": "llseek",
+            "selfBytes": 65568
+          },
+          {
+            "functionName": "readdir",
+            "selfBytes": 65564
+          },
+          {
+            "functionName": "close",
+            "selfBytes": 65552
+          }
+        ]
+      }
+    ],
+    "backing": [
+      {
+        "phase": "before-restart",
+        "scans": 9,
+        "allComplete": true,
+        "noSharedOrHiddenCapacity": true,
+        "ordinaryBackingRange": [
+          7950529,
+          8992512
+        ],
+        "spareCapacityRange": [
+          432956,
+          1051452
+        ],
+        "knownFileAndCacheRange": [
+          13162603,
+          26774768
+        ],
+        "pairedSamples": 8,
+        "scanTriggeredSamples": 0,
+        "sampleDelayRangeMs": [
+          4,
+          25
+        ],
+        "unattributedBackingRange": [
+          2040445,
+          16301558
+        ],
+        "rows": [
+          {
+            "at": 1795319716446,
+            "stage": "before-request",
+            "uniqueExternalBuffers": 1109,
+            "ordinaryBackingBytes": 7950529,
+            "compressedBytes": 5212074,
+            "cacheBytes": 0,
+            "knownFileAndCacheBytes": 13162603,
+            "spareFileCapacityBytes": 432956,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 488541
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 1,
+                "backingBytes": 344064
+              },
+              "runtime": {
+                "buffers": 61,
+                "backingBytes": 1529740
+              }
+            },
+            "largest": [
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 344064,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 325178,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": null
+          },
+          {
+            "at": 1795319742095,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8989598,
+            "compressedBytes": 5212074,
+            "cacheBytes": 10777417,
+            "knownFileAndCacheBytes": 24979089,
+            "spareFileCapacityBytes": 1051452,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 488843
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376421
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 325178,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 14,
+              "backingBytes": 40871107,
+              "jsBytes": 27189232,
+              "unattributedBackingBytes": 15892018
+            }
+          },
+          {
+            "at": 1795319745279,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8989575,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12143667,
+            "knownFileAndCacheBytes": 26345316,
+            "spareFileCapacityBytes": 1051452,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 488843
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376398
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 325178,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 12,
+              "backingBytes": 29181825,
+              "jsBytes": 19492252,
+              "unattributedBackingBytes": 2836509
+            }
+          },
+          {
+            "at": 1795319746082,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8989575,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12484708,
+            "knownFileAndCacheBytes": 26686357,
+            "spareFileCapacityBytes": 1051452,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 488843
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376398
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 325178,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 12,
+              "backingBytes": 30723346,
+              "jsBytes": 21758012,
+              "unattributedBackingBytes": 4036989
+            }
+          },
+          {
+            "at": 1795319767079,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8989575,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12573119,
+            "knownFileAndCacheBytes": 26774768,
+            "spareFileCapacityBytes": 1051452,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 488843
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376398
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 325178,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 4,
+              "backingBytes": 28855534,
+              "jsBytes": 24985304,
+              "unattributedBackingBytes": 2080766
+            }
+          },
+          {
+            "at": 1795319775620,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8989598,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12480876,
+            "knownFileAndCacheBytes": 26682548,
+            "spareFileCapacityBytes": 1051452,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 488843
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376421
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 325178,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 25,
+              "backingBytes": 30585076,
+              "jsBytes": 27069128,
+              "unattributedBackingBytes": 3902528
+            }
+          },
+          {
+            "at": 1795319807558,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8989598,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12480876,
+            "knownFileAndCacheBytes": 26682548,
+            "spareFileCapacityBytes": 1051452,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 488843
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376421
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 325178,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 12,
+              "backingBytes": 28722993,
+              "jsBytes": 18699616,
+              "unattributedBackingBytes": 2040445
+            }
+          },
+          {
+            "at": 1795319810988,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8992512,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12480876,
+            "knownFileAndCacheBytes": 26685462,
+            "spareFileCapacityBytes": 1043260,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 491681
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376497
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 327928,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 13,
+              "backingBytes": 29163870,
+              "jsBytes": 19586040,
+              "unattributedBackingBytes": 2478408
+            }
+          },
+          {
+            "at": 1795319821311,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8992436,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12555871,
+            "knownFileAndCacheBytes": 26760381,
+            "spareFileCapacityBytes": 1043260,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 491681
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376421
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 327928,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 12,
+              "backingBytes": 43061939,
+              "jsBytes": 26025608,
+              "unattributedBackingBytes": 16301558
+            }
+          }
+        ]
+      },
+      {
+        "phase": "after-restart",
+        "scans": 4,
+        "allComplete": true,
+        "noSharedOrHiddenCapacity": true,
+        "ordinaryBackingRange": [
+          7953669,
+          8992436
+        ],
+        "spareCapacityRange": [
+          432956,
+          1063740
+        ],
+        "knownFileAndCacheRange": [
+          13165743,
+          26528625
+        ],
+        "pairedSamples": 3,
+        "scanTriggeredSamples": 0,
+        "sampleDelayRangeMs": [
+          13,
+          16
+        ],
+        "unattributedBackingRange": [
+          15655807,
+          34038187
+        ],
+        "rows": [
+          {
+            "at": 1795319848218,
+            "stage": "before-request",
+            "uniqueExternalBuffers": 1109,
+            "ordinaryBackingBytes": 7953669,
+            "compressedBytes": 5212074,
+            "cacheBytes": 0,
+            "knownFileAndCacheBytes": 13165743,
+            "spareFileCapacityBytes": 432956,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 491681
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 1,
+                "backingBytes": 344064
+              },
+              "runtime": {
+                "buffers": 61,
+                "backingBytes": 1529740
+              }
+            },
+            "largest": [
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 344064,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 327928,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": null
+          },
+          {
+            "at": 1795319850087,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8992436,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12052341,
+            "knownFileAndCacheBytes": 26256851,
+            "spareFileCapacityBytes": 1063740,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 491681
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376421
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 327928,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 16,
+              "backingBytes": 60295038,
+              "jsBytes": 25213532,
+              "unattributedBackingBytes": 34038187
+            }
+          },
+          {
+            "at": 1795319867356,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8992436,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12271880,
+            "knownFileAndCacheBytes": 26476390,
+            "spareFileCapacityBytes": 1051452,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 491681
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376421
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 327928,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 13,
+              "backingBytes": 42353477,
+              "jsBytes": 24723764,
+              "unattributedBackingBytes": 15877087
+            }
+          },
+          {
+            "at": 1795319886475,
+            "stage": "after-persist",
+            "uniqueExternalBuffers": 1114,
+            "ordinaryBackingBytes": 8992134,
+            "compressedBytes": 5212074,
+            "cacheBytes": 12324417,
+            "knownFileAndCacheBytes": 26528625,
+            "spareFileCapacityBytes": 1051452,
+            "categories": {
+              "canonical": {
+                "buffers": 171,
+                "backingBytes": 491379
+              },
+              "uploads": {
+                "buffers": 15,
+                "backingBytes": 653558
+              },
+              "languages": {
+                "buffers": 77,
+                "backingBytes": 2500119
+              },
+              "plugins-and-theme": {
+                "buffers": 376,
+                "backingBytes": 2344019
+              },
+              "wordpress-core": {
+                "buffers": 408,
+                "backingBytes": 90488
+              },
+              "temporary": {
+                "buffers": 4,
+                "backingBytes": 1376421
+              },
+              "runtime": {
+                "buffers": 63,
+                "backingBytes": 1536150
+              }
+            },
+            "largest": [
+              {
+                "bytes": 1376256,
+                "views": 1,
+                "categories": [
+                  "temporary"
+                ]
+              },
+              {
+                "bytes": 536405,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 483218,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 475022,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 402711,
+                "views": 1,
+                "categories": [
+                  "languages"
+                ]
+              },
+              {
+                "bytes": 327928,
+                "views": 1,
+                "categories": [
+                  "canonical"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              },
+              {
+                "bytes": 262144,
+                "views": 1,
+                "categories": [
+                  "runtime"
+                ]
+              }
+            ],
+            "observed": {
+              "pairing": "next-periodic-within-1000ms",
+              "delayMs": 13,
+              "backingBytes": 42184432,
+              "jsBytes": 25163728,
+              "unattributedBackingBytes": 15655807
+            }
+          }
+        ]
+      }
+    ],
+    "providerAcceptance": false
+  },
+  "compression": [
+    {
+      "phase": "before-restart",
+      "installs": 1,
+      "inspectedFiles": 1858,
+      "compressedFiles": 1450,
+      "originalCompressedFileBytes": 22436858,
+      "compressedBytes": 5212074,
+      "retainedCapacityDifference": 17224784,
+      "coreCategoryBytes": 5302562,
+      "scans": 9,
+      "compressionPreservedAcrossAllScans": true,
+      "maximumObservedCacheBytes": 12573119,
+      "cacheLimitBytes": 12582912,
+      "compressionWallMs": 507
+    },
+    {
+      "phase": "after-restart",
+      "installs": 1,
+      "inspectedFiles": 1858,
+      "compressedFiles": 1450,
+      "originalCompressedFileBytes": 22436858,
+      "compressedBytes": 5212074,
+      "retainedCapacityDifference": 17224784,
+      "coreCategoryBytes": 5302562,
+      "scans": 4,
+      "compressionPreservedAcrossAllScans": true,
+      "maximumObservedCacheBytes": 12324417,
+      "cacheLimitBytes": 12582912,
+      "compressionWallMs": 491
+    }
+  ],
+  "lifecycle": [
+    {
+      "phase": "before-restart",
+      "events": 748,
+      "unlocks": [
+        {
+          "id": 210,
+          "outerStatus": 200,
+          "executionStatus": 200,
+          "aborted": false
+        }
+      ],
+      "logoutHeaders": [],
+      "exceptions": 0,
+      "diagnosticTruncation": false
+    },
+    {
+      "phase": "after-restart",
+      "events": 100,
+      "unlocks": [
+        {
+          "id": 8,
+          "outerStatus": 200,
+          "executionStatus": 200,
+          "aborted": false
+        }
+      ],
+      "logoutHeaders": [
+        {
+          "layer": "execution",
+          "status": 302,
+          "aborted": false
+        },
+        {
+          "layer": "outer",
+          "status": 302,
+          "aborted": false
+        }
+      ],
+      "exceptions": 0,
+      "diagnosticTruncation": false
+    }
+  ],
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "limitations": [
+    "Backing inventory is read-only numeric diagnostic code with bounded temporary maps; it adds overhead.",
+    "Ordinary file views are deduplicated by entire buffer capacity, excluding PHP heap aliases; per-category totals may overlap in general, but no sharing occurred in this run.",
+    "Compressed buffers are separate exact copies in the pinned adapter and the cache counts unique whole capacities. Their ownership does not overlap ordinary nodes in this observed run.",
+    "All scan-triggered sampling attempts were skipped while a periodic Inspector request was busy; the first audit requiring these pairs failed. Offline pairing now explicitly uses the next existing periodic sample within1000ms, with measured delay and no rerun.",
+    "Inspector samples follow scans asynchronously. Unattributed backing is not proven live retention, garbage, leak or serialization; it includes any other backing visible to Inspector.",
+    "This uses the measured12MiB LRU policy; trace controls do not replace full-runtime/provider acceptance.",
+    "One pre-login404 came from navigating to the nonexistent local /__playtt-login route; the correct gate was then used.",
+    "The command palette opened during navigation; one global-styles/42 GET403/rest_forbidden_context was classified. No permission or palette fix is claimed.",
+    "Compression keeps1450 post-boot files compressed through scans/read/save/restart; structural backing is not whole-backend peak acceptance.",
+    "Compression startup wall time is not billed CPU. Browser request sequence and timing differ across candidates, so observations are not controlled before/after comparisons.",
+    "No provider deployment, resource-limit enforcement, billed CPU or sustained Free acceptance.",
+    "Observed component sums are asynchronous JS usedSize+backingStorageSize+latest PHP within one generation, not provider peak/RSS/admission.",
+    "Render/save allocation windows include surrounding requests and lifecycle/control diagnostics; do not compare total profiles across browser timings or infer whole-backend speedup.",
+    "Root V8 API allocation has no parent attribution. Call-frame totals only identify local allocation candidates, not retained size or a proven cause of the memory peak.",
+    "Zero exceptions in this run does not identify or fix historical native Network connection lost.",
+    "Native DOM fill/save/readback is not physical IME/mobile acceptance. First Chinese initialization and A01-A20 remain open."
+  ]
+}
