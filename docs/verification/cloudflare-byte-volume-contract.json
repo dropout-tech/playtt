@@ -1,0 +1,16 @@
+{
+  "schema": "playtt/byte-volume-contract/v1",
+  "result": "pass",
+  "cases": [
+    "identity-preserved-view-volume-not-backing-capacity",
+    "label-list-and-snapshots-owned",
+    "no-content-mutation-and-zero-length-counted",
+    "invalid-input-passthrough-marks-incomplete-without-getter",
+    "fixed-label-count-and-format",
+    "numeric-string-only-output-and-empty-allowlist"
+  ],
+  "sourceSha256": "572103879f12c582d452d0b35ef22e95226da9cce9a4a9d7230883f0ec7dec16",
+  "volumeOnly": true,
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false
+}

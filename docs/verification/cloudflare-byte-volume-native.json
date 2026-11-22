@@ -1,0 +1,1758 @@
+{
+  "schema": "playtt/byte-volume-editor-audit/v1",
+  "at": "2026-11-22T04:22:46.836Z",
+  "result": "native-save-restart-logout-backups-pass; Free-memory-and-full-acceptance-open",
+  "bundleSha256": "922ab37887c40d579bd2d383cdc4453a9f50f78c2501703b76a648d21f01ccc0",
+  "counterSha256": "572103879f12c582d452d0b35ef22e95226da9cce9a4a9d7230883f0ec7dec16",
+  "exactExecutedTools": [
+    {
+      "name": "playtt-byte-volume-editor.mjs",
+      "sha256": "7987c93c5e14a2d5a94150284ac19bf6726dea73dfc4f86d0f5e81beb9ef4487"
+    },
+    {
+      "name": "playtt-byte-volume-editor-observer.mjs",
+      "sha256": "0a5a739a5cd3d88a54f7e83aba967682f709b9a024d00d204d01d2ff623cad04"
+    },
+    {
+      "name": "playtt-byte-volume-editor-control.mjs",
+      "sha256": "c322fa07a7e5f0536332a7b37cae1feccfc714e24d0b9fa197c94ba35dec91a6"
+    },
+    {
+      "name": "playtt-request-lifecycle.mjs",
+      "sha256": "32514b7102520a6b5e08c678b071e83b88f26d15f2a502c65f1bb3ce08f4ce3d"
+    },
+    {
+      "name": "playtt-ajax-classifier.mjs",
+      "sha256": "1714739ca54b16198b5a5723070ca97dd9caa25b131d3544413cc008bf62a09a"
+    }
+  ],
+  "centralRuntimeChanged": false,
+  "native": {
+    "baselineVersion": 181,
+    "finalLocalVersion": 191,
+    "contentBytes": 1875,
+    "contentSha256": "93f8e21c8def8c2d5a6ec9b54d91990b8ef41dadcd847ba4d274da51ba01f39b",
+    "receiptVersion": 187,
+    "originalRowsExact": true,
+    "addedRevision": 209,
+    "fullWorkerdRestart": {
+      "fullWorkerdDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "stateExact": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "sameWindow": true,
+      "noReseedOrRearm": true,
+      "version": 188,
+      "chargedBytes": 349997
+    },
+    "allOriginalUsermetaExact": true,
+    "originalSessionsRetainedNewSessionRemoved": true,
+    "mediaAndThemeExact": true,
+    "independentObjects": 304,
+    "independentFiles": 298,
+    "fullMaterializedExact": true,
+    "chargedBytes": 500146,
+    "chargedPuts": 30,
+    "sealed": true,
+    "closed": true,
+    "pending": 0,
+    "disposed": true,
+    "terminalExit": 0,
+    "runtimeExceptions": 0,
+    "expectedUnauthenticatedGate404": 0,
+    "otherHttpErrors": 0
+  },
+  "memory": {
+    "phases": [
+      {
+        "phase": "before-restart",
+        "samples": 120,
+        "matchedSamples": 98,
+        "maxObservedComponentSum": 144803437,
+        "maximumSample": {
+          "total": 144803437,
+          "at": 1795321124793,
+          "label": "allocation-save-start",
+          "generation": 1,
+          "jsBytes": 24123808,
+          "backingBytes": 46623949,
+          "phpBytes": 74055680,
+          "phpObservationAgeMs": 1121
+        },
+        "maxObservedPhpHeapBytes": 74055680,
+        "exceptions": 0
+      },
+      {
+        "phase": "after-restart",
+        "samples": 211,
+        "matchedSamples": 201,
+        "maxObservedComponentSum": 157729044,
+        "maximumSample": {
+          "total": 157729044,
+          "at": 1795321159316,
+          "label": "bootstrap",
+          "generation": 1,
+          "jsBytes": 25373184,
+          "backingBytes": 58955540,
+          "phpBytes": 73400320,
+          "phpObservationAgeMs": 5
+        },
+        "maxObservedPhpHeapBytes": 73400320,
+        "exceptions": 0
+      }
+    ],
+    "windows": [
+      {
+        "name": "render",
+        "samples": 590,
+        "sampledSelfBytes": 20280768,
+        "lookupPathBytes": 3147004,
+        "splitBytes": 426156,
+        "filterBytes": 98532,
+        "requestCategories": {
+          "post-editor": 1,
+          "asset": 51,
+          "other": 1,
+          "rest": 1
+        },
+        "elapsedMs": 36851,
+        "profileSha256": "14907d83988d39860d40c2717fe1b62d3dd054a9be02a0af1436f016932d2cfa",
+        "topSelfNodes": [
+          {
+            "selfBytes": 622804,
+            "functionName": "lookupPath",
+            "compiledLine": 18956,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_lstat64"
+            ]
+          },
+          {
+            "selfBytes": 557248,
+            "functionName": "lookupPath",
+            "compiledLine": 18956,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_openat",
+              "open"
+            ]
+          },
+          {
+            "selfBytes": 524472,
+            "functionName": "lookupPath",
+            "compiledLine": 18956,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 444368,
+            "functionName": "playttProbeAccess",
+            "compiledLine": 55521,
+            "parents": [
+              "fetch",
+              "trace",
+              "(anonymous)",
+              "fetch"
+            ]
+          },
+          {
+            "selfBytes": 427032,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "js_fd_read",
+              "(anonymous)",
+              "read",
+              "read"
+            ]
+          },
+          {
+            "selfBytes": 426492,
+            "functionName": "js_fd_read",
+            "compiledLine": 24886,
+            "parents": [
+              "(anonymous)",
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 393496,
+            "functionName": "getattr",
+            "compiledLine": 18227,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 328080,
+            "functionName": "(V8 API)",
+            "compiledLine": null,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 295756,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "(anonymous)",
+              "js_fd_read",
+              "(anonymous)",
+              "read"
+            ]
+          },
+          {
+            "selfBytes": 295156,
+            "functionName": "streamToBytes",
+            "compiledLine": 6227,
+            "parents": [
+              "(root)",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 295080,
+            "functionName": "getattr",
+            "compiledLine": 18227,
+            "parents": [
+              "invoke_iii",
+              "(anonymous)",
+              "___syscall_fstat64",
+              "fstat"
+            ]
+          },
+          {
+            "selfBytes": 295012,
+            "functionName": "lookupPath",
+            "compiledLine": 18956,
+            "parents": [
+              "invoke_iii",
+              "(anonymous)",
+              "___syscall_openat",
+              "open"
+            ]
+          }
+        ],
+        "attributedFunctionTotals": [
+          {
+            "functionName": "lookupPath",
+            "selfBytes": 3147004
+          },
+          {
+            "functionName": "(anonymous)",
+            "selfBytes": 2631948
+          },
+          {
+            "functionName": "create",
+            "selfBytes": 952676
+          },
+          {
+            "functionName": "playttProbeAccess",
+            "selfBytes": 511392
+          },
+          {
+            "functionName": "split",
+            "selfBytes": 426156
+          },
+          {
+            "functionName": "fetch",
+            "selfBytes": 398364
+          },
+          {
+            "functionName": "serveWordPressStaticAsset",
+            "selfBytes": 395324
+          },
+          {
+            "functionName": "(V8 API)",
+            "selfBytes": 328080
+          },
+          {
+            "functionName": "next",
+            "selfBytes": 229460
+          },
+          {
+            "functionName": "remember",
+            "selfBytes": 172464
+          },
+          {
+            "functionName": "add",
+            "selfBytes": 143460
+          },
+          {
+            "functionName": "join",
+            "selfBytes": 133996
+          },
+          {
+            "functionName": "Uint8Array",
+            "selfBytes": 131252
+          },
+          {
+            "functionName": "from",
+            "selfBytes": 131232
+          },
+          {
+            "functionName": "filter",
+            "selfBytes": 98532
+          },
+          {
+            "functionName": "get text",
+            "selfBytes": 94024
+          },
+          {
+            "functionName": "serializeManifestEnvelope",
+            "selfBytes": 74044
+          },
+          {
+            "functionName": "withPlayttStorageCapacity",
+            "selfBytes": 65588
+          }
+        ]
+      },
+      {
+        "name": "save",
+        "samples": 2044,
+        "sampledSelfBytes": 70023420,
+        "lookupPathBytes": 5769408,
+        "splitBytes": 1376852,
+        "filterBytes": 98608,
+        "requestCategories": {
+          "asset": 1,
+          "rest": 2,
+          "ajax": 2,
+          "other": 2,
+          "profile": 1
+        },
+        "elapsedMs": 22765,
+        "profileSha256": "052c2716b15125987b07824594d10e537ab2aa17ebf214f0dc75ddcc061e9d51",
+        "topSelfNodes": [
+          {
+            "selfBytes": 9057188,
+            "functionName": "(V8 API)",
+            "compiledLine": null,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 2820280,
+            "functionName": "E2",
+            "compiledLine": 1832,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 2430224,
+            "functionName": "create",
+            "compiledLine": null,
+            "parents": [
+              "invoke_iii",
+              "js_fd_read",
+              "(anonymous)",
+              "read"
+            ]
+          },
+          {
+            "selfBytes": 1279704,
+            "functionName": "js_fd_read",
+            "compiledLine": 24886,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "invoke_iii"
+            ]
+          },
+          {
+            "selfBytes": 1181052,
+            "functionName": "js_fd_read",
+            "compiledLine": 24886,
+            "parents": [
+              "(anonymous)",
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 1180040,
+            "functionName": "lookupPath",
+            "compiledLine": 18956,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_lstat64"
+            ]
+          },
+          {
+            "selfBytes": 1114512,
+            "functionName": "(JS)",
+            "compiledLine": null,
+            "parents": [
+              "(root)"
+            ]
+          },
+          {
+            "selfBytes": 1016536,
+            "functionName": "getattr",
+            "compiledLine": 18227,
+            "parents": [
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_fstat64",
+              "fstat"
+            ]
+          },
+          {
+            "selfBytes": 950812,
+            "functionName": "getattr",
+            "compiledLine": 18227,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 950576,
+            "functionName": "lookupPath",
+            "compiledLine": 18956,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_stat64"
+            ]
+          },
+          {
+            "selfBytes": 918200,
+            "functionName": "decodeCanonicalRestorePack",
+            "compiledLine": 1970,
+            "parents": [
+              "(root)",
+              "(anonymous)"
+            ]
+          },
+          {
+            "selfBytes": 885336,
+            "functionName": "getattr",
+            "compiledLine": 18227,
+            "parents": [
+              "js-to-wasm:ii:i",
+              "invoke_iiiii",
+              "(anonymous)",
+              "___syscall_lstat64"
+            ]
+          }
+        ],
+        "attributedFunctionTotals": [
+          {
+            "functionName": "(anonymous)",
+            "selfBytes": 9438288
+          },
+          {
+            "functionName": "(V8 API)",
+            "selfBytes": 9057188
+          },
+          {
+            "functionName": "lookupPath",
+            "selfBytes": 5769408
+          },
+          {
+            "functionName": "getattr",
+            "selfBytes": 4065924
+          },
+          {
+            "functionName": "writeStat",
+            "selfBytes": 2916964
+          },
+          {
+            "functionName": "validatePlayttSnapshotSources",
+            "selfBytes": 2689636
+          },
+          {
+            "functionName": "js_fd_read",
+            "selfBytes": 2657800
+          },
+          {
+            "functionName": "create",
+            "selfBytes": 2495824
+          },
+          {
+            "functionName": "Uint8Array",
+            "selfBytes": 1115416
+          },
+          {
+            "functionName": "read",
+            "selfBytes": 1016932
+          },
+          {
+            "functionName": "getPath",
+            "selfBytes": 1016156
+          },
+          {
+            "functionName": "open",
+            "selfBytes": 754268
+          },
+          {
+            "functionName": "floor",
+            "selfBytes": 360516
+          },
+          {
+            "functionName": "from",
+            "selfBytes": 328376
+          },
+          {
+            "functionName": "toString",
+            "selfBytes": "function toString() { [native code] }32776032784262208"
+          },
+          {
+            "functionName": "E2",
+            "selfBytes": 2918760
+          },
+          {
+            "functionName": "subarray",
+            "selfBytes": 2231056
+          },
+          {
+            "functionName": "next",
+            "selfBytes": 1507840
+          }
+        ]
+      }
+    ],
+    "providerAcceptance": false
+  },
+  "volumes": [
+    {
+      "phase": "before-restart",
+      "snapshots": 48,
+      "contexts": 1,
+      "allComplete": true,
+      "rejected": 0,
+      "monotonic": true,
+      "zipTransitions": [
+        {
+          "firstObservedAt": 1795321046717,
+          "previousObservedAt": null,
+          "stage": "before-request",
+          "context": 256998593,
+          "calls": 1,
+          "bytes": 2295783
+        },
+        {
+          "firstObservedAt": 1795321136026,
+          "previousObservedAt": 1795321123672,
+          "stage": "before-request",
+          "context": 256998593,
+          "calls": 2,
+          "bytes": 4591566
+        }
+      ],
+      "finalByContext": [
+        {
+          "context": 256998593,
+          "rows": [
+            {
+              "label": "arraybuffer:canonical-restore-pack/createCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:canonical-restore-pack/decodeCanonicalRestorePack",
+              "calls": 596,
+              "bytes": 8879472,
+              "maxBytes": 536405
+            },
+            {
+              "label": "arraybuffer:canonical-restore-pack/readCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:content-overlay/readContentBytes",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:manifest-envelope/readCanonicalManifestObject",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:runtime-archive-artifact/readRuntimeArchiveArtifact",
+              "calls": 1,
+              "bytes": 267173,
+              "maxBytes": 267173
+            },
+            {
+              "label": "arraybuffer:wordpress-runtime-artifact/materializeWordPressRuntimeArtifact",
+              "calls": 1,
+              "bytes": 5975792,
+              "maxBytes": 5975792
+            },
+            {
+              "label": "arraybuffer:worker/materializeMarkdownDatabaseIntegration",
+              "calls": 40,
+              "bytes": 316915,
+              "maxBytes": 80792
+            },
+            {
+              "label": "arraybuffer:worker/materializeRuntimeArchiveComponent",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/packagedCanonicalMarkdownSeed",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/putImmutableBytes",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readCanonicalRevision",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readManifestFiles",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readWordPressRuntimeArtifact",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressStaticAsset",
+              "calls": 168,
+              "bytes": 10710004,
+              "maxBytes": 1574731
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressUpload",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressWpContent",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "bounded-content-read:content-overlay/readContentBytes",
+              "calls": 31,
+              "bytes": 6373980,
+              "maxBytes": 2295783
+            },
+            {
+              "label": "digest-input:canonical-restore-pack/sha256Hex",
+              "calls": 598,
+              "bytes": 13471038,
+              "maxBytes": 2295783
+            },
+            {
+              "label": "digest-input:compressed-content/module",
+              "calls": 54,
+              "bytes": 3605768,
+              "maxBytes": 327928
+            },
+            {
+              "label": "digest-input:compressed-persistence/module",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "digest-input:manifest-envelope/module",
+              "calls": 30,
+              "bytes": 1369531,
+              "maxBytes": 74029
+            },
+            {
+              "label": "digest-input:markdown-persistence/persistPlayttMarkdownObjects",
+              "calls": 1368,
+              "bytes": 3916420,
+              "maxBytes": 327928
+            },
+            {
+              "label": "digest-input:runtime-archive-artifact/sha256Hex",
+              "calls": 1,
+              "bytes": 267173,
+              "maxBytes": 267173
+            },
+            {
+              "label": "digest-input:wordpress-runtime-artifact/sha256Hex",
+              "calls": 1,
+              "bytes": 5975792,
+              "maxBytes": 5975792
+            },
+            {
+              "label": "digest-input:worker/secretsMatch",
+              "calls": 16,
+              "bytes": 528,
+              "maxBytes": 33
+            },
+            {
+              "label": "digest-input:worker/sha256Hex",
+              "calls": 168,
+              "bytes": 10710004,
+              "maxBytes": 1574731
+            },
+            {
+              "label": "exact-stream-output:compressed-content/readExactCompressedStream",
+              "calls": 12,
+              "bytes": 1078765,
+              "maxBytes": 365779
+            },
+            {
+              "label": "gzip-input:compressed-content/createCompressedContent",
+              "calls": 7,
+              "bytes": 2546263,
+              "maxBytes": 365779
+            },
+            {
+              "label": "gzip-input:manifest-envelope/serializeManifestEnvelope",
+              "calls": 7,
+              "bytes": 518203,
+              "maxBytes": 74029
+            },
+            {
+              "label": "gzip-output:compressed-content/compress",
+              "calls": 7,
+              "bytes": 184159,
+              "maxBytes": 26380
+            },
+            {
+              "label": "php-read:worker/collectRuntimeFiles",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "php-read:worker/logPlayttRuntimeMemory",
+              "calls": 66,
+              "bytes": 23537,
+              "maxBytes": 1037
+            },
+            {
+              "label": "php-read:worker/patchCanonicalRuntimePoliciesAtInit",
+              "calls": 1,
+              "bytes": 33152,
+              "maxBytes": 33152
+            },
+            {
+              "label": "php-read:worker/patchCanonicalThemeJsonCustomCss",
+              "calls": 1,
+              "bytes": 222059,
+              "maxBytes": 222059
+            },
+            {
+              "label": "php-read:worker/persistRuntime",
+              "calls": 1403,
+              "bytes": 6457062,
+              "maxBytes": 327928
+            },
+            {
+              "label": "php-read:worker/persistRuntimeObjects",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "php-read:worker/readCanonicalChanges",
+              "calls": 8,
+              "bytes": 493,
+              "maxBytes": 121
+            },
+            {
+              "label": "php-read:worker/readPublicationChanges",
+              "calls": 8,
+              "bytes": 314,
+              "maxBytes": 55
+            },
+            {
+              "label": "zip-input:canonical-restore-pack/decodeCanonicalRestorePack",
+              "calls": 2,
+              "bytes": 4591566,
+              "maxBytes": 2295783
+            },
+            {
+              "label": "zip-input:worker/materializeMarkdownDatabaseIntegration",
+              "calls": 1,
+              "bytes": 93269,
+              "maxBytes": 93269
+            },
+            {
+              "label": "zip-input:worker/packagedCanonicalMarkdownSeed",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            }
+          ]
+        }
+      ],
+      "windows": [
+        {
+          "name": "render",
+          "firstStage": "before-request",
+          "lastStage": "after-request",
+          "firstAt": 1795321084757,
+          "lastAt": 1795321088415,
+          "snapshots": 7,
+          "rows": [
+            {
+              "label": "arraybuffer:canonical-restore-pack/createCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:canonical-restore-pack/decodeCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 536405
+            },
+            {
+              "label": "arraybuffer:canonical-restore-pack/readCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:content-overlay/readContentBytes",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:manifest-envelope/readCanonicalManifestObject",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:runtime-archive-artifact/readRuntimeArchiveArtifact",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 267173
+            },
+            {
+              "label": "arraybuffer:wordpress-runtime-artifact/materializeWordPressRuntimeArtifact",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 5975792
+            },
+            {
+              "label": "arraybuffer:worker/materializeMarkdownDatabaseIntegration",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 80792
+            },
+            {
+              "label": "arraybuffer:worker/materializeRuntimeArchiveComponent",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/packagedCanonicalMarkdownSeed",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/putImmutableBytes",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readCanonicalRevision",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readManifestFiles",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readWordPressRuntimeArtifact",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressStaticAsset",
+              "calls": 50,
+              "bytes": 5252608,
+              "maxObservedCallBytes": 1574731
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressUpload",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressWpContent",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "bounded-content-read:content-overlay/readContentBytes",
+              "calls": 3,
+              "bytes": 170933,
+              "maxObservedCallBytes": 2295783
+            },
+            {
+              "label": "digest-input:canonical-restore-pack/sha256Hex",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 2295783
+            },
+            {
+              "label": "digest-input:compressed-content/module",
+              "calls": 7,
+              "bytes": 462131,
+              "maxObservedCallBytes": 325178
+            },
+            {
+              "label": "digest-input:compressed-persistence/module",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "digest-input:manifest-envelope/module",
+              "calls": 4,
+              "bytes": 182605,
+              "maxObservedCallBytes": 74029
+            },
+            {
+              "label": "digest-input:markdown-persistence/persistPlayttMarkdownObjects",
+              "calls": 171,
+              "bytes": 488843,
+              "maxObservedCallBytes": 325178
+            },
+            {
+              "label": "digest-input:runtime-archive-artifact/sha256Hex",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 267173
+            },
+            {
+              "label": "digest-input:wordpress-runtime-artifact/sha256Hex",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 5975792
+            },
+            {
+              "label": "digest-input:worker/secretsMatch",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 33
+            },
+            {
+              "label": "digest-input:worker/sha256Hex",
+              "calls": 50,
+              "bytes": 5252608,
+              "maxObservedCallBytes": 1574731
+            },
+            {
+              "label": "exact-stream-output:compressed-content/readExactCompressedStream",
+              "calls": 1,
+              "bytes": 74029,
+              "maxObservedCallBytes": 74029
+            },
+            {
+              "label": "gzip-input:compressed-content/createCompressedContent",
+              "calls": 1,
+              "bytes": 362941,
+              "maxObservedCallBytes": 362941
+            },
+            {
+              "label": "gzip-input:manifest-envelope/serializeManifestEnvelope",
+              "calls": 1,
+              "bytes": 74029,
+              "maxObservedCallBytes": 74029
+            },
+            {
+              "label": "gzip-output:compressed-content/compress",
+              "calls": 1,
+              "bytes": 26280,
+              "maxObservedCallBytes": 26280
+            },
+            {
+              "label": "php-read:worker/collectRuntimeFiles",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "php-read:worker/logPlayttRuntimeMemory",
+              "calls": 9,
+              "bytes": 3517,
+              "maxObservedCallBytes": 1037
+            },
+            {
+              "label": "php-read:worker/patchCanonicalRuntimePoliciesAtInit",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 33152
+            },
+            {
+              "label": "php-read:worker/patchCanonicalThemeJsonCustomCss",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 222059
+            },
+            {
+              "label": "php-read:worker/persistRuntime",
+              "calls": 176,
+              "bytes": 850981,
+              "maxObservedCallBytes": 325178
+            },
+            {
+              "label": "php-read:worker/persistRuntimeObjects",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "php-read:worker/readCanonicalChanges",
+              "calls": 1,
+              "bytes": 63,
+              "maxObservedCallBytes": 63
+            },
+            {
+              "label": "php-read:worker/readPublicationChanges",
+              "calls": 1,
+              "bytes": 37,
+              "maxObservedCallBytes": 37
+            },
+            {
+              "label": "zip-input:canonical-restore-pack/decodeCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 2295783
+            },
+            {
+              "label": "zip-input:worker/materializeMarkdownDatabaseIntegration",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 93269
+            },
+            {
+              "label": "zip-input:worker/packagedCanonicalMarkdownSeed",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            }
+          ],
+          "operatorStatusRequests": 0
+        },
+        {
+          "name": "save",
+          "firstStage": "before-request",
+          "lastStage": "after-request",
+          "firstAt": 1795321116331,
+          "lastAt": 1795321138440,
+          "snapshots": 15,
+          "rows": [
+            {
+              "label": "arraybuffer:canonical-restore-pack/createCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:canonical-restore-pack/decodeCanonicalRestorePack",
+              "calls": 298,
+              "bytes": 4439736,
+              "maxObservedCallBytes": 536405
+            },
+            {
+              "label": "arraybuffer:canonical-restore-pack/readCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:content-overlay/readContentBytes",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:manifest-envelope/readCanonicalManifestObject",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:runtime-archive-artifact/readRuntimeArchiveArtifact",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 267173
+            },
+            {
+              "label": "arraybuffer:wordpress-runtime-artifact/materializeWordPressRuntimeArtifact",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 5975792
+            },
+            {
+              "label": "arraybuffer:worker/materializeMarkdownDatabaseIntegration",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 80792
+            },
+            {
+              "label": "arraybuffer:worker/materializeRuntimeArchiveComponent",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/packagedCanonicalMarkdownSeed",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/putImmutableBytes",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readCanonicalRevision",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readManifestFiles",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readWordPressRuntimeArtifact",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressStaticAsset",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 1574731
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressUpload",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressWpContent",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "bounded-content-read:content-overlay/readContentBytes",
+              "calls": 12,
+              "bytes": 2908683,
+              "maxObservedCallBytes": 2295783
+            },
+            {
+              "label": "digest-input:canonical-restore-pack/sha256Hex",
+              "calls": 299,
+              "bytes": 6735519,
+              "maxObservedCallBytes": 2295783
+            },
+            {
+              "label": "digest-input:compressed-content/module",
+              "calls": 26,
+              "bytes": 1757245,
+              "maxObservedCallBytes": 327928
+            },
+            {
+              "label": "digest-input:compressed-persistence/module",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "digest-input:manifest-envelope/module",
+              "calls": 16,
+              "bytes": 730419,
+              "maxObservedCallBytes": 74029
+            },
+            {
+              "label": "digest-input:markdown-persistence/persistPlayttMarkdownObjects",
+              "calls": 513,
+              "bytes": 1472205,
+              "maxObservedCallBytes": 327928
+            },
+            {
+              "label": "digest-input:runtime-archive-artifact/sha256Hex",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 267173
+            },
+            {
+              "label": "digest-input:wordpress-runtime-artifact/sha256Hex",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 5975792
+            },
+            {
+              "label": "digest-input:worker/secretsMatch",
+              "calls": 2,
+              "bytes": 66,
+              "maxObservedCallBytes": 33
+            },
+            {
+              "label": "digest-input:worker/sha256Hex",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 1574731
+            },
+            {
+              "label": "exact-stream-output:compressed-content/readExactCompressedStream",
+              "calls": 8,
+              "bytes": 782938,
+              "maxObservedCallBytes": 365779
+            },
+            {
+              "label": "gzip-input:compressed-content/createCompressedContent",
+              "calls": 3,
+              "bytes": 1094499,
+              "maxObservedCallBytes": 365779
+            },
+            {
+              "label": "gzip-input:manifest-envelope/serializeManifestEnvelope",
+              "calls": 3,
+              "bytes": 222087,
+              "maxObservedCallBytes": 74029
+            },
+            {
+              "label": "gzip-output:compressed-content/compress",
+              "calls": 3,
+              "bytes": 79040,
+              "maxObservedCallBytes": 26380
+            },
+            {
+              "label": "php-read:worker/collectRuntimeFiles",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "php-read:worker/logPlayttRuntimeMemory",
+              "calls": 20,
+              "bytes": 7164,
+              "maxObservedCallBytes": 1037
+            },
+            {
+              "label": "php-read:worker/patchCanonicalRuntimePoliciesAtInit",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 33152
+            },
+            {
+              "label": "php-read:worker/patchCanonicalThemeJsonCustomCss",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 222059
+            },
+            {
+              "label": "php-read:worker/persistRuntime",
+              "calls": 528,
+              "bytes": 2564295,
+              "maxObservedCallBytes": 327928
+            },
+            {
+              "label": "php-read:worker/persistRuntimeObjects",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            },
+            {
+              "label": "php-read:worker/readCanonicalChanges",
+              "calls": 3,
+              "bytes": 247,
+              "maxObservedCallBytes": 121
+            },
+            {
+              "label": "php-read:worker/readPublicationChanges",
+              "calls": 3,
+              "bytes": 129,
+              "maxObservedCallBytes": 55
+            },
+            {
+              "label": "zip-input:canonical-restore-pack/decodeCanonicalRestorePack",
+              "calls": 1,
+              "bytes": 2295783,
+              "maxObservedCallBytes": 2295783
+            },
+            {
+              "label": "zip-input:worker/materializeMarkdownDatabaseIntegration",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 93269
+            },
+            {
+              "label": "zip-input:worker/packagedCanonicalMarkdownSeed",
+              "calls": 0,
+              "bytes": 0,
+              "maxObservedCallBytes": 0
+            }
+          ],
+          "operatorStatusRequests": 0
+        }
+      ]
+    },
+    {
+      "phase": "after-restart",
+      "snapshots": 29,
+      "contexts": 1,
+      "allComplete": true,
+      "rejected": 0,
+      "monotonic": true,
+      "zipTransitions": [
+        {
+          "firstObservedAt": 1795321155793,
+          "previousObservedAt": null,
+          "stage": "before-request",
+          "context": 32619713,
+          "calls": 2,
+          "bytes": 4591566
+        },
+        {
+          "firstObservedAt": 1795321185366,
+          "previousObservedAt": 1795321159973,
+          "stage": "before-request",
+          "context": 32619713,
+          "calls": 3,
+          "bytes": 6887349
+        },
+        {
+          "firstObservedAt": 1795321356216,
+          "previousObservedAt": 1795321347357,
+          "stage": "before-request",
+          "context": 32619713,
+          "calls": 4,
+          "bytes": 9183132
+        }
+      ],
+      "finalByContext": [
+        {
+          "context": 32619713,
+          "rows": [
+            {
+              "label": "arraybuffer:canonical-restore-pack/createCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:canonical-restore-pack/decodeCanonicalRestorePack",
+              "calls": 1192,
+              "bytes": 17758944,
+              "maxBytes": 536405
+            },
+            {
+              "label": "arraybuffer:canonical-restore-pack/readCanonicalRestorePack",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:content-overlay/readContentBytes",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:manifest-envelope/readCanonicalManifestObject",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:runtime-archive-artifact/readRuntimeArchiveArtifact",
+              "calls": 1,
+              "bytes": 267173,
+              "maxBytes": 267173
+            },
+            {
+              "label": "arraybuffer:wordpress-runtime-artifact/materializeWordPressRuntimeArtifact",
+              "calls": 1,
+              "bytes": 5975792,
+              "maxBytes": 5975792
+            },
+            {
+              "label": "arraybuffer:worker/materializeMarkdownDatabaseIntegration",
+              "calls": 40,
+              "bytes": 316915,
+              "maxBytes": 80792
+            },
+            {
+              "label": "arraybuffer:worker/materializeRuntimeArchiveComponent",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/packagedCanonicalMarkdownSeed",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/putImmutableBytes",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readCanonicalRevision",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readManifestFiles",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/readWordPressRuntimeArtifact",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressStaticAsset",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressUpload",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "arraybuffer:worker/serveWordPressWpContent",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "bounded-content-read:content-overlay/readContentBytes",
+              "calls": 21,
+              "bytes": 10096240,
+              "maxBytes": 2295783
+            },
+            {
+              "label": "digest-input:canonical-restore-pack/sha256Hex",
+              "calls": 1196,
+              "bytes": 26942076,
+              "maxBytes": 2295783
+            },
+            {
+              "label": "digest-input:compressed-content/module",
+              "calls": 41,
+              "bytes": 2854458,
+              "maxBytes": 327928
+            },
+            {
+              "label": "digest-input:compressed-persistence/module",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "digest-input:manifest-envelope/module",
+              "calls": 26,
+              "bytes": 1186907,
+              "maxBytes": 74029
+            },
+            {
+              "label": "digest-input:markdown-persistence/persistPlayttMarkdownObjects",
+              "calls": 855,
+              "bytes": 2458103,
+              "maxBytes": 327928
+            },
+            {
+              "label": "digest-input:runtime-archive-artifact/sha256Hex",
+              "calls": 1,
+              "bytes": 267173,
+              "maxBytes": 267173
+            },
+            {
+              "label": "digest-input:wordpress-runtime-artifact/sha256Hex",
+              "calls": 1,
+              "bytes": 5975792,
+              "maxBytes": 5975792
+            },
+            {
+              "label": "digest-input:worker/secretsMatch",
+              "calls": 10,
+              "bytes": 330,
+              "maxBytes": 33
+            },
+            {
+              "label": "digest-input:worker/sha256Hex",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "exact-stream-output:compressed-content/readExactCompressedStream",
+              "calls": 21,
+              "bytes": 2367645,
+              "maxBytes": 365779
+            },
+            {
+              "label": "gzip-input:compressed-content/createCompressedContent",
+              "calls": 3,
+              "bytes": 1097035,
+              "maxBytes": 365779
+            },
+            {
+              "label": "gzip-input:manifest-envelope/serializeManifestEnvelope",
+              "calls": 3,
+              "bytes": 222087,
+              "maxBytes": 74029
+            },
+            {
+              "label": "gzip-output:compressed-content/compress",
+              "calls": 3,
+              "bytes": 79091,
+              "maxBytes": 26382
+            },
+            {
+              "label": "php-read:worker/collectRuntimeFiles",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "php-read:worker/logPlayttRuntimeMemory",
+              "calls": 39,
+              "bytes": 13954,
+              "maxBytes": 1037
+            },
+            {
+              "label": "php-read:worker/patchCanonicalRuntimePoliciesAtInit",
+              "calls": 1,
+              "bytes": 33152,
+              "maxBytes": 33152
+            },
+            {
+              "label": "php-read:worker/patchCanonicalThemeJsonCustomCss",
+              "calls": 1,
+              "bytes": 222059,
+              "maxBytes": 222059
+            },
+            {
+              "label": "php-read:worker/persistRuntime",
+              "calls": 870,
+              "bytes": 3552729,
+              "maxBytes": 327928
+            },
+            {
+              "label": "php-read:worker/persistRuntimeObjects",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            },
+            {
+              "label": "php-read:worker/readCanonicalChanges",
+              "calls": 5,
+              "bytes": 269,
+              "maxBytes": 63
+            },
+            {
+              "label": "php-read:worker/readPublicationChanges",
+              "calls": 5,
+              "bytes": 185,
+              "maxBytes": 37
+            },
+            {
+              "label": "zip-input:canonical-restore-pack/decodeCanonicalRestorePack",
+              "calls": 4,
+              "bytes": 9183132,
+              "maxBytes": 2295783
+            },
+            {
+              "label": "zip-input:worker/materializeMarkdownDatabaseIntegration",
+              "calls": 1,
+              "bytes": 93269,
+              "maxBytes": 93269
+            },
+            {
+              "label": "zip-input:worker/packagedCanonicalMarkdownSeed",
+              "calls": 0,
+              "bytes": 0,
+              "maxBytes": 0
+            }
+          ]
+        }
+      ],
+      "windows": []
+    }
+  ],
+  "controlAttribution": {
+    "nativeSaveReceiptAt": 1795321123684,
+    "lastSnapshotBeforeReceiptAt": 1795321123672,
+    "canonicalZipCallsAtCompletedSave": 1,
+    "nextSnapshotAt": 1795321136026,
+    "nextSnapshotCanonicalZipCalls": 2,
+    "savedValidationCompletedAt": 1795321126076,
+    "operatorStatusPerformsFullRead": true,
+    "sourceRoute": "operator-fence/status -> operateCanonicalMutationFence -> cutoverStatus -> readCanonicalRevision",
+    "harnessRoute": "saved -> snapshot -> op(fence-status)",
+    "isolatedMeasurement": false
+  },
+  "compression": [
+    {
+      "phase": "before-restart",
+      "installs": 1,
+      "inspectedFiles": 1858,
+      "compressedFiles": 1450,
+      "originalCompressedFileBytes": 22436858,
+      "compressedBytes": 5212074,
+      "retainedCapacityDifference": 17224784,
+      "coreCategoryBytes": 5302562,
+      "scans": 9,
+      "compressionPreservedAcrossAllScans": true,
+      "maximumObservedCacheBytes": 12573119,
+      "cacheLimitBytes": 12582912,
+      "compressionWallMs": 491
+    },
+    {
+      "phase": "after-restart",
+      "installs": 1,
+      "inspectedFiles": 1858,
+      "compressedFiles": 1450,
+      "originalCompressedFileBytes": 22436858,
+      "compressedBytes": 5212074,
+      "retainedCapacityDifference": 17224784,
+      "coreCategoryBytes": 5302562,
+      "scans": 6,
+      "compressionPreservedAcrossAllScans": true,
+      "maximumObservedCacheBytes": 12324417,
+      "cacheLimitBytes": 12582912,
+      "compressionWallMs": 526
+    }
+  ],
+  "lifecycle": [
+    {
+      "phase": "before-restart",
+      "events": 682,
+      "unlocks": [
+        {
+          "id": 197,
+          "outerStatus": 200,
+          "executionStatus": 200,
+          "aborted": false
+        }
+      ],
+      "logoutHeaders": [],
+      "exceptions": 0,
+      "diagnosticTruncation": false
+    },
+    {
+      "phase": "after-restart",
+      "events": 120,
+      "unlocks": [
+        {
+          "id": 7,
+          "outerStatus": 200,
+          "executionStatus": 200,
+          "aborted": false
+        }
+      ],
+      "logoutHeaders": [
+        {
+          "layer": "execution",
+          "status": 302,
+          "aborted": false
+        },
+        {
+          "layer": "outer",
+          "status": 302,
+          "aborted": false
+        }
+      ],
+      "exceptions": 0,
+      "diagnosticTruncation": false
+    }
+  ],
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "limitations": [
+    "Counters measure call-input/output byte volume, not allocations, live retention, unique bytes or peak. Read/digest/output rows may count the same payload; do not sum categories.",
+    "The original save allocation window includes a harness full-integrity operator request after native save. Extra ZIP work in that window cannot be attributed to native save.",
+    "Isolated windows explicitly stop before operator full-integrity checks; later overall samples still include those required checks and are not native-only peaks.",
+    "The fixed counter does not retain payload references; instrumentation still adds overhead.",
+    "This uses the measured12MiB LRU policy; trace controls do not replace full-runtime/provider acceptance.",
+    "Unauthenticated root404 was not exercised in this run.",
+    "The command palette and prior denied global-style GET were not exercised in this run. Absence of403 does not establish a permission or command-palette fix.",
+    "Compression keeps1450 post-boot files compressed through scans/read/save/restart; structural backing is not whole-backend peak acceptance.",
+    "Compression startup wall time is not billed CPU. Browser request sequence and timing differ across candidates, so observations are not controlled before/after comparisons.",
+    "No provider deployment, resource-limit enforcement, billed CPU or sustained Free acceptance.",
+    "Observed component sums are asynchronous JS usedSize+backingStorageSize+latest PHP within one generation, not provider peak/RSS/admission.",
+    "Render/save allocation windows include surrounding requests and lifecycle/control diagnostics; do not compare total profiles across browser timings or infer whole-backend speedup.",
+    "Root V8 API allocation has no parent attribution. Call-frame totals only identify local allocation candidates, not retained size or a proven cause of the memory peak.",
+    "Zero exceptions in this run does not identify or fix historical native Network connection lost.",
+    "Native DOM fill/save/readback is not physical IME/mobile acceptance. First Chinese initialization and A01-A20 remain open."
+  ]
+}

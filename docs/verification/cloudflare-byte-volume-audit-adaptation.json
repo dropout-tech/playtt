@@ -1,0 +1,7 @@
+{
+  "schema": "playtt/byte-volume-audit-adaptation/v1",
+  "sourceSha256": "7ac4ee4ba4a589de3728cd9f48b948647fa5aa3496b591c6c498074588ec85f2",
+  "auditSha256": "4fa1bcd4183d2a459ba133cfa147453d58928fbc75e0c9b2cc9e9929da86d3f7",
+  "dataRecoveryAssertionsPreserved": true,
+  "cloudRequests": 0
+}

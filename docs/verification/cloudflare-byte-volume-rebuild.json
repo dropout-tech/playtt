@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-22T04:30:56.551510+00:00",
+  "result": "pass",
+  "prerequisites": 294,
+  "newTools": 11,
+  "priorFilesUnchanged": 840,
+  "totalFiles": 851,
+  "reapplyRefusedWithoutMutation": true,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

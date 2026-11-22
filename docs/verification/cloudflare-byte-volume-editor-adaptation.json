@@ -1,0 +1,33 @@
+{
+  "schema": "playtt/byte-volume-editor-adaptation/v1",
+  "generated": [
+    {
+      "name": "playtt-byte-volume-editor.mjs",
+      "source": "playtt-core-lru-editor.mjs",
+      "sourceSha256": "002a13732beb6fd66953aee1939dc354eeb60d0a035ef54f6dee01bcd7e13fe3",
+      "sha256": "7987c93c5e14a2d5a94150284ac19bf6726dea73dfc4f86d0f5e81beb9ef4487"
+    },
+    {
+      "name": "playtt-byte-volume-editor-observer.mjs",
+      "source": "playtt-core-lru-editor-observer.mjs",
+      "sourceSha256": "0f4629be1d269540bee98fb2fa655a297d00b7d26f27868f3607ad6bb52c7b4e",
+      "sha256": "0a5a739a5cd3d88a54f7e83aba967682f709b9a024d00d204d01d2ff623cad04"
+    },
+    {
+      "name": "playtt-byte-volume-editor-control.mjs",
+      "source": "playtt-core-lru-editor-control.mjs",
+      "sourceSha256": "39bb7bc44ae3fa5cd48bf9b7efad4becada1b9a6715dd4a087a2d34be218a1c3",
+      "sha256": "c322fa07a7e5f0536332a7b37cae1feccfc714e24d0b9fa197c94ba35dec91a6"
+    }
+  ],
+  "bundleSha256": "922ab37887c40d579bd2d383cdc4453a9f50f78c2501703b76a648d21f01ccc0",
+  "ports": [
+    9570,
+    9571
+  ],
+  "nativeDataWindowAndRecoveryAssertionsUnchanged": true,
+  "diagnostics": "42 fixed labels with cumulative calls/bytes/max and execution context; input identity unchanged",
+  "sourceInputs": 214,
+  "loadedSources": 76,
+  "cloudRequests": 0
+}

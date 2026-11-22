@@ -1,5 +1,12 @@
 # PLAYTT 執行進度
 
+## 原生量測與完整備份檢查已分離（2026-11-22）
+
+42 個固定數字計數器找到第二次 ZIP 解壓來自測試工具的 fence-status 完整檢查，原生保存完成時仍只有冷啟動的 1 次。新工具禁止在 allocation sampling 中做完整檢查，並在原生採樣後照常驗證資料。同一 bundle 的載入／保存窗口 ZIP 增量與 operator-status 皆 0；未變更媒體與主題內容讀取皆 0。214 輸入／76 載入來源、六組合約通過；中央及正式站不變。
+
+兩輪原生保存、完整重啟、新分頁 11 筆修訂、登出及 304 物件／298 檔還原精確，皆 LOCAL191／30 puts、closed／sealed／pending0／exit0、HTTP 與 runtime exceptions 0。分離量測保存 500,219 bytes；首次完整檢查前最大非同步組件合計 129,189,887 bytes，保存窗口 121,295,221 bytes。取樣可漏尖峰且餘裕小，不能當成 Cloudflare Free 通過；整輪含完整驗證仍為 150,580,172／157,621,676 bytes。下一步釐清冷啟動與 native PHP／靜態資產暫存，完整檢查成本獨立處理。無部署、付費、合併或後台切換，正式 Pages 與原視覺不變，全案 active。詳見[量測修正與限制](../experiments/cloudflare-wordpress/byte-volume/README.md)。
+
+
 ## 檔案backing容量已盤點，其他暫存仍待歸因（2026-11-22）
 
 唯讀診斷的13次完整掃描排除普通檔案隱藏capacity／共享buffer：一般檔案最高8,992,512bytes，含核心壓縮檔及解壓快取的結構合計最高26,774,768bytes。七組邊界測試、213輸入／75載入來源建置0ba3efad通過；只有診斷程式改變。11筆延遲4–25ms的週期配對仍有約2.04–34.04MB未歸因backing，不能當成存活物件、洩漏或某個序列化函式的證據。追加取樣因busy未執行，首次audit失敗保留，僅修正offline配對。
