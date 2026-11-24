@@ -1,0 +1,73 @@
+{
+  "schema": "playtt/native-trace-preflight/v1",
+  "at": "2026-11-22T05:38:20.074Z",
+  "result": "pass",
+  "version": "8e03e9a0-b660-4a45-8384-08f01318d031",
+  "canonicalVersion": 181,
+  "revision": "9e732918-4430-4381-8275-fee800f414cb",
+  "pins": 16,
+  "allOriginalPinsExact": true,
+  "remainingBytes": 62344,
+  "pending": 0,
+  "sealed": true,
+  "windowClosed": true,
+  "fenceActive": false,
+  "publisher": "paused",
+  "bothPointersAndReceiptExact": true,
+  "remoteManifestAndIndependentBackupExact": true,
+  "localRollbackModulesExact": 6,
+  "localRollbackConfigExact": true,
+  "optionalFlagsOff": true,
+  "recoveryDisabled": true,
+  "subscriptions": {
+    "httpStatus": 403,
+    "success": false,
+    "workersPlans": [],
+    "errorCodes": [
+      10000
+    ]
+  },
+  "checks": [
+    {
+      "kind": "provider",
+      "status": 200
+    },
+    {
+      "kind": "provider",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 200
+    },
+    {
+      "kind": "provider",
+      "status": 200
+    },
+    {
+      "kind": "operator",
+      "status": 404
+    },
+    {
+      "kind": "provider",
+      "status": 403
+    }
+  ],
+  "objectGets": 1,
+  "downloadedBytes": 73740,
+  "remoteMutations": 0,
+  "productionChanged": false,
+  "remoteCodeBytesCompared": false
+}

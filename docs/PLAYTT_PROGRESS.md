@@ -1,5 +1,11 @@
 # PLAYTT 執行進度
 
+## 私人 PHP 冷啟動已直接觀測；完整後台仍待（2026-11-24 整理）
+
+修正觀測工具的提早停止，11 項測試通過。11 月 22 日固定 19f8bc17 候選的單次登入 GET 200／3,728 ms，同時取得外層回應及內部 cold／completed PHP trace（2,858 ms），並等待最後相符事件後 5 秒。27 事件皆 ok、例外 0，資料寫入 0 bytes／0 puts。兩次 64 MiB WASM 採樣不是整個 isolate 尖峰，完整登入、Gutenberg 保存、繁中初始化與持續免費使用尚未驗收。
+
+已回復原相容 reader 1a0405bc，6 模組及全部 bindings 精確；canonical181、16 pins、兩個 pointer／receipt 不變。remaining62,344 bytes、closed／sealed／pending0、fence inactive、publisher paused。最新控制 owner 為 native-trace-cold；資料備份仍為 old-provider 的 181 anchor。正式 Pages 與原視覺不變、PR4 draft。詳見[冷啟動紀錄與限制](../experiments/cloudflare-wordpress/native-trace/README.md)。
+
 ## 私人 Cloudflare 單次登入成功，已回復原程式（2026-11-22）
 
 固定19f8bc17候選在120秒／1byte／1operation窗口完成登入表單GET200／3,234ms，0bytes／0puts。live observer捕捉外層請求，10事件皆ok、exceptions0；沒有PHP trace／memory sample，不能宣稱冷載入內部或整體免費後台已驗收。已定位工具收到外層事件便停止，下一步先修正觀測生命週期。

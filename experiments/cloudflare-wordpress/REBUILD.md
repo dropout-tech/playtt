@@ -1,3 +1,5 @@
+最新：[私人 PHP 冷啟動直接觀測](native-trace/README.md)取得內外層完成紀錄，零資料寫入並回復原程式；完整免費後台仍未驗收。
+
 最新：[私人Cloudflare單次登入實測](lazy-provider/README.md)200／零資料寫入，原程式已恢復；PHP追蹤缺失與完整後台驗收仍開放。
 
 最新：[可信 ZIP 壓縮核心直接載入](lazy-core/README.md)通過完整 corpus、檔案屬性、PHP 與原生還原；免費 provider 驗收仍開放，正式官網不變。

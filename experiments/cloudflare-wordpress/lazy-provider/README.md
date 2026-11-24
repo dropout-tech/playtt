@@ -1,3 +1,5 @@
+後續：[native-trace](../native-trace/README.md)已修正觀測生命週期並取得新的冷啟動證據。下方保留原次測試的缺口與版本，最新狀態以後續紀錄為準。
+
 # 壓縮核心候選的私人 Cloudflare 登入實測
 
 固定候選 `19f8bc17966c12b82518961dc550a95672a0c859b2017577bb82fc04c44b0b0d` 在既有私人 Worker 完成一次 WordPress 登入表單 GET：HTTP 200、3,234 ms、8,555 bytes。受限窗口消耗 **0 bytes／0 puts**，已關閉及封存。這是單次未登入的表單讀取成功；完整免費後台仍未驗收。

@@ -1,0 +1,213 @@
+{
+  "schema": "playtt/native-trace-audit/v1",
+  "result": "provider-cold-login-and-internal-trace-pass; full-backend-acceptance-open",
+  "bundleSha256": "19f8bc17966c12b82518961dc550a95672a0c859b2017577bb82fc04c44b0b0d",
+  "local": {
+    "httpStatus": 200,
+    "wallMs": 2210,
+    "bodyBytes": 7330,
+    "observedColdTrace": true,
+    "coldTraceMs": 2194,
+    "allCanonicalContentExact": true,
+    "chargedBytes": 0,
+    "chargedPuts": 0,
+    "exceptions": 0,
+    "outbound": 0,
+    "disposed": true,
+    "priorSandboxFailureRetained": true,
+    "invalidObserverMarkFailureRetained": true,
+    "invalidMarkFailedBeforeNativeRequest": true
+  },
+  "provider": {
+    "temporaryVersion": "fe97f532-377a-4f07-98d3-223f1b428a74",
+    "restoredVersion": "1a0405bc-79cb-4123-afaa-13448207f3e0",
+    "exactSixModulesBeforeCandidateAfterRestoration": true,
+    "exactSixCandidateModules": true,
+    "allBindingsAndNamespaceIdentitiesUnchanged": true,
+    "deployments": 2,
+    "limits": {
+      "durationSeconds": 120,
+      "maxBytes": 1,
+      "maxOperations": 1
+    },
+    "httpStatus": 200,
+    "wallMs": 3728,
+    "bodyBytes": 8555,
+    "nativeLoginForm": true,
+    "nativeHttpRequests": 1,
+    "writeWindowControlsChanged": true,
+    "canonicalDataWrites": 0,
+    "chargedBytes": 0,
+    "chargedPuts": 0,
+    "fullIntegrityChecksBeforeNative": 0
+  },
+  "observation": {
+    "events": 27,
+    "allOutcomesOk": true,
+    "exceptions": 0,
+    "nativeOuterEvents": 1,
+    "nativeInternalEvents": 1,
+    "readyBeforeNative": true,
+    "observerEnded": true,
+    "internalTraces": 1,
+    "phpMemorySamples": 2,
+    "phpHeapBytes": [
+      67108864,
+      67108864
+    ],
+    "coldTrace": {
+      "operation": "read",
+      "runtime": "cold",
+      "completed": true,
+      "totalMs": 2858,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 38,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.read",
+          "durationMs": 140,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.metadata-overlay.restore",
+          "durationMs": 639,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.sqlite.fetch-verify",
+          "durationMs": 187,
+          "aggregateGap": false
+        },
+        {
+          "name": "php.runtime.create",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.wordpress.fetch-verify-extract",
+          "durationMs": 234,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.mdi.extract",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.markdown",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.wp-content",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.uploads",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "playground.version.read",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "playground.opaque",
+          "durationMs": 0,
+          "aggregateGap": true
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.release",
+          "durationMs": 1620,
+          "aggregateGap": false
+        },
+        {
+          "name": "page-cache.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    "nativeCompletion": {
+      "status": "complete",
+      "outerEvents": 1,
+      "internalEvents": 1,
+      "coldInternalEvents": 1,
+      "nativeExceptions": 0,
+      "nativeFailureEvents": 0,
+      "truncatedNativeEvents": 0,
+      "lastMatchedReceivedAt": 1795326002372,
+      "matchingSequences": [
+        15,
+        16
+      ],
+      "waitedMs": 2888,
+      "settleMs": 5000
+    },
+    "wholeIsolateMemoryMeasured": false,
+    "billedCpuMeasured": false,
+    "coldHydrationDirectlyObserved": true,
+    "observationSha256": "691fbbc0fc1460ad4eaa0661ee50ad90506869092fd2256aad957dd5d95ff00f",
+    "earlyStopOnFirstNativeOuterEvent": false,
+    "settledAfterLastNativeEventMs": 5027,
+    "helperContractTests": 11
+  },
+  "final": {
+    "version": "1a0405bc-79cb-4123-afaa-13448207f3e0",
+    "canonicalVersion": 181,
+    "revision": "9e732918-4430-4381-8275-fee800f414cb",
+    "pins": 16,
+    "allPinsExact": true,
+    "bothPointersAndReceiptExact": true,
+    "remainingBytes": 62344,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true,
+    "fenceActive": false,
+    "publisher": "paused",
+    "optionalWritersDisabled": true,
+    "recoveryDisabled": true
+  },
+  "cost": {
+    "freePlanVisibleBefore": true,
+    "r2BillableUsdBefore": 0,
+    "r2BillableUsdAfter": 0,
+    "billingMayLag": true,
+    "doDetailedUsageRefreshed": false,
+    "subscriptionApiStatus": 403,
+    "workersFreePlanSource": "authenticated UI after this run",
+    "workersPlanRefreshedThisRun": true
+  },
+  "productionChanged": false,
+  "goalStatus": "active",
+  "providerMemoryAccepted": false,
+  "limitations": [
+    "One unauthenticated WordPress login-form GET; no authenticated login, Gutenberg/Chinese initialization, editor save, mobile or IME provider acceptance.",
+    "Cold hydration and native PHP completion were directly observed for this one GET. This does not validate authenticated editor behavior or repeated/sustained operation.",
+    "The live observer required both the outer HTTP event and a matching native PHP completion trace, then waited five seconds after the last matching event. Unobserved future events or all provider activity are not covered.",
+    "Provider phase timings are I/O-gated wall intervals. Zero PHP phase duration is not zero CPU use; the lease-release interval cannot be assigned entirely to lease work. The two64MiBWASM samples are not whole-isolate peaks.",
+    "HTTP success and no observed exception do not establish 128 MB peak safety, billed CPU, repeat reliability or sustained Free usage. No controlled before/after performance percentage.",
+    "The 62,344-byte remaining project allowance is unchanged; do not reset/refund it, remove pins/history, clear unknown tickets or create replacement cloud resources.",
+    "The current compatible private code is restored; production Pages and original visual remain unchanged and PR4 stays draft."
+  ]
+}

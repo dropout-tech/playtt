@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-24T13:31:41.707903+00:00",
+  "result": "cold-login-and-internal-trace-pass; full-backend-open",
+  "filesReviewed": 28,
+  "filesIncludingReport": 29,
+  "syntax": "pass",
+  "knownPrivateValuesCompared": 291,
+  "matches": [],
+  "toolHashesChecked": 342,
+  "newTools": 8,
+  "assembledFiles": 888,
+  "priorAssembledFilesUnchanged": 880,
+  "runtimeSourceHashesUnchanged": 82,
+  "configsUnchanged": 20,
+  "offlineAuditRecomputedExact": true,
+  "providerColdOwnerClosedSealed": true,
+  "candidateAndRollbackSixModulesExact": true,
+  "privateDeployments": 2,
+  "canonicalDataWrites": 0,
+  "productionChanged": false,
+  "providerMemoryAccepted": false,
+  "goalStatus": "active"
+}

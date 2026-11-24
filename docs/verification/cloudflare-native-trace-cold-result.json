@@ -1,0 +1,129 @@
+{
+  "schema": "playtt/native-trace-cold/v1",
+  "at": "2026-11-22T05:39:51.192Z",
+  "result": "pass",
+  "version": "fe97f532-377a-4f07-98d3-223f1b428a74",
+  "limits": {
+    "durationSeconds": 120,
+    "maxBytes": 1,
+    "maxOperations": 1
+  },
+  "fullIntegrityChecksBeforeNative": 0,
+  "httpStatus": 200,
+  "wallMs": 3728,
+  "bodyBytes": 8555,
+  "loginForm": true,
+  "resourceLimitError": false,
+  "contained": true,
+  "chargedBytes": 0,
+  "chargedPuts": 0,
+  "remainingBytes": 62344,
+  "pending": 0,
+  "sealed": true,
+  "windowClosed": true,
+  "nativeTrace": {
+    "status": "complete",
+    "outerEvents": 1,
+    "internalEvents": 1,
+    "coldInternalEvents": 1,
+    "nativeExceptions": 0,
+    "nativeFailureEvents": 0,
+    "truncatedNativeEvents": 0,
+    "lastMatchedReceivedAt": 1795326002372,
+    "matchingSequences": [
+      15,
+      16
+    ],
+    "waitedMs": 2888,
+    "settleMs": 5000
+  },
+  "observer": {
+    "ready": true,
+    "startedAt": 1795325992414,
+    "expiresAt": 1795326652414,
+    "ended": true,
+    "endedAt": 1795326007399,
+    "endCode": null,
+    "unparsed": 0
+  },
+  "checks": [
+    {
+      "kind": "control",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "kind": "control",
+      "method": "POST",
+      "status": 200
+    }
+  ],
+  "finishedAt": "2026-11-22T05:40:07.400Z",
+  "productionChanged": false,
+  "providerFullBackendAcceptance": false
+}

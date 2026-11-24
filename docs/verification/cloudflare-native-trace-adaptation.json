@@ -1,0 +1,33 @@
+{
+  "schema": "playtt/native-trace-adaptation/v1",
+  "changes": [
+    {
+      "source": "playtt-lazy-provider-preflight.mjs",
+      "target": "playtt-native-trace-preflight.mjs",
+      "sha256": "20f81a137ef474c7e8af723f029aad3446975c19eb7f5baf18378427bbf97136"
+    },
+    {
+      "source": "playtt-lazy-provider-code.mjs",
+      "target": "playtt-native-trace-code.mjs",
+      "sha256": "21b0394b2448d1ce5ad6d801f42b24bd5fcd4d994aaf0dff7382f7dd739d3ef4"
+    },
+    {
+      "source": "playtt-lazy-provider-deployment.mjs",
+      "target": "playtt-native-trace-deployment.mjs",
+      "sha256": "e25d0a5d4cc2c227ebeb096506cec596d8c1430e6202aaafb1614216861acd6d"
+    },
+    {
+      "source": "playtt-lazy-provider-cold.mjs",
+      "target": "playtt-native-trace-cold.mjs",
+      "sha256": "4eea4b48de6331c33125d20b2412d0ac28ae5e0a695f3e039ad8457794e4155f"
+    },
+    {
+      "source": "playtt-lazy-provider-final.mjs",
+      "target": "playtt-native-trace-final.mjs",
+      "sha256": "7a3dfe17a69c1a0f0761e34f3e1f74f571ec6c4ed66d2711ad42e9653e19a98c"
+    }
+  ],
+  "runtimeModulesChanged": false,
+  "previousControlOwner": "playtt-lazy-provider-cold-owned-private.json",
+  "newObserverWait": "requires native PHP completion plus settle or explicit missing result"
+}
