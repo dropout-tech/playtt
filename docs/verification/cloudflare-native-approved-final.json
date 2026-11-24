@@ -1,0 +1,109 @@
+{
+  "schema": "playtt/native-approved-final/v1",
+  "at": "2026-11-24T14:55:45.241Z",
+  "result": "pass",
+  "version": "9377b040-3509-4cde-8adc-be4f7c2deb73",
+  "canonicalVersion": 201,
+  "revision": "e83f3c7d-d43b-4d67-ba54-875f74b615a4",
+  "pins": 17,
+  "all16OriginalPinsExact": true,
+  "newBackupPinned": true,
+  "independentBackupObjects": 304,
+  "independentBackupFiles": 298,
+  "allSixModuleBytesExact": true,
+  "allBindingsExact": true,
+  "namespaceIdsExact": true,
+  "optionalFlagsOff": true,
+  "limitBytes": 152000000,
+  "remainingBytes": 1067374,
+  "chargedBytes": 994970,
+  "chargedPuts": 60,
+  "ledgerUnchangedDuringPinAndVerification": true,
+  "bothPointersAndReceiptExact": true,
+  "pending": 0,
+  "sealed": true,
+  "windowClosed": true,
+  "fenceActive": false,
+  "publisher": "paused",
+  "observerEnded": true,
+  "productionChanged": false,
+  "paidUpgrade": false,
+  "fullBackendAccepted": false,
+  "checks": [
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    }
+  ]
+}

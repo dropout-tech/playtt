@@ -1,10 +1,12 @@
 # WordPress 與 Cloudflare 操作手冊
 
-## 完整原生流程已備妥，等待這次雲端寫入授權（2026-11-24）
+## 已完成核准的私人保存與重啟測試；視覺編輯仍待修正（2026-11-24）
 
-最新只讀核對仍為相容 reader 1a0405bc、canonical181、16 pins、closed／sealed／pending0，六個線上模組及備份精確。Workers Free、R2 $0.00／2.33GB。新方案準備把自設上限 150MB 調為 152MB，開放一次 10分鐘／1,881,041bytes／96puts 的私人草稿193編輯、保存、重啟讀回及登出；候選與回復 dry-run 各6模組精確，本機前置檢查通過。
+使用者已明確授權這一次受限測試。免費 Cloudflare 私人後台完成登入、草稿193繁中保存、重新部署後全文讀回、11筆修訂與登出。視覺化編輯區出現空白，本次使用 WordPress 原生程式碼編輯模式；**資料流程通過，視覺編輯及完整後台尚未驗收**。
 
-自動核准審查認為既有研究授權未明確涵蓋這次持久上限增加與不可退款的資料寫入，已拒絕執行並向使用者詢問。遠端 controller 尚未啟動，沒有部署或窗口變更；**雲端上限仍150MB、餘額62,344bytes**。完整原生編輯驗證尚未執行，正式 Pages、原視覺與 draft PR 維持現況。詳見[待確認操作與驗證證據](../experiments/cloudflare-wordpress/native-next/README.md)。
+窗口限600秒／1,881,041bytes／96puts，實際994,970bytes／60puts。自設累計上限保留152MB，完整舊帳本保留，餘額1,067,374bytes。304物件／298檔獨立備份精確；新增revision209，原文章、媒體、主題保留。測試使用者2的編輯模式偏好與時間更新，原生登出移除其session資料，其他使用者資料精確。
+
+相容reader已復原為9377b040，六模組、全部bindings及namespace精確。canonical201、17 pins（原16筆全留），closed／sealed／pending0、fence inactive、publisher paused。Workers Free；刷新後R2本期$0.00／2.33GB，帳務可能延遲。正式Pages與原視覺維持現況，PR4保持draft／未合併。詳見[本次結果、重建與續作界線](../experiments/cloudflare-wordpress/native-approved/README.md)。
 
 ## 私人 PHP 冷啟動已直接觀測；完整後台仍待（2026-11-24 整理）
 

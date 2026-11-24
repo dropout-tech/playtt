@@ -1,3 +1,5 @@
+> 歷史準備紀錄：使用者已授權這一次測試，後續實測及最終狀態見[native-approved](../native-approved/README.md)。下方未執行／等待授權描述僅代表準備當時。
+
 # 原生編輯器受限測試：已準備，尚未執行
 
 2026-11-24 已重新核對既有私人 Worker 的六模組、設定、canonical181、16 pins、備份與寫入封存。Workers 仍是 Free，R2 當期畫面顯示 $0.00／2.33 GB、Class A 7.32k、Class B 60.59k；帳務可能延遲。正式 Pages 與原視覺不變。

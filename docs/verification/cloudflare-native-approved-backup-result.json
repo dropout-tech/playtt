@@ -1,0 +1,67 @@
+{
+  "schema": "playtt/native-approved-backup/v1",
+  "at": "2026-11-24T14:52:03.055Z",
+  "result": "export-and-independent-copy-pass",
+  "canonicalVersion": 201,
+  "format": "compressed-content",
+  "manifestEncoding": "gzip-envelope",
+  "objects": 304,
+  "files": 298,
+  "remoteGets": 4,
+  "downloadedBytes": 2419045,
+  "changedMarkdownPaths": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "tableDiffs": {
+    "_tables/postmeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "72",
+          "fields": [
+            "meta_value"
+          ]
+        }
+      ]
+    },
+    "_tables/posts.json": {
+      "added": [
+        {
+          "id": "209",
+          "type": "revision",
+          "parent": "193"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "_tables/usermeta.json": {
+      "added": [],
+      "removed": [
+        "36"
+      ],
+      "changed": [
+        {
+          "id": "38",
+          "fields": [
+            "meta_value"
+          ]
+        }
+      ]
+    }
+  },
+  "allOtherContentMediaThemeExact": true,
+  "ledgerUnchangedDuringBackup": true,
+  "pins": 16,
+  "pending": 0,
+  "sealed": true,
+  "windowClosed": true,
+  "publisher": "paused",
+  "productionChanged": false,
+  "cloudMutations": 0
+}

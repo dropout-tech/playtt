@@ -1,0 +1,66 @@
+{
+  "schema": "playtt/native-approved-delivery/v1",
+  "at": "2026-11-24T14:57:15.530965+00:00",
+  "result": "bounded-native-code-editor-save-and-independent-recovery-pass",
+  "explicitUserApproval": true,
+  "actualWriteWindows": 1,
+  "nativeDraft": 193,
+  "nativeUser": 2,
+  "fullBackendAccepted": false,
+  "visualEditor": "blank; code-editor fallback used",
+  "capBytes": 152000000,
+  "capRetainedAfterRestore": true,
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 1881041,
+    "maxOperations": 96,
+    "observerSeconds": 660
+  },
+  "chargedBytes": 994970,
+  "chargedPuts": 60,
+  "canonicalBefore": 181,
+  "canonicalAfter": 201,
+  "revisionAdded": 209,
+  "pinsBefore": 16,
+  "pinsAfter": 17,
+  "remainingBytes": 1067374,
+  "finalCodeVersion": "9377b040-3509-4cde-8adc-be4f7c2deb73",
+  "privateDeployments": 5,
+  "attempts": [
+    {
+      "attempt": "initial",
+      "result": "fail",
+      "failedPhase": null,
+      "nativeWindowOpened": false,
+      "dataBytes": 0,
+      "cleanupVerified": true
+    },
+    {
+      "attempt": "v2",
+      "result": "fail",
+      "failedPhase": null,
+      "nativeWindowOpened": false,
+      "dataBytes": 0,
+      "restored": true,
+      "note": "152 MB configuration propagated after the 45-second observation deadline; read-only recheck preceded v3"
+    },
+    {
+      "attempt": "v3",
+      "result": "browser-finished-awaiting-independent-verification",
+      "nativeWindowOpened": true,
+      "contained": true,
+      "restored": true,
+      "independentAuditCompleted": true
+    }
+  ],
+  "localStateTests": 6,
+  "sourceConfigsChanged": false,
+  "runtimeSourcesChanged": false,
+  "productionChanged": false,
+  "paidUpgrade": false,
+  "toolHashes": 362,
+  "newTools": 15,
+  "assembledFiles": 908,
+  "priorAssembledFilesUnchanged": 893,
+  "futureRemoteReplayAuthorized": false
+}

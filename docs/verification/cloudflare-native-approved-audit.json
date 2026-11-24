@@ -1,0 +1,125 @@
+{
+  "schema": "playtt/native-approved-audit/v1",
+  "at": "2026-11-24T14:54:18.640Z",
+  "result": "data-integrity-pass-visual-editor-not-accepted",
+  "native": {
+    "authenticatedLogin": true,
+    "editorMode": "native-code-editor",
+    "visualCanvas": "blank-root-cause-unresolved",
+    "saveAndColdReadbackExact": true,
+    "revisionsBefore": 10,
+    "revisionsAfter": 11,
+    "revision209Exact": true,
+    "logoutLoginFormObserved": true,
+    "logoutMessageObserved": "你已完成登出。",
+    "logoutNoteMatcherFalseBecauseItSearched": "已登出",
+    "user2SessionsRemoved": true,
+    "user2PreferencesChanged": "visual-to-text and timestamp only",
+    "allOtherUsersAndPreferencesExact": true
+  },
+  "backup": {
+    "objects": 304,
+    "files": 298,
+    "remoteGets": 4,
+    "downloadedBytes": 2419045,
+    "independentCopyExact": true,
+    "allOriginalPostsExact": true,
+    "onlyAddedRevision": 209,
+    "onlyEditLockRowChanged": 72,
+    "allOtherMarkdownMediaThemeExact": true,
+    "optionSequenceAdvancedBy": 24,
+    "noOptionRowsChanged": true
+  },
+  "budget": {
+    "oldLimitBytes": 150000000,
+    "newLimitBytes": 152000000,
+    "chargedBytes": 994970,
+    "chargedPuts": 60,
+    "maxBytes": 1881041,
+    "maxPuts": 96,
+    "durationLimitSeconds": 600,
+    "remainingBytes": 1067374,
+    "fullHistoricalLedgerPreserved": true
+  },
+  "telemetry": {
+    "events": 373,
+    "outcomes": {
+      "ok": 371,
+      "canceled": 2
+    },
+    "status": {
+      "200": 363,
+      "302": 4,
+      "303": 1,
+      "403": 2,
+      "404": 1,
+      "unavailable": 2
+    },
+    "exceptions": 0,
+    "truncatedEvents": 0,
+    "traces": 28,
+    "traceRuntime": {
+      "cold": 4,
+      "warm": 24
+    },
+    "traceOperations": {
+      "read": 8,
+      "mutation": 20
+    },
+    "memorySamples": 76,
+    "maxWasmHeapBytes": 75497472,
+    "httpNonSuccess": [
+      {
+        "at": "2026-11-24T14:47:46.548Z",
+        "category": "front-page",
+        "method": "GET",
+        "status": 404
+      },
+      {
+        "at": "2026-11-24T14:48:50.930Z",
+        "category": "rest-users",
+        "method": "GET",
+        "status": 403
+      },
+      {
+        "at": "2026-11-24T14:48:51.288Z",
+        "category": "rest-users",
+        "method": "GET",
+        "status": 403
+      }
+    ],
+    "canceled": [
+      {
+        "at": "2026-11-24T14:47:30.033Z",
+        "category": "admin-ajax"
+      },
+      {
+        "at": "2026-11-24T14:47:30.057Z",
+        "category": "admin-ajax"
+      }
+    ],
+    "observerEnded": true,
+    "outerAndInternalEventsAreNotDistinctHttpRequests": true,
+    "wholeIsolatePeakMeasured": false
+  },
+  "after": {
+    "canonicalVersion": 201,
+    "codeVersion": "9377b040-3509-4cde-8adc-be4f7c2deb73",
+    "pinsBeforeNewBackupPin": 16,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "productionChanged": false,
+  "paidUpgrade": false,
+  "fullBackendAccepted": false,
+  "remaining": [
+    "visual editor blank canvas investigation",
+    "first Traditional Chinese initialization",
+    "physical IME and mobile",
+    "sustained Free usage and provider peak memory/CPU",
+    "full A01-A20 acceptance"
+  ]
+}
