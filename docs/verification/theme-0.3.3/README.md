@@ -1,5 +1,7 @@
 # 0.3.3 課程與營業內容整理
 
+[公開預覽](https://1bb1c274.playtt-brand-preview.pages.dev/class/)已發布，deployment1bb1c274-c2dd-4aa4-ac47-40ed0e216bc7，Preview分支commit50c9bbc02515bce64a080fa0729d2efc0d5ea25a，來源4bb8d0254b4bc01fad96bc9d6950ae06e937bc9c。[遠端49檔](preview-http.json)／[正式46檔原樣](production-http.json)／[遠端QA與SEO讀回](preview-browser.json)均通過；404與301相符。
+
 2026-11-25，對照[內容查核](../../CONTENT_REVIEW_20261125.md)發現0.3.2候選仍顯示舊價目、未核定L1–L12及客服時間，並把待確認是否相同的菁英／選手班合併。0.3.3保留歷史內容於內部文件，候選頁面改為洽詢現行安排。
 
 - 六個入口：兒童／成人小班、個人教學、菁英培訓洽詢、租桌、營隊及包班。

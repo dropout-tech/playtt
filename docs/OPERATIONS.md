@@ -2,7 +2,9 @@
 
 ## 最新主題與內容編輯
 
-目前交付包為0.3.2，對比及地圖標籤修正詳見[驗證](verification/theme-0.3.2/README.md)；五頁與共用組件的原生保存證據屬0.3.1。依[編輯手冊](EDITOR_GUIDE.md)修改既有頁面，更新主題不會覆寫已保存內容。[公開品牌預覽](https://8d3afc93.playtt-brand-preview.pages.dev/)已更新為0.3.2，正式站保持0.2.3；沒有授權新的私人雲端寫入窗口。新受限方案、固定工具及本機完整流程見[準備紀錄](../experiments/cloudflare-wordpress/visual-cloud-next/README.md)。
+目前交付包為0.3.3，[品牌預覽](https://1bb1c274.playtt-brand-preview.pages.dev/)已發布，正式站保持0.2.3。課程洽詢、七題QA及未確認資料處理見[驗證](verification/theme-0.3.3/README.md)。五頁與共用組件的完整原生保存證據仍屬0.3.1；[編輯手冊](EDITOR_GUIDE.md)說明既有頁面須逐頁修改，更新主題不覆寫保存內容。
+
+沒有授權新的私人雲端寫入窗口。[單次方案](../experiments/cloudflare-wordpress/visual-cloud-next/README.md)已完成本機預演與固定候選／回退dry-run，等待上一題明確確認。
 
 ## 0.3.1 主題與首頁設定
 

@@ -1,5 +1,13 @@
 # PLAYTT 執行進度
 
+## 0.3.3課程內容與QA已發布預覽（2026-11-25）
+
+[新版課程預覽](https://1bb1c274.playtt-brand-preview.pages.dev/class/)：六種課程／服務入口、包班、特定年齡需求、上課流程、學習與檢定洽詢、七題QA。舊價格、未核定L1–L12與客服時段移出候選並保留於歷史文件；菁英與選手班不再直接等同。業者待補資料仍須確認。
+
+來源4bb8d025，預覽commit50c9bbc0、deployment1bb1c274。六頁51檔匯出、42檔主題ZIP與Git index精確、三頁×375／768／1440px共9組Chrome檢查及七題點擊／Enter操作通過；Node24.18.0。遠端49檔與正式46檔核對通過，正式public無變更。[證據與限制](verification/theme-0.3.3/README.md)。
+
+沒有新的私人雲端部署或資料寫入。上一題單次視覺測試授權仍待答覆，未建立授權檔或run owner；完整雲端後台、營業資料與實體裝置等驗收仍開放，PR4保持draft。
+
 ## 0.3.2預覽發布；最新候選本機視覺流程通過（2026-11-25）
 
 [新版預覽](https://8d3afc93.playtt-brand-preview.pages.dev/)已發布成功，預覽靜態commit132910d4、來源06edf21。遠端49檔精確；正式站46檔仍為原內容。Chrome375／1440px、手機選單與Escape回焦通過。[部署與畫面](verification/theme-0.3.2/DEPLOYMENT.md)。

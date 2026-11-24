@@ -2,7 +2,7 @@
 
 查核日：2026-11-25。依使用者指定，先查品牌 PDF、官方粉專、公開賽事資訊及 DropOut 的 Let’s Play Supabase，再整理店家需要補的內容。以下是候選內容的依據，不代表每個內部商品都已確認可對外招生。
 
-可直接對照[新版官網預覽](https://8d3afc93.playtt-brand-preview.pages.dev/)；正式網域尚未套用本輪改版。
+可直接對照[新版官網預覽](https://1bb1c274.playtt-brand-preview.pages.dev/)；正式網域尚未套用本輪改版。
 
 ## 已確認並套入品牌候選
 
