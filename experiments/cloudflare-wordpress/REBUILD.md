@@ -1,3 +1,5 @@
+準備中：[原生編輯器受限雲端測試](native-next/README.md)已完成 dry-run；自動核准拒絕上限增加與寫入，等待明確確認。沒有新部署。
+
 最新：[私人 PHP 冷啟動直接觀測](native-trace/README.md)取得內外層完成紀錄，零資料寫入並回復原程式；完整免費後台仍未驗收。
 
 最新：[私人Cloudflare單次登入實測](lazy-provider/README.md)200／零資料寫入，原程式已恢復；PHP追蹤缺失與完整後台驗收仍開放。

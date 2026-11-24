@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 完整原生流程已備妥，等待這次雲端寫入授權（2026-11-24）
+
+最新只讀核對仍為相容 reader 1a0405bc、canonical181、16 pins、closed／sealed／pending0，六個線上模組及備份精確。Workers Free、R2 $0.00／2.33GB。新方案準備把自設上限 150MB 調為 152MB，開放一次 10分鐘／1,881,041bytes／96puts 的私人草稿193編輯、保存、重啟讀回及登出；候選與回復 dry-run 各6模組精確，本機前置檢查通過。
+
+自動核准審查認為既有研究授權未明確涵蓋這次持久上限增加與不可退款的資料寫入，已拒絕執行並向使用者詢問。遠端 controller 尚未啟動，沒有部署或窗口變更；**雲端上限仍150MB、餘額62,344bytes**。完整原生編輯驗證尚未執行，正式 Pages、原視覺與 draft PR 維持現況。詳見[待確認操作與驗證證據](../experiments/cloudflare-wordpress/native-next/README.md)。
+
 ## 私人 PHP 冷啟動已直接觀測；完整後台仍待（2026-11-24 整理）
 
 修正觀測工具的提早停止，11 項測試通過。11 月 22 日固定 19f8bc17 候選的單次登入 GET 200／3,728 ms，同時取得外層回應及內部 cold／completed PHP trace（2,858 ms），並等待最後相符事件後 5 秒。27 事件皆 ok、例外 0，資料寫入 0 bytes／0 puts。兩次 64 MiB WASM 採樣不是整個 isolate 尖峰，完整登入、Gutenberg 保存、繁中初始化與持續免費使用尚未驗收。
