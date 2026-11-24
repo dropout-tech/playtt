@@ -1,0 +1,44 @@
+{
+  "scope": "Public static brand preview 0.3.0, not theme 0.3.1/0.3.2 or production; one mobile lab run each; no CrUX field data",
+  "capturedAt": "2026-11-25 02:10 Asia/Taipei",
+  "environment": {
+    "device": "Moto G Power",
+    "network": "Slow 4G",
+    "lighthouse": "13.6.0",
+    "browser": "HeadlessChromium 157.0.8103.38"
+  },
+  "pages": [
+    {
+      "route": "/",
+      "report": "https://pagespeed.web.dev/analysis/https-d344e4ab-playtt-brand-preview-pages-dev/rfdfnmdo5rq2knctebhgh3?form_factor=mobile",
+      "performance": 99,
+      "accessibility": 95,
+      "bestPractices": 100,
+      "seo": 69,
+      "fcpMs": 902,
+      "lcpMs": 902,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 3711
+    },
+    {
+      "route": "/class/",
+      "report": "https://pagespeed.web.dev/analysis/https-d344e4ab-playtt-brand-preview-pages-dev-class/y0p959t2uusa9tzp5zgmy5?form_factor=mobile",
+      "performance": 100,
+      "accessibility": 96,
+      "bestPractices": 100,
+      "seo": 69,
+      "fcpMs": 901,
+      "lcpMs": 901,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 901
+    }
+  ],
+  "findings": {
+    "contrast": "Yellow 12px CTA eyebrow on brand blue flagged on both routes",
+    "links": "Home map links have identical labels for different locations; unscored audit",
+    "indexing": "Preview reports indexing blocked; retain preview noindex",
+    "opportunities": "Render-blocking styles, asset cache lifetime; home image delivery estimated 232 KiB savings. Lab estimates, not observed failures."
+  }
+}

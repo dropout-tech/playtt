@@ -1,0 +1,124 @@
+{
+  "schema": "playtt/theme-editor-site-audit/v1",
+  "theme": "0.3.1",
+  "wordpressArchive": "7.1.4",
+  "wordpressFinal": "7.1.5",
+  "coreVersionCaveat": "Archive was 7.1.4; final version.php is 7.1.5. The helper did not record per-action core versions; this run is not pinned to one WordPress version.",
+  "databaseSchemaVersion": "61833",
+  "scope": "Local WordPress Playground/PHP 8.3/SQLite with native Chrome UI; not Cloudflare Free or physical-device acceptance",
+  "pageEdits": [
+    {
+      "slug": "about",
+      "id": 19,
+      "original": "我們希望桌球不只是技術的練習，也是歡笑、交流與生活的一部分。",
+      "changedAndReloaded": true,
+      "originalRestored": true,
+      "invalidBlocks": false
+    },
+    {
+      "slug": "class",
+      "id": 20,
+      "original": "兒童與成人團體班、個人訓練、菁英培訓與場地租借。透過 LINE，和我們聊聊你的程度與目標。",
+      "changedAndReloaded": true,
+      "originalRestored": true,
+      "invalidBlocks": false
+    },
+    {
+      "slug": "coaches",
+      "id": 21,
+      "original": "不同的教學特色，同樣對桌球的熱情。認識 Let’s Play 教練團隊。",
+      "changedAndReloaded": true,
+      "originalRestored": true,
+      "invalidBlocks": false
+    },
+    {
+      "slug": "locations",
+      "id": 22,
+      "original": "查看據點資訊，透過 LINE 確認課程、體驗與租桌時段。",
+      "changedAndReloaded": true,
+      "originalRestored": true,
+      "invalidBlocks": false
+    },
+    {
+      "slug": "partner",
+      "id": 23,
+      "original": "學校、企業、運動場館與教練夥伴，一起創造更多接觸桌球的機會。",
+      "changedAndReloaded": true,
+      "originalRestored": true,
+      "invalidBlocks": false
+    }
+  ],
+  "pages": [
+    {
+      "slug": "about",
+      "id": 19,
+      "contentSemanticallyRestored": true,
+      "rawBytesUnchanged": false
+    },
+    {
+      "slug": "class",
+      "id": 20,
+      "contentSemanticallyRestored": true,
+      "rawBytesUnchanged": false
+    },
+    {
+      "slug": "coaches",
+      "id": 21,
+      "contentSemanticallyRestored": true,
+      "rawBytesUnchanged": false
+    },
+    {
+      "slug": "locations",
+      "id": 22,
+      "contentSemanticallyRestored": true,
+      "rawBytesUnchanged": false
+    },
+    {
+      "slug": "partner",
+      "id": 23,
+      "contentSemanticallyRestored": true,
+      "rawBytesUnchanged": false
+    },
+    {
+      "slug": "home",
+      "id": 18,
+      "contentSemanticallyRestored": true,
+      "rawBytesUnchanged": true
+    },
+    {
+      "slug": "privacy-policy",
+      "id": 3,
+      "contentSemanticallyRestored": true,
+      "rawBytesUnchanged": true
+    },
+    {
+      "slug": "sample-page",
+      "id": 2,
+      "contentSemanticallyRestored": true,
+      "rawBytesUnchanged": true
+    }
+  ],
+  "headerChangedOnSixPages": true,
+  "footerChangedOnSixPages": true,
+  "allPublicTextRestored": true,
+  "allSessionsRemoved": true,
+  "databaseIntegrity": "ok",
+  "postTypes": {
+    "attachment": 14,
+    "page": 8,
+    "post": 2,
+    "revision": 12,
+    "wp_global_styles": 1,
+    "wp_navigation": 2,
+    "wp_template_part": 2
+  },
+  "responsiveViews": 18,
+  "consoleErrors": [],
+  "consoleWarnings": [
+    "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css"
+  ],
+  "invalidBlocks": 0,
+  "applicationSourceChanged": false,
+  "processesDisposed": true,
+  "cloudOperations": 0
+}

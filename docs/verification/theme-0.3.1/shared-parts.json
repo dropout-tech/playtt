@@ -1,0 +1,18 @@
+{
+  "scope": "Native 0.3.1 local editor; each common part changed then restored on all six pages",
+  "pages": [
+    "about",
+    "class",
+    "coaches",
+    "home",
+    "locations",
+    "partner"
+  ],
+  "changedHeader": "課程介紹（本機驗證）",
+  "restoredHeader": "課程資訊",
+  "navigationTarget": "/class/",
+  "footerChangeAndRestore": true,
+  "finalAnonymousNoAdminbar": true,
+  "finalNoTestText": true,
+  "logoutConfirmed": true
+}

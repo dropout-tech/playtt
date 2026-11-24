@@ -343,7 +343,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"className":"lp-actions"} -->
 <div class="wp-block-buttons lp-actions"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%8C%97%E5%B8%82%E8%98%86%E6%B4%B2%E5%8D%80%E9%95%B7%E6%A8%82%E8%B7%AF106%E8%99%9F3%E6%A8%93">查看地圖 ↗</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%8C%97%E5%B8%82%E8%98%86%E6%B4%B2%E5%8D%80%E9%95%B7%E6%A8%82%E8%B7%AF106%E8%99%9F3%E6%A8%93">蘆洲店地圖 ↗</a></div>
 <!-- /wp:button -->
 <!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://line.me/R/ti/p/@869usyqy">洽詢課程</a></div>
@@ -370,7 +370,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"className":"lp-actions"} -->
 <div class="wp-block-buttons lp-actions"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%8C%97%E5%B8%82%E6%9E%97%E5%8F%A3%E5%8D%80%E4%B8%AD%E5%B1%B1%E8%B7%AF248%E8%99%9FB1-2">查看地圖 ↗</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%8C%97%E5%B8%82%E6%9E%97%E5%8F%A3%E5%8D%80%E4%B8%AD%E5%B1%B1%E8%B7%AF248%E8%99%9FB1-2">林口桌球地圖 ↗</a></div>
 <!-- /wp:button -->
 <!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://line.me/R/ti/p/@869usyqy">洽詢課程</a></div>
