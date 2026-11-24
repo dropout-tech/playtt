@@ -3,7 +3,7 @@ Theme Name: Let's Play 桌球聯盟
 Theme URI: https://playtt.tw/
 Author: 琢奧科技
 Description: Let’s Play 品牌專屬區塊佈景主題。支援網站編輯器、課程、教練、據點與合作內容。
-Version: 0.3.0
+Version: 0.3.2
 Requires at least: 6.7
 Requires PHP: 8.2
 License: GNU General Public License v2 or later
@@ -114,7 +114,7 @@ a,button,summary { -webkit-tap-highlight-color:transparent; }
 .lp-location p { color:#52636d; }
 .lp-location .wp-block-buttons { margin-top:26px; }
 .lp-cta { padding-block:72px; background:var(--lp-blue); color:white; }
-.lp-cta .lp-eyebrow { color:var(--lp-yellow); }
+.lp-cta .lp-eyebrow { color:white; }
 .lp-cta h2 { font-size:clamp(32px,4.3vw,62px); line-height:1.25; margin:0; letter-spacing:-.04em; }
 .lp-cta-row { display:flex; justify-content:space-between; align-items:center; gap:32px; }
 .lp-cta .wp-block-button__link { background:var(--lp-yellow); color:var(--lp-ink); }
