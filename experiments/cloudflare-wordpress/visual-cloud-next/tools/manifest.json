@@ -30,50 +30,118 @@
       "path": "playtt-visual-cloud-rehearsal-control.mjs",
       "bytes": 1383,
       "sha256": "c640ec69d12b906adf2d91c04d6ac39dd163ea89e31da71981964b61b6ece263"
+    },
+    {
+      "path": "playtt-visual-cloud-next-integrity.mjs",
+      "bytes": 8409,
+      "sha256": "d83ef32fa58a8f33c57efdf4c4ff8bb42ea0e1fdb99ad9db241b3ba908bb75e3"
+    },
+    {
+      "path": "playtt-visual-cloud-next-integrity.test.mjs",
+      "bytes": 5075,
+      "sha256": "72f125864b8a5ffdf5469a91d1812ec4c8e80d6b34f8a143f9a30e0441efb442"
+    },
+    {
+      "path": "playtt-visual-cloud-next-audit.mjs",
+      "bytes": 7345,
+      "sha256": "e194a40872be02532070ef2e906b56a0440556ec3ee45127e9038528d167e2f5"
+    },
+    {
+      "path": "playtt-visual-cloud-next-backup.mjs",
+      "bytes": 7112,
+      "sha256": "5956eddc25ff8e251ab648cc78810e9af7c2f7183f74160e6a47683a0e364b0e"
+    },
+    {
+      "path": "playtt-visual-cloud-next-final.mjs",
+      "bytes": 9569,
+      "sha256": "dd80b59ab97561abd1bbfbf1307e6df27253fa6eaf0ee6b68e84c0c0de07a73f"
+    },
+    {
+      "path": "playtt-visual-cloud-next-read-diagnostic.mjs",
+      "bytes": 950,
+      "sha256": "6235b34d9f23bdd767e8197ae17d42515c0ab84c0d4df4f61e856558ad8785c6"
     }
   ],
   "dependencies": [
     {
       "path": "scripts/playtt-snapshot-bundle.mjs",
-      "bytes": 10857,
+      "bytes": 10724,
       "sha256": "e4695b61d524bdf61a5a3fdcb31dee2cc07e1d0afc356dd2b684f1eef97d57ba",
       "observedSha256": "f53351aea2e8c62af46dc41a5429f753433ccce0ecacec9113a822d27a186306",
-      "hashMode": "UTF-8 normalized LF"
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 10857
     },
     {
       "path": "scripts/playtt-native-trace-observer.mjs",
-      "bytes": 11853,
+      "bytes": 11752,
       "sha256": "2cc224e6ef405defd99bedd140648cb44066039e38d1e66f6a78d88557cc6cab",
       "observedSha256": "91638c28a6b6cc83df8efe03bf7ee755db4822d328f363882ae722e5d75aa719",
-      "hashMode": "UTF-8 normalized LF"
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 11853
     },
     {
       "path": "scripts/playtt-native-approved-state.mjs",
       "bytes": 1590,
       "sha256": "bb47ddd2ae1c11081d9c364777ddfe58d6ec7a8eca31e86a4b6a7dd27173edb2",
       "observedSha256": "bb47ddd2ae1c11081d9c364777ddfe58d6ec7a8eca31e86a4b6a7dd27173edb2",
-      "hashMode": "UTF-8 normalized LF"
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 1590
     },
     {
       "path": "scripts/playtt-canvas-typing-local-observer.mjs",
       "bytes": 13575,
       "sha256": "28567f152b9cbf969a8eb421eecf8d2beb6f2a3b3a4b1945af7f4eba98213719",
       "observedSha256": "28567f152b9cbf969a8eb421eecf8d2beb6f2a3b3a4b1945af7f4eba98213719",
-      "hashMode": "UTF-8 normalized LF"
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 13575
     },
     {
       "path": "scripts/playtt-request-lifecycle.mjs",
       "bytes": 4693,
       "sha256": "32514b7102520a6b5e08c678b071e83b88f26d15f2a502c65f1bb3ce08f4ce3d",
       "observedSha256": "32514b7102520a6b5e08c678b071e83b88f26d15f2a502c65f1bb3ce08f4ce3d",
-      "hashMode": "UTF-8 normalized LF"
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 4693
     },
     {
       "path": "scripts/playtt-ajax-classifier.mjs",
       "bytes": 1928,
       "sha256": "1714739ca54b16198b5a5723070ca97dd9caa25b131d3544413cc008bf62a09a",
       "observedSha256": "1714739ca54b16198b5a5723070ca97dd9caa25b131d3544413cc008bf62a09a",
-      "hashMode": "UTF-8 normalized LF"
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 1928
+    },
+    {
+      "path": "scripts/playtt-content-snapshot-source.mjs",
+      "bytes": 2128,
+      "sha256": "89140021a9649b43bea663a80aca0aef9a5ff12b25d0b23b470bc32054baf774",
+      "observedSha256": "89140021a9649b43bea663a80aca0aef9a5ff12b25d0b23b470bc32054baf774",
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 2128
+    },
+    {
+      "path": "scripts/playtt-backup-pin-client.mjs",
+      "bytes": 4305,
+      "sha256": "7e177a7a68c1f4cf81ccbd7e4691ccce43053c19dfb02bc93e9987ed4234fc40",
+      "observedSha256": "daea8b9df62cef066c4532d14b51bcda8b2dee5363461dc9a99edb8a30ca2ed5",
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 4353
+    },
+    {
+      "path": "src/playtt-manifest-envelope.ts",
+      "bytes": 6385,
+      "sha256": "f8a7c6e175297f2e8422f1d4c2704fce094f49af0d3b8a48b09e68a472925795",
+      "observedSha256": "f8a7c6e175297f2e8422f1d4c2704fce094f49af0d3b8a48b09e68a472925795",
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 6385
+    },
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "bytes": 7731,
+      "sha256": "587861372f708ea05177107f983da902628f1bbdd3c8f00037e510a811c4f4f1",
+      "observedSha256": "0c62f929fb54f95f827f22556f221c4cae2680f7a14c3a37d0c4dc80bed57409",
+      "hashMode": "UTF-8 normalized LF",
+      "observedBytes": 7867
     }
   ]
 }

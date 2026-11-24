@@ -1,5 +1,9 @@
 # Let’s Play 驗收狀態
 
+## 私人視覺試驗驗收工具：本機通過，雲端尚未執行（2026-11-25）
+
+真實canonical201與LOCAL216副本完成14項離線核對測試，包含修訂歸屬、保留session、其他使用者權限、媒體、設定、序列及內容損壞的拒絕案例。新GET備份／audit／pin收尾工具已備妥且語法通過，尚未執行遠端流程。A04、A06、A07的完整雲端證據仍不足；A20補充了具體收尾命令和實際Chrome證據格式。三次配置失敗與一次測試fixture路徑錯誤均保留，沒有將失敗紀錄改寫成通過。[測試摘要](verification/cloudflare-visual-next-recovery-check.json)／[操作文件](../experiments/cloudflare-wordpress/visual-cloud-next/README.md)。
+
 ## 0.3.3課程內容與QA已發布預覽（2026-11-25）
 
 [新版課程預覽](https://1bb1c274.playtt-brand-preview.pages.dev/class/)：六種課程／服務入口、包班、特定年齡需求、上課流程、學習與檢定洽詢、七題QA。舊價格、未核定L1–L12與客服時段移出候選並保留於歷史文件；菁英與選手班不再直接等同。業者待補資料仍須確認。

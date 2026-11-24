@@ -1,5 +1,11 @@
 # PLAYTT 執行進度
 
+## 私人雲端試驗後續核對工具完成本機檢查（2026-11-25）
+
+補上新owner專用的GET備份、離線資料／原生操作證據核對及保留pin／回退版本檢查工具。原固定plan、controller與六個既有工具未改；新雲端窗口仍待本次明確授權，沒有授權檔或run owner。正式public與品牌候選未改。
+
+資料核對原先每次查檔都複製整份markdown，改成一次索引與唯讀byte view；異常測試僅替換目標檔案。真實canonical201與LOCAL216備份的14項測試全通過，約2.23秒／Node24.18.0。保留三次記憶體配置失敗及一次測試不存在路徑的失敗；後者已改為實際`_options/siteurl.json`。六個新工具語法通過，遠端備份／audit／pin未執行；本機測試不等於完整免費後台驗收。[結果](verification/cloudflare-visual-next-recovery-check.json)／[操作與限制](../experiments/cloudflare-wordpress/visual-cloud-next/README.md)。
+
 ## 0.3.3課程內容與QA已發布預覽（2026-11-25）
 
 [新版課程預覽](https://1bb1c274.playtt-brand-preview.pages.dev/class/)：六種課程／服務入口、包班、特定年齡需求、上課流程、學習與檢定洽詢、七題QA。舊價格、未核定L1–L12與客服時段移出候選並保留於歷史文件；菁英與選手班不再直接等同。業者待補資料仍須確認。

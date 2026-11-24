@@ -1,0 +1,35 @@
+// One GET-only export of the closed approved trial; no native requests or cloud writes.
+import assert from 'node:assert/strict';
+import {readFile,writeFile,access,mkdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+import {openSnapshotBundle,exportSnapshotBundle,importSnapshotBundle} from './playtt-snapshot-bundle.mjs';
+import {createContentSnapshotSource} from './playtt-content-snapshot-source.mjs';
+import {decodeCanonicalManifestBytes} from '../src/playtt-manifest-envelope.ts';
+import {backupPinInput} from '../src/playtt-backup-pins.ts';
+assert.deepEqual(process.argv.slice(2),['--remote']);
+const prefix='artifacts/playtt-visual-cloud-next-backup-',load=async p=>JSON.parse(await readFile(p,'utf8')),sha=b=>createHash('sha256').update(b).digest('hex');
+await access(prefix+'owned-private.json').then(()=>{throw Error('Export already started; inspect retained evidence');},e=>{if(e.code!=='ENOENT')throw e;});
+const trial=await load('artifacts/playtt-visual-cloud-next-ui-result.json'),control=await load('artifacts/playtt-visual-cloud-next-ui-owned-private.json'),before=await load(control.preflightPath);
+assert.ok(['browser-finished-awaiting-independent-verification','window-ending','fail'].includes(trial.result));assert.equal(trial.contained,true);assert.equal(trial.restored,true);assert.equal(control.phase,'closed-sealed-compatible-reader');assert.equal(control.fenceReleased,true);assert.equal(control.windowClosed,true);
+assert.equal(control.origin,'https://playtt-wp-free-session-audit.muzhi-garden-platform.workers.dev');
+const secrets=await load('../../../playtt-cms-secrets.json'),token=(await readFile('../../../playtt-wrangler-config/.wrangler/config/default.toml','utf8')).match(/^oauth_token\s*=\s*"([^"\r\n]+)"/m)?.[1];assert.ok(token);
+const origin=control.origin,headers={authorization:'Bearer '+secrets.WORDPRESS_OPERATOR_TOKEN,'X-Playtt-Probe':secrets.WORDPRESS_OPERATOR_TOKEN};
+async function op(path){const r=await fetch(origin+path,{method:'GET',headers,redirect:'error',signal:AbortSignal.timeout(45000)});assert.equal(r.status,200);return r.json();}
+async function state(){const rs=await Promise.allSettled([op('/?phase=operator-fence-status'),op('/__playtt-capacity'),op('/__playtt-backup-pins'),op('/__playtt-publishing')]);for(const r of rs)if(r.status==='rejected')throw r.reason;const [s,b,p,pub]=rs.map(r=>r.value);assert.equal(s.coherent,true);assert.deepEqual(s.state,trial.after.state);assert.deepEqual(s.receipt,s.state.pointer);assert.equal(s.fence.active,false);assert.deepEqual(b,{...trial.after.budget,writeTracking:{...trial.after.budget.writeTracking,window:{...trial.after.budget.writeTracking.window,expired:b.writeTracking.window.expired}}});assert.deepEqual(p,before.pins);assert.equal(pub.state,'paused');assert.equal(b.writeTracking.pending,0);assert.equal(b.writeTracking.sealed,true);assert.equal(b.writeTracking.window.closed,true);return {state:s.state,budget:b,pins:p,publisher:pub.state};}
+const initial=await state(),directory=resolve('../../../../outputs/backups/cloudflare-wordpress-visual-next/'+new Date().toISOString().replace(/[:.]/g,'-'));
+const owner={phase:'exporting',at:new Date().toISOString(),directory,state:initial.state,controlOwner:'artifacts/playtt-visual-cloud-next-ui-owned-private.json'};
+await writeFile(prefix+'owned-private.json',JSON.stringify(owner,null,2)+'\n',{flag:'wx'});await mkdir(directory,{recursive:true});
+const source=createContentSnapshotSource({token}),cache=new Map(),bucket={get(key){if(!cache.has(key))cache.set(key,source.bucket.get(key));return cache.get(key);}};
+const raw=await bucket.get(initial.state.pointer.manifestKey);assert.ok(raw);const bytes=new Uint8Array(await raw.arrayBuffer()),manifest=await decodeCanonicalManifestBytes(bytes,'sites/default');
+assert.equal(manifest.restorePack.schema,'playtt/canonical-compressed-content/v1');
+const baseRaw=await bucket.get(manifest.restorePack.base.manifestKey);assert.ok(baseRaw);const base=await decodeCanonicalManifestBytes(new Uint8Array(await baseRaw.arrayBuffer()),'sites/default');
+const anchor=backupPinInput({...initial.state.pointer,manifestSha256:sha(bytes),packKey:base.restorePack.objectKey,packSha256:base.restorePack.sha256,packBytes:base.restorePack.size});owner.anchor=anchor;await writeFile(prefix+'owned-private.json',JSON.stringify(owner,null,2)+'\n');
+await exportSnapshotBundle(bucket,anchor,directory+'/export');const copied=await importSnapshotBundle(directory+'/export',anchor,directory+'/independent');
+const baseline=await openSnapshotBundle(control.baselineDirectory,control.baseline),a=new Map(baseline.graph.contents.markdown.map(f=>[f.path,Buffer.from(f.bytes)])),b=new Map(copied.graph.contents.markdown.map(f=>[f.path,Buffer.from(f.bytes)]));
+assert.deepEqual([...a.keys()].sort(),[...b.keys()].sort());const changed=[...b].filter(([p,v])=>!v.equals(a.get(p))).map(([p])=>p).sort();
+const tableDiffs={};for(const p of changed.filter(p=>p.startsWith('_tables/'))){const old=JSON.parse(a.get(p)),now=JSON.parse(b.get(p));const key=p.endsWith('/posts.json')?'ID':p.endsWith('/postmeta.json')?'meta_id':p.endsWith('/usermeta.json')?'umeta_id':p.endsWith('/options.json')?'option_id':undefined;if(!key){tableDiffs[p]={unknownKey:true};continue;}const previous=new Map(old.map(r=>[r[key],r]));tableDiffs[p]={added:now.filter(r=>!previous.has(r[key])).map(r=>({id:r[key],type:r.post_type,parent:r.post_parent})),removed:old.filter(r=>!now.some(n=>n[key]===r[key])).map(r=>r[key]),changed:now.filter(r=>previous.has(r[key])&&JSON.stringify(r)!==JSON.stringify(previous.get(r[key]))).map(r=>({id:r[key],fields:Object.keys(r).filter(k=>JSON.stringify(r[k])!==JSON.stringify(previous.get(r[key])[k]))}))};}
+for(const group of ['uploads','wpContent','wpContentDeleted'])assert.deepEqual(copied.graph.contents[group],baseline.graph.contents[group]);
+const final=await state();assert.deepEqual({...final,budget:{...final.budget,writeTracking:{...final.budget.writeTracking,window:{...final.budget.writeTracking.window,expired:initial.budget.writeTracking.window.expired}}}},initial);owner.phase='exported-awaiting-content-audit';await writeFile(prefix+'owned-private.json',JSON.stringify(owner,null,2)+'\n');
+const report={schema:'playtt/visual-cloud-next-backup/v1',at:new Date().toISOString(),result:'export-and-independent-copy-pass',trialResult:trial.result,canonicalVersion:final.state.version,format:copied.graph.format,manifestEncoding:copied.graph.manifestEncoding,objects:copied.graph.objects.length,files:copied.graph.contents.markdown.length+copied.graph.contents.uploads.length+copied.graph.contents.wpContent.length,remoteGets:source.stats.requests,downloadedBytes:source.stats.downloadedBytes,changedMarkdownPaths:changed,tableDiffs,allOtherContentMediaThemeExact:true,ledgerUnchangedDuringBackup:true,pins:final.pins.generation,pending:0,sealed:true,windowClosed:true,publisher:final.publisher,productionChanged:false,cloudMutations:0};
+await writeFile(prefix+'result.json',JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(report));
