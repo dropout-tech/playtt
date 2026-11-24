@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-24T18:39:37.557Z",
+  "workers": {
+    "plan": "Free",
+    "source": "https://dash.cloudflare.com/3baadbd4abd9fd63c7f7e51664b26f67/workers/plans"
+  },
+  "r2": {
+    "billableUsd": 0,
+    "storageGb": 2.34,
+    "classAOperationsLabel": "7.4k",
+    "classBOperationsLabel": "60.87k",
+    "period": "October 25 - November 25",
+    "source": "https://dash.cloudflare.com/3baadbd4abd9fd63c7f7e51664b26f67/r2/overview"
+  },
+  "scope": "Dashboard observed; account-wide delayed billing, not a long-term guarantee"
+}

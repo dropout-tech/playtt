@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-24T18:42:19.852Z",
+  "scope": "Local Chrome native UI, latest fixed 2e9819b0 candidate; not cloud acceptance",
+  "origin": "http://127.0.0.1:9580",
+  "draftId": 193,
+  "iframe": "editor-canvas",
+  "edit": "Native contenteditable paragraph fill then one visible 儲存草稿 click",
+  "saveObserved": "已儲存",
+  "nativeSave": {
+    "status": 200,
+    "exact": true,
+    "contentSha256": "473ffca781b6bfd0f72c3292c4411d9a7a2be5abdf20cc9ee4c8e6a64b608807"
+  },
+  "coldRead": {
+    "newTab": true,
+    "visualParagraphExact": true,
+    "iframeVisible": true,
+    "savedVisible": true,
+    "fullDataVerifiedByHarness": true
+  },
+  "logoutObserved": "你已完成登出。",
+  "ownedTabsClosed": true,
+  "ports9580And9581Closed": true,
+  "processExitCode": 0,
+  "browserConsoleSeparatelyInspected": false,
+  "notes": [
+    "Initial immediate editor navigation was aborted during native login redirect. Dashboard was inspected before retrying the same editor URL.",
+    "An attempted active in-app page read reported none; existing tab inventory still confirmed the Supabase session.",
+    "No browser CDP command was executed for authentication or editing."
+  ]
+}

@@ -1,5 +1,15 @@
 # PLAYTT 執行進度
 
+## 0.3.2預覽發布；最新候選本機視覺流程通過（2026-11-25）
+
+[新版預覽](https://8d3afc93.playtt-brand-preview.pages.dev/)已發布成功，預覽靜態commit132910d4、來源06edf21。遠端49檔精確；正式站46檔仍為原內容。Chrome375／1440px、手機選單與Escape回焦通過。[部署與畫面](verification/theme-0.3.2/DEPLOYMENT.md)。
+
+固定2e9819b0以canonical201副本完成原生Chrome畫布修改、一次保存、完整workerd重啟、新分頁讀回及登出：747,221bytes／45puts，LOCAL216，304物件／298檔獨立備份及完整快照一致。原修訂、其他內容／使用者／媒體／主題精確；已封存、pending0、程序退出。server329個樣本例外0，未另查console；不是雲端驗收。
+
+雲端8個GET重新核對canonical201／17pins／原9377b040 reader／152MB cap／餘1,067,374bytes／closed／sealed／pending0／publisher paused，沒有私人雲端寫入或部署。Workers Free，R2當期$0.00／2.34GB。新的600秒／1,050,000bytes／96puts單次方案已完成候選與回退dry-run，保留152MB上限；尚待本次明確授權。[準備、工具與限制](../experiments/cloudflare-wordpress/visual-cloud-next/README.md)。
+
+整體目標仍active、PR4 draft，正式官網和私人後台不切換。實體裝置／IME、營業資料、首次雲端繁中初始化與長期免費使用仍待驗收。
+
 ## 0.3.2 對比修正、編輯手冊與手機效能紀錄（2026-11-25）
 
 0.3.1 已完成五個內容頁及共用頁首頁尾的原生修改、保存、重載與還原；六頁×375／768／1440px共18組版面通過。登出session0、八頁語意恢復，服務已退出。該Playground試驗由7.1.4封存開始、結束為7.1.5，未記錄逐步核心版本，不能稱固定版本驗收。[原生編輯證據](verification/theme-0.3.1/NATIVE_EDITOR.md)／[編輯手冊](EDITOR_GUIDE.md)。

@@ -1,0 +1,212 @@
+{
+  "schema": "playtt/local-canvas-typing-local-run/v1",
+  "at": "2026-11-24T18:37:50.063Z",
+  "result": "pass",
+  "localOnly": true,
+  "cloudRequests": 0,
+  "productionUnchanged": true,
+  "baselineVersion": 201,
+  "finalVersion": 216,
+  "sourceCommit": "b67c191-bootstrap-serial-local",
+  "sourceInputCount": 215,
+  "loadedSourceCount": 77,
+  "centralSourceCount": 82,
+  "fullSourceBuild": true,
+  "centralCandidateAdopted": false,
+  "bundleSha256": "2e9819b0c9602eb937b2819196242a047877923b2d79a27ebdcd821d294074c1",
+  "productionBundleUnchanged": false,
+  "localVariant": "candidate",
+  "localFlags": [
+    "content-gzip-v1",
+    "gzip-v1",
+    "native-30s-v1",
+    "memory-diagnostics"
+  ],
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 1050000,
+    "maxOperations": 96
+  },
+  "initialBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 101062553,
+    "baselineObjects": 308,
+    "chargedBytes": 0,
+    "chargedPuts": 0,
+    "initializedAt": "2026-11-24T18:32:00.102Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-24T18:32:00.119Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-24T18:32:00.136Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "0197f1dd-dac2-497f-a0f5-b34762d56971",
+        "openedAt": 1795545120150,
+        "expiresAt": 1795545720150,
+        "maxBytes": 1050000,
+        "usedBytes": 0,
+        "remainingBytes": 1050000,
+        "maxOperations": 96,
+        "operations": 0,
+        "closed": false,
+        "expired": false,
+        "admitsNewOperations": true,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 152000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 50937447,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "finalBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 101062553,
+    "baselineObjects": 308,
+    "chargedBytes": 747221,
+    "chargedPuts": 45,
+    "initializedAt": "2026-11-24T18:32:00.102Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-24T18:32:00.119Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-24T18:37:36.416Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "0197f1dd-dac2-497f-a0f5-b34762d56971",
+        "openedAt": 1795545120150,
+        "expiresAt": 1795545720150,
+        "maxBytes": 1050000,
+        "usedBytes": 747221,
+        "remainingBytes": 302779,
+        "maxOperations": 96,
+        "operations": 45,
+        "closed": true,
+        "expired": false,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 152000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 50190226,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "chargedBytes": 747221,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "originalRevisionsExact": true,
+  "addedRevisionCount": 1,
+  "addedRevisionIds": [
+    210
+  ],
+  "expectedContentSha256": "473ffca781b6bfd0f72c3292c4411d9a7a2be5abdf20cc9ee4c8e6a64b608807",
+  "nativeSaveExact": true,
+  "fullWorkerdRestart": [
+    {
+      "fullWorkerdDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "stateExact": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "sameWindow": true,
+      "noReseedOrRearm": true,
+      "version": 213,
+      "chargedBytes": 597600
+    }
+  ],
+  "fullMaterializedExact": true,
+  "originalSessionsExactNewSessionRemoved": true,
+  "mediaAndThemeExact": true,
+  "independentBackupExact": true,
+  "independentObjects": 304,
+  "independentFiles": 298,
+  "profiler": [
+    {
+      "label": "bootstrap",
+      "samples": 290,
+      "events": 366,
+      "exceptions": 0,
+      "privateExceptions": 0,
+      "lifecycleEvents": 205,
+      "privateLifecycleErrors": 0,
+      "allocationActive": false,
+      "completedAllocations": [],
+      "busy": false,
+      "stopped": true
+    },
+    {
+      "label": "closing",
+      "samples": 39,
+      "events": 137,
+      "exceptions": 0,
+      "privateExceptions": 0,
+      "lifecycleEvents": 79,
+      "privateLifecycleErrors": 0,
+      "allocationActive": false,
+      "completedAllocations": [],
+      "busy": false,
+      "stopped": true
+    }
+  ],
+  "observations": [
+    {
+      "at": "2026-11-24T18:32:58.009Z",
+      "action": "status"
+    },
+    {
+      "at": "2026-11-24T18:33:19.681Z",
+      "action": "status"
+    },
+    {
+      "at": "2026-11-24T18:36:21.144Z",
+      "action": "status"
+    },
+    {
+      "at": "2026-11-24T18:36:43.525Z",
+      "action": "saved"
+    },
+    {
+      "at": "2026-11-24T18:36:56.251Z",
+      "action": "restart"
+    },
+    {
+      "at": "2026-11-24T18:37:22.750Z",
+      "action": "cold"
+    },
+    {
+      "at": "2026-11-24T18:37:36.433Z",
+      "action": "finish"
+    }
+  ],
+  "outboundAttempts": 0,
+  "localProcessesDisposed": true,
+  "limitations": [
+    "Local workerd inspector adds sampling overhead.",
+    "No assertion about Cloudflare whole-isolate memory, billed CPU, browser IME or long-term free usage.",
+    "Local fixture accounting begins after seed and does not reproduce cloud history/pins/receipt rows.",
+    "Gzip and heartbeat options enabled locally; cloud options remain off."
+  ]
+}

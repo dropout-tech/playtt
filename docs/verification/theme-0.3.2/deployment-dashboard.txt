@@ -1,0 +1,152 @@
+
+  - generic: Preview
+  - heading "Deployment details" [level=1]
+  - paragraph: "Deployment ID: 8d3afc93-9e2e-4520-861c-283ef2438852"
+  - paragraph:
+    - text: "Deployment URL:"
+    - link "https://8d3afc93.playtt-brand-preview.pages.dev":
+      - /url: https://8d3afc93.playtt-brand-preview.pages.dev
+  - generic: "Aliases:"
+  - list:
+    - link "codex-playtt-brand-manual-pr.playtt-brand-preview.pages.dev":
+      - /url: https://codex-playtt-brand-manual-pr.playtt-brand-preview.pages.dev
+  - button "Manage deployment":
+    - generic: Manage deployment
+  - generic: "Repository:"
+  - link "dropout-tech/playtt":
+    - /url: https://github.com/dropout-tech/playtt
+    - generic: dropout-tech/playtt
+  - generic: "Branch:"
+  - generic: codex/playtt-brand-manual-preview
+  - link "132910d":
+    - /url: https://github.com/dropout-tech/playtt/commit/132910d4a0102266f7c078c7ce60c38546296f32
+  - generic: "preview: publish theme 0.3.2 contrast and native SVG fixes"
+  - generic: "Status:"
+  - generic: success
+  - time: 2:27AM November 25, 2026
+  - generic: "Duration:"
+  - generic: 23s
+  - generic "Build settings 1":
+    - generic: ›
+    - generic: Build settings
+    - generic: "1"
+  - link "Build log":
+    - /url: /3baadbd4abd9fd63c7f7e51664b26f67/pages/view/playtt-brand-preview/8d3afc93-9e2e-4520-861c-283ef2438852
+    - generic: Build log
+  - link "Assets uploaded":
+    - /url: /3baadbd4abd9fd63c7f7e51664b26f67/pages/view/playtt-brand-preview/8d3afc93-9e2e-4520-861c-283ef2438852/files
+    - generic: Assets uploaded
+  - link "Functions":
+    - /url: /3baadbd4abd9fd63c7f7e51664b26f67/pages/view/playtt-brand-preview/8d3afc93-9e2e-4520-861c-283ef2438852/functions
+    - generic: Functions
+  - link "Redirects":
+    - /url: /3baadbd4abd9fd63c7f7e51664b26f67/pages/view/playtt-brand-preview/8d3afc93-9e2e-4520-861c-283ef2438852/redirects
+    - generic: Redirects
+  - link "Headers":
+    - /url: /3baadbd4abd9fd63c7f7e51664b26f67/pages/view/playtt-brand-preview/8d3afc93-9e2e-4520-861c-283ef2438852/headers
+    - generic: Headers
+  - heading "Build log" [level=2]
+  - generic: initialize
+  - generic: 3s
+  - generic: clone repo
+  - generic: 6s
+  - generic: build
+  - generic: 7s
+  - generic: deploy
+  - generic: 7s
+  - button "Copy log":
+    - generic: Copy log
+  - button "Download log":
+    - generic: Download log
+  - generic: "1"
+  - generic: "2"
+  - generic: "3"
+  - generic: "4"
+  - generic: "5"
+  - generic: "6"
+  - generic: "7"
+  - generic: "8"
+  - generic: "9"
+  - generic: "10"
+  - generic: "11"
+  - generic: "12"
+  - generic: "13"
+  - generic: "14"
+  - generic: "15"
+  - generic: "16"
+  - generic: "17"
+  - generic: "18"
+  - generic: "19"
+  - generic: "20"
+  - generic: "21"
+  - generic: "22"
+  - generic: "23"
+  - generic: "24"
+  - generic: "25"
+  - generic: "26"
+  - generic: "27"
+  - generic: "28"
+  - generic: "29"
+  - generic: "30"
+  - generic: "31"
+  - generic: "32"
+  - generic: "33"
+  - generic: "34"
+  - generic: "35"
+  - generic: "36"
+  - code:
+    - generic: 2026-11-24T18:26:58.113911Z Cloning repository...
+    - generic: 2026-11-24T18:27:02.076234Z From https://github.com/dropout-tech/playtt
+    - generic: 2026-11-24T18:27:02.076831Z * branch 132910d4a0102266f7c078c7ce60c38546296f32 -> FETCH_HEAD
+    - generic: 2026-11-24T18:27:02.07703Z
+    - generic: "2026-11-24T18:27:03.340817Z HEAD is now at 132910d preview: publish theme 0.3.2 contrast and native SVG fixes"
+    - generic: 2026-11-24T18:27:03.341516Z
+    - generic: 2026-11-24T18:27:03.451057Z
+    - generic: 2026-11-24T18:27:03.451571Z Using v2 root directory strategy
+    - generic: "2026-11-24T18:27:03.479128Z Success: Finished cloning repository files"
+    - generic: 2026-11-24T18:27:06.159592Z Checking for configuration in a Wrangler configuration file (BETA)
+    - generic: 2026-11-24T18:27:06.160935Z
+    - generic: 2026-11-24T18:27:06.162653Z Found wrangler.json file. Reading build configuration...
+    - generic: "2026-11-24T18:27:06.440276Z A Wrangler configuration file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing."
+    - generic: "2026-11-24T18:27:06.719409Z Detected the following tools from environment: npm@10.9.9, yarn@4.9.1, nodejs@22.23.4"
+    - generic: 2026-11-24T18:27:06.721193Z SKIP_DEPENDENCY_INSTALL is present in environment. Skipping automatic dependency installation.
+    - generic: "2026-11-24T18:27:06.722259Z Executing user command: node verify-static.mjs"
+    - generic: "2026-11-24T18:27:07.444884Z {\"result\":\"pass\",\"pages\":6,\"files\":51,\"scope\":\"Static publication integrity\"}"
+    - generic: 2026-11-24T18:27:07.476729Z Finished
+    - generic: 2026-11-24T18:27:08.671676Z Checking for configuration in a Wrangler configuration file (BETA)
+    - generic: 2026-11-24T18:27:08.672448Z
+    - generic: 2026-11-24T18:27:08.672986Z Found wrangler.json file. Reading build configuration...
+    - generic: "2026-11-24T18:27:08.944451Z A Wrangler configuration file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing."
+    - generic: "2026-11-24T18:27:08.945771Z Note: No functions dir at /functions found. Skipping."
+    - generic: 2026-11-24T18:27:08.94603Z Validating asset output directory
+    - generic: 2026-11-24T18:27:11.363858Z Deploying your site to Cloudflare's global network...
+    - generic: 2026-11-24T18:27:12.249714Z Parsed 2 valid redirect rules.
+    - generic: 2026-11-24T18:27:12.250304Z Parsed 3 valid header rules.
+    - generic: 2026-11-24T18:27:14.334687Z Uploading... (41/49)
+    - generic: 2026-11-24T18:27:14.8203Z Uploading... (44/49)
+    - generic: 2026-11-24T18:27:14.964761Z Uploading... (47/49)
+    - generic: 2026-11-24T18:27:15.03787Z Uploading... (49/49)
+    - generic: 2026-11-24T18:27:15.038466Z ✨ Success! Uploaded 8 files (41 already uploaded) (1.06 sec)
+    - generic: 2026-11-24T18:27:15.038609Z
+    - generic: 2026-11-24T18:27:15.413764Z ✨ Upload complete!
+    - generic: "2026-11-24T18:27:17.361812Z Success: Assets published!"
+    - generic: "2026-11-24T18:27:18.682954Z Success: Your site was deployed!"
+- contentinfo:
+  - list:
+    - link "Support":
+      - /url: https://support.cloudflare.com
+    - link "System status":
+      - /url: https://www.cloudflarestatus.com
+    - link "Careers":
+      - /url: https://www.cloudflare.com/careers/
+    - link "Terms of Use":
+      - /url: https://www.cloudflare.com/website-terms/
+    - link "Report Security Issues":
+      - /url: https://www.cloudflare.com/disclosure/
+    - link "Privacy Policy":
+      - /url: https://www.cloudflare.com/privacypolicy/
+    - button "A blue and white pill with a checkmark and an x, representing privacy choices Cookie Preferences":
+      - img "A blue and white pill with a checkmark and an x, representing privacy choices"
+      - text: Cookie Preferences
+    - generic: © 2026 Cloudflare, Inc.
+- region "Notifications"
