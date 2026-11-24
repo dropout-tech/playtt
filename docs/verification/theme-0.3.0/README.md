@@ -1,5 +1,7 @@
 # 品牌 PDF 主題候選 0.3.0 驗證
 
+已發布[獨立品牌預覽](https://d344e4ab.playtt-brand-preview.pages.dev/)，[部署與遠端驗證](DEPLOYMENT.md)記錄49個預覽檔精確、46個正式檔維持原內容。
+
 2026-11-25，使用指定31頁品牌 PDF 的原始向量字標及六個聲音圖案，改為可編輯「Jo起來，玩一下！」首頁、響應式圖案排列與共用品牌色。內容更新含兩據點、兩組電話、移除王泳程、五位新增教練姓名及課程流程。來源與取捨見[品牌說明](../../brand/README.md)、[內容查核](../../CONTENT_REVIEW_20261125.md)。
 
 ## 已完成
@@ -35,6 +37,6 @@ node scripts/export.mjs
 
 2026-11-25 已從登入的 Cloudflare Dashboard 讀回：Pages專案為 `playtt-brand-preview`，production branch是 `codex/playtt-wordpress-cloudflare`，自動部署啟用；所有非production分支可自動建立preview。root為 `cloudflare`，build為 `node verify-static.mjs`，output為 `public`，`SKIP_DEPENDENCY_INSTALL=1`。查核沒有修改設定。
 
-因此本分支只交付主題來源與證據，`cloudflare/public` 保持原版本。0.3.0靜態輸出另由 `codex/playtt-brand-manual-preview` 分支發布，不能把此預覽視為正式網域切換。實際預覽部署與遠端雜湊驗證會記入同目錄的部署紀錄。
+因此來源分支 `codex/playtt-wordpress-cloudflare` 只交付主題來源與證據，`cloudflare/public` 保持原版本。0.3.0靜態輸出另由 `codex/playtt-brand-manual-preview` 分支發布，不能把此預覽視為正式網域切換。實際預覽部署與遠端雜湊驗證見[部署紀錄](DEPLOYMENT.md)。
 
 主題更新不會自動覆寫已編輯的WordPress頁面。既有站套用新版首頁內容前須備份並明確選擇要更新的頁面。實體手機／IME／螢幕閱讀器、完整內容驗收、私人Cloudflare後台與長期免費限制仍待；本輪不宣稱完成全部目標。
