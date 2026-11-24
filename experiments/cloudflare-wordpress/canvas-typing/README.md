@@ -1,3 +1,5 @@
+後續：[首次繁中初始化](../bootstrap-locale/README.md)新增本機完整證據及兩項修正；本文的視覺編輯測試仍使用原19f8bc17候選。
+
 # 本機 Chrome 視覺編輯與冷重啟驗證
 
 2026-11-24，從已獨立驗證的雲端 canonical201 備份建立兩個隔離本機副本。Chrome 原生視覺編輯已完成繁中段落保存、完整 workerd 重啟、新分頁畫布與原生程式碼欄全文讀回、12 筆修訂及登出。本輪未操作 Cloudflare，也未修改 WordPress runtime；正式 Pages 與原視覺維持現況。

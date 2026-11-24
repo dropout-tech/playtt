@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Let’s Play 繁體中文初始化
  * Description: 安裝已核對的 WordPress 7.1.4 官方繁體中文語言檔。完成後可移除此工具，語言檔會保留。
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 if (!defined('ABSPATH')) { exit; }
 register_activation_hook(__FILE__, function () {
@@ -18,6 +18,11 @@ register_activation_hook(__FILE__, function () {
     foreach ($manifest as $name => $hash) {
         if (!copy(__DIR__ . '/package/' . $name, WP_LANG_DIR . '/' . $name)) { wp_die('語言檔複製失敗。'); }
     }
+    // WordPress may have cached an empty directory before activation. Match
+    // its core translation-cache key so sanitize_option() sees the new files.
+    wp_cache_delete(md5(rtrim(WP_LANG_DIR, '/') . '/'), 'translation_files');
+    if (!in_array('zh_TW', get_available_languages(), true)) { wp_die('無法辨識已安裝的繁體中文語言檔。'); }
     update_option('WPLANG', 'zh_TW');
+    if (get_option('WPLANG') !== 'zh_TW') { wp_die('網站語言設定未保存，請檢查後再啟用。'); }
     update_user_meta(get_current_user_id(), 'locale', 'zh_TW');
 });

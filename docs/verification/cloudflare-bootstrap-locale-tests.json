@@ -1,0 +1,15 @@
+{
+  "result": "pass",
+  "tests": 5,
+  "failed": 0,
+  "sourceSha256": "fd150cb32c71ac43623b9f9782c3048f733c19b4374fea6dd8a6ac810b7ae909",
+  "retainedLogSha256": "3f4ca1565b7af2e34e7b430562bab3de2a3a21e7095c8a6ad3e5b5dd7a153934",
+  "cases": [
+    "original134pending overflow reproduced",
+    "serialized134files maximum pending1 and complete manifest",
+    "failure stops without background writes or manifest",
+    "duplicate content deduplicated",
+    "unchanged revision produces no writes"
+  ],
+  "scope": "Actual extracted/transpiled old and new persistMarkdownRevision with actual write-tracking functions; fake R2 transport"
+}
