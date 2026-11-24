@@ -38,26 +38,46 @@ patterns.home = group('lp-manual-hero',group('lp-shell lp-manual-hero-grid',grou
   +section(head('FIND YOUR GAME','每個起點，都有適合的課。','從小班一起進步，到專屬節奏的個人訓練，找到你的上場方式。')+group('lp-grid-3',courseCard('01 / GROUP','小班一起玩','兒童與成人團體課，在互動練習中培養球感與運動習慣。','children')+courseCard('02 / PERSONAL','專注你的進步','一對一教學，依照程度、目標與節奏安排訓練。','individual')+courseCard('03 / TRAINING','練出下一個自己','菁英訓練、假期營隊與場地租借，延伸你的桌球日常。','camp')))
   +section(group('lp-story-grid',group('lp-story-brand',p('MORE THAN A GAME','lp-eyebrow')+p('LET’S<br>PLAY!','lp-story-word'))+group('lp-story-copy',h('不只學會打球，<br>也喜歡上每一次練習。')+p('Let’s Play 創立於 2018 年。我們相信，從「好玩」開始，孩子可以培養信心與專注力，大人可以釋放壓力，每個人都能找到屬於自己的運動節奏。')+p('透過簡單的口訣、互動的遊戲與循序漸進的引導，讓每一次回球，都多一點成就感。')+actions(button('認識 Let’s Play ↗',href('/about/'),true)))),'lp-story')
   +section(head('MEET YOUR COACH','有人陪你，把每一拍打好。','認識教練的教學特色，找到適合自己的學習方式。')+group('lp-grid-3',coaches.slice(0,3).map(c=>coachCard(c,false)).join(''))+actions(button('認識完整教練團隊 ↗',href('/coaches/'),true)))
-  +section(head('PLAY, LEARN & GROW','在玩樂中，看見進步。')+group('lp-grid-2',group('lp-course',p('01 / LET’S PLAY TEST','lp-index')+h('桌球檢定',3)+p('結合揮拍姿勢、桌球知識與敏捷反應，設計 L1–L12 檢定關卡，最後一關加入模擬比賽，陪學員看見自己的學習成果。'))+group('lp-course',p('02 / LET’S PLAY MATCH','lp-index')+h('桌球賽事',3)+p('從邀請賽、積分賽到學員盃，把練習中的技巧帶進比賽，也在交流中增加學習動力。賽事日期與參加方式請透過 LINE 洽詢。'))))
+  +section(head('PLAY, LEARN & GROW','在玩樂中，看見進步。')+group('lp-grid-2',group('lp-course',p('01 / LET’S PLAY TEST','lp-index')+h('學習進度與檢定洽詢',3)+p('想了解目前的程度，或為下一個目標做準備？透過 LINE 詢問學習安排、現行檢定項目與參加條件。')+actions(button('了解課程與學習安排 ↗',href('/class/'),true)))+group('lp-course',p('02 / LET’S PLAY MATCH','lp-index')+h('桌球賽事',3)+p('從邀請賽、積分賽到學員盃，把練習中的技巧帶進比賽，也在交流中增加學習動力。賽事日期與參加方式請透過 LINE 洽詢。'))))
   +section(head('COME PLAY WITH US','離你近一點，離桌球更近。')+locations())+cta();
 patterns.about = intro('ABOUT LET’S PLAY','一起玩，玩出更多可能。','我們希望桌球不只是技術的練習，也是歡笑、交流與生活的一部分。')
   +section(group('lp-story-grid',group('lp-story-brand',p('OUR STORY / SINCE 2018','lp-eyebrow')+p('PLAY<br>FOR JOY.','lp-story-word'))+group('lp-story-copy',h('從一份熱愛，<br>到大家一起玩的空間。')+p('Let’s Play 創立於 2018 年。創辦人阿寬教練就讀麗山國中、松山家商，大學時期受到林學宜教授啟發，理解職業球員訓練的辛苦，也想分享快樂「玩」桌球的方式。')+p('從孩子的信心與專注力，到上班族釋放壓力、年長者豐富退休生活，我們希望每個年齡都能享受桌球。'))))
   +section(head('OUR WAY TO PLAY','讓學習，自然而然發生。')+group('lp-grid-3',group('lp-course',p('01','lp-index')+h('先喜歡，再進步',3)+p('用遊戲、口訣與輕鬆的氣氛，引導不同程度的學員認識桌球。'))+group('lp-course',p('02','lp-index')+h('運動，也是交流',3)+p('養成運動習慣，多一種認識朋友與分享生活的方式。'))+group('lp-course',p('03','lp-index')+h('在來回中成長',3)+p('練習專注、合作與運動家精神，留下歡笑與汗水的回憶。'))))+cta();
-const pricingCard = (index,title,caption,items,note) => group('lp-course',p(index,'lp-index')+h(title,3)+p(caption)+list(items)+p(note,'lp-notice'));
-patterns.class = intro('CLASSES & PRICING','你的第一拍，從這裡開始。','兒童與成人團體班、個人訓練、菁英培訓與場地租借。透過 LINE，和我們聊聊你的程度與目標。')
-  +section(head('CHOOSE YOUR PACE','找到適合你的練習節奏。')+group('lp-grid-3',pricingCard('01 / GROUP','兒童／成人小班','3–6 人，每堂 1.5 小時。',['單堂 NT$600','5 堂 NT$2,750','20 堂 NT$10,000','40 堂 NT$18,000'],'開課時段、套票及贈課內容請透過 LINE 確認。')+pricingCard('02 / PERSONAL','一對一教學','每堂 1 小時，依照目標安排。',['一般教練 NT$1,100／堂','指定教練 NT$1,300／堂','甲級教練 NT$1,600／堂'],'多人合上與套票方案，請洽課程顧問。')+pricingCard('03 / TRAINING','菁英／選手班','每堂 3 小時，進一步累積實戰能力。',['單堂 NT$1,200','20 堂 NT$22,000'],'依學員程度討論合適的訓練規劃。'))+p('實際費用、開班情況及方案適用條件，請於預約時確認。','lp-notice'))
-  +section(head('MORE WAYS TO PLAY','把桌球，排進生活裡。')+group('lp-grid-2',pricingCard('04 / PRACTICE','場地租借','揪朋友一起來，維持練習手感。',['純租桌 NT$200／小時','含球具 NT$250／小時','自動發球機加 NT$100／小時'],'每桌建議 2–4 人，請先確認空桌時段。')+group('lp-course',p('05 / CAMP','lp-index')+h('寒暑假桌球營',3)+p('桌球教學、互動遊戲與體適能練習，讓假期多一點活動與交流。')+p('營隊日期、適合年齡與報名方案，請透過 LINE 洽詢。')+actions(button('洽詢營隊 ↗',line)))))
+const offeringCard = (index,title,caption,items,action='洽詢課程 ↗') => group('lp-course',p(index,'lp-index')+h(title,3)+p(caption)+list(items)+actions(button(action,line)));
+patterns.class = intro('CLASSES & LEARNING','你的第一拍，從這裡開始。','兒童與成人團體班、個人訓練、包班與進階需求。透過 LINE，和我們聊聊你的程度、目標與可上課時段。')
+  +section(head('CHOOSE YOUR PACE','找到適合你的練習節奏。')+group('lp-grid-3',
+    offeringCard('01 / GROUP','兒童／成人小班','和程度相近的夥伴，在互動練習中一起進步。',['小班團體教學','暖身、球感、動作練習與趣味競賽','洽詢適合的年齡分班與時段'])
+    +offeringCard('02 / PERSONAL','個人教學','依照你的經驗與目標，討論適合的練習安排。',['一對一教學','可洽詢一對二、一對三安排','確認教練、上課時長與費用'])
+    +offeringCard('03 / TRAINING','菁英培訓洽詢','想進一步訓練，或為比賽做準備，先聊聊目前程度。',['說明練習與參賽經驗','洽詢現行進階班型與入班條件','確認訓練時段及內容'])
+  )+p('各據點的開班、人數、時長、費用及體驗條件，請於報名前透過 LINE 確認。','lp-notice'))
+  +section(head('MORE WAYS TO PLAY','把桌球，排進生活裡。')+group('lp-grid-3',
+    offeringCard('04 / PRACTICE','場地租借','揪朋友一起來，維持練習手感。',['提供希望到館的據點與時段','確認空桌、球具及發球機需求','洽詢本次租借費用'],'洽詢租桌 ↗')
+    +offeringCard('05 / CAMP','寒暑假桌球營','桌球教學、互動遊戲與體適能練習，讓假期多一點活動與交流。',['詢問本期營隊日期','確認適合年齡與可報名名額','了解報名方案與活動安排'],'洽詢營隊 ↗')
+    +offeringCard('06 / PRIVATE GROUP','包班洽詢','和固定夥伴一起練習，討論適合你們的上課方式。',['提供人數、年齡與桌球經驗','選擇希望上課的據點與時段','確認教學安排、時長及費用'],'洽詢包班 ↗')
+  ))
   +section(head('YOUR FIRST RALLY','一堂課，從暖身到對打。')+group('lp-grid-3',group('lp-course',p('01 / WARM UP','lp-index')+h('暖身與球感',3)+p('從活動身體、熟悉球拍與球開始，準備進入練習。'))+group('lp-course',p('02 / PRACTICE','lp-index')+h('動作與技術',3)+p('透過正反手練習與教練指導，依照程度調整學習內容。'))+group('lp-course',p('03 / PLAY','lp-index')+h('互動與挑戰',3)+p('結合趣味練習與對打，把學到的動作運用在來回中。')))+actions(button('看品牌短片 ↗','https://www.facebook.com/playpp2018/reels_tab',true)))
-  +section(head('BEFORE YOUR FIRST CLASS','第一次來，先了解。')+group('lp-faq',detail('完全沒有打過桌球，也可以參加嗎？',p('可以先透過 LINE 說明年齡與經驗，讓我們協助安排合適的體驗或入門課程。'))+detail('如何預約課程或租桌？',p('加入 LINE @869usyqy，提供想上課的據點、可安排時段與需求，由我們確認課程或空桌。'))+detail('團體課會做哪些練習？',p('包含暖身、球感訓練、正反手練習、動作指導、體適能與趣味競賽，依學員程度調整。'))))+cta();
+  +section(head('YOUR LEARNING PLAN','下一個目標，先聊聊。')+group('lp-grid-2',
+    group('lp-course',h('課程與進度安排',3)+p('帶著你的年齡、經驗與學習目標來洽詢。報名前，可請團隊說明適合的班型、課程內容與階段安排，找到自己的練習節奏。'))
+    +group('lp-course',h('檢定與進階準備',3)+p('想參加桌球檢定或比賽，請先確認目前的項目、參加條件、費用與準備方向，再討論適合的訓練。')+actions(button('洽詢檢定與學習安排 ↗',line,true)))
+  ))
+  +section(head('BEFORE YOUR FIRST CLASS','第一次來，先了解。')+group('lp-faq',
+    detail('完全沒有打過桌球，也可以參加嗎？',p('可以先透過 LINE 說明年齡與經驗，讓我們協助安排合適的體驗或入門課程。'))
+    +detail('如何預約課程或租桌？',p('加入 LINE @869usyqy，提供想上課的據點、可安排時段與需求，由我們確認課程或空桌。'))
+    +detail('團體課會做哪些練習？',p('包含暖身、球感訓練、正反手練習、動作指導、體適能與趣味競賽，依學員程度調整。'))
+    +detail('有親子或特定年齡的課程嗎？',p('若有親子、幼幼、國高中、銀髮或媽媽早鳥時段需求，請提供年齡、人數與可上課時間，讓團隊確認目前是否有合適班型，或可討論的包班安排。'))
+    +detail('體驗課需要費用嗎？',p('預約時請確認該據點與班型的體驗費用、適用對象及次數；各期活動方案請以團隊回覆為準。'))
+    +detail('需要自備球拍或其他裝備嗎？',p('預約時請說明是否自備球拍，並確認球具借用、穿著與到館準備事項。'))
+    +detail('請假、補課或退費如何處理？',p('報名前請透過 LINE 確認所選方案的請假、補課、退費及遲到規則，並一併詢問家長陪同安排。'))
+  ))+cta();
 patterns.coaches = intro('THE PEOPLE BEHIND YOUR PROGRESS','一起練習，一起進步。','不同的教學特色，同樣對桌球的熱情。認識 Let’s Play 教練團隊。')+section(group('lp-grid-3',coaches.map(c=>coachCard(c)).join('')))+section(head('MORE PEOPLE TO PLAY WITH','一起上場的教練夥伴。')+group('lp-coach-names',['力仁','長德','秉成','俊佑','PEGGY'].map(n=>p(n)).join(''))+p('想了解適合的教練與上課時段，歡迎透過 LINE 聊聊你的需求。'))+cta();
-patterns.locations = intro('OUR LOCATIONS','找到你的上場地點。','查看據點資訊，透過 LINE 確認課程、體驗與租桌時段。')+section(locations()+p('客服時間：週一至週五 10:00–19:00。週末及到館安排請先聯繫。','lp-notice'))+cta();
+patterns.locations = intro('OUR LOCATIONS','找到你的上場地點。','查看據點資訊，透過 LINE 確認課程、體驗與租桌時段。')+section(locations()+p('各據點的營業、上課及租桌時段，請於到館前透過 LINE 確認。','lp-notice'))+cta();
 patterns.partner = intro('PARTNERSHIP & CAREERS','讓更多人，一起玩桌球。','學校、企業、運動場館與教練夥伴，一起創造更多接觸桌球的機會。')
   +section(head('LET’S BUILD SOMETHING','把桌球，帶進不同的生活。')+group('lp-grid-3',group('lp-course',p('01 / EDUCATION','lp-index')+h('學校與補習班合作',3)+p('學校社團、幼兒園與補習班課程，結合遊戲、球感與基礎技術，討論適合孩子的教案。'))+group('lp-course',p('02 / COMMUNITY','lp-index')+h('企業與運動場館',3)+p('公司社團、福委會活動、運動中心與趣味比賽，提供教練進駐及活動合作洽詢。'))+group('lp-course',p('03 / COACHES','lp-index')+h('教練夥伴招募',3)+p('歡迎喜歡教學、樂於交流的教練，一起討論課程合作與發展機會。'))))
   +section(group('lp-story-grid',group('lp-story-brand',p('SPORT × CREATIVITY','lp-eyebrow')+p('PLAY<br>TOGETHER.','lp-story-word'))+group('lp-story-copy',h('一起把想法，<br>變成新的可能。')+p('從同業聯盟、跨領域課程到桌球活動，我們樂於和不同領域的夥伴交流。')+p('透過 LINE 告訴我們單位名稱、合作構想、預計地點與時間，讓我們一起討論。')+actions(button('LINE 洽談合作 ↗',line)))),'lp-story');
 const pages = [
   {slug:'home',pattern:'home',title:'Let’s Play 桌球聯盟',excerpt:'Jo起來，玩一下！蘆洲與林口桌球課程、教練、場地租借與教育機構合作。'},
   {slug:'about',pattern:'about',title:'關於我們',excerpt:'認識 Let’s Play 桌球聯盟的品牌故事與教學理念。'},
-  {slug:'class',pattern:'class',title:'課程資訊與收費',excerpt:'探索兒童與成人團體班、一對一教學、菁英培訓與場地租借，透過 LINE 預約。'},
+  {slug:'class',pattern:'class',title:'課程資訊與洽詢',excerpt:'了解兒童與成人團體班、個人教學、包班、進階需求與上課流程，透過 LINE 確認課程、費用及體驗安排。'},
   {slug:'coaches',pattern:'coaches',title:'教練團隊',excerpt:'認識 Let’s Play 教練的經歷與教學特色，找到適合自己的學習方式。'},
   {slug:'locations',pattern:'locations',title:'據點資訊',excerpt:'Let’s Play 蘆洲店與林口桌球的地址、聯絡電話與課程洽詢。'},
   {slug:'partner',pattern:'partner',title:'合作與招募',excerpt:'學校、企業、運動場館與教練夥伴，和 Let’s Play 一起推廣桌球。'},

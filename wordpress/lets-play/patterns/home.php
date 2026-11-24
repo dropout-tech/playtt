@@ -288,11 +288,17 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p class="lp-index">01 / LET’S PLAY TEST</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">桌球檢定</h3>
+<h3 class="wp-block-heading">學習進度與檢定洽詢</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p>結合揮拍姿勢、桌球知識與敏捷反應，設計 L1–L12 檢定關卡，最後一關加入模擬比賽，陪學員看見自己的學習成果。</p>
+<p>想了解目前的程度，或為下一個目標做準備？透過 LINE 詢問學習安排、現行檢定項目與參加條件。</p>
 <!-- /wp:paragraph -->
+<!-- wp:buttons {"className":"lp-actions"} -->
+<div class="wp-block-buttons lp-actions"><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/class/' ) ); ?>">了解課程與學習安排 ↗</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
 </div>
 <!-- /wp:group -->
 <!-- wp:group {"className":"lp-course","layout":{"type":"default"}} -->

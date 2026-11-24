@@ -79,7 +79,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 </div>
 <!-- /wp:group -->
 <!-- wp:paragraph {"className":"lp-notice"} -->
-<p class="lp-notice">客服時間：週一至週五 10:00–19:00。週末及到館安排請先聯繫。</p>
+<p class="lp-notice">各據點的營業、上課及租桌時段，請於到館前透過 LINE 確認。</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
