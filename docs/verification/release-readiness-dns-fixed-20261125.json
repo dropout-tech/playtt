@@ -1,0 +1,145 @@
+{
+  "schema": "playtt/release-readiness-dns/v1",
+  "at": "2026-11-24T19:28:51.7195275Z",
+  "resolver": "1.1.1.1",
+  "result": "pass",
+  "mailRecords": [
+    {
+      "name": "playtt.tw",
+      "type": "MX",
+      "expected": "10 spool.mail.gandi.net",
+      "answers": [
+        "10 spool.mail.gandi.net",
+        "50 fb.mail.gandi.net"
+      ],
+      "pass": true
+    },
+    {
+      "name": "playtt.tw",
+      "type": "MX",
+      "expected": "50 fb.mail.gandi.net",
+      "answers": [
+        "10 spool.mail.gandi.net",
+        "50 fb.mail.gandi.net"
+      ],
+      "pass": true
+    },
+    {
+      "name": "playtt.tw",
+      "type": "TXT",
+      "expected": "\"v=spf1 include:_mailcust.gandi.net ?all\"",
+      "answers": [
+        "v=spf1 include:_mailcust.gandi.net ?all"
+      ],
+      "pass": true
+    },
+    {
+      "name": "_imap._tcp.playtt.tw",
+      "type": "SRV",
+      "expected": "0 0 0 .",
+      "answers": [
+        "0 0 0 ."
+      ],
+      "pass": true
+    },
+    {
+      "name": "_imaps._tcp.playtt.tw",
+      "type": "SRV",
+      "expected": "0 1 993 mail.gandi.net",
+      "answers": [
+        "0 1 993 mail.gandi.net"
+      ],
+      "pass": true
+    },
+    {
+      "name": "_pop3._tcp.playtt.tw",
+      "type": "SRV",
+      "expected": "0 0 0 .",
+      "answers": [
+        "0 0 0 ."
+      ],
+      "pass": true
+    },
+    {
+      "name": "_pop3s._tcp.playtt.tw",
+      "type": "SRV",
+      "expected": "10 1 995 mail.gandi.net",
+      "answers": [
+        "10 1 995 mail.gandi.net"
+      ],
+      "pass": true
+    },
+    {
+      "name": "_submission._tcp.playtt.tw",
+      "type": "SRV",
+      "expected": "0 1 465 mail.gandi.net",
+      "answers": [
+        "0 1 465 mail.gandi.net"
+      ],
+      "pass": true
+    },
+    {
+      "name": "gm1._domainkey.playtt.tw",
+      "type": "CNAME",
+      "expected": "gm1.gandimail.net",
+      "answers": [
+        "gm1.gandimail.net"
+      ],
+      "pass": true
+    },
+    {
+      "name": "gm2._domainkey.playtt.tw",
+      "type": "CNAME",
+      "expected": "gm2.gandimail.net",
+      "answers": [
+        "gm2.gandimail.net"
+      ],
+      "pass": true
+    },
+    {
+      "name": "gm3._domainkey.playtt.tw",
+      "type": "CNAME",
+      "expected": "gm3.gandimail.net",
+      "answers": [
+        "gm3.gandimail.net"
+      ],
+      "pass": true
+    },
+    {
+      "name": "webmail.playtt.tw",
+      "type": "CNAME",
+      "expected": "webmail.gandi.net",
+      "answers": [
+        "webmail.gandi.net"
+      ],
+      "pass": true
+    }
+  ],
+  "nameservers": [
+    "karl.ns.cloudflare.com",
+    "mariah.ns.cloudflare.com"
+  ],
+  "nameserversMatch": true,
+  "originalAbsentRecords": [
+    {
+      "name": "playtt.tw",
+      "type": "DS",
+      "absent": true,
+      "response": "completed",
+      "recordCount": 0
+    },
+    {
+      "name": "_dmarc.playtt.tw",
+      "type": "TXT",
+      "absent": true,
+      "response": "DNS_ERROR_RCODE_NAME_ERROR,Microsoft.DnsClient.Commands.ResolveDnsName",
+      "recordCount": null
+    }
+  ],
+  "scope": "Public DNS readback against the saved migration baseline; no full Dashboard-zone reread or mailbox send/receive",
+  "writes": 0,
+  "previousAttempt": {
+    "file": "release-readiness-dns-20261125.json",
+    "reason": "PowerShell switch replaced the pipeline current item with the type string; selected answer fields were empty. This is a verifier failure, not evidence of DNS drift."
+  }
+}

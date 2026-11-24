@@ -1,0 +1,72 @@
+{
+  "schema": "playtt/release-readiness-http/v1",
+  "at": "2026-11-24T19:29:33.027Z",
+  "result": "pass",
+  "pages": [
+    {
+      "url": "https://playtt.tw/",
+      "version": "production-0.2.3",
+      "status": 200,
+      "sha256": "64adb711a72f270fa5f114042eb67048fff5f3bad296fce283f09ddbeca224bc",
+      "expectedSha256": "64adb711a72f270fa5f114042eb67048fff5f3bad296fce283f09ddbeca224bc",
+      "byteExactAfterRecordedAnalyticsRemoval": true,
+      "analyticsScriptsRemoved": 0,
+      "xRobotsTag": null,
+      "robotsHeaderExpected": true,
+      "tlsVerified": true,
+      "pass": true
+    },
+    {
+      "url": "https://1bb1c274.playtt-brand-preview.pages.dev/",
+      "version": "preview-0.3.3",
+      "status": 200,
+      "sha256": "f8a4c3945367b71a8e0eda53df58ebdb93e102a44754e2ac01aba7a80a455258",
+      "expectedSha256": "f8a4c3945367b71a8e0eda53df58ebdb93e102a44754e2ac01aba7a80a455258",
+      "byteExactAfterRecordedAnalyticsRemoval": true,
+      "analyticsScriptsRemoved": 0,
+      "xRobotsTag": "noindex",
+      "robotsHeaderExpected": true,
+      "tlsVerified": true,
+      "pass": true
+    },
+    {
+      "url": "https://1bb1c274.playtt-brand-preview.pages.dev/class/",
+      "version": "preview-0.3.3",
+      "status": 200,
+      "sha256": "94f563aadda2cd1e82ea4c6c7ee585d0246ebb05e28417e44e5d74769323efff",
+      "expectedSha256": "94f563aadda2cd1e82ea4c6c7ee585d0246ebb05e28417e44e5d74769323efff",
+      "byteExactAfterRecordedAnalyticsRemoval": true,
+      "analyticsScriptsRemoved": 0,
+      "xRobotsTag": "noindex",
+      "robotsHeaderExpected": true,
+      "tlsVerified": true,
+      "pass": true
+    }
+  ],
+  "redirects": [
+    {
+      "url": "https://www.playtt.tw/class/?utm_source=release-audit",
+      "status": 301,
+      "location": "https://playtt.tw/class/?utm_source=release-audit",
+      "expected": "https://playtt.tw/class/?utm_source=release-audit",
+      "pass": true
+    },
+    {
+      "url": "http://playtt.tw/class/?utm_source=release-audit",
+      "status": 301,
+      "location": "https://playtt.tw/class/?utm_source=release-audit",
+      "expected": "https://playtt.tw/class/?utm_source=release-audit",
+      "pass": true
+    },
+    {
+      "url": "https://playtt.tw/home/",
+      "status": 301,
+      "location": "/",
+      "expected": "https://playtt.tw/",
+      "pass": true
+    }
+  ],
+  "scope": "Three selected HTML responses and three redirects; not a repeat of all-asset/browser/WordPress acceptance",
+  "privateWorkerRequests": 0,
+  "writes": 0
+}

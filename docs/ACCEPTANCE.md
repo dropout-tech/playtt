@@ -1,5 +1,7 @@
 # Let’s Play 驗收狀態
 
+**目前 A01–A20 總表： [2026-11-25 交付與剩餘驗收](RELEASE_READINESS_20261125.md)。** 正式站0.2.3、品牌預覽0.3.3及私人後台分別列證據。下方按工作輪次保留歷史，早期版本的「通過」不代表最新版完整雲端後台已驗收。
+
 ## 私人視覺試驗驗收工具：本機通過，雲端尚未執行（2026-11-25）
 
 真實canonical201與LOCAL216副本完成14項離線核對測試，包含修訂歸屬、保留session、其他使用者權限、媒體、設定、序列及內容損壞的拒絕案例。新GET備份／audit／pin收尾工具已備妥且語法通過，尚未執行遠端流程。A04、A06、A07的完整雲端證據仍不足；A20補充了具體收尾命令和實際Chrome證據格式。三次配置失敗與一次測試fixture路徑錯誤均保留，沒有將失敗紀錄改寫成通過。[測試摘要](verification/cloudflare-visual-next-recovery-check.json)／[操作文件](../experiments/cloudflare-wordpress/visual-cloud-next/README.md)。
@@ -1061,7 +1063,9 @@ Chrome 繁中原生區塊編輯器完成新建草稿、兩次段落儲存。重�
 2026-11-17 使用者已選擇繼續研究全Cloudflare免費後台；正式官網維持目前Pages，暫不切換後台。不改採本機後台，也不啟用付費。一般Workers付費方案也有128MB記憶體限制，不能當成已驗證解方。官方來源：https://developers.cloudflare.com/workers/platform/limits/#memory 。
 
 
-更新：2026-11-17（Asia/Taipei）。正式品牌官網已在 Cloudflare Pages 提供服務，Zeabur 本專案已清除；完整免費雲端 WordPress 後台尚未完成。持續目標保持 active。
+## 歷史總表：2026-11-17（已由上方最新總表取代）
+
+以下是當時的紀錄。當前版本、範圍與尚未完成項目以 [2026-11-25 總表](RELEASE_READINESS_20261125.md)為準。正式品牌官網當時已在 Cloudflare Pages 提供服務，Zeabur 本專案已清除；完整免費雲端 WordPress 後台尚未完成。
 
 - 正式站：https://playtt.tw/；預覽：https://playtt-brand-preview.pages.dev/
 - 主題：0.2.3，ZIP SHA256 `471aaf78e1d4a15d1357ec9500a067bcff27a9a4d803f7f8dcea48a00249a79e`

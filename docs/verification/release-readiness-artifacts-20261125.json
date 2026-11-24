@@ -1,0 +1,103 @@
+{
+  "schema": "playtt/release-readiness-artifacts/v1",
+  "at": "2026-11-24T19:33:26.059751+00:00",
+  "result": "pass",
+  "items": [
+    {
+      "path": "outputs/lets-play-0.3.3.zip",
+      "bytes": 898631,
+      "sha256": "30b2ed9e167c43e771df4544e6533bc8a4fef4e7f51fef64baba9c58e93cc4e9",
+      "expectedSha256": "30b2ed9e167c43e771df4544e6533bc8a4fef4e7f51fef64baba9c58e93cc4e9",
+      "matchesRecordedHash": true,
+      "zipCRC": "pass",
+      "files": 42,
+      "packageManifestExact": true
+    },
+    {
+      "path": "work/playtt/docs/brand/source/lets-play-brand-definition-and-visual-design.pdf",
+      "bytes": 47687941,
+      "sha256": "ab20c9a0da143a0874b3d6218f1af3f97e6dce3deef5bab40590f1f47eb8135b",
+      "expectedSha256": "ab20c9a0da143a0874b3d6218f1af3f97e6dce3deef5bab40590f1f47eb8135b",
+      "matchesRecordedHash": true
+    },
+    {
+      "path": "outputs/backups/letsplay-zeabur-template.yaml",
+      "bytes": 796,
+      "sha256": "4f29859f83322921ce80b2f4d2b11399ea9d72090005e929deda6174e87d0ac9",
+      "expectedSha256": "4f29859f83322921ce80b2f4d2b11399ea9d72090005e929deda6174e87d0ac9",
+      "matchesRecordedHash": true
+    },
+    {
+      "path": "outputs/backups/playtt-before-migration.bundle",
+      "bytes": 40030355,
+      "sha256": "ce47af2901557afc855e37c0818c5896cb05fc3983008790fc14117fe0a7e3bc",
+      "expectedSha256": null,
+      "matchesRecordedHash": null
+    },
+    {
+      "path": "outputs/backups/playtt-cloudflare-static-0.2.1.zip",
+      "bytes": 831526,
+      "sha256": "bf42792d3e70ce96d5ad11d6a10d0d6172c2773250ba4bc1346041f879497ea2",
+      "expectedSha256": null,
+      "matchesRecordedHash": null,
+      "zipCRC": "pass",
+      "files": 48
+    },
+    {
+      "path": "outputs/backups/playtt-cloudflare-static-0.2.2.zip",
+      "bytes": 831601,
+      "sha256": "b097cda82db8f8ee5493db47fbf34a4f126041112aa7f79dd15a05b80b638baa",
+      "expectedSha256": null,
+      "matchesRecordedHash": null,
+      "zipCRC": "pass",
+      "files": 48
+    },
+    {
+      "path": "outputs/backups/playtt-static-0.2.3.zip",
+      "bytes": 839808,
+      "sha256": "b24f497ca40ad9a274534337771fd288e462fda6b671e94e047e8fd1a1aec02a",
+      "expectedSha256": null,
+      "matchesRecordedHash": null,
+      "zipCRC": "pass",
+      "files": 48
+    },
+    {
+      "path": "outputs/backups/playtt.tw-cloudflare-after-cutover.json",
+      "bytes": 2675,
+      "sha256": "05c066322077adb11655600a5020a47ff10f0b198c8b0c80dac2159794509682",
+      "expectedSha256": null,
+      "matchesRecordedHash": null
+    },
+    {
+      "path": "outputs/backups/playtt.tw-cloudflare-before-cutover.txt",
+      "bytes": 1067,
+      "sha256": "96901c1e45ff019cbbdd4cc1f1b50deb8c187e84c0d5f26dd50cbb917b0b4609",
+      "expectedSha256": null,
+      "matchesRecordedHash": null
+    },
+    {
+      "path": "outputs/backups/playtt.tw-cloudflare-recheck.json",
+      "bytes": 2650,
+      "sha256": "5b3997160ea5f095640e813c37ccef38f507141100d4f2fb331fcd9b9ff36fcf",
+      "expectedSha256": null,
+      "matchesRecordedHash": null
+    },
+    {
+      "path": "outputs/backups/playtt.tw-gandi-action-time.txt",
+      "bytes": 703,
+      "sha256": "b360b5d58ec716e33e862ccdbdd2a3c971e4372b45a0cdc2a9763a4adc13ad20",
+      "expectedSha256": null,
+      "matchesRecordedHash": null
+    },
+    {
+      "path": "outputs/backups/playtt.tw-gandi-before.zone",
+      "bytes": 703,
+      "sha256": "b360b5d58ec716e33e862ccdbdd2a3c971e4372b45a0cdc2a9763a4adc13ad20",
+      "expectedSha256": null,
+      "matchesRecordedHash": null
+    }
+  ],
+  "scope": "Local presence, checksums, ZIP CRC and 0.3.3 package-manifest comparison; not a new WordPress restore or remote backup",
+  "rawBackupContentsCommitted": false,
+  "remoteRequests": 0
+}
