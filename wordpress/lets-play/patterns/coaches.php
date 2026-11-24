@@ -529,71 +529,47 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
-<!-- wp:group {"className":"lp-coach-card","layout":{"type":"default"}} -->
-<div class="wp-block-group lp-coach-card"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/coach-wang.webp' ) ); ?>" alt="王泳程教練"/></figure>
-<!-- /wp:image -->
-<!-- wp:group {"className":"lp-coach-body","layout":{"type":"default"}} -->
-<div class="wp-block-group lp-coach-body"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
-<p class="lp-eyebrow">程程</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">王泳程</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>強調基本功和小朋友姿勢有美有正確，並且耐心及細心地教導。</p>
-<!-- /wp:paragraph -->
-<!-- wp:details -->
-<details class="wp-block-details"><summary>教練經歷與教學特色</summary><!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">教學年資</h4>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>8 年</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">學習歷程</h4>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>桃園市立壽山高中</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>彰化師範大學</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">教學經歷</h4>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>新北市厚德國小教練</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">教學證照</h4>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>C 級桌球教練</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">比賽成績</h4>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>大專盃團體第四</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>全中運團體第六</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">教學特色</h4>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>強調基本功和小朋友姿勢有美有正確，並且耐心及細心地教導。</p>
-<!-- /wp:paragraph -->
-</details>
-<!-- /wp:details -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"lp-section ","layout":{"type":"default"}} -->
+<section class="wp-block-group lp-section "><!-- wp:group {"className":"lp-shell","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-shell"><!-- wp:group {"className":"lp-section-head","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-section-head"><!-- wp:group {"className":"lp-heading-group","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-heading-group"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
+<p class="lp-eyebrow">MORE PEOPLE TO PLAY WITH</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading">一起上場的教練夥伴。</h2>
+<!-- /wp:heading -->
 </div>
 <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"lp-coach-names","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-coach-names"><!-- wp:paragraph -->
+<p>力仁</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>長德</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>秉成</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>俊佑</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>PEGGY</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:paragraph -->
+<p>想了解適合的教練與上課時段，歡迎透過 LINE 聊聊你的需求。</p>
+<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </section>

@@ -5,4 +5,5 @@ experiments/** text=auto eol=lf
 *.webp binary
 *.jpg binary
 *.png binary
+*.pdf binary
 cloudflare/public/** linguist-generated=true

@@ -1,0 +1,54 @@
+{
+  "scope": "Theme 0.3.0 PDF-based candidate; production publication unchanged",
+  "files": 42,
+  "zipBytes": 898004,
+  "zipSha256": "6062d72755b0ef0fe46e2e2bcaf2ee277f30abc3529ecbd3a1bcf8488a116e30",
+  "installedFilesExact": 42,
+  "integrationChecks": 9,
+  "responsiveChecks": 18,
+  "keyboardStops": 20,
+  "sourcePdfSha256": "ab20c9a0da143a0874b3d6218f1af3f97e6dce3deef5bab40590f1f47eb8135b",
+  "contrastPairs": [
+    {
+      "fg": "#0071CE",
+      "bg": "#FFFFFF",
+      "ratio": 4.937
+    },
+    {
+      "fg": "#0071CE",
+      "bg": "#F5F6F6",
+      "ratio": 4.56
+    },
+    {
+      "fg": "#142B41",
+      "bg": "#FFDA00",
+      "ratio": 10.527
+    },
+    {
+      "fg": "#142B41",
+      "bg": "#3AD531",
+      "ratio": 7.4
+    }
+  ],
+  "limitations": [
+    "Viewport simulation, not physical devices",
+    "Selected palette pairs, not complete screen-reader acceptance",
+    "New starter content does not overwrite existing WordPress pages",
+    "Supabase operational data is not a public biography source"
+  ],
+  "zipArtifact": "lets-play-0.3.0-source-lf.zip",
+  "lineEndingChanges": [
+    {
+      "path": "style.css",
+      "beforeSha256": "026112e6b150e4d0ad472c72f4639d8219dc7a334e77bdab992a9a869e504d74",
+      "afterSha256": "cbc73b774a97fb3a0a587e37e2a5e371808c3d2fa5aedc0ed72d14645942ddfd",
+      "change": "CRLF to LF only"
+    },
+    {
+      "path": "theme.json",
+      "beforeSha256": "e915d15da0665bbce64e6aa17bef459494660e32f484033f32b7d7daf514a4d4",
+      "afterSha256": "0803103a9fab84e8a0dd5aa73418b2ea6572cc59f7ae01d1e820c06b5414d3f8",
+      "change": "CRLF to LF only"
+    }
+  ]
+}

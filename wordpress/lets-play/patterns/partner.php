@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p class="lp-index">01 / EDUCATION</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">學校與教育機構</h3>
+<h3 class="wp-block-heading">學校與補習班合作</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
 <p>學校社團、幼兒園與補習班課程，結合遊戲、球感與基礎技術，討論適合孩子的教案。</p>

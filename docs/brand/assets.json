@@ -1,0 +1,92 @@
+{
+  "source": "docs/brand/source/lets-play-brand-definition-and-visual-design.pdf",
+  "sourceSha256": "ab20c9a0da143a0874b3d6218f1af3f97e6dce3deef5bab40590f1f47eb8135b",
+  "method": "Original PDF vector paths clipped without recoloring or redrawing",
+  "pymupdf": "1.28.0",
+  "assets": [
+    {
+      "path": "wordpress/lets-play/assets/images/brand-logo.svg",
+      "page": 17,
+      "crop": [
+        380,
+        410,
+        725,
+        675
+      ],
+      "bytes": 8053,
+      "sha256": "4e18e2f984acc8cfef08e78fb836258c643fbc1b48c1fd6ea29a93e7f0479546"
+    },
+    {
+      "path": "wordpress/lets-play/assets/images/brand-dong.svg",
+      "page": 19,
+      "crop": [
+        76,
+        0,
+        366,
+        538
+      ],
+      "bytes": 82447,
+      "sha256": "d4c6903ef4d8ad44e8edd9accaf48ca55b608b5d0a864c3f2b2cbfd763575ec4"
+    },
+    {
+      "path": "wordpress/lets-play/assets/images/brand-kii.svg",
+      "page": 19,
+      "crop": [
+        660,
+        0,
+        955,
+        538
+      ],
+      "bytes": 82586,
+      "sha256": "0e37d37ba8da9e2d4924b43d0b8dab0f8206c5d032b61643c5699552550481b9"
+    },
+    {
+      "path": "wordpress/lets-play/assets/images/brand-pa.svg",
+      "page": 19,
+      "crop": [
+        1252,
+        0,
+        1548,
+        538
+      ],
+      "bytes": 82762,
+      "sha256": "1b339474e2838caf78209f471dcbca01227f13799a3595340b88746c8f19960d"
+    },
+    {
+      "path": "wordpress/lets-play/assets/images/brand-ka.svg",
+      "page": 19,
+      "crop": [
+        366,
+        539,
+        660,
+        1080
+      ],
+      "bytes": 82418,
+      "sha256": "e19e9b3e86e2ab17e06ff331d3e19b6485f2995160397dca1a7dc673298801bd"
+    },
+    {
+      "path": "wordpress/lets-play/assets/images/brand-ko.svg",
+      "page": 19,
+      "crop": [
+        956,
+        539,
+        1250,
+        1080
+      ],
+      "bytes": 82432,
+      "sha256": "4b0931196f6ba05b410429ff7152a2611172d94a7671ea5a9c176c6b9f24457d"
+    },
+    {
+      "path": "wordpress/lets-play/assets/images/brand-siou.svg",
+      "page": 19,
+      "crop": [
+        1549,
+        539,
+        1842,
+        1080
+      ],
+      "bytes": 82615,
+      "sha256": "09174a9b332068463eed2ad33361a37bb5a834133a59e0f5402d0ce649d6f19a"
+    }
+  ]
+}

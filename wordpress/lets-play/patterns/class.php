@@ -201,6 +201,69 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <div class="wp-block-group lp-shell"><!-- wp:group {"className":"lp-section-head","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-section-head"><!-- wp:group {"className":"lp-heading-group","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-heading-group"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
+<p class="lp-eyebrow">YOUR FIRST RALLY</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading">一堂課，從暖身到對打。</h2>
+<!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"lp-grid-3","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-grid-3"><!-- wp:group {"className":"lp-course","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-course"><!-- wp:paragraph {"className":"lp-index"} -->
+<p class="lp-index">01 / WARM UP</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">暖身與球感</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>從活動身體、熟悉球拍與球開始，準備進入練習。</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"lp-course","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-course"><!-- wp:paragraph {"className":"lp-index"} -->
+<p class="lp-index">02 / PRACTICE</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">動作與技術</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>透過正反手練習與教練指導，依照程度調整學習內容。</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"lp-course","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-course"><!-- wp:paragraph {"className":"lp-index"} -->
+<p class="lp-index">03 / PLAY</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">互動與挑戰</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>結合趣味練習與對打，把學到的動作運用在來回中。</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+<!-- wp:buttons {"className":"lp-actions"} -->
+<div class="wp-block-buttons lp-actions"><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.facebook.com/playpp2018/reels_tab">看品牌短片 ↗</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"lp-section ","layout":{"type":"default"}} -->
+<section class="wp-block-group lp-section "><!-- wp:group {"className":"lp-shell","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-shell"><!-- wp:group {"className":"lp-section-head","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-section-head"><!-- wp:group {"className":"lp-heading-group","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-heading-group"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
 <p class="lp-eyebrow">BEFORE YOUR FIRST CLASS</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->

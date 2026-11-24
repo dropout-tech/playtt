@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p>新北市蘆洲區長樂路106號3樓</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p><a href="tel:+886282861011">02-8286-1011</a></p>
+<p><a href="tel:+886988521012">0988-521-012 郭執行長</a><br><a href="tel:+886282861011">02-8286-1011</a></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"className":"lp-actions"} -->
 <div class="wp-block-buttons lp-actions"><!-- wp:button {"className":"is-style-outline"} -->
@@ -54,17 +54,23 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p class="lp-eyebrow">02 / LINKOU</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">林口店</h3>
+<h3 class="wp-block-heading">林口桌球</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p>開課資訊與到館方式，請透過 LINE 洽詢。</p>
+<p>新北市林口區中山路248號B1-2</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p>讓我們協助你找到合適的上課時段。</p>
+<p>地下室特力屋入口；到館前請先聯繫。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><a href="tel:+886988521012">0988-521-012 郭執行長</a><br><a href="tel:+886282861011">02-8286-1011</a></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"className":"lp-actions"} -->
-<div class="wp-block-buttons lp-actions"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://line.me/R/ti/p/@869usyqy">LINE 洽詢 ↗</a></div>
+<div class="wp-block-buttons lp-actions"><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%8C%97%E5%B8%82%E6%9E%97%E5%8F%A3%E5%8D%80%E4%B8%AD%E5%B1%B1%E8%B7%AF248%E8%99%9FB1-2">查看地圖 ↗</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://line.me/R/ti/p/@869usyqy">洽詢課程</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

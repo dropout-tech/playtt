@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 0.3.0 品牌候選的發布界線（2026-11-25）
+
+以[品牌PDF](brand/README.md)及[新主題驗證](verification/theme-0.3.0/README.md)為本輪交付來源。**Cloudflare Pages production branch是`codex/playtt-wordpress-cloudflare`，不是master。** 此分支的`cloudflare/public`保持原內容；0.3.0匯出檔僅放在獨立`codex/playtt-brand-manual-preview`分支供預覽。新PDF僅存在docs，不可複製進public。
+
+主題ZIP更新不會覆寫已編輯的WordPress頁面。正式套用新首頁內容前，要備份實際編輯資料並明確選擇更新頁面，再匿名匯出、靜態檔驗證、遠端逐檔比對及瀏覽器確認。[營業內容待核對](CONTENT_REVIEW_20261125.md)仍開放。私人Worker維持既有封存狀態；之前單次雲端寫入授權不能重複使用。
+
 ## 首次啟動與繁中設定修正，本機完整初始化通過（2026-11-25）
 
 新空白本機站發現兩個問題：134個初始檔並行保存撞到128筆pending上限，以及初始化工具複製語言檔後沒有清除空目錄快取，導致只有管理員繁中、網站WPLANG未保存。候選改為逐筆等待保存，工具1.0.1清除指定翻譯快取並檢查寫入讀回；未提高帳本上限。

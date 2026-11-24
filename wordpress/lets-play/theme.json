@@ -5,10 +5,10 @@
     "appearanceTools": true,
     "layout": { "contentSize": "1180px", "wideSize": "1280px" },
     "color": { "defaultPalette": false, "palette": [
-      { "slug": "blue", "name": "品牌藍", "color": "#005CB9" },
-      { "slug": "yellow", "name": "活力黃", "color": "#FFD900" },
-      { "slug": "green", "name": "玩樂綠", "color": "#38D430" },
-      { "slug": "pink", "name": "品牌桃紅", "color": "#FF32AD" },
+      { "slug": "blue", "name": "品牌藍", "color": "#0071CE" },
+      { "slug": "yellow", "name": "活力黃", "color": "#FFDA00" },
+      { "slug": "green", "name": "玩樂綠", "color": "#3AD531" },
+      { "slug": "pink", "name": "品牌桃紅", "color": "#FF41B4" },
       { "slug": "ink", "name": "墨色", "color": "#142B41" },
       { "slug": "paper", "name": "淺灰", "color": "#F5F6F6" },
       { "slug": "white", "name": "純白", "color": "#FFFFFF" }

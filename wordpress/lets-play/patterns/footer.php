@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <div class="wp-block-group lp-shell"><!-- wp:group {"className":"lp-footer-row","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-footer-row"><!-- wp:group {"className":"lp-footer-brand","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-footer-brand"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-logo"} -->
-<figure class="wp-block-image size-full lp-logo"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logo.webp' ) ); ?>" alt="Let’s Play 桌球聯盟"/></figure>
+<figure class="wp-block-image size-full lp-logo"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-logo.svg' ) ); ?>" alt="Let’s Play 桌球聯盟" width="345" height="265"/></figure>
 <!-- /wp:image -->
 <!-- wp:paragraph -->
 <p>運動 × 創新。從喜歡開始，一起玩桌球。</p>
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <!-- /wp:group -->
 <!-- wp:group {"className":"lp-footer-contact","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-footer-contact"><!-- wp:paragraph -->
-<p><a href="tel:+886282861011">02-8286-1011</a><br><a href="mailto:playpp2018@gmail.com">playpp2018@gmail.com</a></p>
+<p><a href="tel:+886988521012">0988-521-012 郭執行長</a><br><a href="tel:+886282861011">02-8286-1011</a><br><a href="mailto:playpp2018@gmail.com">playpp2018@gmail.com</a></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p>新北市蘆洲區長樂路106號3樓</p>

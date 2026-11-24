@@ -7,45 +7,60 @@
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
-<!-- wp:group {"tagName":"section","className":"lp-brand-hero","layout":{"type":"default"}} -->
-<section class="wp-block-group lp-brand-hero"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-brand-desktop"} -->
-<figure class="wp-block-image size-full lp-brand-desktop"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-desktop.webp' ) ); ?>" alt="Let’s Play 原創主視覺：JOIN WITH US. 起來，玩一下！跨專業合作、全齡複合空間、運動設計美學。"/></figure>
-<!-- /wp:image -->
-<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-brand-mobile"} -->
-<figure class="wp-block-image size-full lp-brand-mobile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-mobile.webp' ) ); ?>" alt="Let’s Play：起來，玩一下！"/></figure>
-<!-- /wp:image -->
-</section>
-<!-- /wp:group -->
-<!-- wp:group {"tagName":"section","className":"lp-brand-invite","layout":{"type":"default"}} -->
-<section class="wp-block-group lp-brand-invite"><!-- wp:group {"className":"lp-shell lp-brand-invite-row","layout":{"type":"default"}} -->
-<div class="wp-block-group lp-shell lp-brand-invite-row"><!-- wp:group {"className":"lp-brand-invite-copy","layout":{"type":"default"}} -->
-<div class="wp-block-group lp-brand-invite-copy"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
-<p class="lp-eyebrow">LET’S PLAY / SINCE 2018</p>
+<!-- wp:group {"tagName":"section","className":"lp-manual-hero","layout":{"type":"default"}} -->
+<section class="wp-block-group lp-manual-hero"><!-- wp:group {"className":"lp-shell lp-manual-hero-grid","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-shell lp-manual-hero-grid"><!-- wp:group {"className":"lp-manual-hero-copy","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-manual-hero-copy"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
+<p class="lp-eyebrow">JOOOOO! WITH US. / SINCE 2018</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">起來，玩一下！</h1>
+<h1 class="wp-block-heading">Jo起來，<br>玩一下！</h1>
 <!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>從孩子到大人，一起讓桌球走進生活。</p>
+<!-- wp:paragraph {"className":"lp-manual-lead"} -->
+<p class="lp-manual-lead">從第一拍開始，找到一起玩的快樂。</p>
 <!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
+<!-- wp:paragraph -->
+<p>孩子、大人、朋友與家人，<br>在來回之間，讓桌球走進生活。</p>
+<!-- /wp:paragraph -->
 <!-- wp:buttons {"className":"lp-actions"} -->
 <div class="wp-block-buttons lp-actions"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://line.me/R/ti/p/@869usyqy">LINE 預約體驗 ↗</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/class/' ) ); ?>">探索桌球課程</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/locations/' ) ); ?>">找到上場地點</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"lp-sound-grid","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-sound-grid"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-dong.svg' ) ); ?>" alt="" width="290" height="538"/></figure>
+<!-- /wp:image -->
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-kii.svg' ) ); ?>" alt="" width="295" height="538"/></figure>
+<!-- /wp:image -->
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-pa.svg' ) ); ?>" alt="" width="296" height="538"/></figure>
+<!-- /wp:image -->
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-ka.svg' ) ); ?>" alt="" width="294" height="541"/></figure>
+<!-- /wp:image -->
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-ko.svg' ) ); ?>" alt="" width="294" height="541"/></figure>
+<!-- /wp:image -->
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-siou.svg' ) ); ?>" alt="" width="293" height="541"/></figure>
+<!-- /wp:image -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
 <!-- wp:group {"className":"lp-ticker","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-ticker"><!-- wp:paragraph -->
-<p>跨專業合作</p>
+<p>跨產業合作</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p>全齡複合空間</p>
@@ -324,7 +339,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p>新北市蘆洲區長樂路106號3樓</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p><a href="tel:+886282861011">02-8286-1011</a></p>
+<p><a href="tel:+886988521012">0988-521-012 郭執行長</a><br><a href="tel:+886282861011">02-8286-1011</a></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"className":"lp-actions"} -->
 <div class="wp-block-buttons lp-actions"><!-- wp:button {"className":"is-style-outline"} -->
@@ -342,17 +357,23 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <p class="lp-eyebrow">02 / LINKOU</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">林口店</h3>
+<h3 class="wp-block-heading">林口桌球</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p>開課資訊與到館方式，請透過 LINE 洽詢。</p>
+<p>新北市林口區中山路248號B1-2</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p>讓我們協助你找到合適的上課時段。</p>
+<p>地下室特力屋入口；到館前請先聯繫。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><a href="tel:+886988521012">0988-521-012 郭執行長</a><br><a href="tel:+886282861011">02-8286-1011</a></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"className":"lp-actions"} -->
-<div class="wp-block-buttons lp-actions"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://line.me/R/ti/p/@869usyqy">LINE 洽詢 ↗</a></div>
+<div class="wp-block-buttons lp-actions"><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E5%8C%97%E5%B8%82%E6%9E%97%E5%8F%A3%E5%8D%80%E4%B8%AD%E5%B1%B1%E8%B7%AF248%E8%99%9FB1-2">查看地圖 ↗</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://line.me/R/ti/p/@869usyqy">洽詢課程</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

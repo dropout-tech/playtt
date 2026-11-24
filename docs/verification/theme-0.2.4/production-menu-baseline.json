@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-24T16:19:43.829Z",
+  "focus": "關於我們",
+  "menuLinks": [
+    {
+      "height": 36.75,
+      "label": "關於我們",
+      "padding": "0px",
+      "width": 84
+    },
+    {
+      "height": 36.75,
+      "label": "課程資訊",
+      "padding": "0px",
+      "width": 84
+    },
+    {
+      "height": 36.75,
+      "label": "教練團隊",
+      "padding": "0px",
+      "width": 84
+    },
+    {
+      "height": 36.75,
+      "label": "據點",
+      "padding": "0px",
+      "width": 42
+    },
+    {
+      "height": 36.75,
+      "label": "合作招募",
+      "padding": "0px",
+      "width": 84
+    }
+  ],
+  "url": "https://playtt.tw/",
+  "viewport": {
+    "height": 812,
+    "width": 375
+  }
+}
