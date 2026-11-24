@@ -1,5 +1,13 @@
 # PLAYTT 執行進度
 
+## 0.3.1 圖片區塊修正，原生編輯與完整重啟通過（2026-11-25）
+
+0.3.0 在原生編輯器顯示六個品牌圖形區塊無效，0.3.1 已修正圖片標籤格式，保留原 SVG 和 CSS。固定2e9819b0本機 workerd 完成原生安裝／啟用、六頁匯入、Chrome閱讀設定、畫布修改保存、完整停止重啟、新分頁與匿名首頁讀回、登出。重啟後內容逐位元一致，其他頁面／媒體／42主題檔／77語言檔保留，原內容與帳戶不變，全部session移除。
+
+成功輪LOCAL27／310物件／298檔，13,010,228bytes／108puts（本機帳本）；已封存、pending0、程序退出。194個server觀測樣本例外0，保留iframe樣式警告及登出時一筆ViewTransition錯誤。四次前置失敗完整保留，其中0.3.0輪有一筆本機session留在封存離線備份。新增4工具，384前置精確，重複安裝拒絕且無寫入。
+
+[0.3.1畫面與證據](verification/theme-0.3.1/README.md)／[完整流程與限制](../experiments/cloudflare-wordpress/brand-editor/README.md)。本輪無雲端操作、正式官網或靜態預覽更新；可審閱的品牌預覽仍是0.3.0。完整免費Cloudflare後台、實體IME／手機、長期營運及營業內容確認仍開放，PR4保持draft。
+
 ## 指定品牌 PDF 已保存，0.3.0 候選完成；營業資料已先查核（2026-11-25）
 
 [新版品牌預覽已發布](https://d344e4ab.playtt-brand-preview.pages.dev/)。預覽49檔逐一精確，正式站46檔維持原內容；[部署、遠端畫面與驗證](verification/theme-0.3.0/DEPLOYMENT.md)。

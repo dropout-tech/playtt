@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const theme = path.join(root, 'lets-play');
 const coaches = JSON.parse(await readFile(path.join(root, 'content/coaches.json'), 'utf8'));
-const brandAssets = JSON.parse(await readFile(path.join(root,'../docs/brand/assets.json'),'utf8')).assets;
 const line = 'https://line.me/R/ti/p/@869usyqy';
 const escape = s => s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const href = p => `<?php echo esc_url( home_url( '${p}' ) ); ?>`;
@@ -14,7 +13,9 @@ const self = (name, attrs) => `<!-- wp:${name} ${JSON.stringify(attrs)} /-->\n`;
 const group = (cls, html, tag='div') => block('group', { ...(tag !== 'div' ? {tagName:tag}:{}), className:cls, layout:{type:'default'} }, `<${tag} class="wp-block-group ${cls}">${html}</${tag}>`);
 const p = (text, cls='') => block('paragraph', cls ? {className:cls} : {}, `<p${cls ? ` class="${cls}"`:''}>${text}</p>`);
 const h = (text, level=2, cls='') => block('heading', {level,...(cls?{className:cls}:{})}, `<h${level} class="wp-block-heading${cls ? ' '+cls : ''}">${text}</h${level}>`);
-const img = (name, alt, cls='') => block('image', {sizeSlug:'full',linkDestination:'none',...(cls?{className:cls}:{})}, `<figure class="wp-block-image size-full${cls?' '+cls:''}"><img src="${asset(name)}" alt="${escape(alt)}"${name.endsWith('.svg') ? (()=>{ const a=brandAssets.find(a=>a.path.endsWith('/'+name)); return ` width="${a.crop[2]-a.crop[0]}" height="${a.crop[3]-a.crop[1]}"`; })() : ''}/></figure>`);
+// core/image persists dimensions only when its resize attributes are set. Keep
+// the original SVG viewBox ratio and CSS sizing without invalid saved markup.
+const img = (name, alt, cls='') => block('image', {sizeSlug:'full',linkDestination:'none',...(cls?{className:cls}:{})}, `<figure class="wp-block-image size-full${cls?' '+cls:''}"><img src="${asset(name)}" alt="${escape(alt)}"/></figure>`);
 const button = (text,url,outline=false) => block('button', outline?{className:'is-style-outline'}:{}, `<div class="wp-block-button${outline?' is-style-outline':''}"><a class="wp-block-button__link wp-element-button" href="${url}">${text}</a></div>`);
 const actions = (...items) => block('buttons', {className:'lp-actions'}, `<div class="wp-block-buttons lp-actions">${items.join('')}</div>`);
 const section = (html,cls='') => group('lp-section '+cls,group('lp-shell',html),'section');
@@ -28,7 +29,7 @@ const coachCard = (coach,full=true) => group('lp-coach-card',img(coach.photo+'.w
 const locations = () => group('lp-grid-2',group('lp-location',p('01 / LUZHOU','lp-eyebrow')+h('蘆洲店',3)+p('新北市蘆洲區長樂路106號3樓')+p('<a href="tel:+886988521012">0988-521-012 郭執行長</a><br><a href="tel:+886282861011">02-8286-1011</a>')+actions(button('查看地圖 ↗','https://www.google.com/maps/search/?api=1&amp;query='+encodeURIComponent('新北市蘆洲區長樂路106號3樓'),true),button('洽詢課程',line)))+group('lp-location',p('02 / LINKOU','lp-eyebrow')+h('林口桌球',3)+p('新北市林口區中山路248號B1-2')+p('地下室特力屋入口；到館前請先聯繫。')+p('<a href="tel:+886988521012">0988-521-012 郭執行長</a><br><a href="tel:+886282861011">02-8286-1011</a>')+actions(button('查看地圖 ↗','https://www.google.com/maps/search/?api=1&amp;query='+encodeURIComponent('新北市林口區中山路248號B1-2'),true),button('洽詢課程',line))));
 const patterns = {};
 const navItems = [['關於我們','/about/'],['課程資訊','/class/'],['教練團隊','/coaches/'],['據點','/locations/'],['合作招募','/partner/']];
-patterns.header = group('lp-header',group('lp-shell lp-header-row',block('image',{sizeSlug:'full',linkDestination:'custom',className:'lp-logo'},`<figure class="wp-block-image size-full lp-logo"><a href="${href('/')}"><img src="${asset('brand-logo.svg')}" alt="Let’s Play 桌球聯盟首頁" width="345" height="265"/></a></figure>`)+block('navigation',{overlayMenu:'mobile',ariaLabel:'主要導覽',layout:{type:'flex',justifyContent:'right'}},navItems.map(([label,url])=>self('navigation-link',{label,url:href(url),kind:'custom'})).join(''))));
+patterns.header = group('lp-header',group('lp-shell lp-header-row',block('image',{sizeSlug:'full',linkDestination:'custom',className:'lp-logo'},`<figure class="wp-block-image size-full lp-logo"><a href="${href('/')}"><img src="${asset('brand-logo.svg')}" alt="Let’s Play 桌球聯盟首頁"/></a></figure>`)+block('navigation',{overlayMenu:'mobile',ariaLabel:'主要導覽',layout:{type:'flex',justifyContent:'right'}},navItems.map(([label,url])=>self('navigation-link',{label,url:href(url),kind:'custom'})).join(''))));
 patterns.footer = group('lp-footer',group('lp-shell',group('lp-footer-row',group('lp-footer-brand',img('brand-logo.svg','Let’s Play 桌球聯盟','lp-logo')+p('運動 × 創新。從喜歡開始，一起玩桌球。'))+group('lp-footer-contact',p('<a href="tel:+886988521012">0988-521-012 郭執行長</a><br><a href="tel:+886282861011">02-8286-1011</a><br><a href="mailto:playpp2018@gmail.com">playpp2018@gmail.com</a>')+p('新北市蘆洲區長樂路106號3樓'))+group('lp-footer-social',p(`<a href="${line}">LINE @869usyqy ↗</a>`)+p('<a href="https://www.facebook.com/playpp2018">Facebook ↗</a>')))+group('lp-footer-bottom',p('© Let’s Play 桌球聯盟 · 一起玩，玩出你的可能。'))));
 patterns.footer += p(`<a href="${line}" aria-label="透過 LINE 洽詢與預約">LINE<br>預約 ↗</a>`,'lp-floating-line');
 const soundArt = () => group('lp-sound-grid', ['dong','kii','pa','ka','ko','siou'].map(n=>img('brand-'+n+'.svg','','lp-sound-tile')).join(''));

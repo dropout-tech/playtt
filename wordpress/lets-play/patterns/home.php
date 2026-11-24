@@ -35,22 +35,22 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <!-- /wp:group -->
 <!-- wp:group {"className":"lp-sound-grid","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-sound-grid"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
-<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-dong.svg' ) ); ?>" alt="" width="290" height="538"/></figure>
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-dong.svg' ) ); ?>" alt=""/></figure>
 <!-- /wp:image -->
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
-<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-kii.svg' ) ); ?>" alt="" width="295" height="538"/></figure>
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-kii.svg' ) ); ?>" alt=""/></figure>
 <!-- /wp:image -->
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
-<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-pa.svg' ) ); ?>" alt="" width="296" height="538"/></figure>
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-pa.svg' ) ); ?>" alt=""/></figure>
 <!-- /wp:image -->
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
-<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-ka.svg' ) ); ?>" alt="" width="294" height="541"/></figure>
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-ka.svg' ) ); ?>" alt=""/></figure>
 <!-- /wp:image -->
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
-<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-ko.svg' ) ); ?>" alt="" width="294" height="541"/></figure>
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-ko.svg' ) ); ?>" alt=""/></figure>
 <!-- /wp:image -->
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-sound-tile"} -->
-<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-siou.svg' ) ); ?>" alt="" width="293" height="541"/></figure>
+<figure class="wp-block-image size-full lp-sound-tile"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-siou.svg' ) ); ?>" alt=""/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:group -->

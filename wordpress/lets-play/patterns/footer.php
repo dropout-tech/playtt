@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <div class="wp-block-group lp-shell"><!-- wp:group {"className":"lp-footer-row","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-footer-row"><!-- wp:group {"className":"lp-footer-brand","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-footer-brand"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lp-logo"} -->
-<figure class="wp-block-image size-full lp-logo"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-logo.svg' ) ); ?>" alt="Let’s Play 桌球聯盟" width="345" height="265"/></figure>
+<figure class="wp-block-image size-full lp-logo"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-logo.svg' ) ); ?>" alt="Let’s Play 桌球聯盟"/></figure>
 <!-- /wp:image -->
 <!-- wp:paragraph -->
 <p>運動 × 創新。從喜歡開始，一起玩桌球。</p>

@@ -1,5 +1,11 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 0.3.1 主題與首頁設定
+
+可安裝主題改用0.3.1，修正原生圖片區塊無效問題。[原生編輯／重啟驗證](verification/theme-0.3.1/README.md)。若已有首頁，匯入器會保留原設定；在「設定 → 閱讀 → 靜態首頁」選取「Let’s Play 桌球聯盟」，按「儲存設定」後再核對匿名根網址。匯入或更新主題均不代表授權覆寫現有編輯內容。
+
+本輪只測試隔離本機，最終ZIP為42檔／897,926bytes，SHA-256 `af64c988eca9213b81090bfde24585fe082b315ea2eff9ca9381fd3e29a69f06`。公有品牌預覽仍是0.3.0；正式站、私人雲端寫入與發布狀態維持現況。保存及登出證據有對應的瀏覽器轉場錯誤紀錄，詳見[限制](../experiments/cloudflare-wordpress/brand-editor/README.md)。
+
 ## 0.3.0 品牌候選的發布界線（2026-11-25）
 
 以[品牌PDF](brand/README.md)及[新主題驗證](verification/theme-0.3.0/README.md)為本輪交付來源。**Cloudflare Pages production branch是`codex/playtt-wordpress-cloudflare`，不是master。** 此分支的`cloudflare/public`保持原內容；0.3.0匯出檔僅放在獨立`codex/playtt-brand-manual-preview`分支供預覽。新PDF僅存在docs，不可複製進public。

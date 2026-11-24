@@ -1,0 +1,30 @@
+{
+  "schema": "playtt/local-diagnostic-tools/v2",
+  "scope": "Local theme installation, native UI save/restart and offline audit; no remote operations. Existing attempts cannot be replayed.",
+  "files": [
+    {
+      "path": "scripts/playtt-brand-editor-complete-local.mjs",
+      "source": "playtt-brand-editor-complete-local.mjs",
+      "sha256": "6645749fce67b6c628fe4baa441a6974073630c2c78ffbc11e85d8fb283f2f39"
+    },
+    {
+      "path": "scripts/playtt-brand-editor-complete-control.mjs",
+      "source": "playtt-brand-editor-complete-control.mjs",
+      "sha256": "296137a38a23c8ba10c897790aa8a896ee3eaaafcbbf707de097887e0b5c1c28"
+    },
+    {
+      "path": "scripts/playtt-brand-content-equivalence.mjs",
+      "source": "playtt-brand-content-equivalence.mjs",
+      "sha256": "9bd4fda70c8c3f487fe2c34dfcaf8e7ee8578cd7f29a265c100c40d66022a346"
+    },
+    {
+      "path": "scripts/playtt-brand-editor-offline-audit.mjs",
+      "source": "playtt-brand-editor-offline-audit.mjs",
+      "sha256": "ad28ab25321c450c816b7029d5c366a13b6cf230b6704126d6508b1f178ef36b"
+    }
+  ],
+  "prerequisiteManifest": {
+    "path": "../bootstrap-locale/tool-files.json",
+    "sha256": "d2d23b5b9f5c91000568415303d3a383e623346443eb8a358cfa0d5657338ec2"
+  }
+}

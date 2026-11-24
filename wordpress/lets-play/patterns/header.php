@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <!-- wp:group {"className":"lp-header","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-header"><!-- wp:group {"className":"lp-shell lp-header-row","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-shell lp-header-row"><!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"lp-logo"} -->
-<figure class="wp-block-image size-full lp-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-logo.svg' ) ); ?>" alt="Let’s Play 桌球聯盟首頁" width="345" height="265"/></a></figure>
+<figure class="wp-block-image size-full lp-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/brand-logo.svg' ) ); ?>" alt="Let’s Play 桌球聯盟首頁"/></a></figure>
 <!-- /wp:image -->
 <!-- wp:navigation {"overlayMenu":"mobile","ariaLabel":"主要導覽","layout":{"type":"flex","justifyContent":"right"}} -->
 <!-- wp:navigation-link {"label":"關於我們","url":"<?php echo esc_url( home_url( '/about/' ) ); ?>","kind":"custom"} /-->

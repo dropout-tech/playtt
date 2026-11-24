@@ -196,3 +196,7 @@ Wrangler 仍列出固定 PHP loader 既有 direct-eval／重複鍵警告，保�
 ## 選用未接線的壓縮格式原型
 
 完成既有候選與診斷工具後執行compressed-content/install-local-prototype.py --runtime <runtime-cloudflare> --apply。只新增一個模組、一份測試與兩個本機工具；不改現有來源、設定或啟用旗標。詳見[原型與限制](compressed-content/README.md)。
+
+## 選用品牌主題原生編輯驗證
+
+在bootstrap-locale之後安裝[brand-editor](brand-editor/README.md)的4個本機工具；384項前置雜湊精確，重複安裝會先拒絕。這不是runtime patch，也不部署。固定0.3.1主題與私人繁中seed、原生UI操作、完整workerd重啟及離線證據需求見該層說明。
