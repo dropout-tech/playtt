@@ -1,5 +1,13 @@
 # WordPress 與 Cloudflare 操作手冊
 
+## 本機 Chrome 視覺保存與重啟通過；雲端完整驗收仍待（2026-11-24）
+
+以canonical201備份建立隔離副本，固定19f8bc17候選在Chrome完成原生視覺段落繁中修改、手動保存、完整workerd重啟、新分頁畫布及程式碼欄全文讀回、12筆修訂與登出。LOCAL201→214，648,188bytes／39puts；304物件／298檔獨立備份及完整快照一致，原內容／媒體／其他使用者精確。兩輪均已封存並關閉程序，第二輪原生登入session已移除。
+
+第一輪fill逾時後只產生autosave，手動保存停用、主草稿未變，完整失敗證據與本機session保留。新副本以點選／鍵盤輸入成功，不代表已找出第一次異常的精確原因。純HTML重測仍顯示內建瀏覽器blob iframe空白、Chrome正常；不需為此修改WordPress runtime。成功輪保留2次樣式警告與登出頁1次ViewTransition錯誤，server例外0。
+
+本輪0雲端操作，82中央來源／20設定／6固定模組不變。雲端最後核驗仍canonical201／17pins／152MB cap／餘1,067,374bytes／sealed；單次雲端授權已使用。實體IME／手機、雲端視覺編輯、首次繁中初始化、長期Free及全部A01–A20仍開放。正式Pages與原視覺不變、PR4 draft。詳見[本機視覺流程、重建與限制](../experiments/cloudflare-wordpress/canvas-typing/README.md)。
+
 ## 已完成核准的私人保存與重啟測試；視覺編輯仍待修正（2026-11-24）
 
 使用者已明確授權這一次受限測試。免費 Cloudflare 私人後台完成登入、草稿193繁中保存、重新部署後全文讀回、11筆修訂與登出。視覺化編輯區出現空白，本次使用 WordPress 原生程式碼編輯模式；**資料流程通過，視覺編輯及完整後台尚未驗收**。

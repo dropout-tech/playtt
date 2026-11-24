@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-24T15:17:32.688Z",
+  "visualCanvasRendered": true,
+  "paragraphsVisible": 10,
+  "typedTextVisible": true,
+  "saveButtonDisabled": true,
+  "undoButtonDisabled": true,
+  "saveNotSubmitted": true,
+  "actualInputMethods": [
+    "frameLocator.fill timed out after selection",
+    "AX paste",
+    "AX keypress",
+    "AX typeText",
+    "locator.pressSequentially"
+  ],
+  "rawCdpInputSupported": false
+}

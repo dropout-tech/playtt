@@ -1,0 +1,108 @@
+{
+  "schema": "playtt/canvas-typing-offline-audit/v1",
+  "at": "2026-11-24T15:32:17.704Z",
+  "result": "pass",
+  "scope": "Two isolated local trials plus synthetic iframe comparison; no cloud requests or remote write authorization consumed",
+  "baselineCloudVersion": 201,
+  "remoteCloudVersionLastVerified": 201,
+  "remoteStateReadThisRun": false,
+  "attempts": [
+    {
+      "kind": "native",
+      "result": "incomplete-input-flow-retained",
+      "canonicalVersion": 226,
+      "independentObjects": 304,
+      "files": 298,
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json",
+        "_tables/posts.json",
+        "_tables/usermeta.json"
+      ],
+      "allOriginalRevisionsExact": true,
+      "addedRevision": 210,
+      "addedRevisionKind": "autosave",
+      "mainContent": "original exact",
+      "allOtherDataChecked": true,
+      "localSession": "retained in sealed disposed local fixture",
+      "serverExceptions": 0,
+      "nativeSaves": 0,
+      "autosavePosts": 5,
+      "sealed": true,
+      "disposed": true
+    },
+    {
+      "kind": "typing",
+      "result": "native-visual-save-restart-readback-logout-pass",
+      "canonicalVersion": 214,
+      "independentObjects": 304,
+      "files": 298,
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json",
+        "_tables/posts.json",
+        "_tables/usermeta.json",
+        "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+      ],
+      "allOriginalRevisionsExact": true,
+      "addedRevision": 210,
+      "addedRevisionKind": "revision",
+      "mainContent": "exact visual edit",
+      "allOtherDataChecked": true,
+      "localSession": "removed by native logout",
+      "serverExceptions": 0,
+      "nativeSaves": 1,
+      "autosavePosts": 0,
+      "sealed": true,
+      "disposed": true
+    }
+  ],
+  "successfulTrial": {
+    "limits": {
+      "durationSeconds": 600,
+      "maxBytes": 1881041,
+      "maxOperations": 96
+    },
+    "chargedBytes": 648188,
+    "chargedPuts": 39,
+    "fullRestart": {
+      "fullWorkerdDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "stateExact": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "sameWindow": true,
+      "noReseedOrRearm": true,
+      "version": 207,
+      "chargedBytes": 298965
+    },
+    "originalSessionsExactNewSessionRemoved": true,
+    "fullIndependentAndMaterializedBackup": true,
+    "browserNativeFullContentExact": true,
+    "logoutConfirmed": true
+  },
+  "browserConsole": {
+    "warnings": [
+      "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+      "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css"
+    ],
+    "errors": [
+      "InvalidStateError: Transition was aborted because of invalid state. ViewTransition opt-in disabled"
+    ]
+  },
+  "frozenModuleCount": 6,
+  "frozenBundleSha256": "19f8bc17966c12b82518961dc550a95672a0c859b2017577bb82fc04c44b0b0d",
+  "centralSourcesUnchanged": 82,
+  "productionChanged": false,
+  "newRemoteWriteWindows": 0,
+  "paidUpgrade": false,
+  "fullBackendAccepted": false,
+  "limitations": [
+    "First fill/paste-based attempt retained with autosave-only outcome; exact cause not proven.",
+    "Fresh click/keyboard input passed; no WordPress runtime patch was needed.",
+    "In-app browser still fails synthetic blob iframe; Chrome rendered all frames.",
+    "Physical keyboard/IME, mobile, cloud visual editing, peak memory, billed CPU and long-term free operation remain unverified.",
+    "Local workerd counters are not cloud usage. Raw inherited harness labels about build/adoption/cloud flags are not evidence; verified frozen module hashes above are authoritative."
+  ]
+}
