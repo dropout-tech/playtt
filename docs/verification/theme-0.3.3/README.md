@@ -17,7 +17,24 @@
 
 三張截圖為本機靜態呈現；FAQ截圖記錄列表關閉狀態，展開／鍵盤結果以JSON紀錄為準。viewport已reset、自有分頁關閉、9422與9435無監聽。測試服務為主動停止，未當作自行正常退出。
 
-[主題ZIP](package.json)為42檔，與Git index逐檔一致。這是文案及區塊組合調整，沒有重跑完整原生編輯器保存試驗；既有完整原生證據屬0.3.1。手機為Chrome模擬尺寸，尚非實體裝置驗收，沒有新的PSI分數。
+[主題ZIP](package.json)為42檔，與Git index逐檔一致。這是文案及區塊組合調整，沒有重跑完整原生編輯器保存試驗；既有完整原生證據屬0.3.1。手機為Chrome模擬尺寸，尚非實體裝置驗收；後續補做的同版本PSI量測見下節。
+
+## 0.3.3 手機效能實測
+
+2026-11-25 03:39（Asia/Taipei）對本頁所列固定0.3.3部署各啟動一次PageSpeed Insights，兩個工作皆完成，未重跑挑選較高分數。環境為模擬Moto G Power、慢速4G、Lighthouse13.6.0、HeadlessChromium157.0.8103.38。之前0.3.0分數仍留在原紀錄，不改標版本。
+
+| 頁面 | 效能 | 自動無障礙 | 最佳做法 | SEO | FCP／LCP | TBT | CLS |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [首頁報告](https://pagespeed.web.dev/analysis/https-1bb1c274-playtt-brand-preview-pages-dev/8c5tkc7p07qixhb2jwotq7?form_factor=mobile) | 100 | 100 | 100 | 69 | 902／902ms | 0ms | 0 |
+| [課程報告](https://pagespeed.web.dev/analysis/https-1bb1c274-playtt-brand-preview-pages-dev-class/g4ypociulip57crtes1i8x?form_factor=mobile) | 100 | 100 | 100 | 69 | 901／901ms | 0ms | 0 |
+
+[結構化摘要](pagespeed-preview-0.3.3.json)／[首頁原始可見報告](pagespeed-home-033.txt)／[課程原始可見報告](pagespeed-class-033.txt)。精確毫秒值來自各報告可見的計算機連結；頁面指標顯示四捨五入的0.9秒。僅保存手機結果，未將DOM內另載的桌機指標混入。
+
+兩頁的SEO扣分為預覽封鎖索引，保留noindex。圖片尺寸診斷展開後列的是頁首／頁尾兩張原SVG字標；既有viewBox／CSS比例及[0.3.1延遲載入測試](../theme-0.3.1/svg-layout.json)保留，本輪也未觀察到位移。報告仍列阻擋算繪估計400／410ms、快取估計344／16KiB、首頁圖片估計232KiB可改善；這些估計不是實際退步。沒有為清除未計分提示而修改已驗證的原生圖片區塊，亦未延長可編輯靜態檔的快取期限。
+
+這兩次單頁實驗沒有顯示新版效能退步，但不是控制其他條件後的因果比較。[Lighthouse官方說明](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring)指出分數會隨底層條件變動。兩頁都沒有實際使用者資料；依[Web Vitals說明](https://web.dev/articles/vitals)，不能用這兩筆實驗代替第75百分位實際使用者LCP／INP／CLS驗收。自動無障礙100也不代表螢幕閱讀器、繁中輸入法或實體手機皆通過。
+
+沒有新的部署、私人Worker請求或資料寫入；只新增量測證據。兩個量測分頁已關閉。
 
 ![桌機課程頁](class-1440.jpg)
 
