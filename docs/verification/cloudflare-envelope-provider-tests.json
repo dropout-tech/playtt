@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-21T14:27:31.111324+00:00",
+  "result": "pass",
+  "observerTests": 5,
+  "observerRun": "node --test tests/playtt-envelope-provider-observer.test.mjs",
+  "observerEvidence": "Five passing cases observed in command output before cloud deployment; no separate raw log was saved. Covers live process/version/deadline, stream drain, allowed HTTP fields and privacy.",
+  "controlTests": 2,
+  "controlEvidence": "cloudflare-envelope-provider-control-tests.log",
+  "total": 7,
+  "sourceIntegrationTests": "Prior108+tsc belong the unchanged b5eec65 source integration round, not rerun here."
+}

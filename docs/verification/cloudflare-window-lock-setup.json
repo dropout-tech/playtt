@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-20T19:12:58.852Z",
+  "result": "pass",
+  "ownedUserId": 2,
+  "role": "editor",
+  "syntheticAddress": true,
+  "notificationHookInvoked": false,
+  "existingUsers": 1,
+  "checks": [
+    {
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3877
+    },
+    {
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6097
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1547
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1696
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1151
+    },
+    {
+      "method": "POST",
+      "status": 201,
+      "wallMs": 7373
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "wallMs": 945
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "wallMs": 905
+    }
+  ]
+}

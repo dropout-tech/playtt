@@ -1,0 +1,20 @@
+{
+  "schema": "playtt/base64-native-build-proof/v1",
+  "result": "pass",
+  "sourceInputs": 208,
+  "tsSourceCount": 83,
+  "additionalDeclarationCount": 1,
+  "loadedSourceCount": 72,
+  "sourceSha256": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99",
+  "candidateSha256": "ba0e87ca6848224b0a14aad15d605587d2f2ff9bfddea78c9db22d1e7f296150",
+  "baselineBundleSha256": "abc3045e3e01dd1b8454be9ffd709519bf016a5b6b16f8f3d6efdaab65d4befb",
+  "bundleSha256": "0f9d3340e3e66f7cc6242bf31cc26d4d76ad9c78dfa7f87a17adca214206b025",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "exactScopedSourceChanges": true,
+  "exactEncoderOnlyCompiledChange": true,
+  "unchangedBinaryModules": 5,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

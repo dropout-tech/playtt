@@ -1,0 +1,57 @@
+{
+  "schema": "playtt/legacy-adoption-plan/v1",
+  "source": {
+    "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+    "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+    "persistedAt": "2026-11-21T14:22:06.428Z",
+    "manifestSha256": "83772504c985e0dcfb5970a4641499182802a911c09b65daf436d0cc9aecf4d0",
+    "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "packBytes": 2295783
+  },
+  "target": {
+    "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+    "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+    "persistedAt": "2026-11-21T15:06:06.249Z",
+    "manifestSha256": "7d1a1953d6405da497efaf296aca04b2973808a847cdf832378cbbbe22c2ca7c",
+    "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "packBytes": 2295783
+  },
+  "sourceVersion": 177,
+  "targetVersion": 178,
+  "pointerKey": "sites/default/markdown/current.json",
+  "objects": [
+    {
+      "key": "sites/default/markdown/objects/5bc180deec686111e426680bf63eb28a701af225a81e3df613ec08577e89b3a2",
+      "size": 196,
+      "sha256": "5bc180deec686111e426680bf63eb28a701af225a81e3df613ec08577e89b3a2"
+    },
+    {
+      "key": "sites/default/markdown/objects/825514b6d7be72c679287a67649f399efa38697dee69c7b13ed499daaf36269e",
+      "size": 2421,
+      "sha256": "825514b6d7be72c679287a67649f399efa38697dee69c7b13ed499daaf36269e"
+    },
+    {
+      "key": "sites/default/markdown/objects/84c8fe89ef1a74d4d8a216f328c3763bac737534c43b4a87a36f1b7840f337ba",
+      "size": 14775,
+      "sha256": "84c8fe89ef1a74d4d8a216f328c3763bac737534c43b4a87a36f1b7840f337ba"
+    },
+    {
+      "key": "sites/default/markdown/objects/89e022813f3c15a2079c6197ac056c0301e1e53ab0fd746554ea875e1a4cadc0",
+      "size": 19149,
+      "sha256": "89e022813f3c15a2079c6197ac056c0301e1e53ab0fd746554ea875e1a4cadc0"
+    },
+    {
+      "key": "sites/default/markdown/objects/ad4d59a9d0442290bde537bcd3c0b871aa65aa40f255c0364050f3a08332eb34",
+      "size": 322467,
+      "sha256": "ad4d59a9d0442290bde537bcd3c0b871aa65aa40f255c0364050f3a08332eb34"
+    },
+    {
+      "key": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+      "size": 73740,
+      "sha256": "7d1a1953d6405da497efaf296aca04b2973808a847cdf832378cbbbe22c2ca7c"
+    }
+  ],
+  "digest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28"
+}

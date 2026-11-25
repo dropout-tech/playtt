@@ -1,0 +1,176 @@
+{
+  "version": "0.3.2",
+  "scope": "Packaged from Git index; three theme text files differ from 0.3.1, artwork and block structure unchanged",
+  "zipBytes": 897923,
+  "zipSha256": "e7a33a9bf00195dc91b4f3f9f31cf2e6c7d88824c56c627f327d98a9aa346c7d",
+  "files": [
+    {
+      "path": "lets-play/assets/images/brand-desktop.webp",
+      "sha256": "411915acde994cdb34911a756486c7572ad5c58bea3444aba0c7ba4f980b2869"
+    },
+    {
+      "path": "lets-play/assets/images/brand-dong.svg",
+      "sha256": "d4c6903ef4d8ad44e8edd9accaf48ca55b608b5d0a864c3f2b2cbfd763575ec4"
+    },
+    {
+      "path": "lets-play/assets/images/brand-ka.svg",
+      "sha256": "e19e9b3e86e2ab17e06ff331d3e19b6485f2995160397dca1a7dc673298801bd"
+    },
+    {
+      "path": "lets-play/assets/images/brand-kii.svg",
+      "sha256": "0e37d37ba8da9e2d4924b43d0b8dab0f8206c5d032b61643c5699552550481b9"
+    },
+    {
+      "path": "lets-play/assets/images/brand-ko.svg",
+      "sha256": "4b0931196f6ba05b410429ff7152a2611172d94a7671ea5a9c176c6b9f24457d"
+    },
+    {
+      "path": "lets-play/assets/images/brand-logo.svg",
+      "sha256": "4e18e2f984acc8cfef08e78fb836258c643fbc1b48c1fd6ea29a93e7f0479546"
+    },
+    {
+      "path": "lets-play/assets/images/brand-mobile.webp",
+      "sha256": "ddfebb71a7fd7fccc9eef6edf1c1fc2b354c3f5f5a661625acbe09c1a7be22cd"
+    },
+    {
+      "path": "lets-play/assets/images/brand-pa.svg",
+      "sha256": "1b339474e2838caf78209f471dcbca01227f13799a3595340b88746c8f19960d"
+    },
+    {
+      "path": "lets-play/assets/images/brand-siou.svg",
+      "sha256": "09174a9b332068463eed2ad33361a37bb5a834133a59e0f5402d0ce649d6f19a"
+    },
+    {
+      "path": "lets-play/assets/images/camp.webp",
+      "sha256": "b218afe6593593e91c76c2a617632cf768e383ec5adc3860d65e5306fb467450"
+    },
+    {
+      "path": "lets-play/assets/images/children.webp",
+      "sha256": "d3432294ff271d178928ac287604b3bb3e2124b697927db66cdb9161e285414a"
+    },
+    {
+      "path": "lets-play/assets/images/coach-amber.webp",
+      "sha256": "81b5a0e3d5d5cd27487722df090c1dde633b602cd1a8a855dc7e4eae24ef7034"
+    },
+    {
+      "path": "lets-play/assets/images/coach-huang.webp",
+      "sha256": "1d3cac98c5527bd0ba3773e945bc87d84ce9ad7f2434bf28b050c47f4b232226"
+    },
+    {
+      "path": "lets-play/assets/images/coach-kuo.webp",
+      "sha256": "c1bd888a29305dc4122c113c56c42b139e8624b6bf944c3d855756763b4cf8f1"
+    },
+    {
+      "path": "lets-play/assets/images/coach-lin.webp",
+      "sha256": "834a75a6a16fd865b23e671ae1695295ccf7fbd77adb6bb758983e419d174ad1"
+    },
+    {
+      "path": "lets-play/assets/images/coach-tsai.webp",
+      "sha256": "02b4c579f5d7e4184cea75bbad1745d2fc1823b74d8b2b610be3c4d3bf2731b5"
+    },
+    {
+      "path": "lets-play/assets/images/coach-wang.webp",
+      "sha256": "5a3a46c0442ca1ca762406cf95dc2174dd5ec7ea60e3613e8b4a7e9d6e892b6a"
+    },
+    {
+      "path": "lets-play/assets/images/coach-wen.webp",
+      "sha256": "aafa485ddbe688d850e935d63ce6480ad4dab6c91f927f73ddd52874c1c267d4"
+    },
+    {
+      "path": "lets-play/assets/images/coach-yang.webp",
+      "sha256": "e6bd16dbd55b81f3071b401bfc1265d70231ee4a45fffa1c731a20cbb256f8ff"
+    },
+    {
+      "path": "lets-play/assets/images/individual.webp",
+      "sha256": "a91ad866da4535ce1eebdce6e15c841ec6c15c7a7895d6862910c8bd5229e73e"
+    },
+    {
+      "path": "lets-play/assets/images/logo.webp",
+      "sha256": "dbbad2dd9e3e41d1981f6316f8d63a32d7db172f55a3c2b10e846b4a19777c9a"
+    },
+    {
+      "path": "lets-play/assets/images/share.jpg",
+      "sha256": "377214eac2623eede430ba602c653a7c9f78dd4473728cef73bd1f43484d6b4f"
+    },
+    {
+      "path": "lets-play/assets/legacy-links.js",
+      "sha256": "7e5fc9c46c6a234270c4315ebc799c5afd4fd6065b60fcfff61f40f61c599d2a"
+    },
+    {
+      "path": "lets-play/functions.php",
+      "sha256": "e76280a838f0dee47c8bb9bdcf8e760ac2f82d531f5be3b0106a1f8d6577c581"
+    },
+    {
+      "path": "lets-play/inc/pages.json",
+      "sha256": "d924ba3bd7aca8b09cb2418903b8799aebb2cbdbaf0ebd17e92050a395e1f4f0"
+    },
+    {
+      "path": "lets-play/inc/starter.php",
+      "sha256": "1f99335283d2630bf39521c2c8f3dd614ec6d08e3e68cfc348bf9011b629694f"
+    },
+    {
+      "path": "lets-play/parts/footer.html",
+      "sha256": "b5f08401418a10bb0300ace1311dbc68960fd294b41a39b8475dd8de53f37221"
+    },
+    {
+      "path": "lets-play/parts/header.html",
+      "sha256": "0537fe25b194a7f40325e47b175e94a83b45e8b4d72d45b5bb1db12ea8720202"
+    },
+    {
+      "path": "lets-play/patterns/about.php",
+      "sha256": "47b6a117bca9a9d66f545c44926e3f91232daa1ba39d5705d5c4eb836d19ea03"
+    },
+    {
+      "path": "lets-play/patterns/class.php",
+      "sha256": "83de5af643f81a4b8056be8b4ed32e9638d510b190a78e7e39f6ba9c6f2a0289"
+    },
+    {
+      "path": "lets-play/patterns/coaches.php",
+      "sha256": "093e871ecaafc5fe307aae8acb2ec3cbfd4166945e1a053b854f8386d6ec4713"
+    },
+    {
+      "path": "lets-play/patterns/footer.php",
+      "sha256": "88b957a5cc9414d029563bad22c156c6eabee877801176ceb9fb7c5f32aaa8ef"
+    },
+    {
+      "path": "lets-play/patterns/header.php",
+      "sha256": "1b9409bd0506d7cfafeeb9c8913f3f74a9325e9287bd9c16b7465026b536a349"
+    },
+    {
+      "path": "lets-play/patterns/home.php",
+      "sha256": "c109072a74907082ff303859a01f0fbc725eb204b971a4a54cd4841eed9b5e00"
+    },
+    {
+      "path": "lets-play/patterns/locations.php",
+      "sha256": "c6f2a7ca654e257759f4ff87e900188ec24931de88a790a5eddaca6140246141"
+    },
+    {
+      "path": "lets-play/patterns/partner.php",
+      "sha256": "f9242e98c6a18b1eb45246c268892f6f47045340546d159fbfb4faa008bfe1fb"
+    },
+    {
+      "path": "lets-play/style.css",
+      "sha256": "d9c8f3d80ab0d0c7fa6ade53c52766354d2eb90bb1f1038a1f39688aa89ea1a6"
+    },
+    {
+      "path": "lets-play/templates/404.html",
+      "sha256": "010f2cda61e205059da4bea40391b042add1046e434f1a68ebad73b9091836d4"
+    },
+    {
+      "path": "lets-play/templates/front-page.html",
+      "sha256": "2aa2d91b30b90015049f0a825dea752b305bd939f97ce93278d3b611b5f8a841"
+    },
+    {
+      "path": "lets-play/templates/index.html",
+      "sha256": "b0f3b372dcc6d7dddecdca1966a95f7ba722e19d98b5221224c4afeebfff69e2"
+    },
+    {
+      "path": "lets-play/templates/page.html",
+      "sha256": "2aa2d91b30b90015049f0a825dea752b305bd939f97ce93278d3b611b5f8a841"
+    },
+    {
+      "path": "lets-play/theme.json",
+      "sha256": "0803103a9fab84e8a0dd5aa73418b2ea6572cc59f7ae01d1e820c06b5414d3f8"
+    }
+  ]
+}

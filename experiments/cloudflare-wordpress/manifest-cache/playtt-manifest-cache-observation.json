@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-20T02:49:08.100072+00:00",
+  "events": 545,
+  "first": "2026-11-20T02:35:57.024Z",
+  "last": "2026-11-20T02:48:53.789Z",
+  "outcomes": {
+    "ok": 545
+  },
+  "versions": {
+    "e33e2afb-7d40-4a36-b06e-674eac707f44": 231,
+    "7ecc797d-f042-4c5b-a8a1-0a112aa78fab": 184,
+    "ef56ff0b-92b8-4969-9463-80f7dfaee1c9": 130
+  },
+  "exceptions": 0,
+  "requestFailures": 0,
+  "incompleteTraces": 0,
+  "manifestReuses": 18,
+  "maxWasmHeapBytes": 74973184,
+  "maxSampledFileBytes": 31653685,
+  "observerStopped": true,
+  "orphanTails": 0,
+  "scope": "Finite native HTTP experiment, not browser UI or long-term free-tier acceptance; events are not unique requests and sampled heap/files are not whole-isolate memory."
+}

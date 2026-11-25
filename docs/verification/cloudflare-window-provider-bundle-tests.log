@@ -1,0 +1,20 @@
+✔ full exports and restores into an empty independent local object store (260.3125ms)
+✔ overlay exports and restores into an empty independent local object store (285.3277ms)
+✔ materialization creates a new complete identity readable by the old decoder without any overlay dependencies (349.7632ms)
+✔ a wrong external anchor is rejected before creating an output or trusting a self-consistent catalog (128.525ms)
+✔ damaged copied loose content fails verification despite an intact ZIP and manifest (211.6968ms)
+✔ missing dependencies, unrelated catalog objects and unsafe filenames are rejected (404.9135ms)
+✔ an interrupted or mismatched remote object never creates a verified bundle (22.1961ms)
+✔ import cannot overwrite an existing directory and an independent target never falls back to its source (341.1453ms)
+✔ reference coverage protects the unpinned full base and its old metadata even with only the overlay as a live root (47.1831ms)
+✔ overlay reference coverage rejects omitted dependencies, absent raw evidence, tampered catalogs and wrong pin identity (48.5888ms)
+✔ provider adapter exports an exact overlay with bounded GET-only requests and no redirect or credential output (116.1545ms)
+✔ provider failures, excessive responses and wrong project namespaces fail without exposing response secrets (2.4425ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2591.9556

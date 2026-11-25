@@ -1,0 +1,592 @@
+{
+  "at": "2026-11-20T23:38:04.615Z",
+  "result": "pass",
+  "scope": "Offline exact comparison of local native UI snapshots; no remote calls",
+  "staleErrorWithSavedButtonRemainsOpen": true,
+  "remoteProviderFaultTested": false,
+  "attempts": [
+    {
+      "attempt": "playtt-response-loss-ui",
+      "marker": "playtt-response-loss-ui-3e0690cf-5244-410e-95f6-bf8f62eaf926",
+      "server": {
+        "localProcessesDisposed": true,
+        "outboundAttempts": 0,
+        "restarts": 0,
+        "stopReason": "finished",
+        "versions": [
+          {
+            "label": "before",
+            "version": 129
+          },
+          {
+            "label": "fault",
+            "version": 136
+          },
+          {
+            "label": "final",
+            "version": 154
+          }
+        ]
+      },
+      "browser": {
+        "at": "2026-11-20T23:17:16.546Z",
+        "origin": "http://127.0.0.1:9448",
+        "marker": "playtt-response-loss-ui-3e0690cf-5244-410e-95f6-bf8f62eaf926",
+        "id": 193,
+        "events": [
+          {
+            "type": "first-save-click",
+            "at": "2026-11-20T23:17:35.479Z"
+          },
+          {
+            "type": "after-first-save-observed",
+            "at": "2026-11-20T23:17:46.478Z"
+          },
+          {
+            "type": "post-failure-observation",
+            "at": "2026-11-20T23:18:18.312Z",
+            "savedButton": true,
+            "saveButton": false
+          }
+        ],
+        "errorNoticeObserved": true,
+        "contentRetained": true,
+        "saveDisabledLaterWithErrorStillVisible": true,
+        "manualRetryClicked": false,
+        "logs": [
+          {
+            "level": "error",
+            "message": "InvalidStateError: Transition was aborted because of invalid state. Viewport size changed",
+            "timestamp": "2026-11-20T23:15:50.633Z",
+            "url": "http://127.0.0.1:9448/wp-admin/post.php?post=193&action=edit"
+          },
+          {
+            "level": "warn",
+            "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+            "timestamp": "2026-11-20T23:15:52.701Z",
+            "url": "http://127.0.0.1:9448/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+          },
+          {
+            "level": "warn",
+            "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+            "timestamp": "2026-11-20T23:17:17.295Z",
+            "url": "http://127.0.0.1:9448/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+          }
+        ],
+        "tabClosed": true
+      },
+      "comparisons": [
+        {
+          "from": "before",
+          "to": "fault",
+          "fromVersion": 129,
+          "toVersion": 136,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/posts.json",
+            "_tables/usermeta.json",
+            "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+          ],
+          "tables": {
+            "posts": {
+              "added": [
+                {
+                  "id": "201",
+                  "parent": "193",
+                  "type": "revision",
+                  "ownedContent": true,
+                  "baselineContent": false
+                }
+              ],
+              "removed": [],
+              "changed": []
+            },
+            "postmeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "72",
+                  "postId": "193",
+                  "metaKey": "_edit_lock",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "usermeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "21",
+                  "userId": "1",
+                  "metaKey": "wp_persisted_preferences",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "users": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            }
+          },
+          "pageBodyExact": false,
+          "pageMetadataFields": [
+            "date",
+            "modified",
+            "modified_gmt"
+          ],
+          "revisionIdsBefore": [
+            "194",
+            "195",
+            "196",
+            "200"
+          ],
+          "revisionIdsAfter": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "mediaAndThemeExact": true,
+          "exactUnrelatedCanonicalRowsAndFiles": true,
+          "monotonicCounters": true
+        },
+        {
+          "from": "fault",
+          "to": "final",
+          "fromVersion": 136,
+          "toVersion": 154,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+          ],
+          "tables": {
+            "posts": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            },
+            "postmeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "72",
+                  "postId": "193",
+                  "metaKey": "_edit_lock",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "usermeta": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            },
+            "users": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            }
+          },
+          "pageBodyExact": true,
+          "pageMetadataFields": [
+            "date",
+            "modified",
+            "modified_gmt"
+          ],
+          "revisionIdsBefore": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "revisionIdsAfter": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "mediaAndThemeExact": true,
+          "exactUnrelatedCanonicalRowsAndFiles": true,
+          "monotonicCounters": true
+        }
+      ],
+      "telemetry": {
+        "traces": 49,
+        "completedTraces": 49,
+        "fullPacks": 2,
+        "fullPackBytes": 4588916,
+        "requestFailures": 0
+      }
+    },
+    {
+      "attempt": "playtt-response-loss-ui-retry",
+      "marker": "playtt-response-loss-ui-retry-eff1f204-b4cc-4d13-9b55-bbe632ce9590",
+      "server": {
+        "localProcessesDisposed": true,
+        "outboundAttempts": 0,
+        "restarts": 1,
+        "stopReason": "finished",
+        "versions": [
+          {
+            "label": "before",
+            "version": 160
+          },
+          {
+            "label": "fault",
+            "version": 182
+          },
+          {
+            "label": "retry",
+            "version": 186
+          },
+          {
+            "label": "final",
+            "version": 197
+          }
+        ]
+      },
+      "browser": {
+        "at": "2026-11-20T23:29:37.178Z",
+        "origin": "http://127.0.0.1:9448",
+        "marker": "playtt-response-loss-ui-retry-eff1f204-b4cc-4d13-9b55-bbe632ce9590",
+        "id": 193,
+        "events": [
+          {
+            "type": "first-save-click-attempt-no-match",
+            "at": "2026-11-20T23:29:53.841Z",
+            "result": "Button already saved; fresh DOM and null fault receipt checked, no duplicate click"
+          },
+          {
+            "type": "restore-owned-baseline-click",
+            "at": "2026-11-20T23:30:47.777Z"
+          },
+          {
+            "type": "fault-save-click",
+            "at": "2026-11-20T23:31:11.472Z"
+          },
+          {
+            "type": "failure-observed",
+            "at": "2026-11-20T23:31:28.660Z"
+          },
+          {
+            "type": "retry-click",
+            "at": "2026-11-20T23:31:28.660Z"
+          },
+          {
+            "type": "after-retry-observed",
+            "at": "2026-11-20T23:31:46.060Z"
+          },
+          {
+            "type": "cold-exact-content-verified-and-tab-closed",
+            "at": "2026-11-20T23:33:19.641Z"
+          }
+        ],
+        "manualRetryClicked": true,
+        "savedNoticeObserved": true,
+        "errorNoticeCleared": true,
+        "errorNoticeObserved": true,
+        "contentRetained": true,
+        "logsBeforeRestart": [
+          {
+            "level": "warn",
+            "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+            "timestamp": "2026-11-20T23:22:38.284Z",
+            "url": "http://127.0.0.1:9448/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+          },
+          {
+            "level": "warn",
+            "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+            "timestamp": "2026-11-20T23:29:37.917Z",
+            "url": "http://127.0.0.1:9448/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+          },
+          {
+            "level": "warn",
+            "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+            "timestamp": "2026-11-20T23:30:47.798Z",
+            "url": "http://127.0.0.1:9448/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+          },
+          {
+            "level": "warn",
+            "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+            "timestamp": "2026-11-20T23:31:11.492Z",
+            "url": "http://127.0.0.1:9448/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+          }
+        ],
+        "firstTabClosed": true,
+        "coldVisualContentRetained": true,
+        "coldSameSession": true,
+        "coldContentBytesExact": true,
+        "logsAfterRestart": [
+          {
+            "level": "warn",
+            "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+            "timestamp": "2026-11-20T23:32:18.491Z",
+            "url": "http://127.0.0.1:9448/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+          }
+        ],
+        "coldTabClosed": true,
+        "harnessObservationError": "A missing temporary DOM variable interrupted observation after the injected save. Fresh DOM verified failure; the subsequent single retry click succeeded."
+      },
+      "comparisons": [
+        {
+          "from": "before",
+          "to": "fault",
+          "fromVersion": 160,
+          "toVersion": 182,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/posts.json",
+            "_tables/usermeta.json",
+            "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+          ],
+          "tables": {
+            "posts": {
+              "added": [
+                {
+                  "id": "201",
+                  "parent": "193",
+                  "type": "revision",
+                  "ownedContent": true,
+                  "baselineContent": false
+                }
+              ],
+              "removed": [],
+              "changed": []
+            },
+            "postmeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "72",
+                  "postId": "193",
+                  "metaKey": "_edit_lock",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "usermeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "21",
+                  "userId": "1",
+                  "metaKey": "wp_persisted_preferences",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "users": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            }
+          },
+          "pageBodyExact": false,
+          "pageMetadataFields": [
+            "date",
+            "modified",
+            "modified_gmt"
+          ],
+          "revisionIdsBefore": [
+            "194",
+            "195",
+            "196",
+            "200"
+          ],
+          "revisionIdsAfter": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "mediaAndThemeExact": true,
+          "exactUnrelatedCanonicalRowsAndFiles": true,
+          "monotonicCounters": true
+        },
+        {
+          "from": "fault",
+          "to": "retry",
+          "fromVersion": 182,
+          "toVersion": 186,
+          "changed": [
+            "_tables/postmeta.json",
+            "_tables/usermeta.json",
+            "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+          ],
+          "tables": {
+            "posts": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            },
+            "postmeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "72",
+                  "postId": "193",
+                  "metaKey": "_edit_lock",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "usermeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "21",
+                  "userId": "1",
+                  "metaKey": "wp_persisted_preferences",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "users": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            }
+          },
+          "pageBodyExact": true,
+          "pageMetadataFields": [
+            "date",
+            "modified",
+            "modified_gmt"
+          ],
+          "revisionIdsBefore": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "revisionIdsAfter": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "mediaAndThemeExact": true,
+          "exactUnrelatedCanonicalRowsAndFiles": true,
+          "monotonicCounters": true
+        },
+        {
+          "from": "retry",
+          "to": "final",
+          "fromVersion": 186,
+          "toVersion": 197,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/usermeta.json"
+          ],
+          "tables": {
+            "posts": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            },
+            "postmeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "72",
+                  "postId": "193",
+                  "metaKey": "_edit_lock",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "usermeta": {
+              "added": [],
+              "removed": [],
+              "changed": [
+                {
+                  "id": "21",
+                  "userId": "1",
+                  "metaKey": "wp_persisted_preferences",
+                  "fields": [
+                    "meta_value"
+                  ],
+                  "contentUnchanged": true
+                }
+              ]
+            },
+            "users": {
+              "added": [],
+              "removed": [],
+              "changed": []
+            }
+          },
+          "pageBodyExact": true,
+          "pageMetadataFields": [],
+          "revisionIdsBefore": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "revisionIdsAfter": [
+            "194",
+            "195",
+            "196",
+            "200",
+            "201"
+          ],
+          "mediaAndThemeExact": true,
+          "exactUnrelatedCanonicalRowsAndFiles": true,
+          "monotonicCounters": true
+        }
+      ],
+      "telemetry": {
+        "traces": 102,
+        "completedTraces": 102,
+        "fullPacks": 4,
+        "fullPackBytes": 9177441,
+        "requestFailures": 0
+      }
+    }
+  ]
+}

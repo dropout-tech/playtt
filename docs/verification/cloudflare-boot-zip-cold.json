@@ -1,0 +1,67 @@
+{
+  "schema": "playtt/boot-zip-cold-delivery/v1",
+  "runs": [
+    {
+      "variant": "baseline",
+      "httpStatus": 200,
+      "loginFieldsPresent": true,
+      "wordPressRequests": 1,
+      "wallMs": 2194,
+      "traceMs": 2181,
+      "mdiExtractionMs": 96,
+      "cumulativeSampledJsBytes": 61812408,
+      "memory": {
+        "matchedSamples": 3,
+        "samples": 5,
+        "maximumObservedComponentSumBytes": 123495690,
+        "maximumObservedPhpBytes": 67108864,
+        "providerAcceptance": false
+      },
+      "originalSiteDataExact": true,
+      "r2InventoryUnchanged": true,
+      "r2ObjectCount": 301,
+      "files": 298,
+      "canonicalVersion": 193,
+      "chargedBytes": 0,
+      "closed": true,
+      "sealed": true,
+      "pending": 0,
+      "disposed": true,
+      "exceptions": 0,
+      "terminalExit": 1,
+      "terminalNote": "ReferenceError in final console output after summary write, verification and full disposal; not replayed"
+    },
+    {
+      "variant": "candidate",
+      "httpStatus": 200,
+      "loginFieldsPresent": true,
+      "wordPressRequests": 1,
+      "wallMs": 2074,
+      "traceMs": 2063,
+      "mdiExtractionMs": 40,
+      "cumulativeSampledJsBytes": 61306272,
+      "memory": {
+        "matchedSamples": 3,
+        "samples": 5,
+        "maximumObservedComponentSumBytes": 122163599,
+        "maximumObservedPhpBytes": 67108864,
+        "providerAcceptance": false
+      },
+      "originalSiteDataExact": true,
+      "r2InventoryUnchanged": true,
+      "r2ObjectCount": 301,
+      "files": 298,
+      "canonicalVersion": 193,
+      "chargedBytes": 0,
+      "closed": true,
+      "sealed": true,
+      "pending": 0,
+      "disposed": true,
+      "exceptions": 0,
+      "terminalExit": 0
+    }
+  ],
+  "cloudRequests": 0,
+  "fullEditorAccepted": false,
+  "providerAccepted": false
+}

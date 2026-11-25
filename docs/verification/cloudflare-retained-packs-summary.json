@@ -1,0 +1,158 @@
+{
+  "at": "2026-11-20T05:09:42.958818+00:00",
+  "result": "archive-integrity-pass-with-historical-media-gaps",
+  "scope": "Read-only verification of all retained source snapshots; no cloud mutation, deployment, PHP boots or production cutover",
+  "source": {
+    "worker": "playtt-wp-free-rebuild-audit",
+    "bucket": "playtt-wordpress-rebuild-audit",
+    "canonicalVersion": 309,
+    "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+    "pins": 21,
+    "publisher": "paused",
+    "fenceActive": false
+  },
+  "inventory": {
+    "objects": 1110,
+    "payloadBytes": 640239740,
+    "revisionManifests": 222,
+    "objectMetadataUnchanged": true,
+    "atomicSnapshot": false
+  },
+  "download": {
+    "gets": 144,
+    "bytes": 170385283,
+    "cacheHits": 0
+  },
+  "verification": {
+    "retainedRevisions": 72,
+    "verifiedRevisions": 72,
+    "uniquePacks": 72,
+    "compressedBytes": 165118461,
+    "decodedBytesAcrossRevisions": 318766645,
+    "indexedFilesAcrossRevisions": 21293,
+    "verifiedProtectedRevisions": 21,
+    "revisionsWithMediaRelationshipGaps": 5,
+    "perRevisionPhpRestoreTested": false,
+    "failures": []
+  },
+  "newlyCoveredUnpinnedRevisions": 51,
+  "historicalMediaGaps": [
+    {
+      "revision": "1a990cab-192c-45f5-9483-3e474027e655",
+      "persistedAt": "2026-11-18T19:56:21.164Z",
+      "pinned": true,
+      "postmetaLayout": "full-table-v1",
+      "postmetaRows": 7,
+      "attachmentRecords": 16,
+      "linkedAttachmentFiles": 1,
+      "missingAttachmentFileLinks": 15
+    },
+    {
+      "revision": "29f20b62-9dfe-4576-8926-933f820a2725",
+      "persistedAt": "2026-11-18T19:01:19.679Z",
+      "pinned": false,
+      "postmetaLayout": "legacy-unmarked",
+      "postmetaRows": 2,
+      "attachmentRecords": 15,
+      "linkedAttachmentFiles": 0,
+      "missingAttachmentFileLinks": 15
+    },
+    {
+      "revision": "825b7d5b-fe47-4746-8b12-b146a1a4bca4",
+      "persistedAt": "2026-11-18T19:58:20.671Z",
+      "pinned": true,
+      "postmetaLayout": "full-table-v1",
+      "postmetaRows": 7,
+      "attachmentRecords": 16,
+      "linkedAttachmentFiles": 1,
+      "missingAttachmentFileLinks": 15
+    },
+    {
+      "revision": "98751c70-7fc3-4202-8222-13879468b3ec",
+      "persistedAt": "2026-11-18T19:35:22.541Z",
+      "pinned": true,
+      "postmetaLayout": "legacy-unmarked",
+      "postmetaRows": 2,
+      "attachmentRecords": 15,
+      "linkedAttachmentFiles": 0,
+      "missingAttachmentFileLinks": 15
+    },
+    {
+      "revision": "edf7bf71-b84e-444e-a6d9-1cce10366841",
+      "persistedAt": "2026-11-18T20:00:09.816Z",
+      "pinned": true,
+      "postmetaLayout": "full-table-v1",
+      "postmetaRows": 4,
+      "attachmentRecords": 15,
+      "linkedAttachmentFiles": 0,
+      "missingAttachmentFileLinks": 15
+    }
+  ],
+  "currentSourceReceipt": {
+    "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+    "persistedAt": "2026-11-20T03:25:06.853Z",
+    "manifestSha256": "06a9e1a413cb1b6c808fafd0ec7632e2fb832baa6a20fa657d40f5e77e38261b",
+    "packSha256": "54bde7a44ea53b1ccd36bbe964afc0ddeb3045c6ba62a90682bbcf7b3b1eb61e",
+    "packBytes": 2292624,
+    "decodedBytes": 4427214,
+    "indexedFiles": 295,
+    "markdownFiles": 168,
+    "markdownRecords": 27,
+    "uploads": 15,
+    "wpContent": 112,
+    "jsonTablesParsed": 13,
+    "historyRows": 61,
+    "postmetaRows": 48,
+    "postmetaLayout": "full-table-v1",
+    "attachmentRecords": 15,
+    "linkedAttachmentFiles": 15,
+    "missingAttachmentFileLinks": 0,
+    "perRevisionPhpRestoreTested": false,
+    "pinned": true,
+    "result": "pass",
+    "retentionReasons": [
+      "current",
+      "daily-7-UTC",
+      "durable-backup-pin",
+      "last-24-hours",
+      "latest-20",
+      "verified-local-backup"
+    ]
+  },
+  "localChecks": {
+    "retainedPackTestsPassed": 8,
+    "retentionTestsPassed": 10,
+    "patchesApplied": 23,
+    "sourceFilesCompared": 66,
+    "auditExtrasCompared": 3,
+    "assemblyDifferences": [],
+    "dependencyInstallation": false,
+    "runtimeBuild": false,
+    "remoteDeployment": false
+  },
+  "safeToApply": false,
+  "cloudObjectsDeleted": 0,
+  "bytesReclaimed": 0,
+  "proposedOnly": {
+    "retiredRevisions": 150,
+    "objects": 300,
+    "bytes": 355062939
+  },
+  "postListingRetry": {
+    "result": "fail",
+    "httpStatus": 500,
+    "terminal": true,
+    "action": "Same read-only list retried once; archive download and decode were not restarted"
+  },
+  "limits": [
+    "Archive hashes and decoded index integrity do not prove every historical WordPress version is a ready rollback target.",
+    "Five historical revisions, including four pins, have missing attachment file relationships; their bytes and pins were preserved.",
+    "The other 67 revisions pass this specific relationship check, not every possible semantic or PHP restore check.",
+    "Full roots, external-writer boundaries and verified unresolved-write reconciliation remain open; source has no write journal.",
+    "Matching non-atomic listings are not a drain proof. No deletion, capacity refund or billing savings are authorized by this report.",
+    "Private recovery target and production were not operated by this audit. Earlier deployed version evidence remains separate.",
+    "UI, cancellation attribution, memory/latency, real-device/IME, practical handoff and sustained free-tier acceptance remain open."
+  ],
+  "prDraft": true,
+  "goalStatus": "active"
+}

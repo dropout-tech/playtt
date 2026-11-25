@@ -1,0 +1,218 @@
+--- a/src/playtt-storage-capacity.ts
++++ b/src/playtt-storage-capacity.ts
+@@ -1,3 +1,4 @@
++import { WRITE_PROOF_SCHEMA, WRITE_SETTLED_SCHEMA, PlayttWriteDrainError, isWriteToken, newWriteTracking, validateWriteTracking, openTrackedWrite, settleTrackedWrite, acquireWriteDrain, releaseWriteDrain, writeTrackingStatus, type WriteKind, type WriteTracking } from './playtt-write-drain.js';
+ // Private research deployment only. This bounds R2 payload allocation attempts,
+ // not shared-account billing, metadata, reads, or writes through other clients.
+ export interface PlayttCapacityEnv {
+@@ -5,6 +6,7 @@
+   PLAYTT_STORAGE_BUDGET?: DurableObjectNamespace;
+   PLAYTT_R2_CAPACITY_SCOPE?: string;
+   PLAYTT_R2_CAPACITY_LIMIT_BYTES?: string;
++  PLAYTT_R2_WRITE_TRACKING?: string;
+ }
+
+ const SCOPES = new Set(['playtt-wordpress-rebuild-audit', 'playtt-wordpress-pin-restore-audit']);
+@@ -19,6 +21,7 @@
+   chargedBytes: number;
+   chargedPuts: number;
+   initializedAt: string;
++  writeTracking?: WriteTracking;
+ }
+
+ export class PlayttCapacityError extends Error {
+@@ -34,6 +37,8 @@
+ }
+
+ export function playttCapacityLimit(env: PlayttCapacityEnv): number | null {
++  if (env.PLAYTT_R2_WRITE_TRACKING !== undefined && env.PLAYTT_R2_WRITE_TRACKING !== 'v1') throw new PlayttCapacityError(503);
++  if (env.PLAYTT_R2_WRITE_TRACKING && env.PLAYTT_R2_CAPACITY_SCOPE === undefined) throw new PlayttCapacityError(503);
+   if (env.PLAYTT_R2_CAPACITY_SCOPE === undefined && env.PLAYTT_R2_CAPACITY_LIMIT_BYTES === undefined) return null;
+   const raw = env.PLAYTT_R2_CAPACITY_LIMIT_BYTES;
+   if (!SCOPES.has(env.PLAYTT_R2_CAPACITY_SCOPE ?? '') || !env.PLAYTT_STORAGE_BUDGET || !raw || !/^[1-9][0-9]*$/.test(raw)) throw new PlayttCapacityError(503);
+@@ -62,29 +67,58 @@
+   const callerLimit = playttCapacityLimit(env);
+   if (callerLimit === null || guarded.has(env.WORDPRESS_STATE_BUCKET)) return env;
+   const bucket = env.WORDPRESS_STATE_BUCKET;
+-  const reserve = async (bytes: number): Promise<void> => {
++  const tracking = env.PLAYTT_R2_WRITE_TRACKING === 'v1';
++  const reserve = async (bytes: number, kind: WriteKind = 'put'): Promise<string | undefined> => {
+     try {
+     const response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/reserve', {
+-      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ bytes, limitBytes: callerLimit }),
++      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ bytes, limitBytes: callerLimit, ...(tracking ? { schema: WRITE_PROOF_SCHEMA, kind } : kind === 'delete' ? { schema: RESERVATION_SCHEMA, kind } : {}) }),
+     });
+     if (!response.ok) throw new PlayttCapacityError(response.status === 507 ? 507 : 503);
+-    const proof = await response.json<{ schema?: string; reserved?: boolean; bytes?: number; limitBytes?: number }>();
+-    if (proof.schema !== RESERVATION_SCHEMA || proof.reserved !== true || proof.bytes !== bytes
++    const proof = await response.json<{ schema?: string; reserved?: boolean; bytes?: number; limitBytes?: number; ticket?: string; kind?: string }>();
++    if (proof.schema !== (tracking ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA) || proof.reserved !== true || proof.bytes !== bytes
+         || !Number.isSafeInteger(proof.limitBytes) || proof.limitBytes! < 1 || proof.limitBytes! > callerLimit) throw new PlayttCapacityError(503);
++    if ((tracking && !isWriteToken(proof.ticket)) || ((tracking || kind === 'delete') && proof.kind !== kind)) throw new PlayttCapacityError(503);
++    return proof.ticket;
+     } catch (error) {
+       throw error instanceof PlayttCapacityError ? error : new PlayttCapacityError(503);
+     }
+   };
++  const settled = async (ticket: string | undefined): Promise<void> => {
++    if (!tracking) return;
++    try {
++      const response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/tracking/settle', {
++        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ticket }),
++      });
++      if (!response.ok) throw new PlayttCapacityError(503);
++      const proof = await response.json<{ schema?: string; settled?: boolean; ticket?: string }>();
++      if (proof.schema !== WRITE_SETTLED_SCHEMA || proof.settled !== true || proof.ticket !== ticket) throw new PlayttCapacityError(503);
++    } catch {
++      // R2 already confirmed the mutation. Do not turn a confirmed pointer put
++      // into a synthetic failure before the coordinator commits its DO record.
++      // A missing acknowledgement leaves the durable ticket open, blocking GC.
++      console.warn(JSON.stringify({ schema: 'playtt/r2-write-ack-failure/v1', knownR2Completion: true }));
++    }
++  };
+   const wrapped = {
+-    head: bucket.head.bind(bucket), get: bucket.get.bind(bucket), list: bucket.list.bind(bucket), delete: bucket.delete.bind(bucket),
++    head: bucket.head.bind(bucket), get: bucket.get.bind(bucket), list: bucket.list.bind(bucket),
++    delete: (async (keys: string | string[]) => {
++      const selected = typeof keys === 'string' ? [keys] : keys;
++      if (!Array.isArray(selected) || selected.length > 1000 || selected.some(key => typeof key !== 'string' || (!key.startsWith('sites/default/') && !key.startsWith('runtime/')))) throw new PlayttCapacityError(503);
++      const ticket = await reserve(0, 'delete');
++      await bucket.delete(keys);
++      await settled(ticket);
++    }) as R2Bucket['delete'],
+     put: (async (key: string, value: Parameters<R2Bucket['put']>[1], options?: R2PutOptions) => {
+       if (!key.startsWith('sites/default/') && !key.startsWith('runtime/')) throw new PlayttCapacityError(503);
+       const bytes = bytesOf(value);
+-      await reserve(bytes); // Durable charge precedes every attempted R2 write.
++      const ticket = await reserve(bytes); // Durable charge and open ticket precede every attempted R2 write.
+       if (bytesOf(value) !== bytes) throw new PlayttCapacityError(503);
+       // Conditional misses, failures, aborts and overwrites keep their charge.
+       // No automatic refund can make uncertain writes disappear from the bound.
+-      return bucket.put(key, value, options);
++      const result = await bucket.put(key, value, options);
++      // No finally acknowledgement: an R2 rejection may have an unknown outcome.
++      await settled(ticket);
++      return result;
+     }) as R2Bucket['put'],
+     createMultipartUpload: async () => { throw new PlayttCapacityError(503); },
+     resumeMultipartUpload: () => { throw new PlayttCapacityError(503); },
+@@ -97,6 +131,7 @@
+   if (!value || value.schema !== SCHEMA || value.scope !== scope || !Number.isFinite(Date.parse(value.initializedAt))
+       || ![value.baselineBytes, value.baselineObjects, value.chargedBytes, value.chargedPuts].every(v => Number.isSafeInteger(v) && v >= 0)
+       || !Number.isSafeInteger(value.baselineBytes + value.chargedBytes)) throw new PlayttCapacityError(503);
++  if (value.writeTracking !== undefined) validateWriteTracking(value.writeTracking);
+ }
+
+ export class PlayttStorageBudget implements DurableObject {
+@@ -105,6 +140,7 @@
+
+   fetch(request: Request): Promise<Response> {
+     const result = this.tail.then(() => this.handle(request)).catch(error => {
++      if (error instanceof PlayttWriteDrainError) return Response.json({ code: 'playtt_write_drain', message: error.message }, { status: error.status });
+       if (error instanceof PlayttCapacityError) return playttCapacityResponse(error);
+       return playttCapacityResponse(new PlayttCapacityError(503));
+     });
+@@ -141,30 +177,66 @@
+       await this.state.storage.put(KEY, ledger);
+       return this.status(limit);
+     }
++    if (path.startsWith('/tracking/') && request.method === 'POST') return this.trackingAction(path, request, scope, limit);
+     if (path !== '/reserve' || request.method !== 'POST') return new Response('Not found', { status: 404 });
+     const raw = await request.text();
+-    if (raw.length > 128) throw new PlayttCapacityError(503);
+-    const input = JSON.parse(raw) as { bytes: number; limitBytes: number };
++    if (raw.length > 256) throw new PlayttCapacityError(503);
++    const input = JSON.parse(raw) as { bytes: number; limitBytes: number; schema?: string; kind?: WriteKind };
+     if (!Number.isSafeInteger(input.bytes) || input.bytes < 0 || !Number.isSafeInteger(input.limitBytes)
+         || input.limitBytes < 1 || input.limitBytes > 2_000_000_000) throw new PlayttCapacityError(503);
+     const effectiveLimit = Math.min(limit, input.limitBytes);
++    let ticket: string | undefined;
+     await this.state.storage.transaction(async transaction => {
+       const ledger = await transaction.get<Ledger>(KEY);
+       if (!ledger) throw new PlayttCapacityError(503);
+       validateLedger(ledger, scope);
++      const trackingRequired = this.env.PLAYTT_R2_WRITE_TRACKING === 'v1' || ledger.writeTracking !== undefined;
++      if (trackingRequired) {
++        if (!ledger.writeTracking || input.schema !== WRITE_PROOF_SCHEMA || !['put', 'delete'].includes(input.kind ?? '')
++          || (input.kind === 'delete' && input.bytes !== 0)) throw new PlayttCapacityError(503);
++        ticket = openTrackedWrite(ledger.writeTracking, input.kind!, input.bytes);
++      } else if ((input.schema !== undefined || input.kind !== undefined) && !(input.schema === RESERVATION_SCHEMA && input.kind === 'delete' && input.bytes === 0)) throw new PlayttCapacityError(503);
+       if (input.bytes > effectiveLimit - ledger.baselineBytes - ledger.chargedBytes) throw new PlayttCapacityError(507);
+-      const next = { ...ledger, chargedBytes: ledger.chargedBytes + input.bytes, chargedPuts: ledger.chargedPuts + 1 };
++      const next = { ...ledger, chargedBytes: ledger.chargedBytes + input.bytes, chargedPuts: ledger.chargedPuts + (input.kind === 'delete' ? 0 : 1) };
+       validateLedger(next, scope);
+       await transaction.put(KEY, next);
+     });
+-    return Response.json({ schema: RESERVATION_SCHEMA, reserved: true, bytes: input.bytes, limitBytes: effectiveLimit });
++    return Response.json({ schema: ticket ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA, reserved: true, bytes: input.bytes, limitBytes: effectiveLimit, ...(input.kind ? { kind: input.kind } : {}), ...(ticket ? { ticket } : {}) });
++  }
++
++  private async trackingAction(path: string, request: Request, scope: string, limit: number): Promise<Response> {
++    const raw = await request.text();
++    if (raw.length > 256) throw new PlayttCapacityError(503);
++    const input = (raw ? JSON.parse(raw) : {}) as { token?: string; ticket?: string };
++    let publicProof: object | undefined;
++    await this.state.storage.transaction(async transaction => {
++      const ledger = await transaction.get<Ledger>(KEY);
++      if (!ledger) throw new PlayttCapacityError(503);
++      validateLedger(ledger, scope);
++      if (path === '/tracking/initialize') {
++        if (this.env.PLAYTT_R2_WRITE_TRACKING !== 'v1') throw new PlayttCapacityError(503);
++        if (ledger.writeTracking === undefined) ledger.writeTracking = newWriteTracking();
++      } else {
++        if (!ledger.writeTracking) throw new PlayttCapacityError(503);
++        if (path === '/tracking/settle') {
++          settleTrackedWrite(ledger.writeTracking, input.ticket);
++          publicProof = { schema: WRITE_SETTLED_SCHEMA, settled: true, ticket: input.ticket };
++        } else if (path === '/tracking/acquire') acquireWriteDrain(ledger.writeTracking, input.token);
++        else if (path === '/tracking/release') releaseWriteDrain(ledger.writeTracking, input.token);
++        else throw new PlayttCapacityError(503);
++      }
++      validateLedger(ledger, scope);
++      await transaction.put(KEY, ledger);
++    });
++    return publicProof ? Response.json(publicProof) : this.status(limit);
+   }
+
+   private async status(limit: number): Promise<Response> {
+     const ledger = await this.state.storage.get<Ledger>(KEY);
+-    if (!ledger) return Response.json({ schema: SCHEMA, reservationSchema: RESERVATION_SCHEMA, initialized: false, limitBytes: limit });
++    if (!ledger) return Response.json({ schema: SCHEMA, reservationSchema: RESERVATION_SCHEMA, initialized: false, limitBytes: limit, trackingConfigured: this.env.PLAYTT_R2_WRITE_TRACKING === 'v1' });
+     validateLedger(ledger, this.env.PLAYTT_R2_CAPACITY_SCOPE!);
+-    return Response.json({ ...ledger, reservationSchema: RESERVATION_SCHEMA, initialized: true, limitBytes: limit,
++    const { writeTracking, ...publicLedger } = ledger;
++    return Response.json({ ...publicLedger, ...(writeTracking ? { writeTracking: writeTrackingStatus(writeTracking) } : {}), reservationSchema: writeTracking ? WRITE_PROOF_SCHEMA : RESERVATION_SCHEMA, initialized: true, limitBytes: limit, trackingConfigured: this.env.PLAYTT_R2_WRITE_TRACKING === 'v1',
+       remainingBytes: Math.max(0, limit - ledger.baselineBytes - ledger.chargedBytes),
+       accounting: 'payload baseline plus all attempted put bytes; no automatic refunds' });
+   }
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -1,4 +1,5 @@
+ import { withPlayttStorageCapacity, playttCapacityStub, playttCapacityLimit, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js';
++import { isWriteToken } from './playtt-write-drain.js';
+ import { backupPinInput } from './playtt-backup-pins.js';
+ export { PlayttStorageBudget } from './playtt-storage-capacity.js';
+ import { DurableObjectRevisionCoordinator, WordPressStateCoordinator } from './state-coordinator.js';
+@@ -157,12 +158,19 @@
+         else if (request.method === 'POST') {
+           const raw = await request.text();
+           if (raw.length > 1024) return new Response('Invalid capacity action', { status: 400 });
+-          let input: { action?: string; fenceToken?: string };
++          let input: { action?: string; fenceToken?: string; drainToken?: string; legacyWritersDrained?: boolean };
+           try { input = JSON.parse(raw); } catch { return new Response('Invalid capacity action', { status: 400 }); }
+-          if (input.action !== 'initialize' || typeof input.fenceToken !== 'string') return new Response('Invalid capacity action', { status: 400 });
++          if (!['initialize', 'initialize-write-tracking', 'acquire-write-drain', 'release-write-drain'].includes(input.action || '') || typeof input.fenceToken !== 'string') return new Response('Invalid capacity action', { status: 400 });
+           const coordinator = new DurableObjectRevisionCoordinator(env.WORDPRESS_STATE.getByName(partitionName(env, site.id)), site.id);
+           await coordinator.renewFence(input.fenceToken, 600_000);
+-          response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid/initialize', { method: 'POST' });
++          const actions: Record<string, string> = { initialize: '/initialize', 'initialize-write-tracking': '/tracking/initialize', 'acquire-write-drain': '/tracking/acquire', 'release-write-drain': '/tracking/release' };
++          // Migration is an explicit operator assertion, not an inference from
++          // lease expiry: legacy writers have no durable tickets to inspect.
++          if (input.action === 'initialize-write-tracking' && input.legacyWritersDrained !== true) return new Response('Confirm legacy writers have drained before enabling tracking', { status: 400 });
++          if (input.action!.endsWith('write-drain') && !isWriteToken(input.drainToken)) return new Response('Invalid write drain token', { status: 400 });
++          response = await playttCapacityStub(env).fetch('https://playtt-capacity.invalid' + actions[input.action!], {
++            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: input.drainToken }),
++          });
+         } else return new Response('Method not allowed', { status: 405 });
+         const result = new Response(response.body, response);
+         result.headers.set('Cache-Control', 'no-store'); result.headers.set('X-Robots-Tag', 'noindex, nofollow');

@@ -1,0 +1,25 @@
+{
+  "schema": "playtt/base64-feature/v1",
+  "at": "2026-11-22T01:17:14.750Z",
+  "workerdVersion": "1.20260828.1",
+  "compatibilityDate": "2026-07-18",
+  "compatibilityFlags": [
+    "nodejs_compat",
+    "enable_request_signal"
+  ],
+  "result": {
+    "nativeEncoder": "function",
+    "nodeBuffer": "function",
+    "encodedBuffer": "AP+AQA==",
+    "encodedNative": "AP+AQA==",
+    "inputUnchanged": [
+      0,
+      255,
+      128,
+      64
+    ]
+  },
+  "disposed": true,
+  "cloudRequests": 0,
+  "outbound": 0
+}

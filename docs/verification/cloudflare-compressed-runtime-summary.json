@@ -1,0 +1,62 @@
+{
+  "schema": "playtt/compressed-runtime-candidate/v1",
+  "at": "2026-11-21T11:12:47.906890+00:00",
+  "result": "local-integrated-native-http-pass-not-deployed",
+  "changes": {
+    "readerIntegrated": true,
+    "writerIntegrated": true,
+    "exactWriterFlag": "PLAYTT_CONTENT_OVERLAY=content-gzip-v1",
+    "defaultEnabled": false,
+    "metadataOnlyMarkdown": true,
+    "rawUploadsAndWpContentPreserved": true,
+    "fullFallbackMaterializesMissingMarkdown": true,
+    "backupGraphRawReplicasIncluded": true,
+    "serverPinUsesCompatibleDispatcher": true,
+    "compositePinAndDownloaderSupported": true,
+    "oldRetentionStillRejects": true
+  },
+  "tests": {
+    "passed": 78,
+    "failed": 0,
+    "newIntegrationChecks": 19,
+    "typescript": "pass",
+    "sourceFunctionFaults": [
+      "gzip-put",
+      "manifest-put"
+    ],
+    "faultsReturnNoPointerOrRememberedManifest": true,
+    "nativeHttp": "pass",
+    "nativeResponseLossAndColdReadback": true,
+    "sameContentRetryNoExtraRevision": true,
+    "independentBackupExact": true,
+    "fullFallbackAndColdReadExact": true,
+    "realGateBudgetWorkflow": false,
+    "nativeBrowserWorkflow": false,
+    "providerAcceptance": false
+  },
+  "measurement": {
+    "compressedDeltaBytes": 24866,
+    "manifestBytes": 74029,
+    "deltaAndManifestBytes": 98895,
+    "scope": "One native HTTP save; excludes pointer/coordinator, full workflow and provider measurements"
+  },
+  "cloud": {
+    "requestsThisRound": 0,
+    "deployment": false,
+    "productionChanged": false,
+    "paidChange": false,
+    "lastVerifiedAt": "2026-11-21T06:28:14.277Z",
+    "lastVerifiedVersion": 161,
+    "lastVerifiedPins": 13,
+    "lastVerifiedRemainingBytes": 1881041,
+    "refreshed": false
+  },
+  "limitations": [
+    "Local native HTTP tests are not a complete native browser/gate/budget, Free provider CPU/memory/latency or sustained-usage acceptance.",
+    "Gzip/manifest PUT failures execute the real worker functions with injected storage; no provider fault injection or budget refund was attempted.",
+    "Compatible-reader full fallback and independent legacy full decoding passed; running a previous deployed worker against an adopted restored bucket is still untested.",
+    "Original native heartbeat workflow exhausted its budget; this change has not yet rerun that whole workflow.",
+    "No new config, provider activation, production cutover, cap increase, ledger refund or history/pin cleanup."
+  ],
+  "goalStatus": "active"
+}

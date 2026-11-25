@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-22T05:27:58.047341+00:00",
+  "source": "Authenticated Cloudflare visible R2 UI, expected account",
+  "r2": {
+    "period": "October 25 - November 25",
+    "billableUsageUsd": 0,
+    "classA": "7.31k",
+    "classB": "60.53k",
+    "storage": "2.33 GB"
+  },
+  "billingMayLag": true,
+  "detailedDoUsageRefreshed": false,
+  "planChanged": false
+}

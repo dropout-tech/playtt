@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-18T20:56:02.212081+00:00",
+  "result": "pass-with-bounded-conclusion",
+  "events": 143,
+  "outcomes": {
+    "ok": 141,
+    "canceled": 2
+  },
+  "exceptions": 0,
+  "incompleteTraces": 1,
+  "requestFailures": [
+    {
+      "at": "2026-11-18T20:49:59.267Z",
+      "version": "42b9023d-9df6-4b30-88b2-b76149440617",
+      "request": {
+        "category": "admin-ajax",
+        "method": "POST"
+      },
+      "category": "request-body-unavailable",
+      "endpoint": "admin-ajax",
+      "method": "POST",
+      "operation": "mutation",
+      "runtime": "not-used",
+      "phase": "request.translate",
+      "signalAborted": true,
+      "bodyUsed": true,
+      "cleanupFailed": false,
+      "bodyRead": {
+        "reason": "aborted",
+        "usedBefore": false,
+        "lockedBefore": false,
+        "abortedBefore": true,
+        "abortedAfter": true
+      }
+    }
+  ],
+  "controlledWindowRuntimes": {
+    "warm": 3,
+    "not-used": 1
+  },
+  "controlledFailureOnlyBeforePhpAndLease": true,
+  "noNewFailureInNormalCycle": true,
+  "maxObservedWasmHeapBytes": 73924608,
+  "observerStopped": true,
+  "orphanProcessCheck": "none",
+  "limits": "One controlled complete-body disconnect reproduced an aborted read before PHP; this does not retrospectively prove the cause of earlier uninstrumented failures. One incomplete transport did not yield an execution failure log. Event counts are not HTTP request counts; WASM heap is not whole-isolate memory."
+}

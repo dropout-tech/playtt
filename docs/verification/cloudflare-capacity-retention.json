@@ -1,0 +1,54 @@
+{
+  "schema": "playtt/retention-proposal/v1",
+  "at": "2026-11-20T02:59:19.865835+00:00",
+  "mode": "offline-proposal-only",
+  "safeToApply": false,
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "inventoryAt": "2026-11-20T02:59:19.865835+00:00",
+  "objects": 1086,
+  "bytes": 625679206,
+  "revisions": 216,
+  "packBytes": 495454100,
+  "retainedRevisions": 66,
+  "verifiedBackupPins": 20,
+  "proposedRetiredRevisions": 150,
+  "proposedObjects": 300,
+  "proposedBytes": 355062939,
+  "currentRevision": "c48150e9-0e75-4399-93e4-d94e7c908e2b",
+  "currentPackBytes": 2292478,
+  "byUtcDay": {
+    "2026-11-20": {
+      "revisions": 43,
+      "packBytes": 98644973
+    },
+    "2026-11-19": {
+      "revisions": 4,
+      "packBytes": 9182386
+    },
+    "2026-11-18": {
+      "revisions": 169,
+      "packBytes": 387626741
+    }
+  },
+  "policy": {
+    "allRecentHours": 24,
+    "latestCount": 20,
+    "dailyDaysUTC": 7
+  },
+  "requiredBeforeAnyDeletion": [
+    "Review retention policy and exact retirement list",
+    "Confirm complete backup pin registry",
+    "Stop new mutation/publication work and drain in-flight operations under a renewable fence",
+    "Re-list metadata and re-check all coordinator, operation, publication and backup roots",
+    "Verify retained pack contents and perform an independent restore",
+    "Implement fail-closed write-budget admission; deletion alone is not a cost cap"
+  ],
+  "limitations": [
+    "No cloud mutation/deletion or runtime change",
+    "No content/ZIP reads from R2; object sizes are metadata checks, not content integrity",
+    "Inventory is not atomic and no in-flight operation graph was captured",
+    "Proposed storage savings are not billing savings or a free-tier guarantee"
+  ],
+  "verifiedLocalArchives": 21,
+  "privateInventorySha256": "f49fe3036791463f350d779b3bbc808323dfef9ab001e1900d2b2ce0136b070c"
+}

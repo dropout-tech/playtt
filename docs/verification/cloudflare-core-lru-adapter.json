@@ -1,0 +1,47 @@
+{
+  "schema": "playtt/core-lru-adapter/v1",
+  "sourceSha256": "385e86a870bc8757af0eae5dec5aa28623add5ed9113b0b344f15f66d621fcdb",
+  "candidateSha256": "51ada8f92a11d39d146f169aa532d29d211d431ef9d95436263ca62b95433958",
+  "cacheSha256": "9c3044fdaf897ebca5ca661756596a2c75a6cae477641bd3eddc179f52a73982",
+  "proofSha256": "cd75e394e4008ca4c10748efd4578e073c5e0ab47f9fe97e7a695061dc61430c",
+  "changes": [
+    {
+      "from": "import {deflateRawSync,inflateRawSync} from 'node:zlib';",
+      "to": "import {deflateRawSync,inflateRawSync} from 'node:zlib';\nimport {createDecodedCoreCache} from './playtt-core-lru-cache.mjs';"
+    },
+    {
+      "from": "cacheBytes=512*1024",
+      "to": "cacheBytes=12*1024*1024"
+    },
+    {
+      "from": "let cache;",
+      "to": "const cache=createDecodedCoreCache({mode:'lru',limitBytes:cacheBytes});"
+    },
+    {
+      "from": "if(cache?.record===r)return cache.bytes;",
+      "to": "const hit=cache.get(r);if(hit)return hit;"
+    },
+    {
+      "from": "if(bytes.buffer.byteLength<=cacheBytes)cache={record:r,bytes};else cache=undefined;",
+      "to": "cache.set(r,bytes);"
+    },
+    {
+      "from": "if(cache?.record===r)cache=undefined;",
+      "to": "cache.delete(r);"
+    },
+    {
+      "from": "cache?.bytes.buffer.byteLength||0",
+      "to": "cache.bytes"
+    },
+    {
+      "from": "clearCache:()=>{cache=undefined;}",
+      "to": "clearCache:()=>cache.clear()"
+    }
+  ],
+  "defaultCacheBytes": 12582912,
+  "maxEntries": 2048,
+  "decodeOptionsAndOutputLimitUnchanged": true,
+  "newPhpCase": "multi-file-cache-invalidation",
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0
+}

@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-20T03:03:33.261Z",
+  "operation": "Read-only operator state. No PHP/editor request.",
+  "states": [
+    {
+      "worker": "playtt-wp-free-rebuild-audit",
+      "canonicalVersion": 303,
+      "pointer": {
+        "revision": "c48150e9-0e75-4399-93e4-d94e7c908e2b",
+        "manifestKey": "sites/default/markdown/revisions/c48150e9-0e75-4399-93e4-d94e7c908e2b.json",
+        "persistedAt": "2026-11-20T02:46:39.337Z"
+      },
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    },
+    {
+      "worker": "playtt-wp-free-restore-audit",
+      "canonicalVersion": 175,
+      "pointer": {
+        "revision": "d419f38a-3c0a-4a3b-b1ef-7d6df4f0ebcd",
+        "manifestKey": "sites/default/markdown/revisions/d419f38a-3c0a-4a3b-b1ef-7d6df4f0ebcd.json",
+        "persistedAt": "2026-11-19T18:35:15.162Z"
+      },
+      "coherent": true,
+      "fenceActive": false,
+      "publisher": "paused"
+    }
+  ]
+}

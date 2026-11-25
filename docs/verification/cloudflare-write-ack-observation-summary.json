@@ -1,0 +1,20 @@
+{
+  "events": 184,
+  "outcomes": {
+    "ok": 184
+  },
+  "versions": {
+    "673d1217-4a10-4a41-9a35-955c19da5f38": 77,
+    "dc9704f3-cbcf-4f11-af8e-3cf37e8bc6d5": 107
+  },
+  "exceptions": 0,
+  "requestFailures": 0,
+  "incompleteTraces": 0,
+  "acknowledgementFailures": 0,
+  "acknowledgementRecoveries": 0,
+  "maxSampledWasmHeapBytes": 71827456,
+  "observerStopped": true,
+  "firstAt": "2026-11-20T05:37:52.211Z",
+  "lastAt": "2026-11-20T05:40:58.601Z",
+  "scope": "Finite sanitized platform observation of normal native save/redeploy/readback/cleanup and backup; events are not unique requests, no remote failure injection"
+}

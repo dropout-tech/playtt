@@ -1,0 +1,21 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -1473,7 +1473,17 @@
+         await onPreparedCommit?.({ pointer: next, version: activeLease.version + 1, ssiResult: await response.clone().json(), publicationJobKey: publicationJob?.key ?? null })
+         await heartbeat?.("committing", 90)
+       }
+-      const committed = await trace.measure("coordinator.commit", () => commitLease(coordinator, request.url, activeLease, next))
++      // Only native HTTP requests may finish without a new commit receipt.
++      // persistRuntime has already reconciled every canonical/media/theme file;
++      // pointer equality alone is insufficient if a publication job needs the
++      // next coordinator version. Imports/maintenance keep their receipt contract.
++      const unchangedNative = route === 'wordpress' && !publicationJob && samePointer(pointer, next)
++      const committed = unchangedNative
++        ? await trace.measure('lease.release.unchanged', async () => {
++            await releaseLease(coordinator, request.url, activeLease)
++            return { pointer: next, version: activeLease.version }
++          })
++        : await trace.measure("coordinator.commit", () => commitLease(coordinator, request.url, activeLease, next))
+       finalized = true
+       if (retainCommittedRuntime) {
+         const stateMatched = samePointer(committed.pointer, next)

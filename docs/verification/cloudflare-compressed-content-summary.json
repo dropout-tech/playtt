@@ -1,0 +1,63 @@
+{
+  "schema": "playtt/compressed-content-candidate/v1",
+  "at": "2026-11-21T10:37:36.572834+00:00",
+  "result": "prototype-validated-not-integrated",
+  "sourceSha256": "bee5813df04a53dafd5288e7484b5259973822bbea5360d56061648317827cf8",
+  "tests": {
+    "distinctUnitChecks": 24,
+    "passed": 24,
+    "typescript": "pass",
+    "realStoppedDataOfflineRestore": true,
+    "independentPrototypeCopy": true,
+    "independentLegacyFullMaterialization": true,
+    "coldLocalWorkerd": true,
+    "workerdEncodingMatchesOfflineArchive": true,
+    "boundedStreamRejectsOversizedOutput": true
+  },
+  "measurements": {
+    "changedRawBytes": 359284,
+    "framedDecodedBytes": 360087,
+    "compressedDeltaBytes": 26225,
+    "completeManifestBytes": 74029,
+    "singleDeltaPlusManifestBytes": 100254,
+    "canonicalFiles": 298,
+    "prototypeDependencyObjects": 4,
+    "totalDependencyPayloadBytes": 2469750
+  },
+  "format": {
+    "schema": "playtt/canonical-compressed-content/v1",
+    "base": "one full snapshot",
+    "rawInventoryIdentityUnchanged": true,
+    "newObjectNamespace": "sites/<site>/delta-packs/<compressed-sha256>.gz",
+    "oldReadersReject": true,
+    "oldPinRegistryRejectsWithoutMutation": true
+  },
+  "sourceReviewCorrection": "Copy each supplied buffer into the owned frame before asynchronous hashing; a new regression verifies caller-buffer reuse cannot alter encoded bytes. Final workerd rerun uses a distinct owner and matches the earlier independently materialized archive exactly.",
+  "activation": {
+    "workerEntrypointIntegrated": false,
+    "writerIntegrated": false,
+    "coldReaderIntegrated": false,
+    "normalBackupToolsIntegrated": false,
+    "flagsAdded": false,
+    "configsChanged": 0,
+    "existingRuntimeSourcesChanged": false
+  },
+  "limitations": [
+    "Prototype four-object dependency copy proves raw-content recovery; it does not by itself recreate loose upload/theme objects for current asset-serving routes. Full legacy materialization includes their verified replicas.",
+    "24 checks and local workerd validate the module. No native WordPress save/reopen/logout flow uses this format yet.",
+    "Measured bytes are one cumulative delta and its full manifest, not a complete workflow capacity, CPU, latency or whole-isolate memory result.",
+    "Compatibility readers, persistence fallback, backup graph/export/import, pins and rollback guards must be integrated and tested before enabling any writer."
+  ],
+  "cloud": {
+    "requestsThisRound": 0,
+    "deployed": false,
+    "productionChanged": false,
+    "paidChange": false,
+    "lastVerifiedAt": "2026-11-21T06:28:14.277Z",
+    "lastVerifiedVersion": 161,
+    "lastVerifiedPins": 13,
+    "lastVerifiedRemainingBytes": 1881041,
+    "refreshed": false
+  },
+  "goalStatus": "active"
+}

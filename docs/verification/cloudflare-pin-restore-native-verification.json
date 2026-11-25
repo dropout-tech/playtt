@@ -1,0 +1,496 @@
+{
+  "at": "2026-11-20T04:17:02.365Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "scope": "Authenticated native content/history reads, theme/language, direct media hashes and six HTTP page responses; embedded original content URLs intentionally unchanged; no browser acceptance",
+  "markdownRecords": 27,
+  "templateParts": 2,
+  "navigation": 2,
+  "nativeRevisions": 21,
+  "archivedHistoryRows": 61,
+  "mediaVerified": 15,
+  "pages": [
+    {
+      "slug": "home",
+      "status": 200,
+      "lineLinkMatchesBackup": true
+    },
+    {
+      "slug": "about",
+      "status": 200,
+      "lineLinkMatchesBackup": true
+    },
+    {
+      "slug": "class",
+      "status": 200,
+      "lineLinkMatchesBackup": true
+    },
+    {
+      "slug": "coaches",
+      "status": 200,
+      "lineLinkMatchesBackup": true
+    },
+    {
+      "slug": "locations",
+      "status": 200,
+      "lineLinkMatchesBackup": true
+    },
+    {
+      "slug": "partner",
+      "status": 200,
+      "lineLinkMatchesBackup": true
+    }
+  ],
+  "anonymousDraftPageStatus": 404,
+  "anonymousDraftEditStatus": 401,
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 487
+    },
+    {
+      "target": "restore",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 854
+    },
+    {
+      "target": "restore",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6373
+    },
+    {
+      "target": "restore",
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1343
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/10?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 905
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/11?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 844
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/12?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 855
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/13?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 889
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/14?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 798
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/15?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 783
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/16?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1060
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/17?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 839
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/18?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 804
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/19?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 772
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/20?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 924
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/21?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3706
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/22?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 755
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/23?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 767
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/media/7?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 820
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/25?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 815
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/26?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 849
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/2?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1140
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/27?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1012
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 981
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/28?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 869
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/29?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 863
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/3?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 846
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/posts/6?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 769
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/posts/93?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 720
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/posts/1?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 756
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/posts/5?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 732
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 820
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/navigation/39?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 760
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/navigation/61?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 760
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 809
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 776
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 724
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/25/revisions?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1020
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/26/revisions?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1052
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/27/revisions?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 871
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/24/revisions?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 886
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 984
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/brand-mobile.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1010
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/camp.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 725
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/children.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 839
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/coach-amber.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 914
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/coach-huang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 761
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/coach-kuo.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 737
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/coach-lin.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 673
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/coach-tsai.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 704
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/coach-wang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 702
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/coach-wen.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 783
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/coach-yang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 684
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/individual.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 716
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/logo.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 713
+    },
+    {
+      "target": "restore",
+      "path": "/wp-content/uploads/2026/11/playtt-do-probe.png",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 750
+    },
+    {
+      "target": "restore",
+      "path": "/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2391
+    },
+    {
+      "target": "restore",
+      "path": "/about/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2621
+    },
+    {
+      "target": "restore",
+      "path": "/class/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2652
+    },
+    {
+      "target": "restore",
+      "path": "/coaches/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2334
+    },
+    {
+      "target": "restore",
+      "path": "/locations/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2245
+    },
+    {
+      "target": "restore",
+      "path": "/partner/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2414
+    },
+    {
+      "target": "restore",
+      "path": "/?p=6",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 1956
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/posts/6?context=edit",
+      "method": "GET",
+      "status": 401,
+      "wallMs": 988
+    }
+  ]
+}

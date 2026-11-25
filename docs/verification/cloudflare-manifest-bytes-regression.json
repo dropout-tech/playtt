@@ -1,0 +1,14 @@
+{
+  "schema": "playtt/manifest-bytes-regression/v1",
+  "sourceHashes": {
+    "baseline": "f8a7c6e175297f2e8422f1d4c2704fce094f49af0d3b8a48b09e68a472925795",
+    "candidate": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99"
+  },
+  "testSourceSha256": "52405a7bc7a6aea298d912264a18e923a82280f05ab58112c42114f0dfdc7573",
+  "compiledTestSha256": "de4dd569790cc913d7ce936e706a3cb452c00c24537b74ef81f8d171e3dc4870",
+  "exit": 0,
+  "signal": null,
+  "tests": 25,
+  "failures": 0,
+  "cloudRequests": 0
+}

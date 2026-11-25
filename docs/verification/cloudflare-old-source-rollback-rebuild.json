@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-21T14:59:39.029805+00:00",
+  "result": "pass",
+  "basis": "Prior verified envelope-provider assembly plus archived local diagnostics; no upstream rebuild",
+  "sources": 81,
+  "oldSourcesVerified": 77,
+  "vendorFilesVerified": 109,
+  "sourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "sourcesUnchanged": true,
+  "configsUnchanged": 20,
+  "newFiles": 6,
+  "prerequisites": 85,
+  "allPriorAssemblyFilesUnchanged": true,
+  "helpers": 363,
+  "helpersMatchingRuntime": 362,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "cloudRequests": 0,
+  "productionChanged": false
+}

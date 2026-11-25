@@ -1,0 +1,106 @@
+{
+  "schema": "playtt/visual-cloud-next-recovery-check/v1",
+  "at": "2026-11-24T19:20:59.730Z",
+  "result": "local-data-verifier-pass-remote-followup-prepared",
+  "scope": "Offline data comparison using the real frozen canonical201 and local rehearsal216 backups; not a provider run",
+  "tests": {
+    "node": "v24.18.0",
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "durationMs": 2231.8362,
+    "maxRSSKiB": 171696,
+    "logSha256": "6723060c82ee721c7f2be18a9b36f6a691812030265fa67ed43d4abe77c5a29e",
+    "cases": [
+      "accept the independently verified native visual edit, restart and logout snapshot",
+      "reject a draft body whose integrity marker was not updated",
+      "reject changing an original revision",
+      "reject a revision attached to another page",
+      "reject a retained new login session",
+      "reject an unrelated user capability change",
+      "reject changed media/theme bytes",
+      "reject a regressed option sequence",
+      "reject an unrelated option file change",
+      "reject publishing the private draft",
+      "reject preferences beyond editor mode and modification time",
+      "reject duplicate revision identity",
+      "reject a modification time outside the trial",
+      "reject an unchanged baseline masquerading as a successful save"
+    ]
+  },
+  "snapshots": {
+    "baselineCanonicalVersion": 201,
+    "afterLocalVersion": 216,
+    "baselineObjects": 304,
+    "afterObjects": 304,
+    "files": 298,
+    "addedRevisionIds": [
+      210
+    ]
+  },
+  "changes": [
+    "Index each snapshot once with read-only buffer views instead of copying all markdown payloads on every lookup",
+    "Negative fixtures replace only the changed file, sharing unrelated read-only assets",
+    "Use the real _options/siteurl.json path for the unrelated-option rejection case"
+  ],
+  "preservedFailedAttempts": [
+    {
+      "privateArtifact": "playtt-visual-cloud-next-integrity-tests-private.log",
+      "sha256": "d61d8f6567846173f046cf77df1f1b2d0548e961d8d3037a13d9ad04902985ff",
+      "kind": "allocation-failure-before-individual-cases"
+    },
+    {
+      "privateArtifact": "playtt-visual-cloud-next-integrity-tests-local-private.log",
+      "sha256": "aa42c5d8b73abc3a059c6af386242e8ca211f4615fe81c6d2e0616895b910707",
+      "kind": "allocation-failure-before-individual-cases"
+    },
+    {
+      "privateArtifact": "playtt-visual-cloud-next-integrity-tests-node2418-private.log",
+      "sha256": "14c6563f6336c898d72817abf722ac4862f9615ba95f2f98c0889edf183c9657",
+      "kind": "allocation-failure-before-individual-cases"
+    },
+    {
+      "privateArtifact": "playtt-visual-cloud-next-integrity-tests-indexed-private.log",
+      "sha256": "39fdc1bbbc52764ed6fa1e0bc7614d6df3680007050dad24f8869591e487a1fa",
+      "kind": "13-pass-1-fixture-path-failure"
+    }
+  ],
+  "tools": {
+    "added": [
+      "playtt-visual-cloud-next-integrity.mjs",
+      "playtt-visual-cloud-next-integrity.test.mjs",
+      "playtt-visual-cloud-next-audit.mjs",
+      "playtt-visual-cloud-next-backup.mjs",
+      "playtt-visual-cloud-next-final.mjs",
+      "playtt-visual-cloud-next-read-diagnostic.mjs"
+    ],
+    "existingSixToolsUnchanged": true,
+    "directDependencies": 10,
+    "syntaxChecksPassed": 6,
+    "remoteBackupAuditFinalExecuted": false,
+    "manifestByteConvention": "bytes/sha256 are normalized LF; observedBytes/observedSha256 are raw source",
+    "priorDependencyByteMetadataCorrected": 2,
+    "allDependencySourceHashesUnchanged": true
+  },
+  "authorization": {
+    "authorizationFileExists": false,
+    "runOwnerExists": false,
+    "frozenPlanSha256": "1c8861153a52fb34eb92c1bf16448b2608e594e85bfba0b72f3aa248eb9edaf1",
+    "frozenControllerSha256": "bce93c25a91e79780bd6ec852f96eeabd3024309d062c1a5886474e997f54d2e"
+  },
+  "remoteCalls": 0,
+  "productionChanged": false,
+  "fullBackendAccepted": false,
+  "limitations": [
+    "Prior allocation failures are retained; no controlled benchmark proved the sole underlying cause",
+    "Local Node process RSS does not measure Cloudflare isolate memory",
+    "Future actual Chrome evidence, post-trial backup, pin and restored deployment verification remain unexecuted"
+  ],
+  "delivery": {
+    "files": 11,
+    "toolsExact": 12,
+    "directDependenciesExact": 10,
+    "knownPrivateValuesChecked": 5,
+    "privateValueMatches": 0
+  }
+}

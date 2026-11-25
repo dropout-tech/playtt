@@ -1,0 +1,330 @@
+{
+  "version": "0.2.1",
+  "result": "pass",
+  "checks": [
+    {
+      "brokenImages": [],
+      "h1": "起來，玩一下！",
+      "height": 900,
+      "line": {
+        "bottom": 884,
+        "height": 62,
+        "left": 282,
+        "right": 344,
+        "top": 822,
+        "width": 62,
+        "x": 282,
+        "y": 822
+      },
+      "route": "/",
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "brokenImages": [],
+      "h1": "一起玩，玩出更多可能。",
+      "height": 900,
+      "line": {
+        "bottom": 884,
+        "height": 62,
+        "left": 282,
+        "right": 344,
+        "top": 822,
+        "width": 62,
+        "x": 282,
+        "y": 822
+      },
+      "route": "/about/",
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "brokenImages": [],
+      "h1": "你的第一拍，從這裡開始。",
+      "height": 900,
+      "line": {
+        "bottom": 884,
+        "height": 62,
+        "left": 282,
+        "right": 344,
+        "top": 822,
+        "width": 62,
+        "x": 282,
+        "y": 822
+      },
+      "route": "/class/",
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "brokenImages": [],
+      "h1": "一起練習，一起進步。",
+      "height": 900,
+      "line": {
+        "bottom": 884,
+        "height": 62,
+        "left": 282,
+        "right": 344,
+        "top": 822,
+        "width": 62,
+        "x": 282,
+        "y": 822
+      },
+      "route": "/coaches/",
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "brokenImages": [],
+      "h1": "找到你的上場地點。",
+      "height": 900,
+      "line": {
+        "bottom": 884,
+        "height": 62,
+        "left": 282,
+        "right": 344,
+        "top": 822,
+        "width": 62,
+        "x": 282,
+        "y": 822
+      },
+      "route": "/locations/",
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "brokenImages": [],
+      "h1": "讓更多人，一起玩桌球。",
+      "height": 900,
+      "line": {
+        "bottom": 884,
+        "height": 62,
+        "left": 282,
+        "right": 344,
+        "top": 822,
+        "width": 62,
+        "x": 282,
+        "y": 822
+      },
+      "route": "/partner/",
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "brokenImages": [],
+      "h1": "起來，玩一下！",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 657,
+        "right": 729,
+        "top": 804,
+        "width": 72,
+        "x": 657,
+        "y": 804
+      },
+      "route": "/",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "brokenImages": [],
+      "h1": "一起玩，玩出更多可能。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 657,
+        "right": 729,
+        "top": 804,
+        "width": 72,
+        "x": 657,
+        "y": 804
+      },
+      "route": "/about/",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "brokenImages": [],
+      "h1": "你的第一拍，從這裡開始。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 657,
+        "right": 729,
+        "top": 804,
+        "width": 72,
+        "x": 657,
+        "y": 804
+      },
+      "route": "/class/",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "brokenImages": [],
+      "h1": "一起練習，一起進步。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 657,
+        "right": 729,
+        "top": 804,
+        "width": 72,
+        "x": 657,
+        "y": 804
+      },
+      "route": "/coaches/",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "brokenImages": [],
+      "h1": "找到你的上場地點。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 657,
+        "right": 729,
+        "top": 804,
+        "width": 72,
+        "x": 657,
+        "y": 804
+      },
+      "route": "/locations/",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "brokenImages": [],
+      "h1": "讓更多人，一起玩桌球。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 657,
+        "right": 729,
+        "top": 804,
+        "width": 72,
+        "x": 657,
+        "y": 804
+      },
+      "route": "/partner/",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "brokenImages": [],
+      "h1": "起來，玩一下！",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 1329,
+        "right": 1401,
+        "top": 804,
+        "width": 72,
+        "x": 1329,
+        "y": 804
+      },
+      "route": "/",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1": "一起玩，玩出更多可能。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 1329,
+        "right": 1401,
+        "top": 804,
+        "width": 72,
+        "x": 1329,
+        "y": 804
+      },
+      "route": "/about/",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1": "你的第一拍，從這裡開始。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 1329,
+        "right": 1401,
+        "top": 804,
+        "width": 72,
+        "x": 1329,
+        "y": 804
+      },
+      "route": "/class/",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1": "一起練習，一起進步。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 1329,
+        "right": 1401,
+        "top": 804,
+        "width": 72,
+        "x": 1329,
+        "y": 804
+      },
+      "route": "/coaches/",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1": "找到你的上場地點。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 1329,
+        "right": 1401,
+        "top": 804,
+        "width": 72,
+        "x": 1329,
+        "y": 804
+      },
+      "route": "/locations/",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1": "讓更多人，一起玩桌球。",
+      "height": 900,
+      "line": {
+        "bottom": 876,
+        "height": 72,
+        "left": 1329,
+        "right": 1401,
+        "top": 804,
+        "width": 72,
+        "x": 1329,
+        "y": 804
+      },
+      "route": "/partner/",
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  ]
+}

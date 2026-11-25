@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-18T22:11:40.256Z",
+  "result": "pass",
+  "scope": "One fixed six-update comparison on the same owned draft; logged-in/warm before timed updates; no CPU capture, sanitized tail on both variants. Sequential order and growing owned revision history are limitations.",
+  "variant": "concurrent",
+  "version": "b5398964-ce89-470f-91f7-fa154936a06d",
+  "id": 146,
+  "writes": [
+    {
+      "index": 0,
+      "wallMs": 8282.661
+    },
+    {
+      "index": 1,
+      "wallMs": 6839.661
+    },
+    {
+      "index": 2,
+      "wallMs": 7215.219
+    },
+    {
+      "index": 3,
+      "wallMs": 6935.022
+    },
+    {
+      "index": 4,
+      "wallMs": 6639.128
+    },
+    {
+      "index": 5,
+      "wallMs": 6694.456
+    }
+  ],
+  "medianMs": 6887.3415,
+  "minMs": 6639.128,
+  "maxMs": 8282.661,
+  "wholeResponseClientWallTime": true,
+  "homeUnchanged": true,
+  "contentHash": "bd770c76798e5a44937599acd9159e34181d6be7340423fa9c162174f14e8116",
+  "canonicalVersion": 180,
+  "revision": "fea888cd-0cf4-4329-baaf-833716b7afd3",
+  "publisher": "paused"
+}

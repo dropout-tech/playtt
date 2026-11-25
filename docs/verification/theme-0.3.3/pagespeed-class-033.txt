@@ -1,0 +1,317 @@
+- banner:
+  - link "PageSpeed Insights logo PageSpeed Insights":
+    - /url: ./
+    - img "PageSpeed Insights logo"
+    - generic: PageSpeed Insights
+  - button "複製連結":
+    - generic: 複製連結
+  - generic: 文件
+  - link "文件":
+    - /url: https://developers.google.com/speed/docs/insights/v5/about
+- generic: 這個網站會使用 Google 的 Cookie 提供服務及分析流量。
+- generic: 瞭解詳情。
+- link "瞭解詳情。":
+  - /url: https://policies.google.com/technologies/cookies
+- button "好，我知道了。":
+  - generic: 好，我知道了。
+- generic: 報告建立時間：2026年11月25日 凌晨3:39:36
+- textbox:
+  - /placeholder: 輸入網頁網址
+  - text: https://1bb1c274.playtt-brand-preview.pages.dev/class/
+- paragraph: 請輸入有效的網址
+- button "分析":
+  - generic: 分析
+- tablist:
+  - tab "行動裝置" [selected]:
+    - generic: smartphone
+    - generic: 行動裝置
+  - tab "電腦":
+    - generic: computer
+    - generic: 電腦
+- tabpanel "行動裝置":
+  - generic: 瞭解實際使用者體驗
+  - button "button":
+  - generic: 沒有資料
+  - separator
+  - generic: 診斷效能問題
+  - article:
+    - link "100 效能":
+      - /url: "#performance"
+      - generic: "100"
+      - generic: 效能
+    - link "100 無障礙功能":
+      - /url: "#accessibility"
+      - generic: "100"
+      - generic: 無障礙功能
+    - link "100 最佳做法":
+      - /url: "#best-practices"
+      - generic: "100"
+      - generic: 最佳做法
+    - link "69 搜尋引擎最佳化 (SEO)":
+      - /url: "#seo"
+      - generic: "69"
+      - generic: 搜尋引擎最佳化 (SEO)
+    - link "2/2 代理瀏覽":
+      - /url: "#agentic-browsing"
+      - generic: 2/2
+      - generic: 代理瀏覽
+    - text: 此為預估值，可能與實際情況有所不同。系統會直接根據這些指標
+    - link "計算效能分數":
+      - /url: https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
+    - text: 。
+    - link "查看計算機。":
+      - /url: https://googlechrome.github.io/lighthouse/scorecalc/#FCP=901&LCP=901&TBT=0&CLS=0&SI=901&TTI=901&device=mobile&version=13.6.0
+    - generic: 0–49
+    - generic: 50–89
+    - generic: 90–100
+    - img "Final Screenshot"
+    - checkbox "Toggle the display of metric descriptions"
+    - generic: 指標
+    - generic: 展開檢視畫面
+    - generic: First Contentful Paint
+    - generic: 0.9 秒
+    - generic: Largest Contentful Paint
+    - generic: 0.9 秒
+    - generic: Total Blocking Time
+    - generic: 0 毫秒
+    - generic: Cumulative Layout Shift
+    - generic: "0"
+    - generic: Speed Index
+    - generic: 0.9 秒
+    - list:
+      - listitem: Captured at 2026年11月25日 上午3:39 [GMT+8]
+      - listitem: 已模擬 Moto G Power with Lighthouse 13.6.0
+      - listitem: 單頁工作階段
+      - listitem: 初次載入網頁
+      - listitem: 慢速 4G 節流
+      - listitem: Using HeadlessChromium 157.0.8103.38 with lr
+    - button "查看矩形式樹狀結構圖"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - img "Screenshot"
+    - generic: 顯示與下列指標相關的稽核項目：
+    - radio "All" [checked]
+    - generic: All
+    - radio "FCP"
+    - generic "First Contentful Paint": FCP
+    - radio "LCP"
+    - generic "Largest Contentful Paint": LCP
+    - radio "CLS"
+    - generic "Cumulative Layout Shift": CLS
+    - generic: 深入分析
+    - generic "會阻斷算繪的要求 —預估可省下 410 毫秒":
+      - generic: 會阻斷算繪的要求
+      - text: —預估可省下 410 毫秒
+    - generic "網路依附元件樹狀結構":
+      - generic: 網路依附元件樹狀結構
+    - generic "使用有效的快取生命週期 —預估可省下 16 KiB":
+      - generic: 使用有效的快取生命週期
+      - text: —預估可省下 16 KiB
+    - generic "最佳化 DOM 大小":
+      - generic: 最佳化 DOM 大小
+    - generic "LCP 細目":
+      - generic: LCP 細目
+    - text: 你也可以前往 Chrome 開發人員工具的「效能」面板查看這些深入分析結果。只要
+    - link "記錄追蹤記錄":
+      - /url: https://developer.chrome.com/docs/devtools/performance/reference?utm_source=lighthouse&utm_medium=lr
+    - text: ，即可查看更詳細的資訊。
+    - generic: 診斷
+    - generic "圖片元素沒有明確的width和height" [active]:
+      - text: 圖片元素沒有明確的
+      - code: width
+      - text: 和
+      - code: height
+    - text: 請明確設定圖片元素的寬度和高度，以減少版面配置轉移並改善 CLS。
+    - link "瞭解如何設定圖片尺寸":
+      - /url: https://web.dev/articles/optimize-cls?utm_source=lighthouse&utm_medium=lr#images_without_dimensions
+    - generic "Relevant to Cumulative Layout Shift": CLS
+    - generic "這項稽核作業不會影響整體類別分數。": 未計分
+    - table:
+      - rowgroup:
+        - row "網址":
+          - columnheader
+          - columnheader "網址":
+            - generic: 網址
+      - rowgroup:
+        - row "pages.dev 第一方":
+          - cell "pages.dev 第一方":
+            - generic: pages.dev
+            - generic: 第一方
+          - cell
+        - row "Let’s Play 桌球聯盟首頁 <img decoding=\"async\" src=\"/wp-content/themes/lets-play/assets/images/brand-logo.svg\" alt=\"Let’s Play 桌球聯盟首頁\"> …images/brand-logo.svg(1bb1c274.playtt-brand-preview.pages.dev)":
+          - cell "Let’s Play 桌球聯盟首頁 <img decoding=\"async\" src=\"/wp-content/themes/lets-play/assets/images/brand-logo.svg\" alt=\"Let’s Play 桌球聯盟首頁\">":
+            - generic "div.wp-block-group > figure.wp-block-image > a > img":
+              - generic: Let’s Play 桌球聯盟首頁
+              - generic: <img decoding="async" src="/wp-content/themes/lets-play/assets/images/brand-logo.svg" alt="Let’s Play 桌球聯盟首頁">
+          - cell "…images/brand-logo.svg(1bb1c274.playtt-brand-preview.pages.dev)":
+            - generic "https://1bb1c274.playtt-brand-preview.pages.dev/wp-content/themes/lets-play/assets/images/brand-logo.svg":
+              - link "…images/brand-logo.svg":
+                - /url: https://1bb1c274.playtt-brand-preview.pages.dev/wp-content/themes/lets-play/assets/images/brand-logo.svg
+              - text: (1bb1c274.playtt-brand-preview.pages.dev)
+        - row "Let’s Play 桌球聯盟 <img decoding=\"async\" src=\"/wp-content/themes/lets-play/assets/images/brand-logo.svg\" alt=\"Let’s Play 桌球聯盟\"> …images/brand-logo.svg(1bb1c274.playtt-brand-preview.pages.dev)":
+          - cell "Let’s Play 桌球聯盟 <img decoding=\"async\" src=\"/wp-content/themes/lets-play/assets/images/brand-logo.svg\" alt=\"Let’s Play 桌球聯盟\">":
+            - generic "div.wp-block-group > div.wp-block-group > figure.wp-block-image > img":
+              - generic: Let’s Play 桌球聯盟
+              - generic: <img decoding="async" src="/wp-content/themes/lets-play/assets/images/brand-logo.svg" alt="Let’s Play 桌球聯盟">
+          - cell "…images/brand-logo.svg(1bb1c274.playtt-brand-preview.pages.dev)":
+            - generic "https://1bb1c274.playtt-brand-preview.pages.dev/wp-content/themes/lets-play/assets/images/brand-logo.svg":
+              - link "…images/brand-logo.svg":
+                - /url: https://1bb1c274.playtt-brand-preview.pages.dev/wp-content/themes/lets-play/assets/images/brand-logo.svg
+              - text: (1bb1c274.playtt-brand-preview.pages.dev)
+    - text: 進一步瞭解應用程式的效能。這些數字不會
+    - link "直接影響":
+      - /url: https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
+    - text: 「效能」分數。
+    - generic "通過稽核項目 (21) 顯示":
+      - generic: 通過稽核項目 (21)
+      - generic: 顯示
+    - text: — — —
+    - heading "100 無障礙功能" [level=2]:
+      - generic: "100"
+      - generic: 無障礙功能
+    - text: 這些檢查可找出
+    - link "網頁應用程式無障礙設計值得改善之處":
+      - /url: https://developer.chrome.com/docs/lighthouse/accessibility/?utm_source=lighthouse&utm_medium=lr
+    - text: 。自動偵測功能只能偵測出部分問題，而且無法保證網頁應用程式的無障礙程度，因此建議一併使用
+    - link "手動測試":
+      - /url: https://web.dev/articles/how-to-review?utm_source=lighthouse&utm_medium=lr
+    - text: 。
+    - generic "其他手動檢查項目 (10) 隱藏":
+      - generic: 其他手動檢查項目 (10)
+      - generic: 隱藏
+    - generic "Interactive controls are keyboard focusable":
+      - generic: Interactive controls are keyboard focusable
+    - generic "Interactive elements indicate their purpose and state":
+      - generic: Interactive elements indicate their purpose and state
+    - generic "The page has a logical tab order":
+      - generic: The page has a logical tab order
+    - generic "Visual order on the page follows DOM order":
+      - generic: Visual order on the page follows DOM order
+    - generic "User focus is not accidentally trapped in a region":
+      - generic: User focus is not accidentally trapped in a region
+    - generic "The user's focus is directed to new content added to the page":
+      - generic: The user's focus is directed to new content added to the page
+    - generic "HTML5 landmark elements are used to improve navigation":
+      - generic: HTML5 landmark elements are used to improve navigation
+    - generic "Offscreen content is hidden from assistive technology":
+      - generic: Offscreen content is hidden from assistive technology
+    - generic "Custom controls have associated labels":
+      - generic: Custom controls have associated labels
+    - generic "Custom controls have ARIA roles":
+      - generic: Custom controls have ARIA roles
+    - text: 這些稽核項目會檢查自動化測試工具未涵蓋的區域。詳情請參閱
+    - link "無障礙功能審查的執行指南":
+      - /url: https://web.dev/articles/how-to-review?utm_source=lighthouse&utm_medium=lr
+    - text: 。
+    - generic "通過稽核項目 (21) 顯示":
+      - generic: 通過稽核項目 (21)
+      - generic: 顯示
+    - generic "不適用 (42) 顯示":
+      - generic: 不適用 (42)
+      - generic: 顯示
+    - heading "100 最佳做法" [level=2]:
+      - generic: "100"
+      - generic: 最佳做法
+    - generic: 信任與安全性
+    - generic "確保 CSP 能有效防範 XSS 攻擊":
+      - generic: 確保 CSP 能有效防範 XSS 攻擊
+    - generic "使用安全強度高的 HTTP 嚴格傳輸安全性政策":
+      - generic: 使用安全強度高的 HTTP 嚴格傳輸安全性政策
+    - generic "使用 COOP 確保正確的來源隔離":
+      - generic: 使用 COOP 確保正確的來源隔離
+    - generic "使用 Trusted Types 減輕 DOM 型 XSS 攻擊的影響":
+      - generic: 使用 Trusted Types 減輕 DOM 型 XSS 攻擊的影響
+    - generic: 瀏覽器相容性
+    - generic "Baseline 功能":
+      - generic: Baseline 功能
+    - generic: 一般
+    - generic "偵測到 JavaScript 程式庫":
+      - generic: 偵測到 JavaScript 程式庫
+    - generic "通過稽核項目 (13) 顯示":
+      - generic: 通過稽核項目 (13)
+      - generic: 顯示
+    - generic "不適用 (2) 顯示":
+      - generic: 不適用 (2)
+      - generic: 顯示
+    - heading "69 搜尋引擎最佳化 (SEO)" [level=2]:
+      - generic: "69"
+      - generic: 搜尋引擎最佳化 (SEO)
+    - text: 這些檢查項目可確保你的網頁採用基本的搜尋引擎最佳化建議。請注意，Lighthouse 這裡未列入評分的其他因素還有很多，這些因素也可能會影響你的網頁搜尋結果排名，包括
+    - link "網站體驗核心指標":
+      - /url: https://web.dev/explore/vitals?utm_source=lighthouse&utm_medium=lr
+    - text: 的成效。
+    - link "進一步瞭解 Google 搜尋基礎入門":
+      - /url: https://support.google.com/webmasters/answer/35769
+    - text: 。
+    - generic: 檢索及建立索引
+    - generic "網頁的索引功能遭到封鎖":
+      - generic: 網頁的索引功能遭到封鎖
+    - generic: 檢索器需要存取你的應用程式，才能將網站顯示在搜尋結果中。
+    - generic "其他手動檢查項目 (1) 顯示":
+      - generic: 其他手動檢查項目 (1)
+      - generic: 顯示
+    - generic: 在您的網站上執行這些額外的驗證工具，以檢查其他 SEO 最佳做法。
+    - generic "通過稽核項目 (9) 顯示":
+      - generic: 通過稽核項目 (9)
+      - generic: 顯示
+    - heading "2/2 代理瀏覽" [level=2]:
+      - generic: 2/2
+      - generic: 代理瀏覽
+    - text: 這些檢查旨在確保網站品質優良並
+    - link "適合 AI 代理瀏覽":
+      - /url: https://goo.gle/lighthouse-agentic-web
+    - text: ，同時驗證 WebMCP 整合正確性。這個類別仍在開發階段，可能隨時會有變動。
+    - generic "通過稽核項目 (2) 顯示":
+      - generic: 通過稽核項目 (2)
+      - generic: 顯示
+    - text: — —
+    - generic "不適用 (5) 顯示":
+      - generic: 不適用 (5)
+      - generic: 顯示
+- text: — — — — — — — —
+- contentinfo:
+  - generic: 前往 PageSpeed Insights 查看更多資訊
+  - link "最新消息":
+    - /url: https://developers.google.com/speed/docs/insights/release_notes
+  - link "說明文件":
+    - /url: https://developers.google.com/speed/docs/insights/v5/about
+  - link "瞭解網路效能":
+    - /url: https://developers.google.com/speed
+  - link "在 Stack Overflow 上提出問題":
+    - /url: https://stackoverflow.com/questions/tagged/pagespeed-insights
+  - link "郵寄清單":
+    - /url: https://groups.google.com/g/pagespeed-insights-discuss
+  - generic: 相關內容
+  - link "最新動態":
+    - /url: https://developer.chrome.com/blog
+  - link "網站基礎知識":
+    - /url: https://developers.google.com/focus/web-development
+  - link "個案研究":
+    - /url: https://web.dev/case-studies
+  - link "Podcast":
+    - /url: https://web.dev/shows
+  - generic: 聯絡方式
+  - link "Twitter":
+    - /url: https://twitter.com/ChromiumDev
+  - link "YouTube":
+    - /url: https://www.youtube.com/user/ChromeDevelopers
+  - link "Google Developers Logo":
+    - /url: https://developers.google.com/
+    - img "Google Developers Logo"
+  - link "Chrome":
+    - /url: https://developer.chrome.com/
+  - link "Firebase":
+    - /url: https://firebase.google.com/
+  - link "所有產品":
+    - /url: https://developers.google.com/products/
+  - link "條款與隱私權政策":
+    - /url: https://policies.google.com/
+  - text: 詳情請參閱
+  - link "Google Developers 網站政策":
+    - /url: https://developers.google.com/terms/site-policies
+  - text: 。

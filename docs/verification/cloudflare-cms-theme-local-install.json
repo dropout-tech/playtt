@@ -1,0 +1,133 @@
+{
+  "scope": "Local workerd / simulated R2 and SQLite DO only",
+  "at": "2026-11-16T18:41:19.117Z",
+  "mode": "install",
+  "result": "pass",
+  "theme": "0.2.3",
+  "state": {
+    "zipSha256": "471aaf78e1d4a15d1357ec9500a067bcff27a9a4d803f7f8dcea48a00249a79e",
+    "pages": {
+      "home": 24,
+      "about": 25,
+      "class": 26,
+      "coaches": 27,
+      "locations": 28,
+      "partner": 29
+    },
+    "expectedAboutTitle": "關於 Let’s Play｜DO 保存驗證",
+    "brand": {
+      "url": "http://127.0.0.1:9428/wp-content/uploads/2026/11/brand-desktop.webp",
+      "sha256": "411915acde994cdb34911a756486c7572ad5c58bea3444aba0c7ba4f980b2869"
+    }
+  },
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 2111
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 1497
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 884
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/theme-install.php",
+      "status": 200,
+      "wallMs": 691
+    },
+    {
+      "method": "POST",
+      "path": "/wp-admin/update.php",
+      "status": 200,
+      "wallMs": 1983
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/themes.php",
+      "status": 302,
+      "wallMs": 1408
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/tools.php",
+      "status": 200,
+      "wallMs": 643
+    },
+    {
+      "method": "POST",
+      "path": "/wp-admin/admin-post.php",
+      "status": 302,
+      "wallMs": 9093
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/pages",
+      "status": 200,
+      "wallMs": 1056
+    },
+    {
+      "method": "POST",
+      "path": "/wp-json/wp/v2/settings",
+      "status": 200,
+      "wallMs": 1465
+    },
+    {
+      "method": "POST",
+      "path": "/wp-json/wp/v2/pages/25",
+      "status": 200,
+      "wallMs": 1588
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/media",
+      "status": 200,
+      "wallMs": 621
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/tools.php",
+      "status": 200,
+      "wallMs": 596
+    },
+    {
+      "method": "POST",
+      "path": "/wp-admin/admin-post.php",
+      "status": 302,
+      "wallMs": 834
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/pages",
+      "status": 200,
+      "wallMs": 998
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/media",
+      "status": 200,
+      "wallMs": 585
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/themes",
+      "status": 200,
+      "wallMs": 599
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/pages/25",
+      "status": 200,
+      "wallMs": 552
+    }
+  ]
+}

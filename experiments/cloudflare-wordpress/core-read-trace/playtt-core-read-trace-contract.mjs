@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import {createCoreReadTrace} from './playtt-core-read-trace-module.mjs';
+assert.ok(process.argv.includes('--local')&&!process.argv.includes('--remote'));
+const t=createCoreReadTrace({maxFiles:2,maxRuns:4}),a=t.register('/wordpress/a.php',9000,2000),b=t.register('/wordpress/b.php',12000,3000);
+t.record(a,0,false,9001);t.record(a,0,true,9001);t.record(a,0,true,9001);t.record(b,1,false,12001);t.record(b,2,true,12001);
+const s=t.snapshot(true);assert.deepEqual(s.sequence,[[a,0,1],[a,4,2],[b,1,1],[b,6,1]]);assert.equal(s.calls,5);assert.equal(s.hits,3);assert.equal(s.misses,2);assert.equal(s.decodedBytes,21000);assert.equal(s.encodedBytes,5000);assert.equal(s.sequenceTruncated,false);assert.equal(s.typedArrayBytes,28);
+s.files[0].calls=0;s.sequence[0][2]=100;assert.equal(t.snapshot(true).files[0].calls,3);assert.equal(t.snapshot(true).sequence[0][2],1);
+t.record(a,0,false,9001);assert.equal(t.snapshot().sequenceTruncated,true);assert.equal(t.snapshot().runs,4);assert.equal(t.snapshot().calls,6);assert.equal(t.snapshot().decodedBytes,30000);
+assert.equal(t.register('/wordpress/c.php',1000,300),0);t.record(0,0,false,1001);assert.equal(t.snapshot().dictionaryTruncated,true);assert.equal(t.snapshot().unregisteredCalls,1);assert.equal(t.snapshot().calls,7);
+const p=createCoreReadTrace();assert.equal(p.snapshot().typedArrayBytes,458752);assert.equal(p.register('x'.repeat(513),1000,200),0);assert.equal(p.snapshot().dictionaryTruncated,true);
+for(const options of [{maxFiles:2049},{maxRuns:65537},{maxRuns:0},{maxFiles:1.5}])assert.throws(()=>createCoreReadTrace(options),/bound/);
+const report={schema:'playtt/core-read-trace-contract/v1',result:'pass',rleOrderAndReasonExact:true,countsAndBytesExact:true,snapshotsAreCopies:true,sequenceOverflowExplicit:true,dictionaryOverflowExplicit:true,pathBoundEnforced:true,typedArrayBytes:458752,invalidBoundsRejected:4,cloudRequests:0};
+await writeFile('artifacts/playtt-core-read-trace-contract.json',JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(report));

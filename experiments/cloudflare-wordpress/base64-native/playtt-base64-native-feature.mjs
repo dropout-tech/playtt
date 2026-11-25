@@ -1,0 +1,11 @@
+// One bounded pinned-runtime feature observation, not a deployment or mutation test.
+import assert from 'node:assert/strict';
+import {readFile,writeFile,access} from 'node:fs/promises';
+import {Miniflare,Log,LogLevel,convertV4MiniflareOptions} from 'miniflare';
+const path='artifacts/playtt-base64-native-feature.json';
+assert.ok(process.argv.includes('--local')&&!process.argv.includes('--remote'));
+await access(path).then(()=>{throw Error('Feature observation already exists; inspect without replay');},e=>{if(e.code!=='ENOENT')throw e;});
+const script=`import {Buffer} from 'node:buffer';export default{fetch(){const input=new Uint8Array([99,0,255,128,64,77]).subarray(1,5);return Response.json({nativeEncoder:typeof Uint8Array.prototype.toBase64,nodeBuffer:typeof Buffer.from,encodedBuffer:Buffer.from(input.buffer,input.byteOffset,input.byteLength).toString('base64'),encodedNative:typeof Uint8Array.prototype.toBase64==='function'?Uint8Array.prototype.toBase64.call(input):null,inputUnchanged:[...input]});}};`;
+let mf,outbound=0,result;
+try{mf=new Miniflare(convertV4MiniflareOptions({name:'playtt-base64-feature',modules:true,script,host:'127.0.0.1',port:9549,compatibilityDate:'2026-07-18',compatibilityFlags:['nodejs_compat','enable_request_signal'],cf:false,log:new Log(LogLevel.ERROR),telemetry:{enabled:false},outboundService:()=>{outbound++;throw Error('External network forbidden');}}));await mf.ready;const r=await mf.dispatchFetch('http://127.0.0.1:9549/feature');assert.equal(r.status,200);result=await r.json();assert.equal(result.encodedBuffer,'AP+AQA==');assert.deepEqual(result.inputUnchanged,[0,255,128,64]);if(result.encodedNative!==null)assert.equal(result.encodedNative,result.encodedBuffer);assert.equal(outbound,0);}finally{if(mf)await mf.dispose();}
+const pkg=JSON.parse(await readFile('node_modules/workerd/package.json','utf8')),report={schema:'playtt/base64-feature/v1',at:new Date().toISOString(),workerdVersion:pkg.version,compatibilityDate:'2026-07-18',compatibilityFlags:['nodejs_compat','enable_request_signal'],result,disposed:true,cloudRequests:0,outbound};await writeFile(path,JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(report));

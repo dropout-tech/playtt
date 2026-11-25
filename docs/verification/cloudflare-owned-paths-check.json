@@ -1,0 +1,32 @@
+{
+  "schema": "playtt/owned-paths-check/v1",
+  "result": "pass",
+  "baselineSha256": "0f67fe2b2e198b9665c0d9d1858d7557ab552d877b5165b89c47c9e719546a5d",
+  "candidateSha256": "b95446e9faeb1813fb25083421923f553fa45b83772733bce083f92b1c066198",
+  "comparisons": 1049,
+  "preparedComparisons": 945,
+  "cases": {
+    "path-unprepared": 815,
+    "invalid-owned": 22,
+    "invalid-canonical-short-circuit": 22,
+    "empty-metadata-short-circuit": 22,
+    "empty-tombstone-short-circuit": 22,
+    "mutated-owned": 9,
+    "returned-array-not-trusted": 1,
+    "cloned-array-not-trusted": 1,
+    "frozen-array-not-trusted": 1,
+    "unprepared-custom-iterator": 2,
+    "metadata": 60,
+    "tombstone": 45,
+    "manifest": 25,
+    "ordinary-string-like-compatibility": 2
+  },
+  "preparedSnapshotImmutable": true,
+  "preparedElementsMustBePrimitiveStrings": true,
+  "stringLikeObjectsRejected": 2,
+  "unpreparedMutableAndUntrustedInputsRevalidated": true,
+  "ordinaryApiReturnsFreshMutableArray": true,
+  "validationLimitsUnchanged": true,
+  "cloudRequests": 0,
+  "centralSourceChanged": false
+}

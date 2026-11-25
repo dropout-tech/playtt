@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-21T20:09:55.010936+00:00",
+  "result": "pass",
+  "basis": "Incremental local-memory-limits assembly plus6 diagnostic tools; candidate source not applied; no fresh dependencies",
+  "prerequisites": 112,
+  "newTools": 6,
+  "priorFilesUnchanged": 658,
+  "reapplyRefusedWithoutMutation": true,
+  "candidateSourceDelivered": true,
+  "candidateSourceInstalled": false,
+  "runtimeSourcesChanged": 0,
+  "configsChanged": 0,
+  "cloudRequests": 0,
+  "deployed": false,
+  "productionChanged": false
+}

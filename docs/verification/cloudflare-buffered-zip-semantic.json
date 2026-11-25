@@ -1,0 +1,28 @@
+{
+  "schema": "playtt/buffered-zip-proof/v1",
+  "at": "2026-11-22T00:26:56.055Z",
+  "result": "pass",
+  "upstreamSha256": "4d495f20e873d23fee4f012fbff2d30e3700b1f46637ef0346a13d377626fd81",
+  "canonicalSha256": "e14138243ebb1d650a62897a23234e35a0dc94af70b758cd4305a4594c4d9f0f",
+  "moduleSha256": "d0131db93fc46c0d97b9984922f26dfc4133e92774049ddfe426abbd63ae49c9",
+  "candidateSha256": "cc0d32926ec33b942d3b13700067a958780e9dd62fdc7449426acec9d0dd9d9b",
+  "cases": 39,
+  "valid": 16,
+  "rejected": 23,
+  "allResultsAndErrorsExact": true,
+  "actualBase": {
+    "packBytes": 2295783,
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "fileCount": 298,
+    "decodedBytes": 4439736
+  },
+  "ownershipAfterCompletion": true,
+  "observationsSha256": "b7f90e30f66ee9d093e5e526831f9e1eca126667782bc5530e4c134bb1c1f12f",
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "limitations": [
+    "Node comparisons only; local workerd allocation and full native save/restart acceptance not yet run.",
+    "Input mutation during awaited hashing is outside this completed-buffer check; candidate preserves the former Blob snapshot point after the hash check.",
+    "The pinned upstream ZIP parser and its existing malformed-input behavior are retained; this is not a ZIP security rewrite."
+  ]
+}

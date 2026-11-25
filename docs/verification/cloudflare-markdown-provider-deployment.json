@@ -1,0 +1,12 @@
+{
+  "result": "pass",
+  "sourceCommit": "67dd30840e093cc83097af4273938cbf46b15351",
+  "temporaryVersion": "fdc7f590-560c-4fa8-b68a-8fa71b0aed54",
+  "finalVersion": "9f5aa2c1-3348-4e5f-ae61-776a1b3cd51a",
+  "contentAndReadbackBindingsAbsent": true,
+  "configsChanged": 0,
+  "productionChanged": false,
+  "paidChange": false,
+  "postFinalNativeContentRequestTested": false,
+  "finalOperatorReadOnlyStateVerified": true
+}

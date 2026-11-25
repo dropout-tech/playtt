@@ -1,0 +1,105 @@
+{
+  "schema": "playtt/path-save-native-audit/v1",
+  "at": "2026-11-21T18:49:51.618Z",
+  "result": "native-save-restart-and-data-pass; connection-loss-exceptions-unresolved",
+  "localOnly": true,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "baselineLocalCopyOfCloudVersion": 181,
+  "finalLocalVersion": 191,
+  "nativeSave": {
+    "id": 193,
+    "status": 200,
+    "draft": true,
+    "contentExact": true,
+    "contentBytes": 1869,
+    "contentSha256": "5b2c57c148764bc377da85de0f85cabcc85a86587bc169356fa6be996ca79d2a",
+    "receiptVersion": 186
+  },
+  "browser": {
+    "schema": "playtt/path-save-native-browser/v1",
+    "at": "2026-11-21T18:46:23.006Z",
+    "before": {
+      "paragraphs": 10,
+      "originalLastParagraph": true,
+      "saved": true
+    },
+    "nativeEdit": {
+      "contentEditableFill": true,
+      "saveButtonClicked": true,
+      "saved": true,
+      "editedParagraph": true
+    },
+    "cold": {
+      "canvas": true,
+      "paragraphs": 10,
+      "editedParagraph": true,
+      "saved": true,
+      "revisions11": true,
+      "draft": true
+    },
+    "loggedOut": true,
+    "imeTested": false,
+    "physicalDeviceTested": false
+  },
+  "revision": {
+    "originalCount": 10,
+    "addedCount": 1,
+    "addedId": 209,
+    "originalRowsExact": true
+  },
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "page/<owned-draft>.md"
+  ],
+  "floatingDraftDate": {
+    "coreBehaviorVerified": true,
+    "source": "pinned WordPress corpus wp-includes/post.php:5356-5371",
+    "dateEqualsModified": true,
+    "withinNativeSaveWindow": true,
+    "zeroGmtUnchanged": true
+  },
+  "allOtherContentExact": true,
+  "allOriginalSessionsExactNewSessionRemoved": true,
+  "mediaAndThemeExact": true,
+  "optionSequence": {
+    "before": "784",
+    "after": "802"
+  },
+  "independentObjects": 304,
+  "independentFiles": 298,
+  "independentBackupExact": true,
+  "fullMaterializedExact": true,
+  "sealedReadOnlyRecoveryLedgerUnchanged": true,
+  "chargedBytes": 500144,
+  "chargedPuts": 30,
+  "closed": true,
+  "sealed": true,
+  "pending": 0,
+  "localProcessesDisposed": true,
+  "exceptions": {
+    "count": 8,
+    "detailsCaptured": 8,
+    "label": "login",
+    "text": "Uncaught Error: Network connection lost.",
+    "stackAvailable": false,
+    "causeUnproven": true,
+    "afterRestartCount": 0
+  },
+  "requests": 227,
+  "statusCounts": {
+    "200": 218,
+    "302": 8,
+    "303": 1
+  },
+  "httpErrors": [],
+  "limitations": [
+    "This is local native contenteditable fill/click, not physical device or IME acceptance.",
+    "Connection-loss exceptions are captured but their cause and relation to the earlier unknown exception remain unproven.",
+    "The original runner rejected floating draft date after sealing; this audit verifies its same preserved data without replaying native edits.",
+    "Independent import and full materialization are exact; not a separate end-user restore of that materialized bundle.",
+    "No Cloudflare provider peak memory, billed CPU or sustained free-use proof."
+  ]
+}

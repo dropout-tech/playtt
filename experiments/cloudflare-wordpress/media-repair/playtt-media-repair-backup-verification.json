@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-18T20:18:46.903689+00:00",
+  "result": "pass",
+  "scope": "Full remote backup: exact repaired postmeta bytes and all44 native rows; all Markdown, uploads and wp-content unchanged. Postmeta high-water64 retained; only usermeta sessions and wp_options high-water differ from adoption candidate after login.",
+  "revision": "1cbca5b4-ee39-402a-beba-41a5e0c1bec3",
+  "postmetaRows": 48,
+  "addedRows": 44,
+  "originalRows": 4,
+  "attachmentCount": 15,
+  "brandAssets": 14,
+  "legacyProbeAssets": 1,
+  "postmetaHighWater": "64",
+  "postLoginChangedPaths": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/usermeta.json"
+  ],
+  "optionHighWaterBefore": "290",
+  "optionHighWaterAfter": "293"
+}

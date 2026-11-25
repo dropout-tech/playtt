@@ -1,0 +1,59 @@
+- text:          
+- navigation "工具列":
+  - menu:
+    - menuitem "關於 WordPress":
+      - generic: 關於 WordPress
+    - menuitem "Let’s Play 桌球聯盟"
+    - menuitem "Ctrl+K 開啟命令選擇區":
+      - text: Ctrl+K
+      - generic: 開啟命令選擇區
+    - menuitem "0 則待審閱留言":
+      - generic: "0"
+      - generic: 0 則待審閱留言
+    - menuitem "新增項目":
+      - generic: 新增項目
+    - menuitem "檢視頁面"
+  - menu:
+    - menuitem "你好，admin"
+- main:
+  - heading "編輯頁面" [level=1]
+  - region "編輯器頂端列":
+    - link "檢視頁面":
+      - /url: edit.php?post_type=page
+    - toolbar "內容工具":
+      - button "區塊插入器":
+      - button "復原":
+      - button "取消復原" [disabled]:
+      - button "內容總覽":
+    - button "playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9 · 頁面":
+      - heading "playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9 · 頁面" [level=1]:
+        - generic: playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9
+        - generic: · 頁面
+    - button "已儲存" [disabled] [active]:
+      - text: 已儲存
+    - button "檢視":
+    - button "設定":
+    - button "發佈"
+    - button "設定":
+  - region "編輯器內容":
+    - iframe [name="editor-canvas"]:
+      - textbox "新增標題"
+      - 'document "區塊: 段落"': 全 Cloudflare 免費後台的限時編輯與重讀驗證：playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9。
+      - 'document "區塊: 段落"': 瀏覽器保存驗證：繁體中文、標點與重新載入。 playtt-ui-5594938d-dbc6-444e-bf7e-0057650af36f
+      - 'document "區塊: 段落"': 保存失敗後重新嘗試：內容保留、成功保存並重新載入。 playtt-retry-3e4cb7aa-8319-4d95-a703-0a19c967d052
+      - 'document "區塊: 段落"': 官方鎖定修正驗證：由第二位編輯者接管儲存，重新載入仍一致。 playtt-editor-lock-fixed-967b3d3d-22cb-49da-9a73-26b9f574d5bc
+      - 'document "區塊: 段落"': 回應遺失後只讀回確認，不重送寫入；繁體中文完整。 playtt-readback-guard-ui-e95c644d-7187-48a5-b784-78ec8f269f7e
+  - region "編輯器設定"
+  - region "編輯器發佈":
+    - button "開啟 [發佈] 面板"
+  - region "編輯器頁尾":
+    - list "區塊導覽標記":
+      - generic: 頁面
+  - button "關閉這項通知":
+    - text: 草稿已儲存。
+    - link "檢視預覽 (在新分頁中開啟)":
+      - /url: http://127.0.0.1:9449/?page_id=193
+      - text: 檢視預覽
+      - generic "(在新分頁中開啟)": ↗
+- paragraph: 通知
+- generic: 草稿已儲存。

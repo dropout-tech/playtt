@@ -1,0 +1,62 @@
+{
+  "schema": "playtt/pagespeed-preview-0.3.3/v1",
+  "capturedAt": "2026-11-24T19:41:09.238Z",
+  "scope": "Public static brand preview 0.3.3; one mobile lab run per route; not production or private WordPress",
+  "previewCommit": "50c9bbc02515bce64a080fa0729d2efc0d5ea25a",
+  "sourceCommit": "4bb8d0254b4bc01fad96bc9d6950ae06e937bc9c",
+  "environment": {
+    "device": "Moto G Power (emulated)",
+    "network": "Slow 4G",
+    "lighthouse": "13.6.0",
+    "browser": "HeadlessChromium 157.0.8103.38"
+  },
+  "pages": [
+    {
+      "route": "/",
+      "report": "https://pagespeed.web.dev/analysis/https-1bb1c274-playtt-brand-preview-pages-dev/8c5tkc7p07qixhb2jwotq7?form_factor=mobile",
+      "reportCreatedLocal": "2026年11月25日 凌晨3:39:23",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 69,
+      "fcpMs": 902,
+      "lcpMs": 902,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 902,
+      "metricSource": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=902&LCP=902&TBT=0&CLS=0&SI=902&TTI=902&device=mobile&version=13.6.0",
+      "noFieldData": true,
+      "rawSnapshot": "pagespeed-home-033.txt"
+    },
+    {
+      "route": "/class/",
+      "report": "https://pagespeed.web.dev/analysis/https-1bb1c274-playtt-brand-preview-pages-dev-class/g4ypociulip57crtes1i8x?form_factor=mobile",
+      "reportCreatedLocal": "2026年11月25日 凌晨3:39:36",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 69,
+      "fcpMs": 901,
+      "lcpMs": 901,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 901,
+      "metricSource": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=901&LCP=901&TBT=0&CLS=0&SI=901&TTI=901&device=mobile&version=13.6.0",
+      "noFieldData": true,
+      "rawSnapshot": "pagespeed-class-033.txt"
+    }
+  ],
+  "interpretation": {
+    "performanceRegressionObserved": false,
+    "previewIndexingBlocked": true,
+    "automatedAccessibilityOnly": true,
+    "fullCoreWebVitalsFieldAcceptance": false,
+    "physicalDeviceAcceptance": false,
+    "privateBackendAcceptance": false,
+    "productionChanged": false
+  },
+  "sources": [
+    "https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
+    "https://web.dev/articles/vitals"
+  ]
+}

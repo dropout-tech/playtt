@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-18T17:40:38.327Z",
+  "result": "pass",
+  "scope": "Read-only private audit preflight; no production route or cron in the chosen config",
+  "revision": "c1423c9b-b818-4410-92f7-dff11ccb8d15",
+  "publisherPaused": true,
+  "backupPointerMatches": true,
+  "fenceInactive": true
+}

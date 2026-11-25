@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-20T03:49:09.239Z",
+  "result": "pass",
+  "scope": "Authenticated read-only registry export; not an atomic retention snapshot",
+  "pins": 21,
+  "generation": 21,
+  "privateRegistrySha256": "97905be61072f0ffe8393f08db0a581ef40ef9267613ab61df2ce9c7db90be53"
+}

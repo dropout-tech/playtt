@@ -1,0 +1,153 @@
+{
+  "at": "2026-11-17T06:11:23.491284+00:00",
+  "scope": "Subsequent native editing and language initialization exposed remaining memory resets; these failures supersede any broad stability inference from the earlier successful test interval",
+  "events": [
+    {
+      "at": "2026-11-17T05:55:45.773Z",
+      "outcome": "exception",
+      "cpuTime": 0,
+      "wallTime": 86993,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "81e848e1-e100-4a9c-9598-d116b5ac0c91",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T05:57:15.933Z",
+      "outcome": "exception",
+      "cpuTime": 314,
+      "wallTime": 7456,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "81e848e1-e100-4a9c-9598-d116b5ac0c91",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T05:57:33.415Z",
+      "outcome": "exceededMemory",
+      "cpuTime": 2093,
+      "wallTime": 35909,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "81e848e1-e100-4a9c-9598-d116b5ac0c91",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T05:57:33.267Z",
+      "outcome": "exceededMemory",
+      "cpuTime": 5,
+      "wallTime": 36063,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "81e848e1-e100-4a9c-9598-d116b5ac0c91",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T05:57:32.962Z",
+      "outcome": "exception",
+      "cpuTime": 1,
+      "wallTime": 36429,
+      "executionModel": "stateless",
+      "version": "81e848e1-e100-4a9c-9598-d116b5ac0c91",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:01:08.183Z",
+      "outcome": "exception",
+      "cpuTime": 770,
+      "wallTime": 23752,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "7b13e109-a539-449c-bc04-a579b90be298",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:01:07.748Z",
+      "outcome": "exception",
+      "cpuTime": 556,
+      "wallTime": 24692,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "7b13e109-a539-449c-bc04-a579b90be298",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:01:07.785Z",
+      "outcome": "exception",
+      "cpuTime": 1,
+      "wallTime": 24719,
+      "executionModel": "stateless",
+      "version": "7b13e109-a539-449c-bc04-a579b90be298",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:06:04.746Z",
+      "outcome": "exception",
+      "cpuTime": 1,
+      "wallTime": 16047,
+      "executionModel": "stateless",
+      "version": "7b13e109-a539-449c-bc04-a579b90be298",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    },
+    {
+      "at": "2026-11-17T06:06:03.805Z",
+      "outcome": "exception",
+      "cpuTime": 1150,
+      "wallTime": 16020,
+      "executionModel": "durableObject",
+      "entrypoint": "PlayttWordPressExecution",
+      "version": "7b13e109-a539-449c-bc04-a579b90be298",
+      "exceptions": [
+        {
+          "name": "Error",
+          "message": "Durable Object's isolate exceeded its memory limit and was reset."
+        }
+      ]
+    }
+  ]
+}

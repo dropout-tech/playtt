@@ -1,0 +1,40 @@
+{
+  "scope": "Theme 0.3.0 PDF-based candidate; production publication unchanged",
+  "files": 42,
+  "zipBytes": 898023,
+  "zipSha256": "0e88ea6cb98886254152ce2e2f19d49834a1c826c8b236883fa43cd83fef0f71",
+  "installedFilesExact": 42,
+  "integrationChecks": 9,
+  "responsiveChecks": 18,
+  "keyboardStops": 20,
+  "sourcePdfSha256": "ab20c9a0da143a0874b3d6218f1af3f97e6dce3deef5bab40590f1f47eb8135b",
+  "contrastPairs": [
+    {
+      "fg": "#0071CE",
+      "bg": "#FFFFFF",
+      "ratio": 4.937
+    },
+    {
+      "fg": "#0071CE",
+      "bg": "#F5F6F6",
+      "ratio": 4.56
+    },
+    {
+      "fg": "#142B41",
+      "bg": "#FFDA00",
+      "ratio": 10.527
+    },
+    {
+      "fg": "#142B41",
+      "bg": "#3AD531",
+      "ratio": 7.4
+    }
+  ],
+  "limitations": [
+    "Viewport simulation, not physical devices",
+    "Selected palette pairs, not complete screen-reader acceptance",
+    "New starter content does not overwrite existing WordPress pages",
+    "Supabase operational data is not a public biography source"
+  ],
+  "zipArtifact": "lets-play-0.3.0.zip"
+}

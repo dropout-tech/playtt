@@ -1,0 +1,226 @@
+{
+  "schema": "playtt/core-lru-audit/v1",
+  "at": "2026-11-22T03:29:30.282Z",
+  "result": "controls-and-PHP-semantics-pass; full-Free-acceptance-open",
+  "workerdVersion": "1.20260828.1",
+  "nodeVersion": "v24.13.0",
+  "instances": 12,
+  "groups": [
+    {
+      "phase": "before-restart",
+      "mode": "single",
+      "instances": [
+        0,
+        5
+      ],
+      "calls": 10779,
+      "hits": 22,
+      "misses": 10757,
+      "decodedBytes": 238505641,
+      "cacheLimit": 524288,
+      "maxCacheBytes": 357679,
+      "maxEntries": 1,
+      "sampledJsBytes": [
+        16928220,
+        17075080
+      ],
+      "observedJsBackingMaxima": [
+        255873476,
+        255907600
+      ],
+      "workerWallMs": [
+        2170,
+        2153
+      ],
+      "meanSampledJsBytes": 17001650,
+      "meanObservedJsBackingMaximum": 255890538,
+      "meanWorkerWallMs": 2161.5
+    },
+    {
+      "phase": "before-restart",
+      "mode": "lru512",
+      "instances": [
+        1,
+        4
+      ],
+      "calls": 10779,
+      "hits": 61,
+      "misses": 10718,
+      "decodedBytes": 236134729,
+      "cacheLimit": 524288,
+      "maxCacheBytes": 524281,
+      "maxEntries": 86,
+      "sampledJsBytes": [
+        18626492,
+        18648156
+      ],
+      "observedJsBackingMaxima": [
+        253495245,
+        253538057
+      ],
+      "workerWallMs": [
+        2179,
+        2187
+      ],
+      "meanSampledJsBytes": 18637324,
+      "meanObservedJsBackingMaximum": 253516651,
+      "meanWorkerWallMs": 2183
+    },
+    {
+      "phase": "before-restart",
+      "mode": "lru12",
+      "instances": [
+        2,
+        3
+      ],
+      "calls": 10779,
+      "hits": 10203,
+      "misses": 576,
+      "decodedBytes": 12915404,
+      "cacheLimit": 12582912,
+      "maxCacheBytes": 12579944,
+      "maxEntries": 569,
+      "sampledJsBytes": [
+        1933468,
+        1898996
+      ],
+      "observedJsBackingMaxima": [
+        23303074,
+        23303426
+      ],
+      "workerWallMs": [
+        1407,
+        1394
+      ],
+      "meanSampledJsBytes": 1916232,
+      "meanObservedJsBackingMaximum": 23303250,
+      "meanWorkerWallMs": 1400.5
+    },
+    {
+      "phase": "after-restart",
+      "mode": "single",
+      "instances": [
+        8,
+        9
+      ],
+      "calls": 6124,
+      "hits": 14,
+      "misses": 6110,
+      "decodedBytes": 135512499,
+      "cacheLimit": 524288,
+      "maxCacheBytes": 357679,
+      "maxEntries": 1,
+      "sampledJsBytes": [
+        10305668,
+        11404956
+      ],
+      "observedJsBackingMaxima": [
+        150631739,
+        150675595
+      ],
+      "workerWallMs": [
+        1264,
+        1260
+      ],
+      "meanSampledJsBytes": 10855312,
+      "meanObservedJsBackingMaximum": 150653667,
+      "meanWorkerWallMs": 1262
+    },
+    {
+      "phase": "after-restart",
+      "mode": "lru512",
+      "instances": [
+        6,
+        11
+      ],
+      "calls": 6124,
+      "hits": 37,
+      "misses": 6087,
+      "decodedBytes": 133997467,
+      "cacheLimit": 524288,
+      "maxCacheBytes": 524281,
+      "maxEntries": 86,
+      "sampledJsBytes": [
+        11207556,
+        10578904
+      ],
+      "observedJsBackingMaxima": [
+        149267032,
+        149253852
+      ],
+      "workerWallMs": [
+        1262,
+        1264
+      ],
+      "meanSampledJsBytes": 10893230,
+      "meanObservedJsBackingMaximum": 149260442,
+      "meanWorkerWallMs": 1263
+    },
+    {
+      "phase": "after-restart",
+      "mode": "lru12",
+      "instances": [
+        7,
+        10
+      ],
+      "calls": 6124,
+      "hits": 5574,
+      "misses": 550,
+      "decodedBytes": 12370409,
+      "cacheLimit": 12582912,
+      "maxCacheBytes": 12370959,
+      "maxEntries": 550,
+      "sampledJsBytes": [
+        2227948,
+        1933820
+      ],
+      "observedJsBackingMaxima": [
+        22511853,
+        22513269
+      ],
+      "workerWallMs": [
+        845,
+        847
+      ],
+      "meanSampledJsBytes": 2080884,
+      "meanObservedJsBackingMaximum": 22512561,
+      "meanWorkerWallMs": 846
+    }
+  ],
+  "fixture": {
+    "records": 1450,
+    "payloadBytes": 5212074,
+    "payloadSha256": "6ca0af91fdde21fe3aa94450bda78f578b070e2d993efcaf8951bf61a5d4191e",
+    "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+    "traceMetadataMatchesAllFiles": true,
+    "originalLivePerFileHashesCaptured": false
+  },
+  "sourceHashes": {
+    "playtt-core-lru-cache.mjs": "9c3044fdaf897ebca5ca661756596a2c75a6cae477641bd3eddc179f52a73982",
+    "playtt-core-lru-worker.mjs": "ac580cd5b6e9e1be8ee555d0e3a5f337d326a2ea4462e2f93a9ca5974369583c",
+    "playtt-core-lru-control.mjs": "bf80864de3f7e3ff316881885c8c0b9e42a470804aa73b9f885bb1a468df3b20"
+  },
+  "adapterSha256": "51ada8f92a11d39d146f169aa532d29d211d431ef9d95436263ca62b95433958",
+  "cacheSha256": "9c3044fdaf897ebca5ca661756596a2c75a6cae477641bd3eddc179f52a73982",
+  "uniqueBackingAccounting": true,
+  "maxCacheBytes": 12582912,
+  "maxEntries": 2048,
+  "phpCases": 23,
+  "phpObservationSha256": "b98b64513fe2a2a27b41227e4869be27084ee5a30c38b2098195978c78ab5f18",
+  "phpInstancesExited": true,
+  "controlInstancesDisposed": true,
+  "controlExceptions": 0,
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "providerAccepted": false,
+  "limitations": [
+    "Post-boot bytes are reconstructed from the exact pinned archive and source transformations; every traced path/raw length/compressed length matches. The original read trace did not retain per-file content hashes, so matching metadata alone is not a direct hash comparison to the old live heap.",
+    "This fixture does not reproduce PHP execution, browser request gaps, native storage writes or whole-isolate provider admission.",
+    "Two fresh instances per phase/policy, one synchronous complete trace each; no forced GC. This is a bounded control, not statistical performance certainty.",
+    "Hashing every returned stream and first decoded files, inspector sampling and cache accounting add shared measurement overhead.",
+    "JS samples include collected objects; observed JS+backing is not exact peak, retained memory, PHP/WASM, RSS, billed CPU or provider admission.",
+    "Input loading occurs before samples; leftover allocations and GC timing may affect observations.",
+    "The baseline uses the original single-slot record/bytes behavior, while LRU counts unique buffers and bounds entries.",
+    "No PHP/MEMFS integration, native edit/save/restart, error-free logout or Free acceptance is established by these cache controls."
+  ]
+}

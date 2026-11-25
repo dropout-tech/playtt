@@ -1,0 +1,11 @@
+{
+  "sourceSha256": "5a465dc594c8429f483cacf6bfcbb06fb54206dc7524936abcf7f90f140270f1",
+  "sha256": "7ac4ee4ba4a589de3728cd9f48b948647fa5aa3496b591c6c498074588ec85f2",
+  "nativeDataAndBackupAssertionsPreserved": true,
+  "cacheLimit": 12582912,
+  "maxEntries": 2048,
+  "expectedRuntimeExceptions": 0,
+  "expectedHttpErrors": 0,
+  "rootGate404Exercised": false,
+  "cloudRequests": 0
+}

@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-21T01:11:45.710672+00:00",
+  "result": "local-negative-native-flows-pass",
+  "scope": "Free Cloudflare research only; production Pages and original visual unchanged",
+  "runtimeSourceChanged": false,
+  "configsChanged": false,
+  "cloudDeployment": false,
+  "cloudMutation": false,
+  "readbackFlagEnabledRemotely": false,
+  "independentLocalCopies": 3,
+  "successfulNativeScenarios": 2,
+  "failedHarnessAttempts": 1,
+  "failedHarnessReason": {
+    "prefix": "playtt-readback-multitab-ui",
+    "cause": "Assumed legacy post_ID HTML field absent from pinned block editor; corrected to actual initializeEditor page ID",
+    "countedAsPass": false
+  },
+  "nativeTabsClosed": 8,
+  "allLocalServersDisposed": true,
+  "outboundAttempts": 0,
+  "uncommittedSave": {
+    "versions": [
+      121,
+      128,
+      128,
+      129,
+      134
+    ],
+    "nativeMutationInvokedAtFault": false,
+    "readbackCount": 1,
+    "oldContentReturned": true,
+    "originalErrorPreserved": true,
+    "failedTextBytesExact": true,
+    "manualNativeRetryPassed": true,
+    "sameSessionColdContentExact": true,
+    "fullPacks": 1,
+    "fullPackBytes": 2294490
+  },
+  "concurrentNativeDraft": {
+    "versions": [
+      121,
+      126,
+      126,
+      127,
+      135
+    ],
+    "committedFirstId": 193,
+    "secondNativeAutoDraftId": 202,
+    "readbackStatus": 409,
+    "readbackCode": "playtt_readback_unsettled",
+    "secondDraftAbsentFromCanonicalAtReadback": true,
+    "secondDraftSavedWithSameId": true,
+    "bothDraftsColdContentExact": true,
+    "firstSaveRetried": false,
+    "fullPacks": 2,
+    "fullPackBytes": 4589742
+  },
+  "testingLimitations": [
+    "Local emulator does not measure provider isolate memory, latency or Free operation.",
+    "Test gate coordinates native new-tab creation before readback, and temporarily blocks background writes; not unmodified real-world scheduling.",
+    "Second draft was created natively but text was entered after conservative rejection; this proves transient draft identity survival, not arbitrary pre-existing unsaved text across tabs.",
+    "Native global-styles warnings remain; broad plugins/payloads and IME/device acceptance remain open.",
+    "First failed harness run is retained privately and excluded from passing telemetry."
+  ],
+  "validation": {
+    "exactOfflineAudit": "pass",
+    "sourceHashesMatch8612eae": true,
+    "focusedTests": "Prior 25 checks retained; no runtime changes and no redundant rerun this round",
+    "reassemblyReport": "cloudflare-readback-negative-reassembly.json",
+    "reviewReport": "cloudflare-readback-negative-review.json"
+  },
+  "remoteObservedAt": "2026-11-21T01:08:24.794Z",
+  "remoteCanonical": 118,
+  "remotePins": 8,
+  "remoteSealed": true,
+  "remotePublisher": "paused",
+  "remainingBytes": 10232130,
+  "next": [
+    "Design bounded private provider test without increasing accounting cap or replaying completed helpers.",
+    "Verify provider memory/latency and full-pack cost before selecting an editing backend.",
+    "Keep PR #4 draft and current production unchanged."
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "at": "2026-11-18T20:16:55.637Z",
+  "result": "pass",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "scope": "Native authenticated WordPress media API: all 15 original attachment IDs, titles, slugs, GUIDs unchanged; file paths, image metadata and current-origin URLs repaired; all 15 image SHA checks pass",
+  "attachments": 15,
+  "brandAssets": 14,
+  "legacyProbeAssets": 1,
+  "version": 87,
+  "revision": "1cbca5b4-ee39-402a-beba-41a5e0c1bec3",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 512
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2371
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 8478
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7777
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4178
+    },
+    {
+      "path": "/wp-json/wp/v2/media?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3204
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/playtt-do-probe.png",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 869
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1167
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/brand-mobile.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 801
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/camp.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 737
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/children.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 711
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-amber.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 741
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-huang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 693
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-kuo.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 750
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-lin.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 724
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-tsai.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 745
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-wang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 711
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-wen.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 775
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-yang.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 800
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/individual.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 700
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/logo.webp",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 743
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 267
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2471
+    }
+  ]
+}

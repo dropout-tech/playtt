@@ -1,0 +1,143 @@
+{
+  "at": "2026-11-18T20:18:32.895Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "previousOrigin": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev",
+  "result": "pass",
+  "scope": "Read-only bounded plan across current editable REST content; GUIDs and historical revisions preserved; login may save a session",
+  "entities": 34,
+  "changes": [
+    {
+      "route": "navigation/61",
+      "fields": [
+        "content"
+      ],
+      "beforeHash": "325e6f5d3d03b4876bad70abd499d6191da9a95ea82b6079d75a33ab48348f27",
+      "afterHash": "9e73b0c1cd967e073952cbd0f6626f85c336a4fb1097c9edd8f3a712196d28fe",
+      "references": 5
+    },
+    {
+      "route": "pages/24",
+      "fields": [
+        "content"
+      ],
+      "beforeHash": "6f540a75fa7b81659ed1b655546ce28b765c4c07aa000414b19c7c7bc8b81d14",
+      "afterHash": "56e162917e50e922a3cb9d069f21e0a6bb89b631fcf560548da240ec45b075ef",
+      "references": 14
+    },
+    {
+      "route": "pages/27",
+      "fields": [
+        "content"
+      ],
+      "beforeHash": "866caba2c04e437febca5f40966ea0d5e16cd9bf1711b70be3d1c1b83b6de60c",
+      "afterHash": "93169540d5c9b56e05d92a425bb7d4aef4d0cdb9af7d0e7eb57964c312120af4",
+      "references": 8
+    },
+    {
+      "route": "template-parts/lets-play//footer",
+      "fields": [
+        "content"
+      ],
+      "beforeHash": "ae73e2188f18fc8ac2be4e6804dc4ec7eb8f259e9224a38acbca266dad1edc81",
+      "afterHash": "b4bd65ad9765f96a0ca197f55b86b63b241db8025fb8617146d3082bbf85be93",
+      "references": 1
+    },
+    {
+      "route": "template-parts/lets-play//header",
+      "fields": [
+        "content"
+      ],
+      "beforeHash": "664f1a43020f25cfeea09d812732bb4a6df6bcca0de8eecdac755846640b4624",
+      "afterHash": "f80586361c7e613ade9d6baa590f0511afa21923ccf8c35741c425f4a0fc80d9",
+      "references": 2
+    }
+  ],
+  "beforeHash": "6ee45e59ede283f2ded16596dcbfbf286807aeaa44c6cd258e585d307301b73e",
+  "afterHash": "7403bbe5e84a5c03cad186c700ce8dceec6e4abaa31f26f501072aa740113473",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 497
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2106
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2005
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6280
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3648
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4174
+    },
+    {
+      "path": "/wp-json/wp/v2/posts?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3114
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3182
+    },
+    {
+      "path": "/wp-json/wp/v2/templates?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2953
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2599
+    },
+    {
+      "path": "/wp-json/wp/v2/media?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3274
+    },
+    {
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2572
+    },
+    {
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2377
+    },
+    {
+      "path": "/wp-json/wp/v2/settings",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2181
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "schema": "playtt/retained-native-snapshot-audit/v1",
+  "at": "2026-11-21T17:48:50.903443+00:00",
+  "scope": "Same local workerd process, native draft after first and third visits; snapshots can collect; not provider RSS/peak or long-term leak proof",
+  "snapshots": [
+    {
+      "label": "snapshot-first",
+      "snapshotBytes": 25115275,
+      "snapshotSha256": "c24c72fa17d35c154ec6bceb80cf740f324897f478f25b6216d97bad43762e6e",
+      "nodeCount": 304264,
+      "snapshotSelfBytes": 122600794,
+      "selfBytesByType": {
+        "synthetic": 1512,
+        "native": 109061032,
+        "string": 6802086,
+        "object shape": 371196,
+        "code": 3418148,
+        "array": 1503208,
+        "number": 108972,
+        "symbol": 1376,
+        "object": 831344,
+        "closure": 492576,
+        "concatenated string": 8160,
+        "regexp": 1128,
+        "bigint": 16,
+        "sliced string": 40
+      },
+      "arrayBufferBackingBytes": 106872515,
+      "largestBackings": [
+        {
+          "bytes": 74317824,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": true
+        },
+        {
+          "bytes": 1376256,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 536405,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 483218,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 475022,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 402711,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 376832,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 357678,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        }
+      ],
+      "loaderWasmMemoryInstances": 1,
+      "wasmLinkEvidence": "wasmMemory context -> Memory instance -> ArrayBuffer -> backing_store; instance prototype is WebAssembly.Memory",
+      "loaderWasmBackingBytes": 74317824,
+      "bootArraysRetainedBytes": 0,
+      "bootArrays": {},
+      "cdpBefore": {
+        "usedSize": 17990428,
+        "totalSize": 27385856,
+        "embedderHeapUsedSize": 405448,
+        "backingStorageSize": 34583290
+      },
+      "cdpAfter": {
+        "usedSize": 14804412,
+        "totalSize": 15589376,
+        "embedderHeapUsedSize": 2168,
+        "backingStorageSize": 33459809
+      },
+      "eventsDuring": []
+    },
+    {
+      "label": "snapshot-repeat",
+      "snapshotBytes": 25269352,
+      "snapshotSha256": "727802974f5caaf46791946a752c2f543ea73a45b05ed13f6882ee94228520ee",
+      "nodeCount": 305124,
+      "snapshotSelfBytes": 122714462,
+      "selfBytesByType": {
+        "synthetic": 1512,
+        "native": 109064168,
+        "string": 6837762,
+        "object shape": 371460,
+        "code": 3484480,
+        "array": 1506068,
+        "number": 108972,
+        "symbol": 1376,
+        "object": 835144,
+        "closure": 492576,
+        "concatenated string": 9760,
+        "regexp": 1128,
+        "bigint": 16,
+        "sliced string": 40
+      },
+      "arrayBufferBackingBytes": 106872515,
+      "largestBackings": [
+        {
+          "bytes": 74317824,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": true
+        },
+        {
+          "bytes": 1376256,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 536405,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 483218,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 475022,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 402711,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 376832,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 357678,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        }
+      ],
+      "loaderWasmMemoryInstances": 1,
+      "wasmLinkEvidence": "wasmMemory context -> Memory instance -> ArrayBuffer -> backing_store; instance prototype is WebAssembly.Memory",
+      "loaderWasmBackingBytes": 74317824,
+      "bootArraysRetainedBytes": 0,
+      "bootArrays": {},
+      "cdpBefore": {
+        "usedSize": 18805908,
+        "totalSize": 23191552,
+        "embedderHeapUsedSize": 346488,
+        "backingStorageSize": 35611730
+      },
+      "cdpAfter": {
+        "usedSize": 14918080,
+        "totalSize": 15327232,
+        "embedderHeapUsedSize": 2168,
+        "backingStorageSize": 33459809
+      },
+      "eventsDuring": []
+    }
+  ],
+  "deltaSelfBytes": 113668,
+  "deltaBackingBytes": 0,
+  "phpHeapPeak": 74317824,
+  "generations": [
+    {
+      "at": 1795282850198,
+      "label": "bootstrap",
+      "kind": "generation",
+      "generation": 1
+    }
+  ],
+  "retirements": [],
+  "exceptions": [
+    {
+      "at": 1795282877666,
+      "label": "login",
+      "kind": "exception"
+    }
+  ],
+  "samplingErrors": [],
+  "httpErrors": [],
+  "rawSnapshotsPrivate": true,
+  "cloudRequests": 0
+}

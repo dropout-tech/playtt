@@ -1,0 +1,24 @@
+{
+  "schema": "playtt/owned-paths-allocation-check/v1",
+  "at": "2026-11-21T22:25:28.887Z",
+  "result": "pass",
+  "fixtureReconstructedExact": true,
+  "pinnedAssets": 3,
+  "pinnedVendorFiles": 109,
+  "profileHashesRecomputed": 6,
+  "inventoryFiles": 413,
+  "pathsChecked": 414,
+  "iterations": 20,
+  "baselineSelfBytes": [
+    28131076,
+    27576240,
+    29483840
+  ],
+  "candidateSelfBytes": [
+    13535276,
+    13066004,
+    13216952
+  ],
+  "readOnlyInputs": true,
+  "cloudRequests": 0
+}

@@ -1,0 +1,7 @@
+{
+  "oldSha256": "ee56907308d378253e5514fc1d57aefc3df44dcc02634183ad017fe61f966104",
+  "newSha256": "b95446e9faeb1813fb25083421923f553fa45b83772733bce083f92b1c066198",
+  "reason": "Only primitive strings can form an immutable trusted snapshot; string-like objects remain on the ordinary API path but are refused by the new constructor.",
+  "v1InputsPreserved": true,
+  "v1OwnersReplayed": false
+}

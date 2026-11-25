@@ -1,0 +1,141 @@
+{
+  "at": "2026-11-20T04:44:57.538Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "targetState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "8a06b16e-fe6c-428f-9785-3caf79d056a6",
+      "manifestKey": "sites/default/markdown/revisions/8a06b16e-fe6c-428f-9785-3caf79d056a6.json",
+      "persistedAt": "2026-11-20T04:43:58.408Z"
+    },
+    "version": 16
+  },
+  "sourceState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+      "manifestKey": "sites/default/markdown/revisions/c0ba467c-c422-41e8-861c-64926c69e1fb.json",
+      "persistedAt": "2026-11-20T03:25:06.853Z"
+    },
+    "version": 309
+  },
+  "fenceActive": false,
+  "publisher": "paused",
+  "pins": 23,
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-pin-restore-audit",
+    "baselineBytes": 149591427,
+    "baselineObjects": 396,
+    "chargedBytes": 37709294,
+    "chargedPuts": 83,
+    "initializedAt": "2026-11-20T04:10:42.674Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v1",
+      "initializedAt": "2026-11-20T04:41:44.739Z",
+      "pending": 0,
+      "sealed": false,
+      "maximumPending": 128,
+      "automaticExpiry": false
+    },
+    "reservationSchema": "playtt/r2-write-reservation/v1",
+    "initialized": true,
+    "limitBytes": 300000000,
+    "trackingConfigured": true,
+    "remainingBytes": 112699279,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "gateChecks": [
+    {
+      "path": "/wp-admin/",
+      "status": 404
+    },
+    {
+      "path": "/wp-json/wp/v2/media",
+      "status": 404
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "status": 404
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/logo.webp",
+      "status": 404
+    }
+  ],
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 811
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 244
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1467
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 511
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 926
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 243
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1370
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 169
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 184
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 152
+    }
+  ]
+}

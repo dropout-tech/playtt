@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-17T05:59:30.734124+00:00",
+  "scope": "Native global styles save, browser reload and real redeploy persistence; restore attempt failed and is unresolved",
+  "saved": true,
+  "reloaded": true,
+  "afterDeploy": "81e848e1-e100-4a9c-9598-d116b5ac0c91",
+  "globalStyleId": 42,
+  "expectedColor": "var(--wp--preset--color--ink)",
+  "restoreAttempt": "Saving failed; remote memory exception observed; pending fix",
+  "productionChanged": false
+}

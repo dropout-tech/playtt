@@ -1,0 +1,42 @@
+✔ D1 coordinator partitions state, leases, fences, and commit receipts by site ID (7.2528ms)
+✔ D1 adoption accepts monotonic forward state and requires an active fence token (4.6681ms)
+✔ Durable Object coordinator writes the matching site pointer and preserves default compatibility (32.8474ms)
+✔ an unpinned historical commit remains a conservative reference even when current and backup agree (19.8118ms)
+✔ missing historical manifest or ZIP is not hidden by intact current content (4.3319ms)
+✔ expired lease bases are checked and never discarded as proof of completed writes (0.8159ms)
+✔ incomplete inventory, publication/import objects and divergent current or protected pointers fail closed (3.9108ms)
+✔ referenced content objects require exact namespace and listed size (1.3121ms)
+✔ all commit receipts are exported across lexicographic pages and numerically ordered without writes (7.6047ms)
+✔ expired lease roots are preserved while tokens and unrelated private storage fields are omitted (1.0164ms)
+✔ uninitialized storage is not lazily created and another site is rejected (0.6265ms)
+✔ missing or mismatched current receipt cannot masquerade as a complete inventory (0.5265ms)
+✔ malformed receipt paths, versions and cross-site pointers fail closed (0.9054ms)
+✔ history limit or a non-progressing storage page refuses partial success (22.6663ms)
+✔ empty initialized coordinator is inspectable and historical forward receipts remain visible (0.3725ms)
+✔ internal endpoint enforces method/scope and the existing queue prevents a concurrent lease mutation (37.9651ms)
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true}
+{"schema":"playtt/r2-write-ack-failure/v1","knownR2Completion":true}
+✔ legacy capacity reservation and expired canonical lease do not prove R2 writes drained (52.3333ms)
+✔ pending put survives a budget restart; seal waits for actual R2 completion (6.1576ms)
+✔ a delayed delete is tracked without charging bytes or put count; a seal blocks deletion (3.2687ms)
+✔ failed R2 response retains its ticket even if the provider applied the write (2.053ms)
+✔ lost reservation reply leaves an unsettled ticket and sends no R2 request (2.8713ms)
+✔ lost settlement reply preserves confirmed R2 success and an already closed ticket does not obstruct the seal (3.3259ms)
+✔ tracking must be initialized and cannot be disabled by dropping the environment flag (2.1553ms)
+✔ persistent seals do not expire; exact acquisition retries and owner release are safe (3.6403ms)
+✔ settlement is ticket-specific and idempotent; an unrelated UUID cannot clear another operation (2.4419ms)
+✔ pending operations are bounded and never expire merely because their timestamps are old (96.9447ms)
+✔ reservation capacity failure rolls back both charge and tentative ticket (1.6158ms)
+✔ an early parallel-write failure cannot hide a still-running sibling from a drain (2.2028ms)
+✔ corrupt tracking cannot be reinitialized or bypassed with legacy requests (1.2896ms)
+✔ lost settlement request cannot strand an already written canonical pointer outside its DO commit (2.4925ms)
+✔ a confirmed conditional put miss settles its ticket while retaining the conservative charge (1.5869ms)
+✔ tracked callers reject old, missing-ticket and wrong-operation proofs before R2 (2.5332ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 614.1937

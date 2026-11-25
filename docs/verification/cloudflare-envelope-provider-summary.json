@@ -1,0 +1,242 @@
+{
+  "schema": "playtt/envelope-private-provider-workflow/v1",
+  "at": "2026-11-21T14:25:33.244Z",
+  "result": "core-workflow-and-independent-recovery-pass",
+  "sourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "productionChanged": false,
+  "paidChange": false,
+  "canonical": {
+    "before": 161,
+    "after": 177,
+    "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+    "savedCheckpoint": 175,
+    "coldCheckpoint": 176,
+    "manualRevision": "207",
+    "bodyExact": true,
+    "priorPostsAndRevisionsExact": true,
+    "allOtherFilesExact": true,
+    "mediaAndThemeExact": true,
+    "oldSessionsExact": 5,
+    "newSessionRetained": 0,
+    "monotonicSequences": true
+  },
+  "native": {
+    "at": "2026-11-21T14:18:13.998Z",
+    "beforeExact": true,
+    "saveClicks": 1,
+    "editedAt": "2026-11-21T14:18:13.998Z",
+    "baselineParagraphs": 8,
+    "expectedParagraphs": 9,
+    "source": "native browser visible UI, exact textarea precheck",
+    "saveStartedAt": "2026-11-21T14:19:53.896Z",
+    "savedUi": true,
+    "coldReopenStartedAt": "2026-11-21T14:21:31.045Z",
+    "coldParagraphCount": 9,
+    "coldParagraphsExact": true,
+    "coldReopenVerifiedAt": "2026-11-21T14:21:49.931Z",
+    "logoutStartedAt": "2026-11-21T14:22:05.760Z",
+    "logoutSucceeded": true,
+    "logoutVerifiedAt": "2026-11-21T14:22:11.209Z",
+    "ownedBrowserTabClosed": true,
+    "autosaves": 2,
+    "manualSaves": 1,
+    "coldDeployedVersion": "71bcd451-db1b-442e-b944-f18b0af49109"
+  },
+  "accounting": {
+    "chargedBytes": 797202,
+    "chargedPuts": 48,
+    "remainingBytes": 1083839,
+    "closed": true,
+    "sealed": true,
+    "pending": 0,
+    "capIncreased": false,
+    "refundOrHistoryDeleted": false
+  },
+  "observation": {
+    "events": 310,
+    "phpRequests": 39,
+    "exceptions": 0,
+    "nonOkOutcomes": 3,
+    "zeroHttpErrors": false,
+    "maxObservedPhpHeapBytes": 75497472,
+    "heapIsNotWholeIsolate": true,
+    "observerEnded": true,
+    "canceled": [
+      {
+        "at": "2026-11-21T14:22:09.979Z",
+        "outcome": "canceled",
+        "entrypoint": "outer-worker",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        }
+      },
+      {
+        "at": "2026-11-21T14:22:11.516Z",
+        "outcome": "canceled",
+        "entrypoint": "outer-worker",
+        "request": {
+          "category": "other",
+          "method": "GET"
+        }
+      },
+      {
+        "at": "2026-11-21T14:22:09.594Z",
+        "outcome": "canceled",
+        "entrypoint": "PlayttWordPressExecution",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        }
+      }
+    ],
+    "allHttpErrors": [
+      {
+        "at": "2026-11-21T14:20:58.480Z",
+        "status": 404,
+        "entrypoint": "outer-worker",
+        "request": {
+          "category": "front-page",
+          "method": "GET"
+        }
+      },
+      {
+        "at": "2026-11-21T14:22:06.245Z",
+        "status": 400,
+        "entrypoint": "PlayttWordPressExecution",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        }
+      },
+      {
+        "at": "2026-11-21T14:22:06.234Z",
+        "status": 400,
+        "entrypoint": "outer-worker",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        }
+      }
+    ],
+    "notes": "Provider tail counts include both outer and DO envelopes. Three canceled events after logout are not successful requests. Runtime logs can share serial-queue contexts; no per-request latency is inferred from trace attachment.",
+    "phpHttpErrors": [
+      {
+        "at": "2026-11-21T14:22:06.245Z",
+        "status": 400,
+        "category": "admin-ajax",
+        "method": "POST",
+        "version": "71bcd451-db1b-442e-b944-f18b0af49109"
+      }
+    ]
+  },
+  "backup": {
+    "at": "2026-11-21T14:23:14.886Z",
+    "result": "recovery-pin-verified",
+    "canonicalVersion": 177,
+    "anchor": {
+      "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+      "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+      "persistedAt": "2026-11-21T14:22:06.428Z",
+      "manifestSha256": "83772504c985e0dcfb5970a4641499182802a911c09b65daf436d0cc9aecf4d0",
+      "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+      "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+      "packBytes": 2295783
+    },
+    "format": "compressed-content",
+    "manifestEncoding": "gzip-envelope",
+    "objects": 304,
+    "files": 298,
+    "independentOpenedAgain": true,
+    "fullMaterializedOpenedAgain": true,
+    "allContentsExact": true,
+    "nativeAcceptance": "Exact canonical/content/session assertions passed separately in this offline verifier",
+    "finalPins": 14,
+    "canonicalAndAccountingUnchanged": true,
+    "fenceReleased": true,
+    "physicalManifestBytes": 23495,
+    "physicalManifestSha256": "83772504c985e0dcfb5970a4641499182802a911c09b65daf436d0cc9aecf4d0"
+  },
+  "limitations": [
+    "One bounded private account run is not sustained Free usage or physical-device/IME acceptance.",
+    "Reported PHP heap is not total isolate memory; no measured CPU-time acceptance.",
+    "Any late AJAX400 remains retained and its action is not captured by provider tail.",
+    "Old runtime source cannot read the new format; disabling writer flags keeps compatible readers and does not prove old-source rollback.",
+    "Three canceled tail events and one outer front-page404 remain recorded; their initiators are not proven. No zero-error acceptance."
+  ],
+  "goalStatus": "active",
+  "elapsedWindowMs": 353048,
+  "finalDeployment": {
+    "at": "2026-11-21T14:24:49.947Z",
+    "result": "pass",
+    "mode": "disabled",
+    "worker": "playtt-wp-free-session-audit",
+    "version": "af985705-1cb2-403e-962e-5af3e29ff5ff",
+    "canonicalVersion": 177,
+    "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+    "pins": 14,
+    "publisher": "paused",
+    "sealed": true,
+    "pending": 0,
+    "windowClosed": true,
+    "fenceActive": false,
+    "remainingBytes": 1083839,
+    "optionalWritersEnabled": false,
+    "heartbeatEnabled": false,
+    "allExpectedBindingsExact": true,
+    "checks": [
+      {
+        "kind": "deployment",
+        "status": 200
+      },
+      {
+        "kind": "deployment",
+        "status": 200
+      },
+      {
+        "kind": "operator",
+        "status": 200
+      },
+      {
+        "kind": "operator",
+        "status": 200
+      },
+      {
+        "kind": "operator",
+        "status": 200
+      },
+      {
+        "kind": "operator",
+        "status": 200
+      }
+    ],
+    "remoteMutations": 0,
+    "productionChanged": false
+  },
+  "billing": {
+    "at": "2026-11-21T14:15:06.713Z",
+    "account": "info@dropout.tw",
+    "workers": {
+      "plan": "Free",
+      "currentPlan": true,
+      "priceUsd": 0,
+      "source": "https://dash.cloudflare.com/3baadbd4abd9fd63c7f7e51664b26f67/workers/plans"
+    },
+    "r2": {
+      "period": "October 25 - November 25",
+      "classA": "7.22k",
+      "classB": "59.86k",
+      "storage": "2.33 GB",
+      "billableUsageUsd": 0,
+      "source": "https://dash.cloudflare.com/3baadbd4abd9fd63c7f7e51664b26f67/r2/overview"
+    },
+    "method": "Authenticated visible browser dashboard; account totals may lag; no billing changes",
+    "productionChanged": false
+  },
+  "controllerRace": {
+    "observed": true,
+    "action": "cold-begin",
+    "effect": "Client read a partially written reply and exited; controller had completed the action. Same command was inspected, not replayed.",
+    "fix": "Client publishes command by rename and tolerates an incomplete reply only while waiting for its original command ID."
+  }
+}

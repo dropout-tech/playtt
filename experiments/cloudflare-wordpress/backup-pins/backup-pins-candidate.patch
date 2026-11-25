@@ -1,0 +1,95 @@
+--- a/src/state-coordinator.ts
++++ b/src/state-coordinator.ts
+@@ -1,4 +1,5 @@
+ import { withPlayttStorageCapacity, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js'
++import { PlayttBackupPins, PlayttBackupPinError, type PlayttBackupPinInput } from './playtt-backup-pins.js'
+ import { mutationFenceExpiresAt, revisionLeaseExpiresAt, RevisionConflict, type MarkdownPointer, type MutationFence, type MutationFenceStatus, type RevisionCoordinator, type RevisionLease, type RevisionState } from "./revision-coordinator.js"
+
+ interface StoredLease {
+@@ -78,6 +79,14 @@
+
+   async reset(): Promise<void> {
+     await this.call("reset", {})
++  }
++
++  backupPins(): ReturnType<PlayttBackupPins['list']> {
++    return this.call('backup-pins')
++  }
++
++  pinBackup(pin: PlayttBackupPinInput, fenceToken: string): ReturnType<PlayttBackupPins['register']> {
++    return this.call('backup-pin', { pin, fenceToken })
+   }
+
+   private async call<T>(action: string, body?: Record<string, unknown>): Promise<T> {
+@@ -110,6 +119,7 @@
+
+   fetch(request: Request): Promise<Response> {
+     const response = this.tail.then(() => this.handle(request)).catch((error: unknown) => {
++      if (error instanceof PlayttBackupPinError) return Response.json({ code: 'playtt_backup_pin', message: error.message }, { status: error.status })
+       if (error instanceof PlayttCapacityError) return playttCapacityResponse(error)
+       if (error instanceof RevisionConflict) {
+         const headers = new Headers()
+@@ -126,6 +136,21 @@
+     const url = new URL(request.url)
+     const action = url.searchParams.get("__wp_codebox_coordinator")
+     const siteId = url.searchParams.get("siteId") ?? "default"
++    if (action === 'backup-pins' || action === 'backup-pin') {
++      if (siteId !== 'default' || this.env.PLAYTT_R2_CAPACITY_SCOPE !== 'playtt-wordpress-rebuild-audit') return new Response('Backup pins are disabled.', { status: 404 })
++      await this.record(siteId)
++      const pins = new PlayttBackupPins(this.state.storage, this.env.WORDPRESS_STATE_BUCKET)
++      if (request.method === 'GET' && action === 'backup-pins') return Response.json(await pins.list())
++      if (request.method !== 'POST' || action !== 'backup-pin') return new Response('Method not allowed.', { status: 405 })
++      const raw = await request.text()
++      if (raw.length > 8192) return new Response('Backup pin request too large.', { status: 413 })
++      const body = JSON.parse(raw) as { pin: unknown; fenceToken: string }
++      const record = await this.record(siteId)
++      const requireFence = () => {
++        if (!record.fence || record.fence.expiresAt <= Date.now() || record.fence.token !== body.fenceToken) throw new RevisionConflict('Backup pin registration requires its active fence token.')
++      }
++      return Response.json(await pins.register(body.pin, requireFence))
++    }
+     if (request.method === "GET" && action === "state") return Response.json(await this.current(siteId))
+     if (request.method === "GET" && action === "fence-status") return Response.json(await this.fenceStatus(siteId))
+     if (request.method !== "POST" || !action) return new Response("Coordinator requests require an internal action.", { status: 404 })
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -1,4 +1,5 @@
+ import { withPlayttStorageCapacity, playttCapacityStub, playttCapacityLimit, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js';
++import { backupPinInput } from './playtt-backup-pins.js';
+ export { PlayttStorageBudget } from './playtt-storage-capacity.js';
+ import { DurableObjectRevisionCoordinator, WordPressStateCoordinator } from './state-coordinator.js';
+ import { createCloudflareRuntime, drainPlayttPublication, isAuthorizedOperator, retirePlayttIdleRuntimes, serveWordPressStaticAsset, serveWordPressUpload, serveWordPressWpContent, type RuntimeEnv } from './worker.js';
+@@ -120,6 +121,33 @@
+     let site;
+     try { site = resolveSiteContextFromRequest(request, parseSiteContexts(env.WORDPRESS_SITE_CONTEXTS)); }
+     catch { return new Response('Unknown site hostname.', { status: 421 }); }
++    if (new URL(request.url).pathname === '/__playtt-backup-pins') {
++      const headers = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow', 'X-Playtt-Probe-State': thisPartition(env) };
++      if (!await isAuthorizedOperator(request, env, site)) return new Response('Unauthorized', { status: 401, headers });
++      try {
++        if (playttCapacityLimit(env) === null || site.id !== 'default') return new Response('Backup pins are disabled', { status: 404, headers });
++        const coordinator = new DurableObjectRevisionCoordinator(env.WORDPRESS_STATE.getByName(partitionName(env, site.id)), site.id);
++        if (request.method === 'GET') return Response.json(await coordinator.backupPins(), { headers });
++        if (request.method !== 'POST') return new Response('Method not allowed', { status: 405, headers });
++        const reader = request.body?.getReader();
++        if (!reader) return new Response('Invalid backup pin', { status: 400, headers });
++        const chunks: Uint8Array[] = []; let bytes = 0;
++        try {
++          while (true) {
++            const result = await reader.read(); if (result.done) break;
++            bytes += result.value.byteLength;
++            if (bytes > 8192) { await reader.cancel(); return new Response('Backup pin request too large', { status: 413, headers }); }
++            chunks.push(result.value);
++          }
++        } finally { reader.releaseLock(); }
++        const raw = new Uint8Array(bytes); let offset = 0;
++        for (const chunk of chunks) { raw.set(chunk, offset); offset += chunk.length; }
++        const input = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(raw));
++        if (typeof input.fenceToken !== 'string') return new Response('Invalid backup pin', { status: 400, headers });
++        const pin = backupPinInput(input.pin);
++        return Response.json(await coordinator.pinBackup(pin, input.fenceToken), { headers });
++      } catch { return new Response('Backup pin registration unavailable', { status: 409, headers }); }
++    }
+     if (new URL(request.url).pathname === '/__playtt-capacity') {
+       if (!await isAuthorizedOperator(request, env, site)) return new Response('Unauthorized', { status: 401 });
+       try {

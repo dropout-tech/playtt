@@ -1,0 +1,1674 @@
+{
+  "schema": "playtt/transient-allocation-audit/v1",
+  "at": "2026-11-21T21:50:10.725Z",
+  "result": "analyzed",
+  "bundleSha256": "cb9302a8b57c9bc3db16304cb3ad995b793eab543a759a4f7b9bfdb4800e0de5",
+  "windows": [
+    {
+      "name": "render",
+      "elapsedMs": 18041,
+      "profileBytes": 86575,
+      "profileSha256": "bb1c5f200a2af2dd041377d4870e0abb7213875c1a88e8804dd728166f56f166",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "profileNodes": 402,
+      "samples": 578,
+      "nodeAttributedSelfBytes": 23013676,
+      "sampleAttributedSizeSum": 22973680,
+      "topFunctions": [
+        {
+          "function": "patchPlayttEditorLock",
+          "attributedSelfBytes": 3149500
+        },
+        {
+          "function": "(anonymous)",
+          "attributedSelfBytes": 2360048
+        },
+        {
+          "function": "lookupPath",
+          "attributedSelfBytes": 2032900
+        },
+        {
+          "function": "getattr",
+          "attributedSelfBytes": 1836260
+        },
+        {
+          "function": "split",
+          "attributedSelfBytes": 1409644
+        },
+        {
+          "function": "next",
+          "attributedSelfBytes": 1180020
+        },
+        {
+          "function": "subarray",
+          "attributedSelfBytes": 885856
+        },
+        {
+          "function": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 754312
+        },
+        {
+          "function": "js_fd_read",
+          "attributedSelfBytes": 656320
+        },
+        {
+          "function": "writeStat",
+          "attributedSelfBytes": 655532
+        },
+        {
+          "function": "visit",
+          "attributedSelfBytes": 491836
+        },
+        {
+          "function": "getPath",
+          "attributedSelfBytes": 491700
+        },
+        {
+          "function": "playttProbeAccess",
+          "attributedSelfBytes": 474292
+        },
+        {
+          "function": "Asyncify.handleSleep",
+          "attributedSelfBytes": 430388
+        },
+        {
+          "function": "fetch",
+          "attributedSelfBytes": 394028
+        },
+        {
+          "function": "(V8 API)",
+          "attributedSelfBytes": 360788
+        },
+        {
+          "function": "base64",
+          "attributedSelfBytes": 337804
+        },
+        {
+          "function": "from",
+          "attributedSelfBytes": 325308
+        },
+        {
+          "function": "serveWordPressStaticAsset",
+          "attributedSelfBytes": 296836
+        },
+        {
+          "function": "slice",
+          "attributedSelfBytes": 295184
+        },
+        {
+          "function": "streamToBytes",
+          "attributedSelfBytes": 295096
+        },
+        {
+          "function": "join",
+          "attributedSelfBytes": 271812
+        },
+        {
+          "function": "toString",
+          "attributedSelfBytes": 262224
+        },
+        {
+          "function": "add",
+          "attributedSelfBytes": 209980
+        },
+        {
+          "function": "open",
+          "attributedSelfBytes": 196820
+        }
+      ],
+      "topLocations": [
+        {
+          "function": "patchPlayttEditorLock",
+          "source": "production-bundle",
+          "line": 359,
+          "column": 37,
+          "attributedSelfBytes": 3149500
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 2032900
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 1836260
+        },
+        {
+          "function": "split",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 1409644
+        },
+        {
+          "function": "next",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 1180020
+        },
+        {
+          "function": "subarray",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 885856
+        },
+        {
+          "function": "validatePlayttSnapshotSources",
+          "source": "production-bundle",
+          "line": 1726,
+          "column": 39,
+          "attributedSelfBytes": 754312
+        },
+        {
+          "function": "js_fd_read",
+          "source": "production-bundle",
+          "line": 24359,
+          "column": 22,
+          "attributedSelfBytes": 656320
+        },
+        {
+          "function": "writeStat",
+          "source": "production-bundle",
+          "line": 20816,
+          "column": 14,
+          "attributedSelfBytes": 655532
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 16628,
+          "column": 50,
+          "attributedSelfBytes": 557776
+        },
+        {
+          "function": "visit",
+          "source": "production-bundle",
+          "line": 3798,
+          "column": 17,
+          "attributedSelfBytes": 491836
+        },
+        {
+          "function": "getPath",
+          "source": "production-bundle",
+          "line": 18505,
+          "column": 12,
+          "attributedSelfBytes": 491700
+        },
+        {
+          "function": "playttProbeAccess",
+          "source": "production-bundle",
+          "line": 54981,
+          "column": 33,
+          "attributedSelfBytes": 474292
+        },
+        {
+          "function": "Asyncify.handleSleep",
+          "source": "production-bundle",
+          "line": 25558,
+          "column": 36,
+          "attributedSelfBytes": 430388
+        },
+        {
+          "function": "(V8 API)",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 360788
+        },
+        {
+          "function": "base64",
+          "source": "production-bundle",
+          "line": 2680,
+          "column": 16,
+          "attributedSelfBytes": 337804
+        },
+        {
+          "function": "from",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 325308
+        },
+        {
+          "function": "serveWordPressStaticAsset",
+          "source": "production-bundle",
+          "line": 54635,
+          "column": 41,
+          "attributedSelfBytes": 296836
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2470,
+          "column": 34,
+          "attributedSelfBytes": 296176
+        },
+        {
+          "function": "slice",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 295184
+        },
+        {
+          "function": "streamToBytes",
+          "source": "production-bundle",
+          "line": 5717,
+          "column": 29,
+          "attributedSelfBytes": 295096
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2667,
+          "column": 37,
+          "attributedSelfBytes": 284240
+        },
+        {
+          "function": "join",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 271812
+        },
+        {
+          "function": "toString",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 262224
+        },
+        {
+          "function": "add",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 209980
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 3353,
+          "column": 37,
+          "attributedSelfBytes": 204992
+        },
+        {
+          "function": "fetch",
+          "source": "production-bundle",
+          "line": 55129,
+          "column": 14,
+          "attributedSelfBytes": 197056
+        },
+        {
+          "function": "open",
+          "source": "production-bundle",
+          "line": 19147,
+          "column": 9,
+          "attributedSelfBytes": 196820
+        },
+        {
+          "function": "collectWpContentFiles",
+          "source": "production-bundle",
+          "line": 54248,
+          "column": 37,
+          "attributedSelfBytes": 163984
+        },
+        {
+          "function": "prepareCompressedContent",
+          "source": "production-bundle",
+          "line": 3357,
+          "column": 40,
+          "attributedSelfBytes": 148088
+        }
+      ],
+      "topCallsites": [
+        {
+          "function": "patchPlayttEditorLock",
+          "source": "production-bundle",
+          "line": 359,
+          "column": 37,
+          "attributedSelfBytes": 3149500,
+          "ancestors": [
+            "(root)",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 655760,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_fstat64",
+            "fstat"
+          ]
+        },
+        {
+          "function": "next",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 458900,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "prepareCompressedContent",
+            "decodeCanonicalManifestBytes",
+            "from"
+          ]
+        },
+        {
+          "function": "Asyncify.handleSleep",
+          "source": "production-bundle",
+          "line": 25558,
+          "column": 36,
+          "attributedSelfBytes": 430388,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 393436,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_stat64"
+          ]
+        },
+        {
+          "function": "(V8 API)",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 360788,
+          "ancestors": [
+            "(root)"
+          ]
+        },
+        {
+          "function": "base64",
+          "source": "production-bundle",
+          "line": 2680,
+          "column": 16,
+          "attributedSelfBytes": 337804,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "serializeManifestEnvelope"
+          ]
+        },
+        {
+          "function": "js_fd_read",
+          "source": "production-bundle",
+          "line": 24359,
+          "column": 22,
+          "attributedSelfBytes": 328036,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 327936,
+          "ancestors": [
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "invoke_iii",
+            "(anonymous)",
+            "___syscall_fstat64",
+            "fstat"
+          ]
+        },
+        {
+          "function": "playttProbeAccess",
+          "source": "production-bundle",
+          "line": 54981,
+          "column": 33,
+          "attributedSelfBytes": 308548,
+          "ancestors": [
+            "(root)",
+            "fetch",
+            "fetch"
+          ]
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 295156,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_openat",
+            "open"
+          ]
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 295108,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_lstat64"
+          ]
+        },
+        {
+          "function": "streamToBytes",
+          "source": "production-bundle",
+          "line": 5717,
+          "column": 29,
+          "attributedSelfBytes": 295096,
+          "ancestors": [
+            "(root)",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "next",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 295000,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "serializeManifestEnvelope",
+            "base64"
+          ]
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 262304,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_lstat64"
+          ]
+        },
+        {
+          "function": "getPath",
+          "source": "production-bundle",
+          "line": 18505,
+          "column": 12,
+          "attributedSelfBytes": 262220,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_openat",
+            "open"
+          ]
+        },
+        {
+          "function": "from",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 259708,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "prepareCompressedContent",
+            "decodeCanonicalManifestBytes"
+          ]
+        },
+        {
+          "function": "serveWordPressStaticAsset",
+          "source": "production-bundle",
+          "line": 54635,
+          "column": 41,
+          "attributedSelfBytes": 231276,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "fetch"
+          ]
+        },
+        {
+          "function": "slice",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 229572,
+          "ancestors": [
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "_fd_write",
+            "(anonymous)",
+            "write",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "split",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 229472,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_stat64",
+            "lookupPath"
+          ]
+        },
+        {
+          "function": "toString",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 229440,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "(anonymous)",
+            "from",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "join",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 206152,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "playttProbeAccess"
+          ]
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2667,
+          "column": 37,
+          "attributedSelfBytes": 205328,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "persistMarkdownManifest",
+            "serializeManifestEnvelope"
+          ]
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 3353,
+          "column": 37,
+          "attributedSelfBytes": 204992,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "prepareCompressedContent"
+          ]
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 16628,
+          "column": 50,
+          "attributedSelfBytes": 196884,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_openat"
+          ]
+        },
+        {
+          "function": "subarray",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 196840,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_stat64",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "validatePlayttSnapshotSources",
+          "source": "production-bundle",
+          "line": 1726,
+          "column": 39,
+          "attributedSelfBytes": 196788,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "persistRuntime",
+            "measure",
+            "trace.measure.files",
+            "persistMarkdownManifest",
+            "prepareCompressedContent"
+          ]
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 196756,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "invoke_iii",
+            "___syscall_fstat64",
+            "fstat"
+          ]
+        },
+        {
+          "function": "visit",
+          "source": "production-bundle",
+          "line": 3798,
+          "column": 17,
+          "attributedSelfBytes": 196736,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "runCoordinatedWordPressRequest",
+            "logPlayttRuntimeMemory",
+            "playttRuntimeMemoryEvidence",
+            "collectPlayttFileMemory",
+            "visit",
+            "visit",
+            "visit",
+            "visit"
+          ]
+        },
+        {
+          "function": "next",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 196660,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "(anonymous)",
+            "from"
+          ]
+        }
+      ],
+      "requestsDuringSampling": 54,
+      "nativeSaveReceipts": 0,
+      "requestCategories": {
+        "asset": 51,
+        "other": 1,
+        "post-editor": 1,
+        "rest": 1
+      },
+      "requestStatusCounts": {
+        "200": 53,
+        "302": 1
+      }
+    },
+    {
+      "name": "save",
+      "elapsedMs": 20917,
+      "profileBytes": 105811,
+      "profileSha256": "c3ca8fa76bc9dfd611e7c4034a43a2fe9ad047fbb189f9717b5b9c023de5377e",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "profileNodes": 453,
+      "samples": 873,
+      "nodeAttributedSelfBytes": 30536920,
+      "sampleAttributedSizeSum": 30463824,
+      "topFunctions": [
+        {
+          "function": "(anonymous)",
+          "attributedSelfBytes": 4292896
+        },
+        {
+          "function": "lookupPath",
+          "attributedSelfBytes": 2786556
+        },
+        {
+          "function": "split",
+          "attributedSelfBytes": 2655400
+        },
+        {
+          "function": "getattr",
+          "attributedSelfBytes": 2557668
+        },
+        {
+          "function": "next",
+          "attributedSelfBytes": 2425600
+        },
+        {
+          "function": "writeStat",
+          "attributedSelfBytes": 1507680
+        },
+        {
+          "function": "js_fd_read",
+          "attributedSelfBytes": 1410952
+        },
+        {
+          "function": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 1344948
+        },
+        {
+          "function": "subarray",
+          "attributedSelfBytes": 721696
+        },
+        {
+          "function": "base64",
+          "attributedSelfBytes": 691304
+        },
+        {
+          "function": "filter",
+          "attributedSelfBytes": 689196
+        },
+        {
+          "function": "from",
+          "attributedSelfBytes": 657092
+        },
+        {
+          "function": "getPath",
+          "attributedSelfBytes": 622808
+        },
+        {
+          "function": "Asyncify.handleSleep",
+          "attributedSelfBytes": 562224
+        },
+        {
+          "function": "runtimeOwnedWpContentPaths",
+          "attributedSelfBytes": 491980
+        },
+        {
+          "function": "includes",
+          "attributedSelfBytes": 459296
+        },
+        {
+          "function": "floor",
+          "attributedSelfBytes": 458832
+        },
+        {
+          "function": "add",
+          "attributedSelfBytes": 359760
+        },
+        {
+          "function": "createStream",
+          "attributedSelfBytes": 327828
+        },
+        {
+          "function": "visit",
+          "attributedSelfBytes": 327800
+        },
+        {
+          "function": "remember",
+          "attributedSelfBytes": 279340
+        },
+        {
+          "function": "(V8 API)",
+          "attributedSelfBytes": 262416
+        },
+        {
+          "function": "collectWpContentFiles",
+          "attributedSelfBytes": 229684
+        },
+        {
+          "function": "Set",
+          "attributedSelfBytes": 229636
+        },
+        {
+          "function": "readContentBytes",
+          "attributedSelfBytes": 229536
+        }
+      ],
+      "topLocations": [
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 2786556
+        },
+        {
+          "function": "split",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 2655400
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 2557668
+        },
+        {
+          "function": "next",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 2425600
+        },
+        {
+          "function": "writeStat",
+          "source": "production-bundle",
+          "line": 20816,
+          "column": 14,
+          "attributedSelfBytes": 1507680
+        },
+        {
+          "function": "js_fd_read",
+          "source": "production-bundle",
+          "line": 24359,
+          "column": 22,
+          "attributedSelfBytes": 1410952
+        },
+        {
+          "function": "validatePlayttSnapshotSources",
+          "source": "production-bundle",
+          "line": 1726,
+          "column": 39,
+          "attributedSelfBytes": 1344948
+        },
+        {
+          "function": "subarray",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 721696
+        },
+        {
+          "function": "base64",
+          "source": "production-bundle",
+          "line": 2680,
+          "column": 16,
+          "attributedSelfBytes": 691304
+        },
+        {
+          "function": "filter",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 689196
+        },
+        {
+          "function": "from",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 657092
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2667,
+          "column": 37,
+          "attributedSelfBytes": 651836
+        },
+        {
+          "function": "getPath",
+          "source": "production-bundle",
+          "line": 18505,
+          "column": 12,
+          "attributedSelfBytes": 622808
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2470,
+          "column": 34,
+          "attributedSelfBytes": 592352
+        },
+        {
+          "function": "Asyncify.handleSleep",
+          "source": "production-bundle",
+          "line": 25558,
+          "column": 36,
+          "attributedSelfBytes": 562224
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 16628,
+          "column": 50,
+          "attributedSelfBytes": 525104
+        },
+        {
+          "function": "runtimeOwnedWpContentPaths",
+          "source": "production-bundle",
+          "line": 28215,
+          "column": 36,
+          "attributedSelfBytes": 491980
+        },
+        {
+          "function": "includes",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 459296
+        },
+        {
+          "function": "floor",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 458832
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 28217,
+          "column": 18,
+          "attributedSelfBytes": 360592
+        },
+        {
+          "function": "add",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 359760
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 3353,
+          "column": 37,
+          "attributedSelfBytes": 344308
+        },
+        {
+          "function": "createStream",
+          "source": "production-bundle",
+          "line": 18692,
+          "column": 17,
+          "attributedSelfBytes": 327828
+        },
+        {
+          "function": "visit",
+          "source": "production-bundle",
+          "line": 3798,
+          "column": 17,
+          "attributedSelfBytes": 327800
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2472,
+          "column": 37,
+          "attributedSelfBytes": 311452
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 24018,
+          "column": 38,
+          "attributedSelfBytes": 295308
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2471,
+          "column": 37,
+          "attributedSelfBytes": 294912
+        },
+        {
+          "function": "remember",
+          "source": "production-bundle",
+          "line": 4020,
+          "column": 11,
+          "attributedSelfBytes": 279340
+        },
+        {
+          "function": "(V8 API)",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 262416
+        },
+        {
+          "function": "collectWpContentFiles",
+          "source": "production-bundle",
+          "line": 54248,
+          "column": 37,
+          "attributedSelfBytes": 229684
+        }
+      ],
+      "topCallsites": [
+        {
+          "function": "js_fd_read",
+          "source": "production-bundle",
+          "line": 24359,
+          "column": 22,
+          "attributedSelfBytes": 918684,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "next",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 885000,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "serializeManifestEnvelope",
+            "base64"
+          ]
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 819728,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_stat64"
+          ]
+        },
+        {
+          "function": "base64",
+          "source": "production-bundle",
+          "line": 2680,
+          "column": 16,
+          "attributedSelfBytes": 691304,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "serializeManifestEnvelope"
+          ]
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 622972,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_fstat64",
+            "fstat"
+          ]
+        },
+        {
+          "function": "Asyncify.handleSleep",
+          "source": "production-bundle",
+          "line": 25558,
+          "column": 36,
+          "attributedSelfBytes": 562224,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "(anonymous)"
+          ]
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 557248,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_stat64"
+          ]
+        },
+        {
+          "function": "next",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 557220,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "prepareCompressedContent",
+            "decodeCanonicalManifestBytes",
+            "from"
+          ]
+        },
+        {
+          "function": "from",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 525548,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "prepareCompressedContent",
+            "decodeCanonicalManifestBytes"
+          ]
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 491748,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_openat",
+            "open"
+          ]
+        },
+        {
+          "function": "writeStat",
+          "source": "production-bundle",
+          "line": 20816,
+          "column": 14,
+          "attributedSelfBytes": 491636,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_fstat64"
+          ]
+        },
+        {
+          "function": "js_fd_read",
+          "source": "production-bundle",
+          "line": 24359,
+          "column": 22,
+          "attributedSelfBytes": 426592,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "invoke_iii"
+          ]
+        },
+        {
+          "function": "split",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 393392,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_lstat64",
+            "lookupPath"
+          ]
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 360720,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "invoke_iii",
+            "___syscall_fstat64",
+            "fstat"
+          ]
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 360628,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_lstat64"
+          ]
+        },
+        {
+          "function": "getPath",
+          "source": "production-bundle",
+          "line": 18505,
+          "column": 12,
+          "attributedSelfBytes": 360572,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_openat",
+            "open"
+          ]
+        },
+        {
+          "function": "writeStat",
+          "source": "production-bundle",
+          "line": 20816,
+          "column": 14,
+          "attributedSelfBytes": 360528,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_stat64"
+          ]
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 3353,
+          "column": 37,
+          "attributedSelfBytes": 344308,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "prepareCompressedContent"
+          ]
+        },
+        {
+          "function": "runtimeOwnedWpContentPaths",
+          "source": "production-bundle",
+          "line": 28215,
+          "column": 36,
+          "attributedSelfBytes": 327968,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "collectWpContentFiles",
+            "validateWpContentMetadata",
+            "isCanonicalWpContentPath"
+          ]
+        },
+        {
+          "function": "getattr",
+          "source": "production-bundle",
+          "line": 17717,
+          "column": 14,
+          "attributedSelfBytes": 327904,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_lstat64"
+          ]
+        },
+        {
+          "function": "split",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 327856,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_stat64",
+            "lookupPath"
+          ]
+        },
+        {
+          "function": "writeStat",
+          "source": "production-bundle",
+          "line": 20816,
+          "column": 14,
+          "attributedSelfBytes": 327752,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "___syscall_lstat64"
+          ]
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2667,
+          "column": 37,
+          "attributedSelfBytes": 312216,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "persistMarkdownManifest",
+            "serializeManifestEnvelope"
+          ]
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2472,
+          "column": 37,
+          "attributedSelfBytes": 311452,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "createCompressedContent"
+          ]
+        },
+        {
+          "function": "validatePlayttSnapshotSources",
+          "source": "production-bundle",
+          "line": 1726,
+          "column": 39,
+          "attributedSelfBytes": 295264,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "persistRuntime",
+            "measure",
+            "trace.measure.files",
+            "persistMarkdownManifest",
+            "prepareCompressedContent"
+          ]
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 295112,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "collectWpContentFiles",
+            "filter",
+            "(anonymous)",
+            "isDir",
+            "(anonymous)",
+            "isDir",
+            "(anonymous)",
+            "fileExists"
+          ]
+        },
+        {
+          "function": "lookupPath",
+          "source": "production-bundle",
+          "line": 18446,
+          "column": 15,
+          "attributedSelfBytes": 295012,
+          "ancestors": [
+            "(anonymous)",
+            "(anonymous)",
+            "invoke_ii",
+            "(anonymous)",
+            "js-to-wasm:ii:i",
+            "invoke_iiiii",
+            "(anonymous)",
+            "invoke_iii",
+            "___syscall_openat",
+            "open"
+          ]
+        },
+        {
+          "function": "next",
+          "source": "runtime-or-wrapper",
+          "line": 0,
+          "column": 0,
+          "attributedSelfBytes": 295000,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "(anonymous)",
+            "from"
+          ]
+        },
+        {
+          "function": "(anonymous)",
+          "source": "production-bundle",
+          "line": 2471,
+          "column": 37,
+          "attributedSelfBytes": 294912,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "createCompressedContent"
+          ]
+        },
+        {
+          "function": "remember",
+          "source": "production-bundle",
+          "line": 4020,
+          "column": 11,
+          "attributedSelfBytes": 279340,
+          "ancestors": [
+            "(root)",
+            "(anonymous)",
+            "persistMarkdownManifest",
+            "(anonymous)"
+          ]
+        }
+      ],
+      "requestsDuringSampling": 4,
+      "nativeSaveReceipts": 1,
+      "requestCategories": {
+        "ajax": 1,
+        "asset": 1,
+        "rest": 2
+      },
+      "requestStatusCounts": {
+        "200": 4
+      }
+    }
+  ],
+  "scope": "Separate native-editor render and save windows on the same local workerd instance.",
+  "limitations": [
+    "Sampling includes collected objects. Cumulative sampled JS allocations are not simultaneous retained bytes, WASM allocator usage, RSS, provider peak or billed CPU.",
+    "Node selfSize and sample sizes are distinct outputs and must not be added together.",
+    "Windows contain surrounding requests as enumerated; elapsed time includes browser interaction and control overhead.",
+    "The local fixture does not enforce Cloudflare admission. No cloud write or deployment occurred."
+  ],
+  "cloudRequests": 0,
+  "centralSourceChanged": false,
+  "rawProfilesPrivate": true
+}

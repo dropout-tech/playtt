@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-18T19:59:10.860Z",
+  "result": "pass",
+  "scope": "Two independently decoded/hash-verified remote backups around deployment; all owned attachment rows including meta_id identical",
+  "id": 128,
+  "rows": 3,
+  "rowIds": [
+    "18",
+    "19",
+    "20"
+  ],
+  "keys": [
+    "_wp_attached_file",
+    "_wp_attachment_metadata",
+    "_wp_attachment_image_alt"
+  ],
+  "beforeRevision": "1a990cab-192c-45f5-9483-3e474027e655",
+  "afterRevision": "825b7d5b-fe47-4746-8b12-b146a1a4bca4",
+  "fileHash": "05c8d9c0d11d8ed170b65400af975a1a09268f09955d6f784c1df49c9dc4d762"
+}

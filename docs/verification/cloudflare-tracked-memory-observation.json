@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-17T07:08:24.548976+00:00",
+  "scope": "Finite sanitized remote observation, not sustained production reliability acceptance",
+  "deployment": "755bdb73-82ca-4607-9937-017970a2ed3e",
+  "events": 758,
+  "outcomes": {
+    "ok": 752,
+    "canceled": 6
+  },
+  "exceptions": [],
+  "maxHeapBytes": 76218368,
+  "maxFileBytes": 35671850,
+  "firstEvent": "2026-11-17T06:48:38.963Z",
+  "lastEvent": "2026-11-17T07:06:41.099Z",
+  "productionChanged": false
+}

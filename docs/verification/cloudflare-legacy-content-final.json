@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-21T15:10:53.413Z",
+  "result": "pass",
+  "finalVersion": 181,
+  "finalPrimaryPageBodyAndDigestExact": true,
+  "pageMetadataPreservedExceptNativeModificationDates": true,
+  "allUsermetaAndOriginalSessionBytesExact": true,
+  "sequenceChanges": [
+    {
+      "table": "wp_options",
+      "before": "773",
+      "after": "784"
+    },
+    {
+      "table": "wp_posts",
+      "before": "207",
+      "after": "208"
+    }
+  ],
+  "oldPinReaderSourceFiles": [
+    "src/canonical-restore-pack.ts",
+    "src/playtt-backup-pins.ts",
+    "src/playtt-content-overlay.ts",
+    "src/playtt-maintenance-overlay.ts",
+    "src/playtt-metadata-overlay.ts",
+    "src/playtt-snapshot-source.ts",
+    "src/playtt-usermeta-overlay.ts"
+  ],
+  "oldPinReaderSha256": "8114db77acb02a1d524dc02a874b019fdecabf0f1bc62d73ffb24058b27c0f94",
+  "oldPinReaderAcceptsConvertedAndFinal": true,
+  "oldPinRestartIdempotent": true,
+  "pinsLocalOnly": 2,
+  "allObservedHttpBelow400": true,
+  "nativeWindowChargedBytes": 588515,
+  "nativeWindowPuts": 13,
+  "combinedDerivedBytes": 1021446,
+  "combinedDerivedPuts": 20,
+  "lastMeasuredCloudRemainder": 1083839,
+  "headroomDerived": 62393,
+  "windowDurationMs": 18715,
+  "cloudRequests": 0,
+  "localProcessesDisposed": true,
+  "goalStatus": "active"
+}

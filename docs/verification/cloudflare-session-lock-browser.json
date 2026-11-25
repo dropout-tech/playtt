@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-20T21:00:17.383Z",
+  "result": "incomplete",
+  "newContentTyped": false,
+  "initialTakeoverLinkObserved": true,
+  "takeoverClickSucceeded": false,
+  "firstUserLostLock": false,
+  "secondUserSavedAndReloaded": false,
+  "transitionToTakeoverLostWithoutClick": true,
+  "editorNavigationAborted": true,
+  "editorReplacementTabBlockedByAllowance": true,
+  "adminTabClosed": true,
+  "editorTabClosed": true
+}

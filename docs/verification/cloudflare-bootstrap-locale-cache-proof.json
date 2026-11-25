@@ -1,0 +1,59 @@
+{
+  "schema": "playtt/locale-cache-proof/v1",
+  "result": "pass",
+  "scope": "Pinned real WordPress locale sanitization and translation registry under PHP WASM; stubbed option storage, not native persistence acceptance",
+  "outcomes": [
+    {
+      "variant": "original",
+      "before": [],
+      "first": {
+        "siteLocale": false,
+        "userLocale": "zh_TW",
+        "available": [],
+        "files": 77,
+        "unrelatedCache": "keep"
+      },
+      "repeatSiteLocale": false
+    },
+    {
+      "variant": "fixed",
+      "before": [],
+      "first": {
+        "siteLocale": "zh_TW",
+        "userLocale": "zh_TW",
+        "available": [
+          "zh_TW"
+        ],
+        "files": 77,
+        "unrelatedCache": "keep"
+      },
+      "repeatSiteLocale": "zh_TW"
+    }
+  ],
+  "coreFiles": [
+    {
+      "path": "l10n.php",
+      "sha256": "43c9af6b687ee3eb92608fea4697ebe7b62b3d45490a7657efce71033ac82ed7"
+    },
+    {
+      "path": "formatting.php",
+      "sha256": "350f6b32303915df970bb0e3ea360fcd54bb0b8a7ecc3d504c3d860ab9468d32"
+    },
+    {
+      "path": "class-wp-textdomain-registry.php",
+      "sha256": "c2c44ce46450364208968b731102497fa3dd3323edfd0357bfdeabc98dc6b40e"
+    },
+    {
+      "path": "cache.php",
+      "sha256": "a219c2b57cc9990b560c6b497c877db443b7e29239645a6a79b2d76839c46e19"
+    },
+    {
+      "path": "class-wp-object-cache.php",
+      "sha256": "1857b774bd9cfbafbd50a1b1424f7df637d202cf3f2253cda9798d4ad56f3cf0"
+    }
+  ],
+  "originalPluginSha256": "e39b45fdcb7d12d328608e40c7e7e32f6fb95099da1513b47489e01c035f92b4",
+  "fixedPluginSha256": "b005ff790968b1009f8fab634f0e456b019662855d83640c0fe84dc4bae42f3d",
+  "cloudRequests": 0,
+  "phpExited": true
+}

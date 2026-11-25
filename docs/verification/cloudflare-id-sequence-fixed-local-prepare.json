@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-17T11:14:44.161Z",
+  "mode": "prepare",
+  "result": "prepared",
+  "scope": "Local-only two owned drafts created, highest removed; stop and restart local runtime before check",
+  "retainedId": 208,
+  "removedHighestId": 209
+}

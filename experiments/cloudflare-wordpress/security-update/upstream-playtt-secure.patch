@@ -1,0 +1,220 @@
+diff --git a/packages/runtime-cloudflare/src/worker.ts b/packages/runtime-cloudflare/src/worker.ts
+--- a/packages/runtime-cloudflare/src/worker.ts
++++ b/packages/runtime-cloudflare/src/worker.ts
+@@ -3,11 +3,12 @@
+ import { bootWordPressAndRequestHandler, type WordPressInstallMode } from "@wp-playground/wordpress"
+ // The PHP-WASM package publishes this Emscripten loader without TypeScript declarations.
+ // @ts-expect-error The adjacent Wasm declaration covers the compiled binary import.
+-import { dependenciesTotalSize, init } from "../node_modules/@php-wasm/web-8-5/asyncify/php_8_5.js"
+-import phpWasmModule from "../node_modules/@php-wasm/web-8-5/asyncify/8_5_8/php_8_5.wasm"
++import { dependenciesTotalSize, init } from "../node_modules/@php-wasm/web-8-3/asyncify/php_8_3.js"
++import phpWasmModule from "../node_modules/@php-wasm/web-8-3/asyncify/8_3_36/php_8_3.wasm"
+ import { CLOUDFLARE_RUNTIME_HEALTH_MARKER, CLOUDFLARE_RUNTIME_HEALTH_SCHEMA, cloudflareRuntimeHealthResponse } from "./health-envelope.js"
+ import { leaseRetryDelayMs } from "./lease-retry.js"
+ import { logMutationPhase, MutationRetainedBytes } from "./mutation-memory.js"
++import { installPlayttOpaqueIds, installPlayttStorageOpaqueIds, PLAYTT_STARTER_MEDIA_POLICY } from './playtt-php-compat.js'
+ import { attachServerTiming, CloudflarePhaseTrace, logPhaseTrace, type PageCacheDisposition, type RuntimeDisposition, type TraceOperation } from "./phase-trace.js"
+ import { selectOperatorCoordinator } from "./operator-coordinator.js"
+ import { canonicalPublicRoute, MAX_PUBLISHED_PAGE_BYTES, MAX_PUBLISHED_REVISION_BYTES, MAX_PUBLISHED_ROUTES, normalizePublishedRoutes, PUBLISHED_PAGE_SCHEMA, PUBLISHED_REVISION_SCHEMA, publishedPageObjectKey, publishedRevisionObjectKey, validatePublishedRevision, type PublishedRevision } from "./published-reader.js"
+@@ -40,7 +41,7 @@
+ import websiteImporterArtifactManifest from "../assets/website-importer-artifact.json" with { type: "json" }
+ import { createCanonicalRestorePack, decodeCanonicalRestorePack, validateCanonicalRestorePackMetadata, type CanonicalRestorePackMetadata } from "./canonical-restore-pack.js"
+ 
+-const PHP_VERSION = "8.5.8"
++const PHP_VERSION = "8.3.36"
+ const websiteImporterArtifact = websiteImporterArtifactManifest as RuntimeArchiveArtifactManifest
+ validateRuntimeArchiveArtifactManifest(websiteImporterArtifact)
+ if (!websiteImporterArtifact.component) throw new Error("Website importer runtime artifact is missing its component descriptor.")
+@@ -1612,11 +1613,10 @@
+     let adminPassword: string
+     try { adminPassword = await administratorPasswordForSite(env, site.id) } catch { throw new Error("Administrator credential roots are required to bootstrap a complete canonical WordPress revision.") }
+     runtime.php.writeFile(passwordFile, new TextEncoder().encode(adminPassword))
+-    const passwordOutput = (trace ? await trace.measure("canonical.bootstrap.password", () => runtime.php.run({ code: canonicalBootstrapPasswordCode(passwordFile) })) : await runtime.php.run({ code: canonicalBootstrapPasswordCode(passwordFile) })).text.trim()
+-    if (passwordOutput !== "password-updated") throw new Error("Canonical bootstrap did not update the admin password.")
+-    const urlOutput = (trace ? await trace.measure("canonical.bootstrap.url", () => runtime.php.run({ code: canonicalBootstrapUrlCode(origin) })) : await runtime.php.run({ code: canonicalBootstrapUrlCode(origin) })).text.trim()
+-    if (urlOutput !== "urls-updated") throw new Error("Canonical bootstrap did not update the site URLs.")
+-    const flushOutput = (trace ? await trace.measure("canonical.bootstrap.flush", () => runtime.php.run({ code: canonicalBootstrapFlushCode() })) : await runtime.php.run({ code: canonicalBootstrapFlushCode() })).text.trim()
++    // One WordPress request avoids repeated bootstrap work and multiple native
++    // uniqid() calls against the host's fixed clock before the next R2 I/O.
++    const setup = () => runtime.php.run({ code: canonicalBootstrapSetupCode(passwordFile, origin) })
++    const flushOutput = (trace ? await trace.measure("canonical.bootstrap.setup", setup) : await setup()).text.trim()
+     if (flushOutput !== "flushed") throw new Error("MDI did not confirm canonical bootstrap flush.")
+     const files = trace ? await trace.measure("canonical.bootstrap.collect", async () => collectRuntimeFiles(runtime.php, MARKDOWN_ROOT)) : collectRuntimeFiles(runtime.php, MARKDOWN_ROOT)
+     const pointer = await trace?.measure("canonical.bootstrap.persist", () => persistMarkdownRevision(env.WORDPRESS_STATE_BUCKET, files, site)) ?? await persistMarkdownRevision(env.WORDPRESS_STATE_BUCKET, files, site)
+@@ -1629,32 +1629,6 @@
+   }
+ }
+ 
+-function canonicalBootstrapPasswordCode(passwordFile: string): string {
+-  return `<?php
+-require '/wordpress/wp-load.php';
+-$password = file_get_contents(${JSON.stringify(passwordFile)});
+-@unlink(${JSON.stringify(passwordFile)});
+-if (!is_string($password) || $password === '') throw new Exception('WORDPRESS_ADMIN_PASSWORD was unavailable during canonical bootstrap.');
+-$admin = get_user_by('login', 'admin');
+-if (!$admin) throw new Exception('The WordPress seed does not contain the admin user.');
+-wp_set_password($password, $admin->ID);
+-echo 'password-updated';`
+-}
+-
+-function canonicalBootstrapUrlCode(origin: string): string {
+-  return `<?php
+-require '/wordpress/wp-load.php';
+-update_option('siteurl', ${JSON.stringify(origin)});
+-update_option('home', ${JSON.stringify(origin)});
+-echo 'urls-updated';`
+-}
+-
+-function canonicalBootstrapFlushCode(): string {
+-  return `<?php
+-require '/wordpress/wp-load.php';
+-$GLOBALS['wpdb']->flush_canonical_writes();
+-echo 'flushed';`
+-}
+ async function canonicalWordPressAuthConstants(env: RuntimeEnv, site: SiteContext): Promise<Record<WordPressAuthConstant, string>> {
+   return deriveWordPressAuthConstants(env.WORDPRESS_AUTH_SECRET ?? "", site.id)
+ }
+@@ -2064,7 +2038,7 @@
+   return files.sort((left, right) => left.path.localeCompare(right.path))
+ }
+ 
+-async function runBootProbe(phase: string, bucket: R2Bucket): Promise<Response> {
++export async function runBootProbe(phase: string, bucket: R2Bucket): Promise<Response> {
+   if (phase === "wordpress-archive" || phase === "sqlite-archive") {
+     const archiveBytes = phase === "wordpress-archive"
+       ? (await readWordPressRuntimeArtifact(bucket)).byteLength
+@@ -2302,10 +2276,14 @@
+   const websiteImporterZip = includeWebsiteImporter ? trace ? await trace.measure("runtime.archive.component.fetch-verify", () => readWebsiteImporterArtifact(runtimeBucket!)) : await readWebsiteImporterArtifact(runtimeBucket!) : undefined
+   const boot = () => bootWordPressAndRequestHandler({
+     createPhpRuntime: trace ? () => trace.measure("php.runtime.create", () => createPhpRuntime()) : createPhpRuntime,
++    // The WASM filesystem lives in the same 128 MiB isolate. A file-only
++    // opcode cache duplicates compiled PHP in that filesystem after each load.
++    phpIniEntries: { "opcache.enable": "0", "opcache.enable_cli": "0" },
+     constants: {
+       AUTOMATIC_UPDATER_DISABLED: true,
+       CONCATENATE_SCRIPTS: false,
+       DISABLE_WP_CRON: true,
++      FS_METHOD: "direct",
+       SCRIPT_DEBUG: false,
+       ...authConstants,
+       ...(markdownFiles ? {
+@@ -2325,10 +2303,12 @@
+     hooks: streamWordPressFiles || databaseSeed || markdownFiles || uploadFiles?.length || wpContentFiles?.length || wpContentDeleted.length || includeWebsiteImporter ? {
+       beforeWordPressFiles: streamWordPressFiles || markdownFiles || uploadFiles?.length || wpContentFiles?.length || wpContentDeleted.length || includeWebsiteImporter ? async (php: PHP) => {
+         if (streamWordPressFiles) trace ? await trace.measure("runtime.archive.wordpress.fetch-verify-extract", () => materializeWordPressServerFiles(php, runtimeBucket)) : await materializeWordPressServerFiles(php, runtimeBucket)
++        if (streamWordPressFiles) installPlayttOpaqueIds(php)
+         if (websiteImporterZip) trace ? await trace.measure("runtime.archive.component.materialize", async () => materializeRuntimeArchiveComponent(php, await websiteImporterZip, WEBSITE_IMPORTER_COMPONENT)) : await materializeRuntimeArchiveComponent(php, await websiteImporterZip, WEBSITE_IMPORTER_COMPONENT)
+         if (markdownFiles) {
+           if (trace) await trace.measure("runtime.archive.mdi.extract", () => materializeMarkdownDatabaseIntegration(php))
+           else await materializeMarkdownDatabaseIntegration(php)
++          installPlayttStorageOpaqueIds(php)
+           materializeCanonicalChangeAdapter(php)
+           if (trace) await trace.measure("canonical.hydration.markdown", async () => materializeRuntimeFiles(php, MARKDOWN_ROOT, markdownFiles), { files: markdownFiles.length, bytes: sumRuntimeFileBytes(markdownFiles) })
+           else materializeRuntimeFiles(php, MARKDOWN_ROOT, markdownFiles)
+@@ -2349,7 +2329,7 @@
+       } : undefined,
+     } : undefined,
+     maxPhpInstances: 1,
+-    phpVersion: "8.5",
++    phpVersion: "8.3",
+     siteUrl,
+     wordPressZip: undefined,
+     sqliteIntegrationPluginZip,
+@@ -2628,6 +2608,7 @@
+ function materializeCanonicalChangeAdapter(php: PHP): void {
+   const path = "/wordpress/wp-content/mu-plugins/wp-codebox-cloudflare-canonical-changes.php"
+   const source = `<?php
++${PLAYTT_STARTER_MEDIA_POLICY}
+ add_action( 'markdown_database_integration_flushed', static function ( $changes ) {
+ 	$json = json_encode( $changes, JSON_UNESCAPED_SLASHES );
+ 	if ( false === $json || false === file_put_contents( '${MARKDOWN_CHANGES_PATH}', $json, LOCK_EX ) ) {
+@@ -2759,7 +2740,7 @@
+   return readRuntimeArchiveArtifact(bucket, websiteImporterArtifact)
+ }
+ 
+-async function serveWordPressWpContent(request: Request, bucket: R2Bucket, coordinator: RevisionCoordinator, site: SiteContext): Promise<Response | null> {
++export async function serveWordPressWpContent(request: Request, bucket: R2Bucket, coordinator: RevisionCoordinator, site: SiteContext): Promise<Response | null> {
+   if (request.method !== "GET" && request.method !== "HEAD") return null
+   const url = new URL(request.url)
+   if (!url.pathname.startsWith("/wp-content/") || !PUBLIC_WP_CONTENT_EXTENSION.test(url.pathname)) return null
+@@ -2814,7 +2795,7 @@
+   return response
+ }
+ 
+-async function serveWordPressUpload(request: Request, bucket: R2Bucket, coordinator: RevisionCoordinator, site: SiteContext): Promise<Response | null> {
++export async function serveWordPressUpload(request: Request, bucket: R2Bucket, coordinator: RevisionCoordinator, site: SiteContext): Promise<Response | null> {
+   if (request.method !== "GET" && request.method !== "HEAD") return null
+   const url = new URL(request.url)
+   if (!url.pathname.startsWith("/wp-content/uploads/")) return null
+@@ -2905,7 +2886,7 @@
+   } as Record<string, string>)[extension] ?? "application/octet-stream"
+ }
+ 
+-async function serveWordPressStaticAsset(request: Request, bucket: R2Bucket): Promise<Response | null> {
++export async function serveWordPressStaticAsset(request: Request, bucket: R2Bucket): Promise<Response | null> {
+   if (request.method !== "GET" && request.method !== "HEAD") return null
+   const archivePath = wordpressStaticArchivePath(new URL(request.url).pathname)
+   if (!archivePath) return null
+@@ -2951,7 +2932,7 @@
+ 
+ function createPhpRuntime() {
+   return loadPHPRuntime(
+-    { dependencyFilename: "php_8_5.wasm", dependenciesTotalSize, phpWasmAsyncMode: "asyncify", init },
++    { dependencyFilename: "php_8_3.wasm", dependenciesTotalSize, phpWasmAsyncMode: "asyncify", init },
+     { instantiateWasm: instantiatePrecompiledWasm(phpWasmModule) },
+   )
+ }
+@@ -2963,3 +2944,4 @@
+ function probeResponse(phase: string, evidence: Record<string, number | string>): Response {
+   return Response.json({ schema: "wp-codebox/cloudflare-boot-probe/v1", phase, completed: true, evidence })
+ }
++
+diff --git a/packages/runtime-cloudflare/src/phase-trace.ts b/packages/runtime-cloudflare/src/phase-trace.ts
+--- a/packages/runtime-cloudflare/src/phase-trace.ts
++++ b/packages/runtime-cloudflare/src/phase-trace.ts
+@@ -27,6 +27,12 @@
+ const MAX_EVIDENCE_ENTRIES = 16
+ const SENSITIVE_EVIDENCE_KEY = /(?:authorization|cookie|credential|digest|host|key|password|path|revision|secret|token|url|(?:^id$|Id$|_id$|\.id$|-id$))/i
+ const PHASE_NAME = /^[a-z][a-z0-9_.-]{0,63}$/i
++let playttPhaseDiagnostics = false
++
++// Isolated probe only: emit bounded phase names, never request data or secrets.
++export function enablePlayttPhaseDiagnostics(): void {
++  playttPhaseDiagnostics = true
++}
+ 
+ function defaultNow(): number {
+   return typeof performance !== "undefined" ? performance.now() : Date.now()
+@@ -64,6 +70,7 @@
+     if (this.summary) throw new Error("Cloudflare phase trace is already complete.")
+     if (this.active || !PHASE_NAME.test(name) || this.phases.length + this.reservedPhases >= MAX_PHASES) throw new Error("Cloudflare phase must be a bounded, non-overlapping leaf.")
+     this.active = { name, startedAt: this.clock(), evidence }
++    if (playttPhaseDiagnostics) console.log(JSON.stringify({ probe: 'playtt', phase: name, event: 'start' }))
+   }
+ 
+   end(evidence?: Record<string, unknown>): void {
+@@ -71,6 +78,7 @@
+     const active = this.active
+     this.active = undefined
+     this.phases.push({ name: active.name, durationMs: boundedMs(this.clock() - active.startedAt), evidence: boundedEvidence({ ...active.evidence, ...evidence }) })
++    if (playttPhaseDiagnostics) console.log(JSON.stringify({ probe: 'playtt', phase: active.name, event: 'end', durationMs: this.phases.at(-1)!.durationMs }))
+   }
+ 
+   async measure<T>(name: string, work: () => Promise<T>, evidence?: Record<string, unknown>): Promise<T> {
+diff --git a/packages/runtime-cloudflare/scripts/generate-wordpress-runtime-corpus.ts b/packages/runtime-cloudflare/scripts/generate-wordpress-runtime-corpus.ts
+--- a/packages/runtime-cloudflare/scripts/generate-wordpress-runtime-corpus.ts
++++ b/packages/runtime-cloudflare/scripts/generate-wordpress-runtime-corpus.ts
+@@ -87,6 +87,13 @@
+ await writeFile(sqliteOutput, sqliteArchive)
+ await writeFile(sqliteManifestOutput, `${JSON.stringify(sqliteManifest, null, 2)}\n`)
+ 
++// The playtt deployment installs its own brand theme and never enables the
++// optional website-importer component. Generate only its three required assets.
++if (process.argv.includes('--playtt-core-only')) {
++  console.log(JSON.stringify({ wordpress: sourceVersion, runtimeBytes: archive.byteLength, staticBytes: staticBlob.byteLength, sqliteBytes: sqliteArchive.byteLength }))
++  process.exit(0)
++}
++
+ const componentResponse = await fetch(websiteImporterSource.source.url)
+ if (!componentResponse.ok) throw new Error(`Unable to download runtime archive component ${websiteImporterSource.component.id}: ${componentResponse.status}.`)
+ const componentSourceArchive = new Uint8Array(await componentResponse.arrayBuffer())

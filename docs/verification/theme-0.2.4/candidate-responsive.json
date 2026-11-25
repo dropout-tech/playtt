@@ -1,0 +1,468 @@
+{
+  "at": "2026-11-24T16:29:12.608Z",
+  "scope": "Chrome viewport emulation of published WordPress HTML and assets with candidate theme CSS only; not a physical phone",
+  "checks": [
+    {
+      "clientWidth": 360,
+      "copyrightBottom": 709.6875,
+      "copyrightOverlap": 0,
+      "deferredImages": 3,
+      "details": [],
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "lineTop": 734,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "clientWidth": 360,
+      "copyrightBottom": 709.65625,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "lineTop": 734,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/about/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "clientWidth": 360,
+      "copyrightBottom": 710.15625,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [
+        {
+          "height": 44,
+          "text": "完全沒有打過桌球，也可以參加嗎？"
+        },
+        {
+          "height": 44,
+          "text": "如何預約課程或租桌？"
+        },
+        {
+          "height": 44,
+          "text": "團體課會做哪些練習？"
+        }
+      ],
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "lineTop": 734,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/class/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "clientWidth": 360,
+      "copyrightBottom": 709.625,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        }
+      ],
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "lineTop": 734,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/coaches/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "clientWidth": 360,
+      "copyrightBottom": 710,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "lineTop": 734,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/locations/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "clientWidth": 360,
+      "copyrightBottom": 710.203125,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "lineTop": 734,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/partner/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "clientWidth": 753,
+      "copyrightBottom": 903.921875,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "lineTop": 928,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 753,
+      "copyrightBottom": 904.34375,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "lineTop": 928,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/about/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 753,
+      "copyrightBottom": 904.171875,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [
+        {
+          "height": 44,
+          "text": "完全沒有打過桌球，也可以參加嗎？"
+        },
+        {
+          "height": 44,
+          "text": "如何預約課程或租桌？"
+        },
+        {
+          "height": 44,
+          "text": "團體課會做哪些練習？"
+        }
+      ],
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "lineTop": 928,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/class/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 753,
+      "copyrightBottom": 903.75,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        }
+      ],
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "lineTop": 928,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/coaches/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 753,
+      "copyrightBottom": 904.40625,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "lineTop": 928,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/locations/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 753,
+      "copyrightBottom": 904.3125,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "lineTop": 928,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/partner/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 1425,
+      "copyrightBottom": 780.0625,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 900,
+      "lang": "zh-TW",
+      "lineTop": 804,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "clientWidth": 1425,
+      "copyrightBottom": 779.90625,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 900,
+      "lang": "zh-TW",
+      "lineTop": 804,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/about/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "clientWidth": 1425,
+      "copyrightBottom": 779.953125,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [
+        {
+          "height": 44,
+          "text": "完全沒有打過桌球，也可以參加嗎？"
+        },
+        {
+          "height": 44,
+          "text": "如何預約課程或租桌？"
+        },
+        {
+          "height": 44,
+          "text": "團體課會做哪些練習？"
+        }
+      ],
+      "h1": 1,
+      "height": 900,
+      "lang": "zh-TW",
+      "lineTop": 804,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/class/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "clientWidth": 1425,
+      "copyrightBottom": 780.296875,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        },
+        {
+          "height": 44,
+          "text": "教練經歷與教學特色"
+        }
+      ],
+      "h1": 1,
+      "height": 900,
+      "lang": "zh-TW",
+      "lineTop": 804,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/coaches/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "clientWidth": 1425,
+      "copyrightBottom": 780.015625,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 900,
+      "lang": "zh-TW",
+      "lineTop": 804,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/locations/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "clientWidth": 1425,
+      "copyrightBottom": 780.265625,
+      "copyrightOverlap": 0,
+      "deferredImages": 0,
+      "details": [],
+      "h1": 1,
+      "height": 900,
+      "lang": "zh-TW",
+      "lineTop": 804,
+      "lineUrl": "https://line.me/R/ti/p/@869usyqy",
+      "main": 1,
+      "missingAlt": 0,
+      "path": "/partner/",
+      "renderedBrokenImages": [],
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  ]
+}

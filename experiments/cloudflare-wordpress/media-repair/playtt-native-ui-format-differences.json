@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-18T20:33Z",
+  "differencesAfterBlockBoundaryNormalization": [
+    {
+      "kind": "delete",
+      "before": " ",
+      "after": "",
+      "context": ":{\"type\":\"default\"}} --><section class=\"wp-block-group lp-section \"><!-- wp:group {\"className\":\"lp-shell\",\"layout\":{\"type\":\"default"
+    },
+    {
+      "kind": "delete",
+      "before": " {\"level\":2}",
+      "after": "",
+      "context": "-eyebrow\">FIND YOUR GAME</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":2} --><h2 class=\"wp-block-heading\">每個起點，都有適合的課。</h2><!-- /wp:headin"
+    },
+    {
+      "kind": "delete",
+      "before": "{\"level\":2} ",
+      "after": "",
+      "context": "\"}} --><div class=\"wp-block-group lp-story-copy\"><!-- wp:heading {\"level\":2} --><h2 class=\"wp-block-heading\">不只學會打球，<br>也喜歡上每一次練習。</h2><!-- /w"
+    },
+    {
+      "kind": "delete",
+      "before": " ",
+      "after": "",
+      "context": ":{\"type\":\"default\"}} --><section class=\"wp-block-group lp-section \"><!-- wp:group {\"className\":\"lp-shell\",\"layout\":{\"type\":\"default"
+    },
+    {
+      "kind": "delete",
+      "before": " {\"level\":2}",
+      "after": "",
+      "context": "eyebrow\">MEET YOUR COACH</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":2} --><h2 class=\"wp-block-heading\">有人陪你，把每一拍打好。</h2><!-- /wp:headin"
+    },
+    {
+      "kind": "delete",
+      "before": " ",
+      "after": "",
+      "context": ":{\"type\":\"default\"}} --><section class=\"wp-block-group lp-section \"><!-- wp:group {\"className\":\"lp-shell\",\"layout\":{\"type\":\"default"
+    },
+    {
+      "kind": "insert",
+      "before": "",
+      "after": "amp;",
+      "context": "{\"className\":\"lp-eyebrow\"} --><p class=\"lp-eyebrow\">PLAY, LEARN & GROW</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":2} --><h2"
+    },
+    {
+      "kind": "delete",
+      "before": " {\"level\":2}",
+      "after": "",
+      "context": "brow\">PLAY, LEARN & GROW</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":2} --><h2 class=\"wp-block-heading\">在玩樂中，看見進步。</h2><!-- /wp:heading "
+    },
+    {
+      "kind": "delete",
+      "before": " ",
+      "after": "",
+      "context": ":{\"type\":\"default\"}} --><section class=\"wp-block-group lp-section \"><!-- wp:group {\"className\":\"lp-shell\",\"layout\":{\"type\":\"default"
+    },
+    {
+      "kind": "delete",
+      "before": " {\"level\":2}",
+      "after": "",
+      "context": "ebrow\">COME PLAY WITH US</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":2} --><h2 class=\"wp-block-heading\">離你近一點，離桌球更近。</h2><!-- /wp:headin"
+    },
+    {
+      "kind": "delete",
+      "before": "{\"level\":2} ",
+      "after": "",
+      "context": " NEXT RALLY STARTS HERE</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":2} --><h2 class=\"wp-block-heading\">下一球，<br>一起玩。</h2><!-- /wp:heading"
+    }
+  ]
+}

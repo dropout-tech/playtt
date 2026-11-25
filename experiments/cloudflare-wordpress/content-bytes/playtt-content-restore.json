@@ -1,0 +1,106 @@
+{
+  "at": "2026-11-18T21:18:20.357Z",
+  "result": "pass",
+  "scope": "Replayed native restore action on the existing owned revision after a byte-preserving reader/writer fix; fresh-session content exact including final LF; originals unchanged. No browser UI claim.",
+  "id": 140,
+  "revisionId": 141,
+  "targetHash": "22e2db746bf4fe2d65d226798f15d387cf79952ae50708c02d35c3c2d74648fc",
+  "targetBytes": 2401,
+  "preFixLostBytes": 1,
+  "preFixBackupRetainedBytes": true,
+  "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+  "cleanupComplete": false,
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1815
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 7117
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7372
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2994
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/140?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2957
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2787
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/140/revisions/141?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2526
+    },
+    {
+      "path": "/wp-admin/revision.php?revision=141",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2650
+    },
+    {
+      "path": "/wp-admin/revision.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6941
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2166
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6549
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3822
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/140?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2462
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2657
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 300
+    }
+  ]
+}

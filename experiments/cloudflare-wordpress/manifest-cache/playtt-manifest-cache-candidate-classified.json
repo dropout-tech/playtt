@@ -1,0 +1,1243 @@
+{
+  "at": "2026-11-20T02:44:32.010Z",
+  "result": "pass",
+  "mode": "candidate",
+  "samples": [
+    {
+      "at": "2026-11-20T02:41:25.072Z",
+      "index": 0,
+      "kind": "empty-warmup",
+      "wallMs": 2212.542800000003,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 291,
+      "afterVersion": 291,
+      "eventAt": "2026-11-20T02:41:24.503Z",
+      "eventOffsetMs": -569,
+      "runtime": "warm",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 2180,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 161,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 254,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.release.unchanged",
+          "durationMs": 1765,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:41:32.469Z",
+      "index": 1,
+      "kind": "empty",
+      "wallMs": 2361.426999999996,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 291,
+      "afterVersion": 291,
+      "eventAt": "2026-11-20T02:41:32.586Z",
+      "eventOffsetMs": 117,
+      "runtime": "warm",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 705,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 84,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 155,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.release.unchanged",
+          "durationMs": 466,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:41:39.843Z",
+      "index": 2,
+      "kind": "post-lock",
+      "wallMs": 9812.627400000005,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 291,
+      "afterVersion": 292,
+      "eventAt": "2026-11-20T02:41:40.654Z",
+      "eventOffsetMs": 811,
+      "runtime": "cold",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 8793,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 72,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.read",
+          "durationMs": 152,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.restore-pack.fetch",
+          "durationMs": 189,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.restore-pack.verify-decode",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.sqlite.fetch-verify",
+          "durationMs": 444,
+          "aggregateGap": false
+        },
+        {
+          "name": "php.runtime.create",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.wordpress.fetch-verify-extract",
+          "durationMs": 390,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.mdi.extract",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.markdown",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.wp-content",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.uploads",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "playground.opaque",
+          "durationMs": 0,
+          "aggregateGap": true
+        },
+        {
+          "name": "playground.version.read",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 1734,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 2595,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.manifest.write",
+          "durationMs": 2431,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "coordinator.commit",
+          "durationMs": 786,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:41:53.596Z",
+      "index": 3,
+      "kind": "content",
+      "wallMs": 6361.736099999995,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 292,
+      "afterVersion": 293,
+      "eventAt": "2026-11-20T02:41:52.784Z",
+      "eventOffsetMs": -812,
+      "runtime": "warm",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 6980,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 142,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 272,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 3626,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.manifest.write",
+          "durationMs": 2184,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "coordinator.commit",
+          "durationMs": 756,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:42:04.108Z",
+      "index": 4,
+      "kind": "empty",
+      "wallMs": 2658.843200000003,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 293,
+      "afterVersion": 293,
+      "eventAt": "2026-11-20T02:42:03.216Z",
+      "eventOffsetMs": -892,
+      "runtime": "warm",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 3510,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 145,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 274,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.release.unchanged",
+          "durationMs": 3091,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:42:12.059Z",
+      "index": 5,
+      "kind": "post-lock",
+      "wallMs": 5555.588000000003,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 293,
+      "afterVersion": 294,
+      "eventAt": "2026-11-20T02:42:11.094Z",
+      "eventOffsetMs": -965,
+      "runtime": "warm",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 6191,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 168,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 296,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 1703,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.manifest.write",
+          "durationMs": 3277,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "coordinator.commit",
+          "durationMs": 747,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:42:22.003Z",
+      "index": 6,
+      "kind": "content",
+      "wallMs": 6635.573199999999,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 294,
+      "afterVersion": 295,
+      "eventAt": "2026-11-20T02:42:21.103Z",
+      "eventOffsetMs": -900,
+      "runtime": "warm",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 7372,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 146,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 288,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 4147,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.manifest.write",
+          "durationMs": 2119,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "coordinator.commit",
+          "durationMs": 672,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:42:32.506Z",
+      "index": 7,
+      "kind": "empty",
+      "wallMs": 1839.698900000003,
+      "status": 200,
+      "canonicalChanged": false,
+      "versionDelta": 0,
+      "beforeVersion": 295,
+      "afterVersion": 295,
+      "eventAt": "2026-11-20T02:42:31.690Z",
+      "eventOffsetMs": -816,
+      "runtime": "warm",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 2603,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 144,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 261,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.release.unchanged",
+          "durationMs": 2198,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:42:38.497Z",
+      "index": 8,
+      "kind": "post-lock",
+      "wallMs": 5373.6456000000035,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 295,
+      "afterVersion": 296,
+      "eventAt": "2026-11-20T02:42:37.617Z",
+      "eventOffsetMs": -880,
+      "runtime": "warm",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 6060,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 138,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 268,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 2669,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.manifest.write",
+          "durationMs": 2173,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "coordinator.commit",
+          "durationMs": 812,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    },
+    {
+      "at": "2026-11-20T02:42:48.748Z",
+      "index": 9,
+      "kind": "content",
+      "wallMs": 9889.233399999997,
+      "status": 200,
+      "canonicalChanged": true,
+      "versionDelta": 1,
+      "beforeVersion": 296,
+      "afterVersion": 297,
+      "eventAt": "2026-11-20T02:42:47.981Z",
+      "eventOffsetMs": -767,
+      "runtime": "cold",
+      "workerVersion": "7ecc797d-f042-4c5b-a8a1-0a112aa78fab",
+      "traceMs": 10447,
+      "manifestReused": true,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 149,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.read",
+          "durationMs": 267,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.restore-pack.fetch",
+          "durationMs": 328,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.restore-pack.verify-decode",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.sqlite.fetch-verify",
+          "durationMs": 872,
+          "aggregateGap": false
+        },
+        {
+          "name": "php.runtime.create",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.wordpress.fetch-verify-extract",
+          "durationMs": 519,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.mdi.extract",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.markdown",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.wp-content",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.uploads",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "playground.opaque",
+          "durationMs": 0,
+          "aggregateGap": true
+        },
+        {
+          "name": "playground.version.read",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.current.read",
+          "durationMs": 1655,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.changes.collect",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.current.reuse",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.upload.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.inventory",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.wp-content.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.markdown.write",
+          "durationMs": 3788,
+          "aggregateGap": false
+        },
+        {
+          "name": "persistence.manifest.write",
+          "durationMs": 2167,
+          "aggregateGap": false
+        },
+        {
+          "name": "publication.enqueue",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "coordinator.commit",
+          "durationMs": 702,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.cache.promote",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ]
+    }
+  ],
+  "grouped": [
+    {
+      "kind": "empty",
+      "runtime": "warm",
+      "count": 3,
+      "medianWallMs": 2361.426999999996,
+      "wallMs": [
+        2361.426999999996,
+        2658.843200000003,
+        1839.698900000003
+      ]
+    },
+    {
+      "kind": "post-lock",
+      "runtime": "warm",
+      "count": 2,
+      "medianWallMs": 5464.616800000003,
+      "wallMs": [
+        5555.588000000003,
+        5373.6456000000035
+      ]
+    },
+    {
+      "kind": "post-lock",
+      "runtime": "cold",
+      "count": 1,
+      "medianWallMs": 9812.627400000005,
+      "wallMs": [
+        9812.627400000005
+      ]
+    },
+    {
+      "kind": "content",
+      "runtime": "warm",
+      "count": 2,
+      "medianWallMs": 6498.654649999997,
+      "wallMs": [
+        6361.736099999995,
+        6635.573199999999
+      ]
+    },
+    {
+      "kind": "content",
+      "runtime": "cold",
+      "count": 1,
+      "medianWallMs": 9889.233399999997,
+      "wallMs": [
+        9889.233399999997
+      ]
+    }
+  ],
+  "limits": [
+    "Small sequential samples; no randomized order or statistical speedup claim.",
+    "Remote phase clocks advance on I/O; phase durations are not isolated CPU/operation cost.",
+    "Timing includes complete native response and, for content mutations, a small local ownership-guard file write."
+  ]
+}

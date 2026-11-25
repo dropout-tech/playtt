@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-24T16:13:38.403473+00:00",
+  "result": "pass",
+  "filesReviewed": 31,
+  "filesIncludingReport": 32,
+  "syntax": "pass; PHP initializer executed in pinned WASM proof and native local WordPress",
+  "knownPrivateValuesCompared": 314,
+  "matches": [],
+  "toolHashesChecked": 384,
+  "newTools": 14,
+  "assembledFiles": 930,
+  "priorAssembledFilesUnchanged": 916,
+  "centralRuntimeSourceHashesUnchanged": 82,
+  "configsUnchanged": 20,
+  "isolatedBuildInputs": 215,
+  "isolatedChangedInputs": [
+    "src/worker.ts"
+  ],
+  "isolatedPriorInputsUnchanged": 214,
+  "binaryModulesUnchanged": 5,
+  "executedHarnessSourcesExact": true,
+  "offlineBothInitializedAttemptDataAudit": "pass",
+  "failedBootstrapLedgerRetained": true,
+  "siteLanguageFalsePositiveCorrected": true,
+  "oldUnattributedExceptions": 2,
+  "finalServerExceptionsObserved": 0,
+  "latestBrowserConsoleInspected": false,
+  "cloudOperations": 0,
+  "productionChanged": false,
+  "fullBackendAccepted": false,
+  "remoteOwnersReplayed": false,
+  "goalStatus": "active"
+}

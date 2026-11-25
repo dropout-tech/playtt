@@ -1,0 +1,181 @@
+{
+  "menu": [
+    {
+      "height": 60.75,
+      "text": "關於我們",
+      "width": 108
+    },
+    {
+      "height": 60.75,
+      "text": "課程資訊",
+      "width": 108
+    },
+    {
+      "height": 60.75,
+      "text": "教練團隊",
+      "width": 108
+    },
+    {
+      "height": 60.75,
+      "text": "據點",
+      "width": 66
+    },
+    {
+      "height": 60.75,
+      "text": "合作招募",
+      "width": 108
+    }
+  ],
+  "wrap": {
+    "focus": true,
+    "label": "Close menu"
+  },
+  "escape": {
+    "focus": true,
+    "label": "Open menu",
+    "open": false
+  },
+  "focus": [
+    {
+      "focus": true,
+      "label": "LINE 預約體驗 ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "找到上場地點",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "探索課程 ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "探索課程 ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "探索課程 ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "認識 Let’s Play ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "認識完整教練團隊 ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "0988-521-012 郭執行長",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "02-8286-1011",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "查看地圖 ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "洽詢課程",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "0988-521-012 郭執行長",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "02-8286-1011",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "查看地圖 ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "洽詢課程",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "LINE 預約體驗 ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "0988-521-012 郭執行長",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "02-8286-1011",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "playpp2018@gmail.com",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    },
+    {
+      "focus": true,
+      "label": "LINE @869usyqy ↗",
+      "outline": "solid",
+      "overlap": 0,
+      "visible": true
+    }
+  ],
+  "console": []
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "playtt/core-sized-build-proof/v1",
+  "result": "pass",
+  "sourceInputs": 210,
+  "changedInputs": [
+    "src/playtt-compressed-core-module.mjs"
+  ],
+  "unchangedPriorInputs": 209,
+  "loadedSources": 73,
+  "sourceSha256": "3a72305b1edfa3e222644084777d018e3727b2d7f5730acd930182400b24a93a",
+  "candidateSha256": "385e86a870bc8757af0eae5dec5aa28623add5ed9113b0b344f15f66d621fcdb",
+  "baselineBundleSha256": "ed725b8e4a79b26af5b3f22351dd5e2bc850ce9bfbf440ec0f9fff8a7a9b864a",
+  "bundleSha256": "14cada693be821b6d4eac703d85422f10a33a1a0dde540ba3c4e31c9a92141e7",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "exactCompiledChunkSizeOnlyChange": true,
+  "unchangedBinaryModules": 5,
+  "maxOutputLengthUnchanged": true,
+  "cacheLimitUnchanged": true,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

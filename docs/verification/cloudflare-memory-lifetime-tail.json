@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-17T08:18:53.238552+00:00",
+  "scope": "Sanitized finite remote tail interval; paired Worker and DO envelopes are not unique requests. WASM heap and selected MEMFS file capacity are not total isolate memory.",
+  "from": "2026-11-17T07:57:27.961Z",
+  "to": "2026-11-17T08:17:07.320Z",
+  "versions": {
+    "959ecd6b-e951-4b9a-b683-497c6bb21e10": {
+      "events": 472,
+      "outcomes": {
+        "ok": 472
+      },
+      "exceptions": [],
+      "stages": {
+        "after-persist": {
+          "samples": 23,
+          "maxHeapBytes": 76546048,
+          "maxObservedFileBytes": 27195916
+        },
+        "after-request": {
+          "samples": 53,
+          "maxHeapBytes": 76546048,
+          "maxObservedFileBytes": 27203532
+        },
+        "before-request": {
+          "samples": 53,
+          "maxHeapBytes": 76546048,
+          "maxObservedFileBytes": 27203532
+        }
+      },
+      "generations": []
+    },
+    "c972b58e-e6be-41e2-a8c8-ffd066c86db1": {
+      "events": 209,
+      "outcomes": {
+        "ok": 207,
+        "canceled": 2
+      },
+      "exceptions": [],
+      "stages": {
+        "after-persist": {
+          "samples": 8,
+          "maxHeapBytes": 72155136,
+          "maxObservedFileBytes": 27211774
+        },
+        "after-request": {
+          "samples": 22,
+          "maxHeapBytes": 75497472,
+          "maxObservedFileBytes": 27211774
+        },
+        "before-request": {
+          "samples": 23,
+          "maxHeapBytes": 75497472,
+          "maxObservedFileBytes": 27211734
+        }
+      },
+      "generations": []
+    }
+  }
+}

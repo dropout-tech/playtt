@@ -1,0 +1,24 @@
+{
+  "result": "pass",
+  "wallMs": 70992,
+  "independentBackup": {
+    "objects": 303,
+    "files": 298,
+    "remoteGets": 8,
+    "downloadedBytes": 2802244,
+    "exact": true
+  },
+  "observerEvents": 164,
+  "outcomes": {
+    "ok": 164
+  },
+  "statuses": {
+    "200": 160,
+    "404": 4
+  },
+  "exceptions": [],
+  "observedVersions": [
+    "c7c46433-a876-4cd1-900f-a5dd532dda56"
+  ],
+  "observerStopped": true
+}

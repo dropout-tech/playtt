@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-18T21:47:11.873Z",
+  "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+  "result": "pass",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "revision": "78a0d6bd-c4a3-4c7b-be37-66e03578671b",
+  "objects": 297,
+  "decodedBytes": 4430243,
+  "archiveBytes": 2293332,
+  "archiveSha256": "fd35afa004cf05a16d7f0295627531c01c18cfb4de545eeed2c49468ee4fbaff"
+}

@@ -1,0 +1,179 @@
+{
+  "schema": "playtt/cleanup-native-audit/v1",
+  "at": "2026-11-21T21:13:45.846Z",
+  "result": "native-save-full-restart-and-data-pass; ajax400-unclassified; provider-memory-acceptance-open",
+  "sourceBuild": "cb9302a8b57c9bc3db16304cb3ad995b793eab543a759a4f7b9bfdb4800e0de5",
+  "sourceCount": 83,
+  "fullSourceBuild": true,
+  "centralCandidateAdopted": false,
+  "deployed": false,
+  "localOnly": true,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "baselineLocalCopyOfCloudVersion": 181,
+  "finalLocalVersion": 190,
+  "nativeSave": {
+    "status": 200,
+    "id": 193,
+    "draft": true,
+    "contentBytes": 1875,
+    "contentSha256": "93f8e21c8def8c2d5a6ec9b54d91990b8ef41dadcd847ba4d274da51ba01f39b",
+    "exact": true,
+    "receiptVersion": 186
+  },
+  "browser": {
+    "saved": {
+      "at": "2026-11-21T21:12:13.787Z",
+      "nativeSavedButton": true,
+      "nativeSavedNotice": true,
+      "editedParagraphPresent": true,
+      "paragraphs": 10
+    },
+    "cold": {
+      "at": "2026-11-21T21:13:01.050Z",
+      "newBrowserTab": true,
+      "nativeSavedButton": true,
+      "editedParagraphPresent": true,
+      "paragraphs": 10,
+      "draft": true,
+      "revisions11": true
+    },
+    "logout": {
+      "at": "2026-11-21T21:13:36.027Z",
+      "nativeLoggedOutMessage": true,
+      "nativeMessage": "你已完成登出。"
+    }
+  },
+  "restart": {
+    "fullWorkerdDisposed": true,
+    "bothPortsClosed": true,
+    "newInstance": true,
+    "stateExact": true,
+    "allDataExact": true,
+    "budgetExact": true,
+    "sameWindow": true,
+    "noReseedOrRearm": true,
+    "version": 187,
+    "chargedBytes": 300011
+  },
+  "revision": {
+    "originalRowsExact": true,
+    "addedCount": 1,
+    "addedId": 209
+  },
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "page/<owned-draft>.md"
+  ],
+  "allOtherContentExact": true,
+  "allOriginalUsermetaExactNewSessionRemoved": true,
+  "mediaAndThemeExact": true,
+  "independentBackupExact": true,
+  "fullMaterializedExact": true,
+  "independentObjects": 304,
+  "independentFiles": 298,
+  "chargedBytes": 450169,
+  "chargedPuts": 27,
+  "closed": true,
+  "sealed": true,
+  "pending": 0,
+  "localProcessesDisposed": true,
+  "exceptions": 0,
+  "observerErrors": 0,
+  "requests": 226,
+  "statusCounts": {
+    "200": 214,
+    "302": 9,
+    "303": 1,
+    "400": 1,
+    "403": 1
+  },
+  "httpErrors": [
+    {
+      "label": "post-first",
+      "kind": "request",
+      "restRoute": "/wp-json/wp/v2/global-styles/42",
+      "restErrorCode": "rest_forbidden_context",
+      "category": "rest",
+      "method": "GET",
+      "status": 403,
+      "wallMs": 560
+    },
+    {
+      "label": "logout",
+      "kind": "request",
+      "category": "ajax",
+      "method": "POST",
+      "status": 400,
+      "wallMs": 669
+    }
+  ],
+  "unclassifiedHttpErrors": [
+    {
+      "label": "logout",
+      "kind": "request",
+      "category": "ajax",
+      "method": "POST",
+      "status": 400,
+      "wallMs": 669
+    }
+  ],
+  "allHttpErrorsExplained": false,
+  "globalStyle403": {
+    "route": "/wp-json/wp/v2/global-styles/42",
+    "code": "rest_forbidden_context",
+    "pinnedCore": "wordpress/wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:172",
+    "interpretation": "Matches the edit-context update-permission rejection in the pinned core. No permission relaxation; this run still saved the draft.",
+    "previousUnclassified403Attributed": false
+  },
+  "memory": {
+    "method": "Runtime.getHeapUsage usedSize + backingStorageSize + last observed HEAPU8 within the same generation; no embedder double-counting; observer overhead and asynchronous boundary remain",
+    "phases": [
+      {
+        "phase": "before-restart",
+        "samples": 950,
+        "matchedSamples": 790,
+        "skippedSamples": 160,
+        "exceptions": 0,
+        "observerErrors": 0,
+        "maxObservedComponents": {
+          "label": "saving",
+          "usedSize": 31087484,
+          "backingStorageSize": 43387299,
+          "lastObservedPhpHeapBytes": 75956224,
+          "observedComponentSum": 150431007
+        },
+        "maxObservedPhpHeapBytes": 75956224
+      },
+      {
+        "phase": "after-restart",
+        "samples": 495,
+        "matchedSamples": 378,
+        "skippedSamples": 117,
+        "exceptions": 0,
+        "observerErrors": 0,
+        "maxObservedComponents": {
+          "label": "logout",
+          "usedSize": 31433596,
+          "backingStorageSize": 47850851,
+          "lastObservedPhpHeapBytes": 73400320,
+          "observedComponentSum": 152684767
+        },
+        "maxObservedPhpHeapBytes": 73400320
+      }
+    ],
+    "thresholdBytes": 134217728,
+    "observedSumAboveThreshold": true,
+    "providerAcceptance": false
+  },
+  "limitations": [
+    "Single local workflow; contenteditable fill/click is not physical IME/mobile acceptance.",
+    "Local workerd does not enforce the Cloudflare limit. These sampled, partially asynchronous component sums are not provider peak, billed CPU, RSS or an admission test.",
+    "One Ajax POST400 near logout lacks action/response evidence. Its cause and functional impact remain unproven; do not attribute it to heartbeat or logout merely by timing.",
+    "The new 403 is classified by exact route/error code and pinned source; earlier unclassified failures remain unresolved.",
+    "Independent import/materialization was checked by the runner; no separate end-user restoration of that output in this run.",
+    "Malformed ZIP/I/O and boot-failure cases passed in the preceding stage; this native run is a native save/restart data workflow, not sustained free-use acceptance."
+  ]
+}

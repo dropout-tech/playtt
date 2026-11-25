@@ -1,0 +1,206 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -1,3 +1,4 @@
++import { createMetadataOverlay, isMetadataOverlay, readMetadataOverlay, validateMetadataOverlay, type PlayttMetadataOverlay } from './playtt-metadata-overlay.js'
+ import { PlayttCapacityError, playttCapacityResponse } from './playtt-storage-capacity.js'
+ import { wordPressContentType } from './asset-content-type.js';
+ import { compactPlayttCoreFiles } from './playtt-core-memory.js';
+@@ -243,6 +244,7 @@
+ echo wp_json_encode(array_merge(array('status' => 'imported'), $record), JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR);`
+ export interface RuntimeEnv {
+   WORDPRESS_STATE_BUCKET: R2Bucket
++  PLAYTT_METADATA_OVERLAY?: string
+   WORDPRESS_SITE_CONTEXTS?: string
+   WORDPRESS_PREVIEW_DOMAIN?: string
+   WORDPRESS_PREVIEW_HOST_SECRET?: string
+@@ -442,7 +444,7 @@
+   uploads?: MarkdownManifestFile[]
+   wpContent?: MarkdownManifestFile[]
+   wpContentDeleted?: string[]
+-  restorePack?: CanonicalRestorePackMetadata
++  restorePack?: CanonicalRestorePackMetadata | PlayttMetadataOverlay
+ }
+
+ interface RuntimeFile {
+@@ -1453,7 +1455,7 @@
+       if (!canonicalChanges || !publicationChanges) throw new Error("Canonical mutation completed without its persistence evidence.")
+       logMutationPhase(diagnosticsStartedAt, "php-request", retained, { canonicalCreated: canonicalChanges.created.length, canonicalChanged: canonicalChanges.changed.length, canonicalDeleted: canonicalChanges.deleted.length })
+       if (route === "static-artifact-import") await heartbeat?.("persisting-canonical", 70)
+-      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace)
++      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_METADATA_OVERLAY === 'v1')
+       logPlayttRuntimeMemory("after-persist", runtime!, env)
+       if (route === "static-artifact-import") await heartbeat?.("canonical-prepared", 80)
+       if (!response) {
+@@ -1783,7 +1785,7 @@
+   return deriveWordPressAuthConstants(env.WORDPRESS_AUTH_SECRET ?? "", site.id)
+ }
+
+-async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace): Promise<MarkdownPointer> {
++async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay = false): Promise<MarkdownPointer> {
+   validateMarkdownChanges(changes)
+   const root = siteStorageKeys(site).root
+   const manifestCache = runtime.manifestCache ??= new PlayttRuntimeManifestCache<MarkdownManifest>()
+@@ -1849,7 +1851,7 @@
+   // This metadata is remembered only after the new pack and manifest are in
+   // R2. Until coordinator commit promotes runtime.pointer, it cannot be a hit.
+   const rememberPersisted = (manifest: MarkdownManifest) => { manifestCache.remember(root, manifest, manifest) }
+-  return trace ? trace.measure("persistence.manifest.write", () => persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted), { files: files.length }) : persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted)
++  return trace ? trace.measure("persistence.manifest.write", () => persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted, allowMetadataOverlay), { files: files.length }) : persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted, allowMetadataOverlay)
+ }
+
+ function readCanonicalChanges(php: PHP): MarkdownChanges {
+@@ -1996,6 +1998,11 @@
+   }
+   const manifest = trace ? await trace.measure("canonical.manifest.read", readManifest) : await readManifest()
+   const objectEvidence = { markdownFiles: manifest.files.length, markdownBytes: sumManifestFileBytes(manifest.files), uploadFiles: manifest.uploads?.length ?? 0, uploadBytes: sumManifestFileBytes(manifest.uploads ?? []), wpContentFiles: manifest.wpContent?.length ?? 0, wpContentBytes: sumManifestFileBytes(manifest.wpContent ?? []), wpContentDeleted: manifest.wpContentDeleted?.length ?? 0 }
++  if (isMetadataOverlay(manifest.restorePack)) {
++    const readOverlay = () => readMetadataOverlay(bucket, siteStorageKeys(site).root, manifest)
++    const restored = trace ? await trace.measure('canonical.metadata-overlay.restore', readOverlay) : await readOverlay()
++    return { ...restored.contents, manifest }
++  }
+   if (manifest.restorePack !== undefined) {
+     const restorePack = manifest.restorePack
+     validateCanonicalRestorePackMetadata(restorePack, siteStorageKeys(site).root, { markdown: manifest.files, uploads: manifest.uploads ?? [], wpContent: manifest.wpContent ?? [] })
+@@ -2116,7 +2123,7 @@
+   validateUploadMetadata(files.map((file) => ({ path: file.path, size: file.bytes.byteLength })))
+ }
+
+-async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void): Promise<MarkdownPointer> {
++async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay = false): Promise<MarkdownPointer> {
+   const revision = crypto.randomUUID()
+   const manifestKey = `${siteStorageKeys(site).markdownRevisionPrefix}/${revision}.json`
+   const persistedAt = new Date().toISOString()
+@@ -2125,6 +2132,18 @@
+   validateUploadManifestFiles(uploads, site)
+   validateWpContentManifestFiles(wpContent, site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   validateWpContentDeletedPaths(wpContentDeleted, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
++  if (allowMetadataOverlay && previous) {
++    const overlay = await createMetadataOverlay(bucket, siteStorageKeys(site).root, { files, uploads, wpContent, wpContentDeleted }, previous)
++    if (overlay) {
++      const manifest: MarkdownManifest = { ...pointer, files, uploads, wpContent, wpContentDeleted, restorePack: overlay }
++      validateMetadataOverlay(manifest, siteStorageKeys(site).root)
++      const raw = JSON.stringify(manifest)
++      if (new TextEncoder().encode(raw).length > 256 * 1024) throw new Error('Metadata overlay manifest exceeds its byte budget.')
++      await bucket.put(manifestKey, raw, { httpMetadata: { contentType: 'application/json' } })
++      onPersisted?.(manifest)
++      return pointer
++    }
++  }
+   // Rehash unchanged runtime bytes against the committed manifest, and read
+   // changed objects from R2. Persist a complete new pack before commit.
+   let snapshotPhaseAt = performance.now()
+@@ -2154,7 +2173,8 @@
+   validateUploadManifestFiles(manifest.uploads ?? [], site)
+   validateWpContentManifestFiles(manifest.wpContent ?? [], site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   validateWpContentDeletedPaths(manifest.wpContentDeleted ?? [], WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+-  if (manifest.restorePack !== undefined) validateCanonicalRestorePackMetadata(manifest.restorePack, siteStorageKeys(site).root, { markdown: manifest.files, uploads: manifest.uploads ?? [], wpContent: manifest.wpContent ?? [] })
++  if (isMetadataOverlay(manifest.restorePack)) validateMetadataOverlay(manifest, siteStorageKeys(site).root)
++  else if (manifest.restorePack !== undefined) validateCanonicalRestorePackMetadata(manifest.restorePack, siteStorageKeys(site).root, { markdown: manifest.files, uploads: manifest.uploads ?? [], wpContent: manifest.wpContent ?? [] })
+   return manifest
+ }
+
+--- a/src/playtt-snapshot-source.ts
++++ b/src/playtt-snapshot-source.ts
+@@ -1,11 +1,11 @@
+-import { MAX_RESTORE_PACK_DECODED_BYTES, type CanonicalRestorePackFile, type CanonicalRestorePackMetadata, type RestorePackBucket, type RestorePackContents } from './canonical-restore-pack.js';
++import { MAX_RESTORE_PACK_DECODED_BYTES, type CanonicalRestorePackFile, type RestorePackBucket, type RestorePackContents } from './canonical-restore-pack.js';
+
+ export interface PlayttSnapshotManifest {
+   files: CanonicalRestorePackFile[];
+   uploads?: CanonicalRestorePackFile[];
+   wpContent?: CanonicalRestorePackFile[];
+   wpContentDeleted?: string[];
+-  restorePack?: CanonicalRestorePackMetadata;
++  restorePack?: unknown;
+ }
+
+ type Group = 'markdown' | 'uploads' | 'wpContent';
+@@ -14,7 +14,7 @@
+ const prefixes = { markdown: 'markdown', uploads: 'uploads', wpContent: 'wp-content' } as const;
+ const filesOf = (manifest: PlayttSnapshotManifest, group: Group) => group === 'markdown' ? manifest.files : manifest[group] || [];
+
+-function validateSources(root: string, manifest: PlayttSnapshotManifest): void {
++export function validatePlayttSnapshotSources(root: string, manifest: PlayttSnapshotManifest): void {
+   if (!/^sites\/[a-z0-9_-]{1,128}$/i.test(root)) throw new Error('Snapshot source root is invalid.');
+   let count = 0, bytes = 0;
+   for (const group of groups) {
+@@ -35,8 +35,8 @@
+ // retain full R2 reads. No bytes or callbacks survive this operation. This does
+ // not recheck availability of unchanged loose-object replicas.
+ export async function readPlayttSnapshotSources(bucket: RestorePackBucket, root: string, next: PlayttSnapshotManifest, previous?: PlayttSnapshotManifest | null, readRuntimeFile?: PlayttSnapshotRuntimeReader): Promise<{ contents: RestorePackContents; reusedFiles: number; objectReads: number; runtimeSourceUsed: boolean }> {
+-  validateSources(root, next);
+-  if (previous) validateSources(root, previous);
++  validatePlayttSnapshotSources(root, next);
++  if (previous) validatePlayttSnapshotSources(root, previous);
+   if (readRuntimeFile && !previous) throw new Error('Runtime snapshot source requires a prior committed manifest.');
+   const result: RestorePackContents = { markdown: [], uploads: [], wpContent: [], wpContentDeleted: [...(next.wpContentDeleted || [])] };
+   const tasks: Array<{ group: Group; index: number; file: CanonicalRestorePackFile; reuse: boolean }> = [];
+--- a/src/playtt-backup-pins.ts
++++ b/src/playtt-backup-pins.ts
+@@ -1,3 +1,4 @@
++import { isMetadataOverlay, readMetadataOverlay, type OverlayManifest } from './playtt-metadata-overlay.js';
+ // Append-only protection for independently verified local backups. The caller
+ // must serialize this operation with its coordinator's renewable fence.
+ const KEY = 'playtt-backup-pins-v1';
+@@ -107,11 +108,22 @@
+     try { manifest = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(manifestBytes)); }
+     catch { throw new PlayttBackupPinError(503, 'Backup manifest is invalid.'); }
+     requirePin(manifest && manifest.revision === input.revision && manifest.manifestKey === input.manifestKey
+-      && manifest.persistedAt === input.persistedAt && manifest.restorePack?.schema === 'wp-codebox/cloudflare-canonical-restore-pack/v1'
+-      && manifest.restorePack?.objectKey === input.packKey && manifest.restorePack.sha256 === input.packSha256
+-      && manifest.restorePack.size === input.packBytes, 'Backup manifest identity mismatch.');
+-    const pack = await readBounded(this.bucket, input.packKey, MAX_PACK_BYTES);
+-    requirePin(pack.byteLength === input.packBytes && await sha(pack) === input.packSha256, 'Backup archive hash mismatch.');
++      && manifest.persistedAt === input.persistedAt, 'Backup manifest identity mismatch.');
++    if (isMetadataOverlay(manifest.restorePack)) {
++      // The pin protects the current manifest's exact hash, which anchors the
++      // full base and all replacement object hashes. Verify every dependency.
++      try {
++        const restored = await readMetadataOverlay(this.bucket, 'sites/default', manifest as OverlayManifest);
++        const pack = restored.base.restorePack;
++        requirePin(pack.objectKey === input.packKey && pack.sha256 === input.packSha256 && pack.size === input.packBytes, 'Overlay backup archive identity mismatch.');
++      } catch { throw new PlayttBackupPinError(503, 'Overlay backup dependency verification failed.'); }
++    } else {
++      requirePin(manifest.restorePack?.schema === 'wp-codebox/cloudflare-canonical-restore-pack/v1'
++        && manifest.restorePack?.objectKey === input.packKey && manifest.restorePack.sha256 === input.packSha256
++        && manifest.restorePack.size === input.packBytes, 'Backup manifest identity mismatch.');
++      const pack = await readBounded(this.bucket, input.packKey, MAX_PACK_BYTES);
++      requirePin(pack.byteLength === input.packBytes && await sha(pack) === input.packSha256, 'Backup archive hash mismatch.');
++    }
+     requireFence(); // I/O must not outlive the owning fence before persisting.
+     const pin = { ...input, registeredAt: new Date().toISOString() };
+     const next = { ...registry, generation: registry.generation + 1, pins: [...registry.pins, pin] };
+--- a/scripts/playtt-backup-pin-client.mjs
++++ b/scripts/playtt-backup-pin-client.mjs
+@@ -1,12 +1,29 @@
+ import assert from 'node:assert/strict';
+-import { readFile } from 'node:fs/promises';
++import { readFile, stat } from 'node:fs/promises';
+ import { createHash } from 'node:crypto';
+ import { decodeCanonicalRestorePack } from '../src/canonical-restore-pack.ts';
+ import { backupPinInput } from '../src/playtt-backup-pins.ts';
++import { isMetadataOverlay, readMetadataOverlay } from '../src/playtt-metadata-overlay.ts';
+
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
++const boundedFile=async(file,limit)=>{const info=await stat(file);assert.ok(info.isFile()&&info.size>0&&info.size<=limit);const bytes=await readFile(file);assert.equal(bytes.length,info.size);return bytes;};
+ export async function verifiedBackupPin(directory) {
+-  const bytes = await readFile(directory + '/manifest.json'), manifest = JSON.parse(bytes.toString('utf8'));
++  const bytes = await boundedFile(directory + '/manifest.json',256*1024), manifest = JSON.parse(bytes.toString('utf8'));
++  if(isMetadataOverlay(manifest.restorePack)) {
++    const baseBytes=await boundedFile(directory+'/base-manifest.json',256*1024),base=JSON.parse(baseBytes.toString('utf8'));
++    const objects=new Map(manifest.files.map(f=>[f.objectKey,f.sha256]));
++    const bucket={async get(key){
++      let file;
++      if(key===manifest.restorePack.base.manifestKey)file=directory+'/base-manifest.json';
++      else if(key===base.restorePack?.objectKey)file=directory+'/restore.zip';
++      else {const sha=objects.get(key);assert.match(sha||'',/^[a-f0-9]{64}$/);file=directory+'/objects/'+sha;}
++      const content=await boundedFile(file,8*1024*1024);return {size:content.length,arrayBuffer:async()=>Uint8Array.from(content).buffer};
++    }};
++    const verified=await readMetadataOverlay(bucket,'sites/default',manifest),pack=verified.base.restorePack;
++    const pin=backupPinInput({revision:manifest.revision,manifestKey:manifest.manifestKey,persistedAt:manifest.persistedAt,
++      manifestSha256:hash(bytes),packKey:pack.objectKey,packSha256:pack.sha256,packBytes:pack.size});
++    return {pin,objects:verified.changed.length+3,reconstructedFiles:verified.contents.markdown.length+verified.contents.uploads.length+verified.contents.wpContent.length,format:'metadata-overlay-with-base',dependenciesVerified:true};
++  }
+   const pack = await readFile(directory + '/restore.zip');
+   const pin = backupPinInput({ revision: manifest.revision, manifestKey: manifest.manifestKey, persistedAt: manifest.persistedAt,
+     manifestSha256: hash(bytes), packKey: manifest.restorePack.objectKey, packSha256: hash(pack), packBytes: pack.length });

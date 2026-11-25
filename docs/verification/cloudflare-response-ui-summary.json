@@ -1,0 +1,105 @@
+{
+  "at": "2026-11-20T23:41:33.947155+00:00",
+  "result": "local-native-browser-retry-and-cold-reload-pass-with-stale-error-gap",
+  "runtimeSourceChanged": false,
+  "configsChanged": false,
+  "newDeployment": false,
+  "remoteMutations": 0,
+  "browser": "existing Chrome extension connection",
+  "sourceBaseline": "canonical118 / 207cc3ef-5e65-463d-857c-b8e4c2ad3e89",
+  "attempts": [
+    {
+      "name": "playtt-response-loss-ui",
+      "versions": [
+        {
+          "label": "before",
+          "version": 129
+        },
+        {
+          "label": "fault",
+          "version": 136
+        },
+        {
+          "label": "final",
+          "version": 154
+        }
+      ],
+      "restarts": 0,
+      "manualRetry": false,
+      "staleErrorWithSavedButton": true,
+      "coldExact": false,
+      "telemetry": {
+        "traces": 49,
+        "completedTraces": 49,
+        "fullPacks": 2,
+        "fullPackBytes": 4588916,
+        "requestFailures": 0
+      }
+    },
+    {
+      "name": "playtt-response-loss-ui-retry",
+      "versions": [
+        {
+          "label": "before",
+          "version": 160
+        },
+        {
+          "label": "fault",
+          "version": 182
+        },
+        {
+          "label": "retry",
+          "version": 186
+        },
+        {
+          "label": "final",
+          "version": 197
+        }
+      ],
+      "restarts": 1,
+      "manualRetry": true,
+      "staleErrorWithSavedButton": false,
+      "coldExact": true,
+      "telemetry": {
+        "traces": 102,
+        "completedTraces": 102,
+        "fullPacks": 4,
+        "fullPackBytes": 9177441,
+        "requestFailures": 0
+      }
+    }
+  ],
+  "proofs": [
+    "Actual native Chrome error notice after local wrapper withheld the committed save response body",
+    "All five paragraphs remained visible",
+    "Second attempt: one observed retry click, matching committed retry receipt, native saved notification and cleared error",
+    "Entire workerd replaced; same browser session authenticated, all five paragraphs visible and native code textarea value exactly equals expected content",
+    "Exact snapshot comparison: no additional page, no extra revision on retry, all prior revisions and unrelated canonical rows/files preserved",
+    "All test tabs and both 900-second-bounded emulator sessions terminated"
+  ],
+  "openIssue": "First attempt later showed disabled Saved button with the invalid-JSON error still visible. No matching same-content explicit page-save retry receipt was observed. Background native mutations continued; the precise state-reconciliation cause is not established.",
+  "scopeLimits": [
+    "Local real workerd/PHP/WordPress UI; no Cloudflare-provider fault or Free quota simulation",
+    "Not a TCP-reset or platform memory-exhaustion scenario",
+    "No competing edits/create-post retry test",
+    "No exact user-perceived latency measurement; event timestamps bracket tool observations",
+    "Known global-styles warnings remain; first attempt also logged viewport-transition InvalidStateError",
+    "Private full backup/emulator state remains outside Git; test data not clean production handoff"
+  ],
+  "cloud": {
+    "canonical": 118,
+    "pins": 8,
+    "sealed": true,
+    "pending": 0,
+    "windowClosed": true,
+    "publisher": "paused",
+    "remainingPayloadBytes": 10232130,
+    "checkedAt": "2026-11-20T23:39:03.475Z"
+  },
+  "next": [
+    "Trace and fix the stale failure notice when native state becomes saved, without hiding real unsaved content",
+    "Reduce full-pack writes on same-content saves with exact cold recovery proof",
+    "Plan bounded provider validation inside existing allowance; no replay/reset/refund/pruning/cap increase",
+    "Latency, whole-isolate memory, retention/reconciliation, physical devices/IME and long-term Free acceptance"
+  ]
+}

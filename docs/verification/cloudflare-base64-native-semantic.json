@@ -1,0 +1,40 @@
+{
+  "schema": "playtt/base64-native-proof/v1",
+  "at": "2026-11-22T01:19:19.711Z",
+  "result": "pass",
+  "sourceSha256": "c81f37e3ab4399efc98fcb5688d1e62fc3dd114fc8e3e28c9edb0a2fdef76e99",
+  "candidateSha256": "ba0e87ca6848224b0a14aad15d605587d2f2ff9bfddea78c9db22d1e7f296150",
+  "fixtureSha256": "ab1ef2d793bb79b125740f63b2390d33a4a3f11dbccd42d6d48e6cf7fb60d2ba",
+  "compiledSha256": "1f41fa2106c36a5e9a05fc3d432988189df4eea4e2815dfd9463d5b3c52f0046",
+  "nodeNative": "undefined",
+  "workerdNative": "function",
+  "directCasesPerVariant": 279,
+  "envelopeCasesPerVariant": 18,
+  "envelopeSuccesses": 11,
+  "envelopeRejections": 7,
+  "variants": [
+    "baseline",
+    "candidate",
+    "fallback"
+  ],
+  "bothRuntimeLogicalResultsExact": true,
+  "withinRuntimeWireBytesExact": true,
+  "crossRuntimeWireBytesExact": true,
+  "inputAndOutputOwnershipExact": true,
+  "mutableMetadataSnapshotExact": true,
+  "independentBufferEncodingExact": true,
+  "actualManifestBytes": 74029,
+  "actualManifestSha256": "43c04035974fd6fb5cb6192d7fad836fe4e39052bd6076b73b253c637583f416",
+  "observations": {
+    "nodeSha256": "eaade254755289a3f9f348626e7d9716f9c2412bd1268d02afcdb9ae5e7e4004",
+    "workerdSha256": "8d35fb600a7b90b6852aa5023b62ba8e4a23a607d1640660b8e0e615edf7b1d5"
+  },
+  "cloudRequests": 0,
+  "outbound": 0,
+  "centralRuntimeChanged": false,
+  "limitations": [
+    "Only standard Uint8Array inputs created by gzip are production inputs; this private helper is not a generic array/iterator API.",
+    "No PHP or browser workflow/resource-limit acceptance.",
+    "Node lacks the native API; native fast path is tested in pinned workerd and forced fallback in both runtimes."
+  ]
+}

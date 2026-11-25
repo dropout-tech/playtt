@@ -1,0 +1,89 @@
+{
+  "at": "2026-11-20T04:11:25.891Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "version": 1,
+  "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+  "coherent": true,
+  "fenceActive": false,
+  "publisher": "paused",
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-pin-restore-audit",
+    "baselineBytes": 149591427,
+    "baselineObjects": 396,
+    "chargedBytes": 183,
+    "chargedPuts": 1,
+    "initializedAt": "2026-11-20T04:10:42.674Z",
+    "reservationSchema": "playtt/r2-capacity-reservation/v1",
+    "initialized": true,
+    "limitBytes": 300000000,
+    "remainingBytes": 150408390,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 643
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 249
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 199
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 159
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 169
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 229
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-restore",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1308
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1480
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 178
+    }
+  ]
+}

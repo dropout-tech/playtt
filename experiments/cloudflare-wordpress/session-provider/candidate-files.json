@@ -1,0 +1,104 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": true,
+  "existingConfigsChanged": false,
+  "prerequisites": [
+    {
+      "path": "src/playtt-metadata-overlay.ts",
+      "sha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43"
+    },
+    {
+      "path": "src/playtt-usermeta-overlay.ts",
+      "sha256": "caafbbd624cbda0bbdef5fd593dbfe83932085001749a3b4c86ea66bc9d1b1a0"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "sha256": "71a12314e4c19ee25f2b0f44625bb113a984d8b5b0e4ee0425b14ea4d66379ca"
+    },
+    {
+      "path": "src/worker.ts",
+      "sha256": "6a5009b2c7aecd7ca5e590d0d943268765e157d1f0bf62c8034f4b6792e1fade"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "3f9b2dd54f5508c9c42efb82b0f70a52bcc65edab7706dc523767c3ebfdfafe0"
+    },
+    {
+      "path": "scripts/playtt-backup-pin-client.mjs",
+      "sha256": "5fc3eecff9cff0e1edae353eeb98b267611cc1681e82b2536c1689d7987a8653"
+    },
+    {
+      "path": "wrangler.playtt-window-audit.jsonc",
+      "sha256": "6e83a60f58312c15f391b740ef24bfae3773b51ea08d0a66c0b437d4be95d61f"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "beforeSha256": "889b9b2061826e24a8ec8190ac57aed58c8137ff5cd8edcd66115126b9210625",
+      "afterSha256": "3ddc0834f7397dfe18149aad2e441b8528a5f9717eea338e1208508a793d6245"
+    },
+    {
+      "path": "scripts/playtt-snapshot-download.mjs",
+      "beforeSha256": "2d3aca82e6e26f97d8634bd98f12cf38712a447cc51e3fccf4f3d0f81e435d8e",
+      "afterSha256": "3ad17ec3909cdea39640a1897870adf371e6c1b276bd53b8f1784502dc4b5a53"
+    },
+    {
+      "path": "wrangler.playtt-session-audit.jsonc",
+      "source": "wrangler.playtt-session-audit.jsonc",
+      "afterSha256": "fe232b96a4f82ef5c4743dc266b7715e0279de3a1ab6a15203939897fbafd99f"
+    },
+    {
+      "path": "tests/playtt-session-provider-config.test.ts",
+      "source": "playtt-session-provider-config.test.ts",
+      "afterSha256": "66af18a81b6be3b38fef811d28d8498b83c08e228a2015df5dfb4febfa5048bb"
+    },
+    {
+      "path": "tests/playtt-native-profile.test.ts",
+      "source": "playtt-native-profile.test.ts",
+      "afterSha256": "f974e5806f5315f7c38e230422ed7e00051c3d208e3805fc1c8e7710658f5e52"
+    },
+    {
+      "path": "scripts/playtt-session-provider.mjs",
+      "source": "playtt-session-provider.mjs",
+      "afterSha256": "2e34bc51ebd89b5189f41a724d86b66068630d0339fb7e0bba62e2d2a199b5aa"
+    },
+    {
+      "path": "scripts/playtt-session-enable.mjs",
+      "source": "playtt-session-enable.mjs",
+      "afterSha256": "9a919063376a4b4b09d31069daaf6731009c9dd289decd91d334ff95b963bd05"
+    },
+    {
+      "path": "scripts/playtt-session-control-diagnostics.mjs",
+      "source": "playtt-session-control-diagnostics.mjs",
+      "afterSha256": "0a4ee08f170177ebc337709c2935fd162f15273225b195ec7bb1091955666119"
+    },
+    {
+      "path": "scripts/playtt-tail-session-sanitized.mjs",
+      "source": "playtt-tail-session-sanitized.mjs",
+      "afterSha256": "de2fd49765b0aabd16b6f444bc17a2007ad0af468e065f62ba5505f1899dc19e"
+    },
+    {
+      "path": "scripts/playtt-session-native-initial.mjs",
+      "source": "playtt-session-native-initial.mjs",
+      "afterSha256": "6869b376ffbe47288d5695b84ca32c7c7357ff5b076c095a6640aa5a8193b85f"
+    },
+    {
+      "path": "scripts/playtt-session-native-retry.mjs",
+      "source": "playtt-session-native-retry.mjs",
+      "afterSha256": "354834b3256dd709c53c0714a8fc25293f2358bde526d72119c38a0c61ba26a6"
+    },
+    {
+      "path": "scripts/playtt-session-native.mjs",
+      "source": "playtt-session-native.mjs",
+      "afterSha256": "403d13608bb2846a22813156f977dd7ed828b9fe088fdee7db366487bc421473"
+    },
+    {
+      "path": "scripts/playtt-native-profile.mjs",
+      "source": "playtt-native-profile.mjs",
+      "afterSha256": "25084bd58a8107edaaaae7a7ea608bd259e5481772ae5dc19e39920d7d543436"
+    }
+  ],
+  "patchSha256": "2907fe58aa9a5cecd6a523837d6c548c51caaf91ae3ac5a04f2ff8dc5ee5f1d8"
+}

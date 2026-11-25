@@ -1,0 +1,16 @@
+{
+  "schema": "playtt/bootstrap-serial-build-proof/v1",
+  "result": "pass",
+  "sourceInputs": 215,
+  "loadedSources": 77,
+  "unchangedPriorInputs": 214,
+  "changedInputs": [
+    "src/worker.ts"
+  ],
+  "bundleSha256": "2e9819b0c9602eb937b2819196242a047877923b2d79a27ebdcd821d294074c1",
+  "binaryModulesUnchanged": 5,
+  "centralSourcesUnchanged": 82,
+  "typecheck": "pass",
+  "dryRun": "pass",
+  "deployed": false
+}

@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-18T20:49:47.749Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "mode": "--queued-disconnect",
+  "result": "pass",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1054
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2314
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2139
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2443
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2752
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2084
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2268
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 210
+    }
+  ],
+  "scope": "One complete unauthenticated heartbeat canceled while overlapping a normal read; canonical stability verified; execution-layer reason and queue order require separate evidence",
+  "transport": {
+    "startedAt": "2026-11-18T20:49:56.045Z",
+    "declaredBytes": 21,
+    "sentBytes": 21,
+    "abortAfterMs": 700,
+    "completeBodySent": true,
+    "overlappingRead": true,
+    "disconnected": true,
+    "endedAt": "2026-11-18T20:49:56.765Z"
+  },
+  "version": 133,
+  "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+  "canonicalUnchanged": true,
+  "publisher": "paused"
+}

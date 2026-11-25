@@ -1,0 +1,146 @@
+{
+  "at": "2026-11-20T21:30:45.788Z",
+  "result": "pass",
+  "remoteGets": 7,
+  "downloadedBytes": 2178057,
+  "allSevenFullCommitsOnlyAutosave198DateChanges": true,
+  "contentAndOtherPostsExact": true,
+  "changes": [
+    {
+      "version": 24,
+      "tableBytes": 311151,
+      "sha256": "f510a59700c5b77fc71c5df49bbcd7a2aca8dfe46d39c521f1daa21e16cfe915",
+      "modified": [
+        {
+          "id": 198,
+          "parent": 193,
+          "author": 2,
+          "fields": [
+            "post_date",
+            "post_date_gmt",
+            "post_modified",
+            "post_modified_gmt"
+          ],
+          "contentExact": true
+        }
+      ]
+    },
+    {
+      "version": 26,
+      "tableBytes": 311151,
+      "sha256": "30c17608445bc59e4eca0fe1b190954aa946afd23e9dc19b2d6e153c1a1d6178",
+      "modified": [
+        {
+          "id": 198,
+          "parent": 193,
+          "author": 2,
+          "fields": [
+            "post_date",
+            "post_date_gmt",
+            "post_modified",
+            "post_modified_gmt"
+          ],
+          "contentExact": true
+        }
+      ]
+    },
+    {
+      "version": 28,
+      "tableBytes": 311151,
+      "sha256": "b1edb611564f57ec040731ff5ad124e9ec0962504b49416a51afaef5f6257e25",
+      "modified": [
+        {
+          "id": 198,
+          "parent": 193,
+          "author": 2,
+          "fields": [
+            "post_date",
+            "post_date_gmt",
+            "post_modified",
+            "post_modified_gmt"
+          ],
+          "contentExact": true
+        }
+      ]
+    },
+    {
+      "version": 30,
+      "tableBytes": 311151,
+      "sha256": "4045569f321f2e3125c47d7f1f9e25e51e2b749c964a29835916233a50ad130f",
+      "modified": [
+        {
+          "id": 198,
+          "parent": 193,
+          "author": 2,
+          "fields": [
+            "post_date",
+            "post_date_gmt",
+            "post_modified",
+            "post_modified_gmt"
+          ],
+          "contentExact": true
+        }
+      ]
+    },
+    {
+      "version": 32,
+      "tableBytes": 311151,
+      "sha256": "6e0e5f72665b32bfac14faacdbf6a62081ca2283a039a385041ffba9b23bdd41",
+      "modified": [
+        {
+          "id": 198,
+          "parent": 193,
+          "author": 2,
+          "fields": [
+            "post_date",
+            "post_date_gmt",
+            "post_modified",
+            "post_modified_gmt"
+          ],
+          "contentExact": true
+        }
+      ]
+    },
+    {
+      "version": 34,
+      "tableBytes": 311151,
+      "sha256": "43eb7f764cdabef74ea2380026bdf8dfdde7c946cfd7e45e90db5fd0454d01d9",
+      "modified": [
+        {
+          "id": 198,
+          "parent": 193,
+          "author": 2,
+          "fields": [
+            "post_date",
+            "post_date_gmt",
+            "post_modified",
+            "post_modified_gmt"
+          ],
+          "contentExact": true
+        }
+      ]
+    },
+    {
+      "version": 36,
+      "tableBytes": 311151,
+      "sha256": "3b55fa33e8e1c702e3e96429713ff872bdfac40eed24ad582cc8a7aabc3bce49",
+      "modified": [
+        {
+          "id": 198,
+          "parent": 193,
+          "author": 2,
+          "fields": [
+            "post_date",
+            "post_date_gmt",
+            "post_modified",
+            "post_modified_gmt"
+          ],
+          "contentExact": true
+        }
+      ]
+    }
+  ],
+  "committedFullPackBytes": 16066574,
+  "remoteMutations": 0,
+  "causalUiFixVerified": false
+}

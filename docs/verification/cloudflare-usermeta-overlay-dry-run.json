@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-20T19:41:28.348997+00:00",
+  "result": "pass",
+  "command": [
+    "node_modules/wrangler/bin/wrangler.js",
+    "deploy",
+    "--dry-run",
+    "--config",
+    "wrangler.playtt-window-audit.jsonc",
+    "--var",
+    "PLAYTT_METADATA_OVERLAY:v2",
+    "--outdir",
+    "artifacts/usermeta-dry-run"
+  ],
+  "exitCode": 0,
+  "remoteMutation": false,
+  "uploadSummary": [
+    "Total Upload: 20868.76 KiB / gzip: 7604.79 KiB"
+  ],
+  "warnings": [
+    "[WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]",
+    "[WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]",
+    "[WARNING] Duplicate key \"F_GETFL\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_ACCMODE\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_RDONLY\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_WRONLY\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_APPEND\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_NONBLOCK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETFL\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_GETLK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETLK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETLKW\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_SET\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_CUR\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_END\" in object literal [duplicate-object-key]"
+  ],
+  "featureFlagOnlyInLocalDryRunArgument": true
+}

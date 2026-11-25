@@ -1,0 +1,15 @@
+{
+  "name":"playtt-wp-free-boot-probe",
+  "account_id":"3baadbd4abd9fd63c7f7e51664b26f67",
+  "main":"src/playtt-free-probe.ts",
+  "compatibility_date":"2026-07-18",
+  "compatibility_flags":["nodejs_compat"],
+  "workers_dev":true,
+  "preview_urls":false,
+  "durable_objects":{"bindings":[{"name":"PLAYTT_PROBE","class_name":"PlayttBootProbe"}]},
+  "migrations":[{"tag":"v1","new_sqlite_classes":["PlayttBootProbe"]}],
+  "rules":[
+    {"type":"CompiledWasm","globs":["**/*.wasm"],"fallthrough":false},
+    {"type":"Data","globs":["**/*.sqlite","**/*.zip"],"fallthrough":false}
+  ]
+}

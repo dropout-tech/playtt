@@ -1,0 +1,391 @@
+{
+  "scope": "Both intentional local transport abort runs ended with Wrangler Network connection lost. This is NOT a complete local pass. Before: lease abort/runtime dispose; after: failed translation before lease, next request starts warm; before CLI exits.",
+  "runs": [
+    {
+      "label": "diagnostic-before",
+      "wranglerExitCode": 1,
+      "workloadCompleted": false,
+      "evidence": [
+        {
+          "schema": "wp-codebox/cloudflare-runtime-phase-trace/v1",
+          "operation": "read",
+          "runtime": "cold",
+          "pageCache": "not-applicable",
+          "completed": true,
+          "totalMs": 2722,
+          "phases": [
+            {
+              "name": "lease.acquire",
+              "durationMs": 26
+            },
+            {
+              "name": "published.page-cache.lookup",
+              "durationMs": 0
+            },
+            {
+              "name": "canonical.manifest.read",
+              "durationMs": 36
+            },
+            {
+              "name": "canonical.restore-pack.fetch",
+              "durationMs": 12,
+              "evidence": {
+                "requests": 1,
+                "bytes": 2292281
+              }
+            },
+            {
+              "name": "canonical.restore-pack.verify-decode",
+              "durationMs": 732,
+              "evidence": {
+                "requests": 0,
+                "bytes": 4902495,
+                "files": 292
+              }
+            },
+            {
+              "name": "runtime.archive.sqlite.fetch-verify",
+              "durationMs": 8
+            },
+            {
+              "name": "php.runtime.create",
+              "durationMs": 61
+            },
+            {
+              "name": "runtime.archive.wordpress.fetch-verify-extract",
+              "durationMs": 642
+            },
+            {
+              "name": "runtime.archive.mdi.extract",
+              "durationMs": 97
+            },
+            {
+              "name": "canonical.hydration.markdown",
+              "durationMs": 8,
+              "evidence": {
+                "files": 165,
+                "bytes": 938618
+              }
+            },
+            {
+              "name": "canonical.hydration.wp-content",
+              "durationMs": 6,
+              "evidence": {
+                "files": 112,
+                "bytes": 3310319
+              }
+            },
+            {
+              "name": "canonical.hydration.uploads",
+              "durationMs": 2,
+              "evidence": {
+                "files": 15,
+                "bytes": 653558
+              }
+            },
+            {
+              "name": "playground.opaque",
+              "durationMs": 63,
+              "aggregateGap": true,
+              "evidence": {
+                "failed": false
+              }
+            },
+            {
+              "name": "playground.version.read",
+              "durationMs": 3
+            },
+            {
+              "name": "request.translate",
+              "durationMs": 0
+            },
+            {
+              "name": "request.php",
+              "durationMs": 984
+            },
+            {
+              "name": "lease.release",
+              "durationMs": 19
+            },
+            {
+              "name": "page-cache.write",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "schema": "wp-codebox/cloudflare-runtime-phase-trace/v1",
+          "operation": "read",
+          "runtime": "warm",
+          "pageCache": "not-applicable",
+          "completed": true,
+          "totalMs": 576,
+          "phases": [
+            {
+              "name": "lease.acquire",
+              "durationMs": 8
+            },
+            {
+              "name": "published.page-cache.lookup",
+              "durationMs": 0
+            },
+            {
+              "name": "runtime.cache.reuse",
+              "durationMs": 0
+            },
+            {
+              "name": "request.translate",
+              "durationMs": 0
+            },
+            {
+              "name": "request.php",
+              "durationMs": 550
+            },
+            {
+              "name": "lease.release",
+              "durationMs": 15
+            },
+            {
+              "name": "page-cache.write",
+              "durationMs": 1
+            }
+          ]
+        },
+        {
+          "schema": "wp-codebox/cloudflare-runtime-phase-trace/v1",
+          "operation": "mutation",
+          "runtime": "warm",
+          "pageCache": "not-applicable",
+          "completed": false,
+          "totalMs": 1224,
+          "phases": [
+            {
+              "name": "lease.acquire",
+              "durationMs": 7
+            },
+            {
+              "name": "published.page-cache.lookup",
+              "durationMs": 1
+            },
+            {
+              "name": "runtime.cache.reuse",
+              "durationMs": 0
+            },
+            {
+              "name": "publication.current.read",
+              "durationMs": 12
+            },
+            {
+              "name": "request.translate",
+              "durationMs": 1196,
+              "evidence": {
+                "failed": true
+              }
+            },
+            {
+              "name": "lease.abort",
+              "durationMs": 6
+            },
+            {
+              "name": "runtime.dispose",
+              "durationMs": 2
+            }
+          ]
+        },
+        {
+          "schema": "playtt-request-failure/v1",
+          "category": "other",
+          "endpoint": "admin-ajax",
+          "method": "POST",
+          "operation": "mutation",
+          "runtime": "warm",
+          "phase": "request.translate",
+          "signalAborted": false,
+          "bodyUsed": true,
+          "cleanupFailed": false
+        }
+      ]
+    },
+    {
+      "label": "prepared-after",
+      "wranglerExitCode": 1,
+      "workloadCompleted": false,
+      "evidence": [
+        {
+          "schema": "wp-codebox/cloudflare-runtime-phase-trace/v1",
+          "operation": "read",
+          "runtime": "cold",
+          "pageCache": "not-applicable",
+          "completed": true,
+          "totalMs": 2658,
+          "phases": [
+            {
+              "name": "request.translate",
+              "durationMs": 5
+            },
+            {
+              "name": "lease.acquire",
+              "durationMs": 25
+            },
+            {
+              "name": "published.page-cache.lookup",
+              "durationMs": 0
+            },
+            {
+              "name": "canonical.manifest.read",
+              "durationMs": 25
+            },
+            {
+              "name": "canonical.restore-pack.fetch",
+              "durationMs": 8,
+              "evidence": {
+                "requests": 1,
+                "bytes": 2292281
+              }
+            },
+            {
+              "name": "canonical.restore-pack.verify-decode",
+              "durationMs": 712,
+              "evidence": {
+                "requests": 0,
+                "bytes": 4902495,
+                "files": 292
+              }
+            },
+            {
+              "name": "runtime.archive.sqlite.fetch-verify",
+              "durationMs": 10
+            },
+            {
+              "name": "php.runtime.create",
+              "durationMs": 55
+            },
+            {
+              "name": "runtime.archive.wordpress.fetch-verify-extract",
+              "durationMs": 629
+            },
+            {
+              "name": "runtime.archive.mdi.extract",
+              "durationMs": 97
+            },
+            {
+              "name": "canonical.hydration.markdown",
+              "durationMs": 9,
+              "evidence": {
+                "files": 165,
+                "bytes": 938618
+              }
+            },
+            {
+              "name": "canonical.hydration.wp-content",
+              "durationMs": 6,
+              "evidence": {
+                "files": 112,
+                "bytes": 3310319
+              }
+            },
+            {
+              "name": "canonical.hydration.uploads",
+              "durationMs": 2,
+              "evidence": {
+                "files": 15,
+                "bytes": 653558
+              }
+            },
+            {
+              "name": "playground.opaque",
+              "durationMs": 61,
+              "aggregateGap": true,
+              "evidence": {
+                "failed": false
+              }
+            },
+            {
+              "name": "playground.version.read",
+              "durationMs": 4
+            },
+            {
+              "name": "request.php",
+              "durationMs": 977
+            },
+            {
+              "name": "lease.release",
+              "durationMs": 16
+            },
+            {
+              "name": "page-cache.write",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "schema": "wp-codebox/cloudflare-runtime-phase-trace/v1",
+          "operation": "read",
+          "runtime": "warm",
+          "pageCache": "not-applicable",
+          "completed": true,
+          "totalMs": 580,
+          "phases": [
+            {
+              "name": "request.translate",
+              "durationMs": 0
+            },
+            {
+              "name": "lease.acquire",
+              "durationMs": 11
+            },
+            {
+              "name": "published.page-cache.lookup",
+              "durationMs": 0
+            },
+            {
+              "name": "runtime.cache.reuse",
+              "durationMs": 0
+            },
+            {
+              "name": "request.php",
+              "durationMs": 554
+            },
+            {
+              "name": "lease.release",
+              "durationMs": 14
+            },
+            {
+              "name": "page-cache.write",
+              "durationMs": 0
+            }
+          ]
+        },
+        {
+          "schema": "wp-codebox/cloudflare-runtime-phase-trace/v1",
+          "operation": "mutation",
+          "runtime": "not-used",
+          "pageCache": "not-applicable",
+          "completed": false,
+          "totalMs": 1214,
+          "phases": [
+            {
+              "name": "request.translate",
+              "durationMs": 1214,
+              "evidence": {
+                "failed": true
+              }
+            }
+          ]
+        },
+        {
+          "schema": "playtt-request-failure/v1",
+          "category": "request-body-unavailable",
+          "endpoint": "admin-ajax",
+          "method": "POST",
+          "operation": "mutation",
+          "runtime": "not-used",
+          "phase": "request.translate",
+          "signalAborted": false,
+          "bodyUsed": true,
+          "cleanupFailed": false
+        }
+      ]
+    }
+  ]
+}

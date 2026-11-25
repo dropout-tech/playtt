@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-20T05:40:52.294Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "unchangedCanonicalFiles": 166,
+  "originalMarkdown": 27,
+  "originalHistoryRows": 61,
+  "postmetaRows": 48,
+  "uploads": 15,
+  "cleanupComplete": true,
+  "sequenceHighWater": {
+    "wp_comments": "1",
+    "wp_options": "567",
+    "wp_postmeta": "70",
+    "wp_posts": "191",
+    "wp_term_taxonomy": "4",
+    "wp_terms": "4",
+    "wp_usermeta": "21",
+    "wp_users": "1"
+  },
+  "differences": [],
+  "scope": "Only login session metadata and monotonic ID counters are allowed to change; all original content/table/media/theme bytes compared"
+}

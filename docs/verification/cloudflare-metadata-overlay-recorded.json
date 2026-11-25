@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-20T16:15:03.154Z",
+  "result": "pass",
+  "scope": "Offline candidate using the complete verified private canonical62 snapshot; simulated next lock/counter values, not a live PHP heartbeat or provider deployment",
+  "baseVersion": 62,
+  "baseRevision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+  "baseArchiveSha256": "89a94538333e7d93179818b8dbcaea38f4fdcea80a363b5b1759a9fdbb58b9ba",
+  "filesCompared": 296,
+  "unchangedFileBytes": 294,
+  "changedFiles": [
+    {
+      "path": "_tables/postmeta.json",
+      "size": 12189
+    },
+    {
+      "path": "_runtime/playtt-auto-increment.json",
+      "size": 196
+    }
+  ],
+  "manifestBytes": 73253,
+  "descriptorBytes": 329,
+  "creationObjectReads": 7,
+  "coldRestoreObjectReads": 4,
+  "overlayWriteBytes": 85821,
+  "fullWriteBytes": 2379610,
+  "avoidedWriteBytes": 2293789,
+  "estimatedPayloadReductionPercent": 96.39348464664378,
+  "portableCompositeBackupVerified": true,
+  "materializedFullArchiveVerified": true,
+  "materializedArchiveBytes": 2293817,
+  "remoteObjectsWritten": 0,
+  "remotePinsRegistered": 0,
+  "featureFlagEnabled": false,
+  "originalSourceUnchanged": true
+}

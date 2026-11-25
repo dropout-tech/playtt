@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-17T07:28:02.614076+00:00",
+  "deployment": "0400c6ab-5cc4-4e6b-bf75-7d44553f0577",
+  "typescript": "pass",
+  "targetedTests": {
+    "passed": 22,
+    "scope": "batch ordering, alarm, CMS access and public reader"
+  },
+  "localBatch": "pass",
+  "localPublicationRegression": "pass",
+  "localJobFailureRecovery": "pass",
+  "localInflightEdit": "pass",
+  "remoteBatch": "failed-memory-reset",
+  "remoteCleanup": "pass",
+  "productionCmsCutover": false
+}

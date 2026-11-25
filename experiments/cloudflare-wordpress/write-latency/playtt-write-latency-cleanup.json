@@ -1,0 +1,110 @@
+{
+  "at": "2026-11-18T22:15:38.562Z",
+  "result": "pass",
+  "scope": "Fresh-login exact content read after fixed comparisons, original homepage unchanged, identity-checked owned draft removal. Complete backup independently verifies no owned revisions remain.",
+  "id": 146,
+  "revisionIds": [
+    168,
+    167,
+    166,
+    165,
+    164,
+    163,
+    162,
+    161,
+    160,
+    159,
+    158,
+    157,
+    156,
+    155,
+    154,
+    153,
+    152,
+    151,
+    150,
+    149,
+    148,
+    147
+  ],
+  "contentHash": "a682dfe310ab915425f688ed17d6e2ffda8c8e2557cabc8094f5ec9eef374aef",
+  "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+  "cleanupComplete": true,
+  "canonicalVersion": 189,
+  "revision": "ebcc8669-0433-45ad-9a8f-3a0f83d91da8",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 762
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2314
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1721
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6201
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3330
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2604
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146/revisions?per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1815
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4119
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 8865
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 1738
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 210
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3718
+    }
+  ]
+}

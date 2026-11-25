@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-21T19:36:58.759580+00:00",
+  "result": "pass",
+  "basis": "Prior materialized-native assembly plus 3 local diagnostic tools; no new dependency install",
+  "prerequisites": 109,
+  "newTools": 3,
+  "reapplyRefusedWithoutMutation": true,
+  "priorFilesUnchanged": 655,
+  "runtimeSourcesChanged": 0,
+  "configsChanged": 0,
+  "generatorAndLoaderChanged": false,
+  "cloudRequests": 0,
+  "newWordpressRequests": 0,
+  "deployed": false,
+  "productionChanged": false
+}

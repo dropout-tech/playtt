@@ -1,0 +1,27 @@
+{
+  "copyright": {
+    "bottom": 709.6875,
+    "height": 41.75,
+    "left": 22,
+    "right": 338,
+    "top": 667.9375,
+    "width": 316,
+    "x": 22,
+    "y": 667.9375
+  },
+  "fixed": {
+    "bottom": 796,
+    "height": 62,
+    "left": 282,
+    "right": 344,
+    "top": 734,
+    "width": 62,
+    "x": 282,
+    "y": 734
+  },
+  "scrollY": 8110,
+  "viewport": {
+    "height": 812,
+    "width": 375
+  }
+}

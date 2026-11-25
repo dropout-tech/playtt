@@ -1,0 +1,181 @@
+{
+  "schema": "playtt/old-provider-build/v1",
+  "at": "2026-11-21T16:33:40.330256+00:00",
+  "result": "pass",
+  "sourceCommit": "67dd308",
+  "verifiedSources": 77,
+  "verifiedVendorFiles": 109,
+  "verifiedAssets": 9,
+  "loadedSourceFilesIncludingGeneratedLoader": 65,
+  "loadedSources": [
+    "src/administrator-secret-bindings.ts",
+    "src/allocation-lifecycle.ts",
+    "src/asset-content-type.ts",
+    "src/canonical-restore-pack.ts",
+    "src/d1-operation-repository.ts",
+    "src/health-envelope.ts",
+    "src/lease-retry.ts",
+    "src/mutation-memory.ts",
+    "src/operator-coordinator.ts",
+    "src/phase-trace.ts",
+    "src/playtt-auto-draft-policy.ts",
+    "src/playtt-backup-pins.ts",
+    "src/playtt-cms-access.ts",
+    "src/playtt-content-overlay.ts",
+    "src/playtt-content-policy.ts",
+    "src/playtt-core-memory.ts",
+    "src/playtt-editor-lock.ts",
+    "src/playtt-editor-readback.ts",
+    "src/playtt-id-sequences.ts",
+    "src/playtt-maintenance-overlay.ts",
+    "src/playtt-maintenance-schedule.ts",
+    "src/playtt-maintenance.ts",
+    "src/playtt-markdown-persistence.ts",
+    "src/playtt-memory-diagnostics.ts",
+    "src/playtt-metadata-overlay.ts",
+    "src/playtt-php-compat.ts",
+    "src/playtt-php-loader.mjs",
+    "src/playtt-postmeta-policy.ts",
+    "src/playtt-probe-access.ts",
+    "src/playtt-publication-alarm.ts",
+    "src/playtt-publication-batch.ts",
+    "src/playtt-reference-roots.ts",
+    "src/playtt-request-mutation.ts",
+    "src/playtt-runtime-factory.ts",
+    "src/playtt-runtime-lifetime.ts",
+    "src/playtt-runtime-manifest-cache.ts",
+    "src/playtt-slug-policy.ts",
+    "src/playtt-snapshot-source.ts",
+    "src/playtt-storage-capacity.ts",
+    "src/playtt-usermeta-overlay.ts",
+    "src/playtt-write-drain.ts",
+    "src/playtt-write-window.ts",
+    "src/principal-credential-repository.ts",
+    "src/provisioning-api.ts",
+    "src/public-reader.ts",
+    "src/publication-contract.json",
+    "src/published-reader.ts",
+    "src/queue-batch.ts",
+    "src/queue-dispatch.ts",
+    "src/request-routing.ts",
+    "src/request-translation.ts",
+    "src/revision-coordinator.ts",
+    "src/runtime-archive-artifact.ts",
+    "src/site-context.ts",
+    "src/state-coordinator.ts",
+    "src/static-artifact-import.ts",
+    "src/upload-persistence.ts",
+    "src/wordpress-auth.ts",
+    "src/wordpress-runtime-artifact.ts",
+    "src/wordpress-runtime-corpus.ts",
+    "src/wordpress-static-artifact.ts",
+    "src/wordpress-static-reader.ts",
+    "src/worker-playtt-do.ts",
+    "src/worker.ts",
+    "src/wp-content-persistence.ts"
+  ],
+  "sourceMapFilesLocalOnly": true,
+  "dependencies": [
+    {
+      "path": "node_modules/@php-wasm/stream-compression/index.js",
+      "sha256": "4d495f20e873d23fee4f012fbff2d30e3700b1f46637ef0346a13d377626fd81"
+    },
+    {
+      "path": "node_modules/@php-wasm/logger/index.js",
+      "sha256": "a37e076ffda71378ccfe6627e3ff68c712a4ceb7b2bb8ca2cb3aa594ba627f00"
+    },
+    {
+      "path": "node_modules/@php-wasm/universal/node_modules/@php-wasm/util/index.js",
+      "sha256": "61f30b002d00838b890178163d7abdf547370d9c44b5d64f40a09af8b8ce1729"
+    },
+    {
+      "path": "node_modules/ini/lib/ini.js",
+      "sha256": "464ed612a571f3fe3bd8aea709a316d0285710ba07fd809ae4443081eab840f8"
+    },
+    {
+      "path": "node_modules/@php-wasm/universal/node_modules/@php-wasm/stream-compression/index.js",
+      "sha256": "df6893297e8e4dbb5f9fb4329ce31ec3a5b21fca5d744685ee00a35ffde751be"
+    },
+    {
+      "path": "node_modules/@php-wasm/universal/index.js",
+      "sha256": "c57d1a49efa686897807cc01ee83526a1c563bd0c5b67420bd45fc20f5ba3c08"
+    },
+    {
+      "path": "node_modules/@wp-playground/wordpress/node_modules/@php-wasm/util/index.js",
+      "sha256": "61f30b002d00838b890178163d7abdf547370d9c44b5d64f40a09af8b8ce1729"
+    },
+    {
+      "path": "node_modules/@wp-playground/common/node_modules/@php-wasm/util/index.js",
+      "sha256": "61f30b002d00838b890178163d7abdf547370d9c44b5d64f40a09af8b8ce1729"
+    },
+    {
+      "path": "node_modules/@wp-playground/common/index.js",
+      "sha256": "4767d9aad0bb1eb07eda2fe45725dd88458429217b9515b1f913d8c891630288"
+    },
+    {
+      "path": "node_modules/@wp-playground/wordpress/zstddec-stream.modern-C2FJ34ZP.js",
+      "sha256": "192cace3fdec88ad4649aff615ab2abbb71e41e469846aa72c1618d52b913d70"
+    },
+    {
+      "path": "node_modules/@wp-playground/wordpress/index.js",
+      "sha256": "ddd81085e7a246d678f7f669737a9452a9b24bff0bff575f59cd128e0d20d371"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-policy.js",
+      "sha256": "5bc171cb78015fb33a791763039cfdabca558eb48cca87f23100dd3f4fff6238"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-contracts.js",
+      "sha256": "69c05efab7efc9b36620160b2d9ecf397aa1eb8724ef297827f2b14c453c239f"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-command-result.js",
+      "sha256": "008f9d205ff588f5382f1c8252bc7976f3d0c7ba8dba6caa7ab58f738fa04556"
+    },
+    {
+      "path": "vendor/wp-codebox-core/runtime-archive-component.js",
+      "sha256": "bc8417d5bd2f4d9e627c8a941f0220b6b6204085bd34a734fe495bb2a069bd1c"
+    }
+  ],
+  "modules": [
+    {
+      "path": "191a2ac391878abd230f5cb8d717e0c0d67f3f48-markdown-database-integration-canonical-seed.zip",
+      "sha256": "60231408fa51e56dd288c2e39c5158df25417d227c0ed4603e70ef22aa7bbf20",
+      "bytes": 55902
+    },
+    {
+      "path": "50ab73f4afbeda0dd102c72d74bf52238068bd45-markdown-primary-bootstrap-index.sqlite",
+      "sha256": "af46f25f1a40152c06ff2c545bf027a50a6ba82e1d08445b3998e9fa674467b4",
+      "bytes": 344064
+    },
+    {
+      "path": "552ab6f13ff5704a7de36503f1a281be72197401-wordpress-install-seed.sqlite",
+      "sha256": "7212b89f1c01f98a23b89e9a2dd2b214306a85c10adb0355b9c7a6005b4fe822",
+      "bytes": 376832
+    },
+    {
+      "path": "c6e7ecf28a6294348d58dc26fa71174ea6b420f7-markdown-database-integration-runtime.zip",
+      "sha256": "eeb01238babfea9dff7c56111974584c86e0aec8616cb0ae0f09296a222b92c0",
+      "bytes": 93269
+    },
+    {
+      "path": "f6f24a9faa5a01af56a4823104f0a7e0d38e4b1e-php_8_3.wasm",
+      "sha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+      "bytes": 18319469
+    },
+    {
+      "path": "worker-playtt-do.js",
+      "sha256": "f5e10640024fa5050527b5069a55c619c1780f0652479fc7119653d8720610c1",
+      "bytes": 2208914
+    }
+  ],
+  "bundleSha256": "f5e10640024fa5050527b5069a55c619c1780f0652479fc7119653d8720610c1",
+  "productionEntrypoint": "src/worker-playtt-do.ts",
+  "localGateOrBootstrapIncluded": false,
+  "dryRunUploadKiB": 20896.92,
+  "dryRunGzipKiB": 7610.85,
+  "existingUpstreamLoaderWarningsRetained": true,
+  "freshDependencyRebuild": false,
+  "cloudRequests": 0,
+  "deployments": 0
+}

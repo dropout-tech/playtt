@@ -1,0 +1,143 @@
+{
+  "schema": "playtt/native-allocation-data-audit/v1",
+  "at": "2026-11-21T22:21:50.546Z",
+  "result": "native-save-full-restart-and-data-pass; provider-memory-acceptance-open",
+  "sourceBuild": "aafffb7d3ad856a1601234801004f05ce970929329ca02a2b2580fc45861ed83",
+  "sourceCount": 83,
+  "fullSourceBuild": true,
+  "centralCandidateAdopted": false,
+  "deployed": false,
+  "localOnly": true,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "baselineLocalCopyOfCloudVersion": 181,
+  "finalLocalVersion": 191,
+  "nativeSave": {
+    "status": 200,
+    "id": 193,
+    "draft": true,
+    "contentBytes": 1875,
+    "contentSha256": "93f8e21c8def8c2d5a6ec9b54d91990b8ef41dadcd847ba4d274da51ba01f39b",
+    "exact": true,
+    "receiptVersion": 186
+  },
+  "browser": {
+    "saved": {
+      "at": "2026-11-21T22:20:24.362Z",
+      "nativeSavedButton": true,
+      "nativeSavedNotice": true,
+      "editedParagraphPresent": true,
+      "paragraphs": 10
+    },
+    "cold": {
+      "at": "2026-11-21T22:21:25.977Z",
+      "newBrowserTab": true,
+      "nativeSavedButton": true,
+      "editedParagraphPresent": true,
+      "paragraphs": 10,
+      "draft": true,
+      "revisions11": true
+    },
+    "logout": {
+      "at": "2026-11-21T22:21:38.213Z",
+      "nativeLoggedOutMessage": true,
+      "nativeMessage": "你已完成登出。"
+    }
+  },
+  "restart": {
+    "fullWorkerdDisposed": true,
+    "bothPortsClosed": true,
+    "newInstance": true,
+    "stateExact": true,
+    "allDataExact": true,
+    "budgetExact": true,
+    "sameWindow": true,
+    "noReseedOrRearm": true,
+    "version": 187,
+    "chargedBytes": 299991
+  },
+  "revision": {
+    "originalRowsExact": true,
+    "addedCount": 1,
+    "addedId": 209
+  },
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "page/<owned-draft>.md"
+  ],
+  "allOtherContentExact": true,
+  "allOriginalUsermetaExactNewSessionRemoved": true,
+  "mediaAndThemeExact": true,
+  "independentBackupExact": true,
+  "fullMaterializedExact": true,
+  "independentObjects": 304,
+  "independentFiles": 298,
+  "chargedBytes": 500207,
+  "chargedPuts": 30,
+  "closed": true,
+  "sealed": true,
+  "pending": 0,
+  "localProcessesDisposed": true,
+  "exceptions": 0,
+  "observerErrors": 0,
+  "requests": 214,
+  "statusCounts": {
+    "200": 205,
+    "302": 8,
+    "303": 1
+  },
+  "httpErrors": [],
+  "unclassifiedHttpErrors": [],
+  "allHttpErrorsExplained": true,
+  "globalStyle403": null,
+  "memory": {
+    "method": "Runtime.getHeapUsage usedSize + backingStorageSize + last observed HEAPU8 within the same generation; no embedder double-counting; observer overhead and asynchronous boundary remain",
+    "phases": [
+      {
+        "phase": "before-restart",
+        "samples": 1198,
+        "matchedSamples": 1046,
+        "skippedSamples": 152,
+        "exceptions": 0,
+        "observerErrors": 0,
+        "maxObservedComponents": {
+          "label": "allocation-save-stop",
+          "usedSize": 31260564,
+          "backingStorageSize": 45106650,
+          "lastObservedPhpHeapBytes": 75956224,
+          "observedComponentSum": 152323438
+        },
+        "maxObservedPhpHeapBytes": 75956224
+      },
+      {
+        "phase": "after-restart",
+        "samples": 388,
+        "matchedSamples": 382,
+        "skippedSamples": 6,
+        "exceptions": 0,
+        "observerErrors": 0,
+        "maxObservedComponents": {
+          "label": "bootstrap",
+          "usedSize": 32232620,
+          "backingStorageSize": 44954581,
+          "lastObservedPhpHeapBytes": 73400320,
+          "observedComponentSum": 150587521
+        },
+        "maxObservedPhpHeapBytes": 73400320
+      }
+    ],
+    "thresholdBytes": 134217728,
+    "observedSumAboveThreshold": true,
+    "providerAcceptance": false
+  },
+  "limitations": [
+    "Single local workflow; contenteditable fill/click is not physical IME/mobile acceptance.",
+    "Local workerd does not enforce the Cloudflare limit. These sampled, partially asynchronous component sums are not provider peak, billed CPU, RSS or an admission test.",
+    "This run does not retrospectively explain prior HTTP failures.",
+    "Any global-style 403 is classified only when its exact route and code match; other errors remain explicitly unclassified.",
+    "Independent import/materialization was checked by the runner; no separate end-user restoration of that output in this run.",
+    "Malformed ZIP/I/O and boot-failure cases passed in the preceding stage; this native run is a native save/restart data workflow, not sustained free-use acceptance."
+  ]
+}

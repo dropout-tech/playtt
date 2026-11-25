@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-16T19:41:38.792Z",
+  "scope": "Remote parallel immutable editor assets; exact manifest bytes/SHA256; unauthenticated access denied",
+  "result": "pass",
+  "totalWallMs": 3174,
+  "checks": [
+    {
+      "path": "wordpress/wp-includes/js/dist/block-editor.min.js",
+      "bytes": 1056002,
+      "wallMs": 1468,
+      "status": 200
+    },
+    {
+      "path": "wordpress/wp-includes/js/dist/editor.min.js",
+      "bytes": 1046150,
+      "wallMs": 2972,
+      "status": 200
+    },
+    {
+      "path": "wordpress/wp-includes/js/dist/blocks.min.js",
+      "bytes": 184952,
+      "wallMs": 1047,
+      "status": 200
+    },
+    {
+      "path": "wordpress/wp-includes/js/dist/components.min.js",
+      "bytes": 805148,
+      "wallMs": 1357,
+      "status": 200
+    },
+    {
+      "path": "wordpress/wp-includes/js/dist/block-library.min.js",
+      "bytes": 1143976,
+      "wallMs": 2391,
+      "status": 200
+    },
+    {
+      "path": "wordpress/wp-includes/css/dashicons.min.css",
+      "bytes": 59004,
+      "wallMs": 1086,
+      "status": 200
+    }
+  ]
+}

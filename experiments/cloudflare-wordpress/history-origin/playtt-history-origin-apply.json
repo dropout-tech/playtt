@@ -1,0 +1,66 @@
+{
+  "at": "2026-11-18T21:05:30.595Z",
+  "result": "pass",
+  "scope": "Fenced monotonic adoption after exact base comparison; only 18 historical post_content values changed",
+  "version": 139,
+  "revision": "b2184d10-2c66-4036-aebe-a7ca86cc0f49",
+  "revisions": 18,
+  "references": 28,
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1377
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3568
+    },
+    {
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 564
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2605
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 479
+    },
+    {
+      "path": "/?phase=operator-adopt",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 848
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3709
+    },
+    {
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 539
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1330
+    }
+  ]
+}

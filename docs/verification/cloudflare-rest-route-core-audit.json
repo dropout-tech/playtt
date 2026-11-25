@@ -1,0 +1,96 @@
+{
+  "schema": "playtt/rest-route-core-audit/v1",
+  "at": "2026-11-21T17:33:44.799443+00:00",
+  "result": "pass",
+  "wordpressVersion": "7.1.4",
+  "runtimeArchiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+  "files": [
+    {
+      "path": "wordpress/wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php",
+      "sha256": "cf33b58ddc9736fdfd784e8aaa7cca01774e53d781dca82b4cb1492dac4022c2",
+      "bytes": 24063,
+      "checks": [
+        {
+          "anchor": "class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller",
+          "lines": [
+            13
+          ]
+        },
+        {
+          "anchor": "if ( 'edit' === $request['context'] && $post && ! $this->check_update_permission( $post ) )",
+          "lines": [
+            172
+          ]
+        },
+        {
+          "anchor": "'rest_forbidden_context'",
+          "lines": [
+            174
+          ]
+        }
+      ]
+    },
+    {
+      "path": "wordpress/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php",
+      "sha256": "ac06af313d150b4442eced4655142337552c56caf4dedbd5a88d34d4abae4338",
+      "bytes": 104810,
+      "checks": [
+        {
+          "anchor": "protected function check_update_permission( $post )",
+          "lines": [
+            1827
+          ]
+        },
+        {
+          "anchor": "return current_user_can( 'edit_post', $post->ID );",
+          "lines": [
+            1834
+          ]
+        }
+      ]
+    },
+    {
+      "path": "wordpress/wp-includes/post.php",
+      "sha256": "34678856a4326b7e76ef120ba80a9e46c6903193e058b988555ec5c1f5cb8f26",
+      "bytes": 305589,
+      "checks": [
+        {
+          "anchor": "'wp_global_styles'",
+          "lines": [
+            497,
+            529
+          ]
+        },
+        {
+          "anchor": "'edit_posts'             => 'edit_theme_options'",
+          "lines": [
+            170,
+            412,
+            477,
+            514,
+            584,
+            611,
+            643
+          ]
+        },
+        {
+          "anchor": "'edit_others_posts'      => 'edit_theme_options'",
+          "lines": [
+            171,
+            413,
+            478,
+            517,
+            574,
+            612,
+            644
+          ]
+        }
+      ]
+    }
+  ],
+  "observedRoleEvidence": "playtt-rest-route-audit.json; editor role has edit_pages/edit_others_pages but no edit_theme_options",
+  "interpretation": "Native global-style edit-context request requires update permission; its denial matches the observed REST403. Do not grant extra capability to suppress this response.",
+  "sourceUrl": "https://developer.wordpress.org/reference/classes/wp_rest_global_styles_controller/get_item_permissions_check/",
+  "runtimeFilesChanged": false,
+  "networkRequests": 0
+}

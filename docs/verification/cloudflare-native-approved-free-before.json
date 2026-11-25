@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-24T14:32:39.073Z",
+  "account": "3baadbd4abd9fd63c7f7e51664b26f67",
+  "workers": {
+    "plan": "Free",
+    "priceUsd": 0,
+    "currentPlan": true,
+    "source": "authenticated UI"
+  },
+  "r2": {
+    "period": "October25–November25",
+    "storageGb": 2.33,
+    "classA": "7.33k",
+    "classB": "60.6k",
+    "billableUsd": 0
+  },
+  "billingMayLag": true,
+  "doDetailedUsageRefreshed": false
+}

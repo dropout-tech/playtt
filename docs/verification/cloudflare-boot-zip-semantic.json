@@ -1,0 +1,255 @@
+{
+  "schema": "playtt/boot-zip-proof/v1",
+  "at": "2026-11-22T00:49:45.608Z",
+  "result": "pass",
+  "originalSha256": "d720192f15ca3a456de4732f0945c1bef83f3cda164da4b345ad9405558d02f6",
+  "candidateSha256": "7ea9f96252eeb847da0f579aa45016717d8e79f6c4da5d2907b7534091511251",
+  "moduleSha256": "d0131db93fc46c0d97b9984922f26dfc4133e92774049ddfe426abbd63ae49c9",
+  "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+  "loaderSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+  "cases": 26,
+  "valid": 11,
+  "rejected": 15,
+  "observations": [
+    {
+      "label": "actual-seed",
+      "ok": true,
+      "files": 0,
+      "returnedFiles": 134,
+      "calls": 0,
+      "observationSha256": "6c1bd86a404f7aa2790e93f06e4f2e35450d031993b45ee7dded06058755492e"
+    },
+    {
+      "label": "generated-seed",
+      "ok": true,
+      "files": 0,
+      "returnedFiles": 4,
+      "calls": 0,
+      "observationSha256": "9d67a959a071ecae3e69764f4f37e517ad49d00aff0a275e2d6287830e6eeb9a"
+    },
+    {
+      "label": "empty-seed",
+      "ok": true,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "170b0de02fd5cd56bbd3a158d00ba1b4c0824760b1c26272b2b01863c5c908ea"
+    },
+    {
+      "label": "seed-schema",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "e60f1ace9ce20fd804aca81257c1cab5e76d061d7f6a62e6ab666a5eb767699b"
+    },
+    {
+      "label": "seed-revision",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "52ea976c54a32013ec64404b0d10fad02fdcaafc8ebb774d3221af41eafa52aa"
+    },
+    {
+      "label": "seed-archive-hash",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "0af04ef7b098cc2adae3a40f5a8c959e8ad611f5e2b92f79a08267378b8a337c"
+    },
+    {
+      "label": "seed-file-hash",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "0a1f68aa5f08689eec57d72b542267b505a6e58c6ca5c757a904e369e8bc116c"
+    },
+    {
+      "label": "seed-file-size",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "6eed680e2d234d7f2ac12350f575902c1695c358f7db223fe852a5d416b5cccd"
+    },
+    {
+      "label": "seed-missing-inventory",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "d4bbaa130a87891e4e18cd019e65b263ddf2738c0c0b18f6846e4640e3222d9c"
+    },
+    {
+      "label": "seed-extra-inventory",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "48279e778981384931e42476cab797fb8000432cd89406bf34e53be249558757"
+    },
+    {
+      "label": "seed-truncated-0",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "3c8d8fd63561a695849696220daa138f1533e4b34db9c69a7d792bbf01606096"
+    },
+    {
+      "label": "seed-truncated-3",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "1832e0619790c15a68c054abe51484cce3c47b5e89aeaa62d90cc47e5aa628cd"
+    },
+    {
+      "label": "seed-truncated-29",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "33b6f18c040b26749e19f9a819470479a09da7b94de4b5d51e4b841d57479264"
+    },
+    {
+      "label": "seed-truncated-55901",
+      "ok": true,
+      "files": 0,
+      "returnedFiles": 134,
+      "calls": 0,
+      "observationSha256": "5fb9534f5de83d2ce15e531fe8b9eaea9309bab129b59996b3a1879240e7e27b"
+    },
+    {
+      "label": "actual-mdi",
+      "ok": true,
+      "files": 41,
+      "returnedFiles": 0,
+      "calls": 81,
+      "observationSha256": "bfeb8a8e8b5663ece1e5377e6968f30de9c2ed14b84eb06c7888e05390e86079"
+    },
+    {
+      "label": "generated-mdi",
+      "ok": true,
+      "files": 5,
+      "returnedFiles": 0,
+      "calls": 9,
+      "observationSha256": "bba861be67e1725ee37a85cf7cebd5b1c65f38af71a94be107a9a06c0e359f20"
+    },
+    {
+      "label": "empty-mdi",
+      "ok": true,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "cd0761981ca30f886d89757f4d2862c4d4548c074c5c2e37b81f053fe8209864"
+    },
+    {
+      "label": "mdi-snapshot-owned",
+      "ok": true,
+      "files": 5,
+      "returnedFiles": 0,
+      "calls": 9,
+      "observationSha256": "36449b3572a59e256b74dff424d7d4764c06ca1e80c3a897488e7c9bfca3c3e4"
+    },
+    {
+      "label": "mdi-truncated-0",
+      "ok": true,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "acc6f39e41575826db08b2e764fd18813582585866a46e4e35e0d0af8ee4639e"
+    },
+    {
+      "label": "mdi-truncated-3",
+      "ok": true,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "e12ae580deedefa8677143bdd4d150389b1fa93191d01b1eb8066891b4a6026f"
+    },
+    {
+      "label": "mdi-truncated-29",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 0,
+      "observationSha256": "4d062d98a6cbd1aa54839da224f4d3a1ef7264d0e4adb925ce7254d4d622c2f2"
+    },
+    {
+      "label": "mdi-truncated-93268",
+      "ok": true,
+      "files": 41,
+      "returnedFiles": 0,
+      "calls": 81,
+      "observationSha256": "e2a9ad94dd0d1e23a0d74446b03b98fb701101f1db1e747e4f54ed4eda06806f"
+    },
+    {
+      "label": "mdi-mkdir-fails-1",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 1,
+      "observationSha256": "8ccf91afaee5d69eaa3dd990715b906b7eb506633cd8cc5a331e4dda6de6271a"
+    },
+    {
+      "label": "mdi-mkdir-fails-4",
+      "ok": false,
+      "files": 4,
+      "returnedFiles": 0,
+      "calls": 8,
+      "observationSha256": "f75cc2e6afdde99dcbe2cc221dffe7d44baf371299595960a3ef6a5b1ed8d640"
+    },
+    {
+      "label": "mdi-writeFile-fails-1",
+      "ok": false,
+      "files": 0,
+      "returnedFiles": 0,
+      "calls": 2,
+      "observationSha256": "ddad8fc07805411de65d90ca6fb9a92936f926383b1a1c51d90d14856f245d29"
+    },
+    {
+      "label": "mdi-writeFile-fails-4",
+      "ok": false,
+      "files": 3,
+      "returnedFiles": 0,
+      "calls": 7,
+      "observationSha256": "1f7e16ccc7177b7a2bcf58a8c010bf2aec54295a0cb178d3cba82c636fbe3f6b"
+    }
+  ],
+  "assets": [
+    {
+      "name": "markdown-database-integration-canonical-seed.zip",
+      "bytes": 55902,
+      "sha256": "60231408fa51e56dd288c2e39c5158df25417d227c0ed4603e70ef22aa7bbf20"
+    },
+    {
+      "name": "markdown-database-integration-canonical-seed.json",
+      "bytes": 25599,
+      "sha256": "cca1574450d754f00b0b807472a3684c01a0c3ad3104c45b30cc21a10fb92eed"
+    },
+    {
+      "name": "markdown-database-integration-runtime.zip",
+      "bytes": 93269,
+      "sha256": "eeb01238babfea9dff7c56111974584c86e0aec8616cb0ae0f09296a222b92c0"
+    }
+  ],
+  "independentPythonZipInventoryExact": true,
+  "seedFiles": 134,
+  "mdiFiles": 40,
+  "mdiDbPhpDuplicateExact": true,
+  "partialWritesAndModesExact": true,
+  "mdiSynchronousSnapshotOwnership": true,
+  "allResultsAndErrorsExact": true,
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "limitations": [
+    "Actual PHP/WASM filesystem checks under Node, not full WordPress boot/editor or provider limits.",
+    "Remote component importer unchanged because its actual pinned ZIP is not available locally.",
+    "Seed hash await and snapshot timing preserved; input mutation during that await is not newly validated.",
+    "Original ZIP parser and existing validation gaps retained; not a security rewrite."
+  ]
+}

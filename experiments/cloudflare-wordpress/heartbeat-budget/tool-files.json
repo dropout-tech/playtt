@@ -1,0 +1,47 @@
+{
+  "schema": "playtt/local-diagnostic-tools/v1",
+  "scope": "Local integrated heartbeat full-workflow capacity evidence; no source/config edit or deployment",
+  "prerequisites": [
+    {
+      "path": "src/worker.ts",
+      "sha256": "0c4d77291f3c766446d820d3c92a698e09517f31dbf2c92eadd539ab8697e3ed"
+    },
+    {
+      "path": "src/playtt-editor-heartbeat.ts",
+      "sha256": "341ffbe6394d12c0bdadfdd8b53523dc0810f383a777551617a1acb1727f028b"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "sha256": "ad31e78d03643c0e00ccafff47b9cd27e049086e38d69fc04ecac6df288e6f4d"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "sha256": "3ddc0834f7397dfe18149aad2e441b8528a5f9717eea338e1208508a793d6245"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "4262655fb0aef100b0401302622b81f9502896833bf7e3a8ab16737f3210e2aa"
+    },
+    {
+      "path": "scripts/playtt-background-write-inspect.mjs",
+      "sha256": "bdc530930450088d8d676c3577553fc995c88f8bc7a1526d5252db1562ee4c8a"
+    }
+  ],
+  "files": [
+    {
+      "path": "scripts/playtt-heartbeat-budget-ui.mjs",
+      "source": "playtt-heartbeat-budget-ui.mjs",
+      "sha256": "d284050265fc05690e0577baa25b29d60b4c6714646db0d51df8c8cfe9247f41"
+    },
+    {
+      "path": "scripts/playtt-heartbeat-budget-ui-control.mjs",
+      "source": "playtt-heartbeat-budget-ui-control.mjs",
+      "sha256": "8f275e197584c3bc7e9fb7f8d05582e7534b36b0950cb3f855c054004b66f4ef"
+    },
+    {
+      "path": "scripts/playtt-heartbeat-budget-final.mjs",
+      "source": "playtt-heartbeat-budget-final.mjs",
+      "sha256": "93faf8c43839fb5d311d50662e1a2ef9fc4819d1f92c94b5e594aef7a9e251e8"
+    }
+  ]
+}

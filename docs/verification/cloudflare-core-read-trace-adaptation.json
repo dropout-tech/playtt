@@ -1,0 +1,32 @@
+{
+  "generated": [
+    {
+      "name": "playtt-core-read-trace-editor-v2.mjs",
+      "source": "playtt-core-read-trace-editor.mjs",
+      "sourceSha256": "deb755ce2000f51ff6dbc1b2da6acf2fbafd493c5750dcf9ad6bed80f96d1977",
+      "sha256": "c2bb7ec3201b32d459babb72436e5fefe853e72f91335fc573474dca4e172648"
+    },
+    {
+      "name": "playtt-core-read-trace-editor-v2-observer.mjs",
+      "source": "playtt-core-read-trace-editor-observer.mjs",
+      "sourceSha256": "d83e42e1c6a5d360e449d454ee8da7a0e49a1f765fdef27030e865761b5e8596",
+      "sha256": "b63695d68b0d5c96a79a78f28bbc37cf1b7b99f5893f5f9b9c655dede6d89e5c"
+    },
+    {
+      "name": "playtt-core-read-trace-editor-v2-control.mjs",
+      "source": "playtt-core-read-trace-editor-control.mjs",
+      "sourceSha256": "272ca89f1221a12213cbb7668520fcbc401d057c0a85544191df46aea5644d6a",
+      "sha256": "70fdee3ca1b6d9c7a23d8155886de89708e360174f97c7e303d7c6d83d9c1cd6"
+    }
+  ],
+  "bundleSha256": "71e610a9f86da6eafd338d35afc95690014aabd87bb6079f5d848f05f22a2bdc",
+  "ports": [
+    9562,
+    9563
+  ],
+  "correctedExplicitContextSelection": true,
+  "priorFailedOwnerNotReplayed": true,
+  "fixedWindowUnchanged": true,
+  "nativeAssertionsUnchanged": true,
+  "cloudRequests": 0
+}

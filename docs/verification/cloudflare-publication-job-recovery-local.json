@@ -1,0 +1,148 @@
+{
+  "at": "2026-11-17T05:39:41.093Z",
+  "result": "pass",
+  "scope": "Local invalid-job failure retains the complete public revision; restore and explicit retry publishes the saved edit",
+  "failure": {
+    "state": "pending",
+    "attempts": 1,
+    "at": "2026-11-17T05:39:27.342Z",
+    "error": "Publication outbox entry is invalid or unavailable."
+  },
+  "checks": [
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-20T19:44:24.885817+00:00",
+  "result": "pass",
+  "adoptedPatches": 25,
+  "optionalPatches": 5,
+  "sourceFilesCompared": 72,
+  "helpersCompared": 38,
+  "v1ModuleUnchanged": true,
+  "v1ModuleSha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43",
+  "existingConfigsUnchanged": 19,
+  "v2FlagsEnabled": false,
+  "reapplyRefusedBeforeMutation": true,
+  "differences": [],
+  "deployed": false,
+  "defaultAssemblerIncludesCandidates": false,
+  "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler"
+}

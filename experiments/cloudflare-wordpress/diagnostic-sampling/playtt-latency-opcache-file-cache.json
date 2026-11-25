@@ -1,0 +1,98 @@
+{
+  "at": "2026-11-18T21:31:10.311Z",
+  "result": "pass",
+  "mode": "file-cache",
+  "scope": "Local pinned PHP-WASM native WordPress login reads on disposable SQLite seed; excludes MDI, real content, network, remote CPU limits and total isolate memory.",
+  "bootMs": 298,
+  "ini": {
+    "enabled": "1",
+    "fileCacheOnly": "1",
+    "fileUpdateProtection": "0",
+    "fileCache": "/internal/shared/opcache",
+    "sapi": "wasm",
+    "status": false
+  },
+  "initialMemory": {
+    "wasmHeapBytes": 67108864,
+    "opcodeFiles": 0,
+    "opcodeUsedBytes": 0,
+    "opcodeAllocatedBytes": 0
+  },
+  "requests": [
+    {
+      "index": 0,
+      "wallMs": 706.511,
+      "responseBytes": 5940,
+      "wasmHeapBytes": 67108864,
+      "opcodeFiles": 0,
+      "opcodeUsedBytes": 0,
+      "opcodeAllocatedBytes": 0
+    },
+    {
+      "index": 1,
+      "wallMs": 444.776,
+      "responseBytes": 5940,
+      "wasmHeapBytes": 67108864,
+      "opcodeFiles": 0,
+      "opcodeUsedBytes": 0,
+      "opcodeAllocatedBytes": 0
+    },
+    {
+      "index": 2,
+      "wallMs": 436.399,
+      "responseBytes": 5940,
+      "wasmHeapBytes": 67108864,
+      "opcodeFiles": 0,
+      "opcodeUsedBytes": 0,
+      "opcodeAllocatedBytes": 0
+    },
+    {
+      "index": 3,
+      "wallMs": 439.624,
+      "responseBytes": 5940,
+      "wasmHeapBytes": 68222976,
+      "opcodeFiles": 0,
+      "opcodeUsedBytes": 0,
+      "opcodeAllocatedBytes": 0
+    },
+    {
+      "index": 4,
+      "wallMs": 432.492,
+      "responseBytes": 5940,
+      "wasmHeapBytes": 68222976,
+      "opcodeFiles": 0,
+      "opcodeUsedBytes": 0,
+      "opcodeAllocatedBytes": 0
+    },
+    {
+      "index": 5,
+      "wallMs": 429.149,
+      "responseBytes": 5940,
+      "wasmHeapBytes": 68222976,
+      "opcodeFiles": 0,
+      "opcodeUsedBytes": 0,
+      "opcodeAllocatedBytes": 0
+    },
+    {
+      "index": 6,
+      "wallMs": 430.278,
+      "responseBytes": 5940,
+      "wasmHeapBytes": 68222976,
+      "opcodeFiles": 0,
+      "opcodeUsedBytes": 0,
+      "opcodeAllocatedBytes": 0
+    },
+    {
+      "index": 7,
+      "wallMs": 438.142,
+      "responseBytes": 5940,
+      "wasmHeapBytes": 68222976,
+      "opcodeFiles": 0,
+      "opcodeUsedBytes": 0,
+      "opcodeAllocatedBytes": 0
+    }
+  ],
+  "warmMedianMs": 434.44550000000004,
+  "maxWasmHeapBytes": 68222976,
+  "maxOpcodeAllocatedBytes": 0
+}

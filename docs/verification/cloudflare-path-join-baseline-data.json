@@ -1,0 +1,69 @@
+{
+  "schema": "playtt/path-join-data-audit/v1",
+  "variant": "baseline",
+  "at": "2026-11-21T18:22:15.678Z",
+  "result": "data-integrity-pass; earlier exception not reproduced or resolved",
+  "localOnly": true,
+  "baselineLocalCopyOfCloudVersion": 181,
+  "finalLocalVersion": 190,
+  "cloudRequests": 0,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json"
+  ],
+  "editLock": {
+    "postId": 193,
+    "metaId": 72,
+    "userId": 2
+  },
+  "optionSequence": {
+    "before": "784",
+    "after": "794"
+  },
+  "allOtherFilesExact": true,
+  "allOriginalSessionsExactNewSessionRemoved": true,
+  "independentObjects": 304,
+  "independentFiles": 298,
+  "chargedBytes": 449653,
+  "chargedPuts": 27,
+  "closed": true,
+  "sealed": true,
+  "pending": 0,
+  "localProcessesDisposed": true,
+  "samples": 940,
+  "events": 307,
+  "requests": 210,
+  "statusCounts": {
+    "200": 199,
+    "302": 10,
+    "303": 1
+  },
+  "capturedExceptions": [],
+  "httpErrors": [],
+  "exceptionLimitation": "No exception captured in this run. Prior retained-native exception lacked details and remains unclassified; non-reproduction is not a fix. New bounded detail capture was not exercised by a real exception this run.",
+  "browser": {
+    "at": "2026-11-21T18:17:23.273Z",
+    "variant": "baseline",
+    "visits": [
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      },
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      },
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      }
+    ],
+    "loggedOut": true,
+    "contentEdited": false
+  },
+  "contentSaveOrImeTested": false,
+  "productionChanged": false
+}

@@ -1,0 +1,22 @@
+--- a/src/playtt-storage-capacity.ts
++++ b/src/playtt-storage-capacity.ts
+@@ -11,7 +11,7 @@
+   PLAYTT_R2_WRITE_WINDOW?: string;
+ }
+
+-const SCOPES = new Set(['playtt-wordpress-rebuild-audit', 'playtt-wordpress-pin-restore-audit']);
++const SCOPES = new Set(['playtt-wordpress-rebuild-audit', 'playtt-wordpress-pin-restore-audit', 'playtt-wordpress-window-audit']);
+ const KEY = 'playtt-r2-capacity-ledger-v1';
+ const SCHEMA = 'playtt/r2-capacity-ledger/v1';
+ const RESERVATION_SCHEMA = 'playtt/r2-capacity-reservation/v1';
+--- a/scripts/playtt-snapshot-download.mjs
++++ b/scripts/playtt-snapshot-download.mjs
+@@ -1,7 +1,7 @@
+ import assert from 'node:assert/strict';
+
+ export function createCloudflareSnapshotSource({bucketName,token,fetchImpl=fetch}){
+- assert.ok(['playtt-wordpress-rebuild-audit','playtt-wordpress-pin-restore-audit'].includes(bucketName));
++ assert.ok(['playtt-wordpress-rebuild-audit','playtt-wordpress-pin-restore-audit','playtt-wordpress-window-audit'].includes(bucketName));
+  assert.ok(typeof token==='string'&&token.length>0&&token.length<=8192);
+  const base=`https://api.cloudflare.com/client/v4/accounts/3baadbd4abd9fd63c7f7e51664b26f67/r2/buckets/${bucketName}/objects/`;
+  const stats={requests:0,downloadedBytes:0};

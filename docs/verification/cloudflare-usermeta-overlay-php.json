@@ -1,0 +1,45 @@
+{
+  "at": "2026-11-20T19:39:45.498Z",
+  "result": "pass",
+  "scope": "Offline canonical57 with exact pinned core WP_Session_Tokens/WP_User_Meta_Session_Tokens, real MDI writer/loader and PDO SQLite in two fresh PHP instances. SQL metadata/filter adapter is narrow; not full WordPress HTTP/login/browser acceptance.",
+  "baselineVersion": 57,
+  "baselineRevision": "34a7df5f-087f-4d50-925d-05a748c1d66e",
+  "fullBaseRevision": "5ad54029-4fe8-4f98-88e0-bd7a48536034",
+  "coreClasses": [
+    {
+      "name": "class-wp-session-tokens.php",
+      "sha256": "0708de7171949675139eda1e476935763f65e8a3a0cf40fc534dfffa00fb04cb"
+    },
+    {
+      "name": "class-wp-user-meta-session-tokens.php",
+      "sha256": "bd32717507322f0e15234d546c4938c8e2d092d7166d4055f8ec6815ed09daa8"
+    }
+  ],
+  "writerChecks": 40,
+  "coldChecks": 17,
+  "userMetadataRows": 38,
+  "accounts": 2,
+  "sequenceTables": 8,
+  "filesCompared": 298,
+  "unchangedFiles": 297,
+  "changedFiles": [
+    {
+      "path": "_tables/usermeta.json",
+      "size": 21836
+    }
+  ],
+  "coreSessionValidatedAfterColdRestore": true,
+  "coreWrongUserAndExpiryAndLogoutChecks": true,
+  "chinesePreferencesExact": true,
+  "oldV1ReaderRejected": true,
+  "independentBundleVerified": true,
+  "materializedFullPackVerified": true,
+  "materializedFullPackBytes": 2296037,
+  "overlayWriteBytes": 95760,
+  "fullWriteBytes": 2391769,
+  "avoidedWriteBytes": 2296009,
+  "estimatedObjectPayloadReductionPercent": 95.99626887044693,
+  "costScope": "One local replay estimate: changed loose objects, new manifest, pointer and optional full pack. Excludes operation cost, reads and retries; not measured provider savings.",
+  "remoteObjectsWritten": 0,
+  "featureFlagEnabled": false
+}

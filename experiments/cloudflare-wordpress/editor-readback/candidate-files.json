@@ -1,0 +1,98 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": false,
+  "existingConfigsChanged": false,
+  "prerequisites": [
+    {
+      "path": "src/playtt-editor-lock.ts",
+      "sha256": "c61e547c55400355fa19088869215480e8dd4f6b07c01f7ae086f08b4adacb82"
+    },
+    {
+      "path": "src/wp-content-persistence.ts",
+      "sha256": "0f67fe2b2e198b9665c0d9d1858d7557ab552d877b5165b89c47c9e719546a5d"
+    },
+    {
+      "path": "assets/wordpress-static-artifact.json",
+      "sha256": "39fc2a00539d7a561ef7cc3483f723e510a24a84a6a1029bd0f88b5a3da218d2"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "beforeSha256": "da6d1cd1aaa3ce6f7746a3fe1fc72b3271440b0335d30e46f80449af40888359",
+      "afterSha256": "80cfe44766223bc9ca17e3868343da01f5b1cf7fce707d55d1175302907c221e"
+    },
+    {
+      "path": "src/playtt-editor-readback.ts",
+      "source": "playtt-editor-readback.ts",
+      "afterSha256": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+    },
+    {
+      "path": "tests/playtt-editor-readback.test.mjs",
+      "source": "playtt-editor-readback.test.mjs",
+      "afterSha256": "22b3b0f55d94a79a827ab4f2d8a040d829d38f298440704bc17329701548b8db"
+    },
+    {
+      "path": "scripts/playtt-readback-guard-ui.mjs",
+      "source": "playtt-readback-guard-ui.mjs",
+      "afterSha256": "fd458a67b4e09d8a41afb0b88f8478bc9735b688fc11db9c292245508ea7644b"
+    },
+    {
+      "path": "scripts/playtt-readback-guard-ui-control.mjs",
+      "source": "playtt-readback-guard-ui-control.mjs",
+      "afterSha256": "a642f4361553faff635262e443f2ffbcd00a8595f823feef2e01114d36445808"
+    },
+    {
+      "path": "scripts/playtt-readback-ui-audit.mjs",
+      "source": "playtt-readback-ui-audit.mjs",
+      "afterSha256": "8a2ba0f8d88fea3e8ac467cf23cb6da2789319c56ba3e709fe9c8db1575a7ff5"
+    },
+    {
+      "path": "scripts/playtt-readback-uncommitted-ui.mjs",
+      "source": "playtt-readback-uncommitted-ui.mjs",
+      "afterSha256": "2a97eac2b9045d89b80a5f217caffcea4001e74475f73c52ad801e513e44a688"
+    },
+    {
+      "path": "scripts/playtt-readback-uncommitted-ui-control.mjs",
+      "source": "playtt-readback-uncommitted-ui-control.mjs",
+      "afterSha256": "5d5d6093fa8c26b0ed8738ceffb440fe369083ecc67e4ce159a421cd60c9a67e"
+    },
+    {
+      "path": "scripts/playtt-readback-multitab-guard-ui.mjs",
+      "source": "playtt-readback-multitab-guard-ui.mjs",
+      "afterSha256": "91708948fc68c31e0e6b3d27e297ef76d88e284d39a762a66bd226830801ef02"
+    },
+    {
+      "path": "scripts/playtt-readback-multitab-guard-ui-control.mjs",
+      "source": "playtt-readback-multitab-guard-ui-control.mjs",
+      "afterSha256": "9ada958ca4f26e6abf1f769c6e60f8eac7f0e0fedd1e7da8a6ef07d8e256bccd"
+    },
+    {
+      "path": "scripts/playtt-readback-negative-audit.mjs",
+      "source": "playtt-readback-negative-audit.mjs",
+      "afterSha256": "7893a45c3be348eac65b13df5f9f221c28cd1862ae8c4080186752ee04ddf9dc"
+    },
+    {
+      "path": "scripts/playtt-readback-provider.mjs",
+      "source": "playtt-readback-provider.mjs",
+      "afterSha256": "afe377f11884ca36065024f9275ca6d86e535e3ce20c9eadb04295edc8f21149"
+    },
+    {
+      "path": "scripts/playtt-readback-provider-backup.mjs",
+      "source": "playtt-readback-provider-backup.mjs",
+      "afterSha256": "53f3841697adde42db8723c495e7f239a4120fbec07211a18d8764d14351020c"
+    },
+    {
+      "path": "scripts/playtt-readback-provider-pin.mjs",
+      "source": "playtt-readback-provider-pin.mjs",
+      "afterSha256": "2061518eb5fa4ce63e34e0073d57370a6b42f477293443386d00a5f02e7c620e"
+    },
+    {
+      "path": "scripts/playtt-readback-provider-inspect.mjs",
+      "source": "playtt-readback-provider-inspect.mjs",
+      "afterSha256": "171db2a23fd21b26ee1b51782484018b7bffd0e5c3ae90b8b747080bb55738bb"
+    }
+  ],
+  "patchSha256": "c1e59184a28c6cdb803d19ccc70efa5c1037bf839a710a57131973d55429b638"
+}

@@ -1,0 +1,236 @@
+{
+  "at": "2026-11-21T01:07:48.082Z",
+  "result": "pass",
+  "scope": "Local native-browser negative flows and exact offline canonical comparisons; no provider execution",
+  "attempts": [
+    {
+      "attempt": "playtt-readback-uncommitted-ui",
+      "marker": "playtt-readback-uncommitted-ui-77bc9073-bfc6-49fd-8ed5-6af70d9d4800",
+      "testedSourceHashes": {
+        "src/worker.ts": "80cfe44766223bc9ca17e3868343da01f5b1cf7fce707d55d1175302907c221e",
+        "src/playtt-editor-readback.ts": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+      },
+      "browser": {
+        "at": "2026-11-21T00:56:18.807Z",
+        "failedNoticeObserved": true,
+        "failedSaveStillAvailable": true,
+        "failedTextBytesExact": true,
+        "savedNoticeObserved": true,
+        "errorNoticeAbsent": true,
+        "manualRetryClicked": true,
+        "firstTabClosed": true,
+        "coldSameSession": true,
+        "coldVisualContentRetained": true,
+        "coldContentBytesExact": true,
+        "coldTabClosed": true
+      },
+      "versions": [
+        {
+          "label": "before",
+          "version": 121
+        },
+        {
+          "label": "fault",
+          "version": 128
+        },
+        {
+          "label": "readback",
+          "version": 128
+        },
+        {
+          "label": "retry",
+          "version": 129
+        },
+        {
+          "label": "final",
+          "version": 134
+        }
+      ],
+      "comparisons": [
+        {
+          "from": "before",
+          "to": "fault",
+          "fromVersion": 121,
+          "toVersion": 128,
+          "changed": [
+            "_tables/postmeta.json",
+            "_tables/usermeta.json"
+          ]
+        },
+        {
+          "from": "fault",
+          "to": "readback",
+          "fromVersion": 128,
+          "toVersion": 128,
+          "changed": []
+        },
+        {
+          "from": "readback",
+          "to": "retry",
+          "fromVersion": 128,
+          "toVersion": 129,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/posts.json",
+            "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+          ]
+        },
+        {
+          "from": "retry",
+          "to": "final",
+          "fromVersion": 129,
+          "toVersion": 134,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/usermeta.json"
+          ]
+        }
+      ],
+      "exactUnrelatedRowsFilesMediaAndTheme": true,
+      "originalRevisionsPreserved": true,
+      "readbackSnapshotUnchanged": true,
+      "uncommittedDraftIdentityPreserved": null,
+      "readback": {
+        "count": 1,
+        "status": 200,
+        "code": null,
+        "contentMismatchPreservedAsError": true,
+        "runtimeUsed": true,
+        "commitPhase": false,
+        "traceMs": 2344,
+        "localGateMs": 0
+      },
+      "telemetry": {
+        "traces": 37,
+        "completedTraces": 37,
+        "fullPacks": 1,
+        "fullPackBytes": 2294490,
+        "requestFailures": 0,
+        "blockedBackgroundMutations": 6
+      },
+      "localProcessesDisposed": true,
+      "outboundAttempts": 0
+    },
+    {
+      "attempt": "playtt-readback-multitab-guard-ui",
+      "marker": "playtt-readback-multitab-guard-ui-87154dac-ee9f-4141-b163-537d90ff584a",
+      "testedSourceHashes": {
+        "src/worker.ts": "80cfe44766223bc9ca17e3868343da01f5b1cf7fce707d55d1175302907c221e",
+        "src/playtt-editor-readback.ts": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+      },
+      "browser": {
+        "at": "2026-11-21T01:04:45.550Z",
+        "failedNoticeObserved": true,
+        "failedSaveStillAvailable": true,
+        "firstContentVisible": true,
+        "firstSaveNotRetried": true,
+        "secondSavedNoticeObserved": true,
+        "secondErrorNoticeAbsent": true,
+        "coldSameSession": true,
+        "coldSecondTitleBytesExact": true,
+        "coldSecondContentBytesExact": true,
+        "coldFirstContentBytesExact": true,
+        "allFourTabsClosed": true
+      },
+      "versions": [
+        {
+          "label": "before",
+          "version": 121
+        },
+        {
+          "label": "fault",
+          "version": 126
+        },
+        {
+          "label": "readback",
+          "version": 126
+        },
+        {
+          "label": "second",
+          "version": 127
+        },
+        {
+          "label": "final",
+          "version": 135
+        }
+      ],
+      "comparisons": [
+        {
+          "from": "before",
+          "to": "fault",
+          "fromVersion": 121,
+          "toVersion": 126,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/posts.json",
+            "_tables/usermeta.json",
+            "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+          ]
+        },
+        {
+          "from": "fault",
+          "to": "readback",
+          "fromVersion": 126,
+          "toVersion": 126,
+          "changed": []
+        },
+        {
+          "from": "readback",
+          "to": "second",
+          "fromVersion": 126,
+          "toVersion": 127,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/posts.json",
+            "page/202.md"
+          ]
+        },
+        {
+          "from": "second",
+          "to": "final",
+          "fromVersion": 127,
+          "toVersion": 135,
+          "changed": [
+            "_runtime/playtt-auto-increment.json",
+            "_tables/postmeta.json",
+            "_tables/usermeta.json"
+          ]
+        }
+      ],
+      "exactUnrelatedRowsFilesMediaAndTheme": true,
+      "originalRevisionsPreserved": true,
+      "readbackSnapshotUnchanged": true,
+      "uncommittedDraftIdentityPreserved": 202,
+      "readback": {
+        "count": 1,
+        "status": 409,
+        "code": "playtt_readback_unsettled",
+        "contentMismatchPreservedAsError": false,
+        "runtimeUsed": false,
+        "commitPhase": false,
+        "traceMs": 4,
+        "localGateMs": 3025
+      },
+      "telemetry": {
+        "traces": 52,
+        "completedTraces": 52,
+        "fullPacks": 2,
+        "fullPackBytes": 4589742,
+        "requestFailures": 0,
+        "blockedBackgroundMutations": 8
+      },
+      "localProcessesDisposed": true,
+      "outboundAttempts": 0
+    }
+  ],
+  "remoteFeatureEnabled": false,
+  "providerTested": false,
+  "failedHarnessAttempt": {
+    "prefix": "playtt-readback-multitab-ui",
+    "cause": "Assumed legacy post_ID HTML field absent from pinned block editor; corrected to actual initializeEditor page ID",
+    "countedAsPass": false
+  }
+}

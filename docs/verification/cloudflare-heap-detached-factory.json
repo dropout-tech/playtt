@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-17T07:49:54.698016+00:00",
+  "label": "detached-factory",
+  "scope": "Sanitized V8 heap snapshot summary; raw heap and content strings remain private",
+  "snapshotSelfBytes": 128332259,
+  "selfBytesByType": {
+    "synthetic": 1512,
+    "native": 115485949,
+    "string": 6306810,
+    "object shape": 361308,
+    "code": 3267124,
+    "array": 1477040,
+    "number": 108480,
+    "symbol": 1392,
+    "object": 825640,
+    "closure": 486372,
+    "concatenated string": 9680,
+    "regexp": 936,
+    "bigint": 16
+  },
+  "arrayBufferBackingBytes": 113294668,
+  "bootArrays": {},
+  "bootArraysRetainedBytes": 0
+}

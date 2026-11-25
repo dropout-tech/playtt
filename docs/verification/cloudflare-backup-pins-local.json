@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-20T03:41:23.956Z",
+  "result": "pass",
+  "scope": "All completed backups in the project rebuild UI backup directory, not an attestation about unknown external copies",
+  "archives": 22,
+  "uniqueRevisions": 21,
+  "archiveBytes": 50405182,
+  "allArchivesDecodedAndVerified": true
+}

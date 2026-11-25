@@ -1,0 +1,10 @@
+{
+  "schema": "playtt/logout-action-browser/v1",
+  "at": "2026-11-21T13:54:09.332Z",
+  "originalContentExact": true,
+  "paragraphCount": 8,
+  "saveClicks": 0,
+  "logoutSucceeded": true,
+  "logoutMethod": "Browser navigation to native logout link observed in DOM",
+  "ownedBrowserTabClosed": true
+}

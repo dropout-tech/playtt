@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-17T08:12:32.507Z",
+  "result": "pass",
+  "scope": "Private restore-v1 only; native styles and original content readback",
+  "expectInk": true,
+  "evidence": {
+    "style": "native ink color persisted after redeployment",
+    "content": [
+      {
+        "slug": "about",
+        "status": "publish",
+        "sha256": "80369bd17460797df423c957eb91bc0032fc268d1755a1738e79ee3ea7962b3d"
+      },
+      {
+        "slug": "class",
+        "status": "publish",
+        "sha256": "e31919e8a634f32df6473bd55cca5e4e3b918ea417e34f846cc1b341a82a7973"
+      }
+    ],
+    "footerSha256": "6403c8dc8667a556f7a1c11b4856324d4ee8e854070a6cb6e92fcb6d3b7f9f4e"
+  },
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1191
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1050
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 12464
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1674
+    },
+    {
+      "path": "/wp-json/wp/v2/users/me?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 915
+    },
+    {
+      "path": "/wp-json/wp/v2/plugins?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 932
+    },
+    {
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 939
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1029
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/26?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1041
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts/lets-play%2F%2Ffooter?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1075
+    }
+  ]
+}

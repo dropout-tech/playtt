@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-18T19:04:41.479Z",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "backupRevision": "359644be-2af8-491c-b178-86c2a98f8f4e",
+  "result": "fail",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'f7d0ec8f80d8369fb31ff499b87063157ca81ae1e66bb06df86d851f00cc4327'\n- '143dadbd46972bba112972dd38412ec602ce86d8852ca8fbf35443115f8ae40e'\n",
+  "checks": [
+    {
+      "target": "audit",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1223
+    },
+    {
+      "target": "audit",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4722
+    },
+    {
+      "target": "audit",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 5777
+    },
+    {
+      "target": "audit",
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2752
+    },
+    {
+      "target": "audit",
+      "path": "/wp-json/wp/v2/pages/126?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1156
+    }
+  ]
+}

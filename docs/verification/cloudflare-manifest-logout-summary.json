@@ -1,0 +1,73 @@
+{
+  "schema": "playtt/native-logout-action-proof/v1",
+  "at": "2026-11-21T13:57:31.824Z",
+  "result": "native-post-logout-remove-lock-rejection-reproduced",
+  "sourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "localOnly": true,
+  "scope": "Native login, existing editor load and direct logout attribution only; no save or restart",
+  "sourceEvidence": {
+    "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+    "file": "wordpress/wp-admin/admin-ajax.php",
+    "fileSha256": "06f3a0e4fbeaed4f965f5fe22f3d767faaa0c775d1446975bf420f4b85ba7a01",
+    "registeredAuthenticatedActionLine": 99,
+    "missingUnauthenticatedActionCheckLine": 195,
+    "coreHasNoUnauthenticatedRemoveLockHandler": true
+  },
+  "native": {
+    "schema": "playtt/logout-action-browser/v1",
+    "at": "2026-11-21T13:54:09.332Z",
+    "originalContentExact": true,
+    "paragraphCount": 8,
+    "saveClicks": 0,
+    "logoutSucceeded": true,
+    "logoutMethod": "Browser navigation to native logout link observed in DOM",
+    "ownedBrowserTabClosed": true
+  },
+  "request": {
+    "at": "2026-11-21T13:53:56.698Z",
+    "path": "/wp-admin/admin-ajax.php",
+    "method": "POST",
+    "action": "wp-remove-post-lock",
+    "status": 400,
+    "version": 166,
+    "revision": "2e41880a-e957-4190-9ee9-89596ba63f0c"
+  },
+  "logoutVersion": 166,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json"
+  ],
+  "onlyEditLockAndMonotonicIdsChanged": true,
+  "allUserSessionMetadataRestoredExactly": true,
+  "contentAndRevisionsUnchanged": true,
+  "mediaAndThemeExact": true,
+  "noLaterCanonicalVersion": true,
+  "backup": {
+    "format": "compressed-content",
+    "manifestEncoding": "gzip-envelope",
+    "objects": 304,
+    "independentExact": true,
+    "fullMaterializedExact": true,
+    "independentReopenedExact": true,
+    "materializedReopenedExact": true
+  },
+  "accounting": {
+    "bytes": 248768,
+    "puts": 15,
+    "remainingBytes": 1632273,
+    "pending": 0,
+    "sealed": true,
+    "closed": true,
+    "elapsedWindowMs": 127705
+  },
+  "outboundAttempts": 0,
+  "localProcessesDisposed": true,
+  "ownedBrowserTabClosed": true,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "limitations": [
+    "This separately reproduces the same native logout ordering with an explicit action-only diagnostic. The preceding complete-workflow request was recorded as other, so its exact action remains an inference, not retroactively observed.",
+    "The400 response remains in both histories; no suppression, retry, cap increase or runtime behavior change was applied.",
+    "Not a provider, whole-isolate, long-term Free or device acceptance."
+  ]
+}

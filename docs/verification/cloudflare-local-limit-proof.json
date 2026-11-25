@@ -1,0 +1,162 @@
+{
+  "schema": "playtt/local-limit-capability-proof/v1",
+  "at": "2026-11-21T19:24:28.333Z",
+  "result": "local-runtime-is-not-cloudflare-memory-limit-emulation",
+  "versions": {
+    "workerd": "1.20260828.1",
+    "miniflare": "5.20260828.0-alpha",
+    "wrangler": "4.127.1"
+  },
+  "binaryVersion": "workerd 2026-08-28",
+  "pinnedWorkerdCommit": "8ea63498c7aa107995f9b2ffee7789631707e09f",
+  "installedCapnpMatchesPinnedBlob": true,
+  "capnpBlobSha": "43d59cd6848e71624a2837762fe56828d714f97f",
+  "source": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/server/server.c%2B%2B",
+  "cases": [
+    {
+      "v8Flags": [],
+      "kind": "array-buffer",
+      "allocatedBytes": 167772160,
+      "touchedPages": 40960,
+      "pageBytes": 4096,
+      "checksum": 5156166,
+      "allocationHttp200": true,
+      "separateRequestRetainedExact": true,
+      "sameInstance": true,
+      "requests": 3,
+      "usageBefore": {
+        "usedSize": 408580,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "usageAfter": {
+        "usedSize": 423228,
+        "totalSize": 1835008,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 167772160
+      },
+      "usageDelta": {
+        "usedSize": 14648,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 0,
+        "backingStorageSize": 167772160
+      },
+      "forcedGc": false,
+      "exceptions": []
+    },
+    {
+      "v8Flags": [],
+      "kind": "wasm-memory",
+      "allocatedBytes": 167772160,
+      "touchedPages": 40960,
+      "pageBytes": 4096,
+      "checksum": 5156166,
+      "allocationHttp200": true,
+      "separateRequestRetainedExact": true,
+      "sameInstance": true,
+      "requests": 3,
+      "usageBefore": {
+        "usedSize": 408720,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "usageAfter": {
+        "usedSize": 424588,
+        "totalSize": 1835008,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "usageDelta": {
+        "usedSize": 15868,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": 0,
+        "backingStorageSize": 0
+      },
+      "forcedGc": false,
+      "exceptions": []
+    },
+    {
+      "v8Flags": [
+        "--max-old-space-size=128"
+      ],
+      "kind": "array-buffer",
+      "allocatedBytes": 167772160,
+      "touchedPages": 40960,
+      "pageBytes": 4096,
+      "checksum": 5156166,
+      "allocationHttp200": true,
+      "separateRequestRetainedExact": true,
+      "sameInstance": true,
+      "requests": 3,
+      "usageBefore": {
+        "usedSize": 408580,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "usageAfter": {
+        "usedSize": 231168,
+        "totalSize": 1835008,
+        "embedderHeapUsedSize": 128616,
+        "backingStorageSize": 167772160
+      },
+      "usageDelta": {
+        "usedSize": -177412,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": -258288,
+        "backingStorageSize": 167772160
+      },
+      "forcedGc": false,
+      "exceptions": []
+    },
+    {
+      "v8Flags": [
+        "--max-old-space-size=128"
+      ],
+      "kind": "wasm-memory",
+      "allocatedBytes": 167772160,
+      "touchedPages": 40960,
+      "pageBytes": 4096,
+      "checksum": 5156166,
+      "allocationHttp200": true,
+      "separateRequestRetainedExact": true,
+      "sameInstance": true,
+      "requests": 3,
+      "usageBefore": {
+        "usedSize": 408720,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 0
+      },
+      "usageAfter": {
+        "usedSize": 231980,
+        "totalSize": 1835008,
+        "embedderHeapUsedSize": 128616,
+        "backingStorageSize": 0
+      },
+      "usageDelta": {
+        "usedSize": -176740,
+        "totalSize": 1048576,
+        "embedderHeapUsedSize": -258288,
+        "backingStorageSize": 0
+      },
+      "forcedGc": false,
+      "exceptions": []
+    }
+  ],
+  "localOnly": true,
+  "cloudRequests": 0,
+  "wordpressRequests": 0,
+  "dataStoresConfigured": false,
+  "outboundAttempts": 0,
+  "localProcessesDisposed": true,
+  "environmentRestored": true,
+  "limitations": [
+    "This proves the pinned local runtime permits these individual160MiB allocations across requests. It does not measure peak process memory or WordPress peak.",
+    "V8 old-space128 flag is not an aggregate JavaScript-plus-WASM Cloudflare128MB enforcement mechanism.",
+    "Local functional tests remain useful for content/recovery semantics, not cloud resource admission.",
+    "Cloudflare documentation describes128MB per isolate including JavaScript and WebAssembly; no Cloudflare request was made here."
+  ]
+}

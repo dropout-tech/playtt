@@ -1,0 +1,142 @@
+--- a/packages/runtime-cloudflare/src/worker.ts
++++ b/packages/runtime-cloudflare/src/worker.ts
+@@ -1,6 +1,8 @@
+ import { wordPressContentType } from './asset-content-type.js';
+ import { compactPlayttCoreFiles } from './playtt-core-memory.js';
+ import { createPlayttRuntimeFactory } from './playtt-runtime-factory.js';
++import { trackPlayttRuntimeLifetime, playttRuntimeRetirement } from './playtt-runtime-lifetime.js';
++import { patchPlayttAutoDraftPersistence } from './playtt-auto-draft-policy.js';
+ import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+ import { decodeZip } from "@php-wasm/stream-compression"
+@@ -1468,7 +1470,17 @@
+       response.headers.set("x-wp-codebox-canonical-version", String(committed.version))
+       logMutationPhase(diagnosticsStartedAt, "commit", retained, { publication: publicationJob ? "queued" : "unchanged" })
+     } else {
+-      await trace.measure("lease.release", () => releaseLease(coordinator, request.url, activeLease))
++      // Native GETs can create an auto-draft or theme-style relationship. Before
++      // retiring their runtime, preserve that bounded inventory under the same
++      // lease so IDs already returned to an editor survive the next cold boot.
++      if (runtime && playttRuntimeRetirement(runtime.php).due) {
++        const next=await trace.measure("runtime.retirement.persist", () => persistRuntime(env.WORDPRESS_STATE_BUCKET,runtime!,{created:[],changed:[],deleted:[]},site))
++        if(!samePointer(pointer,next)) {
++          const committed=await trace.measure("coordinator.commit", () => commitLease(coordinator,request.url,activeLease,next))
++          if(!samePointer(committed.pointer,next))throw new Error('Retirement persistence pointer was not committed.')
++          cacheRuntime(committed.pointer,{...runtime,pointer:committed.pointer},site)
++        } else await trace.measure("lease.release", () => releaseLease(coordinator,request.url,activeLease))
++      } else await trace.measure("lease.release", () => releaseLease(coordinator, request.url, activeLease))
+     }
+     finalized = true
+     if (!mutatesCanonicalState && route === "wordpress" && response) response = await trace.measure("page-cache.write", () => cacheWordPressPage(request, lease!.pointer!, response!, env.WORDPRESS_STATE_BUCKET, site))
+@@ -1662,6 +1674,18 @@
+     await disposeRequestHandler((await cached.promise).requestHandler)
+   } catch {
+     // A rejected boot has no live runtime to dispose.
++  }
++}
++
++// Call only after the serialized operation has returned and released/committed
++// its canonical lease. Do not retain the old promise across the next boot.
++export async function retirePlayttIdleRuntimes(): Promise<void> {
++  for(const [siteId,cached] of cachedRuntimes){
++    if(cached.state!=='ready')continue;
++    const evidence=playttRuntimeRetirement((await cached.promise).php);
++    if(!evidence.due)continue;
++    await discardCachedRuntime(siteId);
++    console.log(JSON.stringify({schema:'playtt-runtime-retired/v1',requests:evidence.requests,heapBytes:evidence.heapBytes}));
+   }
+ }
+ 
+@@ -2409,6 +2433,7 @@
+         if (wpContentDeleted.length) trace ? await trace.measure("canonical.hydration.tombstones", () => materializeWpContentTombstones(php, wpContentDeleted), { count: wpContentDeleted.length }) : await materializeWpContentTombstones(php, wpContentDeleted)
+         if (uploadFiles?.length) trace ? await trace.measure("canonical.hydration.uploads", async () => materializeRuntimeFiles(php, UPLOADS_ROOT, uploadFiles), { files: uploadFiles.length, bytes: sumRuntimeFileBytes(uploadFiles) }) : materializeRuntimeFiles(php, UPLOADS_ROOT, uploadFiles)
+         if (shouldPatchCanonicalRuntimePoliciesAtInit) {
++          patchPlayttAutoDraftPersistence(php)
+           patchCanonicalRuntimePoliciesAtInit(php)
+           patchCanonicalThemeJsonCustomCss(php)
+         }
+@@ -2432,6 +2457,7 @@
+   if (!wordpressVersion) throw new Error("WordPress boot completed without a detected version.")
+   const compacted = compactPlayttCoreFiles(php)
+   console.log(JSON.stringify({ schema: 'playtt-core-compaction/v1', ...compacted }))
++  trackPlayttRuntimeLifetime(php)
+   return { php, requestHandler, wordpressVersion }
+ }
+ 
+--- a/packages/runtime-cloudflare/src/worker-playtt-do.ts
++++ b/packages/runtime-cloudflare/src/worker-playtt-do.ts
+@@ -1,5 +1,5 @@
+ import { DurableObjectRevisionCoordinator, WordPressStateCoordinator } from './state-coordinator.js';
+-import { createCloudflareRuntime, drainPlayttPublication, serveWordPressStaticAsset, serveWordPressUpload, serveWordPressWpContent, type RuntimeEnv } from './worker.js';
++import { createCloudflareRuntime, drainPlayttPublication, retirePlayttIdleRuntimes, serveWordPressStaticAsset, serveWordPressUpload, serveWordPressWpContent, type RuntimeEnv } from './worker.js';
+ import { servePublicPublication } from './public-reader.js';
+ import { PlayttPublicationAlarm } from './playtt-publication-alarm.js';
+ import { enablePlayttPhaseDiagnostics } from './phase-trace.js';
+@@ -68,6 +68,7 @@
+       if (enabled && mutation) await this.publisher.wake();
+       const result = await runtime.fetch(request, this.env);
+       if (enabled && result.headers.has('x-wp-codebox-publication-job')) await this.publisher.wake();
++      await retirePlayttIdleRuntimes();
+       return result;
+     });
+     this.tail = response.then(() => undefined, () => undefined);
+@@ -77,6 +78,7 @@
+   alarm(): Promise<void> {
+     const action = this.tail.then(async () => {
+       if (this.env.PLAYTT_AUTO_PUBLISH === 'true') await this.publisher.tick();
++      await retirePlayttIdleRuntimes();
+     });
+     this.tail = action.then(() => undefined, () => undefined);
+     return action;
+--- a/packages/runtime-cloudflare/src/php-wasm-universal.d.ts
++++ b/packages/runtime-cloudflare/src/php-wasm-universal.d.ts
+@@ -17,6 +17,7 @@
+   export class PHP {
+     constructor(runtimeId: number)
+     run(request: { code: string }): Promise<{ bytes: Uint8Array; text: string }>
++    addEventListener(eventType: 'request.end', listener: () => void): void
+     isDir(path: string): boolean
+     listFiles(path: string): string[]
+     mkdir(path: string): void
+--- /dev/null
++++ b/packages/runtime-cloudflare/src/playtt-runtime-lifetime.ts
+@@ -0,0 +1,18 @@
++import type { PHP } from '@php-wasm/universal';
++
++// Release between fully committed HTTP/alarm operations, before the upstream
++// 400-request hot swap has to keep both complete PHP runtimes alive at once.
++// The WeakMap and event listener do not retain a disposed PHP instance.
++const lifetime=new WeakMap<PHP,{requests:number}>();
++export function trackPlayttRuntimeLifetime(php: PHP): void {
++  if(lifetime.has(php))return;
++  const state={requests:0};lifetime.set(php,state);
++  php.addEventListener('request.end',()=>{state.requests++;});
++}
++export function playttRuntimeRetirement(php: PHP): {requests:number;heapBytes:number;due:boolean} {
++  const requests=lifetime.get(php)?.requests||0;
++  const key=Object.getOwnPropertySymbols(php).find(s=>s.description==='__private__dont__use');
++  const module=key?(php as unknown as Record<symbol,any>)[key]:undefined;
++  const heapBytes=module?.HEAPU8?.byteLength||0;
++  return {requests,heapBytes,due:requests>=96||heapBytes>=76*1024*1024};
++}
+--- /dev/null
++++ b/packages/runtime-cloudflare/src/playtt-auto-draft-policy.ts
+@@ -0,0 +1,18 @@
++import type { PHP } from '@php-wasm/universal';
++
++// The pinned MDI package deliberately drops auto-drafts as ephemeral. In a
++// runtime rebuilt between editor requests, their IDs must survive until the
++// user saves or discards them. Preserve native status, content and permissions.
++export function patchPlayttAutoDraftPersistence(php: PHP): void {
++  const root='/wordpress/wp-content/plugins/markdown-database-integration/inc/';
++  const patches=[
++    {file:'class-wp-markdown-write-engine.php',needle:'$id && ! $this->is_auto_draft( (int) $id )',replacement:'$id /* PLAYTT_PERSIST_AUTO_DRAFT */'},
++    {file:'class-wp-markdown-storage.php',needle:"\t\tif ( 'auto-draft' === $status ) {\n\t\t\treturn false;\n\t\t}",replacement:'\t\t// PLAYTT_PERSIST_AUTO_DRAFT: keep native status across runtime retirement.'},
++  ];
++  for(const patch of patches){
++    const path=root+patch.file,source=new TextDecoder().decode(php.readFileAsBuffer(path));
++    const index=source.indexOf(patch.needle);
++    if(index<0||index!==source.lastIndexOf(patch.needle))throw new Error('Pinned MDI auto-draft policy needle is not unique: '+patch.file);
++    php.writeFile(path,new TextEncoder().encode(source.slice(0,index)+patch.replacement+source.slice(index+patch.needle.length)));
++  }
++}

@@ -1,0 +1,200 @@
+{
+  "at": "2026-11-20T20:41:59.341770+00:00",
+  "result": "private-native-session-preferences-cold-logout-pass",
+  "worker": "playtt-wp-free-session-audit",
+  "bucket": "playtt-wordpress-session-audit",
+  "workerVersion": "c914a8a0-1ef3-49a9-b66c-4b937f4d6e74",
+  "sourceVersionImported": 57,
+  "bootstrapObjects": 303,
+  "bootstrapPayloadBytes": 100738428,
+  "selectedGraphOnly": true,
+  "oldTargetUnchanged": {
+    "version": 57,
+    "pins": 8,
+    "stateAndBudgetUnchanged": true,
+    "writeSealed": true,
+    "windowClosed": true,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "canonicalVersion": 15,
+  "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+  "pins": 5,
+  "allPinIdentitiesRetained": true,
+  "windowClosed": true,
+  "writeSealed": true,
+  "pending": 0,
+  "fenceActive": false,
+  "publisher": "paused",
+  "payloadBoundBytes": 101754104,
+  "payloadLimitBytes": 150000000,
+  "remainingBytes": 48245896,
+  "nativeLoginPreferenceAndColdSession": true,
+  "nativeLogoutColdRevocation": true,
+  "invalidNonceRejected": true,
+  "finalPreferencesBytesRestored": true,
+  "snapshots": [
+    {
+      "label": "preferences",
+      "version": 11,
+      "anchor": {
+        "revision": "bfa9e55e-e5aa-436c-a911-81b91490e81d",
+        "manifestKey": "sites/default/markdown/revisions/bfa9e55e-e5aa-436c-a911-81b91490e81d.json",
+        "persistedAt": "2026-11-20T20:35:05.612Z",
+        "manifestSha256": "2e9fd121bfb65647f2494873bf825ec15370e864605da668edc934106ed3dabd",
+        "packKey": "sites/default/restore-packs/ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b.zip",
+        "packSha256": "ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b",
+        "packBytes": 2295898
+      },
+      "format": "playtt/canonical-metadata-overlay/v2",
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "unchangedFiles": 296,
+      "files": 298,
+      "objects": 301,
+      "originalDraftAndAccountsExact": true,
+      "otherUsersUnchanged": true,
+      "mediaAndThemeExact": true,
+      "independentCopyVerified": true,
+      "remoteGets": 6,
+      "downloadedBytes": 2480965,
+      "pins": 4
+    },
+    {
+      "label": "final",
+      "version": 15,
+      "anchor": {
+        "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+        "manifestKey": "sites/default/markdown/revisions/506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97.json",
+        "persistedAt": "2026-11-20T20:35:57.286Z",
+        "manifestSha256": "c0ca569605a471508146e2a0b1291ee50a4128f8574edfc5ae15836bc6be61ff",
+        "packKey": "sites/default/restore-packs/ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b.zip",
+        "packSha256": "ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b",
+        "packBytes": 2295898
+      },
+      "format": "playtt/canonical-metadata-overlay/v2",
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "unchangedFiles": 296,
+      "files": 298,
+      "objects": 301,
+      "originalDraftAndAccountsExact": true,
+      "otherUsersUnchanged": true,
+      "mediaAndThemeExact": true,
+      "independentCopyVerified": true,
+      "remoteGets": 6,
+      "downloadedBytes": 2480746,
+      "pins": 5
+    }
+  ],
+  "telemetry": {
+    "events": 312,
+    "outcomes": {
+      "ok": 311,
+      "canceled": 1
+    },
+    "traces": 13,
+    "completed": 13,
+    "exceptions": 0,
+    "maxSampledWasmHeapBytes": 71565312,
+    "wholeIsolateMemoryMeasured": false,
+    "collectionBoundSeconds": 315
+  },
+  "actualLastWindow": {
+    "bytes": 460017,
+    "operations": 17
+  },
+  "measuredLoginWriteBytes": 96614,
+  "measuredPreferenceWriteBytes": 96444,
+  "measuredLogoutWriteBytes": 96225,
+  "providerSavingsPercentClaimed": false,
+  "deployedBundle": [
+    "Total Upload: 20869.18 KiB / gzip: 7604.90 KiB"
+  ],
+  "deploymentWarnings": [
+    "[WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]",
+    "[WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]",
+    "[WARNING] Duplicate key \"F_GETFL\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_ACCMODE\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_RDONLY\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_WRONLY\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_APPEND\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_NONBLOCK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETFL\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_GETLK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETLK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETLKW\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_SET\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_CUR\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_END\" in object literal [duplicate-object-key]"
+  ],
+  "knownIssuesResolved": [
+    "New capacity scope missing from closed allowlist before bootstrap",
+    "Test-only logout link parser omitted single quotes and decimal ampersand entities",
+    "Native GET logout was treated as read and did not persist session deletion"
+  ],
+  "firstWarmOnlyLogoutResultSuperseded": true,
+  "officialPlanEvidence": "cloudflare-session-provider-plan.json",
+  "accountMetrics": {
+    "infrequentAccess": {
+      "uploaded": {
+        "objects": 0,
+        "payloadSize": 0,
+        "metadataSize": 0
+      },
+      "published": {
+        "objects": 0,
+        "payloadSize": 0,
+        "metadataSize": 0
+      }
+    },
+    "standard": {
+      "uploaded": {
+        "objects": 0,
+        "payloadSize": 0,
+        "metadataSize": 0
+      },
+      "published": {
+        "objects": 4212,
+        "payloadSize": 2177634382,
+        "metadataSize": 89061
+      }
+    }
+  },
+  "accountUsageLimitations": [
+    "Analytics may lag; account aggregates include other projects.",
+    "Not an invoice, billing-period confirmation, forecast, or spending cap."
+  ],
+  "productionChanged": false,
+  "originalVisualChanged": false,
+  "paidPlanAdded": false,
+  "browserUiAcceptedThisStage": false,
+  "competingEditorAccepted": false,
+  "allOwnedCommandsTerminal": true,
+  "goal": "active",
+  "prDraft": true,
+  "prMerged": false,
+  "remaining": [
+    "browser UI",
+    "competing-editor takeover",
+    "physical devices and IME",
+    "post-commit response loss",
+    "long-term Free usage",
+    "sustainable retention",
+    "production backend cutover"
+  ],
+  "nativeRegressionVersion": "8f4b111b-a4f6-4e35-9f64-6d01cb273116",
+  "finalHardening": {
+    "scope": "Conservatively classify any duplicated action=logout value; avoids first-value JavaScript versus last-value PHP mismatch. Ordinary native logout branch unchanged.",
+    "unitCasesRerun": 2,
+    "providerDuplicateQueryTestPerformed": false,
+    "newVersionDeployed": true,
+    "postDeployStateAndPinsReadOnlyVerified": true,
+    "phpNotReopenedAfterFinalHardening": true
+  },
+  "lastReadOnlyCheckedAt": "2026-11-20T20:47:01.562Z"
+}

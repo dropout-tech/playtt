@@ -1,0 +1,16 @@
+{
+  "schema": "playtt/core-sized-editor-source-followup/v1",
+  "repository": "cloudflare/workerd",
+  "commit": "8ea63498c7aa107995f9b2ffee7789631707e09f",
+  "path": "src/workerd/api/node/zlib-util.c++",
+  "blobSha": "a5d7dc60d42a6f1e10f55a7abba1f53252fc48be",
+  "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/api/node/zlib-util.c%2B%2B#L767",
+  "lines": [
+    774,
+    784
+  ],
+  "finding": "The one-shot zlibSync path reads and validates options.chunkSize but constructs GrowableBuffer with the fixed ZLIB_PERFORMANT_CHUNK_SIZE. Transferring the sized stream option alone does not change that native output-buffer allocation path.",
+  "scope": "Pinned source inspection only; no new runtime invocation, one-shot workaround, output-limit change or deployment.",
+  "next": "Measure actual core-file decode/cache-miss working set with bounded local diagnostics before choosing a cache policy or different decoder.",
+  "cloudProjectRequests": 0
+}

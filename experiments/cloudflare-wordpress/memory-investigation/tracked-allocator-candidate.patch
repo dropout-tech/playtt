@@ -1,0 +1,94 @@
+--- a/packages/runtime-cloudflare/src/worker.ts
++++ b/packages/runtime-cloudflare/src/worker.ts
+@@ -4,7 +4,7 @@
+ import { bootWordPressAndRequestHandler, type WordPressInstallMode } from "@wp-playground/wordpress"
+ // The PHP-WASM package publishes this Emscripten loader without TypeScript declarations.
+ // @ts-expect-error The adjacent Wasm declaration covers the compiled binary import.
+-import { dependenciesTotalSize, init } from "../node_modules/@php-wasm/web-8-3/asyncify/php_8_3.js"
++import { dependenciesTotalSize, init } from "./playtt-php-loader.mjs"
+ import phpWasmModule from "../node_modules/@php-wasm/web-8-3/asyncify/8_3_36/php_8_3.wasm"
+ import { CLOUDFLARE_RUNTIME_HEALTH_MARKER, CLOUDFLARE_RUNTIME_HEALTH_SCHEMA, cloudflareRuntimeHealthResponse } from "./health-envelope.js"
+ import { leaseRetryDelayMs } from "./lease-retry.js"
+@@ -510,6 +510,36 @@
+   route?: string
+ }
+ 
++function logPlayttRuntimeMemory(stage: string, runtime: Runtime, env: RuntimeEnv): void {
++  if ((env as RuntimeEnv & { PLAYTT_MEMORY_DIAGNOSTICS?: string }).PLAYTT_MEMORY_DIAGNOSTICS !== 'true') return
++  const key = Object.getOwnPropertySymbols(runtime.php).find(symbol => symbol.description === '__private__dont__use')
++  const module = key ? (runtime.php as unknown as Record<symbol, any>)[key] : undefined
++  let fileBytes = 0, files = 0, heapAliasedFileBytes = 0
++  const categories: Record<string, number> = {}
++  function visit(node: any): void {
++    if (node?.contents instanceof Uint8Array) {
++      const size = node.contents.byteLength
++      fileBytes += size; files++
++      if (node.contents.buffer === module?.HEAPU8?.buffer) heapAliasedFileBytes += size
++      let path = node.name || '', parent = node.parent
++      for (let depth = 0; parent && parent !== parent.parent && depth < 20; depth++, parent = parent.parent) path = parent.name + '/' + path
++      const category = path.includes('/wp-content/markdown/') ? 'canonical' : path.includes('/wp-content/uploads/') ? 'uploads' : path.includes('/wp-content/languages/') ? 'languages' : path.includes('/wp-content/') ? 'plugins-and-theme' : path.includes('wordpress/') ? 'wordpress-core' : path.includes('tmp/') ? 'temporary' : 'runtime'
++      categories[category] = (categories[category] || 0) + size
++    }
++    else if (node?.contents && typeof node.contents === 'object') for (const child of Object.values(node.contents)) visit(child)
++  }
++  visit(module?.FS?.root)
++  let phpMemory: unknown
++  try { phpMemory = JSON.parse(new TextDecoder().decode(runtime.php.readFileAsBuffer('/tmp/playtt-memory.json'))) } catch { /* absent until first request shutdown */ }
++  console.log(JSON.stringify({ schema: 'playtt-runtime-memory/v1', stage, heapBytes: module?.HEAPU8?.byteLength || 0, fileBytes, heapAliasedFileBytes, categories, phpMemory, files }))
++  if (stage === 'before-request') {
++    const path = '/internal/shared/auto_prepend_file.php'
++    const source = new TextDecoder().decode(runtime.php.readFileAsBuffer(path))
++    if (!source.includes('PLAYTT_MEMORY_PROFILE')) runtime.php.writeFile(path, new TextEncoder().encode(source + `\n/* PLAYTT_MEMORY_PROFILE */
++register_shutdown_function(static function () { file_put_contents('/tmp/playtt-memory.json', json_encode(array('used' => memory_get_usage(false), 'allocated' => memory_get_usage(true), 'peakUsed' => memory_get_peak_usage(false), 'peakAllocated' => memory_get_peak_usage(true)))); });\n`))
++  }
++}
++
+ const cachedRuntimes = new Map<string, { baseRevision: string; promise: Promise<Runtime>; state: "pending" | "ready" }>()
+ const LEASE_ACQUISITION_TIMEOUT_MS = 100_000
+ const MAX_MARKDOWN_FILES = 5_000
+@@ -1319,6 +1349,7 @@
+         ? await trace.measure("runtime.cache.reuse", () => getRuntime(env, pointer, site, route === "static-artifact-import", bootTrace))
+         : await getRuntime(env, pointer, site, route === "static-artifact-import", bootTrace)
+     if (route === "static-artifact-import") await heartbeat?.("runtime-ready", 35)
++    logPlayttRuntimeMemory("before-request", runtime, env)
+     const diagnosticsStartedAt = Date.now()
+     const retained = new MutationRetainedBytes()
+     let currentPublication = mutatesCanonicalState ? await trace.measure("publication.current.read", () => readCurrentPublication(env.WORDPRESS_STATE_BUCKET, site)) : null
+@@ -1362,6 +1393,7 @@
+         initializePublicationChanges(runtime.php)
+       }
+       phpResponse = await trace.measure("request.php", async () => runtime!.requestHandler.request(await toPHPRequest(request)))
++      logPlayttRuntimeMemory("after-request", runtime!, env)
+       responseBodyBytes = phpResponse.bytes.byteLength
+       if (mutatesCanonicalState) retained.retain(responseBodyBytes)
+       if (!mutatesCanonicalState) response = toFetchResponse(request, phpResponse)
+@@ -1375,6 +1407,7 @@
+       logMutationPhase(diagnosticsStartedAt, "php-request", retained, { canonicalCreated: canonicalChanges.created.length, canonicalChanged: canonicalChanges.changed.length, canonicalDeleted: canonicalChanges.deleted.length })
+       if (route === "static-artifact-import") await heartbeat?.("persisting-canonical", 70)
+       const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace)
++      logPlayttRuntimeMemory("after-persist", runtime!, env)
+       if (route === "static-artifact-import") await heartbeat?.("canonical-prepared", 80)
+       if (!response) {
+         if (!phpResponse) throw new Error("WordPress mutation completed without a PHP response.")
+@@ -2969,7 +3002,10 @@
+ function createPhpRuntime() {
+   return loadPHPRuntime(
+     { dependencyFilename: "php_8_3.wasm", dependenciesTotalSize, phpWasmAsyncMode: "asyncify", init },
+-    { instantiateWasm: instantiatePrecompiledWasm(phpWasmModule) },
++    // PHP's tracked system allocator avoids Zend's aligned mmap chunks while
++    // retaining request cleanup and memory accounting. Experimental until the
++    // pinned runtime's limit behavior and remote editor workload are verified.
++    { instantiateWasm: instantiatePrecompiledWasm(phpWasmModule), ENV: { USE_ZEND_ALLOC: '0', USE_TRACKED_ALLOC: '1' } },
+   )
+ }
+ 
+--- a/packages/runtime-cloudflare/src/php-wasm-universal.d.ts
++++ b/packages/runtime-cloudflare/src/php-wasm-universal.d.ts
+@@ -32,6 +32,7 @@
+     init: unknown
+   }, options: {
+     instantiateWasm: unknown
++    ENV?: Record<string, string>
+   }): Promise<number>
+ 
+   export class PHPRequestHandler {

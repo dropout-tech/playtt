@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-20T22:11:46.738565+00:00",
+  "result": "pass",
+  "tests": 14,
+  "command": "node --import tsx --test tests/playtt-editor-lock.test.mjs tests/playtt-write-window-execution.test.mjs tests/playtt-session-provider-config.test.ts",
+  "typescript": "pass",
+  "dryRun": "pass",
+  "bundle": [
+    "Total Upload: 20873.45 KiB / gzip: 7606.17 KiB"
+  ],
+  "warnings": [
+    "[WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]",
+    "[WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]",
+    "[WARNING] Duplicate key \"F_GETFL\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_ACCMODE\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_RDONLY\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_WRONLY\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_APPEND\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"O_NONBLOCK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETFL\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_GETLK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETLK\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"F_SETLKW\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_SET\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_CUR\" in object literal [duplicate-object-key]",
+    "[WARNING] Duplicate key \"SEEK_END\" in object literal [duplicate-object-key]"
+  ],
+  "limitations": [
+    "Component test executes real pinned minified function with simulated React scheduling and WordPress server hooks.",
+    "HTML rewriting runs in real local workerd.",
+    "Initial test runner shape corrected; loopback sandbox denial resolved with permission."
+  ]
+}

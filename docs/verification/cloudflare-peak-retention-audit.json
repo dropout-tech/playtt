@@ -1,0 +1,159 @@
+{
+  "schema": "playtt/peak-retention-audit/v1",
+  "result": "offline-component-and-core-byte-feasibility-evidence; no memory acceptance",
+  "candidateBundleSha256": "0f9d3340e3e66f7cc6242bf31cc26d4d76ad9c78dfa7f87a17adca214206b025",
+  "calibration": "docs/verification/cloudflare-local-memory-accounting.json",
+  "phases": [
+    {
+      "phase": "before-restart",
+      "inputSha256": "622afa244230b128371a4b1e8f19fb8091c879d372611013e3804feafba94d9e",
+      "samples": 129,
+      "matched": 100,
+      "maximum": {
+        "at": 1795311280664,
+        "label": "allocation-save-start",
+        "generation": 1,
+        "jsBytes": 24557040,
+        "backingBytes": 52529360,
+        "lastPhpBytes": 74055680,
+        "phpObservationAgeMs": 6635,
+        "sumBytes": 151142080
+      },
+      "minimumBacking": {
+        "at": 1795311268790,
+        "label": "allocation-save-start",
+        "generation": 1,
+        "jsBytes": 15427568,
+        "backingBytes": 33244115,
+        "lastPhpBytes": 74055680,
+        "phpObservationAgeMs": 4,
+        "sumBytes": 122727363
+      },
+      "laterMinimumBacking": {
+        "at": 1795311298019,
+        "label": "allocation-save-stop",
+        "generation": 1,
+        "jsBytes": 17058172,
+        "backingBytes": 33487756,
+        "lastPhpBytes": 74055680,
+        "phpObservationAgeMs": 3,
+        "sumBytes": 124601608
+      },
+      "backingRangeBytes": 19285245,
+      "nearbyEvents": [
+        {
+          "at": 1795311280599,
+          "kind": "request",
+          "category": "other",
+          "method": "GET",
+          "status": 200
+        },
+        {
+          "at": 1795311281543,
+          "kind": "php",
+          "stage": "before-request",
+          "heapBytes": 74055680
+        },
+        {
+          "at": 1795311281543,
+          "kind": "php",
+          "stage": "after-request",
+          "heapBytes": 74055680
+        },
+        {
+          "at": 1795311281544,
+          "kind": "php",
+          "stage": "after-persist",
+          "heapBytes": 74055680
+        },
+        {
+          "at": 1795311281544,
+          "kind": "trace",
+          "operation": "mutation",
+          "runtime": "warm",
+          "totalMs": 766
+        },
+        {
+          "at": 1795311281544,
+          "kind": "request",
+          "category": "ajax",
+          "method": "POST",
+          "status": 200
+        }
+      ],
+      "newMeasurements": false
+    },
+    {
+      "phase": "after-restart",
+      "inputSha256": "a369ad674fd0fde37d637d28d536a042411aa50c8525dca22991ca963223995f",
+      "samples": 49,
+      "matched": 40,
+      "maximum": {
+        "at": 1795311324211,
+        "label": "restarted",
+        "generation": 1,
+        "jsBytes": 25619308,
+        "backingBytes": 54695737,
+        "lastPhpBytes": 73400320,
+        "phpObservationAgeMs": 7573,
+        "sumBytes": 153715365
+      },
+      "minimumBacking": {
+        "at": 1795311350831,
+        "label": "closing",
+        "generation": 1,
+        "jsBytes": 15269368,
+        "backingBytes": 33213552,
+        "lastPhpBytes": 73400320,
+        "phpObservationAgeMs": 8906,
+        "sumBytes": 121883240
+      },
+      "laterMinimumBacking": {
+        "at": 1795311350831,
+        "label": "closing",
+        "generation": 1,
+        "jsBytes": 15269368,
+        "backingBytes": 33213552,
+        "lastPhpBytes": 73400320,
+        "phpObservationAgeMs": 8906,
+        "sumBytes": 121883240
+      },
+      "backingRangeBytes": 21482185,
+      "nearbyEvents": [
+        {
+          "at": 1795311323751,
+          "kind": "request",
+          "category": "other",
+          "method": "GET",
+          "status": 200
+        }
+      ],
+      "newMeasurements": false
+    }
+  ],
+  "coreCorpus": {
+    "files": 1857,
+    "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+    "bytes": 22522980,
+    "deflatedBytes": 5276854,
+    "byteDifference": 17246126,
+    "largestFileBytes": 357678,
+    "allSourceAndRoundtripBytesExact": true,
+    "appliesTo": "pinned core archive before boot patches; offline Python zlib size estimate"
+  },
+  "newWordpressRequests": 0,
+  "newWorkerdRequests": 0,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "limitations": [
+    "Observed JS/backing/last-PHP sums are asynchronous and calibrated for this workerd; not retained sizes, exact peaks, RSS or cloud admission.",
+    "Falling backing samples alone do not prove GC or the responsible objects. Nearby events use host receipt times and do not establish allocation causation.",
+    "Earlier retained snapshots identify core file backing but use another build; their retained counts cannot be transferred to this candidate.",
+    "Compression size savings do not establish runtime memory savings: adapter metadata, decoded cache, native compression buffers, promotion and GC must be measured.",
+    "No core compression is installed in the runtime. Filesystem semantics, native execution/performance and provider acceptance remain required."
+  ],
+  "sources": [
+    "https://developers.cloudflare.com/workers/platform/limits/",
+    "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/server/server.c%2B%2B"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "playtt/core-integrated-editor-adaptation/v1",
+  "generated": [
+    {
+      "name": "playtt-core-integrated-editor.mjs",
+      "source": "playtt-base64-editor.mjs",
+      "sourceSha256": "00220a81884d296d1404b0f355a2a25091bcb5ecaffc388099b44c6e46a50997",
+      "sha256": "afa5266f66084af24cd99ab4489f538a91a2a5941cf42d0bc7405126819ee85b"
+    },
+    {
+      "name": "playtt-core-integrated-editor-observer.mjs",
+      "source": "playtt-base64-editor-observer.mjs",
+      "sourceSha256": "6f56d82541c4875bbd1afa9c620351b816dc3c58893d3ab8683000c1b0492552",
+      "sha256": "71e038aeee42ed93a61d918f0ac7e9ddb90e76466e4491e3ed7bfa455683bed1"
+    },
+    {
+      "name": "playtt-core-integrated-editor-control.mjs",
+      "source": "playtt-base64-editor-control.mjs",
+      "sourceSha256": "1a0e05e7cefaa5862cad29e353a2a15914f1d729e94b880050722aa860fe8dad",
+      "sha256": "b54de3d9c89b163432988985650fe6be558883e0082584dee2c37a46dc8298a7"
+    }
+  ],
+  "changes": [
+    "Use exact ed725b8e4 full compression candidate; distinct owned local ports9554/9555 and artifacts.",
+    "Preserve original native fixture, fixed write window, restart/data/budget assertions and independent recovery.",
+    "Extend observer with bounded numeric compression, file scan and cache evidence; original exception/lifecycle/allocation logic retained.",
+    "Archive exact inputs before starting. No central runtime change, cloud request or publishing."
+  ],
+  "cloudRequests": 0
+}

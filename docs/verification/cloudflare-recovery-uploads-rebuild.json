@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-21T15:50:55.439520+00:00",
+  "result": "pass",
+  "basis": "Previous legacy-adoption assembly plus private recovery upload candidate; no upstream rebuild",
+  "sources": 82,
+  "sourceFilesModified": 2,
+  "sourceFilesAdded": 1,
+  "configsUnchanged": 20,
+  "deliveredFiles": 6,
+  "prerequisites": 101,
+  "helpers": 376,
+  "helpersMatchingRuntime": 375,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "typeScript": "pass",
+  "tests": 85,
+  "localWorkerdScenarios": 5,
+  "fullProcessRestarts": 5
+}

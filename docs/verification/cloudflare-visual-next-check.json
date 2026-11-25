@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-24T18:42:19.854Z",
+  "result": "pass",
+  "controllerCheck": "No remote calls",
+  "wranglerVersion": "4.127.1",
+  "candidateAndFallbackDryRuns": true,
+  "modulesPerVariant": 6,
+  "moduleBytesExact": true,
+  "planSha256": "1c8861153a52fb34eb92c1bf16448b2608e594e85bfba0b72f3aa248eb9edaf1",
+  "controllerSha256": "bce93c25a91e79780bd6ec852f96eeabd3024309d062c1a5886474e997f54d2e",
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 1050000,
+    "maxOperations": 96,
+    "observerSeconds": 660
+  },
+  "applicationCapBytes": 152000000,
+  "authorizationMarkerCreated": false,
+  "privateCloudMutations": 0,
+  "notes": [
+    "Initial read-only attempt returned401; ordinary Wrangler OAuth refresh succeeded for info@dropout.tw, then eight GETs returned200. Initial failure preserved separately.",
+    "Cloudflare connector could not access the intended account; existing authorized Wrangler account and dashboard were used.",
+    "Local rehearsal ledger begins after seeding; cloud historical ledger is preserved."
+  ]
+}

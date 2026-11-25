@@ -1,0 +1,22 @@
+{
+  "schema": "playtt/core-direct-editor-adaptation/v1",
+  "generated": [
+    {
+      "name": "playtt-core-direct-editor.mjs",
+      "sha256": "254989fc161e1008b2cd21d8a37378a5b473758be6ee5b9c48af900a5626c9fc",
+      "sourceSha256": "4fe2cc2f684f4bfe148c1a7e503218bffcf94ad5db8debffc4d643f419fb0366"
+    },
+    {
+      "name": "playtt-core-direct-editor-control.mjs",
+      "sha256": "59500657495e8aea27d4dcfc5a8853f071bb9f4b92329741c4a4993589eae5b2",
+      "sourceSha256": "16851ea9cd6e1560d0f827f7b721c1d268767d4930e74ee429db1d8b9830c889"
+    },
+    {
+      "name": "playtt-core-direct-editor-observer.mjs",
+      "sha256": "1dec48c28746cc8265e3652cb8bc8f95d8b422be664e57129646b8529d0028fe",
+      "sourceSha256": "a8acaa29b0eccaf668552ae9ac377d97d0c57677240b827396475d44a98ef2a1"
+    }
+  ],
+  "nativeSamplingBeforeIntegrityChecks": true,
+  "cloudRequests": 0
+}

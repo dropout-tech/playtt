@@ -1,0 +1,603 @@
+{
+  "schema": "playtt/boot-zip-allocation/v1",
+  "result": "pass",
+  "at": "2026-11-22T00:50:56.721Z",
+  "originalSha256": "d720192f15ca3a456de4732f0945c1bef83f3cda164da4b345ad9405558d02f6",
+  "candidateSha256": "7ea9f96252eeb847da0f579aa45016717d8e79f6c4da5d2907b7534091511251",
+  "moduleSha256": "d0131db93fc46c0d97b9984922f26dfc4133e92774049ddfe426abbd63ae49c9",
+  "fixtureSha256": "9064daa2e7bd1df88fd51d2311d04d28fbfc3bb84d69e40a499c7dd18d9a97a9",
+  "runs": [
+    {
+      "index": 0,
+      "variant": "baseline",
+      "bundleSha256": "f8e8501212884992e521641f0a5c1634fdbca5a80ff37b0d4424b694e8830c1a",
+      "profileSha256": "c094d374afc4b5d86bceea2606c6b41a138346318f5484e24c6be553397d5d3b",
+      "nodes": 99,
+      "samples": 507,
+      "selfBytes": 16626880,
+      "sampleSizeSum": 16625200,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 4722088
+        },
+        {
+          "functionName": "u",
+          "attributedSelfBytes": 2820420
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 2296232
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 1574132
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 819548
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 786880
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 689028
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 688392
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 656092
+        },
+        {
+          "functionName": "packagedCanonicalMarkdownSeed",
+          "attributedSelfBytes": 295148
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 262240
+        },
+        {
+          "functionName": "T",
+          "attributedSelfBytes": 196828
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 131232
+        },
+        {
+          "functionName": "sha256Hex",
+          "attributedSelfBytes": 131188
+        },
+        {
+          "functionName": "then",
+          "attributedSelfBytes": 98352
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 474708,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 149171
+      },
+      "after": {
+        "usedSize": 12268848,
+        "totalSize": 14680064,
+        "embedderHeapUsedSize": 1934424,
+        "backingStorageSize": 1440043
+      },
+      "wallMs": 331.3258999999998,
+      "result": {
+        "seedFiles": 134,
+        "mdiFiles": 41,
+        "mdiWrites": 41,
+        "entriesSha256": "0812fe4f7c9351892e884d4241aafc6f3733fafd2c1a8a1e52920444f0338f5b",
+        "decodedBytes": 364114
+      }
+    },
+    {
+      "index": 1,
+      "variant": "candidate",
+      "bundleSha256": "27805f14e0134daef685533160a0997e3cbcb186c8e6202a61750ded468d7e4d",
+      "profileSha256": "2dde12cb910206ef4f0379b73304687072cc16adbece33165cd7c2c9d1223fe9",
+      "nodes": 68,
+      "samples": 207,
+      "selfBytes": 6805232,
+      "sampleSizeSum": 6805156,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 2360948
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 623056
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 557924
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 426144
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 360712
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 328200
+        },
+        {
+          "functionName": "packagedCanonicalMarkdownSeed",
+          "attributedSelfBytes": 229504
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 229440
+        },
+        {
+          "functionName": "u",
+          "attributedSelfBytes": 196920
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 196864
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 196764
+        },
+        {
+          "functionName": "subarray",
+          "attributedSelfBytes": 131328
+        },
+        {
+          "functionName": "T",
+          "attributedSelfBytes": 131264
+        },
+        {
+          "functionName": "F",
+          "attributedSelfBytes": 98448
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 98412
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 477116,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 149171
+      },
+      "after": {
+        "usedSize": 4390888,
+        "totalSize": 6291456,
+        "embedderHeapUsedSize": 773784,
+        "backingStorageSize": 1410097
+      },
+      "wallMs": 114.0655999999999,
+      "result": {
+        "seedFiles": 134,
+        "mdiFiles": 41,
+        "mdiWrites": 41,
+        "entriesSha256": "0812fe4f7c9351892e884d4241aafc6f3733fafd2c1a8a1e52920444f0338f5b",
+        "decodedBytes": 364114
+      }
+    },
+    {
+      "index": 2,
+      "variant": "candidate",
+      "bundleSha256": "27805f14e0134daef685533160a0997e3cbcb186c8e6202a61750ded468d7e4d",
+      "profileSha256": "55a5015198ec5fcbd7602bb5ff88ba9cf8635892188c39c97ceecb7d9474db2d",
+      "nodes": 52,
+      "samples": 205,
+      "selfBytes": 6723252,
+      "sampleSizeSum": 6723704,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 2032976
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 655952
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 623352
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 426216
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 393360
+        },
+        {
+          "functionName": "packagedCanonicalMarkdownSeed",
+          "attributedSelfBytes": 328108
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 327996
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 327984
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 327780
+        },
+        {
+          "functionName": "F",
+          "attributedSelfBytes": 196852
+        },
+        {
+          "functionName": "u",
+          "attributedSelfBytes": 164060
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 131392
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 131272
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "N",
+          "attributedSelfBytes": 98360
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 476876,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 149171
+      },
+      "after": {
+        "usedSize": 4393544,
+        "totalSize": 6291456,
+        "embedderHeapUsedSize": 773784,
+        "backingStorageSize": 1410229
+      },
+      "wallMs": 109.53070000000025,
+      "result": {
+        "seedFiles": 134,
+        "mdiFiles": 41,
+        "mdiWrites": 41,
+        "entriesSha256": "0812fe4f7c9351892e884d4241aafc6f3733fafd2c1a8a1e52920444f0338f5b",
+        "decodedBytes": 364114
+      }
+    },
+    {
+      "index": 3,
+      "variant": "baseline",
+      "bundleSha256": "f8e8501212884992e521641f0a5c1634fdbca5a80ff37b0d4424b694e8830c1a",
+      "profileSha256": "51fe500cc72152f217493427d68f2f128eaec1e1efe944c40f555fcf9c50b298",
+      "nodes": 78,
+      "samples": 505,
+      "selfBytes": 16561344,
+      "sampleSizeSum": 16559324,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 5213828
+        },
+        {
+          "functionName": "u",
+          "attributedSelfBytes": 2918772
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 2230664
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 1410032
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 918104
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 688444
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 622824
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 492108
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 361000
+        },
+        {
+          "functionName": "packagedCanonicalMarkdownSeed",
+          "attributedSelfBytes": 262508
+        },
+        {
+          "functionName": "T",
+          "attributedSelfBytes": 131280
+        },
+        {
+          "functionName": "sha256Hex",
+          "attributedSelfBytes": 131188
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 131180
+        },
+        {
+          "functionName": "next",
+          "attributedSelfBytes": 131120
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 98564
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 474708,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 149171
+      },
+      "after": {
+        "usedSize": 12279976,
+        "totalSize": 14942208,
+        "embedderHeapUsedSize": 1934424,
+        "backingStorageSize": 1448690
+      },
+      "wallMs": 325.1086,
+      "result": {
+        "seedFiles": 134,
+        "mdiFiles": 41,
+        "mdiWrites": 41,
+        "entriesSha256": "0812fe4f7c9351892e884d4241aafc6f3733fafd2c1a8a1e52920444f0338f5b",
+        "decodedBytes": 364114
+      }
+    },
+    {
+      "index": 4,
+      "variant": "baseline",
+      "bundleSha256": "f8e8501212884992e521641f0a5c1634fdbca5a80ff37b0d4424b694e8830c1a",
+      "profileSha256": "68787aada61d468c3702dd3bbd9cdf9b0345e2048f854ae14fe3b2d2f0959e67",
+      "nodes": 70,
+      "samples": 479,
+      "selfBytes": 15721912,
+      "sampleSizeSum": 15720568,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 4754804
+        },
+        {
+          "functionName": "u",
+          "attributedSelfBytes": 2885908
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 2132476
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 1442988
+        },
+        {
+          "functionName": "b",
+          "attributedSelfBytes": 819668
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 655992
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 557256
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 524916
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 491816
+        },
+        {
+          "functionName": "packagedCanonicalMarkdownSeed",
+          "attributedSelfBytes": 327900
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 164064
+        },
+        {
+          "functionName": "join",
+          "attributedSelfBytes": 98564
+        },
+        {
+          "functionName": "T",
+          "attributedSelfBytes": 98492
+        },
+        {
+          "functionName": "F",
+          "attributedSelfBytes": 98432
+        },
+        {
+          "functionName": "transform",
+          "attributedSelfBytes": 98404
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 474708,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 149171
+      },
+      "after": {
+        "usedSize": 12243972,
+        "totalSize": 14942208,
+        "embedderHeapUsedSize": 1934424,
+        "backingStorageSize": 1448449
+      },
+      "wallMs": 320.26760000000013,
+      "result": {
+        "seedFiles": 134,
+        "mdiFiles": 41,
+        "mdiWrites": 41,
+        "entriesSha256": "0812fe4f7c9351892e884d4241aafc6f3733fafd2c1a8a1e52920444f0338f5b",
+        "decodedBytes": 364114
+      }
+    },
+    {
+      "index": 5,
+      "variant": "candidate",
+      "bundleSha256": "27805f14e0134daef685533160a0997e3cbcb186c8e6202a61750ded468d7e4d",
+      "profileSha256": "764442a6750c48fc562e527afef6ce90df1b8acf7422e58d48c061fb49544141",
+      "nodes": 64,
+      "samples": 185,
+      "selfBytes": 6080976,
+      "sampleSizeSum": 6080492,
+      "topFunctions": [
+        {
+          "functionName": "(V8 API)",
+          "attributedSelfBytes": 2098780
+        },
+        {
+          "functionName": "E",
+          "attributedSelfBytes": 820060
+        },
+        {
+          "functionName": "(JS)",
+          "attributedSelfBytes": 426144
+        },
+        {
+          "functionName": "Uint8Array",
+          "attributedSelfBytes": 393836
+        },
+        {
+          "functionName": "pull",
+          "attributedSelfBytes": 327924
+        },
+        {
+          "functionName": "(anonymous)",
+          "attributedSelfBytes": 295156
+        },
+        {
+          "functionName": "sha256Hex",
+          "attributedSelfBytes": 262412
+        },
+        {
+          "functionName": "packagedCanonicalMarkdownSeed",
+          "attributedSelfBytes": 262324
+        },
+        {
+          "functionName": "from",
+          "attributedSelfBytes": 164128
+        },
+        {
+          "functionName": "subarray",
+          "attributedSelfBytes": 164084
+        },
+        {
+          "functionName": "D",
+          "attributedSelfBytes": 131124
+        },
+        {
+          "functionName": "F",
+          "attributedSelfBytes": 98376
+        },
+        {
+          "functionName": "T",
+          "attributedSelfBytes": 65676
+        },
+        {
+          "functionName": "materializeMarkdownDatabaseIntegration",
+          "attributedSelfBytes": 65620
+        },
+        {
+          "functionName": "fetch",
+          "attributedSelfBytes": 45752
+        }
+      ],
+      "sampling": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "before": {
+        "usedSize": 476876,
+        "totalSize": 786432,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 149171
+      },
+      "after": {
+        "usedSize": 4378260,
+        "totalSize": 6553600,
+        "embedderHeapUsedSize": 773784,
+        "backingStorageSize": 1410087
+      },
+      "wallMs": 110.48220000000038,
+      "result": {
+        "seedFiles": 134,
+        "mdiFiles": 41,
+        "mdiWrites": 41,
+        "entriesSha256": "0812fe4f7c9351892e884d4241aafc6f3733fafd2c1a8a1e52920444f0338f5b",
+        "decodedBytes": 364114
+      }
+    }
+  ],
+  "cloudRequests": 0,
+  "outboundAttempts": 0,
+  "centralRuntimeChanged": false,
+  "productionChanged": false,
+  "scope": "Six fresh workerd instances each execute the exact extracted worker functions for one actual seed and one actual MDI archive, including validation and final output hashes. MDI writes go to an in-memory adapter; real PHP semantics were verified separately.",
+  "limitations": [
+    "Cumulative sampled allocations include collected objects; not peak memory, RSS, billed CPU or provider admission.",
+    "No complete PHP/WordPress boot or browser flow in these controls.",
+    "Seed runs only at initialization, while MDI materialization runs during canonical boot; their combined cost is not every request."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-11-20T05:42:31.5969486Z",
+  "matchingOrphanTails": 0,
+  "processes": [],
+  "scope": "Only Node processes matching this playtt private observer or its explicit Wrangler tail config"
+}

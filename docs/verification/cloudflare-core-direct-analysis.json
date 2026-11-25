@@ -1,0 +1,639 @@
+{
+  "schema": "playtt/core-direct-measurement-scope/v1",
+  "result": "operator-integrity-allocation-separated; native-data-pass; provider-acceptance-open",
+  "observationSha256": "fe2bd7f5093e85cef0c473ba5cce43c56587c5ca942640c5855c69197b0b2110",
+  "bundleSha256": "c68abf7e8c0eb3a08ed02f6d7eb156e372078a6cce6808a915a4a8e742a8dc1f",
+  "firstControlStartApprox": 1795322405276,
+  "boundaryMarginMs": 10,
+  "prefix": {
+    "samples": 68,
+    "maximumObserved": {
+      "at": 1795322340496,
+      "label": "bootstrap",
+      "generation": 1,
+      "jsBytes": 20900740,
+      "backingBytes": 56629652,
+      "phpBytes": 67108864,
+      "phpObservationAgeMs": 4,
+      "total": 144639256
+    }
+  },
+  "windows": [
+    {
+      "name": "render",
+      "samples": 20,
+      "maximumObserved": {
+        "at": 1795322378556,
+        "label": "allocation-render-start",
+        "generation": 1,
+        "jsBytes": 21088108,
+        "backingBytes": 36103034,
+        "phpBytes": 74055680,
+        "phpObservationAgeMs": 1141,
+        "total": 131246822
+      }
+    },
+    {
+      "name": "save",
+      "samples": 12,
+      "maximumObserved": {
+        "at": 1795322394529,
+        "label": "allocation-save-start",
+        "generation": 1,
+        "jsBytes": 16512476,
+        "backingBytes": 30262905,
+        "phpBytes": 74055680,
+        "phpObservationAgeMs": 14678,
+        "total": 120831061
+      }
+    }
+  ],
+  "byteVolumes": [
+    {
+      "name": "render",
+      "firstStage": "before-request",
+      "lastStage": "after-request",
+      "firstAt": 1795322376144,
+      "lastAt": 1795322379851,
+      "snapshots": 7,
+      "rows": [
+        {
+          "label": "arraybuffer:canonical-restore-pack/createCanonicalRestorePack",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:canonical-restore-pack/decodeCanonicalRestorePack",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 536405
+        },
+        {
+          "label": "arraybuffer:canonical-restore-pack/readCanonicalRestorePack",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:content-overlay/readContentBytes",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:manifest-envelope/readCanonicalManifestObject",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:runtime-archive-artifact/readRuntimeArchiveArtifact",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 267173
+        },
+        {
+          "label": "arraybuffer:wordpress-runtime-artifact/materializeWordPressRuntimeArtifact",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 5975792
+        },
+        {
+          "label": "arraybuffer:worker/materializeMarkdownDatabaseIntegration",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 80792
+        },
+        {
+          "label": "arraybuffer:worker/materializeRuntimeArchiveComponent",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/packagedCanonicalMarkdownSeed",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/putImmutableBytes",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/readCanonicalRevision",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/readManifestFiles",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/readWordPressRuntimeArtifact",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/serveWordPressStaticAsset",
+          "calls": 50,
+          "bytes": 5252608,
+          "maxObservedCallBytes": 1574731
+        },
+        {
+          "label": "arraybuffer:worker/serveWordPressUpload",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/serveWordPressWpContent",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "bounded-content-read:content-overlay/readContentBytes",
+          "calls": 3,
+          "bytes": 170937,
+          "maxObservedCallBytes": 2295783
+        },
+        {
+          "label": "digest-input:canonical-restore-pack/sha256Hex",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 2295783
+        },
+        {
+          "label": "digest-input:compressed-content/module",
+          "calls": 7,
+          "bytes": 462130,
+          "maxObservedCallBytes": 325178
+        },
+        {
+          "label": "digest-input:compressed-persistence/module",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "digest-input:manifest-envelope/module",
+          "calls": 4,
+          "bytes": 182611,
+          "maxObservedCallBytes": 74029
+        },
+        {
+          "label": "digest-input:markdown-persistence/persistPlayttMarkdownObjects",
+          "calls": 171,
+          "bytes": 488843,
+          "maxObservedCallBytes": 325178
+        },
+        {
+          "label": "digest-input:runtime-archive-artifact/sha256Hex",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 267173
+        },
+        {
+          "label": "digest-input:wordpress-runtime-artifact/sha256Hex",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 5975792
+        },
+        {
+          "label": "digest-input:worker/secretsMatch",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 33
+        },
+        {
+          "label": "digest-input:worker/sha256Hex",
+          "calls": 50,
+          "bytes": 5252608,
+          "maxObservedCallBytes": 1574731
+        },
+        {
+          "label": "exact-stream-output:compressed-content/readExactCompressedStream",
+          "calls": 1,
+          "bytes": 74029,
+          "maxObservedCallBytes": 74029
+        },
+        {
+          "label": "gzip-input:compressed-content/createCompressedContent",
+          "calls": 1,
+          "bytes": 362941,
+          "maxObservedCallBytes": 362941
+        },
+        {
+          "label": "gzip-input:manifest-envelope/serializeManifestEnvelope",
+          "calls": 1,
+          "bytes": 74029,
+          "maxObservedCallBytes": 74029
+        },
+        {
+          "label": "gzip-output:compressed-content/compress",
+          "calls": 1,
+          "bytes": 26279,
+          "maxObservedCallBytes": 26279
+        },
+        {
+          "label": "php-read:worker/collectRuntimeFiles",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "php-read:worker/logPlayttRuntimeMemory",
+          "calls": 9,
+          "bytes": 3517,
+          "maxObservedCallBytes": 1037
+        },
+        {
+          "label": "php-read:worker/patchCanonicalRuntimePoliciesAtInit",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 33152
+        },
+        {
+          "label": "php-read:worker/patchCanonicalThemeJsonCustomCss",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 222059
+        },
+        {
+          "label": "php-read:worker/persistRuntime",
+          "calls": 176,
+          "bytes": 850981,
+          "maxObservedCallBytes": 325178
+        },
+        {
+          "label": "php-read:worker/persistRuntimeObjects",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "php-read:worker/readCanonicalChanges",
+          "calls": 1,
+          "bytes": 63,
+          "maxObservedCallBytes": 63
+        },
+        {
+          "label": "php-read:worker/readPublicationChanges",
+          "calls": 1,
+          "bytes": 37,
+          "maxObservedCallBytes": 37
+        },
+        {
+          "label": "zip-input:canonical-restore-pack/decodeCanonicalRestorePack",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 2295783
+        },
+        {
+          "label": "zip-input:worker/materializeMarkdownDatabaseIntegration",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 93269
+        },
+        {
+          "label": "zip-input:worker/packagedCanonicalMarkdownSeed",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        }
+      ],
+      "operatorStatusRequests": 0
+    },
+    {
+      "name": "save",
+      "firstStage": "before-request",
+      "lastStage": "after-persist",
+      "firstAt": 1795322395057,
+      "lastAt": 1795322396575,
+      "snapshots": 5,
+      "rows": [
+        {
+          "label": "arraybuffer:canonical-restore-pack/createCanonicalRestorePack",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:canonical-restore-pack/decodeCanonicalRestorePack",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 536405
+        },
+        {
+          "label": "arraybuffer:canonical-restore-pack/readCanonicalRestorePack",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:content-overlay/readContentBytes",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:manifest-envelope/readCanonicalManifestObject",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:runtime-archive-artifact/readRuntimeArchiveArtifact",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 267173
+        },
+        {
+          "label": "arraybuffer:wordpress-runtime-artifact/materializeWordPressRuntimeArtifact",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 5975792
+        },
+        {
+          "label": "arraybuffer:worker/materializeMarkdownDatabaseIntegration",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 80792
+        },
+        {
+          "label": "arraybuffer:worker/materializeRuntimeArchiveComponent",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/packagedCanonicalMarkdownSeed",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/putImmutableBytes",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/readCanonicalRevision",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/readManifestFiles",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/readWordPressRuntimeArtifact",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/serveWordPressStaticAsset",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 1574731
+        },
+        {
+          "label": "arraybuffer:worker/serveWordPressUpload",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "arraybuffer:worker/serveWordPressWpContent",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "bounded-content-read:content-overlay/readContentBytes",
+          "calls": 3,
+          "bytes": 170941,
+          "maxObservedCallBytes": 2295783
+        },
+        {
+          "label": "digest-input:canonical-restore-pack/sha256Hex",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 2295783
+        },
+        {
+          "label": "digest-input:compressed-content/module",
+          "calls": 7,
+          "bytes": 465072,
+          "maxObservedCallBytes": 327928
+        },
+        {
+          "label": "digest-input:compressed-persistence/module",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "digest-input:manifest-envelope/module",
+          "calls": 4,
+          "bytes": 182609,
+          "maxObservedCallBytes": 74029
+        },
+        {
+          "label": "digest-input:markdown-persistence/persistPlayttMarkdownObjects",
+          "calls": 171,
+          "bytes": 491681,
+          "maxObservedCallBytes": 327928
+        },
+        {
+          "label": "digest-input:runtime-archive-artifact/sha256Hex",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 267173
+        },
+        {
+          "label": "digest-input:wordpress-runtime-artifact/sha256Hex",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 5975792
+        },
+        {
+          "label": "digest-input:worker/secretsMatch",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 33
+        },
+        {
+          "label": "digest-input:worker/sha256Hex",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 1574731
+        },
+        {
+          "label": "exact-stream-output:compressed-content/readExactCompressedStream",
+          "calls": 1,
+          "bytes": 74029,
+          "maxObservedCallBytes": 74029
+        },
+        {
+          "label": "gzip-input:compressed-content/createCompressedContent",
+          "calls": 1,
+          "bytes": 365779,
+          "maxObservedCallBytes": 365779
+        },
+        {
+          "label": "gzip-input:manifest-envelope/serializeManifestEnvelope",
+          "calls": 1,
+          "bytes": 74029,
+          "maxObservedCallBytes": 74029
+        },
+        {
+          "label": "gzip-output:compressed-content/compress",
+          "calls": 1,
+          "bytes": 26383,
+          "maxObservedCallBytes": 26383
+        },
+        {
+          "label": "php-read:worker/collectRuntimeFiles",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "php-read:worker/logPlayttRuntimeMemory",
+          "calls": 6,
+          "bytes": 2350,
+          "maxObservedCallBytes": 1037
+        },
+        {
+          "label": "php-read:worker/patchCanonicalRuntimePoliciesAtInit",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 33152
+        },
+        {
+          "label": "php-read:worker/patchCanonicalThemeJsonCustomCss",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 222059
+        },
+        {
+          "label": "php-read:worker/persistRuntime",
+          "calls": 176,
+          "bytes": 856657,
+          "maxObservedCallBytes": 327928
+        },
+        {
+          "label": "php-read:worker/persistRuntimeObjects",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        },
+        {
+          "label": "php-read:worker/readCanonicalChanges",
+          "calls": 1,
+          "bytes": 121,
+          "maxObservedCallBytes": 121
+        },
+        {
+          "label": "php-read:worker/readPublicationChanges",
+          "calls": 1,
+          "bytes": 55,
+          "maxObservedCallBytes": 55
+        },
+        {
+          "label": "zip-input:canonical-restore-pack/decodeCanonicalRestorePack",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 2295783
+        },
+        {
+          "label": "zip-input:worker/materializeMarkdownDatabaseIntegration",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 93269
+        },
+        {
+          "label": "zip-input:worker/packagedCanonicalMarkdownSeed",
+          "calls": 0,
+          "bytes": 0,
+          "maxObservedCallBytes": 0
+        }
+      ],
+      "operatorStatusRequests": 0
+    }
+  ],
+  "wholeRunComponentSums": [
+    {
+      "phase": "before-restart",
+      "maximumObserved": 151975831
+    },
+    {
+      "phase": "after-restart",
+      "maximumObserved": 154694569
+    }
+  ],
+  "native": {
+    "baselineVersion": 181,
+    "finalLocalVersion": 191,
+    "contentBytes": 1875,
+    "contentSha256": "93f8e21c8def8c2d5a6ec9b54d91990b8ef41dadcd847ba4d274da51ba01f39b",
+    "receiptVersion": 186,
+    "originalRowsExact": true,
+    "addedRevision": 209,
+    "fullWorkerdRestart": {
+      "fullWorkerdDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "stateExact": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "sameWindow": true,
+      "noReseedOrRearm": true,
+      "version": 188,
+      "chargedBytes": 350109
+    },
+    "allOriginalUsermetaExact": true,
+    "originalSessionsRetainedNewSessionRemoved": true,
+    "mediaAndThemeExact": true,
+    "independentObjects": 304,
+    "independentFiles": 298,
+    "fullMaterializedExact": true,
+    "chargedBytes": 500265,
+    "chargedPuts": 30,
+    "sealed": true,
+    "closed": true,
+    "pending": 0,
+    "disposed": true,
+    "terminalExit": 0,
+    "runtimeExceptions": 0,
+    "expectedUnauthenticatedGate404": 0,
+    "otherHttpErrors": 0
+  },
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "providerMemoryAccepted": false,
+  "limitations": [
+    "The prefix ends before the first explicitly classified full-integrity request. The ten-millisecond margin avoids assigning boundary samples using asynchronous event-receipt time.",
+    "Counters track byte volume, not allocation or retention. Read/digest/codec outputs can refer to the same payload and must not be added together.",
+    "Maxima combine asynchronous Inspector JS/backing observations with the latest PHP heap in the same generation. These are observed component sums, not provider memory peaks, RSS, limit enforcement or billed CPU.",
+    "Sampling can miss cold-boot/transient peaks. A local sum below 128 MiB is not evidence that Cloudflare Free accepts the runtime, and observed margin is small.",
+    "The after-restart phase was preceded by full-integrity validation and is deliberately excluded from the native-only prefix. Full-run maxima still include validation allocations.",
+    "Direct compressed reads remove transient wrapper objects; this native run is not a controlled performance comparison. The prior byte-native run used different browser timing.",
+    "Full backup, restart, original rows, sessions, media and theme checks remain mandatory and passed separately. No integrity check was weakened.",
+    "Physical IME/mobile, first Chinese initialization, sustained usage and full A01-A20 acceptance remain open."
+  ]
+}

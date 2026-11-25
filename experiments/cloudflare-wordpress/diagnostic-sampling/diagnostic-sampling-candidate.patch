@@ -1,0 +1,39 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -6,6 +6,7 @@
+ import { patchPlayttIdSequences } from './playtt-id-sequences.js';
+ import { patchPlayttEmptySlugPersistence } from './playtt-slug-policy.js';
+ import { patchPlayttContentPersistence } from './playtt-content-policy.js';
++import { playttRuntimeMemoryEvidence } from './playtt-memory-diagnostics.js';
+ import { patchPlayttPostmetaPersistence } from './playtt-postmeta-policy.js';
+ import { readPlayttMaintenanceAction, playttAutoDraftMaintenanceCode, validatePlayttMaintenanceResult, type PlayttMaintenanceAction } from './playtt-maintenance.js';
+ import { readPlayttSnapshotSources, type PlayttSnapshotRuntimeReader } from './playtt-snapshot-source.js';
+@@ -533,26 +534,10 @@
+ 
+ function logPlayttRuntimeMemory(stage: string, runtime: Runtime, env: RuntimeEnv): void {
+   if ((env as RuntimeEnv & { PLAYTT_MEMORY_DIAGNOSTICS?: string }).PLAYTT_MEMORY_DIAGNOSTICS !== 'true') return
+-  const key = Object.getOwnPropertySymbols(runtime.php).find(symbol => symbol.description === '__private__dont__use')
+-  const module = key ? (runtime.php as unknown as Record<symbol, any>)[key] : undefined
+-  let fileBytes = 0, files = 0, heapAliasedFileBytes = 0
+-  const categories: Record<string, number> = {}
+-  function visit(node: any): void {
+-    if (node?.contents instanceof Uint8Array) {
+-      const size = node.contents.byteLength
+-      fileBytes += size; files++
+-      if (node.contents.buffer === module?.HEAPU8?.buffer) heapAliasedFileBytes += size
+-      let path = node.name || '', parent = node.parent
+-      for (let depth = 0; parent && parent !== parent.parent && depth < 20; depth++, parent = parent.parent) path = parent.name + '/' + path
+-      const category = path.includes('/wp-content/markdown/') ? 'canonical' : path.includes('/wp-content/uploads/') ? 'uploads' : path.includes('/wp-content/languages/') ? 'languages' : path.includes('/wp-content/') ? 'plugins-and-theme' : path.includes('wordpress/') ? 'wordpress-core' : path.includes('tmp/') ? 'temporary' : 'runtime'
+-      categories[category] = (categories[category] || 0) + size
+-    }
+-    else if (node?.contents && typeof node.contents === 'object') for (const child of Object.values(node.contents)) visit(child)
+-  }
+-  visit(module?.FS?.root)
++  const evidence = playttRuntimeMemoryEvidence(runtime.php, stage)
+   let phpMemory: unknown
+   try { phpMemory = JSON.parse(new TextDecoder().decode(runtime.php.readFileAsBuffer('/tmp/playtt-memory.json'))) } catch { /* absent until first request shutdown */ }
+-  console.log(JSON.stringify({ schema: 'playtt-runtime-memory/v1', stage, heapBytes: module?.HEAPU8?.byteLength || 0, fileBytes, heapAliasedFileBytes, categories, phpMemory, files }))
++  console.log(JSON.stringify({ schema: 'playtt-runtime-memory/v1', stage, ...evidence, phpMemory }))
+   if (stage === 'before-request') {
+     const path = '/internal/shared/auto_prepend_file.php'
+     const source = new TextDecoder().decode(runtime.php.readFileAsBuffer(path))

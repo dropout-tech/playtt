@@ -1,0 +1,541 @@
+{
+  "at": "2026-11-18T20:04:56.819740+00:00",
+  "result": "pass-with-open-acceptance",
+  "scope": "Private attachment persistence correction; production unchanged. Existing legacy media associations and content-origin migration remain open.",
+  "worker": "playtt-wp-free-rebuild-audit",
+  "workerVersion": "643a81da-b010-4748-95e2-f22732d9e5e7",
+  "firstFixedVersion": "95da984e-2b04-42d9-b366-9cf094bf6477",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "schema": "playtt/postmeta-table/v1",
+  "local": {
+    "at": "2026-11-18T19:52:10.327Z",
+    "result": "pass",
+    "scope": "Pinned PHP-WASM, real MDI storage/write-engine/loader and PDO SQLite; narrow driver adapter, not full WordPress HTTP",
+    "reports": [
+      {
+        "patched": false,
+        "result": "pass",
+        "checks": [
+          "real write engine exported postmeta snapshot",
+          "baseline reproduces attachment path loss",
+          "baseline reproduces serialized attachment metadata loss",
+          "baseline reproduces metadata identity reassignment",
+          "baseline loses rows on cold hydration"
+        ],
+        "originalRows": 10,
+        "firstColdRows": 4
+      },
+      {
+        "patched": true,
+        "result": "pass",
+        "checks": [
+          "real write engine exported postmeta snapshot",
+          "cold hydration preserves every original row and ID",
+          "versioned full-table layout recognized",
+          "layout marker tracked in canonical changes",
+          "serialized attachment data stays byte-valid",
+          "stale Markdown frontmatter cannot overwrite or duplicate canonical metadata",
+          "warm full-table sync preserves update and deletion by meta_id",
+          "second cold hydration preserves duplicate-row deletion",
+          "changed Markdown keeps canonical metadata and IDs",
+          "warm delete-all is an authoritative empty table",
+          "cold empty table does not resurrect stale frontmatter",
+          "invalid layout fails before hydration",
+          "invalid layout fails before hydration",
+          "invalid layout fails before hydration",
+          "missing authoritative table is rejected",
+          "legacy Markdown remains readable without new marker",
+          "malformed table rolls back destructive warm replacement"
+        ],
+        "originalRows": 10,
+        "firstColdRows": 10
+      }
+    ]
+  },
+  "typeScript": "pass",
+  "dryRun": "pass",
+  "nativeUpload": {
+    "at": "2026-11-18T19:56:27.927Z",
+    "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+    "result": "pass",
+    "scope": "Native WordPress REST image upload, alt/title edit, fresh media readback and original file SHA-256",
+    "id": 128,
+    "dimensions": [
+      16,
+      16
+    ],
+    "fileHash": "05c8d9c0d11d8ed170b65400af975a1a09268f09955d6f784c1df49c9dc4d762",
+    "publisher": "paused",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1607
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2727
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 8290
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 8001
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3863
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "method": "POST",
+        "status": 201,
+        "wallMs": 9121
+      },
+      {
+        "path": "/wp-json/wp/v2/media/128",
+        "method": "POST",
+        "status": 200,
+        "wallMs": 7129
+      },
+      {
+        "path": "/wp-json/wp/v2/media/128?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2324
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/playtt-postmeta-cb214806-03f3-400a-95d7-e5fd3d9c6e1d.png",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 991
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 864
+      }
+    ]
+  },
+  "crossDeployment": {
+    "at": "2026-11-18T19:58:29.856Z",
+    "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+    "result": "pass",
+    "scope": "Fresh native WordPress session after independent deployment; attachment fields and image bytes unchanged; deployment evidence retained separately",
+    "id": 128,
+    "fileHash": "05c8d9c0d11d8ed170b65400af975a1a09268f09955d6f784c1df49c9dc4d762",
+    "publisher": "paused",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1378
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3459
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 6563
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 8048
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3496
+      },
+      {
+        "path": "/wp-json/wp/v2/media/128?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1936
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/playtt-postmeta-cb214806-03f3-400a-95d7-e5fd3d9c6e1d.png",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 841
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 264
+      }
+    ]
+  },
+  "backupComparison": {
+    "at": "2026-11-18T19:59:10.860Z",
+    "result": "pass",
+    "scope": "Two independently decoded/hash-verified remote backups around deployment; all owned attachment rows including meta_id identical",
+    "id": 128,
+    "rows": 3,
+    "rowIds": [
+      "18",
+      "19",
+      "20"
+    ],
+    "keys": [
+      "_wp_attached_file",
+      "_wp_attachment_metadata",
+      "_wp_attachment_image_alt"
+    ],
+    "beforeRevision": "1a990cab-192c-45f5-9483-3e474027e655",
+    "afterRevision": "825b7d5b-fe47-4746-8b12-b146a1a4bca4",
+    "fileHash": "05c8d9c0d11d8ed170b65400af975a1a09268f09955d6f784c1df49c9dc4d762"
+  },
+  "final": {
+    "at": "2026-11-18T20:02:01.717Z",
+    "result": "pass",
+    "scope": "Verified cleanup backup: all prior Markdown and 15 uploaded files byte-identical; existing JSON rows retained, owned attachment absent, full-table marker and sequence high-water preserved. Read-only live state/pause/gate checks.",
+    "markdownFiles": 27,
+    "originalUploads": 15,
+    "legacyJsonRows": 2,
+    "finalPostmetaRows": 4,
+    "ownedId": 128,
+    "cleanupComplete": true,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "290",
+      "wp_postmeta": "20",
+      "wp_posts": "128",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "daily-source",
+        "version": 174,
+        "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "rebuild",
+        "version": 85,
+        "revision": "edf7bf71-b84e-444e-a6d9-1cce10366841",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ]
+  },
+  "observation": {
+    "at": "2026-11-18T20:02:02.549Z",
+    "events": 502,
+    "outcomes": {
+      "ok": 499,
+      "canceled": 3
+    },
+    "versions": {
+      "1ca938eb-4984-440b-b6f0-a500d9c20f7d": 359,
+      "95da984e-2b04-42d9-b366-9cf094bf6477": 46,
+      "643a81da-b010-4748-95e2-f22732d9e5e7": 97
+    },
+    "requestCategories": {
+      "probe-login": 1,
+      "front-page": 226,
+      "wp-login": 18,
+      "core-asset": 37,
+      "admin-other": 27,
+      "other": 9,
+      "admin-ajax": 96,
+      "post-editor": 2,
+      "rest-templates": 2,
+      "rest-other": 2,
+      "publisher": 15,
+      "operator": 39,
+      "rest-pages": 1,
+      "rest-posts": 1,
+      "rest-navigation": 1,
+      "rest-template-parts": 1,
+      "rest-media": 16,
+      "rest-themes": 1,
+      "rest-global-styles": 1,
+      "rest-settings": 1,
+      "site-asset": 5
+    },
+    "exceptions": 0,
+    "incompleteTraces": 0,
+    "requestFailures": 0,
+    "maxObservedWasmBytes": 76873728,
+    "canceled": [
+      {
+        "at": "2026-11-18T19:27:53.065Z",
+        "outcome": "canceled",
+        "version": "1ca938eb-4984-440b-b6f0-a500d9c20f7d",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": []
+      },
+      {
+        "at": "2026-11-18T19:27:52.626Z",
+        "outcome": "canceled",
+        "version": "1ca938eb-4984-440b-b6f0-a500d9c20f7d",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": [
+          {
+            "operation": "mutation",
+            "runtime": "warm",
+            "completed": true,
+            "totalMs": 10083,
+            "phases": [
+              {
+                "name": "request.translate",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "lease.acquire",
+                "durationMs": 115,
+                "aggregateGap": false
+              },
+              {
+                "name": "published.page-cache.lookup",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.reuse",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.current.read",
+                "durationMs": 272,
+                "aggregateGap": false
+              },
+              {
+                "name": "request.php",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.manifest.current.read",
+                "durationMs": 4171,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.markdown.write",
+                "durationMs": 1846,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.manifest.write",
+                "durationMs": 2931,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.enqueue",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "coordinator.commit",
+                "durationMs": 748,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.promote",
+                "durationMs": 0,
+                "aggregateGap": false
+              }
+            ]
+          },
+          {
+            "operation": "mutation",
+            "runtime": "warm",
+            "completed": true,
+            "totalMs": 3287,
+            "phases": [
+              {
+                "name": "request.translate",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "lease.acquire",
+                "durationMs": 78,
+                "aggregateGap": false
+              },
+              {
+                "name": "published.page-cache.lookup",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.reuse",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.current.read",
+                "durationMs": 239,
+                "aggregateGap": false
+              },
+              {
+                "name": "request.php",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.changes.collect",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "canonical.manifest.current.read",
+                "durationMs": 1863,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.upload.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.inventory",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.wp-content.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "persistence.markdown.write",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "publication.enqueue",
+                "durationMs": 0,
+                "aggregateGap": false
+              },
+              {
+                "name": "coordinator.commit",
+                "durationMs": 1107,
+                "aggregateGap": false
+              },
+              {
+                "name": "runtime.cache.promote",
+                "durationMs": 0,
+                "aggregateGap": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "at": "2026-11-18T19:33:34.709Z",
+        "outcome": "canceled",
+        "version": "1ca938eb-4984-440b-b6f0-a500d9c20f7d",
+        "request": {
+          "category": "admin-ajax",
+          "method": "POST"
+        },
+        "traces": []
+      }
+    ]
+  },
+  "observerStopped": true,
+  "sourceAssembly": {
+    "patches": 14,
+    "sourceFiles": 60,
+    "differences": []
+  },
+  "remaining": [
+    "Repair original 15 attachment associations from verified source artifacts; missing unknown historical metadata cannot be inferred.",
+    "Re-plan embedded-origin migration; no content mutation or rollback has been applied.",
+    "Browser visual and native editing/reload acceptance after repairs.",
+    "Practical handoff, cancellation diagnosis and sustained free-tier usage."
+  ],
+  "goalStatus": "active"
+}

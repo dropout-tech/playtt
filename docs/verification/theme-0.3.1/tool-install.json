@@ -1,0 +1,11 @@
+{
+  "result": "pass",
+  "installerSchema": "playtt/local-diagnostic-tools/v2",
+  "prerequisiteManifestExact": true,
+  "prerequisitesExact": 384,
+  "newToolsExact": 4,
+  "duplicateInstallRejectedWithoutWrites": true,
+  "runtimeSourcesChanged": false,
+  "configsChanged": false,
+  "cloudOperations": 0
+}

@@ -1,0 +1,7 @@
+{
+  "result": "initial-audit-failed",
+  "expectedExceptions": 0,
+  "observedExceptions": 1,
+  "message": "AssertionError 1 !== 0 in per-phase exception check",
+  "interpretation": "Runtime data runner completed; the audit assumption of no exception was false. Raw observations retained and the final audit explicitly reports one unresolved network-loss exception."
+}

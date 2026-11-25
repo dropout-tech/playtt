@@ -1,0 +1,265 @@
+{
+  "schema": "playtt/brand-editor-audit/v1",
+  "at": "2026-11-24T17:42:35.075Z",
+  "scope": "Independent offline verification of isolated local workerd; no cloud operation or provider acceptance",
+  "result": "pass",
+  "themeVersion": "0.3.1",
+  "themeFiles": 42,
+  "themeZipSha256": "af64c988eca9213b81090bfde24585fe082b315ea2eff9ca9381fd3e29a69f06",
+  "bundleSha256": "2e9819b0c9602eb937b2819196242a047877923b2d79a27ebdcd821d294074c1",
+  "homeId": 21,
+  "content": {
+    "originalSha256": "802b45bde6d2ec6cb1fdbde95fc866b6234bfe8ede66c4bfc1b1f470ec1fd553",
+    "savedSha256": "869c4d3b843394e76373c8a0615cb4362d51567b991b063af00e1b2a53f85066",
+    "limitedNormalizations": 4,
+    "mutationControlsRejected": 6,
+    "coldAndFinalByteExact": true,
+    "otherPageFilesUnchanged": 7
+  },
+  "allInstalledMediaAndWpContentUnchanged": true,
+  "allBaselineWpContentUnchanged": true,
+  "baselineUserAccountsUnchanged": true,
+  "changedBaselinePaths": [
+    "_options/cron.json",
+    "_options/fresh_site.json",
+    "_options/page_on_front.json",
+    "_options/sidebars_widgets.json",
+    "_options/stylesheet.json",
+    "_options/template.json",
+    "_options/theme_mods_twentytwentyfive.json",
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/term_relationships.json",
+    "_tables/term_taxonomy.json",
+    "_tables/terms.json",
+    "_tables/usermeta.json"
+  ],
+  "allSessionsRemoved": true,
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 33554432,
+    "maxOperations": 512
+  },
+  "chargedBytes": 13010228,
+  "chargedPuts": 108,
+  "sealed": true,
+  "pending": 0,
+  "localProcessesDisposed": true,
+  "restartProofs": [
+    {
+      "oldProcessDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "noReseedOrRearm": true
+    }
+  ],
+  "finalSnapshot": {
+    "version": 27,
+    "objects": 310,
+    "files": 298,
+    "manifestSha256": "92c8292882bdbb1787a872d1e7cc5c1fe477972bf953a1112ca9ab927e2807d5"
+  },
+  "observers": [
+    {
+      "label": "integrity",
+      "samples": 102,
+      "events": 581,
+      "exceptions": 0,
+      "privateExceptions": 0,
+      "lifecycleEvents": 317,
+      "privateLifecycleErrors": 0,
+      "allocationActive": false,
+      "completedAllocations": [],
+      "busy": false,
+      "stopped": true
+    },
+    {
+      "label": "integrity",
+      "samples": 92,
+      "events": 336,
+      "exceptions": 0,
+      "privateExceptions": 0,
+      "lifecycleEvents": 198,
+      "privateLifecycleErrors": 0,
+      "allocationActive": false,
+      "completedAllocations": [],
+      "busy": false,
+      "stopped": true
+    }
+  ],
+  "browser": {
+    "reading": {
+      "invalidBlocks": false,
+      "errors": [],
+      "warnings": [],
+      "priorAttemptEntries": 0
+    },
+    "saved": {
+      "invalidBlocks": false,
+      "errors": [],
+      "warnings": [
+        "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css"
+      ],
+      "priorAttemptEntries": 4
+    },
+    "cold": {
+      "invalidBlocks": false,
+      "errors": [],
+      "warnings": [
+        "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css"
+      ],
+      "priorAttemptEntries": 0
+    },
+    "logout": {
+      "invalidBlocks": false,
+      "errors": [],
+      "warnings": [],
+      "priorAttemptEntries": 0
+    },
+    "public": {
+      "invalidBlocks": false,
+      "errors": [
+        "InvalidStateError: Transition was aborted because of invalid state. ViewTransition opt-in disabled"
+      ],
+      "warnings": [
+        "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css"
+      ],
+      "priorAttemptEntries": 0
+    }
+  },
+  "attempts": [
+    {
+      "name": "editor",
+      "note": "Harness rejected 1024 operations above the existing 512 maximum; no WordPress test request.",
+      "phase": "failed",
+      "armed": false,
+      "sealed": false,
+      "disposed": true,
+      "chargedBytes": null,
+      "puts": 0,
+      "executedInputs": [
+        {
+          "name": "playtt-brand-editor-local.mjs",
+          "sha256": "f9058b398db21cfb9932c38d592c7d39505452c226e06f1833fcc0eb804fee78"
+        },
+        {
+          "name": "playtt-locale-complete-observer.mjs",
+          "sha256": "9ebfddb40448dfd6ff30c48c5ee3efa8385d2055da7398d42bf2d966bc50f8a7"
+        },
+        {
+          "name": "playtt-brand-editor-control.mjs",
+          "sha256": "7652de4fa6aa4d38c3c3464b21393c633310fdebfb0b2dbebee070b2368c4461"
+        }
+      ]
+    },
+    {
+      "name": "editor-ui",
+      "note": "Theme 0.3.0 six invalid image blocks; browser tab disappeared before logout; one local session remains in sealed offline backup.",
+      "phase": "failed",
+      "armed": true,
+      "sealed": true,
+      "disposed": true,
+      "chargedBytes": 12822008,
+      "puts": 106,
+      "executedInputs": [
+        {
+          "name": "playtt-brand-editor-ui-local.mjs",
+          "sha256": "11d3d860da134f2bb962a136cfa3744da418fcdc71f8cfa340a554366f4e5f05"
+        },
+        {
+          "name": "playtt-locale-complete-observer.mjs",
+          "sha256": "9ebfddb40448dfd6ff30c48c5ee3efa8385d2055da7398d42bf2d966bc50f8a7"
+        },
+        {
+          "name": "playtt-brand-editor-ui-control.mjs",
+          "sha256": "fc3d4045b158840d1dc90982a762fa67cb55ff914e63f937ce164b708e53971c"
+        }
+      ]
+    },
+    {
+      "name": "editor-blockfix",
+      "note": "Theme 0.3.1 native UI save succeeded; byte-only test oracle rejected normal WordPress serialization.",
+      "phase": "failed",
+      "armed": true,
+      "sealed": true,
+      "disposed": true,
+      "chargedBytes": 10762854,
+      "puts": 97,
+      "executedInputs": [
+        {
+          "name": "playtt-brand-editor-blockfix-local.mjs",
+          "sha256": "0a6ac5f602084ef054bdfb290fa04b56b60eb56c9abe39f262d92f501fb29e34"
+        },
+        {
+          "name": "playtt-locale-complete-observer.mjs",
+          "sha256": "9ebfddb40448dfd6ff30c48c5ee3efa8385d2055da7398d42bf2d966bc50f8a7"
+        },
+        {
+          "name": "playtt-brand-editor-blockfix-control.mjs",
+          "sha256": "c3a60ef2928241d963fcf3569fff82c32551cc72b1b0d24a1287fdcfa99405d0"
+        }
+      ]
+    },
+    {
+      "name": "editor-roundtrip",
+      "note": "Save equivalence passed; root-page test required explicit Reading selection because importer preserved the existing homepage.",
+      "phase": "failed",
+      "armed": true,
+      "sealed": true,
+      "disposed": true,
+      "chargedBytes": 11697207,
+      "puts": 103,
+      "executedInputs": [
+        {
+          "name": "playtt-brand-editor-roundtrip-local.mjs",
+          "sha256": "d20eb486284fa499177a9b6e5062295172531760fd4a3730df147ab5bf029d1d"
+        },
+        {
+          "name": "playtt-locale-complete-observer.mjs",
+          "sha256": "9ebfddb40448dfd6ff30c48c5ee3efa8385d2055da7398d42bf2d966bc50f8a7"
+        },
+        {
+          "name": "playtt-brand-editor-roundtrip-control.mjs",
+          "sha256": "54d353c464550525a5111662cf270d720798a19c6dd39a154bc26f18b03c5abc"
+        },
+        {
+          "name": "playtt-brand-content-equivalence.mjs",
+          "sha256": "9bd4fda70c8c3f487fe2c34dfcaf8e7ee8578cd7f29a265c100c40d66022a346"
+        }
+      ]
+    },
+    {
+      "name": "editor-complete",
+      "note": "Native Reading selection, canvas edit/save, complete restart/readback, anonymous root and logout passed.",
+      "phase": "verified",
+      "armed": true,
+      "sealed": true,
+      "disposed": true,
+      "chargedBytes": 13010228,
+      "puts": 108,
+      "executedInputs": [
+        {
+          "name": "playtt-brand-editor-complete-local.mjs",
+          "sha256": "6645749fce67b6c628fe4baa441a6974073630c2c78ffbc11e85d8fb283f2f39"
+        },
+        {
+          "name": "playtt-locale-complete-observer.mjs",
+          "sha256": "9ebfddb40448dfd6ff30c48c5ee3efa8385d2055da7398d42bf2d966bc50f8a7"
+        },
+        {
+          "name": "playtt-brand-editor-complete-control.mjs",
+          "sha256": "296137a38a23c8ba10c897790aa8a896ee3eaaafcbbf707de097887e0b5c1c28"
+        },
+        {
+          "name": "playtt-brand-content-equivalence.mjs",
+          "sha256": "9bd4fda70c8c3f487fe2c34dfcaf8e7ee8578cd7f29a265c100c40d66022a346"
+        }
+      ]
+    }
+  ],
+  "providerMemoryAccepted": false,
+  "productionChanged": false
+}

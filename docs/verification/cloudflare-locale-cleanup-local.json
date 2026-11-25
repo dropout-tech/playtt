@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-17T05:50:57.190Z",
+  "result": "pass",
+  "scope": "One-time initializer removed through native plugin REST endpoint; official language files and zh_TW admin remain",
+  "remote": false,
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 545
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 2060
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 775
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/plugins",
+      "status": 200,
+      "wallMs": 595
+    },
+    {
+      "method": "POST",
+      "path": "/wp-json/wp/v2/plugins/playtt-zh-tw/playtt-zh-tw",
+      "status": 200,
+      "wallMs": 1920
+    },
+    {
+      "method": "DELETE",
+      "path": "/wp-json/wp/v2/plugins/playtt-zh-tw/playtt-zh-tw",
+      "status": 200,
+      "wallMs": 1506
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 2555
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/users/me",
+      "status": 200,
+      "wallMs": 2252
+    }
+  ]
+}

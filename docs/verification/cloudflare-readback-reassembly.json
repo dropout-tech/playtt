@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-21T00:37:18.410392+00:00",
+  "result": "pass",
+  "adoptedPatches": 25,
+  "optionalPatches": 9,
+  "sourceFilesCompared": 75,
+  "helpersCompared": 82,
+  "existingConfigsUnchanged": 20,
+  "privateConfigAddedFlagOnlyInPriorStage": true,
+  "currentRoundAll20ConfigsUnchanged": true,
+  "currentRoundSourceChanges": [
+    "src/playtt-editor-readback.ts",
+    "src/worker.ts"
+  ],
+  "readbackFlagEnabledInAnyConfig": false,
+  "metadataOverlayV2PreviouslyEnabledConfigs": [
+    "wrangler.playtt-session-audit.jsonc"
+  ],
+  "reapplyRefusedBeforeMutation": true,
+  "differences": [],
+  "defaultAssemblerIncludesCandidates": false,
+  "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler",
+  "assemblyDeploysNothing": true,
+  "staticManifestExplicitlyCopiedFromHashVerifiedRuntime": true,
+  "staticBlobRegeneratedThisRun": false,
+  "coreRegenerationStillRequiredForFreshDeployment": true
+}

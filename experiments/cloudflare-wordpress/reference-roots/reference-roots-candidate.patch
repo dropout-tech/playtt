@@ -1,0 +1,61 @@
+diff --git a/src/state-coordinator.ts b/src/state-coordinator.ts
+--- a/src/state-coordinator.ts
++++ b/src/state-coordinator.ts
+@@ -1,5 +1,6 @@
+ import { withPlayttStorageCapacity, playttCapacityLimit, PlayttCapacityError, playttCapacityResponse, type PlayttCapacityEnv } from './playtt-storage-capacity.js'
+ import { PlayttBackupPins, PlayttBackupPinError, type PlayttBackupPinInput } from './playtt-backup-pins.js'
++import { readCoordinatorReferenceRoots, PlayttReferenceRootsError } from './playtt-reference-roots.js'
+ import { mutationFenceExpiresAt, revisionLeaseExpiresAt, RevisionConflict, type MarkdownPointer, type MutationFence, type MutationFenceStatus, type RevisionCoordinator, type RevisionLease, type RevisionState } from "./revision-coordinator.js"
+
+ interface StoredLease {
+@@ -83,6 +84,10 @@
+
+   backupPins(): ReturnType<PlayttBackupPins['list']> {
+     return this.call('backup-pins')
++  }
++
++  referenceRoots(): ReturnType<typeof readCoordinatorReferenceRoots> {
++    return this.call('reference-roots')
+   }
+
+   pinBackup(pin: PlayttBackupPinInput, fenceToken: string): ReturnType<PlayttBackupPins['register']> {
+@@ -119,6 +124,7 @@
+
+   fetch(request: Request): Promise<Response> {
+     const response = this.tail.then(() => this.handle(request)).catch((error: unknown) => {
++      if (error instanceof PlayttReferenceRootsError) return Response.json({ code: 'playtt_reference_roots', message: error.message }, { status: error.status })
+       if (error instanceof PlayttBackupPinError) return Response.json({ code: 'playtt_backup_pin', message: error.message }, { status: error.status })
+       if (error instanceof PlayttCapacityError) return playttCapacityResponse(error)
+       if (error instanceof RevisionConflict) {
+@@ -136,6 +142,11 @@
+     const url = new URL(request.url)
+     const action = url.searchParams.get("__wp_codebox_coordinator")
+     const siteId = url.searchParams.get("siteId") ?? "default"
++    if (action === 'reference-roots') {
++      if (siteId !== 'default' || playttCapacityLimit(this.env) === null) return new Response('Reference inventory is disabled.', { status: 404 })
++      if (request.method !== 'GET') return new Response('Method not allowed.', { status: 405 })
++      return Response.json(await readCoordinatorReferenceRoots(this.state.storage, siteId))
++    }
+     if (action === 'backup-pins' || action === 'backup-pin') {
+       if (siteId !== 'default' || playttCapacityLimit(this.env) === null) return new Response('Backup pins are disabled.', { status: 404 })
+       await this.record(siteId)
+diff --git a/src/worker-playtt-do.ts b/src/worker-playtt-do.ts
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -122,6 +122,16 @@
+     let site;
+     try { site = resolveSiteContextFromRequest(request, parseSiteContexts(env.WORDPRESS_SITE_CONTEXTS)); }
+     catch { return new Response('Unknown site hostname.', { status: 421 }); }
++    if (new URL(request.url).pathname === '/__playtt-reference-roots') {
++      const headers = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow', 'X-Playtt-Probe-State': thisPartition(env) };
++      if (!await isAuthorizedOperator(request, env, site)) return new Response('Unauthorized', { status: 401, headers });
++      if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers });
++      try {
++        if (site.id !== 'default' || playttCapacityLimit(env) === null) return new Response('Reference inventory is disabled', { status: 404, headers });
++        const coordinator = new DurableObjectRevisionCoordinator(env.WORDPRESS_STATE.getByName(partitionName(env, site.id)), site.id);
++        return Response.json(await coordinator.referenceRoots(), { headers });
++      } catch { return new Response('Reference inventory unavailable', { status: 503, headers }); }
++    }
+     if (new URL(request.url).pathname === '/__playtt-backup-pins') {
+       const headers = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow', 'X-Playtt-Probe-State': thisPartition(env) };
+       if (!await isAuthorizedOperator(request, env, site)) return new Response('Unauthorized', { status: 401, headers });

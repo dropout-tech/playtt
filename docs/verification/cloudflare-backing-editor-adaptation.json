@@ -1,0 +1,36 @@
+{
+  "schema": "playtt/backing-editor-adaptation/v1",
+  "generated": [
+    {
+      "name": "playtt-backing-editor.mjs",
+      "source": "playtt-core-lru-editor.mjs",
+      "sourceSha256": "002a13732beb6fd66953aee1939dc354eeb60d0a035ef54f6dee01bcd7e13fe3",
+      "sha256": "fec2f81911e09ce475ee0ed6bf6db57e7d7802773dafed6876d5b7caac52e4a4"
+    },
+    {
+      "name": "playtt-backing-editor-observer.mjs",
+      "source": "playtt-core-lru-editor-observer.mjs",
+      "sourceSha256": "0f4629be1d269540bee98fb2fa655a297d00b7d26f27868f3607ad6bb52c7b4e",
+      "sha256": "e64a2fdee3f9391e0a66cc6946c17abdd8febdb811b684073d1096ae9b6677d3"
+    },
+    {
+      "name": "playtt-backing-editor-control.mjs",
+      "source": "playtt-core-lru-editor-control.mjs",
+      "sourceSha256": "39bb7bc44ae3fa5cd48bf9b7efad4becada1b9a6715dd4a087a2d34be218a1c3",
+      "sha256": "ca7db1d2a31fc015499788df28ae935b1984c91e5468d5cdb04b1b8e9e6325d8"
+    }
+  ],
+  "bundleSha256": "0ba3efadc2345c2c9bd87113a7c978e9cf98cca7ee0a03ec9d7999ef339bf796",
+  "ports": [
+    9568,
+    9569
+  ],
+  "nativeDataWindowAndRecoveryAssertionsUnchanged": true,
+  "diagnostics": [
+    "bounded numeric backing inventory",
+    "heap samples after file scans with measured delay"
+  ],
+  "sourceInputs": 213,
+  "loadedSources": 75,
+  "cloudRequests": 0
+}

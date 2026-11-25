@@ -1,0 +1,170 @@
+{
+  "schema": "playtt/recovery-provider/v1",
+  "at": "2026-11-21T16:19:54.493Z",
+  "result": "pass",
+  "worker": "playtt-wp-free-session-audit",
+  "sourceVersion": 177,
+  "targetVersion": 178,
+  "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+  "deployed": {
+    "version": "c7c46433-a876-4cd1-900f-a5dd532dda56",
+    "bindingsExact": true
+  },
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 432931,
+    "maxOperations": 7
+  },
+  "checks": [
+    {
+      "phase": "preflight",
+      "endpoint": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "preflight",
+      "endpoint": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "preflight",
+      "endpoint": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "preflight",
+      "endpoint": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "waiting-observer",
+      "endpoint": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "waiting-observer",
+      "endpoint": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "acquiring-fence",
+      "endpoint": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "arming",
+      "endpoint": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "arming",
+      "endpoint": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "endpoint": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "endpoint": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "endpoint": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "endpoint": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "endpoint": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "endpoint": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "endpoint": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "adoption": {
+    "result": "adopted-and-pointer-verified",
+    "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+    "sourceVersion": 177,
+    "targetVersion": 178,
+    "sourcePinPreserved": true,
+    "targetPinned": true,
+    "bothPointersVerified": true,
+    "containmentStillHeld": true
+  },
+  "before": {
+    "version": 177,
+    "pins": 14,
+    "remainingBytes": 1083839
+  },
+  "after": {
+    "version": 178,
+    "pins": 15,
+    "remainingBytes": 650908,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "chargedBytes": 432931,
+  "chargedPuts": 7,
+  "wallMs": 70992,
+  "allOriginalPinsExact": true,
+  "allContentsMediaThemeExact": true,
+  "independentBackup": {
+    "objects": 303,
+    "files": 298,
+    "remoteGets": 8,
+    "downloadedBytes": 2802244,
+    "exact": true
+  },
+  "observerLiveDuringAdoption": true,
+  "productionChanged": false,
+  "paidUpgrade": false,
+  "capChanged": false,
+  "historyDeleted": false,
+  "oldSourceDeployed": false,
+  "providerFaultInjected": false,
+  "nativePhpEdited": false,
+  "observer": {
+    "ready": true,
+    "startedAt": 1795277923490,
+    "expiresAt": 1795278583490,
+    "ended": true,
+    "endedAt": 1795277994493,
+    "endCode": null,
+    "unparsed": 0
+  }
+}

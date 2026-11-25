@@ -1,0 +1,25 @@
+{
+  "schema": "playtt/core-lru-build-proof/v1",
+  "result": "pass",
+  "sourceInputs": 211,
+  "loadedSources": 74,
+  "unchangedPriorInputs": 209,
+  "changedInputs": [
+    "src/playtt-compressed-core-module.mjs"
+  ],
+  "addedInputs": [
+    "src/playtt-core-lru-cache.mjs"
+  ],
+  "sourceSha256": "51ada8f92a11d39d146f169aa532d29d211d431ef9d95436263ca62b95433958",
+  "cacheSha256": "9c3044fdaf897ebca5ca661756596a2c75a6cae477641bd3eddc179f52a73982",
+  "bundleSha256": "a600faf90967a07bfeac1f1ef849d0688b453c4e3046828a70a5754378bae8b1",
+  "exactCompiledAdapterAndCacheOnlyChange": true,
+  "binaryModulesUnchanged": 5,
+  "typecheck": "pass",
+  "dryRun": "pass",
+  "cacheLimit": 12582912,
+  "maxEntries": 2048,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

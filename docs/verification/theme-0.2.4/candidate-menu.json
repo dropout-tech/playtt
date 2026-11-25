@@ -1,0 +1,89 @@
+{
+  "at": "2026-11-24T16:25:38.255Z",
+  "links": [
+    {
+      "name": "關於我們",
+      "padding": "12px",
+      "rect": {
+        "bottom": 148.75,
+        "height": 60.75,
+        "left": 235,
+        "right": 343,
+        "top": 88,
+        "width": 108,
+        "x": 235,
+        "y": 88
+      }
+    },
+    {
+      "name": "課程資訊",
+      "padding": "12px",
+      "rect": {
+        "bottom": 225.5,
+        "height": 60.75,
+        "left": 235,
+        "right": 343,
+        "top": 164.75,
+        "width": 108,
+        "x": 235,
+        "y": 164.75
+      }
+    },
+    {
+      "name": "教練團隊",
+      "padding": "12px",
+      "rect": {
+        "bottom": 302.25,
+        "height": 60.75,
+        "left": 235,
+        "right": 343,
+        "top": 241.5,
+        "width": 108,
+        "x": 235,
+        "y": 241.5
+      }
+    },
+    {
+      "name": "據點",
+      "padding": "12px",
+      "rect": {
+        "bottom": 379,
+        "height": 60.75,
+        "left": 277,
+        "right": 343,
+        "top": 318.25,
+        "width": 66,
+        "x": 277,
+        "y": 318.25
+      }
+    },
+    {
+      "name": "合作招募",
+      "padding": "12px",
+      "rect": {
+        "bottom": 455.75,
+        "height": 60.75,
+        "left": 235,
+        "right": 343,
+        "top": 395,
+        "width": 108,
+        "x": 235,
+        "y": 395
+      }
+    }
+  ],
+  "viewport": {
+    "height": 812,
+    "width": 375
+  },
+  "menuWrap": {
+    "label": "Close menu",
+    "text": ""
+  },
+  "menuReturn": {
+    "focusVisible": true,
+    "label": "Open menu",
+    "open": false,
+    "outline": "solid"
+  }
+}

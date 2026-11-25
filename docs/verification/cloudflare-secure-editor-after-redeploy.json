@@ -1,0 +1,103 @@
+{
+  "at": "2026-11-17T04:39:18.693Z",
+  "result": "pass",
+  "mode": "after-redeploy",
+  "scope": "Remote current content, revision records, independent concurrent drafts and ordinary image thumbnails; native UI actions have separate evidence; no same-page merge claim",
+  "nativeRevisionRestored": true,
+  "footerTemplatePartVerified": true,
+  "state": {
+    "posts": [
+      {
+        "id": 40,
+        "title": "PLAYTT concurrent A 1794890156282"
+      },
+      {
+        "id": 41,
+        "title": "PLAYTT concurrent B 1794890156282"
+      }
+    ],
+    "aboutId": 25,
+    "marker": "【遠端視覺編輯驗收】",
+    "revisionIds": [
+      37,
+      33,
+      30
+    ],
+    "media": {
+      "id": 42,
+      "url": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev/wp-content/uploads/2026/11/playtt-normal-media-1.webp",
+      "sha256": "d3432294ff271d178928ac287604b3bb3e2124b697927db66cdb9161e285414a",
+      "thumbnailUrl": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev/wp-content/uploads/2026/11/playtt-normal-media-1-300x256.webp",
+      "thumbnailSha256": "ddd16c8b2b6cc12075dbca0af433bd62d3670835fa4650d89abbf4937623bb61",
+      "thumbnailSizes": [
+        "medium",
+        "large",
+        "thumbnail",
+        "medium_large",
+        "full"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 5817
+    },
+    {
+      "method": "POST",
+      "path": "/wp-login.php",
+      "status": 302,
+      "wallMs": 14688
+    },
+    {
+      "method": "GET",
+      "path": "/wp-admin/",
+      "status": 200,
+      "wallMs": 2000
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/pages/25",
+      "status": 200,
+      "wallMs": 1059
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/template-parts",
+      "status": 200,
+      "wallMs": 990
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/pages/25/revisions",
+      "status": 200,
+      "wallMs": 1085
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/posts/40",
+      "status": 200,
+      "wallMs": 890
+    },
+    {
+      "method": "GET",
+      "path": "/wp-json/wp/v2/posts/41",
+      "status": 200,
+      "wallMs": 885
+    },
+    {
+      "method": "GET",
+      "path": "/wp-content/uploads/2026/11/playtt-normal-media-1.webp",
+      "status": 200,
+      "wallMs": 1000
+    },
+    {
+      "method": "GET",
+      "path": "/wp-content/uploads/2026/11/playtt-normal-media-1-300x256.webp",
+      "status": 200,
+      "wallMs": 946
+    }
+  ]
+}

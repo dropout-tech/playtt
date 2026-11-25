@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-18T21:43:20.850Z",
+  "result": "pass",
+  "scope": "Actual pinned PHP-WASM MEMFS: cold inventory, warm heap-only diagnostics, PHP-written file rescan and unchanged file bytes; local only, no whole-isolate memory claim.",
+  "before": {
+    "heapBytes": 67108864,
+    "fileScanPerformed": true,
+    "fileBytes": 1293,
+    "files": 4,
+    "heapAliasedFileBytes": 0,
+    "unknownFileBuffers": 0,
+    "categories": {
+      "runtime": 1288,
+      "canonical": 5
+    }
+  },
+  "warm": {
+    "heapBytes": 67108864,
+    "fileScanPerformed": false
+  },
+  "after": {
+    "heapBytes": 67108864,
+    "fileScanPerformed": true,
+    "fileBytes": 1400,
+    "files": 5,
+    "heapAliasedFileBytes": 0,
+    "unknownFileBuffers": 0,
+    "categories": {
+      "runtime": 1387,
+      "canonical": 13
+    }
+  }
+}

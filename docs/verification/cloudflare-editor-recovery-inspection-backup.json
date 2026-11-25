@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-20T15:44:16.652Z",
+  "result": "pass",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "revision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+  "version": 62,
+  "objects": 298,
+  "decodedBytes": 4430300,
+  "archiveBytes": 2293896,
+  "archiveSha256": "89a94538333e7d93179818b8dbcaea38f4fdcea80a363b5b1759a9fdbb58b9ba",
+  "pinRegistered": true,
+  "pinGeneration": 25,
+  "ownedDraftPresent": 192,
+  "cleanupComplete": false,
+  "writeSealRetained": true
+}

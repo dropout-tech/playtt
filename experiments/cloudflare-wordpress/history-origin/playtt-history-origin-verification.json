@@ -1,0 +1,73 @@
+{
+  "at": "2026-11-18T21:08:45.552Z",
+  "result": "pass",
+  "scope": "Authenticated native template-part/navigation revision endpoints; every revision under the three parents matches candidate content/title/numeric revision ID. Template GUIDs are not exposed by this API and remain verified in full backups.",
+  "verifiedRevisions": 23,
+  "migratedRevisions": 18,
+  "references": 28,
+  "version": 142,
+  "revision": "45fb3da1-119e-47cd-8f92-e899e3413ba3",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 530
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3641
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2120
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 8450
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4086
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts/lets-play//footer/revisions?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3156
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation/61/revisions?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2453
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts/lets-play//header/revisions?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2404
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 264
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2490
+    }
+  ]
+}

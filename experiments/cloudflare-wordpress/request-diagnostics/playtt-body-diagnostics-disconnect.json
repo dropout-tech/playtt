@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-18T20:48:29.794Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "mode": "--disconnect",
+  "result": "pass",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2108
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2482
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 7075
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2211
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3675
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2737
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 200
+    }
+  ],
+  "scope": "One intentionally incomplete unauthenticated heartbeat; client disconnect and canonical stability verified; execution-layer reason requires separate tail evidence",
+  "transport": {
+    "startedAt": "2026-11-18T20:48:43.701Z",
+    "declaredBytes": 2048,
+    "sentBytes": 21,
+    "abortAfterMs": 5000,
+    "disconnected": true,
+    "endedAt": "2026-11-18T20:48:48.719Z"
+  },
+  "version": 133,
+  "revision": "c79f3f55-93b6-4bbf-9ec6-3fb0462d5cfc",
+  "canonicalUnchanged": true,
+  "publisher": "paused"
+}

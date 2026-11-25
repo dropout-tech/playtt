@@ -1,0 +1,18 @@
+{
+  "schema": "playtt/editor-byte-build-proof/v1",
+  "at": "2026-11-21T21:57:07.525104+00:00",
+  "result": "pass",
+  "sourceCount": 83,
+  "sourceInputs": 206,
+  "loadedSourceCount": 71,
+  "candidateSha256": "bd22569a66cc2aa22536d33cedaedc51ccfce94c282eadc3a1001f46b0034928",
+  "baselineBundleSha256": "cb9302a8b57c9bc3db16304cb3ad995b793eab543a759a4f7b9bfdb4800e0de5",
+  "bundleSha256": "d3a78fa46ba73861129bd9596b18ef93e1e545476e6d3471ac2a8f345b783e1a",
+  "typecheck": "pass",
+  "wranglerDryRun": "pass",
+  "exactScopedCompiledChanges": true,
+  "unchangedBinaryModules": 5,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

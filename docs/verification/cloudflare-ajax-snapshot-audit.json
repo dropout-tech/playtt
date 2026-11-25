@@ -1,0 +1,329 @@
+{
+  "schema": "playtt/ajax-retained-snapshot-audit/v1",
+  "at": "2026-11-21T21:26:43.617Z",
+  "scope": "Same local workerd process, after native editor load and after logout; no draft content edit; snapshots can collect; not provider RSS/peak or long-term leak proof",
+  "snapshots": [
+    {
+      "label": "snapshot-first",
+      "snapshotBytes": 25196726,
+      "snapshotSha256": "53f49b2e197a91900cc12256c2ee7e2cc2da69edd5aef385f1945497dcb40d9c",
+      "nodeCount": 304510,
+      "snapshotSelfBytes": 122976050,
+      "selfBytesByType": {
+        "synthetic": 1512,
+        "native": 109399828,
+        "string": 6815806,
+        "object shape": 372272,
+        "code": 3436924,
+        "array": 1505148,
+        "number": 108972,
+        "symbol": 1376,
+        "closure": 492900,
+        "object": 831928,
+        "concatenated string": 8200,
+        "sliced string": 40,
+        "regexp": 1128,
+        "bigint": 16
+      },
+      "arrayBufferBackingBytes": 107211355,
+      "largestBackings": [
+        {
+          "bytes": 74907648,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": true
+        },
+        {
+          "bytes": 1376256,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 536405,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 483218,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 475022,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 402711,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 376832,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 357678,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        }
+      ],
+      "loaderWasmMemoryInstances": 1,
+      "wasmLinkEvidence": "wasmMemory context -> Memory instance -> ArrayBuffer -> backing_store; instance prototype is WebAssembly.Memory",
+      "loaderWasmBackingBytes": 74907648,
+      "filesystemBackings": {
+        "filesWithBacking": 2564,
+        "uniqueBackings": 2564,
+        "bytes": 31426460,
+        "wasmAliasedBytes": 0,
+        "categories": {
+          "temporary": {
+            "buffers": 4,
+            "bytes": 1376425
+          },
+          "wordpress-core": {
+            "buffers": 1858,
+            "bytes": 22527346
+          },
+          "runtime": {
+            "buffers": 63,
+            "bytes": 1536150
+          },
+          "languages": {
+            "buffers": 77,
+            "bytes": 2500119
+          },
+          "plugins-and-theme": {
+            "buffers": 376,
+            "bytes": 2344019
+          },
+          "canonical": {
+            "buffers": 171,
+            "bytes": 488843
+          },
+          "uploads": {
+            "buffers": 15,
+            "bytes": 653558
+          }
+        },
+        "otherNonWasmNonFileBackingBytes": 877247,
+        "largestOtherBackingBytes": [
+          376832,
+          344064,
+          93269,
+          55902,
+          6144,
+          1024,
+          8,
+          4
+        ]
+      },
+      "bootArraysRetainedBytes": 0,
+      "bootArrays": {},
+      "cdpBefore": {
+        "usedSize": 19498656,
+        "totalSize": 26611712,
+        "embedderHeapUsedSize": 164768,
+        "backingStorageSize": 34577281
+      },
+      "cdpAfter": {
+        "usedSize": 14840316,
+        "totalSize": 15597568,
+        "embedderHeapUsedSize": 2208,
+        "backingStorageSize": 33208825
+      },
+      "eventsDuring": []
+    },
+    {
+      "label": "snapshot-repeat",
+      "snapshotBytes": 25287092,
+      "snapshotSha256": "09a60fda8f056ac24bb2ac2ea093c0484b77af4fc3113204c24cfd4f1f65d8b1",
+      "nodeCount": 305356,
+      "snapshotSelfBytes": 123071549,
+      "selfBytesByType": {
+        "synthetic": 1512,
+        "native": 109403839,
+        "string": 6839414,
+        "object shape": 373056,
+        "code": 3495536,
+        "array": 1509224,
+        "number": 108972,
+        "symbol": 1376,
+        "object": 835000,
+        "closure": 493196,
+        "concatenated string": 9280,
+        "regexp": 1128,
+        "bigint": 16
+      },
+      "arrayBufferBackingBytes": 107211030,
+      "largestBackings": [
+        {
+          "bytes": 74907648,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": true
+        },
+        {
+          "bytes": 1376256,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 536405,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 483218,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 475022,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 402711,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 376832,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        },
+        {
+          "bytes": 357678,
+          "owners": {
+            "ArrayBuffer": 1
+          },
+          "loaderWasmMemoryLink": false
+        }
+      ],
+      "loaderWasmMemoryInstances": 1,
+      "wasmLinkEvidence": "wasmMemory context -> Memory instance -> ArrayBuffer -> backing_store; instance prototype is WebAssembly.Memory",
+      "loaderWasmBackingBytes": 74907648,
+      "filesystemBackings": {
+        "filesWithBacking": 2564,
+        "uniqueBackings": 2564,
+        "bytes": 31426135,
+        "wasmAliasedBytes": 0,
+        "categories": {
+          "wordpress-core": {
+            "buffers": 1858,
+            "bytes": 22527346
+          },
+          "runtime": {
+            "buffers": 63,
+            "bytes": 1536150
+          },
+          "temporary": {
+            "buffers": 4,
+            "bytes": 1376402
+          },
+          "languages": {
+            "buffers": 77,
+            "bytes": 2500119
+          },
+          "plugins-and-theme": {
+            "buffers": 376,
+            "bytes": 2344019
+          },
+          "canonical": {
+            "buffers": 171,
+            "bytes": 488541
+          },
+          "uploads": {
+            "buffers": 15,
+            "bytes": 653558
+          }
+        },
+        "otherNonWasmNonFileBackingBytes": 877247,
+        "largestOtherBackingBytes": [
+          376832,
+          344064,
+          93269,
+          55902,
+          6144,
+          1024,
+          8,
+          4
+        ]
+      },
+      "bootArraysRetainedBytes": 0,
+      "bootArrays": {},
+      "cdpBefore": {
+        "usedSize": 17736464,
+        "totalSize": 21889024,
+        "embedderHeapUsedSize": 228656,
+        "backingStorageSize": 33813603
+      },
+      "cdpAfter": {
+        "usedSize": 14934076,
+        "totalSize": 15597568,
+        "embedderHeapUsedSize": 2488,
+        "backingStorageSize": 33208500
+      },
+      "eventsDuring": []
+    }
+  ],
+  "deltaSelfBytes": 95499,
+  "deltaBackingBytes": -325,
+  "phpHeapPeak": 74907648,
+  "generations": [
+    {
+      "at": 1795296305574,
+      "label": "bootstrap",
+      "kind": "generation",
+      "generation": 1
+    }
+  ],
+  "retirements": [],
+  "exceptions": [],
+  "samplingErrors": [],
+  "httpErrors": [
+    {
+      "at": 1795296382615,
+      "label": "logout",
+      "kind": "request",
+      "id": 195,
+      "category": "ajax",
+      "method": "POST",
+      "status": 400,
+      "wallMs": 675,
+      "version": 187
+    }
+  ],
+  "rawSnapshotsPrivate": true,
+  "cloudRequests": 0
+}

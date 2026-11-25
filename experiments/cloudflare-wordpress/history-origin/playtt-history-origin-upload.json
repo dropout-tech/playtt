@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-18T21:04:57.655Z",
+  "result": "pass",
+  "scope": "Three bounded immutable objects uploaded/downloaded for SHA verification; pointer unchanged",
+  "candidateRevision": "b2184d10-2c66-4036-aebe-a7ca86cc0f49",
+  "objects": 3,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1995
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2927
+    }
+  ]
+}

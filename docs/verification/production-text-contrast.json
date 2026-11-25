@@ -1,0 +1,1571 @@
+{
+  "at": "2026-11-16T18:30:35.656Z",
+  "scope": "Browser computed styles for visible text and structural DOM; not full assistive-technology acceptance or image-text contrast",
+  "pages": [
+    {
+      "h1": [
+        "起來，玩一下！"
+      ],
+      "imagesMissingAlt": 0,
+      "lang": "zh-TW",
+      "mainCount": 1,
+      "pairs": [
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "Skip to content",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "關於我們",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "LET’S PLAY / SINCE 2018",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "51.2px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "起來，玩一下！",
+          "ratio": 6.5,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "從孩子到大人，一起讓桌球走進生活。",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "LINE 預約體驗 ↗",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "探索桌球課程",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "跨專業合作",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "FIND YOUR GAME",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "44.8px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "每個起點，都有適合的課。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "從小班一起進步，到專屬節奏的個人訓練，找到你的上場方式。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "01 / GROUP",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "26px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "小班一起玩",
+          "ratio": 14.47,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "兒童與成人團體課，在互動練習中培養球感與運動習慣。",
+          "ratio": 6.24,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "探索課程 ↗",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "MORE THAN A GAME",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "115.2px",
+          "fontWeight": "900",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "LET’SPLAY!",
+          "ratio": 4.7,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "38.4px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "不只學會打球，也喜歡上每一次練習。",
+          "ratio": 10.46,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "Let’s Play 創立於 2018 年。我們相信，從「好玩」開始，孩子可以培養信心與專注力，大人可以釋放壓力，每個人",
+          "ratio": 10.46,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "認識 Let’s Play ↗",
+          "ratio": 10.46,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "阿寬",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "24px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "郭則寬",
+          "ratio": 14.47,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "透過引導教學方式，讓不管是大學員小學員，皆能夠快速上手桌球。",
+          "ratio": 6.24,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "認識完整教練團隊 ↗",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "01 / LUZHOU",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "27px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "蘆洲店",
+          "ratio": 14.47,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "02-8286-1011",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "查看地圖 ↗",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 217, 0)",
+          "sample": "YOUR NEXT RALLY STARTS HERE",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "55.04px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "下一球，一起玩。",
+          "ratio": 6.5,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "運動 × 創新。從喜歡開始，一起玩桌球。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "02-8286-1011",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(56, 212, 48)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "900",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 7.32,
+          "required": 4.5,
+          "pass": true
+        }
+      ],
+      "skipLinks": [
+        {
+          "href": "#wp--skip-link--target",
+          "text": "Skip to content"
+        }
+      ],
+      "url": "https://playtt.tw/"
+    },
+    {
+      "h1": [
+        "你的第一拍，從這裡開始。"
+      ],
+      "imagesMissingAlt": 0,
+      "lang": "zh-TW",
+      "mainCount": 1,
+      "pairs": [
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "Skip to content",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "關於我們",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "CLASSES & PRICING",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "64px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "你的第一拍，從這裡開始。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "foreground": "rgb(71, 89, 104)",
+          "sample": "兒童與成人團體班、個人訓練、菁英培訓與場地租借。透過 LINE，和我們聊聊你的程度與目標。",
+          "ratio": 6.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "CHOOSE YOUR PACE",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "44.8px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "找到適合你的練習節奏。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "01 / GROUP",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "26px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "兒童／成人小班",
+          "ratio": 14.47,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "3–6 人，每堂 1.5 小時。",
+          "ratio": 6.24,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "單堂 NT$600",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "開課時段、套票及贈課內容請透過 LINE 確認。",
+          "ratio": 6.24,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "實際費用、開班情況及方案適用條件，請於預約時確認。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "洽詢營隊 ↗",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "18px",
+          "fontWeight": "700",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "完全沒有打過桌球，也可以參加嗎？",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 217, 0)",
+          "sample": "YOUR NEXT RALLY STARTS HERE",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "55.04px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "下一球，一起玩。",
+          "ratio": 6.5,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "加入 LINE，聊聊適合你的第一堂課。",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE 預約體驗 ↗",
+          "ratio": 10.46,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "運動 × 創新。從喜歡開始，一起玩桌球。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "02-8286-1011",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(56, 212, 48)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "900",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 7.32,
+          "required": 4.5,
+          "pass": true
+        }
+      ],
+      "skipLinks": [
+        {
+          "href": "#wp--skip-link--target",
+          "text": "Skip to content"
+        }
+      ],
+      "url": "https://playtt.tw/class/"
+    },
+    {
+      "h1": [
+        "一起玩，玩出更多可能。"
+      ],
+      "imagesMissingAlt": 0,
+      "lang": "zh-TW",
+      "mainCount": 1,
+      "pairs": [
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "Skip to content",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "關於我們",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "ABOUT LET’S PLAY",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "64px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "一起玩，玩出更多可能。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "foreground": "rgb(71, 89, 104)",
+          "sample": "我們希望桌球不只是技術的練習，也是歡笑、交流與生活的一部分。",
+          "ratio": 6.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "OUR STORY / SINCE 2018",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "115.2px",
+          "fontWeight": "900",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "PLAYFOR JOY.",
+          "ratio": 6,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "23.9952px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "從一份熱愛，到大家一起玩的空間。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "Let’s Play 創立於 2018 年。創辦人阿寬教練就讀麗山國中、松山家商，大學時期受到林學宜教授啟發，理解職業球",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "44.8px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "讓學習，自然而然發生。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "01",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "26px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "先喜歡，再進步",
+          "ratio": 14.47,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "用遊戲、口訣與輕鬆的氣氛，引導不同程度的學員認識桌球。",
+          "ratio": 6.24,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 217, 0)",
+          "sample": "YOUR NEXT RALLY STARTS HERE",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "55.04px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "下一球，一起玩。",
+          "ratio": 6.5,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "加入 LINE，聊聊適合你的第一堂課。",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE 預約體驗 ↗",
+          "ratio": 10.46,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "運動 × 創新。從喜歡開始，一起玩桌球。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "02-8286-1011",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(56, 212, 48)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "900",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 7.32,
+          "required": 4.5,
+          "pass": true
+        }
+      ],
+      "skipLinks": [
+        {
+          "href": "#wp--skip-link--target",
+          "text": "Skip to content"
+        }
+      ],
+      "url": "https://playtt.tw/about/"
+    },
+    {
+      "h1": [
+        "一起練習，一起進步。"
+      ],
+      "imagesMissingAlt": 0,
+      "lang": "zh-TW",
+      "mainCount": 1,
+      "pairs": [
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "Skip to content",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "關於我們",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "THE PEOPLE BEHIND YOUR PROGRESS",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "64px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "一起練習，一起進步。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "foreground": "rgb(71, 89, 104)",
+          "sample": "不同的教學特色，同樣對桌球的熱情。認識 Let’s Play 教練團隊。",
+          "ratio": 6.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "阿寬",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "24px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "郭則寬",
+          "ratio": 14.47,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "透過引導教學方式，讓不管是大學員小學員，皆能夠快速上手桌球。",
+          "ratio": 6.24,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "學習歷程",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 217, 0)",
+          "sample": "YOUR NEXT RALLY STARTS HERE",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "55.04px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "下一球，一起玩。",
+          "ratio": 6.5,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "加入 LINE，聊聊適合你的第一堂課。",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE 預約體驗 ↗",
+          "ratio": 10.46,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "運動 × 創新。從喜歡開始，一起玩桌球。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "02-8286-1011",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(56, 212, 48)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "900",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 7.32,
+          "required": 4.5,
+          "pass": true
+        }
+      ],
+      "skipLinks": [
+        {
+          "href": "#wp--skip-link--target",
+          "text": "Skip to content"
+        }
+      ],
+      "url": "https://playtt.tw/coaches/"
+    },
+    {
+      "h1": [
+        "找到你的上場地點。"
+      ],
+      "imagesMissingAlt": 0,
+      "lang": "zh-TW",
+      "mainCount": 1,
+      "pairs": [
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "Skip to content",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "關於我們",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "OUR LOCATIONS",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "64px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "找到你的上場地點。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "foreground": "rgb(71, 89, 104)",
+          "sample": "查看據點資訊，透過 LINE 確認課程、體驗與租桌時段。",
+          "ratio": 6.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "01 / LUZHOU",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "27px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "蘆洲店",
+          "ratio": 14.47,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "新北市蘆洲區長樂路106號3樓",
+          "ratio": 6.24,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "02-8286-1011",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "查看地圖 ↗",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "洽詢課程",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "客服時間：週一至週五 10:00–19:00。週末及到館安排請先聯繫。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 217, 0)",
+          "sample": "YOUR NEXT RALLY STARTS HERE",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "55.04px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "下一球，一起玩。",
+          "ratio": 6.5,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "加入 LINE，聊聊適合你的第一堂課。",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE 預約體驗 ↗",
+          "ratio": 10.46,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "運動 × 創新。從喜歡開始，一起玩桌球。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "02-8286-1011",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(56, 212, 48)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "900",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 7.32,
+          "required": 4.5,
+          "pass": true
+        }
+      ],
+      "skipLinks": [
+        {
+          "href": "#wp--skip-link--target",
+          "text": "Skip to content"
+        }
+      ],
+      "url": "https://playtt.tw/locations/"
+    },
+    {
+      "h1": [
+        "讓更多人，一起玩桌球。"
+      ],
+      "imagesMissingAlt": 0,
+      "lang": "zh-TW",
+      "mainCount": 1,
+      "pairs": [
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "Skip to content",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "關於我們",
+          "ratio": 14.47,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "PARTNERSHIP & CAREERS",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "64px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "讓更多人，一起玩桌球。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "foreground": "rgb(71, 89, 104)",
+          "sample": "學校、企業、運動場館與教練夥伴，一起創造更多接觸桌球的機會。",
+          "ratio": 6.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "LET’S BUILD SOMETHING",
+          "ratio": 6,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "44.8px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "把桌球，帶進不同的生活。",
+          "ratio": 13.36,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "01 / EDUCATION",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "26px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "學校與教育機構",
+          "ratio": 14.47,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "學校社團、幼兒園與補習班課程，結合遊戲、球感與基礎技術，討論適合孩子的教案。",
+          "ratio": 6.24,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "12px",
+          "fontWeight": "800",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "SPORT × CREATIVITY",
+          "ratio": 4.7,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "115.2px",
+          "fontWeight": "900",
+          "foreground": "rgb(0, 92, 185)",
+          "sample": "PLAYTOGETHER.",
+          "ratio": 4.7,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "38.4px",
+          "fontWeight": "800",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "一起把想法，變成新的可能。",
+          "ratio": 10.46,
+          "required": 3,
+          "pass": true
+        },
+        {
+          "background": "rgb(255, 217, 0)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "從同業聯盟、跨領域課程到桌球活動，我們樂於和不同領域的夥伴交流。",
+          "ratio": 10.46,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(0, 92, 185)",
+          "backgroundImage": false,
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "foreground": "rgb(255, 255, 255)",
+          "sample": "LINE 洽談合作 ↗",
+          "ratio": 6.5,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(82, 99, 109)",
+          "sample": "運動 × 創新。從喜歡開始，一起玩桌球。",
+          "ratio": 5.77,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "02-8286-1011",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(245, 246, 246)",
+          "backgroundImage": false,
+          "fontSize": "15.9968px",
+          "fontWeight": "400",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 13.36,
+          "required": 4.5,
+          "pass": true
+        },
+        {
+          "background": "rgb(56, 212, 48)",
+          "backgroundImage": false,
+          "fontSize": "14px",
+          "fontWeight": "900",
+          "foreground": "rgb(20, 43, 65)",
+          "sample": "LINE預約 ↗",
+          "ratio": 7.32,
+          "required": 4.5,
+          "pass": true
+        }
+      ],
+      "skipLinks": [
+        {
+          "href": "#wp--skip-link--target",
+          "text": "Skip to content"
+        }
+      ],
+      "url": "https://playtt.tw/partner/"
+    }
+  ]
+}

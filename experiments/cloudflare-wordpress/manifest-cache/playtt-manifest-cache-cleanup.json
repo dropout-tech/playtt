@@ -1,0 +1,113 @@
+{
+  "at": "2026-11-20T02:46:08.365Z",
+  "mode": "--cleanup",
+  "result": "pass",
+  "samples": [],
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1069
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2148
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2485
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6022
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2950
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2644
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2258
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 6071
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/174?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 1522
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2097
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 5156
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2781
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2045
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 205
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2349
+    }
+  ],
+  "ownedId": 174,
+  "homepageUnchanged": true,
+  "contentHash": "3199b37d311f91541c28fbc54e1e73c77bebfe90f3f18989c8452ddf16d47d4f",
+  "cleanupComplete": true,
+  "scope": "Bounded sequential native requests; exact content readback through a fresh login; runtime cache availability must be classified from separate platform traces",
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "c48150e9-0e75-4399-93e4-d94e7c908e2b",
+      "manifestKey": "sites/default/markdown/revisions/c48150e9-0e75-4399-93e4-d94e7c908e2b.json",
+      "persistedAt": "2026-11-20T02:46:39.337Z"
+    },
+    "version": 303
+  }
+}

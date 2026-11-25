@@ -1,0 +1,22 @@
+{
+  "schema": "playtt/compressed-native-browser/v1",
+  "at": "2026-11-21T11:50:47.596Z",
+  "privateGateLogin": true,
+  "saveClicks": 1,
+  "beforeExact": true,
+  "savedUi": true,
+  "coldReloadAttempted": true,
+  "logoutAttempted": true,
+  "editAt": "2026-11-21T11:50:48.756Z",
+  "manualSaveAt": "2026-11-21T11:52:29.576Z",
+  "coldParagraphsExact": true,
+  "coldParagraphCount": 9,
+  "logoutAt": "2026-11-21T11:54:33.193Z",
+  "logoutSucceeded": false,
+  "logoutFailure503": true,
+  "coldVisibleSaved": true,
+  "unsavedContentLost": false,
+  "providerTested": false,
+  "result": "save-and-cold-reopen-pass-logout-capacity-failure",
+  "ownedBrowserTabClosed": true
+}

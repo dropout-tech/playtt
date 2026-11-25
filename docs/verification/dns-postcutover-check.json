@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-16T11:08:44.059Z",
+  "result": "pass",
+  "mailRecordsUnchanged": 12,
+  "websiteRecords": 2,
+  "target": "playtt-brand-preview.pages.dev",
+  "dnssec": "disabled at Gandi; verified at cutover",
+  "scope": "Dashboard DNS comparison; does not prove mailbox send/receive"
+}

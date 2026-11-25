@@ -1,0 +1,23 @@
+{
+  "schema": "playtt/backing-build-proof/v1",
+  "result": "pass",
+  "sourceInputs": 213,
+  "loadedSources": 75,
+  "unchangedPriorInputs": 210,
+  "changedInputs": [
+    "src/playtt-memory-diagnostics.ts"
+  ],
+  "addedInputs": [
+    "src/playtt-backing-inventory.mjs",
+    "src/playtt-backing-inventory.d.mts"
+  ],
+  "moduleSha256": "8e792e054d903c44000bc3c15a75026a8a62661c3e3c8d81227aba10dcb7f517",
+  "bundleSha256": "0ba3efadc2345c2c9bd87113a7c978e9cf98cca7ee0a03ec9d7999ef339bf796",
+  "exactCompiledDiagnosticsOnlyChange": true,
+  "binaryModulesUnchanged": 5,
+  "typecheck": "pass",
+  "dryRun": "pass",
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false
+}

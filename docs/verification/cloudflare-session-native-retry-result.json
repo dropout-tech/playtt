@@ -1,0 +1,315 @@
+{
+  "at": "2026-11-20T20:25:03.094Z",
+  "result": "fail",
+  "scope": "Native WordPress HTTP using retained editor2, exact preferences, fenced same-snapshot forward adoption, cold-session readback and logout revocation. Not browser UI or competing-editor acceptance.",
+  "checks": [
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:24:59.383Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3033
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:25:02.421Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 282
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:25:02.704Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 171
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:25:02.877Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 212
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:25:03.110Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 239
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:25:03.351Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 271
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:25:03.626Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 322
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:25:03.950Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 270
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:25:04.222Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1596
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:25:05.819Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 156
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:25:05.977Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3799
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:25:09.778Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2298
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:25:12.077Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 161
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:25:12.242Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1674
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:25:13.917Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 161
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:25:14.080Z",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6261
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:25:20.344Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2232
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:25:22.578Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 777
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:25:23.357Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1691
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:25:25.048Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 195
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:25:25.245Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1022
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:26.294Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 213
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:26.511Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 221
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:26.733Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1750
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:28.484Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 198
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:28.684Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 341
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:29.026Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 214
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:29.241Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 151
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:29.392Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1703
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:31.095Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 195
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:25:31.290Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 210
+    }
+  ],
+  "steps": [
+    {
+      "label": "cold-login-form",
+      "versionBefore": 2,
+      "versionAfter": 2,
+      "pointer": {
+        "revision": "f0bb6a66-be22-423f-94e5-d97fcb0a8486",
+        "manifestKey": "sites/default/markdown/revisions/f0bb6a66-be22-423f-94e5-d97fcb0a8486.json",
+        "persistedAt": "2026-11-20T20:23:08.804Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "editor2-login",
+      "versionBefore": 2,
+      "versionAfter": 3,
+      "pointer": {
+        "revision": "35d8b603-cfec-430d-933c-87a6e8c56abd",
+        "manifestKey": "sites/default/markdown/revisions/35d8b603-cfec-430d-933c-87a6e8c56abd.json",
+        "persistedAt": "2026-11-20T20:25:16.267Z"
+      },
+      "chargedBytes": 96228,
+      "operations": 4
+    }
+  ],
+  "snapshots": [],
+  "profile": {
+    "traditionalChinese": true,
+    "hasInlineRestNonce": true,
+    "hasAnyInlineNonce": true,
+    "hasNativeLogout": true
+  },
+  "failedStage": "profile",
+  "errorName": "AssertionError",
+  "finalBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 100738428,
+    "baselineObjects": 303,
+    "chargedBytes": 192446,
+    "chargedPuts": 9,
+    "initializedAt": "2026-11-20T20:06:31.237Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T20:06:31.656Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T20:25:29.112Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "6cd01c68-fd1f-42fe-9e2e-d63f11908139",
+        "openedAt": 1795206303724,
+        "expiresAt": 1795206603724,
+        "maxBytes": 8388608,
+        "usedBytes": 96228,
+        "remainingBytes": 8292380,
+        "maxOperations": 128,
+        "operations": 4,
+        "closed": true,
+        "expired": false,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 49069126,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "35d8b603-cfec-430d-933c-87a6e8c56abd",
+      "manifestKey": "sites/default/markdown/revisions/35d8b603-cfec-430d-933c-87a6e8c56abd.json",
+      "persistedAt": "2026-11-20T20:25:16.267Z"
+    },
+    "version": 3
+  },
+  "finalPins": 1,
+  "publisher": "paused",
+  "windowClosed": true,
+  "writeSealed": true,
+  "fenceReleased": true
+}

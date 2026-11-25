@@ -1,0 +1,79 @@
+{
+  "at": "2026-11-20T18:01:11.638Z",
+  "worker": "playtt-wp-free-window-audit",
+  "bucket": "playtt-wordpress-window-audit",
+  "result": "pass",
+  "checks": [
+    {
+      "path": "/wp-admin/",
+      "status": 503,
+      "code": "playtt_write_window_closed"
+    },
+    {
+      "path": "/wp-json/wp/v2/posts",
+      "status": 503,
+      "code": "playtt_write_window_closed"
+    },
+    {
+      "path": "/?phase=operator-restore",
+      "status": 503,
+      "code": "playtt_write_window_closed"
+    }
+  ],
+  "chargedBytesUnchanged": 183,
+  "operationsUnchanged": 1,
+  "canonicalVersion": 1,
+  "wrongOwnerDenied": true,
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-window-audit",
+    "baselineBytes": 100637598,
+    "baselineObjects": 298,
+    "chargedBytes": 183,
+    "chargedPuts": 1,
+    "initializedAt": "2026-11-20T18:00:31.856Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T18:00:32.111Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T18:01:08.308Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "7a3723fd-8b33-4572-9f55-7c14689b453d",
+        "openedAt": 1795197633735,
+        "expiresAt": 1795197663735,
+        "maxBytes": 1048576,
+        "usedBytes": 183,
+        "remainingBytes": 1048393,
+        "maxOperations": 8,
+        "operations": 1,
+        "closed": true,
+        "expired": true,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 49362219,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "fenceReleased": true,
+  "publisher": "paused",
+  "oldTarget": {
+    "canonicalVersion": 62,
+    "revision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+    "pins": 25,
+    "pending": 0,
+    "sealed": true,
+    "remainingBytes": 2141868,
+    "publisher": "paused"
+  }
+}

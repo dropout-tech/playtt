@@ -1,0 +1,709 @@
+{
+  "schema": "playtt/cold-boot-preallocation-audit/v1",
+  "result": "pass",
+  "runs": [
+    {
+      "fixture": "playtt-cold-boot-v4",
+      "summarySha256": "ae41a096ecce6607750a398e08e81b7f530e4abda140f7630115855251727893",
+      "diagnosticBundleSha256": "fa957eda3c415fec1e2b471a38d63eb915c602f49e195fc1828211183c95bbc8",
+      "httpStatus": 200,
+      "loginFieldsPresent": true,
+      "wallMs": 2525,
+      "localCanonicalVersion": 191,
+      "r2Objects": 301,
+      "originalSiteDataExact": true,
+      "r2InventoryUnchanged": true,
+      "chargedBytes": 0,
+      "closed": true,
+      "sealed": true,
+      "pending": 0,
+      "exceptions": 0,
+      "stages": [
+        {
+          "receivedAt": 1795291088176,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 1,
+          "stage": "before-archive",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 13,
+            "usedFileBytes": 18724,
+            "capacityFileBytes": 18724,
+            "distinctNonWasmBuffers": 12,
+            "distinctNonWasmBufferBytes": 18724,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "runtime": {
+                "files": 13,
+                "usedBytes": 18724,
+                "capacityBytes": 18724
+              }
+            }
+          },
+          "extra": {},
+          "heap": {
+            "usedSize": 14180416,
+            "totalSize": 21389312,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 6581887
+          },
+          "observedComponentSumBytes": 87871167
+        },
+        {
+          "receivedAt": 1795291088196,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 2,
+          "stage": "archive-read",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 13,
+            "usedFileBytes": 18724,
+            "capacityFileBytes": 18724,
+            "distinctNonWasmBuffers": 12,
+            "distinctNonWasmBufferBytes": 18724,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "runtime": {
+                "files": 13,
+                "usedBytes": 18724,
+                "capacityBytes": 18724
+              }
+            }
+          },
+          "extra": {
+            "archiveBytes": 5975792
+          },
+          "heap": {
+            "usedSize": 14868128,
+            "totalSize": 21389312,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 12557679
+          },
+          "observedComponentSumBytes": 94534671
+        },
+        {
+          "receivedAt": 1795291088233,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 3,
+          "stage": "archive-verified",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 13,
+            "usedFileBytes": 18724,
+            "capacityFileBytes": 18724,
+            "distinctNonWasmBuffers": 12,
+            "distinctNonWasmBufferBytes": 18724,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "runtime": {
+                "files": 13,
+                "usedBytes": 18724,
+                "capacityBytes": 18724
+              }
+            }
+          },
+          "extra": {
+            "archiveBytes": 5975792
+          },
+          "heap": {
+            "usedSize": 14885124,
+            "totalSize": 21389312,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 18533503
+          },
+          "observedComponentSumBytes": 100527491
+        },
+        {
+          "receivedAt": 1795291088237,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 4,
+          "stage": "archive-written",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 14,
+            "usedFileBytes": 5994516,
+            "capacityFileBytes": 5994516,
+            "distinctNonWasmBuffers": 13,
+            "distinctNonWasmBufferBytes": 5994516,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "temporary": {
+                "files": 1,
+                "usedBytes": 5975792,
+                "capacityBytes": 5975792
+              },
+              "runtime": {
+                "files": 13,
+                "usedBytes": 18724,
+                "capacityBytes": 18724
+              }
+            }
+          },
+          "extra": {
+            "archiveBytes": 5975792
+          },
+          "heap": {
+            "usedSize": 14901368,
+            "totalSize": 21389312,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 24509295
+          },
+          "observedComponentSumBytes": 106519527
+        },
+        {
+          "receivedAt": 1795291088763,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 5,
+          "stage": "archive-extracted",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 2168,
+            "usedFileBytes": 23879965,
+            "capacityFileBytes": 33335389,
+            "distinctNonWasmBuffers": 2167,
+            "distinctNonWasmBufferBytes": 33335389,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "runtime": {
+                "files": 14,
+                "usedBytes": 165325,
+                "capacityBytes": 165325
+              },
+              "wordpress-core": {
+                "files": 1857,
+                "usedBytes": 22522980,
+                "capacityBytes": 31727397
+              },
+              "wp-content": {
+                "files": 297,
+                "usedBytes": 1191660,
+                "capacityBytes": 1442667
+              }
+            }
+          },
+          "extra": {
+            "archiveBytes": 5975792
+          },
+          "heap": {
+            "usedSize": 15108452,
+            "totalSize": 28217344,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 70453303
+          },
+          "observedComponentSumBytes": 152670619
+        },
+        {
+          "receivedAt": 1795291088929,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 6,
+          "stage": "before-compaction",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 2560,
+            "usedFileBytes": 29957257,
+            "capacityFileBytes": 39216177,
+            "distinctNonWasmBuffers": 2559,
+            "distinctNonWasmBufferBytes": 39216177,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "temporary": {
+                "files": 1,
+                "usedBytes": 344064,
+                "capacityBytes": 344064
+              },
+              "runtime": {
+                "files": 62,
+                "usedBytes": 1096784,
+                "capacityBytes": 1529740
+              },
+              "wordpress-core": {
+                "files": 1858,
+                "usedBytes": 22527346,
+                "capacityBytes": 31102303
+              },
+              "wp-content": {
+                "files": 639,
+                "usedBytes": 5989063,
+                "capacityBytes": 6240070
+              }
+            }
+          },
+          "extra": {},
+          "heap": {
+            "usedSize": 16757848,
+            "totalSize": 30167040,
+            "embedderHeapUsedSize": 515936,
+            "backingStorageSize": 50835535
+          },
+          "observedComponentSumBytes": 134702247
+        },
+        {
+          "receivedAt": 1795291088968,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 7,
+          "stage": "after-compaction",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 2560,
+            "usedFileBytes": 29957257,
+            "capacityFileBytes": 30641220,
+            "distinctNonWasmBuffers": 2559,
+            "distinctNonWasmBufferBytes": 30641220,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "temporary": {
+                "files": 1,
+                "usedBytes": 344064,
+                "capacityBytes": 344064
+              },
+              "runtime": {
+                "files": 62,
+                "usedBytes": 1096784,
+                "capacityBytes": 1529740
+              },
+              "wordpress-core": {
+                "files": 1858,
+                "usedBytes": 22527346,
+                "capacityBytes": 22527346
+              },
+              "wp-content": {
+                "files": 639,
+                "usedBytes": 5989063,
+                "capacityBytes": 6240070
+              }
+            }
+          },
+          "extra": {
+            "files": 489,
+            "beforeBytes": 31102303,
+            "afterBytes": 22527346,
+            "releasedCapacityBytes": 8574957,
+            "copiedUsedBytes": 18196499,
+            "replacedCapacityBytes": 26771456,
+            "copiedBytesExact": true
+          },
+          "heap": {
+            "usedSize": 18086220,
+            "totalSize": 30167040,
+            "embedderHeapUsedSize": 515936,
+            "backingStorageSize": 64716637
+          },
+          "observedComponentSumBytes": 149911721
+        }
+      ],
+      "afterResponse": {
+        "heap": {
+          "usedSize": 17537472,
+          "totalSize": 36458496,
+          "embedderHeapUsedSize": 515936,
+          "backingStorageSize": 65706775
+        },
+        "lastKnownWasmBytes": 67108864,
+        "observedComponentSumBytes": 150353111
+      },
+      "largestStageComponentSumBytes": 152670619
+    },
+    {
+      "fixture": "playtt-preallocated-cold",
+      "summarySha256": "a29a4607822bd1c9582a49901e233342e21b1b7e47fea04188bc81f99cd41770",
+      "diagnosticBundleSha256": "8c55ebb074bec0a2f5ba9fd69e9e9fb940a522044420f9f8f6473a64e01524b3",
+      "httpStatus": 200,
+      "loginFieldsPresent": true,
+      "wallMs": 2517,
+      "localCanonicalVersion": 191,
+      "r2Objects": 301,
+      "originalSiteDataExact": true,
+      "r2InventoryUnchanged": true,
+      "chargedBytes": 0,
+      "closed": true,
+      "sealed": true,
+      "pending": 0,
+      "exceptions": 0,
+      "stages": [
+        {
+          "receivedAt": 1795291536087,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 1,
+          "stage": "before-archive",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 13,
+            "usedFileBytes": 18724,
+            "capacityFileBytes": 18724,
+            "distinctNonWasmBuffers": 12,
+            "distinctNonWasmBufferBytes": 18724,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "runtime": {
+                "files": 13,
+                "usedBytes": 18724,
+                "capacityBytes": 18724
+              }
+            }
+          },
+          "extra": {},
+          "heap": {
+            "usedSize": 14164712,
+            "totalSize": 20869120,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 6581887
+          },
+          "observedComponentSumBytes": 87855463
+        },
+        {
+          "receivedAt": 1795291536106,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 2,
+          "stage": "archive-read",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 13,
+            "usedFileBytes": 18724,
+            "capacityFileBytes": 18724,
+            "distinctNonWasmBuffers": 12,
+            "distinctNonWasmBufferBytes": 18724,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "runtime": {
+                "files": 13,
+                "usedBytes": 18724,
+                "capacityBytes": 18724
+              }
+            }
+          },
+          "extra": {
+            "archiveBytes": 5975792
+          },
+          "heap": {
+            "usedSize": 14851952,
+            "totalSize": 20869120,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 12557679
+          },
+          "observedComponentSumBytes": 94518495
+        },
+        {
+          "receivedAt": 1795291536141,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 3,
+          "stage": "archive-verified",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 13,
+            "usedFileBytes": 18724,
+            "capacityFileBytes": 18724,
+            "distinctNonWasmBuffers": 12,
+            "distinctNonWasmBufferBytes": 18724,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "runtime": {
+                "files": 13,
+                "usedBytes": 18724,
+                "capacityBytes": 18724
+              }
+            }
+          },
+          "extra": {
+            "archiveBytes": 5975792
+          },
+          "heap": {
+            "usedSize": 14868772,
+            "totalSize": 20869120,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 12557711
+          },
+          "observedComponentSumBytes": 94535347
+        },
+        {
+          "receivedAt": 1795291536145,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 4,
+          "stage": "archive-written",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 14,
+            "usedFileBytes": 5994516,
+            "capacityFileBytes": 5994516,
+            "distinctNonWasmBuffers": 13,
+            "distinctNonWasmBufferBytes": 5994516,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "temporary": {
+                "files": 1,
+                "usedBytes": 5975792,
+                "capacityBytes": 5975792
+              },
+              "runtime": {
+                "files": 13,
+                "usedBytes": 18724,
+                "capacityBytes": 18724
+              }
+            }
+          },
+          "extra": {
+            "archiveBytes": 5975792
+          },
+          "heap": {
+            "usedSize": 14885016,
+            "totalSize": 20869120,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 18533503
+          },
+          "observedComponentSumBytes": 100527383
+        },
+        {
+          "receivedAt": 1795291536677,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 5,
+          "stage": "archive-extracted",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 2168,
+            "usedFileBytes": 23881280,
+            "capacityFileBytes": 23881280,
+            "distinctNonWasmBuffers": 2167,
+            "distinctNonWasmBufferBytes": 23881280,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "runtime": {
+                "files": 14,
+                "usedBytes": 166640,
+                "capacityBytes": 166640
+              },
+              "wordpress-core": {
+                "files": 1857,
+                "usedBytes": 22522980,
+                "capacityBytes": 22522980
+              },
+              "wp-content": {
+                "files": 297,
+                "usedBytes": 1191660,
+                "capacityBytes": 1191660
+              }
+            }
+          },
+          "extra": {
+            "archiveBytes": 5975792
+          },
+          "heap": {
+            "usedSize": 16569296,
+            "totalSize": 33468416,
+            "embedderHeapUsedSize": 131696,
+            "backingStorageSize": 42337818
+          },
+          "observedComponentSumBytes": 126015978
+        },
+        {
+          "receivedAt": 1795291536846,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 6,
+          "stage": "before-compaction",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 2560,
+            "usedFileBytes": 29957257,
+            "capacityFileBytes": 30390213,
+            "distinctNonWasmBuffers": 2559,
+            "distinctNonWasmBufferBytes": 30390213,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "temporary": {
+                "files": 1,
+                "usedBytes": 344064,
+                "capacityBytes": 344064
+              },
+              "runtime": {
+                "files": 62,
+                "usedBytes": 1096784,
+                "capacityBytes": 1529740
+              },
+              "wordpress-core": {
+                "files": 1858,
+                "usedBytes": 22527346,
+                "capacityBytes": 22527346
+              },
+              "wp-content": {
+                "files": 639,
+                "usedBytes": 5989063,
+                "capacityBytes": 5989063
+              }
+            }
+          },
+          "extra": {},
+          "heap": {
+            "usedSize": 15105128,
+            "totalSize": 33320960,
+            "embedderHeapUsedSize": 191016,
+            "backingStorageSize": 41527065
+          },
+          "observedComponentSumBytes": 123741057
+        },
+        {
+          "receivedAt": 1795291536854,
+          "schema": "playtt/cold-boot-stage/v1",
+          "id": 7,
+          "stage": "after-compaction",
+          "inventory": {
+            "wasmBytes": 67108864,
+            "files": 2560,
+            "usedFileBytes": 29957257,
+            "capacityFileBytes": 30390213,
+            "distinctNonWasmBuffers": 2559,
+            "distinctNonWasmBufferBytes": 30390213,
+            "heapAliasedViews": 0,
+            "unknownFileBuffers": 0,
+            "categories": {
+              "temporary": {
+                "files": 1,
+                "usedBytes": 344064,
+                "capacityBytes": 344064
+              },
+              "runtime": {
+                "files": 62,
+                "usedBytes": 1096784,
+                "capacityBytes": 1529740
+              },
+              "wordpress-core": {
+                "files": 1858,
+                "usedBytes": 22527346,
+                "capacityBytes": 22527346
+              },
+              "wp-content": {
+                "files": 639,
+                "usedBytes": 5989063,
+                "capacityBytes": 5989063
+              }
+            }
+          },
+          "extra": {
+            "files": 0,
+            "beforeBytes": 22527346,
+            "afterBytes": 22527346,
+            "releasedCapacityBytes": 0
+          },
+          "heap": {
+            "usedSize": 16526048,
+            "totalSize": 33320960,
+            "embedderHeapUsedSize": 191016,
+            "backingStorageSize": 41527065
+          },
+          "observedComponentSumBytes": 125161977
+        }
+      ],
+      "afterResponse": {
+        "heap": {
+          "usedSize": 15771844,
+          "totalSize": 34107392,
+          "embedderHeapUsedSize": 191016,
+          "backingStorageSize": 41286051
+        },
+        "lastKnownWasmBytes": 67108864,
+        "observedComponentSumBytes": 124166759
+      },
+      "largestStageComponentSumBytes": 126015978
+    }
+  ],
+  "stageComparison": [
+    {
+      "stage": "before-archive",
+      "baselineBytes": 87871167,
+      "candidateBytes": 87855463,
+      "differenceBytes": 15704
+    },
+    {
+      "stage": "archive-read",
+      "baselineBytes": 94534671,
+      "candidateBytes": 94518495,
+      "differenceBytes": 16176
+    },
+    {
+      "stage": "archive-verified",
+      "baselineBytes": 100527491,
+      "candidateBytes": 94535347,
+      "differenceBytes": 5992144
+    },
+    {
+      "stage": "archive-written",
+      "baselineBytes": 106519527,
+      "candidateBytes": 100527383,
+      "differenceBytes": 5992144
+    },
+    {
+      "stage": "archive-extracted",
+      "baselineBytes": 152670619,
+      "candidateBytes": 126015978,
+      "differenceBytes": 26654641
+    },
+    {
+      "stage": "before-compaction",
+      "baselineBytes": 134702247,
+      "candidateBytes": 123741057,
+      "differenceBytes": 10961190
+    },
+    {
+      "stage": "after-compaction",
+      "baselineBytes": 149911721,
+      "candidateBytes": 125161977,
+      "differenceBytes": 24749744
+    }
+  ],
+  "semanticProofSha256": "350451133561b9cb4b43c19bf102c49c42631bf440bd45556a7478ae5ef5ed8a",
+  "baselineSourceSha256": "2a3345501b3c258d5087639d00fd5720a8539dda0953cf1fef025f0933e16efc",
+  "candidateSourceSha256": "fd63abb044984c9b8f43799f9682e4ea65d232fa858be90ce4cab70a986e424f",
+  "candidateImplementationEdits": 2,
+  "fiveBinaryModulesExact": true,
+  "diagnosticCandidateReversePatchExact": true,
+  "digestStageBackingIncreaseBytes": {
+    "baseline": 5975824,
+    "candidate": 32,
+    "avoidedCopyBytes": 5975792
+  },
+  "sourceChangesAdoptedCentrally": false,
+  "freshFullSourceCandidateBuild": false,
+  "providerRequests": 0,
+  "providerDeployments": 0,
+  "successfulLoginGets": 2,
+  "failedDiagnosticLoginGets": 2,
+  "browserUsed": false,
+  "productionChanged": false,
+  "failureHistory": [
+    {
+      "attempt": "v1",
+      "result": "sandbox EACCES on loopback before arming; exited1/disposed, no WordPress request"
+    },
+    {
+      "attempt": "v2",
+      "result": "first diagnostic barrier timed out/HTTP500; protocol cause not captured; closed/sealed/pending0/disposed/exit1"
+    },
+    {
+      "attempt": "v3",
+      "result": "first sample obtained, Runtime.evaluate Cannot find default execution context; HTTP500; closed/sealed/pending0/disposed/exit1"
+    },
+    {
+      "attempt": "semantic-v1",
+      "result": "full2154-file pair passed; verifier treated valid empty MEMFS contents=null as bytes and failed before finishing edge fixtures; all PHP exited; corrected verifier in newv2"
+    }
+  ],
+  "next": "Build the single candidate TypeScript module through the complete source pipeline; then verify native Chinese editor/save/restart with the full artifact before adopting into central research. No cloud cutover.",
+  "limitations": [
+    "Seven async service-binding measurement barriers and FS inventories alter scheduling/GC and add memory. These are observed component sums, not continuous or cloud peaks.",
+    "Single fixed-order pair, local Windows workerd;2525/2517ms are diagnostic wall samples, not a stable latency improvement.",
+    "Candidate stage samples below diagnostic128MiB do not establish provider memory admission, editor/Chinese initialization stability or sustained Free.",
+    "Both changes tested together in the cold flow; the isolated digest-stage delta supports that copy attribution, not a complete attribution of every allocation.",
+    "Node semantic cases cover actual pinned core bytes/sizes/modes and8edge files; malformed ZIP/failure-injection and full candidate-source rebuild remain outside this evidence.",
+    "No changes to original snapshots, current central TypeScript/loader, cloud state, budgets or pins. Local191 is not cloud181."
+  ]
+}

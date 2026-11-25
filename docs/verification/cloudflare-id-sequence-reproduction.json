@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-18T17:11:28.112903+00:00",
+  "result": "pass",
+  "scope": "Patch applied after request-body candidate; exact LF-normalized source hashes",
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "normalizedSha256": "8fa898dd364081f6b9c4a9261ca7f1c5f05247238f6ee96bb42df95e80a921cf"
+    },
+    {
+      "path": "src/playtt-id-sequences.ts",
+      "normalizedSha256": "cdc8d1187a75b9bef21dfed0a366e53e1f4985a9c5ba2ad8e4101162ef7da17d"
+    }
+  ]
+}

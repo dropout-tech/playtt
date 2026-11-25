@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-21T07:55:31.813Z",
+  "result": "save-and-full-restart-exact",
+  "ownedId": 193,
+  "beforeExact": true,
+  "saveClickedAt": "2026-11-21T07:53:58.273Z",
+  "saveClicks": 1,
+  "savedUi": true,
+  "coldContentExact": true,
+  "coldParagraphs": 9,
+  "secondUserBlocked": true,
+  "takeoverClickedAt": "2026-11-21T07:56:54.559Z",
+  "oldEditorTakeoverNotice": true,
+  "takeoverObservedAt": "2026-11-21T07:58:14.419Z",
+  "bothLoggedOut": true
+}

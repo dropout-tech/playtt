@@ -1,0 +1,88 @@
+{
+  "scope": "Local WordPress/PHP-WASM/SQLite only; NOT Cloudflare backend acceptance",
+  "at": "2026-11-24T16:23:17.555Z",
+  "checks": [
+    {
+      "name": "ZIP installation using WordPress Theme_Upgrader and activation",
+      "status": "pass",
+      "evidence": {
+        "installed": true,
+        "theme": "Let's Play 桌球聯盟",
+        "version": "7.1.4"
+      }
+    },
+    {
+      "name": "Import six editable pages and fourteen media files",
+      "status": "pass",
+      "evidence": {
+        "pages": {
+          "home": 18,
+          "about": 19,
+          "class": 20,
+          "coaches": 21,
+          "locations": 22,
+          "partner": 23
+        },
+        "media": 14
+      }
+    },
+    {
+      "name": "Editor changes survive importer rerun; media is not duplicated",
+      "status": "pass",
+      "evidence": {
+        "created": [],
+        "title": "保存驗證：關於我們",
+        "media": 14
+      }
+    },
+    {
+      "name": "Unauthenticated importer is denied",
+      "status": "pass",
+      "evidence": {
+        "error": "forbidden"
+      }
+    },
+    {
+      "name": "Content edit and WordPress revision restore",
+      "status": "pass",
+      "evidence": {
+        "revision": 24,
+        "contentRestored": true
+      }
+    },
+    {
+      "name": "Anonymous requests cannot see draft or edit admin",
+      "status": "pass",
+      "evidence": {
+        "draft": 404,
+        "admin": 302
+      }
+    },
+    {
+      "name": "Media Library file can be downloaded anonymously",
+      "status": "pass",
+      "evidence": {
+        "status": 200,
+        "sha256": "dbbad2dd9e3e41d1981f6316f8d63a32d7db172f55a3c2b10e846b4a19777c9a"
+      }
+    },
+    {
+      "name": "Restart preserves edited page and uploaded media",
+      "status": "pass",
+      "evidence": {
+        "title": "保存驗證：關於我們",
+        "sha": "dbbad2dd9e3e41d1981f6316f8d63a32d7db172f55a3c2b10e846b4a19777c9a"
+      }
+    },
+    {
+      "name": "Independent backup restore recovers content and media",
+      "status": "pass",
+      "evidence": {
+        "restored": true,
+        "title": "保存驗證：關於我們",
+        "sha": "dbbad2dd9e3e41d1981f6316f8d63a32d7db172f55a3c2b10e846b4a19777c9a"
+      }
+    }
+  ],
+  "result": "pass"
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "playtt/native-trace-deployment/v1",
+  "at": "2026-11-22T05:42:02.076Z",
+  "result": "pass",
+  "stage": "restored",
+  "version": "1a0405bc-79cb-4123-afaa-13448207f3e0",
+  "modules": [
+    {
+      "name": "191a2ac391878abd230f5cb8d717e0c0d67f3f48-markdown-database-integration-canonical-seed.zip",
+      "bytes": 55902,
+      "sha256": "60231408fa51e56dd288c2e39c5158df25417d227c0ed4603e70ef22aa7bbf20"
+    },
+    {
+      "name": "50ab73f4afbeda0dd102c72d74bf52238068bd45-markdown-primary-bootstrap-index.sqlite",
+      "bytes": 344064,
+      "sha256": "af46f25f1a40152c06ff2c545bf027a50a6ba82e1d08445b3998e9fa674467b4"
+    },
+    {
+      "name": "552ab6f13ff5704a7de36503f1a281be72197401-wordpress-install-seed.sqlite",
+      "bytes": 376832,
+      "sha256": "7212b89f1c01f98a23b89e9a2dd2b214306a85c10adb0355b9c7a6005b4fe822"
+    },
+    {
+      "name": "c6e7ecf28a6294348d58dc26fa71174ea6b420f7-markdown-database-integration-runtime.zip",
+      "bytes": 93269,
+      "sha256": "eeb01238babfea9dff7c56111974584c86e0aec8616cb0ae0f09296a222b92c0"
+    },
+    {
+      "name": "f6f24a9faa5a01af56a4823104f0a7e0d38e4b1e-php_8_3.wasm",
+      "bytes": 18319469,
+      "sha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854"
+    },
+    {
+      "name": "worker-playtt-do.js",
+      "bytes": 2253663,
+      "sha256": "95caf86b252b184cf9219654b1323af035529b73099bb05e3b39b8a470bf9324"
+    }
+  ],
+  "allSixModulesExact": true,
+  "allBindingsIncludingNamespaceIdentitiesExact": true,
+  "compatibilityExact": true,
+  "usageModelUnchanged": true,
+  "requests": 3,
+  "remoteMutations": 0,
+  "productionChanged": false
+}

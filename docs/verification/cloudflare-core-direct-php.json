@@ -1,0 +1,177 @@
+{
+  "schema": "playtt/compressed-core-proof/v1",
+  "at": "2026-11-22T04:36:20.703Z",
+  "result": "pass",
+  "moduleSha256": "a453e26322320b83e46bfa95cbdcf92b66fae758402ee59a81e3a40a6790097c",
+  "proofSha256": "e232343937e9730ead31f5e8f44b876d8ebea0871b82ae1ea580a82b71b7c74d",
+  "loaderSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+  "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+  "cases": 25,
+  "allObservationsExact": true,
+  "observations": [
+    {
+      "label": "multi-file-cache-invalidation",
+      "sha256": "742288555afb544a9238ffba9034d982a7450a84bc2c7ab15fe4528a1539a9b3"
+    },
+    {
+      "label": "whole-read-and-input-ownership",
+      "sha256": "c89726ac439bdb1ce450cc51ae84dc056ebddcbc810b0f9c468aae70e6367f09"
+    },
+    {
+      "label": "offset-eof-zero-small-large",
+      "sha256": "87be0c1b8731c929fa2f606e784a55029c848df0e16ef0c42c25f6ce7a314a1e"
+    },
+    {
+      "label": "read-buffer-types-and-boundaries",
+      "sha256": "4da2c872166d5bc2ff9a1d096b350096da4c06a2c755d0d8a98798979cc3effa"
+    },
+    {
+      "label": "warm-reads-no-shadow-objects",
+      "sha256": "5e96d6e6a0ce81794c80b8a8f5739a3512f3e9d09b16b1a88b843709fbbcc8f6"
+    },
+    {
+      "label": "sequential-read-seek",
+      "sha256": "6efed7725d4ebf0732520b41bf1029788a718b2c98e9ac7cf5310952164788a7"
+    },
+    {
+      "label": "metadata-and-fresh-dates",
+      "sha256": "08a8a58ef34ef8c1e910ad8e3bee36555ccc123e78093e9b403cd10ecdfeaab5"
+    },
+    {
+      "label": "symlink-and-directory",
+      "sha256": "4b97eef32d03d1352acd8f4ab6795fc5639090d730f81f5f5c33114bb9cb71dc"
+    },
+    {
+      "label": "rename-open-file",
+      "sha256": "e38345bbeb78cdac8dca0a0e9e55441d8cd287800120925611fad94760317883"
+    },
+    {
+      "label": "unlink-with-live-descriptor",
+      "sha256": "aa41f54445cd355754c9670acd6c7a7418474e3ec6a68d48bbce9a06f15b9003"
+    },
+    {
+      "label": "truncate-zero",
+      "sha256": "391430ea626871f4bf03f1a3c76dc3348edbceaefcf74988e3c5fcade734bd39"
+    },
+    {
+      "label": "shrink",
+      "sha256": "72a6f6131309ca7485a7226b7a47637a6682b83687f17801fa211bb8fbc812be"
+    },
+    {
+      "label": "grow",
+      "sha256": "8632aeb48c2ea075ab77eb0d0995fcf5bf453ef292dfdd07e303d18c11b03a52"
+    },
+    {
+      "label": "overwrite",
+      "sha256": "05811e35dcb764658d4fa5df84107a0f2f8dc504d81ba1cf7125153e6b2bdfd5"
+    },
+    {
+      "label": "append",
+      "sha256": "7d8176f08f8cfcf6ef211b5b4372198ae747847f76f7aee98fcba32af83c2d73"
+    },
+    {
+      "label": "hole",
+      "sha256": "946f15299187c54142a20eb5f2b8c20709b56a3223b52d4dc6491e358e5e36bc"
+    },
+    {
+      "label": "can-own",
+      "sha256": "e846e9503be81fdfb2050b3f493c7bec29b4a1a197196e10bbd34e572b83845e"
+    },
+    {
+      "label": "direct-contents-access-preserves-alias",
+      "sha256": "1cc603910d6805c9b5633c61e55138579f6caad15964138991452823eec45c92"
+    },
+    {
+      "label": "memfs-data-helper-preserves-alias",
+      "sha256": "15b921c38708f4a27a934f85e5b260ceb12b62ccb318a2b968a04e0603bf3ad1"
+    },
+    {
+      "label": "mmap-read",
+      "sha256": "ce7d47602a815fb5cb97b48f3df186f6d66d77b2b4355e1dd1b30a8d49ed1464"
+    },
+    {
+      "label": "mmap-write",
+      "sha256": "7c14d5132cbc59a8830387359d04719f359399e86d9dc969b4d776d13d694cf4"
+    },
+    {
+      "label": "mmap-private",
+      "sha256": "d8ccc1038887288f39f9d6621e30d686c6d67f056dfbd03852bab2bd1bfdc4fd"
+    },
+    {
+      "label": "read-only-and-invalid-errno",
+      "sha256": "b3e3eddbbadd36b853da7cf9d06cff467a43e575d0be25393fdea1ee883e3920"
+    },
+    {
+      "label": "original-open-custom-mounted-and-excluded",
+      "sha256": "f09a4f49aa0d886f5a430101df34b1227bd5951bbdcd4b4cb0b7e21feeaeee89"
+    },
+    {
+      "label": "real-php-include-file-reads-and-writes",
+      "sha256": "22a8c5f51d411fca71a98b10f611088eeb6ccd59e2b9cd2eca84066eb064236e"
+    }
+  ],
+  "baselineSha256": "d18f01eb192f5b0e83ce74a2efe37202ea7f8f891131aa9b00805abf3a7a8832",
+  "priorSha256": "d18f01eb192f5b0e83ce74a2efe37202ea7f8f891131aa9b00805abf3a7a8832",
+  "candidateSha256": "d18f01eb192f5b0e83ce74a2efe37202ea7f8f891131aa9b00805abf3a7a8832",
+  "metrics": [
+    {
+      "variant": "baseline",
+      "readCalls": 1024,
+      "shadowObjectCreateCalls": 0,
+      "bytes": 4194304
+    },
+    {
+      "variant": "prior",
+      "readCalls": 1024,
+      "shadowObjectCreateCalls": 2048,
+      "bytes": 4194304
+    },
+    {
+      "variant": "prior",
+      "stats": {
+        "inspectedFiles": 26,
+        "compressedFiles": 23,
+        "originalBytes": 378568,
+        "compressedBytes": 8814,
+        "retainedCapacitySavings": 369754,
+        "skippedOpenFiles": 1,
+        "decodedCacheLimit": 12582912
+      },
+      "cache": {
+        "bytes": 116383,
+        "limit": 12582912
+      }
+    },
+    {
+      "variant": "candidate",
+      "readCalls": 1024,
+      "shadowObjectCreateCalls": 0,
+      "bytes": 4194304
+    },
+    {
+      "variant": "candidate",
+      "stats": {
+        "inspectedFiles": 26,
+        "compressedFiles": 23,
+        "originalBytes": 378568,
+        "compressedBytes": 8814,
+        "retainedCapacitySavings": 369754,
+        "skippedOpenFiles": 1,
+        "decodedCacheLimit": 12582912
+      },
+      "cache": {
+        "bytes": 116383,
+        "limit": 12582912
+      }
+    }
+  ],
+  "allPhpInstancesExited": true,
+  "cloudRequests": 0,
+  "centralRuntimeChanged": false,
+  "limitations": [
+    "Actual pinned PHP/MEMFS under Node, not full WordPress or actual workerd native-zlib availability/performance.",
+    "Prototype uses bounded multi-file LRU with12MiB unique backing and2048entry limit. Direct contents access, mutations and resize restore ordinary writable nodes. Core outside wp-content only; open/custom/mounted/non-exact-capacity nodes are skipped.",
+    "Pre-existing private aliases to core buffers are outside the intended install point; installation is restricted to owned post-boot core files.",
+    "Memory savings, loader lifetime, compressed-store-aware diagnostics and full native/provider acceptance remain unvalidated."
+  ]
+}

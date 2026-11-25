@@ -1,0 +1,58 @@
+[
+  {
+    "kind": "empty-warmup",
+    "wallMs": 2590.676,
+    "runtime": "warm",
+    "versionDelta": 1,
+    "canonicalChanged": false,
+    "leaseReleaseUnchanged": false
+  },
+  {
+    "kind": "empty",
+    "wallMs": 9521.173,
+    "runtime": "cold",
+    "versionDelta": 1,
+    "canonicalChanged": true,
+    "leaseReleaseUnchanged": false
+  },
+  {
+    "kind": "post-lock",
+    "wallMs": 6003.769,
+    "runtime": "warm",
+    "versionDelta": 1,
+    "canonicalChanged": true,
+    "leaseReleaseUnchanged": false
+  },
+  {
+    "kind": "empty",
+    "wallMs": 3226.403,
+    "runtime": "warm",
+    "versionDelta": 1,
+    "canonicalChanged": false,
+    "leaseReleaseUnchanged": false
+  },
+  {
+    "kind": "post-lock",
+    "wallMs": 5319.707,
+    "runtime": "warm",
+    "versionDelta": 1,
+    "canonicalChanged": true,
+    "leaseReleaseUnchanged": false
+  },
+  {
+    "kind": "empty",
+    "wallMs": 9770.252,
+    "runtime": "cold",
+    "versionDelta": 1,
+    "canonicalChanged": true,
+    "leaseReleaseUnchanged": false
+  },
+  {
+    "kind": "post-lock",
+    "wallMs": 5623.972,
+    "runtime": "warm",
+    "versionDelta": 1,
+    "canonicalChanged": true,
+    "leaseReleaseUnchanged": false
+  }
+]

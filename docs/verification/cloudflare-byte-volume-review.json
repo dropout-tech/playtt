@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-22T04:31:51.570162+00:00",
+  "result": "operator-integrity-allocation-separated; native-data-pass; provider-acceptance-open",
+  "filesReviewed": 28,
+  "filesIncludingReport": 29,
+  "jsonFilesParsed": 10,
+  "syntax": "pass",
+  "knownPrivateValuesCompared": 277,
+  "matches": [],
+  "privatePayloadsIncluded": false,
+  "diffWhitespace": "pass",
+  "toolHashesChecked": 305,
+  "runtimeSourceHashesUnchanged": 82,
+  "configsUnchanged": 20,
+  "frozenModuleHashesUnchanged": 18,
+  "researchGeneratorAndLoaderUnchanged": true,
+  "newTools": 11,
+  "assembledFiles": 851,
+  "priorAssembledFilesUnchanged": 840,
+  "completedOwnerAndBuildReplayRefusalsWithoutMutation": 3,
+  "offlineAuditsRecomputedExact": 4,
+  "ports9570_9573Closed": true,
+  "nativeTerminalSessions": [
+    69776,
+    2971
+  ],
+  "nativeTerminalExits": [
+    0,
+    0
+  ],
+  "privateProcessLogSha256": {
+    "byte-volume": "06f108709dfcddc587dd091520e3ec248c385e5431ad351d372a274f1156f3ec",
+    "byte-native": "896d884b22000f5913b137b68d80c3f8e1f777556cb0b756f0ceaa0a26d632a7"
+  },
+  "numericCounterLabels": 42,
+  "nativeSaveRenderAdditionalZipCalls": 0,
+  "fullIntegrityChecksPreserved": true,
+  "nativeDataSaveRestartLogoutRecovery": true,
+  "nativeRuntimeExceptions": 0,
+  "historicalNetworkExceptionsResolved": false,
+  "httpErrors": 0,
+  "nativePrefixObservedComponentSum": 129189887,
+  "nativeSaveObservedComponentSum": 121295221,
+  "providerMemoryAccepted": false,
+  "centralCandidateAdopted": false,
+  "cloudRequests": 0,
+  "privateWorkerDeployments": 0,
+  "productionDeployment": false,
+  "goalStatus": "active"
+}

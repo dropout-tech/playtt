@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-20T18:09:04.481Z",
+  "result": "pass",
+  "snapshots": [
+    {
+      "label": "heartbeat-0",
+      "anchor": {
+        "revision": "0df606d7-bbea-4d42-afd4-7cacf0232cc8",
+        "manifestKey": "sites/default/markdown/revisions/0df606d7-bbea-4d42-afd4-7cacf0232cc8.json",
+        "persistedAt": "2026-11-20T18:04:20.726Z",
+        "manifestSha256": "0a977ea8eb0fd55f7f160ea2f639e32f09362d0f696dff8544a0f5aeab949e45",
+        "packKey": "sites/default/restore-packs/33fe9465496bb0663ad1932f4bda38706eee19532f5ca68858769af89b81eabc.zip",
+        "packSha256": "33fe9465496bb0663ad1932f4bda38706eee19532f5ca68858769af89b81eabc",
+        "packBytes": 2294504
+      },
+      "format": "metadata-overlay",
+      "baseRevision": "94b24b77-573a-4ded-9c7e-3b51fc22c3e7",
+      "files": 297,
+      "objects": 299,
+      "payloadBytes": 6887033,
+      "remoteGets": 5,
+      "downloadedBytes": 2456487,
+      "independentCopyVerified": true,
+      "remotePinGeneration": 2
+    },
+    {
+      "label": "heartbeat-1",
+      "anchor": {
+        "revision": "ef40f2b5-d72b-45c1-baf2-46591a583fb7",
+        "manifestKey": "sites/default/markdown/revisions/ef40f2b5-d72b-45c1-baf2-46591a583fb7.json",
+        "persistedAt": "2026-11-20T18:04:30.913Z",
+        "manifestSha256": "fbe80c5c0d65b84a9a424ae1435a91c025528a59d275b34cb10dffb0bebd6b58",
+        "packKey": "sites/default/restore-packs/33fe9465496bb0663ad1932f4bda38706eee19532f5ca68858769af89b81eabc.zip",
+        "packSha256": "33fe9465496bb0663ad1932f4bda38706eee19532f5ca68858769af89b81eabc",
+        "packBytes": 2294504
+      },
+      "format": "metadata-overlay",
+      "baseRevision": "94b24b77-573a-4ded-9c7e-3b51fc22c3e7",
+      "files": 297,
+      "objects": 299,
+      "payloadBytes": 6887033,
+      "remoteGets": 5,
+      "downloadedBytes": 2456487,
+      "independentCopyVerified": true,
+      "remotePinGeneration": 3
+    },
+    {
+      "label": "final",
+      "anchor": {
+        "revision": "9beba823-a06b-43cb-90c9-9c9eda7b24e7",
+        "manifestKey": "sites/default/markdown/revisions/9beba823-a06b-43cb-90c9-9c9eda7b24e7.json",
+        "persistedAt": "2026-11-20T18:04:41.169Z",
+        "manifestSha256": "8a1a2c042ca81b174cfc99a6ebec1afeb40690689ec081517595da4e41df6a84",
+        "packKey": "sites/default/restore-packs/48a65f21f3917a478d085fb2a9397195548859dae63999aa870f526a41fcdb20.zip",
+        "packSha256": "48a65f21f3917a478d085fb2a9397195548859dae63999aa870f526a41fcdb20",
+        "packBytes": 2294699
+      },
+      "format": "full-pack",
+      "baseRevision": "9beba823-a06b-43cb-90c9-9c9eda7b24e7",
+      "files": 297,
+      "objects": 296,
+      "payloadBytes": 6799940,
+      "remoteGets": 2,
+      "downloadedBytes": 2368191,
+      "independentCopyVerified": true,
+      "remotePinGeneration": 4
+    }
+  ],
+  "sourceVersion": 7,
+  "remoteR2Mutations": 0,
+  "remoteRestoreAttempted": false,
+  "finalPins": 4,
+  "canonicalUnchanged": true,
+  "capacityLedgerUnchanged": true,
+  "fenceReleased": true
+}

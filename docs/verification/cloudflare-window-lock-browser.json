@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-20T19:15:53.796Z",
+  "result": "incomplete",
+  "ownedId": 193,
+  "ownedUserId": 2,
+  "secondUserBlocked": true,
+  "takeoverObserved": false,
+  "firstUserLostLock": false,
+  "secondUserSavedAndReloaded": false,
+  "newContentTyped": false,
+  "tabClosed": true,
+  "closedAt": "2026-11-20T19:15:54.297Z",
+  "scope": "Two independent native browser sessions: Chrome admin1 and in-app editor2. Lock exclusion observed; takeover and second-editor save were not completed.",
+  "nativeBlockedHeading": "已有其他人接管了這篇內容的編輯工作。",
+  "reportedLockOwner": "admin",
+  "savePauseMessage": "目前已暫停儲存，請保留編輯內容並聯絡管理員。",
+  "exitNavigationCompleted": false,
+  "console": {
+    "admin": {
+      "errors": 1,
+      "warnings": 1
+    },
+    "editor": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "screenshots": [
+    "window-lock-editor-b-blocked.jpg",
+    "window-lock-editor-b-exit-failed.jpg"
+  ],
+  "limitations": [
+    "The core modal also says changes were saved while an autosave error is visible behind it; no new text was typed in this attempt. Do not infer general data-loss protection from that wording.",
+    "The pause error was visible by the blocked-state screenshot; clicking Exit is not proven to be its cause."
+  ]
+}

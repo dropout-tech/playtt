@@ -1,0 +1,34 @@
+{
+  "scope": "Local WordPress 0.3.1 SVG response-delay experiment only; no CPU/network throttling, no Lighthouse score",
+  "svgResponseDelayMs": 1200,
+  "measurements": [
+    {
+      "ageMs": 7929,
+      "cls": 0,
+      "fcpMs": 1520,
+      "lcpMs": 1520,
+      "lcpTag": "H1",
+      "loaded": "complete",
+      "shifts": [],
+      "svgDelayMs": 1200,
+      "viewport": {
+        "height": 855,
+        "width": 1920
+      }
+    },
+    {
+      "ageMs": 9137,
+      "cls": 0,
+      "fcpMs": 2644,
+      "lcpMs": 2644,
+      "lcpTag": "H1",
+      "loaded": "complete",
+      "shifts": [],
+      "svgDelayMs": 1200,
+      "viewport": {
+        "height": 812,
+        "width": 375
+      }
+    }
+  ]
+}

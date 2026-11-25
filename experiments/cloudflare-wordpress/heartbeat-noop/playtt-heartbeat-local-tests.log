@@ -1,0 +1,26 @@
+✔ Cloudflare phase traces use bounded, non-overlapping leaves and independent dimensions (3.0103ms)
+✔ Cloudflare composite phases report only their unmeasured gap (1.3037ms)
+✔ Cloudflare diagnostic Server-Timing serializes only completed leaf phases (26.2875ms)
+✔ changed, added and deleted content produces exactly the complete archive from a full independent read (116.6026ms)
+✔ unchanged runtime bytes are fully verified even when loose replicas are unavailable (2.6683ms)
+✔ callers without a runtime reader independently read every object with bounded concurrency (68.9321ms)
+✔ same path in another domain does not reuse unrelated runtime bytes (31.3147ms)
+✔ untrusted runtime missing failure rejects reuse (1.5265ms)
+✔ untrusted runtime size failure rejects reuse (0.5033ms)
+✔ untrusted runtime bytes failure rejects reuse (1.373ms)
+✔ a new hash must come from R2, not an uncommitted runtime buffer (27.1095ms)
+✔ changed R2 object missing failure rejects the entire snapshot (15.4584ms)
+✔ changed R2 object size failure rejects the entire snapshot (1.0215ms)
+✔ changed R2 object bytes failure rejects the entire snapshot (13.7796ms)
+✔ invalid metadata cannot read another site, duplicate or traverse paths (0.8919ms)
+✔ a runtime reader needs the previous committed inventory (0.3025ms)
+✔ an empty new inventory preserves only the requested tombstones (0.2728ms)
+✔ failure settles every in-flight read before returning (14.5835ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1433.2799

@@ -1,0 +1,79 @@
+{
+  "at": "2026-11-20T22:01:29.946Z",
+  "result": "independent-copy-verified-comparison-pending",
+  "canonicalVersion": 94,
+  "anchor": {
+    "revision": "bc63cc39-5cd3-4849-b266-10b16e8e75d5",
+    "manifestKey": "sites/default/markdown/revisions/bc63cc39-5cd3-4849-b266-10b16e8e75d5.json",
+    "persistedAt": "2026-11-20T21:59:49.161Z",
+    "manifestSha256": "db993483c904a393ee67da945b4b0075710ca1dc8a55719a71a49491731c1a5c",
+    "packKey": "sites/default/restore-packs/b5ee4a0768e2782fa9c237db3e5cedf72ae55be815093d980c01e47d2a0d0e7f.zip",
+    "packSha256": "b5ee4a0768e2782fa9c237db3e5cedf72ae55be815093d980c01e47d2a0d0e7f",
+    "packBytes": 2295572
+  },
+  "changed": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "removed": [],
+  "tables": {
+    "_tables/posts.json": {
+      "added": [
+        {
+          "id": "200",
+          "parent": "193",
+          "postType": "revision",
+          "contentBytes": 527
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "_tables/postmeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "72",
+          "postId": "193",
+          "metaKey": "_edit_lock",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/usermeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "38",
+          "userId": "2",
+          "metaKey": "wp_persisted_preferences",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/users.json": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "files": 298,
+  "objects": 300,
+  "remoteGets": 5,
+  "downloadedBytes": 2477072,
+  "mediaAndThemeExact": true,
+  "canonicalAndAccountingUnchanged": true,
+  "remoteMutations": 0,
+  "pinAdded": false
+}

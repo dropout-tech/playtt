@@ -1,0 +1,135 @@
+{
+  "schema": "playtt/path-scan-audit/v1",
+  "result": "semantic-allocation-native-data-pass; provider-memory-open",
+  "at": "2026-11-22T00:12:00.494Z",
+  "baselineSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+  "candidateSha256": "280d74443122ff048049d12fb033cb28cd85e84ca4ae3ee1d390b1df5189de81",
+  "bundleSha256": "efe592948f9141231be34db0258f7275f779832b9bba44676e85d56c89735f96",
+  "semanticCasesEach": 3893,
+  "nodeLookupsEach": 11179,
+  "semanticOutputsExact": true,
+  "actualPhpFileOperations": true,
+  "allocation": {
+    "runs": 6,
+    "lookupsEach": 30000,
+    "groups": {
+      "baseline": {
+        "sampledMeanBytes": 16034496,
+        "wallMeanMs": 84.78590000000015,
+        "sampledBytesRange": [
+          15771280,
+          16394496
+        ]
+      },
+      "candidate": {
+        "sampledMeanBytes": 13987138.666666666,
+        "wallMeanMs": 89.90620000000006,
+        "sampledBytesRange": [
+          13440800,
+          14358884
+        ]
+      }
+    },
+    "sampledMeanReductionPercent": 12.768454545333597,
+    "wallMeanIncreasePercent": 6.039093764411163
+  },
+  "native": {
+    "finalLocalVersion": 191,
+    "contentBytes": 1875,
+    "contentSha256": "93f8e21c8def8c2d5a6ec9b54d91990b8ef41dadcd847ba4d274da51ba01f39b",
+    "originalRowsExact": true,
+    "addedRevision": 209,
+    "fullWorkerdRestart": {
+      "fullWorkerdDisposed": true,
+      "bothPortsClosed": true,
+      "newInstance": true,
+      "stateExact": true,
+      "allDataExact": true,
+      "budgetExact": true,
+      "sameWindow": true,
+      "noReseedOrRearm": true,
+      "version": 188,
+      "chargedBytes": 350116
+    },
+    "allOriginalUsermetaExact": true,
+    "mediaAndThemeExact": true,
+    "independentObjects": 304,
+    "independentFiles": 298,
+    "fullMaterializedExact": true,
+    "chargedBytes": 500288,
+    "chargedPuts": 30,
+    "sealed": true,
+    "closed": true,
+    "pending": 0,
+    "disposed": true,
+    "runtimeExceptions": 0,
+    "expectedInitialGate404": 1,
+    "globalStylesPermission403": 1,
+    "otherHttpErrors": 0
+  },
+  "memory": {
+    "phases": [
+      {
+        "phase": "before-restart",
+        "samples": 1513,
+        "matchedSamples": 964,
+        "maxObservedComponentSum": 152741987,
+        "maxObservedPhpHeapBytes": 75956224,
+        "exceptions": 0
+      },
+      {
+        "phase": "after-restart",
+        "samples": 480,
+        "matchedSamples": 411,
+        "maxObservedComponentSum": 144502296,
+        "maxObservedPhpHeapBytes": 73400320,
+        "exceptions": 0
+      }
+    ],
+    "windows": [
+      {
+        "name": "render",
+        "samples": 1352,
+        "sampledSelfBytes": 45230508,
+        "lookupPathBytes": 7867332,
+        "splitBytes": 524500,
+        "filterBytes": 0,
+        "requestCategories": {
+          "rest": 11,
+          "other": 3,
+          "asset": 53,
+          "ajax": 1,
+          "post-editor": 1
+        },
+        "elapsedMs": 47411,
+        "profileSha256": "e4c4d8fd567c991a2e74ea0b0c383c26080074271eab7dc4988abadd9b0a7f70"
+      },
+      {
+        "name": "save",
+        "samples": 1989,
+        "sampledSelfBytes": 67311520,
+        "lookupPathBytes": 3015872,
+        "splitBytes": 819540,
+        "filterBytes": 0,
+        "requestCategories": {
+          "rest": 1,
+          "ajax": 1,
+          "other": 2
+        },
+        "elapsedMs": 23316,
+        "profileSha256": "47dddfc0543db91ccec91d5e5d62357b520b770cdd10955f1a2683309525fe76"
+      }
+    ],
+    "providerAcceptance": false
+  },
+  "cloudRequests": 0,
+  "productionChanged": false,
+  "centralLoaderChanged": false,
+  "limitations": [
+    "Sampled JS allocations include collected objects and are not peak memory. Local wall time includes profiling and is not billed CPU.",
+    "Native render window includes page listing and editor loading; save window includes surrounding requests. Different browser timings prevent a before/after performance claim.",
+    "Component sums combine JS usedSize, backingStorageSize and last observed PHP heap within a generation; asynchronous samples and observer overhead remain. Not provider peak, RSS or admission.",
+    "Native DOM editing is not physical IME/mobile acceptance. First Chinese installation and sustained Cloudflare Free usage remain unverified.",
+    "The initial unauthenticated root request returned the expected probe gate 404. One global-styles edit-context GET returned 403 rest_forbidden_context, matching the existing permission boundary. No other HTTP error or runtime exception occurred in this one workflow."
+  ]
+}

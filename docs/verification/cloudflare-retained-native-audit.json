@@ -1,0 +1,72 @@
+{
+  "schema": "playtt/retained-native-data-audit/v1",
+  "at": "2026-11-21T17:50:41.562Z",
+  "result": "data-integrity-pass; one unclassified inspector exception remains",
+  "localOnly": true,
+  "baselineLocalCopyOfCloudVersion": 181,
+  "finalLocalVersion": 189,
+  "cloudRequests": 0,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json"
+  ],
+  "editLock": {
+    "postId": 193,
+    "metaId": 72,
+    "userId": 2
+  },
+  "optionSequence": {
+    "before": "784",
+    "after": "794"
+  },
+  "allOtherFilesExact": true,
+  "allOriginalSessionsExactNewSessionRemoved": true,
+  "independentObjects": 304,
+  "independentFiles": 298,
+  "chargedBytes": 399692,
+  "chargedPuts": 24,
+  "closed": true,
+  "sealed": true,
+  "pending": 0,
+  "localProcessesDisposed": true,
+  "samples": 1134,
+  "events": 276,
+  "requests": 209,
+  "statusCounts": {
+    "200": 198,
+    "302": 10,
+    "303": 1
+  },
+  "unclassifiedExceptions": [
+    {
+      "at": 1795282877666,
+      "label": "login",
+      "kind": "exception"
+    }
+  ],
+  "exceptionLimitation": "Observer recorded only event time and phase; type, message, stack and cause were not captured. Not an exception-free acceptance.",
+  "browser": {
+    "at": "2026-11-21T17:42:47.985Z",
+    "visits": [
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      },
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      },
+      {
+        "canvas": true,
+        "paragraphs": 10,
+        "saved": true
+      }
+    ],
+    "loggedOut": true,
+    "contentEdited": false
+  },
+  "contentSaveOrImeTested": false,
+  "productionChanged": false
+}

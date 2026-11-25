@@ -1,0 +1,327 @@
+{
+  "schema": "playtt/path-join-native-comparison/v1",
+  "at": "2026-11-21T18:23:01.610112+00:00",
+  "result": "local-candidate-supported",
+  "runs": [
+    {
+      "variant": "baseline",
+      "bundleSha256": "24090611fc3fe34cd510034bf11d06587005ea81f31176cb0c5ed5fc17ca14d7",
+      "profileSha256": "c95afa159df1f12a5686087b4636db7b6a80bf6f0abb1e3fe626e6b07bb378ef",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "samplingElapsedMs": 28557,
+      "nodes": 618,
+      "samples": 3045,
+      "nodeAttributedSelfBytes": 103185812,
+      "pathFunctionsAttributedSelfBytes": 57252016,
+      "topFunctions": [
+        {
+          "function": "lookupPath",
+          "attributedSelfBytes": 29121556
+        },
+        {
+          "function": "split",
+          "attributedSelfBytes": 19602336
+        },
+        {
+          "function": "(anonymous)",
+          "attributedSelfBytes": 8866196
+        },
+        {
+          "function": "join",
+          "attributedSelfBytes": 8528124
+        },
+        {
+          "function": "getattr",
+          "attributedSelfBytes": 4951244
+        },
+        {
+          "function": "js_fd_read",
+          "attributedSelfBytes": 3084136
+        },
+        {
+          "function": "next",
+          "attributedSelfBytes": 2917280
+        },
+        {
+          "function": "subarray",
+          "attributedSelfBytes": 2558844
+        },
+        {
+          "function": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 2165024
+        },
+        {
+          "function": "visit",
+          "attributedSelfBytes": 2164504
+        },
+        {
+          "function": "open",
+          "attributedSelfBytes": 1737472
+        },
+        {
+          "function": "writeStat",
+          "attributedSelfBytes": 1343780
+        },
+        {
+          "function": "from",
+          "attributedSelfBytes": 1081392
+        },
+        {
+          "function": "fstat",
+          "attributedSelfBytes": 1049244
+        },
+        {
+          "function": "streamToBytes",
+          "attributedSelfBytes": 983608
+        },
+        {
+          "function": "base64",
+          "attributedSelfBytes": 926676
+        },
+        {
+          "function": "add",
+          "attributedSelfBytes": 829540
+        },
+        {
+          "function": "entries",
+          "attributedSelfBytes": 790476
+        },
+        {
+          "function": "Asyncify.handleSleep",
+          "attributedSelfBytes": 629468
+        },
+        {
+          "function": "runtimeOwnedWpContentPaths",
+          "attributedSelfBytes": 557540
+        }
+      ],
+      "requestMix": [
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "version": 186
+        },
+        {
+          "category": "post-editor",
+          "method": "GET",
+          "status": 200,
+          "version": 187
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "version": null
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "version": null
+        },
+        {
+          "category": "post-editor",
+          "method": "GET",
+          "status": 200,
+          "version": 188
+        },
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "version": 188
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "version": null
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "version": null
+        }
+      ],
+      "editorHtmlWallMs": [
+        1269,
+        1262
+      ],
+      "phpHeapPeakObserved": 74317824,
+      "exceptions": 0
+    },
+    {
+      "variant": "candidate",
+      "bundleSha256": "824e974b27bf37302cc6607a840985f56b89fedc19e899e3e6140d8ac66cb2fa",
+      "profileSha256": "83f24a306eab97d8849068dd1ccf337b55ec29ae3ee2df6307bb563dbc4166d5",
+      "options": {
+        "samplingInterval": 32768,
+        "includeObjectsCollectedByMajorGC": true,
+        "includeObjectsCollectedByMinorGC": true
+      },
+      "samplingElapsedMs": 22413,
+      "nodes": 586,
+      "samples": 1794,
+      "nodeAttributedSelfBytes": 62450276,
+      "pathFunctionsAttributedSelfBytes": 14000700,
+      "topFunctions": [
+        {
+          "function": "(anonymous)",
+          "attributedSelfBytes": 9637092
+        },
+        {
+          "function": "lookupPath",
+          "attributedSelfBytes": 8557512
+        },
+        {
+          "function": "split",
+          "attributedSelfBytes": 5245028
+        },
+        {
+          "function": "getattr",
+          "attributedSelfBytes": 4950988
+        },
+        {
+          "function": "js_fd_read",
+          "attributedSelfBytes": 3248448
+        },
+        {
+          "function": "subarray",
+          "attributedSelfBytes": 2919844
+        },
+        {
+          "function": "next",
+          "attributedSelfBytes": 2687820
+        },
+        {
+          "function": "validatePlayttSnapshotSources",
+          "attributedSelfBytes": 2623924
+        },
+        {
+          "function": "open",
+          "attributedSelfBytes": 2491508
+        },
+        {
+          "function": "writeStat",
+          "attributedSelfBytes": 1836952
+        },
+        {
+          "function": "visit",
+          "attributedSelfBytes": 1704968
+        },
+        {
+          "function": "fstat",
+          "attributedSelfBytes": 1672156
+        },
+        {
+          "function": "from",
+          "attributedSelfBytes": 1169416
+        },
+        {
+          "function": "add",
+          "attributedSelfBytes": 1109880
+        },
+        {
+          "function": "streamToBytes",
+          "attributedSelfBytes": 885312
+        },
+        {
+          "function": "base64",
+          "attributedSelfBytes": 816948
+        },
+        {
+          "function": "runtimeOwnedWpContentPaths",
+          "attributedSelfBytes": 524752
+        },
+        {
+          "function": "persistRuntime",
+          "attributedSelfBytes": 464636
+        },
+        {
+          "function": "(V8 API)",
+          "attributedSelfBytes": 459112
+        },
+        {
+          "function": "prepareCompressedContent",
+          "attributedSelfBytes": 444264
+        }
+      ],
+      "requestMix": [
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "version": 186
+        },
+        {
+          "category": "post-editor",
+          "method": "GET",
+          "status": 200,
+          "version": 187
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "version": null
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "version": null
+        },
+        {
+          "category": "post-editor",
+          "method": "GET",
+          "status": 200,
+          "version": 188
+        },
+        {
+          "category": "ajax",
+          "method": "POST",
+          "status": 200,
+          "version": 188
+        },
+        {
+          "category": "other",
+          "method": "GET",
+          "status": 302,
+          "version": null
+        },
+        {
+          "category": "rest",
+          "method": "GET",
+          "status": 200,
+          "version": null
+        }
+      ],
+      "editorHtmlWallMs": [
+        1244,
+        1232
+      ],
+      "phpHeapPeakObserved": 74317824,
+      "exceptions": 0
+    }
+  ],
+  "changedBundleStatements": 1,
+  "requestMixAndVersionsExact": true,
+  "nodeAttributedSelfBytesReduction": 40735536,
+  "nodeAttributedSelfBytesReductionPercent": 39.477846043407595,
+  "pathFunctionReductionPercent": 75.54548996143646,
+  "limits": [
+    "One fixed-order local pair; statistical allocation sampling, different observation durations and initial browser asset caches.",
+    "Both sampled windows contain the same8 request categories/methods/statuses/versions, no assets; three native canvases checked independently per run.",
+    "Cumulative sampled JS allocation is not retained/peak memory, PHP allocations, provider CPU or128MiB acceptance.",
+    "No candidate content edit/save, cross-process reload, IME or provider deployment in this pair.",
+    "Earlier unclassified retained-native exception was not reproduced; no claim it is fixed."
+  ],
+  "productionChanged": false,
+  "cloudRequests": 0
+}

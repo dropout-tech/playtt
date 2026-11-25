@@ -1,0 +1,45 @@
+{
+  "at": "2026-11-21T06:15:05.583Z",
+  "result": "pass",
+  "canonicalVersion": 154,
+  "anchor": {
+    "revision": "d320f731-4543-48fb-a01d-32c795bb9ab1",
+    "manifestKey": "sites/default/markdown/revisions/d320f731-4543-48fb-a01d-32c795bb9ab1.json",
+    "persistedAt": "2026-11-21T06:07:02.281Z",
+    "manifestSha256": "cc4a8f868b6e202ca94dcdc71916558e0517c7fabb93dfb320489cf5351cb67b",
+    "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "packBytes": 2295783
+  },
+  "files": 298,
+  "objects": 303,
+  "unchangedFiles": 293,
+  "changedFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "ownedDraftContentExact": true,
+  "addedOwnedRevision": "205",
+  "addedOwnedAutosave": "204",
+  "addedAutosaveFootnotes": "75",
+  "otherRevisionsExact": true,
+  "unrelatedSessionsPreferencesAccountsExact": true,
+  "changedOwnedUserMetaRows": [
+    36,
+    38
+  ],
+  "nativeLogoutCompleted": false,
+  "mediaAndThemeExact": true,
+  "independentCopyVerified": true,
+  "nativeBrowserSaveConfirmed": true,
+  "nativeBrowserReloadPassed": false,
+  "format": "content-overlay",
+  "baseUnchanged": true,
+  "fullMaterializationExact": true,
+  "finalPins": 12,
+  "canonicalAndAccountingUnchanged": true,
+  "fenceReleased": true
+}

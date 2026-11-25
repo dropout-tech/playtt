@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-17T07:26:12.705Z",
+  "result": "pass",
+  "scope": "Formal Pages site remains available; private experimental publisher paused during authorized all-Cloudflare research",
+  "formalPages": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "Let’s Play 桌球聯盟 &#8211; 從喜歡開始，一起玩桌球。"
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "title": "關於我們 &#8211; Let’s Play 桌球聯盟"
+    },
+    {
+      "path": "/class/",
+      "status": 200,
+      "title": "課程資訊與收費 &#8211; Let’s Play 桌球聯盟"
+    },
+    {
+      "path": "/coaches/",
+      "status": 200,
+      "title": "教練團隊 &#8211; Let’s Play 桌球聯盟"
+    },
+    {
+      "path": "/locations/",
+      "status": 200,
+      "title": "據點資訊 &#8211; Let’s Play 桌球聯盟"
+    },
+    {
+      "path": "/partner/",
+      "status": 200,
+      "title": "合作與招募 &#8211; Let’s Play 桌球聯盟"
+    }
+  ],
+  "privatePublisher": {
+    "state": "paused",
+    "attempts": 0
+  },
+  "previewStatus": 200,
+  "productionCmsCutover": false
+}

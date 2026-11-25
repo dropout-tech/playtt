@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-17T08:58:41.093314+00:00",
+  "result": "pass",
+  "scope": "Candidate patch applies to the previous deployed runtime source after lifetime/rotation patches; hashes use LF-normalized source",
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "normalizedSha256": "dafb17636a7955577b372f65195916c42b55f1ef442c39db8743897262fd2aa9"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "normalizedSha256": "deb7b6f12721d34b680c568d5876eb093542df1381d5e53f2acf3f9a72c43dfb"
+    },
+    {
+      "path": "src/php-wasm-universal.d.ts",
+      "normalizedSha256": "8d5acc70f4a5375eb384375f925d86d569964ae4395746c9108625e7320c84f1"
+    },
+    {
+      "path": "src/playtt-runtime-lifetime.ts",
+      "normalizedSha256": "c115f47307fca8d5106f81ee55d80ffd5b74dd85a5683100c44bcfe2c8db6b5d"
+    },
+    {
+      "path": "src/playtt-auto-draft-policy.ts",
+      "normalizedSha256": "ec56aa749ca029ceb17f245bd45a4b4476f2e6811055e7b223e931d9fb05a88f"
+    }
+  ]
+}

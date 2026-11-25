@@ -1,0 +1,377 @@
+{
+  "schema": "playtt/local-diagnostic-tools/v1",
+  "scope": "Completed local native-editor retained-memory investigation; no provider deploy; completed owners prohibit replay",
+  "prerequisites": [
+    {
+      "path": "src/administrator-secret-bindings.ts",
+      "sha256": "a5d3604e7f305a98f9608860e8f54b811b5d455cb1d5602bd5a2dbc1e5e36f85"
+    },
+    {
+      "path": "src/allocation-lifecycle.ts",
+      "sha256": "0699a483b417830f28b87b8a2d4bbb91fd3187a8a4901bd7e751b3ae6e3a775b"
+    },
+    {
+      "path": "src/asset-content-type.ts",
+      "sha256": "188d3425cb04cc1a7aaa1e6fe27df9ff8b18d1f10f2ae413189a90334f60eaee"
+    },
+    {
+      "path": "src/canonical-restore-pack.ts",
+      "sha256": "e14138243ebb1d650a62897a23234e35a0dc94af70b758cd4305a4594c4d9f0f"
+    },
+    {
+      "path": "src/d1-operation-repository.ts",
+      "sha256": "d2bd96a4991bb1a39a4d90766741aa7de57a33e87ef334a8f8f66d54d459ff1a"
+    },
+    {
+      "path": "src/d1-revision-coordinator.ts",
+      "sha256": "796cb02187a97834c26d08a42d0df7a4d9555afe3ddccddf732677a966ff1e74"
+    },
+    {
+      "path": "src/health-envelope.ts",
+      "sha256": "a8507032c5fd0d29cd4ffb46c2ec5c818652fff80724fec10724a855a11a1aaa"
+    },
+    {
+      "path": "src/lease-retry.ts",
+      "sha256": "6c3a29eab611e38af64a7f6d92bff64d3eba6f1824048d827a95582c7eac01c3"
+    },
+    {
+      "path": "src/mutation-memory.ts",
+      "sha256": "00b96c62fc4e5d5a161aaf5f41b20874f6665086b9fb84634d9a00902bc7b650"
+    },
+    {
+      "path": "src/operator-coordinator.ts",
+      "sha256": "18aad9ab3105b0db6fca295f5822616c5bd9cb17423e228e2874f6c149c99c74"
+    },
+    {
+      "path": "src/phase-trace.ts",
+      "sha256": "a01f474daa71f2f37b9e4aa806f10210239f05c25b365ab015da6857a16ce52e"
+    },
+    {
+      "path": "src/php-wasm-universal.d.ts",
+      "sha256": "2d8f8d1830f7928cd8632828c1b30a3e6b0ff0b32dcbe2a29ae8665d981f3626"
+    },
+    {
+      "path": "src/playtt-auto-draft-policy.ts",
+      "sha256": "ec56aa749ca029ceb17f245bd45a4b4476f2e6811055e7b223e931d9fb05a88f"
+    },
+    {
+      "path": "src/playtt-backup-pins.ts",
+      "sha256": "587861372f708ea05177107f983da902628f1bbdd3c8f00037e510a811c4f4f1"
+    },
+    {
+      "path": "src/playtt-cms-access.ts",
+      "sha256": "9b1b30629ba2a25753baec164d706981148029a1d61fc2fe701ade14c927af24"
+    },
+    {
+      "path": "src/playtt-compressed-content.ts",
+      "sha256": "e7cb72fae29723156dbb7eb878a6c6bc20989e34b2304bce0c338595acaf5620"
+    },
+    {
+      "path": "src/playtt-compressed-persistence.ts",
+      "sha256": "8fc173296eece52c5cc5018b967ae6260511b2dd561ff7274fd79cb3b94864a9"
+    },
+    {
+      "path": "src/playtt-content-overlay.ts",
+      "sha256": "7bf63e94d077d66bf46c4341add07e548ae1b12cc027541a6ca663f84c5281c3"
+    },
+    {
+      "path": "src/playtt-content-policy.ts",
+      "sha256": "b11ca43b067824bd631215aa0cdcb20842396595589d09de00e13c398f2bb78e"
+    },
+    {
+      "path": "src/playtt-core-memory.ts",
+      "sha256": "6ea4d0c2ec872074479eeb3cb6a563391747ddde8415bbf059b2ab6755be5837"
+    },
+    {
+      "path": "src/playtt-editor-heartbeat.ts",
+      "sha256": "341ffbe6394d12c0bdadfdd8b53523dc0810f383a777551617a1acb1727f028b"
+    },
+    {
+      "path": "src/playtt-editor-lock.ts",
+      "sha256": "c61e547c55400355fa19088869215480e8dd4f6b07c01f7ae086f08b4adacb82"
+    },
+    {
+      "path": "src/playtt-editor-readback.ts",
+      "sha256": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+    },
+    {
+      "path": "src/playtt-free-probe.ts",
+      "sha256": "d7895ce30b3fabfa057af5c587d6f54d5162c860477f38d97f47e275428f70ed"
+    },
+    {
+      "path": "src/playtt-id-sequences.ts",
+      "sha256": "cdc8d1187a75b9bef21dfed0a366e53e1f4985a9c5ba2ad8e4101162ef7da17d"
+    },
+    {
+      "path": "src/playtt-maintenance-fault-worker.ts",
+      "sha256": "bba64bda64d916186ffbd252724fd8db1cc366734127d71ca2c66d4b6f6d495c"
+    },
+    {
+      "path": "src/playtt-maintenance-overlay.ts",
+      "sha256": "a5e811a88fa3b3081ee108807bf6a68c8c9acadcec711e7adf859502632bb6e9"
+    },
+    {
+      "path": "src/playtt-maintenance-schedule.ts",
+      "sha256": "414dcccbdf7ba01b2212a4692c92db747f2777c71097884d202eaddbd8d4fd13"
+    },
+    {
+      "path": "src/playtt-maintenance.ts",
+      "sha256": "acbc25a29273fa522dad36c768780b1776b274035c1f8daad8be21c29481963d"
+    },
+    {
+      "path": "src/playtt-manifest-envelope.ts",
+      "sha256": "f8a7c6e175297f2e8422f1d4c2704fce094f49af0d3b8a48b09e68a472925795"
+    },
+    {
+      "path": "src/playtt-markdown-persistence.ts",
+      "sha256": "ea333f1111e4608a2dd6505f4dde68ed0b0647168a222494860d4cd5aeea69ff"
+    },
+    {
+      "path": "src/playtt-memory-diagnostics.ts",
+      "sha256": "1f3ca896da39e97b554851d93dfe853c7c315297c9153ed5ec089007a9a77743"
+    },
+    {
+      "path": "src/playtt-metadata-overlay.ts",
+      "sha256": "36a6959e3c06fb12aba40662dec5876ce5b174b5a0f65e436d6b77bb99f77d43"
+    },
+    {
+      "path": "src/playtt-php-compat.ts",
+      "sha256": "79d9ef561b2af05e88b3d0190c21810c337d7f3980e42790f98c8a2b7a5f6f2f"
+    },
+    {
+      "path": "src/playtt-postmeta-policy.ts",
+      "sha256": "60f092c2ade945fa06ed2e79a9bf535e3e6f335f15f571682fbb9c442558d4eb"
+    },
+    {
+      "path": "src/playtt-probe-access.ts",
+      "sha256": "480cac3d6d1c55771530266ea18d54c583be50f4a0e8af9fcf816ace7575bf9a"
+    },
+    {
+      "path": "src/playtt-probe-zip.d.ts",
+      "sha256": "e6e35466cb1481d74dca1d6807484700d9509fd7fa071ac7de8c573612131e8a"
+    },
+    {
+      "path": "src/playtt-publication-alarm.ts",
+      "sha256": "ac2a0e71d6163f323f97941e25abc12a931977e2f0f276453cbe0f47c24c41e3"
+    },
+    {
+      "path": "src/playtt-publication-batch.ts",
+      "sha256": "5faab27d9979f55be69f6ed2a1247ee603f884a716dcd6b0eda77d727a8d8ad7"
+    },
+    {
+      "path": "src/playtt-recovery-uploads.ts",
+      "sha256": "5476b7fd78475cd99b523e80955836c44d9588d862037131c289a56f4f22e191"
+    },
+    {
+      "path": "src/playtt-reference-roots.ts",
+      "sha256": "86811f5a6b305f63332c6e0df0cddda0fd6ba366acfa0026d060d47045629884"
+    },
+    {
+      "path": "src/playtt-request-mutation.ts",
+      "sha256": "40f46f166f9112ab377795867b4a1d3865b03f3c9ad416ad4387b2025cc23c6a"
+    },
+    {
+      "path": "src/playtt-runtime-factory.ts",
+      "sha256": "44f8c3d51855713cf57f4e96c924f7cec9ccff50f19de9ff0bea6602856fb9bc"
+    },
+    {
+      "path": "src/playtt-runtime-lifetime.ts",
+      "sha256": "c115f47307fca8d5106f81ee55d80ffd5b74dd85a5683100c44bcfe2c8db6b5d"
+    },
+    {
+      "path": "src/playtt-runtime-manifest-cache.ts",
+      "sha256": "b74352e8de70bef32c33e4e813c51e54154b5140055337786404e32e45577b88"
+    },
+    {
+      "path": "src/playtt-slug-policy.ts",
+      "sha256": "17c37e757754933d07e6505e5f56aaaee2a73dfb9ed23907bc9103300b647c56"
+    },
+    {
+      "path": "src/playtt-snapshot-source.ts",
+      "sha256": "9e7fd70863c5e6512834b191aec53b2ff2b200480b00c7cf0061d2684b8cf05a"
+    },
+    {
+      "path": "src/playtt-storage-capacity.ts",
+      "sha256": "25cdfbfecbfaf66915d9e8e5c1cf255018a6a33fd65b6bc30b7842eb20cdaf1d"
+    },
+    {
+      "path": "src/playtt-usermeta-overlay.ts",
+      "sha256": "caafbbd624cbda0bbdef5fd593dbfe83932085001749a3b4c86ea66bc9d1b1a0"
+    },
+    {
+      "path": "src/playtt-write-drain.ts",
+      "sha256": "d1f5dc04cce1f61e4f17a94c33221acb068444197d41f782e482f91f15ace1f7"
+    },
+    {
+      "path": "src/playtt-write-window.ts",
+      "sha256": "2df90a0f7f323049acfd0375eba49bf1cee3a11dafcd5b9a76772a28ca1d7c54"
+    },
+    {
+      "path": "src/principal-credential-repository.ts",
+      "sha256": "af97382e3c162e442b0f74d28931396537ca7190d84c99c8f58b61b3da4069df"
+    },
+    {
+      "path": "src/provisioning-api.ts",
+      "sha256": "c8c90c00da499f39ae80d0134cd955f631036b40ab5a2ed88199abc0a3e627a4"
+    },
+    {
+      "path": "src/public-reader-worker.ts",
+      "sha256": "091c7df04f80f4e30e09a24116a8509048d6a1fcfd35f9e826825794baf8bdb3"
+    },
+    {
+      "path": "src/public-reader.ts",
+      "sha256": "26d75286301f325ecede93ce9382d4b5cbe631081502e88b5f2c5ed8f2652579"
+    },
+    {
+      "path": "src/publication-contract.json",
+      "sha256": "d3a5b178e20ded840ea9dc6f767bfeab5d33bf2ffa11cacfc5a077e20b6d92aa"
+    },
+    {
+      "path": "src/published-reader.ts",
+      "sha256": "515e7789957edd2a72ae1f1ed7401654da7f51b309fc3518df122bc4ef63365a"
+    },
+    {
+      "path": "src/queue-batch.ts",
+      "sha256": "3087619c156ae9113c905cc35215ae25fb90b4a221c8af376566b6e1603edda5"
+    },
+    {
+      "path": "src/queue-dispatch.ts",
+      "sha256": "061f910cd4b6186d7141818393baab789da822904e10656265e5196fbddabae6"
+    },
+    {
+      "path": "src/request-routing.ts",
+      "sha256": "c8900c81cdc78caa94a8541ec41580c60d9491f7c6070de526a6ad22f3e63950"
+    },
+    {
+      "path": "src/request-translation.ts",
+      "sha256": "fdbd6cc653b29ca5c931a7411e59bc893d902f65fd78c856660a4e963e8356b1"
+    },
+    {
+      "path": "src/revision-coordinator.ts",
+      "sha256": "ea31dcd605deb22aa0e3bffbc887b5479393a18bd22d889550be9fb609f70983"
+    },
+    {
+      "path": "src/runtime-archive-artifact.ts",
+      "sha256": "bedd0287e6781994b254354edab7937d80c229ea19ceac076cda72dfc12376e6"
+    },
+    {
+      "path": "src/site-context.ts",
+      "sha256": "25a29013cb36065cb92a3ec46e1a53131e0044016c8b2295ab00b097aa63781d"
+    },
+    {
+      "path": "src/sqlite.d.ts",
+      "sha256": "110b36b9036cd61a8d47b344080a2850b139d1c999fc6ff9049cfccbdf8b0c50"
+    },
+    {
+      "path": "src/state-coordinator.ts",
+      "sha256": "1b95e3569fd8eeb079605bf9f9f64246399d7d70a0418f8059da2d712772c31b"
+    },
+    {
+      "path": "src/static-artifact-import.ts",
+      "sha256": "ecb29ee989cdc3b458e0db8f38a949769c50c0d46fa9faedeffbe01178ad8e75"
+    },
+    {
+      "path": "src/upload-persistence.ts",
+      "sha256": "498667fd6f1e01ff6dafa9cd91278f764821d5dea624afdac6a48787e89e9dd8"
+    },
+    {
+      "path": "src/wasm.d.ts",
+      "sha256": "109f8567627a0fbe70fa74d871f8f2849d19b6105c935f7b58e38a5ea2b10f38"
+    },
+    {
+      "path": "src/wordpress-auth.ts",
+      "sha256": "957a0d6a6425f3d7153ce25ced8368528d84b8d93c36f545d828111d1f939261"
+    },
+    {
+      "path": "src/wordpress-runtime-artifact.ts",
+      "sha256": "2a3345501b3c258d5087639d00fd5720a8539dda0953cf1fef025f0933e16efc"
+    },
+    {
+      "path": "src/wordpress-runtime-corpus.ts",
+      "sha256": "e6562fa8face9c55cc1587fe458882cdf22fb55a0f0dd9560f4aa6c7273a9a03"
+    },
+    {
+      "path": "src/wordpress-static-artifact.ts",
+      "sha256": "cb9ece2558d1247c8199275593fc215a3fb0e674b5016c9f65873b71c5f7652e"
+    },
+    {
+      "path": "src/wordpress-static-reader.ts",
+      "sha256": "dc06e1934eacd33b3e7266fcdd57d5857dcddc99586de23f403d17bc6ec841ae"
+    },
+    {
+      "path": "src/worker-control.ts",
+      "sha256": "0332835dcdc65bc79d501086558a894d0397f7399cf91c9558386dce1f4d6b96"
+    },
+    {
+      "path": "src/worker-d1.ts",
+      "sha256": "cff8ec480546eecb99b871bccc9a31986acf759e760709934e996829ba0db0fa"
+    },
+    {
+      "path": "src/worker-do.ts",
+      "sha256": "31e42b7d33df3f9b75a329a07bcf9ab239471d7a60547f9ab74ec18eab446e64"
+    },
+    {
+      "path": "src/worker-playtt-do.ts",
+      "sha256": "a0b93d457676996aa8965c7c9576abf317682aa5c2b64640eb969d97c60a9af6"
+    },
+    {
+      "path": "src/worker-playtt-public.ts",
+      "sha256": "2386ebd04376f864037835cc071b8737dceffd78d443b594075046b8aba38ec0"
+    },
+    {
+      "path": "src/worker.ts",
+      "sha256": "e730b3ad9172b767b35de8031b38fa7d4d758cd035187e4562fe45e29c930439"
+    },
+    {
+      "path": "src/wp-content-persistence.ts",
+      "sha256": "0f67fe2b2e198b9665c0d9d1858d7557ab552d877b5165b89c47c9e719546a5d"
+    },
+    {
+      "path": "src/zip.d.ts",
+      "sha256": "7daa8d79b91cfa9905bbc3a1a0795746d6f359dd19c5de6de0e15a56393c9bf0"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "e4695b61d524bdf61a5a3fdcb31dee2cc07e1d0afc356dd2b684f1eef97d57ba"
+    },
+    {
+      "path": "scripts/playtt-content-snapshot-source.mjs",
+      "sha256": "89140021a9649b43bea663a80aca0aef9a5ff12b25d0b23b470bc32054baf774"
+    },
+    {
+      "path": "artifacts/playtt-old-provider-deploy-plan.json",
+      "sha256": "d33a94cd5b3a5e0c8c92191d34eedf7ba718bfd86b43bbd5078a77e9ee3a5abb"
+    },
+    {
+      "path": "artifacts/playtt-recovery-provider-source-plan.json",
+      "sha256": "402c0eed345777837bcbe40db6313e7387f73ce1d4c5e18b1661d2b474117aae"
+    }
+  ],
+  "files": [
+    {
+      "path": "scripts/playtt-retained-inspector.mjs",
+      "source": "playtt-retained-inspector.mjs",
+      "sha256": "6e5d773a7be2dd6db5fc066df0c7f0242fd1a44b128fc4a81b602fbfc9fb37f3"
+    },
+    {
+      "path": "scripts/playtt-retained-native-local.mjs",
+      "source": "playtt-retained-native-local.mjs",
+      "sha256": "e6466053578db70cfcaa62d1f0270b7ee8bdf4349465e7dc48eba68820da3d96"
+    },
+    {
+      "path": "scripts/playtt-retained-native-control.mjs",
+      "source": "playtt-retained-native-control.mjs",
+      "sha256": "980995d5ed167b3b818bc8d98106963c69226b3ccb93e02ddf7d5a26779aacaf"
+    },
+    {
+      "path": "scripts/playtt-retained-native-audit.mjs",
+      "source": "playtt-retained-native-audit.mjs",
+      "sha256": "88e45ee867cf351c51ca50d12bed288369f10ce6cc2b55ccd2441ec37980ff74"
+    },
+    {
+      "path": "scripts/playtt-retained-snapshot-audit.py",
+      "source": "playtt-retained-snapshot-audit.py",
+      "sha256": "90f446788dbf9c32f97724df0418cf30a70f49955aec3e850f0206cc9a06ecf9"
+    }
+  ]
+}

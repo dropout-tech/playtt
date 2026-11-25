@@ -1,0 +1,362 @@
+{
+  "at": "2026-11-20T02:27:58.466237+00:00",
+  "result": "native-ui-save-reopen-and-cleanup-pass",
+  "workerVersion": "e33e2afb-7d40-4a36-b06e-674eac707f44",
+  "scope": "Private free WordPress only. Production Pages and original branding unchanged; publishing paused; PR remains draft.",
+  "browser": {
+    "width": 375,
+    "height": 812,
+    "traditionalChineseLogin": true,
+    "nativeParagraphEdit": true,
+    "savedIndicator": true,
+    "leaveAndReopen": true,
+    "independentFreshLoginReadback": true,
+    "originalHomepageByteIdentical": true,
+    "activeEditorClosed": true,
+    "viewportReset": true,
+    "staleDashboardCloseConfirmed": false
+  },
+  "verification": {
+    "at": "2026-11-20T02:22:17.968Z",
+    "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+    "result": "pass",
+    "scope": "Post-noop-change native UI save independently read through authenticated REST; planned paragraph plus audited block-boundary newlines, four trailing class spaces, six default h2 attributes and one ampersand escape; original homepage is byte-identical",
+    "id": 173,
+    "contentHash": "1d826372bb5dbb47a9292aa60706989d40e362520ed039e7ecadfdb10a9b193f",
+    "plannedRawHash": "29d08543ba6b78f52492aa3c0689c61022610430869dd14a5ab5784cc26d97ca",
+    "actualRawHash": "0f8bec67b9c6bd76c8e6ec322b46fb7954a622d7aa6175d38be83dc4e32dfafa",
+    "auditedSerializationChanges": true,
+    "sourceHomeHash": "5e800ffb86faf8e2a367b8e92959e0a7afc53b32bcb7c91cb401e9f088b9922d",
+    "publisher": "paused",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1726
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2241
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 7198
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 5803
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2833
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/173?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2157
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2525
+      }
+    ]
+  },
+  "final": {
+    "at": "2026-11-20T02:26:22.190Z",
+    "result": "pass",
+    "scope": "Complete backup after native mobile-width edit/save/reopen on the no-change runtime and owned cleanup; all original content, historical revisions, media and metadata retained; owned draft/revisions absent",
+    "ownedId": 173,
+    "cleanupComplete": true,
+    "unchangedCanonicalFiles": 37,
+    "originalMarkdown": 27,
+    "uploads": 15,
+    "postmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "458",
+      "wp_postmeta": "69",
+      "wp_posts": "173",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 278,
+        "revision": "6bfd0a41-07de-4e1a-9008-8f21c2231c25",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 175,
+        "revision": "d419f38a-3c0a-4a3b-b1ef-7d6df4f0ebcd",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-20T02:25:50.910Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "6bfd0a41-07de-4e1a-9008-8f21c2231c25",
+      "objects": 297,
+      "decodedBytes": 4424898,
+      "archiveBytes": 2292055,
+      "archiveSha256": "ba6d214f1588a98793b642a1787890c2932d550e5095187c58299ddfeafdb35f"
+    }
+  },
+  "observation": {
+    "at": "2026-11-20T02:27:58.442780+00:00",
+    "periods": [
+      {
+        "label": "noop-ui",
+        "events": 287,
+        "first": "2026-11-18T22:57:29.364Z",
+        "last": "2026-11-19T01:41:42.359Z",
+        "outcomes": {
+          "ok": 287
+        },
+        "versions": {
+          "e33e2afb-7d40-4a36-b06e-674eac707f44": 287
+        },
+        "exceptions": 0,
+        "requestFailures": 0,
+        "incompleteTraces": 0,
+        "unchangedLeaseReleases": 29,
+        "canceled": []
+      },
+      {
+        "label": "noop-ui-resumed",
+        "events": 955,
+        "first": "2026-11-19T16:07:53.403Z",
+        "last": "2026-11-20T02:26:22.184Z",
+        "outcomes": {
+          "ok": 951,
+          "canceled": 4
+        },
+        "versions": {
+          "e33e2afb-7d40-4a36-b06e-674eac707f44": 955
+        },
+        "exceptions": 0,
+        "requestFailures": 0,
+        "incompleteTraces": 0,
+        "unchangedLeaseReleases": 31,
+        "canceled": [
+          {
+            "at": "2026-11-20T02:22:57.001Z",
+            "outcome": "canceled",
+            "request": {
+              "category": "admin-ajax",
+              "method": "POST"
+            },
+            "exceptions": []
+          },
+          {
+            "at": "2026-11-20T02:22:56.886Z",
+            "outcome": "canceled",
+            "request": {
+              "category": "admin-ajax",
+              "method": "POST"
+            },
+            "exceptions": []
+          },
+          {
+            "at": "2026-11-20T02:23:59.917Z",
+            "outcome": "canceled",
+            "request": {
+              "category": "other",
+              "method": "GET"
+            },
+            "exceptions": []
+          },
+          {
+            "at": "2026-11-20T02:23:59.919Z",
+            "outcome": "canceled",
+            "request": {
+              "category": "other",
+              "method": "GET"
+            },
+            "exceptions": []
+          }
+        ]
+      }
+    ],
+    "combined": {
+      "events": 1242,
+      "first": "2026-11-18T22:57:29.364Z",
+      "last": "2026-11-20T02:26:22.184Z",
+      "outcomes": {
+        "ok": 1238,
+        "canceled": 4
+      },
+      "versions": {
+        "e33e2afb-7d40-4a36-b06e-674eac707f44": 1242
+      },
+      "exceptions": 0,
+      "requestFailures": 0,
+      "incompleteTraces": 0,
+      "unchangedLeaseReleases": 60,
+      "canceled": [
+        {
+          "at": "2026-11-20T02:22:57.001Z",
+          "outcome": "canceled",
+          "request": {
+            "category": "admin-ajax",
+            "method": "POST"
+          },
+          "exceptions": []
+        },
+        {
+          "at": "2026-11-20T02:22:56.886Z",
+          "outcome": "canceled",
+          "request": {
+            "category": "admin-ajax",
+            "method": "POST"
+          },
+          "exceptions": []
+        },
+        {
+          "at": "2026-11-20T02:23:59.917Z",
+          "outcome": "canceled",
+          "request": {
+            "category": "other",
+            "method": "GET"
+          },
+          "exceptions": []
+        },
+        {
+          "at": "2026-11-20T02:23:59.919Z",
+          "outcome": "canceled",
+          "request": {
+            "category": "other",
+            "method": "GET"
+          },
+          "exceptions": []
+        }
+      ]
+    },
+    "uiAndCleanupWindow": {
+      "events": 230,
+      "first": "2026-11-20T02:19:47.770Z",
+      "last": "2026-11-20T02:26:22.184Z",
+      "outcomes": {
+        "ok": 226,
+        "canceled": 4
+      },
+      "versions": {
+        "e33e2afb-7d40-4a36-b06e-674eac707f44": 230
+      },
+      "exceptions": 0,
+      "requestFailures": 0,
+      "incompleteTraces": 0,
+      "unchangedLeaseReleases": 3,
+      "canceled": [
+        {
+          "at": "2026-11-20T02:22:57.001Z",
+          "outcome": "canceled",
+          "request": {
+            "category": "admin-ajax",
+            "method": "POST"
+          },
+          "exceptions": []
+        },
+        {
+          "at": "2026-11-20T02:22:56.886Z",
+          "outcome": "canceled",
+          "request": {
+            "category": "admin-ajax",
+            "method": "POST"
+          },
+          "exceptions": []
+        },
+        {
+          "at": "2026-11-20T02:23:59.917Z",
+          "outcome": "canceled",
+          "request": {
+            "category": "other",
+            "method": "GET"
+          },
+          "exceptions": []
+        },
+        {
+          "at": "2026-11-20T02:23:59.919Z",
+          "outcome": "canceled",
+          "request": {
+            "category": "other",
+            "method": "GET"
+          },
+          "exceptions": []
+        }
+      ]
+    },
+    "windowStart": "2026-11-20T02:19:47.523Z",
+    "windowEnd": "2026-11-20T02:26:22.190Z",
+    "observerStopped": true,
+    "orphanTails": 0,
+    "limits": [
+      "Observation spans interrupted tool sessions and idle background activity; elapsed wall time is not continuous testing or a reliability/stress benchmark.",
+      "Platform events include multiple entrypoints and are not a count of unique HTTP requests.",
+      "Browser CDP observation did not produce a retained network report after a tool-session interruption. Cancellation causes remain unproved.",
+      "UI action timestamps are observation markers, not exact save latency. The save click timed out at the input-control layer; subsequent UI showed autosaving then saved. Independent REST and reopening prove persistence."
+    ]
+  },
+  "limits": [
+    "Observation spans interrupted tool sessions and idle background activity; elapsed wall time is not continuous testing or a reliability/stress benchmark.",
+    "Platform events include multiple entrypoints and are not a count of unique HTTP requests.",
+    "Browser CDP observation did not produce a retained network report after a tool-session interruption. Cancellation causes remain unproved.",
+    "UI action timestamps are observation markers, not exact save latency. The save click timed out at the input-control layer; subsequent UI showed autosaving then saved. Independent REST and reopening prove persistence.",
+    "Viewport simulation only; no real touch/keyboard/IME or practical operator handoff.",
+    "No production change, backend cutover, paid plan, runtime deployment or new empty-environment restore in this cycle.",
+    "Cold-start/save/lock latency, additional native workflows and sustained free-tier usage remain open.",
+    "The active test editor tab was closed and viewport reset. An older stale dashboard tab could not be explicitly closed because its control initialization timed out; it is unmarked for automatic cleanup."
+  ],
+  "goalStatus": "active",
+  "prDraft": true,
+  "delivery": {
+    "sourceFiles": 62,
+    "patches": 18,
+    "sourceDifferences": 0,
+    "helperScriptsCompared": [
+      "playtt-noop-ui-fixture.mjs",
+      "playtt-noop-ui-final-check.mjs",
+      "playtt-rebuild-ui-backup.mjs",
+      "playtt-tail-rebuild-sanitized.mjs"
+    ],
+    "helperDifferences": 0,
+    "runtimeSourceChangedThisCycle": false,
+    "freshDependenciesOrLocalRuntimeTestsThisCycle": false,
+    "scriptSyntax": "pass"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-20T22:23:23.893Z",
+  "result": "cross-browser-rendering-difference-observed",
+  "newContentTyped": false,
+  "saveClicked": false,
+  "nativeTakeoverClicked": false,
+  "iabIframeParagraphsVisible": false,
+  "chromeIframeParagraphsVisible": true,
+  "iabLogs": [],
+  "chromeLogs": [
+    {
+      "level": "warn",
+      "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+      "timestamp": "2026-11-20T22:21:02.906Z",
+      "url": "https://playtt-wp-free-session-audit.muzhi-garden-platform.workers.dev/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+    }
+  ],
+  "iframeDomInspectionLimited": true,
+  "domInspectionNote": "contentWindow/contentDocument/constructor are not exposed by the DOM evaluation surface; their absence is not proof of a browser-origin or runtime failure.",
+  "editorTabClosed": true,
+  "adminTabClosed": true
+}

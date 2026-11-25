@@ -1,0 +1,56 @@
+{
+  "schema": "playtt/local-candidate-files/v1",
+  "adopted": false,
+  "newIsolatedConfigFlagsEnabled": false,
+  "existingConfigsChanged": false,
+  "prerequisites": [
+    {
+      "path": "src/playtt-editor-readback.ts",
+      "sha256": "8fce1fe4538991ae876c1f2d1576d1dd9cf8f09a8886b43c650dc59ed915c71e"
+    },
+    {
+      "path": "src/playtt-runtime-lifetime.ts",
+      "sha256": "c115f47307fca8d5106f81ee55d80ffd5b74dd85a5683100c44bcfe2c8db6b5d"
+    },
+    {
+      "path": "src/playtt-content-policy.ts",
+      "sha256": "b11ca43b067824bd631215aa0cdcb20842396595589d09de00e13c398f2bb78e"
+    },
+    {
+      "path": "scripts/playtt-snapshot-bundle.mjs",
+      "sha256": "4262655fb0aef100b0401302622b81f9502896833bf7e3a8ab16737f3210e2aa"
+    },
+    {
+      "path": "assets/wordpress-static-artifact.json",
+      "sha256": "39fc2a00539d7a561ef7cc3483f723e510a24a84a6a1029bd0f88b5a3da218d2"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/worker.ts",
+      "beforeSha256": "d3463f03bb9bf03c29ed40733a51476bb0540def2c2f28eb12560779b86f1b26",
+      "afterSha256": "0c4d77291f3c766446d820d3c92a698e09517f31dbf2c92eadd539ab8697e3ed"
+    },
+    {
+      "path": "tests/playtt-editor-readback.test.mjs",
+      "beforeSha256": "22b3b0f55d94a79a827ab4f2d8a040d829d38f298440704bc17329701548b8db",
+      "afterSha256": "314b8a2382eb54190cadd32573df22d65b47b461b8d43cae85ff95d055b172b3"
+    },
+    {
+      "path": "src/playtt-editor-heartbeat.ts",
+      "source": "playtt-editor-heartbeat.ts",
+      "afterSha256": "341ffbe6394d12c0bdadfdd8b53523dc0810f383a777551617a1acb1727f028b"
+    },
+    {
+      "path": "tests/playtt-editor-heartbeat.test.mjs",
+      "source": "playtt-editor-heartbeat.test.mjs",
+      "afterSha256": "886b3f349b59643cec6f8ffa97dc7baedecd2a659a3e0cbebedc010076dbeac8"
+    },
+    {
+      "path": "scripts/playtt-heartbeat-policy-local.mjs",
+      "source": "playtt-heartbeat-policy-local.mjs",
+      "afterSha256": "cc5cd9febf24b9af9cc3f8ec91fde08a070e90b0f80b821fcd7c57309ae7f777"
+    }
+  ],
+  "patchSha256": "01d2b2fe0ec64e454b161524cba59ffee383c72a8a418767088a3c5b67535d58"
+}

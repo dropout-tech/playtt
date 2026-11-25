@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-21T06:08:11.729Z",
+  "result": "save-confirmed-reload-rejected",
+  "scope": "Native Chrome on existing private Cloudflare Worker; code-editor fill and visual Save once; reload returned write-window closed.",
+  "id": 193,
+  "saveClickedOnce": true,
+  "saveStartedAt": "2026-11-21T06:06:22.429Z",
+  "beforeExact": true,
+  "savedNotice": true,
+  "savedVisibleParagraphs": 8,
+  "reloadHttpCode": "playtt_write_window_closed",
+  "reloadedMarkupExact": false,
+  "nativeLogoutCompleted": false
+}

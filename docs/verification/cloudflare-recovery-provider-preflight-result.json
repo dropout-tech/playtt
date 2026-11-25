@@ -1,0 +1,82 @@
+{
+  "schema": "playtt/recovery-provider-readonly-preflight/v1",
+  "at": "2026-11-21T16:12:56.813Z",
+  "result": "pass",
+  "account": "3baadbd4abd9fd63c7f7e51664b26f67",
+  "worker": "playtt-wp-free-session-audit",
+  "bucket": "playtt-wordpress-session-audit",
+  "canonicalVersion": 177,
+  "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+  "manifestSha256": "83772504c985e0dcfb5970a4641499182802a911c09b65daf436d0cc9aecf4d0",
+  "independentBaselineExact": true,
+  "pins": 14,
+  "publisher": "paused",
+  "fenceActive": false,
+  "budget": {
+    "baselineBytes": 100738428,
+    "chargedBytes": 48177733,
+    "chargedPuts": 598,
+    "remainingBytes": 1083839,
+    "limitBytes": 150000000,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true
+  },
+  "deployedVersion": "af985705-1cb2-403e-962e-5af3e29ff5ff",
+  "flags": {
+    "PLAYTT_PROBE_GATE": "true",
+    "PLAYTT_STATE_PARTITION": "restore-v1",
+    "PLAYTT_AUTO_PUBLISH": "true",
+    "PLAYTT_R2_CAPACITY_SCOPE": "playtt-wordpress-session-audit",
+    "PLAYTT_R2_CAPACITY_LIMIT_BYTES": "150000000",
+    "PLAYTT_R2_WRITE_TRACKING": "v1",
+    "PLAYTT_R2_WRITE_WINDOW": "v1",
+    "PLAYTT_METADATA_OVERLAY": "v2",
+    "PLAYTT_CORE_EDITOR_LOCK": "gutenberg-79997-v1",
+    "PLAYTT_CONTENT_OVERLAY": null,
+    "PLAYTT_MANIFEST_ENCODING": null,
+    "PLAYTT_EDITOR_HEARTBEAT": null,
+    "PLAYTT_EDITOR_READBACK": null,
+    "PLAYTT_RECOVERY_UPLOADS": null
+  },
+  "checks": [
+    {
+      "endpoint": "/workers/scripts/playtt-wp-free-session-audit/deployments",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "/workers/scripts/playtt-wp-free-session-audit/settings",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "objectGets": 1,
+  "objectDownloadBytes": 23495,
+  "cloudRequests": 7,
+  "remoteMutations": 0,
+  "contentRequests": 0,
+  "deployments": 0,
+  "planOrBillingRefreshed": false,
+  "productionChanged": false
+}

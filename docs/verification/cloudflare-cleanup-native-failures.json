@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-21T21:18:40.583986+00:00",
+  "result": "failures retained and scope corrected",
+  "firstStartup": {
+    "terminalExit": 1,
+    "phase": "failed",
+    "error": "fetch failed",
+    "browserReadyReached": false,
+    "causeCaptured": false,
+    "localProcessesDisposed": true,
+    "originalInputsRetained": true,
+    "laterAttemptWithLocalProcessPermissionReachedBrowserReady": true,
+    "permissionRestrictionProvenAsRootCause": false
+  },
+  "initialOfflineAudit": {
+    "attempt": "cleanup-native-v2-offline-audit-initial",
+    "terminalExit": 1,
+    "failedExpectation": "Only classified403 or unauthenticated404 HTTP errors",
+    "actualAdditionalResult": {
+      "category": "ajax",
+      "method": "POST",
+      "status": 400,
+      "label": "logout"
+    },
+    "responseActionCaptured": false,
+    "runtimeOwnerResultUnchanged": "verified content/save/restart/backup",
+    "subsequentAuditScope": "Data proof passes; Ajax400 explicitly remains unclassified. No broad healthy HTTP claim."
+  },
+  "logoutTextParser": {
+    "initialBoolean": false,
+    "originalResultRetained": true,
+    "actualVisibleText": "你已完成登出。",
+    "correctedBoolean": true,
+    "freshDomReadConfirmed": true
+  },
+  "runTerminalExit": 0,
+  "ports9507and9508Free": true,
+  "ownedBrowserTabsClosed": true,
+  "cloudRequests": 0,
+  "productionChanged": false
+}

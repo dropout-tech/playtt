@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-18T17:11:26.155Z",
+  "result": "pass",
+  "scope": "Latest authenticated remote backup fully decoded and hash-checked; canonical sequence metadata preserves highest IDs even after owned drafts were deleted. This is archive verification, not another independent full WordPress restore.",
+  "revision": "c1423c9b-b818-4410-92f7-dff11ccb8d15",
+  "objects": 296,
+  "archiveBytes": 2285242,
+  "archiveSha256": "1c2b60f63d6df0b446fddc6cb7cfd40328393ff752d901c0509fc530fa7fdc4b",
+  "metadataPath": "_runtime/playtt-auto-increment.json",
+  "metadataBytes": 195,
+  "metadataSha256": "16664e99cc3012af695eb21e5b81fb46fefbb9b5fce83020d723370f0653920d",
+  "tableCount": 8,
+  "wpPostsHighWater": "111"
+}

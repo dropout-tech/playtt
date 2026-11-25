@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-21T06:28:14.277Z",
+  "result": "pass",
+  "scope": "Four GET-only existing-private-project status requests",
+  "canonicalVersion": 161,
+  "revision": "3021e7bd-a125-439d-9027-11005ea71316",
+  "pins": 13,
+  "coherent": true,
+  "fenceActive": false,
+  "pending": 0,
+  "sealed": true,
+  "windowClosed": true,
+  "publisher": "paused",
+  "remainingBytes": 1881041,
+  "mutatingRequests": 0,
+  "productionRequests": 0
+}

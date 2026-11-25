@@ -1,0 +1,80 @@
+{
+  "at": "2026-11-18T17:37:10.094Z",
+  "result": "pass",
+  "scope": "Local cold reconstruction after injected manifest failure; owned auto-draft identity preserved, normal retry commits deletion",
+  "id": 249,
+  "failedDeletionRolledBack": true,
+  "retry": {
+    "schema": "playtt/auto-draft-maintenance/v1",
+    "action": "run",
+    "batchLimit": 20,
+    "eligibleBefore": 1,
+    "selectedIds": [
+      249
+    ],
+    "deletedIds": [
+      249
+    ],
+    "remainingEligible": 0,
+    "skippedIds": []
+  },
+  "allOwnedIds404": true,
+  "originalPublishedPagesUnchanged": true,
+  "publisherPaused": true,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 99
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2651
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 1349
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 935
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/249?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 618
+    },
+    {
+      "path": "/?phase=operator-auto-draft-maintenance",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 1203
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/249?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 610
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&status=publish&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1242
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 14
+    }
+  ]
+}

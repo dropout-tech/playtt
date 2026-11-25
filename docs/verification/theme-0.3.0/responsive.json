@@ -1,0 +1,401 @@
+{
+  "scope": "Fresh native WordPress export, theme 0.3.0; desktop viewport emulation, not physical devices",
+  "cells": [
+    {
+      "route": "/",
+      "brokenImages": 0,
+      "client": 360,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 360,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 375
+    },
+    {
+      "route": "/about/",
+      "brokenImages": 0,
+      "client": 360,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 360,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 375
+    },
+    {
+      "route": "/class/",
+      "brokenImages": 0,
+      "client": 360,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 360,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 375
+    },
+    {
+      "route": "/coaches/",
+      "brokenImages": 0,
+      "client": 360,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [
+        "力仁",
+        "長德",
+        "秉成",
+        "俊佑",
+        "PEGGY"
+      ],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 360,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 375
+    },
+    {
+      "route": "/locations/",
+      "brokenImages": 0,
+      "client": 360,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 360,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 375
+    },
+    {
+      "route": "/partner/",
+      "brokenImages": 0,
+      "client": 360,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 812,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 360,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 375
+    },
+    {
+      "route": "/",
+      "brokenImages": 0,
+      "client": 753,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 753,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 768
+    },
+    {
+      "route": "/about/",
+      "brokenImages": 0,
+      "client": 753,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 753,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 768
+    },
+    {
+      "route": "/class/",
+      "brokenImages": 0,
+      "client": 753,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 753,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 768
+    },
+    {
+      "route": "/coaches/",
+      "brokenImages": 0,
+      "client": 753,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [
+        "力仁",
+        "長德",
+        "秉成",
+        "俊佑",
+        "PEGGY"
+      ],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 753,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 768
+    },
+    {
+      "route": "/locations/",
+      "brokenImages": 0,
+      "client": 753,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 753,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 768
+    },
+    {
+      "route": "/partner/",
+      "brokenImages": 0,
+      "client": 753,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1024,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 753,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 768
+    },
+    {
+      "route": "/",
+      "brokenImages": 0,
+      "client": 1425,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1000,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 1425,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 1440
+    },
+    {
+      "route": "/about/",
+      "brokenImages": 0,
+      "client": 1425,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1000,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 1425,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 1440
+    },
+    {
+      "route": "/class/",
+      "brokenImages": 0,
+      "client": 1425,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1000,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 1425,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 1440
+    },
+    {
+      "route": "/coaches/",
+      "brokenImages": 0,
+      "client": 1425,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1000,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [
+        "力仁",
+        "長德",
+        "秉成",
+        "俊佑",
+        "PEGGY"
+      ],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 1425,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 1440
+    },
+    {
+      "route": "/locations/",
+      "brokenImages": 0,
+      "client": 1425,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1000,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 1425,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 1440
+    },
+    {
+      "route": "/partner/",
+      "brokenImages": 0,
+      "client": 1425,
+      "footerOverlap": 0,
+      "h1": 1,
+      "height": 1000,
+      "lang": "zh-TW",
+      "main": 1,
+      "missingAlt": 0,
+      "newCoachNames": [],
+      "phones": [
+        "tel:+886988521012",
+        "tel:+886282861011"
+      ],
+      "removedCoach": false,
+      "scrollWidth": 1425,
+      "unannouncedOffice": false,
+      "unloadedImages": 0,
+      "width": 1440
+    }
+  ]
+}

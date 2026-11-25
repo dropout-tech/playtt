@@ -1,0 +1,106 @@
+{
+  "schema": "playtt/preallocated-corpus-proof/v1",
+  "at": "2026-11-21T20:03:37.558Z",
+  "result": "pass",
+  "localOnly": true,
+  "cloudRequests": 0,
+  "baselineSourceSha256": "2a3345501b3c258d5087639d00fd5720a8539dda0953cf1fef025f0933e16efc",
+  "candidateSourceSha256": "fd63abb044984c9b8f43799f9682e4ea65d232fa858be90ce4cab70a986e424f",
+  "loaderSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+  "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+  "digestViewCases": 4,
+  "digestInputsUnchanged": true,
+  "results": [
+    {
+      "fixture": "core",
+      "label": "baseline",
+      "files": 2154,
+      "usedBytes": 23714640,
+      "capacityBytes": 33170064,
+      "unusedCapacityBytes": 9455424,
+      "oversizedFiles": 525,
+      "compaction": {
+        "files": 501,
+        "beforeBytes": 31727397,
+        "afterBytes": 22522980,
+        "releasedCapacityBytes": 9204417
+      },
+      "allFileHashesExact": true,
+      "archiveTemporaryFileRemoved": true,
+      "inventorySha256": "9fc7227fc7f0801a6af0b85b54065ef7ae531dac50a01fd4d6d8e6af3a6096df"
+    },
+    {
+      "fixture": "core",
+      "label": "candidate",
+      "files": 2154,
+      "usedBytes": 23714640,
+      "capacityBytes": 23714640,
+      "unusedCapacityBytes": 0,
+      "oversizedFiles": 0,
+      "compaction": {
+        "files": 0,
+        "beforeBytes": 22522980,
+        "afterBytes": 22522980,
+        "releasedCapacityBytes": 0
+      },
+      "allFileHashesExact": true,
+      "archiveTemporaryFileRemoved": true,
+      "inventorySha256": "9fc7227fc7f0801a6af0b85b54065ef7ae531dac50a01fd4d6d8e6af3a6096df"
+    },
+    {
+      "fixture": "edge-cases",
+      "label": "baseline",
+      "files": 8,
+      "usedBytes": 1114206,
+      "capacityBytes": 1310804,
+      "unusedCapacityBytes": 196598,
+      "oversizedFiles": 2,
+      "compaction": {
+        "files": 2,
+        "beforeBytes": 1310804,
+        "afterBytes": 1114206,
+        "releasedCapacityBytes": 196598
+      },
+      "allFileHashesExact": true,
+      "archiveTemporaryFileRemoved": true,
+      "inventorySha256": "2d6e9ef6f41bbf97171e4e0e22659b2f7f42d3b5acdd8fb61fbc697f6b3e3d92"
+    },
+    {
+      "fixture": "edge-cases",
+      "label": "candidate",
+      "files": 8,
+      "usedBytes": 1114206,
+      "capacityBytes": 1114206,
+      "unusedCapacityBytes": 0,
+      "oversizedFiles": 0,
+      "compaction": {
+        "files": 0,
+        "beforeBytes": 1114206,
+        "afterBytes": 1114206,
+        "releasedCapacityBytes": 0
+      },
+      "allFileHashesExact": true,
+      "archiveTemporaryFileRemoved": true,
+      "inventorySha256": "2d6e9ef6f41bbf97171e4e0e22659b2f7f42d3b5acdd8fb61fbc697f6b3e3d92"
+    }
+  ],
+  "comparisons": [
+    {
+      "fixture": "core",
+      "allFileBytesSizeAndModesEqual": true,
+      "files": 2154
+    },
+    {
+      "fixture": "edge-cases",
+      "allFileBytesSizeAndModesEqual": true,
+      "files": 8
+    }
+  ],
+  "centralRuntimeChanged": false,
+  "deployed": false,
+  "limitations": [
+    "Actual PHP8.3.36 filesystem semantics under Node, not Cloudflare resource enforcement.",
+    "No browser/editor/site publication flow and no production candidate adoption.",
+    "Allocation/CPU peak not measured by this semantic proof."
+  ]
+}

@@ -1,0 +1,94 @@
+--- a/src/worker-playtt-do.ts
++++ b/src/worker-playtt-do.ts
+@@ -7,6 +7,7 @@
+ import { playttProbeAccess } from './playtt-probe-access.js';
+ import { parseSiteContexts, resolveSiteContextFromRequest } from './site-context.js';
+ import { preparePlayttMaintenanceRequest } from './playtt-maintenance.js';
++import { runPlayttScheduledMaintenance } from './playtt-maintenance-schedule.js';
+ 
+ interface PlayttEnv extends RuntimeEnv {
+   WORDPRESS_STATE: DurableObjectNamespace;
+@@ -15,6 +16,7 @@
+   PLAYTT_CMS_MODE?: string;
+   PLAYTT_STATE_PARTITION?: string;
+   PLAYTT_AUTO_PUBLISH?: string;
++  PLAYTT_MAINTENANCE_CRON?: string;
+ }
+ 
+ export { WordPressStateCoordinator };
+@@ -90,6 +92,11 @@
+ }
+ 
+ export default {
++  async scheduled(controller: ScheduledController, env: PlayttEnv): Promise<void> {
++    const report=await runPlayttScheduledMaintenance(controller,env,request=>
++      env.PLAYTT_EXECUTION.getByName(partitionName(env,'playtt-cms-v1')).fetch(request));
++    console.log(JSON.stringify(report));
++  },
+   async fetch(request: Request, env: PlayttEnv): Promise<Response> {
+     if (env.PLAYTT_CMS_MODE === 'production') {
+       const denied = protectPlayttCms(request, env.WORDPRESS_OPERATOR_TOKEN || '');
+--- /dev/null
++++ b/src/playtt-maintenance-schedule.ts
+@@ -0,0 +1,45 @@
++import {parseSiteContexts} from './site-context.js';
++import {deriveSiteCredential} from './wordpress-auth.js';
++import {validatePlayttMaintenanceResult} from './playtt-maintenance.js';
++
++export interface PlayttMaintenanceScheduleEnv {
++  PLAYTT_MAINTENANCE_CRON?: string;
++  WORDPRESS_SITE_CONTEXTS?: string;
++  WORDPRESS_OPERATOR_TOKEN?: string;
++}
++
++// A single daily invocation delegates one bounded batch to the SAME execution
++// DO used by editing. No PHP runs in the scheduled caller, no general WP-Cron
++// hooks are dispatched, and there is no internal retry/backlog-draining loop.
++export async function runPlayttScheduledMaintenance(
++  event: Pick<ScheduledController,'cron'|'scheduledTime'>,
++  env: PlayttMaintenanceScheduleEnv,
++  dispatch: (request: Request) => Promise<Response>,
++) {
++  const schema='playtt/scheduled-auto-draft-maintenance/v1';
++  if (!env.PLAYTT_MAINTENANCE_CRON) return {schema,outcome:'disabled'};
++  const daily=/^(\d|[1-5]\d) (\d|1\d|2[0-3]) \* \* \*$/.exec(env.PLAYTT_MAINTENANCE_CRON);
++  if (!daily || daily[0]!==env.PLAYTT_MAINTENANCE_CRON) throw new Error('Playtt maintenance requires one fixed daily UTC schedule.');
++  // Old triggers may still arrive during Cloudflare configuration propagation.
++  if (event.cron!==env.PLAYTT_MAINTENANCE_CRON) return {schema,outcome:'ignored-cron'};
++  if (!Number.isSafeInteger(event.scheduledTime) || event.scheduledTime<0 || event.scheduledTime>8640000000000000) throw new Error('Maintenance scheduled time is invalid.');
++  if (!env.WORDPRESS_SITE_CONTEXTS || !env.WORDPRESS_OPERATOR_TOKEN) throw new Error('Maintenance schedule requires explicit site and operator configuration.');
++  const sites=parseSiteContexts(env.WORDPRESS_SITE_CONTEXTS);
++  if(sites.length!==1) throw new Error('Playtt maintenance schedule requires exactly one site.');
++  const site=sites[0],token=await deriveSiteCredential(env.WORDPRESS_OPERATOR_TOKEN,site.id,'operator-token');
++  const url=new URL('/?phase=operator-auto-draft-maintenance',site.origin);
++  let response:Response;
++  try {
++    response=await dispatch(new Request(url,{method:'POST',headers:{authorization:'Bearer '+token,'content-type':'application/json'},body:'{"action":"run"}'}));
++  } catch { throw new Error('Scheduled maintenance dispatch failed.'); }
++  if(response.status!==200){
++    await response.body?.cancel();
++    throw new Error('Scheduled maintenance returned HTTP '+response.status+'.');
++  }
++  const result=await response.json<{eligibleBefore:number;deletedIds:number[];remainingEligible:number;skippedIds:number[]}>();
++  validatePlayttMaintenanceResult(result,'run');
++  const revision=response.headers.get('x-wp-codebox-canonical-revision'),version=Number(response.headers.get('x-wp-codebox-canonical-version'));
++  if(!revision || !/^[a-f0-9-]{36}$/.test(revision) || !Number.isSafeInteger(version) || version<1) throw new Error('Scheduled maintenance commit receipt is invalid.');
++  // Counts and commit identifiers only; never log credentials or post contents.
++  return {schema,outcome:'completed',cron:event.cron,scheduledTime:event.scheduledTime,siteId:site.id,eligibleBefore:result.eligibleBefore,deleted:result.deletedIds.length,remainingEligible:result.remainingEligible,skipped:result.skippedIds.length,revision,version};
++}
+--- a/wrangler.playtt-retirement-restore-audit.jsonc
++++ b/wrangler.playtt-retirement-restore-audit.jsonc
+@@ -58,6 +58,12 @@
+     "WORDPRESS_SITE_CONTEXTS": "[{\"id\":\"default\",\"hostname\":\"playtt-wp-free-restore-audit.muzhi-garden-platform.workers.dev\",\"origin\":\"https://playtt-wp-free-restore-audit.muzhi-garden-platform.workers.dev\"}]",
+     "PLAYTT_STATE_PARTITION": "restore-v1",
+     "PLAYTT_AUTO_PUBLISH": "true",
+-    "PLAYTT_MEMORY_DIAGNOSTICS": "true"
++    "PLAYTT_MEMORY_DIAGNOSTICS": "true",
++    "PLAYTT_MAINTENANCE_CRON": "35 18 * * *"
++  },
++  "triggers": {
++    "crons": [
++      "35 18 * * *"
++    ]
+   }
+ }

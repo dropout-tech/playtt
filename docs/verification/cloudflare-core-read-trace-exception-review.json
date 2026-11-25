@@ -1,0 +1,9 @@
+{
+  "initialAuditSha256": "c071940b0d97eaf90b207b747fd37f7646ea3d75eea115c1251ec7c4dfcdf25f",
+  "reviewedAuditSha256": "808eda27df2b8f52bffb9a48e15c4a570f2f507392e75ceb6fd870b227c8b7fe",
+  "initialZeroExceptionAssertionFailed": true,
+  "observedRuntimeExceptions": 2,
+  "knownErrorText": "Uncaught Error: Network connection lost.",
+  "dataAssertionsUnchanged": true,
+  "zeroExceptionAcceptance": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "playtt/manifest-complete-browser/v1",
+  "at": "2026-11-21T13:45:27.595Z",
+  "result": "native-save-reopen-logout-observed",
+  "beforeExact": true,
+  "saveClicks": 1,
+  "savedUi": true,
+  "coldParagraphsExact": true,
+  "coldParagraphCount": 9,
+  "logoutSucceeded": true,
+  "logoutFailure503": false,
+  "logoutMethod": "Browser navigation to the native WordPress logout link observed in the DOM",
+  "ownedBrowserTabClosed": true,
+  "cloudRequests": 0
+}

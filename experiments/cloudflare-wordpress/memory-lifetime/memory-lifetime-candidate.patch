@@ -1,0 +1,71 @@
+--- a/packages/runtime-cloudflare/src/worker.ts
++++ b/packages/runtime-cloudflare/src/worker.ts
+@@ -1,4 +1,5 @@
+ import { wordPressContentType } from './asset-content-type.js';
++import { compactPlayttCoreFiles } from './playtt-core-memory.js';
+ import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+ import { decodeZip } from "@php-wasm/stream-compression"
+@@ -2342,6 +2343,13 @@
+ require '/wordpress/wp-load.php';`
+ }
+ 
++// Playground retains this factory for runtime rotation. Create its closure in
++// a separate scope so it cannot retain bootWordPressRuntime's decoded content,
++// language files and archive buffers after they have been copied into MEMFS.
++function tracedPhpRuntimeFactory(trace: CloudflarePhaseTrace): typeof createPhpRuntime {
++  return () => trace.measure("php.runtime.create", createPhpRuntime)
++}
++
+ async function bootWordPressRuntime(
+   wordpressInstallMode: WordPressInstallMode = "install-from-existing-files",
+   includeSqlite = true,
+@@ -2364,7 +2372,7 @@
+   const sqliteIntegrationPluginZip = includeSqlite ? trace ? await trace.measure("runtime.archive.sqlite.fetch-verify", () => readSqliteIntegrationArtifact(runtimeBucket!)) : await readSqliteIntegrationArtifact(runtimeBucket!) : undefined
+   const websiteImporterZip = includeWebsiteImporter ? trace ? await trace.measure("runtime.archive.component.fetch-verify", () => readWebsiteImporterArtifact(runtimeBucket!)) : await readWebsiteImporterArtifact(runtimeBucket!) : undefined
+   const boot = () => bootWordPressAndRequestHandler({
+-    createPhpRuntime: trace ? () => trace.measure("php.runtime.create", () => createPhpRuntime()) : createPhpRuntime,
++    createPhpRuntime: trace ? tracedPhpRuntimeFactory(trace) : createPhpRuntime,
+     // The WASM filesystem lives in the same 128 MiB isolate. A file-only
+     // opcode cache duplicates compiled PHP in that filesystem after each load.
+     phpIniEntries: { "opcache.enable": "0", "opcache.enable_cli": "0" },
+@@ -2428,6 +2436,8 @@
+   const php = await requestHandler.getPrimaryPhp()
+   const wordpressVersion = (trace ? await trace.measure("playground.version.read", () => php.run({ code: "<?php require '/wordpress/wp-includes/version.php'; echo $wp_version;" })) : await php.run({ code: "<?php require '/wordpress/wp-includes/version.php'; echo $wp_version;" })).text.trim()
+   if (!wordpressVersion) throw new Error("WordPress boot completed without a detected version.")
++  const compacted = compactPlayttCoreFiles(php)
++  console.log(JSON.stringify({ schema: 'playtt-core-compaction/v1', ...compacted }))
+   return { php, requestHandler, wordpressVersion }
+ }
+ 
+--- /dev/null
++++ b/packages/runtime-cloudflare/src/playtt-core-memory.ts
+@@ -0,0 +1,28 @@
++import type { PHP } from '@php-wasm/universal';
++
++// The pinned Emscripten MEMFS doubles small file capacities during ZIP
++// extraction. Core PHP source is immutable after our boot patches; retain
++// exactly its used bytes instead of the unused growth capacity. Never touch
++// canonical wp-content, uploads, database files or WASM-aliased buffers.
++export function compactPlayttCoreFiles(php: PHP): { files: number; beforeBytes: number; afterBytes: number; releasedCapacityBytes: number } {
++  const key=Object.getOwnPropertySymbols(php).find(symbol=>symbol.description==='__private__dont__use');
++  const module=key?(php as unknown as Record<symbol,any>)[key]:undefined;
++  const root=module?.FS?.root?.contents?.wordpress;
++  if(!root)throw new Error('Pinned PHP MEMFS core root is unavailable.');
++  const result={files:0,beforeBytes:0,afterBytes:0,releasedCapacityBytes:0};
++  const seen=new Set<object>();
++  function visit(node:any,path:string):void {
++    if(!node||seen.has(node)||path==='/wordpress/wp-content')return;
++    seen.add(node);
++    const bytes=node.contents;
++    if(ArrayBuffer.isView(bytes)&&(bytes as any).BYTES_PER_ELEMENT===1){
++      result.beforeBytes+=bytes.byteLength;
++      if(Number.isSafeInteger(node.usedBytes)&&node.usedBytes>=0&&node.usedBytes<bytes.byteLength&&bytes.buffer!==module.HEAPU8.buffer){
++        node.contents=(bytes as Uint8Array).slice(0,node.usedBytes);
++        result.files++;
++      }
++      result.afterBytes+=node.contents.byteLength;
++    }else if(bytes&&typeof bytes==='object')for(const [name,child]of Object.entries(bytes))visit(child,path+'/'+name);
++  }
++  visit(root,'/wordpress');result.releasedCapacityBytes=result.beforeBytes-result.afterBytes;return result;
++}

@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-18T17:23:46Z",
+  "scope": "First local maintenance integration attempt, before test fixture creation",
+  "expectedStatus": 400,
+  "observedStatus": 500,
+  "signature": "Can't read from request stream after response has been sent.",
+  "finding": "Forwarding a network-backed request body into the DO preceded this local workerd transport failure. The outer Worker now authenticates and parses the bounded input, then forwards a new byte-backed body; the full rejection/cleanup/restart test passed. This does not prove every previous interruption had the same cause."
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "playtt/core-lru-contract/v1",
+  "result": "pass",
+  "cases": [
+    "shared-backing-reference-counts",
+    "get-promotes-least-recent-eviction",
+    "replacement-releases-old-buffer",
+    "oversized-lru-bypasses-preserving-others",
+    "clear-releases-all-accounting",
+    "entry-bound-even-with-shared-buffer",
+    "single-original-replacement-and-oversize-clear",
+    "view-charged-full-backing-capacity",
+    "zero-limit-disables-cache",
+    "invalid-policies-and-values-rejected"
+  ],
+  "uniqueBackingAccounting": true,
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0
+}

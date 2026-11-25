@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-20T03:45:35.548Z",
+  "result": "pass",
+  "pins": 21,
+  "generation": 21,
+  "canonicalUnchanged": true,
+  "capacityLedgerUnchanged": true,
+  "registrySurvivedRedeployment": true,
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1507
+    },
+    {
+      "path": "/?phase=operator-fence-renew",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 862
+    },
+    {
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 178
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1890
+    },
+    {
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 845
+    }
+  ]
+}

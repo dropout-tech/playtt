@@ -1,0 +1,61 @@
+{
+  "schema": "playtt/path-join-proof/v1",
+  "at": "2026-11-21T18:08:24.936Z",
+  "result": "pass",
+  "scope": "Isolated single-line lookupPath candidate against actual pinned PHP web WASM; source runtime unchanged, no WordPress/browser/provider candidate run yet",
+  "baselineSha256": "9eee1c4bf010ff84741d82c5143689e76c2d06cd0c877dc919c6ecd202b9b666",
+  "candidateSha256": "382310127a494ab04b7324823230f3e119e6928330575a3089cd84566da6150f",
+  "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+  "changedStatements": 1,
+  "observations": [
+    {
+      "label": "baseline",
+      "cases": 1876,
+      "resultSha256": "cd45a3ef89de79e3f9e05b0e2900066cfc58d5e2e521f8ace16c17b86a8391da",
+      "native": [
+        "繁中測試",
+        true,
+        "/spec/a",
+        "/spec/a/b/changed.txt"
+      ],
+      "lookupBenchmark": {
+        "runs": 5,
+        "lookupsPerRun": 20000,
+        "wallMs": [
+          66.68059999999991,
+          63.71139999999991,
+          60.608600000000024,
+          62.91929999999991,
+          62.901700000000005
+        ],
+        "scope": "Local Node diagnostic only; fixed order, no provider/whole-request performance claim"
+      }
+    },
+    {
+      "label": "candidate",
+      "cases": 1876,
+      "resultSha256": "cd45a3ef89de79e3f9e05b0e2900066cfc58d5e2e521f8ace16c17b86a8391da",
+      "native": [
+        "繁中測試",
+        true,
+        "/spec/a",
+        "/spec/a/b/changed.txt"
+      ],
+      "lookupBenchmark": {
+        "runs": 5,
+        "lookupsPerRun": 20000,
+        "wallMs": [
+          24.783699999999953,
+          19.3590999999999,
+          18.104000000000042,
+          17.774400000000014,
+          17.644700000000057
+        ],
+        "scope": "Local Node diagnostic only; fixed order, no provider/whole-request performance claim"
+      }
+    }
+  ],
+  "semanticCasesExact": true,
+  "cloudRequests": 0,
+  "productionChanged": false
+}

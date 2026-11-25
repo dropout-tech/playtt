@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-17T10:44:29.549Z",
+  "result": "pass",
+  "scope": "One intentional incomplete heartbeat transport disconnect on private audit only; canonical pointer/version must remain unchanged; tail separately proves whether PHP was reached",
+  "disconnected": true,
+  "canonicalUnchanged": true,
+  "checks": [
+    {
+      "at": "2026-11-17T10:44:09.514Z",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 8877
+    },
+    {
+      "at": "2026-11-17T10:44:18.393Z",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 2352
+    },
+    {
+      "at": "2026-11-17T10:44:24.891Z",
+      "path": "/wp-login.php",
+      "status": 200,
+      "wallMs": 1956
+    }
+  ]
+}

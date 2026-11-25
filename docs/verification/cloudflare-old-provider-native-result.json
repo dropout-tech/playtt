@@ -1,0 +1,675 @@
+{
+  "schema": "playtt/old-provider-native/v1",
+  "at": "2026-11-21T16:50:24.668Z",
+  "result": "pass",
+  "oldSource": "67dd308",
+  "fallbackSource": "97a92c8a32cd58931d57fa5f17434b943976331e",
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 650908,
+    "maxOperations": 96
+  },
+  "before": {
+    "version": 178,
+    "pins": 15,
+    "remainingBytes": 650908
+  },
+  "checks": [
+    {
+      "phase": "preflight",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "preflight",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "preflight",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "preflight",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "preflight",
+      "kind": "provider",
+      "path": "deployments",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "preflight",
+      "kind": "provider",
+      "path": "settings",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "deploying-old",
+      "kind": "provider",
+      "path": "deployments",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "deploying-old",
+      "kind": "provider",
+      "path": "settings",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "deploying-old",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "deploying-old",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "deploying-old",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "deploying-old",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "waiting-observer",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "waiting-observer",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "arming",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "arming",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "arming",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "arming",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "native",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4065
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "native",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 3560,
+      "version": 179
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "native",
+      "path": "/wp-admin/profile.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1014
+    },
+    {
+      "phase": "native-login",
+      "kind": "native",
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 841
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-login",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-save",
+      "kind": "native",
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 3728,
+      "version": 180
+    },
+    {
+      "phase": "native-save",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-save",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-save",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-save",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "provider",
+      "path": "deployments",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "provider",
+      "path": "settings",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "cold-held",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "native-cold-read",
+      "kind": "native",
+      "path": "/wp-json/wp/v2/pages/193",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3007
+    },
+    {
+      "phase": "native-cold-read",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-cold-read",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-cold-read",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-cold-read",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-logout",
+      "kind": "native",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 302,
+      "wallMs": 3544,
+      "version": 181
+    },
+    {
+      "phase": "native-logout",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-logout",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-logout",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "native-logout",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "closing",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "independent-backup",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "restoring-compatible-reader",
+      "kind": "provider",
+      "path": "deployments",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "restoring-compatible-reader",
+      "kind": "provider",
+      "path": "settings",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "restoring-compatible-reader",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "restoring-compatible-reader",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "restoring-compatible-reader",
+      "kind": "operator",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "restoring-compatible-reader",
+      "kind": "operator",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "restoring-compatible-reader",
+      "kind": "operator",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "restoring-compatible-reader",
+      "kind": "operator",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "deployments": [
+    {
+      "label": "first",
+      "target": "old",
+      "version": "072fd18a-45e1-4f58-a39c-0cd517d573d5",
+      "at": "2026-11-21T16:50:35.320Z",
+      "frozenModulesVerified": true,
+      "bindingsExact": true
+    },
+    {
+      "label": "cold",
+      "target": "old",
+      "version": "b8e0a87d-1b4f-438e-ac8a-d360ccbc5cc6",
+      "at": "2026-11-21T16:51:14.575Z",
+      "frozenModulesVerified": true,
+      "bindingsExact": true
+    },
+    {
+      "label": "final",
+      "target": "fallback",
+      "version": "aa595610-cc7c-44b9-89ec-f11f4939902f",
+      "at": "2026-11-21T16:51:55.781Z",
+      "frozenModulesVerified": true,
+      "bindingsExact": true
+    }
+  ],
+  "productionChanged": false,
+  "paidChange": false,
+  "totalCapChanged": false,
+  "unknownTicketsCleared": false,
+  "nativeFlowComplete": true,
+  "coldDeployment": "b8e0a87d-1b4f-438e-ac8a-d360ccbc5cc6",
+  "chargedBytes": 588564,
+  "chargedPuts": 13,
+  "all15OriginalPinsExact": true,
+  "revision208Exact": true,
+  "allOriginalUsermetaAndSessionsExact": true,
+  "newSessionRemoved": true,
+  "allOtherContentMediaThemeExact": true,
+  "independentBackup": {
+    "objects": 303,
+    "files": 298,
+    "remoteGets": 8,
+    "downloadedBytes": 2805072,
+    "exact": true
+  },
+  "savedVersion": 180,
+  "coldReadVersion": 180,
+  "finalVersion": 181,
+  "fallbackVersion": "aa595610-cc7c-44b9-89ec-f11f4939902f",
+  "after": {
+    "version": 181,
+    "revision": "9e732918-4430-4381-8275-fee800f414cb",
+    "pins": 16,
+    "remainingBytes": 62344,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true,
+    "fenceActive": false,
+    "publisher": "paused"
+  },
+  "observer": {
+    "ready": true,
+    "startedAt": 1795279837551,
+    "expiresAt": 1795280497551,
+    "ended": true,
+    "endedAt": 1795279922419,
+    "endCode": null,
+    "unparsed": 0
+  },
+  "contained": true,
+  "finishedAt": "2026-11-21T16:52:02.419Z"
+}

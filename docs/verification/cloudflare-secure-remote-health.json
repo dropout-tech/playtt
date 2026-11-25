@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-17T04:30:57.460Z",
+  "status": 200,
+  "wallMs": 5028,
+  "cfRay": "a5bc00af9b7e152b-SJC",
+  "title": null,
+  "cloudflareError": null,
+  "loginForm": false,
+  "health": {
+    "schema": "wp-codebox/cloudflare-runtime-health/v1",
+    "marker": "wp-codebox-cloudflare-runtime-health",
+    "wordpressVersion": "7.1.4",
+    "phpVersion": "8.3.36",
+    "runtime": {
+      "backend": "wordpress-playground",
+      "environment": "wordpress"
+    },
+    "evidence": {
+      "initialization": "completed",
+      "execution": "completed",
+      "initializationScope": "isolate"
+    },
+    "execution": {
+      "schema": "wp-codebox/runtime-command-result/v1",
+      "status": "ok",
+      "json": {
+        "schema": "wp-codebox/cloudflare-runtime-health/v1",
+        "marker": "wp-codebox-cloudflare-runtime-health",
+        "wordpressVersion": "7.1.4",
+        "phpVersion": "8.3.36",
+        "runtime": {
+          "backend": "wordpress-playground",
+          "environment": "wordpress"
+        },
+        "evidence": {
+          "initialization": "completed",
+          "execution": "completed",
+          "initializationScope": "isolate"
+        }
+      },
+      "diagnostics": [
+        {
+          "schema": "wp-codebox/runtime-diagnostic/v1",
+          "code": "wordpress_runtime_initialized",
+          "severity": "info",
+          "message": "WordPress boot and PHP execution completed."
+        }
+      ]
+    }
+  }
+}

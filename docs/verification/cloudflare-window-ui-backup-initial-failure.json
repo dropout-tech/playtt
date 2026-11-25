@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-20T18:36:48.335Z",
+  "result": "fail",
+  "canonicalVersion": 26,
+  "remoteR2Mutations": 0,
+  "sourceRevision": "5c575aeb-871c-4b84-818f-593fa480dfab",
+  "changedMarkdownFiles": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json",
+    "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+  ],
+  "errorName": "AssertionError",
+  "fenceReleased": true
+}

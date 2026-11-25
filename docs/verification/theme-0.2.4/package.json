@@ -1,0 +1,15 @@
+{
+  "version": "0.2.4",
+  "scope": "Candidate theme ZIP; not deployed",
+  "zipSha256": "b5517d4ffc8443548217a67439c2833e0af595481795c68bde3e679007aa641e",
+  "files": 35,
+  "priorZipSha256": "471aaf78e1d4a15d1357ec9500a067bcff27a9a4d803f7f8dcea48a00249a79e",
+  "changedFiles": [
+    "style.css"
+  ],
+  "unchangedFiles": 34,
+  "styleSha256": "960526be8b1e4b3960626b653f1c646c3dcab6e916192ce7d5bdd82cc887e3be",
+  "nativeInstalledFilesExact": 35,
+  "integrationChecks": 9,
+  "wordpressVersion": "7.1.4"
+}

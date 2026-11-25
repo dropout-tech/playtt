@@ -1,0 +1,298 @@
+{
+  "at": "2026-11-18T21:53:59.290014+00:00",
+  "result": "private-milestone-passed",
+  "scope": "Diagnostic sampling optimization in the private rebuild only; production Pages, branding, daily-source code and backend selection unchanged; no paid plan.",
+  "workerVersion": "04c50a77-d4ca-4af0-93ab-0cc3ff1963e9",
+  "baselineWorkerVersion": "b90bf162-72f3-4c7b-a3a9-e61c46c8a773",
+  "cpuEvidence": {
+    "profileSha256": "5f5457792078dafa89b9c12555151befaa04fd77e9ad7b0be44656910ef1a070",
+    "durationNs": 10141024000,
+    "samples": 7300,
+    "cpuUnit": "nanoseconds",
+    "diagnosticVisitSelfNs": 1866000000,
+    "diagnosticVisitSelfPercent": 25.562,
+    "baselineBundleLocation": {
+      "file": "worker-playtt-do.js",
+      "line": 49581,
+      "mappedTo": "logPlayttRuntimeMemory.visit",
+      "bundleSha256": "71a1da4506a5534c9a99acca8b6467dff7223dfafb76d4790d262e1a8c729793"
+    }
+  },
+  "profilingLimit": "One private actor capture, not per-request accounting. First capture returned 10393/no recent executions; warmed latest-deployed retry succeeded. No proof of a specific remote typed-array misclassification.",
+  "change": "Heap measured each call; full file inventory only on first use of a PHP instance and after persistence. Mode-aware traversal does not enumerate file bytes; unsampled file totals are omitted.",
+  "readComparison": {
+    "requestsPerVersion": 6,
+    "warmupsExcludedPerVersion": 1,
+    "baselineMedianMs": 2406.077,
+    "sampledMedianMs": 1978.3739999999998,
+    "medianReductionMs": 427.703,
+    "medianReductionPercent": 17.776,
+    "wholeResponseClientWallTime": true,
+    "canonicalUnchanged": true,
+    "limits": "Small sequential samples with network variance; no CPU capture during either benchmark; sanitized tail active only for sampled run. Not a statistical estimate or whole-backend speed claim."
+  },
+  "localValidation": {
+    "nodeTests": {
+      "passed": 5,
+      "failed": 0,
+      "evidence": "Observed execution output; tests cover capacity, cross-realm views, numeric arrays, cycles, no warm file traversal, resampling and missing runtime."
+    },
+    "typeScript": "passed",
+    "privateDryRun": "passed",
+    "pinnedPhpMemfs": {
+      "at": "2026-11-18T21:43:20.850Z",
+      "result": "pass",
+      "scope": "Actual pinned PHP-WASM MEMFS: cold inventory, warm heap-only diagnostics, PHP-written file rescan and unchanged file bytes; local only, no whole-isolate memory claim.",
+      "before": {
+        "heapBytes": 67108864,
+        "fileScanPerformed": true,
+        "fileBytes": 1293,
+        "files": 4,
+        "heapAliasedFileBytes": 0,
+        "unknownFileBuffers": 0,
+        "categories": {
+          "runtime": 1288,
+          "canonical": 5
+        }
+      },
+      "warm": {
+        "heapBytes": 67108864,
+        "fileScanPerformed": false
+      },
+      "after": {
+        "heapBytes": 67108864,
+        "fileScanPerformed": true,
+        "fileBytes": 1400,
+        "files": 5,
+        "heapAliasedFileBytes": 0,
+        "unknownFileBuffers": 0,
+        "categories": {
+          "runtime": 1387,
+          "canonical": 13
+        }
+      }
+    }
+  },
+  "opcacheExperiment": {
+    "scope": "Local disposable pinned WordPress/SQLite seed only; no MDI, real site or remote isolate limit.",
+    "offMedianLastSixMs": 436.564,
+    "fileCacheMedianLastSixMs": 434.4455,
+    "cacheFilesBoth": 0,
+    "decision": "Simple toggle did not demonstrate cache files or a measurable gain; not adopted or deployed. Does not establish general OPCache incompatibility."
+  },
+  "nativeWriteCycle": {
+    "at": "2026-11-18T21:46:36.360Z",
+    "result": "pass",
+    "scope": "After diagnostic sampling change: native draft create/update, exact trailing-space/LF readback in a fresh login, original homepage unchanged and owned cleanup; no browser UI claim.",
+    "id": 144,
+    "contentHash": "b814bdfc8b2e57ef02d620cb7c2ed2a9520b2cf5c3c5fe250339e35b52422bfe",
+    "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+    "cleanupComplete": true,
+    "publisher": "paused",
+    "checks": [
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 796
+      },
+      {
+        "path": "/?phase=operator-fence-status",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 3065
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2040
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 7256
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 4793
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2757
+      },
+      {
+        "path": "/wp-json/wp/v2/pages",
+        "method": "POST",
+        "status": 201,
+        "wallMs": 6850
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/144",
+        "method": "POST",
+        "status": 200,
+        "wallMs": 8247
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 1982
+      },
+      {
+        "path": "/wp-login.php",
+        "method": "POST",
+        "status": 302,
+        "wallMs": 7712
+      },
+      {
+        "path": "/wp-admin/",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 4812
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/144?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2806
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/24?context=edit",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 2525
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/144?force=true",
+        "method": "DELETE",
+        "status": 200,
+        "wallMs": 7139
+      },
+      {
+        "path": "/wp-json/wp/v2/pages/144?context=edit",
+        "method": "GET",
+        "status": 404,
+        "wallMs": 1597
+      },
+      {
+        "path": "/__playtt-publishing",
+        "method": "GET",
+        "status": 200,
+        "wallMs": 371
+      }
+    ]
+  },
+  "finalIntegrity": {
+    "at": "2026-11-18T21:47:21.580Z",
+    "result": "pass",
+    "scope": "Complete backup after diagnostic sampling and native write cycle; all original content, historical revisions, media and metadata retained; owned draft/revisions absent",
+    "ownedId": 144,
+    "cleanupComplete": true,
+    "unchangedCanonicalFiles": 37,
+    "originalMarkdown": 27,
+    "uploads": 15,
+    "postmetaRows": 48,
+    "sequenceHighWater": {
+      "wp_comments": "1",
+      "wp_options": "361",
+      "wp_postmeta": "66",
+      "wp_posts": "145",
+      "wp_term_taxonomy": "4",
+      "wp_terms": "4",
+      "wp_usermeta": "21",
+      "wp_users": "1"
+    },
+    "states": [
+      {
+        "target": "rebuild",
+        "version": 158,
+        "revision": "78a0d6bd-c4a3-4c7b-be37-66e03578671b",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      },
+      {
+        "target": "daily-source",
+        "version": 174,
+        "revision": "fa72c9cc-709d-4242-862a-71ee8a17a112",
+        "coherent": true,
+        "fenceActive": false,
+        "publisher": "paused"
+      }
+    ],
+    "gateChecks": [
+      {
+        "path": "/wp-admin/",
+        "status": 404
+      },
+      {
+        "path": "/wp-json/wp/v2/media",
+        "status": 404
+      },
+      {
+        "path": "/wp-content/uploads/2026/11/logo.webp",
+        "status": 404
+      }
+    ],
+    "backup": {
+      "at": "2026-11-18T21:47:11.873Z",
+      "scope": "Authenticated remote R2 backup; every decoded entry verified; restore is a separate acceptance",
+      "result": "pass",
+      "bucket": "playtt-wordpress-rebuild-audit",
+      "revision": "78a0d6bd-c4a3-4c7b-be37-66e03578671b",
+      "objects": 297,
+      "decodedBytes": 4430243,
+      "archiveBytes": 2293332,
+      "archiveSha256": "fd35afa004cf05a16d7f0295627531c01c18cfb4de545eeed2c49468ee4fbaff"
+    }
+  },
+  "observation": {
+    "at": "2026-11-18T21:49:07.775664+00:00",
+    "events": 123,
+    "outcomes": {
+      "ok": 123
+    },
+    "exceptions": 0,
+    "requestFailures": 0,
+    "incompleteTraces": 0,
+    "memoryRows": 45,
+    "sampling": {
+      "before-request:True": 1,
+      "after-request:False": 20,
+      "before-request:False": 19,
+      "after-persist:True": 5
+    },
+    "maxObservedWasmHeapBytes": 73859072,
+    "maxObservedFileBufferBytes": 31652392,
+    "unknownFileBuffers": 0,
+    "observerStopped": true,
+    "scopedOrphanTailProcesses": 0,
+    "limits": "Finite window; event counts are not HTTP request counts. File buffers and WASM heap are not whole-isolate memory. Warm records intentionally omit unmeasured file totals."
+  },
+  "reassembly": {
+    "patches": 17,
+    "sourceFiles": 62,
+    "latestTools": 9,
+    "testFiles": 1,
+    "verification": "Recorded separately in diagnostic-sampling/reassembly-verification.json after fresh assembly."
+  },
+  "remaining": [
+    "Native reads still around 2.5–4.8 seconds and writes 6.85–8.25 seconds in this finite cycle.",
+    "Additional native/browser/mobile workflows and practical handoff.",
+    "Sustained free-tier usage and long-term stability.",
+    "No new browser/mobile run or separate empty-environment restore in this round.",
+    "Earlier uninstrumented cancellation causes remain unproved."
+  ],
+  "goalStatus": "active",
+  "pullRequest": {
+    "number": 4,
+    "draft": true,
+    "merged": false
+  }
+}

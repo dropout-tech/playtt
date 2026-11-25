@@ -1,0 +1,84 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -1,4 +1,4 @@
+-import { createMetadataOverlay, isMetadataOverlay, readMetadataOverlay, validateMetadataOverlay, type PlayttMetadataOverlay } from './playtt-metadata-overlay.js'
++import { createMetadataOverlay, isMetadataOverlay, readMetadataOverlay, validateMetadataOverlay, type PlayttMetadataOverlay } from './playtt-maintenance-overlay.js'
+ import { PlayttCapacityError, playttCapacityResponse } from './playtt-storage-capacity.js'
+ import { wordPressContentType } from './asset-content-type.js';
+ import { compactPlayttCoreFiles } from './playtt-core-memory.js';
+@@ -1455,7 +1455,7 @@
+       if (!canonicalChanges || !publicationChanges) throw new Error("Canonical mutation completed without its persistence evidence.")
+       logMutationPhase(diagnosticsStartedAt, "php-request", retained, { canonicalCreated: canonicalChanges.created.length, canonicalChanged: canonicalChanges.changed.length, canonicalDeleted: canonicalChanges.deleted.length })
+       if (route === "static-artifact-import") await heartbeat?.("persisting-canonical", 70)
+-      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_METADATA_OVERLAY === 'v1')
++      const next = await persistRuntime(env.WORDPRESS_STATE_BUCKET, runtime!, canonicalChanges!, site, diagnosticsStartedAt, retained, trace, env.PLAYTT_METADATA_OVERLAY === 'v2' ? 'v2' : env.PLAYTT_METADATA_OVERLAY === 'v1' ? 'v1' : false)
+       logPlayttRuntimeMemory("after-persist", runtime!, env)
+       if (route === "static-artifact-import") await heartbeat?.("canonical-prepared", 80)
+       if (!response) {
+@@ -1785,7 +1785,7 @@
+   return deriveWordPressAuthConstants(env.WORDPRESS_AUTH_SECRET ?? "", site.id)
+ }
+ 
+-async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay = false): Promise<MarkdownPointer> {
++async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace, allowMetadataOverlay: false | 'v1' | 'v2' = false): Promise<MarkdownPointer> {
+   validateMarkdownChanges(changes)
+   const root = siteStorageKeys(site).root
+   const manifestCache = runtime.manifestCache ??= new PlayttRuntimeManifestCache<MarkdownManifest>()
+@@ -2123,7 +2123,7 @@
+   validateUploadMetadata(files.map((file) => ({ path: file.path, size: file.bytes.byteLength })))
+ }
+ 
+-async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay = false): Promise<MarkdownPointer> {
++async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void, allowMetadataOverlay: false | 'v1' | 'v2' = false): Promise<MarkdownPointer> {
+   const revision = crypto.randomUUID()
+   const manifestKey = `${siteStorageKeys(site).markdownRevisionPrefix}/${revision}.json`
+   const persistedAt = new Date().toISOString()
+@@ -2133,7 +2133,7 @@
+   validateWpContentManifestFiles(wpContent, site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   validateWpContentDeletedPaths(wpContentDeleted, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   if (allowMetadataOverlay && previous) {
+-    const overlay = await createMetadataOverlay(bucket, siteStorageKeys(site).root, { files, uploads, wpContent, wpContentDeleted }, previous)
++    const overlay = await createMetadataOverlay(bucket, siteStorageKeys(site).root, { files, uploads, wpContent, wpContentDeleted }, previous, allowMetadataOverlay)
+     if (overlay) {
+       const manifest: MarkdownManifest = { ...pointer, files, uploads, wpContent, wpContentDeleted, restorePack: overlay }
+       validateMetadataOverlay(manifest, siteStorageKeys(site).root)
+--- a/src/playtt-backup-pins.ts
++++ b/src/playtt-backup-pins.ts
+@@ -1,4 +1,4 @@
+-import { isMetadataOverlay, readMetadataOverlay, type OverlayManifest } from './playtt-metadata-overlay.js';
++import { isMetadataOverlay, readMetadataOverlay, type OverlayManifest } from './playtt-maintenance-overlay.js';
+ // Append-only protection for independently verified local backups. The caller
+ // must serialize this operation with its coordinator's renewable fence.
+ const KEY = 'playtt-backup-pins-v1';
+--- a/scripts/playtt-backup-pin-client.mjs
++++ b/scripts/playtt-backup-pin-client.mjs
+@@ -3,7 +3,7 @@
+ import { createHash } from 'node:crypto';
+ import { decodeCanonicalRestorePack } from '../src/canonical-restore-pack.ts';
+ import { backupPinInput } from '../src/playtt-backup-pins.ts';
+-import { isMetadataOverlay, readMetadataOverlay } from '../src/playtt-metadata-overlay.ts';
++import { isMetadataOverlay, readMetadataOverlay } from '../src/playtt-maintenance-overlay.ts';
+ 
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+ const boundedFile=async(file,limit)=>{const info=await stat(file);assert.ok(info.isFile()&&info.size>0&&info.size<=limit);const bytes=await readFile(file);assert.equal(bytes.length,info.size);return bytes;};
+--- a/scripts/playtt-snapshot-bundle.mjs
++++ b/scripts/playtt-snapshot-bundle.mjs
+@@ -6,7 +6,7 @@
+ import {resolve} from 'node:path';
+ import {backupPinInput} from '../src/playtt-backup-pins.ts';
+ import {createCanonicalRestorePack,decodeCanonicalRestorePack,validateCanonicalRestorePackMetadata} from '../src/canonical-restore-pack.ts';
+-import {isMetadataOverlay,readMetadataOverlay,readOverlayBytes,MAX_OVERLAY_MANIFEST,MAX_OVERLAY_PACK} from '../src/playtt-metadata-overlay.ts';
++import {isMetadataOverlay,readMetadataOverlay,readOverlayBytes,MAX_OVERLAY_MANIFEST,MAX_OVERLAY_PACK} from '../src/playtt-maintenance-overlay.ts';
+ import {validatePlayttSnapshotSources} from '../src/playtt-snapshot-source.ts';
+ 
+ const ROOT='sites/default',SCHEMA='playtt/snapshot-bundle/v1';
+--- a/scripts/playtt-reference-coverage.mjs
++++ b/scripts/playtt-reference-coverage.mjs
+@@ -1,6 +1,6 @@
+ import assert from 'node:assert/strict';
+ import {createHash} from 'node:crypto';
+-import {isMetadataOverlay,validateMetadataOverlay,MAX_OVERLAY_PACK} from '../src/playtt-metadata-overlay.ts';
++import {isMetadataOverlay,validateMetadataOverlay,MAX_OVERLAY_PACK} from '../src/playtt-maintenance-overlay.ts';
+ import {validateCanonicalRestorePackMetadata} from '../src/canonical-restore-pack.ts';
+ 
+ const ROOT='sites/default/', MANIFESTS=ROOT+'markdown/revisions/';

@@ -1,0 +1,87 @@
+{
+  "schema": "playtt/boot-cleanup-proof/v1",
+  "at": "2026-11-21T20:49:14.845Z",
+  "result": "pass",
+  "actualPhp": "8.3.36",
+  "actualWordPress": "7.1.4",
+  "candidateHelperSha256": "4893fc54a80d03181357ac947275eb6c3b136e472d75b82101a1bd335220f5c5",
+  "wordpressPackageSha256": "ddd81085e7a246d678f7f669737a9452a9b24bff0bff575f59cd128e0d20d371",
+  "phpPackageSha256": "c57d1a49efa686897807cc01ee83526a1c563bd0c5b67420bd45fc20f5ba3c08",
+  "cases": 6,
+  "results": [
+    {
+      "name": "upstream-bad-zip",
+      "created": 1,
+      "finishCalled": false,
+      "baselineStillAliveAfterRejectedBoot": true,
+      "disposedOnFailure": false,
+      "cleanupErrorNotHidden": false,
+      "successfulHandlerOwnedByCaller": false,
+      "exitEvents": 1,
+      "allInstancesExited": true
+    },
+    {
+      "name": "candidate-bad-zip",
+      "created": 1,
+      "finishCalled": false,
+      "baselineStillAliveAfterRejectedBoot": false,
+      "disposedOnFailure": true,
+      "cleanupErrorNotHidden": false,
+      "successfulHandlerOwnedByCaller": false,
+      "exitEvents": 1,
+      "allInstancesExited": true
+    },
+    {
+      "name": "candidate-post-boot-validation-failure",
+      "created": 1,
+      "finishCalled": true,
+      "baselineStillAliveAfterRejectedBoot": false,
+      "disposedOnFailure": true,
+      "cleanupErrorNotHidden": false,
+      "successfulHandlerOwnedByCaller": false,
+      "exitEvents": 1,
+      "allInstancesExited": true
+    },
+    {
+      "name": "candidate-success-and-normal-disposal",
+      "created": 1,
+      "finishCalled": true,
+      "baselineStillAliveAfterRejectedBoot": false,
+      "disposedOnFailure": false,
+      "cleanupErrorNotHidden": false,
+      "successfulHandlerOwnedByCaller": true,
+      "exitEvents": 1,
+      "allInstancesExited": true
+    },
+    {
+      "name": "candidate-cleanup-error-retains-both-errors",
+      "created": 1,
+      "finishCalled": false,
+      "baselineStillAliveAfterRejectedBoot": false,
+      "disposedOnFailure": true,
+      "cleanupErrorNotHidden": true,
+      "successfulHandlerOwnedByCaller": false,
+      "exitEvents": 1,
+      "allInstancesExited": true
+    },
+    {
+      "name": "candidate-factory-rejects-before-php",
+      "created": 0,
+      "finishCalled": false,
+      "baselineStillAliveAfterRejectedBoot": false,
+      "disposedOnFailure": false,
+      "cleanupErrorNotHidden": false,
+      "successfulHandlerOwnedByCaller": false,
+      "exitEvents": 0,
+      "allInstancesExited": true
+    }
+  ],
+  "centralRuntimeChanged": false,
+  "cloudRequests": 0,
+  "deployed": false,
+  "limitations": [
+    "Real package boot and PHP instance lifetime under Node; not Cloudflare memory or whole-isolate retention measurement.",
+    "This ownership helper starts after bootRequestHandler returns. Mid-construction failures inside that dependency before a handler is returned are outside the cleanup contract.",
+    "The tested candidate helper is not yet wired into the full worker; integration/typecheck/source build remain next."
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "at": "2026-11-17T07:24:01.324Z",
+  "error": "AssertionError [ERR_ASSERTION]: Rendered unexpected snapshot\n+ actual - expected\n\n+ 'sites/default/publications/jobs/00000000000000000106-6761ae60-39b1-4c02-a9e5-0cf77f75473c.json'\n- 'sites/default/publications/jobs/00000000000000000107-efba9a58-7f22-4091-9b95-43dd1b93fbf1.json'\n",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/26",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/97",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/25",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts/lets-play%2F%2Ffooter",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/26",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-published/about/",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "observations": [
+    {
+      "state": "pending",
+      "attempts": 0,
+      "at": "2026-11-17T07:23:43.617Z"
+    },
+    {
+      "state": "pending",
+      "attempts": 0,
+      "at": "2026-11-17T07:23:43.617Z"
+    },
+    {
+      "state": "pending",
+      "attempts": 0,
+      "at": "2026-11-17T07:23:58.569Z",
+      "result": "rendered",
+      "jobKey": "sites/default/publications/jobs/00000000000000000106-6761ae60-39b1-4c02-a9e5-0cf77f75473c.json",
+      "route": "/"
+    },
+    {
+      "state": "pending",
+      "attempts": 0,
+      "at": "2026-11-17T07:23:58.600Z",
+      "result": "rendered",
+      "jobKey": "sites/default/publications/jobs/00000000000000000106-6761ae60-39b1-4c02-a9e5-0cf77f75473c.json",
+      "route": "/"
+    }
+  ]
+}

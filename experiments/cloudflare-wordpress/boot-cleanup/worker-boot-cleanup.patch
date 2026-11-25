@@ -1,0 +1,34 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -26,3 +26,4 @@
+ import { decodeZip } from "@php-wasm/stream-compression"
+-import { bootWordPressAndRequestHandler, type WordPressInstallMode } from "@wp-playground/wordpress"
++import type { WordPressInstallMode } from "@wp-playground/wordpress"
++import { bootPlayttWordPressRuntime } from "./playtt-boot-cleanup.js"
+ // The PHP-WASM package publishes this Emscripten loader without TypeScript declarations.
+@@ -2528,3 +2529,3 @@
+   const websiteImporterZip = includeWebsiteImporter ? trace ? await trace.measure("runtime.archive.component.fetch-verify", () => readWebsiteImporterArtifact(runtimeBucket!)) : await readWebsiteImporterArtifact(runtimeBucket!) : undefined
+-  const boot = () => bootWordPressAndRequestHandler({
++  const boot = () => bootPlayttWordPressRuntime({
+     createPhpRuntime: createPlayttRuntimeFactory(createPhpRuntime, trace),
+@@ -2593,11 +2594,12 @@
+     wordpressInstallMode,
++  }, async (requestHandler) => {
++    const php = await requestHandler.getPrimaryPhp()
++    const wordpressVersion = (trace ? await trace.measure("playground.version.read", () => php.run({ code: "<?php require '/wordpress/wp-includes/version.php'; echo $wp_version;" })) : await php.run({ code: "<?php require '/wordpress/wp-includes/version.php'; echo $wp_version;" })).text.trim()
++    if (!wordpressVersion) throw new Error("WordPress boot completed without a detected version.")
++    const compacted = compactPlayttCoreFiles(php)
++    console.log(JSON.stringify({ schema: 'playtt-core-compaction/v1', ...compacted }))
++    trackPlayttRuntimeLifetime(php)
++    return { php, requestHandler, wordpressVersion, editorHeartbeat }
+   })
+-  const requestHandler = trace ? await trace.measureComposite("playground.opaque", boot) : await boot()
+-  const php = await requestHandler.getPrimaryPhp()
+-  const wordpressVersion = (trace ? await trace.measure("playground.version.read", () => php.run({ code: "<?php require '/wordpress/wp-includes/version.php'; echo $wp_version;" })) : await php.run({ code: "<?php require '/wordpress/wp-includes/version.php'; echo $wp_version;" })).text.trim()
+-  if (!wordpressVersion) throw new Error("WordPress boot completed without a detected version.")
+-  const compacted = compactPlayttCoreFiles(php)
+-  console.log(JSON.stringify({ schema: 'playtt-core-compaction/v1', ...compacted }))
+-  trackPlayttRuntimeLifetime(php)
+-  return { php, requestHandler, wordpressVersion, editorHeartbeat }
++  return trace ? trace.measureComposite("playground.opaque", boot) : boot()
+ }

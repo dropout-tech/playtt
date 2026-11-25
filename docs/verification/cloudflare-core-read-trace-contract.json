@@ -1,0 +1,13 @@
+{
+  "schema": "playtt/core-read-trace-contract/v1",
+  "result": "pass",
+  "rleOrderAndReasonExact": true,
+  "countsAndBytesExact": true,
+  "snapshotsAreCopies": true,
+  "sequenceOverflowExplicit": true,
+  "dictionaryOverflowExplicit": true,
+  "pathBoundEnforced": true,
+  "typedArrayBytes": 458752,
+  "invalidBoundsRejected": 4,
+  "cloudRequests": 0
+}

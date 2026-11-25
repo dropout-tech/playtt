@@ -1,0 +1,15 @@
+{
+  "sourceFiles": 62,
+  "patches": 18,
+  "sourceDifferences": 0,
+  "helperScriptsCompared": [
+    "playtt-noop-ui-fixture.mjs",
+    "playtt-noop-ui-final-check.mjs",
+    "playtt-rebuild-ui-backup.mjs",
+    "playtt-tail-rebuild-sanitized.mjs"
+  ],
+  "helperDifferences": 0,
+  "runtimeSourceChangedThisCycle": false,
+  "freshDependenciesOrLocalRuntimeTestsThisCycle": false,
+  "scriptSyntax": "pass"
+}

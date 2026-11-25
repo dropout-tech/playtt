@@ -1,0 +1,387 @@
+{
+  "at": "2026-11-24T16:28:18.658Z",
+  "viewport": 375,
+  "method": "Native Tab, wait until focused target geometry stable and within viewport; 5.4second deadline; no forced scroll/focus or CSS changes",
+  "steps": [
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "Skip to content",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 53,
+        "height": 49,
+        "left": 4,
+        "right": 149.5625,
+        "top": 4,
+        "width": 145.5625,
+        "x": 4,
+        "y": 4
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 60.65625,
+        "height": 25.3125,
+        "left": 22,
+        "right": 177,
+        "top": 35.34375,
+        "width": 155,
+        "x": 22,
+        "y": 35.34375
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "Open menu",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 82,
+        "height": 44,
+        "left": 294,
+        "right": 338,
+        "top": 38,
+        "width": 44,
+        "x": 294,
+        "y": 38
+      },
+      "tag": "BUTTON",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "LINE 預約體驗 ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 433.40625,
+        "height": 48.5,
+        "left": 22,
+        "right": 163.203125,
+        "top": 384.90625,
+        "width": 141.203125,
+        "x": 22,
+        "y": 384.90625
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "探索桌球課程",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 434.40625,
+        "height": 50.5,
+        "left": 173.203125,
+        "right": 291.203125,
+        "top": 383.90625,
+        "width": 118,
+        "x": 173.203125,
+        "y": 383.90625
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "探索課程 ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 419.484375,
+        "height": 20,
+        "left": 46,
+        "right": 119.78125,
+        "top": 399.484375,
+        "width": 73.78125,
+        "x": 46,
+        "y": 399.484375
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "探索課程 ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 418.890625,
+        "height": 20,
+        "left": 46,
+        "right": 119.78125,
+        "top": 398.890625,
+        "width": 73.78125,
+        "x": 46,
+        "y": 398.890625
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "探索課程 ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 418.78125,
+        "height": 20,
+        "left": 46,
+        "right": 119.78125,
+        "top": 398.78125,
+        "width": 73.78125,
+        "x": 46,
+        "y": 398.78125
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "認識 Let’s Play ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 436.875,
+        "height": 56.25,
+        "left": 22,
+        "right": 207.359375,
+        "top": 380.625,
+        "width": 185.359375,
+        "x": 22,
+        "y": 380.625
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "認識完整教練團隊 ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 437.15625,
+        "height": 56.25,
+        "left": 22,
+        "right": 210.4375,
+        "top": 380.90625,
+        "width": 188.4375,
+        "x": 22,
+        "y": 380.90625
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "02-8286-1011",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 418.84375,
+        "height": 20,
+        "left": 49,
+        "right": 137.109375,
+        "top": 398.84375,
+        "width": 88.109375,
+        "x": 49,
+        "y": 398.84375
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "查看地圖 ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 503.78125,
+        "height": 56.25,
+        "left": 49,
+        "right": 177.4375,
+        "top": 447.53125,
+        "width": 128.4375,
+        "x": 49,
+        "y": 447.53125
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "洽詢課程",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 502.78125,
+        "height": 54.25,
+        "left": 189.4375,
+        "right": 297.4375,
+        "top": 448.53125,
+        "width": 108,
+        "x": 189.4375,
+        "y": 448.53125
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "LINE 洽詢 ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 436.1875,
+        "height": 54.25,
+        "left": 49,
+        "right": 184,
+        "top": 381.9375,
+        "width": 135,
+        "x": 49,
+        "y": 381.9375
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "LINE 預約體驗 ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 436.125,
+        "height": 54.25,
+        "left": 22,
+        "right": 187,
+        "top": 381.875,
+        "width": 165,
+        "x": 22,
+        "y": 381.875
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "02-8286-1011",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 680.1875,
+        "height": 19,
+        "left": 22,
+        "right": 103.1875,
+        "top": 661.1875,
+        "width": 81.1875,
+        "x": 22,
+        "y": 661.1875
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "playpp2018@gmail.com",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 702.9375,
+        "height": 19,
+        "left": 22,
+        "right": 168.703125,
+        "top": 683.9375,
+        "width": 146.703125,
+        "x": 22,
+        "y": 683.9375
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "LINE @869usyqy ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 578.4375,
+        "height": 19,
+        "left": 22,
+        "right": 138.1875,
+        "top": 559.4375,
+        "width": 116.1875,
+        "x": 22,
+        "y": 559.4375
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": false,
+      "label": "Facebook ↗",
+      "outline": "solid",
+      "overlapWithLine": 0,
+      "rect": {
+        "bottom": 625.1875,
+        "height": 19,
+        "left": 22,
+        "right": 96.34375,
+        "top": 606.1875,
+        "width": 74.34375,
+        "x": 22,
+        "y": 606.1875
+      },
+      "tag": "A",
+      "withinViewport": true
+    },
+    {
+      "focusVisible": true,
+      "isLine": true,
+      "label": "透過 LINE 洽詢與預約",
+      "outline": "solid",
+      "overlapWithLine": 3844,
+      "rect": {
+        "bottom": 796,
+        "height": 62,
+        "left": 282,
+        "right": 344,
+        "top": 734,
+        "width": 62,
+        "x": 282,
+        "y": 734
+      },
+      "tag": "A",
+      "withinViewport": true
+    }
+  ]
+}

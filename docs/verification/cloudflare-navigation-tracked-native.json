@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-17T07:00:00Z",
+  "scope": "Private restore-v1 Chrome native editor, PHP tracked allocator candidate",
+  "deployment": "755bdb73-82ca-4607-9937-017970a2ed3e",
+  "locale": "zh_TW",
+  "path": [
+    "外觀",
+    "編輯器",
+    "區塊版面配置",
+    "頁首",
+    "品牌頁首"
+  ],
+  "edit": {
+    "before": "據點",
+    "after": "上課據點"
+  },
+  "saveToast": "範本組件已更新。",
+  "reloadedVisualRetained": true,
+  "restoration": "pass",
+  "productionChanged": false,
+  "restoredLabel": "據點",
+  "restoredReloadVerified": true,
+  "restorationToast": "網站已更新。",
+  "completedAt": "2026-11-17T07:08:24.548976+00:00"
+}

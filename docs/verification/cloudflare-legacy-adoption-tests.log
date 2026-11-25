@@ -1,0 +1,25 @@
+✔ real coordinator, pins and write ledger complete once; repeated verification creates no new writes or version (644.2898ms)
+✔ ambiguous R2 failure before write retains charge and pending ticket; reconstruction cannot silently clear it (409.144ms)
+✔ ambiguous R2 response loss retains charge and pending ticket; reconstruction cannot silently clear it (413.5717ms)
+✔ client response loss after the storage ticket settled resumes by hash without repeating the upload (446.351ms)
+✔ server pin failure never changes either live pointer (468.8926ms)
+✔ adoption error before commit preserves source and sends no pointer write (491.8349ms)
+✔ lost successful adoption response is resolved from exact receipt without repeating adoption (447.4383ms)
+✔ pointer failure after adoption retains target coordinator and source R2; restart finishes only the conditional pointer (476.6876ms)
+✔ lost successful pointer response is read back without another charged write (428.9754ms)
+✔ a foreign R2 pointer wins the conditional race and is never overwritten (469.4098ms)
+✔ changed plan payload, insufficient budget and absent source pin reject before staging (1122.4531ms)
+✔ expired fence between stages stops all further writes and adoption (365.1022ms)
+✔ journal failure before adoption is resumable from observed data without rewriting staged objects (481.0547ms)
+✔ corrupt existing immutable object is never replaced with local data (363.8236ms)
+✔ foreign coordinator receipt is not accepted despite a matching state pointer (385.5087ms)
+✔ an existing target pin does not substitute for current full-base verification (425.7218ms)
+✔ closed write window blocks staging and admission that closes after the adoption intent preserves source (811.4147ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9222.5284

@@ -1,0 +1,15 @@
+{
+  "schema": "playtt/locale-first-browser/v1",
+  "at": "2026-11-24T16:05:49.546Z",
+  "browser": "in-app",
+  "scope": "Fresh local canonical store, fixed initializer, full workerd restart; native login/dashboard/settings/logout",
+  "lang": "zh-TW",
+  "siteLanguage": "zh_TW",
+  "nativeLogin": true,
+  "dashboardTraditionalChinese": true,
+  "settingsSiteLocale": true,
+  "nativeLogout": true,
+  "consoleInspected": false,
+  "screenshot": "playtt-locale-complete-dashboard.jpg",
+  "cloudOperations": 0
+}

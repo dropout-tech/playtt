@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-20T20:41:59.339617+00:00",
+  "result": "pass",
+  "batches": [
+    {
+      "command": "node --import tsx --test tests/playtt-session-provider-config.test.ts tests/playtt-snapshot-bundle.test.ts",
+      "passed": 14
+    },
+    {
+      "command": "node --import tsx --test tests/playtt-native-profile.test.ts",
+      "passed": 2
+    },
+    {
+      "command": "node --import tsx --test tests/playtt-request-mutation.test.ts tests/playtt-usermeta-overlay.test.ts",
+      "passed": 10
+    }
+  ],
+  "typescript": {
+    "command": "node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "exitCode": 0
+  },
+  "scope": "26 tests across three distinct batches; prior 40 capacity/window tests were run before the final second config test and are not added to this count.",
+  "finalDuplicateParameterHardening": {
+    "command": "node --import tsx --test tests/playtt-request-mutation.test.ts",
+    "passed": 2,
+    "additionalDistinctTestCount": 0
+  }
+}

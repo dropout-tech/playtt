@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { client, source, bucket, load, save, hash } from './playtt-pin-restore-lib.mjs';
+assert.ok(process.argv.includes('--remote'));
+const prefix='artifacts/playtt-editor-recovery-',owned=await load(prefix+'owned-private.json'),c=await client();
+const state=await c.operator('operator-fence-status');assert.equal(state.coherent,true);assert.equal(state.fence.active,false);assert.equal(hash(state.state),hash(owned.sealedState));assert.equal((await c.control()).state,'paused');
+const br=await c.request('/__playtt-capacity',{headers:c.auth});assert.equal(br.status,200);const budget=await br.json();assert.equal(hash(budget),hash(owned.sealedBudget));assert.equal(budget.writeTracking.pending,0);assert.equal(budget.writeTracking.sealed,true);
+const pr=await c.request('/__playtt-backup-pins',{headers:c.auth});assert.equal(pr.status,200);const pins=await pr.json();assert.equal(pins.generation,25);for(const old of owned.registry.pins){const found=pins.pins.find(x=>x.revision===old.revision);assert.ok(found);assert.equal(hash(found),hash(old));}
+const sc=await client(source),ss=await sc.operator('operator-fence-status');assert.equal(ss.coherent,true);assert.equal(ss.fence.active,false);assert.equal(hash(ss.state),hash(owned.sourceState));assert.equal((await sc.control()).state,'paused');
+const report={at:new Date().toISOString(),result:'contained-incomplete',bucket,targetState:state.state,sourceState:ss.state,budget,pins:25,fenceActive:false,writeSealed:true,publisher:'paused',ownedId:owned.id,ownedCleanupComplete:false,browserUiAcceptanceComplete:false,capacityLimitIncreased:false,historyDeleted:false,refund:false,scope:'After browser interruption, snapshot-growth diagnosis and fully verified inspection backup; write seal intentionally retained while safe recovery is developed',checks:c.checks};
+await save(prefix+'final-state.json',report);console.log(JSON.stringify({result:report.result,version:state.state.version,pins:25,pending:0,sealed:true,remainingBytes:budget.remainingBytes,sourceVersion:ss.state.version}));

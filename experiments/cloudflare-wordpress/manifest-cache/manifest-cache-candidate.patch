@@ -1,0 +1,149 @@
+--- a/src/worker.ts
++++ b/src/worker.ts
+@@ -10,6 +10,7 @@
+ import { patchPlayttPostmetaPersistence } from './playtt-postmeta-policy.js';
+ import { readPlayttMaintenanceAction, playttAutoDraftMaintenanceCode, validatePlayttMaintenanceResult, type PlayttMaintenanceAction } from './playtt-maintenance.js';
+ import { readPlayttSnapshotSources, type PlayttSnapshotRuntimeReader } from './playtt-snapshot-source.js';
++import { PlayttRuntimeManifestCache } from './playtt-runtime-manifest-cache.js';
+ import { MAX_PLAYTT_PUBLICATION_BATCH, selectPublicationBatch } from './playtt-publication-batch.js';
+ import { loadPHPRuntime, PHP, type PHPRequestHandler, type PHPResponseData } from "@php-wasm/universal"
+ import { decodeZip } from "@php-wasm/stream-compression"
+@@ -514,6 +515,7 @@
+   requestHandler: PHPRequestHandler
+   wordpressVersion: string
+   pointer: MarkdownPointer
++  manifestCache?: PlayttRuntimeManifestCache<MarkdownManifest>
+ }
+ 
+ interface CronInvocationEvidence {
+@@ -546,7 +548,7 @@
+   }
+ }
+ 
+-const cachedRuntimes = new Map<string, { baseRevision: string; promise: Promise<Runtime>; state: "pending" | "ready" }>()
++const cachedRuntimes = new Map<string, { basePointer: MarkdownPointer; promise: Promise<Runtime>; state: "pending" | "ready" }>()
+ const LEASE_ACQUISITION_TIMEOUT_MS = 100_000
+ const MAX_MARKDOWN_FILES = 5_000
+ const MAX_MARKDOWN_FILE_BYTES = 16 * 1024 * 1024
+@@ -1367,10 +1369,10 @@
+     // returns, even after getRuntime() disposes it, doubling peak isolate memory.
+     const previousRuntimeInfo = (() => {
+       const cached = cachedRuntimes.get(site.id)
+-      return cached ? { baseRevision: cached.baseRevision, state: cached.state } : undefined
++      return cached ? { matchesPointer: samePointer(cached.basePointer, pointer), state: cached.state } : undefined
+     })()
+     if (runtimeDisposition !== "cold") {
+-      runtimeDisposition = previousRuntimeInfo && previousRuntimeInfo.baseRevision === pointer.revision && route !== "static-artifact-import"
++      runtimeDisposition = previousRuntimeInfo?.matchesPointer && route !== "static-artifact-import"
+         ? previousRuntimeInfo.state === "pending" ? "shared-initialization" : "warm"
+         : previousRuntimeInfo ? "invalidated" : "cold"
+     }
+@@ -1678,14 +1680,14 @@
+ 
+ async function getRuntime(env: RuntimeEnv, pointer: MarkdownPointer, site: SiteContext, includeWebsiteImporter = false, trace?: CloudflarePhaseTrace): Promise<Runtime> {
+   let cachedRuntime = cachedRuntimes.get(site.id)
+-  if (cachedRuntime && (cachedRuntime.baseRevision !== pointer.revision || includeWebsiteImporter)) {
++  if (cachedRuntime && (!samePointer(cachedRuntime.basePointer, pointer) || includeWebsiteImporter)) {
+     if (trace) await trace.measure("runtime.invalidate.dispose", () => discardCachedRuntime(site.id))
+     else await discardCachedRuntime(site.id)
+     cachedRuntime = undefined
+   }
+   if (!cachedRuntime) {
+     const promise = (async () => bootRuntime(env.WORDPRESS_STATE_BUCKET, pointer, site.origin, await canonicalWordPressAuthConstants(env, site), includeWebsiteImporter, site, trace))()
+-    cachedRuntime = { baseRevision: pointer.revision, promise, state: "pending" }
++    cachedRuntime = { basePointer: { ...pointer }, promise, state: "pending" }
+     cachedRuntimes.set(site.id, cachedRuntime)
+     promise.then(() => {
+       const current = cachedRuntimes.get(site.id)
+@@ -1698,7 +1700,7 @@
+ }
+ 
+ function cacheRuntime(pointer: MarkdownPointer, runtime: Runtime, site: SiteContext): void {
+-  cachedRuntimes.set(site.id, { baseRevision: pointer.revision, promise: Promise.resolve(runtime), state: "ready" })
++  cachedRuntimes.set(site.id, { basePointer: { ...pointer }, promise: Promise.resolve(runtime), state: "ready" })
+ }
+ 
+ async function discardCachedRuntime(siteId: string): Promise<void> {
+@@ -1745,7 +1747,9 @@
+ async function bootRuntime(bucket: R2Bucket, pointer: MarkdownPointer, origin: string, authConstants: Record<WordPressAuthConstant, string>, includeWebsiteImporter = false, site: SiteContext = DEFAULT_SITE_CONTEXT, trace?: CloudflarePhaseTrace): Promise<Runtime> {
+   const revision = await readCanonicalRevision(bucket, pointer, site, trace)
+   const booted = await bootWordPressRuntime("do-not-attempt-installing", true, true, undefined, revision.markdown, new Uint8Array(markdownPrimaryBootstrapIndex), origin, authConstants, bucket, true, revision.uploads, revision.wpContent, revision.wpContentDeleted, includeWebsiteImporter, trace)
+-  return { ...booted, pointer }
++  const manifestCache = new PlayttRuntimeManifestCache<MarkdownManifest>()
++  manifestCache.remember(siteStorageKeys(site).root, pointer, revision.manifest)
++  return { ...booted, pointer, manifestCache }
+ }
+ 
+ async function bootstrapCanonicalRuntime(env: RuntimeEnv, coordinator: RevisionCoordinator, site: SiteContext, requestUrl: string, lease: Lease, trace?: CloudflarePhaseTrace): Promise<Runtime> {
+@@ -1779,8 +1783,13 @@
+ 
+ async function persistRuntime(bucket: R2Bucket, runtime: Runtime, changes: MarkdownChanges, site: SiteContext, diagnosticsStartedAt = Date.now(), retained = new MutationRetainedBytes(), trace?: CloudflarePhaseTrace): Promise<MarkdownPointer> {
+   validateMarkdownChanges(changes)
+-  const currentManifest = trace ? await trace.measure("canonical.manifest.current.read", () => readMarkdownManifest(bucket, runtime.pointer, site)) : await readMarkdownManifest(bucket, runtime.pointer, site)
++  const root = siteStorageKeys(site).root
++  const manifestCache = runtime.manifestCache ??= new PlayttRuntimeManifestCache<MarkdownManifest>()
++  const cachedManifest = manifestCache.get(root, runtime.pointer)
++  const readCurrent = async () => cachedManifest ?? readMarkdownManifest(bucket, runtime.pointer, site)
++  const currentManifest = trace ? await trace.measure(cachedManifest ? "canonical.manifest.current.reuse" : "canonical.manifest.current.read", readCurrent) : await readCurrent()
+   if (!currentManifest) throw new Error(`R2 Markdown manifest is missing: ${runtime.pointer.manifestKey}`)
++  if (!cachedManifest) manifestCache.remember(root, runtime.pointer, currentManifest)
+   validateUploadManifestFiles(currentManifest.uploads ?? [], site)
+   validateWpContentManifestFiles(currentManifest.wpContent ?? [], site, WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+   validateWpContentDeletedPaths(currentManifest.wpContentDeleted ?? [], WEBSITE_IMPORTER_OWNED_WP_CONTENT_PATHS)
+@@ -1835,7 +1844,10 @@
+     && JSON.stringify(currentManifest.wpContentDeleted ?? []) === JSON.stringify(wpContent.deleted)
+   if (unchanged) return runtime.pointer
+   const readCommittedFile: PlayttSnapshotRuntimeReader = (group, path) => runtime.php.readFileAsBuffer(`${group === 'markdown' ? MARKDOWN_ROOT : group === 'uploads' ? UPLOADS_ROOT : '/wordpress/wp-content'}/${path}`)
+-  return trace ? trace.measure("persistence.manifest.write", () => persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile), { files: files.length }) : persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile)
++  // This metadata is remembered only after the new pack and manifest are in
++  // R2. Until coordinator commit promotes runtime.pointer, it cannot be a hit.
++  const rememberPersisted = (manifest: MarkdownManifest) => { manifestCache.remember(root, manifest, manifest) }
++  return trace ? trace.measure("persistence.manifest.write", () => persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted), { files: files.length }) : persistMarkdownManifest(bucket, files, site, uploadManifestFiles, wpContentManifestFiles, wpContent.deleted, currentManifest, readCommittedFile, rememberPersisted)
+ }
+ 
+ function readCanonicalChanges(php: PHP): MarkdownChanges {
+@@ -1967,7 +1979,7 @@
+   return path.length > 0 && !path.startsWith("/") && !path.includes("\\") && !path.split("/").includes("..")
+ }
+ 
+-async function readCanonicalRevision(bucket: R2Bucket, pointer: MarkdownPointer, site: SiteContext, trace?: CloudflarePhaseTrace): Promise<{ markdown: RuntimeFile[]; uploads: RuntimeFile[]; wpContent: RuntimeFile[]; wpContentDeleted: string[] }> {
++async function readCanonicalRevision(bucket: R2Bucket, pointer: MarkdownPointer, site: SiteContext, trace?: CloudflarePhaseTrace): Promise<{ markdown: RuntimeFile[]; uploads: RuntimeFile[]; wpContent: RuntimeFile[]; wpContentDeleted: string[]; manifest: MarkdownManifest }> {
+   if (!isCanonicalRestorePointer(pointer, site)) throw new Error("Canonical pointer belongs to a different site namespace.")
+   const readManifest = async () => {
+     const manifestObject = await bucket.get(pointer.manifestKey)
+@@ -1993,7 +2005,8 @@
+     }
+     const pack = trace ? await trace.measure("canonical.restore-pack.fetch", fetchPack, { requests: 1, bytes: restorePack.size }) : await fetchPack()
+     const restore = () => decodeCanonicalRestorePack(restorePack, siteStorageKeys(site).root, { markdown: manifest.files, uploads: manifest.uploads ?? [], wpContent: manifest.wpContent ?? [], wpContentDeleted: manifest.wpContentDeleted ?? [] }, pack)
+-    return trace ? trace.measure("canonical.restore-pack.verify-decode", restore, { requests: 0, bytes: restorePack.decodedBytes, files: restorePack.fileCount }) : restore()
++    const contents = trace ? await trace.measure("canonical.restore-pack.verify-decode", restore, { requests: 0, bytes: restorePack.decodedBytes, files: restorePack.fileCount }) : await restore()
++    return { ...contents, manifest }
+   }
+   const hydrate = () => Promise.all([
+     readManifestFiles(bucket, manifest.files, "Markdown"),
+@@ -2001,7 +2014,7 @@
+     readManifestFiles(bucket, manifest.wpContent ?? [], "wp-content"),
+   ])
+   const [markdown, uploads, wpContent] = trace ? await trace.measure("canonical.objects.hydrate", hydrate, { ...objectEvidence, requests: manifest.files.length + (manifest.uploads?.length ?? 0) + (manifest.wpContent?.length ?? 0) }) : await hydrate()
+-  return { markdown, uploads, wpContent, wpContentDeleted: manifest.wpContentDeleted ?? [] }
++  return { markdown, uploads, wpContent, wpContentDeleted: manifest.wpContentDeleted ?? [], manifest }
+ }
+ 
+ function sumManifestFileBytes(files: MarkdownManifestFile[]): number { return files.reduce((total, file) => total + file.size, 0) }
+@@ -2101,7 +2114,7 @@
+   validateUploadMetadata(files.map((file) => ({ path: file.path, size: file.bytes.byteLength })))
+ }
+ 
+-async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader): Promise<MarkdownPointer> {
++async function persistMarkdownManifest(bucket: R2Bucket, files: MarkdownManifestFile[], site: SiteContext, uploads: MarkdownManifestFile[] = [], wpContent: MarkdownManifestFile[] = [], wpContentDeleted: string[] = [], previous?: MarkdownManifest | null, readCommittedFile?: PlayttSnapshotRuntimeReader, onPersisted?: (manifest: MarkdownManifest) => void): Promise<MarkdownPointer> {
+   const revision = crypto.randomUUID()
+   const manifestKey = `${siteStorageKeys(site).markdownRevisionPrefix}/${revision}.json`
+   const persistedAt = new Date().toISOString()
+@@ -2125,6 +2138,7 @@
+     httpMetadata: { contentType: "application/json" },
+   })
+   logPlayttSnapshotPhase('manifest-upload', snapshotPhaseAt, snapshotFiles, pack.bytes.byteLength)
++  onPersisted?.(manifest)
+   return pointer
+ }
+ 

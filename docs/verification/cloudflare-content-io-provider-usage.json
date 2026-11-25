@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-21T03:45:34.585Z",
+  "source": "Cloudflare dashboard refreshed Workers plans and R2 overview",
+  "account": "info@dropout.tw",
+  "workersCurrentPlan": "Free",
+  "workersPlanPrice": "$0",
+  "r2BillingPeriod": "October 25 - November 25",
+  "r2BillableUsage": "$0.00",
+  "r2Storage": "2.32 GB",
+  "r2ClassA": "7.14k",
+  "r2ClassB": "59k",
+  "displaysMayLag": true,
+  "changesMade": false
+}

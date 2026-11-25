@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-21T15:31:11.841149+00:00",
+  "result": "pass",
+  "basis": "Prior verified legacy-content assembly plus procedure/fault models; no upstream rebuild",
+  "sources": 81,
+  "sourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "sourcesUnchanged": true,
+  "configsUnchanged": 20,
+  "newFiles": 5,
+  "prerequisites": 84,
+  "allPriorAssemblyFilesUnchanged": true,
+  "helpers": 373,
+  "helpersMatchingRuntime": 372,
+  "priorHelperDifferences": [
+    "scripts/playtt-scheduled-remote.mjs"
+  ],
+  "refusedReapplyBeforeMutation": true,
+  "cloudRequests": 0,
+  "productionChanged": false
+}

@@ -1,0 +1,575 @@
+{
+  "schema": "playtt/r2-capacity-observation/v1",
+  "at": "2026-11-20T20:37:16.336720+00:00",
+  "range": {
+    "from": "2026-11-01T00:00:00+00:00",
+    "to": "2026-11-20T20:37:16.336720+00:00"
+  },
+  "source": "Cloudflare authenticated REST + GraphQL, read-only",
+  "accountMetrics": {
+    "success": true,
+    "errors": [],
+    "messages": [],
+    "result": {
+      "infrequentAccess": {
+        "uploaded": {
+          "objects": 0,
+          "payloadSize": 0,
+          "metadataSize": 0
+        },
+        "published": {
+          "objects": 0,
+          "payloadSize": 0,
+          "metadataSize": 0
+        }
+      },
+      "standard": {
+        "uploaded": {
+          "objects": 0,
+          "payloadSize": 0,
+          "metadataSize": 0
+        },
+        "published": {
+          "objects": 4212,
+          "payloadSize": 2177634382,
+          "metadataSize": 89061
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Analytics may lag; account aggregates include other projects.",
+    "Not an invoice, billing-period confirmation, forecast, or spending cap."
+  ],
+  "buckets": [
+    {
+      "name": "playtt-wordpress-pin-restore-audit",
+      "latestStorage": [
+        {
+          "dimensions": {
+            "datetime": "2026-11-20T20:00:00Z"
+          },
+          "max": {
+            "metadataSize": 9672,
+            "objectCount": 622,
+            "payloadSize": 296927399
+          }
+        }
+      ],
+      "operations": [
+        {
+          "dimensions": {
+            "actionType": "PutObject"
+          },
+          "sum": {
+            "requests": 688
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadBucket"
+          },
+          "sum": {
+            "requests": 15
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "ListObjects"
+          },
+          "sum": {
+            "requests": 3
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "GetObject"
+          },
+          "sum": {
+            "requests": 739
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "PutBucket"
+          },
+          "sum": {
+            "requests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "playtt-wordpress-probe",
+      "latestStorage": [
+        {
+          "dimensions": {
+            "datetime": "2026-11-20T20:20:00Z"
+          },
+          "max": {
+            "metadataSize": 7453,
+            "objectCount": 417,
+            "payloadSize": 217619381
+          }
+        }
+      ],
+      "operations": [
+        {
+          "dimensions": {
+            "actionType": "PutObject"
+          },
+          "sum": {
+            "requests": 776
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadBucket"
+          },
+          "sum": {
+            "requests": 39
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "GetObject"
+          },
+          "sum": {
+            "requests": 10944
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "PutBucket"
+          },
+          "sum": {
+            "requests": 1
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadObject"
+          },
+          "sum": {
+            "requests": 645
+          }
+        }
+      ]
+    },
+    {
+      "name": "playtt-wordpress-rebuild-audit",
+      "latestStorage": [
+        {
+          "dimensions": {
+            "datetime": "2026-11-20T20:10:00Z"
+          },
+          "max": {
+            "metadataSize": 21455,
+            "objectCount": 1110,
+            "payloadSize": 640239740
+          }
+        }
+      ],
+      "operations": [
+        {
+          "dimensions": {
+            "actionType": "PutObject"
+          },
+          "sum": {
+            "requests": 1446
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadBucket"
+          },
+          "sum": {
+            "requests": 42
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "ListObjects"
+          },
+          "sum": {
+            "requests": 16
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "GetObject"
+          },
+          "sum": {
+            "requests": 3213
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "PutBucket"
+          },
+          "sum": {
+            "requests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "playtt-wordpress-restore-probe",
+      "latestStorage": [
+        {
+          "dimensions": {
+            "datetime": "2026-11-20T20:10:00Z"
+          },
+          "max": {
+            "metadataSize": 24226,
+            "objectCount": 1023,
+            "payloadSize": 410421751
+          }
+        }
+      ],
+      "operations": [
+        {
+          "dimensions": {
+            "actionType": "PutObject"
+          },
+          "sum": {
+            "requests": 1816
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadBucket"
+          },
+          "sum": {
+            "requests": 41
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "ListObjects"
+          },
+          "sum": {
+            "requests": 368
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "GetObject"
+          },
+          "sum": {
+            "requests": 32581
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "DeleteObjects"
+          },
+          "sum": {
+            "requests": 77
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "PutBucket"
+          },
+          "sum": {
+            "requests": 1
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadObject"
+          },
+          "sum": {
+            "requests": 375
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "DeleteObject"
+          },
+          "sum": {
+            "requests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "playtt-wordpress-retirement-audit",
+      "latestStorage": [
+        {
+          "dimensions": {
+            "datetime": "2026-11-20T20:20:00Z"
+          },
+          "max": {
+            "metadataSize": 10199,
+            "objectCount": 583,
+            "payloadSize": 307685953
+          }
+        }
+      ],
+      "operations": [
+        {
+          "dimensions": {
+            "actionType": "PutObject"
+          },
+          "sum": {
+            "requests": 788
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadBucket"
+          },
+          "sum": {
+            "requests": 22
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "GetObject"
+          },
+          "sum": {
+            "requests": 4183
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "PutBucket"
+          },
+          "sum": {
+            "requests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "playtt-wordpress-session-audit",
+      "latestStorage": [
+        {
+          "dimensions": {
+            "datetime": "2026-11-20T20:00:00Z"
+          },
+          "max": {
+            "metadataSize": 13064,
+            "objectCount": 304,
+            "payloadSize": 100738611
+          }
+        }
+      ],
+      "operations": [
+        {
+          "dimensions": {
+            "actionType": "PutObject"
+          },
+          "sum": {
+            "requests": 328
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadBucket"
+          },
+          "sum": {
+            "requests": 8
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "ListObjects"
+          },
+          "sum": {
+            "requests": 1
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "GetObject"
+          },
+          "sum": {
+            "requests": 1291
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "PutBucket"
+          },
+          "sum": {
+            "requests": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "playtt-wordpress-window-audit",
+      "latestStorage": [
+        {
+          "dimensions": {
+            "datetime": "2026-11-20T20:00:00Z"
+          },
+          "max": {
+            "metadataSize": 15970,
+            "objectCount": 455,
+            "payloadSize": 146168487
+          }
+        }
+      ],
+      "operations": [
+        {
+          "dimensions": {
+            "actionType": "PutObject"
+          },
+          "sum": {
+            "requests": 481
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "HeadBucket"
+          },
+          "sum": {
+            "requests": 4
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "ListObjects"
+          },
+          "sum": {
+            "requests": 1
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "GetObject"
+          },
+          "sum": {
+            "requests": 1714
+          }
+        },
+        {
+          "dimensions": {
+            "actionType": "PutBucket"
+          },
+          "sum": {
+            "requests": 1
+          }
+        }
+      ]
+    }
+  ],
+  "accountOperations": [
+    {
+      "dimensions": {
+        "actionType": "GetBucketLifecycleConfiguration"
+      },
+      "sum": {
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "PutObject"
+      },
+      "sum": {
+        "requests": 6324
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "HeadBucket"
+      },
+      "sum": {
+        "requests": 177
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "GetBucketSippyConfiguration"
+      },
+      "sum": {
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "GetBucketNotificationConfiguration"
+      },
+      "sum": {
+        "requests": 2
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "ListMultipartUploads"
+      },
+      "sum": {
+        "requests": 2
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "GetBucketCors"
+      },
+      "sum": {
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "ListObjects"
+      },
+      "sum": {
+        "requests": 391
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "GetObject"
+      },
+      "sum": {
+        "requests": 54667
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "DeleteObjects"
+      },
+      "sum": {
+        "requests": 77
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "PutBucket"
+      },
+      "sum": {
+        "requests": 9
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "HeadObject"
+      },
+      "sum": {
+        "requests": 1021
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "DeleteObject"
+      },
+      "sum": {
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "actionType": "ListBuckets"
+      },
+      "sum": {
+        "requests": 39
+      }
+    }
+  ]
+}

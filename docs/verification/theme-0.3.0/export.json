@@ -1,0 +1,271 @@
+{
+  "at": "2026-11-24T16:42:45.675Z",
+  "scope": "Anonymous static publication only",
+  "output": "wordpress/dist/static-1795538515213 (local artifact, not deployed)",
+  "routes": [
+    "/",
+    "/about/",
+    "/class/",
+    "/coaches/",
+    "/locations/",
+    "/partner/"
+  ],
+  "assets": 40,
+  "manifest": [
+    {
+      "path": "index.html",
+      "bytes": 63980,
+      "sha256": "d230572b9fb3889bdf2d87334a2d7753170402be6ba3079aa8e062bdbc76d439"
+    },
+    {
+      "path": "about/index.html",
+      "bytes": 52165,
+      "sha256": "7751f749e57a52082f207b0064d500c53def905d7e41a3e7c96a7d2095a8b7cb"
+    },
+    {
+      "path": "class/index.html",
+      "bytes": 57882,
+      "sha256": "cf31dec78e00f604724d45297503a78862e4ce5fbbdd2e0111c687b1a107ae48"
+    },
+    {
+      "path": "coaches/index.html",
+      "bytes": 64299,
+      "sha256": "532a2ef423cb644a143c4285574a68d42c540fbe58d7f295ea5e5b9aaf24bd9c"
+    },
+    {
+      "path": "locations/index.html",
+      "bytes": 52607,
+      "sha256": "ac99c27ae75b49378da788c2e736a182fb5917d0d063f4733cde948bba5685a7"
+    },
+    {
+      "path": "partner/index.html",
+      "bytes": 51684,
+      "sha256": "685598dec2e67183ae10d86a6fec1fbfba53d23a6d133c16af90e08fb1e906a6"
+    },
+    {
+      "path": "404.html",
+      "bytes": 64221,
+      "sha256": "4e61451f7b075c99af7ddbf517c07fbb8cfb9ff76ae8fe50e0755906b7051332"
+    },
+    {
+      "path": "wp-includes/blocks/image/style.min.css",
+      "bytes": 8811,
+      "sha256": "9f7b39031856a5fd829277b3b0c966c5e684da40d1300473bf04705838d54ca7"
+    },
+    {
+      "path": "wp-includes/blocks/image/theme.min.css",
+      "bytes": 198,
+      "sha256": "97f64f05a3fe3b5e5dc183deef220c3ab23a413c68ef0241c4ec677745d7b0eb"
+    },
+    {
+      "path": "wp-includes/blocks/navigation-link/style.min.css",
+      "bytes": 316,
+      "sha256": "7dd7835ab92b90455b2e9aabb2fb0e2b55d2713198707588016bb8cecf9d8e17"
+    },
+    {
+      "path": "wp-includes/blocks/navigation/style.min.css",
+      "bytes": 20776,
+      "sha256": "bfb2953c6eced1909de016645ff3d2da8cdbae613f956356a47188c8cc3e2dae"
+    },
+    {
+      "path": "wp-includes/blocks/group/style.min.css",
+      "bytes": 117,
+      "sha256": "628253f7b803c3e507e1189320a8c925ac718d5237c1f2c346a183ae02bbd6bb"
+    },
+    {
+      "path": "wp-includes/blocks/group/theme.min.css",
+      "bytes": 62,
+      "sha256": "7cdc95241dae1a12350e177473d07acbcce3f01149572f4698cf2e84ac80da1b"
+    },
+    {
+      "path": "wp-includes/blocks/template-part/theme.min.css",
+      "bytes": 105,
+      "sha256": "85b366f1200d3a58cf06d32173c73c7704da73562134c789656c58f0a7e81a17"
+    },
+    {
+      "path": "wp-includes/blocks/paragraph/style.min.css",
+      "bytes": 655,
+      "sha256": "622f970d122913e7a6707d8be35940b9417f061eb64b21c3bf1b01b76bfccd62"
+    },
+    {
+      "path": "wp-includes/blocks/heading/style.min.css",
+      "bytes": 1165,
+      "sha256": "187c2a0a016f532b73a680d2ec1095537ee7c6a545833c6c244571fdf3c9f7c9"
+    },
+    {
+      "path": "wp-includes/blocks/button/style.min.css",
+      "bytes": 2559,
+      "sha256": "20592f4da9a7b718128ec1053865f6597d3730dd30ab7e97592ba040b7d30d74"
+    },
+    {
+      "path": "wp-includes/blocks/buttons/style.min.css",
+      "bytes": 1395,
+      "sha256": "4bd8c4991f6811a65be67cffb8b0eb0240bc95c19d8ac0fdd11b9c5f02ade768"
+    },
+    {
+      "path": "wp-includes/blocks/post-content/style.min.css",
+      "bytes": 41,
+      "sha256": "5632fcbd1fa2fa2c20a2c160d11acdaf4d26a45c1478144671d75be2c69fe20c"
+    },
+    {
+      "path": "wp-includes/css/dist/block-library/common.min.css",
+      "bytes": 4203,
+      "sha256": "9077cbb97de5e41cc83d31e735e1ec5226517048d5c354e2c2e0762842acd578"
+    },
+    {
+      "path": "wp-includes/css/wp-block-template-skip-link.min.css",
+      "bytes": 467,
+      "sha256": "0a4e769501116063e4b64e134b206a74e492986aea803694656bf06bfda968be"
+    },
+    {
+      "path": "wp-content/themes/lets-play/style.css",
+      "bytes": 15184,
+      "sha256": "026112e6b150e4d0ad472c72f4639d8219dc7a334e77bdab992a9a869e504d74"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/legacy-links.js",
+      "bytes": 1104,
+      "sha256": "7e5fc9c46c6a234270c4315ebc799c5afd4fd6065b60fcfff61f40f61c599d2a"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/share.jpg",
+      "bytes": 57657,
+      "sha256": "377214eac2623eede430ba602c653a7c9f78dd4473728cef73bd1f43484d6b4f"
+    },
+    {
+      "path": "wp-includes/js/dist/script-modules/interactivity/index.min.js",
+      "bytes": 42848,
+      "sha256": "aaab5f92523f3443e527431c80a1d3ddb1bc3f3f7e677445fd309eb58d4db87e"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/brand-logo.svg",
+      "bytes": 8053,
+      "sha256": "4e18e2f984acc8cfef08e78fb836258c643fbc1b48c1fd6ea29a93e7f0479546"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/brand-dong.svg",
+      "bytes": 82447,
+      "sha256": "d4c6903ef4d8ad44e8edd9accaf48ca55b608b5d0a864c3f2b2cbfd763575ec4"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/brand-kii.svg",
+      "bytes": 82586,
+      "sha256": "0e37d37ba8da9e2d4924b43d0b8dab0f8206c5d032b61643c5699552550481b9"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/brand-pa.svg",
+      "bytes": 82762,
+      "sha256": "1b339474e2838caf78209f471dcbca01227f13799a3595340b88746c8f19960d"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/brand-ka.svg",
+      "bytes": 82418,
+      "sha256": "e19e9b3e86e2ab17e06ff331d3e19b6485f2995160397dca1a7dc673298801bd"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/brand-ko.svg",
+      "bytes": 82432,
+      "sha256": "4b0931196f6ba05b410429ff7152a2611172d94a7671ea5a9c176c6b9f24457d"
+    },
+    {
+      "path": "wp-content/themes/lets-play/assets/images/brand-siou.svg",
+      "bytes": 82615,
+      "sha256": "09174a9b332068463eed2ad33361a37bb5a834133a59e0f5402d0ce649d6f19a"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/children.webp",
+      "bytes": 74158,
+      "sha256": "d3432294ff271d178928ac287604b3bb3e2124b697927db66cdb9161e285414a"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/individual.webp",
+      "bytes": 89448,
+      "sha256": "a91ad866da4535ce1eebdce6e15c841ec6c15c7a7895d6862910c8bd5229e73e"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/camp.webp",
+      "bytes": 92538,
+      "sha256": "b218afe6593593e91c76c2a617632cf768e383ec5adc3860d65e5306fb467450"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-kuo.webp",
+      "bytes": 28312,
+      "sha256": "c1bd888a29305dc4122c113c56c42b139e8624b6bf944c3d855756763b4cf8f1"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-lin.webp",
+      "bytes": 29132,
+      "sha256": "834a75a6a16fd865b23e671ae1695295ccf7fbd77adb6bb758983e419d174ad1"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-yang.webp",
+      "bytes": 41464,
+      "sha256": "e6bd16dbd55b81f3071b401bfc1265d70231ee4a45fffa1c731a20cbb256f8ff"
+    },
+    {
+      "path": "wp-includes/js/dist/script-modules/block-library/navigation/view.min.js",
+      "bytes": 3033,
+      "sha256": "fbe11af6f29f55ae480e2058aad3ac400315d2792c3b14346f016b70cebf3bb3"
+    },
+    {
+      "path": "wp-includes/js/wp-emoji-release.min.js",
+      "bytes": 22752,
+      "sha256": "063840b4b3f5869e0f0d078bab8bd29cfb3a59ee85e8e3edbbec35a8fe846fd3"
+    },
+    {
+      "path": "wp-includes/js/wp-emoji-loader.min.js",
+      "bytes": 2977,
+      "sha256": "2312e2af7de8ecba77b54d69322e66882c55e28d0bf538a2059cf804280bef8c"
+    },
+    {
+      "path": "wp-includes/blocks/list/style.min.css",
+      "bytes": 95,
+      "sha256": "942b2302016e4ef821e6ce7f339addb7a7b021f151c2132d1d6de54c849b3a34"
+    },
+    {
+      "path": "wp-includes/blocks/details/style.min.css",
+      "bytes": 81,
+      "sha256": "b725e3774697bba8856599dd041eac8332c1caf46b5496cb403bd99acc875685"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-huang.webp",
+      "bytes": 36554,
+      "sha256": "1d3cac98c5527bd0ba3773e945bc87d84ce9ad7f2434bf28b050c47f4b232226"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-amber.webp",
+      "bytes": 20624,
+      "sha256": "81b5a0e3d5d5cd27487722df090c1dde633b602cd1a8a855dc7e4eae24ef7034"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-tsai.webp",
+      "bytes": 59322,
+      "sha256": "02b4c579f5d7e4184cea75bbad1745d2fc1823b74d8b2b610be3c4d3bf2731b5"
+    },
+    {
+      "path": "wp-content/uploads/2026/11/coach-wen.webp",
+      "bytes": 31188,
+      "sha256": "aafa485ddbe688d850e935d63ce6480ad4dab6c91f927f73ddd52874c1c267d4"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 62,
+      "sha256": "889a2c248a01ba278d067be4979e67f945920923f0898d82db7dabec2d50d5a5"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 387,
+      "sha256": "46b933109a910c84c34072d9a9eea5cc14ecd58935705e9c1b763e417c5b8d6d"
+    },
+    {
+      "path": "_redirects",
+      "bytes": 25,
+      "sha256": "19a2390f1265c1ffd8254d8c6a01c5c9267ba07cbf98a349ac1027f3355bca95"
+    },
+    {
+      "path": "_headers",
+      "bytes": 224,
+      "sha256": "894e3f7c2cdbf18bb2d008d65a02fc7c1c0d8a383688348136278443f3362431"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+playtt-backup-pins-tests.log
+✔ verified immutable pin survives restart; exact retry after lost acknowledgement is idempotent (23.5469ms)
+✔ remote manifest and complete archive hashes are checked before protection is recorded (8.5708ms)
+✔ invalid namespace, time, identity and oversized input cannot trigger R2 reads (0.8396ms)
+✔ expired or lost fence before or during I/O cannot register a pin (3.0177ms)
+✔ corrupt registry is never silently replaced with an empty list (0.8091ms)
+✔ declared object size is enforced while streaming, not after an unlimited buffer (0.9223ms)
+✔ a matching manifest hash cannot bind a different pack or revision (1.5922ms)
+✔ coordinator serializes registration and fence release; wrong-token writes and other sites are rejected (34.6098ms)
+✔ concurrent pins under the same fence retain both entries without advancing canonical state (5.3685ms)
+✔ input normalization retains only immutable identity fields (0.4332ms)
+✔ uninitialized or corrupt ledger rejects writes before touching R2 (36.7372ms)
+✔ concurrent writers share a durable bound and UTF-8 bytes, not characters (5.6697ms)
+✔ ambiguous R2 failure, overwritten bytes, conditional miss and delete never refund (2.6664ms)
+✔ lost reservation response leaves charge but never starts the R2 write (1.1168ms)
+✔ unknown streams, multipart and cross-site paths cannot bypass allocation (1.3928ms)
+✔ initialization paginates even short pages and never overwrites an existing ledger (1.808ms)
+✔ failed or looping inventory never enables writes; malformed configuration fails closed (1.853ms)
+✔ coordinator capacity refusal preserves current pointer, version and receipt; subsequent release works (5.2837ms)
+✔ disabled deployments keep their original bucket and repeated wrapping cannot double-charge (1.0488ms)
+✔ mixed deployment limits use the smaller value; old clients cannot omit their bound (2.2382ms)
+✔ legacy, wrong-byte and overly permissive reservation replies never reach R2 (0.8914ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 437.9855
+
+playtt-backup-pins-coordinator-tests.log
+✔ D1 coordinator partitions state, leases, fences, and commit receipts by site ID (19.6372ms)
+✔ D1 adoption accepts monotonic forward state and requires an active fence token (4.1556ms)
+✔ Durable Object coordinator writes the matching site pointer and preserves default compatibility (30.1689ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 412.9955
+
+playtt-backup-pins-retention-tests.log
+test_absent_or_mismatched_registry_cannot_produce_a_plan (test_retention.RetentionTests.test_absent_or_mismatched_registry_cannot_produce_a_plan) ... ok
+test_incomplete_catalogs_wrong_bucket_and_duplicate_keys_fail_closed (test_retention.RetentionTests.test_incomplete_catalogs_wrong_bucket_and_duplicate_keys_fail_closed) ... ok
+test_missing_backup_pin_or_unclassified_pack_fails_closed (test_retention.RetentionTests.test_missing_backup_pin_or_unclassified_pack_fails_closed) ... ok
+test_missing_pack_wrong_size_cross_site_and_pointer_mismatch_fail_closed (test_retention.RetentionTests.test_missing_pack_wrong_size_cross_site_and_pointer_mismatch_fail_closed) ... ok
+test_old_current_backup_publication_job_and_cache_are_protected (test_retention.RetentionTests.test_old_current_backup_publication_job_and_cache_are_protected) ... ok
+test_omitted_job_record_cannot_hide_a_root (test_retention.RetentionTests.test_omitted_job_record_cannot_hide_a_root) ... ok
+test_proposal_is_never_executable_and_only_known_manifest_pack_keys (test_retention.RetentionTests.test_proposal_is_never_executable_and_only_known_manifest_pack_keys) ... ok
+test_recent_and_daily_points_survive_latest_count (test_retention.RetentionTests.test_recent_and_daily_points_survive_latest_count) ... ok
+test_registered_backup_remains_protected_without_a_local_copy (test_retention.RetentionTests.test_registered_backup_remains_protected_without_a_local_copy) ... ok
+test_shared_pack_is_kept_if_any_retained_manifest_needs_it (test_retention.RetentionTests.test_shared_pack_is_kept_if_any_retained_manifest_needs_it) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.012s
+
+OK

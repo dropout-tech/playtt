@@ -1,0 +1,47 @@
+{
+  "scope": "Public static preview only",
+  "desktop": {
+    "brandTiles": 6,
+    "heading": "Jo起來，\n玩一下！",
+    "height": 855,
+    "loadedBrokenImages": 0,
+    "logo": "/wp-content/themes/lets-play/assets/images/brand-logo.svg",
+    "overflow": false,
+    "url": "https://d344e4ab.playtt-brand-preview.pages.dev/",
+    "width": 1920
+  },
+  "mobile": {
+    "brandTiles": 6,
+    "heading": "Jo起來，\n玩一下！",
+    "height": 812,
+    "loadedBrokenImages": 0,
+    "overflow": false,
+    "url": "https://d344e4ab.playtt-brand-preview.pages.dev/",
+    "width": 375
+  },
+  "menu": {
+    "linkHeights": [
+      60.75,
+      60.75,
+      60.75,
+      60.75,
+      60.75
+    ],
+    "open": true
+  },
+  "escapeFocus": {
+    "bottom": 82,
+    "label": "Open menu",
+    "left": 294,
+    "scrollY": 0,
+    "tag": "BUTTON",
+    "top": 38,
+    "visible": true
+  },
+  "console": [],
+  "final": {
+    "focusLabel": "Open menu",
+    "focusVisible": true,
+    "menuClosed": true
+  }
+}

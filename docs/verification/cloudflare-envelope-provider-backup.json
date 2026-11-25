@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-21T14:23:14.886Z",
+  "result": "recovery-pin-verified",
+  "canonicalVersion": 177,
+  "anchor": {
+    "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+    "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+    "persistedAt": "2026-11-21T14:22:06.428Z",
+    "manifestSha256": "83772504c985e0dcfb5970a4641499182802a911c09b65daf436d0cc9aecf4d0",
+    "packKey": "sites/default/restore-packs/4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa.zip",
+    "packSha256": "4916d283087db435aa553c125ac7197df6becb3a554e7135787a6606515fb8fa",
+    "packBytes": 2295783
+  },
+  "format": "compressed-content",
+  "manifestEncoding": "gzip-envelope",
+  "objects": 304,
+  "files": 298,
+  "independentOpenedAgain": true,
+  "fullMaterializedOpenedAgain": true,
+  "allContentsExact": true,
+  "nativeAcceptance": "separate-verification-required",
+  "finalPins": 14,
+  "canonicalAndAccountingUnchanged": true,
+  "fenceReleased": true
+}

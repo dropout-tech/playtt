@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-17T09:10:16.965Z",
+  "scope": "410 sequential editor REST reads only; excludes login, native page creation and cleanup. Fetch header wall time from this one private remote run; not browser interaction latency or a production SLA.",
+  "reads": 410,
+  "medianMs": 927,
+  "p95Ms": 1570,
+  "maxMs": 11010,
+  "over2Seconds": 7,
+  "over5Seconds": 1
+}

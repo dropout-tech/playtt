@@ -1,0 +1,116 @@
+{
+  "at": "2026-11-18T20:52:32.219Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "mode": "--normal-cycle",
+  "result": "pass",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 654
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2376
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2224
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6765
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3890
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3308
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 7342
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/138",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 8304
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 257
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2181
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 7602
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3962
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/138?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3016
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3022
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/138?force=true",
+      "method": "DELETE",
+      "status": 200,
+      "wallMs": 6997
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/138?context=edit",
+      "method": "GET",
+      "status": 404,
+      "wallMs": 3109
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 194
+    }
+  ],
+  "scope": "After controlled disconnect: native authenticated create/update, fresh-session readback and identity-checked cleanup of an owned draft; original homepage content unchanged",
+  "id": 138,
+  "contentHash": "1172474a98bccbf08b5ef24be6fac4d849a4d65b38921c996bfddb6ecf195263",
+  "homeHash": "3917500777eb63f0f56ece92f756767a785b3aa101306b29848195cb80a0a025",
+  "cleanupComplete": true,
+  "publisher": "paused"
+}

@@ -1,0 +1,390 @@
+{
+  "schema": "playtt/ajax-retained-audit/v1",
+  "at": "2026-11-21T21:26:43.617Z",
+  "result": "local request-boundary and heap-ownership evidence; provider-memory-open",
+  "bundleSha256": "cb9302a8b57c9bc3db16304cb3ad995b793eab543a759a4f7b9bfdb4800e0de5",
+  "runs": [
+    {
+      "run": "playtt-ajax-retained",
+      "finalLocalVersion": 187,
+      "chargedBytes": 299751,
+      "chargedPuts": 18,
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json"
+      ],
+      "allContentAndOriginalSessionsExact": true,
+      "onlyOwnedLockAndOptionSequenceMayChange": true,
+      "independentObjects": 304,
+      "closed": true,
+      "sealed": true,
+      "pending": 0,
+      "disposed": true,
+      "exceptions": 0,
+      "ajax": [
+        {
+          "label": "login",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "other",
+          "formBytes": 70,
+          "hasPostId": false,
+          "hasActiveLock": false
+        },
+        {
+          "label": "login",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "other",
+          "status": 200,
+          "result": "json-failure"
+        },
+        {
+          "label": "login",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "heartbeat",
+          "formBytes": 541,
+          "hasPostId": false,
+          "hasActiveLock": false
+        },
+        {
+          "label": "login",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "heartbeat",
+          "status": 200,
+          "result": "json"
+        },
+        {
+          "label": "snapshot-first",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "heartbeat",
+          "formBytes": 180,
+          "hasPostId": false,
+          "hasActiveLock": false
+        },
+        {
+          "label": "snapshot-first",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "heartbeat",
+          "status": 200,
+          "result": "json"
+        },
+        {
+          "label": "logout",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "unsupported-content-type"
+        },
+        {
+          "label": "logout",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "unsupported-content-type",
+          "status": 400,
+          "result": "0"
+        }
+      ],
+      "httpErrorCount": 1,
+      "heapSnapshots": 2
+    },
+    {
+      "run": "playtt-ajax-retained-v2",
+      "finalLocalVersion": 187,
+      "chargedBytes": 299780,
+      "chargedPuts": 18,
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/postmeta.json"
+      ],
+      "allContentAndOriginalSessionsExact": true,
+      "onlyOwnedLockAndOptionSequenceMayChange": true,
+      "independentObjects": 304,
+      "closed": true,
+      "sealed": true,
+      "pending": 0,
+      "disposed": true,
+      "exceptions": 0,
+      "ajax": [
+        {
+          "label": "login",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "other",
+          "encoding": "urlencoded",
+          "formBytes": 70,
+          "hasPostId": false,
+          "hasActiveLock": false
+        },
+        {
+          "label": "login",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "other",
+          "status": 200,
+          "result": "json-failure"
+        },
+        {
+          "label": "login",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "heartbeat",
+          "encoding": "urlencoded",
+          "formBytes": 541,
+          "hasPostId": false,
+          "hasActiveLock": false
+        },
+        {
+          "label": "login",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "heartbeat",
+          "status": 200,
+          "result": "json"
+        },
+        {
+          "label": "logout",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "wp-remove-post-lock",
+          "encoding": "multipart",
+          "formBytes": 473,
+          "hasPostId": true,
+          "hasActiveLock": true
+        },
+        {
+          "label": "logout",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "wp-remove-post-lock",
+          "status": 200,
+          "result": "1"
+        }
+      ],
+      "httpErrorCount": 0,
+      "heapSnapshots": 0
+    },
+    {
+      "run": "playtt-ajax-boundary",
+      "finalLocalVersion": 182,
+      "chargedBytes": 49916,
+      "chargedPuts": 3,
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json"
+      ],
+      "allContentAndOriginalSessionsExact": true,
+      "onlyOwnedLockAndOptionSequenceMayChange": true,
+      "independentObjects": 304,
+      "closed": true,
+      "sealed": true,
+      "pending": 0,
+      "disposed": true,
+      "exceptions": 0,
+      "ajax": [
+        {
+          "label": "logout",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "wp-remove-post-lock",
+          "encoding": "multipart",
+          "formBytes": 453,
+          "hasPostId": true,
+          "hasActiveLock": true
+        },
+        {
+          "label": "logout",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "wp-remove-post-lock",
+          "status": 400,
+          "result": "0"
+        },
+        {
+          "label": "logout",
+          "kind": "ajax",
+          "stage": "begin",
+          "action": "heartbeat",
+          "encoding": "multipart",
+          "formBytes": 134,
+          "hasPostId": false,
+          "hasActiveLock": false
+        },
+        {
+          "label": "logout",
+          "kind": "ajax",
+          "stage": "end",
+          "action": "heartbeat",
+          "status": 200,
+          "result": "json"
+        }
+      ],
+      "httpErrorCount": 1,
+      "heapSnapshots": 0
+    }
+  ],
+  "classifierCases": 11,
+  "requestBodyBound": 8192,
+  "sensitiveRequestValuesRecorded": false,
+  "actualMultipartUnlockBeforeLogout": {
+    "status": 200,
+    "result": "1",
+    "loggedOutAfter": true
+  },
+  "anonymousControls": {
+    "unlockStatus": 400,
+    "unlockResult": "0",
+    "heartbeatStatus": 200,
+    "heartbeatAuthenticationFalse": true
+  },
+  "oldAjax400ActionKnown": false,
+  "oldAjax400CauseProven": false,
+  "permissionRelaxed": false,
+  "heapSnapshots": [
+    {
+      "label": "snapshot-first",
+      "selfBytes": 122976050,
+      "wasmBytes": 74907648,
+      "filesystem": {
+        "filesWithBacking": 2564,
+        "uniqueBackings": 2564,
+        "bytes": 31426460,
+        "wasmAliasedBytes": 0,
+        "categories": {
+          "temporary": {
+            "buffers": 4,
+            "bytes": 1376425
+          },
+          "wordpress-core": {
+            "buffers": 1858,
+            "bytes": 22527346
+          },
+          "runtime": {
+            "buffers": 63,
+            "bytes": 1536150
+          },
+          "languages": {
+            "buffers": 77,
+            "bytes": 2500119
+          },
+          "plugins-and-theme": {
+            "buffers": 376,
+            "bytes": 2344019
+          },
+          "canonical": {
+            "buffers": 171,
+            "bytes": 488843
+          },
+          "uploads": {
+            "buffers": 15,
+            "bytes": 653558
+          }
+        },
+        "otherNonWasmNonFileBackingBytes": 877247,
+        "largestOtherBackingBytes": [
+          376832,
+          344064,
+          93269,
+          55902,
+          6144,
+          1024,
+          8,
+          4
+        ]
+      },
+      "bootArraysRetainedBytes": 0,
+      "before": {
+        "usedSize": 19498656,
+        "totalSize": 26611712,
+        "embedderHeapUsedSize": 164768,
+        "backingStorageSize": 34577281
+      },
+      "after": {
+        "usedSize": 14840316,
+        "totalSize": 15597568,
+        "embedderHeapUsedSize": 2208,
+        "backingStorageSize": 33208825
+      },
+      "mayCollect": true
+    },
+    {
+      "label": "snapshot-repeat",
+      "selfBytes": 123071549,
+      "wasmBytes": 74907648,
+      "filesystem": {
+        "filesWithBacking": 2564,
+        "uniqueBackings": 2564,
+        "bytes": 31426135,
+        "wasmAliasedBytes": 0,
+        "categories": {
+          "wordpress-core": {
+            "buffers": 1858,
+            "bytes": 22527346
+          },
+          "runtime": {
+            "buffers": 63,
+            "bytes": 1536150
+          },
+          "temporary": {
+            "buffers": 4,
+            "bytes": 1376402
+          },
+          "languages": {
+            "buffers": 77,
+            "bytes": 2500119
+          },
+          "plugins-and-theme": {
+            "buffers": 376,
+            "bytes": 2344019
+          },
+          "canonical": {
+            "buffers": 171,
+            "bytes": 488541
+          },
+          "uploads": {
+            "buffers": 15,
+            "bytes": 653558
+          }
+        },
+        "otherNonWasmNonFileBackingBytes": 877247,
+        "largestOtherBackingBytes": [
+          376832,
+          344064,
+          93269,
+          55902,
+          6144,
+          1024,
+          8,
+          4
+        ]
+      },
+      "bootArraysRetainedBytes": 0,
+      "before": {
+        "usedSize": 17736464,
+        "totalSize": 21889024,
+        "embedderHeapUsedSize": 228656,
+        "backingStorageSize": 33813603
+      },
+      "after": {
+        "usedSize": 14934076,
+        "totalSize": 15597568,
+        "embedderHeapUsedSize": 2488,
+        "backingStorageSize": 33208500
+      },
+      "mayCollect": true
+    }
+  ],
+  "cloudRequests": 0,
+  "deployed": false,
+  "centralRuntimeChanged": false,
+  "productionChanged": false,
+  "providerMemoryAccepted": false,
+  "limitations": [
+    "Old failed native request still lacks action/auth evidence; these controls establish behavior, not retrospective attribution.",
+    "Snapshot capture may collect and changed GC timing; totals are not provider peaks or normal full-edit acceptance.",
+    "No edits or revision creation in these focused runs; prior combined-candidate native save/restart proof remains separate.",
+    "Next investigate transient editor allocations; retained boot arrays are zero in these two samples, not a universal absence-of-leaks claim."
+  ]
+}

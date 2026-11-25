@@ -1,0 +1,264 @@
+{
+  "at": "2026-11-20T18:44:19.583926+00:00",
+  "result": "provider-overlay-cold-restore-and-one-native-browser-save-pass",
+  "goalStatus": "active",
+  "prDraft": true,
+  "productionChanged": false,
+  "productionBackendSwitched": false,
+  "runtimeRedeployed": false,
+  "runtimeSourceChanged": false,
+  "paidPlanChange": false,
+  "restoration": {
+    "coldEvidence": [
+      {
+        "snapshot": "overlay",
+        "eventAt": "2026-11-20T18:26:48.955Z",
+        "runtime": "cold",
+        "completed": true,
+        "wallMs": 3383,
+        "traceTotalMs": 2733,
+        "restorePhase": "canonical.metadata-overlay.restore",
+        "restorePhaseMs": 1009
+      },
+      {
+        "snapshot": "full",
+        "eventAt": "2026-11-20T18:27:09.548Z",
+        "runtime": "cold",
+        "completed": true,
+        "wallMs": 2832,
+        "traceTotalMs": 2439,
+        "restorePhase": "canonical.restore-pack.fetch",
+        "restorePhaseMs": 262
+      }
+    ],
+    "readback": "Overlay original draft bytes and restored full edited draft bytes, title/slug/status and homepage matched; includes trailing whitespace",
+    "adoptionVersions": [
+      9,
+      11
+    ],
+    "loginCommitVersions": [
+      10,
+      12
+    ],
+    "newWindowSeconds": 180,
+    "newWindowBytes": 16777216,
+    "usedBytes": 4775239,
+    "resetOrDelete": false,
+    "recoveryBackupPin": 5
+  },
+  "ui": {
+    "at": "2026-11-20T18:33:51.643Z",
+    "result": "pass",
+    "scope": "One desktop Chrome native block editor save and reload on owned draft193; no responsive/physical-device/concurrent-editor/error-retry acceptance",
+    "ownedId": 193,
+    "originalParagraphPresent": true,
+    "newParagraphSavedAndReloaded": true,
+    "nativeSavedNotificationObserved": true,
+    "tabClosed": true,
+    "consoleErrorsObserved": 0,
+    "consoleWarnings": 2,
+    "warningCategory": "global-styles-css-custom-properties-inline-css added to editor iframe incorrectly",
+    "screenshots": [
+      "window-native-editor-before.jpg",
+      "window-native-editor-saved.jpg",
+      "window-native-editor-reloaded.jpg"
+    ],
+    "independentPersistedContentVerified": true,
+    "stillDraft": true
+  },
+  "uiWindow": {
+    "seconds": 300,
+    "maxBytes": 16777216,
+    "maxOperations": 128,
+    "usedBytes": 6113401,
+    "operations": 47,
+    "closedBeforeDeadline": true
+  },
+  "backup": {
+    "at": "2026-11-20T18:39:30.033Z",
+    "result": "pass",
+    "canonicalVersion": 26,
+    "remoteR2Mutations": 0,
+    "sourceRevision": "5c575aeb-871c-4b84-818f-593fa480dfab",
+    "changedMarkdownFiles": [
+      "_runtime/playtt-auto-increment.json",
+      "_tables/postmeta.json",
+      "_tables/posts.json",
+      "_tables/usermeta.json",
+      "page/playtt-window-d86f7e96-4ac5-473c-8ca8-b05516832ff9.md"
+    ],
+    "anchor": {
+      "revision": "f56f11b1-4553-434d-940c-02255fd5c816",
+      "manifestKey": "sites/default/markdown/revisions/f56f11b1-4553-434d-940c-02255fd5c816.json",
+      "persistedAt": "2026-11-20T18:34:16.232Z",
+      "manifestSha256": "c553ad6d2d583770cf4f82a685b97b16cb1b290137a1c6ed30d7de6ac019d1cd",
+      "packKey": "sites/default/restore-packs/78e5cc9ab23f45ee591c7735a9c00e0de1003a01c4b69e772c8ac6e8f3264d76.zip",
+      "packSha256": "78e5cc9ab23f45ee591c7735a9c00e0de1003a01c4b69e772c8ac6e8f3264d76",
+      "packBytes": 2294877
+    },
+    "format": "metadata-overlay",
+    "baseRevision": "35b1a0ba-bd8f-4e17-aca0-8259bad736cb",
+    "files": 297,
+    "objects": 298,
+    "payloadBytes": 6889711,
+    "remoteGetsThisRun": 0,
+    "downloadedBytesThisRun": 0,
+    "resumedVerifiedLocalGraph": true,
+    "independentCopyVerified": true,
+    "unchangedMarkdownFiles": 165,
+    "ownedDraft": 193,
+    "ownedDraftStillPrivate": true,
+    "originalParagraphPreserved": true,
+    "browserParagraphExact": true,
+    "ownedDraftDateUpdatedByNativeSave": true,
+    "addedRevisionIds": [
+      195
+    ],
+    "addedUserKeys": [],
+    "postmetaRows": 50,
+    "postTableRows": 70,
+    "mediaAndThemeIdentical": true,
+    "finalPins": 6,
+    "canonicalUnchanged": true,
+    "capacityLedgerUnchanged": true,
+    "fenceReleased": true
+  },
+  "telemetry": {
+    "overlay-restore": {
+      "events": 35,
+      "outcomes": {
+        "canceled": 1,
+        "ok": 34
+      },
+      "traces": 0,
+      "incompleteTraces": 0,
+      "requestFailures": 0,
+      "exceptions": 0,
+      "maxSampledWasmHeapBytes": null,
+      "tailEnded": true
+    },
+    "overlay-restore-retry": {
+      "events": 66,
+      "outcomes": {
+        "ok": 66
+      },
+      "traces": 1,
+      "incompleteTraces": 0,
+      "requestFailures": 0,
+      "exceptions": 0,
+      "maxSampledWasmHeapBytes": 67108864,
+      "tailEnded": true
+    },
+    "overlay-cold-complete": {
+      "events": 163,
+      "outcomes": {
+        "ok": 163
+      },
+      "traces": 10,
+      "incompleteTraces": 0,
+      "requestFailures": 0,
+      "exceptions": 0,
+      "maxSampledWasmHeapBytes": 71827456,
+      "tailEnded": true
+    },
+    "native-ui": {
+      "events": 276,
+      "outcomes": {
+        "canceled": 6,
+        "ok": 270
+      },
+      "traces": 18,
+      "incompleteTraces": 0,
+      "requestFailures": 0,
+      "exceptions": 0,
+      "maxSampledWasmHeapBytes": 77660160,
+      "tailEnded": true
+    }
+  },
+  "cancellationInterpretation": "Six UI canceled platform events occurred near observed reload/tab close. Some include completed mutation traces. Timing correlation is not complete causation proof; not a clean platform-event pass.",
+  "finalTarget": {
+    "workerVersion": "053fa18f-80b6-4f25-8404-5bb7b9c56525",
+    "canonicalVersion": 26,
+    "revision": "f56f11b1-4553-434d-940c-02255fd5c816",
+    "pins": 6,
+    "pending": 0,
+    "writeSealed": true,
+    "windowClosed": true,
+    "fenceActive": false,
+    "publisher": "paused",
+    "payloadBoundBytes": 119224979,
+    "payloadLimitBytes": 150000000,
+    "remainingBytes": 30775021,
+    "ownedDraftRetained": 193,
+    "ownedRevisionRetained": 195,
+    "importedDraftRetained": 192
+  },
+  "validation": {
+    "at": "2026-11-20T18:45:54.777279+00:00",
+    "result": "pass",
+    "adoptedPatches": 25,
+    "optionalPatches": 4,
+    "sourceFilesCompared": 70,
+    "extraHelpersCompared": 30,
+    "addedHelpersSyntax": "pass",
+    "runtimeChanges": false,
+    "runtimeRedeployed": false,
+    "priorProviderSourceHashesUnchanged": true,
+    "existingConfigsUnchanged": 19,
+    "defaultAssemblerIncludesCandidates": false,
+    "reapplyRefusedBeforeMutation": true,
+    "differences": [],
+    "generatedSourceExclusion": "src/playtt-php-loader.mjs, same as default assembler",
+    "scope": "Exact reconstruction and new helper syntax; no repeated claim of the earlier 51-test suite or new TypeScript/dry-run/deployment",
+    "priorProviderSourceFilesCompared": 70,
+    "priorProviderConfigsCompared": 19,
+    "freshFinalAssemblyAfterWhitespaceNormalization": true
+  },
+  "initialStops": [
+    {
+      "stage": "offline fixture lookup",
+      "cause": "Ordinary pages are Markdown records; raw posts table does not contain draft193",
+      "cloudMutations": 0
+    },
+    {
+      "stage": "first remote adoption",
+      "cause": "Held write seal correctly denied admission with HTTP503",
+      "canonicalChanged": false,
+      "r2BytesCharged": 0
+    },
+    {
+      "stage": "second cold form",
+      "cause": "Harness expected server-timing on ordinary WordPress response; runtime only adds it to health",
+      "canonicalVersion": 8,
+      "actualColdPhpGetSucceeded": true,
+      "r2BytesCharged": 0
+    },
+    {
+      "stage": "UI backup comparison",
+      "cause": "Owned draft post_date changes on native save with zero GMT date and no edit_date; pinned core rule inspected",
+      "resumedFromIndependentLocalBundle": true,
+      "additionalObjectDownloads": 0
+    }
+  ],
+  "draftDateRule": {
+    "runtimeArchiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+    "entry": "wordpress/wp-includes/post.php",
+    "function": "wp_update_post",
+    "lines": [
+      5356,
+      5371
+    ],
+    "exceptionScope": "Only owned draft193 date; exact comparison retained for every other frontmatter field except native modification timestamps"
+  },
+  "acceptanceStillOpen": [
+    "Editor iframe style enqueue warnings",
+    "Complete cancellation attribution and native failed-save/retry UI",
+    "Concurrent-editor lock behavior",
+    "Whole-isolate memory and representative latency",
+    "Sustainable history retention and unknown-write recovery",
+    "Mixed-version operational rollback",
+    "Physical devices/IME and practical editor handoff",
+    "Long-term free usage; bounded private research windows are not an unrestricted production backend"
+  ],
+  "next": "Fix the editor iframe style warning using the actual WordPress/theme enqueue path, then exercise failed-save/retry and competing-editor lock behavior in a separately owned bounded window. Keep production unchanged and both private targets sealed between attempts."
+}

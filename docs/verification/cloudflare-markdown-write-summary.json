@@ -1,0 +1,115 @@
+{
+  "at": "2026-11-21T05:43:12.667631+00:00",
+  "result": "pass-with-existing-broad-suite-limitations",
+  "scope": "Local bounded Markdown writes, actual PHP stat fixture, native HTTP recovery and native Chrome draft save; no deployment",
+  "sourceHashes": {
+    "src/worker.ts": "d3463f03bb9bf03c29ed40733a51476bb0540def2c2f28eb12560779b86f1b26",
+    "src/mutation-memory.ts": "00b96c62fc4e5d5a161aaf5f41b20874f6665086b9fb84634d9a00902bc7b650",
+    "tests/cloudflare-runtime.test.ts": "124379429df9353e43565a540ed64bfeba7876671de06c11366e005d85806a04",
+    "tests/playtt-content-io.test.ts": "42a7552f7abdce1a23e19aa48865c637b5c8cb4f1b41a3f09e129861444d4553",
+    "src/playtt-markdown-persistence.ts": "8443497aae4646884d88caa2e73d8f131e5eb47b8af0681cecdf3894032781eb",
+    "tests/playtt-markdown-persistence.test.ts": "dcd5ae6e8c6d827bed098f6f5c257e65d57067a045d2d603665fd5fabbd73042",
+    "scripts/playtt-markdown-write-local.mjs": "876c9ef36f015d337a8e5bf05f5d3fec82cc5f730f5270479826708c905e5644",
+    "scripts/playtt-markdown-write-ui.mjs": "30188c9de0ab80f2044e59a3220aeb0da092b4efb361c6a840950756fbb51852",
+    "scripts/playtt-markdown-write-ui-control.mjs": "8efc8c2834e61580a32f79e60e33053090eb97fe3f3b7a61c867c674936aae0a",
+    "scripts/playtt-markdown-write-ui-audit.mjs": "0eb54e080a7e22b54f204808b4bd8e35d12c79e73fb71cdf7a200618a8995088",
+    "scripts/playtt-markdown-write-status.mjs": "841dd655dc792d4f0e3a7b418af108cd218a8d0f49506442ecb633000b278450"
+  },
+  "scheduler": {
+    "maximumActive": 4,
+    "smallFileWindowBytes": 1048576,
+    "largerFilesAlone": true,
+    "existingFileLimitBytes": 16777216,
+    "existingTotalLimitBytes": 67108864,
+    "existingFileLimit": 5000,
+    "statPreflightBeforeMarkdownCopiesAndWrites": true,
+    "otherFileGroupsAlreadyPersistedBeforeMarkdown": true,
+    "stopAfterObservedFailure": true,
+    "drainAllStartedTasks": true,
+    "noBudgetRefundOrHistoryDeletion": true,
+    "noManifestOrPointerChangesInHelper": true,
+    "schemaAndFlagsUnchanged": true,
+    "retentionExcludesHashProviderWasmAndFilesystem": true
+  },
+  "validation": {
+    "newSchedulerTestsPassed": 10,
+    "relatedRegressionDistinctPassed": 115,
+    "uniqueRelevantChecksPassedAcrossRuns": 125,
+    "regressionFirstRun": {
+      "passed": 114,
+      "failed": 1,
+      "failure": "Existing content-io boundary used 500 event-loop turns rather than a wall-clock timeout; fixed to 5 seconds with 1 ms polling, GET fault armed before invoke; all 10 content-io tests passed on rerun."
+    },
+    "newSchedulerInitialFailure": "16 MiB hashing did not finish within 1000 immediate turns; same bounded wall-clock wait correction; all 10 passed on rerun.",
+    "broaderRuntimeSuite": {
+      "passed": 29,
+      "failed": 3,
+      "failures": [
+        "Two source-text regex assertions already fail against the hash-pinned baseline worker, unchanged behavior here.",
+        "Seed generator requires a PHP CLI; spawn php ENOENT in this environment."
+      ],
+      "wholeBroadSuiteGreen": false
+    },
+    "typescript": "pass",
+    "dryRun": "20896.10 KiB / gzip 7610.67 KiB",
+    "knownLoaderWarningsRemain": true,
+    "nativeHttpRequestsAndTraces": 10,
+    "phpStatFixtureFiles": 5,
+    "phpQuotesUnicodeNewlineBackslashAndFreshSizes": "pass",
+    "nativeBrowser": "Chrome; native code editor fill, visual canvas save button, full workerd restart, exact cold code-editor read; eight paragraphs",
+    "physicalImeAndDevicesTested": false,
+    "uiHelperCleanupAfterRun": "Removed unused readback/fault status fields and unused API helpers; runtime save/restart logic unchanged; syntax checked, no extra UI replay."
+  },
+  "telemetry": {
+    "local": {
+      "traces": 10,
+      "completed": 10,
+      "markdownWrites": 4,
+      "maximumOwnedFileBytes": 363758,
+      "maximumActiveFiles": 4,
+      "maximumObservedRetainedBytes": 370307,
+      "requestFailures": 0,
+      "wholeIsolateMeasured": false
+    },
+    "ui": {
+      "traces": 32,
+      "completed": 32,
+      "markdownWrites": 21,
+      "maximumOwnedFileBytes": 363767,
+      "maximumActiveFiles": 4,
+      "maximumObservedRetainedBytes": 1207098,
+      "requestFailures": 0,
+      "wholeIsolateMeasured": false
+    }
+  },
+  "cloud": {
+    "at": "2026-11-21T05:41:13.784Z",
+    "result": "pass",
+    "scope": "Four GET-only existing-private-project status requests",
+    "canonicalVersion": 130,
+    "revision": "566e44a3-c953-423e-adde-2b0124ece358",
+    "pins": 11,
+    "coherent": true,
+    "fenceActive": false,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true,
+    "publisher": "paused",
+    "remainingBytes": 5935730,
+    "mutatingRequests": 0,
+    "productionRequests": 0
+  },
+  "lastVerifiedDeployment": "1c55f0fa-5b78-4f39-917d-9a0b03e7d1ab",
+  "deployedSourceStill": "bbe6a4db1473aa1ee8ebb0d896f9c094ea0a6c73",
+  "privateDeployment": false,
+  "productionChanged": false,
+  "paidChanges": false,
+  "cloudCandidateLatencyMeasured": false,
+  "prDraft": true,
+  "goalStatus": "active",
+  "next": [
+    "Native browser provider exercise with observer lifetime and write window coordinated; do not reuse completed one-shot tools or stale ready files.",
+    "Current private130/pin11 with 5,935,730 bytes remaining, closed/sealed and publisher paused. Do not increase cap or delete history.",
+    "Whole-isolate memory, real IME/devices, concurrency, mixed-version provider restore and sustainable Free acceptance remain open."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "result": "pass",
+  "packageFiles": 42,
+  "changedThemeFilesFrom031": [
+    "lets-play/patterns/home.php",
+    "lets-play/patterns/locations.php",
+    "lets-play/style.css"
+  ],
+  "targetedViews": 6,
+  "staticExport": {
+    "pages": 6,
+    "files": 51
+  },
+  "negativeChecks": {
+    "svgWithoutViewBoxRejected": true,
+    "rasterWithoutWidthRejected": true,
+    "restoredFixturePasses": true
+  },
+  "productionPublicUnchangedFrom": "172469989dfeafa2f58c8f95db89e83c0c35abca",
+  "localPortsClosed": {
+    "9422": true,
+    "9431": true,
+    "9432": true,
+    "9434": true
+  },
+  "nativeEditorRetestedFor032": false,
+  "cloudWrites": 0,
+  "nodeVersion": "v24.13.0",
+  "toolingCaveat": "This round used the host Node v24.13.0, below package.json recommended >=24.18.0; exact recorded local checks passed."
+}

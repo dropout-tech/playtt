@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-21T09:51:40.205299+00:00",
+  "result": "pass",
+  "basis": "copy of previously hash-verified 25+13-stage assembly; no new upstream rebuild",
+  "unchangedSources": 78,
+  "newTools": 3,
+  "totalHelpers": 145,
+  "unchangedConfigs": 20,
+  "allCopiedTextFilesUnchangedAfterRefusedReapply": true,
+  "cloudRequests": 0
+}

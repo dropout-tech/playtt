@@ -1,0 +1,58 @@
+{
+  "at": "2026-11-20T04:40:18.847Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "version": 10,
+  "protectedPins": 22,
+  "legacyProof": {
+    "scope": "This newly isolated owner-only target; all known upload/native sessions completed and full observation recorded no pending failures. Not a general inference for an arbitrary existing bucket.",
+    "events": 848,
+    "knownCompletedChargedPuts": 52
+  },
+  "publisher": "paused",
+  "sourceVersion": 309,
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2614
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 546
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 147
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 915
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 240
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1349
+    }
+  ]
+}

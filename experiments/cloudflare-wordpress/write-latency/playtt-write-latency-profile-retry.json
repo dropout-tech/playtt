@@ -1,0 +1,86 @@
+{
+  "at": "2026-11-18T22:02:24.497Z",
+  "scope": "Only warmed retry after 10393, same private actor and two owned native updates; existing baseline evidence retained. Not a deployment or general latency benchmark.",
+  "version": "04c50a77-d4ca-4af0-93ab-0cc3ff1963e9",
+  "id": 146,
+  "captured": true,
+  "status": 200,
+  "profileBytes": 242438,
+  "profileSha256": "4123fe4344dff859ab7a82d3b2cbc9bf4a75e1701109a447b380d95f07c75a86",
+  "errorCodes": [],
+  "writes": [
+    {
+      "index": 6,
+      "wallMs": 7113.771
+    },
+    {
+      "index": 7,
+      "wallMs": 7972.419
+    }
+  ],
+  "canonicalVersion": 168,
+  "revision": "2dbca375-3db4-48c5-81f4-f76c800eb15a",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1831
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3052
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2485
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6284
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3218
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1819
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 7112
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/146",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 7972
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3306
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 274
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "at": "2026-11-20T15:54:00.175068+00:00",
+  "result": "contained-incomplete",
+  "scope": "Native editor attempt exposed background snapshot growth; browser connection failed before text editing or save-refusal/retry acceptance",
+  "worker": "playtt-wp-free-pin-restore-audit",
+  "workerVersion": "dc9704f3-cbcf-4f11-af8e-3cf37e8bc6d5",
+  "runtimeDeployedThisCycle": false,
+  "beforeVersion": 22,
+  "preparedVersion": 24,
+  "finalVersion": 62,
+  "ownedId": 192,
+  "ownedDraftRetained": true,
+  "cleanupComplete": false,
+  "browserUiAcceptanceComplete": false,
+  "browserFailure": "Browser session reset after an expired continuation; recovered tab actions and close timed out at Emulation.setFocusEmulationEnabled. No cause established; close not confirmed.",
+  "background": {
+    "snapshotEvents": 45,
+    "adminAjaxSnapshotEvents": 44,
+    "requestFailures": 9,
+    "incompleteTraces": 9,
+    "exceptions": 0,
+    "allPlatformOutcomesOk": true,
+    "warning": "Platform outcome ok includes failed application requests; it is not an all-pass result."
+  },
+  "payloadBoundBytes": 297858132,
+  "limitBytes": 300000000,
+  "remainingBytes": 2141868,
+  "incrementFromPreviousCheckpointBytes": 95393215,
+  "lockDelta": {
+    "at": "2026-11-20T15:49:00.887Z",
+    "result": "pass",
+    "scope": "Two adjacent committed snapshots differ in one native edit-lock timestamp and monotonic counters; manifest and changed loose-object hashes checked, latest complete pack independently decoded",
+    "versions": [
+      61,
+      62
+    ],
+    "changedFiles": [
+      "_runtime/playtt-auto-increment.json",
+      "_tables/postmeta.json"
+    ],
+    "changedRows": 1,
+    "field": "meta_value",
+    "key": "_edit_lock",
+    "postId": 192,
+    "secondsBetweenLockValues": 120,
+    "sameLockOwner": true,
+    "sequenceChanges": [
+      {
+        "table": "wp_options",
+        "before": "581",
+        "after": "583"
+      }
+    ],
+    "restorePackBytes": [
+      2293894,
+      2293896
+    ],
+    "restorePackKeysDiffer": true,
+    "contentMediaThemeUnchanged": true
+  },
+  "backup": {
+    "at": "2026-11-20T15:44:16.652Z",
+    "result": "pass",
+    "bucket": "playtt-wordpress-pin-restore-audit",
+    "revision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+    "version": 62,
+    "objects": 298,
+    "decodedBytes": 4430300,
+    "archiveBytes": 2293896,
+    "archiveSha256": "89a94538333e7d93179818b8dbcaea38f4fdcea80a363b5b1759a9fdbb58b9ba",
+    "pinRegistered": true,
+    "pinGeneration": 25,
+    "ownedDraftPresent": 192,
+    "cleanupComplete": false,
+    "writeSealRetained": true
+  },
+  "final": {
+    "pending": 0,
+    "sealed": true,
+    "fenceActive": false,
+    "pins": 25,
+    "publisher": "paused",
+    "sourceVersion": 309,
+    "sourceUnchanged": true,
+    "observerStopped": true,
+    "matchingOrphanTails": 0
+  },
+  "productionChanged": false,
+  "paidPlanAdded": false,
+  "limitRaised": false,
+  "ledgerRefundReset": false,
+  "historicalObjectsDeleted": 0,
+  "goalStatus": "active",
+  "next": "Develop a bounded durable path for native edit-lock and monotonic-counter updates that avoids full pack rewrites; preserve serialization, cold recovery, IDs and backups before adopting it. Add an independent deadline/seal watchdog before another browser run.",
+  "limits": [
+    "The operator seal was acquired after the interruption, not before headroom was exhausted. It did not provide a test-duration bound.",
+    "The guard rejected pack persistence but small earlier writes still charged conservatively; failed attempts did not advance the canonical pointer.",
+    "The remaining headroom is smaller than one full pack. Do not resume normal editing or blindly unseal/replay login/cleanup.",
+    "Only two adjacent versions were compared for the exact lock/counter delta; no claim that all historical revisions have identical changes.",
+    "Physical-device/IME, native error recovery, latency/memory, sustained zero-cost use and backend cutover remain unaccepted."
+  ]
+}

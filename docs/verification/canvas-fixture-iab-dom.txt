@@ -1,0 +1,16 @@
+- heading "PLAYTT 最小 iframe 顯示測試" [level=1]
+- paragraph: 合成內容；不讀取網站帳號、儲存空間或工作階段。
+- main:
+  - heading "ordinary" [level=2]
+  - generic: "{\"kind\":\"ordinary\",\"loadEvents\":1,\"parentAppend\":true,\"readyState\":\"complete\",\"text\":\"ordinary frame content 普通框架\\n\\nparent portal content 父頁面插入\"}"
+  - iframe [name="test-ordinary"]:
+    - heading "ordinary frame content 普通框架" [level=2]
+    - paragraph: parent portal content 父頁面插入
+  - heading "srcdoc" [level=2]
+  - generic: "{\"kind\":\"srcdoc\",\"loadEvents\":1,\"parentAppend\":true,\"readyState\":\"complete\",\"text\":\"srcdoc frame content 框架文字\\n\\nparent portal content 父頁面插入\"}"
+  - iframe [name="test-srcdoc"]:
+    - heading "srcdoc frame content 框架文字" [level=2]
+    - paragraph: parent portal content 父頁面插入
+  - heading "blob" [level=2]
+  - generic: "{\"kind\":\"blob\",\"loadEvents\":0,\"parentAppend\":false,\"readyState\":\"complete\",\"text\":null}"
+  - iframe [name="test-blob"]

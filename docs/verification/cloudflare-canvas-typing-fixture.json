@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-24T15:08:25.444Z",
+  "wordpressPresent": false,
+  "cloudflarePresent": false,
+  "pageUsesMutationObserver": false,
+  "chrome": [
+    {
+      "kind": "ordinary",
+      "loadEvents": 1,
+      "parentAppend": true,
+      "readyState": "complete",
+      "text": "ordinary frame content 普通框架\n\nparent portal content 父頁面插入"
+    },
+    {
+      "kind": "srcdoc",
+      "loadEvents": 1,
+      "parentAppend": true,
+      "readyState": "complete",
+      "text": "srcdoc frame content 框架文字\n\nparent portal content 父頁面插入"
+    },
+    {
+      "kind": "blob",
+      "loadEvents": 1,
+      "parentAppend": true,
+      "readyState": "complete",
+      "text": "blob frame content 框架文字\n\nparent portal content 父頁面插入"
+    }
+  ],
+  "iab": [
+    {
+      "kind": "ordinary",
+      "loadEvents": 1,
+      "parentAppend": true,
+      "readyState": "complete",
+      "text": "ordinary frame content 普通框架\n\nparent portal content 父頁面插入"
+    },
+    {
+      "kind": "srcdoc",
+      "loadEvents": 1,
+      "parentAppend": true,
+      "readyState": "complete",
+      "text": "srcdoc frame content 框架文字\n\nparent portal content 父頁面插入"
+    },
+    {
+      "kind": "blob",
+      "loadEvents": 0,
+      "parentAppend": false,
+      "readyState": "complete",
+      "text": null
+    }
+  ],
+  "chromeErrors": [],
+  "iabErrors": [
+    {
+      "level": "error",
+      "message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+      "timestamp": "2026-11-24T15:07:59.192Z"
+    },
+    {
+      "level": "error",
+      "message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+      "timestamp": "2026-11-24T15:07:59.200Z"
+    }
+  ]
+}

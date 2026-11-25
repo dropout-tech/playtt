@@ -1,0 +1,23 @@
+{
+  "schema": "playtt/local-compressed-content-proof/v1",
+  "at": "2026-11-21T10:21:42.819Z",
+  "result": "pass",
+  "realWorkerd": true,
+  "coldLocalInstance": true,
+  "localR2": true,
+  "physicalDependencies": 4,
+  "canonicalFiles": 298,
+  "firstRestoreExact": true,
+  "workerdReencodingAndSecondRestoreExact": true,
+  "compressedBytes": 26225,
+  "decodedBytes": 360087,
+  "oversizedDecodedStreamRejected": true,
+  "decodedStreamTestBytes": 2097152,
+  "decodedStreamAllowance": 360087,
+  "outboundAttempts": 0,
+  "wordpressOrPhpExecuted": false,
+  "workerEntrypointIntegrated": false,
+  "providerTested": false,
+  "cpuOrWholeIsolateMemoryMeasured": false,
+  "localProcessesDisposed": true
+}

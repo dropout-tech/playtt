@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-16T11:12:34.690Z",
+  "base": "https://playtt.tw",
+  "theme": "0.2.2",
+  "desktop": {
+    "viewportWidth": 1280,
+    "scrollWidth": 1265,
+    "brokenImages": 0
+  },
+  "mobile": {
+    "viewportWidth": 375,
+    "height": 812,
+    "scrollWidth": 360,
+    "pages": [
+      "/",
+      "/class/"
+    ],
+    "brokenImages": 0
+  },
+  "keyboard": {
+    "enterOpensMenu": true,
+    "focusStarts": "關於我們",
+    "escapeCloses": true,
+    "focusReturns": "Open menu"
+  },
+  "legacy": {
+    "input": "https://playtt.tw/#/class?utm_source=formal-site",
+    "output": "https://playtt.tw/class/?utm_source=formal-site",
+    "heading": "你的第一拍，從這裡開始。"
+  },
+  "mail": "mailto:playpp2018@gmail.com",
+  "limits": "Basic keyboard/browser checks; not full assistive-technology or performance acceptance"
+}

@@ -1,0 +1,234 @@
+{
+  "schema": "playtt/compressed-core-zlib-info-boundaries/v1",
+  "at": "2026-11-22T01:55:17.575Z",
+  "result": "pass",
+  "workerdVersion": "1.20260828.1",
+  "compatibilityDate": "2026-07-18",
+  "compatibilityFlags": [
+    "nodejs_compat",
+    "enable_request_signal"
+  ],
+  "fixtureSha256": "fd9084050a6db916e6915accabe8114defb97aed4f357f871febd8c1787c9a76",
+  "cases": 16,
+  "observations": [
+    {
+      "length": 512,
+      "encodedBytes": 136,
+      "decodedCapacity": 16384,
+      "sha256": "1b16831049006d3b05b9db3581d36fe64ee837e2999855e5717bcf069f21490c",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 512
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 513,
+      "encodedBytes": 136,
+      "decodedCapacity": 16384,
+      "sha256": "c6ca3b0ca3123ff11d9848acbc32ede9bfaa52cd78d93b0b588d10897daa15d5",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 513
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 16383,
+      "encodedBytes": 243,
+      "decodedCapacity": 16384,
+      "sha256": "c983a5f171c694fde9cb010eb97218574eccbbfc55394636bca8318a3660d79c",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 16383
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 16384,
+      "encodedBytes": 243,
+      "decodedCapacity": 16384,
+      "sha256": "3b9c4cf182fa0d6b834d84587e04b6e5b5073de7fd7bf3647213265378fff800",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 16384
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 16385,
+      "encodedBytes": 242,
+      "decodedCapacity": 16385,
+      "sha256": "17606fed70d9ec3f038dae474c34b7b53a4babef5b30b64fd52a222e9adf64a8",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 16385
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 40959,
+      "encodedBytes": 367,
+      "decodedCapacity": 40959,
+      "sha256": "a18088fdc20df0028da1e0889a262a66a05ac84e2e03d3ffbeec56108f64f80f",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 40959
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 40960,
+      "encodedBytes": 367,
+      "decodedCapacity": 40960,
+      "sha256": "d8931ab9f6f46b9475e3765cfab618f2551c7c0e40a92a4abd52106518cd387a",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 40960
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 40961,
+      "encodedBytes": 369,
+      "decodedCapacity": 40961,
+      "sha256": "63f4d1ddf6aa0ec204dac242064f31eb01e6d005caee9a45bd1839848cb58d20",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": false,
+        "name": "RangeError",
+        "message": "Memory limit exceeded"
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 81919,
+      "encodedBytes": 559,
+      "decodedCapacity": 81919,
+      "sha256": "0f3114f0ff3829a7c25f1d673deb6a07e032cf8a72e0be16185640ced7e405a7",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": false,
+        "name": "RangeError",
+        "message": "Memory limit exceeded"
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 81920,
+      "encodedBytes": 559,
+      "decodedCapacity": 81920,
+      "sha256": "de463a19201d00ce7f245fcc229b76fbc9833c2d98e4a2c3de09e4ee427dd63b",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 81920
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 81921,
+      "encodedBytes": 560,
+      "decodedCapacity": 81921,
+      "sha256": "c88b13a315839cdc665f9a6d31667b531376257855adb91624310c0161810896",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": false,
+        "name": "RangeError",
+        "message": "Memory limit exceeded"
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 357678,
+      "encodedBytes": 1835,
+      "decodedCapacity": 357678,
+      "sha256": "8b6d5a9faf493b1d9ed4ba701633319b64abe08aeaf966ceae6d24ea02795748",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": false,
+        "name": "RangeError",
+        "message": "Memory limit exceeded"
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 524287,
+      "encodedBytes": 2598,
+      "decodedCapacity": 524287,
+      "sha256": "801f438052cb9ad5aa324dc2ba650f3c1b61d6a19e54759b5997a3c27842cd0f",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 524287
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 524288,
+      "encodedBytes": 2598,
+      "decodedCapacity": 524288,
+      "sha256": "6248e0d8ed2c4e68a9fb3a67e2037363093b36ee18d6e41717408402226d94cb",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 524288
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 524289,
+      "encodedBytes": 2598,
+      "decodedCapacity": 524289,
+      "sha256": "b025515f719166b1bec53dca4bc5a6320b708ebb50ee1dd15a037fb2fc91daa0",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 524289
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    },
+    {
+      "length": 8388608,
+      "encodedBytes": 38275,
+      "decodedCapacity": 8388608,
+      "sha256": "f51144f10349df88d7fad1ff455edacb38bc0642d97055b03972b051280dfc8f",
+      "inputUnchanged": true,
+      "exactLimit": {
+        "ok": true,
+        "bytes": 8388608
+      },
+      "tooSmallRejected": true,
+      "oneExtraByteRejected": true
+    }
+  ],
+  "exactLimitRejected": 4,
+  "exactLengthValidatedWithInfoStreamEngine": true,
+  "cloudRequests": 0,
+  "outbound": 0,
+  "wordpressRequests": 0,
+  "scope": "Fixed actual workerd zlib cases512B..8MiB; strict decoded length and oversized rejection. Not adapter/PHP integration, retained memory or provider acceptance.",
+  "relatedSource": "https://github.com/cloudflare/workerd/pull/8642"
+}

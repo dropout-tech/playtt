@@ -1,0 +1,853 @@
+{
+  "at": "2026-11-20T20:27:33.795Z",
+  "result": "pass",
+  "scope": "Native WordPress HTTP using retained editor2, exact preferences, fenced same-snapshot forward adoption, cold-session readback and logout revocation. Not browser UI or competing-editor acceptance.",
+  "checks": [
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:27:30.820Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2345
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:27:33.168Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 220
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:27:33.389Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 180
+    },
+    {
+      "stage": "preflight",
+      "startedAt": "2026-11-20T20:27:33.570Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 215
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:27:33.809Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 254
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:27:34.065Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 256
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:27:34.323Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 258
+    },
+    {
+      "stage": "arm",
+      "startedAt": "2026-11-20T20:27:34.584Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 252
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:27:34.838Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1642
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:27:36.483Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 192
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:27:36.676Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3862
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:27:40.539Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1725
+    },
+    {
+      "stage": "cold-login-form",
+      "startedAt": "2026-11-20T20:27:42.266Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 177
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:27:42.445Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1975
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:27:44.423Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 158
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:27:44.583Z",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 5803
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:27:50.388Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2065
+    },
+    {
+      "stage": "editor2-login",
+      "startedAt": "2026-11-20T20:27:52.456Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 153
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:27:52.614Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1719
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:27:54.337Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 171
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:27:54.511Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1008
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:27:55.555Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1679
+    },
+    {
+      "stage": "profile",
+      "startedAt": "2026-11-20T20:27:57.235Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 151
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:27:57.392Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2057
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:27:59.450Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 151
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:27:59.605Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 5005
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:28:04.612Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1862
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:28:06.475Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 163
+    },
+    {
+      "stage": "native-rest-nonce",
+      "startedAt": "2026-11-20T20:28:06.639Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 791
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:28:07.432Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1706
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:28:09.141Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 161
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:28:09.303Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 5051
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:28:14.355Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1821
+    },
+    {
+      "stage": "save-preferences",
+      "startedAt": "2026-11-20T20:28:16.177Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 156
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:28:16.334Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2000
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:28:18.335Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 147
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:28:18.483Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 772
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:28:19.256Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1581
+    },
+    {
+      "stage": "read-preferences",
+      "startedAt": "2026-11-20T20:28:20.838Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 162
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:28:21.001Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 240
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:28:21.244Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1657
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:28:22.902Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 154
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:28:23.057Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 159
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:28:30.665Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1706
+    },
+    {
+      "stage": "pin-v2-before-cold",
+      "startedAt": "2026-11-20T20:28:32.372Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 244
+    },
+    {
+      "stage": "forward-adopt-v2",
+      "startedAt": "2026-11-20T20:28:32.618Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1681
+    },
+    {
+      "stage": "forward-adopt-v2",
+      "startedAt": "2026-11-20T20:28:34.300Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 405
+    },
+    {
+      "stage": "forward-adopt-v2",
+      "startedAt": "2026-11-20T20:28:34.706Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 289
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:28:34.997Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1700
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:28:36.698Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 167
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:28:36.866Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3232
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:28:40.100Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1726
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:28:41.829Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 206
+    },
+    {
+      "stage": "cold-session-preferences",
+      "startedAt": "2026-11-20T20:28:42.036Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 818
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:28:42.856Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1622
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:28:44.481Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 163
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:28:44.646Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 5905
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:28:50.552Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2189
+    },
+    {
+      "stage": "restore-preferences",
+      "startedAt": "2026-11-20T20:28:52.742Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 166
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:28:52.913Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1802
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:28:54.716Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 161
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:28:54.879Z",
+      "method": "GET",
+      "status": 302,
+      "wallMs": 784
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:28:55.665Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2130
+    },
+    {
+      "stage": "native-logout",
+      "startedAt": "2026-11-20T20:28:57.796Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 504
+    },
+    {
+      "stage": "old-cookie-rejected",
+      "startedAt": "2026-11-20T20:28:58.302Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1785
+    },
+    {
+      "stage": "old-cookie-rejected",
+      "startedAt": "2026-11-20T20:29:00.088Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 207
+    },
+    {
+      "stage": "old-cookie-rejected",
+      "startedAt": "2026-11-20T20:29:00.296Z",
+      "method": "GET",
+      "status": 403,
+      "wallMs": 870
+    },
+    {
+      "stage": "old-cookie-rejected",
+      "startedAt": "2026-11-20T20:29:01.166Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1678
+    },
+    {
+      "stage": "old-cookie-rejected",
+      "startedAt": "2026-11-20T20:29:02.845Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 159
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:29:03.006Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 220
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:29:03.227Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 181
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:29:03.411Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1620
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:29:05.032Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 214
+    },
+    {
+      "stage": "close-and-seal",
+      "startedAt": "2026-11-20T20:29:05.248Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 279
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:05.538Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1758
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:07.296Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 174
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:07.471Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 187
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:14.236Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2060
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:16.297Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 182
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:16.481Z",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 228
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:16.711Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 152
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:16.864Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1653
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:18.518Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 194
+    },
+    {
+      "stage": "final-backup",
+      "startedAt": "2026-11-20T20:29:18.713Z",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 207
+    }
+  ],
+  "steps": [
+    {
+      "label": "cold-login-form",
+      "versionBefore": 3,
+      "versionAfter": 3,
+      "pointer": {
+        "revision": "35d8b603-cfec-430d-933c-87a6e8c56abd",
+        "manifestKey": "sites/default/markdown/revisions/35d8b603-cfec-430d-933c-87a6e8c56abd.json",
+        "persistedAt": "2026-11-20T20:25:16.267Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "editor2-login",
+      "versionBefore": 3,
+      "versionAfter": 4,
+      "pointer": {
+        "revision": "1400b00e-4042-44e4-9d79-7c5c302ef1df",
+        "manifestKey": "sites/default/markdown/revisions/1400b00e-4042-44e4-9d79-7c5c302ef1df.json",
+        "persistedAt": "2026-11-20T20:27:46.678Z"
+      },
+      "chargedBytes": 96421,
+      "operations": 4
+    },
+    {
+      "label": "profile",
+      "versionBefore": 4,
+      "versionAfter": 4,
+      "pointer": {
+        "revision": "1400b00e-4042-44e4-9d79-7c5c302ef1df",
+        "manifestKey": "sites/default/markdown/revisions/1400b00e-4042-44e4-9d79-7c5c302ef1df.json",
+        "persistedAt": "2026-11-20T20:27:46.678Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "native-rest-nonce",
+      "versionBefore": 4,
+      "versionAfter": 5,
+      "pointer": {
+        "revision": "7ff75696-da2b-4906-aece-d094121175bd",
+        "manifestKey": "sites/default/markdown/revisions/7ff75696-da2b-4906-aece-d094121175bd.json",
+        "persistedAt": "2026-11-20T20:28:00.613Z"
+      },
+      "chargedBytes": 74120,
+      "operations": 3
+    },
+    {
+      "label": "save-preferences",
+      "versionBefore": 5,
+      "versionAfter": 6,
+      "pointer": {
+        "revision": "9bd718b7-f0fa-4842-b041-2579ebd2f18a",
+        "manifestKey": "sites/default/markdown/revisions/9bd718b7-f0fa-4842-b041-2579ebd2f18a.json",
+        "persistedAt": "2026-11-20T20:28:10.642Z"
+      },
+      "chargedBytes": 96251,
+      "operations": 3
+    },
+    {
+      "label": "read-preferences",
+      "versionBefore": 6,
+      "versionAfter": 6,
+      "pointer": {
+        "revision": "9bd718b7-f0fa-4842-b041-2579ebd2f18a",
+        "manifestKey": "sites/default/markdown/revisions/9bd718b7-f0fa-4842-b041-2579ebd2f18a.json",
+        "persistedAt": "2026-11-20T20:28:10.642Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "cold-session-preferences",
+      "versionBefore": 7,
+      "versionAfter": 7,
+      "pointer": {
+        "revision": "9bd718b7-f0fa-4842-b041-2579ebd2f18a",
+        "manifestKey": "sites/default/markdown/revisions/9bd718b7-f0fa-4842-b041-2579ebd2f18a.json",
+        "persistedAt": "2026-11-20T20:28:10.642Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "restore-preferences",
+      "versionBefore": 7,
+      "versionAfter": 8,
+      "pointer": {
+        "revision": "eb89def1-1ed1-4791-9bb8-a67bd2f434db",
+        "manifestKey": "sites/default/markdown/revisions/eb89def1-1ed1-4791-9bb8-a67bd2f434db.json",
+        "persistedAt": "2026-11-20T20:28:46.938Z"
+      },
+      "chargedBytes": 96421,
+      "operations": 4
+    },
+    {
+      "label": "native-logout",
+      "versionBefore": 8,
+      "versionAfter": 8,
+      "pointer": {
+        "revision": "eb89def1-1ed1-4791-9bb8-a67bd2f434db",
+        "manifestKey": "sites/default/markdown/revisions/eb89def1-1ed1-4791-9bb8-a67bd2f434db.json",
+        "persistedAt": "2026-11-20T20:28:46.938Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    },
+    {
+      "label": "old-cookie-rejected",
+      "versionBefore": 8,
+      "versionAfter": 8,
+      "pointer": {
+        "revision": "eb89def1-1ed1-4791-9bb8-a67bd2f434db",
+        "manifestKey": "sites/default/markdown/revisions/eb89def1-1ed1-4791-9bb8-a67bd2f434db.json",
+        "persistedAt": "2026-11-20T20:28:46.938Z"
+      },
+      "chargedBytes": 0,
+      "operations": 0
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "preferences",
+      "version": 6,
+      "anchor": {
+        "revision": "9bd718b7-f0fa-4842-b041-2579ebd2f18a",
+        "manifestKey": "sites/default/markdown/revisions/9bd718b7-f0fa-4842-b041-2579ebd2f18a.json",
+        "persistedAt": "2026-11-20T20:28:10.642Z",
+        "manifestSha256": "bf2b71e2186a02258f257f6a1fa90a4a45e567e0c61911f17241a089d8521cf0",
+        "packKey": "sites/default/restore-packs/ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b.zip",
+        "packSha256": "ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b",
+        "packBytes": 2295898
+      },
+      "format": "playtt/canonical-metadata-overlay/v2",
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "unchangedFiles": 296,
+      "files": 298,
+      "objects": 301,
+      "originalDraftAndAccountsExact": true,
+      "otherUsersUnchanged": true,
+      "mediaAndThemeExact": true,
+      "independentCopyVerified": true,
+      "remoteGets": 6,
+      "downloadedBytes": 2480772,
+      "pins": 2
+    },
+    {
+      "label": "final",
+      "version": 8,
+      "anchor": {
+        "revision": "eb89def1-1ed1-4791-9bb8-a67bd2f434db",
+        "manifestKey": "sites/default/markdown/revisions/eb89def1-1ed1-4791-9bb8-a67bd2f434db.json",
+        "persistedAt": "2026-11-20T20:28:46.938Z",
+        "manifestSha256": "9e27107dc76e71237f4f4a80a183bb1636c379ff112bc1697661948fb7982882",
+        "packKey": "sites/default/restore-packs/ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b.zip",
+        "packSha256": "ded2292e17500f786ac9264352000aa2c2e6d9eb8e913429dd58da6490c3ca9b",
+        "packBytes": 2295898
+      },
+      "format": "playtt/canonical-metadata-overlay/v2",
+      "changedFiles": [
+        "_runtime/playtt-auto-increment.json",
+        "_tables/usermeta.json"
+      ],
+      "unchangedFiles": 296,
+      "files": 298,
+      "objects": 301,
+      "originalDraftAndAccountsExact": true,
+      "otherUsersUnchanged": true,
+      "mediaAndThemeExact": true,
+      "independentCopyVerified": true,
+      "remoteGets": 6,
+      "downloadedBytes": 2480746,
+      "pins": 3
+    }
+  ],
+  "profile": {
+    "traditionalChinese": true,
+    "hasInlineRestNonce": true,
+    "hasAnyInlineNonce": true,
+    "hasNativeLogout": true
+  },
+  "forwardAdoption": {
+    "fromVersion": 6,
+    "toVersion": 7,
+    "pointer": {
+      "revision": "9bd718b7-f0fa-4842-b041-2579ebd2f18a",
+      "manifestKey": "sites/default/markdown/revisions/9bd718b7-f0fa-4842-b041-2579ebd2f18a.json",
+      "persistedAt": "2026-11-20T20:28:10.642Z"
+    }
+  },
+  "coldSessionValidated": true,
+  "coldPhaseRequiresSeparateTail": true,
+  "originalDraftExact": true,
+  "revokedCookieStatus": 403,
+  "revokedCookieCode": "rest_cookie_invalid_nonce",
+  "preferencesRestored": true,
+  "nativeLogoutRevokedSavedCookie": true,
+  "finalBudget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-session-audit",
+    "baselineBytes": 100738428,
+    "baselineObjects": 303,
+    "chargedBytes": 555659,
+    "chargedPuts": 23,
+    "initializedAt": "2026-11-20T20:06:31.237Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v2",
+      "initializedAt": "2026-11-20T20:06:31.656Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T20:29:05.631Z",
+      "maximumPending": 128,
+      "automaticExpiry": false,
+      "window": {
+        "schema": "playtt/r2-write-window/v1",
+        "id": "0f066ec2-ccd1-413e-b7b7-0553a6068d69",
+        "openedAt": 1795206454427,
+        "expiresAt": 1795206754427,
+        "maxBytes": 8388608,
+        "usedBytes": 363213,
+        "remainingBytes": 8025395,
+        "maxOperations": 128,
+        "operations": 14,
+        "closed": true,
+        "expired": false,
+        "admitsNewOperations": false,
+        "pendingOperationsExpire": false,
+        "automaticReopen": false
+      }
+    },
+    "reservationSchema": "playtt/r2-window-reservation/v1",
+    "initialized": true,
+    "limitBytes": 150000000,
+    "trackingConfigured": true,
+    "windowConfigured": true,
+    "remainingBytes": 48705913,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "finalState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "eb89def1-1ed1-4791-9bb8-a67bd2f434db",
+      "manifestKey": "sites/default/markdown/revisions/eb89def1-1ed1-4791-9bb8-a67bd2f434db.json",
+      "persistedAt": "2026-11-20T20:28:46.938Z"
+    },
+    "version": 8
+  },
+  "finalPins": 3,
+  "publisher": "paused",
+  "windowClosed": true,
+  "writeSealed": true,
+  "fenceReleased": true
+}

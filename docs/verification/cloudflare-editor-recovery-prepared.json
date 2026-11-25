@@ -1,0 +1,105 @@
+{
+  "at": "2026-11-20T05:53:19.147Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "state": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "65404964-6f00-4040-92e9-58a6097ef100",
+      "manifestKey": "sites/default/markdown/revisions/65404964-6f00-4040-92e9-58a6097ef100.json",
+      "persistedAt": "2026-11-20T05:53:13.178Z"
+    },
+    "version": 24
+  },
+  "editUrl": "https://playtt-wp-free-pin-restore-audit.muzhi-garden-platform.workers.dev/wp-admin/post.php?post=192&action=edit",
+  "beforeText": "原始草稿：讓孩子與大人一起享受桌球。",
+  "afterText": "儲存失敗仍保留：孩子與大人一起享受桌球，恢復後再試。",
+  "publisher": "paused",
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2825
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 160
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 520
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 202
+    },
+    {
+      "target": "restore",
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3838
+    },
+    {
+      "target": "restore",
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 6045
+    },
+    {
+      "target": "restore",
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1314
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/settings",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1038
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 919
+    },
+    {
+      "target": "restore",
+      "path": "/wp-json/wp/v2/pages",
+      "method": "POST",
+      "status": 201,
+      "wallMs": 5802
+    },
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2254
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 172
+    }
+  ]
+}

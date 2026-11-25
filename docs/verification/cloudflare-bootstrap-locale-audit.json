@@ -1,0 +1,316 @@
+{
+  "schema": "playtt/bootstrap-locale-audit/v1",
+  "at": "2026-11-24T16:09:28.986Z",
+  "result": "pass",
+  "scope": "Retained local first bootstrap and zh_TW initialization; not cloud Free acceptance",
+  "failedBootstrap": {
+    "schema": "playtt/first-locale-failed-bootstrap/v1",
+    "at": "2026-11-24T15:46:57.819Z",
+    "scope": "Read-only local retained budget and R2; no native PHP replay",
+    "result": "bootstrap-failed-before-locale-installation",
+    "committedPointerExists": false,
+    "partialObjects": 125,
+    "chargedPuts": 128,
+    "chargedBytes": 20367,
+    "pending": 0,
+    "sealed": true,
+    "windowClosed": true,
+    "maximumPending": 128,
+    "windowOperations": 128,
+    "outboundAttempts": 0
+  },
+  "attempts": [
+    {
+      "kind": "serial",
+      "result": "user-locale-only-site-option-missing",
+      "chargedBytes": 6366993,
+      "chargedPuts": 254,
+      "snapshots": [
+        {
+          "label": "english",
+          "version": 2,
+          "objects": 138,
+          "files": 136
+        },
+        {
+          "label": "localized",
+          "version": 4,
+          "objects": 217,
+          "files": 296
+        },
+        {
+          "label": "cleaned",
+          "version": 6,
+          "objects": 215,
+          "files": 217
+        },
+        {
+          "label": "final",
+          "version": 11,
+          "objects": 220,
+          "files": 218
+        }
+      ],
+      "changedCanonicalFiles": [
+        "_options/can_compress_scripts.json",
+        "_options/cron.json",
+        "_options/recently_activated.json",
+        "_runtime/playtt-auto-increment.json",
+        "_runtime/playtt-postmeta-layout.json",
+        "_tables/postmeta.json",
+        "_tables/posts.json",
+        "_tables/usermeta.json",
+        "post/4.md"
+      ],
+      "languageFiles": 77,
+      "languageBytes": 2500119,
+      "originalContentUsersUploadsAndThemeExact": true,
+      "postmetaLegacyValuesMigratedExactly": true,
+      "nativeDashboardAutoDraft": 4,
+      "nativeSessionCleanup": true,
+      "siteLanguagePersisted": false,
+      "independentExportsExact": true,
+      "fullWorkerdRestart": true,
+      "observations": [
+        {
+          "label": "before-restart",
+          "events": 234,
+          "samples": 31,
+          "exceptions": 0,
+          "maxSampledPhpHeapBytes": 74711040,
+          "maxSampledInspectorSumBytes": 108156011,
+          "peakOrProviderAccepted": false
+        },
+        {
+          "label": "after-restart",
+          "events": 764,
+          "samples": 217,
+          "exceptions": 2,
+          "maxSampledPhpHeapBytes": 74383360,
+          "maxSampledInspectorSumBytes": 56204845,
+          "peakOrProviderAccepted": false
+        }
+      ],
+      "requestTimings": [
+        {
+          "phase": "upload",
+          "path": "/wp-admin/plugin-install.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 913
+        },
+        {
+          "phase": "upload",
+          "path": "/wp-admin/update.php",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 3234,
+          "version": 3
+        },
+        {
+          "phase": "activate",
+          "path": "/wp-admin/plugins.php",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 2055,
+          "version": 4
+        },
+        {
+          "phase": "restarted",
+          "path": "/wp-admin/",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2775
+        },
+        {
+          "phase": "restarted",
+          "path": "/wp-json/wp/v2/users/me",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 646
+        },
+        {
+          "phase": "restarted",
+          "path": "/wp-json/wp/v2/plugins",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 644
+        }
+      ],
+      "sealed": true,
+      "disposed": true
+    },
+    {
+      "kind": "complete",
+      "result": "site-and-user-locale-persisted",
+      "chargedBytes": 6369525,
+      "chargedPuts": 255,
+      "snapshots": [
+        {
+          "label": "english",
+          "version": 2,
+          "objects": 138,
+          "files": 136
+        },
+        {
+          "label": "localized",
+          "version": 4,
+          "objects": 218,
+          "files": 297
+        },
+        {
+          "label": "cleaned",
+          "version": 6,
+          "objects": 216,
+          "files": 218
+        },
+        {
+          "label": "final",
+          "version": 11,
+          "objects": 221,
+          "files": 219
+        }
+      ],
+      "changedCanonicalFiles": [
+        "_options/WPLANG.json",
+        "_options/can_compress_scripts.json",
+        "_options/cron.json",
+        "_options/recently_activated.json",
+        "_runtime/playtt-auto-increment.json",
+        "_runtime/playtt-postmeta-layout.json",
+        "_tables/postmeta.json",
+        "_tables/posts.json",
+        "_tables/usermeta.json",
+        "post/4.md"
+      ],
+      "languageFiles": 77,
+      "languageBytes": 2500119,
+      "originalContentUsersUploadsAndThemeExact": true,
+      "postmetaLegacyValuesMigratedExactly": true,
+      "nativeDashboardAutoDraft": 4,
+      "nativeSessionCleanup": true,
+      "siteLanguagePersisted": true,
+      "independentExportsExact": true,
+      "fullWorkerdRestart": true,
+      "observations": [
+        {
+          "label": "before-restart",
+          "events": 250,
+          "samples": 32,
+          "exceptions": 0,
+          "maxSampledPhpHeapBytes": 74514432,
+          "maxSampledInspectorSumBytes": 114209614,
+          "peakOrProviderAccepted": false
+        },
+        {
+          "label": "after-restart",
+          "events": 393,
+          "samples": 87,
+          "exceptions": 0,
+          "maxSampledPhpHeapBytes": 76349440,
+          "maxSampledInspectorSumBytes": 55340001,
+          "peakOrProviderAccepted": false
+        }
+      ],
+      "requestTimings": [
+        {
+          "phase": "upload",
+          "path": "/wp-admin/plugin-install.php",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 913
+        },
+        {
+          "phase": "upload",
+          "path": "/wp-admin/update.php",
+          "method": "POST",
+          "status": 200,
+          "wallMs": 2866,
+          "version": 3
+        },
+        {
+          "phase": "activate",
+          "path": "/wp-admin/plugins.php",
+          "method": "GET",
+          "status": 302,
+          "wallMs": 1752,
+          "version": 4
+        },
+        {
+          "phase": "restarted",
+          "path": "/wp-admin/",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 2945
+        },
+        {
+          "phase": "restarted",
+          "path": "/wp-json/wp/v2/users/me",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 946
+        },
+        {
+          "phase": "restarted",
+          "path": "/wp-json/wp/v2/settings",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 629
+        },
+        {
+          "phase": "restarted",
+          "path": "/wp-json/wp/v2/plugins",
+          "method": "GET",
+          "status": 200,
+          "wallMs": 663
+        }
+      ],
+      "sealed": true,
+      "disposed": true
+    }
+  ],
+  "build": {
+    "schema": "playtt/bootstrap-serial-build-proof/v1",
+    "result": "pass",
+    "sourceInputs": 215,
+    "loadedSources": 77,
+    "unchangedPriorInputs": 214,
+    "changedInputs": [
+      "src/worker.ts"
+    ],
+    "bundleSha256": "2e9819b0c9602eb937b2819196242a047877923b2d79a27ebdcd821d294074c1",
+    "binaryModulesUnchanged": 5,
+    "centralSourcesUnchanged": 82,
+    "typecheck": "pass",
+    "dryRun": "pass",
+    "deployed": false
+  },
+  "cacheProof": "playtt-locale-cache-php-proof.json",
+  "nativeBrowser": {
+    "schema": "playtt/locale-first-browser/v1",
+    "at": "2026-11-24T16:05:49.546Z",
+    "browser": "in-app",
+    "scope": "Fresh local canonical store, fixed initializer, full workerd restart; native login/dashboard/settings/logout",
+    "lang": "zh-TW",
+    "siteLanguage": "zh_TW",
+    "nativeLogin": true,
+    "dashboardTraditionalChinese": true,
+    "settingsSiteLocale": true,
+    "nativeLogout": true,
+    "consoleInspected": false,
+    "screenshot": "playtt-locale-complete-dashboard.jpg",
+    "cloudOperations": 0
+  },
+  "centralSourcesUnchanged": 82,
+  "cloudOperations": 0,
+  "productionChanged": false,
+  "paidUpgrade": false,
+  "fullBackendAccepted": false,
+  "limitations": [
+    "Original concurrent bootstrap stopped before a canonical pointer; charged partial objects and closed ledger retained.",
+    "First serial trial had only user locale: historical pass flags do not prove WPLANG. Two post-restart Network connection lost exceptions remain unattributed; Chrome control failed before login, IAB succeeded.",
+    "Final fixed initializer trial had zero observed server exceptions, but browser console was not inspected.",
+    "Inspector values are periodic samples, not provider total or peak memory, billed CPU, or sustained Free admission.",
+    "Candidate serial bootstrap module and initializer1.0.1 have not been deployed remotely. Previously authorized one-time remote window remains consumed; production unchanged."
+  ]
+}

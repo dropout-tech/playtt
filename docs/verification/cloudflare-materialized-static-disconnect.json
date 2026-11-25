@@ -1,0 +1,121 @@
+{
+  "schema": "playtt/local-static-disconnect/v1",
+  "at": "2026-11-21T19:05:02.080Z",
+  "result": "completed",
+  "localOnly": true,
+  "cloudRequests": 0,
+  "candidateBundleSha256": "824e974b27bf37302cc6607a840985f56b89fedc19e899e3e6140d8ac66cb2fa",
+  "asset": {
+    "path": "/wp-includes/js/dist/components.js",
+    "bytes": 3821298,
+    "sha256": "60d45be44743433355e3fd6d8d027747b937e67555f44012cb5761b01f9e274e"
+  },
+  "results": [
+    {
+      "label": "control-before",
+      "status": 200,
+      "canceled": false,
+      "bytes": 3821298,
+      "sha256": "60d45be44743433355e3fd6d8d027747b937e67555f44012cb5761b01f9e274e"
+    },
+    {
+      "label": "control-before",
+      "observer": {
+        "label": "control-before",
+        "samples": 7,
+        "events": 2,
+        "exceptions": 0,
+        "privateExceptions": 0,
+        "allocationActive": false,
+        "busy": false,
+        "stopped": false
+      }
+    },
+    {
+      "label": "cancel-headers",
+      "status": 200,
+      "canceled": true,
+      "cancelAt": "response-headers",
+      "receivedBodyBytes": 0
+    },
+    {
+      "label": "cancel-headers",
+      "observer": {
+        "label": "cancel-headers",
+        "samples": 13,
+        "events": 4,
+        "exceptions": 0,
+        "privateExceptions": 0,
+        "allocationActive": false,
+        "busy": false,
+        "stopped": false
+      }
+    },
+    {
+      "label": "cancel-inflight",
+      "headersAlreadyObservedAtCancel": false
+    },
+    {
+      "label": "cancel-inflight",
+      "canceled": true,
+      "cancelAt": "inflight",
+      "clientError": "ECONNRESET"
+    },
+    {
+      "label": "cancel-inflight",
+      "observer": {
+        "label": "cancel-inflight",
+        "samples": 19,
+        "events": 7,
+        "exceptions": 1,
+        "privateExceptions": 1,
+        "allocationActive": false,
+        "busy": false,
+        "stopped": false
+      }
+    },
+    {
+      "label": "control-after",
+      "status": 200,
+      "canceled": false,
+      "bytes": 3821298,
+      "sha256": "60d45be44743433355e3fd6d8d027747b937e67555f44012cb5761b01f9e274e"
+    },
+    {
+      "label": "control-after",
+      "observer": {
+        "label": "control-after",
+        "samples": 25,
+        "events": 9,
+        "exceptions": 1,
+        "privateExceptions": 1,
+        "allocationActive": false,
+        "busy": false,
+        "stopped": false
+      }
+    }
+  ],
+  "observation": {
+    "label": "control-after",
+    "samples": 26,
+    "events": 9,
+    "exceptions": 1,
+    "privateExceptions": 1,
+    "allocationActive": false,
+    "busy": false,
+    "stopped": true
+  },
+  "wordPressDataSeeded": false,
+  "phpInvoked": false,
+  "localR2ObjectsBefore": 1,
+  "localR2ObjectsAfter": 1,
+  "localR2Unchanged": true,
+  "mutableRequestsAllowed": false,
+  "outboundAttempts": 0,
+  "limitations": [
+    "Only intentional local HTTP client cancellation against an immutable asset.",
+    "Same text alone cannot retroactively prove the cause of earlier browser exceptions.",
+    "No Cloudflare memory/CPU or backend acceptance claim."
+  ],
+  "localProcessesDisposed": true
+}

@@ -1,0 +1,135 @@
+{
+  "at": "2026-11-20T16:54:26.646Z",
+  "result": "pass",
+  "scope": "Offline export/import from recorded full canonical62 and the previously simulated overlay, independent local object stores and fresh PHP/MDI/PDO hydration; no provider, browser or complete WordPress HTTP acceptance",
+  "baseRevision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+  "results": [
+    {
+      "format": "full",
+      "files": 296,
+      "immutableObjects": 295,
+      "payloadBytes": 6797143,
+      "sourceObjectReads": 2,
+      "sourceOfflineDuringImport": true,
+      "independentObjectHashesMatch": true,
+      "referenceCoverage": {
+        "result": "pass",
+        "scope": "Conservative coordinator-receipt/lease/current/pin/cache reference coverage including exact-hash overlay bases; object presence/size plus raw overlay manifest hashes, not ZIP/content decode or provider restore",
+        "safeToApply": false,
+        "manifests": 1,
+        "commitReceipts": 1,
+        "protectedPins": 1,
+        "referencedRevisions": 1,
+        "unpinnedCommitRevisions": 0,
+        "uniqueReferencedObjects": 295,
+        "leaseBaseIncluded": false,
+        "publicationAndImportObjects": 0,
+        "overlayRevisions": 0,
+        "overlayBaseRevisions": 0,
+        "outsideReferenceSet": {
+          "current-pointer": {
+            "objects": 1,
+            "bytes": 183
+          }
+        },
+        "outsideReferenceSetDeletable": false,
+        "referenced": [
+          {
+            "revision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+            "reasons": [
+              "commit-receipt",
+              "coordinator-current",
+              "durable-backup-pin",
+              "r2-current"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "format": "overlay",
+      "files": 296,
+      "immutableObjects": 298,
+      "payloadBytes": 6882781,
+      "sourceObjectReads": 5,
+      "sourceOfflineDuringImport": true,
+      "independentObjectHashesMatch": true,
+      "referenceCoverage": {
+        "result": "pass",
+        "scope": "Conservative coordinator-receipt/lease/current/pin/cache reference coverage including exact-hash overlay bases; object presence/size plus raw overlay manifest hashes, not ZIP/content decode or provider restore",
+        "safeToApply": false,
+        "manifests": 2,
+        "commitReceipts": 1,
+        "protectedPins": 1,
+        "referencedRevisions": 2,
+        "unpinnedCommitRevisions": 0,
+        "uniqueReferencedObjects": 298,
+        "leaseBaseIncluded": false,
+        "publicationAndImportObjects": 0,
+        "overlayRevisions": 1,
+        "overlayBaseRevisions": 1,
+        "outsideReferenceSet": {
+          "current-pointer": {
+            "objects": 1,
+            "bytes": 183
+          }
+        },
+        "outsideReferenceSetDeletable": false,
+        "referenced": [
+          {
+            "revision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+            "reasons": [
+              "overlay-base"
+            ]
+          },
+          {
+            "revision": "e4db6b6c-3efd-4e31-a628-a2780b468784",
+            "reasons": [
+              "commit-receipt",
+              "coordinator-current",
+              "durable-backup-pin",
+              "r2-current"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "materialization": {
+    "newIdentity": true,
+    "originalOverlayPreserved": true,
+    "fullFiles": 296,
+    "allFileHashesAndTombstonesMatch": true,
+    "immutableObjects": 295
+  },
+  "php": {
+    "scope": "Real MDI loader and PDO SQLite; narrow driver adapter",
+    "assets": {
+      "wasmSha256": "5b1787681568c62c37cf44f3a73d979540b5439c0c79d960cbbaf5d22a467854",
+      "mdiSha256": "eeb01238babfea9dff7c56111974584c86e0aec8616cb0ae0f09296a222b92c0",
+      "seedSha256": "7212b89f1c01f98a23b89e9a2dd2b214306a85c10adb0355b9c7a6005b4fe822"
+    },
+    "checks": [
+      {
+        "label": "overlay-independent",
+        "result": "pass",
+        "metadataRows": 49,
+        "sequenceTables": 8,
+        "attachmentRelationships": 15,
+        "metadataRowsSha256": "3cafc60a771d5a60c749f2c22fb2fad5cb36156ada89335ff6aac29482c19213"
+      },
+      {
+        "label": "materialized-independent",
+        "result": "pass",
+        "metadataRows": 49,
+        "sequenceTables": 8,
+        "attachmentRelationships": 15,
+        "metadataRowsSha256": "3cafc60a771d5a60c749f2c22fb2fad5cb36156ada89335ff6aac29482c19213"
+      }
+    ]
+  },
+  "cloudflareRequests": 0,
+  "cloudflareMutations": 0,
+  "remotePinsAdded": 0,
+  "featureFlagEnabled": false
+}

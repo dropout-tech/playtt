@@ -1,0 +1,9 @@
+{
+  "scope": "WCAG relative luminance calculation for 12px CTA eyebrow; observed computed colors recorded in local-browser.json",
+  "background": "#0071ce",
+  "before": "#ffda00",
+  "after": "#ffffff",
+  "beforeRatio": 3.5926390263721313,
+  "afterRatio": 4.937346035379707,
+  "threshold": 4.5
+}

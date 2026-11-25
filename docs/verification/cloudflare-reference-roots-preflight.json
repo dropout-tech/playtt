@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-20T05:21:15.561Z",
+  "result": "pass",
+  "version": 16,
+  "pins": 23,
+  "pending": 0,
+  "sealed": false,
+  "fenceActive": false,
+  "publisher": "paused",
+  "sourceVersion": 309,
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 4034
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 556
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 273
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 233
+    }
+  ]
+}

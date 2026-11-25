@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-20T04:09:26.836Z",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "result": "pass",
+  "objects": 396,
+  "payloadBytes": 149591427,
+  "scope": "Only verified immutable union objects copied to the new owned bucket; no source writes or reset"
+}

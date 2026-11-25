@@ -1,0 +1,329 @@
+{
+  "at": "2026-11-21T03:28:21.542Z",
+  "result": "pass",
+  "scope": "Offline fixed backup126, identical object bytes and GET counts; injected delay is synthetic, not provider latency or billing",
+  "baselineRevision": "c7933a7c-c54e-4dc7-8a01-7888418761e8",
+  "baselineSourceSha256": "367b2f462edf85f1ec0b8666538f90d896f3328a4e94ab8dc3f9475b28f188fc",
+  "candidateSourceSha256": "7bf63e94d077d66bf46c4341add07e548ae1b12cc027541a6ca663f84c5281c3",
+  "completeContentsExact": true,
+  "writerDescriptorExact": true,
+  "allStartedReadsDrained": true,
+  "networkRequests": 0,
+  "wholeIsolateMemoryMeasured": false,
+  "runs": [
+    {
+      "latencyMs": 0,
+      "round": 0,
+      "phase": "verify",
+      "implementation": "serial",
+      "durationMs": 8.1,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 315201
+    },
+    {
+      "latencyMs": 0,
+      "round": 0,
+      "phase": "verify",
+      "implementation": "bounded",
+      "durationMs": 6.97,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 349321
+    },
+    {
+      "latencyMs": 0,
+      "round": 0,
+      "phase": "restore",
+      "implementation": "serial",
+      "durationMs": 334.56,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 0,
+      "round": 0,
+      "phase": "restore",
+      "implementation": "bounded",
+      "durationMs": 309.18,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 0,
+      "round": 1,
+      "phase": "verify",
+      "implementation": "bounded",
+      "durationMs": 4.84,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 349321
+    },
+    {
+      "latencyMs": 0,
+      "round": 1,
+      "phase": "verify",
+      "implementation": "serial",
+      "durationMs": 4.92,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 315201
+    },
+    {
+      "latencyMs": 0,
+      "round": 1,
+      "phase": "restore",
+      "implementation": "bounded",
+      "durationMs": 304.08,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 0,
+      "round": 1,
+      "phase": "restore",
+      "implementation": "serial",
+      "durationMs": 303.22,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 0,
+      "round": 2,
+      "phase": "verify",
+      "implementation": "serial",
+      "durationMs": 5.11,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 315201
+    },
+    {
+      "latencyMs": 0,
+      "round": 2,
+      "phase": "verify",
+      "implementation": "bounded",
+      "durationMs": 4.63,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 349321
+    },
+    {
+      "latencyMs": 0,
+      "round": 2,
+      "phase": "restore",
+      "implementation": "serial",
+      "durationMs": 294.34,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 0,
+      "round": 2,
+      "phase": "restore",
+      "implementation": "bounded",
+      "durationMs": 284.77,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 25,
+      "round": 0,
+      "phase": "verify",
+      "implementation": "serial",
+      "durationMs": 223.79,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 315201
+    },
+    {
+      "latencyMs": 25,
+      "round": 0,
+      "phase": "verify",
+      "implementation": "bounded",
+      "durationMs": 124.08,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 349321
+    },
+    {
+      "latencyMs": 25,
+      "round": 0,
+      "phase": "restore",
+      "implementation": "serial",
+      "durationMs": 514.92,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 25,
+      "round": 0,
+      "phase": "restore",
+      "implementation": "bounded",
+      "durationMs": 433.87,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 25,
+      "round": 1,
+      "phase": "verify",
+      "implementation": "bounded",
+      "durationMs": 124.37,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 349321
+    },
+    {
+      "latencyMs": 25,
+      "round": 1,
+      "phase": "verify",
+      "implementation": "serial",
+      "durationMs": 217.1,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 315201
+    },
+    {
+      "latencyMs": 25,
+      "round": 1,
+      "phase": "restore",
+      "implementation": "bounded",
+      "durationMs": 403.15,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 25,
+      "round": 1,
+      "phase": "restore",
+      "implementation": "serial",
+      "durationMs": 497.85,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 25,
+      "round": 2,
+      "phase": "verify",
+      "implementation": "serial",
+      "durationMs": 230.13,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 315201
+    },
+    {
+      "latencyMs": 25,
+      "round": 2,
+      "phase": "verify",
+      "implementation": "bounded",
+      "durationMs": 122,
+      "calls": 7,
+      "bytesRead": 498641,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 349321
+    },
+    {
+      "latencyMs": 25,
+      "round": 2,
+      "phase": "restore",
+      "implementation": "serial",
+      "durationMs": 534.83,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 1,
+      "peakDeclaredActiveBytes": 2295783
+    },
+    {
+      "latencyMs": 25,
+      "round": 2,
+      "phase": "restore",
+      "implementation": "bounded",
+      "durationMs": 437.46,
+      "calls": 7,
+      "bytesRead": 2720684,
+      "peakActiveReads": 4,
+      "peakDeclaredActiveBytes": 2295783
+    }
+  ],
+  "medians": [
+    {
+      "latencyMs": 0,
+      "phase": "verify",
+      "implementation": "serial",
+      "medianMs": 5.11
+    },
+    {
+      "latencyMs": 0,
+      "phase": "verify",
+      "implementation": "bounded",
+      "medianMs": 4.84
+    },
+    {
+      "latencyMs": 0,
+      "phase": "restore",
+      "implementation": "serial",
+      "medianMs": 303.22
+    },
+    {
+      "latencyMs": 0,
+      "phase": "restore",
+      "implementation": "bounded",
+      "medianMs": 304.08
+    },
+    {
+      "latencyMs": 25,
+      "phase": "verify",
+      "implementation": "serial",
+      "medianMs": 223.79
+    },
+    {
+      "latencyMs": 25,
+      "phase": "verify",
+      "implementation": "bounded",
+      "medianMs": 124.08
+    },
+    {
+      "latencyMs": 25,
+      "phase": "restore",
+      "implementation": "serial",
+      "medianMs": 514.92
+    },
+    {
+      "latencyMs": 25,
+      "phase": "restore",
+      "implementation": "bounded",
+      "medianMs": 433.87
+    }
+  ]
+}

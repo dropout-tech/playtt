@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-20T02:22:17.968Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "result": "pass",
+  "scope": "Post-noop-change native UI save independently read through authenticated REST; planned paragraph plus audited block-boundary newlines, four trailing class spaces, six default h2 attributes and one ampersand escape; original homepage is byte-identical",
+  "id": 173,
+  "contentHash": "1d826372bb5dbb47a9292aa60706989d40e362520ed039e7ecadfdb10a9b193f",
+  "plannedRawHash": "29d08543ba6b78f52492aa3c0689c61022610430869dd14a5ab5784cc26d97ca",
+  "actualRawHash": "0f8bec67b9c6bd76c8e6ec322b46fb7954a622d7aa6175d38be83dc4e32dfafa",
+  "auditedSerializationChanges": true,
+  "sourceHomeHash": "5e800ffb86faf8e2a367b8e92959e0a7afc53b32bcb7c91cb401e9f088b9922d",
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1726
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2241
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 7198
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 5803
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2833
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/173?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2157
+    },
+    {
+      "path": "/wp-json/wp/v2/pages/24?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2525
+    }
+  ]
+}

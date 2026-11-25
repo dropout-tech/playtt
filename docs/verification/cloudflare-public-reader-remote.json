@@ -1,0 +1,237 @@
+{
+  "at": "2026-11-17T05:12:42.975Z",
+  "result": "pass",
+  "scope": "Remote noindex public reader, six coherent pages, all linked core/theme/media assets, origin rewrite, tracking/cookies, redirects, sitemap and private/source rejection",
+  "assets": 20,
+  "revision": "05d7f292-a1c8-4405-a7d4-2b2f0e409c25",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "wallMs": 870,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "wallMs": 676,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/class/",
+      "status": 200,
+      "wallMs": 728,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/coaches/",
+      "status": 200,
+      "wallMs": 857,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/locations/",
+      "status": 200,
+      "wallMs": 741,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/partner/",
+      "status": 200,
+      "wallMs": 795,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/wp-includes/css/dist/block-library/common.min.css",
+      "status": 200,
+      "wallMs": 323,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/wp-includes/css/wp-block-template-skip-link.min.css",
+      "status": 200,
+      "wallMs": 1414,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/wp-content/themes/lets-play/style.css",
+      "status": 200,
+      "wallMs": 568,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/wp-content/themes/lets-play/assets/legacy-links.js",
+      "status": 200,
+      "wallMs": 623,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "/wp-includes/js/dist/script-modules/interactivity/index.min.js",
+      "status": 200,
+      "wallMs": 656,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "/wp-content/themes/lets-play/assets/images/logo.webp",
+      "status": 200,
+      "wallMs": 595,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/brand-desktop.webp",
+      "status": 200,
+      "wallMs": 881,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/brand-mobile.webp",
+      "status": 200,
+      "wallMs": 575,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/children.webp",
+      "status": 200,
+      "wallMs": 633,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/individual.webp",
+      "status": 200,
+      "wallMs": 602,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/camp.webp",
+      "status": 200,
+      "wallMs": 604,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-kuo.webp",
+      "status": 200,
+      "wallMs": 674,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-lin.webp",
+      "status": 200,
+      "wallMs": 604,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-yang.webp",
+      "status": 200,
+      "wallMs": 591,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js",
+      "status": 200,
+      "wallMs": 849,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-huang.webp",
+      "status": 200,
+      "wallMs": 630,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-amber.webp",
+      "status": 200,
+      "wallMs": 572,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-tsai.webp",
+      "status": 200,
+      "wallMs": 596,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-wen.webp",
+      "status": 200,
+      "wallMs": 622,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/wp-content/uploads/2026/11/coach-wang.webp",
+      "status": 200,
+      "wallMs": 571,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "wallMs": 324,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/home",
+      "status": 301,
+      "wallMs": 135,
+      "contentType": null
+    },
+    {
+      "path": "/class",
+      "status": 301,
+      "wallMs": 149,
+      "contentType": null
+    },
+    {
+      "path": "/wp-content/themes/lets-play/functions.php",
+      "status": 404,
+      "wallMs": 138,
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/wp-content/themes/lets-play/functions.%70hp",
+      "status": 404,
+      "wallMs": 314,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/wp-json/wp/v2/pages",
+      "status": 404,
+      "wallMs": 136,
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/",
+      "status": 404,
+      "wallMs": 151,
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/",
+      "status": 404,
+      "wallMs": 136,
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/missing/",
+      "status": 404,
+      "wallMs": 300,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/",
+      "status": 405,
+      "wallMs": 159,
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "wallMs": 280,
+      "contentType": "application/xml; charset=utf-8"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "wallMs": 135,
+      "contentType": "text/plain; charset=utf-8"
+    }
+  ]
+}

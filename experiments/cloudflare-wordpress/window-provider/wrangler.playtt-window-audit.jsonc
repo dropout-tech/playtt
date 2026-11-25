@@ -1,0 +1,82 @@
+{
+  "name": "playtt-wp-free-window-audit",
+  "account_id": "3baadbd4abd9fd63c7f7e51664b26f67",
+  "main": "src/worker-playtt-do.ts",
+  "compatibility_date": "2026-07-18",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "enable_request_signal"
+  ],
+  "workers_dev": true,
+  "preview_urls": false,
+  "r2_buckets": [
+    {
+      "binding": "WORDPRESS_STATE_BUCKET",
+      "bucket_name": "playtt-wordpress-window-audit"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "WORDPRESS_STATE",
+        "class_name": "WordPressStateCoordinator"
+      },
+      {
+        "name": "PLAYTT_EXECUTION",
+        "class_name": "PlayttWordPressExecution"
+      },
+      {
+        "name": "PLAYTT_STORAGE_BUDGET",
+        "class_name": "PlayttStorageBudget"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "WordPressStateCoordinator",
+        "PlayttWordPressExecution"
+      ]
+    },
+    {
+      "tag": "v2-capacity",
+      "new_sqlite_classes": [
+        "PlayttStorageBudget"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "type": "CompiledWasm",
+      "globs": [
+        "**/*.wasm"
+      ],
+      "fallthrough": false
+    },
+    {
+      "type": "Data",
+      "globs": [
+        "**/*.sqlite",
+        "**/*-runtime.zip",
+        "**/*-canonical-seed.zip"
+      ],
+      "fallthrough": false
+    }
+  ],
+  "vars": {
+    "PLAYTT_PROBE_GATE": "true",
+    "WORDPRESS_SITE_CONTEXTS": "[{\"id\":\"default\",\"hostname\":\"playtt-wp-free-window-audit.muzhi-garden-platform.workers.dev\",\"origin\":\"https://playtt-wp-free-window-audit.muzhi-garden-platform.workers.dev\"}]",
+    "PLAYTT_STATE_PARTITION": "restore-v1",
+    "PLAYTT_AUTO_PUBLISH": "true",
+    "PLAYTT_MEMORY_DIAGNOSTICS": "true",
+    "PLAYTT_R2_CAPACITY_SCOPE": "playtt-wordpress-window-audit",
+    "PLAYTT_R2_CAPACITY_LIMIT_BYTES": "150000000",
+    "PLAYTT_R2_WRITE_TRACKING": "v1",
+    "PLAYTT_R2_WRITE_WINDOW": "v1",
+    "PLAYTT_METADATA_OVERLAY": "v1"
+  },
+  "triggers": {
+    "crons": []
+  }
+}

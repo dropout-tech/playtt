@@ -1,0 +1,80 @@
+{
+  "at": "2026-11-16T11:13:47.929Z",
+  "resolver": "1.1.1.1",
+  "result": "pass",
+  "records": [
+    {
+      "name": "playtt.tw",
+      "type": "MX",
+      "content": "10 spool.mail.gandi.net",
+      "pass": true
+    },
+    {
+      "name": "playtt.tw",
+      "type": "MX",
+      "content": "50 fb.mail.gandi.net",
+      "pass": true
+    },
+    {
+      "name": "playtt.tw",
+      "type": "TXT",
+      "content": "\"v=spf1 include:_mailcust.gandi.net ?all\"",
+      "pass": true
+    },
+    {
+      "name": "_imap._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "0 0 0 .",
+      "pass": true
+    },
+    {
+      "name": "_imaps._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "0 1 993 mail.gandi.net",
+      "pass": true
+    },
+    {
+      "name": "_pop3._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "0 0 0 .",
+      "pass": true
+    },
+    {
+      "name": "_pop3s._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "10 1 995 mail.gandi.net",
+      "pass": true
+    },
+    {
+      "name": "_submission._tcp.playtt.tw",
+      "type": "SRV",
+      "content": "0 1 465 mail.gandi.net",
+      "pass": true
+    },
+    {
+      "name": "gm1._domainkey.playtt.tw",
+      "type": "CNAME",
+      "content": "gm1.gandimail.net",
+      "pass": true
+    },
+    {
+      "name": "gm2._domainkey.playtt.tw",
+      "type": "CNAME",
+      "content": "gm2.gandimail.net",
+      "pass": true
+    },
+    {
+      "name": "gm3._domainkey.playtt.tw",
+      "type": "CNAME",
+      "content": "gm3.gandimail.net",
+      "pass": true
+    },
+    {
+      "name": "webmail.playtt.tw",
+      "type": "CNAME",
+      "content": "webmail.gandi.net",
+      "pass": true
+    }
+  ],
+  "scope": "Public DNS only; no mailbox login or test messages"
+}

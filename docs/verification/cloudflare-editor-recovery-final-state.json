@@ -1,0 +1,90 @@
+{
+  "at": "2026-11-20T15:51:23.484Z",
+  "result": "contained-incomplete",
+  "bucket": "playtt-wordpress-pin-restore-audit",
+  "targetState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "0baa062c-294a-415a-9d2d-7f4cab89a59a",
+      "manifestKey": "sites/default/markdown/revisions/0baa062c-294a-415a-9d2d-7f4cab89a59a.json",
+      "persistedAt": "2026-11-20T06:03:57.136Z"
+    },
+    "version": 62
+  },
+  "sourceState": {
+    "schema": "wp-codebox/cloudflare-wordpress-state/v2",
+    "store": "durable-object",
+    "pointer": {
+      "revision": "c0ba467c-c422-41e8-861c-64926c69e1fb",
+      "manifestKey": "sites/default/markdown/revisions/c0ba467c-c422-41e8-861c-64926c69e1fb.json",
+      "persistedAt": "2026-11-20T03:25:06.853Z"
+    },
+    "version": 309
+  },
+  "budget": {
+    "schema": "playtt/r2-capacity-ledger/v1",
+    "scope": "playtt-wordpress-pin-restore-audit",
+    "baselineBytes": 149591427,
+    "baselineObjects": 396,
+    "chargedBytes": 148266705,
+    "chargedPuts": 297,
+    "initializedAt": "2026-11-20T04:10:42.674Z",
+    "writeTracking": {
+      "schema": "playtt/r2-write-tracking/v1",
+      "initializedAt": "2026-11-20T04:41:44.739Z",
+      "pending": 0,
+      "sealed": true,
+      "acquiredAt": "2026-11-20T15:39:53.624Z",
+      "maximumPending": 128,
+      "automaticExpiry": false
+    },
+    "reservationSchema": "playtt/r2-write-reservation/v1",
+    "initialized": true,
+    "limitBytes": 300000000,
+    "trackingConfigured": true,
+    "remainingBytes": 2141868,
+    "accounting": "payload baseline plus all attempted put bytes; no automatic refunds"
+  },
+  "pins": 25,
+  "fenceActive": false,
+  "writeSealed": true,
+  "publisher": "paused",
+  "ownedId": 192,
+  "ownedCleanupComplete": false,
+  "browserUiAcceptanceComplete": false,
+  "capacityLimitIncreased": false,
+  "historyDeleted": false,
+  "refund": false,
+  "scope": "After browser interruption, snapshot-growth diagnosis and fully verified inspection backup; write seal intentionally retained while safe recovery is developed",
+  "checks": [
+    {
+      "target": "restore",
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2495
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 167
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-capacity",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 533
+    },
+    {
+      "target": "restore",
+      "path": "/__playtt-backup-pins",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 177
+    }
+  ]
+}

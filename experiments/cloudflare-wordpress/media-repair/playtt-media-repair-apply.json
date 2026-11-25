@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-18T20:15:49.517Z",
+  "result": "pass",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "bucket": "playtt-wordpress-rebuild-audit",
+  "scope": "Monotonic canonical adoption under an active fence after exact base-version/pointer check; no reset, no deployment, two metadata files changed",
+  "version": 86,
+  "revision": "e12466c4-4831-49b4-ba05-51b7dc7fd636",
+  "addedRows": 44,
+  "attachments": 15,
+  "publisher": "paused",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 1022
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2532
+    },
+    {
+      "path": "/?phase=operator-fence-acquire",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 334
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3046
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 246
+    },
+    {
+      "path": "/?phase=operator-adopt",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 667
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2350
+    },
+    {
+      "path": "/?phase=operator-fence-release",
+      "method": "POST",
+      "status": 200,
+      "wallMs": 325
+    },
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 797
+    }
+  ]
+}

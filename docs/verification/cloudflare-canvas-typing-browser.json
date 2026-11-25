@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-24T15:29:21.059Z",
+  "scope": "Local Chrome actual native visual edit; baseline cloud201 clone",
+  "visualCanvasRendered": true,
+  "inputMethod": "click last paragraph, End, pressSequentially TEST, four Backspace, pressSequentially Traditional Chinese suffix",
+  "saveClicked": true,
+  "savedUi": true,
+  "coldVisualTextExact": true,
+  "coldNativeCodeContentExact": true,
+  "logoutUiConfirmed": true,
+  "console": [
+    {
+      "level": "warn",
+      "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+      "timestamp": "2026-11-24T15:27:41.550Z",
+      "url": "http://127.0.0.1:9580/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+    },
+    {
+      "level": "warn",
+      "message": "global-styles-css-custom-properties-inline-css was added to the iframe incorrectly. Please use block.json or enqueue_block_assets to add styles to the iframe. style#global-styles-css-custom-properties-inline-css",
+      "timestamp": "2026-11-24T15:28:45.529Z",
+      "url": "http://127.0.0.1:9580/wp-includes/js/dist/block-editor.min.js?ver=37e58da384b2558bd479"
+    },
+    {
+      "level": "error",
+      "message": "InvalidStateError: Transition was aborted because of invalid state. ViewTransition opt-in disabled",
+      "timestamp": "2026-11-24T15:29:00.719Z",
+      "url": "http://127.0.0.1:9580/wp-login.php?loggedout=true&wp_lang=zh_TW"
+    }
+  ]
+}

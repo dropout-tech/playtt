@@ -1,0 +1,661 @@
+{
+  "schema": "playtt/legacy-adoption-recorded-model/v1",
+  "at": "2026-11-21T15:28:53.986Z",
+  "result": "pass-with-explicit-unknown-storage-stop",
+  "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+  "sourceVersion": 177,
+  "targetVersion": 178,
+  "sourceFilesVerified": 81,
+  "model": "Actual coordinator/pin/budget classes over in-memory R2 and durable-storage models; not workerd/Cloudflare",
+  "existingPinsInEachModel": 2,
+  "allContentBytesPreservedByPreparedPlan": true,
+  "scenarios": [
+    {
+      "mode": "happy",
+      "result": "verified-and-sealed",
+      "firstError": null,
+      "intermediate": {
+        "version": 178,
+        "pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "r2Pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "pending": 0
+      },
+      "final": {
+        "version": 178,
+        "pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "r2Pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "fenceOwned": false
+      },
+      "chargedBytes": 432931,
+      "chargedPuts": 7,
+      "pending": 0,
+      "sealed": true,
+      "windowClosed": true,
+      "stats": {
+        "adopts": 1,
+        "pointerCalls": 1,
+        "stageCalls": 6
+      },
+      "journal": [
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "source",
+          "version": 177
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/5bc180deec686111e426680bf63eb28a701af225a81e3df613ec08577e89b3a2",
+          "bytes": 196
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/5bc180deec686111e426680bf63eb28a701af225a81e3df613ec08577e89b3a2"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/825514b6d7be72c679287a67649f399efa38697dee69c7b13ed499daaf36269e",
+          "bytes": 2421
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/825514b6d7be72c679287a67649f399efa38697dee69c7b13ed499daaf36269e"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/84c8fe89ef1a74d4d8a216f328c3763bac737534c43b4a87a36f1b7840f337ba",
+          "bytes": 14775
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/84c8fe89ef1a74d4d8a216f328c3763bac737534c43b4a87a36f1b7840f337ba"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/89e022813f3c15a2079c6197ac056c0301e1e53ab0fd746554ea875e1a4cadc0",
+          "bytes": 19149
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/89e022813f3c15a2079c6197ac056c0301e1e53ab0fd746554ea875e1a4cadc0"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/ad4d59a9d0442290bde537bcd3c0b871aa65aa40f255c0364050f3a08332eb34",
+          "bytes": 322467
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/ad4d59a9d0442290bde537bcd3c0b871aa65aa40f255c0364050f3a08332eb34"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "bytes": 73740
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pin-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "target-pinned-and-dependencies-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "adopt-intent",
+          "version": 178
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pointer-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "both-pointers-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "target-complete",
+          "version": 178
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pin-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "target-pinned-and-dependencies-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "both-pointers-verified"
+        }
+      ],
+      "originalTwoModelPinsPreserved": true
+    },
+    {
+      "mode": "settled-response-loss",
+      "result": "verified-and-sealed",
+      "firstError": "injected client response loss after settled write",
+      "intermediate": {
+        "version": 177,
+        "pointer": {
+          "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+          "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+          "persistedAt": "2026-11-21T14:22:06.428Z"
+        },
+        "r2Pointer": {
+          "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+          "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+          "persistedAt": "2026-11-21T14:22:06.428Z"
+        },
+        "pending": 0
+      },
+      "final": {
+        "version": 178,
+        "pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "r2Pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "fenceOwned": false
+      },
+      "chargedBytes": 432931,
+      "chargedPuts": 7,
+      "pending": 0,
+      "sealed": true,
+      "windowClosed": true,
+      "stats": {
+        "adopts": 1,
+        "pointerCalls": 1,
+        "stageCalls": 6
+      },
+      "journal": [
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "source",
+          "version": 177
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/5bc180deec686111e426680bf63eb28a701af225a81e3df613ec08577e89b3a2",
+          "bytes": 196
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "source",
+          "version": 177
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/825514b6d7be72c679287a67649f399efa38697dee69c7b13ed499daaf36269e",
+          "bytes": 2421
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/825514b6d7be72c679287a67649f399efa38697dee69c7b13ed499daaf36269e"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/84c8fe89ef1a74d4d8a216f328c3763bac737534c43b4a87a36f1b7840f337ba",
+          "bytes": 14775
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/84c8fe89ef1a74d4d8a216f328c3763bac737534c43b4a87a36f1b7840f337ba"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/89e022813f3c15a2079c6197ac056c0301e1e53ab0fd746554ea875e1a4cadc0",
+          "bytes": 19149
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/89e022813f3c15a2079c6197ac056c0301e1e53ab0fd746554ea875e1a4cadc0"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/ad4d59a9d0442290bde537bcd3c0b871aa65aa40f255c0364050f3a08332eb34",
+          "bytes": 322467
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/ad4d59a9d0442290bde537bcd3c0b871aa65aa40f255c0364050f3a08332eb34"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "bytes": 73740
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pin-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "target-pinned-and-dependencies-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "adopt-intent",
+          "version": 178
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pointer-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "both-pointers-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "target-complete",
+          "version": 178
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pin-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "target-pinned-and-dependencies-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "both-pointers-verified"
+        }
+      ],
+      "originalTwoModelPinsPreserved": true
+    },
+    {
+      "mode": "adopted-pointer-pending",
+      "result": "verified-and-sealed",
+      "firstError": "injected pointer failure before write",
+      "intermediate": {
+        "version": 178,
+        "pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "r2Pointer": {
+          "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+          "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+          "persistedAt": "2026-11-21T14:22:06.428Z"
+        },
+        "pending": 0
+      },
+      "final": {
+        "version": 178,
+        "pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "r2Pointer": {
+          "revision": "b331752f-d210-4b7c-9c98-2424d97e9ebe",
+          "manifestKey": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "persistedAt": "2026-11-21T15:06:06.249Z"
+        },
+        "fenceOwned": false
+      },
+      "chargedBytes": 432931,
+      "chargedPuts": 7,
+      "pending": 0,
+      "sealed": true,
+      "windowClosed": true,
+      "stats": {
+        "adopts": 1,
+        "pointerCalls": 2,
+        "stageCalls": 6
+      },
+      "journal": [
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "source",
+          "version": 177
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/5bc180deec686111e426680bf63eb28a701af225a81e3df613ec08577e89b3a2",
+          "bytes": 196
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/5bc180deec686111e426680bf63eb28a701af225a81e3df613ec08577e89b3a2"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/825514b6d7be72c679287a67649f399efa38697dee69c7b13ed499daaf36269e",
+          "bytes": 2421
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/825514b6d7be72c679287a67649f399efa38697dee69c7b13ed499daaf36269e"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/84c8fe89ef1a74d4d8a216f328c3763bac737534c43b4a87a36f1b7840f337ba",
+          "bytes": 14775
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/84c8fe89ef1a74d4d8a216f328c3763bac737534c43b4a87a36f1b7840f337ba"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/89e022813f3c15a2079c6197ac056c0301e1e53ab0fd746554ea875e1a4cadc0",
+          "bytes": 19149
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/89e022813f3c15a2079c6197ac056c0301e1e53ab0fd746554ea875e1a4cadc0"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/ad4d59a9d0442290bde537bcd3c0b871aa65aa40f255c0364050f3a08332eb34",
+          "bytes": 322467
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/objects/ad4d59a9d0442290bde537bcd3c0b871aa65aa40f255c0364050f3a08332eb34"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json",
+          "bytes": 73740
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-verified",
+          "key": "sites/default/markdown/revisions/b331752f-d210-4b7c-9c98-2424d97e9ebe.json"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pin-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "target-pinned-and-dependencies-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "adopt-intent",
+          "version": 178
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pointer-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pointer-response-unknown",
+          "observed": "target-pointer-pending"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "target-pointer-pending",
+          "version": 178
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pin-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "target-pinned-and-dependencies-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pointer-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "both-pointers-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "target-complete",
+          "version": 178
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "pin-intent"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "target-pinned-and-dependencies-verified"
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "both-pointers-verified"
+        }
+      ],
+      "originalTwoModelPinsPreserved": true
+    },
+    {
+      "mode": "ambiguous-storage-write",
+      "result": "stopped-with-original-state-and-unsettled-ticket",
+      "firstError": "injected response loss after write",
+      "intermediate": {
+        "version": 177,
+        "pointer": {
+          "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+          "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+          "persistedAt": "2026-11-21T14:22:06.428Z"
+        },
+        "r2Pointer": {
+          "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+          "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+          "persistedAt": "2026-11-21T14:22:06.428Z"
+        },
+        "pending": 1
+      },
+      "final": {
+        "version": 177,
+        "pointer": {
+          "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+          "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+          "persistedAt": "2026-11-21T14:22:06.428Z"
+        },
+        "r2Pointer": {
+          "revision": "84fea105-9e00-41ad-abba-23ba958cc215",
+          "manifestKey": "sites/default/markdown/revisions/84fea105-9e00-41ad-abba-23ba958cc215.json",
+          "persistedAt": "2026-11-21T14:22:06.428Z"
+        },
+        "fenceOwned": true
+      },
+      "chargedBytes": 196,
+      "chargedPuts": 1,
+      "pending": 1,
+      "sealed": false,
+      "windowClosed": true,
+      "stats": {
+        "adopts": 0,
+        "pointerCalls": 0,
+        "stageCalls": 1
+      },
+      "journal": [
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "observed",
+          "mode": "source",
+          "version": 177
+        },
+        {
+          "schema": "playtt/legacy-adoption-event/v1",
+          "planDigest": "33ddf8dc0a38a1b7b98b353e77c6cc34e854dc1094d69ffb70297145d7387d28",
+          "phase": "upload-intent",
+          "key": "sites/default/markdown/objects/5bc180deec686111e426680bf63eb28a701af225a81e3df613ec08577e89b3a2",
+          "bytes": 196
+        }
+      ],
+      "originalTwoModelPinsPreserved": true
+    }
+  ],
+  "successfulAdoptionBytes": 432931,
+  "successfulAdoptionPuts": 7,
+  "cloudRequests": 0,
+  "cloudChanged": false,
+  "runtimeSourceChanged": false,
+  "actualProviderAdapterImplemented": false,
+  "unknownStorageOutcomeRecoveryImplemented": false,
+  "observedLimitations": [
+    "Existing operator coherent status does not compare R2 current.json; protocol reads both pointers and exact receipt independently.",
+    "A pending ambiguous R2 attempt is not cleared by object presence or restart; window closes but drain cannot seal, source remains177.",
+    "No actual network/conditional-write timing or Cloudflare control endpoint was tested.",
+    "Model existing pin count2 is not the live14-pin registry.",
+    "No safe remote scoped upload/ticket settlement API is provided by these scripts."
+  ],
+  "goalStatus": "active",
+  "toolHashes": {
+    "scripts/playtt-legacy-adoption.mjs": "746b9fb451c271a86c6c432dd0f7d2f59e3541798231caed67e6d7dc33df0178",
+    "scripts/playtt-adoption-model.mjs": "f2deabad162412a79c2bdae01e0173f576765b876d90eab07470ee01361294e9",
+    "scripts/playtt-legacy-adoption-recorded.mjs": "2f799a491d91e9299859a6fd0439145e7a5ef20066b6105de2e6c3593f36f7b7"
+  },
+  "windowAdmissionGuardsChecked": true
+}

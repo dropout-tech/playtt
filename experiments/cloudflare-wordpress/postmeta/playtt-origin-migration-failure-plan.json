@@ -1,0 +1,93 @@
+{
+  "at": "2026-11-18T19:36:05.614Z",
+  "origin": "https://playtt-wp-free-rebuild-audit.muzhi-garden-platform.workers.dev",
+  "previousOrigin": "https://playtt-wp-free-cms-probe.muzhi-garden-platform.workers.dev",
+  "result": "fail",
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(!media.source_url?.startsWith(previousOrigin))\n",
+  "checks": [
+    {
+      "path": "/__playtt-publishing",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 962
+    },
+    {
+      "path": "/?phase=operator-fence-status",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 2880
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6318
+    },
+    {
+      "path": "/wp-login.php",
+      "method": "POST",
+      "status": 302,
+      "wallMs": 8036
+    },
+    {
+      "path": "/wp-admin/",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 16249
+    },
+    {
+      "path": "/wp-json/wp/v2/pages?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 12925
+    },
+    {
+      "path": "/wp-json/wp/v2/posts?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 11366
+    },
+    {
+      "path": "/wp-json/wp/v2/navigation?context=edit&per_page=100&status=publish,draft,pending,private,future",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 7185
+    },
+    {
+      "path": "/wp-json/wp/v2/templates?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6242
+    },
+    {
+      "path": "/wp-json/wp/v2/template-parts?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3690
+    },
+    {
+      "path": "/wp-json/wp/v2/media?context=edit&per_page=100",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6589
+    },
+    {
+      "path": "/wp-json/wp/v2/themes?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3266
+    },
+    {
+      "path": "/wp-json/wp/v2/global-styles/42?context=edit",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 6082
+    },
+    {
+      "path": "/wp-json/wp/v2/settings",
+      "method": "GET",
+      "status": 200,
+      "wallMs": 3082
+    }
+  ]
+}

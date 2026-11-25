@@ -1,0 +1,18 @@
+{
+  "result": "pass",
+  "tests": 11,
+  "failures": 0,
+  "logSha256": "7e54ee2bea1d3200f3fe31e7405dbfca68c243d7230d53a5a6a14bd8e8ab4602",
+  "testSourceSha256": "3a72746a8aa6279bdf34b1b257aa2e492c94d90d430eb09b68b4f24b850cc5c2",
+  "contracts": [
+    "live readiness",
+    "closed log vocabulary",
+    "deadline",
+    "termination",
+    "outer-only timeout",
+    "late internal completion",
+    "ignore old/wrong-version/incomplete traces",
+    "settle includes late failure",
+    "missing outer and truncated rejection"
+  ]
+}

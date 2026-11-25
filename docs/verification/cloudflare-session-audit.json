@@ -1,0 +1,250 @@
+{
+  "at": "2026-11-20T20:39:44.933Z",
+  "result": "pass",
+  "previousWarmOnlyReportInsufficient": true,
+  "previousPersistedSessionRowsUnchangedAfterLogout": true,
+  "previousLogoutCommitted": false,
+  "fix": "Classify native wp-login.php?action=logout as a canonical mutation in runtime and DO publisher prearm; preserve core nonce/authentication checks.",
+  "nativeLogout": {
+    "label": "native-logout",
+    "versionBefore": 13,
+    "versionAfter": 14,
+    "pointer": {
+      "revision": "506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97",
+      "manifestKey": "sites/default/markdown/revisions/506f29fb-c3a5-4139-a0e9-2f4c0a3ccc97.json",
+      "persistedAt": "2026-11-20T20:35:57.286Z"
+    },
+    "chargedBytes": 96225,
+    "operations": 3
+  },
+  "coldRecoveryEvidence": [
+    {
+      "stage": "cold-session-preferences",
+      "operation": "read",
+      "runtime": "cold",
+      "completed": true,
+      "totalMs": 2073,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 52,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.read",
+          "durationMs": 169,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.metadata-overlay.restore",
+          "durationMs": 1134,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.sqlite.fetch-verify",
+          "durationMs": 205,
+          "aggregateGap": false
+        },
+        {
+          "name": "php.runtime.create",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.wordpress.fetch-verify-extract",
+          "durationMs": 342,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.mdi.extract",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.markdown",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.wp-content",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.uploads",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "playground.opaque",
+          "durationMs": 0,
+          "aggregateGap": true
+        },
+        {
+          "name": "playground.version.read",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.release",
+          "durationMs": 171,
+          "aggregateGap": false
+        },
+        {
+          "name": "page-cache.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ],
+      "at": "2026-11-20T20:35:31.978Z",
+      "request": {
+        "category": "rest-users",
+        "method": "GET"
+      }
+    },
+    {
+      "stage": "cold-old-cookie-rejected",
+      "operation": "read",
+      "runtime": "cold",
+      "completed": true,
+      "totalMs": 2893,
+      "phases": [
+        {
+          "name": "request.translate",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.acquire",
+          "durationMs": 52,
+          "aggregateGap": false
+        },
+        {
+          "name": "published.page-cache.lookup",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.manifest.read",
+          "durationMs": 160,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.metadata-overlay.restore",
+          "durationMs": 1008,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.sqlite.fetch-verify",
+          "durationMs": 180,
+          "aggregateGap": false
+        },
+        {
+          "name": "php.runtime.create",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.wordpress.fetch-verify-extract",
+          "durationMs": 226,
+          "aggregateGap": false
+        },
+        {
+          "name": "runtime.archive.mdi.extract",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.markdown",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.wp-content",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "canonical.hydration.uploads",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "playground.opaque",
+          "durationMs": 0,
+          "aggregateGap": true
+        },
+        {
+          "name": "playground.version.read",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "request.php",
+          "durationMs": 0,
+          "aggregateGap": false
+        },
+        {
+          "name": "lease.release",
+          "durationMs": 1267,
+          "aggregateGap": false
+        },
+        {
+          "name": "page-cache.write",
+          "durationMs": 0,
+          "aggregateGap": false
+        }
+      ],
+      "at": "2026-11-20T20:36:07.394Z",
+      "request": {
+        "category": "rest-users",
+        "method": "GET"
+      }
+    }
+  ],
+  "invalidLogoutNonceRejected": true,
+  "persistedTokenRemoved": true,
+  "preferencesBytesRestored": true,
+  "telemetry": {
+    "events": 312,
+    "outcomes": {
+      "ok": 311,
+      "canceled": 1
+    },
+    "traces": 13,
+    "completed": 13,
+    "exceptions": 0,
+    "maxSampledWasmHeapBytes": 71565312,
+    "wholeIsolateMemoryMeasured": false,
+    "collectionBoundSeconds": 315
+  },
+  "lastWindow": {
+    "bytes": 460017,
+    "operations": 17
+  },
+  "notAccepted": [
+    "browser UI",
+    "competing-editor takeover",
+    "physical devices and IME",
+    "post-commit response loss",
+    "long-term Free usage",
+    "sustainable retention",
+    "production backend cutover"
+  ],
+  "remoteRequests": 0
+}

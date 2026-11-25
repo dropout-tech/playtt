@@ -1,0 +1,280 @@
+{
+  "at": "2026-11-18T21:52:15.131934+00:00",
+  "scope": "One private execution actor CPU sample capture during bounded read-only login-page requests. Includes sampled call stacks, not per-request accounting or I/O time; names only, no paths/labels/raw stacks.",
+  "profileSha256": "5f5457792078dafa89b9c12555151befaa04fd77e9ad7b0be44656910ef1a070",
+  "transportGzip": false,
+  "samples": 7300,
+  "functions": 5729,
+  "locations": 5729,
+  "sampleTypes": [
+    {
+      "type": "cpu",
+      "unit": "nanoseconds",
+      "total": 7300000000
+    }
+  ],
+  "durationNs": 10141024000,
+  "cpuUnit": "nanoseconds",
+  "topSelf": [
+    {
+      "function": "wasm-function[2479]",
+      "value": 677000000,
+      "percent": 9.274
+    },
+    {
+      "function": "visit",
+      "value": 440000000,
+      "percent": 6.027
+    },
+    {
+      "function": "visit",
+      "value": 405000000,
+      "percent": 5.548
+    },
+    {
+      "function": "visit",
+      "value": 395000000,
+      "percent": 5.411
+    },
+    {
+      "function": "wasm-function[5060]",
+      "value": 376000000,
+      "percent": 5.151
+    },
+    {
+      "function": "visit",
+      "value": 257000000,
+      "percent": 3.521
+    },
+    {
+      "function": "visit",
+      "value": 226000000,
+      "percent": 3.096
+    },
+    {
+      "function": "wasm-function[2479]",
+      "value": 161000000,
+      "percent": 2.205
+    },
+    {
+      "function": "wasm-function[11434]",
+      "value": 156000000,
+      "percent": 2.137
+    },
+    {
+      "function": "wasm-function[5060]",
+      "value": 119000000,
+      "percent": 1.63
+    },
+    {
+      "function": "visit",
+      "value": 104000000,
+      "percent": 1.425
+    },
+    {
+      "function": "wasm-function[498]",
+      "value": 77000000,
+      "percent": 1.055
+    },
+    {
+      "function": "wasm-function[10988]",
+      "value": 33000000,
+      "percent": 0.452
+    },
+    {
+      "function": "wasm-function[171]",
+      "value": 30000000,
+      "percent": 0.411
+    },
+    {
+      "function": "wasm-function[5814]",
+      "value": 28000000,
+      "percent": 0.384
+    },
+    {
+      "function": "wasm-function[986]",
+      "value": 28000000,
+      "percent": 0.384
+    },
+    {
+      "function": "wasm-function[135]",
+      "value": 28000000,
+      "percent": 0.384
+    },
+    {
+      "function": "wasm-function[5814]",
+      "value": 25000000,
+      "percent": 0.342
+    },
+    {
+      "function": "visit",
+      "value": 24000000,
+      "percent": 0.329
+    },
+    {
+      "function": "wasm-function[855]",
+      "value": 24000000,
+      "percent": 0.329
+    },
+    {
+      "function": "wasm-function[986]",
+      "value": 24000000,
+      "percent": 0.329
+    },
+    {
+      "function": "wasm-function[134]",
+      "value": 22000000,
+      "percent": 0.301
+    },
+    {
+      "function": "wasm-function[135]",
+      "value": 22000000,
+      "percent": 0.301
+    },
+    {
+      "function": "wasm-function[879]",
+      "value": 21000000,
+      "percent": 0.288
+    },
+    {
+      "function": "wasm-function[855]",
+      "value": 20000000,
+      "percent": 0.274
+    }
+  ],
+  "topCumulative": [
+    {
+      "function": "(root)",
+      "value": 7300000000,
+      "percent": 100.0
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 5376000000,
+      "percent": 73.644
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 5375000000,
+      "percent": 73.63
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 5373000000,
+      "percent": 73.603
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 5368000000,
+      "percent": 73.534
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 5368000000,
+      "percent": 73.534
+    },
+    {
+      "function": "js-to-wasm::i",
+      "value": 5368000000,
+      "percent": 73.534
+    },
+    {
+      "function": "wasm-function[10327]",
+      "value": 5368000000,
+      "percent": 73.534
+    },
+    {
+      "function": "wasm-to-js",
+      "value": 4946000000,
+      "percent": 67.753
+    },
+    {
+      "function": "invoke_ii",
+      "value": 4946000000,
+      "percent": 67.753
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 4946000000,
+      "percent": 67.753
+    },
+    {
+      "function": "js-to-wasm:i:",
+      "value": 4946000000,
+      "percent": 67.753
+    },
+    {
+      "function": "wasm-function[14609]",
+      "value": 4946000000,
+      "percent": 67.753
+    },
+    {
+      "function": "wasm-function[11681]",
+      "value": 4945000000,
+      "percent": 67.74
+    },
+    {
+      "function": "wasm-to-js",
+      "value": 4945000000,
+      "percent": 67.74
+    },
+    {
+      "function": "invoke_iiiii",
+      "value": 4945000000,
+      "percent": 67.74
+    },
+    {
+      "function": "[name-redacted]",
+      "value": 4945000000,
+      "percent": 67.74
+    },
+    {
+      "function": "js-to-wasm:iiiii:i",
+      "value": 4945000000,
+      "percent": 67.74
+    },
+    {
+      "function": "wasm-function[14608]",
+      "value": 4945000000,
+      "percent": 67.74
+    },
+    {
+      "function": "wasm-function[11451]",
+      "value": 4945000000,
+      "percent": 67.74
+    },
+    {
+      "function": "wasm-function[4883]",
+      "value": 4924000000,
+      "percent": 67.452
+    },
+    {
+      "function": "wasm-function[11434]",
+      "value": 4874000000,
+      "percent": 66.767
+    },
+    {
+      "function": "wasm-function[11013]",
+      "value": 2920000000,
+      "percent": 40.0
+    },
+    {
+      "function": "wasm-function[3787]",
+      "value": 2915000000,
+      "percent": 39.932
+    },
+    {
+      "function": "wasm-function[12496]",
+      "value": 2880000000,
+      "percent": 39.452
+    }
+  ],
+  "diagnosticVisitSelfNs": 1866000000,
+  "diagnosticVisitSelfPercent": 25.562,
+  "baselineBundleLocation": {
+    "file": "worker-playtt-do.js",
+    "line": 49581,
+    "mappedTo": "logPlayttRuntimeMemory.visit",
+    "bundleSha256": "71a1da4506a5534c9a99acca8b6467dff7223dfafb76d4790d262e1a8c729793"
+  }
+}

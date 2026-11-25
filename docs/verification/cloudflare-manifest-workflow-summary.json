@@ -1,0 +1,163 @@
+{
+  "schema": "playtt/manifest-native-budget-proof/v1",
+  "at": "2026-11-21T13:58:09.569Z",
+  "result": "native-workflow-pass-with-reproduced-post-logout-rejection",
+  "sourceCommit": "b5eec65392ee43bf7c2bfcee65987b323aa20816",
+  "localOnly": true,
+  "outerWorkerGateAndBudget": true,
+  "compressedWriterEnabled": true,
+  "manifestEncodingEnabled": true,
+  "policyInjected": false,
+  "limits": {
+    "durationSeconds": 600,
+    "maxBytes": 1881041,
+    "maxOperations": 96
+  },
+  "elapsedWindowMs": 307281,
+  "native": {
+    "schema": "playtt/manifest-complete-browser/v1",
+    "at": "2026-11-21T13:45:27.595Z",
+    "result": "native-save-reopen-logout-observed",
+    "beforeExact": true,
+    "saveClicks": 1,
+    "savedUi": true,
+    "coldParagraphsExact": true,
+    "coldParagraphCount": 9,
+    "logoutSucceeded": true,
+    "logoutFailure503": false,
+    "logoutMethod": "Browser navigation to the native WordPress logout link observed in the DOM",
+    "ownedBrowserTabClosed": true,
+    "cloudRequests": 0
+  },
+  "canonical": {
+    "versionBefore": 161,
+    "versionAfter": 178,
+    "manualSaveVersion": 175,
+    "autosavesSucceeded": 2,
+    "manualSavesSucceeded": 1,
+    "restarts": 1,
+    "coldParagraphCount": 9,
+    "canonicalBodyAndContentHashExact": true,
+    "savedBodySurvivesColdRestart": true,
+    "manualRevision207Exact": true,
+    "coldCoreRemovedAutosave206AndFootnotes76": true,
+    "priorPostsAndRevisionsExact": true,
+    "allUnrelatedCanonicalFilesExact": true,
+    "mediaAndThemeExact": true,
+    "preferenceOnlyModifiedTimestampChanged": true,
+    "monotonicSequences": true,
+    "priorSessionsPreserved": 5,
+    "newLocalSessionRetained": 0,
+    "logoutCompleted": true
+  },
+  "accounting": {
+    "chargedBytes": 847368,
+    "chargedPuts": 51,
+    "remainingWindowBytes": 1033673,
+    "pending": 0,
+    "sealed": true,
+    "closed": true,
+    "committedSnapshots": 17,
+    "committedManifestBytes": 399591,
+    "equivalentPlainManifestBytes": 1258493,
+    "manifestBytesAvoided": 858902,
+    "committedDeltaBytes": 444666,
+    "manifestShareOfAllChargedBytes": 0.47156725295267227,
+    "capIncreased": false,
+    "refundOrHistoryDeletion": false
+  },
+  "cadence": {
+    "minimalInterval": "30",
+    "firstSessionIntervalsMs": [
+      30012,
+      30011,
+      30004,
+      30017
+    ],
+    "strictRateLimit": false
+  },
+  "backup": {
+    "format": "compressed-content",
+    "manifestEncoding": "gzip-envelope",
+    "objects": 304,
+    "independentExact": true,
+    "fullMaterializedExact": true,
+    "independentOpenedAgain": true,
+    "materializedOpenedAgain": true,
+    "rawReplicasVerified": true,
+    "files": 298
+  },
+  "manifestEncoding": {
+    "schema": "playtt/canonical-manifest-envelope/v1",
+    "finalPhysicalBytes": 23507,
+    "physicalSha256": "8feeed5ce7bd7785fcb35e32aa0c865e73485d1bee41bcd87b5cb4a8c9c4f40d",
+    "runtimeImplemented": true,
+    "allCommittedManifestsEncoded": true,
+    "wholeLocalWorkflowMeasured": true
+  },
+  "postLogoutObservation": {
+    "request": {
+      "at": "2026-11-21T13:45:12.462Z",
+      "path": "/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "action": "other",
+      "status": 400,
+      "version": 178,
+      "revision": "08a9b711-1388-43d6-89d3-f95caead5f34"
+    },
+    "logoutCommittedVersion": 178,
+    "noLaterCanonicalVersion": true,
+    "allAuthenticatedSavesAndAutosavesSucceeded": true,
+    "exactActionCaptured": false,
+    "zeroHttpErrors": false,
+    "scope": "Login, autosaves, manual save, cold reopen, logout/session removal and independent recovery passed. One post-logout AJAX400 is retained for attribution; the original zero-error assertion failed and this does not turn the response into success.",
+    "followUp": {
+      "artifact": "playtt-logout-action-summary.json",
+      "explicitAction": "wp-remove-post-lock",
+      "status": 400,
+      "logoutSessionRemovalVerified": true,
+      "sourceEvidence": {
+        "archiveSha256": "046b5a12bf4787d3209743c46b99de2c82e3daf73f0b8a389a93c2095b7047af",
+        "file": "wordpress/wp-admin/admin-ajax.php",
+        "fileSha256": "06f3a0e4fbeaed4f965f5fe22f3d767faaa0c775d1446975bf420f4b85ba7a01",
+        "registeredAuthenticatedActionLine": 99,
+        "missingUnauthenticatedActionCheckLine": 195,
+        "coreHasNoUnauthenticatedRemoveLockHandler": true
+      },
+      "originalRequestActionIsInference": true
+    }
+  },
+  "initialObservation": "A previous independent envelope attempt saved and reopened but expired before logout at595239ms with784245bytes remaining. That owner remains expired/sealed; this new copy starts separately from verifiedbackup161 with the same600sec/1881041bytes/96ops. Native logout navigation was prepared in advance.",
+  "fixture": {
+    "storageClassObserved": "",
+    "defaultedTo": "Standard",
+    "unknownValuesRejected": true,
+    "productionValidatorUnchanged": true,
+    "baselineObjects": 307,
+    "baselineBytes": 101079607,
+    "diagnosticObjectWritesExcluded": true
+  },
+  "localProcessesDisposed": true,
+  "ownedBrowserTabClosed": true,
+  "outboundAttempts": 0,
+  "limitations": [
+    "All native core actions and exact canonical/session state pass within the unchanged window. A separate action-only browser probe reproduces native wp-remove-post-lock400 after logout; the original other action is an inference, and zero HTTP errors are not claimed.",
+    "This is not provider CPU/latency/whole-isolate or sustained Free acceptance.",
+    "Elapsed time includes agent interaction delays; observed cadence is not a strict rate limit.",
+    "Local capacity baseline differs from the real account; diagnostic evidence objects are outside runtime accounting.",
+    "Actual old-source rollback/adopt, physical devices/IME and full A01-A20 remain open."
+  ],
+  "next": "Assess one bounded private provider validation against current remaining allowance, retaining action-only diagnostics and canonical/session checks; keep productionPages/currentvisual unchanged and do not replay finished owners.",
+  "cloud": {
+    "requestsThisTurn": 0,
+    "deployed": false,
+    "productionChanged": false,
+    "paidChange": false,
+    "lastVerifiedAt": "2026-11-21T06:28:14.277Z",
+    "lastVerifiedVersion": 161,
+    "lastVerifiedPins": 13,
+    "lastVerifiedRemainingBytes": 1881041,
+    "refreshed": false
+  },
+  "goalStatus": "active"
+}

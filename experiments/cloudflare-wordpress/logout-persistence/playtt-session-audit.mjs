@@ -1,0 +1,21 @@
+// Offline audit of native reports and independent backups; never emits cookies.
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {openSnapshotBundle} from './playtt-snapshot-bundle.mjs';
+const load=async p=>JSON.parse(await readFile(p,'utf8'));
+const legacy=await load('artifacts/playtt-session-native-verified-result.json'),owner=await load('artifacts/playtt-session-native-verified-owned-private.json');
+const session=async(label)=>{const s=owner.snapshots.find(s=>s.label===label),b=await openSnapshotBundle(owner.directory+'/'+label+'-independent',s.anchor);return JSON.parse(new TextDecoder().decode(b.graph.contents.markdown.find(f=>f.path==='_tables/usermeta.json').bytes)).find(r=>r.user_id==='2'&&r.meta_key==='session_tokens').meta_value;};
+assert.equal(await session('preferences'),await session('final'));
+assert.equal(legacy.steps.find(s=>s.label==='native-logout').chargedBytes,0);
+const fixed=await load('artifacts/playtt-session-logout-result.json');
+assert.equal(fixed.result,'pass');assert.equal(fixed.coldLogoutRevocationValidated,true);assert.equal(fixed.persistedTokenRemoved,true);assert.equal(fixed.preferencesBytesRestored,true);assert.equal(fixed.invalidLogoutNonceRejected,true);
+const logout=fixed.steps.find(s=>s.label==='native-logout');assert.equal(logout.versionAfter,logout.versionBefore+1);assert.ok(logout.chargedBytes>0);
+const events=(await readFile('artifacts/playtt-session-provider-logout-persistence-observation.jsonl','utf8')).trim().split('\n').filter(Boolean).map(JSON.parse);
+const traces=events.flatMap(e=>e.traces.map(t=>({...t,at:e.at,request:e.request}))),cold=traces.filter(t=>t.runtime==='cold'&&t.completed&&t.request?.category==='rest-users');
+const stages=['cold-session-preferences','cold-old-cookie-rejected'];
+const coldEvidence=stages.map(stage=>{const calls=fixed.checks.filter(c=>c.stage===stage);assert.ok(calls.length);const from=Date.parse(calls[0].startedAt)-2000,to=Date.parse(calls.at(-1).startedAt)+calls.at(-1).wallMs+2000;const candidates=cold.filter(t=>Date.parse(t.at)>=from&&Date.parse(t.at)<=to&&t.phases.some(p=>p.name==='canonical.metadata-overlay.restore'));assert.equal(candidates.length,1);return {stage,...candidates[0]};});
+const exceptions=events.flatMap(e=>e.exceptions),failed=traces.filter(t=>!t.completed);
+assert.equal(exceptions.length,0);assert.equal(failed.length,0);
+const heap=events.flatMap(e=>e.memory).map(m=>m.heapBytes).filter(Number.isFinite);
+const report={at:new Date().toISOString(),result:'pass',previousWarmOnlyReportInsufficient:true,previousPersistedSessionRowsUnchangedAfterLogout:true,previousLogoutCommitted:false,fix:'Classify native wp-login.php?action=logout as a canonical mutation in runtime and DO publisher prearm; preserve core nonce/authentication checks.',nativeLogout:logout,coldRecoveryEvidence:coldEvidence,invalidLogoutNonceRejected:true,persistedTokenRemoved:true,preferencesBytesRestored:true,telemetry:{events:events.length,outcomes:Object.fromEntries([...new Set(events.map(e=>e.outcome))].map(k=>[k,events.filter(e=>e.outcome===k).length])),traces:traces.length,completed:traces.length-failed.length,exceptions:exceptions.length,maxSampledWasmHeapBytes:heap.length?Math.max(...heap):null,wholeIsolateMemoryMeasured:false,collectionBoundSeconds:315},lastWindow:{bytes:fixed.finalBudget.writeTracking.window.usedBytes,operations:fixed.finalBudget.writeTracking.window.operations},notAccepted:['browser UI','competing-editor takeover','physical devices and IME','post-commit response loss','long-term Free usage','sustainable retention','production backend cutover'],remoteRequests:0};
+await writeFile('artifacts/playtt-session-audit.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

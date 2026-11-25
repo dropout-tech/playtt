@@ -1,0 +1,93 @@
+{
+  "at": "2026-11-20T21:10:51.862Z",
+  "result": "independent-copy-verified-comparison-pending",
+  "canonicalVersion": 43,
+  "anchor": {
+    "revision": "57e3bcef-4738-4b57-a798-23e0fef3d1f1",
+    "manifestKey": "sites/default/markdown/revisions/57e3bcef-4738-4b57-a798-23e0fef3d1f1.json",
+    "persistedAt": "2026-11-20T20:58:34.365Z",
+    "manifestSha256": "fd8efb7eacb9bf50d479856aca77cdf4d7cd4632882c82d6352fcf5e681d3ba6",
+    "packKey": "sites/default/restore-packs/9d0e36adbf306072ac9eb7cdc2ef105098fee724ecd0957d720b0a7c2879b7f6.zip",
+    "packSha256": "9d0e36adbf306072ac9eb7cdc2ef105098fee724ecd0957d720b0a7c2879b7f6",
+    "packBytes": 2295225
+  },
+  "changed": [
+    "_runtime/playtt-auto-increment.json",
+    "_tables/postmeta.json",
+    "_tables/posts.json",
+    "_tables/usermeta.json"
+  ],
+  "removed": [],
+  "tables": {
+    "_tables/posts.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "198",
+          "parent": "193",
+          "postType": "revision",
+          "fields": [
+            "post_date",
+            "post_date_gmt",
+            "post_modified",
+            "post_modified_gmt"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/postmeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "72",
+          "postId": "193",
+          "metaKey": "_edit_lock",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/usermeta.json": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "id": "16",
+          "userId": "1",
+          "metaKey": "session_tokens",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        },
+        {
+          "id": "36",
+          "userId": "2",
+          "metaKey": "session_tokens",
+          "fields": [
+            "meta_value"
+          ],
+          "contentUnchanged": true
+        }
+      ]
+    },
+    "_tables/users.json": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "files": 298,
+  "objects": 300,
+  "remoteGets": 5,
+  "downloadedBytes": 2457772,
+  "mediaAndThemeExact": true,
+  "canonicalAndAccountingUnchanged": true,
+  "remoteMutations": 0,
+  "pinAdded": false
+}

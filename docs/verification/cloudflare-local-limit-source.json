@@ -1,0 +1,64 @@
+{
+  "schema": "playtt/local-memory-limit-source-audit/v1",
+  "at": "2026-11-21T19:23:08.534Z",
+  "workerdVersion": "1.20260828.1",
+  "commit": "8ea63498c7aa107995f9b2ffee7789631707e09f",
+  "tag": "v1.20260828.1",
+  "sources": [
+    {
+      "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/server/server.c%2B%2B",
+      "gitBlobSha": "5c9e6cd53429baed38e549ce91c53ff2237c6e49",
+      "lines": [
+        {
+          "start": 3247,
+          "end": 3254,
+          "finding": "NullIsolateLimitEnforcer supplies default V8 create parameters and no custom isolate limits."
+        },
+        {
+          "start": 3307,
+          "end": 3308,
+          "finding": "hasExcessivelyExceededHeapLimit returns false."
+        },
+        {
+          "start": 4552,
+          "end": 4588,
+          "finding": "Request LimitEnforcer does not enforce resource limits; buffering uses maximum size; SQLite memory usage reports zero."
+        },
+        {
+          "start": 5641,
+          "end": 5643,
+          "finding": "Worker construction instantiates this NullIsolateLimitEnforcer."
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/cloudflare/workerd/blob/8ea63498c7aa107995f9b2ffee7789631707e09f/src/workerd/server/workerd.capnp",
+      "gitBlobSha": "43d59cd6848e71624a2837762fe56828d714f97f",
+      "installedBlobExact": true,
+      "finding": "Installed configuration schema matches the pinned release; v8Flags exists, but no Cloudflare aggregate isolate-memory limit option was found."
+    },
+    {
+      "url": "https://developers.cloudflare.com/workers/platform/limits/",
+      "checkedAt": "2026-11-21",
+      "finding": "Cloudflare documents128MB per isolate including JavaScript and WebAssembly. Local success does not establish this limit."
+    },
+    {
+      "url": "https://developers.cloudflare.com/durable-objects/platform/limits/",
+      "checkedAt": "2026-11-21",
+      "finding": "Durable Objects are subject to Workers memory limits; their documented default CPU request budget is30seconds. Account/plan usage was not queried."
+    }
+  ],
+  "localSourceFindings": [
+    {
+      "file": "node_modules/miniflare/dist/src/index.js",
+      "lines": "31482-31500",
+      "finding": "memoryLimitBytes hits in this section belong to QuickJS runtime helpers, not a workerd isolate memory configuration."
+    },
+    {
+      "file": "node_modules/miniflare/dist/src/index.js",
+      "lines": "113320-113334",
+      "finding": "MINIFLARE_WORKERD_V8_FLAGS is passed into workerd configuration."
+    }
+  ],
+  "scope": "Read-only source/documentation audit plus separately recorded local capability test; not a provider quota or acceptance check."
+}
