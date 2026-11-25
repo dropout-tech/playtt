@@ -1,5 +1,9 @@
 # 2026-11-26 教練官網更新
 
+**已上線：** [正式教練頁](https://playtt.tw/coaches/)。來源提交 `4f860bbcbec490a6aac62f84927a682002bde820`，[正式67個遠端檔案](production-http.json)全部與候選一致，含21張新增圖片；404及舊首頁301通過。正式瀏覽器確認21個姓名、新圖來源、375px無溢出及經歷展開／Enter關閉。[正式桌面畫面](production-desktop.jpg)／[正式手機畫面](production-mobile.jpg)。
+
+**品牌預覽同步：** [0.3.4預覽](https://00d7583b.playtt-brand-preview.pages.dev/coaches/)，分支提交 `0940c252ab5d28cc29fab9f8fd2c97b4c55ec85a`，Cloudflare部署 `00d7583b-cf54-446e-a0f7-42d27afca999` 成功。[預覽70個遠端檔案](preview-http.json)全部匹配，404／301通過；瀏覽器讀回21張卡及0.3.4樣式。完整改版未切到正式網域。
+
 使用者指定 `D:\Downloads\.pptx` 並確認全檔皆現役、要求更新官網。23頁依原序整理；第6、7頁皆李承翰但履歷不同，已詢問使用者，暫緩兩頁，先發布21位。王泳程按最新現役名單納入。完整來源與取捨見 [查核紀錄](../../COACH_REFERENCE_20261126.md)，店家剩餘需求見 [可轉傳訊息](../../OWNER_CONTENT_REQUEST_20261126.md)。
 
 ## 發布與回復範圍
