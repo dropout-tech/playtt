@@ -30,6 +30,13 @@ const coaches = vm.runInNewContext('(' + literal + ')', {}, { timeout: 1000 });
 const photos = ['coach-kuo','coach-lin','coach-yang','coach-huang','coach-amber','coach-tsai','coach-wen','coach-wang'];
 for (const [i, coach] of coaches.entries()) coach.photo = photos[i];
 await mkdir(path.join(root, 'content'), { recursive: true });
-await writeFile(path.join(root, 'content/coaches.json'), JSON.stringify(coaches, null, 2) + '\n');
+// The curated roster is authoritative; the legacy React roster only seeds new checkouts.
+let coachesSeeded = false;
+try {
+  await writeFile(path.join(root, 'content/coaches.json'), JSON.stringify(coaches, null, 2) + '\n', { flag: 'wx' });
+  coachesSeeded = true;
+} catch (error) {
+  if (error.code !== 'EEXIST') throw error;
+}
 await writeFile(path.join(root, 'content/assets.json'), JSON.stringify(manifest, null, 2) + '\n');
-console.log(JSON.stringify({ assets: manifest.length + 1, coaches: coaches.length, webpBytes: manifest.reduce((s,a) => s+a.bytes,0) }));
+console.log(JSON.stringify({ assets: manifest.length + 1, coachesSeeded, webpBytes: manifest.reduce((s,a) => s+a.bytes,0) }));

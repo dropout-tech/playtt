@@ -23,15 +23,15 @@ try {
     const r=await json(`wp_set_current_user(1); define('FS_METHOD','direct'); require_once ABSPATH.'wp-admin/includes/admin.php'; require_once ABSPATH.'wp-admin/includes/class-wp-upgrader.php'; $u=new Theme_Upgrader(new Automatic_Upgrader_Skin()); $r=$u->install('/tmp/lets-play.zip'); if(is_wp_error($r)){throw new Exception($r->get_error_message());} switch_theme('lets-play'); echo wp_json_encode(array('installed'=>$r,'theme'=>wp_get_theme()->get('Name'),'version'=>get_bloginfo('version')));`);
     assert.equal(r.installed,true); assert.match(r.theme,/Play/); return r;
   });
-  const initial=await check('Import six editable pages and fourteen media files',async()=>{
+  const initial=await check('Import six editable pages and thirty-five media files',async()=>{
     const r=await json(`wp_set_current_user(1); update_option('WPLANG','zh_TW'); update_option('permalink_structure','/%postname%/'); update_option('blog_public',0); $r=lets_play_import_starter(); if(is_wp_error($r)){throw new Exception($r->get_error_message());} flush_rewrite_rules(false); echo wp_json_encode(array('pages'=>$r,'media'=>count(get_posts(array('post_type'=>'attachment','posts_per_page'=>-1)))));`);
-    assert.equal(Object.keys(r.pages).length,6); assert.equal(r.media,14); return r;
+    assert.equal(Object.keys(r.pages).length,6); assert.equal(r.media,35); return r;
   });
   const page=initial.pages.about;
   const saved=await json(`$p=get_post(${page}); echo wp_json_encode(array('title'=>$p->post_title,'content'=>$p->post_content));`);
   await check('Editor changes survive importer rerun; media is not duplicated',async()=>{
     const r=await json(`wp_set_current_user(1); wp_update_post(array('ID'=>${page},'post_title'=>'保存驗證：關於我們')); $a=lets_play_import_starter(); echo wp_json_encode(array('created'=>$a,'title'=>get_the_title(${page}),'media'=>count(get_posts(array('post_type'=>'attachment','posts_per_page'=>-1)))));`);
-    assert.equal(Object.keys(r.created).length,0); assert.equal(r.title,'保存驗證：關於我們'); assert.equal(r.media,14); return r;
+    assert.equal(Object.keys(r.created).length,0); assert.equal(r.title,'保存驗證：關於我們'); assert.equal(r.media,35); return r;
   });
   await check('Unauthenticated importer is denied',async()=>{
     const r=await json(`wp_set_current_user(0); $r=lets_play_import_starter(); echo wp_json_encode(array('error'=>is_wp_error($r)?$r->get_error_code():null));`); assert.equal(r.error,'forbidden'); return r;

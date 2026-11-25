@@ -204,7 +204,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <!-- wp:group {"className":"lp-grid-3","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-grid-3"><!-- wp:group {"className":"lp-coach-card","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-coach-card"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/coach-kuo.webp' ) ); ?>" alt="郭則寬教練"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/coach-20261126-01.webp' ) ); ?>" alt="郭則寬教練"/></figure>
 <!-- /wp:image -->
 <!-- wp:group {"className":"lp-coach-body","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-coach-body"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
@@ -214,7 +214,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <h3 class="wp-block-heading">郭則寬</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p>透過引導教學方式，讓不管是大學員小學員，皆能夠快速上手桌球。</p>
+<p>透過引導式教學，陪伴不同年齡的學員認識桌球，輕鬆建立基本動作與打球信心。</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -222,25 +222,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <!-- /wp:group -->
 <!-- wp:group {"className":"lp-coach-card","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-coach-card"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/coach-lin.webp' ) ); ?>" alt="林培中教練"/></figure>
-<!-- /wp:image -->
-<!-- wp:group {"className":"lp-coach-body","layout":{"type":"default"}} -->
-<div class="wp-block-group lp-coach-body"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
-<p class="lp-eyebrow">派派</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">林培中</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>教學生動活潑，親和力十足。</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
-</div>
-<!-- /wp:group -->
-<!-- wp:group {"className":"lp-coach-card","layout":{"type":"default"}} -->
-<div class="wp-block-group lp-coach-card"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/coach-yang.webp' ) ); ?>" alt="楊秉翰教練"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/coach-20261126-02.webp' ) ); ?>" alt="楊秉翰教練"/></figure>
 <!-- /wp:image -->
 <!-- wp:group {"className":"lp-coach-body","layout":{"type":"default"}} -->
 <div class="wp-block-group lp-coach-body"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
@@ -250,7 +232,25 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <h3 class="wp-block-heading">楊秉翰</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p>透過遊戲讓學員產生興趣以及學習相關技術。</p>
+<p>用遊戲培養學習興趣，依照學員需求調整內容，讓技術練習也能充滿樂趣。</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"lp-coach-card","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-coach-card"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/coach-20261126-03.webp' ) ); ?>" alt="賴佩圻教練"/></figure>
+<!-- /wp:image -->
+<!-- wp:group {"className":"lp-coach-body","layout":{"type":"default"}} -->
+<div class="wp-block-group lp-coach-body"><!-- wp:paragraph {"className":"lp-eyebrow"} -->
+<p class="lp-eyebrow">Peggy</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">賴佩圻</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>依學員需求調整教學方式，耐心建立基本功，也能進一步要求技術品質，讓學員保持對桌球的熱情。</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

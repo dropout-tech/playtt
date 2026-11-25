@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const theme = path.join(root, 'lets-play');
-const coaches = JSON.parse(await readFile(path.join(root, 'content/coaches.json'), 'utf8'));
+const coaches = JSON.parse(await readFile(path.join(root, 'content/coaches.json'), 'utf8')).filter(coach => !coach.pendingIdentity);
 const line = 'https://line.me/R/ti/p/@869usyqy';
 const escape = s => s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const href = p => `<?php echo esc_url( home_url( '${p}' ) ); ?>`;
@@ -69,7 +69,7 @@ patterns.class = intro('CLASSES & LEARNING','你的第一拍，從這裡開始�
     +detail('需要自備球拍或其他裝備嗎？',p('預約時請說明是否自備球拍，並確認球具借用、穿著與到館準備事項。'))
     +detail('請假、補課或退費如何處理？',p('報名前請透過 LINE 確認所選方案的請假、補課、退費及遲到規則，並一併詢問家長陪同安排。'))
   ))+cta();
-patterns.coaches = intro('THE PEOPLE BEHIND YOUR PROGRESS','一起練習，一起進步。','不同的教學特色，同樣對桌球的熱情。認識 Let’s Play 教練團隊。')+section(group('lp-grid-3',coaches.map(c=>coachCard(c)).join('')))+section(head('MORE PEOPLE TO PLAY WITH','一起上場的教練夥伴。')+group('lp-coach-names',['力仁','長德','秉成','俊佑','PEGGY'].map(n=>p(n)).join(''))+p('想了解適合的教練與上課時段，歡迎透過 LINE 聊聊你的需求。'))+cta();
+patterns.coaches = intro('THE PEOPLE BEHIND YOUR PROGRESS','一起練習，一起進步。','不同的教學特色，同樣對桌球的熱情。認識 Let’s Play 教練團隊。')+section(group('lp-grid-3',coaches.map(c=>coachCard(c)).join('')))+cta();
 patterns.locations = intro('OUR LOCATIONS','找到你的上場地點。','查看據點資訊，透過 LINE 確認課程、體驗與租桌時段。')+section(locations()+p('各據點的營業、上課及租桌時段，請於到館前透過 LINE 確認。','lp-notice'))+cta();
 patterns.partner = intro('PARTNERSHIP & CAREERS','讓更多人，一起玩桌球。','學校、企業、運動場館與教練夥伴，一起創造更多接觸桌球的機會。')
   +section(head('LET’S BUILD SOMETHING','把桌球，帶進不同的生活。')+group('lp-grid-3',group('lp-course',p('01 / EDUCATION','lp-index')+h('學校與補習班合作',3)+p('學校社團、幼兒園與補習班課程，結合遊戲、球感與基礎技術，討論適合孩子的教案。'))+group('lp-course',p('02 / COMMUNITY','lp-index')+h('企業與運動場館',3)+p('公司社團、福委會活動、運動中心與趣味比賽，提供教練進駐及活動合作洽詢。'))+group('lp-course',p('03 / COACHES','lp-index')+h('教練夥伴招募',3)+p('歡迎喜歡教學、樂於交流的教練，一起討論課程合作與發展機會。'))))
